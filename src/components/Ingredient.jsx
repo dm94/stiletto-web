@@ -4,10 +4,12 @@ class Ingredient extends Component {
   state = {};
   render() {
     return (
-      <row>
-        <div class="col-sm">{this.props.ingredient.name}</div>
-        <div class="col-sm">{this.props.ingredient.count}</div>
-      </row>
+      <div className="row">
+        <div className="col-6 text-right">
+          {this.props.ingredient.count * this.props.value}x
+        </div>
+        <div className="col-6 text-left">{this.props.ingredient.name}</div>
+      </div>
     );
   }
 }

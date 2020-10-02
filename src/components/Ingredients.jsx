@@ -8,7 +8,11 @@ class Ingredients extends Component {
       <div className="col-sm">
         {this.props.crafting.ingredients.name}
         {this.props.crafting.ingredients.map((ingredient) => (
-          <Ingredient key={ingredient.name} ingredient={ingredient} />
+          <Ingredient
+            key={ingredient.name}
+            ingredient={ingredient}
+            value={this.props.value}
+          />
         ))}
       </div>
     );

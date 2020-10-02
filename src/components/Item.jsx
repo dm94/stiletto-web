@@ -15,10 +15,8 @@ class Item extends Component {
   render() {
     return (
       <li className="list-group-item container">
-        <div className="d-inline-block text-wrap" style={{ width: "16rem" }}>
-          {this.props.item.name}
-        </div>
-        <div className="mb-1">
+        <div className="col-10">{this.props.item.name}</div>
+        <div className="col-2">
           <button
             className="btn btn-success btn-sm"
             onClick={() => this.props.onAdd(this.props.item.name)}

@@ -5,9 +5,7 @@ function App() {
   return (
     <React.Fragment>
       <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-        <a className="navbar-brand" href="#">
-          Stiletto
-        </a>
+        <p className="navbar-brand">Stiletto</p>
       </nav>
       <main className="container-fluid">
         <ItemSelector />

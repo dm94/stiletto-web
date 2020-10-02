@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Items from "./Items";
-import Item from "./Item";
+import SelectedItem from "./SelectedItem";
+import Ingredient from "./Ingredient";
 
 class ItemSelector extends Component {
   state = {
@@ -31,6 +32,7 @@ class ItemSelector extends Component {
     selectedItems: [],
     searchText: "",
     filteredItems: [],
+    totalIngredients: [],
   };
 
   componentDidMount() {
@@ -39,14 +41,6 @@ class ItemSelector extends Component {
     )
       .then((response) => response.json())
       .then((items) => this.setState({ items }));
-  }
-
-  showSelectedItems() {
-    if (this.state.selectedItems != null) {
-      return this.state.selectedItems.map((item) => (
-        <Item key={item.name} item={item} />
-      ));
-    }
   }
 
   handleInputChangeSearchItem = (event) => {
@@ -58,12 +52,6 @@ class ItemSelector extends Component {
       this.setState({ searchText });
       this.setState({ filteredItems });
     }
-  };
-
-  handleAdd = (itemName) => {
-    const selectedItem = this.state.items.filter((it) => it.name === itemName);
-    const selectedItems = this.state.selectedItems.concat(selectedItem);
-    this.setState({ selectedItems });
   };
 
   showAllItems() {
@@ -85,11 +73,124 @@ class ItemSelector extends Component {
     }
   }
 
+  handleAdd = (itemName) => {
+    let selectedItem = this.state.items.filter((it) => it.name === itemName);
+    if (
+      this.state.selectedItems.filter((it) => it.name === itemName).length > 0
+    ) {
+      this.addQuantity(itemName);
+    } else {
+      if (selectedItem[0] != null) {
+        const selectedItems = this.state.selectedItems.concat([
+          {
+            name: selectedItem[0].name,
+            category: selectedItem[0].category,
+            crafting: selectedItem[0].crafting,
+            count: 1,
+          },
+        ]);
+        this.setState({ selectedItems });
+      }
+    }
+  };
+
+  addQuantity = (itemName) => {
+    this.changeCount(itemName, 1);
+  };
+
+  addQuantity10 = (itemName) => {
+    this.changeCount(itemName, 10);
+  };
+
+  addQuantity100 = (itemName) => {
+    this.changeCount(itemName, 100);
+  };
+
+  removeQuantity = (itemName) => {
+    this.changeCount(itemName, 1 * -1);
+  };
+
+  removeQuantity10 = (itemName) => {
+    this.changeCount(itemName, 10 * -1);
+  };
+
+  removeQuantity100 = (itemName) => {
+    this.changeCount(itemName, 100 * -1);
+  };
+
+  changeCount(itemName, count) {
+    let selectedItem = this.state.selectedItems.filter(
+      (it) => it.name === itemName
+    );
+    let otherItems = this.state.selectedItems.filter(
+      (it) => it.name !== itemName
+    );
+    if (selectedItem[0] != null) {
+      if (selectedItem[0].count + count < 0) {
+        this.removeSelectedItem(itemName);
+      } else {
+        const selectedItems = otherItems.concat([
+          {
+            name: selectedItem[0].name,
+            category: selectedItem[0].category,
+            crafting: selectedItem[0].crafting,
+            count: selectedItem[0].count + count,
+          },
+        ]);
+        this.setState({ selectedItems });
+      }
+    }
+  }
+
+  showSelectedItems() {
+    if (this.state.selectedItems != null) {
+      return this.state.selectedItems.map((item) => (
+        <SelectedItem
+          key={item.name}
+          item={item}
+          value={item.count}
+          onAdd={this.addQuantity}
+          onRemove={this.removeQuantity}
+          onAdd10={this.addQuantity10}
+          onRemove10={this.removeQuantity10}
+          onAdd100={this.addQuantity100}
+          onRemove100={this.removeQuantity100}
+        />
+      ));
+    }
+  }
+
+  removeSelectedItem(itemName) {
+    const selectedItems = this.state.selectedItems.filter(
+      (it) => it.name !== itemName
+    );
+    this.setState({ selectedItems });
+  }
+
+  showTotal() {
+    let totalIngredients = [];
+    this.state.selectedItems.forEach((item) => {
+      if (item.crafting != null) {
+        if (item.crafting[0].ingredients != null) {
+          item.crafting[0].ingredients.forEach((ingredient) => {
+            totalIngredients.push({
+              name: ingredient.name,
+              count: ingredient.count * item.count,
+            });
+          });
+        }
+      }
+    });
+    return totalIngredients.map((ingredient) => (
+      <Ingredient key={ingredient.name} ingredient={ingredient} value={1} />
+    ));
+  }
+
   render() {
     return (
       <div className="row">
-        <div className="col-4">
-          <div className="navbar navbar-light bg-light">
+        <div className="col-3">
+          <div className="navbar">
             <ul className="list-group">
               <li className="list-group-item">
                 <input
@@ -100,12 +201,18 @@ class ItemSelector extends Component {
                   onChange={this.handleInputChangeSearchItem}
                 />
               </li>
-              {this.showAllItems()}
+              <ul
+                className="list-group overflow-auto"
+                style={{ height: "40em" }}
+              >
+                {this.showAllItems()}
+              </ul>
             </ul>
           </div>
         </div>
         <div className="col-8 border border-primary">
-          {this.showSelectedItems()}
+          <div className="col-12">{this.showSelectedItems()}</div>
+          <div className="col-12">{this.showTotal()}</div>
         </div>
       </div>
     );
