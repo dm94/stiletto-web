@@ -173,10 +173,20 @@ class ItemSelector extends Component {
       if (item.crafting != null) {
         if (item.crafting[0].ingredients != null) {
           item.crafting[0].ingredients.forEach((ingredient) => {
-            totalIngredients.push({
-              name: ingredient.name,
-              count: ingredient.count * item.count,
-            });
+            if (
+              totalIngredients.find((ingre) => ingre.name === ingredient.name)
+            ) {
+              totalIngredients.map((ingre) => {
+                if (ingre.name === ingredient.name) {
+                  ingre.count += ingredient.count * item.count;
+                }
+              });
+            } else {
+              totalIngredients.push({
+                name: ingredient.name,
+                count: ingredient.count * item.count,
+              });
+            }
           });
         }
       }
@@ -210,9 +220,20 @@ class ItemSelector extends Component {
             </ul>
           </div>
         </div>
-        <div className="col-8 border border-primary">
+        <div className="col-8">
           <div className="col-12">{this.showSelectedItems()}</div>
-          <div className="col-12">{this.showTotal()}</div>
+          <div className="col-6">
+            <div className="card">
+              <div className="card-header">
+                <div className="my-0 font-weight-normal">
+                  Materiales necesarios en total
+                </div>
+              </div>
+              <div className="card-body">
+                <div className="list-unstyled">{this.showTotal()}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     );

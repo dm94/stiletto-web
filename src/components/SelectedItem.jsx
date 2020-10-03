@@ -18,8 +18,8 @@ class SelectedItem extends Component {
 
   render() {
     return (
-      <div className="col-12 row border">
-        <div className="col-6 ml-auto">
+      <div className="col-12 row border border-info rounded-top">
+        <div className="col-6">
           <div className="row">
             <div className="col-6 text-right">{this.props.value}x</div>
             <div className="col-6 text-left">{this.props.item.name}</div>
