@@ -50,7 +50,7 @@
                     "grant_type" => "authorization_code",
                     "client_id" => $config['DISCORD_CLIENT_ID'],
                     "client_secret" => $config['DISCORD_CLIENT_SECRET'],
-                    "redirect_uri" => "https://stiletto.comunidadgzone.es/clan",
+                    "redirect_uri" => $config['DISCORD_REDIRECT_URL'],
                     "code" => $discordcode
                 )
             ));
