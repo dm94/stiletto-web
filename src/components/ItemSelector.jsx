@@ -213,7 +213,7 @@ class ItemSelector extends Component {
               </li>
               <ul
                 className="list-group overflow-auto"
-                style={{ height: "40em" }}
+                style={{ height: "100vh" }}
               >
                 {this.showAllItems()}
               </ul>
