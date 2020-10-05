@@ -21,7 +21,7 @@ class Item extends Component {
             className="btn btn-success btn-sm"
             onClick={() => this.props.onAdd(this.props.item.name)}
           >
-            +
+            <i class="fas fa-plus"></i>
           </button>
         </div>
       </li>
