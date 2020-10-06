@@ -1,16 +1,18 @@
 ## Stiletto Web
 
-Web with different utilities for the game Last Oasis
+Web with different utilities for the game Last Oasis.
+It is created with JS (react), PHP, HTML, CSS (bootstrap) and uses as database MySql
 
 ### Working
 
 - See the list of objects and calculate what it costs to do it in different amounts
 - Showing the total cost of making all the objects
 - Linking the web with discord
+- Create clans, edit clans and link them to a discord server
 
 ### In process
 
-- Create clans, edit clans and link them to a discord server
+- Managing clan people
 
 ### Ideas to be added
 

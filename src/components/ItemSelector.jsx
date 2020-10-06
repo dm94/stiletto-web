@@ -225,9 +225,7 @@ class ItemSelector extends Component {
           <div className="col-6">
             <div className="card">
               <div className="card-header">
-                <div className="my-0 font-weight-normal">
-                  Materiales necesarios en total
-                </div>
+                <div className="my-0 font-weight-normal">Total materials</div>
               </div>
               <div className="card-body">
                 <div className="list-unstyled">{this.showTotal()}</div>
