@@ -8,16 +8,26 @@
         $user_discord_id = $_SESSION["user_discord_id"];
         $connected = true;
 
-        if ($accion =='delete_user' && $user_discord_id != null) {
-            $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-            $query = "delete from users where discordID=?";
-            $statement = $mysqli->prepare($query);
-            $statement->bind_param('s', $user_discord_id);
-            $statement->execute();
-            mysqli_close($mysqli);
-
-            $connected = false;
-            $_SESSION = array();
+        if ($user_discord_id != null) {
+            if ($accion =='delete_user') {
+                $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                $query = "delete from users where discordID=?";
+                $statement = $mysqli->prepare($query);
+                $statement->bind_param('s', $user_discord_id);
+                $statement->execute();
+                mysqli_close($mysqli);
+    
+                $connected = false;
+                $_SESSION = array();
+            } else if ($accion=='leave_the_clan') {
+                $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                $nickname = $mysqli->escape_string($nickname);
+                $query = "update users set clanid=null where discordID=?";
+                $statement = $mysqli->prepare($query);
+                $statement->bind_param('s', $nickname, $user_discord_id);
+                $statement->execute();
+                mysqli_close($mysqli);
+            }
         }
     } else {
         $_SESSION = array();
@@ -57,8 +67,8 @@
  </script>
 <body class="d-flex flex-column h-100">
     <?php include_once ('./components/header.php'); ?>
-    <main role="main" class="flex-shrink-0">
-        <div class="container">
+    <main role="main" class="flex-shrink-0 container-fluid">
+        <div>
         <?php
             require_once ('./components/discordButton.php');
             $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],$config['DISCORD_REDIRECT_URL']);
@@ -123,7 +133,7 @@
 
         ?>
             <div class="row">
-                <div class="col-6">
+                <div class="col">
                     <div class="card border-secondary mb-3">
                         <div class="card-header">Your details</div>
                         <div class="card-body text-secondary">
@@ -141,6 +151,18 @@
                                     <div class="text-muted"><?php echo $user_clan;?></div>
                                 </li>
                             </ul>
+                        <?php
+                            if ($user_clan != null && $user_clan != "No Clan") {
+                        ?>
+                            <form method="POST" id="leaveClanForm" action="">
+                                <input type="hidden" name="accion" value="leave_the_clan"/>
+                                <button class="btn btn-lg btn-outline-warning btn-block" type="submit">Leave the clan</button>
+                            </form>
+                        <?php
+                            }
+                        ?>
+                        </div>
+                        <div class="card-footer">
                             <form method="POST" id="deleteUserForm" action="">
                                 <input type="hidden" name="accion" value="delete_user"/>
                                 <button class="btn btn-lg btn-outline-danger btn-block g-recaptcha" data-sitekey="6LeuONQZAAAAANRgjK7KisOiAHp1apuZucokpOKw" 
@@ -153,7 +175,7 @@
                     if ($nickname == null || $nickname == "Not defined") {
                         /* So that it only appears when we do not have a defined name */
                 ?>
-                    <div class="col-6">
+                    <div class="col">
                         <div class="card border-secondary mb-3">
                             <div class="card-header">Add name in the game</div>
                             <div class="card-body text-succes">
@@ -175,11 +197,11 @@
                     if ($user_clan == null || $user_clan == "No Clan") {
                         /* So that it only appears when we do not have a defined name */
                 ?>
-                    <div class="col-6">
+                    <div class="col">
                         <div class="card border-secondary mb-3">
                             <div class="card-header">Add clan</div>
                             <div class="card-body text-succes">
-                                <a class="btn btn-lg btn-outline-info btn-block" href="#">Join a clan</a>
+                                <a class="btn btn-lg btn-outline-info btn-block" href="https://stiletto.comunidadgzone.es/clanlist">Join a clan</a>
                                 <a class="btn btn-lg btn-outline-warning btn-block" href="https://stiletto.comunidadgzone.es/addclan">Create a clan</a>
                                 <p class="text-muted text-center">Only valid if you are the owner of the some discord</p>
                             </div> 

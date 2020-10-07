@@ -122,6 +122,8 @@
                         </div>
                     <?
                 }
+            } else {
+                header('Location: '.$config['DISCORD_REDIRECT_URL']);
             }
         ?>
         </div>

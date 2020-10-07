@@ -18,14 +18,16 @@ class SelectedItem extends Component {
 
   render() {
     return (
-      <div className="col-12 row border border-info rounded-top">
-        <div className="col-6">
-          <div className="row">
-            <div className="col-6 text-right">{this.props.value}x</div>
-            <div className="col-6 text-left">{this.props.item.name}</div>
+      <div className="col">
+        <div className="card">
+          <div className="text-center card-header">
+            {this.props.value}x {this.props.item.name}
           </div>
-          <div className="row">
-            <div className="ml-auto btn-group mr-2" role="group">
+          <div className="card-body">
+            <div className="list-unstyled ">{this.showIngredient()}</div>
+          </div>
+          <div className="card-footer">
+            <div className="btn-group col-xl-12" role="group">
               <button
                 className="btn btn-success"
                 onClick={(e) => this.props.onAdd(this.props.item.name)}
@@ -65,7 +67,6 @@ class SelectedItem extends Component {
             </div>
           </div>
         </div>
-        <div className="col-6">{this.showIngredient()}</div>
       </div>
     );
   }

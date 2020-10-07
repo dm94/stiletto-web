@@ -14,15 +14,17 @@ class Item extends Component {
 
   render() {
     return (
-      <li className="list-group-item container">
-        <div className="col-10">{this.props.item.name}</div>
-        <div className="col-2">
-          <button
-            className="btn btn-success btn-sm"
-            onClick={() => this.props.onAdd(this.props.item.name)}
-          >
-            <i class="fas fa-plus"></i>
-          </button>
+      <li className="list-group-item">
+        <div className="row">
+          <div className="col-md-8 col-xl-10">{this.props.item.name}</div>
+          <div className="col-md-7 col-xl-2">
+            <button
+              className="btn btn-success btn-sm"
+              onClick={() => this.props.onAdd(this.props.item.name)}
+            >
+              <i className="fas fa-plus"></i>
+            </button>
+          </div>
         </div>
       </li>
     );

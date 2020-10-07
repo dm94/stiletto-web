@@ -198,41 +198,66 @@ class ItemSelector extends Component {
 
   render() {
     return (
-      <div className="row">
-        <div className="col-3">
-          <div className="navbar">
-            <ul className="list-group">
-              <li className="list-group-item">
-                <input
-                  className="form-control"
-                  type="text"
-                  placeholder="Search"
-                  aria-label="Search"
-                  onChange={this.handleInputChangeSearchItem}
-                />
-              </li>
-              <ul
-                className="list-group overflow-auto"
-                style={{ height: "100vh" }}
+      <div className="row flex-xl-nowrap">
+        <div className="col-md-2 col-xl-3">
+          <form role="search" class="bd-search d-flex align-items-center">
+            <input
+              className="form-control"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              onChange={this.handleInputChangeSearchItem}
+            />
+            <button
+              className="btn d-md-none p-0 ml-3"
+              type="button"
+              data-toggle="collapse"
+              data-target="#items-nav"
+              aria-controls="items-nav"
+              aria-expanded="false"
+              aria-label="Toggle items"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                role="img"
+                focusable="false"
               >
-                {this.showAllItems()}
-              </ul>
+                <title>Menu</title>
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                  d="M4 7h22M4 15h22M4 23h22"
+                ></path>
+              </svg>
+            </button>
+          </form>
+          <nav className="collapse show" id="items-nav" aria-label="Items Navs">
+            <ul
+              className="nav overflow-auto list-group"
+              style={{ height: "100vh" }}
+            >
+              {this.showAllItems()}
             </ul>
-          </div>
+          </nav>
         </div>
-        <div className="col-8">
-          <div className="col-12">{this.showSelectedItems()}</div>
-          <div className="col-6">
-            <div className="card">
-              <div className="card-header">
-                <div className="my-0 font-weight-normal">Total materials</div>
+        <main role="main" class="col-md-9 col-xl-8">
+          <div className="col-12 card-group">{this.showSelectedItems()}</div>
+          <div className="col-12">
+            <div className="card border-warning mb-3">
+              <div className="card-header border-warning">
+                <div className="font-weight-normal">Total materials</div>
               </div>
               <div className="card-body">
                 <div className="list-unstyled">{this.showTotal()}</div>
               </div>
             </div>
           </div>
-        </div>
+        </main>
       </div>
     );
   }

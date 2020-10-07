@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <nav class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark">
         <a class="navbar-brand" href="./index.html">Stiletto</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -12,6 +12,9 @@
                     <a class="dropdown-item" href="#">Quality map</a>
                     <a class="dropdown-item" href="#">Alliance management</a>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/dm94/stiletto-web/issues" target="_blank">Report Bugs</a>
             </li>
         </ul>
     </nav>

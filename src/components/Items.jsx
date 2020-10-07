@@ -6,7 +6,7 @@ class Items extends Component {
 
   render() {
     return (
-      <div className="list-group">
+      <div>
         {this.props.items.map((item) => (
           <Item key={item.name} onAdd={this.props.onAdd} item={item} />
         ))}
