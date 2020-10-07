@@ -67,8 +67,8 @@
  </script>
 <body class="d-flex flex-column h-100">
     <?php include_once ('./components/header.php'); ?>
-    <main role="main" class="flex-shrink-0 container-fluid">
-        <div>
+    <main role="main" class="container">
+    <div class="row">
         <?php
             require_once ('./components/discordButton.php');
             $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],$config['DISCORD_REDIRECT_URL']);
@@ -132,8 +132,7 @@
                 mysqli_close($mysqli);
 
         ?>
-            <div class="row">
-                <div class="col">
+                <div class="col-xl-6">
                     <div class="card border-secondary mb-3">
                         <div class="card-header">Your details</div>
                         <div class="card-body text-secondary">
@@ -175,7 +174,7 @@
                     if ($nickname == null || $nickname == "Not defined") {
                         /* So that it only appears when we do not have a defined name */
                 ?>
-                    <div class="col">
+                    <div class="col-xl-6">
                         <div class="card border-secondary mb-3">
                             <div class="card-header">Add name in the game</div>
                             <div class="card-body text-succes">
@@ -197,7 +196,7 @@
                     if ($user_clan == null || $user_clan == "No Clan") {
                         /* So that it only appears when we do not have a defined name */
                 ?>
-                    <div class="col">
+                    <div class="col-xl-6">
                         <div class="card border-secondary mb-3">
                             <div class="card-header">Add clan</div>
                             <div class="card-body text-succes">
@@ -210,7 +209,6 @@
                 <?php
                     }
                 ?>
-            </div>
         <?php
             }
         ?>

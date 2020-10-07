@@ -11,13 +11,15 @@
         if ($accion =='add_clan' && $user_discord_id != null) {
             $discord = isset($_POST['discordlist']) ? $_POST['discordlist'] : null;
             $clan_name = isset($_POST['clan_name']) ? $_POST['clan_name'] : null;
+            $discordinvite = isset($_POST['discord_invite']) ? $_POST['discord_invite'] : null;
 
             if ($clan_name != null && $discord != null) {
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
                 $clan_name = $mysqli->escape_string($clan_name);
-                $query = "INSERT INTO clans(name, discordid, leaderid) VALUES (?,?,?)";
+                $discordinvite = $mysqli->escape_string($discordinvite);
+                $query = "INSERT INTO clans(name, invitelink, discordid, leaderid) VALUES (?,?,?)";
                 $statement = $mysqli->prepare($query);
-                $statement->bind_param('sss', $clan_name,$discord,$user_discord_id);
+                $statement->bind_param('ssss', $clan_name,$discordinvite,$discord,$user_discord_id);
                 $statement->execute();
                 mysqli_close($mysqli);
     
@@ -82,7 +84,16 @@
                                 <form method="POST" action="">
                                     <div class="form-group">
                                         <label for="clan_name">Clan Name</label>
-                                        <input type="text" class="form-control" id="clan_name" name="clan_name" value=""/>
+                                        <input type="text" class="form-control" id="clan_name" name="clan_name" value="" required/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="discord_invite">Discord Link Invite (Optional)</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">https://discord.gg/</span>
+                                            </div>
+                                            <input type="text" class="form-control" id="discord_invite" name="discord_invite" value="" maxlength="10"/>
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="discordlist">Select discord server</label>

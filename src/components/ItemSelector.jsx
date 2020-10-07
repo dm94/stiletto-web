@@ -33,6 +33,7 @@ class ItemSelector extends Component {
     searchText: "",
     filteredItems: [],
     totalIngredients: [],
+    languaje: "ES",
   };
 
   componentDidMount() {
@@ -51,6 +52,26 @@ class ItemSelector extends Component {
       );
       this.setState({ searchText });
       this.setState({ filteredItems });
+    }
+  };
+
+  switchLanguaje = (event) => {
+    if (event != null) {
+      event.preventDefault();
+      var itemsUrlJson =
+        "https://raw.githubusercontent.com/dm94/lastoasisbot/master/itemsES_min.json";
+      if (this.state.languaje === "ES") {
+        itemsUrlJson =
+          "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json";
+        this.setState({ languaje: "EN" });
+      } else {
+        itemsUrlJson =
+          "https://raw.githubusercontent.com/dm94/lastoasisbot/master/itemsES_min.json";
+        this.setState({ languaje: "ES" });
+      }
+      fetch(itemsUrlJson)
+        .then((response) => response.json())
+        .then((items) => this.setState({ items }));
     }
   };
 
@@ -200,7 +221,10 @@ class ItemSelector extends Component {
     return (
       <div className="row flex-xl-nowrap">
         <div className="col-md-2 col-xl-3">
-          <form role="search" class="bd-search d-flex align-items-center">
+          <form role="search" className="bd-search d-flex align-items-center">
+            <button className="btn btn-warning" onClick={this.switchLanguaje}>
+              ES/EN
+            </button>
             <input
               className="form-control"
               type="search"
@@ -228,9 +252,9 @@ class ItemSelector extends Component {
                 <title>Menu</title>
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-miterlimit="10"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="2"
                   d="M4 7h22M4 15h22M4 23h22"
                 ></path>
               </svg>
@@ -245,7 +269,7 @@ class ItemSelector extends Component {
             </ul>
           </nav>
         </div>
-        <main role="main" class="col-md-9 col-xl-8">
+        <main role="main" className="col-md-9 col-xl-8">
           <div className="col-12 card-group">{this.showSelectedItems()}</div>
           <div className="col-12">
             <div className="card border-warning mb-3">
