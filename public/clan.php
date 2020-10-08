@@ -112,9 +112,8 @@
                     mysqli_close($mysqli);
                 }
 
-
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                $query = "SELECT users.nickname nickname, clans.name clan, users.discordTag discordTag  FROM users LEFT JOIN clans on users.clanid=clans.discordid where users.discordID='".$user_discord_id."'";
+                $query = "SELECT users.nickname nickname, clans.name clan, clans.leaderid leaderid, users.discordTag discordTag, clans.discordid clandiscordid  FROM users LEFT JOIN clans on users.clanid=clans.discordid where users.discordID='".$user_discord_id."'";
                 $result = mysqli_query($mysqli, $query);
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -127,7 +126,8 @@
                 if ($row["clan"] != null) {
                     $user_clan = $row["clan"];
                 }
-
+                $clanid = $row["clandiscordid"];
+                $clan_leader_id = $row["leaderid"];
                 mysqli_free_result($result);
                 mysqli_close($mysqli);
 
@@ -150,16 +150,6 @@
                                     <div class="text-muted"><?php echo $user_clan;?></div>
                                 </li>
                             </ul>
-                        <?php
-                            if ($user_clan != null && $user_clan != "No Clan") {
-                        ?>
-                            <form method="POST" id="leaveClanForm" action="">
-                                <input type="hidden" name="accion" value="leave_the_clan"/>
-                                <button class="btn btn-lg btn-outline-warning btn-block" type="submit">Leave the clan</button>
-                            </form>
-                        <?php
-                            }
-                        ?>
                         </div>
                         <div class="card-footer">
                             <form method="POST" id="deleteUserForm" action="">
@@ -207,9 +197,79 @@
                         </div>
                     </div>
                 <?php
-                    }
+                    } else {
                 ?>
-        <?php
+                    <div class="col-xl-12">
+                        <div class="card border-secondary mb-3">
+                            <div class="card-header">Manage Clan</div>
+                            <?php 
+                                if ($clan_leader_id == $user_discord_id) {
+                                    $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                                    $query = "SELECT users.discordtag, users.nickname, clanrequest.discordid userrequestid FROM users,clanrequest where userrequestid.discordID=users.discordID and userrequestid.clanid='".$clanid."'";
+                                    $result = mysqli_query($mysqli, $query);                            
+                                    if (mysqli_num_rows($result) > 0) {
+                            ?>
+                                <div class="card-body">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center" scope="col">Discord Tag</th>
+                                                <th class="text-center" scope="col">Nick in game</th>
+                                                <th class="text-center" scope="col" colspan="2">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                            while ($row = $result->fetch_assoc()) {
+                                        ?>
+                                            <tr>
+                                                <td class="text-center"><?php echo $row['discordtag']; ?></th>
+                                                <td class="text-center"><?php echo $row['nickname']; ?></td>
+                                                <td class="text-center">
+                                                    <form method="POST" id="acceptRequestForm" action="">
+                                                        <input type="hidden" name="accion" value="accept_request"/>
+                                                        <input type="hidden" name="userrequestid" value="<?php echo $row['userrequestid'];?>"/>
+                                                        <button class="btn btn-block btn-success" type="submit">Accept</button>
+                                                    </form>
+                                                </td>
+                                                <td class="text-center">
+                                                    <form method="POST" id="declineRequestForm" action="">
+                                                        <input type="hidden" name="accion" value="decline_request"/>
+                                                        <input type="hidden" name="userrequestid" value="<?php echo $row['userrequestid'];?>"/>
+                                                        <button class="btn btn-block btn-danger" type="submit">Decline</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <?php
+                                    }
+                                    mysqli_free_result($result);
+                                    mysqli_close($mysqli);
+                                ?>
+                            <div class="card-footer">
+                                <a class="btn btn-lg btn-outline-secondary btn-block" href="https://stiletto.comunidadgzone.es/walkerlist">Walker list</a>
+                            </div>
+                            <?php 
+                                } else {
+                            ?>  
+                            <div class="card-footer">
+                                <form method="POST" id="leaveClanForm" action="">
+                                    <input type="hidden" name="accion" value="leave_the_clan"/>
+                                    <button class="btn btn-lg btn-outline-danger btn-block" type="submit">Leave the clan</button>
+                                </form>
+                            </div>
+                            <?php   
+                                }
+                            ?>
+                        </div>
+                    </div>
+                <?php
+                    }
             }
         ?>
         </div>
