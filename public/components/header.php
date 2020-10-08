@@ -3,15 +3,10 @@
         <a class="navbar-brand" href="./index.html">Stiletto</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="./index.html">Crafter</a>
+                <a class="nav-link" href="./index.html">Crafting</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clan</a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./clan">Manage</a>
-                    <a class="dropdown-item" href="#">Quality map</a>
-                    <a class="dropdown-item" href="#">Alliance management</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="https://stiletto.comunidadgzone.es/clan">Clan</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="https://github.com/dm94/stiletto-web/issues" target="_blank">Report Bugs</a>

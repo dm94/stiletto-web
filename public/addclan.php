@@ -1,7 +1,7 @@
 <?php
     session_start();
     $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
-    include ('./config.php');
+    require ('./config.php');
     $user_discord_id = null;
     $connected = false;
     if(isset($_SESSION["user_discord_id"])){
@@ -60,12 +60,12 @@
     <title>Add Clan - Stiletto</title>
 </head>
 <body class="d-flex flex-column h-100">
-    <?php include_once ('./components/header.php'); ?>
+    <?php include ('./components/header.php'); ?>
     <main role="main" class="flex-shrink-0">
         <div class="container">
         <?php
             if ($connected == true) {
-                require_once ('./components/discordButton.php');
+                require ('./components/discordButton.php');
                 $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],"https://stiletto.comunidadgzone.es/addclan");
                 $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
                 if (!empty($discordcode)) {
@@ -139,5 +139,5 @@
         ?>
         </div>
     </main>
-    <?php include_once ('./components/footer.php'); ?>
+    <?php include ('./components/footer.php'); ?>
 </body>

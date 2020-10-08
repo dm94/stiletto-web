@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include ('./config.php');
+    require ('./config.php');
     $user_discord_id = null;
     $connected = false;
     if(isset($_SESSION["user_discord_id"])){
@@ -34,7 +34,7 @@
     <title>Walker List - Stiletto</title>
 </head>
 <body class="d-flex flex-column h-100">
-    <?php include_once ('./components/header.php'); ?>
+    <?php include ('./components/header.php'); ?>
     <main role="main" class="flex-shrink-0">
         <div class="container">
         <?php
@@ -85,5 +85,5 @@
         ?>
         </div>
     </main>
-    <?php include_once ('./components/footer.php'); ?>
+    <?php include ('./components/footer.php'); ?>
 </body>

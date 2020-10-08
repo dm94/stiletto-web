@@ -1,7 +1,7 @@
 <?php
     session_start();
     $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
-    include ('./config.php');
+    require ('./config.php');
     $user_discord_id = null;
     $connected = false;
     if(isset($_SESSION["user_discord_id"])){
@@ -66,11 +66,11 @@
    }
  </script>
 <body class="d-flex flex-column h-100">
-    <?php include_once ('./components/header.php'); ?>
+    <?php include ('./components/header.php'); ?>
     <main role="main" class="container">
     <div class="row">
         <?php
-            require_once ('./components/discordButton.php');
+            include ('./components/discordButton.php');
             $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],$config['DISCORD_REDIRECT_URL']);
             $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
             if ($connected == false && !empty($discordcode)) {
@@ -291,7 +291,7 @@
                             <div class="card-body">
                             <?php
                                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                                $query = "SELECT discordtag, nickname FROM users where clanid='".$clanid."'";
+                                $query = "SELECT discordtag, nickname, discordID FROM users where clanid='".$clanid."'";
                                 $result = mysqli_query($mysqli, $query);
                             ?>
                             <table class="table">
@@ -299,15 +299,38 @@
                                     <tr>
                                         <th class="text-center" scope="col">Discord Tag</th>
                                         <th class="text-center" scope="col">Nick in game</th>
+                                        <th class="text-center" scope="col">Kick</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php
+                                    if ($clan_leader_id == $user_discord_id && $accion=='kick_from_clan') {
+                                        if ($accion=='accept_request') {
+                                            $userkickid = isset($_POST['userkickid']) ? $_POST['userkickid'] : null;
+                                            $query = "update users set clanid=null where discordID=? and clanid=?";
+                                            $statement = $mysqli->prepare($query);
+                                            $statement->bind_param('ss', $userkickid,$clanid);
+                                            $statement->execute();
+                                        }
+                                    }
                                     while ($row = $result->fetch_assoc()) {
                                 ?>
                                     <tr>
                                         <td class="text-center"><?php echo $row['discordtag']; ?></th>
                                         <td class="text-center"><?php echo $row['nickname']; ?></td>
+                                        <td>
+                                        <?php 
+                                            if ($clan_leader_id == $user_discord_id && $row['discordID'] != $user_discord_id) {
+                                        ?> 
+                                            <form method="POST" action="">
+                                                <input type="hidden" name="accion" value="kick_from_clan"/>
+                                                <input type="hidden" name="userkickid" value="<?php echo $row['discordID']; ?>"/>
+                                                <button class="btn btn-danger btn-block" type="submit">Kick</button>
+                                            </form>
+                                        <?php
+                                            }
+                                        ?>
+                                        </td>
                                     </tr>
                                 <?php
                                     }
@@ -325,5 +348,5 @@
         ?>
         </div>
     </main>
-    <?php include_once ('./components/footer.php'); ?>
+    <?php include ('./components/footer.php'); ?>
 </body>
