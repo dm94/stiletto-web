@@ -116,7 +116,6 @@
                 $query = "SELECT users.nickname nickname, clans.name clan, clans.leaderid leaderid, users.discordTag discordTag, clans.discordid clandiscordid  FROM users LEFT JOIN clans on users.clanid=clans.discordid where users.discordID='".$user_discord_id."'";
                 $result = mysqli_query($mysqli, $query);
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
                 if ($row["nickname"] != null) {
                     $nickname = $row["nickname"];
                 }
@@ -284,6 +283,40 @@
                             <?php   
                                 }
                             ?>
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                    <div class="card border-secondary mb-3">
+                            <div class="card-header">Clan Members</div>
+                            <div class="card-body">
+                            <?php
+                                $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                                $query = "SELECT discordtag, nickname FROM users where clanid='".$clanid."'";
+                                $result = mysqli_query($mysqli, $query);
+                            ?>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" scope="col">Discord Tag</th>
+                                        <th class="text-center" scope="col">Nick in game</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                    while ($row = $result->fetch_assoc()) {
+                                ?>
+                                    <tr>
+                                        <td class="text-center"><?php echo $row['discordtag']; ?></th>
+                                        <td class="text-center"><?php echo $row['nickname']; ?></td>
+                                    </tr>
+                                <?php
+                                    }
+                                    mysqli_free_result($result);
+                                    mysqli_close($mysqli);
+                                    ?>
+                                </tbody>
+                            </table>
+                            </div>
                         </div>
                     </div>
                 <?php
