@@ -204,6 +204,24 @@
                             <div class="card-header">Manage Clan</div>
                             <?php 
                                 if ($clan_leader_id == $user_discord_id) {
+                                    if ($accion=='accept_request' || $accion=='decline_request') {
+                                        $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                                        $userrequestid = isset($_POST['userrequestid']) ? $_POST['userrequestid'] : null;
+
+                                        $query = "delete from clanrequest where clanid=? and discordID=?";
+                                        $statement = $mysqli->prepare($query);
+                                        $statement->bind_param('ss', $clanid, $userrequestid);
+                                        $statement->execute();
+
+                                        if ($accion=='accept_request') {
+                                            $query = "update users set clanid=? where discordID=?";
+                                            $statement = $mysqli->prepare($query);
+                                            $statement->bind_param('ss', $clanid, $userrequestid);
+                                            $statement->execute();
+                                        }
+                                        mysqli_close($mysqli);
+                                    }
+
                                     $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
                                     $query = "SELECT users.discordtag, users.nickname, clanrequest.discordid userrequestid FROM users,clanrequest where userrequestid.discordID=users.discordID and userrequestid.clanid='".$clanid."'";
                                     $result = mysqli_query($mysqli, $query);                            
