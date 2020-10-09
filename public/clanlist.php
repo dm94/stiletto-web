@@ -69,7 +69,7 @@
 
                 mysqli_free_result($result);
 
-                $query = "SELECT clans.discordid clanid, clans.name, clans.invitelink, clans.recruitment, users.discordTag, clans.leaderid leaderid FROM clans left join users on clans.leaderid=users.discordID";
+                $query = "SELECT clans.clanid, clans.name, clans.invitelink, clans.recruitment, users.discordTag, clans.leaderid leaderid FROM clans left join users on clans.leaderid=users.discordID";
                 $result = mysqli_query($mysqli, $query);
 
             if ($message != null) {

@@ -23,7 +23,6 @@
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "UA-104878658-2");
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -40,9 +39,10 @@
         <?php
             if ($connected == true) {
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                $query = "SELECT walkers.walkerid, walkers.name, walkers.ownerUser, walkers.lastUser, walkers.datelastuse  FROM walkers, users where users.clanid=walkers.discorid and users.discordID=".$user_discord_id." order by walkers.datelastuse DESC";
+                $query = "SELECT walkers.walkerid, walkers.name, walkers.ownerUser, walkers.lastUser, walkers.datelastuse, clans.leaderid, clans.discordid FROM users left join clans on users.clanid=clans.clanid left join walkers on walkers.discorid=clans.discordid and users.discordID=".$user_discord_id;
                 $result = mysqli_query($mysqli, $query);
         ?>
+        <div class="row">
             <div class="col-xl-6">
                 <div class="card">
                     <div class="card-body">
@@ -50,6 +50,87 @@
                     </div> 
                 </div>
             </div>
+            <?php
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+            if ($user_discord_id == $row["leaderid"] && $row["discordid"] == null) {
+                mysqli_free_result($result);
+                mysqli_close($mysqli);
+                $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
+                if ($accion =='linkdiscord') {
+                    $discord = isset($_POST['discordlist']) ? $_POST['discordlist'] : null;
+        
+                    if ($discord != null) {
+                        $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                        $query = "update clans set discordid = ? where leaderid = ?";
+                        $statement = $mysqli->prepare($query);
+                        $statement->bind_param('ss', $discord,$user_discord_id);
+                        $statement->execute();
+                        mysqli_close($mysqli);
+                    }
+                }
+
+                require ('./components/discordButton.php');
+                $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],"https://stiletto.comunidadgzone.es/walkerlist");
+                $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
+                if (!empty($discordcode)) {
+                    $guilds = $discordapi->get_guilds($discordcode);
+                    $has_some_guild = false;
+                    foreach ($guilds as $guild) {
+                        if ($guild->owner == true) {
+                            $has_some_guild = true;
+                        }
+                    }
+                    if ($has_some_guild) {
+                ?>
+                    <div class="col-xl-12">
+                        <div class="card border-secondary mb-3">
+                            <div class="card-body text-succes">
+                                <form method="POST" action="">
+                                    <div class="form-group">
+                                        <label for="discordlist">Select discord server</label>
+                                        <select class="form-control" id="discordlist" name="discordlist">
+                                            <?php
+                                                foreach ($guilds as $guild) {
+                                                    if ($guild->owner == true) {
+                                                        echo '<option value="'.$guild->id.'">'.$guild->name.'</option>';
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                        <input type="hidden" name="accion" value="linkdiscord"/>
+                                    </div>
+                                    <button class="btn btn-lg btn-outline-success btn-block" type="submit">Link discord server</button>
+                                </form>
+                            </div> 
+                        </div>
+                    </div> 
+                <?
+                    } else {
+                    ?>
+                    <div class="col-xl-12">
+                        <div class="card border-danger mb-3">
+                            <div class="card-header">You are not the owner of any discord</div>
+                        </div>
+                    </div> 
+                    <?
+                    }
+                } else {
+                    ?>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header">To see the walkers you have to link your discord server</div>
+                            <div class="card-body">
+                                <a class="btn btn-outline-secondary btn-block" href="<?php echo $discordapi->authenticate(); ?>">Link discord server</a>
+                            </div> 
+                        </div>
+                    </div>
+                    <?php
+                }
+                ?>
+            </div>
+            <?php
+            } else {
+            ?>
             <table class="table">
                 <thead>
                     <tr>
@@ -79,9 +160,10 @@
         <?php
                 mysqli_free_result($result);
                 mysqli_close($mysqli);
-            } else {
-                header('Location: '.$config['DISCORD_REDIRECT_URL']);
             }
+        } else {
+            header('Location: '.$config['DISCORD_REDIRECT_URL']);
+        }
         ?>
         </div>
     </main>

@@ -9,24 +9,32 @@
         $connected = true;
 
         if ($accion =='add_clan' && $user_discord_id != null) {
-            $discord = isset($_POST['discordlist']) ? $_POST['discordlist'] : null;
             $clan_name = isset($_POST['clan_name']) ? $_POST['clan_name'] : null;
             $discordinvite = isset($_POST['discord_invite']) ? $_POST['discord_invite'] : null;
 
-            if ($clan_name != null && $discord != null) {
+            if ($clan_name != null) {
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
                 $clan_name = $mysqli->escape_string($clan_name);
                 $discordinvite = $mysqli->escape_string($discordinvite);
-                $query = "INSERT INTO clans(name, invitelink, discordid, leaderid) VALUES (?,?,?)";
+                $query = "INSERT INTO clans(name, invitelink, leaderid) VALUES (?,?,?)";
                 $statement = $mysqli->prepare($query);
-                $statement->bind_param('ssss', $clan_name,$discordinvite,$discord,$user_discord_id);
+                $statement->bind_param('sss', $clan_name,$discordinvite,$user_discord_id);
                 $statement->execute();
                 mysqli_close($mysqli);
     
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                $query = "select clanid from clans where leaderid=".$user_discord_id;
+                $result = mysqli_query($mysqli, $query);
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $clandiscordid = $row['clanid'];
+                mysqli_free_result($result);
+                mysqli_close($mysqli);
+
+
+                $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
                 $query = "update users set clanid=? where discordID=?";
                 $statement = $mysqli->prepare($query);
-                $statement->bind_param('ss', $discord,$user_discord_id);
+                $statement->bind_param('ss', $clandiscordid,$user_discord_id);
                 $statement->execute();
                 mysqli_close($mysqli);
 
@@ -65,73 +73,40 @@
         <div class="container">
         <?php
             if ($connected == true) {
-                require ('./components/discordButton.php');
-                $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],"https://stiletto.comunidadgzone.es/addclan");
-                $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
-                if (!empty($discordcode)) {
-                    $guilds = $discordapi->get_guilds($discordcode);
-                    $has_some_guild = false;
-                    foreach ($guilds as $guild) {
-                        if ($guild->owner == true) {
-                            $has_some_guild = true;
-                        }
-                    }
-                    if ($has_some_guild) {
-                ?>
-                    <div class="col-6">
-                        <div class="card border-secondary mb-3">
-                            <div class="card-body text-succes">
-                                <form method="POST" action="">
-                                    <div class="form-group">
-                                        <label for="clan_name">Clan Name</label>
-                                        <input type="text" class="form-control" id="clan_name" name="clan_name" value="" required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="discord_invite">Discord Link Invite (Optional)</label>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">https://discord.gg/</span>
-                                            </div>
-                                            <input type="text" class="form-control" id="discord_invite" name="discord_invite" value="" maxlength="10"/>
+                $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                $query = "select * from users where discordid=".$user_discord_id;
+                $result = mysqli_query($mysqli, $query);
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $clanid = $row['clanid'];
+                mysqli_free_result($result);
+                mysqli_close($mysqli);
+                if ($clanid == null) {
+            ?>
+                <div class="col-6">
+                    <div class="card border-secondary mb-3">
+                        <div class="card-body text-succes">
+                            <form method="POST" action="">
+                                <div class="form-group">
+                                    <label for="clan_name">Clan Name</label>
+                                    <input type="text" class="form-control" id="clan_name" name="clan_name" value="" required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="discord_invite">Discord Link Invite (Optional)</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text">https://discord.gg/</span>
                                         </div>
+                                        <input type="text" class="form-control" id="discord_invite" name="discord_invite" value="" maxlength="10"/>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="discordlist">Select discord server</label>
-                                        <select class="form-control" id="discordlist" name="discordlist">
-                                            <?php
-                                                foreach ($guilds as $guild) {
-                                                    if ($guild->owner == true) {
-                                                        echo '<option value="'.$guild->id.'">'.$guild->name.'</option>';
-                                                    }
-                                                }
-                                            ?>
-                                        </select>
-                                        <input type="hidden" name="accion" value="add_clan"/>
-                                    </div>
-                                    <button class="btn btn-lg btn-outline-success btn-block" type="submit">Create a clan</button>
-                                </form>
-                            </div> 
-                        </div>
-                    </div> 
-                <?
-                    } else {
-                    ?>
-                    <div class="col-6">
-                        <div class="card border-danger mb-3">
-                            <div class="card-header">You are not the owner of any discord</div>
-                            <a class="btn btn-lg btn-outline-info btn-block" href="<?php echo $config['DISCORD_REDIRECT_URL']; ?>">Go back</a>
-                        </div>
-                    </div> 
-                    <?
-                    }
+                                </div>
+                                <button class="btn btn-lg btn-outline-success btn-block" type="submit">Create a clan</button>
+                            </form>
+                        </div> 
+                    </div>
+                </div> 
+            <?php
                 } else {
-                    ?>
-                        <div class="col-12">
-                            <a class="btn btn-lg btn-outline-primary btn-block" href="<?php echo $discordapi->authenticate(); ?>">
-                                <i class="fab fa-discord"></i> Check the discords you have
-                            </a>
-                        </div>
-                    <?
+                    header('Location: '.$config['DISCORD_REDIRECT_URL']);
                 }
             } else {
                 header('Location: '.$config['DISCORD_REDIRECT_URL']);

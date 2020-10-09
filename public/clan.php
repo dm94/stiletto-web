@@ -113,7 +113,7 @@
                 }
 
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                $query = "SELECT users.nickname nickname, clans.name clan, clans.leaderid leaderid, users.discordTag discordTag, clans.discordid clandiscordid  FROM users LEFT JOIN clans on users.clanid=clans.discordid where users.discordID='".$user_discord_id."'";
+                $query = "SELECT users.nickname, clans.name clan, clans.leaderid, users.discordTag, clans.clanid FROM users LEFT JOIN clans on users.clanid=clans.clanid where users.discordID='".$user_discord_id."'";
                 $result = mysqli_query($mysqli, $query);
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 if ($row["nickname"] != null) {
@@ -125,7 +125,7 @@
                 if ($row["clan"] != null) {
                     $user_clan = $row["clan"];
                 }
-                $clanid = $row["clandiscordid"];
+                $clanid = $row["clanid"];
                 $clan_leader_id = $row["leaderid"];
                 mysqli_free_result($result);
                 mysqli_close($mysqli);
@@ -151,12 +151,33 @@
                             </ul>
                         </div>
                         <div class="card-footer">
+                            <button type="button" class="btn btn-lg btn-outline-danger btn-block" data-toggle="modal" data-target="#deletemodal">
+                            Delete user
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="deletemodal" tabindex="-1" aria-labelledby="deleteusermodal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteusermodal">Are you sure?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                        This option is not reversible, your user and all his data will be deleted.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <form method="POST" id="deleteUserForm" action="">
                                 <input type="hidden" name="accion" value="delete_user"/>
                                 <button class="btn btn-lg btn-outline-danger btn-block g-recaptcha" data-sitekey="6LeuONQZAAAAANRgjK7KisOiAHp1apuZucokpOKw" 
                                 data-callback='onSubmit' data-action='submit'>Delete user</button>
                             </form>
-                        </div> 
+                        </div>
+                        </div>
                     </div>
                 </div>
                 <?php
