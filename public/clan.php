@@ -1,4 +1,6 @@
+
 <?php
+    ini_set('error_reporting', E_ALL);
     session_start();
     $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
     require './config.php';
@@ -37,21 +39,19 @@
     $user_clan = 'No Clan';
     $nickname = isset($_POST['user_game_name']) ? $_POST['user_game_name'] : 'Not defined';
 ?>
-<script src="https://www.google.com/recaptcha/api.js"></script>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-104878658-2"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104878658-2"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-104878658-2");
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "UA-104878658-2");
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -59,18 +59,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/bba734017e.js" crossorigin="anonymous"></script>
     <title>User profile - Stiletto</title>
+    <script>
+        function onSubmit(token) {
+            document.getElementById("deleteUserForm").submit();
+        }
+    </script>
 </head>
-<script>
-   function onSubmit(token) {
-       document.getElementById("deleteUserForm").submit();
-   }
- </script>
 <body class="d-flex flex-column h-100">
     <?php include './components/header.php'; ?>
     <main role="main" class="container">
     <div class="row">
         <?php
-            include ('./components/discordButton.php');
+            include './components/discordButton.php';
             $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],$config['DISCORD_REDIRECT_URL']);
             $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
             if ($connected == false && !empty($discordcode)) {
@@ -222,6 +222,7 @@
                     <div class="col-xl-12">
                         <div class="card border-secondary mb-3">
                             <div class="card-header">Manage Clan</div>
+                            <div class="card-body">
                             <?php 
                                 if ($clan_leader_id == $user_discord_id) {
                                     if ($accion=='accept_request' || $accion=='decline_request') {
@@ -247,7 +248,6 @@
                                     $result = mysqli_query($mysqli, $query);                            
                                     if (mysqli_num_rows($result) > 0) {
                             ?>
-                                <div class="card-body">
                                     <table class="table">
                                         <thead>
                                             <tr>
@@ -283,12 +283,13 @@
                                             ?>
                                         </tbody>
                                     </table>
-                                </div>
                                 <?php
                                     }
                                     mysqli_free_result($result);
                                     mysqli_close($mysqli);
                                 ?>
+                            </div>
+                            <a class="btn btn-lg btn-outline-secondary btn-block" href="https://stiletto.comunidadgzone.es/members">Clan Members</a>
                             <div class="card-footer">
                                 <a class="btn btn-lg btn-outline-secondary btn-block" href="https://stiletto.comunidadgzone.es/walkerlist">Walker list</a>
                             </div>
@@ -306,63 +307,6 @@
                             ?>
                         </div>
                     </div>
-                    <div class="col-xl-6">
-                    <div class="card border-secondary mb-3">
-                            <div class="card-header">Clan Members</div>
-                            <div class="card-body">
-                            <?php
-                                $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                                $query = 'SELECT discordtag, nickname, discordID FROM users where clanid='.$clanid;
-                                $result = mysqli_query($mysqli, $query);
-                            ?>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center" scope="col">Discord Tag</th>
-                                        <th class="text-center" scope="col">Nick in game</th>
-                                        <th class="text-center" scope="col">Kick</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                    if ($clan_leader_id == $user_discord_id && $accion=='kick_from_clan') {
-                                        if ($accion == 'accept_request') {
-                                            $userkickid = isset($_POST['userkickid']) ? $_POST['userkickid'] : null;
-                                            $query = "update users set clanid=null where discordID=? and clanid=?";
-                                            $statement = $mysqli->prepare($query);
-                                            $statement->bind_param('ss', $userkickid,$clanid);
-                                            $statement->execute();
-                                        }
-                                    }
-                                    while ($row = $result->fetch_assoc()) {
-                                ?>
-                                    <tr>
-                                        <td class="text-center"><?php echo $row['discordtag']; ?></th>
-                                        <td class="text-center"><?php echo $row['nickname']; ?></td>
-                                        <td>
-                                        <?php 
-                                            if ($clan_leader_id == $user_discord_id && $row['discordID'] != $user_discord_id) {
-                                        ?> 
-                                            <form method="POST" action="">
-                                                <input type="hidden" name="accion" value="kick_from_clan"/>
-                                                <input type="hidden" name="userkickid" value="<?php echo $row['discordID']; ?>"/>
-                                                <button class="btn btn-danger btn-block" type="submit">Kick</button>
-                                            </form>
-                                        <?php
-                                            }
-                                        ?>
-                                        </td>
-                                    </tr>
-                                <?php
-                                    }
-                                    mysqli_free_result($result);
-                                    mysqli_close($mysqli);
-                                    ?>
-                                </tbody>
-                            </table>
-                            </div>
-                        </div>
-                    </div>
                 <?php
                     }
             }
@@ -371,3 +315,4 @@
     </main>
     <?php include './components/footer.php'; ?>
 </body>
+</html>

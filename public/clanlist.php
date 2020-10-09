@@ -30,7 +30,9 @@
         header('Location: '.$config['DISCORD_REDIRECT_URL']);
     }
 ?>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
@@ -147,3 +149,4 @@
     </main>
     <?php include './components/footer.php'; ?>
 </body>
+</html>

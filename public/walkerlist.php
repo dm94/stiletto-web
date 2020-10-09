@@ -11,19 +11,18 @@
         header('Location: '.$config['DISCORD_REDIRECT_URL']);
     }
 ?>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-104878658-2"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104878658-2"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-104878658-2");
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "UA-104878658-2");
     </script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -56,20 +55,17 @@
                 mysqli_free_result($result);
                 mysqli_close($mysqli);
                 $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
-                if ($accion =='linkdiscord') {
-                    $discord = isset($_POST['discordlist']) ? $_POST['discordlist'] : null;
-        
-                    if ($discord != null) {
-                        $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                        $query = "update clans set discordid = ? where leaderid = ?";
-                        $statement = $mysqli->prepare($query);
-                        $statement->bind_param('ss', $discord,$user_discord_id);
-                        $statement->execute();
-                        mysqli_close($mysqli);
-                    }
+                $discord = isset($_POST['discordlist']) ? $_POST['discordlist'] : null;
+                if ($accion =='linkdiscord' && $discord != null) {
+                    $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
+                    $query = "update clans set discordid = ? where leaderid = ?";
+                    $statement = $mysqli->prepare($query);
+                    $statement->bind_param('ss', $discord,$user_discord_id);
+                    $statement->execute();
+                    mysqli_close($mysqli);
                 }
 
-                require ('./components/discordButton.php');
+                require './components/discordButton.php';
                 $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],'https://stiletto.comunidadgzone.es/walkerlist');
                 $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
                 if (!empty($discordcode)) {
@@ -169,3 +165,4 @@
     </main>
     <?php include './components/footer.php'; ?>
 </body>
+</html>
