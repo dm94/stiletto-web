@@ -2,17 +2,17 @@
     session_start();
     $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
     $message = null;
-    require ('./config.php');
+    require './config.php';
     $user_discord_id = null;
     $connected = false;
     $user_clan_id = null;
-    if(isset($_SESSION["user_discord_id"])){
-        $user_discord_id = $_SESSION["user_discord_id"];
+    if(isset($_SESSION['user_discord_id'])){
+        $user_discord_id = $_SESSION['user_discord_id'];
         $connected = true;
         $clanid = isset($_POST['clanid']) ? $_POST['clanid'] : null;
         if ($accion=='send_request' && $clanid != null) {
             $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-            $query = "select * from clanrequest where discordid=".$user_discord_id;
+            $query = 'select * from clanrequest where discordid='.$user_discord_id;
             $result = mysqli_query($mysqli, $query);
             if ( mysqli_num_rows($result) > 0) {
                 mysqli_free_result($result);
@@ -21,7 +21,7 @@
                 $statement->bind_param('ss', $clanid, $user_discord_id);
                 $statement->execute();
             } else {
-                $message = "You already have a pending application to join a clan";
+                $message = 'You already have a pending application to join a clan';
             }
             mysqli_close($mysqli);
         }
@@ -53,23 +53,23 @@
     <title>Clan List - Stiletto</title>
 </head>
 <body class="d-flex flex-column h-100">
-    <?php include ('./components/header.php'); ?>
+    <?php include './components/header.php'; ?>
     <main role="main" class="flex-shrink-0">
         <div class="container">
         <?php
             if ($connected == true) {
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                $query = "SELECT clanid  FROM users where discordID='".$user_discord_id."'";
+                $query = 'SELECT clanid  FROM users where discordID='.$user_discord_id;
                 $result = mysqli_query($mysqli, $query);
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
-                if ($row["clanid"] != null) {
-                    $user_clan_id = $row["clanid"];
+                if ($row['clanid'] != null) {
+                    $user_clan_id = $row['clanid'];
                 }
 
                 mysqli_free_result($result);
 
-                $query = "SELECT clans.clanid, clans.name, clans.invitelink, clans.recruitment, users.discordTag, clans.leaderid leaderid FROM clans left join users on clans.leaderid=users.discordID";
+                $query = 'SELECT clans.clanid, clans.name, clans.invitelink, clans.recruitment, users.discordTag, clans.leaderid leaderid FROM clans left join users on clans.leaderid=users.discordID';
                 $result = mysqli_query($mysqli, $query);
 
             if ($message != null) {
@@ -108,7 +108,7 @@
                     <td class="text-center">
                     <?php 
                         if ($row['invitelink'] != null) {
-                            echo "<a href='https://discord.gg/".$row['invitelink']."'target='_blank' >".$row['invitelink']."</a>"; 
+                            echo '<a href="https://discord.gg/'.$row['invitelink'].'" target="_blank" >'.$row['invitelink'].'</a>'; 
                         }
                     ?>
                     </td>
@@ -145,5 +145,5 @@
         ?>
         </div>
     </main>
-    <?php include ('./components/footer.php'); ?>
+    <?php include './components/footer.php'; ?>
 </body>

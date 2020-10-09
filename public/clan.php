@@ -1,11 +1,11 @@
 <?php
     session_start();
     $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
-    require ('./config.php');
+    require './config.php';
     $user_discord_id = null;
     $connected = false;
-    if(isset($_SESSION["user_discord_id"])){
-        $user_discord_id = $_SESSION["user_discord_id"];
+    if(isset($_SESSION['user_discord_id'])){
+        $user_discord_id = $_SESSION['user_discord_id'];
         $connected = true;
 
         if ($user_discord_id != null) {
@@ -33,9 +33,9 @@
         $_SESSION = array();
     }
 
-    $discord_username = "User#0000";
-    $user_clan = "No Clan";
-    $nickname = isset($_POST['user_game_name']) ? $_POST['user_game_name'] : "Not defined";
+    $discord_username = 'User#0000';
+    $user_clan = 'No Clan';
+    $nickname = isset($_POST['user_game_name']) ? $_POST['user_game_name'] : 'Not defined';
 ?>
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <head>
@@ -66,7 +66,7 @@
    }
  </script>
 <body class="d-flex flex-column h-100">
-    <?php include ('./components/header.php'); ?>
+    <?php include './components/header.php'; ?>
     <main role="main" class="container">
     <div class="row">
         <?php
@@ -80,7 +80,7 @@
 
                 if ($user_discord_id != null) {
                     $connected = true;
-                    $_SESSION["user_discord_id"] = $user_discord_id;
+                    $_SESSION['user_discord_id'] = $user_discord_id;
                     $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
                     $query = "INSERT INTO users(discordID, discordTag) VALUES (?,?) ON DUPLICATE KEY UPDATE discordTag=?";
                     $statement = $mysqli->prepare($query);
@@ -113,20 +113,20 @@
                 }
 
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                $query = "SELECT users.nickname, clans.name clan, clans.leaderid, users.discordTag, clans.clanid FROM users LEFT JOIN clans on users.clanid=clans.clanid where users.discordID='".$user_discord_id."'";
+                $query = 'SELECT users.nickname, clans.name clan, clans.leaderid, users.discordTag, clans.clanid FROM users LEFT JOIN clans on users.clanid=clans.clanid where users.discordID='.$user_discord_id;
                 $result = mysqli_query($mysqli, $query);
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                if ($row["nickname"] != null) {
-                    $nickname = $row["nickname"];
+                if ($row['nickname'] != null) {
+                    $nickname = $row['nickname'];
                 }
-                if ($row["discordTag"] != null) {
-                    $discord_username = $row["discordTag"];
+                if ($row['discordTag'] != null) {
+                    $discord_username = $row['discordTag'];
                 }
-                if ($row["clan"] != null) {
-                    $user_clan = $row["clan"];
+                if ($row['clan'] != null) {
+                    $user_clan = $row['clan'];
                 }
-                $clanid = $row["clanid"];
-                $clan_leader_id = $row["leaderid"];
+                $clanid = $row['clanid'];
+                $clan_leader_id = $row['leaderid'];
                 mysqli_free_result($result);
                 mysqli_close($mysqli);
 
@@ -181,7 +181,7 @@
                     </div>
                 </div>
                 <?php
-                    if ($nickname == null || $nickname == "Not defined") {
+                    if ($nickname == null || $nickname == 'Not defined') {
                         /* So that it only appears when we do not have a defined name */
                 ?>
                     <div class="col-xl-6">
@@ -203,7 +203,7 @@
                     }
                 ?>
                 <?php
-                    if ($user_clan == null || $user_clan == "No Clan") {
+                    if ($user_clan == null || $user_clan == 'No Clan') {
                         /* So that it only appears when we do not have a defined name */
                 ?>
                     <div class="col-xl-6">
@@ -243,7 +243,7 @@
                                     }
 
                                     $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                                    $query = "SELECT users.discordtag, users.nickname, clanrequest.discordid userrequestid FROM users,clanrequest where userrequestid.discordID=users.discordID and userrequestid.clanid='".$clanid."'";
+                                    $query = 'SELECT users.discordtag, users.nickname, clanrequest.discordid userrequestid FROM users,clanrequest where userrequestid.discordID=users.discordID and userrequestid.clanid='.$clanid;
                                     $result = mysqli_query($mysqli, $query);                            
                                     if (mysqli_num_rows($result) > 0) {
                             ?>
@@ -312,7 +312,7 @@
                             <div class="card-body">
                             <?php
                                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                                $query = "SELECT discordtag, nickname, discordID FROM users where clanid='".$clanid."'";
+                                $query = 'SELECT discordtag, nickname, discordID FROM users where clanid='.$clanid;
                                 $result = mysqli_query($mysqli, $query);
                             ?>
                             <table class="table">
@@ -326,7 +326,7 @@
                                 <tbody>
                                 <?php
                                     if ($clan_leader_id == $user_discord_id && $accion=='kick_from_clan') {
-                                        if ($accion=='accept_request') {
+                                        if ($accion == 'accept_request') {
                                             $userkickid = isset($_POST['userkickid']) ? $_POST['userkickid'] : null;
                                             $query = "update users set clanid=null where discordID=? and clanid=?";
                                             $statement = $mysqli->prepare($query);
@@ -369,5 +369,5 @@
         ?>
         </div>
     </main>
-    <?php include ('./components/footer.php'); ?>
+    <?php include './components/footer.php'; ?>
 </body>

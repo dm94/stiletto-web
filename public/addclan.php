@@ -1,11 +1,11 @@
 <?php
     session_start();
     $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
-    require ('./config.php');
+    require './config.php';
     $user_discord_id = null;
     $connected = false;
-    if(isset($_SESSION["user_discord_id"])){
-        $user_discord_id = $_SESSION["user_discord_id"];
+    if(isset($_SESSION['user_discord_id'])){
+        $user_discord_id = $_SESSION['user_discord_id'];
         $connected = true;
 
         if ($accion =='add_clan' && $user_discord_id != null) {
@@ -23,7 +23,7 @@
                 mysqli_close($mysqli);
     
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                $query = "select clanid from clans where leaderid=".$user_discord_id;
+                $query = 'select clanid from clans where leaderid='.$user_discord_id;
                 $result = mysqli_query($mysqli, $query);
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $clandiscordid = $row['clanid'];
@@ -68,13 +68,13 @@
     <title>Add Clan - Stiletto</title>
 </head>
 <body class="d-flex flex-column h-100">
-    <?php include ('./components/header.php'); ?>
+    <?php include './components/header.php'; ?>
     <main role="main" class="flex-shrink-0">
         <div class="container">
         <?php
             if ($connected == true) {
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                $query = "select * from users where discordid=".$user_discord_id;
+                $query = 'select * from users where discordid='.$user_discord_id;
                 $result = mysqli_query($mysqli, $query);
                 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 $clanid = $row['clanid'];
@@ -114,5 +114,5 @@
         ?>
         </div>
     </main>
-    <?php include ('./components/footer.php'); ?>
+    <?php include './components/footer.php'; ?>
 </body>

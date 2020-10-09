@@ -1,7 +1,7 @@
 <?php
 
 class DiscordButton {
-    var $base_url = "https://discord.com/api/";
+    var $base_url = 'https://discord.com/api/';
     private $client_id;
     private $client_secret;
     private $redirect_url;
@@ -36,7 +36,7 @@ class DiscordButton {
         $resp = $this->get_access_token($discordcode);
         if (isset($resp->access_token)) {
             $access_token = $resp->access_token;
-            $info_request = "https://discord.com/api/users/@me";
+            $info_request =  $this->base_url.'users/@me';
             $info = curl_init();
             curl_setopt_array($info, array(
                 CURLOPT_URL => $info_request,
@@ -57,7 +57,7 @@ class DiscordButton {
         $resp = $this->get_access_token($discordcode);
         if (isset($resp->access_token)) {
             $access_token = $resp->access_token;
-            $info_request = $this->base_url."users/@me/guilds";
+            $info_request = $this->base_url.'users/@me/guilds';
             $info = curl_init();
             curl_setopt_array($info, array(
                 CURLOPT_URL => $info_request,
@@ -75,7 +75,7 @@ class DiscordButton {
     }
 
     public function get_access_token($code) {
-		$token_request = $this->base_url."oauth2/token";
+		$token_request = $this->base_url.'oauth2/token';
         $token = curl_init();
         curl_setopt_array($token, array(
             CURLOPT_URL => $token_request,

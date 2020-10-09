@@ -1,10 +1,10 @@
 <?php
     session_start();
-    require ('./config.php');
+    require './config.php';
     $user_discord_id = null;
     $connected = false;
-    if(isset($_SESSION["user_discord_id"])){
-        $user_discord_id = $_SESSION["user_discord_id"];
+    if(isset($_SESSION['user_discord_id'])){
+        $user_discord_id = $_SESSION['user_discord_id'];
         $connected = true;
     } else {
         $_SESSION = array();
@@ -33,13 +33,13 @@
     <title>Walker List - Stiletto</title>
 </head>
 <body class="d-flex flex-column h-100">
-    <?php include ('./components/header.php'); ?>
+    <?php include './components/header.php'; ?>
     <main role="main" class="flex-shrink-0">
         <div class="container">
         <?php
             if ($connected == true) {
                 $mysqli = mysqli_connect($config['DB_HOST'],$config['DB_USERNAME'],$config['DB_PASSWORD'],$config['DB_DATABASE']);
-                $query = "SELECT walkers.walkerid, walkers.name, walkers.ownerUser, walkers.lastUser, walkers.datelastuse, clans.leaderid, clans.discordid FROM users left join clans on users.clanid=clans.clanid left join walkers on walkers.discorid=clans.discordid and users.discordID=".$user_discord_id;
+                $query = 'SELECT walkers.walkerid, walkers.name, walkers.ownerUser, walkers.lastUser, walkers.datelastuse, clans.leaderid, clans.discordid FROM users left join clans on users.clanid=clans.clanid left join walkers on walkers.discorid=clans.discordid and users.discordID='.$user_discord_id;
                 $result = mysqli_query($mysqli, $query);
         ?>
         <div class="row">
@@ -52,7 +52,7 @@
             </div>
             <?php
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            if ($user_discord_id == $row["leaderid"] && $row["discordid"] == null) {
+            if ($user_discord_id == $row['leaderid'] && $row['discordid'] == null) {
                 mysqli_free_result($result);
                 mysqli_close($mysqli);
                 $accion = isset($_POST['accion']) ? $_POST['accion'] : null;
@@ -70,7 +70,7 @@
                 }
 
                 require ('./components/discordButton.php');
-                $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],"https://stiletto.comunidadgzone.es/walkerlist");
+                $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],'https://stiletto.comunidadgzone.es/walkerlist');
                 $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
                 if (!empty($discordcode)) {
                     $guilds = $discordapi->get_guilds($discordcode);
@@ -167,5 +167,5 @@
         ?>
         </div>
     </main>
-    <?php include ('./components/footer.php'); ?>
+    <?php include './components/footer.php'; ?>
 </body>
