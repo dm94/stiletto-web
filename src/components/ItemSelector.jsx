@@ -58,8 +58,7 @@ class ItemSelector extends Component {
   switchLanguaje = (event) => {
     if (event != null) {
       event.preventDefault();
-      var itemsUrlJson =
-        "https://raw.githubusercontent.com/dm94/lastoasisbot/master/itemsES_min.json";
+      var itemsUrlJson;
       if (this.state.languaje === "ES") {
         itemsUrlJson =
           "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json";
@@ -197,7 +196,7 @@ class ItemSelector extends Component {
             if (
               totalIngredients.find((ingre) => ingre.name === ingredient.name)
             ) {
-              totalIngredients.map((ingre) => {
+              totalIngredients.forEach((ingre) => {
                 if (ingre.name === ingredient.name) {
                   ingre.count += ingredient.count * item.count;
                 }
