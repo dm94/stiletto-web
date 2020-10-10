@@ -1,6 +1,6 @@
 <?php
 
-class DiscordButton {
+class DiscordApi {
     var $base_url = 'https://discord.com/api/';
     private $client_id;
     private $client_secret;

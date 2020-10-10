@@ -65,8 +65,8 @@
                     mysqli_close($mysqli);
                 }
 
-                require './components/discordButton.php';
-                $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],'https://stiletto.comunidadgzone.es/walkerlist');
+                require './components/discordApi.php';
+                $discordapi = new DiscordApi($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],'https://stiletto.comunidadgzone.es/walkerlist');
                 $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
                 if (!empty($discordcode)) {
                     $guilds = $discordapi->get_guilds($discordcode);

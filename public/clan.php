@@ -70,8 +70,8 @@
     <main role="main" class="container">
     <div class="row">
         <?php
-            include './components/discordButton.php';
-            $discordapi = new DiscordButton($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],$config['DISCORD_REDIRECT_URL']);
+            include './components/discordApi.php';
+            $discordapi = new DiscordApi($config['DISCORD_CLIENT_ID'],$config['DISCORD_CLIENT_SECRET'],$config['DISCORD_REDIRECT_URL']);
             $discordcode = isset($_GET['code']) ? $_GET['code'] : null;
             if ($connected == false && !empty($discordcode)) {
                 $user = $discordapi->get_user($discordcode);
