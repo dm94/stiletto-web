@@ -31,7 +31,7 @@ class DiscordConnection extends Component {
       return (
         <a
           className="btn btn-lg btn-outline-primary btn-block"
-          href="https://discord.com/api/oauth2/authorize?client_id=762652181382823946&redirect_uri=https://stiletto.comunidadgzone.es/api/v1/discordlogin.php&scope=identify%20guilds&response_type=code"
+          href="https://discord.com/api/oauth2/authorize?client_id=762652181382823946&redirect_uri=https://api.comunidadgzone.es/v1/discordlogin.php&scope=identify%20guilds&response_type=code"
         >
           <i className="fab fa-discord"></i>Login with discord
         </a>

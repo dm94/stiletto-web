@@ -12,7 +12,7 @@ class PrivateProfile extends Component {
     this.state = {
       user_discord_id: this.props.auth.discorduserid,
       token: this.props.auth.token,
-      urlApi: "https://stiletto.comunidadgzone.es/api/v1/users",
+      urlApi: "https://api.comunidadgzone.es/v1/users",
       discordtag: "Loading...",
       nickname: "Loading...",
       clanname: "Loading...",
