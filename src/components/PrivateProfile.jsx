@@ -70,15 +70,16 @@ class PrivateProfile extends Component {
 
   addNickInGame = (event) => {
     event.preventDefault();
-    const data = {
-      discordid: this.state.user_discord_id,
-      token: this.state.token,
-      dataupdate: this.state.nameInGameInput,
-      accion: "changeusergamename",
-    };
     if (event != null) {
       axios
-        .post(this.state.urlApi, data)
+        .get(this.state.urlApi, {
+          params: {
+            discordid: this.state.user_discord_id,
+            token: this.state.token,
+            dataupdate: this.state.nameInGameInput,
+            accion: "changeusergamename",
+          },
+        })
         .then((response) => {
           this.setState({ nickname: this.state.nameInGameInput });
         })

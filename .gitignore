@@ -22,7 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
-public/api/v1/config.php
+public/api
 public/old
 public/img
 yarn.lock
