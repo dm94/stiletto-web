@@ -89,6 +89,26 @@ class PrivateProfile extends Component {
     }
   };
 
+  leaveClan = (event) => {
+    event.preventDefault();
+    if (event != null) {
+      axios
+        .get(this.state.urlApi, {
+          params: {
+            discordid: this.state.user_discord_id,
+            token: this.state.token,
+            accion: "leavetheclan",
+          },
+        })
+        .then((response) => {
+          this.setState({ clanname: null });
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }
+  };
+
   showClanSection() {
     let showHideClassName = this.state.showDeleteModal
       ? "modal d-block"
@@ -266,7 +286,23 @@ class PrivateProfile extends Component {
                 Walker list
               </Link>
             </div>
+            {this.leaveClanButton}
           </div>
+        </div>
+      );
+    }
+  }
+
+  leaveClanButton() {
+    if (this.state.clanleaderid !== this.state.user_discord_id) {
+      return (
+        <div className="card-footer">
+          <button
+            className="btn btn-lg btn-outline-danger btn-block"
+            onClick={this.leaveClan}
+          >
+            Leave the clan
+          </button>
         </div>
       );
     }

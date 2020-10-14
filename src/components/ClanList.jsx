@@ -28,7 +28,6 @@ class ClanList extends Component {
           this.state.token
       )
       .then((response) => {
-        console.log(response);
         if (response.status === 200) {
           this.setState({ clans: response.data });
         }
