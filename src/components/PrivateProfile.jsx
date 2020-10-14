@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import LoadingScreen from "./LoadingScreen";
 import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
-import ModalError from "./ModalError";
+import ModalMessage from "./ModalMessage";
 
 const axios = require("axios");
 
@@ -49,7 +49,7 @@ class PrivateProfile extends Component {
           });
         } else if (response.status === 205) {
           localStorage.clear();
-          this.setState({ redirect: true });
+          this.setState({ error: "This user cannot be found" });
         }
         this.setState({ isLoaded: true });
       })
@@ -313,7 +313,11 @@ class PrivateProfile extends Component {
 
   render() {
     if (this.state.error) {
-      return <ModalError value={this.state.error} />;
+      return (
+        <ModalMessage
+          message={{ isError: true, text: this.state.error, redirectPage: "/" }}
+        />
+      );
     }
     return this.state.isLoaded ? this.showClanSection() : <LoadingScreen />;
   }

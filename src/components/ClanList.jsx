@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import LoadingScreen from "./LoadingScreen";
-import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 import ClanListItem from "./ClanListItem";
+import ModalMessage from "./ModalMessage";
 const axios = require("axios");
 
 class ClanList extends Component {
@@ -93,7 +93,15 @@ class ClanList extends Component {
 
   render() {
     if (this.state.redirect) {
-      return <Redirect to="/profile" />;
+      return (
+        <ModalMessage
+          message={{
+            isError: false,
+            text: "Application to enter the clan sent",
+            redirectPage: "/profile",
+          }}
+        />
+      );
     }
     if (
       localStorage.getItem("discordid") != null &&
@@ -101,7 +109,15 @@ class ClanList extends Component {
     ) {
       return this.clanList();
     }
-    return <Redirect to="/profile" />;
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: "Login to access this section",
+          redirectPage: "/profile",
+        }}
+      />
+    );
   }
 }
 
