@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LoadingScreen from "./LoadingScreen";
-import { BrowserRouter as Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 import ClanListItem from "./ClanListItem";
 const axios = require("axios");
 
@@ -28,42 +28,48 @@ class ClanList extends Component {
           this.state.token
       )
       .then((response) => {
+        console.log(response);
         if (response.status === 200) {
-          this.setState({ clans: response.data, isLoaded: true });
+          this.setState({ clans: response.data });
         }
+        this.setState({ isLoaded: true });
       });
   }
 
   list() {
-    return (
-      <table class="table">
-        <thead>
-          <tr>
-            <th class="text-center" scope="col">
-              Clan Name
-            </th>
-            <th class="text-center" scope="col">
-              Leader
-            </th>
-            <th class="text-center" scope="col">
-              Discord Invite Link
-            </th>
-            <th class="text-center" scope="col">
-              Actions
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.clans.map((clanListItem) => (
-            <ClanListItem key={clanListItem.clanid} clan={clanListItem} />
-          ))}
-        </tbody>
-      </table>
-    );
+    if (this.state.clans != null) {
+      return this.state.clans.map((clan) => (
+        <ClanListItem key={clan.name} clan={clan} />
+      ));
+    }
   }
 
   clanList() {
-    return this.state.isLoaded ? this.list() : <LoadingScreen />;
+    if (this.state.isLoaded) {
+      return (
+        <table className="table">
+          <thead>
+            <tr>
+              <th className="text-center" scope="col">
+                Clan Name
+              </th>
+              <th className="text-center" scope="col">
+                Leader
+              </th>
+              <th className="text-center" scope="col">
+                Discord Invite Link
+              </th>
+              <th className="text-center" scope="col">
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody>{this.list()}</tbody>
+        </table>
+      );
+    } else {
+      return <LoadingScreen />;
+    }
   }
 
   render() {
@@ -71,9 +77,9 @@ class ClanList extends Component {
       localStorage.getItem("discordid") != null &&
       localStorage.getItem("token") != null
     ) {
-      this.clanList();
+      return this.clanList();
     } else {
-      return <Redirect to="/" />;
+      return <Redirect to="/profile" />;
     }
   }
 }

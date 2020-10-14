@@ -9,24 +9,15 @@ class DiscordConnection extends Component {
   showClanInfo() {
     const parsed = queryString.parse(this.props.location.search);
     if (parsed.discordid != null && parsed.token != null) {
-      auth.authenticate(parsed.discordid, parsed.token);
       localStorage.setItem("discordid", parsed.discordid);
       localStorage.setItem("token", parsed.token);
-    } else if (
-      localStorage.getItem("discordid") != null &&
-      localStorage.getItem("token") != null
-    ) {
-      auth.authenticate(
-        localStorage.getItem("discordid"),
-        localStorage.getItem("token")
-      );
     }
 
     if (
       localStorage.getItem("discordid") != null &&
       localStorage.getItem("token") != null
     ) {
-      return <PrivateProfile key={auth.discordid} auth={auth} />;
+      return <PrivateProfile key={localStorage.getItem("discordid")} />;
     } else {
       return (
         <a
@@ -43,18 +34,5 @@ class DiscordConnection extends Component {
     return <div className="h-100 container">{this.showClanInfo()}</div>;
   }
 }
-
-const auth = {
-  isAuthenticated: false,
-  discorduserid: "",
-  token: "",
-  authenticate(discordid, token) {
-    if (discordid != null && token != null) {
-      auth.isAuthenticated = true;
-      auth.discorduserid = discordid;
-      auth.token = token;
-    }
-  },
-};
 
 export default DiscordConnection;

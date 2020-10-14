@@ -5,9 +5,9 @@ class ClanListItem extends Component {
   render() {
     return (
       <tr>
-        <td class="text-center">{this.props.clan.name}</td>
-        <td class="text-center">{this.props.clan.discordTag}</td>
-        <td class="text-center">
+        <td className="text-center">{this.props.clan.name}</td>
+        <td className="text-center">{this.props.clan.discordTag}</td>
+        <td className="text-center">
           <a
             href={"https://discord.gg/" + this.props.clan.invitelink}
             target="_blank"
@@ -17,7 +17,7 @@ class ClanListItem extends Component {
           </a>
         </td>
         <td>
-          <button class="btn btn-block btn-primary" type="submit">
+          <button className="btn btn-block btn-primary" type="submit">
             Send request
           </button>
         </td>

@@ -89,7 +89,7 @@ function CrafterApp() {
       <main role="main" className="container-fluid h-100">
         <Switch>
           <Route path="/profile" component={DiscordConnection} />
-          <Route path="/" component={ItemSelector} />
+          <Route exact path="/" component={ItemSelector} />
           <Route path="/members" component={ClanList} />
           <Route path="/clanlist" component={ClanList} />
           <Route path="/walkerlist" component={ClanList} />

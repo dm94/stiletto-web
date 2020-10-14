@@ -48,6 +48,7 @@ class PrivateProfile extends Component {
           localStorage.clear();
           this.setState({ redirect: true });
         }
+        this.setState({ isLoaded: true });
       });
   }
 
