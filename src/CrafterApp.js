@@ -1,10 +1,10 @@
 import React from "react";
 import ItemSelector from "./components/ItemSelector";
 import DiscordConnection from "./components/DiscordConnection";
+import ClanList from "./components/ClanList";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
-  /*return <ItemSelector />;*/
   return (
     <Router>
       <header className="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark">
@@ -18,15 +18,36 @@ function CrafterApp() {
                 Crafting
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/clan">
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="/profile"
+                id="clanDrodown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 Clan
               </Link>
+              <div className="dropdown-menu" aria-labelledby="clanDrodown">
+                <Link className="dropdown-item" to="/profile">
+                  Profile
+                </Link>
+                <Link className="dropdown-item" to="/clanlist">
+                  Clan List
+                </Link>
+                <Link className="dropdown-item" to="/members">
+                  Members
+                </Link>
+                <Link className="dropdown-item" to="/walkerlist">
+                  Walker List
+                </Link>
+              </div>
             </li>
             <li className="nav-item dropdown">
-              <a
+              <div
                 className="nav-link dropdown-toggle"
-                href="#"
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -34,7 +55,7 @@ function CrafterApp() {
                 aria-expanded="false"
               >
                 Other Links
-              </a>
+              </div>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a
                   className="dropdown-item"
@@ -67,10 +88,11 @@ function CrafterApp() {
       </header>
       <main role="main" className="container-fluid h-100">
         <Switch>
-          <Route path="/clan" component={DiscordConnection} />
+          <Route path="/profile" component={DiscordConnection} />
           <Route path="/" component={ItemSelector} />
-          <Route path="/members" component={ItemSelector} />
-          <Route path="/walkerlist" component={ItemSelector} />
+          <Route path="/members" component={ClanList} />
+          <Route path="/clanlist" component={ClanList} />
+          <Route path="/walkerlist" component={ClanList} />
         </Switch>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
