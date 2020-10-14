@@ -86,7 +86,7 @@ function CrafterApp() {
           </ul>
         </div>
       </header>
-      <main role="main" className="container-fluid h-100">
+      <main role="main" className="container-fluid h-100 bg-white">
         <Switch>
           <Route path="/profile" component={DiscordConnection} />
           <Route exact path="/" component={ItemSelector} />
