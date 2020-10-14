@@ -16,7 +16,7 @@ class PrivateProfile extends Component {
       discordtag: "Loading...",
       nickname: "Loading...",
       clanname: "Loading...",
-      clanid: 0,
+      clanid: localStorage.getItem("clanid"),
       showDeleteModal: false,
       clanleaderid: null,
       isLoaded: false,
@@ -36,6 +36,7 @@ class PrivateProfile extends Component {
       )
       .then((response) => {
         if (response.status === 200) {
+          localStorage.setItem("clanid", response.data.clanid);
           this.setState({
             discordtag: response.data.discordtag,
             clanname: response.data.clanname,

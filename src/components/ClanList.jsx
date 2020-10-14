@@ -15,6 +15,7 @@ class ClanList extends Component {
       urlApi: "https://api.comunidadgzone.es/v1/clans",
       isLoaded: false,
       clans: null,
+      redirect: false,
     };
   }
 
@@ -35,10 +36,29 @@ class ClanList extends Component {
       });
   }
 
+  sendRequest = (clanid) => {
+    axios
+      .get(this.state.urlApi, {
+        params: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          dataupdate: clanid,
+          accion: "sendrequest",
+        },
+      })
+      .then((response) => {
+        this.setState({ redirect: true });
+      });
+  };
+
   list() {
     if (this.state.clans != null) {
       return this.state.clans.map((clan) => (
-        <ClanListItem key={clan.name} clan={clan} />
+        <ClanListItem
+          key={clan.name}
+          clan={clan}
+          onSendRequest={this.sendRequest}
+        />
       ));
     }
   }
@@ -72,14 +92,16 @@ class ClanList extends Component {
   }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/profile" />;
+    }
     if (
       localStorage.getItem("discordid") != null &&
       localStorage.getItem("token") != null
     ) {
       return this.clanList();
-    } else {
-      return <Redirect to="/profile" />;
     }
+    return <Redirect to="/profile" />;
   }
 }
 
