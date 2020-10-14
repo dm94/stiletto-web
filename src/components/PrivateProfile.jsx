@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import LoadingScreen from "./LoadingScreen";
 import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
+import ModalError from "./ModalError";
 
 const axios = require("axios");
 
@@ -22,6 +23,7 @@ class PrivateProfile extends Component {
       isLoaded: false,
       redirect: false,
       nameInGameInput: "",
+      error: null,
     };
   }
 
@@ -50,6 +52,9 @@ class PrivateProfile extends Component {
           this.setState({ redirect: true });
         }
         this.setState({ isLoaded: true });
+      })
+      .catch((error) => {
+        this.setState({ error: error });
       });
   }
 
@@ -85,7 +90,7 @@ class PrivateProfile extends Component {
           this.setState({ nickname: this.state.nameInGameInput });
         })
         .catch((error) => {
-          console.error(error);
+          this.setState({ error: error });
         });
     }
   };
@@ -105,7 +110,7 @@ class PrivateProfile extends Component {
           this.setState({ clanname: null });
         })
         .catch((error) => {
-          console.error(error);
+          this.setState({ error: error });
         });
     }
   };
@@ -166,14 +171,6 @@ class PrivateProfile extends Component {
                   <h5 className="modal-title" id="deleteusermodal">
                     Are you sure?
                   </h5>
-                  <button
-                    type="button"
-                    className="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true"></span>
-                  </button>
                 </div>
                 <div className="modal-body">
                   This option is not reversible, your user and all his data will
@@ -186,15 +183,12 @@ class PrivateProfile extends Component {
                   >
                     Cancel
                   </button>
-                  <form method="POST" id="deleteUserForm" action="">
-                    <input type="hidden" name="accion" value="delete_user" />
-                    <button
-                      className="btn btn-lg btn-outline-danger btn-block g-recaptcha"
-                      onClick={this.deleteUser}
-                    >
-                      Delete user
-                    </button>
-                  </form>
+                  <button
+                    className="btn btn-lg btn-outline-danger btn-block g-recaptcha"
+                    onClick={this.deleteUser}
+                  >
+                    Delete user
+                  </button>
                 </div>
               </div>
             </div>
@@ -318,6 +312,9 @@ class PrivateProfile extends Component {
   };
 
   render() {
+    if (this.state.error) {
+      return <ModalError value={this.state.error} />;
+    }
     return this.state.isLoaded ? this.showClanSection() : <LoadingScreen />;
   }
 }
