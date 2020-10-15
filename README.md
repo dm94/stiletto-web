@@ -1,8 +1,7 @@
 ## Stiletto Web
 
 Web with different utilities for the game Last Oasis.
-It is created with JS (react), PHP, HTML, CSS (bootstrap) and uses as database MySql
-
+It is created with JS (react), HTML, CSS (bootstrap) and PHP API
 You can see this website in operation here: [stiletto.comunidadgzone.es](https://stiletto.comunidadgzone.es/)
 
 ### Working
@@ -22,3 +21,4 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 
 - Sharing quality maps in the same clan
 - System to make the web multi-language
+- Trading system
