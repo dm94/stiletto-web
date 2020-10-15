@@ -55,34 +55,32 @@ class WalkerList extends Component {
   }
 
   linkDiscordServer = (event) => {
-    if (event != null) {
-      event.preventDefault();
-      axios
-        .get(this.state.urlApi + "/walkers", {
-          params: {
-            discordid: this.state.user_discord_id,
-            token: this.state.token,
-            accion: "linkdiscordserver",
-            dataupdate: this.state.inputDiscodId,
-          },
-        })
-        .then((response) => {
-          if (response.status === 202) {
-            window.location.href =
-              "https://discord.com/api/oauth2/authorize?client_id=762652181382823946&redirect_uri=" +
-              this.state.urlApi +
-              "/walkers&scope=identify%20guilds&response_type=code";
-          } else if (response.status === 205) {
-            localStorage.clear();
-            this.setState({
-              error: "You don't have access here, try to log in again",
-            });
-          }
-        })
-        .catch((error) => {
-          this.setState({ error: "Try again later" });
-        });
-    }
+    event.preventDefault();
+    axios
+      .get(this.state.urlApi + "/walkers", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "linkdiscordserver",
+          dataupdate: this.state.inputDiscodId,
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          window.location.href =
+            "https://discord.com/api/oauth2/authorize?client_id=762652181382823946&redirect_uri=" +
+            this.state.urlApi +
+            "/walkers&scope=identify%20guilds&response_type=code";
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
   };
 
   serverLinkButton() {

@@ -63,97 +63,89 @@ class PrivateProfile extends Component {
   }
 
   deleteUser = (event) => {
-    if (event != null) {
-      event.preventDefault();
-      axios
-        .delete(
-          this.state.urlApi +
-            "/users" +
-            "?discordid=" +
-            this.state.user_discord_id +
-            "&token=" +
-            this.state.token
-        )
-        .then(localStorage.clear())
-        .then(this.setState({ redirect: true }));
-    }
+    event.preventDefault();
+    axios
+      .delete(
+        this.state.urlApi +
+          "/users" +
+          "?discordid=" +
+          this.state.user_discord_id +
+          "&token=" +
+          this.state.token
+      )
+      .then(localStorage.clear())
+      .then(this.setState({ redirect: true }));
   };
 
   addNickInGame = (event) => {
-    if (event != null) {
-      event.preventDefault();
-      axios
-        .get(this.state.urlApi + "/users", {
-          params: {
-            discordid: this.state.user_discord_id,
-            token: this.state.token,
-            dataupdate: this.state.nameInGameInput,
-            accion: "changeusergamename",
-          },
-        })
-        .then((response) => {
-          this.setState({ nickname: this.state.nameInGameInput });
-        })
-        .catch((error) => {
-          this.setState({ error: "Try again later" });
-        });
-    }
+    event.preventDefault();
+    axios
+      .get(this.state.urlApi + "/users", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          dataupdate: this.state.nameInGameInput,
+          accion: "changeusergamename",
+        },
+      })
+      .then((response) => {
+        this.setState({ nickname: this.state.nameInGameInput });
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
   };
 
   leaveClan = (event) => {
-    if (event != null) {
-      event.preventDefault();
-      axios
-        .get(this.state.urlApi + "/users", {
-          params: {
-            discordid: this.state.user_discord_id,
-            token: this.state.token,
-            accion: "leavetheclan",
-          },
-        })
-        .then((response) => {
-          this.setState({ clanname: null });
-        })
-        .catch((error) => {
-          this.setState({ error: "Try again later" });
-        });
-    }
+    event.preventDefault();
+    axios
+      .get(this.state.urlApi + "/users", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "leavetheclan",
+        },
+      })
+      .then((response) => {
+        this.setState({ clanname: null });
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
   };
 
   createClan = (event) => {
-    if (event != null) {
-      event.preventDefault();
-      axios
-        .get(this.state.urlApi + "/clans", {
-          params: {
-            discordid: this.state.user_discord_id,
-            token: this.state.token,
-            accion: "createclan",
-            clanname: this.state.addClanNameInput,
-            clancolor: this.state.addClanColorInput,
-            clandiscord: this.state.addClanDiscordInput,
-          },
-        })
-        .then((response) => {
-          if (response.status === 202) {
-            return (
-              <ModalMessage
-                message={{
-                  isError: false,
-                  text: "The clan has been created",
-                  redirectPage: "/profile",
-                }}
-              />
-            );
-          } else if (response.status === 205) {
-            localStorage.clear();
-            this.setState({ error: "This user cannot be found" });
-          }
-        })
-        .catch((error) => {
-          this.setState({ error: "Try again later" });
-        });
-    }
+    event.preventDefault();
+    axios
+      .get(this.state.urlApi + "/clans", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "createclan",
+          clanname: this.state.addClanNameInput,
+          clancolor: this.state.addClanColorInput,
+          clandiscord: this.state.addClanDiscordInput,
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          return (
+            <ModalMessage
+              message={{
+                isError: false,
+                text: "The clan has been created",
+                redirectPage: "/profile",
+              }}
+            />
+          );
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({ error: "This user cannot be found" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
   };
 
   showClanSection() {
