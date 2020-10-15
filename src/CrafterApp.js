@@ -2,6 +2,7 @@ import React from "react";
 import ItemSelector from "./components/ItemSelector";
 import DiscordConnection from "./components/DiscordConnection";
 import ClanList from "./components/ClanList";
+import MemberList from "./components/MemberList";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -86,11 +87,11 @@ function CrafterApp() {
           </ul>
         </div>
       </header>
-      <main role="main" className="container-fluid h-100 bg-white pt-4">
+      <main role="main" className="container-fluid bg-white pt-4">
         <Switch>
           <Route path="/profile" component={DiscordConnection} />
           <Route exact path="/" component={ItemSelector} />
-          <Route path="/members" component={ClanList} />
+          <Route path="/members" component={MemberList} />
           <Route path="/clanlist" component={ClanList} />
           <Route path="/walkerlist" component={ClanList} />
         </Switch>

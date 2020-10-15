@@ -13,7 +13,7 @@ class PrivateProfile extends Component {
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      urlApi: "https://api.comunidadgzone.es/v1/users",
+      urlApi: "https://api.comunidadgzone.es/v1",
       discordtag: "Loading...",
       nickname: "Loading...",
       clanname: "Loading...",
@@ -24,6 +24,9 @@ class PrivateProfile extends Component {
       redirect: false,
       nameInGameInput: "",
       error: null,
+      addClanNameInput: "",
+      addClanColorInput: "",
+      addClanDiscordInput: "",
     };
   }
 
@@ -31,6 +34,7 @@ class PrivateProfile extends Component {
     axios
       .get(
         this.state.urlApi +
+          "/users" +
           "?discordid=" +
           this.state.user_discord_id +
           "&token=" +
@@ -53,8 +57,8 @@ class PrivateProfile extends Component {
         }
         this.setState({ isLoaded: true });
       })
-      .catch((error) => {
-        this.setState({ error: error });
+      .catch((er) => {
+        this.setState({ error: "Try again later" });
       });
   }
 
@@ -64,6 +68,7 @@ class PrivateProfile extends Component {
       axios
         .delete(
           this.state.urlApi +
+            "/users" +
             "?discordid=" +
             this.state.user_discord_id +
             "&token=" +
@@ -78,7 +83,7 @@ class PrivateProfile extends Component {
     event.preventDefault();
     if (event != null) {
       axios
-        .get(this.state.urlApi, {
+        .get(this.state.urlApi + "/users", {
           params: {
             discordid: this.state.user_discord_id,
             token: this.state.token,
@@ -90,7 +95,7 @@ class PrivateProfile extends Component {
           this.setState({ nickname: this.state.nameInGameInput });
         })
         .catch((error) => {
-          this.setState({ error: error });
+          this.setState({ error: "Try again later" });
         });
     }
   };
@@ -99,7 +104,7 @@ class PrivateProfile extends Component {
     event.preventDefault();
     if (event != null) {
       axios
-        .get(this.state.urlApi, {
+        .get(this.state.urlApi + "/users", {
           params: {
             discordid: this.state.user_discord_id,
             token: this.state.token,
@@ -110,7 +115,43 @@ class PrivateProfile extends Component {
           this.setState({ clanname: null });
         })
         .catch((error) => {
-          this.setState({ error: error });
+          this.setState({ error: "Try again later" });
+        });
+    }
+  };
+
+  createClan = (event) => {
+    event.preventDefault();
+    if (event != null) {
+      axios
+        .get(this.state.urlApi + "/clans", {
+          params: {
+            discordid: this.state.user_discord_id,
+            token: this.state.token,
+            accion: "createclan",
+            clanname: this.state.addClanNameInput,
+            clancolor: this.state.addClanColorInput,
+            clandiscord: this.state.addClanDiscordInput,
+          },
+        })
+        .then((response) => {
+          if (response.status === 202) {
+            return (
+              <ModalMessage
+                message={{
+                  isError: false,
+                  text: "The clan has been created",
+                  redirectPage: "/profile",
+                }}
+              />
+            );
+          } else if (response.status === 205) {
+            localStorage.clear();
+            this.setState({ error: "This user cannot be found" });
+          }
+        })
+        .catch((error) => {
+          this.setState({ error: "Try again later" });
         });
     }
   };
@@ -209,26 +250,32 @@ class PrivateProfile extends Component {
           <div className="card border-secondary mb-3">
             <div className="card-header">Add name in the game</div>
             <div className="card-body text-succes">
-              <div className="form-group">
-                <label htmlFor="user_game_name">Your name in Last Oasis</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="nameInGameInput"
-                  value={this.state.nameInGameInput}
-                  onChange={(evt) =>
-                    this.setState({
-                      nameInGameInput: evt.target.value,
-                    })
-                  }
-                />
-              </div>
-              <button
-                className="btn btn-lg btn-outline-success btn-block"
-                onClick={this.addNickInGame}
-              >
-                Add
-              </button>
+              <form onSubmit={this.addNickInGame}>
+                <div className="form-group">
+                  <label htmlFor="user_game_name">
+                    Your name in Last Oasis
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="nameInGameInput"
+                    value={this.state.nameInGameInput}
+                    onChange={(evt) =>
+                      this.setState({
+                        nameInGameInput: evt.target.value,
+                      })
+                    }
+                    required
+                  />
+                </div>
+                <button
+                  className="btn btn-lg btn-outline-success btn-block"
+                  type="submit"
+                  value="Submit"
+                >
+                  Add
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -241,23 +288,79 @@ class PrivateProfile extends Component {
       return (
         <div className="col-xl-6">
           <div className="card border-secondary mb-3">
-            <div className="card-header">Add clan</div>
-            <div className="card-body text-succes">
-              <Link
-                className="btn btn-lg btn-outline-info btn-block"
-                to="/clanlist"
-              >
+            <div className="card-header">
+              <Link className="btn btn-lg btn-info btn-block" to="/clanlist">
                 Join a clan
               </Link>
-              <Link
-                className="btn btn-lg btn-outline-warning btn-block"
-                to="/addclan"
-              >
-                Create a clan
-              </Link>
-              <p className="text-muted text-center">
-                Only valid if you are the owner of the some discord
-              </p>
+            </div>
+            <div className="card-body text-succes">
+              <form onSubmit={this.createClan}>
+                <div className="form-group">
+                  <label htmlFor="clan_name">Clan Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="clan_name"
+                    name="clan_name"
+                    maxLength="20"
+                    value={this.state.addClanNameInput}
+                    onChange={(evt) =>
+                      this.setState({
+                        addClanNameInput: evt.target.value,
+                      })
+                    }
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="flag_color">Flag Color</label>
+                  <input
+                    type="color"
+                    className="form-control"
+                    id="flag_color"
+                    name="flag_color"
+                    value={this.state.addClanColorInput}
+                    onChange={(evt) =>
+                      this.setState({
+                        addClanColorInput: evt.target.value,
+                      })
+                    }
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="discord_invite">
+                    Discord Link Invite (Optional)
+                  </label>
+                  <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">
+                        https://discord.gg/
+                      </span>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="discord_invite"
+                      name="discord_invite"
+                      maxLength="10"
+                      value={this.state.addClanDiscordInput}
+                      onChange={(evt) =>
+                        this.setState({
+                          addClanDiscordInput: evt.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                </div>
+                <button
+                  className="btn btn-lg btn-outline-success btn-block"
+                  type="submit"
+                  value="Submit"
+                >
+                  Create a clan
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -296,7 +399,7 @@ class PrivateProfile extends Component {
             className="btn btn-lg btn-outline-danger btn-block"
             onClick={this.leaveClan}
           >
-            Leave the clan
+            Leave clan
           </button>
         </div>
       );

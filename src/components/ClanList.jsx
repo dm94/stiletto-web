@@ -16,6 +16,7 @@ class ClanList extends Component {
       isLoaded: false,
       clans: null,
       redirect: false,
+      error: null,
     };
   }
 
@@ -31,6 +32,11 @@ class ClanList extends Component {
       .then((response) => {
         if (response.status === 200) {
           this.setState({ clans: response.data });
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
         }
         this.setState({ isLoaded: true });
       });
@@ -98,6 +104,16 @@ class ClanList extends Component {
           message={{
             isError: false,
             text: "Application to enter the clan sent",
+            redirectPage: "/profile",
+          }}
+        />
+      );
+    } else if (this.state.error) {
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: this.state.error,
             redirectPage: "/profile",
           }}
         />
