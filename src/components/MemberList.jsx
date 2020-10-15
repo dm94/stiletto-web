@@ -168,22 +168,14 @@ class MemberList extends Component {
   };
 
   list() {
-    if (this.state.isLoaded) {
-      if (this.state.members != null) {
-        return this.state.members.map((member) => (
-          <MemberListItem
-            key={member.discordid}
-            member={member}
-            onKick={this.kickMember}
-          />
-        ));
-      }
-    } else {
-      return (
-        <tr>
-          <LoadingScreen />
-        </tr>
-      );
+    if (this.state.members != null) {
+      return this.state.members.map((member) => (
+        <MemberListItem
+          key={member.discordid}
+          member={member}
+          onKick={this.kickMember}
+        />
+      ));
     }
   }
 
@@ -239,6 +231,10 @@ class MemberList extends Component {
           }}
         />
       );
+    }
+
+    if (!this.state.isLoaded) {
+      return <LoadingScreen />;
     }
 
     return (
