@@ -63,8 +63,8 @@ class PrivateProfile extends Component {
   }
 
   deleteUser = (event) => {
-    event.preventDefault();
     if (event != null) {
+      event.preventDefault();
       axios
         .delete(
           this.state.urlApi +
@@ -80,8 +80,8 @@ class PrivateProfile extends Component {
   };
 
   addNickInGame = (event) => {
-    event.preventDefault();
     if (event != null) {
+      event.preventDefault();
       axios
         .get(this.state.urlApi + "/users", {
           params: {
@@ -101,8 +101,8 @@ class PrivateProfile extends Component {
   };
 
   leaveClan = (event) => {
-    event.preventDefault();
     if (event != null) {
+      event.preventDefault();
       axios
         .get(this.state.urlApi + "/users", {
           params: {
@@ -121,8 +121,8 @@ class PrivateProfile extends Component {
   };
 
   createClan = (event) => {
-    event.preventDefault();
     if (event != null) {
+      event.preventDefault();
       axios
         .get(this.state.urlApi + "/clans", {
           params: {

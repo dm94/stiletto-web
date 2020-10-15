@@ -55,8 +55,8 @@ class WalkerList extends Component {
   }
 
   linkDiscordServer = (event) => {
-    event.preventDefault();
     if (event != null) {
+      event.preventDefault();
       axios
         .get(this.state.urlApi + "/walkers", {
           params: {
