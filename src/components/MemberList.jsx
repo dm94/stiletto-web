@@ -15,7 +15,6 @@ class MemberList extends Component {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
       clanid: localStorage.getItem("clanid"),
-      urlApi: "https://api.comunidadgzone.es/v1",
       isLoaded: false,
       members: null,
       requestMembers: null,
@@ -26,7 +25,7 @@ class MemberList extends Component {
 
   componentDidMount() {
     axios
-      .get(this.state.urlApi + "/clans", {
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
         params: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
@@ -49,7 +48,7 @@ class MemberList extends Component {
       });
 
     axios
-      .get(this.state.urlApi + "/clans", {
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
         params: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
@@ -71,7 +70,7 @@ class MemberList extends Component {
 
   kickMember = (memberdiscordid) => {
     axios
-      .get(this.state.urlApi + "/clans", {
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
         params: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
@@ -96,7 +95,7 @@ class MemberList extends Component {
 
   acceptMember = (memberdiscordid) => {
     axios
-      .get(this.state.urlApi + "/clans", {
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
         params: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
@@ -110,29 +109,7 @@ class MemberList extends Component {
             (m) => m.discordid !== memberdiscordid
           );
           this.setState({ requestMembers: requestMembers });
-
-          axios
-            .get(this.state.urlApi + "/clans", {
-              params: {
-                discordid: this.state.user_discord_id,
-                token: this.state.token,
-                accion: "seeclanmembers",
-              },
-            })
-            .then((response) => {
-              if (response.status === 200) {
-                this.setState({ members: response.data });
-              } else if (response.status === 205) {
-                localStorage.clear();
-                this.setState({
-                  error: "You don't have access here, try to log in again",
-                });
-              }
-              this.setState({ isLoaded: true });
-            })
-            .catch((error) => {
-              this.setState({ error: "Try again later" });
-            });
+          this.componentDidMount();
         } else {
           this.setState({ error: "Error when add member" });
         }
@@ -144,7 +121,7 @@ class MemberList extends Component {
 
   rejectMember = (memberdiscordid) => {
     axios
-      .get(this.state.urlApi + "/clans", {
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
         params: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),

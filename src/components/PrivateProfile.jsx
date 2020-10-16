@@ -13,7 +13,6 @@ class PrivateProfile extends Component {
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      urlApi: "https://api.comunidadgzone.es/v1",
       discordtag: "Loading...",
       nickname: "Loading...",
       clanname: "Loading...",
@@ -33,8 +32,8 @@ class PrivateProfile extends Component {
   componentDidMount() {
     axios
       .get(
-        this.state.urlApi +
-          "/users" +
+        process.env.REACT_APP_API_URL +
+          "/users.php" +
           "?discordid=" +
           this.state.user_discord_id +
           "&token=" +
@@ -66,8 +65,8 @@ class PrivateProfile extends Component {
     event.preventDefault();
     axios
       .delete(
-        this.state.urlApi +
-          "/users" +
+        process.env.REACT_APP_API_URL +
+          "/users.php" +
           "?discordid=" +
           this.state.user_discord_id +
           "&token=" +
@@ -80,7 +79,7 @@ class PrivateProfile extends Component {
   addNickInGame = (event) => {
     event.preventDefault();
     axios
-      .get(this.state.urlApi + "/users", {
+      .get(process.env.REACT_APP_API_URL + "/users.php", {
         params: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
@@ -99,7 +98,7 @@ class PrivateProfile extends Component {
   leaveClan = (event) => {
     event.preventDefault();
     axios
-      .get(this.state.urlApi + "/users", {
+      .get(process.env.REACT_APP_API_URL + "/users.php", {
         params: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
@@ -117,7 +116,7 @@ class PrivateProfile extends Component {
   createClan = (event) => {
     event.preventDefault();
     axios
-      .get(this.state.urlApi + "/clans", {
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
         params: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
@@ -374,6 +373,12 @@ class PrivateProfile extends Component {
                 to="/walkerlist"
               >
                 Walker list
+              </Link>
+              <Link
+                className="btn btn-lg btn-outline-secondary btn-block"
+                to="/maps"
+              >
+                Resources Maps
               </Link>
             </div>
             {this.leaveClanButton}

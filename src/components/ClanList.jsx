@@ -12,7 +12,6 @@ class ClanList extends Component {
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      urlApi: "https://api.comunidadgzone.es/v1/clans",
       isLoaded: false,
       clans: null,
       redirect: false,
@@ -23,7 +22,8 @@ class ClanList extends Component {
   componentDidMount() {
     axios
       .get(
-        this.state.urlApi +
+        process.env.REACT_APP_API_URL +
+          "/clans.php" +
           "?discordid=" +
           this.state.user_discord_id +
           "&token=" +
@@ -44,7 +44,7 @@ class ClanList extends Component {
 
   sendRequest = (clanid) => {
     axios
-      .get(this.state.urlApi, {
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
         params: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),

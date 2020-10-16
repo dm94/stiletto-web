@@ -12,7 +12,6 @@ class WalkerList extends Component {
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      urlApi: "https://api.comunidadgzone.es/v1",
       isLoaded: false,
       walkers: null,
       redirect: false,
@@ -24,7 +23,7 @@ class WalkerList extends Component {
 
   componentDidMount() {
     axios
-      .get(this.state.urlApi + "/walkers", {
+      .get(process.env.REACT_APP_API_URL + "/walkers.php", {
         params: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
@@ -57,7 +56,7 @@ class WalkerList extends Component {
   linkDiscordServer = (event) => {
     event.preventDefault();
     axios
-      .get(this.state.urlApi + "/walkers", {
+      .get(process.env.REACT_APP_API_URL + "/walkers.php", {
         params: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
@@ -68,9 +67,11 @@ class WalkerList extends Component {
       .then((response) => {
         if (response.status === 202) {
           window.location.href =
-            "https://discord.com/api/oauth2/authorize?client_id=762652181382823946&redirect_uri=" +
-            this.state.urlApi +
-            "/walkers&scope=identify%20guilds&response_type=code";
+            "https://discord.com/api/oauth2/authorize?client_id=" +
+            process.env.REACT_APP_DISCORD_CLIENT_ID +
+            "&redirect_uri=" +
+            process.env.REACT_APP_API_URL +
+            "/walkers.php&scope=identify%20guilds&response_type=code";
         } else if (response.status === 205) {
           localStorage.clear();
           this.setState({

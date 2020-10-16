@@ -26,3 +26,4 @@ public/api
 public/old
 public/img
 yarn.lock
+.env
