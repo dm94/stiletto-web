@@ -11,7 +11,7 @@ class DiscordConnection extends Component {
       process.env.REACT_APP_DISCORD_CLIENT_ID +
       "&redirect_uri=" +
       process.env.REACT_APP_API_URL +
-      "discordlogin.php&scope=identify%20guilds&response_type=code";
+      "/discordlogin.php&scope=identify%20guilds&response_type=code";
     if (parsed.discordid != null && parsed.token != null) {
       localStorage.setItem("discordid", parsed.discordid);
       localStorage.setItem("token", parsed.token);
