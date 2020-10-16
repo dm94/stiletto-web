@@ -13,7 +13,7 @@ class ClanMaps extends Component {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
       clanid: localStorage.getItem("clanid"),
-      isLoaded: false,
+      isLoaded: true,
       maps: null,
       error: null,
     };
