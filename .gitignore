@@ -24,6 +24,5 @@ yarn-error.log*
 package-lock.json
 public/api
 public/old
-public/img
 yarn.lock
 .env
