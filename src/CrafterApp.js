@@ -5,6 +5,7 @@ import ClanList from "./components/ClanList";
 import MemberList from "./components/MemberList";
 import WalkerList from "./components/WalkerList";
 import ClanMaps from "./components/ClanMaps";
+import CookieConsent from "react-cookie-consent";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -119,6 +120,16 @@ function CrafterApp() {
           </a>
         </div>
       </footer>
+      <CookieConsent
+        location="bottom"
+        buttonText="Let´s GO!!"
+        cookieName="acceptscookies"
+        style={{ background: "#2B373B" }}
+        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+        expires={150}
+      >
+        This website uses cookies to enhance the user experience.
+      </CookieConsent>
     </Router>
   );
 }
