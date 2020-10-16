@@ -1,0 +1,44 @@
+[
+  {
+    "idMap": 1,
+    "name": "Canyon",
+    "type": "Medium",
+    "image": "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/canyon.jpg"
+  },
+  {
+    "idMap": 2,
+    "name": "CanyonB",
+    "type": "Medium",
+    "image": "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/canyonB.jpg"
+  },
+  {
+    "idMap": 3,
+    "name": "SleepingGiants",
+    "type": "Difficult",
+    "image": "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/SleepingGiants.jpg"
+  },
+  {
+    "idMap": 4,
+    "name": "SleepingGiantsB",
+    "type": "Difficult",
+    "image": "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/SleepingGiantsB.jpg"
+  },
+  {
+    "idMap": 5,
+    "name": "Volcanic",
+    "type": "Difficult",
+    "image": "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/volcanic.jpg"
+  },
+  {
+    "idMap": 6,
+    "name": "Crater",
+    "type": "Event",
+    "image": "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/crater.jpg"
+  },
+  {
+    "idMap": 7,
+    "name": "Volcanyon",
+    "type": "Difficult",
+    "image": "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/crater.jpg"
+  }
+]
