@@ -381,7 +381,7 @@ class PrivateProfile extends Component {
                 Resources Maps
               </Link>
             </div>
-            {this.leaveClanButton}
+            {this.leaveClanButton()}
           </div>
         </div>
       );
