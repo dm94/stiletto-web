@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ModalMessage from "./ModalMessage";
-import LoadingScreen from "./LoadingScreen";
 import ClanMapItem from "./ClanMapItem";
 
 const axios = require("axios");
