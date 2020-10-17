@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ModalMessage from "./ModalMessage";
 import LoadingScreen from "./LoadingScreen";
+import ClanMapItem from "./ClanMapItem";
 
 const axios = require("axios");
 
@@ -29,6 +30,25 @@ class ClanMaps extends Component {
     )
       .then((response) => response.json())
       .then((maps) => this.setState({ maps }));
+
+    axios
+      .get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({ clanMaps: response.data });
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        }
+        this.setState({ isLoaded: true });
+      });
   }
 
   mapSelect() {
@@ -60,23 +80,96 @@ class ClanMaps extends Component {
   }
 
   clanMapList() {
-    if (this.state.clanMaps != null) {
+    if (this.state.clanMaps != null && this.state.maps != null) {
       return this.state.clanMaps.map((map) => (
-        <div className="m-2 col-sm-2 col-xl text-center">
-          <h6>{map.name}</h6>
-        </div>
+        <ClanMapItem
+          key={"clanmap" + map.mapid}
+          map={map}
+          value={this.getImageMap(map.typemap)}
+          onOpen={this.openMap}
+          onDelete={this.deleteMap}
+        />
       ));
-    } else {
-      return <LoadingScreen />;
     }
   }
+
+  openMap = (map) => {
+    console.log(map.mapid);
+  };
+
+  deleteMap = (mapid) => {
+    console.log("Borrando mapa " + mapid);
+    axios
+      .get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "deletemap",
+          dataupdate: mapid,
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({ error: "Login again" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
+  };
+
+  getImageMap(typemap) {
+    if (this.state.maps != null) {
+      var m = this.state.maps.filter((m) => {
+        return m.idMap === typemap;
+      });
+      if (m[0] != null) {
+        return m[0].image;
+      }
+    }
+    return "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/crater.jpg";
+  }
+
+  createMap = (event) => {
+    event.preventDefault();
+    axios
+      .get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "addmap",
+          mapName: this.state.mapNameInput,
+          mapDate: this.state.mapDateInput,
+          mapType: this.state.mapSelectInput,
+        },
+      })
+      .then((response) => {
+        this.setState({
+          mapNameInput: "",
+          mapDateInput: "",
+          mapSelectInput: "",
+        });
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({ error: "Login again" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
+  };
 
   createMapPanel() {
     return (
       <div className="row">
         <div className="col-xl-12">
           <div className="card border-secondary mb-3">
-            <div className="card-header">Map List</div>
+            <div className="card-header">Map List (Don´t work)</div>
             <div className="card-body row">{this.clanMapList()}</div>
           </div>
         </div>
@@ -84,7 +177,7 @@ class ClanMaps extends Component {
           <div className="card border-secondary mb-3">
             <div className="card-header">New Map</div>
             <div className="card-body text-succes">
-              <form>
+              <form onSubmit={this.createMap}>
                 <div className="row">
                   <div className="col-xl-6 col-sm-12 form-group">
                     <label htmlFor="map_name">Map Name</label>
