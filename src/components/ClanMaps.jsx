@@ -254,7 +254,7 @@ class ClanMaps extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: "You do not have permission to access this page",
+            text: "You have to be connected and have a clan to enter here",
             redirectPage: "/profile",
           }}
         />

@@ -47,6 +47,9 @@ function CrafterApp() {
                 <Link className="dropdown-item" to="/walkerlist">
                   Walker List
                 </Link>
+                <Link className="dropdown-item" to="/maps">
+                  Resources maps
+                </Link>
               </div>
             </li>
             <li className="nav-item dropdown">
