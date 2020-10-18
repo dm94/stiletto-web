@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ModalMessage from "./ModalMessage";
 import ClanMapItem from "./ClanMapItem";
+import ResourceMap from "./ResourceMap";
 
 const axios = require("axios");
 
@@ -20,6 +21,7 @@ class ClanMaps extends Component {
       mapNameInput: "",
       mapDateInput: "",
       mapSelectInput: 1,
+      mapThatIsOpen: null,
     };
   }
 
@@ -93,7 +95,7 @@ class ClanMaps extends Component {
   }
 
   openMap = (map) => {
-    console.log(map.mapid);
+    this.setState({ mapThatIsOpen: map });
   };
 
   deleteMap = (mapid) => {
@@ -132,6 +134,18 @@ class ClanMaps extends Component {
     return "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/crater.jpg";
   }
 
+  getNameMap(typemap) {
+    if (this.state.maps != null) {
+      var m = this.state.maps.filter((m) => {
+        return m.idMap === typemap;
+      });
+      if (m[0] != null) {
+        return m[0].name;
+      }
+    }
+    return "Crater";
+  }
+
   createMap = (event) => {
     event.preventDefault();
     axios
@@ -168,7 +182,7 @@ class ClanMaps extends Component {
       <div className="row">
         <div className="col-xl-12">
           <div className="card border-secondary mb-3">
-            <div className="card-header">Map List (Don´t work)</div>
+            <div className="card-header">Map List</div>
             <div className="card-body row">{this.clanMapList()}</div>
           </div>
         </div>
@@ -223,7 +237,7 @@ class ClanMaps extends Component {
                   type="submit"
                   value="Submit"
                 >
-                  Create new map (Don´t work)
+                  Create new map
                 </button>
               </form>
             </div>
@@ -234,6 +248,16 @@ class ClanMaps extends Component {
   }
 
   render() {
+    if (this.state.mapThatIsOpen) {
+      return (
+        <ResourceMap
+          key={"mapOpen" + this.state.mapThatIsOpen.mapid}
+          onReturn={() => this.setState({ mapThatIsOpen: null })}
+          map={this.state.mapThatIsOpen}
+          value={this.getNameMap(this.state.mapThatIsOpen.typemap)}
+        />
+      );
+    }
     if (this.state.error) {
       return (
         <ModalMessage

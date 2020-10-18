@@ -24,5 +24,6 @@ yarn-error.log*
 package-lock.json
 public/api
 public/old
+public/maps
 yarn.lock
 .env

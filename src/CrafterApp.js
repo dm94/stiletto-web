@@ -6,7 +6,6 @@ import MemberList from "./components/MemberList";
 import WalkerList from "./components/WalkerList";
 import ClanMaps from "./components/ClanMaps";
 import CookieConsent from "react-cookie-consent";
-import ResourceMap from "./components/ResourceMap";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -102,7 +101,6 @@ function CrafterApp() {
           <Route path="/clanlist" component={ClanList} />
           <Route path="/walkerlist" component={WalkerList} />
           <Route path="/maps" component={ClanMaps} />
-          <Route path="/map" component={ResourceMap} />
         </Switch>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
