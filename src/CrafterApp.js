@@ -44,13 +44,17 @@ function CrafterApp() {
                 <Link className="dropdown-item" to="/members">
                   Members
                 </Link>
-                <Link className="dropdown-item" to="/walkerlist">
-                  Walker List
-                </Link>
-                <Link className="dropdown-item" to="/maps">
-                  Resources maps
-                </Link>
               </div>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/walkerlist">
+                Walker List
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/maps">
+                Resources maps
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <div

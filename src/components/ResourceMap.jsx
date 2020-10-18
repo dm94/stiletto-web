@@ -12,17 +12,14 @@ var myIcon = L.icon({
   iconAnchor: [20, 35],
   popupAnchor: [-6, -20],
 });
-var offset = -301040;
+var offset = -3010;
 
 function makeMap() {
-  var minZoom = 0;
-  var maxZoom = 5;
-  var img = [602080, 602080];
+  var img = [6020, 6020];
 
   map = L.map("map", {
-    center: [img[0] / 2, img[1] / 2],
-    minZoom: minZoom,
-    maxZoom: maxZoom,
+    minZoom: 0,
+    maxZoom: 5,
   });
 
   rc = new L.RasterCoords(map, img);
@@ -32,7 +29,7 @@ function makeMap() {
     .layers(
       {},
       {
-        Bounds: layerBounds(map, rc),
+        Markers: layerBounds(map, rc),
       }
     )
     .addTo(map);
@@ -40,7 +37,7 @@ function makeMap() {
 
 function layerBounds(map, rc) {
   var layerBounds = L.layerGroup([
-    L.marker(rc.unproject([-273184 + offset, -48159 + offset]), {
+    L.marker(rc.unproject([-2731 - offset, -481 - offset]), {
       icon: myIcon,
     }).bindPopup("[TEST]"),
   ]);
@@ -54,9 +51,9 @@ function layerBounds(map, rc) {
     marker
       .bindPopup(
         "[" +
-          Math.floor(coord.x - offset) +
+          Math.floor(coord.x + offset) +
           "," +
-          Math.floor(coord.y - offset) +
+          Math.floor(coord.y + offset) +
           "]"
       )
       .openPopup();
