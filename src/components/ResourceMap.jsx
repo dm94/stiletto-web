@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 L.RasterCoords = require("leaflet-rastercoords");
+const axios = require("axios");
 
 let map = null;
 let rc = null;
@@ -14,7 +15,7 @@ var myIcon = L.icon({
 });
 var offset = -3010;
 
-function makeMap() {
+function makeMap(url) {
   var img = [6020, 6020];
 
   map = L.map("map", {
@@ -33,6 +34,9 @@ function makeMap() {
       }
     )
     .addTo(map);
+  L.tileLayer(url, {
+    noWrap: true,
+  }).addTo(map);
 }
 
 function layerBounds(map, rc) {
@@ -79,19 +83,18 @@ class ResourceMap extends Component {
   }
 
   componentDidMount() {
-    fetch(
-      "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json"
-    )
-      .then((response) => response.json())
-      .then((items) => this.setState({ items }));
+    axios
+      .get(
+        "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json"
+      )
+      .then((response) => {
+        const items = response.data.filter((it) => it.category === "materials");
+        this.setState({ items });
+      });
 
-    makeMap();
-    L.tileLayer(
-      process.env.REACT_APP_MAPS_URL + this.state.mapType + "/{z}/{x}/{y}.png",
-      {
-        noWrap: true,
-      }
-    ).addTo(map);
+    makeMap(
+      process.env.REACT_APP_MAPS_URL + this.state.mapType + "/{z}/{x}/{y}.png"
+    );
   }
 
   resourcesList() {
