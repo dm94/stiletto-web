@@ -12,6 +12,7 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 - Create clans, edit clans and link them to a discord server
 - See the list of walkers of that clan, collected by the discord bot
 - Managing clan people
+- Sharing quality maps in the same clan
 
 ### In process
 
@@ -19,6 +20,5 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 
 ### Ideas to be added
 
-- Sharing quality maps in the same clan
 - System to make the web multi-language
 - Trading system
