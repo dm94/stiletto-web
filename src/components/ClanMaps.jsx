@@ -6,8 +6,6 @@ import ResourceMap from "./ResourceMap";
 const axios = require("axios");
 
 class ClanMaps extends Component {
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {

@@ -7,8 +7,6 @@ import RequestMemberListItem from "./RequestMemberListItem";
 const axios = require("axios");
 
 class MemberList extends Component {
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {

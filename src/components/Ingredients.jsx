@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Ingredient from "./Ingredient";
 
 class Ingredients extends Component {
-  state = {};
   render() {
     return (
       <div className="col-sm">

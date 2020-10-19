@@ -5,8 +5,6 @@ import WalkerListItem from "./WalkerListItem";
 const axios = require("axios");
 
 class WalkerList extends Component {
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {

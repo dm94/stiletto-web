@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 class MemberListItem extends Component {
-  state = {};
-
   kickButton() {
     if (this.props.member.leaderid == localStorage.getItem("discordid")) {
       if (this.props.member.discordid != localStorage.getItem("discordid")) {

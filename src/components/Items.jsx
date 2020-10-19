@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Item from "./Item";
 
 class Items extends Component {
-  state = {};
-
   render() {
     return (
       <div>

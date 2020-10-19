@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 class RequestMemberListItem extends Component {
-  state = {};
-
   acceptButton() {
     if (this.props.member.leaderid == localStorage.getItem("discordid")) {
       return (

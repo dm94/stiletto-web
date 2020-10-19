@@ -5,8 +5,6 @@ import ModalMessage from "./ModalMessage";
 const axios = require("axios");
 
 class ClanList extends Component {
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {

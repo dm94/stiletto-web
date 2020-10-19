@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 class ClanMapItem extends Component {
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {

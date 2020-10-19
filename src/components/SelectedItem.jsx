@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Ingredients from "./Ingredients";
 
 class SelectedItem extends Component {
-  state = {};
-
   showIngredient() {
     if (this.props.item.crafting != null) {
       return this.props.item.crafting.map((ingredients) => (

@@ -1,74 +1,32 @@
-import React, { Component } from "react";
+import React, { createRef, Component } from "react";
 import L from "leaflet";
+import { Map, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
+import RasterCoords from "leaflet-rastercoords";
 import "leaflet/dist/leaflet.css";
-L.RasterCoords = require("leaflet-rastercoords");
 const axios = require("axios");
 
-let map = null;
-let rc = null;
-var myIcon = L.icon({
+var myMarker = L.icon({
   iconUrl:
     "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/marker.png",
   iconSize: [25, 41],
-  iconAnchor: [20, 35],
+  iconAnchor: [13, 44],
   popupAnchor: [-6, -20],
 });
-var offset = -3010;
 
-function makeMap(url) {
-  var img = [6020, 6020];
+class MapExtended extends Map {
+  createLeafletElement(props) {
+    let leafletMapElement = super.createLeafletElement(props);
+    let img = [6020, 6020];
 
-  map = L.map("map", {
-    minZoom: 0,
-    maxZoom: 5,
-  });
+    let rc = new RasterCoords(leafletMapElement, img);
 
-  rc = new L.RasterCoords(map, img);
-  map.setView(rc.unproject([img[0], img[1]]), 2);
+    leafletMapElement.setView(rc.unproject([img[0], img[1]]), 2);
 
-  L.control
-    .layers(
-      {},
-      {
-        Markers: layerBounds(map, rc),
-      }
-    )
-    .addTo(map);
-  L.tileLayer(url, {
-    noWrap: true,
-  }).addTo(map);
-}
-
-function layerBounds(map, rc) {
-  var layerBounds = L.layerGroup([
-    L.marker(rc.unproject([-2731 - offset, -481 - offset]), {
-      icon: myIcon,
-    }).bindPopup("[TEST]"),
-  ]);
-  map.addLayer(layerBounds);
-
-  map.on("click", function (event) {
-    var coord = rc.project(event.latlng);
-    var marker = L.marker(rc.unproject(coord), { icon: myIcon }).addTo(
-      layerBounds
-    );
-    marker
-      .bindPopup(
-        "[" +
-          Math.floor(coord.x + offset) +
-          "," +
-          Math.floor(coord.y + offset) +
-          "]"
-      )
-      .openPopup();
-  });
-
-  return layerBounds;
+    return leafletMapElement;
+  }
 }
 
 class ResourceMap extends Component {
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {
@@ -79,6 +37,7 @@ class ResourceMap extends Component {
       coordinateYInput: 0,
       items: null,
       resourcesInTheMap: null,
+      latlng: null,
     };
   }
 
@@ -91,10 +50,6 @@ class ResourceMap extends Component {
         const items = response.data.filter((it) => it.category === "materials");
         this.setState({ items });
       });
-
-    makeMap(
-      process.env.REACT_APP_MAPS_URL + this.state.mapType + "/{z}/{x}/{y}.png"
-    );
   }
 
   resourcesList() {
@@ -107,7 +62,30 @@ class ResourceMap extends Component {
     }
   }
 
+  handleClick = (e) => {
+    console.log(e);
+    this.setState({
+      hasLocation: true,
+      coordinateXInput: Math.floor(e.latlng.lat),
+      coordinateYInput: Math.floor(e.latlng.lng),
+    });
+  };
+
   render() {
+    let position = [this.state.coordinateXInput, this.state.coordinateYInput];
+    const marker = this.state.hasLocation ? (
+      <Marker position={position} icon={myMarker}>
+        <Popup>
+          [
+          {Math.floor(this.state.coordinateXInput) +
+            "," +
+            Math.floor(this.state.coordinateYInput)}
+          ]
+        </Popup>
+        <Tooltip>TEST</Tooltip>
+      </Marker>
+    ) : null;
+
     return (
       <div className="row flex-xl-nowrap">
         <div className="col-xl-3 col-sm-12">
@@ -166,7 +144,9 @@ class ResourceMap extends Component {
                     </select>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="coordinateXInput">Coordinate X</label>
+                    <label htmlFor="coordinateXInput">
+                      Coordinate X (Not the real thing)
+                    </label>
                     <input
                       type="text"
                       className="form-control"
@@ -181,7 +161,9 @@ class ResourceMap extends Component {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="coordinateYInput">Coordinate Y</label>
+                    <label htmlFor="coordinateYInput">
+                      Coordinate Y (Not the real thing)
+                    </label>
                     <input
                       type="text"
                       className="form-control"
@@ -224,11 +206,25 @@ class ResourceMap extends Component {
             </div>
           </nav>
         </div>
-        <div
-          id="map"
-          className="col-xl-9 col-sm-12"
-          style={{ height: 800 }}
-        ></div>
+        <div id="map" className="col-xl-9 col-sm-12">
+          <MapExtended
+            minZoom={0}
+            maxZoom={5}
+            style={{ width: "800px", height: "800px" }}
+            onClick={this.handleClick}
+          >
+            {/* the tile layer containing the image generated with gdal2tiles --leaflet ... */}
+            <TileLayer
+              url={
+                process.env.REACT_APP_MAPS_URL +
+                this.state.mapType +
+                "/{z}/{x}/{y}.png"
+              }
+              noWrap={true}
+            />
+            {marker}
+          </MapExtended>
+        </div>
       </div>
     );
   }

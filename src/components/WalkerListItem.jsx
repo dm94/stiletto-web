@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 
 class WalkerListItem extends Component {
-  state = {};
-
   render() {
     return (
       <tr>

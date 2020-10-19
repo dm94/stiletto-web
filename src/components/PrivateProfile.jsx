@@ -6,8 +6,6 @@ import ModalMessage from "./ModalMessage";
 const axios = require("axios");
 
 class PrivateProfile extends Component {
-  state = {};
-
   constructor(props) {
     super(props);
     this.state = {
