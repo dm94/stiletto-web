@@ -1,4 +1,4 @@
-import React, { createRef, Component } from "react";
+import React, { Component, Fragment } from "react";
 import L from "leaflet";
 import { Map, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import RasterCoords from "leaflet-rastercoords";
@@ -30,6 +30,8 @@ class ResourceMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      user_discord_id: localStorage.getItem("discordid"),
+      token: localStorage.getItem("token"),
       mapType: this.props.value,
       resourcetypeInput: "Aloe",
       qualityInput: 0,
@@ -38,6 +40,7 @@ class ResourceMap extends Component {
       items: null,
       resourcesInTheMap: null,
       latlng: null,
+      hasLocation: false,
     };
   }
 
@@ -50,7 +53,70 @@ class ResourceMap extends Component {
         const items = response.data.filter((it) => it.category === "materials");
         this.setState({ items });
       });
+
+    axios
+      .get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          dataupdate: this.props.map.clanid,
+          accion: "getresources",
+        },
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({ resourcesInTheMap: response.data });
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        }
+      });
   }
+
+  createResource = (event) => {
+    event.preventDefault();
+    axios
+      .get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "addresourcemap",
+          mapid: this.props.map.clanid,
+          resourcetype: this.state.resourcetypeInput,
+          quality: this.state.qualityInput,
+          x: this.state.coordinateXInput,
+          y: this.state.coordinateYInput,
+        },
+      })
+      .then((response) => {
+        this.setState({
+          resourcetypeInput: "Aloe",
+          qualityInput: 0,
+          coordinateXInput: 0,
+          coordinateYInput: 0,
+          hasLocation: false,
+        });
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({ error: "Login again" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
+  };
+
+  handleClick = (e) => {
+    this.setState({
+      hasLocation: true,
+      coordinateXInput: Math.floor(e.latlng.lat),
+      coordinateYInput: Math.floor(e.latlng.lng),
+    });
+  };
 
   resourcesList() {
     if (this.state.items != null) {
@@ -62,14 +128,30 @@ class ResourceMap extends Component {
     }
   }
 
-  handleClick = (e) => {
-    console.log(e);
-    this.setState({
-      hasLocation: true,
-      coordinateXInput: Math.floor(e.latlng.lat),
-      coordinateYInput: Math.floor(e.latlng.lng),
-    });
-  };
+  getMarkers() {
+    if (this.state.resourcesInTheMap != null) {
+      return this.state.resourcesInTheMap.map((resource) => (
+        <Marker
+          key={"resource" + resource.resourceid}
+          position={[resource.x, resource.y]}
+          icon={myMarker}
+        >
+          <Popup>
+            <p>
+              {resource.resourcetype} - Q: {resource.quality}
+            </p>
+            <small className="text-muted">
+              [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
+            </small>
+          </Popup>
+          <Tooltip>
+            {resource.resourcetype} - Q: {resource.quality}
+          </Tooltip>
+        </Marker>
+      ));
+    }
+    return null;
+  }
 
   render() {
     let position = [this.state.coordinateXInput, this.state.coordinateYInput];
@@ -127,7 +209,7 @@ class ResourceMap extends Component {
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
             <div className="nav card border-secondary mb-3">
               <div className="card-body">
-                <form>
+                <form onSubmit={this.createResource}>
                   <div className="form-group">
                     <label htmlFor="resourcetype">Type</label>
                     <select
@@ -199,7 +281,7 @@ class ResourceMap extends Component {
                     type="submit"
                     value="Submit"
                   >
-                    Create resource (Don´t work)
+                    Create resource
                   </button>
                 </form>
               </div>
@@ -213,7 +295,6 @@ class ResourceMap extends Component {
             style={{ width: "800px", height: "800px" }}
             onClick={this.handleClick}
           >
-            {/* the tile layer containing the image generated with gdal2tiles --leaflet ... */}
             <TileLayer
               url={
                 process.env.REACT_APP_MAPS_URL +
@@ -223,6 +304,7 @@ class ResourceMap extends Component {
               noWrap={true}
             />
             {marker}
+            <Fragment>{this.getMarkers()}</Fragment>
           </MapExtended>
         </div>
       </div>
