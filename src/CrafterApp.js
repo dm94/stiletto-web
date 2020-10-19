@@ -6,6 +6,7 @@ import MemberList from "./components/MemberList";
 import WalkerList from "./components/WalkerList";
 import ClanMaps from "./components/ClanMaps";
 import CookieConsent from "react-cookie-consent";
+import Home from "./components/Home";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -18,7 +19,7 @@ function CrafterApp() {
         <div className="navbar-nav-scroll">
           <ul className="navbar-nav bd-navbar-nav flex-row">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/crafter">
                 Crafting
               </Link>
             </li>
@@ -44,17 +45,13 @@ function CrafterApp() {
                 <Link className="dropdown-item" to="/members">
                   Members
                 </Link>
+                <Link className="dropdown-item" to="/walkerlist">
+                  Walker List
+                </Link>
+                <Link className="dropdown-item" to="/maps">
+                  Resources maps
+                </Link>
               </div>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/walkerlist">
-                Walker List
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/maps">
-                Resources maps
-              </Link>
             </li>
             <li className="nav-item dropdown">
               <div
@@ -99,8 +96,9 @@ function CrafterApp() {
       </header>
       <main role="main" className="container-fluid pt-4">
         <Switch>
+          <Route exact path="/" component={Home} />
           <Route path="/profile" component={DiscordConnection} />
-          <Route exact path="/" component={ItemSelector} />
+          <Route exact path="/crafter" component={ItemSelector} />
           <Route path="/members" component={MemberList} />
           <Route path="/clanlist" component={ClanList} />
           <Route path="/walkerlist" component={WalkerList} />
