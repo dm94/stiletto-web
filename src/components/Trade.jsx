@@ -14,7 +14,9 @@ class Trade extends Component {
       this.state.user_discord_id != this.props.trade.discordid
     ) {
       return (
-        <div class="card-footer">Discord: {this.props.trade.discordtag}</div>
+        <div className="card-footer">
+          Discord: {this.props.trade.discordtag}
+        </div>
       );
     } else {
       return (
@@ -36,7 +38,7 @@ class Trade extends Component {
             {this.props.trade.type} - {this.props.trade.region}
           </div>
           <div className="card-body">
-            <h5 class="card-title">
+            <h5 className="card-title">
               {this.props.trade.amount !== 0
                 ? this.props.trade.amount + "x "
                 : ""}{" "}
