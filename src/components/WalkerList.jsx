@@ -16,6 +16,9 @@ class WalkerList extends Component {
       error: null,
       inputDiscodId: "",
       showLinkDiscordButton: false,
+      isFiltered: false,
+      searchInput: "",
+      walkersFiltered: [],
     };
   }
 
@@ -44,10 +47,19 @@ class WalkerList extends Component {
   }
 
   walkerList() {
-    if (this.state.walkers != null && this.state.walkers[0].discordid != null) {
-      return this.state.walkers.map((walker) => (
+    if (this.state.isFiltered) {
+      return this.state.walkersFiltered.map((walker) => (
         <WalkerListItem key={walker.walkerID} walker={walker} />
       ));
+    } else {
+      if (
+        this.state.walkers != null &&
+        this.state.walkers[0].discordid != null
+      ) {
+        return this.state.walkers.map((walker) => (
+          <WalkerListItem key={walker.walkerID} walker={walker} />
+        ));
+      }
     }
   }
 
@@ -80,6 +92,19 @@ class WalkerList extends Component {
       .catch((error) => {
         this.setState({ error: "Try again later" });
       });
+  };
+
+  searchWalkers = (event) => {
+    event.preventDefault();
+    let walkersFiltered = this.state.walkers.filter((w) =>
+      w.name.toLowerCase().match(this.state.searchInput.toLowerCase())
+    );
+    this.setState({ walkersFiltered: walkersFiltered, isFiltered: true });
+  };
+
+  clearSearch = (event) => {
+    event.preventDefault();
+    this.setState({ walkersFiltered: [], isFiltered: false, searchInput: "" });
   };
 
   serverLinkButton() {
@@ -151,8 +176,42 @@ class WalkerList extends Component {
                 <th className="text-center" scope="col">
                   Walker ID
                 </th>
-                <th className="text-center" scope="col">
-                  Name
+                <th scope="col">
+                  <div class="input-group input-group-sm w-50 mb-0 mx-auto">
+                    <input
+                      className="form-control"
+                      id="search-name"
+                      type="search"
+                      placeholder="Name.."
+                      aria-label="Search"
+                      onChange={(evt) =>
+                        this.setState({
+                          searchInput: evt.target.value,
+                        })
+                      }
+                      value={this.state.searchInput}
+                    />
+                    <div class="input-group-append">
+                      <button
+                        type="button"
+                        className="btn btn-secondary"
+                        onClick={(e) => this.searchWalkers(e)}
+                      >
+                        Search
+                      </button>
+                      <button
+                        type="button"
+                        className={
+                          this.state.isFiltered
+                            ? "btn btn-success"
+                            : "btn btn-success d-none"
+                        }
+                        onClick={(e) => this.clearSearch(e)}
+                      >
+                        Clear
+                      </button>
+                    </div>
+                  </div>
                 </th>
                 <th className="text-center" scope="col">
                   Owner

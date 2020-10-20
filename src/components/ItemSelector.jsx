@@ -48,7 +48,7 @@ class ItemSelector extends Component {
     if (event != null) {
       const searchText = event.currentTarget.value;
       const filteredItems = this.state.items.filter((it) =>
-        it.name.toLowerCase().match(searchText)
+        it.name.toLowerCase().match(searchText.toLowerCase())
       );
       this.setState({ searchText });
       this.setState({ filteredItems });
