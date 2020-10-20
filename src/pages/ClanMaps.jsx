@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ModalMessage from "./ModalMessage";
-import ClanMapItem from "./ClanMapItem";
-import ResourceMap from "./ResourceMap";
+import ModalMessage from "../components/ModalMessage";
+import ClanMapItem from "../components/ClanMapItem";
+import ResourceMap from "../components/ResourceMap";
 
 const axios = require("axios");
 

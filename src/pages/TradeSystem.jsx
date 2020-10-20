@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import LoadingScreen from "./LoadingScreen";
-import ModalMessage from "./ModalMessage";
-import Trade from "./Trade";
+import LoadingScreen from "../components/LoadingScreen";
+import ModalMessage from "../components/ModalMessage";
+import Trade from "../components/Trade";
 const axios = require("axios");
 
 class TradeSystem extends Component {
@@ -349,13 +349,13 @@ class TradeSystem extends Component {
                 </div>
                 <div className="col-xl-3 btn-group">
                   <button
-                    className="btn btn-lg btn-warning"
+                    className="btn btn-lg btn-primary"
                     onClick={(e) => this.onClickFilterTrades(e)}
                   >
                     Filter trades
                   </button>
                   <button
-                    className="btn btn-lg btn-primary"
+                    className="btn btn-lg btn-secondary"
                     onClick={(e) => this.onClickCleanTrades(e)}
                   >
                     Clean filter

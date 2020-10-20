@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ModalMessage from "./ModalMessage";
-import LoadingScreen from "./LoadingScreen";
-import WalkerListItem from "./WalkerListItem";
+import ModalMessage from "../components/ModalMessage";
+import LoadingScreen from "../components/LoadingScreen";
+import WalkerListItem from "../components/WalkerListItem";
 const axios = require("axios");
 
 class WalkerList extends Component {

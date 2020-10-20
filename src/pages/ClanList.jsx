@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import LoadingScreen from "./LoadingScreen";
-import ClanListItem from "./ClanListItem";
-import ModalMessage from "./ModalMessage";
+import LoadingScreen from "../components/LoadingScreen";
+import ClanListItem from "../components/ClanListItem";
+import ModalMessage from "../components/ModalMessage";
 const axios = require("axios");
 
 class ClanList extends Component {

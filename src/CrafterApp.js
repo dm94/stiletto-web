@@ -1,13 +1,13 @@
 import React from "react";
-import ItemSelector from "./components/ItemSelector";
-import DiscordConnection from "./components/DiscordConnection";
-import ClanList from "./components/ClanList";
-import MemberList from "./components/MemberList";
-import WalkerList from "./components/WalkerList";
-import ClanMaps from "./components/ClanMaps";
+import ItemSelector from "./pages/ItemSelector";
+import DiscordConnection from "./pages/DiscordConnection";
+import ClanList from "./pages/ClanList";
+import MemberList from "./pages/MemberList";
+import WalkerList from "./pages/WalkerList";
+import ClanMaps from "./pages/ClanMaps";
 import CookieConsent from "react-cookie-consent";
-import Home from "./components/Home";
-import TradeSystem from "./components/TradeSystem";
+import Home from "./pages/Home";
+import TradeSystem from "./pages/TradeSystem";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {

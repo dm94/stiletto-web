@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ModalMessage from "./ModalMessage";
-import LoadingScreen from "./LoadingScreen";
-import MemberListItem from "./MemberListItem";
-import RequestMemberListItem from "./RequestMemberListItem";
+import ModalMessage from "../components/ModalMessage";
+import LoadingScreen from "../components/LoadingScreen";
+import MemberListItem from "../components/MemberListItem";
+import RequestMemberListItem from "../components/RequestMemberListItem";
 
 const axios = require("axios");
 

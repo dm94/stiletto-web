@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PrivateProfile from "./PrivateProfile";
+import PrivateProfile from "../components/PrivateProfile";
 
 const queryString = require("query-string");
 

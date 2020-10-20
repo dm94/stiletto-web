@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Items from "./Items";
-import SelectedItem from "./SelectedItem";
-import Ingredient from "./Ingredient";
+import Items from "../components/Items";
+import SelectedItem from "../components/SelectedItem";
+import Ingredient from "../components/Ingredient";
 
 class ItemSelector extends Component {
   state = {
