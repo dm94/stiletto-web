@@ -7,6 +7,7 @@ import WalkerList from "./components/WalkerList";
 import ClanMaps from "./components/ClanMaps";
 import CookieConsent from "react-cookie-consent";
 import Home from "./components/Home";
+import TradeSystem from "./components/TradeSystem";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -53,6 +54,11 @@ function CrafterApp() {
                 </Link>
               </div>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/trades">
+                Trades
+              </Link>
+            </li>
             <li className="nav-item dropdown">
               <div
                 className="nav-link dropdown-toggle"
@@ -98,11 +104,12 @@ function CrafterApp() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/profile" component={DiscordConnection} />
-          <Route exact path="/crafter" component={ItemSelector} />
+          <Route path="/crafter" component={ItemSelector} />
           <Route path="/members" component={MemberList} />
           <Route path="/clanlist" component={ClanList} />
           <Route path="/walkerlist" component={WalkerList} />
           <Route path="/maps" component={ClanMaps} />
+          <Route path="/trades" component={TradeSystem} />
         </Switch>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">

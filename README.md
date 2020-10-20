@@ -13,6 +13,7 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 - See the list of walkers of that clan, collected by the discord bot
 - Managing clan people
 - Sharing quality maps in the same clan
+- Trading system
 
 ### In process
 
@@ -21,4 +22,3 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 ### Ideas to be added
 
 - System to make the web multi-language
-- Trading system

@@ -38,7 +38,7 @@ class Home extends Component {
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col-6 p-4 d-flex flex-column position-static">
               <h3 className="mb-0">Resources Map</h3>
-              <div class="mb-1 text-muted">In beta stage</div>
+              <div className="mb-1 text-muted">In beta stage</div>
               <p className="card-text mb-auto">
                 Create and edit maps to add resources or strategic points. You
                 need to be logged in and in a clan to use it
@@ -77,6 +77,28 @@ class Home extends Component {
           </div>
         </div>
         <div
+          className="col-md-6"
+          onClick={() => this.setState({ redirectTo: "/trades" })}
+        >
+          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div className="col-6 p-4 d-flex flex-column position-static">
+              <h3 className="mb-0">Trading system</h3>
+              <p className="card-text mb-auto">
+                You can create offers or search for them easily from here, you
+                don't need to be on 20 discord servers looking for who to
+                exchange with
+              </p>
+            </div>
+            <div className="col-6">
+              <img
+                alt="Trade system page"
+                className="img-fluid"
+                src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
           className="col-md-3"
           onClick={() => this.setState({ redirectTo: "/profile" })}
         >
@@ -86,21 +108,6 @@ class Home extends Component {
               <p className="card-text mb-auto">
                 Use this section to control your clan, make alliances or send
                 wars and to easily show it to your clan members.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-3">
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-12 p-4 d-flex flex-column position-static">
-              <h3 className="mb-0">Trading system</h3>
-              <div class="mb-1 text-muted">
-                This function is not yet available
-              </div>
-              <p className="card-text mb-auto">
-                You can create offers or search for them easily from here, you
-                don't need to be on 20 discord servers looking for who to
-                exchange with
               </p>
             </div>
           </div>

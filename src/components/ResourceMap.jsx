@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import L from "leaflet";
 import { Map, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import RasterCoords from "leaflet-rastercoords";
+import ModalMessage from "./ModalMessage";
 import "leaflet/dist/leaflet.css";
 const axios = require("axios");
 
@@ -33,7 +34,7 @@ class ResourceMap extends Component {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
       mapType: this.props.value,
-      resourcetypeInput: "Aloe",
+      resourceTypeInput: "Aloe",
       qualityInput: 0,
       coordinateXInput: 0,
       coordinateYInput: 0,
@@ -59,7 +60,7 @@ class ResourceMap extends Component {
         params: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
-          dataupdate: this.props.map.clanid,
+          dataupdate: this.props.map.mapid,
           accion: "getresources",
         },
       })
@@ -83,8 +84,8 @@ class ResourceMap extends Component {
           discordid: this.state.user_discord_id,
           token: this.state.token,
           accion: "addresourcemap",
-          mapid: this.props.map.clanid,
-          resourcetype: this.state.resourcetypeInput,
+          mapid: this.props.map.mapid,
+          resourcetype: this.state.resourceTypeInput,
           quality: this.state.qualityInput,
           x: this.state.coordinateXInput,
           y: this.state.coordinateYInput,
@@ -92,7 +93,7 @@ class ResourceMap extends Component {
       })
       .then((response) => {
         this.setState({
-          resourcetypeInput: "Aloe",
+          resourceTypeInput: "Aloe",
           qualityInput: 0,
           coordinateXInput: 0,
           coordinateYInput: 0,
@@ -168,6 +169,18 @@ class ResourceMap extends Component {
       </Marker>
     ) : null;
 
+    if (this.state.user_discord_id == null || this.state.token == null) {
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: "You have to be connected and have a clan to enter here",
+            redirectPage: "/profile",
+          }}
+        />
+      );
+    }
+
     return (
       <div className="row flex-xl-nowrap">
         <div className="col-xl-3 col-sm-12">
@@ -215,10 +228,10 @@ class ResourceMap extends Component {
                     <select
                       id="resourcetype"
                       className="custom-select"
-                      value={this.state.resourcetypeInput}
+                      value={this.state.resourceTypeInput}
                       onChange={(evt) =>
                         this.setState({
-                          resourcetypeInput: evt.target.value,
+                          resourceTypeInput: evt.target.value,
                         })
                       }
                     >
