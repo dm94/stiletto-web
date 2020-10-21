@@ -99,16 +99,23 @@ class Home extends Component {
           </div>
         </div>
         <div
-          className="col-md-3"
+          className="col-md-6"
           onClick={() => this.setState({ redirectTo: "/profile" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-12 p-4 d-flex flex-column position-static">
+            <div className="col-6 p-4 d-flex flex-column position-static">
               <h3 className="mb-0">Control the clan</h3>
               <p className="card-text mb-auto">
                 Use this section to control your clan, make alliances or send
                 wars and to easily show it to your clan members.
               </p>
+            </div>
+            <div className="col-6">
+              <img
+                alt="Diplomacy page"
+                className="img-fluid"
+                src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+              />
             </div>
           </div>
         </div>
