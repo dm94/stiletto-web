@@ -112,37 +112,31 @@ class PrivateProfile extends Component {
   };
 
   createClan = (event) => {
-    event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "createclan",
-          clanname: this.state.addClanNameInput,
-          clancolor: this.state.addClanColorInput,
-          clandiscord: this.state.addClanDiscordInput,
-        },
-      })
-      .then((response) => {
-        if (response.status === 202) {
-          return (
-            <ModalMessage
-              message={{
-                isError: false,
-                text: "The clan has been created",
-                redirectPage: "/profile",
-              }}
-            />
-          );
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({ error: "This user cannot be found" });
-        }
-      })
-      .catch((error) => {
-        this.setState({ error: "Try again later" });
-      });
+    if (event != null) {
+      event.preventDefault();
+      axios
+        .get(process.env.REACT_APP_API_URL + "/clans.php", {
+          params: {
+            discordid: this.state.user_discord_id,
+            token: this.state.token,
+            accion: "createclan",
+            clanname: this.state.addClanNameInput,
+            clancolor: this.state.addClanColorInput,
+            clandiscord: this.state.addClanDiscordInput,
+          },
+        })
+        .then((response) => {
+          if (response.status === 202) {
+            this.componentDidMount();
+          } else if (response.status === 205) {
+            localStorage.clear();
+            this.setState({ error: "This user cannot be found" });
+          }
+        })
+        .catch((error) => {
+          this.setState({ error: "Try again later" });
+        });
+    }
   };
 
   showClanSection() {
@@ -283,7 +277,7 @@ class PrivateProfile extends Component {
               </Link>
             </div>
             <div className="card-body text-succes">
-              <form onSubmit={this.createClan}>
+              <form onSubmit={this.createClan()}>
                 <div className="form-group">
                   <label htmlFor="clan_name">Clan Name</label>
                   <input
@@ -377,6 +371,12 @@ class PrivateProfile extends Component {
                 to="/maps"
               >
                 Resources Maps
+              </Link>
+              <Link
+                className="btn btn-lg btn-outline-secondary btn-block"
+                to="/diplomacy"
+              >
+                Diplomacy
               </Link>
             </div>
             {this.leaveClanButton()}

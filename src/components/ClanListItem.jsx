@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import ClanName from "./ClanName";
 
 class ClanListItem extends Component {
   constructor(props) {
@@ -31,7 +32,9 @@ class ClanListItem extends Component {
   render() {
     return (
       <tr>
-        <td className="text-center">{this.props.clan.name}</td>
+        <td className="text-center">
+          <ClanName key={this.props.clan.name} clan={this.props.clan} />
+        </td>
         <td className="text-center">{this.props.clan.discordTag}</td>
         <td className="text-center">
           <a

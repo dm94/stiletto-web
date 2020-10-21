@@ -8,6 +8,7 @@ import ClanMaps from "./pages/ClanMaps";
 import CookieConsent from "react-cookie-consent";
 import Home from "./pages/Home";
 import TradeSystem from "./pages/TradeSystem";
+import Diplomacy from "./pages/Diplomacy";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -51,6 +52,9 @@ function CrafterApp() {
                 </Link>
                 <Link className="dropdown-item" to="/maps">
                   Resources maps
+                </Link>
+                <Link className="dropdown-item" to="/diplomacy">
+                  Diplomacy
                 </Link>
               </div>
             </li>
@@ -110,6 +114,7 @@ function CrafterApp() {
           <Route path="/walkerlist" component={WalkerList} />
           <Route path="/maps" component={ClanMaps} />
           <Route path="/trades" component={TradeSystem} />
+          <Route path="/diplomacy" component={Diplomacy} />
         </Switch>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
