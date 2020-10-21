@@ -133,7 +133,7 @@ class Diplomacy extends Component {
     }
   }
 
-  listOfNPA() {
+  listOfNAP() {
     if (this.state.listOfRelations != null) {
       var allies = this.state.listOfRelations.filter(
         (r) => r.typed == 0 || r.typed == 30
@@ -279,7 +279,7 @@ class Diplomacy extends Component {
               <div className="card-header bg-warning text-dark text-center">
                 Non-attack pact
               </div>
-              <div className="card-body">{this.listOfNPA()}</div>
+              <div className="card-body">{this.listOfNAP()}</div>
             </div>
           </div>
           <div className="col-md-3">
