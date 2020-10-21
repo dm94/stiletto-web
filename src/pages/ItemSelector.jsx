@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Items from "../components/Items";
 import SelectedItem from "../components/SelectedItem";
-import Ingredient from "../components/Ingredient";
+import TotalMaterials from "../components/TotalMaterials";
 
 class ItemSelector extends Component {
   state = {
@@ -187,35 +187,6 @@ class ItemSelector extends Component {
     this.setState({ selectedItems });
   }
 
-  showTotal() {
-    let totalIngredients = [];
-    this.state.selectedItems.forEach((item) => {
-      if (item.crafting != null) {
-        if (item.crafting[0].ingredients != null) {
-          item.crafting[0].ingredients.forEach((ingredient) => {
-            if (
-              totalIngredients.find((ingre) => ingre.name === ingredient.name)
-            ) {
-              totalIngredients.forEach((ingre) => {
-                if (ingre.name === ingredient.name) {
-                  ingre.count += ingredient.count * item.count;
-                }
-              });
-            } else {
-              totalIngredients.push({
-                name: ingredient.name,
-                count: ingredient.count * item.count,
-              });
-            }
-          });
-        }
-      }
-    });
-    return totalIngredients.map((ingredient) => (
-      <Ingredient key={ingredient.name} ingredient={ingredient} value={1} />
-    ));
-  }
-
   render() {
     return (
       <div className="row flex-xl-nowrap">
@@ -271,14 +242,10 @@ class ItemSelector extends Component {
         <main role="main" className="col-md-9 col-xl-8">
           <div className="col-12 card-group">{this.showSelectedItems()}</div>
           <div className="col-12">
-            <div className="card border-warning mb-3">
-              <div className="card-header border-warning">
-                <div className="font-weight-normal">Total materials</div>
-              </div>
-              <div className="card-body">
-                <div className="list-unstyled">{this.showTotal()}</div>
-              </div>
-            </div>
+            <TotalMaterials
+              key="totalmaterialsid"
+              selectedItems={this.state.selectedItems}
+            />
           </div>
         </main>
       </div>
