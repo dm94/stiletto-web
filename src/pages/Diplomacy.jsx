@@ -56,10 +56,6 @@ class Diplomacy extends Component {
           typed: this.state.typedInput,
         },
       })
-      .then((response) => {
-        if (response.status === 202) {
-        }
-      })
       .catch((error) => {
         this.setState({ error: "Try again later" });
       });
@@ -166,7 +162,7 @@ class Diplomacy extends Component {
               <form onSubmit={this.createRelationship}>
                 <div className="row">
                   <div className="form-group col">
-                    <label htmlFor="typedInput">Clan Name</label>
+                    <label htmlFor="typedInput">Type</label>
                     <select
                       id="typedInput"
                       className="custom-select"
@@ -177,7 +173,7 @@ class Diplomacy extends Component {
                         })
                       }
                     >
-                      <option value="0">PNA</option>
+                      <option value="0">NPA</option>
                       <option value="1">Ally</option>
                       <option value="2">Enemy</option>
                     </select>
