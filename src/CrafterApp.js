@@ -9,6 +9,7 @@ import CookieConsent from "react-cookie-consent";
 import Home from "./pages/Home";
 import TradeSystem from "./pages/TradeSystem";
 import Diplomacy from "./pages/Diplomacy";
+import AuctionTimers from "./pages/AuctionTimers";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -63,6 +64,11 @@ function CrafterApp() {
                 Trades
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/auctions">
+                Auction Timers
+              </Link>
+            </li>
             <li className="nav-item dropdown">
               <div
                 className="nav-link dropdown-toggle"
@@ -115,6 +121,7 @@ function CrafterApp() {
           <Route path="/maps" component={ClanMaps} />
           <Route path="/trades" component={TradeSystem} />
           <Route path="/diplomacy" component={Diplomacy} />
+          <Route path="/auctions" component={AuctionTimers} />
         </Switch>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
