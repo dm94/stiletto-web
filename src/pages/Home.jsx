@@ -33,6 +33,49 @@ class Home extends Component {
         </div>
         <div
           className="col-md-6"
+          onClick={() => this.setState({ redirectTo: "/auctions" })}
+        >
+          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div className="col-6 p-4 d-flex flex-column position-static">
+              <h3 className="mb-0">Auctions timers</h3>
+              <p className="card-text mb-auto">
+                See how much time is left to finish the auctions of the maps you
+                want easily
+              </p>
+            </div>
+            <div className="col-6">
+              <img
+                alt="Diplomacy page"
+                className="img-fluid"
+                src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-6"
+          onClick={() => this.setState({ redirectTo: "/trades" })}
+        >
+          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div className="col-6 p-4 d-flex flex-column position-static">
+              <h3 className="mb-0">Trading system</h3>
+              <p className="card-text mb-auto">
+                You can create offers or search for them easily from here, you
+                don't need to be on 20 discord servers looking for who to
+                exchange with
+              </p>
+            </div>
+            <div className="col-6">
+              <img
+                alt="Trade system page"
+                className="img-fluid"
+                src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-md-6"
           onClick={() => this.setState({ redirectTo: "/maps" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -72,28 +115,6 @@ class Home extends Component {
                 alt="Resources map page"
                 className="img-fluid"
                 src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/trades" })}
-        >
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-6 p-4 d-flex flex-column position-static">
-              <h3 className="mb-0">Trading system</h3>
-              <p className="card-text mb-auto">
-                You can create offers or search for them easily from here, you
-                don't need to be on 20 discord servers looking for who to
-                exchange with
-              </p>
-            </div>
-            <div className="col-6">
-              <img
-                alt="Trade system page"
-                className="img-fluid"
-                src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
               />
             </div>
           </div>
