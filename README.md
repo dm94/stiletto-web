@@ -14,6 +14,7 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 - Managing clan people
 - Sharing quality maps in the same clan
 - Trading system
+- Auction Timers
 
 ### In process
 

@@ -30,10 +30,14 @@ class Timer extends Component {
         this.setState({ seconds: this.state.seconds - 1 });
       } else if (this.state.seconds == 0) {
         if (this.state.minutes > 0) {
-          this.setState({ minutes: this.state.minutes - 1, seconds: 60 });
+          this.setState({ minutes: this.state.minutes - 1, seconds: 59 });
         } else if (this.state.minutes == 0) {
           if (this.state.hours > 0) {
-            this.setState({ hours: this.state.hours - 1, minutes: 60 });
+            this.setState({
+              hours: this.state.hours - 1,
+              minutes: 59,
+              seconds: 59,
+            });
           }
         }
       }
@@ -70,7 +74,7 @@ class Timer extends Component {
                   id="minutes"
                   value={this.state.minutes}
                   onChange={(e) => this.setState({ minutes: e.target.value })}
-                  max="60"
+                  max="59"
                   min="0"
                   className="text-right form-control"
                 />
@@ -84,7 +88,7 @@ class Timer extends Component {
                   id="seconds"
                   value={this.state.seconds}
                   onChange={(e) => this.setState({ seconds: e.target.value })}
-                  max="60"
+                  max="59"
                   min="0"
                   className="text-right form-control"
                 />
