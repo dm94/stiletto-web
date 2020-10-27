@@ -25,7 +25,7 @@ class ClanMaps extends Component {
 
   componentDidMount() {
     fetch(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/maps.json"
+      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.json"
     )
       .then((response) => response.json())
       .then((maps) => this.setState({ maps }));

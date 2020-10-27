@@ -38,7 +38,7 @@ class ItemSelector extends Component {
 
   componentDidMount() {
     fetch(
-      "https://raw.githubusercontent.com/dm94/lastoasisbot/master/itemsES_min.json"
+      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json"
     )
       .then((response) => response.json())
       .then((items) => this.setState({ items }));
@@ -65,7 +65,7 @@ class ItemSelector extends Component {
         this.setState({ languaje: "EN" });
       } else {
         itemsUrlJson =
-          "https://raw.githubusercontent.com/dm94/lastoasisbot/master/itemsES_min.json";
+          "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json";
         this.setState({ languaje: "ES" });
       }
       fetch(itemsUrlJson)
