@@ -214,6 +214,18 @@ class PrivateProfile extends Component {
               </div>
             </div>
           </div>
+          <div className="col-xl-6">
+            <div className="card border-secondary mb-3">
+              <div className="card-body">
+                <Link
+                  className="btn btn-lg btn-outline-secondary btn-block"
+                  to="/maps"
+                >
+                  Resources Maps
+                </Link>
+              </div>
+            </div>
+          </div>
           {this.changeNamePart()}
           {this.manageClanPart()}
         </div>

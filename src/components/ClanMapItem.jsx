@@ -28,14 +28,22 @@ class ClanMapItem extends Component {
           >
             Show map
           </button>
-          <button
-            className="btn btn-danger btn-sm"
-            variant="primary"
-            onClick={() => this.props.onDelete(this.props.map.mapid)}
-          >
-            Delete map
-          </button>
+          {this.deleteMapButton()}
         </div>
+      );
+    }
+  }
+
+  deleteMapButton() {
+    if (this.props.map.discordid == localStorage.getItem("discordid")) {
+      return (
+        <button
+          className="btn btn-danger btn-sm"
+          variant="primary"
+          onClick={() => this.props.onDelete(this.props.map.mapid)}
+        >
+          Delete map
+        </button>
       );
     }
   }
