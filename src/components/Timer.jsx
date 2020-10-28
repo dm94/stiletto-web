@@ -36,7 +36,7 @@ class Timer extends Component {
             this.setState({
               hours: this.state.hours - 1,
               minutes: 59,
-              seconds: 59,
+              seconds: 60,
             });
           }
         }

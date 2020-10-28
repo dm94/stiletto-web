@@ -11,7 +11,6 @@ class ClanMaps extends Component {
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      clanid: localStorage.getItem("clanid"),
       isLoaded: false,
       maps: null,
       clanMaps: null,
@@ -266,11 +265,7 @@ class ClanMaps extends Component {
           }}
         />
       );
-    } else if (
-      this.state.clanid == "null" ||
-      this.state.user_discord_id == null ||
-      this.state.token == null
-    ) {
+    } else if (this.state.user_discord_id == null || this.state.token == null) {
       return (
         <ModalMessage
           message={{
