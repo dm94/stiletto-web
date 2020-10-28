@@ -214,6 +214,8 @@ class PrivateProfile extends Component {
               </div>
             </div>
           </div>
+          {this.changeNamePart()}
+          {this.manageClanPart()}
           <div className="col-xl-6">
             <div className="card border-secondary mb-3">
               <div className="card-body">
@@ -226,8 +228,6 @@ class PrivateProfile extends Component {
               </div>
             </div>
           </div>
-          {this.changeNamePart()}
-          {this.manageClanPart()}
         </div>
       );
     } else {

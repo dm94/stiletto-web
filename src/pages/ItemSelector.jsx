@@ -70,7 +70,9 @@ class ItemSelector extends Component {
       }
       fetch(itemsUrlJson)
         .then((response) => response.json())
-        .then((items) => this.setState({ items }));
+        .then((items) =>
+          this.setState({ items: items, filteredItems: [], searchText: "" })
+        );
     }
   };
 
@@ -201,6 +203,7 @@ class ItemSelector extends Component {
               placeholder="Search"
               aria-label="Search"
               onChange={this.handleInputChangeSearchItem}
+              value={this.state.searchText}
             />
             <button
               className="btn d-md-none p-0 ml-3"
