@@ -18,6 +18,7 @@ class MemberList extends Component {
       requestMembers: null,
       error: null,
       isLoadedRequestList: false,
+      redirectMessage: null,
     };
   }
 
@@ -154,6 +155,7 @@ class MemberList extends Component {
       .then((response) => {
         if (response.status === 202) {
           localStorage.setItem("clanid", "null");
+          this.setState({ redirectMessage: "Clan deleted correctly" });
         } else {
           this.setState({ error: "Error when delete clan" });
         }
@@ -208,12 +210,18 @@ class MemberList extends Component {
       this.state.members[0].leaderid == localStorage.getItem("discordid")
     ) {
       return (
-        <button
-          className="btn btn-block btn-danger"
-          onClick={() => this.deleteClan()}
-        >
-          Delete Clan
-        </button>
+        <div className="col-xl-6">
+          <div className="card mb-3">
+            <div className="card-body">
+              <button
+                className="btn btn-block btn-danger"
+                onClick={() => this.deleteClan()}
+              >
+                Delete Clan
+              </button>
+            </div>
+          </div>
+        </div>
       );
     }
   }
@@ -225,6 +233,16 @@ class MemberList extends Component {
           message={{
             isError: true,
             text: this.state.error,
+            redirectPage: "/profile",
+          }}
+        />
+      );
+    } else if (this.state.redirectMessage) {
+      return (
+        <ModalMessage
+          message={{
+            isError: false,
+            text: this.state.redirectMessage,
             redirectPage: "/profile",
           }}
         />
