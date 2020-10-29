@@ -15,6 +15,7 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 - Sharing quality maps in the same clan
 - Trading system
 - Auction Timers
+- Section where to create a list of allies, enemies or NAP
 
 ### In process
 
@@ -23,3 +24,9 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 ### Ideas to be added
 
 - System to make the web multi-language
+
+#### Environmental variables
+
+REACT_APP_API_URL= API ADDRESS
+REACT_APP_DISCORD_CLIENT_ID= DISCORD CLIENT ID
+REACT_APP_MAPS_URL= Address where maps are hosted

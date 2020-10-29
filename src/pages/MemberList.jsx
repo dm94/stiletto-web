@@ -142,6 +142,27 @@ class MemberList extends Component {
       });
   };
 
+  deleteClan = () => {
+    axios
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
+        params: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          accion: "deleteclan",
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          localStorage.setItem("clanid", "null");
+        } else {
+          this.setState({ error: "Error when delete clan" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
+  };
+
   list() {
     if (this.state.members != null) {
       return this.state.members.map((member) => (
@@ -181,6 +202,22 @@ class MemberList extends Component {
     }
   }
 
+  deleteClanButton() {
+    if (
+      this.state.members != null &&
+      this.state.members[0].leaderid == localStorage.getItem("discordid")
+    ) {
+      return (
+        <button
+          className="btn btn-block btn-danger"
+          onClick={() => this.deleteClan()}
+        >
+          Delete Clan
+        </button>
+      );
+    }
+  }
+
   render() {
     if (this.state.error) {
       return (
@@ -214,6 +251,7 @@ class MemberList extends Component {
 
     return (
       <div className="row">
+        {this.deleteClanButton()}
         <div className="col-xl-6">
           <div className="card mb-3">
             <div className="card-header">Member List</div>

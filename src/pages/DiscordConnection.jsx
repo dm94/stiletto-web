@@ -24,9 +24,18 @@ class DiscordConnection extends Component {
       return <PrivateProfile key={localStorage.getItem("discordid")} />;
     } else {
       return (
-        <a className="btn btn-lg btn-outline-primary btn-block" href={urlLink}>
-          <i className="fab fa-discord"></i>Login with discord
-        </a>
+        <div className="col-xl-6">
+          <div className="card border-secondary mb-3">
+            <div className="card-body text-succes">
+              <a
+                className="btn btn-lg btn-outline-primary btn-block"
+                href={urlLink}
+              >
+                <i className="fab fa-discord"></i>Login with discord
+              </a>
+            </div>
+          </div>
+        </div>
       );
     }
   }
