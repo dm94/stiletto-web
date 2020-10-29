@@ -162,7 +162,8 @@ class WalkerList extends Component {
     }
     if (
       localStorage.getItem("discordid") != null &&
-      localStorage.getItem("token") != null
+      localStorage.getItem("token") != null &&
+      localStorage.getItem("token") != "null"
     ) {
       if (!this.state.isLoaded) {
         return <LoadingScreen />;
@@ -233,7 +234,7 @@ class WalkerList extends Component {
       <ModalMessage
         message={{
           isError: true,
-          text: "Login to access this section",
+          text: "You need to have a clan to access this section",
           redirectPage: "/profile",
         }}
       />

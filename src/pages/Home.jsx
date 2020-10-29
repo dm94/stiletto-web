@@ -83,8 +83,7 @@ class Home extends Component {
               <h3 className="mb-0">Resources Map</h3>
               <div className="mb-1 text-muted">In beta stage</div>
               <p className="card-text mb-auto">
-                Create and edit maps to add resources or strategic points. You
-                need to be logged in and in a clan to use it
+                Create and edit maps to add resources or strategic points.
               </p>
             </div>
             <div className="col-6">

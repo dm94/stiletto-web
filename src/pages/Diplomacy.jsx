@@ -239,7 +239,7 @@ class Diplomacy extends Component {
         />
       );
     } else if (
-      this.state.clanid == null ||
+      this.state.clanid == "null" ||
       this.state.user_discord_id == null ||
       this.state.token == null
     ) {
