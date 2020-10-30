@@ -55,7 +55,7 @@ class PrivateProfile extends Component {
         this.setState({ isLoaded: true });
       })
       .catch((er) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   }
 
@@ -89,7 +89,7 @@ class PrivateProfile extends Component {
         this.setState({ nickname: this.state.nameInGameInput });
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -107,7 +107,7 @@ class PrivateProfile extends Component {
         this.setState({ clanname: null });
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -132,7 +132,7 @@ class PrivateProfile extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 

@@ -210,7 +210,7 @@ class MemberList extends Component {
       this.state.members[0].leaderid == localStorage.getItem("discordid")
     ) {
       return (
-        <div className="col-xl-6">
+        <div className="col-xl-12">
           <div className="card mb-3">
             <div className="card-body">
               <button
