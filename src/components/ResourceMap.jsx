@@ -111,6 +111,30 @@ class ResourceMap extends Component {
       });
   };
 
+  deleteResource = (resourceid) => {
+    axios
+      .get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "deleteresource",
+          mapid: this.props.map.mapid,
+          dataupdate: resourceid,
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({ error: "Login again" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
+  };
+
   handleClick = (e) => {
     this.setState({
       hasLocation: true,
@@ -138,12 +162,18 @@ class ResourceMap extends Component {
           icon={myMarker}
         >
           <Popup>
-            <p>
+            <div className="mb-0">
               {resource.resourcetype} - Q: {resource.quality}
-            </p>
-            <small className="text-muted">
+            </div>
+            <div className="mb-1 text-muted">
               [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
-            </small>
+            </div>
+            <button
+              className="btn btn-danger"
+              onClick={() => this.deleteResource(resource.resourceid)}
+            >
+              Delete
+            </button>
           </Popup>
           <Tooltip>
             {resource.resourcetype} - Q: {resource.quality}

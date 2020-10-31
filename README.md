@@ -27,6 +27,6 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 
 #### Environmental variables
 
-REACT_APP_API_URL= API ADDRESS
-REACT_APP_DISCORD_CLIENT_ID= DISCORD CLIENT ID
-REACT_APP_MAPS_URL= Address where maps are hosted
+- REACT_APP_API_URL= API ADDRESS
+- REACT_APP_DISCORD_CLIENT_ID= DISCORD CLIENT ID
+- REACT_APP_MAPS_URL= Address where maps are hosted

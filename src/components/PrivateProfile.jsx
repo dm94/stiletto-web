@@ -377,12 +377,6 @@ class PrivateProfile extends Component {
               </Link>
               <Link
                 className="btn btn-lg btn-outline-secondary btn-block"
-                to="/maps"
-              >
-                Resources Maps
-              </Link>
-              <Link
-                className="btn btn-lg btn-outline-secondary btn-block"
                 to="/diplomacy"
               >
                 Diplomacy
