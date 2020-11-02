@@ -153,13 +153,32 @@ class ResourceMap extends Component {
     }
   }
 
+  getMarketDesign(resource) {
+    var res = resource.replace(" ", "_");
+    var marker = null;
+    var img = new Image();
+    img.src = "http://api2.comunidadgzone.es/markers/" + res + ".png";
+    if (img.complete) {
+      marker = L.icon({
+        iconUrl: "http://api2.comunidadgzone.es/markers/" + res + ".png",
+        iconSize: [25, 41],
+        iconAnchor: [13, 44],
+        popupAnchor: [-6, -20],
+      });
+    } else {
+      marker = myMarker;
+    }
+
+    return marker;
+  }
+
   getMarkers() {
     if (this.state.resourcesInTheMap != null) {
       return this.state.resourcesInTheMap.map((resource) => (
         <Marker
           key={"resource" + resource.resourceid}
           position={[resource.x, resource.y]}
-          icon={myMarker}
+          icon={this.getMarketDesign(resource.resourcetype)}
         >
           <Popup>
             <div className="mb-0">

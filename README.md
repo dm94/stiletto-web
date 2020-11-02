@@ -30,3 +30,10 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 - REACT_APP_API_URL= API ADDRESS
 - REACT_APP_DISCORD_CLIENT_ID= DISCORD CLIENT ID
 - REACT_APP_MAPS_URL= Address where maps are hosted
+
+#### Generate maps
+
+Library: [gdal2tiles-leaflet](https://github.com/commenthol/gdal2tiles-leaflet)
+
+Command to generate it:
+`python gdal2tiles.py -l -p raster -z 0-5 -w none <image> <folder>`
