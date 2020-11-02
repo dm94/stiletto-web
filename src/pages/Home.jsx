@@ -120,7 +120,7 @@ class Home extends Component {
         </div>
         <div
           className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/profile" })}
+          onClick={() => this.setState({ redirectTo: "/diplomacy" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col-6 p-4 d-flex flex-column position-static">
