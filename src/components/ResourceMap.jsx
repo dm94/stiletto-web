@@ -157,10 +157,10 @@ class ResourceMap extends Component {
     var res = resource.replace(" ", "_");
     var marker = null;
     var img = new Image();
-    img.src = "http://api2.comunidadgzone.es/markers/" + res + ".png";
+    img.src = "https://api2.comunidadgzone.es/markers/" + res + ".png";
     if (img.complete) {
       marker = L.icon({
-        iconUrl: "http://api2.comunidadgzone.es/markers/" + res + ".png",
+        iconUrl: "https://api2.comunidadgzone.es/markers/" + res + ".png",
         iconSize: [25, 41],
         iconAnchor: [13, 44],
         popupAnchor: [-6, -20],
