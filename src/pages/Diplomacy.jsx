@@ -173,9 +173,9 @@ class Diplomacy extends Component {
                         })
                       }
                     >
-                      <option value="0">NPA</option>
+                      <option value="0">NPA or Settler</option>
                       <option value="1">Ally</option>
-                      <option value="2">Enemy</option>
+                      <option value="2">War</option>
                     </select>
                   </div>
                   <div className="form-group col">
@@ -273,7 +273,7 @@ class Diplomacy extends Component {
           <div className="col-md-3">
             <div className="card mb-4 shadow-sm border-warning">
               <div className="card-header bg-warning text-dark text-center">
-                Non-attack pact
+                NAP or Settlers
               </div>
               <div className="card-body">{this.listOfNAP()}</div>
             </div>
@@ -281,7 +281,7 @@ class Diplomacy extends Component {
           <div className="col-md-3">
             <div className="card mb-4 shadow-sm border-danger">
               <div className="card-header bg-danger text-white text-center">
-                Enemies
+                War
               </div>
               <div className="card-body">{this.listOfEnemies()}</div>
             </div>
