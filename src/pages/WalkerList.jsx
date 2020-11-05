@@ -110,37 +110,60 @@ class WalkerList extends Component {
   serverLinkButton() {
     if (this.state.walkers != null && !this.state.walkers[0].discordid) {
       return (
-        <div className="col-xl-4">
-          <div className="card border-secondary mb-3">
-            <div className="card-body">
-              <div className="text-info mb-3">
-                For the walkers to appear it is necessary to link the discord
-                server with the clan, only users with administration power can
-                add the discord server.
-              </div>
-              <form onSubmit={this.linkDiscordServer}>
-                <div className="form-group">
-                  <label htmlFor="discordlist">Discord ID</label>
-                  <input
-                    className="form-control"
-                    type="number"
-                    value={this.state.inputDiscodId}
-                    onChange={(evt) =>
-                      this.setState({
-                        inputDiscodId: evt.target.value,
-                      })
-                    }
-                    required
-                  />
+        <div className="row">
+          <div className="col-xl-4">
+            <div className="card border-secondary mb-3">
+              <div className="card-body">
+                <div className="text-info mb-3">
+                  For the walkers to appear it is necessary to link the discord
+                  server with the clan, only users with administration power can
+                  add the discord server.
                 </div>
-                <button
+                <form onSubmit={this.linkDiscordServer}>
+                  <div className="form-group">
+                    <label htmlFor="discordlist">Discord ID</label>
+                    <input
+                      className="form-control"
+                      type="number"
+                      value={this.state.inputDiscodId}
+                      onChange={(evt) =>
+                        this.setState({
+                          inputDiscodId: evt.target.value,
+                        })
+                      }
+                      required
+                    />
+                  </div>
+                  <button
+                    className="btn btn-lg btn-outline-success btn-block"
+                    type="submit"
+                    value="Submit"
+                  >
+                    Link discord server
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-4">
+            <div className="card border-secondary mb-3">
+              <div className="card-header">Discord Bot</div>
+              <div className="card-body">
+                <div className="mb-3">
+                  You need to add the bot to your discord to compile the list of
+                  walkers from the log, but it also has other functions like
+                  checking what you need to do the different items
+                </div>
+
+                <a
                   className="btn btn-lg btn-outline-success btn-block"
-                  type="submit"
-                  value="Submit"
+                  href="https://top.gg/bot/715948052979908911"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Link discord server
-                </button>
-              </form>
+                  Discord Bot
+                </a>
+              </div>
             </div>
           </div>
         </div>
