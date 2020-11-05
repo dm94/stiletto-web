@@ -40,5 +40,11 @@
     "name": "Volcanyon",
     "type": "Difficult",
     "image": "https://api2.comunidadgzone.es/maps/volcanyon.jpg"
+  },
+  {
+    "idMap": 8,
+    "name": "AncientCity",
+    "type": "Event",
+    "image": "https://api2.comunidadgzone.es/maps/crater.jpg"
   }
 ]

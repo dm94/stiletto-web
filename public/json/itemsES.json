@@ -14467,5 +14467,361 @@
         ]
       }
     ]
+  }, {
+    "name": "Hardened Hellfire Bolt",
+    "category": "items/ammo/ammunition/projectiles/ballista",
+    "cost": {
+      "name": "Placas",
+      "count": 22
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Perno infernal",
+            "count": 1
+          }, {
+            "name": "Esquirla de cerámica",
+            "count": 2
+          }, {
+            "name": "Mineral de Nibiru",
+            "count": 1
+          }, {
+            "name": "Combustible liquido",
+            "count": 2
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Base Maintenance Chest",
+    "category": "buildings/construction/container",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Madera",
+            "count": 130
+          }, {
+            "name": "Fibra",
+            "count": 25
+          }, {
+            "name": "Piedra",
+            "count": 25
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Cuerpo Walker Hercul",
+    "category": "walkers/hercul",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Madera",
+            "count": 1580
+          }, {
+            "name": "Piedra",
+            "count": 270
+          }, {
+            "name": "Fibra",
+            "count": 1200
+          }, {
+            "name": "Cuerda",
+            "count": 15
+          }, {
+            "name": "Poste de madera",
+            "count": 45
+          }, {
+            "name": "Ceresina",
+            "count": 10
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hercul Walker Legs",
+    "category": "walkers/hercul/parts/legs",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Madera",
+            "count": 280
+          }, {
+            "name": "Poste de Madera",
+            "count": 36
+          }, {
+            "name": "Ceresina",
+            "count": 42
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hercul Walker Wings",
+    "category": "walkers/hercul/parts/wings",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Madera",
+            "count": 93
+          }, {
+            "name": "Tejido de Fibra",
+            "count": 52
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hercul Walker Legs Armored",
+    "category": "walkers/hercul/parts/legs",
+    "cost": {
+      "name": "Placas",
+      "count": 3
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Madera",
+            "count": 1470
+          }, {
+            "name": "Poste de Madera",
+            "count": 183
+          }, {
+            "name": "Esquirla de Cerámica",
+            "count": 102
+          }, {
+            "name": "Adhesivo de hueso",
+            "count": 33
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hercul Walker Wings Heavy",
+    "category": "walkers/hercul/parts/wings",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Poste de Madera",
+            "count": 78
+          }, {
+            "name": "Cuerda",
+            "count": 40
+          }, {
+            "name": "Tela Nomad",
+            "count": 14
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Alas medianas de Walker Hercul",
+    "category": "walkers/hercul/parts/wings",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Poste de Madera",
+            "count": 92
+          }, {
+            "name": "Tela Nomad",
+            "count": 8
+          }, {
+            "name": "Esconderse",
+            "count": 50
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hercul Walker Wings Raider",
+    "category": "walkers/hercul/parts/wings",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Reforzar tablón",
+            "count": 70
+          }, {
+            "name": "Seda de gusano",
+            "count": 60
+          }, {
+            "name": "Esconderse",
+            "count": 120
+          }, {
+            "name": "Madera de secuoya roja",
+            "count": 24
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hercul Walker Wings Rugged",
+    "category": "walkers/hercul/parts/wings",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Reforzar tablón",
+            "count": 60
+          }, {
+            "name": "Seda de gusano",
+            "count": 40
+          }, {
+            "name": "Esconderse",
+            "count": 60
+          }, {
+            "name": "Madera de secuoya roja",
+            "count": 14
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hercul Walker Wings Skirmish",
+    "category": "walkers/hercul/parts/wings",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Reforzar tablón",
+            "count": 70
+          }, {
+            "name": "Seda de gusano",
+            "count": 60
+          }, {
+            "name": "Esconderse",
+            "count": 100
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Alas pequeñas de Walker Hercul",
+    "category": "walkers/hercul/parts/wings",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Poste de Madera",
+            "count": 46
+          }, {
+            "name": "Cuerda",
+            "count": 18
+          }, {
+            "name": "Tela Nomad",
+            "count": 4
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker hercul - Capacidad energética - Mejora de rango 2",
+    "category": "walkers/hercul/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Astilla de hueso",
+            "count": 24
+          }, {
+            "name": "Fibra",
+            "count": 104
+          }, {
+            "name": "Madera",
+            "count": 96
+          }, {
+            "name": "Cuerda",
+            "count": 20
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker hercul - Depósito de agua - Mejora de rango 2",
+    "category": "walkers/hercul/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Astilla de hueso",
+            "count": 16
+          }, {
+            "name": "Fibra",
+            "count": 160
+          }, {
+            "name": "Esconderse",
+            "count": 24
+          }, {
+            "name": "Madera",
+            "count": 24
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker hercul - Capacidad energética - Mejora de rango 3",
+    "category": "walkers/hercul/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Esquirla de cerámica",
+            "count": 48
+          }, {
+            "name": "Vid Rupu",
+            "count": 56
+          }, {
+            "name": "Cuerda",
+            "count": 40
+          }, {
+            "name": "Madera",
+            "count": 128
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker hercul - Depósito de agua - Mejora de rango 3",
+    "category": "walkers/hercul/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Esquirla de cerámica",
+            "count": 32
+          }, {
+            "name": "Esconderse",
+            "count": 72
+          }, {
+            "name": "Madera",
+            "count": 136
+          }, {
+            "name": "Tejido de Fibra",
+            "count": 56
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker hercul - Capacidad energética - Mejora de rango 4",
+    "category": "walkers/hercul/upgrades/tier4",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Lingote de hierro",
+            "count": 24
+          }, {
+            "name": "Escama de quiitina",
+            "count": 61
+          }, {
+            "name": "Reforzar tablón",
+            "count": 16
+          }, {
+            "name": "Esquirla de cerámica",
+            "count": 80
+          }, {
+            "name": "Madera de secuoya roja",
+            "count": 192
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker hercul - Depósito de agua - Mejora de rango 4",
+    "category": "walkers/hercul/upgrades/tier4",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Lingote de hierro",
+            "count": 13
+          }, {
+            "name": "Tela Nomad",
+            "count": 40
+          }, {
+            "name": "Madera de secuoya roja",
+            "count": 128
+          }, {
+            "name": "Mantequilla de la tribu rupu",
+            "count": 48
+          }, {
+            "name": "Adhesivo de hueso",
+            "count": 24
+          }
+        ]
+      }
+    ]
   }
 ]
