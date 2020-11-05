@@ -19,6 +19,7 @@ class MemberList extends Component {
       error: null,
       isLoadedRequestList: false,
       redirectMessage: null,
+      selectNewOwner: localStorage.getItem("discordid"),
     };
   }
 
@@ -165,6 +166,28 @@ class MemberList extends Component {
       });
   };
 
+  changeOwner = () => {
+    axios
+      .get(process.env.REACT_APP_API_URL + "/clans.php", {
+        params: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          dataupdate: this.state.selectNewOwner,
+          accion: "changeowner",
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          this.setState({ redirectMessage: "Clan updated correctly" });
+        } else {
+          this.setState({ error: "Error when change owner of clan" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Failure to connect to API" });
+      });
+  };
+
   list() {
     if (this.state.members != null) {
       return this.state.members.map((member) => (
@@ -210,9 +233,14 @@ class MemberList extends Component {
       this.state.members[0].leaderid == localStorage.getItem("discordid")
     ) {
       return (
-        <div className="col-xl-12">
+        <div className="col-xl-3">
           <div className="card mb-3">
+            <div className="card-header">Delete Clan</div>
             <div className="card-body">
+              By deleting the clan you will delete all the data linked to it, be
+              careful because this option is not reversible
+            </div>
+            <div className="card-footer">
               <button
                 className="btn btn-block btn-danger"
                 onClick={() => this.deleteClan()}
@@ -223,6 +251,58 @@ class MemberList extends Component {
           </div>
         </div>
       );
+    }
+  }
+
+  transferOwnerPanel() {
+    if (
+      this.state.members != null &&
+      this.state.members[0].leaderid == localStorage.getItem("discordid")
+    ) {
+      return (
+        <div className="col-xl-3">
+          <div className="card mb-3">
+            <div className="card-header">Transfer Clan</div>
+            <div className="card-body">
+              <p>
+                This option is not reversible, so be careful who you pass it on
+                to in the leadership of the clan
+              </p>
+              <label htmlFor="selectNewOwner">New leader:</label>
+              <select
+                id="selectNewOwner"
+                className="custom-select"
+                value={this.state.selectNewOwner}
+                onChange={(evt) =>
+                  this.setState({
+                    selectNewOwner: evt.target.value,
+                  })
+                }
+              >
+                {this.memberListOption()}
+              </select>
+            </div>
+            <div className="card-footer">
+              <button
+                className="btn btn-block btn-danger"
+                onClick={() => this.changeOwner()}
+              >
+                Change Owner
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+
+  memberListOption() {
+    if (this.state.members != null) {
+      return this.state.members.map((member) => (
+        <option key={member.discordid} value={member.discordid}>
+          {member.discordtag}
+        </option>
+      ));
     }
   }
 
@@ -269,7 +349,6 @@ class MemberList extends Component {
 
     return (
       <div className="row">
-        {this.deleteClanButton()}
         <div className="col-xl-6">
           <div className="card mb-3">
             <div className="card-header">Member List</div>
@@ -319,6 +398,8 @@ class MemberList extends Component {
             </div>
           </div>
         </div>
+        {this.transferOwnerPanel()}
+        {this.deleteClanButton()}
       </div>
     );
   }
