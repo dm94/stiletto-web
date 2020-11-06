@@ -25,6 +25,9 @@ class Timer extends Component {
         this.state.seconds == 0
       ) {
         this.setState({ isFinish: true, isOn: false });
+        if (this.props.value) {
+          this.props.onPlay();
+        }
       }
       if (this.state.seconds > 0) {
         this.setState({ seconds: this.state.seconds - 1 });
@@ -43,6 +46,7 @@ class Timer extends Component {
       }
     }
   }
+
   render() {
     return (
       <div className="card">
