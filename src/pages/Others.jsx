@@ -1,22 +1,58 @@
 import React, { Component } from "react";
-const axios = require("axios");
+var XMLParser = require("react-xml-parser");
 
 class Others extends Component {
   state = { items: null };
 
   componentDidMount() {
-    axios
-      .get("https://steamcommunity.com/games/903950/rss/")
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    fetch(proxyurl + "https://steamcommunity.com/games/903950/rss/")
+      .then((response) => response.text())
       .then((response) => {
-        this.setState({ items: response.data });
+        this.setState({
+          items: new XMLParser()
+            .parseFromString(response)
+            .getElementsByTagName("item"),
+        });
       });
   }
 
   showUpdates() {
     if (this.state.items != null) {
-      return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vel est mi. Nunc accumsan felis eu metus sollicitudin, quis malesuada tortor tempus. Integer suscipit nibh ac tincidunt luctus. Fusce ac diam ut ligula posuere gravida. Nam ultrices maximus velit auctor lacinia. Proin et lacus justo. Sed ullamcorper suscipit cursus. Nam hendrerit mi in neque maximus, ut rhoncus quam facilisis. Cras id nibh diam. In dignissim eget dui congue interdum. Nunc mi est, vulputate in iaculis et, molestie in nisl.";
+      var data = [];
+      this.state.items.forEach((item) => {
+        if (item.children != null) {
+          var title;
+          var link;
+          item.children.forEach((c) => {
+            if (c.name != null && c.name === "title") {
+              title = c.value;
+            }
+            if (c.name != null && c.name === "guid") {
+              link = c.value;
+            }
+          });
+          if (title != null && link != null) {
+            data.push({ title: title, link: link });
+          }
+        }
+      });
+      if (data.length > 7) {
+        data = data.slice(0, 7);
+      }
+      return data.map((update) => (
+        <li className="list-group-item">
+          <a
+            href={update.link + "?curator_clanid=9919055"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {update.title}
+          </a>
+        </li>
+      ));
     } else {
-      return "Data could not be loaded";
+      return "Game updates are loading";
     }
   }
 
@@ -26,7 +62,7 @@ class Others extends Component {
         <div className="col-md-4">
           <div className="card mb-3">
             <div className="card-header">Latest updates</div>
-            <div className="card-body">{this.showUpdates()}</div>
+            <ul className="list-group">{this.showUpdates()}</ul>
           </div>
         </div>
         <div className="col-md-8">
