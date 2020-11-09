@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import TradeSystem from "./pages/TradeSystem";
 import Diplomacy from "./pages/Diplomacy";
 import AuctionTimers from "./pages/AuctionTimers";
+import Others from "./pages/Others";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -69,43 +70,10 @@ function CrafterApp() {
                 Auction Timers
               </Link>
             </li>
-            <li className="nav-item dropdown">
-              <div
-                className="nav-link dropdown-toggle"
-                id="navbarDropdown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Other Links
-              </div>
-              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a
-                  className="dropdown-item"
-                  href="https://github.com/dm94/stiletto-web/issues"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Report Bugs
-                </a>
-                <a
-                  className="dropdown-item"
-                  href="https://top.gg/bot/715948052979908911"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Discord Bot
-                </a>
-                <a
-                  className="dropdown-item"
-                  href="https://discord.gg/PdXxUWd"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Dm94´s Discord
-                </a>
-              </div>
+            <li className="nav-item">
+              <Link className="nav-link" to="/others">
+                Other info
+              </Link>
             </li>
           </ul>
         </div>
@@ -122,6 +90,7 @@ function CrafterApp() {
           <Route path="/trades" component={TradeSystem} />
           <Route path="/diplomacy" component={Diplomacy} />
           <Route path="/auctions" component={AuctionTimers} />
+          <Route path="/others" component={Others} />
         </Switch>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
