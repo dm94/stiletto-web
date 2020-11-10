@@ -29,6 +29,7 @@ class ClanMapItem extends Component {
             Show map
           </button>
           {this.deleteMapButton()}
+          {this.ShareMapButton()}
         </div>
       );
     }
@@ -48,6 +49,29 @@ class ClanMapItem extends Component {
     }
   }
 
+  ShareMapButton() {
+    if (this.props.map.discordid == localStorage.getItem("discordid")) {
+      return (
+        <a
+          className="btn btn-success btn-sm"
+          href={
+            window.location.hostname +
+            "/map?mapid=" +
+            this.props.map.mapid +
+            "&pass=" +
+            this.props.map.pass +
+            "&mapname=" +
+            this.props.value
+          }
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Share map
+        </a>
+      );
+    }
+  }
+
   render() {
     return (
       <div
@@ -57,7 +81,7 @@ class ClanMapItem extends Component {
         onMouseLeave={() => this.setState({ isHover: false })}
       >
         <img
-          src={this.props.value}
+          src={process.env.REACT_APP_MAPS_URL + this.props.value + ".jpg"}
           className="img-fluid"
           alt={this.props.map.name}
         />

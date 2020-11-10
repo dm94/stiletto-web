@@ -11,6 +11,7 @@ import TradeSystem from "./pages/TradeSystem";
 import Diplomacy from "./pages/Diplomacy";
 import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
+import Map from "./pages/Map";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function CrafterApp() {
@@ -91,6 +92,7 @@ function CrafterApp() {
           <Route path="/diplomacy" component={Diplomacy} />
           <Route path="/auctions" component={AuctionTimers} />
           <Route path="/others" component={Others} />
+          <Route path="/map" component={Map} />
         </Switch>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">

@@ -3,13 +3,13 @@
     "idMap": 1,
     "name": "Canyon",
     "type": "Medium",
-    "image": "https://api2.comunidadgzone.es/maps/canyon.jpg"
+    "image": "https://api2.comunidadgzone.es/maps/Canyon.jpg"
   },
   {
     "idMap": 2,
     "name": "CanyonB",
     "type": "Medium",
-    "image": "https://api2.comunidadgzone.es/maps/canyonB.jpg"
+    "image": "https://api2.comunidadgzone.es/maps/CanyonB.jpg"
   },
   {
     "idMap": 3,
@@ -27,24 +27,24 @@
     "idMap": 5,
     "name": "Volcanic",
     "type": "Difficult",
-    "image": "https://api2.comunidadgzone.es/maps/volcanic.jpg"
+    "image": "https://api2.comunidadgzone.es/maps/Volcanic.jpg"
   },
   {
     "idMap": 6,
     "name": "Crater",
     "type": "Event",
-    "image": "https://api2.comunidadgzone.es/maps/crater.jpg"
+    "image": "https://api2.comunidadgzone.es/maps/Crater.jpg"
   },
   {
     "idMap": 7,
     "name": "Volcanyon",
     "type": "Difficult",
-    "image": "https://api2.comunidadgzone.es/maps/volcanyon.jpg"
+    "image": "https://api2.comunidadgzone.es/maps/Volcanyon.jpg"
   },
   {
     "idMap": 8,
     "name": "AncientCity",
     "type": "Event",
-    "image": "https://api2.comunidadgzone.es/maps/ancientcity.jpg"
+    "image": "https://api2.comunidadgzone.es/maps/AncientCity.jpg"
   }
 ]

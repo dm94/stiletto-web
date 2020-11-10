@@ -83,7 +83,7 @@ class ClanMaps extends Component {
         <ClanMapItem
           key={"clanmap" + map.mapid}
           map={map}
-          value={this.getImageMap(map.typemap)}
+          value={this.getNameMap(map.typemap)}
           onOpen={this.openMap}
           onDelete={this.deleteMap}
         />
@@ -128,7 +128,7 @@ class ClanMaps extends Component {
         return m[0].image;
       }
     }
-    return "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/maps/crater.jpg";
+    return process.env.REACT_APP_MAPS_URL + "Crater.jpg";
   }
 
   getNameMap(typemap) {

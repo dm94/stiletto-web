@@ -1,39 +1,16 @@
-import React, { Component, Fragment } from "react";
-import L from "leaflet";
-import { Map, TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
-import RasterCoords from "leaflet-rastercoords";
+import React, { Component } from "react";
 import ModalMessage from "./ModalMessage";
-import "leaflet/dist/leaflet.css";
+import MapLayer from "./MapLayer";
 const axios = require("axios");
-
-var myMarker = L.icon({
-  iconUrl:
-    "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/marker.png",
-  iconSize: [25, 41],
-  iconAnchor: [13, 44],
-  popupAnchor: [-6, -20],
-});
-
-class MapExtended extends Map {
-  createLeafletElement(props) {
-    let leafletMapElement = super.createLeafletElement(props);
-    let img = [6020, 6020];
-
-    let rc = new RasterCoords(leafletMapElement, img);
-
-    leafletMapElement.setView(rc.unproject([img[0], img[1]]), 2);
-
-    return leafletMapElement;
-  }
-}
 
 class ResourceMap extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      mapType: this.props.value,
+      mapName: this.props.value,
       resourceTypeInput: "Aloe",
       qualityInput: 0,
       coordinateXInput: 0,
@@ -41,7 +18,6 @@ class ResourceMap extends Component {
       items: null,
       resourcesInTheMap: null,
       latlng: null,
-      hasLocation: false,
     };
   }
 
@@ -135,11 +111,10 @@ class ResourceMap extends Component {
       });
   };
 
-  handleClick = (e) => {
+  changeCoords = (x, y) => {
     this.setState({
-      hasLocation: true,
-      coordinateXInput: Math.floor(e.latlng.lat),
-      coordinateYInput: Math.floor(e.latlng.lng),
+      coordinateXInput: x,
+      coordinateYInput: y,
     });
   };
 
@@ -153,71 +128,7 @@ class ResourceMap extends Component {
     }
   }
 
-  getMarketDesign(resource) {
-    var res = resource.replace(" ", "_");
-    var marker = null;
-    var img = new Image();
-    img.src = "https://api2.comunidadgzone.es/markers/" + res + ".png";
-    if (img.complete) {
-      marker = L.icon({
-        iconUrl: "https://api2.comunidadgzone.es/markers/" + res + ".png",
-        iconSize: [25, 41],
-        iconAnchor: [13, 44],
-        popupAnchor: [-6, -20],
-      });
-    } else {
-      marker = myMarker;
-    }
-
-    return marker;
-  }
-
-  getMarkers() {
-    if (this.state.resourcesInTheMap != null) {
-      return this.state.resourcesInTheMap.map((resource) => (
-        <Marker
-          key={"resource" + resource.resourceid}
-          position={[resource.x, resource.y]}
-          icon={this.getMarketDesign(resource.resourcetype)}
-        >
-          <Popup>
-            <div className="mb-0">
-              {resource.resourcetype} - Q: {resource.quality}
-            </div>
-            <div className="mb-1 text-muted">
-              [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
-            </div>
-            <button
-              className="btn btn-danger"
-              onClick={() => this.deleteResource(resource.resourceid)}
-            >
-              Delete
-            </button>
-          </Popup>
-          <Tooltip>
-            {resource.resourcetype} - Q: {resource.quality}
-          </Tooltip>
-        </Marker>
-      ));
-    }
-    return null;
-  }
-
   render() {
-    let position = [this.state.coordinateXInput, this.state.coordinateYInput];
-    const marker = this.state.hasLocation ? (
-      <Marker position={position} icon={myMarker}>
-        <Popup>
-          [
-          {Math.floor(this.state.coordinateXInput) +
-            "," +
-            Math.floor(this.state.coordinateYInput)}
-          ]
-        </Popup>
-        <Tooltip>TEST</Tooltip>
-      </Marker>
-    ) : null;
-
     if (this.state.user_discord_id == null || this.state.token == null) {
       return (
         <ModalMessage
@@ -350,25 +261,13 @@ class ResourceMap extends Component {
             </div>
           </nav>
         </div>
-        <div id="map" className="col-xl-9 col-sm-12">
-          <MapExtended
-            minZoom={0}
-            maxZoom={5}
-            style={{ width: "800px", height: "800px" }}
-            onClick={this.handleClick}
-          >
-            <TileLayer
-              url={
-                process.env.REACT_APP_MAPS_URL +
-                this.state.mapType +
-                "/{z}/{x}/{y}.png"
-              }
-              noWrap={true}
-            />
-            {marker}
-            <Fragment>{this.getMarkers()}</Fragment>
-          </MapExtended>
-        </div>
+        <MapLayer
+          key={this.props.map.mapid}
+          resourcesInTheMap={this.state.resourcesInTheMap}
+          deleteResource={this.deleteResource}
+          changeInput={this.changeCoords}
+          mapName={this.state.mapName}
+        ></MapLayer>
       </div>
     );
   }
