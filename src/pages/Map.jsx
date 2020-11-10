@@ -59,13 +59,15 @@ class Map extends Component {
     if (this.state.mapId != null && this.state.pass != null) {
       return (
         <div className="row flex-xl-nowrap">
-          <MapLayer
-            key={this.state.mapId}
-            resourcesInTheMap={this.state.resourcesInTheMap}
-            deleteResource={this.deleteResource}
-            changeInput={this.changeCoords}
-            mapName={this.state.mapName}
-          ></MapLayer>
+          <div className="col-xl-12">
+            <MapLayer
+              key={this.state.mapId}
+              resourcesInTheMap={this.state.resourcesInTheMap}
+              deleteResource={this.deleteResource}
+              changeInput={this.changeCoords}
+              mapName={this.state.mapName}
+            ></MapLayer>
+          </div>
         </div>
       );
     } else {

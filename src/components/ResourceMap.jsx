@@ -261,13 +261,15 @@ class ResourceMap extends Component {
             </div>
           </nav>
         </div>
-        <MapLayer
-          key={this.props.map.mapid}
-          resourcesInTheMap={this.state.resourcesInTheMap}
-          deleteResource={this.deleteResource}
-          changeInput={this.changeCoords}
-          mapName={this.state.mapName}
-        ></MapLayer>
+        <div className="col-xl-9 col-sm-12">
+          <MapLayer
+            key={this.props.map.mapid}
+            resourcesInTheMap={this.state.resourcesInTheMap}
+            deleteResource={this.deleteResource}
+            changeInput={this.changeCoords}
+            mapName={this.state.mapName}
+          ></MapLayer>
+        </div>
       </div>
     );
   }

@@ -100,7 +100,7 @@ class MapLayer extends Component {
     ) : null;
 
     return (
-      <div id="map" className="col-xl-9 col-sm-12">
+      <div id="map">
         <MapExtended
           minZoom={0}
           maxZoom={5}
