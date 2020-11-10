@@ -51,11 +51,15 @@ class ClanMapItem extends Component {
 
   ShareMapButton() {
     if (this.props.map.discordid == localStorage.getItem("discordid")) {
+      var http = window.location.protocol;
+      var slashes = http.concat("//");
+      var host = slashes.concat(window.location.hostname);
       return (
         <a
           className="btn btn-success btn-sm"
           href={
-            window.location.hostname +
+            host +
+            (window.location.port ? ":" + window.location.port : "") +
             "/map?mapid=" +
             this.props.map.mapid +
             "&pass=" +
