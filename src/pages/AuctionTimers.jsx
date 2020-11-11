@@ -27,14 +27,14 @@ class AuctionTimers extends Component {
   render() {
     return (
       <div className="row">
-        <div className="col-8">
+        <div className="col-md-8">
           <div className="card">
             <div className="card-header text-center">
               This data is not saved, if you reload the page it will be deleted
             </div>
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-md-4">
           <div className="card">
             <div className="card-body text-center">
               <div className="btn-group">
@@ -67,7 +67,7 @@ class AuctionTimers extends Component {
           </div>
         </div>
         {this.showTimers()}
-        <div className="col-12">
+        <div className="col-md-12">
           <div className="card">
             <div className="card-body text-center">
               <div className="row">

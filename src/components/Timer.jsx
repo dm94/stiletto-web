@@ -56,7 +56,7 @@ class Timer extends Component {
           }
         >
           <div className="row">
-            <div className="col-1">
+            <div className="col-md-1">
               <label htmlFor="hours">Hours</label>
               <h1>
                 <input
@@ -70,7 +70,7 @@ class Timer extends Component {
                 />
               </h1>
             </div>
-            <div className="col-1">
+            <div className="col-md-1">
               <label htmlFor="minutes">Minutes</label>
               <h1>
                 <input
@@ -84,7 +84,7 @@ class Timer extends Component {
                 />
               </h1>
             </div>
-            <div className="col-1">
+            <div className="col-md-1">
               <label htmlFor="seconds">Seconds</label>
               <h1>
                 <input
@@ -98,7 +98,7 @@ class Timer extends Component {
                 />
               </h1>
             </div>
-            <div className="col">
+            <div className="col-md-5">
               <label htmlFor="description">Description</label>
               <input
                 type="text"
@@ -107,7 +107,7 @@ class Timer extends Component {
                 placeholder="Description"
               />
             </div>
-            <div className="col">
+            <div className="col-md-4">
               <button
                 className="btn btn-success btn-block"
                 onClick={() => this.setState({ isOn: true, isFinish: false })}

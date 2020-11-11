@@ -137,7 +137,7 @@ function discordButton() {
     localStorage.getItem("token") != null
   ) {
     return (
-      <Link className="btn btn-outline-light" to="/profile">
+      <Link className="btn btn-outline-light d-none d-sm-block" to="/profile">
         Profile
       </Link>
     );
@@ -149,7 +149,7 @@ function discordButton() {
       process.env.REACT_APP_API_URL +
       "/discordlogin.php&scope=identify%20guilds&response_type=code";
     return (
-      <a className="btn btn-outline-light" href={urlLink}>
+      <a className="btn btn-outline-light d-none d-sm-block" href={urlLink}>
         <i className="fab fa-discord"></i> Login with discord
       </a>
     );

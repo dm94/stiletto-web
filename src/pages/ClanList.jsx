@@ -59,7 +59,7 @@ class ClanList extends Component {
     if (this.state.clans != null) {
       return this.state.clans.map((clan) => (
         <ClanListItem
-          key={clan.name}
+          key={clan.clanid}
           clan={clan}
           onSendRequest={this.sendRequest}
         />
@@ -70,25 +70,27 @@ class ClanList extends Component {
   clanList() {
     if (this.state.isLoaded) {
       return (
-        <table className="table">
-          <thead>
-            <tr>
-              <th className="text-center" scope="col">
-                Clan Name
-              </th>
-              <th className="text-center" scope="col">
-                Leader
-              </th>
-              <th className="text-center" scope="col">
-                Discord Invite Link
-              </th>
-              <th className="text-center" scope="col">
-                Actions
-              </th>
-            </tr>
-          </thead>
-          <tbody>{this.list()}</tbody>
-        </table>
+        <div className="table-responsive">
+          <table className="table">
+            <thead>
+              <tr>
+                <th className="text-center" scope="col">
+                  Clan Name
+                </th>
+                <th className="text-center" scope="col">
+                  Leader
+                </th>
+                <th className="text-center" scope="col">
+                  Discord Invite Link
+                </th>
+                <th className="text-center" scope="col">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>{this.list()}</tbody>
+          </table>
+        </div>
       );
     } else {
       return <LoadingScreen />;
