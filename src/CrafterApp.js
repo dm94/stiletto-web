@@ -21,8 +21,8 @@ function CrafterApp() {
         <Link className="navbar-brand" to="/">
           Stiletto
         </Link>
-        <div className="navbar-nav-scroll">
-          <ul className="navbar-nav bd-navbar-nav flex-row">
+        <div className="collapse navbar-collapse navbar-nav-scroll">
+          <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/crafter">
                 Crafting
@@ -77,6 +77,7 @@ function CrafterApp() {
               </Link>
             </li>
           </ul>
+          {discordButton()}
         </div>
       </header>
       <main role="main" className="container-fluid pt-4">
@@ -128,6 +129,31 @@ function CrafterApp() {
       </CookieConsent>
     </Router>
   );
+}
+
+function discordButton() {
+  if (
+    localStorage.getItem("discordid") != null &&
+    localStorage.getItem("token") != null
+  ) {
+    return (
+      <Link className="btn btn-outline-light" to="/profile">
+        Profile
+      </Link>
+    );
+  } else {
+    let urlLink =
+      "https://discord.com/api/oauth2/authorize?client_id=" +
+      process.env.REACT_APP_DISCORD_CLIENT_ID +
+      "&redirect_uri=" +
+      process.env.REACT_APP_API_URL +
+      "/discordlogin.php&scope=identify%20guilds&response_type=code";
+    return (
+      <a className="btn btn-outline-light" href={urlLink}>
+        <i className="fab fa-discord"></i> Login with discord
+      </a>
+    );
+  }
 }
 
 export default CrafterApp;
