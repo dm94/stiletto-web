@@ -33,12 +33,12 @@ class ItemSelector extends Component {
     searchText: "",
     filteredItems: [],
     totalIngredients: [],
-    languaje: "ES",
+    languaje: "EN",
   };
 
   componentDidMount() {
     fetch(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json"
+      "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json"
     )
       .then((response) => response.json())
       .then((items) => this.setState({ items }));
@@ -189,14 +189,19 @@ class ItemSelector extends Component {
     this.setState({ selectedItems });
   }
 
+  buttonChangeLanguaje() {
+    return (
+      <button className="btn btn-warning" onClick={this.switchLanguaje}>
+        ES/EN
+      </button>
+    );
+  }
+
   render() {
     return (
       <div className="row flex-xl-nowrap">
         <div className="col-md-2 col-xl-3">
           <form role="search" className="bd-search d-flex align-items-center">
-            <button className="btn btn-warning" onClick={this.switchLanguaje}>
-              ES/EN
-            </button>
             <input
               className="form-control"
               type="search"
@@ -204,6 +209,21 @@ class ItemSelector extends Component {
               aria-label="Search"
               onChange={this.handleInputChangeSearchItem}
               value={this.state.searchText}
+            />
+            <img
+              className="img-thumbnail"
+              width="15%"
+              src={
+                this.state.languaje === "ES"
+                  ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                  : "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+              }
+              alt={
+                this.state.languaje === "ES"
+                  ? "Spanish language"
+                  : "English language"
+              }
+              onClick={this.switchLanguaje}
             />
             <button
               className="btn d-md-none p-0 ml-3"
