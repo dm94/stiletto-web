@@ -82,7 +82,6 @@ class AuctionTimers extends Component {
                   </button>
                 </div>
                 <div className="col">
-                  {" "}
                   <button
                     className="btn btn-warning btn-block"
                     onClick={() =>
