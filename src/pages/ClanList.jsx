@@ -72,7 +72,7 @@ class ClanList extends Component {
       return (
         <div className="table-responsive">
           <table className="table">
-            <thead>
+            <thead className="thead-light">
               <tr>
                 <th className="text-center" scope="col">
                   Clan Name
