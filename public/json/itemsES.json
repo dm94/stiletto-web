@@ -14823,5 +14823,207 @@
         ]
       }
     ]
+  }, {
+    "name": "Cuerpo Walker Balang",
+    "category": "walkers/balang",
+    "cost": {
+      "name": "Fragmentos",
+      "count": 10
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Madera",
+            "count": 400
+          }, {
+            "name": "Fibra",
+            "count": 265
+          }, {
+            "name": "Vid Rupu",
+            "count": 22
+          }, {
+            "name": "Poste de madera",
+            "count": 10
+          }, {
+            "name": "Piedra",
+            "count": 85
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Balang Walker Legs",
+    "category": "walkers/balang/parts/legs",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Madera",
+            "count": 90
+          }, {
+            "name": "Poste de Madera",
+            "count": 8
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Balang Walker Wings",
+    "category": "walkers/balang/parts/wings",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Madera",
+            "count": 30
+          }, {
+            "name": "Tejido de Fibra",
+            "count": 16
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Balang Walker Wings Small",
+    "category": "walkers/balang/parts/wings",
+    "cost": {
+      "name": "Fragmentos",
+      "count": 40
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Poste de Madera",
+            "count": 16
+          }, {
+            "name": "Tejido de fibra",
+            "count": 42
+          }, {
+            "name": "Cuerda",
+            "count": 15
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker Balang - Capacidad energética - Mejora de rango 2",
+    "category": "walkers/balang/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Astilla de hueso",
+            "count": 15
+          }, {
+            "name": "Fibra",
+            "count": 65
+          }, {
+            "name": "Madera",
+            "count": 60
+          }, {
+            "name": "Cuerda",
+            "count": 12
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker Balang - Depósito de agua - Mejora de rango 2",
+    "category": "walkers/balang/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Astilla de hueso",
+            "count": 10
+          }, {
+            "name": "Fibra",
+            "count": 100
+          }, {
+            "name": "Piel rupu",
+            "count": 15
+          }, {
+            "name": "Madera",
+            "count": 15
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker Balang - Capacidad energética - Mejora de rango 3",
+    "category": "walkers/balang/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Esquirla de cerámica",
+            "count": 30
+          }, {
+            "name": "Vid Rupu",
+            "count": 35
+          }, {
+            "name": "Cuerda",
+            "count": 25
+          }, {
+            "name": "Madera",
+            "count": 80
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker Balang - Depósito de agua - Mejora de rango 3",
+    "category": "walkers/balang/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Esquirla de cerámica",
+            "count": 20
+          }, {
+            "name": "Piel rupu",
+            "count": 45
+          }, {
+            "name": "Madera",
+            "count": 85
+          }, {
+            "name": "Tejido de Fibra",
+            "count": 35
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker Balang - Capacidad energética - Mejora de rango 4",
+    "category": "walkers/balang/upgrades/tier4",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Lingote de hierro",
+            "count": 15
+          }, {
+            "name": "Escama de quiitina",
+            "count": 38
+          }, {
+            "name": "Reforzar tablón",
+            "count": 10
+          }, {
+            "name": "Esquirla de cerámica",
+            "count": 50
+          }, {
+            "name": "Madera de secuoya roja",
+            "count": 120
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Mejora del walker Balang - Depósito de agua - Mejora de rango 4",
+    "category": "walkers/balang/upgrades/tier4",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Lingote de hierro",
+            "count": 8
+          }, {
+            "name": "Tela Nomad",
+            "count": 25
+          }, {
+            "name": "Madera de secuoya roja",
+            "count": 80
+          }, {
+            "name": "Mantequilla de la tribu rupu",
+            "count": 30
+          }, {
+            "name": "Adhesivo de hueso",
+            "count": 15
+          }
+        ]
+      }
+    ]
   }
 ]
