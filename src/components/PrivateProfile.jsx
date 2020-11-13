@@ -199,13 +199,13 @@ class PrivateProfile extends Component {
                 </div>
                 <div className="modal-footer">
                   <button
-                    className="btn btn-outline-secondary "
+                    className="btn btn-outline-secondary"
                     onClick={this.hideModal}
                   >
                     Cancel
                   </button>
                   <button
-                    className="btn btn-outline-danger "
+                    className="btn btn-outline-danger"
                     onClick={this.deleteUser}
                   >
                     Delete user
