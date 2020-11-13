@@ -17,6 +17,10 @@ class Timer extends Component {
     this.timer = setInterval(this.tick, 1000);
   }
 
+  componentWillUnmount() {
+    clearInterval(this.timer);
+  }
+
   tick() {
     if (this.state.isOn) {
       if (
