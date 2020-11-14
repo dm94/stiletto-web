@@ -241,7 +241,7 @@ class PrivateProfile extends Component {
                   className="btn btn-lg btn-outline-secondary btn-block"
                   to="/maps"
                 >
-                  {t("Resources Maps")}
+                  {t("Resources maps")}
                 </Link>
               </div>
             </div>
