@@ -191,7 +191,7 @@
             "name": "Brea",
             "count": 12
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }, {
             "name": "Ceniza",
@@ -211,7 +211,7 @@
             "name": "Brea",
             "count": 12
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }, {
             "name": "Ceniza",
@@ -231,7 +231,7 @@
             "name": "Brea",
             "count": 12
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }, {
             "name": "Ceniza",
@@ -251,7 +251,7 @@
             "name": "Brea",
             "count": 12
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }, {
             "name": "Ceniza",
@@ -271,7 +271,7 @@
             "name": "Brea",
             "count": 12
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }, {
             "name": "Ceniza",
@@ -291,7 +291,7 @@
             "name": "Brea",
             "count": 12
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }, {
             "name": "Ceniza",
@@ -311,7 +311,7 @@
             "name": "Brea",
             "count": 12
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }, {
             "name": "Ceniza",
@@ -646,7 +646,7 @@
             "name": "Madera de secuoya roja",
             "count": 65
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }
         ]
@@ -1843,7 +1843,7 @@
             "name": "Madera",
             "count": 300
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 500
           }, {
             "name": "Reforzar tablón",
@@ -1894,7 +1894,7 @@
             "name": "Madera",
             "count": 300
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 500
           }, {
             "name": "Reforzar tablón",
@@ -2573,7 +2573,7 @@
             "name": "Adhesivo de hueso",
             "count": 8
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 30
           }, {
             "name": "Tela Nomad",
@@ -2593,7 +2593,7 @@
             "name": "Adhesivo de hueso",
             "count": 4
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 24
           }, {
             "name": "Tela Nomad",
@@ -2613,7 +2613,7 @@
             "name": "Adhesivo de hueso",
             "count": 4
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 20
           }, {
             "name": "Tela Nomad",
@@ -2714,7 +2714,7 @@
     "category": "items/armors/forester's armor",
     "crafting": [{
         "ingredients": [{
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 8
           }, {
             "name": "Armadura de guardabosques",
@@ -4672,7 +4672,7 @@
       }
     ]
   }, {
-    "name": "Escama de quiitina",
+    "name": "Escama de quitina",
     "category": "materials"
   }, {
     "name": "Arcilla",
@@ -5339,7 +5339,7 @@
             "name": "Piel rupu",
             "count": 42
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 4
           }
         ]
@@ -5459,7 +5459,7 @@
             "name": "Adhesivo de hueso",
             "count": 7
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 16
           }
         ]
@@ -5579,7 +5579,7 @@
             "name": "Esquirla de cerámica",
             "count": 192
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 56
           }, {
             "name": "Tela Nomad",
@@ -5645,7 +5645,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -5782,7 +5782,7 @@
             "name": "Esconderse",
             "count": 20
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 2
           }
         ]
@@ -5902,7 +5902,7 @@
             "name": "Adhesivo de hueso",
             "count": 4
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 10
           }
         ]
@@ -6022,7 +6022,7 @@
             "name": "Esquirla de cerámica",
             "count": 120
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 35
           }, {
             "name": "Tela Nomad",
@@ -6088,7 +6088,7 @@
             "name": "Lingote de hierro",
             "count": 15
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 38
           }, {
             "name": "Reforzar tablón",
@@ -6394,7 +6394,7 @@
             "name": "Piel rupu",
             "count": 65
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 5
           }
         ]
@@ -6514,7 +6514,7 @@
             "name": "Adhesivo de hueso",
             "count": 10
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 25
           }
         ]
@@ -6634,7 +6634,7 @@
             "name": "Esquirla de cerámica",
             "count": 300
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 88
           }, {
             "name": "Tela Nomad",
@@ -6700,7 +6700,7 @@
             "name": "Lingote de hierro",
             "count": 38
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 95
           }, {
             "name": "Reforzar tablón",
@@ -6806,7 +6806,7 @@
             "name": "Reforzar tablón",
             "count": 72
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 12
           }, {
             "name": "Brea",
@@ -7093,7 +7093,7 @@
             "name": "Piel rupu",
             "count": 42
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 4
           }
         ]
@@ -7213,7 +7213,7 @@
             "name": "Adhesivo de hueso",
             "count": 7
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 16
           }
         ]
@@ -7333,7 +7333,7 @@
             "name": "Esquirla de cerámica",
             "count": 192
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 56
           }, {
             "name": "Tela Nomad",
@@ -7399,7 +7399,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -7595,7 +7595,7 @@
             "name": "Esconderse",
             "count": 20
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 2
           }
         ]
@@ -7715,7 +7715,7 @@
             "name": "Adhesivo de hueso",
             "count": 4
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 10
           }
         ]
@@ -7835,7 +7835,7 @@
             "name": "Esquirla de cerámica",
             "count": 120
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 35
           }, {
             "name": "Tela Nomad",
@@ -7901,7 +7901,7 @@
             "name": "Lingote de hierro",
             "count": 15
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 38
           }, {
             "name": "Reforzar tablón",
@@ -8209,7 +8209,7 @@
             "name": "Piel rupu",
             "count": 42
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 4
           }
         ]
@@ -8329,7 +8329,7 @@
             "name": "Adhesivo de hueso",
             "count": 7
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 16
           }
         ]
@@ -8449,7 +8449,7 @@
             "name": "Esquirla de cerámica",
             "count": 192
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 56
           }, {
             "name": "Tela Nomad",
@@ -8515,7 +8515,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -8874,7 +8874,7 @@
             "name": "Piel rupu",
             "count": 42
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 4
           }
         ]
@@ -8994,7 +8994,7 @@
             "name": "Adhesivo de hueso",
             "count": 7
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 16
           }
         ]
@@ -9114,7 +9114,7 @@
             "name": "Esquirla de cerámica",
             "count": 192
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 56
           }, {
             "name": "Tela Nomad",
@@ -9180,7 +9180,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -9674,7 +9674,7 @@
             "name": "Piel rupu",
             "count": 65
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 5
           }
         ]
@@ -9794,7 +9794,7 @@
             "name": "Adhesivo de hueso",
             "count": 10
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 25
           }
         ]
@@ -9914,7 +9914,7 @@
             "name": "Esquirla de cerámica",
             "count": 300
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 88
           }, {
             "name": "Tela Nomad",
@@ -9980,7 +9980,7 @@
             "name": "Lingote de hierro",
             "count": 38
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 95
           }, {
             "name": "Reforzar tablón",
@@ -10202,7 +10202,7 @@
             "name": "Esconderse",
             "count": 20
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 2
           }
         ]
@@ -10322,7 +10322,7 @@
             "name": "Adhesivo de hueso",
             "count": 4
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 10
           }
         ]
@@ -10442,7 +10442,7 @@
             "name": "Esquirla de cerámica",
             "count": 120
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 35
           }, {
             "name": "Tela Nomad",
@@ -10508,7 +10508,7 @@
             "name": "Lingote de hierro",
             "count": 15
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 38
           }, {
             "name": "Reforzar tablón",
@@ -10766,7 +10766,7 @@
             "name": "Piel rupu",
             "count": 42
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 4
           }
         ]
@@ -10886,7 +10886,7 @@
             "name": "Adhesivo de hueso",
             "count": 7
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 16
           }
         ]
@@ -11006,7 +11006,7 @@
             "name": "Esquirla de cerámica",
             "count": 192
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 56
           }, {
             "name": "Tela Nomad",
@@ -11072,7 +11072,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -11372,7 +11372,7 @@
             "name": "Piel rupu",
             "count": 65
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 5
           }
         ]
@@ -11492,7 +11492,7 @@
             "name": "Adhesivo de hueso",
             "count": 10
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 25
           }
         ]
@@ -11612,7 +11612,7 @@
             "name": "Esquirla de cerámica",
             "count": 300
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 88
           }, {
             "name": "Tela Nomad",
@@ -11678,7 +11678,7 @@
             "name": "Lingote de hierro",
             "count": 38
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 95
           }, {
             "name": "Reforzar tablón",
@@ -11767,7 +11767,7 @@
             "name": "Reforzar tablón",
             "count": 45
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 5
           }, {
             "name": "Brea",
@@ -11972,7 +11972,7 @@
             "name": "Piel rupu",
             "count": 42
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 4
           }
         ]
@@ -12092,7 +12092,7 @@
             "name": "Adhesivo de hueso",
             "count": 7
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 16
           }
         ]
@@ -12212,7 +12212,7 @@
             "name": "Esquirla de cerámica",
             "count": 192
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 56
           }, {
             "name": "Tela Nomad",
@@ -12278,7 +12278,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -12675,7 +12675,7 @@
             "name": "Piel rupu",
             "count": 65
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 5
           }
         ]
@@ -12795,7 +12795,7 @@
             "name": "Adhesivo de hueso",
             "count": 10
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 25
           }
         ]
@@ -12915,7 +12915,7 @@
             "name": "Esquirla de cerámica",
             "count": 300
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 88
           }, {
             "name": "Tela Nomad",
@@ -12981,7 +12981,7 @@
             "name": "Lingote de hierro",
             "count": 38
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 95
           }, {
             "name": "Reforzar tablón",
@@ -13233,7 +13233,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -13457,7 +13457,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -13887,7 +13887,7 @@
             "name": "Piel rupu",
             "count": 65
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 5
           }
         ]
@@ -14007,7 +14007,7 @@
             "name": "Adhesivo de hueso",
             "count": 10
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 25
           }
         ]
@@ -14127,7 +14127,7 @@
             "name": "Esquirla de cerámica",
             "count": 300
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 88
           }, {
             "name": "Tela Nomad",
@@ -14193,7 +14193,7 @@
             "name": "Lingote de hierro",
             "count": 38
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 95
           }, {
             "name": "Reforzar tablón",
@@ -14360,7 +14360,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -14785,7 +14785,7 @@
             "name": "Lingote de hierro",
             "count": 24
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 61
           }, {
             "name": "Reforzar tablón",
@@ -14987,7 +14987,7 @@
             "name": "Lingote de hierro",
             "count": 15
           }, {
-            "name": "Escama de quiitina",
+            "name": "Escama de quitina",
             "count": 38
           }, {
             "name": "Reforzar tablón",
