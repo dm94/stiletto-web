@@ -83,7 +83,7 @@ class Home extends Component {
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col-6 p-4 d-flex flex-column position-static">
-              <h3 className="mb-0">{t("Resources Maps")}</h3>
+              <h3 className="mb-0">{t("Resources maps")}</h3>
               <p className="card-text mb-auto">
                 {t(
                   "Create and edit maps to add resources or strategic points."

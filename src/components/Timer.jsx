@@ -110,7 +110,7 @@ class Timer extends Component {
                 type="text"
                 id="description"
                 className="form-control"
-                placeholder="Description"
+                placeholder={t("Description")}
               />
             </div>
             <div className="col-md-4">

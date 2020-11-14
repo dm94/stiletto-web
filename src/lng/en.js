@@ -30,6 +30,8 @@ let en = {
     "Control the clan": "Control the clan",
     "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.":
       "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.",
+    "Create and edit maps to add resources or strategic points.":
+      "Create and edit maps to add resources or strategic points.",
     "Your details": "Your details",
     "Discord Tag": "Discord Tag",
     "Nick in Game": "Nick in Game",

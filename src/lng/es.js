@@ -30,6 +30,8 @@ let es = {
     "Control the clan": "Controla el clan",
     "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.":
       "Usa esta sección para controlar tu clan, hacer alianzas o enviar guerras y mostrarlo fácilmente a los miembros de tu clan.",
+    "Create and edit maps to add resources or strategic points.":
+      "Crea y edita mapas para añadir recursos o puntos estratégicos.",
     "Your details": "Tus dattos",
     "Discord Tag": "Discord Tag",
     "Nick in Game": "Nick en el juego",
