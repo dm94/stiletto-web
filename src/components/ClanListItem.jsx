@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import ClanName from "./ClanName";
+import { withTranslation } from "react-i18next";
 
 class ClanListItem extends Component {
   constructor(props) {
@@ -11,19 +12,20 @@ class ClanListItem extends Component {
   }
 
   sendRequestButton() {
+    const { t } = this.props;
     if (this.state.clanuserid == "null") {
       return (
         <button
           className="btn btn-block btn-primary"
           onClick={(e) => this.props.onSendRequest(this.props.clan.clanid)}
         >
-          Send request
+          {t("Send request")}
         </button>
       );
     } else if (this.state.clanuserid == this.props.clan.clanid) {
       return (
         <Link className="btn btn-block btn-primary" to="/members">
-          Clan Members
+          {t("Members")}
         </Link>
       );
     }
@@ -51,4 +53,4 @@ class ClanListItem extends Component {
   }
 }
 
-export default ClanListItem;
+export default withTranslation()(ClanListItem);

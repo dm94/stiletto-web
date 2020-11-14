@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanListItem from "../components/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
+import { withTranslation } from "react-i18next";
 const axios = require("axios");
 
 class ClanList extends Component {
@@ -67,7 +68,7 @@ class ClanList extends Component {
     }
   }
 
-  clanList() {
+  clanList(t) {
     if (this.state.isLoaded) {
       return (
         <div className="table-responsive">
@@ -75,16 +76,16 @@ class ClanList extends Component {
             <thead className="thead-light">
               <tr>
                 <th className="text-center" scope="col">
-                  Clan Name
+                  {t("Clan Name")}
                 </th>
                 <th className="text-center" scope="col">
-                  Leader
+                  {t("Leader")}
                 </th>
                 <th className="text-center" scope="col">
-                  Discord Invite Link
+                  {t("Discord Invite Link")}
                 </th>
                 <th className="text-center" scope="col">
-                  Actions
+                  {t("Actions")}
                 </th>
               </tr>
             </thead>
@@ -98,12 +99,13 @@ class ClanList extends Component {
   }
 
   render() {
+    const { t } = this.props;
     if (this.state.redirect) {
       return (
         <ModalMessage
           message={{
             isError: false,
-            text: "Application to enter the clan sent",
+            text: t("Application to enter the clan sent"),
             redirectPage: "/profile",
           }}
         />
@@ -113,7 +115,7 @@ class ClanList extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: this.state.error,
+            text: t(this.state.error),
             redirectPage: "/profile",
           }}
         />
@@ -123,7 +125,7 @@ class ClanList extends Component {
       localStorage.getItem("discordid") != null &&
       localStorage.getItem("token") != null
     ) {
-      return this.clanList();
+      return this.clanList(t);
     }
     return (
       <ModalMessage
@@ -137,4 +139,4 @@ class ClanList extends Component {
   }
 }
 
-export default ClanList;
+export default withTranslation()(ClanList);

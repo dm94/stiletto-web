@@ -13,8 +13,10 @@ import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
 import Map from "./pages/Map";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function CrafterApp() {
+  const [t] = useTranslation();
   return (
     <Router>
       <header className="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark">
@@ -25,7 +27,7 @@ function CrafterApp() {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link className="nav-link" to="/crafter">
-                Crafting
+                {t("Crafting")}
               </Link>
             </li>
             <li className="nav-item dropdown">
@@ -38,46 +40,46 @@ function CrafterApp() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                Clan
+                {t("Clan")}
               </Link>
               <div className="dropdown-menu" aria-labelledby="clanDrodown">
                 <Link className="dropdown-item" to="/profile">
-                  Profile
+                  {t("Profile")}
                 </Link>
                 <Link className="dropdown-item" to="/clanlist">
-                  Clan List
+                  {t("Clan List")}
                 </Link>
                 <Link className="dropdown-item" to="/members">
-                  Members
+                  {t("Members")}
                 </Link>
                 <Link className="dropdown-item" to="/walkerlist">
-                  Walker List
+                  {t("Walker List")}
                 </Link>
                 <Link className="dropdown-item" to="/maps">
-                  Resources maps
+                  {t("Resources maps")}
                 </Link>
                 <Link className="dropdown-item" to="/diplomacy">
-                  Diplomacy
+                  {t("Diplomacy")}
                 </Link>
               </div>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/trades">
-                Trades
+                {t("Trades")}
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/auctions">
-                Auction Timers
+                {t("Auctions timers")}
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/others">
-                Other info
+                {t("Other info")}
               </Link>
             </li>
           </ul>
-          {discordButton()}
+          {discordButton(t)}
         </div>
       </header>
       <main role="main" className="container-fluid pt-4">
@@ -104,10 +106,12 @@ function CrafterApp() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Github project
-          </a>{" "}
-          | This website are utilities related to the game Last Oasis but is not
-          affiliated with{" "}
+            {t("Github project")}
+          </a>
+          {" | "}|{" "}
+          {t(
+            "This website are utilities related to the game Last Oasis but is not affiliated with"
+          )}{" "}
           <a
             href="https://www.donkey.team/"
             target="_blank"
@@ -125,20 +129,20 @@ function CrafterApp() {
         buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
         expires={150}
       >
-        This website uses cookies to enhance the user experience.
+        {t("This website uses cookies to enhance the user experience.")}
       </CookieConsent>
     </Router>
   );
 }
 
-function discordButton() {
+function discordButton(t) {
   if (
     localStorage.getItem("discordid") != null &&
     localStorage.getItem("token") != null
   ) {
     return (
       <Link className="btn btn-outline-light d-none d-sm-block" to="/profile">
-        Profile
+        {t("Profile")}
       </Link>
     );
   } else {
@@ -150,7 +154,7 @@ function discordButton() {
       "/discordlogin.php&scope=identify%20guilds&response_type=code";
     return (
       <a className="btn btn-outline-light d-none d-sm-block" href={urlLink}>
-        <i className="fab fa-discord"></i> Login with discord
+        <i className="fab fa-discord"></i> {t("Login with discord")}
       </a>
     );
   }

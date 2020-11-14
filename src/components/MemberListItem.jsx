@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { withTranslation } from "react-i18next";
 
 class MemberListItem extends Component {
   kickButton() {
+    const { t } = this.props;
     if (this.props.member.leaderid == localStorage.getItem("discordid")) {
       if (this.props.member.discordid != localStorage.getItem("discordid")) {
         return (
@@ -9,7 +11,7 @@ class MemberListItem extends Component {
             className="btn btn-block btn-danger"
             onClick={(e) => this.props.onKick(this.props.member.discordid)}
           >
-            Kick
+            {t("Kick")}
           </button>
         );
       }
@@ -27,4 +29,4 @@ class MemberListItem extends Component {
   }
 }
 
-export default MemberListItem;
+export default withTranslation()(MemberListItem);

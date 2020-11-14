@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withTranslation } from "react-i18next";
 var XMLParser = require("react-xml-parser");
 
 class Others extends Component {
@@ -57,11 +58,12 @@ class Others extends Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className="row">
         <div className="col-md-4">
           <div className="card mb-3">
-            <div className="card-header">Latest updates</div>
+            <div className="card-header">{t("Latest updates")}</div>
             <ul className="list-group">{this.showUpdates()}</ul>
           </div>
         </div>
@@ -70,10 +72,11 @@ class Others extends Component {
             <div className="col-md-6">
               <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div className="p-4 d-flex flex-column position-static">
-                  <h3 className="mb-0 pb-2">Report Bugs</h3>
+                  <h3 className="mb-0 pb-2">{t("Report Bugs")}</h3>
                   <p className="card-text mb-auto">
-                    I'd appreciate it if you find a bug and tell me about it on
-                    Github or another platform so that I can fix it
+                    {t(
+                      "I'd appreciate it if you find a bug and tell me about it on Github or another platform so that I can fix it"
+                    )}
                   </p>
                   <a
                     className="btn btn-success m-2"
@@ -81,7 +84,7 @@ class Others extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Report
+                    {t("Report")}
                   </a>
                 </div>
               </div>
@@ -89,10 +92,11 @@ class Others extends Component {
             <div className="col-md-6">
               <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div className="p-4 d-flex flex-column">
-                  <h3 className="mb-0 pb-2">Discord Bot</h3>
+                  <h3 className="mb-0 pb-2">{t("Discord Bot")}</h3>
                   <p className="card-text mb-auto">
-                    I have also created a discord bot useful to control the
-                    walkers and make a list of what is needed to create objects.
+                    {t(
+                      "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects."
+                    )}
                   </p>
                   <a
                     className="btn btn-success m-2"
@@ -100,7 +104,7 @@ class Others extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Go to Discord bot
+                    {t("Go to Discord bot")}
                   </a>
                 </div>
               </div>
@@ -114,7 +118,7 @@ class Others extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Dm94´s Discord
+                    {t("Dm94Dani´s Discord")}
                   </a>
                 </div>
               </div>
@@ -128,7 +132,7 @@ class Others extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Steam Page
+                    {t("Steam Page")}
                   </a>
                 </div>
               </div>
@@ -142,7 +146,7 @@ class Others extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Official Discord
+                    {t("Official Discord")}
                   </a>
                 </div>
               </div>
@@ -156,7 +160,7 @@ class Others extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Wiki
+                    {t("Wiki")}
                   </a>
                 </div>
               </div>
@@ -168,4 +172,4 @@ class Others extends Component {
   }
 }
 
-export default Others;
+export default withTranslation()(Others);

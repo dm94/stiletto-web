@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withTranslation } from "react-i18next";
 
 class ClanMapItem extends Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class ClanMapItem extends Component {
   }
 
   showButton() {
+    const { t } = this.props;
     if (this.state.isHover) {
       return (
         <div
@@ -26,16 +28,16 @@ class ClanMapItem extends Component {
             variant="primary"
             onClick={() => this.props.onOpen(this.props.map)}
           >
-            Show map
+            {t("Show map")}
           </button>
-          {this.deleteMapButton()}
-          {this.ShareMapButton()}
+          {this.deleteMapButton(t)}
+          {this.ShareMapButton(t)}
         </div>
       );
     }
   }
 
-  deleteMapButton() {
+  deleteMapButton(t) {
     if (this.props.map.discordid == localStorage.getItem("discordid")) {
       return (
         <button
@@ -43,13 +45,13 @@ class ClanMapItem extends Component {
           variant="primary"
           onClick={() => this.props.onDelete(this.props.map.mapid)}
         >
-          Delete map
+          {t("Delete map")}
         </button>
       );
     }
   }
 
-  ShareMapButton() {
+  ShareMapButton(t) {
     if (this.props.map.discordid == localStorage.getItem("discordid")) {
       var http = window.location.protocol;
       var slashes = http.concat("//");
@@ -70,7 +72,7 @@ class ClanMapItem extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Share map
+          {t("Share map")}
         </a>
       );
     }
@@ -99,4 +101,4 @@ class ClanMapItem extends Component {
   }
 }
 
-export default ClanMapItem;
+export default withTranslation()(ClanMapItem);

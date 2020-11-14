@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import MapLayer from "../components/MapLayer";
+import { withTranslation } from "react-i18next";
 const axios = require("axios");
 const queryString = require("query-string");
 
@@ -52,6 +53,7 @@ class Map extends Component {
   };
 
   render() {
+    const { t } = this.props;
     if (this.state.isLoaded) {
       return <LoadingScreen />;
     }
@@ -75,7 +77,7 @@ class Map extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: "You need a link with more data to access here",
+            text: t("You need a link with more data to access here"),
             redirectPage: "/",
           }}
         />
@@ -84,4 +86,4 @@ class Map extends Component {
   }
 }
 
-export default Map;
+export default withTranslation()(Map);

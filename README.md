@@ -16,14 +16,11 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 - Trading system
 - Auction Timers
 - Section where to create a list of allies, enemies or NAP
+- System to make the web multi-language
 
 ### In process
 
 - Management of alliances between various clans
-
-### Ideas to be added
-
-- System to make the web multi-language
 
 #### Environmental variables
 

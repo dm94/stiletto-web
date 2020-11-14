@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Items from "../components/Items";
 import SelectedItem from "../components/SelectedItem";
 import TotalMaterials from "../components/TotalMaterials";
+import { withTranslation } from "react-i18next";
 
 class ItemSelector extends Component {
   state = {
@@ -189,15 +190,8 @@ class ItemSelector extends Component {
     this.setState({ selectedItems });
   }
 
-  buttonChangeLanguaje() {
-    return (
-      <button className="btn btn-warning" onClick={this.switchLanguaje}>
-        ES/EN
-      </button>
-    );
-  }
-
   render() {
+    const { t } = this.props;
     return (
       <div className="row flex-xl-nowrap">
         <div className="col-md-2 col-xl-3">
@@ -242,7 +236,7 @@ class ItemSelector extends Component {
                 role="img"
                 focusable="false"
               >
-                <title>Menu</title>
+                <title>{t("Menu")}</title>
                 <path
                   stroke="currentColor"
                   strokeLinecap="round"
@@ -276,4 +270,4 @@ class ItemSelector extends Component {
   }
 }
 
-export default ItemSelector;
+export default withTranslation()(ItemSelector);

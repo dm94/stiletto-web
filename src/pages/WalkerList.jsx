@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import WalkerListItem from "../components/WalkerListItem";
+import { withTranslation } from "react-i18next";
 const axios = require("axios");
 
 class WalkerList extends Component {
@@ -42,7 +43,7 @@ class WalkerList extends Component {
         this.setState({ isLoaded: true });
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   }
 
@@ -90,7 +91,7 @@ class WalkerList extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -107,7 +108,7 @@ class WalkerList extends Component {
     this.setState({ walkersFiltered: [], isFiltered: false, searchInput: "" });
   };
 
-  serverLinkButton() {
+  serverLinkButton(t) {
     if (this.state.walkers != null && !this.state.walkers[0].discordid) {
       return (
         <div className="row">
@@ -115,13 +116,13 @@ class WalkerList extends Component {
             <div className="card border-secondary mb-3">
               <div className="card-body">
                 <div className="text-info mb-3">
-                  For the walkers to appear it is necessary to link the discord
-                  server with the clan, only users with administration power can
-                  add the discord server.
+                  {t(
+                    "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+                  )}
                 </div>
                 <form onSubmit={this.linkDiscordServer}>
                   <div className="form-group">
-                    <label htmlFor="discordlist">Discord ID</label>
+                    <label htmlFor="discordlist">{t("Discord ID")}</label>
                     <input
                       className="form-control"
                       type="number"
@@ -139,7 +140,7 @@ class WalkerList extends Component {
                     type="submit"
                     value="Submit"
                   >
-                    Link discord server
+                    {t("Link discord server")}
                   </button>
                 </form>
               </div>
@@ -147,12 +148,12 @@ class WalkerList extends Component {
           </div>
           <div className="col-xl-4">
             <div className="card border-secondary mb-3">
-              <div className="card-header">Discord Bot</div>
+              <div className="card-header">{t("Discord Bot")}</div>
               <div className="card-body">
                 <div className="mb-3">
-                  You need to add the bot to your discord to compile the list of
-                  walkers from the log, but it also has other functions like
-                  checking what you need to do the different items
+                  {t(
+                    "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items"
+                  )}
                 </div>
 
                 <a
@@ -161,7 +162,7 @@ class WalkerList extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Discord Bot
+                  {t("Discord Bot")}
                 </a>
               </div>
             </div>
@@ -172,12 +173,13 @@ class WalkerList extends Component {
   }
 
   render() {
+    const { t } = this.props;
     if (this.state.error) {
       return (
         <ModalMessage
           message={{
             isError: true,
-            text: this.state.error,
+            text: t(this.state.error),
             redirectPage: "/profile",
           }}
         />
@@ -193,12 +195,12 @@ class WalkerList extends Component {
       }
       return (
         <div>
-          {this.serverLinkButton()}
+          {this.serverLinkButton(t)}
           <table className="table">
             <thead>
               <tr>
                 <th className="text-center" scope="col">
-                  Walker ID
+                  {t("Walker ID")}
                 </th>
                 <th scope="col">
                   <div class="input-group input-group-sm w-50 mb-0 mx-auto">
@@ -221,7 +223,7 @@ class WalkerList extends Component {
                         className="btn btn-secondary"
                         onClick={(e) => this.searchWalkers(e)}
                       >
-                        Search
+                        {t("Search")}
                       </button>
                       <button
                         type="button"
@@ -232,19 +234,19 @@ class WalkerList extends Component {
                         }
                         onClick={(e) => this.clearSearch(e)}
                       >
-                        Clear
+                        {t("Clean")}
                       </button>
                     </div>
                   </div>
                 </th>
                 <th className="text-center" scope="col">
-                  Owner
+                  {t("Owner")}
                 </th>
                 <th className="text-center" scope="col">
-                  Last User
+                  {t("Last User")}
                 </th>
                 <th className="text-center" scope="col">
-                  Last Use
+                  {t("Last Use")}
                 </th>
               </tr>
             </thead>
@@ -257,7 +259,7 @@ class WalkerList extends Component {
       <ModalMessage
         message={{
           isError: true,
-          text: "You need to have a clan to access this section",
+          text: t("You need to have a clan to access this section"),
           redirectPage: "/profile",
         }}
       />
@@ -265,4 +267,4 @@ class WalkerList extends Component {
   }
 }
 
-export default WalkerList;
+export default withTranslation()(WalkerList);

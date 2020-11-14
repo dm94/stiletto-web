@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Trade from "../components/Trade";
+import { withTranslation } from "react-i18next";
 const axios = require("axios");
 
 class TradeSystem extends Component {
@@ -42,7 +43,7 @@ class TradeSystem extends Component {
       });
     axios
       .get(
-        "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json"
+        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json"
       )
       .then((response) => {
         const items = response.data.filter((it) => it.category === "materials");
@@ -50,17 +51,17 @@ class TradeSystem extends Component {
       });
   }
 
-  resourcesList() {
+  resourcesList(t) {
     if (this.state.items != null) {
       return this.state.items.map((item) => (
         <option key={item.name} value={item.name}>
-          {item.name}
+          {t(item.name)}
         </option>
       ));
     }
   }
 
-  tradeList() {
+  tradeList(t) {
     if (this.state.trades != null) {
       if (this.state.isFiltered) {
         if (this.state.filteredTrades.length > 0) {
@@ -68,7 +69,7 @@ class TradeSystem extends Component {
             <Trade key={"trade" + trade.idtrade} trade={trade} />
           ));
         } else {
-          return <div>No trade offers were found with this filter</div>;
+          return <div>{t("No trade offers were found with this filter")}</div>;
         }
       } else {
         return this.state.trades.map((trade) => (
@@ -147,14 +148,15 @@ class TradeSystem extends Component {
       });
   };
 
-  loggedPart() {
+  loggedPart(t) {
     if (this.state.user_discord_id == null || this.state.token == null) {
       return (
         <div className="col-xl-6">
           <div className="card border-secondary mb-3">
             <div className="card-body text-succes">
-              If you want to publish your own exchange offers you have to be
-              connected
+              {t(
+                "If you want to publish your own exchange offers you have to be connected"
+              )}
             </div>
           </div>
         </div>
@@ -165,11 +167,11 @@ class TradeSystem extends Component {
           <div className="col-xl-12">
             <form onSubmit={this.createTrade}>
               <div className="card border-secondary mb-3">
-                <div className="card-header">Publish an exchange</div>
+                <div className="card-header">{t("Publish an trade")}</div>
                 <div className="card-body">
                   <div className="row">
                     <div className="form-group col-xl-2">
-                      <label htmlFor="tradeType">Type</label>
+                      <label htmlFor="tradeType">{t("Type")}</label>
                       <select
                         id="tradeType"
                         className="custom-select"
@@ -180,12 +182,12 @@ class TradeSystem extends Component {
                           })
                         }
                       >
-                        <option value="Supply">Supply</option>
-                        <option value="Demand">Demand</option>
+                        <option value="Supply">{t("Supply")}</option>
+                        <option value="Demand">{t("Demand")}</option>
                       </select>
                     </div>
                     <div className="form-group col-xl-2">
-                      <label htmlFor="resourcetype">Resource</label>
+                      <label htmlFor="resourcetype">{t("Resource")}</label>
                       <select
                         id="resourcetype"
                         className="custom-select"
@@ -196,11 +198,11 @@ class TradeSystem extends Component {
                           })
                         }
                       >
-                        {this.resourcesList()}
+                        {this.resourcesList(t)}
                       </select>
                     </div>
                     <div className="form-group col-xl-2">
-                      <label htmlFor="regionInput">Region</label>
+                      <label htmlFor="regionInput">{t("Region")}</label>
                       <select
                         id="regionInput"
                         className="custom-select"
@@ -219,7 +221,7 @@ class TradeSystem extends Component {
                       </select>
                     </div>
                     <div className="form-group col-xl-2">
-                      <label htmlFor="amountInput">Quantity</label>
+                      <label htmlFor="amountInput">{t("Quantity")}</label>
                       <input
                         type="number"
                         id="amountInput"
@@ -234,7 +236,7 @@ class TradeSystem extends Component {
                     </div>
                     <div className="form-group col-xl-2">
                       <label htmlFor="qualityInput">
-                        Quality Q: {this.state.qualityInput}
+                        {t("Quantity")}: {this.state.qualityInput}
                       </label>
                       <input
                         id="qualityInput"
@@ -255,7 +257,7 @@ class TradeSystem extends Component {
                         type="submit"
                         value="Submit"
                       >
-                        Publish
+                        {t("Publish")}
                       </button>
                     </div>
                   </div>
@@ -269,12 +271,13 @@ class TradeSystem extends Component {
   }
 
   render() {
+    const { t } = this.props;
     if (this.state.error) {
       return (
         <ModalMessage
           message={{
             isError: true,
-            text: this.state.error,
+            text: t(this.state.error),
             redirectPage: "/profile",
           }}
         />
@@ -285,14 +288,14 @@ class TradeSystem extends Component {
     }
     return (
       <div className="row">
-        {this.loggedPart()}
+        {this.loggedPart(t)}
         <div className="col-md-12">
           <div className="card mb-3">
-            <div className="card-header">Published Trades</div>
+            <div className="card-header">{t("Published Trades")}</div>
             <div className="card-body">
               <div className="row">
                 <div className="col-1">
-                  <label htmlFor="tradeTypeFilter">Type</label>
+                  <label htmlFor="tradeTypeFilter">{t("Type")}</label>
                 </div>
                 <div className="col-xl-2">
                   <select
@@ -305,12 +308,12 @@ class TradeSystem extends Component {
                       })
                     }
                   >
-                    <option value="Supply">Supply</option>
-                    <option value="Demand">Demand</option>
+                    <option value="Supply">{t("Supply")}</option>
+                    <option value="Demand">{t("Demand")}</option>
                   </select>
                 </div>
                 <div className="col-1">
-                  <label htmlFor="resourcetypefilter">Resource</label>
+                  <label htmlFor="resourcetypefilter">{t("Resource")}</label>
                 </div>
                 <div className="col-xl-2">
                   <select
@@ -323,11 +326,11 @@ class TradeSystem extends Component {
                       })
                     }
                   >
-                    {this.resourcesList()}
+                    {this.resourcesList(t)}
                   </select>
                 </div>
                 <div className="col-1">
-                  <label htmlFor="regionFilterInput">Region</label>
+                  <label htmlFor="regionFilterInput">{t("Region")}</label>
                 </div>
                 <div className="col-xl-2">
                   <select
@@ -352,13 +355,13 @@ class TradeSystem extends Component {
                     className="btn btn-lg btn-primary"
                     onClick={(e) => this.onClickFilterTrades(e)}
                   >
-                    Filter trades
+                    {t("Filter trades")}
                   </button>
                   <button
                     className="btn btn-lg btn-secondary"
                     onClick={(e) => this.onClickCleanTrades(e)}
                   >
-                    Clean filter
+                    {t("Clean filter")}
                   </button>
                 </div>
               </div>
@@ -366,11 +369,11 @@ class TradeSystem extends Component {
           </div>
         </div>
         <div className="col-md-12">
-          <div className="row">{this.tradeList()}</div>
+          <div className="row">{this.tradeList(t)}</div>
         </div>
       </div>
     );
   }
 }
 
-export default TradeSystem;
+export default withTranslation()(TradeSystem);

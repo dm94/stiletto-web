@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import PrivateProfile from "../components/PrivateProfile";
+import { withTranslation } from "react-i18next";
 
 const queryString = require("query-string");
 
 class DiscordConnection extends Component {
   showClanInfo() {
+    const { t } = this.props;
     const parsed = queryString.parse(this.props.location.search);
     let urlLink =
       "https://discord.com/api/oauth2/authorize?client_id=" +
@@ -31,7 +33,7 @@ class DiscordConnection extends Component {
                 className="btn btn-lg btn-outline-primary btn-block"
                 href={urlLink}
               >
-                <i className="fab fa-discord"></i>Login with discord
+                <i className="fab fa-discord"></i> {t("Login with discord")}
               </a>
             </div>
           </div>
@@ -45,4 +47,4 @@ class DiscordConnection extends Component {
   }
 }
 
-export default DiscordConnection;
+export default withTranslation()(DiscordConnection);

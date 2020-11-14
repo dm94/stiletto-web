@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import LoadingScreen from "./LoadingScreen";
 import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 import ModalMessage from "./ModalMessage";
+import { withTranslation } from "react-i18next";
+import i18next from "i18next";
 
 const axios = require("axios");
 
@@ -24,6 +26,7 @@ class PrivateProfile extends Component {
       addClanNameInput: "",
       addClanColorInput: "",
       addClanDiscordInput: "",
+      language: localStorage.getItem("i18nextLng"),
     };
   }
 
@@ -50,12 +53,12 @@ class PrivateProfile extends Component {
           });
         } else if (response.status === 205) {
           localStorage.clear();
-          this.setState({ error: "This user cannot be found" });
+          this.setError("This user cannot be found");
         }
         this.setState({ isLoaded: true });
       })
       .catch((er) => {
-        this.setState({ error: "Error when connecting to the API" });
+        this.setConnectionError();
       });
   }
 
@@ -89,7 +92,7 @@ class PrivateProfile extends Component {
         this.setState({ nickname: this.state.nameInGameInput });
       })
       .catch((error) => {
-        this.setState({ error: "Error when connecting to the API" });
+        this.setConnectionError();
       });
   };
 
@@ -107,7 +110,7 @@ class PrivateProfile extends Component {
         this.setState({ clanname: null });
       })
       .catch((error) => {
-        this.setState({ error: "Error when connecting to the API" });
+        this.setConnectionError();
       });
   };
 
@@ -128,15 +131,29 @@ class PrivateProfile extends Component {
           this.componentDidMount();
         } else if (response.status === 205) {
           localStorage.clear();
-          this.setState({ error: "This user cannot be found" });
+          this.setError("This user cannot be found");
         }
       })
       .catch((error) => {
-        this.setState({ error: "Error when connecting to the API" });
+        this.setConnectionError();
       });
   };
 
+  changeLanguage = () => {
+    i18next.changeLanguage(this.state.language, (err, t) => {});
+  };
+
+  setConnectionError() {
+    this.setError("Error when connecting to the API");
+  }
+
+  setError(error) {
+    const { t } = this.props;
+    this.setState({ error: t(error) });
+  }
+
   showClanSection() {
+    const { t } = this.props;
     let showHideClassName = this.state.showDeleteModal
       ? "modal d-block"
       : "modal d-none";
@@ -149,27 +166,27 @@ class PrivateProfile extends Component {
         <div className="row">
           <div className="col-xl-6">
             <div className="card border-secondary mb-3">
-              <div className="card-header">Your details</div>
+              <div className="card-header">{t("Your details")}</div>
               <div className="card-body text-secondary">
                 <ul className="list-group mb-3">
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">Discord Tag</div>
+                    <div className="my-0">{t("Discord Tag")}</div>
                     <div className="text-muted">{this.state.discordtag}</div>
                   </li>
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">Nick in Game</div>
+                    <div className="my-0">{t("Nick in Game")}</div>
                     <div className="text-muted">
                       {this.state.nickname != null
                         ? this.state.nickname
-                        : "Not defined"}
+                        : t("Not defined")}
                     </div>
                   </li>
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">Clan</div>
+                    <div className="my-0">{t("Clan")}</div>
                     <div className="text-muted">
                       {this.state.clanname != null
                         ? this.state.clanname
-                        : "No Clan"}
+                        : t("No Clan")}
                     </div>
                   </li>
                 </ul>
@@ -180,7 +197,7 @@ class PrivateProfile extends Component {
                   className="btn btn-lg btn-outline-danger btn-block"
                   onClick={this.showModal}
                 >
-                  Delete user
+                  {t("Delete user")}
                 </button>
               </div>
             </div>
@@ -190,32 +207,33 @@ class PrivateProfile extends Component {
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title" id="deleteusermodal">
-                    Are you sure?
+                    {t("Are you sure?")}
                   </h5>
                 </div>
                 <div className="modal-body">
-                  This option is not reversible, your user and all his data will
-                  be deleted.
+                  {t(
+                    "This option is not reversible, your user and all his data will be deleted."
+                  )}
                 </div>
                 <div className="modal-footer">
                   <button
                     className="btn btn-outline-secondary"
                     onClick={this.hideModal}
                   >
-                    Cancel
+                    {t("Cancel")}
                   </button>
                   <button
                     className="btn btn-outline-danger"
                     onClick={this.deleteUser}
                   >
-                    Delete user
+                    {t("Delete user")}
                   </button>
                 </div>
               </div>
             </div>
           </div>
-          {this.changeNamePart()}
-          {this.manageClanPart()}
+          {this.changeNamePart(t)}
+          {this.manageClanPart(t)}
           <div className="col-xl-6">
             <div className="card border-secondary mb-3">
               <div className="card-body">
@@ -223,8 +241,40 @@ class PrivateProfile extends Component {
                   className="btn btn-lg btn-outline-secondary btn-block"
                   to="/maps"
                 >
-                  Resources Maps
+                  {t("Resources Maps")}
                 </Link>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-6">
+            <div className="card border-secondary mb-3">
+              <div className="card-header">{t("Change language")}</div>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col">
+                    <select
+                      id="changeLanguajeSelect"
+                      className="custom-select"
+                      value={this.state.language}
+                      onChange={(evt) =>
+                        this.setState({
+                          language: evt.target.value,
+                        })
+                      }
+                    >
+                      <option value="en">{t("English")}</option>
+                      <option value="es">{t("Spanish")}</option>
+                    </select>
+                  </div>
+                  <div className="col">
+                    <button
+                      className="btn btn-outline-primary"
+                      onClick={this.changeLanguage}
+                    >
+                      {t("Change language")}
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -235,17 +285,17 @@ class PrivateProfile extends Component {
     }
   }
 
-  changeNamePart() {
+  changeNamePart(t) {
     if (this.state.nickname == null || this.state.nickname === "Loading...") {
       return (
         <div className="col-xl-6">
           <div className="card border-secondary mb-3">
-            <div className="card-header">Add name in the game</div>
+            <div className="card-header">{t("Add name in the game")}</div>
             <div className="card-body text-succes">
               <form onSubmit={this.addNickInGame}>
                 <div className="form-group">
                   <label htmlFor="user_game_name">
-                    Your name in Last Oasis
+                    {t("Your name in Last Oasis")}
                   </label>
                   <input
                     type="text"
@@ -265,7 +315,7 @@ class PrivateProfile extends Component {
                   type="submit"
                   value="Submit"
                 >
-                  Add
+                  {t("Add")}
                 </button>
               </form>
             </div>
@@ -275,20 +325,20 @@ class PrivateProfile extends Component {
     }
   }
 
-  manageClanPart() {
+  manageClanPart(t) {
     if (this.state.clanname == null || this.state.clanname === "Loading...") {
       return (
         <div className="col-xl-6">
           <div className="card border-secondary mb-3">
             <div className="card-header">
               <Link className="btn btn-lg btn-info btn-block" to="/clanlist">
-                Join a clan
+                {t("Join a clan")}
               </Link>
             </div>
             <div className="card-body text-succes">
               <form onSubmit={this.createClan}>
                 <div className="form-group">
-                  <label htmlFor="clan_name">Clan Name</label>
+                  <label htmlFor="clan_name">{t("Clan Name")}</label>
                   <input
                     type="text"
                     className="form-control"
@@ -305,7 +355,7 @@ class PrivateProfile extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="flag_color">Flag Color</label>
+                  <label htmlFor="flag_color">{t("Flag Color")}</label>
                   <input
                     type="color"
                     className="form-control"
@@ -322,7 +372,7 @@ class PrivateProfile extends Component {
                 </div>
                 <div className="form-group">
                   <label htmlFor="discord_invite">
-                    Discord Link Invite (Optional)
+                    {t("Discord Invite Link")} {t("(Optional)")}
                   </label>
                   <div className="input-group mb-3">
                     <div className="input-group-prepend">
@@ -350,7 +400,7 @@ class PrivateProfile extends Component {
                   type="submit"
                   value="Submit"
                 >
-                  Create a clan
+                  {t("Create a clan")}
                 </button>
               </form>
             </div>
@@ -361,35 +411,35 @@ class PrivateProfile extends Component {
       return (
         <div className="col-xl-6">
           <div className="card border-secondary mb-3">
-            <div className="card-header">Manage Clan</div>
+            <div className="card-header">{t("Manage Clan")}</div>
             <div className="card-body">
               <Link
                 className="btn btn-lg btn-outline-secondary btn-block"
                 to="/members"
               >
-                Clan Members
+                {t("Members")}
               </Link>
               <Link
                 className="btn btn-lg btn-outline-secondary btn-block"
                 to="/walkerlist"
               >
-                Walker list
+                {t("Walker List")}
               </Link>
               <Link
                 className="btn btn-lg btn-outline-secondary btn-block"
                 to="/diplomacy"
               >
-                Diplomacy
+                {t("Diplomacy")}
               </Link>
             </div>
-            {this.leaveClanButton()}
+            {this.leaveClanButton(t)}
           </div>
         </div>
       );
     }
   }
 
-  leaveClanButton() {
+  leaveClanButton(t) {
     if (this.state.clanleaderid !== this.state.user_discord_id) {
       return (
         <div className="card-footer">
@@ -397,7 +447,7 @@ class PrivateProfile extends Component {
             className="btn btn-lg btn-outline-danger btn-block"
             onClick={this.leaveClan}
           >
-            Leave clan
+            {t("Leave clan")}
           </button>
         </div>
       );
@@ -424,4 +474,4 @@ class PrivateProfile extends Component {
   }
 }
 
-export default PrivateProfile;
+export default withTranslation()(PrivateProfile);

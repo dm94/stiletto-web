@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withTranslation } from "react-i18next";
 
 class Timer extends Component {
   constructor(props) {
@@ -52,6 +53,7 @@ class Timer extends Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className="card">
         <div
@@ -61,7 +63,7 @@ class Timer extends Component {
         >
           <div className="row">
             <div className="col-md-1">
-              <label htmlFor="hours">Hours</label>
+              <label htmlFor="hours">{t("Hours")}</label>
               <h1>
                 <input
                   type="number"
@@ -75,7 +77,7 @@ class Timer extends Component {
               </h1>
             </div>
             <div className="col-md-1">
-              <label htmlFor="minutes">Minutes</label>
+              <label htmlFor="minutes">{t("Minutes")}</label>
               <h1>
                 <input
                   type="number"
@@ -89,7 +91,7 @@ class Timer extends Component {
               </h1>
             </div>
             <div className="col-md-1">
-              <label htmlFor="seconds">Seconds</label>
+              <label htmlFor="seconds">{t("Seconds")}</label>
               <h1>
                 <input
                   type="number"
@@ -103,7 +105,7 @@ class Timer extends Component {
               </h1>
             </div>
             <div className="col-md-5">
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">{t("Description")}</label>
               <input
                 type="text"
                 id="description"
@@ -116,13 +118,13 @@ class Timer extends Component {
                 className="btn btn-success btn-block"
                 onClick={() => this.setState({ isOn: true, isFinish: false })}
               >
-                Start
+                {t("Start")}
               </button>
               <button
                 className="btn btn-danger btn-block"
                 onClick={() => this.setState({ isOn: false })}
               >
-                Stop
+                {t("Stop")}
               </button>
             </div>
           </div>
@@ -132,4 +134,4 @@ class Timer extends Component {
   }
 }
 
-export default Timer;
+export default withTranslation()(Timer);

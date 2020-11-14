@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Timer from "../components/Timer";
+import { withTranslation } from "react-i18next";
 
 class AuctionTimers extends Component {
   state = {
@@ -25,12 +26,15 @@ class AuctionTimers extends Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className="row">
         <div className="col-md-8">
           <div className="card">
             <div className="card-header text-center">
-              This data is not saved, if you reload the page it will be deleted
+              {t(
+                "This data is not saved, if you reload the page it will be deleted"
+              )}
             </div>
           </div>
         </div>
@@ -48,7 +52,7 @@ class AuctionTimers extends Component {
                     this.setState({ playSound: true });
                   }}
                 >
-                  Sound On
+                  {t("Sound On")}
                 </button>
                 <button
                   className={
@@ -60,7 +64,7 @@ class AuctionTimers extends Component {
                     this.setState({ playSound: false });
                   }}
                 >
-                  Sound Off
+                  {t("Sound Off")}
                 </button>
               </div>
             </div>
@@ -100,4 +104,4 @@ class AuctionTimers extends Component {
   }
 }
 
-export default AuctionTimers;
+export default withTranslation()(AuctionTimers);

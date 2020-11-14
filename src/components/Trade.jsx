@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withTranslation } from "react-i18next";
 
 class Trade extends Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Trade extends Component {
     };
   }
 
-  cardFooter() {
+  cardFooter(t) {
     if (
       this.state.user_discord_id == null ||
       this.state.user_discord_id != this.props.trade.discordid
@@ -24,18 +25,19 @@ class Trade extends Component {
           className="btn btn-danger"
           onClick={(e) => this.props.onDelete(this.props.trade.idtrade)}
         >
-          Delete
+          {t("Delete")}
         </button>
       );
     }
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className="col-xl-3 text-center">
         <div className="card mb-4 shadow-sm">
           <div className="card-header">
-            {this.props.trade.type} - {this.props.trade.region}
+            {t(this.props.trade.type)} - {this.props.trade.region}
           </div>
           <div className="card-body">
             <h5 className="card-title">
@@ -48,14 +50,14 @@ class Trade extends Component {
                 : ""}
             </h5>
             {this.props.trade.nickname != null
-              ? "Nick in game: " + this.props.trade.nickname
+              ? t("Nick in game") + ": " + this.props.trade.nickname
               : ""}
           </div>
-          {this.cardFooter()}
+          {this.cardFooter(t)}
         </div>
       </div>
     );
   }
 }
 
-export default Trade;
+export default withTranslation()(Trade);

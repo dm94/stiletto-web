@@ -3,6 +3,7 @@ import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import MemberListItem from "../components/MemberListItem";
 import RequestMemberListItem from "../components/RequestMemberListItem";
+import { withTranslation } from "react-i18next";
 
 const axios = require("axios");
 
@@ -44,7 +45,7 @@ class MemberList extends Component {
         this.setState({ isLoaded: true });
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
 
     axios
@@ -63,7 +64,7 @@ class MemberList extends Component {
       })
       .catch((error) => {
         this.setState({
-          error: "Error when loading the list of applications. Try again later",
+          error: "Error when connecting to the API",
         });
       });
   }
@@ -89,7 +90,7 @@ class MemberList extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -115,7 +116,7 @@ class MemberList extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -140,7 +141,7 @@ class MemberList extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -162,7 +163,7 @@ class MemberList extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -184,7 +185,7 @@ class MemberList extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Failure to connect to API" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -200,9 +201,12 @@ class MemberList extends Component {
     }
   }
 
-  requestList() {
+  requestList(t) {
     if (this.state.isLoadedRequestList) {
-      if (this.state.requestMembers != null) {
+      if (
+        this.state.requestMembers != null &&
+        this.state.requestMembers.length > 0
+      ) {
         return this.state.requestMembers.map((member) => (
           <RequestMemberListItem
             key={member.discordid}
@@ -214,20 +218,22 @@ class MemberList extends Component {
       } else {
         return (
           <tr>
-            <td colSpan="4">There are no pending requests</td>
+            <td colSpan="4">{t("There are no pending requests")}</td>
           </tr>
         );
       }
     } else {
       return (
         <tr>
-          <td colSpan="4">Loading the list of requests to enter the clan</td>
+          <td colSpan="4">
+            {t("Loading the list of requests to enter the clan")}
+          </td>
         </tr>
       );
     }
   }
 
-  deleteClanButton() {
+  deleteClanButton(t) {
     if (
       this.state.members != null &&
       this.state.members[0].leaderid == localStorage.getItem("discordid")
@@ -235,17 +241,18 @@ class MemberList extends Component {
       return (
         <div className="col-xl-3">
           <div className="card mb-3">
-            <div className="card-header">Delete Clan</div>
+            <div className="card-header">{t("Delete Clan")}</div>
             <div className="card-body">
-              By deleting the clan you will delete all the data linked to it, be
-              careful because this option is not reversible
+              {t(
+                "By deleting the clan you will delete all the data linked to it, be careful because this option is not reversible"
+              )}
             </div>
             <div className="card-footer">
               <button
                 className="btn btn-block btn-danger"
                 onClick={() => this.deleteClan()}
               >
-                Delete Clan
+                {t("Delete")}
               </button>
             </div>
           </div>
@@ -254,7 +261,7 @@ class MemberList extends Component {
     }
   }
 
-  transferOwnerPanel() {
+  transferOwnerPanel(t) {
     if (
       this.state.members != null &&
       this.state.members[0].leaderid == localStorage.getItem("discordid")
@@ -262,13 +269,14 @@ class MemberList extends Component {
       return (
         <div className="col-xl-3">
           <div className="card mb-3">
-            <div className="card-header">Transfer Clan</div>
+            <div className="card-header">{t("Transfer Clan")}</div>
             <div className="card-body">
               <p>
-                This option is not reversible, so be careful who you pass it on
-                to in the leadership of the clan
+                {t(
+                  "This option is not reversible, so be careful who you pass it on to in the leadership of the clan"
+                )}
               </p>
-              <label htmlFor="selectNewOwner">New leader:</label>
+              <label htmlFor="selectNewOwner">{t("New leader:")}</label>
               <select
                 id="selectNewOwner"
                 className="custom-select"
@@ -287,7 +295,7 @@ class MemberList extends Component {
                 className="btn btn-block btn-danger"
                 onClick={() => this.changeOwner()}
               >
-                Change Owner
+                {t("Change leader")}
               </button>
             </div>
           </div>
@@ -307,12 +315,13 @@ class MemberList extends Component {
   }
 
   render() {
+    const { t } = this.props;
     if (this.state.error) {
       return (
         <ModalMessage
           message={{
             isError: true,
-            text: this.state.error,
+            text: t(this.state.error),
             redirectPage: "/profile",
           }}
         />
@@ -322,7 +331,7 @@ class MemberList extends Component {
         <ModalMessage
           message={{
             isError: false,
-            text: this.state.redirectMessage,
+            text: t(this.state.redirectMessage),
             redirectPage: "/profile",
           }}
         />
@@ -336,7 +345,7 @@ class MemberList extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: "You do not have permission to access this page",
+            text: t("You do not have permission to access this page"),
             redirectPage: "/profile",
           }}
         />
@@ -351,19 +360,19 @@ class MemberList extends Component {
       <div className="row">
         <div className="col-xl-6">
           <div className="card mb-3">
-            <div className="card-header">Member List</div>
+            <div className="card-header">{t("Member List")}</div>
             <div className="card-body">
               <table className="table">
                 <thead>
                   <tr>
                     <th className="text-center" scope="col">
-                      Discord Tag
+                      {t("Discord Tag")}
                     </th>
                     <th className="text-center" scope="col">
-                      Nick in game
+                      {t("Nick in game")}
                     </th>
                     <th className="text-center" scope="col">
-                      Kick
+                      {t("Kick")}
                     </th>
                   </tr>
                 </thead>
@@ -374,35 +383,35 @@ class MemberList extends Component {
         </div>
         <div className="col-xl-6">
           <div className="card mb-3">
-            <div className="card-header">List of requests</div>
+            <div className="card-header">{t("List of requests")}</div>
             <div className="card-body">
               <table className="table">
                 <thead>
                   <tr>
                     <th className="text-center" scope="col">
-                      Discord Tag
+                      {t("Discord Tag")}
                     </th>
                     <th className="text-center" scope="col">
-                      Nick in game
+                      {t("Nick in game")}
                     </th>
                     <th className="text-center" scope="col">
-                      Accept
+                      {t("Accept")}
                     </th>
                     <th className="text-center" scope="col">
-                      Reject
+                      {t("Reject")}
                     </th>
                   </tr>
                 </thead>
-                <tbody>{this.requestList()}</tbody>
+                <tbody>{this.requestList(t)}</tbody>
               </table>
             </div>
           </div>
         </div>
-        {this.transferOwnerPanel()}
-        {this.deleteClanButton()}
+        {this.transferOwnerPanel(t)}
+        {this.deleteClanButton(t)}
       </div>
     );
   }
 }
 
-export default MemberList;
+export default withTranslation()(MemberList);

@@ -1,14 +1,16 @@
 import React, { Component } from "react";
+import { withTranslation } from "react-i18next";
 
 class Ingredient extends Component {
   render() {
+    const { t } = this.props;
     return (
       <div className="text-center">
         {this.props.ingredient.count * this.props.value}x{" "}
-        {this.props.ingredient.name}
+        {t(this.props.ingredient.name)}
       </div>
     );
   }
 }
 
-export default Ingredient;
+export default withTranslation()(Ingredient);

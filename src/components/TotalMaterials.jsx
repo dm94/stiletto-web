@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Ingredient from "../components/Ingredient";
 import domtoimage from "dom-to-image";
+import { withTranslation } from "react-i18next";
 
 class ListIngredients extends Component {
   render() {
@@ -32,7 +33,7 @@ class ListIngredients extends Component {
     ));
   }
 }
-export default class TotalMaterials extends Component {
+class TotalMaterials extends Component {
   constructor(props) {
     super(props);
     this.componentRef = React.createRef();
@@ -50,10 +51,11 @@ export default class TotalMaterials extends Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className="card border-warning mb-3">
         <div className="card-header border-warning">
-          <div className="font-weight-normal">Total materials</div>
+          <div className="font-weight-normal">{t("Total materials")}</div>
         </div>
         <div className="card-body bg-light" id="list-all-items">
           <div className="list-unstyled">
@@ -62,7 +64,8 @@ export default class TotalMaterials extends Component {
               selectedItems={this.props.selectedItems}
             />
             <li className="text-right text-muted">
-              List of all necessary materials by stiletto.comunidadgzone.es
+              {t("List of all necessary materials by")}{" "}
+              stiletto.comunidadgzone.es
             </li>
           </div>
         </div>
@@ -71,10 +74,11 @@ export default class TotalMaterials extends Component {
             className="btn btn-primary"
             onClick={() => this.downloadsTotal()}
           >
-            Download Totals
+            {t("Download Totals")}
           </button>
         </div>
       </div>
     );
   }
 }
+export default withTranslation()(TotalMaterials);

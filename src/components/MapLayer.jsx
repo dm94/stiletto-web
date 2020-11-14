@@ -3,6 +3,7 @@ import L from "leaflet";
 import { TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
+import { withTranslation } from "react-i18next";
 
 var myMarker = L.icon({
   iconUrl:
@@ -41,7 +42,7 @@ class MapLayer extends Component {
     return marker;
   }
 
-  getMarkers() {
+  getMarkers(t) {
     if (this.props.resourcesInTheMap != null) {
       return this.props.resourcesInTheMap.map((resource) => (
         <Marker
@@ -51,7 +52,7 @@ class MapLayer extends Component {
         >
           <Popup>
             <div className="mb-0">
-              {resource.resourcetype} - Q: {resource.quality}
+              {t(resource.resourcetype)} - Q: {resource.quality}
             </div>
             <div className="mb-1 text-muted">
               [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
@@ -60,11 +61,11 @@ class MapLayer extends Component {
               className="btn btn-danger"
               onClick={() => this.props.deleteResource(resource.resourceid)}
             >
-              Delete
+              {t("Delete")}
             </button>
           </Popup>
           <Tooltip>
-            {resource.resourcetype} - Q: {resource.quality}
+            {t(resource.resourcetype)} - Q: {resource.quality}
           </Tooltip>
         </Marker>
       ));
@@ -85,6 +86,7 @@ class MapLayer extends Component {
   };
 
   render() {
+    const { t } = this.props;
     let position = [this.state.coordinateXInput, this.state.coordinateYInput];
     const marker = this.state.hasLocation ? (
       <Marker position={position} icon={myMarker}>
@@ -95,7 +97,7 @@ class MapLayer extends Component {
             Math.floor(this.state.coordinateYInput)}
           ]
         </Popup>
-        <Tooltip>Temporal Marker</Tooltip>
+        <Tooltip>{t("Temporal Marker")}</Tooltip>
       </Marker>
     ) : null;
 
@@ -116,11 +118,11 @@ class MapLayer extends Component {
             noWrap={true}
           />
           {marker}
-          <Fragment>{this.getMarkers()}</Fragment>
+          <Fragment>{this.getMarkers(t)}</Fragment>
         </MapExtended>
       </div>
     );
   }
 }
 
-export default MapLayer;
+export default withTranslation()(MapLayer);

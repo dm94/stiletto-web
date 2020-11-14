@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ModalMessage from "./ModalMessage";
 import MapLayer from "./MapLayer";
+import { withTranslation } from "react-i18next";
 const axios = require("axios");
 
 class ResourceMap extends Component {
@@ -24,7 +25,7 @@ class ResourceMap extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json"
+        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json"
       )
       .then((response) => {
         const items = response.data.filter((it) => it.category === "materials");
@@ -83,7 +84,7 @@ class ResourceMap extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -107,7 +108,7 @@ class ResourceMap extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -118,23 +119,24 @@ class ResourceMap extends Component {
     });
   };
 
-  resourcesList() {
+  resourcesList(t) {
     if (this.state.items != null) {
       return this.state.items.map((item) => (
         <option key={item.name} value={item.name}>
-          {item.name}
+          {t(item.name)}
         </option>
       ));
     }
   }
 
   render() {
+    const { t } = this.props;
     if (this.state.user_discord_id == null || this.state.token == null) {
       return (
         <ModalMessage
           message={{
             isError: true,
-            text: "You have to be connected and have a clan to enter here",
+            text: t("Login with discord"),
             redirectPage: "/profile",
           }}
         />
@@ -149,7 +151,7 @@ class ResourceMap extends Component {
               className="btn btn-lg btn-primary btn-block"
               onClick={() => this.props.onReturn()}
             >
-              Back to the list of maps
+              {t("Back to the list of maps")}
             </button>
             <button
               className="btn d-md-none p-0 ml-3"
@@ -168,7 +170,7 @@ class ResourceMap extends Component {
                 role="img"
                 focusable="false"
               >
-                <title>Menu</title>
+                <title>{t("Menu")}</title>
                 <path
                   stroke="currentColor"
                   strokeLinecap="round"
@@ -184,7 +186,7 @@ class ResourceMap extends Component {
               <div className="card-body">
                 <form onSubmit={this.createResource}>
                   <div className="form-group">
-                    <label htmlFor="resourcetype">Type</label>
+                    <label htmlFor="resourcetype">{t("Type")}</label>
                     <select
                       id="resourcetype"
                       className="custom-select"
@@ -195,12 +197,12 @@ class ResourceMap extends Component {
                         })
                       }
                     >
-                      {this.resourcesList()}
+                      {this.resourcesList(t)}
                     </select>
                   </div>
                   <div className="form-group">
                     <label htmlFor="coordinateXInput">
-                      Coordinate X (Not the real thing)
+                      {t("Coordinate")} X {t("Not the same as in the game")}
                     </label>
                     <input
                       type="text"
@@ -217,7 +219,7 @@ class ResourceMap extends Component {
                   </div>
                   <div className="form-group">
                     <label htmlFor="coordinateYInput">
-                      Coordinate Y (Not the real thing)
+                      {t("Coordinate")} Y {t("Not the same as in the game")}
                     </label>
                     <input
                       type="text"
@@ -234,7 +236,7 @@ class ResourceMap extends Component {
                   </div>
                   <div className="form-group">
                     <label htmlFor="quality">
-                      Quality {this.state.qualityInput}
+                      {t("Quality:")} {this.state.qualityInput}
                     </label>
                     <input
                       type="range"
@@ -254,7 +256,7 @@ class ResourceMap extends Component {
                     type="submit"
                     value="Submit"
                   >
-                    Create resource
+                    {t("Create resource")}
                   </button>
                 </form>
               </div>
@@ -275,4 +277,4 @@ class ResourceMap extends Component {
   }
 }
 
-export default ResourceMap;
+export default withTranslation()(ResourceMap);

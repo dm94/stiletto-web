@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Ingredients from "./Ingredients";
+import { withTranslation } from "react-i18next";
 
 class SelectedItem extends Component {
   showIngredient() {
@@ -15,11 +16,12 @@ class SelectedItem extends Component {
   }
 
   render() {
+    const { t } = this.props;
     return (
       <div className="col">
         <div className="card">
           <div className="text-center card-header">
-            {this.props.value}x {this.props.item.name}
+            {this.props.value}x {t(this.props.item.name)}
           </div>
           <div className="card-body">
             <div className="list-unstyled ">{this.showIngredient()}</div>
@@ -70,4 +72,4 @@ class SelectedItem extends Component {
   }
 }
 
-export default SelectedItem;
+export default withTranslation()(SelectedItem);

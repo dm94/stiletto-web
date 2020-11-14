@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ModalMessage from "../components/ModalMessage";
 import ClanMapItem from "../components/ClanMapItem";
 import ResourceMap from "../components/ResourceMap";
-
+import { withTranslation } from "react-i18next";
 const axios = require("axios");
 
 class ClanMaps extends Component {
@@ -111,11 +111,13 @@ class ClanMaps extends Component {
           this.componentDidMount();
         } else if (response.status === 205) {
           localStorage.clear();
-          this.setState({ error: "Login again" });
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
@@ -170,27 +172,27 @@ class ClanMaps extends Component {
         }
       })
       .catch((error) => {
-        this.setState({ error: "Try again later" });
+        this.setState({ error: "Error when connecting to the API" });
       });
   };
 
-  createMapPanel() {
+  createMapPanel(t) {
     return (
       <div className="row">
         <div className="col-xl-12">
           <div className="card border-secondary mb-3">
-            <div className="card-header">Map List</div>
+            <div className="card-header">{t("Map List")}</div>
             <div className="card-body row">{this.clanMapList()}</div>
           </div>
         </div>
         <div className="col-xl-12">
           <div className="card border-secondary mb-3">
-            <div className="card-header">New Map</div>
+            <div className="card-header">{t("New Map")}</div>
             <div className="card-body text-succes">
               <form onSubmit={this.createMap}>
                 <div className="row">
                   <div className="col-xl-6 col-sm-12 form-group">
-                    <label htmlFor="map_name">Map Name</label>
+                    <label htmlFor="map_name">{t("Map Name")}</label>
                     <input
                       type="text"
                       className="form-control"
@@ -207,7 +209,7 @@ class ClanMaps extends Component {
                     />
                   </div>
                   <div className="col-xl-6 col-sm-12 form-group">
-                    <label htmlFor="map_date">Date of burning</label>
+                    <label htmlFor="map_date">{t("Date of burning")}</label>
                     <input
                       type="date"
                       className="form-control"
@@ -224,7 +226,7 @@ class ClanMaps extends Component {
                   </div>
                 </div>
                 <div className="col-xl-12 col-sm-12 form-group">
-                  <p className="text-center">Map Type</p>
+                  <p className="text-center">{t("Map Type")}</p>
                   <div name="mapselect" className="row">
                     {this.mapSelect()}
                   </div>
@@ -234,7 +236,7 @@ class ClanMaps extends Component {
                   type="submit"
                   value="Submit"
                 >
-                  Create new map
+                  {t("Create new map")}
                 </button>
               </form>
             </div>
@@ -245,6 +247,7 @@ class ClanMaps extends Component {
   }
 
   render() {
+    const { t } = this.props;
     if (this.state.mapThatIsOpen) {
       return (
         <ResourceMap
@@ -260,7 +263,7 @@ class ClanMaps extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: this.state.error,
+            text: t(this.state.error),
             redirectPage: "/profile",
           }}
         />
@@ -270,15 +273,15 @@ class ClanMaps extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: "You have to be connected and have a clan to enter here",
+            text: t("You need to have a clan to access this section"),
             redirectPage: "/profile",
           }}
         />
       );
     }
 
-    return <div className="container">{this.createMapPanel()}</div>;
+    return <div className="container">{this.createMapPanel(t)}</div>;
   }
 }
 
-export default ClanMaps;
+export default withTranslation()(ClanMaps);

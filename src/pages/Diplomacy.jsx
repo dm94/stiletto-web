@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ModalMessage from "../components/ModalMessage";
 import ClanName from "../components/ClanName";
 import LoadingScreen from "../components/LoadingScreen";
+import { withTranslation } from "react-i18next";
 const axios = require("axios");
 
 class Diplomacy extends Component {
@@ -153,7 +154,7 @@ class Diplomacy extends Component {
     }
   }
 
-  createNewRelationship() {
+  createNewRelationship(t) {
     if (this.state.isLeader) {
       return (
         <div className="col-md-3">
@@ -162,7 +163,7 @@ class Diplomacy extends Component {
               <form onSubmit={this.createRelationship}>
                 <div className="row">
                   <div className="form-group col">
-                    <label htmlFor="typedInput">Type</label>
+                    <label htmlFor="typedInput">{t("Type")}</label>
                     <select
                       id="typedInput"
                       className="custom-select"
@@ -173,13 +174,13 @@ class Diplomacy extends Component {
                         })
                       }
                     >
-                      <option value="0">NPA or Settler</option>
-                      <option value="1">Ally</option>
-                      <option value="2">War</option>
+                      <option value="0">{t("NAP or Settler")}</option>
+                      <option value="1">{t("Ally")}</option>
+                      <option value="2">{t("War")}</option>
                     </select>
                   </div>
                   <div className="form-group col">
-                    <label htmlFor="flag_color">Flag Color</label>
+                    <label htmlFor="flag_color">{t("Flag Color")}</label>
                     <input
                       type="color"
                       className="form-control"
@@ -196,7 +197,7 @@ class Diplomacy extends Component {
                   </div>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="nameOtherClanInput">Clan Name</label>
+                  <label htmlFor="nameOtherClanInput">{t("Clan Name")}</label>
                   <input
                     type="text"
                     className="form-control"
@@ -217,7 +218,7 @@ class Diplomacy extends Component {
                   type="submit"
                   value="Submit"
                 >
-                  Create a relationship
+                  {t("Create a relationship")}
                 </button>
               </form>
             </div>
@@ -228,12 +229,13 @@ class Diplomacy extends Component {
   }
 
   render() {
+    const { t } = this.props;
     if (this.state.error) {
       return (
         <ModalMessage
           message={{
             isError: true,
-            text: this.state.error,
+            text: t(this.state.error),
             redirectPage: "/profile",
           }}
         />
@@ -247,7 +249,7 @@ class Diplomacy extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: "You have to be connected and have a clan to enter here",
+            text: t("You need to have a clan to access this section"),
             redirectPage: "/profile",
           }}
         />
@@ -263,7 +265,7 @@ class Diplomacy extends Component {
           <div className="col-md-3">
             <div className="card mb-4 shadow-sm border-success">
               <div className="card-header bg-success text-white text-center">
-                Allies
+                {t("Allies")}
               </div>
               <div className="card-body">
                 <div className="row">{this.listOfAllies()}</div>
@@ -273,7 +275,7 @@ class Diplomacy extends Component {
           <div className="col-md-3">
             <div className="card mb-4 shadow-sm border-warning">
               <div className="card-header bg-warning text-dark text-center">
-                NAP or Settlers
+                {t("NAP or Settlers")}
               </div>
               <div className="card-body">{this.listOfNAP()}</div>
             </div>
@@ -281,16 +283,16 @@ class Diplomacy extends Component {
           <div className="col-md-3">
             <div className="card mb-4 shadow-sm border-danger">
               <div className="card-header bg-danger text-white text-center">
-                War
+                {t("War")}
               </div>
               <div className="card-body">{this.listOfEnemies()}</div>
             </div>
           </div>
-          {this.createNewRelationship()}
+          {this.createNewRelationship(t)}
         </div>
       </div>
     );
   }
 }
 
-export default Diplomacy;
+export default withTranslation()(Diplomacy);
