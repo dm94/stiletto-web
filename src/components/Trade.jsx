@@ -44,7 +44,7 @@ class Trade extends Component {
               {this.props.trade.amount !== 0
                 ? this.props.trade.amount + "x "
                 : ""}{" "}
-              {this.props.trade.resource}{" "}
+              {t(this.props.trade.resource)}{" "}
               {this.props.trade.quality !== 0
                 ? "Q: " + this.props.trade.quality
                 : ""}
