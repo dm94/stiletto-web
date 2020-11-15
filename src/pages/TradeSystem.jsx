@@ -43,7 +43,7 @@ class TradeSystem extends Component {
       });
     axios
       .get(
-        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json"
+        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
       )
       .then((response) => {
         const items = response.data.filter((it) => it.category === "materials");
