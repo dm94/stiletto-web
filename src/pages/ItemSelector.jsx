@@ -7,30 +7,7 @@ import i18next from "i18next";
 
 class ItemSelector extends Component {
   state = {
-    items: [
-      {
-        name: "Base de barrera",
-        category: "buildings/construction/barrier",
-        crafting: [
-          {
-            ingredients: [
-              {
-                name: "Madera",
-                count: 50,
-              },
-              {
-                name: "Piedra",
-                count: 20,
-              },
-              {
-                name: "Vid Rupu",
-                count: 3,
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    items: [],
     selectedItems: [],
     searchText: "",
     filteredItems: [],
@@ -39,24 +16,19 @@ class ItemSelector extends Component {
   };
 
   componentDidMount() {
-    var itemsUrlJson;
-    if (this.state.language === "es") {
-      itemsUrlJson =
-        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json";
-    } else {
-      itemsUrlJson =
-        "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json";
-    }
-    fetch(itemsUrlJson)
+    fetch(
+      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
+    )
       .then((response) => response.json())
       .then((items) => this.setState({ items }));
   }
 
   handleInputChangeSearchItem = (event) => {
+    const { t } = this.props;
     if (event != null) {
       const searchText = event.currentTarget.value;
       const filteredItems = this.state.items.filter((it) =>
-        it.name.toLowerCase().match(searchText.toLowerCase())
+        t(it.name).toLowerCase().match(searchText.toLowerCase())
       );
       this.setState({ searchText });
       this.setState({ filteredItems });
@@ -66,23 +38,14 @@ class ItemSelector extends Component {
   switchLanguage = (event) => {
     if (event != null) {
       event.preventDefault();
-      var itemsUrlJson;
+      this.setState({ searchText: "" });
       if (this.state.language === "es") {
-        itemsUrlJson =
-          "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json";
         this.setState({ language: "en" });
         i18next.changeLanguage("en");
       } else {
-        itemsUrlJson =
-          "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json";
         this.setState({ language: "es" });
         i18next.changeLanguage("es");
       }
-      fetch(itemsUrlJson)
-        .then((response) => response.json())
-        .then((items) =>
-          this.setState({ items: items, filteredItems: [], searchText: "" })
-        );
     }
   };
 
