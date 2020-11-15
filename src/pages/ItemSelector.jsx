@@ -3,6 +3,7 @@ import Items from "../components/Items";
 import SelectedItem from "../components/SelectedItem";
 import TotalMaterials from "../components/TotalMaterials";
 import { withTranslation } from "react-i18next";
+import i18next from "i18next";
 
 class ItemSelector extends Component {
   state = {
@@ -34,13 +35,19 @@ class ItemSelector extends Component {
     searchText: "",
     filteredItems: [],
     totalIngredients: [],
-    languaje: "EN",
+    language: localStorage.getItem("i18nextLng"),
   };
 
   componentDidMount() {
-    fetch(
-      "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json"
-    )
+    var itemsUrlJson;
+    if (this.state.language === "es") {
+      itemsUrlJson =
+        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json";
+    } else {
+      itemsUrlJson =
+        "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json";
+    }
+    fetch(itemsUrlJson)
       .then((response) => response.json())
       .then((items) => this.setState({ items }));
   }
@@ -56,18 +63,20 @@ class ItemSelector extends Component {
     }
   };
 
-  switchLanguaje = (event) => {
+  switchLanguage = (event) => {
     if (event != null) {
       event.preventDefault();
       var itemsUrlJson;
-      if (this.state.languaje === "ES") {
+      if (this.state.language === "es") {
         itemsUrlJson =
           "https://raw.githubusercontent.com/Last-Oasis-Crafter/lastoasis-crafting-calculator/master/src/items.json";
-        this.setState({ languaje: "EN" });
+        this.setState({ language: "en" });
+        i18next.changeLanguage("en");
       } else {
         itemsUrlJson =
           "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/itemsES_min.json";
-        this.setState({ languaje: "ES" });
+        this.setState({ language: "es" });
+        i18next.changeLanguage("es");
       }
       fetch(itemsUrlJson)
         .then((response) => response.json())
@@ -208,16 +217,16 @@ class ItemSelector extends Component {
               className="img-thumbnail"
               width="15%"
               src={
-                this.state.languaje === "ES"
+                this.state.language === "es"
                   ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
                   : "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
               }
               alt={
-                this.state.languaje === "ES"
+                this.state.language === "es"
                   ? "Spanish language"
                   : "English language"
               }
-              onClick={this.switchLanguaje}
+              onClick={this.switchLanguage}
             />
             <button
               className="btn d-md-none p-0 ml-3"

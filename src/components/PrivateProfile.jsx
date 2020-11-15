@@ -140,7 +140,7 @@ class PrivateProfile extends Component {
   };
 
   changeLanguage = () => {
-    i18next.changeLanguage(this.state.language, (err, t) => {});
+    i18next.changeLanguage(this.state.language);
   };
 
   setConnectionError() {
