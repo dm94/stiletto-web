@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Ingredient from "../components/Ingredient";
-import domtoimage from "dom-to-image";
 import { withTranslation } from "react-i18next";
 
 class ListIngredients extends Component {
@@ -39,17 +38,6 @@ class TotalMaterials extends Component {
     this.componentRef = React.createRef();
   }
 
-  downloadsTotal() {
-    domtoimage
-      .toJpeg(document.getElementById("list-all-items"), { quality: 0.95 })
-      .then(function (dataUrl) {
-        var link = document.createElement("a");
-        link.download = "totals.jpeg";
-        link.href = dataUrl;
-        link.click();
-      });
-  }
-
   render() {
     const { t } = this.props;
     return (
@@ -68,14 +56,6 @@ class TotalMaterials extends Component {
               stiletto.comunidadgzone.es
             </li>
           </div>
-        </div>
-        <div className="card-footer">
-          <button
-            className="btn btn-primary"
-            onClick={() => this.downloadsTotal()}
-          >
-            {t("Download Totals")}
-          </button>
         </div>
       </div>
     );
