@@ -1,16 +1,7 @@
 import React, { Component } from "react";
-import Ingredients from "./Ingredients";
 import { withTranslation } from "react-i18next";
 
 class Item extends Component {
-  showIngredient() {
-    if (this.props.item.crafting != null) {
-      return this.props.item.crafting.map((ingredients) => (
-        <Ingredients key={this.props.item.name} crafting={ingredients} />
-      ));
-    }
-  }
-
   render() {
     const { t } = this.props;
     return (

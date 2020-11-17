@@ -154,6 +154,7 @@ let en = {
     Description: "Description",
     Start: "Start",
     Stop: "Stop",
+    "made on": "It's made on:",
     "Latest updates": "Latest updates",
     "Report Bugs": "Report Bugs",
     "I'd appreciate it if you find a bug and tell me about it on Github or another platform so that I can fix it":
@@ -163,6 +164,7 @@ let en = {
       "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.",
     "Go to Discord bot": "Go to Discord bot",
     "Dm94Dani´s Discord": "Dm94Dani´s Discord",
+    "Buy me a coffee": "Buy me a coffee",
     "Steam Page": "Steam Page",
     "Official Discord": "Official Discord",
     Wiki: "Wiki",

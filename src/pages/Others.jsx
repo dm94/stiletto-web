@@ -127,6 +127,20 @@ class Others extends Component {
               <div className="card mb-3">
                 <div className="card-body">
                   <a
+                    className="btn btn-success btn-block"
+                    href="https://www.paypal.me/dm94dani/5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("Buy me a coffee")}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card mb-3">
+                <div className="card-body">
+                  <a
                     className="btn btn-primary btn-block"
                     href="https://store.steampowered.com/app/903950/Last_Oasis/?curator_clanid=9919055"
                     target="_blank"

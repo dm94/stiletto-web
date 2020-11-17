@@ -73,7 +73,7 @@ class ItemSelector extends Component {
     if (
       this.state.selectedItems.filter((it) => it.name === itemName).length > 0
     ) {
-      this.addQuantity(itemName);
+      this.changeCount(itemName, 1);
     } else {
       if (selectedItem[0] != null) {
         const selectedItems = this.state.selectedItems.concat([
@@ -89,31 +89,7 @@ class ItemSelector extends Component {
     }
   };
 
-  addQuantity = (itemName) => {
-    this.changeCount(itemName, 1);
-  };
-
-  addQuantity10 = (itemName) => {
-    this.changeCount(itemName, 10);
-  };
-
-  addQuantity100 = (itemName) => {
-    this.changeCount(itemName, 100);
-  };
-
-  removeQuantity = (itemName) => {
-    this.changeCount(itemName, 1 * -1);
-  };
-
-  removeQuantity10 = (itemName) => {
-    this.changeCount(itemName, 10 * -1);
-  };
-
-  removeQuantity100 = (itemName) => {
-    this.changeCount(itemName, 100 * -1);
-  };
-
-  changeCount(itemName, count) {
+  changeCount = (itemName, count) => {
     let selectedItem = this.state.selectedItems.filter(
       (it) => it.name === itemName
     );
@@ -135,7 +111,7 @@ class ItemSelector extends Component {
         this.setState({ selectedItems });
       }
     }
-  }
+  };
 
   showSelectedItems() {
     if (this.state.selectedItems != null) {
@@ -144,12 +120,7 @@ class ItemSelector extends Component {
           key={item.name}
           item={item}
           value={item.count}
-          onAdd={this.addQuantity}
-          onRemove={this.removeQuantity}
-          onAdd10={this.addQuantity10}
-          onRemove10={this.removeQuantity10}
-          onAdd100={this.addQuantity100}
-          onRemove100={this.removeQuantity100}
+          onChangeCount={this.changeCount}
         />
       ));
     }
