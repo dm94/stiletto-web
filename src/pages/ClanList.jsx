@@ -3,6 +3,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import ClanListItem from "../components/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 const axios = require("axios");
 
 class ClanList extends Component {
@@ -72,6 +73,10 @@ class ClanList extends Component {
     if (this.state.isLoaded) {
       return (
         <div className="table-responsive">
+          <Helmet>
+            <title>Clan List - Stiletto</title>
+            <meta name="description" content="List of clans" />
+          </Helmet>
           <table className="table">
             <thead className="thead-light">
               <tr>

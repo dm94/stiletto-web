@@ -3,6 +3,7 @@ import ModalMessage from "../components/ModalMessage";
 import ClanMapItem from "../components/ClanMapItem";
 import ResourceMap from "../components/ResourceMap";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 const axios = require("axios");
 
 class ClanMaps extends Component {
@@ -179,6 +180,10 @@ class ClanMaps extends Component {
   createMapPanel(t) {
     return (
       <div className="row">
+        <Helmet>
+          <title>Map List - Stiletto</title>
+          <meta name="description" content="List of resource maps" />
+        </Helmet>
         <div className="col-xl-12">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Map List")}</div>

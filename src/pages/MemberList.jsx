@@ -4,6 +4,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import MemberListItem from "../components/MemberListItem";
 import RequestMemberListItem from "../components/RequestMemberListItem";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
 const axios = require("axios");
 
@@ -358,6 +359,13 @@ class MemberList extends Component {
 
     return (
       <div className="row">
+        <Helmet>
+          <title>Members List - Stiletto</title>
+          <meta
+            name="description"
+            content="This is the list of all the members of your clan"
+          />
+        </Helmet>
         <div className="col-xl-6">
           <div className="card mb-3">
             <div className="card-header">{t("Member List")}</div>

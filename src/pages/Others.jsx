@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 var XMLParser = require("react-xml-parser");
 
 class Others extends Component {
@@ -42,7 +43,7 @@ class Others extends Component {
         data = data.slice(0, 7);
       }
       return data.map((update) => (
-        <li className="list-group-item">
+        <li className="list-group-item" key={update.title}>
           <a
             href={update.link + "?curator_clanid=9919055"}
             target="_blank"
@@ -61,6 +62,13 @@ class Others extends Component {
     const { t } = this.props;
     return (
       <div className="row">
+        <Helmet>
+          <title>Other Info - Stiletto</title>
+          <meta
+            name="description"
+            content="Here you have different information such as the latest updates"
+          />
+        </Helmet>
         <div className="col-md-4">
           <div className="card mb-3">
             <div className="card-header">{t("Latest updates")}</div>

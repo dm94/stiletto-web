@@ -3,6 +3,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Trade from "../components/Trade";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 const axios = require("axios");
 
 class TradeSystem extends Component {
@@ -288,6 +289,13 @@ class TradeSystem extends Component {
     }
     return (
       <div className="row">
+        <Helmet>
+          <title>Trades - Stiletto</title>
+          <meta
+            name="description"
+            content="You can create offers or search for them easily from here"
+          />
+        </Helmet>
         {this.loggedPart(t)}
         <div className="col-md-12">
           <div className="card mb-3">

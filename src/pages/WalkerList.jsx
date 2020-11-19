@@ -3,6 +3,7 @@ import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 const axios = require("axios");
 
 class WalkerList extends Component {
@@ -195,6 +196,13 @@ class WalkerList extends Component {
       }
       return (
         <div>
+          <Helmet>
+            <title>Walker List - Stiletto</title>
+            <meta
+              name="description"
+              content="This is the list of all the walkers of your clan"
+            />
+          </Helmet>
           {this.serverLinkButton(t)}
           <table className="table">
             <thead>

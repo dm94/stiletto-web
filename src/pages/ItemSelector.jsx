@@ -4,6 +4,7 @@ import SelectedItem from "../components/SelectedItem";
 import TotalMaterials from "../components/TotalMaterials";
 import { withTranslation } from "react-i18next";
 import i18next from "i18next";
+import { Helmet } from "react-helmet";
 
 class ItemSelector extends Component {
   state = {
@@ -137,6 +138,13 @@ class ItemSelector extends Component {
     const { t } = this.props;
     return (
       <div className="row flex-xl-nowrap">
+        <Helmet>
+          <title>Crafter - Stiletto</title>
+          <meta
+            name="description"
+            content="Here you can see the materials needed to build each thing"
+          />
+        </Helmet>
         <div className="col-md-2 col-xl-3">
           <form role="search" className="bd-search d-flex align-items-center">
             <input

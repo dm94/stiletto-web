@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Timer from "../components/Timer";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
 class AuctionTimers extends Component {
   state = {
@@ -29,6 +30,10 @@ class AuctionTimers extends Component {
     const { t } = this.props;
     return (
       <div className="row">
+        <Helmet>
+          <title>Auction Timers - Stiletto</title>
+          <meta name="description" content="Timers for what you need" />
+        </Helmet>
         <div className="col-md-8">
           <div className="card">
             <div className="card-header text-center">

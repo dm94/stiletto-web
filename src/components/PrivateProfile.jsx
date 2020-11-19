@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
 import ModalMessage from "./ModalMessage";
 import { withTranslation } from "react-i18next";
 import i18next from "i18next";
+import { Helmet } from "react-helmet";
 
 const axios = require("axios");
 
@@ -164,6 +165,13 @@ class PrivateProfile extends Component {
     ) {
       return (
         <div className="row">
+          <Helmet>
+            <title>Perfil - Stiletto</title>
+            <meta
+              name="description"
+              content="Private profile where you can configure some things"
+            />
+          </Helmet>
           <div className="col-xl-6">
             <div className="card border-secondary mb-3">
               <div className="card-header">{t("Your details")}</div>

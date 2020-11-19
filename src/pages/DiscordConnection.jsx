@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PrivateProfile from "../components/PrivateProfile";
 import { withTranslation } from "react-i18next";
-
+import { Helmet } from "react-helmet";
 const queryString = require("query-string");
 
 class DiscordConnection extends Component {
@@ -27,6 +27,13 @@ class DiscordConnection extends Component {
     } else {
       return (
         <div className="col-xl-6">
+          <Helmet>
+            <title>Discord Connection - Stiletto</title>
+            <meta
+              name="description"
+              content="Link discord with stiletto and use more functions"
+            />
+          </Helmet>
           <div className="card border-secondary mb-3">
             <div className="card-body text-succes">
               <a

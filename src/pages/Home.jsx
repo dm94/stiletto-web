@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Redirect } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 
 class Home extends Component {
   state = { redirectTo: null };
@@ -11,6 +12,13 @@ class Home extends Component {
     }
     return (
       <div className="row">
+        <Helmet>
+          <title>Home - Stiletto</title>
+          <meta
+            name="description"
+            content="Stiletto the page with utilities for the game Last Oasis"
+          />
+        </Helmet>
         <div
           className="col-md-6"
           onClick={() => this.setState({ redirectTo: "/crafter" })}

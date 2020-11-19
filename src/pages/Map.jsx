@@ -3,6 +3,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import MapLayer from "../components/MapLayer";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 const axios = require("axios");
 const queryString = require("query-string");
 
@@ -61,6 +62,13 @@ class Map extends Component {
     if (this.state.mapId != null && this.state.pass != null) {
       return (
         <div className="row flex-xl-nowrap">
+          <Helmet>
+            <title>Map - Stiletto</title>
+            <meta
+              name="description"
+              content="Map of resources shared through a link"
+            />
+          </Helmet>
           <div className="col-xl-12">
             <MapLayer
               key={this.state.mapId}

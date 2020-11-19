@@ -3,6 +3,7 @@ import ModalMessage from "../components/ModalMessage";
 import ClanName from "../components/ClanName";
 import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 const axios = require("axios");
 
 class Diplomacy extends Component {
@@ -261,6 +262,13 @@ class Diplomacy extends Component {
 
     return (
       <div className="container-fluid">
+        <Helmet>
+          <title>Diplomacy - Stiletto</title>
+          <meta
+            name="description"
+            content="View your clan's list of allies, enemies and NAP"
+          />
+        </Helmet>
         <div className="row">
           <div className="col-md-3">
             <div className="card mb-4 shadow-sm border-success">
