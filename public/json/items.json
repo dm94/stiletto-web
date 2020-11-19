@@ -14964,5 +14964,53 @@
         ]
       }
     ]
+  }, {
+    "name": "Small Base Walker Packer",
+    "category": "buildings/construction/container",
+    "cost": {
+      "name": "Fragment",
+      "count": 25
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 370
+          }, {
+            "name": "Fiber Weave",
+            "count": 27
+          }, {
+            "name": "Earth Wax",
+            "count": 10
+          }, {
+            "name": "Wood Shaft",
+            "count": 25
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Large Base Walker Packer",
+    "category": "buildings/construction/container",
+    "cost": {
+      "name": "Tablet",
+      "count": 5
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Reinforced Plank",
+            "count": 10
+          }, {
+            "name": "Bone Glue",
+            "count": 6
+          }, {
+            "name": "Rope",
+            "count": 60
+          }, {
+            "name": "Redwood Wood",
+            "count": 35
+          }
+        ]
+      }
+    ]
   }
 ]

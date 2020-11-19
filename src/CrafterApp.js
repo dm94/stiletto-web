@@ -84,7 +84,7 @@ function CrafterApp() {
         </div>
       </header>
       <main role="main" className="container-fluid pt-4">
-        <Analytics id="UA-104878658-2">
+        <Analytics id={process.env.REACT_APP_GA_ID}>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/profile" component={DiscordConnection} />

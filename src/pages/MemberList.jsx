@@ -5,7 +5,6 @@ import MemberListItem from "../components/MemberListItem";
 import RequestMemberListItem from "../components/RequestMemberListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-
 const axios = require("axios");
 
 class MemberList extends Component {

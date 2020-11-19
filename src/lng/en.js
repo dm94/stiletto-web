@@ -1346,6 +1346,8 @@ let en = {
       "Balang Walker Upgrade - Torque - Tier 4",
     "Balang Walker Upgrade - Water - Tier 4":
       "Balang Walker Upgrade - Water - Tier 4",
+    "Large Base Walker Packer": "Large Base Walker Packer",
+    "Small Base Walker Packer": "Small Base Walker Packer",
   },
 };
 

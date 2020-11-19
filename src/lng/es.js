@@ -1340,6 +1340,8 @@ let es = {
       "Mejora del walker Balang - Capacidad energética - Mejora de rango 4",
     "Balang Walker Upgrade - Water - Tier 4":
       "Mejora del walker Balang - Depósito de agua - Mejora de rango 4",
+    "Large Base Walker Packer": "Large Base Walker Packer",
+    "Small Base Walker Packer": "Small Base Walker Packer",
   },
 };
 
