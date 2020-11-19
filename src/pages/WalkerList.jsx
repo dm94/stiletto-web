@@ -114,7 +114,7 @@ class WalkerList extends Component {
     if (
       this.state.walkers != null &&
       this.state.walkers[0] != null &&
-      this.state.walkers[0].discordid != null
+      this.state.walkers[0].discordid == null
     ) {
       return (
         <div className="row">
