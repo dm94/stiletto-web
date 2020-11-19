@@ -5587,8 +5587,8 @@
             "name": "Ceramic Shard",
             "count": 64
           }, {
-            "name": "Reinforced Plank",
-            "count": 7
+            "name": "Chitin Plate",
+            "count": 60
           }, {
             "name": "Earth Wax",
             "count": 128
@@ -6437,8 +6437,8 @@
             "name": "Ceramic Shard",
             "count": 40
           }, {
-            "name": "Reinforced Plank",
-            "count": 4
+            "name": "Chitin Plate",
+            "count": 35
           }, {
             "name": "Earth Wax",
             "count": 80
@@ -7049,8 +7049,8 @@
             "name": "Ceramic Shard",
             "count": 100
           }, {
-            "name": "Reinforced Plank",
-            "count": 10
+            "name": "Chitin Plate",
+            "count": 100
           }, {
             "name": "Earth Wax",
             "count": 200
@@ -7748,8 +7748,8 @@
             "name": "Ceramic Shard",
             "count": 64
           }, {
-            "name": "Reinforced Plank",
-            "count": 7
+            "name": "Chitin Plate",
+            "count": 55
           }, {
             "name": "Earth Wax",
             "count": 128
@@ -8250,8 +8250,8 @@
             "name": "Ceramic Shard",
             "count": 40
           }, {
-            "name": "Reinforced Plank",
-            "count": 4
+            "name": "Chitin Plate",
+            "count": 30
           }, {
             "name": "Earth Wax",
             "count": 80
@@ -8864,8 +8864,8 @@
             "name": "Ceramic Shard",
             "count": 64
           }, {
-            "name": "Reinforced Plank",
-            "count": 7
+            "name": "Chitin Plate",
+            "count": 55
           }, {
             "name": "Earth Wax",
             "count": 128
@@ -9529,8 +9529,8 @@
             "name": "Ceramic Shard",
             "count": 64
           }, {
-            "name": "Reinforced Plank",
-            "count": 7
+            "name": "Chitin Plate",
+            "count": 60
           }, {
             "name": "Earth Wax",
             "count": 128
@@ -10147,8 +10147,8 @@
             "name": "Ceramic Shard",
             "count": 100
           }, {
-            "name": "Reinforced Plank",
-            "count": 10
+            "name": "Chitin Plate",
+            "count": 100
           }, {
             "name": "Earth Wax",
             "count": 200
@@ -10947,8 +10947,8 @@
             "name": "Ceramic Shard",
             "count": 100
           }, {
-            "name": "Reinforced Plank",
-            "count": 10
+            "name": "Chitin Plate",
+            "count": 100
           }, {
             "name": "Earth Wax",
             "count": 200
@@ -11475,8 +11475,8 @@
             "name": "Ceramic Shard",
             "count": 40
           }, {
-            "name": "Reinforced Plank",
-            "count": 4
+            "name": "Chitin Plate",
+            "count": 30
           }, {
             "name": "Earth Wax",
             "count": 80
@@ -12039,8 +12039,8 @@
             "name": "Ceramic Shard",
             "count": 64
           }, {
-            "name": "Reinforced Plank",
-            "count": 7
+            "name": "Chitin Plate",
+            "count": 55
           }, {
             "name": "Earth Wax",
             "count": 128
@@ -12645,8 +12645,8 @@
             "name": "Ceramic Shard",
             "count": 100
           }, {
-            "name": "Reinforced Plank",
-            "count": 10
+            "name": "Chitin Plate",
+            "count": 100
           }, {
             "name": "Earth Wax",
             "count": 200
@@ -13245,8 +13245,8 @@
             "name": "Ceramic Shard",
             "count": 64
           }, {
-            "name": "Reinforced Plank",
-            "count": 7
+            "name": "Chitin Plate",
+            "count": 55
           }, {
             "name": "Earth Wax",
             "count": 128
@@ -13968,8 +13968,8 @@
             "name": "Ceramic Shard",
             "count": 100
           }, {
-            "name": "Reinforced Plank",
-            "count": 10
+            "name": "Chitin Plate",
+            "count": 100
           }, {
             "name": "Earth Wax",
             "count": 200
@@ -14162,25 +14162,28 @@
     "name": "Silur Walker Body",
     "category": "walkers/silur",
     "cost": {
-      "name": "Fragment",
-      "count": 30
+      "name": "Tablets",
+      "count": 4
     },
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
-            "count": 1015
+            "count": 1615
           }, {
             "name": "Fiber",
-            "count": 320
+            "count": 950
           }, {
             "name": "Stone",
-            "count": 110
+            "count": 390
           }, {
             "name": "Rope",
-            "count": 29
+            "count": 39
           }, {
             "name": "Wood Shaft",
-            "count": 22
+            "count": 42
+          }, {
+            "name": "Earth Wax",
+            "count": 12
           }
         ]
       }
@@ -14191,10 +14194,13 @@
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
-            "count": 200
+            "count": 280
           }, {
             "name": "Wood Shaft",
-            "count": 24
+            "count": 36
+          }, {
+            "name": "Earth Wax",
+            "count": 42
           }
         ]
       }
@@ -14329,22 +14335,22 @@
     "name": "Silur Walker Legs Armored",
     "cost": {
       "name": "Tablet",
-      "count": 1
+      "count": 2
     },
     "category": "walkers/silur/parts/legs",
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
-            "count": 570
+            "count": 1470
           }, {
             "name": "Wood Shaft",
-            "count": 60
+            "count": 183
           }, {
             "name": "Ceramic Shart",
-            "count": 30
+            "count": 102
           }, {
             "name": "Bone Glue",
-            "count": 12
+            "count": 33
           }
         ]
       }
@@ -14354,18 +14360,18 @@
     "category": "walkers/silur/parts/legs",
     "cost": {
       "name": "Tablet",
-      "count": 2
+      "count": 4
     },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
-            "count": 35
+            "count": 60
           }, {
             "name": "Chitin Plate",
-            "count": 4
+            "count": 10
           }, {
             "name": "Tar",
-            "count": 2
+            "count": 5
           }
         ]
       }
