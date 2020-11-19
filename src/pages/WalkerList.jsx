@@ -56,6 +56,7 @@ class WalkerList extends Component {
     } else {
       if (
         this.state.walkers != null &&
+        this.state.walkers[0] != null &&
         this.state.walkers[0].discordid != null
       ) {
         return this.state.walkers.map((walker) => (
@@ -110,7 +111,11 @@ class WalkerList extends Component {
   };
 
   serverLinkButton(t) {
-    if (this.state.walkers != null && !this.state.walkers[0].discordid) {
+    if (
+      this.state.walkers != null &&
+      this.state.walkers[0] != null &&
+      this.state.walkers[0].discordid != null
+    ) {
       return (
         <div className="row">
           <div className="col-xl-4">
