@@ -20,6 +20,7 @@
     "react-i18next": "^11.7.3",
     "react-leaflet": "^2.7.0",
     "react-router-dom": "^5.2.0",
+    "react-router-ga": "^1.2.3",
     "react-scripts": "^3.4.4",
     "react-xml-parser": "^1.1.8"
   },

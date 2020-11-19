@@ -14,6 +14,7 @@ import Others from "./pages/Others";
 import Map from "./pages/Map";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Analytics from "react-router-ga";
 
 function CrafterApp() {
   const [t] = useTranslation();
@@ -83,20 +84,22 @@ function CrafterApp() {
         </div>
       </header>
       <main role="main" className="container-fluid pt-4">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/profile" component={DiscordConnection} />
-          <Route path="/crafter" component={ItemSelector} />
-          <Route path="/members" component={MemberList} />
-          <Route path="/clanlist" component={ClanList} />
-          <Route path="/walkerlist" component={WalkerList} />
-          <Route path="/maps" component={ClanMaps} />
-          <Route path="/trades" component={TradeSystem} />
-          <Route path="/diplomacy" component={Diplomacy} />
-          <Route path="/auctions" component={AuctionTimers} />
-          <Route path="/others" component={Others} />
-          <Route path="/map" component={Map} />
-        </Switch>
+        <Analytics id="UA-104878658-2">
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/profile" component={DiscordConnection} />
+            <Route path="/crafter" component={ItemSelector} />
+            <Route path="/members" component={MemberList} />
+            <Route path="/clanlist" component={ClanList} />
+            <Route path="/walkerlist" component={WalkerList} />
+            <Route path="/maps" component={ClanMaps} />
+            <Route path="/trades" component={TradeSystem} />
+            <Route path="/diplomacy" component={Diplomacy} />
+            <Route path="/auctions" component={AuctionTimers} />
+            <Route path="/others" component={Others} />
+            <Route path="/map" component={Map} />
+          </Switch>
+        </Analytics>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
         <div className="container">
