@@ -272,6 +272,7 @@ class PrivateProfile extends Component {
                     >
                       <option value="en">{t("English")}</option>
                       <option value="es">{t("Spanish")}</option>
+                      <option value="ru">{t("Russian")}</option>
                     </select>
                   </div>
                   <div className="col">

@@ -92,18 +92,34 @@ function CrafterApp() {
             }}
           >
             <img
-              className="rounded"
+              className={
+                localStorage.getItem("i18nextLng") === "es"
+                  ? "rounded"
+                  : "rounded d-none"
+              }
               width="30%"
-              src={
-                localStorage.getItem("i18nextLng") === "es"
-                  ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
-                  : "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+              alt="Spanish language"
+            />
+            <img
+              className={
+                localStorage.getItem("i18nextLng") === "ru"
+                  ? "rounded"
+                  : "rounded d-none"
               }
-              alt={
-                localStorage.getItem("i18nextLng") === "es"
-                  ? "Spanish language"
-                  : "English language"
+              width="30%"
+              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
+              alt="Russian language"
+            />
+            <img
+              className={
+                localStorage.getItem("i18nextLng") === "en"
+                  ? "rounded"
+                  : "rounded d-none"
               }
+              width="30%"
+              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+              alt="English language"
             />
           </button>
           {discordButton(t)}
@@ -149,6 +165,15 @@ function CrafterApp() {
                       onClick={() => switchLanguage("en")}
                     />
                     <p>{t("English")}</p>
+                  </div>
+                  <div className="col">
+                    <img
+                      className="img-thumbnail"
+                      src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
+                      alt="Russian language"
+                      onClick={() => switchLanguage("ru")}
+                    />
+                    <p>{t("Russian")}</p>
                   </div>
                 </div>
               </div>

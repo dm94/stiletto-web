@@ -59,6 +59,7 @@ let es = {
     "Change language": "Cambiar idioma",
     Spanish: "Español",
     English: "Ingles",
+    Russian: "Ruso",
     "Member List": "Listado de miembros",
     Kick: "Expulsar",
     "List of requests": "Listado de solicitudes",
