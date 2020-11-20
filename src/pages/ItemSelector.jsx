@@ -14,6 +14,7 @@ class ItemSelector extends Component {
     filteredItems: [],
     totalIngredients: [],
     language: localStorage.getItem("i18nextLng"),
+    showChangeLanguageModal: false,
   };
 
   componentDidMount() {
@@ -36,18 +37,13 @@ class ItemSelector extends Component {
     }
   };
 
-  switchLanguage = (event) => {
-    if (event != null) {
-      event.preventDefault();
-      this.setState({ searchText: "" });
-      if (this.state.language === "es") {
-        this.setState({ language: "en" });
-        i18next.changeLanguage("en");
-      } else {
-        this.setState({ language: "es" });
-        i18next.changeLanguage("es");
-      }
-    }
+  switchLanguage = (lng) => {
+    this.setState({
+      searchText: "",
+      language: lng,
+      showChangeNameModal: false,
+    });
+    i18next.changeLanguage(lng);
   };
 
   showAllItems() {
@@ -136,6 +132,9 @@ class ItemSelector extends Component {
 
   render() {
     const { t } = this.props;
+    let showHideClassName = this.state.showChangeLanguageModal
+      ? "modal d-block"
+      : "modal d-none";
     return (
       <div className="row flex-xl-nowrap">
         <Helmet>
@@ -155,6 +154,7 @@ class ItemSelector extends Component {
               onChange={this.handleInputChangeSearchItem}
               value={this.state.searchText}
             />
+
             <img
               className="img-thumbnail"
               width="15%"
@@ -168,7 +168,9 @@ class ItemSelector extends Component {
                   ? "Spanish language"
                   : "English language"
               }
-              onClick={this.switchLanguage}
+              onClick={() => {
+                this.setState({ showChangeLanguageModal: true });
+              }}
             />
             <button
               className="btn d-md-none p-0 ml-3"
@@ -214,6 +216,45 @@ class ItemSelector extends Component {
               key="totalmaterialsid"
               selectedItems={this.state.selectedItems}
             />
+          </div>
+          <div className={showHideClassName}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">{t("Change language")}</div>
+                <div className="modal-body">
+                  <div className="row text-center">
+                    <div className="col">
+                      <img
+                        className="img-thumbnail"
+                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                        alt="Spanish language"
+                        onClick={() => this.switchLanguage("es")}
+                      />
+                      <p>{t("Spanish")}</p>
+                    </div>
+                    <div className="col">
+                      <img
+                        className="img-thumbnail"
+                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+                        alt="English language"
+                        onClick={() => this.switchLanguage("en")}
+                      />
+                      <p>{t("English")}</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    className="btn btn-outline-secondary"
+                    onClick={() => {
+                      this.setState({ showChangeLanguageModal: false });
+                    }}
+                  >
+                    {t("Cancel")}
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       </div>
