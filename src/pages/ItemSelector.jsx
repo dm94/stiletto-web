@@ -3,7 +3,6 @@ import Items from "../components/Items";
 import SelectedItem from "../components/SelectedItem";
 import TotalMaterials from "../components/TotalMaterials";
 import { withTranslation } from "react-i18next";
-import i18next from "i18next";
 import { Helmet } from "react-helmet";
 
 class ItemSelector extends Component {
@@ -13,8 +12,6 @@ class ItemSelector extends Component {
     searchText: "",
     filteredItems: [],
     totalIngredients: [],
-    language: localStorage.getItem("i18nextLng"),
-    showChangeLanguageModal: false,
   };
 
   componentDidMount() {
@@ -35,15 +32,6 @@ class ItemSelector extends Component {
       this.setState({ searchText });
       this.setState({ filteredItems });
     }
-  };
-
-  switchLanguage = (lng) => {
-    this.setState({
-      searchText: "",
-      language: lng,
-      showChangeNameModal: false,
-    });
-    i18next.changeLanguage(lng);
   };
 
   showAllItems() {
@@ -132,9 +120,6 @@ class ItemSelector extends Component {
 
   render() {
     const { t } = this.props;
-    let showHideClassName = this.state.showChangeLanguageModal
-      ? "modal d-block"
-      : "modal d-none";
     return (
       <div className="row flex-xl-nowrap">
         <Helmet>
@@ -153,24 +138,6 @@ class ItemSelector extends Component {
               aria-label="Search"
               onChange={this.handleInputChangeSearchItem}
               value={this.state.searchText}
-            />
-
-            <img
-              className="img-thumbnail"
-              width="15%"
-              src={
-                this.state.language === "es"
-                  ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
-                  : "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
-              }
-              alt={
-                this.state.language === "es"
-                  ? "Spanish language"
-                  : "English language"
-              }
-              onClick={() => {
-                this.setState({ showChangeLanguageModal: true });
-              }}
             />
             <button
               className="btn d-md-none p-0 ml-3"
@@ -216,45 +183,6 @@ class ItemSelector extends Component {
               key="totalmaterialsid"
               selectedItems={this.state.selectedItems}
             />
-          </div>
-          <div className={showHideClassName}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">{t("Change language")}</div>
-                <div className="modal-body">
-                  <div className="row text-center">
-                    <div className="col">
-                      <img
-                        className="img-thumbnail"
-                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
-                        alt="Spanish language"
-                        onClick={() => this.switchLanguage("es")}
-                      />
-                      <p>{t("Spanish")}</p>
-                    </div>
-                    <div className="col">
-                      <img
-                        className="img-thumbnail"
-                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
-                        alt="English language"
-                        onClick={() => this.switchLanguage("en")}
-                      />
-                      <p>{t("English")}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    className="btn btn-outline-secondary"
-                    onClick={() => {
-                      this.setState({ showChangeLanguageModal: false });
-                    }}
-                  >
-                    {t("Cancel")}
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </main>
       </div>

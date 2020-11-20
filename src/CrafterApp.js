@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ItemSelector from "./pages/ItemSelector";
 import DiscordConnection from "./pages/DiscordConnection";
 import ClanList from "./pages/ClanList";
@@ -15,9 +15,14 @@ import Map from "./pages/Map";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Analytics from "react-router-ga";
+import i18next from "i18next";
 
 function CrafterApp() {
   const [t] = useTranslation();
+  const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
+  let showHideClassName = showChangeLanguageModal
+    ? "modal d-block"
+    : "modal d-none";
   return (
     <Router>
       <header className="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark">
@@ -80,6 +85,27 @@ function CrafterApp() {
               </Link>
             </li>
           </ul>
+          <button
+            className="btn d-none d-sm-block btn-sm"
+            onClick={() => {
+              setChangeLanguageModal(true);
+            }}
+          >
+            <img
+              className="rounded"
+              width="30%"
+              src={
+                localStorage.getItem("i18nextLng") === "es"
+                  ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                  : "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+              }
+              alt={
+                localStorage.getItem("i18nextLng") === "es"
+                  ? "Spanish language"
+                  : "English language"
+              }
+            />
+          </button>
           {discordButton(t)}
         </div>
       </header>
@@ -100,6 +126,45 @@ function CrafterApp() {
             <Route path="/map" component={Map} />
           </Switch>
         </Analytics>
+        <div className={showHideClassName}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">{t("Change language")}</div>
+              <div className="modal-body">
+                <div className="row text-center">
+                  <div className="col">
+                    <img
+                      className="img-thumbnail"
+                      src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                      alt="Spanish language"
+                      onClick={() => switchLanguage("es")}
+                    />
+                    <p>{t("Spanish")}</p>
+                  </div>
+                  <div className="col">
+                    <img
+                      className="img-thumbnail"
+                      src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+                      alt="English language"
+                      onClick={() => switchLanguage("en")}
+                    />
+                    <p>{t("English")}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="modal-footer">
+                <button
+                  className="btn btn-outline-secondary"
+                  onClick={() => {
+                    setChangeLanguageModal(false);
+                  }}
+                >
+                  {t("Accept")}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
         <div className="container">
@@ -136,6 +201,10 @@ function CrafterApp() {
       </CookieConsent>
     </Router>
   );
+}
+
+function switchLanguage(lng) {
+  i18next.changeLanguage(lng);
 }
 
 function discordButton(t) {
