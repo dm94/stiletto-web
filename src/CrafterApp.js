@@ -84,6 +84,10 @@ function CrafterApp() {
         </div>
       </header>
       <main role="main" className="container-fluid pt-4">
+        <div className="col-12 text-center bg-warning text-dark p-3 mb-2">
+          To prepare for the wipe I'm going to perform a maintenance of the API,
+          so the functions that need it will not be available for a few hours
+        </div>
         <Analytics id={process.env.REACT_APP_GA_ID}>
           <Switch>
             <Route exact path="/" component={Home} />
