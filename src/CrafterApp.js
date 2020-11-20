@@ -175,6 +175,15 @@ function CrafterApp() {
                     />
                     <p>{t("Russian")}</p>
                   </div>
+                  <div className="col">
+                    <img
+                      className="img-thumbnail"
+                      src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
+                      alt="French language"
+                      onClick={() => switchLanguage("fr")}
+                    />
+                    <p>{t("French")}</p>
+                  </div>
                 </div>
               </div>
               <div className="modal-footer">

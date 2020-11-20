@@ -60,6 +60,7 @@ let es = {
     Spanish: "Español",
     English: "Ingles",
     Russian: "Ruso",
+    French: "Francés",
     "Member List": "Listado de miembros",
     Kick: "Expulsar",
     "List of requests": "Listado de solicitudes",

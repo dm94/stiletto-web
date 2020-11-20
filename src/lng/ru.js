@@ -60,6 +60,7 @@ let ru = {
     Spanish: "испанский",
     English: "английский язык",
     Russian: "русский",
+    French: "франки",
     "Member List": "Список членов",
     Kick: "пинок",
     "List of requests": "Список запросов",

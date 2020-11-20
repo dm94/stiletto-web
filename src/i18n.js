@@ -2,6 +2,7 @@ import i18n from "i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import en from "./lng/en";
 import es from "./lng/es";
+import fr from "./lng/fr";
 import ru from "./lng/ru";
 
 i18n.use(LanguageDetector).init({
@@ -9,6 +10,7 @@ i18n.use(LanguageDetector).init({
     en: en,
     es: es,
     ru: ru,
+    fr: fr,
   },
   fallbackLng: "en",
   debug: false,
