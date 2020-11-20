@@ -121,6 +121,16 @@ function CrafterApp() {
               src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
               alt="English language"
             />
+            <img
+              className={
+                localStorage.getItem("i18nextLng") === "fr"
+                  ? "rounded"
+                  : "rounded d-none"
+              }
+              width="30%"
+              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
+              alt="French language"
+            />
           </button>
           {discordButton(t)}
         </div>
