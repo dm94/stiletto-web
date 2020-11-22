@@ -98,6 +98,7 @@ let ru = {
     "Clan deleted correctly": "Клан удален правильно",
     "Error when delete clan": "Ошибка при удалении клана",
     "Error when change owner of clan": "Ошибка при смене владельца клана",
+    "This option is not reversible": "Эта опция не является обратимой",
     Search: "Поиск",
     Clean: "Чистый",
     Owner: "Владелец",

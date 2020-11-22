@@ -96,6 +96,7 @@ let en = {
     "Clan deleted correctly": "Clan deleted correctly",
     "Error when delete clan": "Error when delete clan",
     "Error when change owner of clan": "Error when change owner of clan",
+    "This option is not reversible": "This option is not reversible",
     Search: "Search",
     Clean: "Clean",
     Owner: "Owner",

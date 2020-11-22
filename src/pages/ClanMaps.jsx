@@ -20,6 +20,8 @@ class ClanMaps extends Component {
       mapDateInput: "",
       mapSelectInput: 1,
       mapThatIsOpen: null,
+      showDeleteModal: false,
+      idMapDeleteModal: null,
     };
   }
 
@@ -86,7 +88,9 @@ class ClanMaps extends Component {
           map={map}
           value={this.getNameMap(map.typemap)}
           onOpen={this.openMap}
-          onDelete={this.deleteMap}
+          onDelete={(mapid) => {
+            this.setState({ showDeleteModal: true, idMapDeleteModal: mapid });
+          }}
         />
       ));
     }
@@ -97,7 +101,6 @@ class ClanMaps extends Component {
   };
 
   deleteMap = (mapid) => {
-    console.log("Borrando mapa " + mapid);
     axios
       .get(process.env.REACT_APP_API_URL + "/maps.php", {
         params: {
@@ -109,6 +112,10 @@ class ClanMaps extends Component {
       })
       .then((response) => {
         if (response.status === 202) {
+          this.setState({
+            showDeleteModal: false,
+            idMapDeleteModal: null,
+          });
           this.componentDidMount();
         } else if (response.status === 205) {
           localStorage.clear();
@@ -178,6 +185,9 @@ class ClanMaps extends Component {
   };
 
   createMapPanel(t) {
+    let showHideClassName = this.state.showDeleteModal
+      ? "modal d-block"
+      : "modal d-none";
     return (
       <div className="row">
         <Helmet>
@@ -244,6 +254,39 @@ class ClanMaps extends Component {
                   {t("Create new map")}
                 </button>
               </form>
+            </div>
+          </div>
+        </div>
+        <div className={showHideClassName}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="deleteusermodal">
+                  {t("Are you sure?")}
+                </h5>
+              </div>
+              <div className="modal-body">
+                {t("This option is not reversible")}
+              </div>
+              <div className="modal-footer">
+                <button
+                  className="btn btn-outline-secondary"
+                  onClick={() =>
+                    this.setState({
+                      showDeleteModal: false,
+                      idMapDeleteModal: null,
+                    })
+                  }
+                >
+                  {t("Cancel")}
+                </button>
+                <button
+                  className="btn btn-outline-danger"
+                  onClick={() => this.deleteMap(this.state.idMapDeleteModal)}
+                >
+                  {t("Delete")}
+                </button>
+              </div>
             </div>
           </div>
         </div>

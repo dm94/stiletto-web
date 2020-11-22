@@ -98,6 +98,7 @@ let es = {
     "Clan deleted correctly": "El clan se ha borrado correctamente",
     "Error when delete clan": "Error al borrar el clan",
     "Error when change owner of clan": "Error al cambiar de lider del clan",
+    "This option is not reversible": "Esta opción no es reversible",
     Search: "Buscar",
     Clean: "Limpiar",
     Owner: "Dueño",

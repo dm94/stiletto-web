@@ -99,6 +99,7 @@ let fr = {
     "Error when delete clan": "Erreur lors de la suppression d'un clan",
     "Error when change owner of clan":
       "Erreur lors du changement de propriétaire du clan",
+    "This option is not reversible": "Cette option n'est pas réversible",
     Search: "Recherchez",
     Clean: "Clean",
     Owner: "Propriétaire",
