@@ -14378,7 +14378,7 @@
     ]
   }, {
     "name": "Battle Fan",
-    "category": "buildings/construction/weapons/ranged",
+    "category": "buildings/construction/tools",
     "cost": {
       "name": "Tablet",
       "count": 10
@@ -14426,7 +14426,7 @@
     ]
   }, {
     "name": "Base Maintenance Chest",
-    "category": "buildings/construction/container",
+    "category": "buildings/construction",
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
@@ -14972,7 +14972,7 @@
     ]
   }, {
     "name": "Small Base Walker Packer",
-    "category": "buildings/construction/container",
+    "category": "buildings/construction/walker",
     "cost": {
       "name": "Fragment",
       "count": 25
@@ -14996,7 +14996,7 @@
     ]
   }, {
     "name": "Large Base Walker Packer",
-    "category": "buildings/construction/container",
+    "category": "buildings/construction/walker",
     "cost": {
       "name": "Tablet",
       "count": 5
