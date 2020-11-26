@@ -46,7 +46,7 @@ function CrafterApp() {
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                {t("Clan")}
+                {t("Profile")}
               </Link>
               <div className="dropdown-menu" aria-labelledby="clanDrodown">
                 <Link className="dropdown-item" to="/profile">
@@ -55,17 +55,8 @@ function CrafterApp() {
                 <Link className="dropdown-item" to="/clanlist">
                   {t("Clan List")}
                 </Link>
-                <Link className="dropdown-item" to="/members">
-                  {t("Members")}
-                </Link>
-                <Link className="dropdown-item" to="/walkerlist">
-                  {t("Walker List")}
-                </Link>
                 <Link className="dropdown-item" to="/maps">
                   {t("Resources maps")}
-                </Link>
-                <Link className="dropdown-item" to="/diplomacy">
-                  {t("Diplomacy")}
                 </Link>
               </div>
             </li>
