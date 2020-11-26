@@ -24,6 +24,7 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 - Walkers section: option to add, delete and edit apart from adding pagination
 - Map section: Possibility to edit the name and date of burning
 - Add transactions section and allow in the view, edit and delete transactions
+- Change the list of markers to a better one
 
 #### Environmental variables
 
