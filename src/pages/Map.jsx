@@ -80,6 +80,15 @@ class Map extends Component {
             />
           </Helmet>
           <div className="col-xl-12">
+            <div className="col-xl-12 text-center">
+              <h1>
+                {this.state.resourcesInTheMap != null &&
+                this.state.resourcesInTheMap[0] != null &&
+                this.state.resourcesInTheMap[0].name != null
+                  ? this.state.resourcesInTheMap[0].name
+                  : ""}
+              </h1>
+            </div>
             <MapLayer
               key={this.state.mapId}
               resourcesInTheMap={this.state.resourcesInTheMap}
