@@ -38,7 +38,7 @@ class ClanMapItem extends Component {
   }
 
   deleteMapButton(t) {
-    if (this.props.map.discordid == localStorage.getItem("discordid")) {
+    if (this.props.map.discordid === localStorage.getItem("discordid")) {
       return (
         <button
           className="btn btn-danger btn-sm"
@@ -52,7 +52,7 @@ class ClanMapItem extends Component {
   }
 
   ShareMapButton(t) {
-    if (this.props.map.discordid == localStorage.getItem("discordid")) {
+    if (this.props.map.discordid === localStorage.getItem("discordid")) {
       var http = window.location.protocol;
       var slashes = http.concat("//");
       var host = slashes.concat(window.location.hostname);
