@@ -26,11 +26,10 @@ class ResourceMap extends Component {
   componentDidMount() {
     axios
       .get(
-        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
+        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.json"
       )
       .then((response) => {
-        const items = response.data.filter((it) => it.category === "materials");
-        this.setState({ items });
+        this.setState({ items: response.data });
       });
 
     axios
