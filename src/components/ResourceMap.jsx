@@ -20,6 +20,7 @@ class ResourceMap extends Component {
       latlng: null,
       pass: this.props.map.pass,
       textSuccess: null,
+      center: null,
     };
   }
 
@@ -157,9 +158,14 @@ class ResourceMap extends Component {
   resourcesInTheMapList(t) {
     if (this.state.resourcesInTheMap != null) {
       return this.state.resourcesInTheMap.map((resource) => (
-        <li className="list-group-item" key={resource.resourceid}>
-          {t(resource.resourcetype)} - Q: {resource.quality} - X: {resource.x} -
-          Y: {resource.y}
+        <li key={resource.resourceid}>
+          <button
+            className="list-group-item btn-block"
+            onClick={() => this.setState({ center: [resource.x, resource.y] })}
+          >
+            {t(resource.resourcetype)} - Q: {resource.quality} - X: {resource.x}{" "}
+            - Y: {resource.y}
+          </button>
         </li>
       ));
     }
@@ -437,6 +443,7 @@ class ResourceMap extends Component {
             resourcesInTheMap={this.state.resourcesInTheMap}
             deleteResource={this.deleteResource}
             changeInput={this.changeCoords}
+            center={this.state.center}
           ></MapLayer>
         </div>
       </div>

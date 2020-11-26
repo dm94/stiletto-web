@@ -112,6 +112,7 @@ class MapLayer extends Component {
           maxZoom={5}
           style={{ width: "100%", height: "800px" }}
           onClick={this.handleClick}
+          center={this.props.center}
         >
           <TileLayer
             url={
