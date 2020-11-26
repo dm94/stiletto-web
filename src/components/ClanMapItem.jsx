@@ -65,9 +65,7 @@ class ClanMapItem extends Component {
             "/map?mapid=" +
             this.props.map.mapid +
             "&pass=" +
-            this.props.map.pass +
-            "&mapname=" +
-            this.props.value
+            this.props.map.pass
           }
           target="_blank"
           rel="noopener noreferrer"

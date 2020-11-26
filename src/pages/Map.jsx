@@ -22,11 +22,10 @@ class Map extends Component {
 
   componentDidMount() {
     const parsed = queryString.parse(this.props.location.search);
-    if (parsed.mapid != null && parsed.pass != null && parsed.mapname != null) {
+    if (parsed.mapid != null && parsed.pass != null) {
       this.setState({
         mapId: parsed.mapid,
         pass: parsed.pass,
-        mapName: parsed.mapname,
       });
 
       axios

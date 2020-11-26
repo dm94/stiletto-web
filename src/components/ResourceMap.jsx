@@ -19,6 +19,8 @@ class ResourceMap extends Component {
       items: null,
       resourcesInTheMap: null,
       latlng: null,
+      pass: this.props.map.pass,
+      textSuccess: null,
     };
   }
 
@@ -88,6 +90,31 @@ class ResourceMap extends Component {
       });
   };
 
+  changePassword = (event) => {
+    event.preventDefault();
+    axios
+      .get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "editpassmap",
+          mapid: this.props.map.mapid,
+          dataupdate: this.state.pass,
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          this.setState({ textSuccess: "Password changed" });
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({ error: "Login again" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
+  };
+
   deleteResource = (resourceid) => {
     axios
       .get(process.env.REACT_APP_API_URL + "/maps.php", {
@@ -129,6 +156,129 @@ class ResourceMap extends Component {
     }
   }
 
+  resourcesInTheMapList(t) {
+    if (this.state.resourcesInTheMap != null) {
+      return this.state.resourcesInTheMap.map((resource) => (
+        <li className="list-group-item" key={resource.resourceid}>
+          {t(resource.resourcetype)} - Q: {resource.quality} - X: {resource.x} -
+          Y: {resource.y}
+        </li>
+      ));
+    }
+  }
+
+  createResourceTab(t) {
+    return (
+      <div className="card-body">
+        <form onSubmit={this.createResource}>
+          <div className="form-group">
+            <label htmlFor="resourcetype">{t("Type")}</label>
+            <select
+              id="resourcetype"
+              className="custom-select"
+              value={this.state.resourceTypeInput}
+              onChange={(evt) =>
+                this.setState({
+                  resourceTypeInput: evt.target.value,
+                })
+              }
+            >
+              {this.resourcesList(t)}
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="coordinateXInput">
+              {t("Coordinate")} X ({t("Not the same as in the game")})
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              name="coordinateXInput"
+              value={this.state.coordinateXInput}
+              onChange={(evt) =>
+                this.setState({
+                  coordinateXInput: evt.target.value,
+                })
+              }
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="coordinateYInput">
+              {t("Coordinate")} Y ({t("Not the same as in the game")})
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              name="coordinateYInput"
+              value={this.state.coordinateYInput}
+              onChange={(evt) =>
+                this.setState({
+                  coordinateYInput: evt.target.value,
+                })
+              }
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="quality">
+              {t("Quality:")} {this.state.qualityInput}
+            </label>
+            <input
+              type="range"
+              className="form-control-range"
+              id="quality"
+              value={this.state.qualityInput}
+              max="200"
+              onChange={(evt) =>
+                this.setState({
+                  qualityInput: evt.target.value,
+                })
+              }
+            />
+          </div>
+          <button
+            className="btn btn-lg btn-outline-success btn-block"
+            type="submit"
+            value="Submit"
+          >
+            {t("Create resource")}
+          </button>
+        </form>
+      </div>
+    );
+  }
+
+  editMapTab(t) {
+    if (this.state.user_discord_id === this.props.map.discordid) {
+      return (
+        <div className="card-body">
+          <form onSubmit={this.changePassword}>
+            <div className="form-group">
+              <label htmlFor="password">{t("Password")}</label>
+              <input
+                type="text"
+                className="form-control"
+                id="password"
+                onChange={(evt) => this.setState({ pass: evt.target.value })}
+                value={this.state.pass}
+                maxLength="20"
+                required
+              ></input>
+            </div>
+            <button
+              className="btn btn-lg btn-outline-success btn-block"
+              type="submit"
+              value="Submit"
+            >
+              {t("Change Password")}
+            </button>
+          </form>
+        </div>
+      );
+    }
+  }
+
   render() {
     const { t } = this.props;
     if (this.state.user_discord_id == null || this.state.token == null) {
@@ -139,6 +289,27 @@ class ResourceMap extends Component {
             text: t("Login with discord"),
             redirectPage: "/profile",
           }}
+        />
+      );
+    } else if (this.state.error != null) {
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: t(this.state.error),
+            redirectPage: "/profile",
+          }}
+        />
+      );
+    } else if (this.state.textSuccess != null) {
+      return (
+        <ModalMessage
+          message={{
+            isError: false,
+            text: t(this.state.textSuccess),
+            redirectPage: null,
+          }}
+          onClickOk={() => this.setState({ textSuccess: null })}
         />
       );
     }
@@ -182,83 +353,82 @@ class ResourceMap extends Component {
             </button>
           </div>
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
-            <div className="nav card border-secondary mb-3">
-              <div className="card-body">
-                <form onSubmit={this.createResource}>
-                  <div className="form-group">
-                    <label htmlFor="resourcetype">{t("Type")}</label>
-                    <select
-                      id="resourcetype"
-                      className="custom-select"
-                      value={this.state.resourceTypeInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          resourceTypeInput: evt.target.value,
-                        })
-                      }
-                    >
-                      {this.resourcesList(t)}
-                    </select>
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="coordinateXInput">
-                      {t("Coordinate")} X {t("Not the same as in the game")}
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="coordinateXInput"
-                      value={this.state.coordinateXInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          coordinateXInput: evt.target.value,
-                        })
-                      }
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="coordinateYInput">
-                      {t("Coordinate")} Y {t("Not the same as in the game")}
-                    </label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="coordinateYInput"
-                      value={this.state.coordinateYInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          coordinateYInput: evt.target.value,
-                        })
-                      }
-                      required
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="quality">
-                      {t("Quality:")} {this.state.qualityInput}
-                    </label>
-                    <input
-                      type="range"
-                      className="form-control-range"
-                      id="quality"
-                      value={this.state.qualityInput}
-                      max="200"
-                      onChange={(evt) =>
-                        this.setState({
-                          qualityInput: evt.target.value,
-                        })
-                      }
-                    />
-                  </div>
-                  <button
-                    className="btn btn-lg btn-outline-success btn-block"
-                    type="submit"
-                    value="Submit"
-                  >
-                    {t("Create resource")}
-                  </button>
-                </form>
+            <ul className="nav nav-tabs" role="tablist">
+              <li className="nav-item" role="presentation">
+                <a
+                  className="nav-link active"
+                  id="add-resource-tab"
+                  data-toggle="tab"
+                  href="#addresource"
+                  role="tab"
+                  aria-controls="addresource"
+                  aria-selected="true"
+                >
+                  {t("Create resource")}
+                </a>
+              </li>
+              <li className="nav-item" role="presentation">
+                <a
+                  className="nav-link"
+                  id="resource-list-tab"
+                  data-toggle="tab"
+                  href="#resourcelist"
+                  role="tab"
+                  aria-controls="resourcelist"
+                  aria-selected="false"
+                >
+                  {t("List")}
+                </a>
+              </li>
+              <li
+                className={
+                  this.state.user_discord_id === this.props.map.discordid
+                    ? "nav-item"
+                    : "nav-item d-none"
+                }
+              >
+                <a
+                  className="nav-link"
+                  id="edit-map-tab"
+                  data-toggle="tab"
+                  href="#editmap"
+                  role="tab"
+                  aria-controls="editmap"
+                  aria-selected="false"
+                >
+                  {t("Edit")}
+                </a>
+              </li>
+            </ul>
+            <div className="tab-content">
+              <div
+                className="tab-pane fade show active"
+                id="addresource"
+                role="tabpanel"
+                aria-labelledby="add-resource-tab"
+              >
+                {this.createResourceTab(t)}
+              </div>
+              <div
+                className="tab-pane fade"
+                id="resourcelist"
+                role="tabpanel"
+                aria-labelledby="resource-list-tab"
+              >
+                <ul
+                  className="list-group overflow-auto"
+                  style={{ height: "100vh" }}
+                >
+                  {this.resourcesInTheMapList(t)}
+                </ul>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="editmap"
+                role="tabpanel"
+                aria-labelledby="edit-map-tab"
+              >
+                {this.editMapTab(t)}
               </div>
             </div>
           </nav>

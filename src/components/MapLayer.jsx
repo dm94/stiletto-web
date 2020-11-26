@@ -43,7 +43,11 @@ class MapLayer extends Component {
   }
 
   getMarkers(t) {
-    if (this.props.resourcesInTheMap != null) {
+    if (
+      this.props.resourcesInTheMap != null &&
+      this.props.resourcesInTheMap[0] != null &&
+      this.props.resourcesInTheMap[0].resourceid != null
+    ) {
       return this.props.resourcesInTheMap.map((resource) => (
         <Marker
           key={"resource" + resource.resourceid}
@@ -112,7 +116,11 @@ class MapLayer extends Component {
           <TileLayer
             url={
               process.env.REACT_APP_MAPS_URL +
-              this.props.mapName +
+              (this.props.resourcesInTheMap != null &&
+              this.props.resourcesInTheMap[0] != null &&
+              this.props.resourcesInTheMap[0].typemap != null
+                ? this.props.resourcesInTheMap[0].typemap
+                : "Crater") +
               "/{z}/{x}/{y}.png"
             }
             noWrap={true}

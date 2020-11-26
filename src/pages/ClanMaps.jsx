@@ -62,12 +62,12 @@ class ClanMaps extends Component {
           <img
             src={map.image}
             className={
-              map.idMap == this.state.mapSelectInput
+              map.name == this.state.mapSelectInput
                 ? "img-fluid img-thumbnail"
                 : "img-fluid"
             }
             alt={map.name}
-            id={map.idMap}
+            id={map.name}
             onClick={(evt) =>
               this.setState({
                 mapSelectInput: evt.target.id,
@@ -86,7 +86,7 @@ class ClanMaps extends Component {
         <ClanMapItem
           key={"clanmap" + map.mapid}
           map={map}
-          value={this.getNameMap(map.typemap)}
+          value={map.typemap}
           onOpen={this.openMap}
           onDelete={(mapid) => {
             this.setState({ showDeleteModal: true, idMapDeleteModal: mapid });
