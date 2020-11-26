@@ -11,7 +11,6 @@ class ResourceMap extends Component {
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      mapName: this.props.value,
       resourceTypeInput: "Aloe",
       qualityInput: 0,
       coordinateXInput: 0,
@@ -439,7 +438,6 @@ class ResourceMap extends Component {
             resourcesInTheMap={this.state.resourcesInTheMap}
             deleteResource={this.deleteResource}
             changeInput={this.changeCoords}
-            mapName={this.state.mapName}
           ></MapLayer>
         </div>
       </div>

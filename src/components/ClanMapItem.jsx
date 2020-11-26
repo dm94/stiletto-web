@@ -77,6 +77,8 @@ class ClanMapItem extends Component {
   }
 
   render() {
+    var date = new Date();
+    var dateBurning = new Date(this.props.map.dateofburning);
     return (
       <div
         className="m-2 col-sm-2 col-xl-2 text-center"
@@ -92,7 +94,9 @@ class ClanMapItem extends Component {
         {this.showButton()}
         <h6>
           {this.props.map.name}{" "}
-          <small className="text-muted">{this.props.map.dateofburning}</small>
+          <small className={dateBurning <= date ? "text-danger" : "text-muted"}>
+            {this.props.map.dateofburning}
+          </small>
         </h6>
       </div>
     );

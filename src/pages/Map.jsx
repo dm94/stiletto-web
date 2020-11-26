@@ -12,11 +12,11 @@ class Map extends Component {
     super(props);
 
     this.state = {
-      mapName: null,
       resourcesInTheMap: null,
       mapId: null,
       pass: null,
       isLoaded: false,
+      textMessage: null,
     };
   }
 
@@ -45,7 +45,7 @@ class Map extends Component {
   }
 
   deleteResource = (resourceid) => {
-    console.log("This function is not available from here");
+    this.setState({ textMessage: "This function is not available from here" });
   };
 
   changeCoords = (x, y) => {
@@ -57,7 +57,18 @@ class Map extends Component {
     if (this.state.isLoaded) {
       return <LoadingScreen />;
     }
-
+    if (this.state.textMessage != null) {
+      return (
+        <ModalMessage
+          message={{
+            isError: false,
+            text: t(this.state.textMessage),
+            redirectPage: null,
+          }}
+          onClickOk={() => this.setState({ textMessage: null })}
+        />
+      );
+    }
     if (this.state.mapId != null && this.state.pass != null) {
       return (
         <div className="row flex-xl-nowrap">
@@ -74,7 +85,6 @@ class Map extends Component {
               resourcesInTheMap={this.state.resourcesInTheMap}
               deleteResource={this.deleteResource}
               changeInput={this.changeCoords}
-              mapName={this.state.mapName}
             ></MapLayer>
           </div>
         </div>

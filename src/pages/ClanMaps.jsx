@@ -129,18 +129,6 @@ class ClanMaps extends Component {
       });
   };
 
-  getImageMap(typemap) {
-    if (this.state.maps != null) {
-      var m = this.state.maps.filter((m) => {
-        return m.idMap === typemap;
-      });
-      if (m[0] != null) {
-        return m[0].image;
-      }
-    }
-    return process.env.REACT_APP_MAPS_URL + "Crater.jpg";
-  }
-
   getNameMap(typemap) {
     if (this.state.maps != null) {
       var m = this.state.maps.filter((m) => {
@@ -302,7 +290,6 @@ class ClanMaps extends Component {
           key={"mapOpen" + this.state.mapThatIsOpen.mapid}
           onReturn={() => this.setState({ mapThatIsOpen: null })}
           map={this.state.mapThatIsOpen}
-          value={this.getNameMap(this.state.mapThatIsOpen.typemap)}
         />
       );
     }
