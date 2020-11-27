@@ -48,10 +48,39 @@ class WalkerList extends Component {
       });
   }
 
+  deleteWalker = (walkerid) => {
+    axios
+      .get(process.env.REACT_APP_API_URL + "/walkers.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "deletewalker",
+          dataupdate: walkerid,
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
+  };
+
   walkerList() {
     if (this.state.isFiltered) {
       return this.state.walkersFiltered.map((walker) => (
-        <WalkerListItem key={walker.walkerID} walker={walker} />
+        <WalkerListItem
+          key={walker.walkerID}
+          walker={walker}
+          onRemove={this.deleteWalker}
+        />
       ));
     } else {
       if (
@@ -60,7 +89,11 @@ class WalkerList extends Component {
         this.state.walkers[0].discordid != null
       ) {
         return this.state.walkers.map((walker) => (
-          <WalkerListItem key={walker.walkerID} walker={walker} />
+          <WalkerListItem
+            key={walker.walkerID}
+            walker={walker}
+            onRemove={this.deleteWalker}
+          />
         ));
       }
     }
@@ -216,7 +249,7 @@ class WalkerList extends Component {
                   {t("Walker ID")}
                 </th>
                 <th scope="col">
-                  <div class="input-group input-group-sm w-50 mb-0 mx-auto">
+                  <div className="input-group input-group-sm w-50 mb-0 mx-auto">
                     <input
                       className="form-control"
                       id="search-name"
@@ -230,7 +263,7 @@ class WalkerList extends Component {
                       }
                       value={this.state.searchInput}
                     />
-                    <div class="input-group-append">
+                    <div className="input-group-append">
                       <button
                         type="button"
                         className="btn btn-secondary"

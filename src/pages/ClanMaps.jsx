@@ -87,7 +87,9 @@ class ClanMaps extends Component {
           key={"clanmap" + map.mapid}
           map={map}
           value={map.typemap}
-          onOpen={this.openMap}
+          onOpen={(map) => {
+            this.setState({ mapThatIsOpen: map });
+          }}
           onDelete={(mapid) => {
             this.setState({ showDeleteModal: true, idMapDeleteModal: mapid });
           }}
@@ -95,10 +97,6 @@ class ClanMaps extends Component {
       ));
     }
   }
-
-  openMap = (map) => {
-    this.setState({ mapThatIsOpen: map });
-  };
 
   deleteMap = (mapid) => {
     axios
