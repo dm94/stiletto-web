@@ -59,6 +59,9 @@ function CrafterApp() {
                 <Link className="dropdown-item" to="/maps">
                   {t("Resources maps")}
                 </Link>
+                <Link className="dropdown-item" to="/transactions">
+                  {t("Transactions")}
+                </Link>
               </div>
             </li>
             <li className="nav-item">
