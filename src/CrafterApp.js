@@ -1,21 +1,22 @@
 import React, { useState } from "react";
+import CookieConsent from "react-cookie-consent";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import Analytics from "react-router-ga";
+import i18next from "i18next";
 import ItemSelector from "./pages/ItemSelector";
 import DiscordConnection from "./pages/DiscordConnection";
 import ClanList from "./pages/ClanList";
 import MemberList from "./pages/MemberList";
 import WalkerList from "./pages/WalkerList";
 import ClanMaps from "./pages/ClanMaps";
-import CookieConsent from "react-cookie-consent";
 import Home from "./pages/Home";
 import TradeSystem from "./pages/TradeSystem";
 import Diplomacy from "./pages/Diplomacy";
 import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
 import Map from "./pages/Map";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import Analytics from "react-router-ga";
-import i18next from "i18next";
+import Transactions from "./pages/Transactions";
 
 function CrafterApp() {
   const [t] = useTranslation();
@@ -140,6 +141,7 @@ function CrafterApp() {
             <Route path="/diplomacy" component={Diplomacy} />
             <Route path="/auctions" component={AuctionTimers} />
             <Route path="/others" component={Others} />
+            <Route exact path="/transactions" component={Transactions} />
             <Route path="/map" component={Map} />
           </Switch>
         </Analytics>

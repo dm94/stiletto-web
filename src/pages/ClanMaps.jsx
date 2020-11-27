@@ -306,7 +306,7 @@ class ClanMaps extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t("You need to have a clan to access this section"),
+            text: t("Login again"),
             redirectPage: "/profile",
           }}
         />
