@@ -16,11 +16,13 @@ class Transactions extends Component {
       transactions: null,
       redirect: false,
       error: null,
-      inputDiscodId: "",
-      showLinkDiscordButton: false,
       isFiltered: false,
       searchInput: "",
       transactionsFiltered: [],
+      balance: 0,
+      quantity: 0,
+      description: "",
+      balanceMain: 0,
     };
   }
 
@@ -35,6 +37,16 @@ class Transactions extends Component {
       .then((response) => {
         if (response.status === 200) {
           this.setState({ transactions: response.data });
+          if (
+            this.state.transactions != null &&
+            this.state.transactions[0] != null &&
+            this.state.transactions[0].transactionID != null
+          ) {
+            this.setState({
+              balanceMain: this.state.transactions[0].balance,
+              balance: this.state.transactions[0].balance,
+            });
+          }
         } else if (response.status === 205) {
           localStorage.clear();
           this.setState({
@@ -47,6 +59,34 @@ class Transactions extends Component {
         this.setState({ error: "Error when connecting to the API" });
       });
   }
+
+  addTransaction = (event) => {
+    event.preventDefault();
+    axios
+      .get(process.env.REACT_APP_API_URL + "/flots.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "addtransaction",
+          balance: this.state.balance,
+          quantity: this.state.quantity,
+          description: this.state.description,
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
+  };
 
   transactionList() {
     if (this.state.isFiltered) {
@@ -121,14 +161,74 @@ class Transactions extends Component {
               content="This is the list of all the transactions"
             />
           </Helmet>
+          <div>
+            <form onSubmit={this.addTransaction}>
+              <div className="row">
+                <div className="col">
+                  <label htmlFor="balance">{t("Total")}</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    name="description"
+                    value={this.state.balance}
+                    required
+                    disabled
+                  />
+                </div>
+                <div className="col">
+                  <label htmlFor="description">{t("Description")}</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="description"
+                    value={this.state.description}
+                    max="200"
+                    onChange={(evt) =>
+                      this.setState({
+                        description: evt.target.value,
+                      })
+                    }
+                    required
+                  />
+                </div>
+                <div className="col">
+                  <label htmlFor="transaction">{t("Transaction")}</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    name="transaction"
+                    value={this.state.quantity}
+                    maxLength="10"
+                    onChange={(evt) =>
+                      this.setState({
+                        quantity: evt.target.value,
+                        balance:
+                          this.state.balanceMain + parseInt(evt.target.value),
+                      })
+                    }
+                    required
+                  />
+                </div>
+                <div className="col">
+                  <button
+                    className="btn btn-lg btn-outline-success btn-block"
+                    type="submit"
+                    value="Submit"
+                  >
+                    {t("Add")}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
           <table className="table">
             <thead>
               <tr>
                 <th className="text-center" scope="col">
-                  {t("Balance")}
+                  {t("Total")}
                 </th>
                 <th className="text-center" scope="col">
-                  {t("Total")}
+                  {t("Transaction")}
                 </th>
                 <th className="text-center" scope="col">
                   {t("Date")}
@@ -139,7 +239,7 @@ class Transactions extends Component {
                       className="form-control"
                       id="search-name"
                       type="search"
-                      placeholder="Description.."
+                      placeholder={t("Description")}
                       aria-label="Search"
                       onChange={(evt) =>
                         this.setState({

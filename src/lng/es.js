@@ -62,7 +62,7 @@ let es = {
     Russian: "Ruso",
     French: "Francés",
     Transactions: "Transacciones",
-    Balance: "Balance",
+    Transaction: "Transacción",
     Total: "Total",
     Date: "Fecha",
     "Member List": "Listado de miembros",
