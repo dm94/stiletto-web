@@ -6,7 +6,15 @@ class TransactionListItem extends Component {
     return (
       <tr>
         <td className="text-center">{this.props.transaction.balance}</td>
-        <td className="text-center">{this.props.transaction.quantity}</td>
+        <td
+          className={
+            this.props.transaction.quantity > 0
+              ? "text-center text-success"
+              : "text-center text-danger"
+          }
+        >
+          {this.props.transaction.quantity}
+        </td>
         <td className="text-center">{this.props.transaction.dateofentry}</td>
         <td className="text-center">{this.props.transaction.description}</td>
       </tr>
