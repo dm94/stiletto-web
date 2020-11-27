@@ -21,6 +21,8 @@ class ResourceMap extends Component {
       pass: this.props.map.pass,
       textSuccess: null,
       center: null,
+      mapname: this.props.map.name,
+      dateofburning: this.props.map.dateofburning,
     };
   }
 
@@ -104,6 +106,32 @@ class ResourceMap extends Component {
       .then((response) => {
         if (response.status === 202) {
           this.setState({ textSuccess: "Password changed" });
+        } else if (response.status === 205) {
+          localStorage.clear();
+          this.setState({ error: "Login again" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
+  };
+
+  changeDataMap = (event) => {
+    event.preventDefault();
+    axios
+      .get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "editmap",
+          mapid: this.props.map.mapid,
+          mapname: this.state.mapname,
+          mapdate: this.state.dateofburning,
+        },
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          this.setState({ textSuccess: "Map updated" });
         } else if (response.status === 205) {
           localStorage.clear();
           this.setState({ error: "Login again" });
@@ -257,6 +285,40 @@ class ResourceMap extends Component {
     if (this.state.user_discord_id === this.props.map.discordid) {
       return (
         <div className="card-body">
+          <form onSubmit={this.changeDataMap}>
+            <div className="form-group">
+              <label htmlFor="mapname">{t("Map Name")}</label>
+              <input
+                type="text"
+                className="form-control"
+                id="mapname"
+                onChange={(evt) => this.setState({ mapname: evt.target.value })}
+                value={this.state.mapname}
+                maxLength="30"
+                required
+              ></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="mapdate">{t("Date of burning")}</label>
+              <input
+                type="date"
+                className="form-control"
+                id="mapdate"
+                onChange={(evt) =>
+                  this.setState({ dateofburning: evt.target.value })
+                }
+                value={this.state.dateofburning}
+                required
+              ></input>
+            </div>
+            <button
+              className="btn btn-lg btn-outline-success btn-block"
+              type="submit"
+              value="Submit"
+            >
+              {t("Update Data")}
+            </button>
+          </form>
           <form onSubmit={this.changePassword}>
             <div className="form-group">
               <label htmlFor="password">{t("Password")}</label>

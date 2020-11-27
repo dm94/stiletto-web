@@ -123,6 +123,8 @@ let ru = {
     Edit: "Редактирование",
     List: "Список",
     Password: "Пароль",
+    "Update Data": "Обновить данные",
+    "Updated data": "Обновлённые данные",
     "Change Password": "Изменить пароль",
     Type: "Введите",
     Coordinate: "Координация",

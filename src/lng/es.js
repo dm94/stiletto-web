@@ -123,6 +123,8 @@ let es = {
     List: "Lista",
     Edit: "Editar",
     Password: "Contraseña",
+    "Update Data": "Actualizar Datos",
+    "Updated data": "Datos actualizados",
     "Change Password": "Cambiar contraseña",
     "Password changed": "Contraseña cambiada",
     Error: "Error",

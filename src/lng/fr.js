@@ -124,6 +124,8 @@ let fr = {
     List: "Liste",
     Edit: "Editer",
     Password: "Mot de passe",
+    "Update Data": "Données actualisées",
+    "Updated data": "Données actualisées",
     "Change Password": "Changer le mot de passe",
     "Password changed": "Mot de passe modifié",
     Error: "Erreur",

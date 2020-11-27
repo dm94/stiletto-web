@@ -121,6 +121,8 @@ let en = {
     List: "List",
     Edit: "Edit",
     Password: "Password",
+    "Update Data": "Update Data",
+    "Updated data": "Updated data",
     "Change Password": "Change Password",
     "Password changed": "Password changed",
     Error: "Error",
