@@ -2,7 +2,7 @@
 
 Web with different utilities for the game Last Oasis, but is not affiliated with [Donkey Crew](https://www.donkey.team/)
 It is created with JS (react), HTML, CSS (bootstrap) and PHP API
-You can see this website in operation here: [stiletto.comunidadgzone.es](https://stiletto.comunidadgzone.es/)
+You can see this website in operation here: [www.stiletto.live](https://www.stiletto.live/)
 
 ### Working
 
@@ -21,7 +21,6 @@ You can see this website in operation here: [stiletto.comunidadgzone.es](https:/
 ### In process
 
 - Management of alliances between various clans
-- Add transactions section and allow in the view, edit and delete transactions
 
 #### Environmental variables
 
