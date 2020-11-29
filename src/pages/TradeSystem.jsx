@@ -237,7 +237,7 @@ class TradeSystem extends Component {
                     </div>
                     <div className="form-group col-xl-2">
                       <label htmlFor="qualityInput">
-                        {t("Quantity")}: {this.state.qualityInput}
+                        {t("Quality")}: {this.state.qualityInput}
                       </label>
                       <input
                         id="qualityInput"
