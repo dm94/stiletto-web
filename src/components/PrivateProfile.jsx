@@ -66,16 +66,20 @@ class PrivateProfile extends Component {
   deleteUser = (event) => {
     event.preventDefault();
     axios
-      .delete(
-        process.env.REACT_APP_API_URL +
-          "/users.php" +
-          "?discordid=" +
-          this.state.user_discord_id +
-          "&token=" +
-          this.state.token
-      )
-      .then(localStorage.clear())
-      .then(this.setState({ redirect: true }));
+      .get(process.env.REACT_APP_API_URL + "/users.php", {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          accion: "deleteuser",
+        },
+      })
+      .then((response) => {
+        localStorage.clear();
+        this.setState({ redirect: true });
+      })
+      .catch((error) => {
+        this.setConnectionError();
+      });
   };
 
   addNickInGame = (event) => {
