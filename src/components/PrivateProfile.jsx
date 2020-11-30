@@ -175,6 +175,17 @@ class PrivateProfile extends Component {
               name="description"
               content="Private profile where you can configure some things"
             />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@dm94dani" />
+            <meta name="twitter:title" content="Perfil - Stiletto" />
+            <meta
+              name="twitter:description"
+              content="Private profile where you can configure some things"
+            />
+            <meta
+              name="twitter:image"
+              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+            />
           </Helmet>
           <div className="col-xl-6">
             <div className="card border-secondary mb-3">

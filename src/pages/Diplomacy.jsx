@@ -268,6 +268,17 @@ class Diplomacy extends Component {
             name="description"
             content="View your clan's list of allies, enemies and NAP"
           />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@dm94dani" />
+          <meta name="twitter:title" content="Diplomacy - Stiletto" />
+          <meta
+            name="twitter:description"
+            content="View your clan's list of allies, enemies and NAP"
+          />
+          <meta
+            name="twitter:image"
+            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+          />
         </Helmet>
         <div className="row">
           <div className="col-md-3">

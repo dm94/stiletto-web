@@ -78,6 +78,17 @@ class Map extends Component {
               name="description"
               content="Map of resources shared through a link"
             />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@dm94dani" />
+            <meta name="twitter:title" content="Map - Stiletto" />
+            <meta
+              name="twitter:description"
+              content="Map of resources shared through a link"
+            />
+            <meta
+              name="twitter:image"
+              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
+            />
           </Helmet>
           <div className="col-xl-12">
             <div className="col-xl-12 text-center">

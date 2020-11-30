@@ -33,6 +33,20 @@ class DiscordConnection extends Component {
               name="description"
               content="Link discord with stiletto and use more functions"
             />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@dm94dani" />
+            <meta
+              name="twitter:title"
+              content="Discord Connection - Stiletto"
+            />
+            <meta
+              name="twitter:description"
+              content="Link discord with stiletto and use more functions"
+            />
+            <meta
+              name="twitter:image"
+              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+            />
           </Helmet>
           <div className="card border-secondary mb-3">
             <div className="card-body text-succes">

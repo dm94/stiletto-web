@@ -160,6 +160,17 @@ class Transactions extends Component {
               name="description"
               content="This is the list of all the transactions"
             />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@dm94dani" />
+            <meta name="twitter:title" content="Transactions List - Stiletto" />
+            <meta
+              name="twitter:description"
+              content="This is the list of all the transactions"
+            />
+            <meta
+              name="twitter:image"
+              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+            />
           </Helmet>
           <div>
             <form onSubmit={this.addTransaction}>

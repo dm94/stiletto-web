@@ -364,6 +364,17 @@ class MemberList extends Component {
             name="description"
             content="This is the list of all the members of your clan"
           />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@dm94dani" />
+          <meta name="twitter:title" content="Members List - Stiletto" />
+          <meta
+            name="twitter:description"
+            content="This is the list of all the members of your clan"
+          />
+          <meta
+            name="twitter:image"
+            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+          />
         </Helmet>
         <div className="col-xl-6">
           <div className="card mb-3">

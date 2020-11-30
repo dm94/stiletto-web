@@ -295,6 +295,17 @@ class TradeSystem extends Component {
             name="description"
             content="You can create offers or search for them easily from here"
           />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@dm94dani" />
+          <meta name="twitter:title" content="Trades - Stiletto" />
+          <meta
+            name="twitter:description"
+            content="You can create offers or search for them easily from here"
+          />
+          <meta
+            name="twitter:image"
+            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
+          />
         </Helmet>
         {this.loggedPart(t)}
         <div className="col-md-12">

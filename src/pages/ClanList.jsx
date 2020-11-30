@@ -76,6 +76,14 @@ class ClanList extends Component {
           <Helmet>
             <title>Clan List - Stiletto</title>
             <meta name="description" content="List of clans" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:site" content="@dm94dani" />
+            <meta name="twitter:title" content="Clan List - Stiletto" />
+            <meta name="twitter:description" content="List of clans" />
+            <meta
+              name="twitter:image"
+              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
+            />
           </Helmet>
           <table className="table">
             <thead className="thead-light">

@@ -68,6 +68,17 @@ class Others extends Component {
             name="description"
             content="Here you have different information such as the latest updates"
           />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@dm94dani" />
+          <meta name="twitter:title" content="Other Info - Stiletto" />
+          <meta
+            name="twitter:description"
+            content="Here you have different information such as the latest updates"
+          />
+          <meta
+            name="twitter:image"
+            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+          />
         </Helmet>
         <div className="col-md-4">
           <div className="card mb-3">
