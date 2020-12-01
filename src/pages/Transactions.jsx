@@ -76,6 +76,7 @@ class Transactions extends Component {
       .then((response) => {
         if (response.status === 202) {
           this.componentDidMount();
+          this.setState({ quantity: 0, description: "" });
         } else if (response.status === 205) {
           localStorage.clear();
           this.setState({
