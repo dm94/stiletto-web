@@ -15018,5 +15018,29 @@
         ]
       }
     ]
+  }, {
+    "name": "Poaching Hut",
+    "category": "buildings/construction/crafting",
+    "cost": {
+      "name": "Tablet",
+      "count": 4
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 300
+          }, {
+            "name": "Animal Fat",
+            "count": 80
+          }, {
+            "name": "Nomad Cloth",
+            "count": 40
+          }, {
+            "name": "Pearl",
+            "count": 20
+          }
+        ]
+      }
+    ]
   }
 ]
