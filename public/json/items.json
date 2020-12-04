@@ -2189,6 +2189,9 @@
           }, {
             "name": "Lava Fuel",
             "count": 5
+          }, {
+            "name": "Fiery Concoction",
+            "count": 1
           }
         ]
       }
@@ -4856,6 +4859,9 @@
         "station": "Fiberworking Station"
       }
     ]
+  }, {
+    "name": "Fiery Concoction",
+    "category": "materials"
   }, {
     "name": "Fragment",
     "category": "materials",
