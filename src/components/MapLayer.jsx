@@ -80,8 +80,8 @@ class MapLayer extends Component {
   handleClick = (e) => {
     this.setState({
       hasLocation: true,
-      coordinateXInput: Math.floor(e.latlng.lat),
-      coordinateYInput: Math.floor(e.latlng.lng),
+      coordinateXInput: Math.round(e.latlng.lat * 100) / 100,
+      coordinateYInput: Math.round(e.latlng.lng * 100) / 100,
     });
     this.props.changeInput(
       this.state.coordinateXInput,
