@@ -47,7 +47,9 @@ class WalkerListItem extends Component {
         onMouseOver={() => this.setState({ isHover: true })}
         onMouseLeave={() => this.setState({ isHover: false })}
       >
-        {this.state.isHover ? this.showButtons() : this.showWalkerData()}
+        {this.state.isHover && this.props.walker.walkerID != null
+          ? this.showButtons()
+          : this.showWalkerData()}
       </tr>
     );
   }
