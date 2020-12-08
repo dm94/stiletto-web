@@ -53,7 +53,8 @@ class TotalMaterials extends Component {
             />
             <li className="text-right text-muted">
               {t("List of all necessary materials by")}{" "}
-              stiletto.comunidadgzone.es
+              {window.location.hostname +
+                (window.location.port ? ":" + window.location.port : "")}
             </li>
           </div>
         </div>
