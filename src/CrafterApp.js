@@ -208,15 +208,18 @@ function CrafterApp() {
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
         <div className="container">
-          Copyright © 2020 Stiletto.
+          Copyright © 2020 Stiletto{" | "}
           <a
             href="https://github.com/dm94/stiletto-web"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t("Github project")}
+            <img
+              alt="GitHub last commit"
+              src="https://img.shields.io/github/last-commit/dm94/stiletto-web"
+            ></img>
           </a>
-          {" | "}|{" "}
+          {" | "}
           {t(
             "This website are utilities related to the game Last Oasis but is not affiliated with"
           )}{" "}
