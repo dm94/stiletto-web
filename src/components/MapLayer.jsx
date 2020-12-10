@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import L from "leaflet";
-import { TileLayer, Marker, Popup, Tooltip } from "react-leaflet";
+import { TileLayer, Marker, Popup, Tooltip, ImageOverlay } from "react-leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import { withTranslation } from "react-i18next";
@@ -21,6 +21,7 @@ class MapLayer extends Component {
       coordinateXInput: 0,
       coordinateYInput: 0,
       hasLocation: false,
+      gridOpacity: 1,
     };
   }
 
@@ -114,6 +115,14 @@ class MapLayer extends Component {
           onClick={this.handleClick}
           center={this.props.center}
         >
+          <ImageOverlay
+            bounds={[
+              [85.5, -180],
+              [-70.5, 101],
+            ]}
+            opacity={this.state.gridOpacity}
+            url={process.env.REACT_APP_MAPS_URL + "Grid.png"}
+          />
           <TileLayer
             url={
               process.env.REACT_APP_MAPS_URL +
