@@ -108,6 +108,34 @@ class MapLayer extends Component {
 
     return (
       <div id="map">
+        <div className="btn-group">
+          <button
+            className={
+              this.state.gridOpacity === 1
+                ? "btn btn-sm btn-secondary active"
+                : "btn btn-sm btn-secondary"
+            }
+            onClick={() => {
+              this.setState({ gridOpacity: 1 });
+            }}
+            type="button"
+          >
+            {t("Show Grid")}
+          </button>
+          <button
+            className={
+              this.state.gridOpacity === 1
+                ? "btn btn-sm btn-secondary"
+                : "btn btn-sm btn-secondary active"
+            }
+            onClick={() => {
+              this.setState({ gridOpacity: 0 });
+            }}
+            type="button"
+          >
+            {t("Hide Grid")}
+          </button>
+        </div>
         <MapExtended
           minZoom={0}
           maxZoom={5}
