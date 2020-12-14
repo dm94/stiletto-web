@@ -23,6 +23,7 @@ class Map extends Component {
       items: null,
       coordinateXInput: 0,
       coordinateYInput: 0,
+      resourcesFiltered: null,
     };
   }
 
@@ -104,6 +105,17 @@ class Map extends Component {
       .catch((error) => {
         this.setState({ error: "Error when connecting to the API" });
       });
+  };
+
+  filterResources = (r) => {
+    if (r === "All") {
+      this.setState({ resourcesFiltered: null });
+    } else {
+      let resourcesFiltered = this.state.resourcesInTheMap.filter(
+        (resource) => resource.resourcetype === r
+      );
+      this.setState({ resourcesFiltered: resourcesFiltered });
+    }
   };
 
   render() {
@@ -231,6 +243,7 @@ class Map extends Component {
                     <ResourcesInMapList
                       resources={this.state.resourcesInTheMap}
                       onSelect={(x, y) => this.setState({ center: [x, y] })}
+                      onFilter={this.filterResources}
                     />
                   </ul>
                 </div>
@@ -272,7 +285,11 @@ class Map extends Component {
             </div>
             <MapLayer
               key={this.state.mapId}
-              resourcesInTheMap={this.state.resourcesInTheMap}
+              resourcesInTheMap={
+                this.state.resourcesFiltered != null
+                  ? this.state.resourcesFiltered
+                  : this.state.resourcesInTheMap
+              }
               deleteResource={this.deleteResource}
               changeInput={(x, y) => {
                 this.setState({

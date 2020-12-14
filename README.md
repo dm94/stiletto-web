@@ -18,10 +18,6 @@ You can see this website in operation here: [www.stiletto.live](https://www.stil
 - Section where to create a list of allies, enemies or NAP
 - System to make the web multi-language
 
-### In process
-
-- Management of alliances between various clans
-
 #### Environmental variables
 
 - REACT_APP_API_URL= API ADDRESS

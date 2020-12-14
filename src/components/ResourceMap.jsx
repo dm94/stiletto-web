@@ -24,6 +24,7 @@ class ResourceMap extends Component {
       mapname: this.props.map.name,
       dateofburning: this.props.map.dateofburning,
       allowEditing: this.props.map.allowedit,
+      resourcesFiltered: null,
     };
   }
 
@@ -166,16 +167,6 @@ class ResourceMap extends Component {
       });
   };
 
-  resourcesList(t) {
-    if (this.state.items != null) {
-      return this.state.items.map((item) => (
-        <option key={item.name} value={item.name}>
-          {t(item.name)}
-        </option>
-      ));
-    }
-  }
-
   editMapTab(t) {
     if (this.state.user_discord_id === this.props.map.discordid) {
       return (
@@ -272,6 +263,17 @@ class ResourceMap extends Component {
       );
     }
   }
+
+  filterResources = (r) => {
+    if (r === "All") {
+      this.setState({ resourcesFiltered: null });
+    } else {
+      let resourcesFiltered = this.state.resourcesInTheMap.filter(
+        (resource) => resource.resourcetype === r
+      );
+      this.setState({ resourcesFiltered: resourcesFiltered });
+    }
+  };
 
   render() {
     const { t } = this.props;
@@ -431,6 +433,7 @@ class ResourceMap extends Component {
                   <ResourcesInMapList
                     resources={this.state.resourcesInTheMap}
                     onSelect={(x, y) => this.setState({ center: [x, y] })}
+                    onFilter={this.filterResources}
                   />
                 </ul>
               </div>
@@ -448,7 +451,11 @@ class ResourceMap extends Component {
         <div className="col-xl-9 col-sm-12">
           <MapLayer
             key={this.props.map.mapid}
-            resourcesInTheMap={this.state.resourcesInTheMap}
+            resourcesInTheMap={
+              this.state.resourcesFiltered != null
+                ? this.state.resourcesFiltered
+                : this.state.resourcesInTheMap
+            }
             deleteResource={this.deleteResource}
             changeInput={(x, y) => {
               this.setState({
