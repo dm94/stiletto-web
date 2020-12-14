@@ -75,7 +75,7 @@ class ResourcesInTheMapList extends Component {
     if (this.props.resources != null) {
       return (
         <div>
-          <div class="btn-group btn-group-sm" role="group">
+          <div className="btn-group btn-group-sm" role="group">
             {this.filterlist(t)}
           </div>
           {this.list(t)}
