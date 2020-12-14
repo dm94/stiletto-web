@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ModalMessage from "./ModalMessage";
 import MapLayer from "./MapLayer";
 import { withTranslation } from "react-i18next";
+import ResourcesInMapList from "./ResourcesInMapList";
+import CreateResourceTab from "../components/CreateResourceTab";
 const axios = require("axios");
 
 class ResourceMap extends Component {
@@ -11,8 +13,6 @@ class ResourceMap extends Component {
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      resourceTypeInput: "Aloe",
-      qualityInput: 0,
       coordinateXInput: 0,
       coordinateYInput: 0,
       items: null,
@@ -23,6 +23,7 @@ class ResourceMap extends Component {
       center: null,
       mapname: this.props.map.name,
       dateofburning: this.props.map.dateofburning,
+      allowEditing: this.props.map.allowedit,
     };
   }
 
@@ -56,8 +57,7 @@ class ResourceMap extends Component {
       });
   }
 
-  createResource = (event) => {
-    event.preventDefault();
+  createResource = (resourceTypeInput, qualityInput) => {
     axios
       .get(process.env.REACT_APP_API_URL + "/maps.php", {
         params: {
@@ -65,16 +65,14 @@ class ResourceMap extends Component {
           token: this.state.token,
           accion: "addresourcemap",
           mapid: this.props.map.mapid,
-          resourcetype: this.state.resourceTypeInput,
-          quality: this.state.qualityInput,
+          resourcetype: resourceTypeInput,
+          quality: qualityInput,
           x: this.state.coordinateXInput,
           y: this.state.coordinateYInput,
         },
       })
       .then((response) => {
         this.setState({
-          resourceTypeInput: "Aloe",
-          qualityInput: 0,
           coordinateXInput: 0,
           coordinateYInput: 0,
           hasLocation: false,
@@ -127,6 +125,7 @@ class ResourceMap extends Component {
           mapid: this.props.map.mapid,
           mapname: this.state.mapname,
           mapdate: this.state.dateofburning,
+          allowediting: this.state.allowEditing ? 1 : 0,
         },
       })
       .then((response) => {
@@ -142,7 +141,7 @@ class ResourceMap extends Component {
       });
   };
 
-  deleteResource = (resourceid) => {
+  deleteResource = (resourceid, resourcetoken) => {
     axios
       .get(process.env.REACT_APP_API_URL + "/maps.php", {
         params: {
@@ -151,6 +150,7 @@ class ResourceMap extends Component {
           accion: "deleteresource",
           mapid: this.props.map.mapid,
           dataupdate: resourceid,
+          resourcetoken: resourcetoken,
         },
       })
       .then((response) => {
@@ -166,13 +166,6 @@ class ResourceMap extends Component {
       });
   };
 
-  changeCoords = (x, y) => {
-    this.setState({
-      coordinateXInput: x,
-      coordinateYInput: y,
-    });
-  };
-
   resourcesList(t) {
     if (this.state.items != null) {
       return this.state.items.map((item) => (
@@ -181,104 +174,6 @@ class ResourceMap extends Component {
         </option>
       ));
     }
-  }
-
-  resourcesInTheMapList(t) {
-    if (this.state.resourcesInTheMap != null) {
-      return this.state.resourcesInTheMap.map((resource) => (
-        <li key={resource.resourceid}>
-          <button
-            className="list-group-item btn-block"
-            onClick={() => this.setState({ center: [resource.x, resource.y] })}
-          >
-            {t(resource.resourcetype)} - Q: {resource.quality} - X: {resource.x}{" "}
-            - Y: {resource.y}
-          </button>
-        </li>
-      ));
-    }
-  }
-
-  createResourceTab(t) {
-    return (
-      <div className="card-body">
-        <form onSubmit={this.createResource}>
-          <div className="form-group">
-            <label htmlFor="resourcetype">{t("Type")}</label>
-            <select
-              id="resourcetype"
-              className="custom-select"
-              value={this.state.resourceTypeInput}
-              onChange={(evt) =>
-                this.setState({
-                  resourceTypeInput: evt.target.value,
-                })
-              }
-            >
-              {this.resourcesList(t)}
-            </select>
-          </div>
-          <div className="form-group">
-            <label htmlFor="coordinateXInput">
-              {t("Coordinate")} X ({t("Not the same as in the game")})
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="coordinateXInput"
-              value={this.state.coordinateXInput}
-              onChange={(evt) =>
-                this.setState({
-                  coordinateXInput: evt.target.value,
-                })
-              }
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="coordinateYInput">
-              {t("Coordinate")} Y ({t("Not the same as in the game")})
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              name="coordinateYInput"
-              value={this.state.coordinateYInput}
-              onChange={(evt) =>
-                this.setState({
-                  coordinateYInput: evt.target.value,
-                })
-              }
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="quality">
-              {t("Quality:")} {this.state.qualityInput}
-            </label>
-            <input
-              type="range"
-              className="form-control-range"
-              id="quality"
-              value={this.state.qualityInput}
-              max="200"
-              onChange={(evt) =>
-                this.setState({
-                  qualityInput: evt.target.value,
-                })
-              }
-            />
-          </div>
-          <button
-            className="btn btn-lg btn-outline-success btn-block"
-            type="submit"
-            value="Submit"
-          >
-            {t("Create resource")}
-          </button>
-        </form>
-      </div>
-    );
   }
 
   editMapTab(t) {
@@ -310,6 +205,39 @@ class ResourceMap extends Component {
                 value={this.state.dateofburning}
                 required
               ></input>
+            </div>
+            <div className="form-group">
+              <label htmlFor="mapdate">
+                {t("Enable editing with the link")}
+              </label>
+              <div className="btn-group">
+                <button
+                  className={
+                    this.state.allowEditing
+                      ? "btn btn-success active"
+                      : "btn btn-success"
+                  }
+                  onClick={() => {
+                    this.setState({ allowEditing: true });
+                  }}
+                  type="button"
+                >
+                  {t("Allow Editing")}
+                </button>
+                <button
+                  className={
+                    this.state.allowEditing
+                      ? "btn btn-danger"
+                      : "btn btn-danger active"
+                  }
+                  onClick={() => {
+                    this.setState({ allowEditing: false });
+                  }}
+                  type="button"
+                >
+                  {t("Read Only")}
+                </button>
+              </div>
             </div>
             <button
               className="btn btn-lg btn-outline-success btn-block"
@@ -473,7 +401,22 @@ class ResourceMap extends Component {
                 role="tabpanel"
                 aria-labelledby="add-resource-tab"
               >
-                {this.createResourceTab(t)}
+                <CreateResourceTab
+                  items={this.state.items}
+                  onCreateResource={this.createResource}
+                  coordinateXInput={this.state.coordinateXInput}
+                  coordinateYInput={this.state.coordinateYInput}
+                  onChangeX={(x) =>
+                    this.setState({
+                      coordinateXInput: x,
+                    })
+                  }
+                  onChangeY={(y) =>
+                    this.setState({
+                      coordinateYInput: y,
+                    })
+                  }
+                />
               </div>
               <div
                 className="tab-pane fade"
@@ -485,7 +428,10 @@ class ResourceMap extends Component {
                   className="list-group overflow-auto"
                   style={{ height: "100vh" }}
                 >
-                  {this.resourcesInTheMapList(t)}
+                  <ResourcesInMapList
+                    resources={this.state.resourcesInTheMap}
+                    onSelect={(x, y) => this.setState({ center: [x, y] })}
+                  />
                 </ul>
               </div>
               <div
@@ -504,7 +450,12 @@ class ResourceMap extends Component {
             key={this.props.map.mapid}
             resourcesInTheMap={this.state.resourcesInTheMap}
             deleteResource={this.deleteResource}
-            changeInput={this.changeCoords}
+            changeInput={(x, y) => {
+              this.setState({
+                coordinateXInput: x,
+                coordinateYInput: y,
+              });
+            }}
             center={this.state.center}
           ></MapLayer>
         </div>
