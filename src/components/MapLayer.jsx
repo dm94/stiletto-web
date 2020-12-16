@@ -160,6 +160,7 @@ class MapLayer extends Component {
           style={{ width: "100%", height: "800px" }}
           onClick={this.handleClick}
           center={this.props.center}
+          attributionControl={false}
         >
           <FeatureGroup>
             <EditControl
