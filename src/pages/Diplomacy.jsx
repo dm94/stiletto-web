@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ModalMessage from "../components/ModalMessage";
-import ClanName from "../components/ClanName";
+import ClanSelect from "../components/ClanSelect";
 import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
@@ -90,18 +90,12 @@ class Diplomacy extends Component {
       );
 
       return allies.map((d) => (
-        <div key={"ally" + d.id} className="col-12 row">
-          <div className="col-10">
-            <ClanName clan={d} />
-          </div>
-          <div className={this.state.isLeader ? "col-2" : "col-2 d-none"}>
-            <button
-              className="btn btn-danger btn-sm"
-              onClick={() => this.deleteDiplomacy(d.id)}
-            >
-              <i className="fas fa-trash"></i>
-            </button>
-          </div>
+        <div key={"ally" + d.id} className="col-12">
+          <ClanSelect
+            clan={d}
+            leader={this.state.isLeader}
+            onDelete={this.deleteDiplomacy}
+          />
         </div>
       ));
     }
@@ -114,18 +108,12 @@ class Diplomacy extends Component {
       );
 
       return allies.map((d) => (
-        <div key={"enemy" + d.id} className="col-12 row">
-          <div className="col-10">
-            <ClanName clan={d} />
-          </div>
-          <div className={this.state.isLeader ? "col-2" : "col-2 d-none"}>
-            <button
-              className="btn btn-danger btn-sm"
-              onClick={() => this.deleteDiplomacy(d.id)}
-            >
-              <i className="fas fa-trash"></i>
-            </button>
-          </div>
+        <div key={"enemy" + d.id} className="col-12">
+          <ClanSelect
+            clan={d}
+            leader={this.state.isLeader}
+            onDelete={this.deleteDiplomacy}
+          />
         </div>
       ));
     }
@@ -138,18 +126,12 @@ class Diplomacy extends Component {
       );
 
       return allies.map((d) => (
-        <div key={"npa" + d.id} className="col-12 row">
-          <div className="col-10">
-            <ClanName clan={d} />
-          </div>
-          <div className={this.state.isLeader ? "col-2" : "col-2 d-none"}>
-            <button
-              className="btn btn-danger btn-sm"
-              onClick={() => this.deleteDiplomacy(d.id)}
-            >
-              <i className="fas fa-trash"></i>
-            </button>
-          </div>
+        <div key={"npa" + d.id} className="col-12">
+          <ClanSelect
+            clan={d}
+            leader={this.state.isLeader}
+            onDelete={this.deleteDiplomacy}
+          />
         </div>
       ));
     }

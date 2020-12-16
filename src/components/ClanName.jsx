@@ -14,8 +14,8 @@ class ClanName extends Component {
           role="img"
         >
           <rect
-            width="100%"
-            height="100%"
+            width="90%"
+            height="90%"
             fill={this.props.clan.flagcolor}
           ></rect>
         </svg>
