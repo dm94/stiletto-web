@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "2.7.9",
+  "version": "2.8.0",
   "private": true,
   "dependencies": {
     "axios": "^0.20.0",
@@ -9,6 +9,7 @@
     "i18next-browser-languagedetector": "^6.0.1",
     "jquery": "^3.5.1",
     "leaflet": "^1.7.1",
+    "leaflet-draw": "^1.0.4",
     "leaflet-rastercoords": "^1.0.3",
     "popper.js": "^1.16.1",
     "query-string": "^6.13.5",
@@ -19,6 +20,7 @@
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.7.3",
     "react-leaflet": "^2.7.0",
+    "react-leaflet-draw": "^0.19.0",
     "react-router-dom": "^5.2.0",
     "react-router-ga": "^1.2.3",
     "react-scripts": "^3.4.4",

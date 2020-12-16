@@ -1,9 +1,18 @@
 import React, { Component, Fragment } from "react";
 import L from "leaflet";
-import { TileLayer, Marker, Popup, Tooltip, ImageOverlay } from "react-leaflet";
+import {
+  TileLayer,
+  Marker,
+  Popup,
+  Tooltip,
+  ImageOverlay,
+  FeatureGroup,
+} from "react-leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import { withTranslation } from "react-i18next";
+import { EditControl } from "react-leaflet-draw";
+import "leaflet-draw/dist/leaflet.draw.css";
 
 var myMarker = L.icon({
   iconUrl:
@@ -141,6 +150,9 @@ class MapLayer extends Component {
           >
             {t("Hide Grid")}
           </button>
+          <div className="border border-warning rounded p-1">
+            {t("The data you draw is not saved, only the markers are saved")}
+          </div>
         </div>
         <MapExtended
           minZoom={0}
@@ -149,6 +161,17 @@ class MapLayer extends Component {
           onClick={this.handleClick}
           center={this.props.center}
         >
+          <FeatureGroup>
+            <EditControl
+              position="topright"
+              onEdited={this._onEditPath}
+              onCreated={this._onCreate}
+              onDeleted={this._onDeleted}
+              draw={{
+                marker: false,
+              }}
+            />
+          </FeatureGroup>
           <ImageOverlay
             bounds={[
               [85.5, -180],
