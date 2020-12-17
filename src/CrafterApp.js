@@ -234,7 +234,7 @@ function CrafterApp() {
       </footer>
       <CookieConsent
         location="bottom"
-        buttonText="Let´s GO!!"
+        buttonText="OK"
         cookieName="acceptscookies"
         style={{ background: "#2B373B" }}
         buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
