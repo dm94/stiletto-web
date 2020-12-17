@@ -85,6 +85,33 @@ class Others extends Component {
             <div className="card-header">{t("Latest updates")}</div>
             <ul className="list-group">{this.showUpdates()}</ul>
           </div>
+          <div className="col-md-12">
+            <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div className="p-4 d-flex flex-column position-static">
+                <h3 className="mb-0 pb-2">{t("Privacy Agreement")}</h3>
+                <p className="card-text mb-auto">
+                  {t(
+                    "Cookies: This site only uses Google cookies to view web traffic."
+                  )}
+                </p>
+                <p className="card-text mb-auto">
+                  {t(
+                    "Private data: The only registration data that is saved is the id and nick of discord"
+                  )}
+                </p>
+                <p className="card-text mb-auto">
+                  {t(
+                    "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data."
+                  )}
+                </p>
+                <p className="card-text mb-auto">
+                  {t(
+                    "If you think this page is not secure, all its code is published on github and I provide all the means for you to report the failure."
+                  )}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="col-md-8">
           <div className="row">

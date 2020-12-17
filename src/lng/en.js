@@ -189,6 +189,15 @@ let en = {
     "Steam Page": "Steam Page",
     "Official Discord": "Official Discord",
     Wiki: "Wiki",
+    "Privacy Agreement": "Privacy Agreement",
+    "Cookies: This site only uses Google cookies to view web traffic.":
+      "Cookies: This site only uses Google cookies to view web traffic.",
+    "Private data: The only registration data that is saved is the id and nick of discord":
+      "Private data: The only registration data that is saved is the id and nick of discord",
+    "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.":
+      "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.",
+    "If you think this page is not secure, all its code is published on github and I provide all the means for you to report the failure.":
+      "If you think this page is not secure, all its code is published on github and I provide all the means for you to report the failure.",
     Aloe: "Aloe",
     "Animal Fat": "Animal Fat",
     Apple: "Apple",

@@ -191,6 +191,15 @@ let es = {
     "Steam Page": "Página de steam",
     "Official Discord": "Discord Oficial",
     Wiki: "Wiki",
+    "Privacy Agreement": "Política de privacidad",
+    "Cookies: This site only uses Google cookies to view web traffic.":
+      "Cookies: Esta pagina solo usa las cookies de google para ver el trafico de la web.",
+    "Private data: The only registration data that is saved is the id and nick of discord":
+      "Datos privados: Los únicos datos de registro que se guardan es la id y el nick de discord",
+    "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.":
+      "Los datos que se añaden a la web como la diplomacia, recursos del mapa o miembros de un clan se almacenan en una base de datos y se toman las medidas de seguridad necesarias para que nadie pueda acceder a esos datos.",
+    "If you think this page is not secure, all its code is published on github and I provide all the means for you to report the failure.":
+      "Si crees que esta pagina no es segura, todo su código esta publicado en github y proporciono todos los medios para que reportes el fallo.",
     Aloe: "Aloe vera",
     "Animal Fat": "Grasa animal",
     Apple: "Manzana",
