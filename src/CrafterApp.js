@@ -81,14 +81,14 @@ function CrafterApp() {
             </li>
           </ul>
           <button
-            className="btn btn-sm"
+            className="btn btn-sm d-none d-sm-block"
             onClick={() => {
               setChangeLanguageModal(true);
             }}
           >
             <img
               className={
-                localStorage.getItem("i18nextLng") === "es"
+                localStorage.getItem("i18nextLng").includes("es")
                   ? "rounded"
                   : "rounded d-none"
               }
@@ -98,7 +98,7 @@ function CrafterApp() {
             />
             <img
               className={
-                localStorage.getItem("i18nextLng") === "ru"
+                localStorage.getItem("i18nextLng").includes("ru")
                   ? "rounded"
                   : "rounded d-none"
               }
@@ -108,23 +108,25 @@ function CrafterApp() {
             />
             <img
               className={
-                localStorage.getItem("i18nextLng") === "en"
-                  ? "rounded"
-                  : "rounded d-none"
-              }
-              width="30%"
-              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
-              alt="English language"
-            />
-            <img
-              className={
-                localStorage.getItem("i18nextLng") === "fr"
+                localStorage.getItem("i18nextLng").includes("fr")
                   ? "rounded"
                   : "rounded d-none"
               }
               width="30%"
               src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
               alt="French language"
+            />
+            <img
+              className={
+                !localStorage.getItem("i18nextLng").includes("es") &&
+                !localStorage.getItem("i18nextLng").includes("fr") &&
+                !localStorage.getItem("i18nextLng").includes("ru")
+                  ? "rounded"
+                  : "rounded d-none"
+              }
+              width="30%"
+              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+              alt="English language"
             />
           </button>
           {discordButton(t)}
