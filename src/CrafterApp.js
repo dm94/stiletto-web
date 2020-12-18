@@ -81,7 +81,7 @@ function CrafterApp() {
             </li>
           </ul>
           <button
-            className="btn d-none d-sm-block btn-sm"
+            className="btn btn-sm"
             onClick={() => {
               setChangeLanguageModal(true);
             }}
