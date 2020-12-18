@@ -35,7 +35,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/crafter" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static">
               <h3 className="mb-0">{t("Crafter")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -43,7 +43,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-6">
+            <div className="col-xl-6">
               <img
                 alt="Crafter page"
                 className="img-fluid"
@@ -57,7 +57,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/auctions" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static">
               <h3 className="mb-0">{t("Auctions timers")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -65,7 +65,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-6">
+            <div className="col-xl-6">
               <img
                 alt="Diplomacy page"
                 className="img-fluid"
@@ -79,7 +79,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/trades" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static">
               <h3 className="mb-0">{t("Trading system")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -87,7 +87,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-6">
+            <div className="col-xl-6">
               <img
                 alt="Trade system page"
                 className="img-fluid"
@@ -101,7 +101,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/maps" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static">
               <h3 className="mb-0">{t("Resources maps")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -109,7 +109,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-6">
+            <div className="col-xl-6">
               <img
                 alt="Resources map page"
                 className="img-fluid"
@@ -123,7 +123,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/walkerlist" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static">
               <h3 className="mb-0">{t("Walker List")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -131,7 +131,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-6">
+            <div className="col-xl-6">
               <img
                 alt="Resources map page"
                 className="img-fluid"
@@ -145,7 +145,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/diplomacy" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static">
               <h3 className="mb-0">{t("Control the clan")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -153,7 +153,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-6">
+            <div className="col-xl-6">
               <img
                 alt="Diplomacy page"
                 className="img-fluid"
