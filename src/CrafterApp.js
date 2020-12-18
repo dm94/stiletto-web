@@ -26,110 +26,114 @@ function CrafterApp() {
     : "modal d-none";
   return (
     <Router>
-      <header className="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-dark">
-        <Link className="navbar-brand" to="/">
-          Stiletto
-        </Link>
-        <div className="collapse navbar-collapse navbar-nav-scroll">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/crafter">
-                {t("Crafting")}
-              </Link>
-            </li>
-            <li className="nav-item dropdown">
-              <Link
-                className="nav-link dropdown-toggle"
-                to="/profile"
-                id="clanDrodown"
-                role="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
+      <header>
+        <div className="navbar navbar-expand-md navbar-dark bg-dark">
+          <div className="container-fluid">
+            <Link className="navbar-brand" to="/">
+              Stiletto
+            </Link>
+            <div className="navbar-collapse collapse show" id="menucollapse">
+              <ul className="navbar-nav mr-auto mb-2 mb-md-0">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/crafter">
+                    {t("Crafting")}
+                  </Link>
+                </li>
+                <li className="nav-item dropdown">
+                  <Link
+                    className="nav-link dropdown-toggle"
+                    to="/profile"
+                    id="clanDrodown"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    {t("Profile")}
+                  </Link>
+                  <div className="dropdown-menu" aria-labelledby="clanDrodown">
+                    <Link className="dropdown-item" to="/profile">
+                      {t("Profile")}
+                    </Link>
+                    <Link className="dropdown-item" to="/clanlist">
+                      {t("Clan List")}
+                    </Link>
+                    <Link className="dropdown-item" to="/maps">
+                      {t("Resources maps")}
+                    </Link>
+                    <Link className="dropdown-item" to="/transactions">
+                      {t("Transactions")}
+                    </Link>
+                  </div>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/trades">
+                    {t("Trades")}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/auctions">
+                    {t("Auctions timers")}
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/others">
+                    {t("Other info")}
+                  </Link>
+                </li>
+              </ul>
+              <button
+                className="btn btn-sm"
+                onClick={() => {
+                  setChangeLanguageModal(true);
+                }}
               >
-                {t("Profile")}
-              </Link>
-              <div className="dropdown-menu" aria-labelledby="clanDrodown">
-                <Link className="dropdown-item" to="/profile">
-                  {t("Profile")}
-                </Link>
-                <Link className="dropdown-item" to="/clanlist">
-                  {t("Clan List")}
-                </Link>
-                <Link className="dropdown-item" to="/maps">
-                  {t("Resources maps")}
-                </Link>
-                <Link className="dropdown-item" to="/transactions">
-                  {t("Transactions")}
-                </Link>
-              </div>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/trades">
-                {t("Trades")}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/auctions">
-                {t("Auctions timers")}
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/others">
-                {t("Other info")}
-              </Link>
-            </li>
-          </ul>
-          <button
-            className="btn btn-sm d-none d-sm-block"
-            onClick={() => {
-              setChangeLanguageModal(true);
-            }}
-          >
-            <img
-              className={
-                localStorage.getItem("i18nextLng").includes("es")
-                  ? "rounded"
-                  : "rounded d-none"
-              }
-              width="30%"
-              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
-              alt="Spanish language"
-            />
-            <img
-              className={
-                localStorage.getItem("i18nextLng").includes("ru")
-                  ? "rounded"
-                  : "rounded d-none"
-              }
-              width="30%"
-              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
-              alt="Russian language"
-            />
-            <img
-              className={
-                localStorage.getItem("i18nextLng").includes("fr")
-                  ? "rounded"
-                  : "rounded d-none"
-              }
-              width="30%"
-              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
-              alt="French language"
-            />
-            <img
-              className={
-                !localStorage.getItem("i18nextLng").includes("es") &&
-                !localStorage.getItem("i18nextLng").includes("fr") &&
-                !localStorage.getItem("i18nextLng").includes("ru")
-                  ? "rounded"
-                  : "rounded d-none"
-              }
-              width="30%"
-              src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
-              alt="English language"
-            />
-          </button>
-          {discordButton(t)}
+                <img
+                  className={
+                    localStorage.getItem("i18nextLng").includes("es")
+                      ? "rounded"
+                      : "rounded d-none"
+                  }
+                  width="30%"
+                  src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                  alt="Spanish language"
+                />
+                <img
+                  className={
+                    localStorage.getItem("i18nextLng").includes("ru")
+                      ? "rounded"
+                      : "rounded d-none"
+                  }
+                  width="30%"
+                  src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
+                  alt="Russian language"
+                />
+                <img
+                  className={
+                    localStorage.getItem("i18nextLng").includes("fr")
+                      ? "rounded"
+                      : "rounded d-none"
+                  }
+                  width="30%"
+                  src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
+                  alt="French language"
+                />
+                <img
+                  className={
+                    !localStorage.getItem("i18nextLng").includes("es") &&
+                    !localStorage.getItem("i18nextLng").includes("fr") &&
+                    !localStorage.getItem("i18nextLng").includes("ru")
+                      ? "rounded"
+                      : "rounded d-none"
+                  }
+                  width="30%"
+                  src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+                  alt="English language"
+                />
+              </button>
+              {discordButton(t)}
+            </div>
+          </div>
         </div>
       </header>
       <main role="main" className="container-fluid pt-4">
@@ -258,7 +262,7 @@ function discordButton(t) {
     localStorage.getItem("token") != null
   ) {
     return (
-      <Link className="btn btn-outline-light d-none d-sm-block" to="/profile">
+      <Link className="btn btn-outline-light" to="/profile">
         {t("Profile")}
       </Link>
     );
@@ -270,7 +274,7 @@ function discordButton(t) {
       process.env.REACT_APP_API_URL +
       "/discordlogin.php&scope=identify%20guilds&response_type=code";
     return (
-      <a className="btn btn-outline-light d-none d-sm-block" href={urlLink}>
+      <a className="btn btn-outline-light" href={urlLink}>
         <i className="fab fa-discord"></i> {t("Login with discord")}
       </a>
     );
