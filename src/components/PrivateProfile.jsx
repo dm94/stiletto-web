@@ -217,6 +217,16 @@ class PrivateProfile extends Component {
               <div className="card-footer">
                 <button
                   type="button"
+                  className="btn btn-lg btn-outline-warning btn-block"
+                  onClick={() => {
+                    localStorage.clear();
+                    this.setState({ redirect: true });
+                  }}
+                >
+                  {t("Close session")}
+                </button>
+                <button
+                  type="button"
                   className="btn btn-lg btn-outline-danger btn-block"
                   onClick={this.showModal}
                 >

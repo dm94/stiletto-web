@@ -39,6 +39,7 @@ let en = {
     "Not defined": "Not defined",
     "No Clan": "No Clan",
     "Delete user": "Delete user",
+    "Close session": "Close session",
     "Are you sure?": "Are you sure?",
     "This option is not reversible, your user and all his data will be deleted.":
       "This option is not reversible, your user and all his data will be deleted.",

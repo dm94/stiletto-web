@@ -39,6 +39,7 @@ let ru = {
     "Not defined": "Не определено",
     "No Clan": "Нет клана",
     "Delete user": "Удалить пользователя",
+    "Close session": "выходить из системы",
     "Are you sure?": "Ты уверен?",
     "This option is not reversible, your user and all his data will be deleted.":
       "Эта опция не является обратимой, ваш пользователь и все его данные будут удалены.",
