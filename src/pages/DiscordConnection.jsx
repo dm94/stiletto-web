@@ -26,7 +26,7 @@ class DiscordConnection extends Component {
       return <PrivateProfile key={localStorage.getItem("discordid")} />;
     } else {
       return (
-        <div className="col-xl-6">
+        <div className="row">
           <Helmet>
             <title>Discord Connection - Stiletto</title>
             <meta
@@ -48,14 +48,32 @@ class DiscordConnection extends Component {
               content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
             />
           </Helmet>
-          <div className="card border-secondary mb-3">
-            <div className="card-body text-succes">
-              <a
-                className="btn btn-lg btn-outline-primary btn-block"
-                href={urlLink}
-              >
-                <i className="fab fa-discord"></i> {t("Login with discord")}
-              </a>
+          <div className="col-xl-6">
+            <div className="card border-secondary mb-3">
+              <div className="card-body text-succes">
+                <a
+                  className="btn btn-lg btn-outline-primary btn-block"
+                  href={urlLink}
+                >
+                  <i className="fab fa-discord"></i> {t("Login with discord")}
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="col-xl-6">
+            <div className="card border-secondary mb-3">
+              <div className="card-body text-succes">
+                <button
+                  className="btn btn-lg btn-outline-primary btn-block"
+                  onClick={() => {
+                    localStorage.setItem("discordid", "000000000000000000");
+                    localStorage.setItem("token", "test");
+                    this.setState({});
+                  }}
+                >
+                  {t("Connect in demo mode")}
+                </button>
+              </div>
             </div>
           </div>
         </div>
