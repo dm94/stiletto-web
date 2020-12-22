@@ -17,6 +17,7 @@ let ru = {
     "This website uses cookies to enhance the user experience.":
       "Этот веб-сайт использует куки-файлы для повышения удобства работы пользователей.",
     "Login with discord": "Войти в систему с разладом",
+    "Connect in demo mode": "Подключение в демонстрационном режиме",
     Crafter: "Подробнее",
     "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish":
       "Здесь вы можете увидеть материалы, необходимые для создания каждой вещи, и количество, которое вам нужно, как если бы это был список покупок. Это на английском и испанском языках",

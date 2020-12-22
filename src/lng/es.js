@@ -17,6 +17,7 @@ let es = {
     "This website uses cookies to enhance the user experience.":
       "Este sitio web utiliza cookies para mejorar la experiencia del usuario.",
     "Login with discord": "Conectar con discord",
+    "Connect in demo mode": "Conectar en modo demo",
     Crafter: "Crafter",
     "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish":
       "Aquí puedes ver los materiales necesarios para construir cada cosa que necesites y con la cantidad que necesites como si fuera una lista de la compra. Está en inglés y en español",

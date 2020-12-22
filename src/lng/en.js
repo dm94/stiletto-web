@@ -17,6 +17,7 @@ let en = {
     "This website uses cookies to enhance the user experience.":
       "This website uses cookies to enhance the user experience.",
     "Login with discord": "Login with discord",
+    "Connect in demo mode": "Connect in demo mode",
     Crafter: "Crafter",
     "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish":
       "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish",
