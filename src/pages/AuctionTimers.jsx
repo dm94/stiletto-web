@@ -92,7 +92,7 @@ class AuctionTimers extends Component {
                   <button
                     className="btn btn-primary btn-block"
                     onClick={() =>
-                      this.setState({ timers: this.state.timers + 1 })
+                      this.setState((state) => ({ timers: state.timers + 1 }))
                     }
                   >
                     +
@@ -102,7 +102,7 @@ class AuctionTimers extends Component {
                   <button
                     className="btn btn-warning btn-block"
                     onClick={() =>
-                      this.setState({ timers: this.state.timers - 1 })
+                      this.setState((state) => ({ timers: state.timers - 1 }))
                     }
                   >
                     -

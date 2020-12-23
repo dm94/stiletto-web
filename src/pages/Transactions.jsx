@@ -212,11 +212,10 @@ class Transactions extends Component {
                     value={this.state.quantity}
                     maxLength="10"
                     onChange={(evt) =>
-                      this.setState({
+                      this.setState((state) => ({
                         quantity: evt.target.value,
-                        balance:
-                          this.state.balanceMain + parseInt(evt.target.value),
-                      })
+                        balance: state.balanceMain + parseInt(evt.target.value),
+                      }))
                     }
                     required
                   />
