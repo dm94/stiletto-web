@@ -133,6 +133,14 @@ class Transactions extends Component {
     });
   };
 
+  changeTotal = (event) => {
+    const value = event.target.value;
+    this.setState((state) => ({
+      quantity: value,
+      balance: state.balanceMain + parseInt(value),
+    }));
+  };
+
   render() {
     const { t } = this.props;
     if (this.state.error) {
@@ -211,12 +219,7 @@ class Transactions extends Component {
                     name="transaction"
                     value={this.state.quantity}
                     maxLength="10"
-                    onChange={(evt) =>
-                      this.setState((state) => ({
-                        quantity: evt.target.value,
-                        balance: state.balanceMain + parseInt(evt.target.value),
-                      }))
-                    }
+                    onChange={this.changeTotal}
                     required
                   />
                 </div>
