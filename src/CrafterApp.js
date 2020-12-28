@@ -89,46 +89,18 @@ function CrafterApp() {
                 }}
               >
                 <img
-                  className={
+                  className="rounded"
+                  width="30%"
+                  src={
                     localStorage.getItem("i18nextLng").includes("es")
-                      ? "rounded"
-                      : "rounded d-none"
+                      ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                      : localStorage.getItem("i18nextLng").includes("ru")
+                      ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
+                      : localStorage.getItem("i18nextLng").includes("fr")
+                      ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
+                      : "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
                   }
-                  width="30%"
-                  src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
-                  alt="Spanish language"
-                />
-                <img
-                  className={
-                    localStorage.getItem("i18nextLng").includes("ru")
-                      ? "rounded"
-                      : "rounded d-none"
-                  }
-                  width="30%"
-                  src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
-                  alt="Russian language"
-                />
-                <img
-                  className={
-                    localStorage.getItem("i18nextLng").includes("fr")
-                      ? "rounded"
-                      : "rounded d-none"
-                  }
-                  width="30%"
-                  src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
-                  alt="French language"
-                />
-                <img
-                  className={
-                    !localStorage.getItem("i18nextLng").includes("es") &&
-                    !localStorage.getItem("i18nextLng").includes("fr") &&
-                    !localStorage.getItem("i18nextLng").includes("ru")
-                      ? "rounded"
-                      : "rounded d-none"
-                  }
-                  width="30%"
-                  src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
-                  alt="English language"
+                  alt="Change language"
                 />
               </button>
               {discordButton(t)}
