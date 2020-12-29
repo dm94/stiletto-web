@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import CreateMapNoLog from "../components/CreateMapNoLog";
 import ResourceMapNoLog from "../components/ResourceMapNoLog";
-const axios = require("axios");
 const queryString = require("query-string");
 
 class Map extends Component {
