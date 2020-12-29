@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import ModalMessage from "../components/ModalMessage";
 import ClanMapItem from "../components/ClanMapItem";
 import ResourceMap from "../components/ResourceMap";
+import CreateMapPanel from "../components/CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+
 const axios = require("axios");
 
 class ClanMaps extends Component {
@@ -16,9 +18,6 @@ class ClanMaps extends Component {
       maps: null,
       clanMaps: null,
       error: null,
-      mapNameInput: "",
-      mapDateInput: "",
-      mapSelectInput: 1,
       mapThatIsOpen: null,
       showDeleteModal: false,
       idMapDeleteModal: null,
@@ -139,7 +138,7 @@ class ClanMaps extends Component {
     return "Crater";
   }
 
-  createMap = (event) => {
+  createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
     event.preventDefault();
     axios
       .get(process.env.REACT_APP_API_URL + "/maps.php", {
@@ -147,9 +146,9 @@ class ClanMaps extends Component {
           discordid: this.state.user_discord_id,
           token: this.state.token,
           accion: "addmap",
-          mapName: this.state.mapNameInput,
-          mapDate: this.state.mapDateInput,
-          mapType: this.state.mapSelectInput,
+          mapName: mapNameInput,
+          mapDate: mapDateInput,
+          mapType: mapSelectInput,
         },
       })
       .then((response) => {
@@ -170,7 +169,7 @@ class ClanMaps extends Component {
       });
   };
 
-  createMapPanel(t) {
+  panel(t) {
     let showHideClassName = this.state.showDeleteModal
       ? "modal d-block"
       : "modal d-none";
@@ -194,68 +193,12 @@ class ClanMaps extends Component {
             <div className="card-body row">{this.clanMapList()}</div>
           </div>
         </div>
-        <div className="col-xl-12">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("New Map")}</div>
-            <div className="card-body text-succes">
-              <form onSubmit={this.createMap}>
-                <div className="row">
-                  <div className="col-xl-6 col-sm-12 form-group">
-                    <label htmlFor="map_name">{t("Map Name")}</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="map_name"
-                      name="map_name"
-                      maxLength="30"
-                      value={this.state.mapNameInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          mapNameInput: evt.target.value,
-                        })
-                      }
-                      required
-                    />
-                  </div>
-                  <div className="col-xl-6 col-sm-12 form-group">
-                    <label htmlFor="map_date">{t("Date of burning")}</label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      id="map_date"
-                      name="map_date"
-                      value={this.state.mapDateInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          mapDateInput: evt.target.value,
-                        })
-                      }
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="col-xl-12 col-sm-12 form-group">
-                  <p className="text-center">{t("Map Type")}</p>
-                  <div name="mapselect" className="row">
-                    {this.mapSelect()}
-                  </div>
-                </div>
-                <button
-                  className="btn btn-lg btn-outline-success btn-block"
-                  type="submit"
-                  value="Submit"
-                >
-                  {t("Create new map")}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
+        <CreateMapPanel maps={this.state.maps} onCreateMap={this.createMap} />
         <div className={showHideClassName}>
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="deleteusermodal">
+                <h5 className="modal-title" id="deletemapmodal">
                   {t("Are you sure?")}
                 </h5>
               </div>
@@ -321,7 +264,7 @@ class ClanMaps extends Component {
       );
     }
 
-    return <div className="container">{this.createMapPanel(t)}</div>;
+    return <div className="container">{this.panel(t)}</div>;
   }
 }
 

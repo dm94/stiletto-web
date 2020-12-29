@@ -119,7 +119,12 @@ let en = {
       "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items",
     "Map List": "Map List",
     "Map Name": "Map Name",
+    "Open a map that has already been created":
+      "Open a map that has already been created",
+    "Open map": "Open the map",
     "New Map": "New Map",
+    "Map ID": "Map ID",
+    "Map Pass": "Map Pass",
     "Show Grid": "Show Grid",
     "Hide Grid": "Hide Grid",
     "Allow Editing": "Allow Editing",
