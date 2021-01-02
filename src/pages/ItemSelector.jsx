@@ -58,7 +58,10 @@ class ItemSelector extends Component {
     if (
       this.state.selectedItems.filter((it) => it.name === itemName).length > 0
     ) {
-      this.changeCount(itemName, 1);
+      let selectedItem = this.state.selectedItems.filter(
+        (it) => it.name === itemName
+      );
+      this.changeCount(itemName, parseInt(selectedItem[0].count) + 1);
     } else {
       if (selectedItem[0] != null) {
         const selectedItems = this.state.selectedItems.concat([
@@ -82,7 +85,7 @@ class ItemSelector extends Component {
       (it) => it.name !== itemName
     );
     if (selectedItem[0] != null) {
-      if (selectedItem[0].count + count < 0) {
+      if (count <= 0) {
         this.removeSelectedItem(itemName);
       } else {
         const selectedItems = otherItems.concat([
@@ -90,7 +93,7 @@ class ItemSelector extends Component {
             name: selectedItem[0].name,
             category: selectedItem[0].category,
             crafting: selectedItem[0].crafting,
-            count: selectedItem[0].count + count,
+            count: count,
           },
         ]);
         this.setState({ selectedItems });

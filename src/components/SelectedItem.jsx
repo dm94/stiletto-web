@@ -3,14 +3,26 @@ import Ingredients from "./Ingredients";
 import { withTranslation } from "react-i18next";
 
 class SelectedItem extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      disableEdit: true,
+    };
+  }
+
   showIngredient() {
     if (this.props.item.crafting != null) {
       return this.props.item.crafting.map((ingredients) => (
-        <Ingredients
+        <div
+          className={
+            this.props.item.crafting.length > 1
+              ? "col-xl-6 border"
+              : "col-xl-12"
+          }
           key={this.props.item.name}
-          crafting={ingredients}
-          value={this.props.value}
-        />
+        >
+          <Ingredients crafting={ingredients} value={this.props.item.count} />
+        </div>
       ));
     }
   }
@@ -28,73 +40,88 @@ class SelectedItem extends Component {
     }
   }
 
+  change(count) {
+    this.props.onChangeCount(
+      this.props.item.name,
+      parseInt(this.props.item.count) + count
+    );
+  }
+
   render() {
     const { t } = this.props;
     return (
       <div className="col">
         <div className="card">
           <div className="text-center card-header">
-            {this.props.value}x {t(this.props.item.name)}
             <button
               className="close"
-              onClick={(e) =>
-                this.props.onChangeCount(this.props.item.name, -100000)
-              }
+              onClick={(e) => this.props.onChangeCount(this.props.item.name, 0)}
             >
               <span aria-hidden="true">&times;</span>
             </button>
+            <div className="input-group w-75">
+              <input
+                type="number"
+                className="form-control text-right"
+                value={this.props.item.count}
+                onChange={(e) => {
+                  this.props.onChangeCount(
+                    this.props.item.name,
+                    e.target.value
+                  );
+                }}
+                onMouseEnter={() => this.setState({ disableEdit: false })}
+                onMouseLeave={(e) => {
+                  this.setState({ disableEdit: true });
+                }}
+                min="1"
+                max="9999"
+                readOnly={this.state.disableEdit}
+              />
+              <span className="input-group-text">
+                x {t(this.props.item.name)}
+              </span>
+            </div>
           </div>
           <div className="card-body">
-            <div className="list-unstyled ">{this.showIngredient()}</div>
+            <div className="list-unstyled row">{this.showIngredient()}</div>
             {this.showStation(t)}
           </div>
           <div className="card-footer">
             <div className="btn-group col-xl-12" role="group">
               <button
                 className="btn btn-success"
-                onClick={(e) =>
-                  this.props.onChangeCount(this.props.item.name, 1)
-                }
+                onClick={(e) => this.change(1)}
               >
                 +1
               </button>
               <button
                 className="btn btn-success"
-                onClick={(e) =>
-                  this.props.onChangeCount(this.props.item.name, 10)
-                }
+                onClick={(e) => this.change(10)}
               >
                 +10
               </button>
               <button
                 className="btn btn-success"
-                onClick={(e) =>
-                  this.props.onChangeCount(this.props.item.name, 100)
-                }
+                onClick={(e) => this.change(100)}
               >
                 +100
               </button>
               <button
                 className="btn btn-danger"
-                onClick={(e) =>
-                  this.props.onChangeCount(this.props.item.name, -1)
-                }
+                onClick={(e) => this.change(-1)}
               >
                 -1
               </button>
               <button
                 className="btn btn-danger"
-                onClick={(e) =>
-                  this.props.onChangeCount(this.props.item.name, -10)
-                }
+                onClick={(e) => this.change(-10)}
               >
                 -10
               </button>
               <button
                 className="btn btn-danger"
-                onClick={(e) =>
-                  this.props.onChangeCount(this.props.item.name, -100)
-                }
+                onClick={(e) => this.change(-100)}
               >
                 -100
               </button>
