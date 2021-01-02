@@ -71,7 +71,7 @@ class SelectedItem extends Component {
                   );
                 }}
                 onMouseEnter={() => this.setState({ disableEdit: false })}
-                onMouseLeave={(e) => {
+                onMouseLeave={() => {
                   this.setState({ disableEdit: true });
                 }}
                 min="1"
@@ -91,37 +91,37 @@ class SelectedItem extends Component {
             <div className="btn-group col-xl-12" role="group">
               <button
                 className="btn btn-success"
-                onClick={(e) => this.change(1)}
+                onClick={() => this.change(1)}
               >
                 +1
               </button>
               <button
                 className="btn btn-success"
-                onClick={(e) => this.change(10)}
+                onClick={() => this.change(10)}
               >
                 +10
               </button>
               <button
                 className="btn btn-success"
-                onClick={(e) => this.change(100)}
+                onClick={() => this.change(100)}
               >
                 +100
               </button>
               <button
                 className="btn btn-danger"
-                onClick={(e) => this.change(-1)}
+                onClick={() => this.change(-1)}
               >
                 -1
               </button>
               <button
                 className="btn btn-danger"
-                onClick={(e) => this.change(-10)}
+                onClick={() => this.change(-10)}
               >
                 -10
               </button>
               <button
                 className="btn btn-danger"
-                onClick={(e) => this.change(-100)}
+                onClick={() => this.change(-100)}
               >
                 -100
               </button>
