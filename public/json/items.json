@@ -5551,16 +5551,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 72
+            "count": 64
           }, {
-            "name": "Redwood Wood",
-            "count": 80
+            "name": "Earth Wax",
+            "count": 128
           }, {
             "name": "Bone Glue",
-            "count": 7
+            "count": 8
           }, {
             "name": "Chitin Plate",
-            "count": 16
+            "count": 60
           }
         ]
       }
@@ -6403,14 +6403,14 @@
             "name": "Ceramic Shard",
             "count": 45
           }, {
-            "name": "Redwood Wood",
-            "count": 50
+            "name": "Earth Wax",
+            "count": 80
           }, {
             "name": "Bone Glue",
             "count": 4
           }, {
             "name": "Chitin Plate",
-            "count": 10
+            "count": 35
           }
         ]
       }
@@ -7013,16 +7013,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 113
+            "count": 100
           }, {
-            "name": "Redwood Wood",
-            "count": 125
+            "name": "Earth Wax",
+            "count": 200
           }, {
             "name": "Bone Glue",
-            "count": 10
+            "count": 13
           }, {
             "name": "Chitin Plate",
-            "count": 25
+            "count": 100
           }
         ]
       }
@@ -7712,16 +7712,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 72
+            "count": 64
           }, {
-            "name": "Redwood Wood",
-            "count": 80
+            "name": "Earth Wax",
+            "count": 128
           }, {
             "name": "Bone Glue",
-            "count": 7
+            "count": 8
           }, {
             "name": "Chitin Plate",
-            "count": 16
+            "count": 55
           }
         ]
       }
@@ -8214,16 +8214,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 45
+            "count": 40
           }, {
-            "name": "Redwood Wood",
-            "count": 50
+            "name": "Earth Wax",
+            "count": 80
           }, {
             "name": "Bone Glue",
-            "count": 4
+            "count": 5
           }, {
             "name": "Chitin Plate",
-            "count": 10
+            "count": 30
           }
         ]
       }
@@ -8828,16 +8828,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 72
+            "count": 64
           }, {
-            "name": "Redwood Wood",
-            "count": 80
+            "name": "Earth Wax",
+            "count": 128
           }, {
             "name": "Bone Glue",
-            "count": 7
+            "count": 8
           }, {
             "name": "Chitin Plate",
-            "count": 16
+            "count": 55
           }
         ]
       }
@@ -9493,16 +9493,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 72
+            "count": 40
           }, {
-            "name": "Redwood Wood",
-            "count": 80
-          }, {
-            "name": "Bone Glue",
-            "count": 7
-          }, {
-            "name": "Chitin Plate",
+            "name": "Nomad Cloth",
             "count": 16
+          }, {
+            "name": "Earth Wax",
+            "count": 64
+          }, {
+            "name": "Wood",
+            "count": 75
           }
         ]
       }
@@ -10111,16 +10111,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 113
+            "count": 100
           }, {
-            "name": "Redwood Wood",
-            "count": 125
+            "name": "Earth Wax",
+            "count": 200
           }, {
             "name": "Bone Glue",
-            "count": 10
+            "count": 13
           }, {
             "name": "Chitin Plate",
-            "count": 25
+            "count": 100
           }
         ]
       }
@@ -10911,16 +10911,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 113
+            "count": 100
           }, {
-            "name": "Redwood Wood",
-            "count": 125
+            "name": "Earth Wax",
+            "count": 200
           }, {
             "name": "Bone Glue",
-            "count": 10
+            "count": 13
           }, {
             "name": "Chitin Plate",
-            "count": 25
+            "count": 100
           }
         ]
       }
@@ -11441,14 +11441,14 @@
             "name": "Ceramic Shard",
             "count": 45
           }, {
-            "name": "Redwood Wood",
-            "count": 50
+            "name": "Earth Wax",
+            "count": 80
           }, {
             "name": "Bone Glue",
-            "count": 4
+            "count": 5
           }, {
             "name": "Chitin Plate",
-            "count": 10
+            "count": 30
           }
         ]
       }
@@ -12003,16 +12003,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 72
+            "count": 64
           }, {
-            "name": "Redwood Wood",
-            "count": 80
+            "name": "Earth Wax",
+            "count": 128
           }, {
             "name": "Bone Glue",
-            "count": 7
+            "count": 8
           }, {
             "name": "Chitin Plate",
-            "count": 16
+            "count": 55
           }
         ]
       }
@@ -12609,16 +12609,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 113
+            "count": 100
           }, {
-            "name": "Redwood Wood",
-            "count": 125
+            "name": "Earth Wax",
+            "count": 200
           }, {
             "name": "Bone Glue",
-            "count": 10
+            "count": 13
           }, {
             "name": "Chitin Plate",
-            "count": 25
+            "count": 100
           }
         ]
       }
@@ -13209,16 +13209,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 72
+            "count": 64
           }, {
-            "name": "Redwood Wood",
-            "count": 80
+            "name": "Earth Wax",
+            "count": 128
           }, {
             "name": "Bone Glue",
-            "count": 7
+            "count": 8
           }, {
             "name": "Chitin Plate",
-            "count": 16
+            "count": 55
           }
         ]
       }
@@ -13932,16 +13932,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
-            "count": 113
+            "count": 100
           }, {
-            "name": "Redwood Wood",
-            "count": 125
+            "name": "Earth Wax",
+            "count": 200
           }, {
             "name": "Bone Glue",
-            "count": 10
+            "count": 13
           }, {
             "name": "Chitin Plate",
-            "count": 25
+            "count": 100
           }
         ]
       }
