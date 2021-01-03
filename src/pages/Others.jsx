@@ -187,6 +187,20 @@ class Others extends Component {
               <div className="card mb-3">
                 <div className="card-body">
                   <a
+                    className="btn btn-danger btn-block"
+                    href="https://docs.google.com/spreadsheets/d/1VbJ3amYocF3QpAebqhZO6rK8dm5c3YGN2JqqoVpaMGY/edit?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("Walkers Upgrades Cost")}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="card mb-3">
+                <div className="card-body">
+                  <a
                     className="btn btn-primary btn-block"
                     href="https://store.steampowered.com/app/903950/Last_Oasis/?curator_clanid=9919055"
                     target="_blank"
