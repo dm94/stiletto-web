@@ -87,7 +87,12 @@ class ClanMapItem extends Component {
         onMouseLeave={() => this.setState({ isHover: false })}
       >
         <img
-          src={process.env.REACT_APP_MAPS_URL + this.props.value + ".jpg"}
+          src={
+            process.env.REACT_APP_API_GENERAL_URL +
+            "/maps/" +
+            this.props.value +
+            ".jpg"
+          }
           className="img-fluid"
           alt={this.props.map.name}
         />

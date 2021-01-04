@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Ingredients from "./Ingredients";
 import { withTranslation } from "react-i18next";
+import Icon from "./Icon";
 
 class SelectedItem extends Component {
   constructor(props) {
@@ -34,7 +35,12 @@ class SelectedItem extends Component {
     ) {
       return (
         <div className="text-right mb-0 text-muted">
-          {t("made on")} {t(this.props.item.crafting[0].station)}
+          {t("made on")}{" "}
+          <Icon
+            key={this.props.item.crafting[0].station}
+            name={this.props.item.crafting[0].station}
+          />{" "}
+          {t(this.props.item.crafting[0].station)}
         </div>
       );
     }

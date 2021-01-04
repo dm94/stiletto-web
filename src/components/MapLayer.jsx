@@ -38,10 +38,12 @@ class MapLayer extends Component {
     var res = resource.replace(" ", "_");
     var marker = null;
     var img = new Image();
-    img.src = "https://api2.comunidadgzone.es/markers/" + res + ".png";
+    img.src =
+      process.env.REACT_APP_API_GENERAL_URL + "/markers/" + res + ".png";
     if (img.complete) {
       marker = L.icon({
-        iconUrl: "https://api2.comunidadgzone.es/markers/" + res + ".png",
+        iconUrl:
+          process.env.REACT_APP_API_GENERAL_URL + "/markers/" + res + ".png",
         iconSize: [25, 41],
         iconAnchor: [13, 44],
         popupAnchor: [-6, -20],
@@ -179,11 +181,12 @@ class MapLayer extends Component {
               [-70.5, 101],
             ]}
             opacity={this.state.gridOpacity}
-            url={process.env.REACT_APP_MAPS_URL + "Grid.png"}
+            url={process.env.REACT_APP_API_GENERAL_URL + "/maps/Grid.png"}
           />
           <TileLayer
             url={
-              process.env.REACT_APP_MAPS_URL +
+              process.env.REACT_APP_API_GENERAL_URL +
+              "/maps/" +
               (this.props.resourcesInTheMap != null &&
               this.props.resourcesInTheMap[0] != null &&
               this.props.resourcesInTheMap[0].typemap != null
