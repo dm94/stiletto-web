@@ -3,7 +3,7 @@
   "version": "2.8.7",
   "private": true,
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": ">=0.21.1",
     "bootstrap": "^4.5.3",
     "i18next": "^19.8.3",
     "i18next-browser-languagedetector": "^6.0.1",
