@@ -5406,6 +5406,108 @@
       }
     ]
   }, {
+    "name": "Buffalo Walker Upgrade - Cargo - Tier 1",
+    "category": "walkers/buffalo/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 48
+          }, {
+            "name": "Fiber",
+            "count": 32
+          }, {
+            "name": "Stone",
+            "count": 16
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Buffalo Walker Upgrade - Durability - Tier 1",
+    "category": "walkers/buffalo/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 64
+          }, {
+            "name": "Stone",
+            "count": 64
+          }, {
+            "name": "Rupu Pelt",
+            "count": 24
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Buffalo Walker Upgrade - Gear - Tier 1",
+    "category": "walkers/buffalo/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 36
+          }, {
+            "name": "Fiber",
+            "count": 32
+          }, {
+            "name": "Stone",
+            "count": 16
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Buffalo Walker Upgrade - Mobility - Tier 1",
+    "category": "walkers/buffalo/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 56
+          }, {
+            "name": "Wood Shaft",
+            "count": 24
+          }, {
+            "name": "Palm Leaves",
+            "count": 32
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Buffalo Walker Upgrade - Torque - Tier 1",
+    "category": "walkers/buffalo/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 52
+          }, {
+            "name": "Wood Shaft",
+            "count": 13
+          }, {
+            "name": "Rope",
+            "count": 6
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Buffalo Walker Upgrade - Water - Tier 1",
+    "category": "walkers/buffalo/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 48
+          }, {
+            "name": "Fiber",
+            "count": 40
+          }, {
+            "name": "Hide",
+            "count": 8
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Buffalo Walker Upgrade - Cargo - Tier 2",
     "category": "walkers/buffalo/upgrades/tier2",
     "crafting": [{
