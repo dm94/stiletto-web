@@ -33,9 +33,12 @@ class ListIngredients extends Component {
   }
 }
 class TotalMaterials extends Component {
-  constructor(props) {
-    super(props);
-    this.componentRef = React.createRef();
+  itemsList() {
+    return this.props.selectedItems.map((item) => (
+      <li className="list-inline-item">
+        {item.count}x {item.name} -
+      </li>
+    ));
   }
 
   render() {
@@ -46,6 +49,7 @@ class TotalMaterials extends Component {
           <div className="font-weight-normal">{t("Total materials")}</div>
         </div>
         <div className="card-body bg-light" id="list-all-items">
+          <ul className="list-inline">{this.itemsList()}</ul>
           <div className="list-unstyled">
             <ListIngredients
               ref={this.componentRef}

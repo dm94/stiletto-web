@@ -11,7 +11,7 @@ class Icon extends Component {
       " icon.png";
 
     if (img.complete) {
-      return <img src={img.src} alt={this.props.name} width="2%" />;
+      return <img src={img.src} width="2%" />;
     } else {
       return "";
     }
