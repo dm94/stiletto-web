@@ -5,7 +5,7 @@ import MemberListItem from "../components/MemberListItem";
 import RequestMemberListItem from "../components/RequestMemberListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-const axios = require("axios");
+import Axios from "axios";
 
 class MemberList extends Component {
   constructor(props) {
@@ -25,14 +25,13 @@ class MemberList extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "seeclanmembers",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "seeclanmembers",
+      },
+    })
       .then((response) => {
         if (response.status === 200) {
           this.setState({ members: response.data });
@@ -48,14 +47,13 @@ class MemberList extends Component {
         this.setState({ error: "Error when connecting to the API" });
       });
 
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "seeclanrequests",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "seeclanrequests",
+      },
+    })
       .then((response) => {
         if (response.status === 200) {
           this.setState({ requestMembers: response.data });
@@ -70,15 +68,14 @@ class MemberList extends Component {
   }
 
   kickMember = (memberdiscordid) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          dataupdate: memberdiscordid,
-          accion: "kickfromclan",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        dataupdate: memberdiscordid,
+        accion: "kickfromclan",
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           let members = this.state.members.filter(
@@ -95,15 +92,14 @@ class MemberList extends Component {
   };
 
   acceptMember = (memberdiscordid) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          dataupdate: memberdiscordid,
-          accion: "acceptmember",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        dataupdate: memberdiscordid,
+        accion: "acceptmember",
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
@@ -121,15 +117,14 @@ class MemberList extends Component {
   };
 
   rejectMember = (memberdiscordid) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          dataupdate: memberdiscordid,
-          accion: "rejectmember",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        dataupdate: memberdiscordid,
+        accion: "rejectmember",
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
@@ -146,14 +141,13 @@ class MemberList extends Component {
   };
 
   deleteClan = () => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          accion: "deleteclan",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        accion: "deleteclan",
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           localStorage.setItem("clanid", "null");
@@ -168,15 +162,14 @@ class MemberList extends Component {
   };
 
   changeOwner = () => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          dataupdate: this.state.selectNewOwner,
-          accion: "changeowner",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        dataupdate: this.state.selectNewOwner,
+        accion: "changeowner",
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.setState({ redirectMessage: "Clan updated correctly" });

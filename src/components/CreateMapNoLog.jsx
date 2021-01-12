@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CreateMapPanel from "./CreateMapPanel";
 import { withTranslation } from "react-i18next";
-const axios = require("axios");
+import Axios from "axios";
 
 class CreateMapNoLog extends Component {
   constructor(props) {
@@ -25,15 +25,14 @@ class CreateMapNoLog extends Component {
 
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          accion: "addmapnolog",
-          mapName: mapNameInput,
-          mapDate: mapDateInput,
-          mapType: mapSelectInput,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        accion: "addmapnolog",
+        mapName: mapNameInput,
+        mapDate: mapDateInput,
+        mapType: mapSelectInput,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.setState({

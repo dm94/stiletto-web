@@ -7,7 +7,7 @@ import ResourcesInMapList from "../components/ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
 
 import { Helmet } from "react-helmet";
-const axios = require("axios");
+import Axios from "axios";
 
 class ResourceMapNoLog extends Component {
   constructor(props) {
@@ -28,45 +28,40 @@ class ResourceMapNoLog extends Component {
   }
   componentDidMount() {
     if (this.props.mapId != null && this.props.pass != null) {
-      axios
-        .get(
-          "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.json"
-        )
-        .then((response) => {
-          this.setState({ items: response.data });
-        });
+      Axios.get(
+        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.json"
+      ).then((response) => {
+        this.setState({ items: response.data });
+      });
 
       this.setState({
         mapId: this.props.mapId,
         pass: this.props.pass,
       });
-      axios
-        .get(process.env.REACT_APP_API_URL + "/maps.php", {
-          params: {
-            mapid: this.props.mapId,
-            pass: this.props.pass,
-            accion: "getresourcesnolog",
-          },
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            this.setState({ resourcesInTheMap: response.data });
-          }
-        });
+      Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+        params: {
+          mapid: this.props.mapId,
+          pass: this.props.pass,
+          accion: "getresourcesnolog",
+        },
+      }).then((response) => {
+        if (response.status === 200) {
+          this.setState({ resourcesInTheMap: response.data });
+        }
+      });
     }
   }
 
   deleteResource = (resourceid, resourcetoken) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          accion: "deleteresourcenolog",
-          mapid: this.state.mapId,
-          pass: this.state.pass,
-          dataupdate: resourceid,
-          resourcetoken: resourcetoken,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        accion: "deleteresourcenolog",
+        mapid: this.state.mapId,
+        pass: this.state.pass,
+        dataupdate: resourceid,
+        resourcetoken: resourcetoken,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.componentDidMount();
@@ -78,18 +73,17 @@ class ResourceMapNoLog extends Component {
   };
 
   createResource = (resourceTypeInput, qualityInput) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          mapid: this.state.mapId,
-          pass: this.state.pass,
-          accion: "addresourcemapnolog",
-          resourcetype: resourceTypeInput,
-          quality: qualityInput,
-          x: this.state.coordinateXInput,
-          y: this.state.coordinateYInput,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        mapid: this.state.mapId,
+        pass: this.state.pass,
+        accion: "addresourcemapnolog",
+        resourcetype: resourceTypeInput,
+        quality: qualityInput,
+        x: this.state.coordinateXInput,
+        y: this.state.coordinateYInput,
+      },
+    })
       .then((response) => {
         this.setState({
           coordinateXInput: 0,

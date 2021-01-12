@@ -4,7 +4,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-const axios = require("axios");
+import Axios from "axios";
 
 class WalkerList extends Component {
   constructor(props) {
@@ -25,13 +25,12 @@ class WalkerList extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/walkers.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/walkers.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+      },
+    })
       .then((response) => {
         if (response.status === 200) {
           this.setState({ walkers: response.data });
@@ -49,15 +48,14 @@ class WalkerList extends Component {
   }
 
   deleteWalker = (walkerid) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/walkers.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "deletewalker",
-          dataupdate: walkerid,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/walkers.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "deletewalker",
+        dataupdate: walkerid,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.componentDidMount();
@@ -101,15 +99,14 @@ class WalkerList extends Component {
 
   linkDiscordServer = (event) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/walkers.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "linkdiscordserver",
-          dataupdate: this.state.inputDiscodId,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/walkers.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "linkdiscordserver",
+        dataupdate: this.state.inputDiscodId,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           window.location.href =

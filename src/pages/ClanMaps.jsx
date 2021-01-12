@@ -5,8 +5,7 @@ import ResourceMap from "../components/ResourceMap";
 import CreateMapPanel from "../components/CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-
-const axios = require("axios");
+import Axios from "axios";
 
 class ClanMaps extends Component {
   constructor(props) {
@@ -31,24 +30,22 @@ class ClanMaps extends Component {
       .then((response) => response.json())
       .then((maps) => this.setState({ maps }));
 
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-        },
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({ clanMaps: response.data });
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        }
-        this.setState({ isLoaded: true });
-      });
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+      },
+    }).then((response) => {
+      if (response.status === 200) {
+        this.setState({ clanMaps: response.data });
+      } else if (response.status === 205) {
+        localStorage.clear();
+        this.setState({
+          error: "You don't have access here, try to log in again",
+        });
+      }
+      this.setState({ isLoaded: true });
+    });
   }
 
   mapSelect() {
@@ -98,15 +95,14 @@ class ClanMaps extends Component {
   }
 
   deleteMap = (mapid) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "deletemap",
-          dataupdate: mapid,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "deletemap",
+        dataupdate: mapid,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.setState({
@@ -140,17 +136,16 @@ class ClanMaps extends Component {
 
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "addmap",
-          mapName: mapNameInput,
-          mapDate: mapDateInput,
-          mapType: mapSelectInput,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "addmap",
+        mapName: mapNameInput,
+        mapDate: mapDateInput,
+        mapType: mapSelectInput,
+      },
+    })
       .then((response) => {
         this.setState({
           mapNameInput: "",

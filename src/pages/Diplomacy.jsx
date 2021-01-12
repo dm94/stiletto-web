@@ -4,7 +4,7 @@ import ClanSelect from "../components/ClanSelect";
 import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-const axios = require("axios");
+import Axios from "axios";
 
 class Diplomacy extends Component {
   constructor(props) {
@@ -24,55 +24,50 @@ class Diplomacy extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          accion: "seerelationships",
-        },
-      })
-      .then((response) => {
-        if (response.status === 202) {
-          this.setState({ listOfRelations: response.data });
-        }
-        this.setState({ isLoaded: true });
-        if (
-          this.state.listOfRelations != null &&
-          this.state.listOfRelations[0].leaderid == this.state.user_discord_id
-        ) {
-          this.setState({ isLeader: true });
-        }
-      });
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        accion: "seerelationships",
+      },
+    }).then((response) => {
+      if (response.status === 202) {
+        this.setState({ listOfRelations: response.data });
+      }
+      this.setState({ isLoaded: true });
+      if (
+        this.state.listOfRelations != null &&
+        this.state.listOfRelations[0].leaderid == this.state.user_discord_id
+      ) {
+        this.setState({ isLeader: true });
+      }
+    });
   }
 
   createRelationship = () => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "createrelationships",
-          nameotherclan: this.state.nameOtherClanInput,
-          clanflag: this.state.clanFlagInput,
-          typed: this.state.typedInput,
-        },
-      })
-      .catch((error) => {
-        this.setState({ error: "Try again later" });
-      });
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "createrelationships",
+        nameotherclan: this.state.nameOtherClanInput,
+        clanflag: this.state.clanFlagInput,
+        typed: this.state.typedInput,
+      },
+    }).catch((error) => {
+      this.setState({ error: "Try again later" });
+    });
   };
 
   deleteDiplomacy = (id) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "deleterelationship",
-          dataupdate: id,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "deleterelationship",
+        dataupdate: id,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.componentDidMount();

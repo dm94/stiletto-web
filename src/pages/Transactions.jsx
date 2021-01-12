@@ -4,7 +4,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import TransactionListItem from "../components/TransactionListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-const axios = require("axios");
+import Axios from "axios";
 
 class Transactions extends Component {
   constructor(props) {
@@ -27,13 +27,12 @@ class Transactions extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/flots.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/flots.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+      },
+    })
       .then((response) => {
         if (response.status === 200) {
           this.setState({ transactions: response.data });
@@ -62,17 +61,16 @@ class Transactions extends Component {
 
   addTransaction = (event) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/flots.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "addtransaction",
-          balance: this.state.balance,
-          quantity: this.state.quantity,
-          description: this.state.description,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/flots.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "addtransaction",
+        balance: this.state.balance,
+        quantity: this.state.quantity,
+        description: this.state.description,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.componentDidMount();

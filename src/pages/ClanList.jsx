@@ -4,7 +4,7 @@ import ClanListItem from "../components/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-const axios = require("axios");
+import Axios from "axios";
 
 class ClanList extends Component {
   constructor(props) {
@@ -20,41 +20,37 @@ class ClanList extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(
-        process.env.REACT_APP_API_URL +
-          "/clans.php" +
-          "?discordid=" +
-          this.state.user_discord_id +
-          "&token=" +
-          this.state.token
-      )
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({ clans: response.data });
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        }
-        this.setState({ isLoaded: true });
-      });
+    Axios.get(
+      process.env.REACT_APP_API_URL +
+        "/clans.php" +
+        "?discordid=" +
+        this.state.user_discord_id +
+        "&token=" +
+        this.state.token
+    ).then((response) => {
+      if (response.status === 200) {
+        this.setState({ clans: response.data });
+      } else if (response.status === 205) {
+        localStorage.clear();
+        this.setState({
+          error: "You don't have access here, try to log in again",
+        });
+      }
+      this.setState({ isLoaded: true });
+    });
   }
 
   sendRequest = (clanid) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          dataupdate: clanid,
-          accion: "sendrequest",
-        },
-      })
-      .then((response) => {
-        this.setState({ redirect: true });
-      });
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        dataupdate: clanid,
+        accion: "sendrequest",
+      },
+    }).then((response) => {
+      this.setState({ redirect: true });
+    });
   };
 
   list() {

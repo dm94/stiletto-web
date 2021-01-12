@@ -5,8 +5,7 @@ import ModalMessage from "./ModalMessage";
 import { withTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
-
-const axios = require("axios");
+import Axios from "axios";
 
 class PrivateProfile extends Component {
   constructor(props) {
@@ -32,15 +31,14 @@ class PrivateProfile extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(
-        process.env.REACT_APP_API_URL +
-          "/users.php" +
-          "?discordid=" +
-          this.state.user_discord_id +
-          "&token=" +
-          this.state.token
-      )
+    Axios.get(
+      process.env.REACT_APP_API_URL +
+        "/users.php" +
+        "?discordid=" +
+        this.state.user_discord_id +
+        "&token=" +
+        this.state.token
+    )
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem("clanid", response.data.clanid);
@@ -65,14 +63,13 @@ class PrivateProfile extends Component {
 
   deleteUser = (event) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/users.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "deleteuser",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/users.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "deleteuser",
+      },
+    })
       .then((response) => {
         localStorage.clear();
         this.setState({ redirect: true });
@@ -84,15 +81,14 @@ class PrivateProfile extends Component {
 
   addNickInGame = (event) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/users.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          dataupdate: this.state.nameInGameInput,
-          accion: "changeusergamename",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/users.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        dataupdate: this.state.nameInGameInput,
+        accion: "changeusergamename",
+      },
+    })
       .then((response) => {
         this.setState({ nickname: this.state.nameInGameInput });
       })
@@ -103,14 +99,13 @@ class PrivateProfile extends Component {
 
   leaveClan = (event) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/users.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "leavetheclan",
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/users.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "leavetheclan",
+      },
+    })
       .then((response) => {
         this.setState({ clanname: null });
       })
@@ -120,17 +115,16 @@ class PrivateProfile extends Component {
   };
 
   createClan = () => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/clans.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "createclan",
-          clanname: this.state.addClanNameInput,
-          clancolor: this.state.addClanColorInput,
-          clandiscord: this.state.addClanDiscordInput,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "createclan",
+        clanname: this.state.addClanNameInput,
+        clancolor: this.state.addClanColorInput,
+        clandiscord: this.state.addClanDiscordInput,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.componentDidMount();

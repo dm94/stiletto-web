@@ -4,7 +4,7 @@ import ModalMessage from "../components/ModalMessage";
 import Trade from "../components/Trade";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-const axios = require("axios");
+import Axios from "axios";
 
 class TradeSystem extends Component {
   constructor(props) {
@@ -30,26 +30,22 @@ class TradeSystem extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/trades.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-        },
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({ trades: response.data, isLoaded: true });
-        }
-      });
-    axios
-      .get(
-        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
-      )
-      .then((response) => {
-        const items = response.data.filter((it) => it.category === "materials");
-        this.setState({ items });
-      });
+    Axios.get(process.env.REACT_APP_API_URL + "/trades.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+      },
+    }).then((response) => {
+      if (response.status === 200) {
+        this.setState({ trades: response.data, isLoaded: true });
+      }
+    });
+    Axios.get(
+      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
+    ).then((response) => {
+      const items = response.data.filter((it) => it.category === "materials");
+      this.setState({ items });
+    });
   }
 
   resourcesList(t) {
@@ -85,20 +81,18 @@ class TradeSystem extends Component {
   }
 
   deleteTrade = (idTrade) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/trades.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "deletetrade",
-          dataupdate: idTrade,
-        },
-      })
-      .then((response) => {
-        if (response.status === 202) {
-          this.componentDidMount();
-        }
-      });
+    Axios.get(process.env.REACT_APP_API_URL + "/trades.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "deletetrade",
+        dataupdate: idTrade,
+      },
+    }).then((response) => {
+      if (response.status === 202) {
+        this.componentDidMount();
+      }
+    });
   };
 
   onClickCleanTrades = (event) => {
@@ -119,19 +113,18 @@ class TradeSystem extends Component {
 
   createTrade = (event) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/trades.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "createtrade",
-          resourceTypeInput: this.state.resourceTypeInput,
-          tradeTypeInput: this.state.tradeTypeInput,
-          amountInput: this.state.amountInput,
-          regionInput: this.state.regionInput,
-          qualityInput: this.state.qualityInput,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/trades.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "createtrade",
+        resourceTypeInput: this.state.resourceTypeInput,
+        tradeTypeInput: this.state.tradeTypeInput,
+        amountInput: this.state.amountInput,
+        regionInput: this.state.regionInput,
+        qualityInput: this.state.qualityInput,
+      },
+    })
       .then((response) => {
         this.setState({
           resourceTypeInput: "Aloe",

@@ -4,7 +4,7 @@ import MapLayer from "./MapLayer";
 import { withTranslation } from "react-i18next";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
-const axios = require("axios");
+import Axios from "axios";
 
 class ResourceMap extends Component {
   constructor(props) {
@@ -29,49 +29,44 @@ class ResourceMap extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get(
-        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.json"
-      )
-      .then((response) => {
-        this.setState({ items: response.data });
-      });
+    Axios.get(
+      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.json"
+    ).then((response) => {
+      this.setState({ items: response.data });
+    });
 
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          dataupdate: this.props.map.mapid,
-          accion: "getresources",
-        },
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({ resourcesInTheMap: response.data });
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        }
-      });
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        dataupdate: this.props.map.mapid,
+        accion: "getresources",
+      },
+    }).then((response) => {
+      if (response.status === 200) {
+        this.setState({ resourcesInTheMap: response.data });
+      } else if (response.status === 205) {
+        localStorage.clear();
+        this.setState({
+          error: "You don't have access here, try to log in again",
+        });
+      }
+    });
   }
 
   createResource = (resourceTypeInput, qualityInput) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "addresourcemap",
-          mapid: this.props.map.mapid,
-          resourcetype: resourceTypeInput,
-          quality: qualityInput,
-          x: this.state.coordinateXInput,
-          y: this.state.coordinateYInput,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "addresourcemap",
+        mapid: this.props.map.mapid,
+        resourcetype: resourceTypeInput,
+        quality: qualityInput,
+        x: this.state.coordinateXInput,
+        y: this.state.coordinateYInput,
+      },
+    })
       .then((response) => {
         this.setState({
           coordinateXInput: 0,
@@ -92,16 +87,15 @@ class ResourceMap extends Component {
 
   changePassword = (event) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "editpassmap",
-          mapid: this.props.map.mapid,
-          dataupdate: this.state.pass,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "editpassmap",
+        mapid: this.props.map.mapid,
+        dataupdate: this.state.pass,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.setState({ textSuccess: "Password changed" });
@@ -117,18 +111,17 @@ class ResourceMap extends Component {
 
   changeDataMap = (event) => {
     event.preventDefault();
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "editmap",
-          mapid: this.props.map.mapid,
-          mapname: this.state.mapname,
-          mapdate: this.state.dateofburning,
-          allowediting: this.state.allowEditing ? 1 : 0,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "editmap",
+        mapid: this.props.map.mapid,
+        mapname: this.state.mapname,
+        mapdate: this.state.dateofburning,
+        allowediting: this.state.allowEditing ? 1 : 0,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.setState({ textSuccess: "Map updated" });
@@ -143,17 +136,16 @@ class ResourceMap extends Component {
   };
 
   deleteResource = (resourceid, resourcetoken) => {
-    axios
-      .get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          accion: "deleteresource",
-          mapid: this.props.map.mapid,
-          dataupdate: resourceid,
-          resourcetoken: resourcetoken,
-        },
-      })
+    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        accion: "deleteresource",
+        mapid: this.props.map.mapid,
+        dataupdate: resourceid,
+        resourcetoken: resourcetoken,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
           this.componentDidMount();
