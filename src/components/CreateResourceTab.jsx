@@ -5,6 +5,7 @@ class CreateResourceTab extends Component {
   state = {
     resourceTypeInput: "Aloe",
     qualityInput: 0,
+    descriptionInput: null,
   };
 
   resourcesList(t) {
@@ -26,8 +27,14 @@ class CreateResourceTab extends Component {
             event.preventDefault();
             this.props.onCreateResource(
               this.state.resourceTypeInput,
-              this.state.qualityInput
+              this.state.qualityInput,
+              this.state.descriptionInput
             );
+            this.setState({
+              resourceTypeInput: "Aloe",
+              qualityInput: 0,
+              descriptionInput: null,
+            });
           }}
         >
           <div className="form-group">
@@ -73,7 +80,7 @@ class CreateResourceTab extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="quality">
-              {t("Quality:")} {this.state.qualityInput}
+              {t("Quality")}: {this.state.qualityInput}
             </label>
             <input
               type="range"
@@ -86,6 +93,21 @@ class CreateResourceTab extends Component {
                   qualityInput: evt.target.value,
                 })
               }
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="descriptionInput">{t("Description")}</label>
+            <input
+              type="text"
+              className="form-control"
+              name="descriptionInput"
+              value={this.props.descriptionInput}
+              onChange={(evt) =>
+                this.setState({
+                  descriptionInput: evt.target.value,
+                })
+              }
+              maxLength="100"
             />
           </div>
           <button

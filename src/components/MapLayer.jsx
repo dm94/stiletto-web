@@ -68,11 +68,13 @@ class MapLayer extends Component {
         >
           <Popup>
             <div className="mb-0">
-              {t(resource.resourcetype)} - Q: {resource.quality}
+              {t(resource.resourcetype)}{" "}
+              {resource.quality > 0 && "- Q:" + resource.quality}
             </div>
             <div className="mb-1 text-muted">
               [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
             </div>
+            <div className="mb-1">{resource.description}</div>
             <button
               className={
                 resource.token != null

@@ -147,7 +147,7 @@ let es = {
     Type: "Tipo",
     Coordinate: "Coordenada",
     "Not the same as in the game": "No es la misma que en el juego",
-    "Quality:": "Calidad:",
+    Quality: "Calidad",
     "Create resource": "Crear recurso",
     "Login again": "Conectate de nuevo",
     "Temporal Marker": "Marca temporal",

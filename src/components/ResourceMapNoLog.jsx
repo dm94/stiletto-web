@@ -72,7 +72,7 @@ class ResourceMapNoLog extends Component {
       });
   };
 
-  createResource = (resourceTypeInput, qualityInput) => {
+  createResource = (resourceTypeInput, qualityInput, descriptionInput) => {
     Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
       params: {
         mapid: this.state.mapId,
@@ -80,6 +80,7 @@ class ResourceMapNoLog extends Component {
         accion: "addresourcemapnolog",
         resourcetype: resourceTypeInput,
         quality: qualityInput,
+        description: descriptionInput,
         x: this.state.coordinateXInput,
         y: this.state.coordinateYInput,
       },

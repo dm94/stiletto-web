@@ -146,7 +146,7 @@ let en = {
     Type: "Type",
     Coordinate: "Coordinate",
     "Not the same as in the game": "Not the same as in the game",
-    "Quality:": "Quality:",
+    Quality: "Quality",
     "Create resource": "Create resource",
     "Login again": "Login again",
     "Temporal Marker": "Temporal Marker",

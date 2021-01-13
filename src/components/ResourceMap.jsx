@@ -54,7 +54,7 @@ class ResourceMap extends Component {
     });
   }
 
-  createResource = (resourceTypeInput, qualityInput) => {
+  createResource = (resourceTypeInput, qualityInput, descriptionInput) => {
     Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
       params: {
         discordid: this.state.user_discord_id,
@@ -65,6 +65,7 @@ class ResourceMap extends Component {
         quality: qualityInput,
         x: this.state.coordinateXInput,
         y: this.state.coordinateYInput,
+        description: descriptionInput,
       },
     })
       .then((response) => {

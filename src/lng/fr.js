@@ -148,7 +148,7 @@ let fr = {
     Type: "Tapez",
     Coordinate: "Coordonner",
     "Not the same as in the game": "Pas la même chose que dans le jeu",
-    "Quality:": "La qualité:",
+    Quality: "La qualité",
     "Create resource": "Créer une ressource",
     "Login again": "Se connecter à nouveau",
     "Temporal Marker": "Marqueur temporel",

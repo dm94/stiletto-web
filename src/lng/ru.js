@@ -144,7 +144,7 @@ let ru = {
     Type: "Введите",
     Coordinate: "Координация",
     "Not the same as in the game": "Не то же самое, что в игре",
-    "Quality:": "Качество:",
+    Quality: "Качество",
     "Create resource": "Создать ресурс",
     "Login again": "Войти снова",
     "Temporal Marker": "Височный маркер",
