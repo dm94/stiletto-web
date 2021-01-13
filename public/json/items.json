@@ -50,6 +50,40 @@
       }
     ]
   }, {
+    "name": "Giant Wall",
+    "category": "buildings/construction/giant",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Bent Wooden Planks",
+            "count": 9
+          }, {
+            "name": "Stone",
+            "count": 50
+          }, {
+            "name": "Wood Shaft",
+            "count": 12
+          }
+        ]
+      }
+    ]
+  },{
+    "name": "Giant Wall Gate",
+    "category": "buildings/construction/giant",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Bent Wooden Planks",
+            "count": 50
+          }, {
+            "name": "Obsidian",
+            "count": 30
+          }, {
+            "name": "Wood Shaft",
+            "count": 45
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Bed",
     "category": "buildings/construction/bed",
     "crafting": [{
@@ -4735,6 +4769,18 @@
       }
     ]
   }, {
+    "name": "Bent Wooden Planks",
+    "category": "materials",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood Logs",
+            "count": 1
+          }
+        ],
+        "station": "Lumbermill"
+      }
+    ]
+  }, {
     "name": "Bone Splinter",
     "category": "materials"
   }, {
@@ -5175,6 +5221,9 @@
     "name": "Wood",
     "category": "materials"
   }, {
+    "name": "Wood Logs",
+    "category": "materials"
+  }, {
     "name": "Wood Shaft",
     "category": "materials",
     "crafting": [{
@@ -5239,7 +5288,7 @@
       }
     ]
   }, {
-    "name": "Buffalo Walker Legs Armored",
+    "name": "Buffalo Walker Legs Armored (1 of 2)",
     "category": "walkers/buffalo/parts/legs",
     "cost": {
       "name": "Tablet",
@@ -5263,7 +5312,7 @@
       }
     ]
   }, {
-    "name": "Buffalo Walker Legs Heavy",
+    "name": "Buffalo Walker Legs Heavy (1 of 2)",
     "category": "walkers/buffalo/parts/legs",
     "cost": {
       "name": "Tablet",
@@ -8595,7 +8644,7 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Legs Armored",
+    "name": "Hornet Walker Legs Armored (1 of 2)",
     "category": "walkers/hornet/parts/legs",
     "cost": {
       "name": "Tablet",
@@ -8619,7 +8668,7 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Legs Heavy",
+    "name": "Hornet Walker Legs Heavy (1 of 2)",
     "category": "walkers/hornet/parts/legs",
     "cost": {
       "name": "Tablet",
@@ -9235,6 +9284,10 @@
     ]
   }, {
     "name": "Mollusk Walker Wings Heavy (1 of 2)",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "walkers/mollusk/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -9242,27 +9295,28 @@
             "count": 38
           }, {
             "name": "Rope",
-            "count": 28
+            "count": 30
           }, {
             "name": "Nomad Cloth",
-            "count": 8
-          }, {
-            "name": "Redwood Wood",
-            "count": 14
+            "count": 6
           }
         ]
       }
     ]
   }, {
     "name": "Mollusk Walker Wings Medium (1 of 2)",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "walkers/mollusk/parts/wings",
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
-            "count": 50
+            "count": 52
           }, {
             "name": "Hide",
-            "count": 30
+            "count": 28
           }, {
             "name": "Nomad Cloth",
             "count": 4
@@ -9272,11 +9326,15 @@
     ]
   }, {
     "name": "Mollusk Walker Wings Raider (1 of 2)",
+    "cost": {
+      "name": "Tablet",
+      "count": 15
+    },
     "category": "walkers/mollusk/parts/wings",
     "crafting": [{
         "ingredients": [{
-            "name": "Reinforced Plank",
-            "count": 36
+            "name": "Wood Shaft",
+            "count": 90
           }, {
             "name": "Worm Silk",
             "count": 24
@@ -9284,19 +9342,23 @@
             "name": "Hide",
             "count": 50
           }, {
-            "name": "Iron Ore",
-            "count": 38
+            "name": "Redwood Wood",
+            "count": 28
           }
         ]
       }
     ]
   }, {
     "name": "Mollusk Walker Wings Rugged (1 of 2)",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "walkers/mollusk/parts/wings",
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
-            "count": 68
+            "count": 76
           }, {
             "name": "Rope",
             "count": 40
@@ -9305,13 +9367,17 @@
             "count": 12
           }, {
             "name": "Redwood Wood",
-            "count": 18
+            "count": 20
           }
         ]
       }
     ]
   }, {
     "name": "Mollusk Walker Wings Skirmish (1 of 2)",
+    "cost": {
+      "name": "Tablet",
+      "count": 7
+    },
     "category": "walkers/mollusk/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -9319,27 +9385,28 @@
             "count": 76
           }, {
             "name": "Rope",
-            "count": 44
+            "count": 60
           }, {
-            "name": "Worm Silk",
-            "count": 20
-          }, {
-            "name": "Iron Ore",
-            "count": 18
+            "name": "Nomad Cloth",
+            "count": 12
           }
         ]
       }
     ]
   }, {
     "name": "Mollusk Walker Wings Small (1 of 2)",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "walkers/mollusk/parts/wings",
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
-            "count": 25
+            "count": 28
           }, {
             "name": "Rope",
-            "count": 12
+            "count": 10
           }, {
             "name": "Nomad Cloth",
             "count": 2
@@ -11811,7 +11878,7 @@
       }
     ]
   }, {
-    "name": "Stiletto Walker Legs Armored",
+    "name": "Stiletto Walker Legs Armored (1 of 2)",
     "category": "walkers/stiletto/parts/legs",
     "cost": {
       "name": "Tablet",
@@ -14440,7 +14507,7 @@
       }
     ]
   }, {
-    "name": "Silur Walker Legs Armored",
+    "name": "Silur Walker Legs Armored (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 2
@@ -14464,7 +14531,7 @@
       }
     ]
   }, {
-    "name": "Silur Walker Legs Heavy",
+    "name": "Silur Walker Legs Heavy (1 of 2)",
     "category": "walkers/silur/parts/legs",
     "cost": {
       "name": "Tablet",
@@ -14597,7 +14664,7 @@
       }
     ]
   }, {
-    "name": "Hercul Walker Wings",
+    "name": "Hercul Walker Wings (1 of 2)",
     "category": "walkers/hercul/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -14611,7 +14678,7 @@
       }
     ]
   }, {
-    "name": "Hercul Walker Legs Armored",
+    "name": "Hercul Walker Legs Armored (1 of 2)",
     "category": "walkers/hercul/parts/legs",
     "cost": {
       "name": "Tablet",
@@ -14635,7 +14702,7 @@
       }
     ]
   }, {
-    "name": "Hercul Walker Wings Heavy",
+    "name": "Hercul Walker Wings Heavy (1 of 2)",
     "category": "walkers/hercul/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -14652,7 +14719,7 @@
       }
     ]
   }, {
-    "name": "Hercul Walker Wings Medium",
+    "name": "Hercul Walker Wings Medium (1 of 2)",
     "category": "walkers/hercul/parts/wings",
     "cost": {
       "name": "Tablet",
@@ -14673,7 +14740,7 @@
       }
     ]
   }, {
-    "name": "Hercul Walker Wings Raider",
+    "name": "Hercul Walker Wings Raider (1 of 2)",
     "category": "walkers/hercul/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -14693,7 +14760,7 @@
       }
     ]
   }, {
-    "name": "Hercul Walker Wings Rugged",
+    "name": "Hercul Walker Wings Rugged (1 of 2)",
     "category": "walkers/hercul/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -14713,7 +14780,7 @@
       }
     ]
   }, {
-    "name": "Hercul Walker Wings Skirmish",
+    "name": "Hercul Walker Wings Skirmish (1 of 2)",
     "category": "walkers/hercul/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -14730,7 +14797,7 @@
       }
     ]
   }, {
-    "name": "Hercul Walker Wings Small",
+    "name": "Hercul Walker Wings Small (1 of 2)",
     "category": "walkers/hercul/parts/wings",
     "cost": {
       "name": "Tablet",
@@ -14918,7 +14985,7 @@
       }
     ]
   }, {
-    "name": "Balang Walker Wings",
+    "name": "Balang Walker Wings (1 of 2)",
     "category": "walkers/balang/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -14932,7 +14999,7 @@
       }
     ]
   }, {
-    "name": "Balang Walker Wings Small",
+    "name": "Balang Walker Wings Small (1 of 2)",
     "category": "walkers/balang/parts/wings",
     "cost": {
       "name": "Fragment",
@@ -15122,6 +15189,27 @@
           }, {
             "name": "Redwood Wood",
             "count": 35
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Giant Wall Packer",
+    "category": "buildings/construction/barrier",
+    "cost": {
+      "name": "Tablet",
+      "count": 7
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Redwood Wood",
+            "count": 85
+          }, {
+            "name": "Reinforced Plank",
+            "count": 10
+          }, {
+            "name": "Rope",
+            "count": 55
           }
         ]
       }
