@@ -14447,7 +14447,7 @@
     "category": "walkers/silur/upgrades/tier3",
     "crafting": [{
         "ingredients": [{
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 48
           }, {
             "name": "Rupu Vine",
@@ -14467,7 +14467,7 @@
     "category": "walkers/silur/upgrades/tier3",
     "crafting": [{
         "ingredients": [{
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 32
           }, {
             "name": "Hide",
@@ -14496,7 +14496,7 @@
             "name": "Reinforced Plank",
             "count": 16
           }, {
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 80
           }, {
             "name": "Redwood Wood",
@@ -14543,7 +14543,7 @@
             "name": "Wood Shaft",
             "count": 183
           }, {
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 102
           }, {
             "name": "Bone Glue",
@@ -14609,7 +14609,7 @@
             "name": "Hellfire Bolt",
             "count": 1
           }, {
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 2
           }, {
             "name": "Nibiran Mineral",
@@ -14714,7 +14714,7 @@
             "name": "Wood Shaft",
             "count": 183
           }, {
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 102
           }, {
             "name": "Bone Glue",
@@ -14884,7 +14884,7 @@
     "category": "walkers/hercul/upgrades/tier3",
     "crafting": [{
         "ingredients": [{
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 48
           }, {
             "name": "Rupu Vine",
@@ -14904,7 +14904,7 @@
     "category": "walkers/hercul/upgrades/tier3",
     "crafting": [{
         "ingredients": [{
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 32
           }, {
             "name": "Hide",
@@ -14933,7 +14933,7 @@
             "name": "Reinforced Plank",
             "count": 16
           }, {
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 80
           }, {
             "name": "Redwood Wood",
@@ -15072,7 +15072,7 @@
             "name": "Fiber",
             "count": 100
           }, {
-            "name": "Piel rupu",
+            "name": "Rupu Pelt",
             "count": 15
           }, {
             "name": "Wood",
@@ -15086,7 +15086,7 @@
     "category": "walkers/balang/upgrades/tier3",
     "crafting": [{
         "ingredients": [{
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 30
           }, {
             "name": "Rupu Vine",
@@ -15106,10 +15106,10 @@
     "category": "walkers/balang/upgrades/tier3",
     "crafting": [{
         "ingredients": [{
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 20
           }, {
-            "name": "Piel rupu",
+            "name": "Rupu Pelt",
             "count": 45
           }, {
             "name": "Wood",
@@ -15135,7 +15135,7 @@
             "name": "Reinforced Plank",
             "count": 10
           }, {
-            "name": "Ceramic Shart",
+            "name": "Ceramic Shard",
             "count": 50
           }, {
             "name": "Redwood Wood",
