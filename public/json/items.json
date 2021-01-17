@@ -4773,7 +4773,7 @@
     "category": "materials",
     "crafting": [{
         "ingredients": [{
-            "name": "Wood Logs",
+            "name": "Wood Log",
             "count": 1
           }
         ],
@@ -5127,7 +5127,19 @@
             "count": 1
           }
         ],
+        "output": 6,
         "station": "Ancient Fabricator"
+      },{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 150
+          }, {
+            "name": "Iron Ingot",
+            "count": 2
+          }
+        ],
+        "output": 10,
+        "station": "Lumbermill"
       }
     ]
   }, {
@@ -5219,9 +5231,19 @@
     "category": "materials"
   }, {
     "name": "Wood",
-    "category": "materials"
+    "category": "materials",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood Log",
+            "count": 1
+          }
+        ],
+        "output": 300,
+        "station": "Lumbermill"
+      }
+    ]
   }, {
-    "name": "Wood Logs",
+    "name": "Wood Log",
     "category": "materials"
   }, {
     "name": "Wood Shaft",

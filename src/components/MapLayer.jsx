@@ -89,7 +89,8 @@ class MapLayer extends Component {
             </button>
           </Popup>
           <Tooltip>
-            {t(resource.resourcetype)} - Q: {resource.quality}
+            {t(resource.resourcetype)}{" "}
+            {resource.quality > 0 && "- Q:" + resource.quality}
           </Tooltip>
         </Marker>
       ));
