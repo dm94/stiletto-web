@@ -1872,13 +1872,13 @@
     "crafting": [{
         "ingredients": [{
             "name": "Iron Ingot",
-            "count": 50
+            "count": 20
           }, {
-            "name": "Wood",
-            "count": 300
+            "name": "Redwood Wood",
+            "count": 70
           }, {
-            "name": "Chitin Plate",
-            "count": 500
+            "name": "Bone Glue",
+            "count": 8
           }, {
             "name": "Reinforced Plank",
             "count": 1
