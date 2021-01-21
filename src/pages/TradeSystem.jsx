@@ -328,7 +328,7 @@ class TradeSystem extends Component {
         </Helmet>
         {this.loggedPart(t)}
         <div className="col-md-12">
-          <div className={getStyle("card mb-3")}>
+          <div className={getStyle("card mb-3 border-primary")}>
             <div className="card-header">{t("Published Trades")}</div>
             <div className="card-body">
               <div className="row">

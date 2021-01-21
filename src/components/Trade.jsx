@@ -36,7 +36,7 @@ class Trade extends Component {
     const { t } = this.props;
     return (
       <div className="col-xl-3 text-center">
-        <div className={getStyle("card mb-4 shadow-sm")}>
+        <div className={getStyle("card mb-4 shadow-sm border-secondary")}>
           <div className="card-header">
             {t(this.props.trade.type)} - {this.props.trade.region}
           </div>

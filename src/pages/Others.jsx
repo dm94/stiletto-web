@@ -40,12 +40,13 @@ class Others extends Component {
           }
         }
       });
-      if (data.length > 7) {
-        data = data.slice(0, 7);
+      if (data.length > 3) {
+        data = data.slice(0, 3);
       }
       return data.map((update) => (
         <li className={getStyle("list-group-item")} key={update.title}>
           <a
+            className="text-danger"
             href={update.link + "?curator_clanid=9919055"}
             target="_blank"
             rel="noopener noreferrer"

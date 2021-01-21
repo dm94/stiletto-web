@@ -56,7 +56,7 @@ class Timer extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className={getStyle("card")}>
+      <div className={getStyle("card border-secondary m-2")}>
         <div
           className={
             this.state.isFinish ? "card-body bg-warning " : "card-body"
