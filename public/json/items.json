@@ -66,7 +66,7 @@
         ]
       }
     ]
-  },{
+  }, {
     "name": "Giant Wall Gate",
     "category": "buildings/construction/giant",
     "crafting": [{
@@ -2124,7 +2124,8 @@
     ]
   }, {
     "name": "Ceramic-Tipped Bolt",
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "items/ammo/ammunition/projectiles/ballista"
+    "trade_price": 100,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -4907,7 +4908,8 @@
     ]
   }, {
     "name": "Fiery Concoction",
-    "category": "materials"
+    "category": "materials",
+    "trade_price": 2500,
   }, {
     "name": "Fragment",
     "category": "materials",
@@ -5129,7 +5131,7 @@
         ],
         "output": 6,
         "station": "Ancient Fabricator"
-      },{
+      }, {
         "ingredients": [{
             "name": "Wood",
             "count": 150
@@ -5200,6 +5202,7 @@
   }, {
     "name": "Tablet",
     "category": "materials",
+    "trade_price": 5000,
     "crafting": [{
         "ingredients": [{
             "name": "Torque",
@@ -5266,6 +5269,78 @@
   }, {
     "name": "Worm Silk",
     "category": "materials"
+  }, {
+    "name": "Armory Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Battery Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Bullrush Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Craftsman Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Foraging Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Fireproof Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Fortress Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Harpoon Protection Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Hearth Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Lifeforce Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Lumberjack Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Merchant Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Pack Mule Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Sandy Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Scavenger Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Torque Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Watery Module",
+    "category": "modules",
+    "trade_price": 200
+  }, {
+    "name": "Weightless Module",
+    "category": "modules",
+    "trade_price": 200
   }, {
     "name": "Buffalo Walker Body",
     "category": "walkers/buffalo",
