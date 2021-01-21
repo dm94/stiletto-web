@@ -2124,7 +2124,7 @@
     ]
   }, {
     "name": "Ceramic-Tipped Bolt",
-    "category": "items/ammo/ammunition/projectiles/ballista"
+    "category": "items/ammo/ammunition/projectiles/ballista",
     "trade_price": 100,
     "crafting": [{
         "ingredients": [{
