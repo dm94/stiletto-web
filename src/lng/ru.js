@@ -155,6 +155,7 @@ let ru = {
     Supply: "Поставка",
     Demand: "Спрос",
     Resource: "Ресурс",
+    "Resource or mats for": "Ресурс или материалы для",
     Region: "Регион",
     "Filter trades": "Торговля фильтрами",
     "Clean filter": "Чистый фильтр",

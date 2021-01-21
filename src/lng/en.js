@@ -154,6 +154,7 @@ let en = {
     Supply: "Supply",
     Demand: "Demand",
     Resource: "Resource",
+    "Resource or mats for": "Resource or mats for",
     Region: "Region",
     "Filter trades": "Filter trades",
     "Clean filter": "Clean filter",

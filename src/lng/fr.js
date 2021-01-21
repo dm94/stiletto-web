@@ -156,6 +156,7 @@ let fr = {
     Supply: "Fournir",
     Demand: "Demande",
     Resource: "Ressource",
+    "Resource or mats for": "Ressources ou matériels pour",
     Region: "Région",
     "Filter trades": "Filtrer les métiers",
     "Clean filter": "Nettoyer le filtre",

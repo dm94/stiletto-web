@@ -44,7 +44,12 @@ class TradeSystem extends Component {
     Axios.get(
       "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
     ).then((response) => {
-      const items = response.data.filter((it) => it.category === "materials");
+      const items = response.data.filter(
+        (it) =>
+          it.category === "materials" ||
+          it.category === "crafting/station" ||
+          it.category === "modules"
+      );
       this.setState({ items });
     });
   }
@@ -182,7 +187,9 @@ class TradeSystem extends Component {
                       </select>
                     </div>
                     <div className="form-group col-xl-2">
-                      <label htmlFor="resourcetype">{t("Resource")}</label>
+                      <label htmlFor="resourcetype">
+                        {t("Resource or mats for")}
+                      </label>
                       <select
                         id="resourcetype"
                         className="custom-select"
