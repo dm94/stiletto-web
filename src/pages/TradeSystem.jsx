@@ -257,7 +257,7 @@ class TradeSystem extends Component {
                       />
                     </div>
                     <div className="form-group col-xl-2">
-                      <label htmlFor="priceInput">{t("Price")}</label>
+                      <label htmlFor="priceInput">{t("Price per unit")}</label>
                       <input
                         id="priceInput"
                         type="number"

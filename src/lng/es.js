@@ -163,7 +163,8 @@ let es = {
       "Si quieres publicar tus propios intercambios tienes que estar conectado",
     "Publish an trade": "Publicar un intercambio",
     Quantity: "Cantidad",
-    Price: "Precio",
+    "Price per unit": "Precio por unidad",
+    Unit: "ud",
     Publish: "Publicar",
     "No trade offers were found with this filter":
       "No se encontraron intercambios con este filtro",

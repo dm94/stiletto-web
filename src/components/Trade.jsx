@@ -52,7 +52,7 @@ class Trade extends Component {
             </h5>
             <p>
               {this.props.trade.price !== 0
-                ? this.props.trade.price + " Flots"
+                ? this.props.trade.price + " Flots/" + t("Unit")
                 : ""}
             </p>
             {this.props.trade.nickname != null

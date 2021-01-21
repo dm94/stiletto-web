@@ -163,7 +163,8 @@ let en = {
     "Publish an trade": "Publish an trade",
     Quantity: "Quantity",
     Publish: "Publish",
-    Price: "Price",
+    "Price per unit": "Price per unit",
+    Unit: "Unit",
     "No trade offers were found with this filter":
       "No trade offers were found with this filter",
     Allies: "Allies",
