@@ -5,6 +5,7 @@ import ModalMessage from "./ModalMessage";
 import { withTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
+import { getStyle } from "./BGDarkSyles";
 import Axios from "axios";
 
 class PrivateProfile extends Component {
@@ -182,15 +183,15 @@ class PrivateProfile extends Component {
             />
           </Helmet>
           <div className="col-xl-6">
-            <div className="card border-secondary mb-3">
+            <div className={getStyle("card border-secondary mb-3")}>
               <div className="card-header">{t("Your details")}</div>
               <div className="card-body text-secondary">
                 <ul className="list-group mb-3">
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                  <li className={getStyle("listitem-profile")}>
                     <div className="my-0">{t("Discord Tag")}</div>
                     <div className="text-muted">{this.state.discordtag}</div>
                   </li>
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                  <li className={getStyle("listitem-profile")}>
                     <div className="my-0">{t("Nick in Game")}</div>
                     <div className="text-muted">
                       {this.state.nickname != null
@@ -198,7 +199,7 @@ class PrivateProfile extends Component {
                         : t("Not defined")}
                     </div>
                   </li>
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                  <li className={getStyle("listitem-profile")}>
                     <div className="my-0">{t("Clan")}</div>
                     <div className="text-muted">
                       {this.state.clanname != null
@@ -262,7 +263,7 @@ class PrivateProfile extends Component {
           {this.changeNamePart(t)}
           {this.manageClanPart(t)}
           <div className="col-xl-6">
-            <div className="card border-secondary mb-3">
+            <div className={getStyle("card border-secondary mb-3")}>
               <div className="card-body">
                 <Link
                   className="btn btn-lg btn-outline-secondary btn-block"
@@ -280,14 +281,14 @@ class PrivateProfile extends Component {
             </div>
           </div>
           <div className="col-xl-6">
-            <div className="card border-secondary mb-3">
+            <div className={getStyle("card border-secondary mb-3")}>
               <div className="card-header">{t("Change language")}</div>
               <div className="card-body">
                 <div className="row">
                   <div className="col">
                     <select
                       id="changeLanguajeSelect"
-                      className="custom-select"
+                      className={getStyle("custom-select")}
                       value={this.state.language}
                       onChange={(evt) =>
                         this.setState({
@@ -324,7 +325,7 @@ class PrivateProfile extends Component {
     if (this.state.nickname == null || this.state.nickname === "Loading...") {
       return (
         <div className="col-xl-6">
-          <div className="card border-secondary mb-3">
+          <div className={getStyle("card border-secondary mb-3")}>
             <div className="card-header">{t("Add name in the game")}</div>
             <div className="card-body text-succes">
               <form onSubmit={this.addNickInGame}>
@@ -364,7 +365,7 @@ class PrivateProfile extends Component {
     if (this.state.clanname == null || this.state.clanname === "Loading...") {
       return (
         <div className="col-xl-6">
-          <div className="card border-secondary mb-3">
+          <div className={getStyle("card border-secondary mb-3")}>
             <div className="card-header">
               <Link className="btn btn-lg btn-info btn-block" to="/clanlist">
                 {t("Join a clan")}
@@ -445,7 +446,7 @@ class PrivateProfile extends Component {
     } else {
       return (
         <div className="col-xl-6">
-          <div className="card border-secondary mb-3">
+          <div className={getStyle("card border-secondary mb-3")}>
             <div className="card-header">{t("Manage Clan")}</div>
             <div className="card-body">
               <Link

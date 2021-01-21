@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Ingredient from "../components/Ingredient";
 import { withTranslation } from "react-i18next";
+import { getStyle } from "./BGDarkSyles";
 
 class ListIngredients extends Component {
   render() {
@@ -44,11 +45,11 @@ class TotalMaterials extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className="card border-warning mb-3">
+      <div className={getStyle("card border-warning m-3")}>
         <div className="card-header border-warning">
           <div className="font-weight-normal">{t("Total materials")}</div>
         </div>
-        <div className="card-body bg-light" id="list-all-items">
+        <div className="card-body" id="list-all-items">
           <ul className="list-inline">{this.itemsList()}</ul>
           <div className="list-unstyled">
             <ListIngredients

@@ -17,6 +17,7 @@ import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
 import Map from "./pages/Map";
 import Transactions from "./pages/Transactions";
+import { getStyle } from "./components/BGDarkSyles";
 
 function CrafterApp() {
   const [t] = useTranslation();
@@ -51,17 +52,23 @@ function CrafterApp() {
                   >
                     {t("Profile")}
                   </Link>
-                  <div className="dropdown-menu" aria-labelledby="clanDrodown">
-                    <Link className="dropdown-item" to="/profile">
+                  <div
+                    className={getStyle("dropdown-menu")}
+                    aria-labelledby="clanDrodown"
+                  >
+                    <Link className={getStyle("dropdown-item")} to="/profile">
                       {t("Profile")}
                     </Link>
-                    <Link className="dropdown-item" to="/clanlist">
+                    <Link className={getStyle("dropdown-item")} to="/clanlist">
                       {t("Clan List")}
                     </Link>
-                    <Link className="dropdown-item" to="/maps">
+                    <Link className={getStyle("dropdown-item")} to="/maps">
                       {t("Resources maps")}
                     </Link>
-                    <Link className="dropdown-item" to="/transactions">
+                    <Link
+                      className={getStyle("dropdown-item")}
+                      to="/transactions"
+                    >
                       {t("Transactions")}
                     </Link>
                   </div>
@@ -108,7 +115,7 @@ function CrafterApp() {
           </div>
         </div>
       </header>
-      <main role="main" className="container-fluid pt-4">
+      <main role="main" className={getStyle("container-fluid pt-4")}>
         <Analytics id={process.env.REACT_APP_GA_ID}>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -128,7 +135,7 @@ function CrafterApp() {
         </Analytics>
         <div className={showHideClassName}>
           <div className="modal-dialog">
-            <div className="modal-content">
+            <div className={getStyle("modal-content")}>
               <div className="modal-header">{t("Change language")}</div>
               <div className="modal-body">
                 <div className="row text-center">
@@ -172,7 +179,11 @@ function CrafterApp() {
               </div>
               <div className="modal-footer">
                 <button
-                  className="btn btn-outline-secondary"
+                  className={
+                    localStorage.getItem("darkmode") !== "true"
+                      ? "btn btn-outline-secondary"
+                      : "btn btn-outline-light"
+                  }
                   onClick={() => {
                     setChangeLanguageModal(false);
                   }}
@@ -185,29 +196,32 @@ function CrafterApp() {
         </div>
       </main>
       <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
-        <div className="container">
-          Copyright © 2020 Stiletto{" | "}
-          <a
-            href="https://github.com/dm94/stiletto-web"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              alt="GitHub last commit"
-              src="https://img.shields.io/github/last-commit/dm94/stiletto-web"
-            ></img>
-          </a>
-          {" | "}
-          {t(
-            "This website are utilities related to the game Last Oasis but is not affiliated with"
-          )}{" "}
-          <a
-            href="https://www.donkey.team/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Donkey Crew
-          </a>
+        <div className="row">
+          <div className="col-10">
+            Copyright © 2020 Stiletto{" | "}
+            <a
+              href="https://github.com/dm94/stiletto-web"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                alt="GitHub last commit"
+                src="https://img.shields.io/github/last-commit/dm94/stiletto-web"
+              ></img>
+            </a>
+            {" | "}
+            {t(
+              "This website are utilities related to the game Last Oasis but is not affiliated with"
+            )}{" "}
+            <a
+              href="https://www.donkey.team/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donkey Crew
+            </a>
+          </div>
+          <div className="col-2">{darkMode()}</div>
         </div>
       </footer>
       <CookieConsent
@@ -226,6 +240,34 @@ function CrafterApp() {
 
 function switchLanguage(lng) {
   i18next.changeLanguage(lng);
+}
+
+function darkMode() {
+  if (localStorage.getItem("darkmode") !== "true") {
+    return (
+      <button
+        className="btn btn-sm btn-outline-light"
+        onClick={() => {
+          localStorage.setItem("darkmode", true);
+          window.location.reload();
+        }}
+      >
+        Dark Theme Mode
+      </button>
+    );
+  } else {
+    return (
+      <button
+        className="btn btn-sm btn-outline-light"
+        onClick={() => {
+          localStorage.setItem("darkmode", false);
+          window.location.reload();
+        }}
+      >
+        Ligh Theme Mode
+      </button>
+    );
+  }
 }
 
 function discordButton(t) {

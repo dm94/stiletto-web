@@ -5,6 +5,7 @@ import { withTranslation } from "react-i18next";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
 import Axios from "axios";
+import { getStyle } from "./BGDarkSyles";
 
 class ResourceMap extends Component {
   constructor(props) {
@@ -169,7 +170,7 @@ class ResourceMap extends Component {
               <label htmlFor="mapname">{t("Map Name")}</label>
               <input
                 type="text"
-                className="form-control"
+                className={getStyle("form-control")}
                 id="mapname"
                 onChange={(evt) => this.setState({ mapname: evt.target.value })}
                 value={this.state.mapname}
@@ -181,7 +182,7 @@ class ResourceMap extends Component {
               <label htmlFor="mapdate">{t("Date of burning")}</label>
               <input
                 type="date"
-                className="form-control"
+                className={getStyle("form-control")}
                 id="mapdate"
                 onChange={(evt) =>
                   this.setState({ dateofburning: evt.target.value })
@@ -236,7 +237,7 @@ class ResourceMap extends Component {
               <label htmlFor="password">{t("Password")}</label>
               <input
                 type="text"
-                className="form-control"
+                className={getStyle("form-control")}
                 id="password"
                 onChange={(evt) => this.setState({ pass: evt.target.value })}
                 value={this.state.pass}

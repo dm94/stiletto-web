@@ -4,6 +4,7 @@ import SelectedItem from "../components/SelectedItem";
 import TotalMaterials from "../components/TotalMaterials";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import { getStyle } from "../components/BGDarkSyles";
 
 class ItemSelector extends Component {
   state = {
@@ -146,7 +147,7 @@ class ItemSelector extends Component {
         <div className="col-md-2 col-xl-3">
           <form role="search" className="bd-search d-flex align-items-center">
             <input
-              className="form-control"
+              className={getStyle("form-control")}
               type="search"
               placeholder="Search"
               aria-label="Search"

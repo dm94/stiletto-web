@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { getStyle } from "./BGDarkSyles";
 
 class ResourcesInTheMapList extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class ResourcesInTheMapList extends Component {
       return resourcesFiltered.map((resource) => (
         <li key={resource.resourceid}>
           <button
-            className="list-group-item btn-block"
+            className={getStyle("list-group-item btn-block")}
             onClick={() => this.props.onSelect(resource.x, resource.y)}
           >
             {t(resource.resourcetype)} | Q: {resource.quality} | X: {resource.x}{" "}
@@ -34,7 +35,7 @@ class ResourcesInTheMapList extends Component {
       return this.props.resources.map((resource) => (
         <li key={resource.resourceid}>
           <button
-            className="list-group-item btn-block"
+            className={getStyle("list-group-item btn-block")}
             onClick={() => this.props.onSelect(resource.x, resource.y)}
           >
             {t(resource.resourcetype)} | Q: {resource.quality} | X: {resource.x}{" "}

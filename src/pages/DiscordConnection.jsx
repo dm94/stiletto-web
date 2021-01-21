@@ -49,7 +49,13 @@ class DiscordConnection extends Component {
             />
           </Helmet>
           <div className="col-xl-6">
-            <div className="card border-secondary mb-3">
+            <div
+              className={
+                localStorage.getItem("darkmode") !== "true"
+                  ? "card border-secondary mb-3"
+                  : "card border-secondary mb-3 text-white bg-dark"
+              }
+            >
               <div className="card-body text-succes">
                 <a
                   className="btn btn-lg btn-outline-primary btn-block"
@@ -61,7 +67,13 @@ class DiscordConnection extends Component {
             </div>
           </div>
           <div className="col-xl-6">
-            <div className="card border-secondary mb-3">
+            <div
+              className={
+                localStorage.getItem("darkmode") !== "true"
+                  ? "card border-secondary mb-3"
+                  : "card border-secondary mb-3 text-white bg-dark"
+              }
+            >
               <div className="card-body text-succes">
                 <button
                   className="btn btn-lg btn-outline-primary btn-block"

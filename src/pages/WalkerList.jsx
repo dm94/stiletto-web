@@ -5,6 +5,7 @@ import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getStyle } from "../components/BGDarkSyles";
 
 class WalkerList extends Component {
   constructor(props) {
@@ -149,7 +150,7 @@ class WalkerList extends Component {
       return (
         <div className="row">
           <div className="col-xl-4">
-            <div className="card border-secondary mb-3">
+            <div className={getStyle("card border-secondary mb-3")}>
               <div className="card-body">
                 <div className="text-info mb-3">
                   {t(
@@ -160,7 +161,7 @@ class WalkerList extends Component {
                   <div className="form-group">
                     <label htmlFor="discordlist">{t("Discord ID")}</label>
                     <input
-                      className="form-control"
+                      className={getStyle("form-control")}
                       type="number"
                       value={this.state.inputDiscodId}
                       onChange={(evt) =>
@@ -183,7 +184,7 @@ class WalkerList extends Component {
             </div>
           </div>
           <div className="col-xl-4">
-            <div className="card border-secondary mb-3">
+            <div className={getStyle("card border-secondary mb-3")}>
               <div className="card-header">{t("Discord Bot")}</div>
               <div className="card-body">
                 <div className="mb-3">
@@ -250,7 +251,7 @@ class WalkerList extends Component {
             />
           </Helmet>
           {this.serverLinkButton(t)}
-          <table className="table">
+          <table className={getStyle("table")}>
             <thead>
               <tr>
                 <th className="text-center" scope="col">
@@ -259,7 +260,7 @@ class WalkerList extends Component {
                 <th scope="col">
                   <div className="input-group input-group-sm w-50 mb-0 mx-auto">
                     <input
-                      className="form-control"
+                      className={getStyle("form-control")}
                       id="search-name"
                       type="search"
                       placeholder="Name.."

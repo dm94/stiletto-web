@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { getStyle } from "./BGDarkSyles";
 
 class Trade extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class Trade extends Component {
     const { t } = this.props;
     return (
       <div className="col-xl-3 text-center">
-        <div className="card mb-4 shadow-sm">
+        <div className={getStyle("card mb-4 shadow-sm")}>
           <div className="card-header">
             {t(this.props.trade.type)} - {this.props.trade.region}
           </div>

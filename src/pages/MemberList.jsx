@@ -6,6 +6,7 @@ import RequestMemberListItem from "../components/RequestMemberListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getStyle } from "../components/BGDarkSyles";
 
 class MemberList extends Component {
   constructor(props) {
@@ -233,7 +234,7 @@ class MemberList extends Component {
     ) {
       return (
         <div className="col-xl-3">
-          <div className="card mb-3">
+          <div className={getStyle("card mb-3")}>
             <div className="card-header">{t("Delete Clan")}</div>
             <div className="card-body">
               {t(
@@ -261,7 +262,7 @@ class MemberList extends Component {
     ) {
       return (
         <div className="col-xl-3">
-          <div className="card mb-3">
+          <div className={getStyle("card mb-3")}>
             <div className="card-header">{t("Transfer Clan")}</div>
             <div className="card-body">
               <p>
@@ -370,10 +371,10 @@ class MemberList extends Component {
           />
         </Helmet>
         <div className="col-xl-6">
-          <div className="card mb-3">
+          <div className={getStyle("card mb-3")}>
             <div className="card-header">{t("Member List")}</div>
             <div className="card-body">
-              <table className="table">
+              <table className={getStyle("table")}>
                 <thead>
                   <tr>
                     <th className="text-center" scope="col">
@@ -393,10 +394,10 @@ class MemberList extends Component {
           </div>
         </div>
         <div className="col-xl-6">
-          <div className="card mb-3">
+          <div className={getStyle("card mb-3")}>
             <div className="card-header">{t("List of requests")}</div>
             <div className="card-body">
-              <table className="table">
+              <table className={getStyle("table")}>
                 <thead>
                   <tr>
                     <th className="text-center" scope="col">

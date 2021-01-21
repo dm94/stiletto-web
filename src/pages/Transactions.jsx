@@ -5,6 +5,7 @@ import TransactionListItem from "../components/TransactionListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getStyle } from "../components/BGDarkSyles";
 
 class Transactions extends Component {
   constructor(props) {
@@ -186,7 +187,7 @@ class Transactions extends Component {
                   <label htmlFor="balance">{t("Total")}</label>
                   <input
                     type="number"
-                    className="form-control"
+                    className={getStyle("form-control")}
                     name="description"
                     value={this.state.balance}
                     required
@@ -197,7 +198,7 @@ class Transactions extends Component {
                   <label htmlFor="description">{t("Description")}</label>
                   <input
                     type="text"
-                    className="form-control"
+                    className={getStyle("form-control")}
                     name="description"
                     value={this.state.description}
                     max="200"
@@ -213,7 +214,7 @@ class Transactions extends Component {
                   <label htmlFor="transaction">{t("Transaction")}</label>
                   <input
                     type="number"
-                    className="form-control"
+                    className={getStyle("form-control")}
                     name="transaction"
                     value={this.state.quantity}
                     maxLength="10"
@@ -233,7 +234,7 @@ class Transactions extends Component {
               </div>
             </form>
           </div>
-          <table className="table">
+          <table className={getStyle("table")}>
             <thead>
               <tr>
                 <th className="text-center" scope="col">

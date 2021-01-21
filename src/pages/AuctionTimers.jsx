@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Timer from "../components/Timer";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import { getStyle } from "../components/BGDarkSyles";
 
 class AuctionTimers extends Component {
   state = {
@@ -43,7 +44,7 @@ class AuctionTimers extends Component {
           />
         </Helmet>
         <div className="col-md-8">
-          <div className="card">
+          <div className={getStyle("card")}>
             <div className="card-header text-center">
               {t(
                 "This data is not saved, if you reload the page it will be deleted"
@@ -52,7 +53,7 @@ class AuctionTimers extends Component {
           </div>
         </div>
         <div className="col-md-4">
-          <div className="card">
+          <div className={getStyle("card")}>
             <div className="card-body text-center">
               <div className="btn-group">
                 <button
@@ -85,7 +86,7 @@ class AuctionTimers extends Component {
         </div>
         {this.showTimers()}
         <div className="col-md-12">
-          <div className="card">
+          <div className={getStyle("card")}>
             <div className="card-body text-center">
               <div className="row">
                 <div className="col">

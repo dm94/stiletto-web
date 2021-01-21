@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import ClanName from "./ClanName";
 import { withTranslation } from "react-i18next";
+import { getStyle } from "./BGDarkSyles";
 
 class ClanListItem extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class ClanListItem extends Component {
 
   render() {
     return (
-      <tr>
+      <tr className={getStyle()}>
         <td className="text-center">
           <ClanName key={this.props.clan.name} clan={this.props.clan} />
         </td>

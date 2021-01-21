@@ -5,7 +5,13 @@ class Item extends Component {
   render() {
     const { t } = this.props;
     return (
-      <li className="list-group-item">
+      <li
+        className={
+          localStorage.getItem("darkmode") !== "true"
+            ? "list-group-item"
+            : "list-group-item list-group-item-dark"
+        }
+      >
         <div className="row">
           <div className="col-md-8 col-xl-10">{t(this.props.item.name)}</div>
           <div className="col-md-7 col-xl-2">

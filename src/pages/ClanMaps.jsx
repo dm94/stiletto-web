@@ -6,6 +6,7 @@ import CreateMapPanel from "../components/CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getStyle } from "../components/BGDarkSyles";
 
 class ClanMaps extends Component {
   constructor(props) {
@@ -183,7 +184,7 @@ class ClanMaps extends Component {
           />
         </Helmet>
         <div className="col-xl-12">
-          <div className="card border-secondary mb-3">
+          <div className={getStyle("card border-secondary mb-3")}>
             <div className="card-header">{t("Map List")}</div>
             <div className="card-body row">{this.clanMapList()}</div>
           </div>
@@ -191,7 +192,7 @@ class ClanMaps extends Component {
         <CreateMapPanel maps={this.state.maps} onCreateMap={this.createMap} />
         <div className={showHideClassName}>
           <div className="modal-dialog">
-            <div className="modal-content">
+            <div className={getStyle("modal-content")}>
               <div className="modal-header">
                 <h5 className="modal-title" id="deletemapmodal">
                   {t("Are you sure?")}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { getStyle } from "./BGDarkSyles";
 
 class CreateResourceTab extends Component {
   state = {
@@ -41,7 +42,7 @@ class CreateResourceTab extends Component {
             <label htmlFor="resourcetype">{t("Type")}</label>
             <select
               id="resourcetype"
-              className="custom-select"
+              className={getStyle("custom-select")}
               value={this.state.resourceTypeInput}
               onChange={(evt) =>
                 this.setState({
@@ -58,7 +59,7 @@ class CreateResourceTab extends Component {
             </label>
             <input
               type="text"
-              className="form-control"
+              className={getStyle("form-control")}
               name="coordinateXInput"
               value={this.props.coordinateXInput}
               onChange={(evt) => this.props.onChangeX(evt.target.value)}
@@ -71,7 +72,7 @@ class CreateResourceTab extends Component {
             </label>
             <input
               type="text"
-              className="form-control"
+              className={getStyle("form-control")}
               name="coordinateYInput"
               value={this.props.coordinateYInput}
               onChange={(evt) => this.props.onChangeY(evt.target.value)}
@@ -99,7 +100,7 @@ class CreateResourceTab extends Component {
             <label htmlFor="descriptionInput">{t("Description")}</label>
             <input
               type="text"
-              className="form-control"
+              className={getStyle("form-control")}
               name="descriptionInput"
               value={this.props.descriptionInput}
               onChange={(evt) =>
