@@ -164,6 +164,7 @@ let fr = {
       "Si vous souhaitez publier vos propres offres d'échange, vous devez être connecté",
     "Publish an trade": "Publier un commerce",
     Quantity: "Quantité",
+    Price: "Prix",
     Publish: "Publier",
     "No trade offers were found with this filter":
       "Aucune offre commerciale n'a été trouvée avec ce filtre",

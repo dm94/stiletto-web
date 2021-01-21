@@ -163,6 +163,7 @@ let es = {
       "Si quieres publicar tus propios intercambios tienes que estar conectado",
     "Publish an trade": "Publicar un intercambio",
     Quantity: "Cantidad",
+    Price: "Precio",
     Publish: "Publicar",
     "No trade offers were found with this filter":
       "No se encontraron intercambios con este filtro",

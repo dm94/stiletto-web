@@ -50,6 +50,11 @@ class Trade extends Component {
                 ? "Q: " + this.props.trade.quality
                 : ""}
             </h5>
+            <p>
+              {this.props.trade.price !== 0
+                ? this.props.trade.price + " Flots"
+                : ""}
+            </p>
             {this.props.trade.nickname != null
               ? t("Nick in game") + ": " + this.props.trade.nickname
               : ""}

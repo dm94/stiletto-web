@@ -22,6 +22,7 @@ class TradeSystem extends Component {
       amountInput: 0,
       regionInput: "EU",
       qualityInput: 0,
+      priceInput: 0,
       filteredTrades: [],
       resourceTypeFilterInput: "Aloe",
       tradeTypeFilterInput: "Supply",
@@ -129,6 +130,7 @@ class TradeSystem extends Component {
         amountInput: this.state.amountInput,
         regionInput: this.state.regionInput,
         qualityInput: this.state.qualityInput,
+        priceInput: this.state.priceInput,
       },
     })
       .then((response) => {
@@ -227,8 +229,9 @@ class TradeSystem extends Component {
                       <input
                         type="number"
                         id="amountInput"
-                        className="custom-select"
+                        className="form-control"
                         value={this.state.amountInput}
+                        min="0"
                         onChange={(evt) =>
                           this.setState({
                             amountInput: evt.target.value,
@@ -254,6 +257,21 @@ class TradeSystem extends Component {
                       />
                     </div>
                     <div className="form-group col-xl-2">
+                      <label htmlFor="priceInput">{t("Price")}</label>
+                      <input
+                        id="priceInput"
+                        type="number"
+                        className="form-control"
+                        min="0"
+                        value={this.state.priceInput}
+                        onChange={(evt) =>
+                          this.setState({
+                            priceInput: evt.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                    <div className="form-group col-xl-12">
                       <button
                         className="btn btn-lg btn-success btn-block"
                         type="submit"
