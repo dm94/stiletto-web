@@ -5,6 +5,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getStyle } from "../components/BGDarkSyles";
 
 class Diplomacy extends Component {
   constructor(props) {
@@ -136,7 +137,7 @@ class Diplomacy extends Component {
     if (this.state.isLeader) {
       return (
         <div className="col-md-3">
-          <div className="card mb-4 shadow-sm">
+          <div className={getStyle("card mb-4 shadow-sm")}>
             <div className="card-body">
               <form onSubmit={this.createRelationship}>
                 <div className="row">
@@ -144,7 +145,7 @@ class Diplomacy extends Component {
                     <label htmlFor="typedInput">{t("Type")}</label>
                     <select
                       id="typedInput"
-                      className="custom-select"
+                      className={getStyle("custom-select")}
                       value={this.state.typedInput}
                       onChange={(evt) =>
                         this.setState({
@@ -161,7 +162,7 @@ class Diplomacy extends Component {
                     <label htmlFor="flag_color">{t("Flag Color")}</label>
                     <input
                       type="color"
-                      className="form-control"
+                      className={getStyle("form-control")}
                       id="flag_color"
                       name="flag_color"
                       value={this.state.clanFlagInput}
@@ -178,7 +179,7 @@ class Diplomacy extends Component {
                   <label htmlFor="nameOtherClanInput">{t("Clan Name")}</label>
                   <input
                     type="text"
-                    className="form-control"
+                    className={getStyle("form-control")}
                     id="nameOtherClanInput"
                     name="nameOtherClanInput"
                     maxLength="20"

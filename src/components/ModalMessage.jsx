@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Redirect } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import { getStyle } from "./BGDarkSyles";
 
 class ModalMessage extends Component {
   state = { redirect: false };
@@ -35,7 +36,7 @@ class ModalMessage extends Component {
     return (
       <div className="modal d-block">
         <div className="modal-dialog">
-          <div className="modal-content">
+          <div className={getStyle("modal-content")}>
             <div className="modal-header">
               <h5 className="modal-title" id="modal">
                 {this.props.message.isError ? t("Error") : t("Information")}

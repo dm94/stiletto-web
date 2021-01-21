@@ -232,7 +232,7 @@ class PrivateProfile extends Component {
           </div>
           <div className={showHideClassName}>
             <div className="modal-dialog">
-              <div className="modal-content">
+              <div className={getStyle("modal-content")}>
                 <div className="modal-header">
                   <h5 className="modal-title" id="deleteusermodal">
                     {t("Are you sure?")}

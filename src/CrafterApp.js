@@ -195,7 +195,7 @@ function CrafterApp() {
           </div>
         </div>
       </main>
-      <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
+      <footer className="footer mt-auto py-3 container-fluid bg-dark text-white h-100">
         <div className="row">
           <div className="col-10">
             Copyright © 2020 Stiletto{" | "}
