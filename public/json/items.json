@@ -3583,6 +3583,7 @@
   }, {
     "name": "Jojo Mojo",
     "category": "items/vitamins",
+    "trade_price": 125,
     "crafting": [{
         "ingredients": [{
             "name": "Mushroom Flesh",
@@ -3601,6 +3602,7 @@
   }, {
     "name": "Race Dust",
     "category": "items/vitamins",
+    "trade_price": 500,
     "crafting": [{
         "ingredients": [{
             "name": "Purified Water",
@@ -3622,6 +3624,7 @@
   }, {
     "name": "Rupu Repellent",
     "category": "items/vitamins",
+    "trade_price": 600,
     "crafting": [{
         "ingredients": [{
             "name": "Purified Water",
@@ -5195,7 +5198,8 @@
     "category": "materials"
   }, {
     "name": "Stone",
-    "category": "materials"
+    "category": "materials",
+    "trade_price": 1.5
   }, {
     "name": "Sulfur",
     "category": "materials"

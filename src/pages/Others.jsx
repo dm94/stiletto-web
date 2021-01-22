@@ -162,7 +162,7 @@ class Others extends Component {
                 <div className="card-body">
                   <a
                     className="btn btn-success btn-block"
-                    href="https://discord.gg/PdXxUWd"
+                    href="https://discord.gg/FcecRtZ"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
