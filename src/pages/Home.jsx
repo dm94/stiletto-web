@@ -48,16 +48,16 @@ class Home extends Component {
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col-xl-6 p-4 d-flex flex-column position-static">
-              <h3 className="mb-0">{t("Crafter")}</h3>
+              <h3 className="mb-0">{t("Crafting Calculator")}</h3>
               <p className="card-text mb-auto">
                 {t(
-                  "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish"
+                  "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish"
                 )}
               </p>
             </div>
             <div className="col-xl-6">
               <img
-                alt="Crafter page"
+                alt="Crafting Calculator page"
                 className="img-fluid"
                 src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
               />
@@ -70,7 +70,7 @@ class Home extends Component {
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col-xl-6 p-4 d-flex flex-column position-static">
-              <h3 className="mb-0">{t("Auctions timers")}</h3>
+              <h3 className="mb-0">{t("Auction Timers")}</h3>
               <p className="card-text mb-auto">
                 {t(
                   "See how much time is left to finish the auctions of the maps you want easily"
@@ -79,7 +79,7 @@ class Home extends Component {
             </div>
             <div className="col-xl-6">
               <img
-                alt="Diplomacy page"
+                alt="Auction Timers page"
                 className="img-fluid"
                 src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
               />
@@ -92,7 +92,7 @@ class Home extends Component {
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col-xl-6 p-4 d-flex flex-column position-static">
-              <h3 className="mb-0">{t("Trading system")}</h3>
+              <h3 className="mb-0">{t("Trading System")}</h3>
               <p className="card-text mb-auto">
                 {t(
                   "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with"
@@ -101,7 +101,7 @@ class Home extends Component {
             </div>
             <div className="col-xl-6">
               <img
-                alt="Trade system page"
+                alt="Trading System page"
                 className="img-fluid"
                 src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
               />
@@ -114,7 +114,7 @@ class Home extends Component {
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col-xl-6 p-4 d-flex flex-column position-static">
-              <h3 className="mb-0">{t("Resources maps")}</h3>
+              <h3 className="mb-0">{t("Resource Maps")}</h3>
               <p className="card-text mb-auto">
                 {t(
                   "Create and edit maps to add resources or strategic points."
@@ -123,7 +123,7 @@ class Home extends Component {
             </div>
             <div className="col-xl-6">
               <img
-                alt="Resources map page"
+                alt="Resource Maps page"
                 className="img-fluid"
                 src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
               />
@@ -145,7 +145,7 @@ class Home extends Component {
             </div>
             <div className="col-xl-6">
               <img
-                alt="Resources map page"
+                alt="Walker List page"
                 className="img-fluid"
                 src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
               />
@@ -158,7 +158,7 @@ class Home extends Component {
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <div className="col-xl-6 p-4 d-flex flex-column position-static">
-              <h3 className="mb-0">{t("Control the clan")}</h3>
+              <h3 className="mb-0">{t("Clan Diplomacy")}</h3>
               <p className="card-text mb-auto">
                 {t(
                   "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members."
@@ -167,7 +167,7 @@ class Home extends Component {
             </div>
             <div className="col-xl-6">
               <img
-                alt="Diplomacy page"
+                alt="Clan Diplomacy page"
                 className="img-fluid"
                 src="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
               />

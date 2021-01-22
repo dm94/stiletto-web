@@ -94,7 +94,7 @@ class Others extends Component {
                 </p>
                 <p className="card-text mb-auto">
                   {t(
-                    "Private data: The only registration data that is saved is the id and nick of discord"
+                    "Private data: The only registration data saved is Discord ID."
                   )}
                 </p>
                 <p className="card-text mb-auto">
@@ -104,7 +104,7 @@ class Others extends Component {
                 </p>
                 <p className="card-text mb-auto">
                   {t(
-                    "If you think this page is not secure, all its code is published on github and I provide all the means for you to report the failure."
+                    "Source Code is published on GitHub for full disclosure where you can also report any issues found."
                   )}
                 </p>
               </div>
@@ -123,7 +123,7 @@ class Others extends Component {
                   <h3 className="mb-0 pb-2">{t("Report Bugs")}</h3>
                   <p className="card-text mb-auto">
                     {t(
-                      "I'd appreciate it if you find a bug and tell me about it on Github or another platform so that I can fix it"
+                      "If you find a bug, let me know on GitHub so it can be fixed!"
                     )}
                   </p>
                   <a

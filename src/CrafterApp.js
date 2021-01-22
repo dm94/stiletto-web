@@ -44,7 +44,7 @@ function CrafterApp() {
                   <Link
                     className="nav-link dropdown-toggle"
                     to="/profile"
-                    id="clanDrodown"
+                    id="clanDropdown"
                     role="button"
                     data-toggle="dropdown"
                     aria-haspopup="true"
@@ -54,16 +54,16 @@ function CrafterApp() {
                   </Link>
                   <div
                     className={getStyle("dropdown-menu")}
-                    aria-labelledby="clanDrodown"
+                    aria-labelledby="clanDropdown"
                   >
                     <Link className={getStyle("dropdown-item")} to="/profile">
-                      {t("Profile")}
+                      {t("User Profile")}
                     </Link>
                     <Link className={getStyle("dropdown-item")} to="/clanlist">
                       {t("Clan List")}
                     </Link>
                     <Link className={getStyle("dropdown-item")} to="/maps">
-                      {t("Resources maps")}
+                      {t("Resource Maps")}
                     </Link>
                     <Link
                       className={getStyle("dropdown-item")}
@@ -80,12 +80,12 @@ function CrafterApp() {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/auctions">
-                    {t("Auctions timers")}
+                    {t("Auction Timers")}
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/others">
-                    {t("Other info")}
+                    {t("About")}
                   </Link>
                 </li>
               </ul>
@@ -211,7 +211,7 @@ function CrafterApp() {
             </a>
             {" | "}
             {t(
-              "This website are utilities related to the game Last Oasis but is not affiliated with"
+              "This website uses utilities related to the game 'Last Oasis' but is not affiliated with"
             )}{" "}
             <a
               href="https://www.donkey.team/"
@@ -264,7 +264,7 @@ function darkMode() {
           window.location.reload();
         }}
       >
-        Ligh Theme Mode
+        Light Theme Mode
       </button>
     );
   }
