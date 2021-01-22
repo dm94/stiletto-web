@@ -40,8 +40,8 @@ class Others extends Component {
           }
         }
       });
-      if (data.length > 3) {
-        data = data.slice(0, 3);
+      if (data.length > 4) {
+        data = data.slice(0, 4);
       }
       return data.map((update) => (
         <li className={getStyle("list-group-item")} key={update.title}>

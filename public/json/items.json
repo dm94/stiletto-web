@@ -4984,7 +4984,8 @@
     ]
   }, {
     "name": "Mushroom Flesh",
-    "category": "materials"
+    "category": "materials",
+    "trade_price": 5.5
   }, {
     "name": "Nibiran Mineral",
     "category": "materials"
