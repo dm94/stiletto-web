@@ -23,7 +23,14 @@ class SelectedItem extends Component {
           }
           key={this.props.item.name}
         >
-          <Ingredients crafting={ingredients} value={this.props.item.count} />
+          <Ingredients
+            crafting={ingredients}
+            value={
+              ingredients.output != null
+                ? this.props.item.count / ingredients.output
+                : this.props.item.count
+            }
+          />
         </div>
       ));
     }
