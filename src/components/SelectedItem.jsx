@@ -95,39 +95,39 @@ class SelectedItem extends Component {
             {this.showStation(t)}
           </div>
           <div className="card-footer">
-            <div className="btn-group col-xl-12" role="group">
+            <div className="row">
               <button
-                className="btn btn-success"
+                className="btn btn-success col"
                 onClick={() => this.change(1)}
               >
                 +1
               </button>
               <button
-                className="btn btn-success"
+                className="btn btn-success col"
                 onClick={() => this.change(10)}
               >
                 +10
               </button>
               <button
-                className="btn btn-success"
+                className="btn btn-success col"
                 onClick={() => this.change(100)}
               >
                 +100
               </button>
               <button
-                className="btn btn-danger"
+                className="btn btn-danger col"
                 onClick={() => this.change(-1)}
               >
                 -1
               </button>
               <button
-                className="btn btn-danger"
+                className="btn btn-danger col"
                 onClick={() => this.change(-10)}
               >
                 -10
               </button>
               <button
-                className="btn btn-danger"
+                className="btn btn-danger col"
                 onClick={() => this.change(-100)}
               >
                 -100
