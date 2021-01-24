@@ -8468,26 +8468,6 @@
       }
     ]
   }, {
-    "name": "Firefly Walker Upgrade - Torque - Tier 2",
-    "category": "walkers/firefly/upgrades/tier2",
-    "crafting": [{
-        "ingredients": [{
-            "name": "Bone Splinter",
-            "count": 15
-          }, {
-            "name": "Fiber",
-            "count": 65
-          }, {
-            "name": "Wood",
-            "count": 60
-          }, {
-            "name": "Rope",
-            "count": 12
-          }
-        ]
-      }
-    ]
-  }, {
     "name": "Firefly Walker Upgrade - Water - Tier 2",
     "category": "walkers/firefly/upgrades/tier2",
     "crafting": [{
@@ -8583,26 +8563,6 @@
           }, {
             "name": "Bone Glue",
             "count": 5
-          }
-        ]
-      }
-    ]
-  }, {
-    "name": "Firefly Walker Upgrade - Torque - Tier 3",
-    "category": "walkers/firefly/upgrades/tier3",
-    "crafting": [{
-        "ingredients": [{
-            "name": "Ceramic Shard",
-            "count": 30
-          }, {
-            "name": "Rupu Vine",
-            "count": 35
-          }, {
-            "name": "Rope",
-            "count": 25
-          }, {
-            "name": "Wood",
-            "count": 80
           }
         ]
       }
@@ -8715,29 +8675,6 @@
           }, {
             "name": "Tar",
             "count": 40
-          }
-        ]
-      }
-    ]
-  }, {
-    "name": "Firefly Walker Upgrade - Torque - Tier 4",
-    "category": "walkers/firefly/upgrades/tier4",
-    "crafting": [{
-        "ingredients": [{
-            "name": "Iron Ingot",
-            "count": 15
-          }, {
-            "name": "Chitin Plate",
-            "count": 38
-          }, {
-            "name": "Reinforced Plank",
-            "count": 10
-          }, {
-            "name": "Ceramic Shard",
-            "count": 50
-          }, {
-            "name": "Redwood Wood",
-            "count": 120
           }
         ]
       }

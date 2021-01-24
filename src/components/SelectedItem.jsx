@@ -60,6 +60,9 @@ class SelectedItem extends Component {
               50% = {this.props.item.damage * this.props.item.count * 0.5}
             </div>
             <div className="col">
+              30% = {this.props.item.damage * this.props.item.count * 0.3}
+            </div>
+            <div className="col">
               10% = {this.props.item.damage * this.props.item.count * 0.1}
             </div>
           </div>
