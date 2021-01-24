@@ -3,17 +3,13 @@ import Ingredient from "./Ingredient";
 
 class Ingredients extends Component {
   render() {
-    return (
-      <div className="col-sm">
-        {this.props.crafting.ingredients.map((ingredient) => (
-          <Ingredient
-            key={ingredient.name}
-            ingredient={ingredient}
-            value={this.props.value}
-          />
-        ))}
-      </div>
-    );
+    return this.props.crafting.ingredients.map((ingredient) => (
+      <Ingredient
+        key={ingredient.name}
+        ingredient={ingredient}
+        value={this.props.value}
+      />
+    ));
   }
 }
 

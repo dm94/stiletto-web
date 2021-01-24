@@ -15,14 +15,7 @@ class SelectedItem extends Component {
   showIngredient() {
     if (this.props.item.crafting != null) {
       return this.props.item.crafting.map((ingredients) => (
-        <div
-          className={
-            this.props.item.crafting.length > 1
-              ? "col-xl-6 border"
-              : "col-xl-12"
-          }
-          key={this.props.item.name}
-        >
+        <div className="container" key={this.props.item.name}>
           <Ingredients
             crafting={ingredients}
             value={
@@ -54,6 +47,27 @@ class SelectedItem extends Component {
     }
   }
 
+  showDamage(t) {
+    if (this.props.item.damage != null) {
+      return (
+        <div className="col-12 text-muted">
+          <div className="row">
+            <div className="col-12">{t("Damage")}</div>
+            <div className="col">
+              100% = {this.props.item.damage * this.props.item.count}
+            </div>
+            <div className="col">
+              50% = {this.props.item.damage * this.props.item.count * 0.5}
+            </div>
+            <div className="col">
+              10% = {this.props.item.damage * this.props.item.count * 0.1}
+            </div>
+          </div>
+        </div>
+      );
+    }
+  }
+
   change(count) {
     this.props.onChangeCount(
       this.props.item.name,
@@ -64,7 +78,7 @@ class SelectedItem extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className="col">
+      <div className="col-xl-6 col-sm-12">
         <div className={getStyle("card")}>
           <div className="text-center card-header">
             <button
@@ -100,6 +114,7 @@ class SelectedItem extends Component {
           <div className="card-body">
             <div className="list-unstyled row">{this.showIngredient()}</div>
             {this.showStation(t)}
+            {this.showDamage(t)}
           </div>
           <div className="card-footer">
             <div className="row">

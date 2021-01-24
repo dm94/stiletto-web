@@ -7,25 +7,23 @@ class ListIngredients extends Component {
   render() {
     let totalIngredients = [];
     this.props.selectedItems.forEach((item) => {
-      if (item.crafting != null) {
-        if (item.crafting[0].ingredients != null) {
-          item.crafting[0].ingredients.forEach((ingredient) => {
-            if (
-              totalIngredients.find((ingre) => ingre.name === ingredient.name)
-            ) {
-              totalIngredients.forEach((ingre) => {
-                if (ingre.name === ingredient.name) {
-                  ingre.count += ingredient.count * item.count;
-                }
-              });
-            } else {
-              totalIngredients.push({
-                name: ingredient.name,
-                count: ingredient.count * item.count,
-              });
-            }
-          });
-        }
+      if (item.crafting != null && item.crafting[0].ingredients != null) {
+        item.crafting[0].ingredients.forEach((ingredient) => {
+          if (
+            totalIngredients.find((ingre) => ingre.name === ingredient.name)
+          ) {
+            totalIngredients.forEach((ingre) => {
+              if (ingre.name === ingredient.name) {
+                ingre.count += ingredient.count * item.count;
+              }
+            });
+          } else {
+            totalIngredients.push({
+              name: ingredient.name,
+              count: ingredient.count * item.count,
+            });
+          }
+        });
       }
     });
     return totalIngredients.map((ingredient) => (
@@ -36,7 +34,7 @@ class ListIngredients extends Component {
 class TotalMaterials extends Component {
   itemsList() {
     return this.props.selectedItems.map((item) => (
-      <li className="list-inline-item">
+      <li className="list-inline-item" key={item.name}>
         {item.count}x {item.name} -
       </li>
     ));

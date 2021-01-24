@@ -70,6 +70,7 @@ class ItemSelector extends Component {
             name: selectedItem[0].name,
             category: selectedItem[0].category,
             crafting: selectedItem[0].crafting,
+            damage: selectedItem[0].damage,
             count: 1,
           },
         ]);
@@ -94,6 +95,7 @@ class ItemSelector extends Component {
             name: selectedItem[0].name,
             category: selectedItem[0].category,
             crafting: selectedItem[0].crafting,
+            damage: selectedItem[0].damage,
             count: count,
           },
         ]);
