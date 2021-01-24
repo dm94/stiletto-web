@@ -2,33 +2,33 @@ let en = {
   translations: {
     Crafting: "Crafting",
     Clan: "Clan",
-    Profile: "Profile",
+    "User Profile": "User Profile",
     "Clan List": "Clan List",
     Members: "Members",
     "Walker List": "Walker List",
-    "Resources maps": "Resources maps",
+    "Resource Maps": "Resource Maps",
     Diplomacy: "Diplomacy",
     Trades: "Trades",
-    "Auctions Timers": "Auctions Timers",
-    "Other info": "Other info",
+    "Auction Timers": "Auction Timers",
+    About: "About",
     "Github project": "Github project",
-    "This website are utilities related to the game Last Oasis but is not affiliated with":
-      "This website are utilities related to the game Last Oasis but is not affiliated with",
+    "This website uses utilities related to the game 'Last Oasis' but is not affiliated with":
+      "This website uses utilities related to the game 'Last Oasis' but is not affiliated with",
     "This website uses cookies to enhance the user experience.":
       "This website uses cookies to enhance the user experience.",
     "Login with discord": "Login with discord",
     "Connect in demo mode": "Connect in demo mode",
-    Crafter: "Crafter",
-    "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish":
-      "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish",
+    "Crafting Calculator": "Crafter",
+    "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish":
+      "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish",
     "See how much time is left to finish the auctions of the maps you want easily":
       "See how much time is left to finish the auctions of the maps you want easily",
-    "Trading system": "Trading system",
+    "Trading System": "Trading System",
     "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with":
       "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with",
     "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way":
       "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way",
-    "Control the clan": "Control the clan",
+    "Clan Diplomacy": "Clan Diplomacy",
     "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.":
       "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.",
     "Create and edit maps to add resources or strategic points.":
@@ -188,8 +188,8 @@ let en = {
     "made on": "It's made on:",
     "Latest updates": "Latest updates",
     "Report Bugs": "Report Bugs",
-    "I'd appreciate it if you find a bug and tell me about it on Github or another platform so that I can fix it":
-      "I'd appreciate it if you find a bug and tell me about it on Github or another platform so that I can fix it",
+    "If you find a bug, let me know on GitHub so it can be fixed!":
+      "If you find a bug, let me know on GitHub so it can be fixed!",
     Report: "Report",
     "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.":
       "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.",
@@ -202,12 +202,12 @@ let en = {
     "Privacy Agreement": "Privacy Agreement",
     "Cookies: This site only uses Google cookies to view web traffic.":
       "Cookies: This site only uses Google cookies to view web traffic.",
-    "Private data: The only registration data that is saved is the id and nick of discord":
-      "Private data: The only registration data that is saved is the id and nick of discord",
+    "Private data: The only registration data saved is Discord ID and Discord Tag":
+      "Private data: The only registration data saved is Discord ID and Discord Tag",
     "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.":
       "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.",
-    "If you think this page is not secure, all its code is published on github and I provide all the means for you to report the failure.":
-      "If you think this page is not secure, all its code is published on github and I provide all the means for you to report the failure.",
+    "Source Code is published on GitHub for full disclosure where you can also report any issues found.":
+      "Source Code is published on GitHub for full disclosure where you can also report any issues found.",
     Aloe: "Aloe",
     "Animal Fat": "Animal Fat",
     Apple: "Apple",

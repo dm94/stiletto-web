@@ -94,7 +94,7 @@ class Others extends Component {
                 </p>
                 <p className="card-text mb-auto">
                   {t(
-                    "Private data: The only registration data saved is Discord ID."
+                    "Private data: The only registration data saved is Discord ID and Discord Tag."
                   )}
                 </p>
                 <p className="card-text mb-auto">

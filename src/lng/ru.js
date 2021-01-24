@@ -2,33 +2,33 @@ let ru = {
   translations: {
     Crafting: "Крафтинг",
     Clan: "Клан",
-    Profile: "Профиль",
+    "User Profile": "Профиль",
     "Clan List": "список кланов",
     Members: "Члены",
     "Walker List": "Список Уокеров",
-    "Resources maps": "Карты ресурсов",
+    "Resource Maps": "Карты ресурсов",
     Diplomacy: "Дипломатия",
     Trades: "Торговля",
-    "Auctions Timers": "Аукционы Таймеры",
-    "Other info": "Другая информация",
+    "Auction Timers": "Аукционы Таймеры",
+    About: "Другая информация",
     "Github project": "проект Китаба",
-    "This website are utilities related to the game Last Oasis but is not affiliated with":
+    "This website uses utilities related to the game 'Last Oasis' but is not affiliated with":
       "Этот сайт представляет собой утилиты, связанные с игрой Last Oasis, но не связан с",
     "This website uses cookies to enhance the user experience.":
       "Этот веб-сайт использует куки-файлы для повышения удобства работы пользователей.",
     "Login with discord": "Войти в систему с разладом",
     "Connect in demo mode": "Подключение в демонстрационном режиме",
-    Crafter: "Подробнее",
-    "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish":
+    "Crafting Calculator": "Подробнее",
+    "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish":
       "Здесь вы можете увидеть материалы, необходимые для создания каждой вещи, и количество, которое вам нужно, как если бы это был список покупок. Это на английском и испанском языках",
     "See how much time is left to finish the auctions of the maps you want easily":
       "Посмотрите, сколько времени осталось до завершения аукционов карт, которые вы хотите легко.",
-    "Trading system": "Торговая система",
+    "Trading System": "Торговая система",
     "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with":
       "Вы можете создавать предложения или искать их легко отсюда, вам не нужно быть на 20 серверах дискорда в поисках того, с кем можно обменяться.",
     "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way":
       "Проверьте, когда ваши ходунки использовались в последний раз и кто использовал их простым и быстрым способом. Я создал робота-дискорта, который, помимо предоставления других функций, позволяет проще управлять входом ходячих.",
-    "Control the clan": "Контролировать клан",
+    "Clan Diplomacy": "Контролировать клан",
     "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.":
       "Используйте этот раздел, чтобы контролировать свой клан, заключать альянсы или отправлять войны и легко показывать его членам вашего клана.",
     "Create and edit maps to add resources or strategic points.":
@@ -189,7 +189,7 @@ let ru = {
     "made on": "Сделано:",
     "Latest updates": "Последние обновления",
     "Report Bugs": "Сообщить об ошибках",
-    "I'd appreciate it if you find a bug and tell me about it on Github or another platform so that I can fix it":
+    "If you find a bug, let me know on GitHub so it can be fixed!":
       "Я был бы признателен, если бы вы нашли ошибку и рассказали мне о ней на Гитубе или другой платформе, чтобы я мог ее исправить.",
     Report: "Сообщить",
     "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.":

@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "2.10.6",
+  "version": "2.10.7",
   "private": true,
   "dependencies": {
     "axios": ">=0.21.1",

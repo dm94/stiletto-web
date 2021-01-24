@@ -2,33 +2,33 @@ let es = {
   translations: {
     Crafting: "Crafteo",
     Clan: "Clan",
-    Profile: "Perfil",
+    "User Profile": "Perfil",
     "Clan List": "Listado de clanes",
     Members: "Miembros",
     "Walker List": "Listado de walkers",
-    "Resources maps": "Mapas de recursos",
+    "Resource Maps": "Mapas de recursos",
     Diplomacy: "Diplomacia",
     Trades: "Intercambios",
-    "Auctions timers": "Temporizadores de subastas",
-    "Other info": "Otra info",
+    "Auction Timers": "Temporizadores de subastas",
+    About: "Otra info",
     "Github project": "Projecto en Github",
-    "This website are utilities related to the game Last Oasis but is not affiliated with":
+    "This website uses utilities related to the game 'Last Oasis' but is not affiliated with":
       "Este sitio web son utilidades relacionadas con el juego Last Oasis pero no está afiliado a",
     "This website uses cookies to enhance the user experience.":
       "Este sitio web utiliza cookies para mejorar la experiencia del usuario.",
     "Login with discord": "Conectar con discord",
     "Connect in demo mode": "Conectar en modo demo",
-    Crafter: "Crafter",
-    "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish":
+    "Crafting Calculator": "Calculadora de crafteo",
+    "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish":
       "Aquí puedes ver los materiales necesarios para construir cada cosa que necesites y con la cantidad que necesites como si fuera una lista de la compra. Está en inglés y en español",
     "See how much time is left to finish the auctions of the maps you want easily":
       "Mira cuánto tiempo queda para terminar las subastas de los mapas que quieras fácilmente",
-    "Trading system": "Sistema de intercambio",
+    "Trading System": "Sistema de intercambio",
     "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with":
       "Puedes crear ofertas o buscarlas fácilmente desde aquí, no necesitas estar en 20 servidores de discord buscando con quien intercambiar",
     "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way":
       "Comprueba cuándo se usaron los walkers por última vez y quién los usó de forma sencilla y rápida. He creado un bot de discord que además de dar otras funciones te permite controlar el registro de walkers de una manera más fácil",
-    "Control the clan": "Controla el clan",
+    "Clan Diplomacy": "Controla el clan",
     "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.":
       "Usa esta sección para controlar tu clan, hacer alianzas o enviar guerras y mostrarlo fácilmente a los miembros de tu clan.",
     "Create and edit maps to add resources or strategic points.":
@@ -189,7 +189,7 @@ let es = {
     "made on": "Se fabrica en:",
     "Latest updates": "Últimas actualizaciones",
     "Report Bugs": "Reportar fallos",
-    "I'd appreciate it if you find a bug and tell me about it on Github or another platform so that I can fix it":
+    "If you find a bug, let me know on GitHub so it can be fixed!":
       "Agradecería si encuentras un error y me lo cuentas en Github o en otra plataforma para que pueda arreglarlo.",
     Report: "Reportar",
     "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.":
@@ -207,7 +207,7 @@ let es = {
       "Datos privados: Los únicos datos de registro que se guardan es la id y el nick de discord",
     "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.":
       "Los datos que se añaden a la web como la diplomacia, recursos del mapa o miembros de un clan se almacenan en una base de datos y se toman las medidas de seguridad necesarias para que nadie pueda acceder a esos datos.",
-    "If you think this page is not secure, all its code is published on github and I provide all the means for you to report the failure.":
+    "Source Code is published on GitHub for full disclosure where you can also report any issues found.":
       "Si crees que esta pagina no es segura, todo su código esta publicado en github y proporciono todos los medios para que reportes el fallo.",
     Aloe: "Aloe vera",
     "Animal Fat": "Grasa animal",

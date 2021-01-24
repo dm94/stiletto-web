@@ -2,33 +2,33 @@ let fr = {
   translations: {
     Crafting: "Artisanat",
     Clan: "Clan",
-    Profile: "Profil",
+    "User Profile": "Profil",
     "Clan List": "Liste des clans",
     Members: "Membres",
     "Walker List": "Liste des marcheurs",
-    "Resources maps": "Cartes des ressources",
+    "Resource Maps": "Cartes des ressources",
     Diplomacy: "Diplomatie",
     Trades: "Métiers",
-    "Auctions Timers": "Minuteurs d'enchères",
-    "Other info": "Autres informations",
+    "Auction Timers": "Minuteurs d'enchères",
+    About: "Autres informations",
     "Github project": "Projet Github",
-    "This website are utilities related to the game Last Oasis but is not affiliated with":
+    "This website uses utilities related to the game 'Last Oasis' but is not affiliated with":
       "Ce site web sont des utilitaires liés au jeu Last Oasis mais n'est pas affilié à",
     "This website uses cookies to enhance the user experience.":
       "Ce site web utilise des cookies pour améliorer l'expérience des utilisateurs.",
     "Login with discord": "Connexion avec discorde",
     "Connect in demo mode": "Se connecter en mode démo",
-    Crafter: "Crafter",
-    "Here you can see the materials needed to build each thing you need and with the amount you need as if it were a shopping list. It is in English and Spanish":
+    "Crafting Calculator": "Crafter",
+    "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish":
       "Vous pouvez voir ici les matériaux nécessaires pour construire chaque chose dont vous avez besoin et avec la quantité nécessaire comme s'il s'agissait d'une liste de courses. Il est en anglais et en espagnol",
     "See how much time is left to finish the auctions of the maps you want easily":
       "Voyez combien de temps il reste pour terminer facilement les enchères des cartes que vous souhaitez",
-    "Trading system": "Système d'échange",
+    "Trading System": "Système d'échange",
     "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with":
       "Vous pouvez créer des offres ou les rechercher facilement à partir d'ici, vous n'avez pas besoin d'être sur 20 serveurs de discordance pour chercher avec qui échanger",
     "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way":
       "Vérifiez quand vos déambulateurs ont été utilisés pour la dernière fois et qui les a utilisés de manière simple et rapide. J'ai créé un robot de discordance qui, en plus d'offrir d'autres fonctions, vous permet de contrôler le journal des déambulateurs de manière plus simple",
-    "Control the clan": "Contrôler le clan",
+    "Clan Diplomacy": "Contrôler le clan",
     "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.":
       "Utilisez cette section pour contrôler votre clan, faire des alliances ou envoyer des guerres et pour le montrer facilement aux membres de votre clan.",
     "Create and edit maps to add resources or strategic points.":
@@ -190,7 +190,7 @@ let fr = {
     "made on": "C'est fait :",
     "Latest updates": "Dernières mises à jour",
     "Report Bugs": "Signaler les bugs",
-    "I'd appreciate it if you find a bug and tell me about it on Github or another platform so that I can fix it":
+    "If you find a bug, let me know on GitHub so it can be fixed!":
       "J'apprécierais que vous trouviez un bug et que vous m'en parliez sur Github ou une autre plateforme afin que je puisse le corriger",
     Report: "Rapport",
     "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.":
