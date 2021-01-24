@@ -1435,7 +1435,8 @@
             "name": "Earth Wax",
             "count": 12
           }
-        ]
+        ],
+        "output": 6
       }
     ]
   }, {
@@ -2091,6 +2092,7 @@
   }, {
     "name": "Bone Bolt",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "damage": 150,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -2108,6 +2110,7 @@
   }, {
     "name": "Bone Harpoon",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "damage": 5,
     "crafting": [{
         "ingredients": [{
             "name": "Bone Bolt",
@@ -2125,6 +2128,7 @@
   }, {
     "name": "Ceramic-Tipped Bolt",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "damage": 165,
     "trade_price": 100,
     "crafting": [{
         "ingredients": [{
@@ -2143,6 +2147,7 @@
   }, {
     "name": "Ceramic-Tipped Harpoon",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "damage": 5,
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic-Tipped Bolt",
@@ -2160,6 +2165,7 @@
   }, {
     "name": "Fire Bolt",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "damage": 850,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -2180,6 +2186,7 @@
   }, {
     "name": "Flint Bolt",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "damage": 125,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -2194,6 +2201,7 @@
   }, {
     "name": "Flint Harpoon",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "damage": 5,
     "crafting": [{
         "ingredients": [{
             "name": "Flint Bolt",
@@ -2211,6 +2219,11 @@
   }, {
     "name": "Hellfire Bolt",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
+    "damage": 1025,
     "crafting": [{
         "ingredients": [{
             "name": "Fire Bolt",
@@ -2234,6 +2247,11 @@
   }, {
     "name": "Iron-Tipped Bolt",
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
+    "damage": 180,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -2271,6 +2289,11 @@
   }, {
     "name": "Explosive Bolt",
     "category": "items/ammo/ammunition/projectiles/ballista/explosive",
+    "cost": {
+      "name": "Tablet",
+      "count": 8
+    },
+    "damage": 25,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -2305,6 +2328,7 @@
   }, {
     "name": "Fire Bomb",
     "category": "items/ammo/ammunition/projectiles/catapult",
+    "damage": 10,
     "crafting": [{
         "ingredients": [{
             "name": "Stone",
@@ -2323,6 +2347,11 @@
   }, {
     "name": "Hullbreaker Rock",
     "category": "items/ammo/ammunition/projectiles/catapult",
+    "cost": {
+      "name": "Tablet",
+      "count": 40
+    },
+    "damage": 200,
     "crafting": [{
         "ingredients": [{
             "name": "Iron Ingot",
@@ -2374,6 +2403,7 @@
   }, {
     "name": "Dart",
     "category": "items/ammo/ammunition/projectiles/repeater",
+    "damage": 30,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -2385,12 +2415,14 @@
             "name": "Stone",
             "count": 1
           }
-        ]
+        ],
+        "output": 8
       }
     ]
   }, {
     "name": "Floating Mine",
     "category": "items/ammo/ammunition/projectiles/repeater",
+    "damage": 150,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -2402,12 +2434,18 @@
             "name": "Lava",
             "count": 12
           }
-        ]
+        ],
+        "output": 8
       }
     ]
   }, {
     "name": "Explosive Dart",
     "category": "items/ammo/ammunition/projectiles/repeater/explosive",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
+    "damage": 35,
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -2425,6 +2463,7 @@
   }, {
     "name": "Hullbreaker Scattershot",
     "category": "items/ammo/ammunition/projectiles/scattershot",
+    "damage": 145,
     "crafting": [{
         "ingredients": [{
             "name": "Obsidian",
@@ -2445,6 +2484,7 @@
   }, {
     "name": "Scattershot",
     "category": "items/ammo/ammunition/projectiles/scattershot",
+    "damage": 160,
     "crafting": [{
         "ingredients": [{
             "name": "Stone",
@@ -2459,6 +2499,10 @@
   }, {
     "name": "Aloe Goo Bomb",
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "cost": {
+      "name": "Tablet",
+      "count": 4
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Aloe Vera",
@@ -2480,6 +2524,10 @@
   }, {
     "name": "Chalk Bomb",
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Clay",
@@ -2498,6 +2546,11 @@
   }, {
     "name": "Cluster Bomb",
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "cost": {
+      "name": "Tablet",
+      "count": 12
+    },
+    "damage": 20,
     "crafting": [{
         "ingredients": [{
             "name": "Obsidian",
@@ -2522,6 +2575,7 @@
   }, {
     "name": "Green Death Bomb",
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "damage": 20,
     "crafting": [{
         "ingredients": [{
             "name": "Clay",
@@ -2540,6 +2594,11 @@
   }, {
     "name": "Insect Bomb",
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
+    "damage": 20,
     "crafting": [{
         "ingredients": [{
             "name": "Clay",
@@ -2561,6 +2620,7 @@
   }, {
     "name": "Rupu Rock",
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "damage": 100,
     "crafting": [{
         "ingredients": [{
             "name": "Stone",
@@ -2575,6 +2635,7 @@
   }, {
     "name": "Small Boulder",
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "damage": 450,
     "crafting": [{
         "ingredients": [{
             "name": "Stone",
@@ -2589,6 +2650,11 @@
   }, {
     "name": "Sulfur Bomb",
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
+    "damage": 20,
     "crafting": [{
         "ingredients": [{
             "name": "Stone",
@@ -14684,6 +14750,7 @@
       "name": "Tablet",
       "count": 22
     },
+    "damage": 1025,
     "crafting": [{
         "ingredients": [{
             "name": "Hellfire Bolt",
