@@ -93,7 +93,7 @@ class IngredientQualityInputs extends Component {
                 id: all.length > 0 ? all[all.length - 1].id + 1 : 1,
                 mats: { quantity: 0, quality: 0 },
               });
-              this.setState({ inputGroups: all });
+              this.setState((state) => ({ inputGroups: all }));
             }}
           >
             +
