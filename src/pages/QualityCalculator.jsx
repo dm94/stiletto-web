@@ -122,7 +122,7 @@ class QualityCalculator extends Component {
     }
     return (
       <p className="text-center m-0 text-primary">
-        {t("Final quality")}:
+        {t("Quality")}:
         <span className="ml-1">{average > 0 ? Math.floor(average) : 0}</span>
       </p>
     );

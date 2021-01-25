@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
 import QualityInput from "./QualityInput";
 
 class IngredientQualityInputs extends Component {
@@ -81,8 +80,6 @@ class IngredientQualityInputs extends Component {
   }
 
   render() {
-    const { t } = this.props;
-
     return (
       <div>
         {this.allInputs()}
@@ -126,4 +123,4 @@ class IngredientQualityInputs extends Component {
   }
 }
 
-export default withTranslation()(IngredientQualityInputs);
+export default IngredientQualityInputs;
