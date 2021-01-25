@@ -17,6 +17,7 @@ import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
 import Map from "./pages/Map";
 import Transactions from "./pages/Transactions";
+import QualityCalculator from "./pages/QualityCalculator";
 import { getStyle } from "./components/BGDarkSyles";
 
 function CrafterApp() {
@@ -84,6 +85,11 @@ function CrafterApp() {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" to="/quality">
+                    {t("Quality")}
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" to="/others">
                     {t("About")}
                   </Link>
@@ -131,6 +137,7 @@ function CrafterApp() {
             <Route path="/others" component={Others} />
             <Route exact path="/transactions" component={Transactions} />
             <Route path="/map" component={Map} />
+            <Route patch="/quality" component={QualityCalculator} />
           </Switch>
         </Analytics>
         <div className={showHideClassName}>
@@ -195,7 +202,7 @@ function CrafterApp() {
           </div>
         </div>
       </main>
-      <footer className="footer mt-auto py-3 container-fluid bg-dark text-white h-100">
+      <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
         <div className="row">
           <div className="col-10">
             Copyright © 2020 Stiletto{" | "}

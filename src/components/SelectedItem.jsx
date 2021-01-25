@@ -15,7 +15,14 @@ class SelectedItem extends Component {
   showIngredient() {
     if (this.props.item.crafting != null) {
       return this.props.item.crafting.map((ingredients) => (
-        <div className="container" key={this.props.item.name}>
+        <div
+          className={
+            this.props.item.crafting.length > 1
+              ? "col-xl-6 border"
+              : "col-xl-12"
+          }
+          key={this.props.item.name}
+        >
           <Ingredients
             crafting={ingredients}
             value={

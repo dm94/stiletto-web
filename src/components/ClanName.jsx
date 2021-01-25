@@ -5,7 +5,7 @@ class ClanName extends Component {
     return (
       <div>
         <svg
-          className="bd-placeholder-img mr-2 rounded"
+          className="bd-placeholder-img mr-2"
           width="32"
           height="32"
           xmlns="http://www.w3.org/2000/svg"
