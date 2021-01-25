@@ -165,127 +165,125 @@ class TradeSystem extends Component {
       );
     } else {
       return (
-        <Fragment>
-          <div className="col-xl-12">
-            <form onSubmit={this.createTrade}>
-              <div className={getStyle("card border-secondary mb-3")}>
-                <div className="card-header">{t("Publish an trade")}</div>
-                <div className="card-body">
-                  <div className="row">
-                    <div className="form-group col-xl-2">
-                      <label htmlFor="tradeType">{t("Type")}</label>
-                      <select
-                        id="tradeType"
-                        className="custom-select"
-                        value={this.state.tradeTypeInput}
-                        onChange={(evt) =>
-                          this.setState({
-                            tradeTypeInput: evt.target.value,
-                          })
-                        }
-                      >
-                        <option value="Supply">{t("Supply")}</option>
-                        <option value="Demand">{t("Demand")}</option>
-                      </select>
-                    </div>
-                    <div className="form-group col-xl-2">
-                      <label htmlFor="resourcetype">
-                        {t("Resource or mats for")}
-                      </label>
-                      <select
-                        id="resourcetype"
-                        className="custom-select"
-                        value={this.state.resourceTypeInput}
-                        onChange={(evt) =>
-                          this.setState({
-                            resourceTypeInput: evt.target.value,
-                          })
-                        }
-                      >
-                        {this.resourcesList(t)}
-                      </select>
-                    </div>
-                    <div className="form-group col-xl-2">
-                      <label htmlFor="regionInput">{t("Region")}</label>
-                      <select
-                        id="regionInput"
-                        className="custom-select"
-                        value={this.state.regionInput}
-                        onChange={(evt) =>
-                          this.setState({
-                            regionInput: evt.target.value,
-                          })
-                        }
-                      >
-                        <option value="EU">EU</option>
-                        <option value="NA">NA</option>
-                        <option value="SA">SA</option>
-                        <option value="ASIA">ASIA</option>
-                        <option value="OCE">OCE</option>
-                      </select>
-                    </div>
-                    <div className="form-group col-xl-2">
-                      <label htmlFor="amountInput">{t("Quantity")}</label>
-                      <input
-                        type="number"
-                        id="amountInput"
-                        className="form-control"
-                        value={this.state.amountInput}
-                        min="0"
-                        onChange={(evt) =>
-                          this.setState({
-                            amountInput: evt.target.value,
-                          })
-                        }
-                      />
-                    </div>
-                    <div className="form-group col-xl-2">
-                      <label htmlFor="qualityInput">
-                        {t("Quality")}: {this.state.qualityInput}
-                      </label>
-                      <input
-                        id="qualityInput"
-                        type="range"
-                        className="form-control-range"
-                        value={this.state.qualityInput}
-                        max="100"
-                        onChange={(evt) =>
-                          this.setState({
-                            qualityInput: evt.target.value,
-                          })
-                        }
-                      />
-                    </div>
-                    <div className="form-group col-xl-2">
-                      <label htmlFor="priceInput">{t("Price per unit")}</label>
-                      <input
-                        id="priceInput"
-                        type="number"
-                        className="form-control"
-                        min="0"
-                        value={this.state.priceInput}
-                        onChange={(evt) =>
-                          this.setState({
-                            priceInput: evt.target.value,
-                          })
-                        }
-                      />
-                    </div>
-                    <div className="form-group col-xl-12">
-                      <button
-                        className="btn btn-lg btn-success btn-block"
-                        type="submit"
-                        value="Submit"
-                      >
-                        {t("Publish")}
-                      </button>
-                    </div>
+        <div className="col-xl-12">
+          <form onSubmit={this.createTrade}>
+            <div className={getStyle("card border-secondary mb-3")}>
+              <div className="card-header">{t("Publish an trade")}</div>
+              <div className="card-body">
+                <div className="row">
+                  <div className="form-group col-xl-2">
+                    <label htmlFor="tradeType">{t("Type")}</label>
+                    <select
+                      id="tradeType"
+                      className="custom-select"
+                      value={this.state.tradeTypeInput}
+                      onChange={(evt) =>
+                        this.setState({
+                          tradeTypeInput: evt.target.value,
+                        })
+                      }
+                    >
+                      <option value="Supply">{t("Supply")}</option>
+                      <option value="Demand">{t("Demand")}</option>
+                    </select>
+                  </div>
+                  <div className="form-group col-xl-2">
+                    <label htmlFor="resourcetype">
+                      {t("Resource or mats for")}
+                    </label>
+                    <select
+                      id="resourcetype"
+                      className="custom-select"
+                      value={this.state.resourceTypeInput}
+                      onChange={(evt) =>
+                        this.setState({
+                          resourceTypeInput: evt.target.value,
+                        })
+                      }
+                    >
+                      {this.resourcesList(t)}
+                    </select>
+                  </div>
+                  <div className="form-group col-xl-2">
+                    <label htmlFor="regionInput">{t("Region")}</label>
+                    <select
+                      id="regionInput"
+                      className="custom-select"
+                      value={this.state.regionInput}
+                      onChange={(evt) =>
+                        this.setState({
+                          regionInput: evt.target.value,
+                        })
+                      }
+                    >
+                      <option value="EU">EU</option>
+                      <option value="NA">NA</option>
+                      <option value="SA">SA</option>
+                      <option value="ASIA">ASIA</option>
+                      <option value="OCE">OCE</option>
+                    </select>
+                  </div>
+                  <div className="form-group col-xl-2">
+                    <label htmlFor="amountInput">{t("Quantity")}</label>
+                    <input
+                      type="number"
+                      id="amountInput"
+                      className="form-control"
+                      value={this.state.amountInput}
+                      min="0"
+                      onChange={(evt) =>
+                        this.setState({
+                          amountInput: evt.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="form-group col-xl-2">
+                    <label htmlFor="qualityInput">
+                      {t("Quality")}: {this.state.qualityInput}
+                    </label>
+                    <input
+                      id="qualityInput"
+                      type="range"
+                      className="form-control-range"
+                      value={this.state.qualityInput}
+                      max="100"
+                      onChange={(evt) =>
+                        this.setState({
+                          qualityInput: evt.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="form-group col-xl-2">
+                    <label htmlFor="priceInput">{t("Price per unit")}</label>
+                    <input
+                      id="priceInput"
+                      type="number"
+                      className="form-control"
+                      min="0"
+                      value={this.state.priceInput}
+                      onChange={(evt) =>
+                        this.setState({
+                          priceInput: evt.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                  <div className="form-group col-xl-12">
+                    <button
+                      className="btn btn-lg btn-success btn-block"
+                      type="submit"
+                      value="Submit"
+                    >
+                      {t("Publish")}
+                    </button>
                   </div>
                 </div>
               </div>
-            </form>
-          </div>
-        </Fragment>
+            </div>
+          </form>
+        </div>
       );
     }
   }
