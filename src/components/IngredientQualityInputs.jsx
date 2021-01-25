@@ -93,7 +93,7 @@ class IngredientQualityInputs extends Component {
             onClick={() => {
               let all = this.state.inputGroups;
               all.push({
-                id: all[all.length - 1].id + 1,
+                id: all.length > 0 ? all[all.length - 1].id + 1 : 1,
                 mats: { quantity: 0, quality: 0 },
               });
               this.setState({ inputGroups: all });
@@ -109,7 +109,7 @@ class IngredientQualityInputs extends Component {
             className="btn btn-danger"
             onClick={() => {
               let all = this.state.inputGroups;
-              if (all.length > 1) {
+              if (all.length > 0) {
                 this.setState({ inputGroups: all.splice(all.length - 1) });
               } else {
                 this.setState({
