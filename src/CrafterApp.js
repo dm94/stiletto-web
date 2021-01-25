@@ -121,114 +121,118 @@ function CrafterApp() {
           </div>
         </div>
       </header>
-      <main role="main" className={getStyle("container-fluid pt-4")}>
-        <Analytics id={process.env.REACT_APP_GA_ID}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/profile" component={DiscordConnection} />
-            <Route path="/crafter" component={ItemSelector} />
-            <Route path="/members" component={MemberList} />
-            <Route path="/clanlist" component={ClanList} />
-            <Route path="/walkerlist" component={WalkerList} />
-            <Route path="/maps" component={ClanMaps} />
-            <Route path="/trades" component={TradeSystem} />
-            <Route path="/diplomacy" component={Diplomacy} />
-            <Route path="/auctions" component={AuctionTimers} />
-            <Route path="/others" component={Others} />
-            <Route exact path="/transactions" component={Transactions} />
-            <Route path="/map" component={Map} />
-            <Route patch="/quality" component={QualityCalculator} />
-          </Switch>
-        </Analytics>
-        <div className={showHideClassName}>
-          <div className="modal-dialog">
-            <div className={getStyle("modal-content")}>
-              <div className="modal-header">{t("Change language")}</div>
-              <div className="modal-body">
-                <div className="row text-center">
-                  <div className="col">
-                    <img
-                      className="img-thumbnail"
-                      src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
-                      alt="Spanish language"
-                      onClick={() => switchLanguage("es")}
-                    />
-                    <p>{t("Spanish")}</p>
-                  </div>
-                  <div className="col">
-                    <img
-                      className="img-thumbnail"
-                      src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
-                      alt="English language"
-                      onClick={() => switchLanguage("en")}
-                    />
-                    <p>{t("English")}</p>
-                  </div>
-                  <div className="col">
-                    <img
-                      className="img-thumbnail"
-                      src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
-                      alt="Russian language"
-                      onClick={() => switchLanguage("ru")}
-                    />
-                    <p>{t("Russian")}</p>
-                  </div>
-                  <div className="col">
-                    <img
-                      className="img-thumbnail"
-                      src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
-                      alt="French language"
-                      onClick={() => switchLanguage("fr")}
-                    />
-                    <p>{t("French")}</p>
+      <main role="main" className="flex-shrink-0">
+        <div className={getStyle("container-fluid pt-4")}>
+          <Analytics id={process.env.REACT_APP_GA_ID}>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/profile" component={DiscordConnection} />
+              <Route path="/crafter" component={ItemSelector} />
+              <Route path="/members" component={MemberList} />
+              <Route path="/clanlist" component={ClanList} />
+              <Route path="/walkerlist" component={WalkerList} />
+              <Route path="/maps" component={ClanMaps} />
+              <Route path="/trades" component={TradeSystem} />
+              <Route path="/diplomacy" component={Diplomacy} />
+              <Route path="/auctions" component={AuctionTimers} />
+              <Route path="/others" component={Others} />
+              <Route exact path="/transactions" component={Transactions} />
+              <Route path="/map" component={Map} />
+              <Route patch="/quality" component={QualityCalculator} />
+            </Switch>
+          </Analytics>
+          <div className={showHideClassName}>
+            <div className="modal-dialog">
+              <div className={getStyle("modal-content")}>
+                <div className="modal-header">{t("Change language")}</div>
+                <div className="modal-body">
+                  <div className="row text-center">
+                    <div className="col">
+                      <img
+                        className="img-thumbnail"
+                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                        alt="Spanish language"
+                        onClick={() => switchLanguage("es")}
+                      />
+                      <p>{t("Spanish")}</p>
+                    </div>
+                    <div className="col">
+                      <img
+                        className="img-thumbnail"
+                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+                        alt="English language"
+                        onClick={() => switchLanguage("en")}
+                      />
+                      <p>{t("English")}</p>
+                    </div>
+                    <div className="col">
+                      <img
+                        className="img-thumbnail"
+                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
+                        alt="Russian language"
+                        onClick={() => switchLanguage("ru")}
+                      />
+                      <p>{t("Russian")}</p>
+                    </div>
+                    <div className="col">
+                      <img
+                        className="img-thumbnail"
+                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
+                        alt="French language"
+                        onClick={() => switchLanguage("fr")}
+                      />
+                      <p>{t("French")}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="modal-footer">
-                <button
-                  className={
-                    localStorage.getItem("darkmode") !== "true"
-                      ? "btn btn-outline-secondary"
-                      : "btn btn-outline-light"
-                  }
-                  onClick={() => {
-                    setChangeLanguageModal(false);
-                  }}
-                >
-                  {t("Accept")}
-                </button>
+                <div className="modal-footer">
+                  <button
+                    className={
+                      localStorage.getItem("darkmode") !== "true"
+                        ? "btn btn-outline-secondary"
+                        : "btn btn-outline-light"
+                    }
+                    onClick={() => {
+                      setChangeLanguageModal(false);
+                    }}
+                  >
+                    {t("Accept")}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </main>
-      <footer className="footer mt-auto py-3 container-fluid bg-dark text-white">
-        <div className="row">
-          <div className="col-10">
-            Copyright © 2020 Stiletto{" | "}
-            <a
-              href="https://github.com/dm94/stiletto-web"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                alt="GitHub last commit"
-                src="https://img.shields.io/github/last-commit/dm94/stiletto-web"
-              ></img>
-            </a>
-            {" | "}
-            {t(
-              "This website uses utilities related to the game 'Last Oasis' but is not affiliated with"
-            )}{" "}
-            <a
-              href="https://www.donkey.team/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Donkey Crew
-            </a>
+      <footer className="footer footer mt-auto">
+        <div className="container-fluid py-3 bg-dark text-white">
+          <div className="row">
+            <div className="col-10">
+              Copyright © 2020 Stiletto{" | "}
+              <a
+                href="https://github.com/dm94/stiletto-web"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  alt="GitHub last commit"
+                  src="https://img.shields.io/github/last-commit/dm94/stiletto-web"
+                ></img>
+              </a>
+              {" | "}
+              {t(
+                "This website uses utilities related to the game 'Last Oasis' but is not affiliated with"
+              )}{" "}
+              <a
+                href="https://www.donkey.team/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Donkey Crew
+              </a>
+            </div>
+            <div className="col-2">{darkMode()}</div>
           </div>
-          <div className="col-2">{darkMode()}</div>
         </div>
       </footer>
       <CookieConsent

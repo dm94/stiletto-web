@@ -70,7 +70,7 @@ class QualityCalculator extends Component {
   showIngredients(t) {
     if (this.state.ingredients.length > 0) {
       return this.state.ingredients.map((ingredient) => (
-        <div key={"column" + ingredient.name} className="col-6">
+        <div key={"column" + ingredient.name} className="col-xl-6 col-sm-12">
           <Ingredient ingredient={ingredient} value={1} />
           <IngredientQualityInputs
             key={"qinputs" + ingredient.name}
@@ -88,7 +88,10 @@ class QualityCalculator extends Component {
       this.state.itemSelected.crafting[0].station != null
     ) {
       return (
-        <div key={"column" + this.state.itemSelected.name} className="col-6">
+        <div
+          key={"column" + this.state.itemSelected.name}
+          className="col-xl-6 col-sm-12"
+        >
           <div className="text-center">
             <Icon
               key={this.state.itemSelected.crafting[0].station}
