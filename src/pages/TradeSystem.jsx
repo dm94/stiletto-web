@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Trade from "../components/Trade";
