@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "./BGDarkSyles";
+import QualityInput from "./QualityInput";
 
 class IngredientQualityInputs extends Component {
   constructor(props) {
@@ -11,41 +11,7 @@ class IngredientQualityInputs extends Component {
     };
   }
 
-  qualitiesInputs(t, input) {
-    return (
-      <div className="input-group input-group-sm mb-3">
-        <input
-          type="number"
-          id={"quantity" + this.props.ingredient.name}
-          max={this.props.ingredient.count}
-          min={0}
-          className={getStyle("form-control")}
-          placeholder={t("Quantity")}
-          aria-label={t("Quantity")}
-          onChange={(evt) =>
-            this.changeMatsQualities(input.id, "quantity", evt.target.value)
-          }
-        />
-        <div className="input-group-prepend">
-          <span className="input-group-text">Q</span>
-        </div>
-        <input
-          id={"quality" + this.props.ingredient.name}
-          type="number"
-          max={100}
-          min={0}
-          className={getStyle("form-control")}
-          placeholder={t("Quality")}
-          aria-label={t("Quality")}
-          onChange={(evt) =>
-            this.changeMatsQualities(input.id, "quality", evt.target.value)
-          }
-        />
-      </div>
-    );
-  }
-
-  changeMatsQualities(id, type, val) {
+  changeMatsQualities = (id, type, val) => {
     let onlyMats = this.state.inputGroups.filter((m) => m.id === id);
     let otherMats = this.state.inputGroups.filter((m) => m.id !== id);
 
@@ -85,23 +51,31 @@ class IngredientQualityInputs extends Component {
       this.props.ingredient.name,
       Math.floor(maxQuality / sumQuantity)
     );
-  }
+  };
 
-  allInputs(t) {
+  allInputs() {
     if (this.state.inputGroups.length > 0) {
       return this.state.inputGroups
         .sort((input) => input.id)
         .map((input) => (
-          <div key={input.id}>{this.qualitiesInputs(t, input)}</div>
+          <QualityInput
+            key={input.id}
+            input={input}
+            ingredient={this.props.ingredient}
+            onChangeMats={this.changeMatsQualities}
+          />
         ));
     } else if (this.state.inputGroups.length === 0) {
       return (
-        <div>
-          {this.qualitiesInputs(t, {
+        <QualityInput
+          key={0}
+          input={{
             id: 0,
             mats: { quantity: 0, quality: 0 },
-          })}
-        </div>
+          }}
+          ingredient={this.props.ingredient}
+          onChangeMats={this.changeMatsQualities}
+        />
       );
     }
   }
@@ -111,7 +85,7 @@ class IngredientQualityInputs extends Component {
 
     return (
       <div>
-        {this.allInputs(t)}
+        {this.allInputs()}
         <div className="btn-group" role="group">
           <button
             type="button"

@@ -5,6 +5,7 @@ import { getStyle } from "../components/BGDarkSyles";
 import Ingredient from "../components/Ingredient";
 import IngredientQualityInputs from "../components/IngredientQualityInputs";
 import Axios from "axios";
+import Icon from "../components/Icon";
 
 class QualityCalculator extends Component {
   state = {
@@ -81,19 +82,48 @@ class QualityCalculator extends Component {
     }
   }
 
+  showStation(t) {
+    if (
+      this.state.itemSelected.crafting != null &&
+      this.state.itemSelected.crafting[0].station != null
+    ) {
+      return (
+        <div key={"column" + this.state.itemSelected.name} className="col-6">
+          <div className="text-center">
+            <Icon
+              key={this.state.itemSelected.crafting[0].station}
+              name={this.state.itemSelected.crafting[0].station}
+            />
+            {t(this.state.itemSelected.crafting[0].station)}
+          </div>
+          <IngredientQualityInputs
+            key={"qinputs" + this.state.itemSelected.crafting[0].station}
+            ingredient={this.state.itemSelected.crafting[0].station}
+            onChangeAverage={this.changeAverage}
+          />
+        </div>
+      );
+    }
+  }
+
   averageQualityTotal(t) {
     let maxQuality = 0;
+    let average = 0;
     this.state.qualities.forEach((mat) => {
       maxQuality = maxQuality + parseInt(mat.average);
     });
+    if (
+      this.state.itemSelected.crafting != null &&
+      this.state.itemSelected.crafting[0].station != null
+    ) {
+      average = maxQuality / (this.state.ingredients.length + 1);
+    } else {
+      average = maxQuality / this.state.ingredients.length;
+    }
     return (
       <p className="text-center m-0 text-primary">
         {t("Final quality")}:
-        <span className="ml-1">
-          {maxQuality / this.state.ingredients.length > 0
-            ? Math.floor(maxQuality / this.state.ingredients.length)
-            : 0}
-        </span>
+        <span className="ml-1">{average > 0 ? Math.floor(average) : 0}</span>
       </p>
     );
   }
@@ -116,8 +146,8 @@ class QualityCalculator extends Component {
               <input
                 className={getStyle("form-control mb-1")}
                 type="search"
-                placeholder="Search"
-                aria-label="Search"
+                placeholder={t("Search")}
+                aria-label={t("Search")}
                 onChange={this.handleInputChangeSearchItem}
                 value={this.state.searchText}
               />
@@ -137,7 +167,9 @@ class QualityCalculator extends Component {
                     ) {
                       this.setState({
                         itemSelected: itemFiltered[0],
-                        ingredients: itemFiltered[0].crafting[0].ingredients,
+                        ingredients: itemFiltered[0].crafting[0].ingredients.filter(
+                          (ing) => ing.name !== "Purified Water"
+                        ),
                         qualities: [],
                       });
                     }
@@ -169,7 +201,10 @@ class QualityCalculator extends Component {
                       t(this.state.itemSelected.name)}
                   </div>
                   <div className="card-body">
-                    <div className="row">{this.showIngredients(t)}</div>
+                    <div className="row">
+                      {this.showIngredients(t)}
+                      {this.showStation(t)}
+                    </div>
                   </div>
                   <div className="card-footer">
                     {this.averageQualityTotal(t)}
