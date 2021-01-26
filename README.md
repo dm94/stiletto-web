@@ -24,7 +24,9 @@ You can see this website in operation here: [www.stiletto.live](https://www.stil
 The website uses several json files to read the game data so that it is always up to date. These files can also be used for other projects.
 
 [items.json](https://github.com/dm94/stiletto-web/blob/master/public/json/items.json) : Here are all the recipes and items in the game including some information such as the cost of learning some recipes or the damage done by some ammunition. Over time I will add more information
+
 [items_min.json](https://github.com/dm94/stiletto-web/blob/master/public/json/items_min.json) : Same as above but minimised to take up less space.
+
 [maps.json](https://github.com/dm94/stiletto-web/blob/master/public/json/maps.json) : List of current game maps
 
 #### Environmental variables
