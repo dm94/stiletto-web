@@ -18,6 +18,7 @@ You can see this website in operation here: [www.stiletto.live](https://www.stil
 - Quality calculator
 - Section where to create a list of allies, enemies or NAP
 - System to make the web multi-language
+- PWA: Now you can have the website as an application on your mobile phone.
 
 #### JSONs
 
