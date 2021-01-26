@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "./BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class Timer extends Component {
   constructor(props) {

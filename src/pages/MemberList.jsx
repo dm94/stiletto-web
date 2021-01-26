@@ -6,7 +6,7 @@ import RequestMemberListItem from "../components/RequestMemberListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class MemberList extends Component {
   constructor(props) {

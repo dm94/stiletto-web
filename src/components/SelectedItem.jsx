@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Ingredients from "./Ingredients";
 import { withTranslation } from "react-i18next";
 import Icon from "./Icon";
-import { getStyle } from "./BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class SelectedItem extends Component {
   constructor(props) {

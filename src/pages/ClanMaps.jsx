@@ -6,7 +6,7 @@ import CreateMapPanel from "../components/CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class ClanMaps extends Component {
   constructor(props) {

@@ -5,7 +5,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class Diplomacy extends Component {
   constructor(props) {

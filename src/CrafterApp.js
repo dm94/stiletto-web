@@ -18,7 +18,7 @@ import Others from "./pages/Others";
 import Map from "./pages/Map";
 import Transactions from "./pages/Transactions";
 import QualityCalculator from "./pages/QualityCalculator";
-import { getStyle } from "./components/BGDarkSyles";
+import { getStyle } from "./BGDarkSyles";
 
 function CrafterApp() {
   const [t] = useTranslation();

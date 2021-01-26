@@ -5,7 +5,7 @@ import TransactionListItem from "../components/TransactionListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class Transactions extends Component {
   constructor(props) {

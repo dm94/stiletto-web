@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import ClanName from "./ClanName";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "./BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class ClanListItem extends Component {
   constructor(props) {

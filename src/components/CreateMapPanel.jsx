@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
-import { getStyle } from "./BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class CreateMapPanel extends Component {
   state = { mapNameInput: "", mapDateInput: "", mapSelectInput: "Canyon" };

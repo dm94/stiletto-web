@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Timer from "../components/Timer";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class AuctionTimers extends Component {
   state = {

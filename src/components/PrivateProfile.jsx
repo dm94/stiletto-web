@@ -5,7 +5,7 @@ import ModalMessage from "./ModalMessage";
 import { withTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
-import { getStyle } from "./BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 import Axios from "axios";
 
 class PrivateProfile extends Component {

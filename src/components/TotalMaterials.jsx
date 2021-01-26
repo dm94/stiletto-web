@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Ingredient from "../components/Ingredient";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "./BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class ListIngredients extends Component {
   render() {

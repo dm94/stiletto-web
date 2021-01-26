@@ -4,7 +4,7 @@ import SelectedItem from "../components/SelectedItem";
 import TotalMaterials from "../components/TotalMaterials";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class ItemSelector extends Component {
   state = {

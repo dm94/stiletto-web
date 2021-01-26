@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CreateMapPanel from "./CreateMapPanel";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "./BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 import Axios from "axios";
 
 class CreateMapNoLog extends Component {

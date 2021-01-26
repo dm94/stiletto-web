@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 var XMLParser = require("react-xml-parser");
 
 class Others extends Component {

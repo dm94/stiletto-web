@@ -5,7 +5,7 @@ import Trade from "../components/Trade";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class TradeSystem extends Component {
   constructor(props) {

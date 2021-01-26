@@ -24,7 +24,13 @@
     "react-router-dom": "^5.2.0",
     "react-router-ga": "^1.2.3",
     "react-scripts": "^3.4.4",
-    "react-xml-parser": "^1.1.8"
+    "react-xml-parser": "^1.1.8",
+    "workbox": "0.0.0",
+    "workbox-core": "^6.0.2",
+    "workbox-expiration": "^6.0.2",
+    "workbox-precaching": "^6.0.2",
+    "workbox-routing": "^6.0.2",
+    "workbox-strategies": "^6.0.2"
   },
   "scripts": {
     "start": "react-scripts start",

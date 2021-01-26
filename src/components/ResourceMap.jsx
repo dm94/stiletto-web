@@ -5,7 +5,7 @@ import { withTranslation } from "react-i18next";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
 import Axios from "axios";
-import { getStyle } from "./BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class ResourceMap extends Component {
   constructor(props) {

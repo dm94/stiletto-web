@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 import Ingredient from "../components/Ingredient";
 import IngredientQualityInputs from "../components/IngredientQualityInputs";
 import Axios from "axios";

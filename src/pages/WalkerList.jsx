@@ -5,7 +5,7 @@ import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getStyle } from "../components/BGDarkSyles";
+import { getStyle } from "../BGDarkSyles";
 
 class WalkerList extends Component {
   constructor(props) {
