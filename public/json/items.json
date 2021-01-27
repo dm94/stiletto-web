@@ -4993,7 +4993,8 @@
         ],
         "station": "Woodworking Station"
       }
-    ]
+    ],
+    "trade_price": 40
   }, {
     "name": "Glass",
     "category": "materials",
