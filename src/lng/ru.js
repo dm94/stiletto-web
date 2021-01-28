@@ -3,22 +3,22 @@ let ru = {
     Crafting: "Крафтинг",
     Clan: "Клан",
     "User Profile": "Профиль",
-    "Clan List": "список кланов",
+    "Clan List": "Список кланов",
     Members: "Члены",
-    "Walker List": "Список Уокеров",
+    "Walker List": "Список ходунов",
     "Resource Maps": "Карты ресурсов",
     Diplomacy: "Дипломатия",
     Trades: "Торговля",
-    "Auction Timers": "Аукционы Таймеры",
+    "Auction Timers": "Таймеры аукционов",
     About: "Другая информация",
-    "Github project": "проект Китаба",
+    "Github project": "проект на github",
     "This website uses utilities related to the game 'Last Oasis' but is not affiliated with":
       "Этот сайт представляет собой утилиты, связанные с игрой Last Oasis, но не связан с",
     "This website uses cookies to enhance the user experience.":
       "Этот веб-сайт использует куки-файлы для повышения удобства работы пользователей.",
-    "Login with discord": "Войти в систему с разладом",
+    "Login with discord": "Войти в систему с помощью discord",
     "Connect in demo mode": "Подключение в демонстрационном режиме",
-    "Crafting Calculator": "Подробнее",
+    "Crafting Calculator": "Калькулятор крафта",
     "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish":
       "Здесь вы можете увидеть материалы, необходимые для создания каждой вещи, и количество, которое вам нужно, как если бы это был список покупок. Это на английском и испанском языках",
     "See how much time is left to finish the auctions of the maps you want easily":
@@ -27,19 +27,19 @@ let ru = {
     "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with":
       "Вы можете создавать предложения или искать их легко отсюда, вам не нужно быть на 20 серверах дискорда в поисках того, с кем можно обменяться.",
     "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way":
-      "Проверьте, когда ваши ходунки использовались в последний раз и кто использовал их простым и быстрым способом. Я создал робота-дискорта, который, помимо предоставления других функций, позволяет проще управлять входом ходячих.",
+      "Проверьте, когда ваши ходунки использовались в последний раз и кто использовал их простым и быстрым способом. Я создал робота-дискорта, который, помимо других функций, позволяет проще управлять входом ходячих.",
     "Clan Diplomacy": "Контролировать клан",
     "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.":
       "Используйте этот раздел, чтобы контролировать свой клан, заключать альянсы или отправлять войны и легко показывать его членам вашего клана.",
     "Create and edit maps to add resources or strategic points.":
       "Создание и редактирование карт для добавления ресурсов или стратегических точек.",
     "Your details": "Ваши данные",
-    "Discord Tag": "Метка Разногласия",
+    "Discord Tag": "Метка Discord",
     "Nick in Game": "Ник в игре",
     "Not defined": "Не определено",
     "No Clan": "Нет клана",
     "Delete user": "Удалить пользователя",
-    "Close session": "выходить из системы",
+    "Close session": "Выходить из системы",
     "Are you sure?": "Ты уверен?",
     "This option is not reversible, your user and all his data will be deleted.":
       "Эта опция не является обратимой, ваш пользователь и все его данные будут удалены.",
@@ -68,7 +68,7 @@ let ru = {
     Total: "Всего",
     Date: "Дата",
     "Member List": "Список членов",
-    Kick: "пинок",
+    Kick: "Пинок",
     "List of requests": "Список запросов",
     Accept: "Принять",
     Reject: "Отклонить",
@@ -79,7 +79,7 @@ let ru = {
     "This option is not reversible, so be careful who you pass it on to in the leadership of the clan":
       "Этот вариант не является обратимым, так что будьте осторожны, кто вы передаете его в руководстве клана",
     "New leader:": "Новый лидер:",
-    "Change leader": "Лидер перемен",
+    "Change leader": "Изменить лидера",
     Delete: "Удалить",
     "Delete Clan": "Удалить клан",
     "By deleting the clan you will delete all the data linked to it, be careful because this option is not reversible":
@@ -92,10 +92,10 @@ let ru = {
     "Application to enter the clan sent":
       "Заявление на вступление в клан отправлено",
     Leader: "Лидер",
-    "Discord Invite Link": "Ссылка Приглашаем к Раздору",
+    "Discord Invite Link": "Ссылка приглашения в discord",
     Actions: "Действия",
     "Send request": "Отправить запрос",
-    "Walker ID": "идентификатор Уолкера",
+    "Walker ID": "Идентификатор ходуна",
     "You don't have access here, try to log in again":
       "У вас нет доступа сюда, попробуйте войти еще раз.",
     "Error when kicking a member": "Ошибка при пинке члена",
@@ -114,15 +114,15 @@ let ru = {
       "Вам нужен клан, чтобы получить доступ к этому разделу.",
     "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.":
       "Для появления ходячих необходимо связать сервер дискорда с кланом, добавить сервер дискорда могут только пользователи, обладающие административными полномочиями.",
-    "Discord ID": "Идентификатор дисконта",
-    "Link discord server": "Сервер разлада связей",
-    "Discord Bot": "Бот Раздора",
+    "Discord ID": "Идентификатор дискорда",
+    "Link discord server": "Связь с сервером discord",
+    "Discord Bot": "Discord бот",
     "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items":
-      "Вам нужно добавить бота в вашу разладку, чтобы составить список ходячих из журнала, но у него также есть и другие функции, такие как проверка того, что вам нужно сделать с различными элементами",
+      "Вам нужно добавить бота в ваш discord, чтобы составить список ходунов из журнала, но у него также есть и другие функции, такие как проверка того, что вам нужно сделать с различными элементами",
     "Map List": "Список карт",
     "Map Name": "Название карты",
     "New Map": "Новая карта",
-    "Open a map that has already been created": "Открыть уже созданную карту",
+    "Open a map that has already been created": "Открыть созданную карту",
     "Open map": "Открыть карту",
     "Map ID": "Map ID",
     "Map Pass": "Map Pass",
@@ -169,7 +169,7 @@ let ru = {
     "No trade offers were found with this filter":
       "С этим фильтром торговые предложения не найдены",
     Allies: "Союзники",
-    "NAP or Settlers": "NAP или сеттлеры",
+    "NAP or Settlers": "Ненаподение или Поселенцы",
     War: "Война",
     "Create a relationship": "Создать отношения",
     "This data is not saved, if you reload the page it will be deleted":
@@ -181,7 +181,7 @@ let ru = {
     "Share map": "Карта акционера",
     Hours: "Часы",
     "Try again later": "Попробуйте позже",
-    Minutes: "Протокол",
+    Minutes: "Минуты",
     Seconds: "Секунды",
     Description: "Описание",
     Start: "Начать",
@@ -190,15 +190,15 @@ let ru = {
     "Latest updates": "Последние обновления",
     "Report Bugs": "Сообщить об ошибках",
     "If you find a bug, let me know on GitHub so it can be fixed!":
-      "Я был бы признателен, если бы вы нашли ошибку и рассказали мне о ней на Гитубе или другой платформе, чтобы я мог ее исправить.",
+      "Я был бы признателен, если бы вы нашли ошибку и рассказали мне о ней на github или другой платформе, чтобы я мог ее исправить.",
     Report: "Сообщить",
     "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.":
-      "Я также создал робота-дискордера, полезного для управления ходунками и составления списка того, что нужно для создания объектов.",
-    "Go to Discord bot": "Перейти к Разногласию, бот",
+      "Я также создал discord бота, полезного для управления ходунами и составления списка того, что нужно для создания предметов.",
+    "Go to Discord bot": "Перейти к discord боту",
     "Dm94Dani´s Discord": "Dm94Dani´s Discord",
     "Buy me a coffee": "Купи мне кофе",
-    "Steam Page": "Steam Page",
-    "Official Discord": "Official Discord",
+    "Steam Page": "Steam страница",
+    "Official Discord": "официальный Discord",
     Wiki: "Wiki",
     Aloe: "Aloe",
     "Animal Fat": "Animal Fat",
