@@ -2657,14 +2657,14 @@
     "damage": 20,
     "crafting": [{
         "ingredients": [{
-            "name": "Stone",
-            "count": 30
+            "name": "Clay",
+            "count": 12
           }, {
             "name": "Earth Wax",
-            "count": 5
+            "count": 18
           }, {
             "name": "Sulfur",
-            "count": 5
+            "count": 30
           }
         ],
         "station": "Camp Fire"
@@ -3631,7 +3631,7 @@
   }, {
     "name": "Fury Fumes",
     "category": "items/vitamins",
-	"trade_price": 400,
+    "trade_price": 400,
     "crafting": [{
         "ingredients": [{
             "name": "Purified Water",
@@ -6325,6 +6325,23 @@
       }
     ]
   }, {
+    "name": "Cobra Walker Upgrade - Water - Tier 1",
+    "category": "walkers/cobra/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 48
+          }, {
+            "name": "Fiber",
+            "count": 40
+          }, {
+            "name": "Hide",
+            "count": 8
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Cobra Walker Upgrade - Cargo - Tier 2",
     "category": "walkers/cobra/upgrades/tier2",
     "crafting": [{
@@ -6574,6 +6591,108 @@
           }, {
             "name": "Fiber Weave",
             "count": 18
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Dinghy Walker Upgrade - Cargo - Tier 1",
+    "category": "walkers/dinghy/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 30
+          }, {
+            "name": "Fiber",
+            "count": 20
+          }, {
+            "name": "Stone",
+            "count": 10
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Dinghy Walker Upgrade - Durability - Tier 1",
+    "category": "walkers/dinghy/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 40
+          }, {
+            "name": "Stone",
+            "count": 40
+          }, {
+            "name": "Hide",
+            "count": 8
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Dinghy Walker Upgrade - Gear - Tier 1",
+    "category": "walkers/dinghy/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 22
+          }, {
+            "name": "Fiber",
+            "count": 18
+          }, {
+            "name": "Stone",
+            "count": 10
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Dinghy Walker Upgrade - Mobility - Tier 1",
+    "category": "walkers/dinghy/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 35
+          }, {
+            "name": "Wood Shaft",
+            "count": 15
+          }, {
+            "name": "Palm Leaves",
+            "count": 20
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Dinghy Walker Upgrade - Torque - Tier 1",
+    "category": "walkers/dinghy/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 32
+          }, {
+            "name": "Wood Shaft",
+            "count": 8
+          }, {
+            "name": "Rope",
+            "count": 3
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Dinghy Walker Upgrade - Water - Tier 1",
+    "category": "walkers/dinghy/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 30
+          }, {
+            "name": "Fiber",
+            "count": 25
+          }, {
+            "name": "Rupu Pelt",
+            "count": 5
           }
         ]
       }
@@ -8938,6 +9057,108 @@
           }, {
             "name": "Fiber Weave",
             "count": 48
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hornet Walker Upgrade - Cargo - Tier 1",
+    "category": "walkers/hornet/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 48
+          }, {
+            "name": "Fiber",
+            "count": 32
+          }, {
+            "name": "Stone",
+            "count": 16
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hornet Walker Upgrade - Durability - Tier 1",
+    "category": "walkers/hornet/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 64
+          }, {
+            "name": "Stone",
+            "count": 64
+          }, {
+            "name": "Rupu Pelt",
+            "count": 24
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hornet Walker Upgrade - Gear - Tier 1",
+    "category": "walkers/hornet/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 36
+          }, {
+            "name": "Fiber",
+            "count": 32
+          }, {
+            "name": "Stone",
+            "count": 16
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hornet Walker Upgrade - Mobility - Tier 1",
+    "category": "walkers/hornet/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 56
+          }, {
+            "name": "Wood Shaft",
+            "count": 24
+          }, {
+            "name": "Palm Leaves",
+            "count": 32
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hornet Walker Upgrade - Torque - Tier 1",
+    "category": "walkers/hornet/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 52
+          }, {
+            "name": "Wood Shaft",
+            "count": 13
+          }, {
+            "name": "Rope",
+            "count": 7
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Hornet Walker Upgrade - Water - Tier 1",
+    "category": "walkers/hornet/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 48
+          }, {
+            "name": "Fiber",
+            "count": 40
+          }, {
+            "name": "Hide",
+            "count": 8
           }
         ]
       }
@@ -12742,6 +12963,108 @@
       }
     ]
   }, {
+    "name": "Titan Walker Upgrade - Cargo - Tier 1",
+    "category": "walkers/titan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 75
+          }, {
+            "name": "Fiber",
+            "count": 50
+          }, {
+            "name": "Stone",
+            "count": 25
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Titan Walker Upgrade - Durability - Tier 1",
+    "category": "walkers/titan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 100
+          }, {
+            "name": "Stone",
+            "count": 100
+          }, {
+            "name": "Rupu Pelt",
+            "count": 38
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Titan Walker Upgrade - Gear - Tier 1",
+    "category": "walkers/titan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 55
+          }, {
+            "name": "Fiber",
+            "count": 45
+          }, {
+            "name": "Stone",
+            "count": 20
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Titan Walker Upgrade - Mobility - Tier 1",
+    "category": "walkers/titan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 88
+          }, {
+            "name": "Wood Shaft",
+            "count": 38
+          }, {
+            "name": "Palm Leaves",
+            "count": 50
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Titan Walker Upgrade - Torque - Tier 1",
+    "category": "walkers/titan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 80
+          }, {
+            "name": "Wood Shaft",
+            "count": 20
+          }, {
+            "name": "Rope",
+            "count": 8
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Titan Walker Upgrade - Water - Tier 1",
+    "category": "walkers/titan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 75
+          }, {
+            "name": "Fiber",
+            "count": 63
+          }, {
+            "name": "Hide",
+            "count": 13
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Titan Walker Upgrade - Cargo - Tier 2",
     "category": "walkers/titan/upgrades/tier2",
     "crafting": [{
@@ -13337,6 +13660,108 @@
           }, {
             "name": "Fiber Weave",
             "count": 45
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Toboggan Walker Upgrade - Cargo - Tier 1",
+    "category": "walkers/toboggan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 48
+          }, {
+            "name": "Fiber",
+            "count": 32
+          }, {
+            "name": "Stone",
+            "count": 16
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Toboggan Walker Upgrade - Durability - Tier 1",
+    "category": "walkers/toboggan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 64
+          }, {
+            "name": "Stone",
+            "count": 64
+          }, {
+            "name": "Rupu Pelt",
+            "count": 24
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Toboggan Walker Upgrade - Gear - Tier 1",
+    "category": "walkers/toboggan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 36
+          }, {
+            "name": "Fiber",
+            "count": 32
+          }, {
+            "name": "Stone",
+            "count": 16
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Toboggan Walker Upgrade - Mobility - Tier 1",
+    "category": "walkers/toboggan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 56
+          }, {
+            "name": "Wood Shaft",
+            "count": 24
+          }, {
+            "name": "Palm Leaves",
+            "count": 32
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Toboggan Walker Upgrade - Torque - Tier 1",
+    "category": "walkers/toboggan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 52
+          }, {
+            "name": "Wood Shaft",
+            "count": 13
+          }, {
+            "name": "Rope",
+            "count": 5
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Toboggan Walker Upgrade - Water - Tier 1",
+    "category": "walkers/toboggan/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 48
+          }, {
+            "name": "Fiber",
+            "count": 40
+          }, {
+            "name": "Hide",
+            "count": 8
           }
         ]
       }
@@ -14060,6 +14485,108 @@
           }, {
             "name": "Nomad Cloth",
             "count": 11
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Tusker Walker Upgrade - Cargo - Tier 1",
+    "category": "walkers/tusker/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 75
+          }, {
+            "name": "Fiber",
+            "count": 50
+          }, {
+            "name": "Stone",
+            "count": 25
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Tusker Walker Upgrade - Durability - Tier 1",
+    "category": "walkers/tusker/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 100
+          }, {
+            "name": "Stone",
+            "count": 100
+          }, {
+            "name": "Rupu Pelt",
+            "count": 38
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Tusker Walker Upgrade - Gear - Tier 1",
+    "category": "walkers/tusker/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 55
+          }, {
+            "name": "Fiber",
+            "count": 45
+          }, {
+            "name": "Stone",
+            "count": 20
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Tusker Walker Upgrade - Mobility - Tier 1",
+    "category": "walkers/tusker/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 88
+          }, {
+            "name": "Wood Shaft",
+            "count": 38
+          }, {
+            "name": "Palm Leaves",
+            "count": 50
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Tusker Walker Upgrade - Torque - Tier 1",
+    "category": "walkers/tusker/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 80
+          }, {
+            "name": "Wood Shaft",
+            "count": 20
+          }, {
+            "name": "Rope",
+            "count": 12
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Tusker Walker Upgrade - Water - Tier 1",
+    "category": "walkers/tusker/upgrades/tier1",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 75
+          }, {
+            "name": "Fiber",
+            "count": 63
+          }, {
+            "name": "Hide",
+            "count": 13
           }
         ]
       }
