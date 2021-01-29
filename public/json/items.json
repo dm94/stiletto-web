@@ -3631,6 +3631,7 @@
   }, {
     "name": "Fury Fumes",
     "category": "items/vitamins",
+	"trade_price": 400,
     "crafting": [{
         "ingredients": [{
             "name": "Purified Water",
