@@ -5245,7 +5245,8 @@
     "category": "materials"
   }, {
     "name": "Rupu Pelt",
-    "category": "materials"
+    "category": "materials",
+    "trade_price": 3.4
   }, {
     "name": "Rupu Vine",
     "category": "materials"
