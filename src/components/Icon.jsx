@@ -11,7 +11,7 @@ class Icon extends Component {
       " icon.png";
 
     if (img.complete) {
-      return <img src={img.src} className="mr-2" width="2%" alt="" />;
+      return <img src={img.src} className="mr-2" width="16" alt="" />;
     } else {
       return "";
     }
