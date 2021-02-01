@@ -532,22 +532,22 @@ let ru = {
     "Nibiran Ingot": "Нибирский слиток(Nibiran Ingot",
     "Lava Fuel": "Лавовое топливо(Lava Fuel",
     "Buffalo Walker Body": "Buffalo Walker Body",
-    "Buffalo Walker Legs (1 of 2": "Buffalo Walker Legs (1 of 2",
+    "Buffalo Walker Legs (1 of 2)": "Buffalo Walker Legs (1 of 2)",
     "Buffalo Walker Legs Armored": "Buffalo Walker Legs Armored",
     "Buffalo Walker Legs Heavy": "Buffalo Walker Legs Heavy",
-    "Buffalo Walker Heavy Wings (1 of 2":
-      "Buffalo Walker Heavy Wings (1 of 2",
-    "Buffalo Walker Medium Wings (1 of 2":
-      "Buffalo Walker Medium Wings (1 of 2",
-    "Buffalo Walker Raider Wings (1 of 2":
-      "Buffalo Walker Raider Wings (1 of 2",
-    "Buffalo Walker Rugged Wings (1 of 2":
-      "Buffalo Walker Rugged Wings (1 of 2",
-    "Buffalo Walker Skirmish Wings (1 of 2":
-      "Buffalo Walker Skirmish Wings (1 of 2",
-    "Buffalo Walker Small Wings (1 of 2":
-      "Buffalo Walker Small Wings (1 of 2",
-    "Buffalo Walker Wings (1 of 2": "Buffalo Walker Wings (1 of 2",
+    "Buffalo Walker Heavy Wings (1 of 2)":
+      "Buffalo Walker Heavy Wings (1 of 2)",
+    "Buffalo Walker Medium Wings (1 of 2)":
+      "Buffalo Walker Medium Wings (1 of 2)",
+    "Buffalo Walker Raider Wings (1 of 2)":
+      "Buffalo Walker Raider Wings (1 of 2)",
+    "Buffalo Walker Rugged Wings (1 of 2)":
+      "Buffalo Walker Rugged Wings (1 of 2)",
+    "Buffalo Walker Skirmish Wings (1 of 2)":
+      "Buffalo Walker Skirmish Wings (1 of 2)",
+    "Buffalo Walker Small Wings (1 of 2)":
+      "Buffalo Walker Small Wings (1 of 2)",
+    "Buffalo Walker Wings (1 of 2)": "Buffalo Walker Wings (1 of 2)",
     "Buffalo Walker Upgrade - Cargo - Tier 2":
       "Buffalo Walker Upgrade - Cargo - Tier 2",
     "Buffalo Walker Upgrade - Durability - Tier 2":
@@ -585,7 +585,7 @@ let ru = {
     "Buffalo Walker Upgrade - Water - Tier 4":
       "Buffalo Walker Upgrade - Water - Tier 4",
     "Camelop Walker Body": "Camelop Walker Body",
-    "Camelop Walker Legs (1 of 2": "Camelop Walker Legs (1 of 2",
+    "Camelop Walker Legs (1 of 2)": "Camelop Walker Legs (1 of 2)",
     "Camelop Walker Upgrade - Torque - Tier 2":
       "Camelop Walker Upgrade - Torque - Tier 2",
     "Camelop Walker Upgrade - Water - Tier 2":
