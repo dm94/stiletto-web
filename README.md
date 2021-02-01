@@ -44,7 +44,6 @@ Library: [gdal2tiles-leaflet](https://github.com/commenthol/gdal2tiles-leaflet)
 Command to generate it:
 `python gdal2tiles.py -l -p raster -z 0-5 -w none <image> <folder>`
 
-#### License
+###Others
 
 Everyone is allowed to make, publish & redistribute videos & content about the software.
-This is an open source project but no distribution or sale is allowed.
