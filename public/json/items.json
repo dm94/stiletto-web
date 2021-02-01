@@ -3734,6 +3734,7 @@
   }, {
     "name": "Vision Powder",
     "category": "items/vitamins",
+    "trade_price": 150,
     "crafting": [{
         "ingredients": [{
             "name": "Huge Cactus Fruit",
