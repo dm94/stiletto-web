@@ -5217,6 +5217,17 @@
         ],
         "output": 10,
         "station": "Lumbermill"
+      }, {
+        "ingredients": [{
+            "name": "Wood Log",
+            "count": 1
+          }, {
+            "name": "Iron Ingot",
+            "count": 2
+          }
+        ],
+        "output": 10,
+        "station": "Lumbermill"
       }
     ]
   }, {
