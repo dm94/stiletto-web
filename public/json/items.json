@@ -3,14 +3,14 @@
     "category": "buildings/construction/barrier",
     "crafting": [{
         "ingredients": [{
-            "name": "Wood",
-            "count": 50
+            "name": "Redwood Wood",
+            "count": 250
           }, {
             "name": "Stone",
-            "count": 20
+            "count": 100
           }, {
-            "name": "Rupu Vine",
-            "count": 3
+            "name": "Rope",
+            "count": 20
           }
         ]
       }
@@ -20,13 +20,13 @@
     "category": "buildings/construction/barrier",
     "crafting": [{
         "ingredients": [{
-            "name": "Wood",
+            "name": "Redwood Wood",
             "count": 250
           }, {
             "name": "Stone",
-            "count": 50
+            "count": 100
           }, {
-            "name": "Rupu Vine",
+            "name": "Rope",
             "count": 20
           }
         ]
@@ -37,14 +37,14 @@
     "category": "buildings/construction/barrier",
     "crafting": [{
         "ingredients": [{
-            "name": "Wood",
-            "count": 80
+            "name": "Redwood Wood",
+            "count": 250
           }, {
             "name": "Stone",
-            "count": 25
+            "count": 100
           }, {
-            "name": "Rupu Vine",
-            "count": 3
+            "name": "Rope",
+            "count": 20
           }
         ]
       }
