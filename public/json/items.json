@@ -5394,6 +5394,9 @@
     "category": "modules",
     "trade_price": 200
   }, {
+    "name": "Hull Hardening Module",
+    "category": "modules"
+  }, {
     "name": "Lifeforce Module",
     "category": "modules",
     "trade_price": 200
