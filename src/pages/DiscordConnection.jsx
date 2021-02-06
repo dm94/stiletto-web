@@ -26,7 +26,7 @@ class DiscordConnection extends Component {
       };
 
       Axios.request(options).then((response) => {
-        if (response.status === 201) {
+        if (response.status === 202) {
           if (response.data.discordid != null) {
             localStorage.setItem("discordid", response.data.discordid);
           }
