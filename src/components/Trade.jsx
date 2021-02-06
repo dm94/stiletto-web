@@ -42,16 +42,16 @@ class Trade extends Component {
           </div>
           <div className="card-body">
             <h5 className="card-title">
-              {this.props.trade.amount !== 0
+              {this.props.trade.amount !== "0"
                 ? this.props.trade.amount + "x "
                 : ""}{" "}
               {t(this.props.trade.resource)}{" "}
-              {this.props.trade.quality !== 0
+              {this.props.trade.quality !== "0"
                 ? "Q: " + this.props.trade.quality
                 : ""}
             </h5>
             <p>
-              {this.props.trade.price !== 0
+              {this.props.trade.price !== "0"
                 ? this.props.trade.price + " Flots/" + t("Unit")
                 : ""}
             </p>
