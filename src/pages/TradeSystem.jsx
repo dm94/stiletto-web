@@ -93,7 +93,7 @@ class TradeSystem extends Component {
     };
 
     Axios.request(options).then((response) => {
-      if (response.status === 202) {
+      if (response.status === 204) {
         this.componentDidMount();
       }
     });
