@@ -48,12 +48,16 @@ class WalkerList extends Component {
   }
 
   deleteWalker = (walkerid) => {
-    Axios.delete(process.env.REACT_APP_API_URL + "/walkers/" + walkerid, {
-      data: {
+    const options = {
+      method: "delete",
+      url: process.env.REACT_APP_API_URL + "/walkers/" + walkerid,
+      params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
-    })
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 204) {
           this.componentDidMount();

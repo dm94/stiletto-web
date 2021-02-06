@@ -26,7 +26,9 @@ class CreateMapNoLog extends Component {
 
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
     event.preventDefault();
-    Axios.post(process.env.REACT_APP_API_URL + "/maps", {
+    const options = {
+      method: "post",
+      url: process.env.REACT_APP_API_URL + "/maps",
       params: {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
@@ -34,7 +36,9 @@ class CreateMapNoLog extends Component {
         mapdate: mapDateInput,
         maptype: mapSelectInput,
       },
-    })
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 201) {
           this.setState({

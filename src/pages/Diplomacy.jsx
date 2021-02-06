@@ -51,21 +51,23 @@ class Diplomacy extends Component {
   }
 
   createRelationship = () => {
-    Axios.post(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "post",
+      url:
+        process.env.REACT_APP_API_URL +
         "/clans/" +
         this.state.clanid +
         "/relationships",
-      {
-        data: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          nameotherclan: this.state.nameOtherClanInput,
-          clanflag: this.state.clanFlagInput,
-          typed: this.state.typedInput,
-        },
-      }
-    )
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        nameotherclan: this.state.nameOtherClanInput,
+        clanflag: this.state.clanFlagInput,
+        typed: this.state.typedInput,
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 201) {
           this.componentDidMount();
@@ -81,19 +83,21 @@ class Diplomacy extends Component {
   };
 
   deleteDiplomacy = (id) => {
-    Axios.delete(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "delete",
+      url:
+        process.env.REACT_APP_API_URL +
         "/clans/" +
         this.state.clanid +
         "/relationships/" +
         id,
-      {
-        data: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-        },
-      }
-    )
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 204) {
           this.componentDidMount();

@@ -88,20 +88,22 @@ class MemberList extends Component {
   }
 
   kickMember = (memberdiscordid) => {
-    Axios.put(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "put",
+      url:
+        process.env.REACT_APP_API_URL +
         "/clans/" +
         this.state.clanid +
         "/members/" +
         memberdiscordid,
-      {
-        data: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          accion: "kick",
-        },
-      }
-    )
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        accion: "kick",
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 202) {
           let members = this.state.members.filter(
@@ -123,20 +125,22 @@ class MemberList extends Component {
   };
 
   acceptMember = (memberdiscordid) => {
-    Axios.put(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "put",
+      url:
+        process.env.REACT_APP_API_URL +
         "/clans/" +
         this.state.clanid +
         "/requests/" +
         memberdiscordid,
-      {
-        data: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          accion: "accept",
-        },
-      }
-    )
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        accion: "accept",
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
@@ -159,20 +163,22 @@ class MemberList extends Component {
   };
 
   rejectMember = (memberdiscordid) => {
-    Axios.put(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "put",
+      url:
+        process.env.REACT_APP_API_URL +
         "/clans/" +
         this.state.clanid +
         "/requests/" +
         memberdiscordid,
-      {
-        data: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          accion: "reject",
-        },
-      }
-    )
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        accion: "reject",
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
@@ -195,15 +201,16 @@ class MemberList extends Component {
   };
 
   deleteClan = () => {
-    Axios.delete(
-      process.env.REACT_APP_API_URL + "/clans/" + this.state.clanid,
-      {
-        data: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-        },
-      }
-    )
+    const options = {
+      method: "delete",
+      url: process.env.REACT_APP_API_URL + "/clans/" + this.state.clanid,
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 204) {
           localStorage.setItem("clanid", "null");
@@ -223,20 +230,22 @@ class MemberList extends Component {
   };
 
   changeOwner = () => {
-    Axios.put(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "put",
+      url:
+        process.env.REACT_APP_API_URL +
         "/clans/" +
         this.state.clanid +
         "/members/" +
         this.state.selectNewOwner,
-      {
-        data: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          accion: "owner",
-        },
-      }
-    )
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        accion: "owner",
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 202) {
           this.setState({ redirectMessage: "Clan updated correctly" });

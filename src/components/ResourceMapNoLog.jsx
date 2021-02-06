@@ -66,18 +66,20 @@ class ResourceMapNoLog extends Component {
   }
 
   deleteResource = (resourceid, resourcetoken) => {
-    Axios.delete(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "delete",
+      url:
+        process.env.REACT_APP_API_URL +
         "/maps/" +
         this.state.mapId +
         "/resources/" +
         resourceid,
-      {
-        data: {
-          token: resourcetoken,
-        },
-      }
-    )
+      params: {
+        token: resourcetoken,
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 204) {
           this.componentDidMount();
@@ -93,25 +95,27 @@ class ResourceMapNoLog extends Component {
   };
 
   createResource = (resourceTypeInput, qualityInput, descriptionInput) => {
-    Axios.post(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "post",
+      url:
+        process.env.REACT_APP_API_URL +
         "/maps/" +
         this.state.mapId +
         "/resources",
-      {
-        data: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          mapid: this.state.mapId,
-          resourcetype: resourceTypeInput,
-          quality: qualityInput,
-          x: this.state.coordinateXInput,
-          y: this.state.coordinateYInput,
-          description: descriptionInput,
-          mappass: this.state.pass,
-        },
-      }
-    )
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+        mapid: this.state.mapId,
+        resourcetype: resourceTypeInput,
+        quality: qualityInput,
+        x: this.state.coordinateXInput,
+        y: this.state.coordinateYInput,
+        description: descriptionInput,
+        mappass: this.state.pass,
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         this.setState({
           coordinateXInput: 0,

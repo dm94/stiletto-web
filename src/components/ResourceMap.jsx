@@ -62,26 +62,28 @@ class ResourceMap extends Component {
   }
 
   createResource = (resourceTypeInput, qualityInput, descriptionInput) => {
-    Axios.post(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "post",
+      url:
+        process.env.REACT_APP_API_URL +
         "/maps/" +
         this.props.map.mapid +
         "/resources",
-      {
-        data: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-          mapid: this.props.map.mapid,
-          resourcetype: resourceTypeInput,
-          quality: qualityInput,
-          x: this.state.coordinateXInput,
-          y: this.state.coordinateYInput,
-          description: descriptionInput,
-          mappass: this.props.map.pass,
-        },
-      }
-    )
+      params: {
+        discordid: this.state.user_discord_id,
+        token: this.state.token,
+        resourcetype: resourceTypeInput,
+        quality: qualityInput,
+        x: this.state.coordinateXInput,
+        y: this.state.coordinateYInput,
+        description: descriptionInput,
+        mappass: this.state.pass,
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
+        console.log(response);
         this.setState({
           coordinateXInput: 0,
           coordinateYInput: 0,
@@ -104,8 +106,11 @@ class ResourceMap extends Component {
 
   changeDataMap = (event) => {
     event.preventDefault();
-    Axios.put(process.env.REACT_APP_API_URL + "/maps/" + this.props.map.mapid, {
-      data: {
+
+    const options = {
+      method: "put",
+      url: process.env.REACT_APP_API_URL + "/maps/" + this.props.map.mapid,
+      params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         mapname: this.state.mapname,
@@ -113,7 +118,9 @@ class ResourceMap extends Component {
         allowediting: this.state.allowEditing ? 1 : 0,
         mappass: this.state.pass,
       },
-    })
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 202) {
           this.setState({ textSuccess: "Map updated" });
@@ -129,18 +136,20 @@ class ResourceMap extends Component {
   };
 
   deleteResource = (resourceid, resourcetoken) => {
-    Axios.delete(
-      process.env.REACT_APP_API_URL +
+    const options = {
+      method: "delete",
+      url:
+        process.env.REACT_APP_API_URL +
         "/maps/" +
         this.props.map.mapid +
         "/resources/" +
         resourceid,
-      {
-        data: {
-          token: resourcetoken,
-        },
-      }
-    )
+      params: {
+        token: resourcetoken,
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 204) {
           this.componentDidMount();

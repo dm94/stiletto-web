@@ -17,11 +17,15 @@ class DiscordConnection extends Component {
   componentDidMount() {
     const parsed = queryString.parse(this.props.location.search);
     if (parsed.code != null) {
-      Axios.post(process.env.REACT_APP_API_URL + "/users/", {
+      const options = {
+        method: "post",
+        url: process.env.REACT_APP_API_URL + "/users/",
         params: {
           code: parsed.code,
         },
-      }).then((response) => {
+      };
+
+      Axios.request(options).then((response) => {
         if (response.status === 201) {
           if (response.data.discordid != null) {
             localStorage.setItem("discordid", response.data.discordid);

@@ -64,14 +64,16 @@ class PrivateProfile extends Component {
 
   deleteUser = (event) => {
     event.preventDefault();
-    Axios.delete(
-      process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
-      {
-        data: {
-          token: this.state.token,
-        },
-      }
-    )
+    const options = {
+      method: "delete",
+      url:
+        process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
+      params: {
+        token: this.state.token,
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         localStorage.clear();
         this.setState({ redirect: true });
@@ -83,15 +85,18 @@ class PrivateProfile extends Component {
 
   addNickInGame = (event) => {
     event.preventDefault();
-    Axios.put(
-      process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
-      {
-        data: {
-          token: this.state.token,
-          dataupdate: this.state.nameInGameInput,
-        },
-      }
-    )
+
+    const options = {
+      method: "put",
+      url:
+        process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
+      params: {
+        token: this.state.token,
+        dataupdate: this.state.nameInGameInput,
+      },
+    };
+
+    Axios.request(options)
       .then((response) => {
         this.setState({ nickname: this.state.nameInGameInput });
       })
@@ -102,12 +107,17 @@ class PrivateProfile extends Component {
 
   leaveClan = (event) => {
     event.preventDefault();
-    Axios.delete(process.env.REACT_APP_API_URL + "/clans", {
-      data: {
+
+    const options = {
+      method: "delete",
+      url: process.env.REACT_APP_API_URL + "/clans",
+      params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
-    })
+    };
+
+    Axios.request(options)
       .then((response) => {
         this.setState({ clanname: null });
       })
@@ -117,15 +127,19 @@ class PrivateProfile extends Component {
   };
 
   createClan = () => {
-    Axios.post(process.env.REACT_APP_API_URL + "/clans", {
-      data: {
+    const options = {
+      method: "post",
+      url: process.env.REACT_APP_API_URL + "/clans",
+      params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         clanname: this.state.addClanNameInput,
         clancolor: this.state.addClanColorInput,
         clandiscord: this.state.addClanDiscordInput,
       },
-    })
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 201) {
           this.componentDidMount();

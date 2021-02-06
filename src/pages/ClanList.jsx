@@ -29,15 +29,16 @@ class ClanList extends Component {
   }
 
   sendRequest = (clanid) => {
-    Axios.post(
-      process.env.REACT_APP_API_URL + "/clans/" + clanid + "/requests",
-      {
-        data: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-        },
-      }
-    ).then((response) => {
+    const options = {
+      method: "post",
+      url: process.env.REACT_APP_API_URL + "/clans/" + clanid + "/requests",
+      params: {
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
+      },
+    };
+
+    Axios.request(options).then((response) => {
       this.setState({ redirect: true });
     });
   };

@@ -83,12 +83,16 @@ class TradeSystem extends Component {
   }
 
   deleteTrade = (idTrade) => {
-    Axios.delete(process.env.REACT_APP_API_URL + "/trades/" + idTrade, {
-      data: {
+    const options = {
+      method: "delete",
+      url: process.env.REACT_APP_API_URL + "/trades/" + idTrade,
+      params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
-    }).then((response) => {
+    };
+
+    Axios.request(options).then((response) => {
       if (response.status === 202) {
         this.componentDidMount();
       }
@@ -113,8 +117,10 @@ class TradeSystem extends Component {
 
   createTrade = (event) => {
     event.preventDefault();
-    Axios.post(process.env.REACT_APP_API_URL + "/trades", {
-      data: {
+    const options = {
+      method: "post",
+      url: process.env.REACT_APP_API_URL + "/trades",
+      params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         resource: this.state.resourceTypeInput,
@@ -124,7 +130,9 @@ class TradeSystem extends Component {
         quality: this.state.qualityInput,
         price: this.state.priceInput,
       },
-    })
+    };
+
+    Axios.request(options)
       .then((response) => {
         this.setState({
           resourceTypeInput: "Aloe",
