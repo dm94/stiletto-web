@@ -20,35 +20,24 @@ class ClanList extends Component {
   }
 
   componentDidMount() {
-    Axios.get(
-      process.env.REACT_APP_API_URL +
-        "/clans.php" +
-        "?discordid=" +
-        this.state.user_discord_id +
-        "&token=" +
-        this.state.token
-    ).then((response) => {
-      if (response.status === 200) {
+    Axios.get(process.env.REACT_APP_API_URL + "/clans").then((response) => {
+      if (response.status === 202) {
         this.setState({ clans: response.data });
-      } else if (response.status === 205) {
-        localStorage.clear();
-        this.setState({
-          error: "You don't have access here, try to log in again",
-        });
       }
       this.setState({ isLoaded: true });
     });
   }
 
   sendRequest = (clanid) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        dataupdate: clanid,
-        accion: "sendrequest",
-      },
-    }).then((response) => {
+    Axios.post(
+      process.env.REACT_APP_API_URL + "/clans/" + clanid + "/requests",
+      {
+        data: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+        },
+      }
+    ).then((response) => {
       this.setState({ redirect: true });
     });
   };

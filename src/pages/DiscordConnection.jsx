@@ -2,17 +2,52 @@ import React, { Component } from "react";
 import PrivateProfile from "../components/PrivateProfile";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import Axios from "axios";
+import LoadingScreen from "../components/LoadingScreen";
 const queryString = require("query-string");
 
 class DiscordConnection extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoaded: false,
+    };
+  }
+
+  componentDidMount() {
+    const parsed = queryString.parse(this.props.location.search);
+    if (parsed.code != null) {
+      Axios.post(process.env.REACT_APP_API_URL + "/users/", {
+        params: {
+          code: parsed.code,
+        },
+      }).then((response) => {
+        if (response.status === 201) {
+          if (response.data.discordid != null) {
+            localStorage.setItem("discordid", response.data.discordid);
+          }
+          if (response.data.token != null) {
+            localStorage.setItem("token", response.data.token);
+          }
+        }
+      });
+    }
+    this.setState({ isLoaded: true });
+  }
+
   showClanInfo() {
     const { t } = this.props;
     const parsed = queryString.parse(this.props.location.search);
+    var http = window.location.protocol;
+    var slashes = http.concat("//");
+    var host = slashes.concat(window.location.hostname);
     let urlLink =
       "https://discord.com/api/oauth2/authorize?client_id=" +
       process.env.REACT_APP_DISCORD_CLIENT_ID +
       "&redirect_uri=" +
-      process.env.REACT_APP_API_URL +
+      host +
+      (window.location.port ? ":" + window.location.port : "") +
+      "/profile" +
       "/discordlogin.php&scope=identify%20guilds&response_type=code";
     if (parsed.discordid != null && parsed.token != null) {
       localStorage.setItem("discordid", parsed.discordid);
@@ -94,6 +129,9 @@ class DiscordConnection extends Component {
   }
 
   render() {
+    if (!this.state.isLoaded) {
+      return <LoadingScreen />;
+    }
     return <div className="h-100 container">{this.showClanInfo()}</div>;
   }
 }

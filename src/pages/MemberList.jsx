@@ -26,21 +26,28 @@ class MemberList extends Component {
   }
 
   componentDidMount() {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        accion: "seeclanmembers",
-      },
-    })
+    Axios.get(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/members",
+      {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+        },
+      }
+    )
       .then((response) => {
-        if (response.status === 200) {
+        if (response.status === 202) {
           this.setState({ members: response.data });
-        } else if (response.status === 205) {
+        } else if (response.status === 405 || response.status === 401) {
           localStorage.clear();
           this.setState({
             error: "You don't have access here, try to log in again",
           });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
         this.setState({ isLoaded: true });
       })
@@ -48,16 +55,28 @@ class MemberList extends Component {
         this.setState({ error: "Error when connecting to the API" });
       });
 
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        accion: "seeclanrequests",
-      },
-    })
+    Axios.get(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/requests",
+      {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+        },
+      }
+    )
       .then((response) => {
-        if (response.status === 200) {
+        if (response.status === 202) {
           this.setState({ requestMembers: response.data });
+        } else if (response.status === 405 || response.status === 401) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
         this.setState({ isLoadedRequestList: true });
       })
@@ -69,22 +88,33 @@ class MemberList extends Component {
   }
 
   kickMember = (memberdiscordid) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        dataupdate: memberdiscordid,
-        accion: "kickfromclan",
-      },
-    })
+    Axios.put(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/members/" +
+        memberdiscordid,
+      {
+        data: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          accion: "kick",
+        },
+      }
+    )
       .then((response) => {
         if (response.status === 202) {
           let members = this.state.members.filter(
             (m) => m.discordid !== memberdiscordid
           );
           this.setState({ members: members });
-        } else {
-          this.setState({ error: "Error when kicking a member" });
+        } else if (response.status === 405 || response.status === 401) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
@@ -93,14 +123,20 @@ class MemberList extends Component {
   };
 
   acceptMember = (memberdiscordid) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        dataupdate: memberdiscordid,
-        accion: "acceptmember",
-      },
-    })
+    Axios.put(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/requests/" +
+        memberdiscordid,
+      {
+        data: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          accion: "accept",
+        },
+      }
+    )
       .then((response) => {
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
@@ -108,8 +144,13 @@ class MemberList extends Component {
           );
           this.setState({ requestMembers: requestMembers });
           this.componentDidMount();
-        } else {
-          this.setState({ error: "Error when add member" });
+        } else if (response.status === 405 || response.status === 401) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
@@ -118,22 +159,34 @@ class MemberList extends Component {
   };
 
   rejectMember = (memberdiscordid) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        dataupdate: memberdiscordid,
-        accion: "rejectmember",
-      },
-    })
+    Axios.put(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/requests/" +
+        memberdiscordid,
+      {
+        data: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          accion: "reject",
+        },
+      }
+    )
       .then((response) => {
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
             (m) => m.discordid !== memberdiscordid
           );
           this.setState({ requestMembers: requestMembers });
-        } else {
-          this.setState({ error: "Error when reject member" });
+          this.componentDidMount();
+        } else if (response.status === 405 || response.status === 401) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
@@ -142,19 +195,26 @@ class MemberList extends Component {
   };
 
   deleteClan = () => {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        accion: "deleteclan",
-      },
-    })
+    Axios.delete(
+      process.env.REACT_APP_API_URL + "/clans/" + this.state.clanid,
+      {
+        data: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+        },
+      }
+    )
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 204) {
           localStorage.setItem("clanid", "null");
           this.setState({ redirectMessage: "Clan deleted correctly" });
-        } else {
-          this.setState({ error: "Error when delete clan" });
+        } else if (response.status === 405) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
@@ -163,19 +223,30 @@ class MemberList extends Component {
   };
 
   changeOwner = () => {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        dataupdate: this.state.selectNewOwner,
-        accion: "changeowner",
-      },
-    })
+    Axios.put(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/members/" +
+        this.state.selectNewOwner,
+      {
+        data: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          accion: "owner",
+        },
+      }
+    )
       .then((response) => {
         if (response.status === 202) {
           this.setState({ redirectMessage: "Clan updated correctly" });
-        } else {
-          this.setState({ error: "Error when change owner of clan" });
+        } else if (response.status === 405 || response.status === 401) {
+          localStorage.clear();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {

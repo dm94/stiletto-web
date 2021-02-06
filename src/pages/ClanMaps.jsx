@@ -31,7 +31,7 @@ class ClanMaps extends Component {
       .then((response) => response.json())
       .then((maps) => this.setState({ maps }));
 
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+    Axios.get(process.env.REACT_APP_API_URL + "/maps", {
       params: {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
@@ -39,7 +39,7 @@ class ClanMaps extends Component {
     }).then((response) => {
       if (response.status === 200) {
         this.setState({ clanMaps: response.data });
-      } else if (response.status === 205) {
+      } else if (response.status === 401) {
         localStorage.clear();
         this.setState({
           error: "You don't have access here, try to log in again",
@@ -96,22 +96,20 @@ class ClanMaps extends Component {
   }
 
   deleteMap = (mapid) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-      params: {
+    Axios.delete(process.env.REACT_APP_API_URL + "/maps/" + mapid, {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
-        accion: "deletemap",
-        dataupdate: mapid,
       },
     })
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 204) {
           this.setState({
             showDeleteModal: false,
             idMapDeleteModal: null,
           });
           this.componentDidMount();
-        } else if (response.status === 205) {
+        } else if (response.status === 401) {
           localStorage.clear();
           this.setState({
             error: "You don't have access here, try to log in again",
@@ -137,11 +135,10 @@ class ClanMaps extends Component {
 
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
     event.preventDefault();
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-      params: {
+    Axios.post(process.env.REACT_APP_API_URL + "/maps", {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
-        accion: "addmap",
         mapName: mapNameInput,
         mapDate: mapDateInput,
         mapType: mapSelectInput,
@@ -153,11 +150,13 @@ class ClanMaps extends Component {
           mapDateInput: "",
           mapSelectInput: "",
         });
-        if (response.status === 202) {
+        if (response.status === 201) {
           this.componentDidMount();
-        } else if (response.status === 205) {
+        } else if (response.status === 401) {
           localStorage.clear();
           this.setState({ error: "Login again" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {

@@ -26,21 +26,24 @@ class CreateMapNoLog extends Component {
 
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
     event.preventDefault();
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+    Axios.post(process.env.REACT_APP_API_URL + "/maps", {
       params: {
-        accion: "addmapnolog",
+        discordid: localStorage.getItem("discordid"),
+        token: localStorage.getItem("token"),
         mapName: mapNameInput,
         mapDate: mapDateInput,
         mapType: mapSelectInput,
       },
     })
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 201) {
           this.setState({
             mapIdInput: response.data.IdMap,
             mapPassInput: response.data.PassMap,
             showShareMap: true,
           });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
