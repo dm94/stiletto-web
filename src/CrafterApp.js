@@ -16,7 +16,6 @@ import Diplomacy from "./pages/Diplomacy";
 import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
 import Map from "./pages/Map";
-import Transactions from "./pages/Transactions";
 import QualityCalculator from "./pages/QualityCalculator";
 import { getStyle } from "./BGDarkSyles";
 
@@ -65,12 +64,6 @@ function CrafterApp() {
                     </Link>
                     <Link className={getStyle("dropdown-item")} to="/maps">
                       {t("Resource Maps")}
-                    </Link>
-                    <Link
-                      className={getStyle("dropdown-item")}
-                      to="/transactions"
-                    >
-                      {t("Transactions")}
                     </Link>
                   </div>
                 </li>
@@ -136,7 +129,6 @@ function CrafterApp() {
               <Route path="/diplomacy" component={Diplomacy} />
               <Route path="/auctions" component={AuctionTimers} />
               <Route path="/others" component={Others} />
-              <Route exact path="/transactions" component={Transactions} />
               <Route path="/map" component={Map} />
               <Route patch="/quality" component={QualityCalculator} />
             </Switch>

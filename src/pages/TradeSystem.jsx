@@ -32,12 +32,7 @@ class TradeSystem extends Component {
   }
 
   componentDidMount() {
-    Axios.get(process.env.REACT_APP_API_URL + "/trades.php", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-      },
-    }).then((response) => {
+    Axios.get(process.env.REACT_APP_API_URL + "/trades").then((response) => {
       if (response.status === 200) {
         this.setState({ trades: response.data, isLoaded: true });
       }
@@ -88,12 +83,10 @@ class TradeSystem extends Component {
   }
 
   deleteTrade = (idTrade) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/trades.php", {
+    Axios.delete(process.env.REACT_APP_API_URL + "/trades/" + idTrade, {
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
-        accion: "deletetrade",
-        dataupdate: idTrade,
       },
     }).then((response) => {
       if (response.status === 202) {
@@ -120,17 +113,16 @@ class TradeSystem extends Component {
 
   createTrade = (event) => {
     event.preventDefault();
-    Axios.get(process.env.REACT_APP_API_URL + "/trades.php", {
+    Axios.post(process.env.REACT_APP_API_URL + "/trades", {
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
-        accion: "createtrade",
-        resourceTypeInput: this.state.resourceTypeInput,
-        tradeTypeInput: this.state.tradeTypeInput,
-        amountInput: this.state.amountInput,
-        regionInput: this.state.regionInput,
-        qualityInput: this.state.qualityInput,
-        priceInput: this.state.priceInput,
+        resource: this.state.resourceTypeInput,
+        type: this.state.tradeTypeInput,
+        amount: this.state.amountInput,
+        region: this.state.regionInput,
+        quality: this.state.qualityInput,
+        price: this.state.priceInput,
       },
     })
       .then((response) => {
@@ -141,8 +133,14 @@ class TradeSystem extends Component {
           regionInput: "EU",
           qualityInput: 0,
         });
-        if (response.status === 202) {
+        if (response.status === 201) {
           this.componentDidMount();
+        } else if (response.status === 400) {
+          this.setState({ error: "Some data are missing" });
+        } else if (response.status === 401) {
+          this.setState({ error: "These connection data are wrong" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {

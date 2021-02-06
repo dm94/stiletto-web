@@ -26,20 +26,19 @@ class WalkerList extends Component {
   }
 
   componentDidMount() {
-    Axios.get(process.env.REACT_APP_API_URL + "/walkers.php", {
+    Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
     })
       .then((response) => {
-        if (response.status === 200) {
+        if (response.status === 202) {
           this.setState({ walkers: response.data });
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
+        } else if (response.status === 401) {
+          this.setState({ error: "The data entered is incorrect" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
         this.setState({ isLoaded: true });
       })
@@ -49,22 +48,17 @@ class WalkerList extends Component {
   }
 
   deleteWalker = (walkerid) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/walkers.php", {
+    Axios.delete(process.env.REACT_APP_API_URL + "/walkers/" + walkerid, {
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
-        accion: "deletewalker",
-        dataupdate: walkerid,
       },
     })
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 204) {
           this.componentDidMount();
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {

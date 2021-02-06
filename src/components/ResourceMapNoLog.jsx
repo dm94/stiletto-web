@@ -38,33 +38,53 @@ class ResourceMapNoLog extends Component {
         mapId: this.props.mapId,
         pass: this.props.pass,
       });
-      Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-        params: {
-          mapid: this.props.mapId,
-          pass: this.props.pass,
-          accion: "getresourcesnolog",
-        },
-      }).then((response) => {
+
+      Axios.get(
+        process.env.REACT_APP_API_URL +
+          "/maps/" +
+          this.props.mapId +
+          "/resources",
+        {
+          params: {
+            discordid: localStorage.getItem("discordid"),
+            token: localStorage.getItem("token"),
+            mappass: this.props.pass,
+          },
+        }
+      ).then((response) => {
         if (response.status === 200) {
           this.setState({ resourcesInTheMap: response.data });
+        } else if (response.status === 401) {
+          this.setState({
+            error: "Unauthorized",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       });
     }
   }
 
   deleteResource = (resourceid, resourcetoken) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-      params: {
-        accion: "deleteresourcenolog",
-        mapid: this.state.mapId,
-        pass: this.state.pass,
-        dataupdate: resourceid,
-        resourcetoken: resourcetoken,
-      },
-    })
+    Axios.delete(
+      process.env.REACT_APP_API_URL +
+        "/maps/" +
+        this.state.mapId +
+        "/resources/" +
+        resourceid,
+      {
+        params: {
+          token: resourcetoken,
+        },
+      }
+    )
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 204) {
           this.componentDidMount();
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
@@ -73,18 +93,25 @@ class ResourceMapNoLog extends Component {
   };
 
   createResource = (resourceTypeInput, qualityInput, descriptionInput) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-      params: {
-        mapid: this.state.mapId,
-        pass: this.state.pass,
-        accion: "addresourcemapnolog",
-        resourcetype: resourceTypeInput,
-        quality: qualityInput,
-        description: descriptionInput,
-        x: this.state.coordinateXInput,
-        y: this.state.coordinateYInput,
-      },
-    })
+    Axios.post(
+      process.env.REACT_APP_API_URL +
+        "/maps/" +
+        this.state.mapId +
+        "/resources",
+      {
+        params: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          mapid: this.state.mapId,
+          resourcetype: resourceTypeInput,
+          quality: qualityInput,
+          x: this.state.coordinateXInput,
+          y: this.state.coordinateYInput,
+          description: descriptionInput,
+          mappass: this.state.pass,
+        },
+      }
+    )
       .then((response) => {
         this.setState({
           coordinateXInput: 0,
@@ -92,6 +119,10 @@ class ResourceMapNoLog extends Component {
         });
         if (response.status === 202) {
           this.componentDidMount();
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {

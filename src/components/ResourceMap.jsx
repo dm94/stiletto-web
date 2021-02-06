@@ -36,39 +36,51 @@ class ResourceMap extends Component {
       this.setState({ items: response.data });
     });
 
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        dataupdate: this.props.map.mapid,
-        accion: "getresources",
-      },
-    }).then((response) => {
+    Axios.get(
+      process.env.REACT_APP_API_URL +
+        "/maps/" +
+        this.props.map.mapid +
+        "/resources",
+      {
+        params: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+          mappass: this.props.map.pass,
+        },
+      }
+    ).then((response) => {
       if (response.status === 200) {
         this.setState({ resourcesInTheMap: response.data });
-      } else if (response.status === 205) {
-        localStorage.clear();
+      } else if (response.status === 401) {
         this.setState({
-          error: "You don't have access here, try to log in again",
+          error: "Unauthorized",
         });
+      } else if (response.status === 503) {
+        this.setState({ error: "Error connecting to database" });
       }
     });
   }
 
   createResource = (resourceTypeInput, qualityInput, descriptionInput) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        accion: "addresourcemap",
-        mapid: this.props.map.mapid,
-        resourcetype: resourceTypeInput,
-        quality: qualityInput,
-        x: this.state.coordinateXInput,
-        y: this.state.coordinateYInput,
-        description: descriptionInput,
-      },
-    })
+    Axios.post(
+      process.env.REACT_APP_API_URL +
+        "/maps/" +
+        this.props.map.mapid +
+        "/resources",
+      {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          mapid: this.props.map.mapid,
+          resourcetype: resourceTypeInput,
+          quality: qualityInput,
+          x: this.state.coordinateXInput,
+          y: this.state.coordinateYInput,
+          description: descriptionInput,
+          mappass: this.props.map.pass,
+        },
+      }
+    )
       .then((response) => {
         this.setState({
           coordinateXInput: 0,
@@ -77,33 +89,12 @@ class ResourceMap extends Component {
         });
         if (response.status === 202) {
           this.componentDidMount();
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({ error: "Login again" });
-        }
-      })
-      .catch((error) => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
-  };
-
-  changePassword = (event) => {
-    event.preventDefault();
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        accion: "editpassmap",
-        mapid: this.props.map.mapid,
-        dataupdate: this.state.pass,
-      },
-    })
-      .then((response) => {
-        if (response.status === 202) {
-          this.setState({ textSuccess: "Password changed" });
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({ error: "Login again" });
+        } else if (response.status === 401) {
+          this.setState({
+            error: "Unauthorized",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
@@ -113,23 +104,23 @@ class ResourceMap extends Component {
 
   changeDataMap = (event) => {
     event.preventDefault();
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
+    Axios.put(process.env.REACT_APP_API_URL + "/maps/" + this.props.map.mapid, {
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
-        accion: "editmap",
-        mapid: this.props.map.mapid,
         mapname: this.state.mapname,
         mapdate: this.state.dateofburning,
         allowediting: this.state.allowEditing ? 1 : 0,
+        mappass: this.state.pass,
       },
     })
       .then((response) => {
         if (response.status === 202) {
           this.setState({ textSuccess: "Map updated" });
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({ error: "Login again" });
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
@@ -138,22 +129,25 @@ class ResourceMap extends Component {
   };
 
   deleteResource = (resourceid, resourcetoken) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/maps.php", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        accion: "deleteresource",
-        mapid: this.props.map.mapid,
-        dataupdate: resourceid,
-        resourcetoken: resourcetoken,
-      },
-    })
+    Axios.delete(
+      process.env.REACT_APP_API_URL +
+        "/maps/" +
+        this.props.map.mapid +
+        "/resources/" +
+        resourceid,
+      {
+        params: {
+          token: resourcetoken,
+        },
+      }
+    )
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 204) {
           this.componentDidMount();
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({ error: "Login again" });
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
@@ -224,15 +218,6 @@ class ResourceMap extends Component {
                 </button>
               </div>
             </div>
-            <button
-              className="btn btn-lg btn-outline-success btn-block"
-              type="submit"
-              value="Submit"
-            >
-              {t("Update Data")}
-            </button>
-          </form>
-          <form onSubmit={this.changePassword}>
             <div className="form-group">
               <label htmlFor="password">{t("Password")}</label>
               <input
@@ -250,7 +235,7 @@ class ResourceMap extends Component {
               type="submit"
               value="Submit"
             >
-              {t("Change Password")}
+              {t("Update Data")}
             </button>
           </form>
         </div>

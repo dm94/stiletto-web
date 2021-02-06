@@ -25,13 +25,18 @@ class Diplomacy extends Component {
   }
 
   componentDidMount() {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        accion: "seerelationships",
-      },
-    }).then((response) => {
+    Axios.get(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/relationships",
+      {
+        params: {
+          discordid: localStorage.getItem("discordid"),
+          token: localStorage.getItem("token"),
+        },
+      }
+    ).then((response) => {
       if (response.status === 202) {
         this.setState({ listOfRelations: response.data });
       }
@@ -46,32 +51,56 @@ class Diplomacy extends Component {
   }
 
   createRelationship = () => {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        accion: "createrelationships",
-        nameotherclan: this.state.nameOtherClanInput,
-        clanflag: this.state.clanFlagInput,
-        typed: this.state.typedInput,
-      },
-    }).catch((error) => {
-      this.setState({ error: "Try again later" });
-    });
+    Axios.post(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/relationships",
+      {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          nameotherclan: this.state.nameOtherClanInput,
+          clanflag: this.state.clanFlagInput,
+          typed: this.state.typedInput,
+        },
+      }
+    )
+      .then((response) => {
+        if (response.status === 201) {
+          this.componentDidMount();
+        } else if (response.status === 405) {
+          this.setState({ error: "Method Not Allowed" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Try again later" });
+      });
   };
 
   deleteDiplomacy = (id) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans.php", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        accion: "deleterelationship",
-        dataupdate: id,
-      },
-    })
+    Axios.delete(
+      process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanid +
+        "/relationships/" +
+        id,
+      {
+        params: {
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+        },
+      }
+    )
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 204) {
           this.componentDidMount();
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       })
       .catch((error) => {
