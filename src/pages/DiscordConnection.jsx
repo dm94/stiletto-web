@@ -38,11 +38,14 @@ class DiscordConnection extends Component {
   showClanInfo() {
     const { t } = this.props;
     const parsed = queryString.parse(this.props.location.search);
+    var http = window.location.protocol;
+    var slashes = http.concat("//");
+    var host = slashes.concat(window.location.hostname);
     let urlLink =
       "https://discord.com/api/oauth2/authorize?client_id=" +
       process.env.REACT_APP_DISCORD_CLIENT_ID +
       "&redirect_uri=" +
-      window.location.hostname +
+      host +
       (window.location.port ? ":" + window.location.port : "") +
       "/profile" +
       "/discordlogin.php&scope=identify%20guilds&response_type=code";
