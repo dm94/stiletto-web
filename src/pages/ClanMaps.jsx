@@ -139,9 +139,9 @@ class ClanMaps extends Component {
       data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
-        mapName: mapNameInput,
-        mapDate: mapDateInput,
-        mapType: mapSelectInput,
+        mapname: mapNameInput,
+        mapdate: mapDateInput,
+        maptype: mapSelectInput,
       },
     })
       .then((response) => {

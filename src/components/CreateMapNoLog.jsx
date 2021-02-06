@@ -30,9 +30,9 @@ class CreateMapNoLog extends Component {
       params: {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
-        mapName: mapNameInput,
-        mapDate: mapDateInput,
-        mapType: mapSelectInput,
+        mapname: mapNameInput,
+        mapdate: mapDateInput,
+        maptype: mapSelectInput,
       },
     })
       .then((response) => {
