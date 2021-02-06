@@ -19,7 +19,7 @@ class DiscordConnection extends Component {
     if (parsed.code != null) {
       const options = {
         method: "post",
-        url: process.env.REACT_APP_API_URL + "/users",
+        url: process.env.REACT_APP_API_URL + "/users/auth",
         params: {
           code: parsed.code,
         },
