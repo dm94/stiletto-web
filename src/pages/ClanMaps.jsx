@@ -97,7 +97,7 @@ class ClanMaps extends Component {
 
   deleteMap = (mapid) => {
     Axios.delete(process.env.REACT_APP_API_URL + "/maps/" + mapid, {
-      params: {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
@@ -136,7 +136,7 @@ class ClanMaps extends Component {
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
     event.preventDefault();
     Axios.post(process.env.REACT_APP_API_URL + "/maps", {
-      params: {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         mapName: mapNameInput,

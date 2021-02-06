@@ -84,7 +84,7 @@ class TradeSystem extends Component {
 
   deleteTrade = (idTrade) => {
     Axios.delete(process.env.REACT_APP_API_URL + "/trades/" + idTrade, {
-      params: {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
@@ -114,7 +114,7 @@ class TradeSystem extends Component {
   createTrade = (event) => {
     event.preventDefault();
     Axios.post(process.env.REACT_APP_API_URL + "/trades", {
-      params: {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         resource: this.state.resourceTypeInput,

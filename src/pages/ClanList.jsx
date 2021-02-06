@@ -32,7 +32,7 @@ class ClanList extends Component {
     Axios.post(
       process.env.REACT_APP_API_URL + "/clans/" + clanid + "/requests",
       {
-        params: {
+        data: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
         },

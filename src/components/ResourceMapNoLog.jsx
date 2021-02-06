@@ -73,7 +73,7 @@ class ResourceMapNoLog extends Component {
         "/resources/" +
         resourceid,
       {
-        params: {
+        data: {
           token: resourcetoken,
         },
       }
@@ -99,7 +99,7 @@ class ResourceMapNoLog extends Component {
         this.state.mapId +
         "/resources",
       {
-        params: {
+        data: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
           mapid: this.state.mapId,

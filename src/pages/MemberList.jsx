@@ -95,7 +95,7 @@ class MemberList extends Component {
         "/members/" +
         memberdiscordid,
       {
-        params: {
+        data: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
           accion: "kick",
@@ -130,7 +130,7 @@ class MemberList extends Component {
         "/requests/" +
         memberdiscordid,
       {
-        params: {
+        data: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
           accion: "accept",
@@ -166,7 +166,7 @@ class MemberList extends Component {
         "/requests/" +
         memberdiscordid,
       {
-        params: {
+        data: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
           accion: "reject",
@@ -198,7 +198,7 @@ class MemberList extends Component {
     Axios.delete(
       process.env.REACT_APP_API_URL + "/clans/" + this.state.clanid,
       {
-        params: {
+        data: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
         },
@@ -230,7 +230,7 @@ class MemberList extends Component {
         "/members/" +
         this.state.selectNewOwner,
       {
-        params: {
+        data: {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
           accion: "owner",

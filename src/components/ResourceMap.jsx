@@ -68,7 +68,7 @@ class ResourceMap extends Component {
         this.props.map.mapid +
         "/resources",
       {
-        params: {
+        data: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
           mapid: this.props.map.mapid,
@@ -105,7 +105,7 @@ class ResourceMap extends Component {
   changeDataMap = (event) => {
     event.preventDefault();
     Axios.put(process.env.REACT_APP_API_URL + "/maps/" + this.props.map.mapid, {
-      params: {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         mapname: this.state.mapname,
@@ -136,7 +136,7 @@ class ResourceMap extends Component {
         "/resources/" +
         resourceid,
       {
-        params: {
+        data: {
           token: resourcetoken,
         },
       }

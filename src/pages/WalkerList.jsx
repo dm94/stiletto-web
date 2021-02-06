@@ -49,7 +49,7 @@ class WalkerList extends Component {
 
   deleteWalker = (walkerid) => {
     Axios.delete(process.env.REACT_APP_API_URL + "/walkers/" + walkerid, {
-      params: {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },

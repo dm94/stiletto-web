@@ -41,7 +41,7 @@ class PrivateProfile extends Component {
       }
     )
       .then((response) => {
-        if (response.status === 200) {
+        if (response.status === 202) {
           localStorage.setItem("clanid", response.data.clanid);
           this.setState({
             discordtag: response.data.discordtag,
@@ -67,7 +67,7 @@ class PrivateProfile extends Component {
     Axios.delete(
       process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
       {
-        params: {
+        data: {
           token: this.state.token,
         },
       }
@@ -86,7 +86,7 @@ class PrivateProfile extends Component {
     Axios.put(
       process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
       {
-        params: {
+        data: {
           token: this.state.token,
           dataupdate: this.state.nameInGameInput,
         },
@@ -103,7 +103,7 @@ class PrivateProfile extends Component {
   leaveClan = (event) => {
     event.preventDefault();
     Axios.delete(process.env.REACT_APP_API_URL + "/clans", {
-      params: {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
@@ -118,7 +118,7 @@ class PrivateProfile extends Component {
 
   createClan = () => {
     Axios.post(process.env.REACT_APP_API_URL + "/clans", {
-      params: {
+      data: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         clanname: this.state.addClanNameInput,

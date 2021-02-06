@@ -57,7 +57,7 @@ class Diplomacy extends Component {
         this.state.clanid +
         "/relationships",
       {
-        params: {
+        data: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
           nameotherclan: this.state.nameOtherClanInput,
@@ -88,7 +88,7 @@ class Diplomacy extends Component {
         "/relationships/" +
         id,
       {
-        params: {
+        data: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
         },
