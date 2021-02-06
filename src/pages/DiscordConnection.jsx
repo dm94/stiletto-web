@@ -33,6 +33,10 @@ class DiscordConnection extends Component {
           if (response.data.token != null) {
             localStorage.setItem("token", response.data.token);
           }
+          this.setState({
+            discordid: response.data.discordid,
+            token: response.data.token,
+          });
         }
       });
     }
@@ -133,10 +137,10 @@ class DiscordConnection extends Component {
   }
 
   render() {
-    if (!this.state.isLoaded) {
-      return <LoadingScreen />;
+    if (this.state.isLoaded) {
+      return <div className="h-100 container">{this.showClanInfo()}</div>;
     }
-    return <div className="h-100 container">{this.showClanInfo()}</div>;
+    return <LoadingScreen />;
   }
 }
 

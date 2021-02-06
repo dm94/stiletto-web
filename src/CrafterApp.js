@@ -284,12 +284,17 @@ function discordButton(t) {
       </Link>
     );
   } else {
+    var http = window.location.protocol;
+    var slashes = http.concat("//");
+    var host = slashes.concat(window.location.hostname);
     let urlLink =
       "https://discord.com/api/oauth2/authorize?client_id=" +
       process.env.REACT_APP_DISCORD_CLIENT_ID +
       "&redirect_uri=" +
-      process.env.REACT_APP_API_URL +
-      "/discordlogin.php&scope=identify%20guilds&response_type=code";
+      host +
+      (window.location.port ? ":" + window.location.port : "") +
+      "/profile" +
+      "&scope=identify%20guilds&response_type=code";
     return (
       <a className="btn btn-outline-light" href={urlLink}>
         <i className="fab fa-discord"></i> {t("Login with discord")}
