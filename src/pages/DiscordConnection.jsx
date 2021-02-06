@@ -52,7 +52,7 @@ class DiscordConnection extends Component {
       host +
       (window.location.port ? ":" + window.location.port : "") +
       "/profile" +
-      "/discordlogin.php&scope=identify%20guilds&response_type=code";
+      "&scope=identify%20guilds&response_type=code";
     if (parsed.discordid != null && parsed.token != null) {
       localStorage.setItem("discordid", parsed.discordid);
       localStorage.setItem("token", parsed.token);
