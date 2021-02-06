@@ -83,7 +83,6 @@ class ResourceMap extends Component {
 
     Axios.request(options)
       .then((response) => {
-        console.log(response);
         this.setState({
           coordinateXInput: 0,
           coordinateYInput: 0,
