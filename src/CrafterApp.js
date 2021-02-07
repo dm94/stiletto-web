@@ -62,7 +62,14 @@ function CrafterApp() {
                     <Link className={getStyle("dropdown-item")} to="/clanlist">
                       {t("Clan List")}
                     </Link>
-                    <Link className={getStyle("dropdown-item")} to="/maps">
+                    <Link
+                      className={getStyle("dropdown-item")}
+                      to={
+                        localStorage.getItem("discordid") != null
+                          ? "/maps"
+                          : "/map"
+                      }
+                    >
                       {t("Resource Maps")}
                     </Link>
                   </div>

@@ -6,6 +6,7 @@ import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { getStyle } from "../BGDarkSyles";
+const queryString = require("query-string");
 
 class WalkerList extends Component {
   constructor(props) {
@@ -22,10 +23,36 @@ class WalkerList extends Component {
       isFiltered: false,
       searchInput: "",
       walkersFiltered: [],
+      discordList: [],
     };
   }
 
   componentDidMount() {
+    const parsed = queryString.parse(this.props.location.search);
+    if (parsed.code != null) {
+      var http = window.location.protocol;
+      var slashes = http.concat("//");
+      var host = slashes.concat(window.location.hostname);
+      const options = {
+        method: "get",
+        url: process.env.REACT_APP_API_URL + "/walkers/auth",
+        params: {
+          code: parsed.code,
+          discordid: this.state.user_discord_id,
+          token: this.state.token,
+          redirect:
+            host +
+            (window.location.port ? ":" + window.location.port : "") +
+            "/walkerlist",
+        },
+      };
+
+      Axios.request(options).then((response) => {
+        if (response.status === 202) {
+          this.setState({ discordList: response.data });
+        }
+      });
+    }
     Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
       params: {
         discordid: this.state.user_discord_id,
@@ -98,27 +125,28 @@ class WalkerList extends Component {
 
   linkDiscordServer = (event) => {
     event.preventDefault();
-    Axios.get(process.env.REACT_APP_API_URL + "/walkers.php", {
+
+    const options = {
+      method: "post",
+      url: process.env.REACT_APP_API_URL + "/walkers/auth",
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
-        accion: "linkdiscordserver",
-        dataupdate: this.state.inputDiscodId,
+        discordserverid: this.state.inputDiscodId,
       },
-    })
+    };
+
+    Axios.request(options)
       .then((response) => {
         if (response.status === 202) {
-          window.location.href =
-            "https://discord.com/api/oauth2/authorize?client_id=" +
-            process.env.REACT_APP_DISCORD_CLIENT_ID +
-            "&redirect_uri=" +
-            process.env.REACT_APP_API_URL +
-            "/walkers.php&scope=identify%20guilds&response_type=code";
-        } else if (response.status === 205) {
-          localStorage.clear();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
+          this.setState({ discordList: response.data });
+        }
+      })
+      .then((response) => {
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 503) {
+          this.setState({ error: "Error when connecting with the database" });
         }
       })
       .catch((error) => {
@@ -139,72 +167,129 @@ class WalkerList extends Component {
     this.setState({ walkersFiltered: [], isFiltered: false, searchInput: "" });
   };
 
+  discordServerList() {
+    if (this.state.discordList != null) {
+      return this.state.discordList.map((item) => (
+        <option key={item.id} value={item.id}>
+          {item.name}
+        </option>
+      ));
+    }
+  }
+
   serverLinkButton(t) {
     if (
       this.state.walkers != null &&
       this.state.walkers[0] != null &&
       this.state.walkers[0].discordid == null
     ) {
-      return (
-        <div className="row">
-          <div className="col-xl-4">
-            <div className={getStyle("card border-secondary mb-3")}>
-              <div className="card-body">
-                <div className="text-info mb-3">
-                  {t(
-                    "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
-                  )}
-                </div>
-                <form onSubmit={this.linkDiscordServer}>
-                  <div className="form-group">
-                    <label htmlFor="discordlist">{t("Discord ID")}</label>
-                    <input
-                      className={getStyle("form-control")}
-                      type="number"
-                      value={this.state.inputDiscodId}
-                      onChange={(evt) =>
-                        this.setState({
-                          inputDiscodId: evt.target.value,
-                        })
-                      }
-                      required
-                    />
+      if (this.state.walkers[0].leaderid !== this.state.user_discord_id) {
+        return;
+      }
+      if (this.state.discordList != null && this.state.discordList.length > 0) {
+        return (
+          <div className="row">
+            <div className="col-xl-4">
+              <div className={getStyle("card border-secondary mb-3")}>
+                <div className="card-body">
+                  <div className="text-info mb-3">
+                    {t(
+                      "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+                    )}
                   </div>
-                  <button
+                  <form onSubmit={this.linkDiscordServer}>
+                    <div className="form-group">
+                      <label htmlFor="discordlist">{t("Discord ID")}</label>
+                      <select
+                        id="discordlist"
+                        className={getStyle("custom-select")}
+                        value={this.state.inputDiscodId}
+                        onChange={(evt) =>
+                          this.setState({
+                            inputDiscodId: evt.target.value,
+                          })
+                        }
+                        required
+                      >
+                        {this.discordServerList()}
+                      </select>
+                    </div>
+                    <button
+                      className="btn btn-lg btn-outline-success btn-block"
+                      type="submit"
+                      value="Submit"
+                    >
+                      {t("Link discord server")}
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            {this.discordBotSection(t)}
+          </div>
+        );
+      } else {
+        var http = window.location.protocol;
+        var slashes = http.concat("//");
+        var host = slashes.concat(window.location.hostname);
+        let urlLink =
+          "https://discord.com/api/oauth2/authorize?client_id=" +
+          process.env.REACT_APP_DISCORD_CLIENT_ID +
+          "&redirect_uri=" +
+          host +
+          (window.location.port ? ":" + window.location.port : "") +
+          "/walkerlist" +
+          "&scope=identify%20guilds&response_type=code";
+        return (
+          <div className="row">
+            <div className="col-xl-4">
+              <div className={getStyle("card border-secondary mb-3")}>
+                <div className="card-body">
+                  <div className="text-info mb-3">
+                    {t(
+                      "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+                    )}
+                  </div>
+                  <a
                     className="btn btn-lg btn-outline-success btn-block"
-                    type="submit"
-                    value="Submit"
+                    href={urlLink}
                   >
                     {t("Link discord server")}
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-4">
-            <div className={getStyle("card border-secondary mb-3")}>
-              <div className="card-header">{t("Discord Bot")}</div>
-              <div className="card-body">
-                <div className="mb-3">
-                  {t(
-                    "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items"
-                  )}
+                  </a>
                 </div>
-
-                <a
-                  className="btn btn-lg btn-outline-success btn-block"
-                  href="https://top.gg/bot/715948052979908911"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {t("Discord Bot")}
-                </a>
               </div>
             </div>
+            {this.discordBotSection(t)}
+          </div>
+        );
+      }
+    }
+  }
+
+  discordBotSection(t) {
+    return (
+      <div className="col-xl-4">
+        <div className={getStyle("card border-secondary mb-3")}>
+          <div className="card-header">{t("Discord Bot")}</div>
+          <div className="card-body">
+            <div className="mb-3">
+              {t(
+                "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items"
+              )}
+            </div>
+
+            <a
+              className="btn btn-lg btn-outline-success btn-block"
+              href="https://top.gg/bot/715948052979908911"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("Discord Bot")}
+            </a>
           </div>
         </div>
-      );
-    }
+      </div>
+    );
   }
 
   render() {
