@@ -19,6 +19,7 @@ class Diplomacy extends Component {
       listOfRelations: null,
       typedInput: 0,
       clanFlagInput: "",
+      clanFlagSymbolInput: "C1",
       nameOtherClanInput: "",
       isLeader: false,
     };
@@ -64,6 +65,7 @@ class Diplomacy extends Component {
         nameotherclan: this.state.nameOtherClanInput,
         clanflag: this.state.clanFlagInput,
         typed: this.state.typedInput,
+        symbol: this.state.clanFlagSymbolInput,
       },
     };
 
@@ -169,7 +171,7 @@ class Diplomacy extends Component {
   createNewRelationship(t) {
     if (this.state.isLeader) {
       return (
-        <div className="col-md-3">
+        <div className="col-md-12">
           <div className={getStyle("card mb-4 shadow-sm")}>
             <div className="card-body">
               <form onSubmit={this.createRelationship}>
@@ -225,6 +227,12 @@ class Diplomacy extends Component {
                     required
                   />
                 </div>
+                <div className="form-group">
+                  <label htmlFor="sigilClanFlagInput">{t("Simbol")}</label>
+                  <div className="col-12">
+                    <div className="row">{this.simbolsList()}</div>
+                  </div>
+                </div>
                 <button
                   className="btn btn-lg btn-outline-primary btn-block"
                   type="submit"
@@ -238,6 +246,33 @@ class Diplomacy extends Component {
         </div>
       );
     }
+  }
+
+  simbolsList() {
+    const symbols = [];
+    for (var i = 1; i < 31; i++) {
+      symbols.push("C" + i);
+    }
+    return symbols.map((symbol) => (
+      <div className="m-2 col-sm-1 text-center" key={"symbol-" + symbol}>
+        <img
+          src={
+            process.env.REACT_APP_API_GENERAL_URL +
+            "/symbols/" +
+            symbol +
+            ".png"
+          }
+          className={
+            symbol === this.state.clanFlagSymbolInput
+              ? "img-fluid img-thumbnail"
+              : "img-fluid"
+          }
+          alt={symbol}
+          id={"symbol-img-" + symbol}
+          onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
+        />
+      </div>
+    ));
   }
 
   render() {
@@ -292,6 +327,7 @@ class Diplomacy extends Component {
           />
         </Helmet>
         <div className="row">
+          {this.createNewRelationship(t)}
           <div className="col-md-3">
             <div className="card mb-4 shadow-sm border-success">
               <div className="card-header bg-success text-white text-center">
@@ -318,7 +354,6 @@ class Diplomacy extends Component {
               <div className="card-body">{this.listOfEnemies()}</div>
             </div>
           </div>
-          {this.createNewRelationship(t)}
         </div>
       </div>
     );
