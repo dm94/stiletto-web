@@ -254,7 +254,7 @@ class Diplomacy extends Component {
       symbols.push("C" + i);
     }
     return symbols.map((symbol) => (
-      <div className="m-2 col-sm-1 text-center" key={"symbol-" + symbol}>
+      <div className="col-1" key={"symbol-" + symbol}>
         <img
           src={
             process.env.REACT_APP_API_GENERAL_URL +
