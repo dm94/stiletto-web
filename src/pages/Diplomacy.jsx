@@ -328,7 +328,7 @@ class Diplomacy extends Component {
         </Helmet>
         <div className="row">
           {this.createNewRelationship(t)}
-          <div className="col-md-3">
+          <div className="col-md-4">
             <div className="card mb-4 shadow-sm border-success">
               <div className="card-header bg-success text-white text-center">
                 {t("Allies")}
@@ -338,7 +338,7 @@ class Diplomacy extends Component {
               </div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-4">
             <div className="card mb-4 shadow-sm border-warning">
               <div className="card-header bg-warning text-dark text-center">
                 {t("NAP or Settlers")}
@@ -346,7 +346,7 @@ class Diplomacy extends Component {
               <div className="card-body">{this.listOfNAP()}</div>
             </div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-4">
             <div className="card mb-4 shadow-sm border-danger">
               <div className="card-header bg-danger text-white text-center">
                 {t("War")}
