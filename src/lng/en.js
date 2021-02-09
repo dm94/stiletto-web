@@ -169,6 +169,7 @@ let en = {
       "No trade offers were found with this filter",
     Allies: "Allies",
     "NAP or Settlers": "NAP or Settlers",
+    Symbol: "Symbol",
     War: "War",
     "Create a relationship": "Create a relationship",
     "This data is not saved, if you reload the page it will be deleted":

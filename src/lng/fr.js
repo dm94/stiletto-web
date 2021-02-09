@@ -171,6 +171,7 @@ let fr = {
       "Aucune offre commerciale n'a été trouvée avec ce filtre",
     Allies: "Alliés",
     "NAP or Settlers": "PAN ou Colons",
+    Symbol: "Symbole",
     War: "Guerre",
     "Create a relationship": "Créer une relation",
     "This data is not saved, if you reload the page it will be deleted":

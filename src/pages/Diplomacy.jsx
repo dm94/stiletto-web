@@ -228,9 +228,9 @@ class Diplomacy extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="sigilClanFlagInput">{t("Simbol")}</label>
+                  <label htmlFor="sigilClanFlagInput">{t("Symbol")}</label>
                   <div className="col-12">
-                    <div className="row">{this.simbolsList()}</div>
+                    <div className="row">{this.symbolsList()}</div>
                   </div>
                 </div>
                 <button
@@ -248,7 +248,7 @@ class Diplomacy extends Component {
     }
   }
 
-  simbolsList() {
+  symbolsList() {
     const symbols = [];
     for (var i = 1; i < 31; i++) {
       symbols.push("C" + i);

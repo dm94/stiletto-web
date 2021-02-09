@@ -170,6 +170,7 @@ let ru = {
       "С этим фильтром торговые предложения не найдены",
     Allies: "Союзники",
     "NAP or Settlers": "Ненаподение или Поселенцы",
+    Symbol: "Символ",
     War: "Война",
     "Create a relationship": "Создать отношения",
     "This data is not saved, if you reload the page it will be deleted":
@@ -361,10 +362,13 @@ let ru = {
     "Lamp Overhanging": "Lamp Overhanging",
     "Lamp Single Hanging": "Lamp Single Hanging",
     "Lamp Standing": "Lamp Standing",
-    "Advanced Fiberworking Station": "Улучшенный ткацкий станок(Advanced Fiberworking Station)",
+    "Advanced Fiberworking Station":
+      "Улучшенный ткацкий станок(Advanced Fiberworking Station)",
     "Advanced Furnace": "Улучшенная печь(Advanced Furnace)",
-    "Advanced Woodworking Station": "Улучшенный столярный станок(Advanced Woodworking Station)",
-    "Artificer Woodworking Station": "Станок мастера для древообработки(Artificer Woodworking Station)",
+    "Advanced Woodworking Station":
+      "Улучшенный столярный станок(Advanced Woodworking Station)",
+    "Artificer Woodworking Station":
+      "Станок мастера для древообработки(Artificer Woodworking Station)",
     "Camp Fire": "Очаг(Camp Fire)",
     "Fiberworking Station": "Ткацкий станок(Fiberworking Station)",
     Furnace: "Печь(Furnace)",

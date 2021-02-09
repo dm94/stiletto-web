@@ -170,6 +170,7 @@ let es = {
       "No se encontraron intercambios con este filtro",
     Allies: "Aliados",
     "NAP or Settlers": "NAP o Colonos",
+    Symbol: "Simbolo",
     War: "Guerra",
     "Create a relationship": "Crear una relación",
     "This data is not saved, if you reload the page it will be deleted":
