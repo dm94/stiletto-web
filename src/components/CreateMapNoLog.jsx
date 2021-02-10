@@ -46,6 +46,8 @@ class CreateMapNoLog extends Component {
             mapPassInput: response.data.PassMap,
             showShareMap: true,
           });
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
         } else if (response.status === 503) {
           this.setState({ error: "Error connecting to database" });
         }

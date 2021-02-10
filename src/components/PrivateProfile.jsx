@@ -75,8 +75,15 @@ class PrivateProfile extends Component {
 
     Axios.request(options)
       .then((response) => {
-        localStorage.clear();
-        this.setState({ redirect: true });
+        if (response.status === 204) {
+          localStorage.clear();
+          this.setState({ redirect: true });
+        } else if (response.status === 401) {
+          localStorage.clear();
+          this.setError("This user cannot be found");
+        } else if (response.status === 503) {
+          this.setError("Error connecting to database");
+        }
       })
       .catch((error) => {
         this.setConnectionError();
@@ -98,7 +105,14 @@ class PrivateProfile extends Component {
 
     Axios.request(options)
       .then((response) => {
-        this.setState({ nickname: this.state.nameInGameInput });
+        if (response.status === 202) {
+          this.setState({ nickname: this.state.nameInGameInput });
+        } else if (response.status === 401) {
+          localStorage.clear();
+          this.setError("This user cannot be found");
+        } else if (response.status === 503) {
+          this.setError("Error connecting to database");
+        }
       })
       .catch((error) => {
         this.setConnectionError();
@@ -119,7 +133,14 @@ class PrivateProfile extends Component {
 
     Axios.request(options)
       .then((response) => {
-        this.setState({ clanname: null });
+        if (response.status === 204) {
+          this.setState({ clanname: null });
+        } else if (response.status === 401) {
+          localStorage.clear();
+          this.setError("This user cannot be found");
+        } else if (response.status === 503) {
+          this.setError("Error connecting to database");
+        }
       })
       .catch((error) => {
         this.setConnectionError();
@@ -146,6 +167,10 @@ class PrivateProfile extends Component {
         } else if (response.status === 401) {
           localStorage.clear();
           this.setError("This user cannot be found");
+        } else if (response.status === 405) {
+          this.setError("You already have a clan");
+        } else if (response.status === 503) {
+          this.setError("Error connecting to database");
         }
       })
       .catch((error) => {

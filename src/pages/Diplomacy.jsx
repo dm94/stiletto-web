@@ -39,14 +39,17 @@ class Diplomacy extends Component {
       }
     ).then((response) => {
       if (response.status === 202) {
-        this.setState({ listOfRelations: response.data });
-      }
-      this.setState({ isLoaded: true });
-      if (
-        this.state.listOfRelations != null &&
-        this.state.listOfRelations[0].leaderid == this.state.user_discord_id
-      ) {
-        this.setState({ isLeader: true });
+        this.setState({ listOfRelations: response.data, isLoaded: true });
+        if (
+          this.state.listOfRelations != null &&
+          this.state.listOfRelations[0].leaderid == this.state.user_discord_id
+        ) {
+          this.setState({ isLeader: true });
+        }
+      } else if (response.status === 405) {
+        this.setState({ error: "Unauthorized" });
+      } else if (response.status === 503) {
+        this.setState({ error: "Error connecting to database" });
       }
     });
   }

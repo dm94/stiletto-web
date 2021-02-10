@@ -37,6 +37,10 @@ class DiscordConnection extends Component {
             discordid: response.data.discordid,
             token: response.data.token,
           });
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
       });
     }

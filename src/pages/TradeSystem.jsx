@@ -35,6 +35,8 @@ class TradeSystem extends Component {
     Axios.get(process.env.REACT_APP_API_URL + "/trades").then((response) => {
       if (response.status === 200) {
         this.setState({ trades: response.data, isLoaded: true });
+      } else if (response.status === 503) {
+        this.setState({ error: "Error connecting to database" });
       }
     });
     Axios.get(
@@ -95,6 +97,10 @@ class TradeSystem extends Component {
     Axios.request(options).then((response) => {
       if (response.status === 204) {
         this.componentDidMount();
+      } else if (response.status === 401) {
+        this.setState({ error: "Unauthorized" });
+      } else if (response.status === 503) {
+        this.setState({ error: "Error connecting to database" });
       }
     });
   };

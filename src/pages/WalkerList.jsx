@@ -47,11 +47,19 @@ class WalkerList extends Component {
         },
       };
 
-      Axios.request(options).then((response) => {
-        if (response.status === 202) {
-          this.setState({ discordList: response.data });
-        }
-      });
+      Axios.request(options)
+        .then((response) => {
+          if (response.status === 202) {
+            this.setState({ discordList: response.data });
+          } else if (response.status === 401) {
+            this.setState({ error: "Unauthorized" });
+          } else if (response.status === 503) {
+            this.setState({ error: "Error connecting to database" });
+          }
+        })
+        .catch((error) => {
+          this.setState({ error: "Error when connecting to the API" });
+        });
     }
     Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
       params: {
@@ -88,6 +96,8 @@ class WalkerList extends Component {
       .then((response) => {
         if (response.status === 204) {
           this.componentDidMount();
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
         } else if (response.status === 503) {
           this.setState({ error: "Error connecting to database" });
         }
@@ -139,12 +149,9 @@ class WalkerList extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 202) {
-          this.setState({ discordList: response.data });
-        }
-      })
-      .then((response) => {
-        if (response.status === 202) {
           this.componentDidMount();
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
         } else if (response.status === 503) {
           this.setState({ error: "Error when connecting with the database" });
         }

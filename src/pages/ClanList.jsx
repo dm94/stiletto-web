@@ -22,9 +22,12 @@ class ClanList extends Component {
   componentDidMount() {
     Axios.get(process.env.REACT_APP_API_URL + "/clans").then((response) => {
       if (response.status === 202) {
-        this.setState({ clans: response.data });
+        this.setState({ clans: response.data, isLoaded: true });
+      } else if (response.status === 503) {
+        this.setState({
+          error: "Error connecting to database",
+        });
       }
-      this.setState({ isLoaded: true });
     });
   }
 
@@ -38,9 +41,23 @@ class ClanList extends Component {
       },
     };
 
-    Axios.request(options).then((response) => {
-      this.setState({ redirect: true });
-    });
+    Axios.request(options)
+      .then((response) => {
+        if (response.status === 405) {
+          this.setState({
+            error: "You already have a pending application to join a clan",
+          });
+        } else if (response.status === 503) {
+          this.setState({
+            error: "Error connecting to database",
+          });
+        } else if (response.status === 202) {
+          this.setState({ redirect: true });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
   };
 
   list() {
@@ -99,22 +116,22 @@ class ClanList extends Component {
 
   render() {
     const { t } = this.props;
-    if (this.state.redirect) {
-      return (
-        <ModalMessage
-          message={{
-            isError: false,
-            text: t("Application to enter the clan sent"),
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    } else if (this.state.error) {
+    if (this.state.error) {
       return (
         <ModalMessage
           message={{
             isError: true,
             text: t(this.state.error),
+            redirectPage: "/profile",
+          }}
+        />
+      );
+    } else if (this.state.redirect) {
+      return (
+        <ModalMessage
+          message={{
+            isError: false,
+            text: t("Application to enter the clan sent"),
             redirectPage: "/profile",
           }}
         />

@@ -14,7 +14,6 @@ class ClanMaps extends Component {
     this.state = {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
-      isLoaded: false,
       maps: null,
       clanMaps: null,
       error: null,
@@ -44,8 +43,9 @@ class ClanMaps extends Component {
         this.setState({
           error: "You don't have access here, try to log in again",
         });
+      } else if (response.status === 503) {
+        this.setState({ error: "Error connecting to database" });
       }
-      this.setState({ isLoaded: true });
     });
   }
 
