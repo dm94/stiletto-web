@@ -7123,6 +7123,10 @@
   }, {
     "name": "Armored Domus Walker Legs (1 of 2)",
     "category": "walkers/domus/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
@@ -9597,6 +9601,10 @@
   }, {
     "name": "Mollusk Walker Legs Armored (1 of 2)",
     "category": "walkers/mollusk/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
@@ -10275,6 +10283,10 @@
   }, {
     "name": "Armored Panda Walker Legs (1 of 2)",
     "category": "walkers/panda/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
@@ -10893,6 +10905,10 @@
   }, {
     "name": "Armored Proxy Walker Legs (1 of 2)",
     "category": "walkers/proxy/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Redwood Wood",
@@ -10976,6 +10992,10 @@
   }, {
     "name": "Armored Schmetterling Walker Legs (1 of 2)",
     "category": "walkers/schmetterling/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
@@ -12776,6 +12796,10 @@
   }, {
     "name": "Armored Titan Walker Legs (1 of 2)",
     "category": "walkers/titan/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Redwood Wood",
@@ -14303,6 +14327,10 @@
   }, {
     "name": "Armored Tusker Walker Legs (1 of 2)",
     "category": "walkers/tusker/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood",
