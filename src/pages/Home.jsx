@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 

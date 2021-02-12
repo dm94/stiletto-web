@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LoadingScreen from "./LoadingScreen";
-import { BrowserRouter as Router, Link, Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import ModalMessage from "./ModalMessage";
 import { withTranslation } from "react-i18next";
 import i18next from "i18next";
@@ -486,7 +486,7 @@ class PrivateProfile extends Component {
                 className="btn btn-lg btn-outline-secondary btn-block"
                 to="/members"
               >
-                <i class="fas fa-users"></i> {t("Members")}
+                <i className="fas fa-users"></i> {t("Members")}
               </Link>
               <Link
                 className="btn btn-lg btn-outline-secondary btn-block"
@@ -498,7 +498,7 @@ class PrivateProfile extends Component {
                 className="btn btn-lg btn-outline-secondary btn-block"
                 to="/diplomacy"
               >
-                <i class="far fa-flag"></i> {t("Diplomacy")}
+                <i className="far fa-flag"></i> {t("Diplomacy")}
               </Link>
             </div>
             {this.leaveClanButton(t)}

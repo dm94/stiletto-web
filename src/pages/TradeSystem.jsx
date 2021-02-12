@@ -32,13 +32,17 @@ class TradeSystem extends Component {
   }
 
   componentDidMount() {
-    Axios.get(process.env.REACT_APP_API_URL + "/trades").then((response) => {
-      if (response.status === 200) {
-        this.setState({ trades: response.data, isLoaded: true });
-      } else if (response.status === 503) {
-        this.setState({ error: "Error connecting to database" });
-      }
-    });
+    Axios.get(process.env.REACT_APP_API_URL + "/trades")
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({ trades: response.data, isLoaded: true });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
+        }
+      })
+      .catch((error) => {
+        this.setState({ error: "Error connecting to the API" });
+      });
     Axios.get(
       "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
     ).then((response) => {

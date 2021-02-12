@@ -289,7 +289,7 @@ function darkMode(t) {
           window.location.reload();
         }}
       >
-        <i class="far fa-moon"></i> {t("Dark Theme Mode")}
+        <i className="far fa-moon"></i> {t("Dark Theme Mode")}
       </button>
     );
   } else {
@@ -314,7 +314,7 @@ function discordButton(t) {
   ) {
     return (
       <Link className="btn btn-outline-light" to="/profile">
-        <i class="far fa-user"></i> {t("Profile")}
+        <i className="far fa-user"></i> {t("Profile")}
       </Link>
     );
   } else {
