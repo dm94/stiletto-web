@@ -18,6 +18,7 @@ import Others from "./pages/Others";
 import Map from "./pages/Map";
 import QualityCalculator from "./pages/QualityCalculator";
 import { getStyle } from "./BGDarkSyles";
+import DiscordButton from "./components/DiscordButton";
 
 function CrafterApp() {
   const [t] = useTranslation();
@@ -143,7 +144,7 @@ function CrafterApp() {
                   alt="Change language"
                 />
               </button>
-              {discordButton(t)}
+              <DiscordButton />
             </div>
           </div>
         </div>
@@ -233,7 +234,7 @@ function CrafterApp() {
       <footer className="footer footer mt-auto">
         <div className="container-fluid py-3 bg-dark text-white">
           <div className="row">
-            <div className="col-10">
+            <div className="col-xl-10">
               Copyright © 2020 Stiletto{" | "}
               <a
                 href="https://github.com/dm94/stiletto-web"
@@ -257,7 +258,7 @@ function CrafterApp() {
                 Donkey Crew
               </a>
             </div>
-            <div className="col-2">{darkMode(t)}</div>
+            <div className="col-xl-2 text-center">{darkMode(t)}</div>
           </div>
         </div>
       </footer>
@@ -303,36 +304,6 @@ function darkMode(t) {
       >
         <i className="far fa-sun"></i> {t("Light Theme Mode")}
       </button>
-    );
-  }
-}
-
-function discordButton(t) {
-  if (
-    localStorage.getItem("discordid") != null &&
-    localStorage.getItem("token") != null
-  ) {
-    return (
-      <Link className="btn btn-outline-light" to="/profile">
-        <i className="far fa-user"></i> {t("Profile")}
-      </Link>
-    );
-  } else {
-    var http = window.location.protocol;
-    var slashes = http.concat("//");
-    var host = slashes.concat(window.location.hostname);
-    let urlLink =
-      "https://discord.com/api/oauth2/authorize?client_id=" +
-      process.env.REACT_APP_DISCORD_CLIENT_ID +
-      "&redirect_uri=" +
-      host +
-      (window.location.port ? ":" + window.location.port : "") +
-      "/profile" +
-      "&scope=identify%20guilds&response_type=code";
-    return (
-      <a className="btn btn-outline-light" href={urlLink}>
-        <i className="fab fa-discord"></i> {t("Login with discord")}
-      </a>
     );
   }
 }
