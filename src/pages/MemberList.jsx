@@ -310,7 +310,7 @@ class MemberList extends Component {
   deleteClanButton(t) {
     if (
       this.state.members != null &&
-      this.state.members[0].leaderid == localStorage.getItem("discordid")
+      this.state.members[0].leaderid === localStorage.getItem("discordid")
     ) {
       return (
         <div className="col-xl-3">
@@ -338,7 +338,7 @@ class MemberList extends Component {
   transferOwnerPanel(t) {
     if (
       this.state.members != null &&
-      this.state.members[0].leaderid == localStorage.getItem("discordid")
+      this.state.members[0].leaderid === localStorage.getItem("discordid")
     ) {
       return (
         <div className="col-xl-3">
@@ -463,9 +463,15 @@ class MemberList extends Component {
                     <th className="text-center" scope="col">
                       {t("Nick in game")}
                     </th>
-                    <th className="text-center" scope="col">
-                      {t("Kick")}
-                    </th>
+                    {this.state.members != null &&
+                    this.state.members[0].leaderid ===
+                      localStorage.getItem("discordid") ? (
+                      <th className="text-center" scope="col">
+                        {t("Kick")}
+                      </th>
+                    ) : (
+                      ""
+                    )}
                   </tr>
                 </thead>
                 <tbody>{this.list()}</tbody>
@@ -486,12 +492,24 @@ class MemberList extends Component {
                     <th className="text-center" scope="col">
                       {t("Nick in game")}
                     </th>
-                    <th className="text-center" scope="col">
-                      {t("Accept")}
-                    </th>
-                    <th className="text-center" scope="col">
-                      {t("Reject")}
-                    </th>
+                    {this.state.members != null &&
+                    this.state.members[0].leaderid ===
+                      localStorage.getItem("discordid") ? (
+                      <th className="text-center" scope="col">
+                        {t("Accept")}
+                      </th>
+                    ) : (
+                      ""
+                    )}
+                    {this.state.members != null &&
+                    this.state.members[0].leaderid ===
+                      localStorage.getItem("discordid") ? (
+                      <th className="text-center" scope="col">
+                        {t("Reject")}
+                      </th>
+                    ) : (
+                      ""
+                    )}
                   </tr>
                 </thead>
                 <tbody>{this.requestList(t)}</tbody>

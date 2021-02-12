@@ -33,7 +33,34 @@ function CrafterApp() {
             <Link className="navbar-brand" to="/">
               Stiletto
             </Link>
-            <div className="navbar-collapse collapse show" id="menucollapse">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbar-main-menu"
+              aria-controls="navbar-main-menu"
+              aria-expanded="false"
+              aria-label="Toggle Menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                role="img"
+                focusable="false"
+              >
+                <title>{t("Menu")}</title>
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeMiterlimit="10"
+                  strokeWidth="2"
+                  d="M4 7h22M4 15h22M4 23h22"
+                ></path>
+              </svg>
+            </button>
+            <div className="collapse navbar-collapse" id="navbar-main-menu">
               <ul className="navbar-nav mr-auto mb-2 mb-md-0">
                 <li className="nav-item">
                   <Link className="nav-link" to="/crafter">
@@ -230,7 +257,7 @@ function CrafterApp() {
                 Donkey Crew
               </a>
             </div>
-            <div className="col-2">{darkMode()}</div>
+            <div className="col-2">{darkMode(t)}</div>
           </div>
         </div>
       </footer>
@@ -252,7 +279,7 @@ function switchLanguage(lng) {
   i18next.changeLanguage(lng);
 }
 
-function darkMode() {
+function darkMode(t) {
   if (localStorage.getItem("darkmode") !== "true") {
     return (
       <button
@@ -262,7 +289,7 @@ function darkMode() {
           window.location.reload();
         }}
       >
-        Dark Theme Mode
+        <i class="far fa-moon"></i> {t("Dark Theme Mode")}
       </button>
     );
   } else {
@@ -274,7 +301,7 @@ function darkMode() {
           window.location.reload();
         }}
       >
-        Light Theme Mode
+        <i className="far fa-sun"></i> {t("Light Theme Mode")}
       </button>
     );
   }
@@ -287,7 +314,7 @@ function discordButton(t) {
   ) {
     return (
       <Link className="btn btn-outline-light" to="/profile">
-        {t("Profile")}
+        <i class="far fa-user"></i> {t("Profile")}
       </Link>
     );
   } else {

@@ -486,7 +486,7 @@ class PrivateProfile extends Component {
                 className="btn btn-lg btn-outline-secondary btn-block"
                 to="/members"
               >
-                {t("Members")}
+                <i class="fas fa-users"></i> {t("Members")}
               </Link>
               <Link
                 className="btn btn-lg btn-outline-secondary btn-block"
@@ -498,7 +498,7 @@ class PrivateProfile extends Component {
                 className="btn btn-lg btn-outline-secondary btn-block"
                 to="/diplomacy"
               >
-                {t("Diplomacy")}
+                <i class="far fa-flag"></i> {t("Diplomacy")}
               </Link>
             </div>
             {this.leaveClanButton(t)}
