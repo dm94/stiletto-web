@@ -171,7 +171,6 @@ class ResourceMapNoLog extends Component {
             content="Map of resources shared through a link"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Map - Stiletto" />
           <meta
             name="twitter:description"

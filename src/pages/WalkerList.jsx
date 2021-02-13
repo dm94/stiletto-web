@@ -329,7 +329,6 @@ class WalkerList extends Component {
               content="This is the list of all the walkers of your clan"
             />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@dm94dani" />
             <meta name="twitter:title" content="Walker List - Stiletto" />
             <meta
               name="twitter:description"

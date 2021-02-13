@@ -80,7 +80,6 @@ class ClanList extends Component {
             <title>Clan List - Stiletto</title>
             <meta name="description" content="List of clans" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@dm94dani" />
             <meta name="twitter:title" content="Clan List - Stiletto" />
             <meta name="twitter:description" content="List of clans" />
             <meta

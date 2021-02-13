@@ -135,7 +135,6 @@ class ItemSelector extends Component {
             content="Here you can see the materials needed to build each thing"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Crafter - Stiletto" />
           <meta
             name="twitter:description"

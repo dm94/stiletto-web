@@ -139,7 +139,6 @@ class QualityCalculator extends Component {
           <title>Quality Calculator - Stiletto</title>
           <meta name="description" content="Quality calculator" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Crafter - Stiletto" />
           <meta name="twitter:description" content="Quality calculator" />
         </Helmet>

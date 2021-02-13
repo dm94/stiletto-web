@@ -71,7 +71,6 @@ class Others extends Component {
             content="Here you have different information such as the latest updates"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Other Info - Stiletto" />
           <meta
             name="twitter:description"

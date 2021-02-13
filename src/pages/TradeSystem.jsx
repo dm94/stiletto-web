@@ -329,7 +329,6 @@ class TradeSystem extends Component {
             content="You can create offers or search for them easily from here"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Trades - Stiletto" />
           <meta
             name="twitter:description"

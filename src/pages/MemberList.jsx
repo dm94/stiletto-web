@@ -439,7 +439,6 @@ class MemberList extends Component {
             content="This is the list of all the members of your clan"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Members List - Stiletto" />
           <meta
             name="twitter:description"

@@ -182,7 +182,6 @@ class ClanMaps extends Component {
           <title>Map List - Stiletto</title>
           <meta name="description" content="List of resource maps" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Map List - Stiletto" />
           <meta name="twitter:description" content="List of resource maps" />
           <meta

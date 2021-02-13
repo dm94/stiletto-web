@@ -35,7 +35,6 @@ class AuctionTimers extends Component {
           <title>Auction Timers - Stiletto</title>
           <meta name="description" content="Timers for what you need" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Auction Timers - Stiletto" />
           <meta name="twitter:description" content="Timers for what you need" />
           <meta

@@ -318,7 +318,6 @@ class Diplomacy extends Component {
             content="View your clan's list of allies, enemies and NAP"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@dm94dani" />
           <meta name="twitter:title" content="Diplomacy - Stiletto" />
           <meta
             name="twitter:description"

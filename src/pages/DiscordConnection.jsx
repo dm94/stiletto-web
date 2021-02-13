@@ -81,7 +81,6 @@ class DiscordConnection extends Component {
               content="Link discord with stiletto and use more functions"
             />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:site" content="@dm94dani" />
             <meta
               name="twitter:title"
               content="Discord Connection - Stiletto"
