@@ -326,13 +326,13 @@ class TradeSystem extends Component {
           <title>Trades - Stiletto</title>
           <meta
             name="description"
-            content="You can create offers or search for them easily from here"
+            content="Publish your trade offers or what you need to make it easy for others to trade with you"
           />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Trades - Stiletto" />
           <meta
             name="twitter:description"
-            content="You can create offers or search for them easily from here"
+            content="Publish your trade offers or what you need to make it easy for others to trade with you"
           />
           <meta
             name="twitter:image"

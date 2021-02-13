@@ -180,10 +180,16 @@ class ClanMaps extends Component {
       <div className="row">
         <Helmet>
           <title>Map List - Stiletto</title>
-          <meta name="description" content="List of resource maps" />
+          <meta
+            name="description"
+            content="Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base."
+          />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Map List - Stiletto" />
-          <meta name="twitter:description" content="List of resource maps" />
+          <meta
+            name="twitter:description"
+            content="Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base."
+          />
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
