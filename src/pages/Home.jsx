@@ -18,17 +18,6 @@ class Home extends Component {
             name="description"
             content="Stiletto the page with utilities for the game Last Oasis"
           />
-          <meta property="og:title" content="Stiletto" />
-          <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://www.stiletto.live/" />
-          <meta
-            property="og:image"
-            content="https://www.stiletto.live/thumb.png"
-          />
-          <meta
-            property="og:description"
-            content="Stiletto the page with utilities for the game Last Oasis"
-          />
           <meta name="theme-color" content="#FFFFFF"></meta>
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@dm94dani" />
