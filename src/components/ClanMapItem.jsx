@@ -97,12 +97,15 @@ class ClanMapItem extends Component {
           alt={this.props.map.name}
         />
         {this.showButton()}
-        <h6>
-          {this.props.map.name}{" "}
+        <h6 className="mb-0">{this.props.map.name}</h6>
+        <p className="m-0 fw-lighter">
+          {this.props.map.discordTag !== null ? this.props.map.discordTag : ""}
+        </p>
+        <p className="m-0">
           <small className={dateBurning <= date ? "text-danger" : "text-muted"}>
             {this.props.map.dateofburning}
           </small>
-        </h6>
+        </p>
       </div>
     );
   }
