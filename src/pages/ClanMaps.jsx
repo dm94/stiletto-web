@@ -179,7 +179,7 @@ class ClanMaps extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>Map List - Stiletto</title>
+          <title>{t("Map List")} - Stiletto</title>
           <meta
             name="description"
             content="Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base."
@@ -193,6 +193,16 @@ class ClanMaps extends Component {
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/maps"
+            }
           />
         </Helmet>
         <div className="col-xl-12">

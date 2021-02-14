@@ -29,10 +29,11 @@ class AuctionTimers extends Component {
 
   render() {
     const { t } = this.props;
+
     return (
       <div className="row">
         <Helmet>
-          <title>Auction Timers - Stiletto</title>
+          <title>{t("Auction Timers")} - Stiletto</title>
           <meta name="description" content="Timers for what you need" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Auction Timers - Stiletto" />
@@ -40,6 +41,16 @@ class AuctionTimers extends Component {
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/auctions"
+            }
           />
         </Helmet>
         <div className="col-md-8">

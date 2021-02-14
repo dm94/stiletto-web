@@ -312,7 +312,7 @@ class Diplomacy extends Component {
     return (
       <div className="container-fluid">
         <Helmet>
-          <title>Diplomacy - Stiletto</title>
+          <title>{t("Diplomacy")} - Stiletto</title>
           <meta
             name="description"
             content="View your clan's list of allies, enemies and NAP"
@@ -326,6 +326,16 @@ class Diplomacy extends Component {
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/diplomacy"
+            }
           />
         </Helmet>
         <div className="row">

@@ -323,7 +323,7 @@ class WalkerList extends Component {
       return (
         <div>
           <Helmet>
-            <title>Walker List - Stiletto</title>
+            <title>{t("Walker List")} - Stiletto</title>
             <meta
               name="description"
               content="This is the list of all the walkers of your clan"
@@ -337,6 +337,16 @@ class WalkerList extends Component {
             <meta
               name="twitter:image"
               content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
+            />
+            <link
+              rel="canonical"
+              href={
+                window.location.protocol
+                  .concat("//")
+                  .concat(window.location.hostname) +
+                (window.location.port ? ":" + window.location.port : "") +
+                "/walkerlist"
+              }
             />
           </Helmet>
           {this.serverLinkButton(t)}

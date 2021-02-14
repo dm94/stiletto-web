@@ -129,7 +129,7 @@ class ItemSelector extends Component {
     return (
       <div className="row flex-xl-nowrap">
         <Helmet>
-          <title>Crafter - Stiletto</title>
+          <title>{t("Crafter")} - Stiletto</title>
           <meta
             name="description"
             content="See the materials needed to build each thing"
@@ -143,6 +143,16 @@ class ItemSelector extends Component {
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/crafter"
+            }
           />
         </Helmet>
         <div className="col-md-2 col-xl-3">

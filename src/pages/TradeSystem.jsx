@@ -323,7 +323,7 @@ class TradeSystem extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>Trades - Stiletto</title>
+          <title>{t("Trades")} - Stiletto</title>
           <meta
             name="description"
             content="Publish your trade offers or what you need to make it easy for others to trade with you"
@@ -337,6 +337,16 @@ class TradeSystem extends Component {
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/trades"
+            }
           />
         </Helmet>
         {this.loggedPart(t)}

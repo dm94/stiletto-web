@@ -433,7 +433,7 @@ class MemberList extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>Members List - Stiletto</title>
+          <title>{t("Members List")} - Stiletto</title>
           <meta
             name="description"
             content="This is the list of all the members of your clan"
@@ -447,6 +447,16 @@ class MemberList extends Component {
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/members"
+            }
           />
         </Helmet>
         <div className="col-xl-6">

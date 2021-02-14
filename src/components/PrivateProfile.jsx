@@ -204,7 +204,7 @@ class PrivateProfile extends Component {
       return (
         <div className="row">
           <Helmet>
-            <title>Perfil - Stiletto</title>
+            <title>{t("Perfil")} - Stiletto</title>
             <meta
               name="description"
               content="Private profile where you can configure some things"
@@ -218,6 +218,16 @@ class PrivateProfile extends Component {
             <meta
               name="twitter:image"
               content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+            />
+            <link
+              rel="canonical"
+              href={
+                window.location.protocol
+                  .concat("//")
+                  .concat(window.location.hostname) +
+                (window.location.port ? ":" + window.location.port : "") +
+                "/profile"
+              }
             />
           </Helmet>
           <div className="col-xl-6">

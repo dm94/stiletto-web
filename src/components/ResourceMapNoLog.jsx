@@ -165,7 +165,7 @@ class ResourceMapNoLog extends Component {
     return (
       <div className="row flex-xl-nowrap">
         <Helmet>
-          <title>Map - Stiletto</title>
+          <title>{t("Map")} - Stiletto</title>
           <meta
             name="description"
             content="Map of resources shared through a link"
@@ -179,6 +179,16 @@ class ResourceMapNoLog extends Component {
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/map"
+            }
           />
         </Helmet>
         <div className="col-xl-3 col-sm-12">

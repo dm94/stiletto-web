@@ -65,7 +65,7 @@ class Others extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>Other Info - Stiletto</title>
+          <title>{t("Other Info")} - Stiletto</title>
           <meta
             name="description"
             content="Here you have different information such as the latest updates"
@@ -79,6 +79,16 @@ class Others extends Component {
           <meta
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/others"
+            }
           />
         </Helmet>
         <div className="col-md-4">

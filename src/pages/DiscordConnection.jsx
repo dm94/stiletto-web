@@ -75,7 +75,7 @@ class DiscordConnection extends Component {
       return (
         <div className="row">
           <Helmet>
-            <title>Discord Connection - Stiletto</title>
+            <title>{t("Discord Connection")} - Stiletto</title>
             <meta
               name="description"
               content="Link discord with stiletto and use more functions"
@@ -92,6 +92,16 @@ class DiscordConnection extends Component {
             <meta
               name="twitter:image"
               content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+            />
+            <link
+              rel="canonical"
+              href={
+                window.location.protocol
+                  .concat("//")
+                  .concat(window.location.hostname) +
+                (window.location.port ? ":" + window.location.port : "") +
+                "/profile"
+              }
             />
           </Helmet>
           <div className="col-xl-6">

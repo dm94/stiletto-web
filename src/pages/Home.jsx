@@ -29,6 +29,15 @@ class Home extends Component {
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
           />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "")
+            }
+          />
         </Helmet>
         <div
           className="col-md-6"

@@ -77,7 +77,7 @@ class ClanList extends Component {
       return (
         <div className="table-responsive">
           <Helmet>
-            <title>Clan List - Stiletto</title>
+            <title>{t("Clan List")} - Stiletto</title>
             <meta name="description" content="List of clans" />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:title" content="Clan List - Stiletto" />
@@ -85,6 +85,16 @@ class ClanList extends Component {
             <meta
               name="twitter:image"
               content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
+            />
+            <link
+              rel="canonical"
+              href={
+                window.location.protocol
+                  .concat("//")
+                  .concat(window.location.hostname) +
+                (window.location.port ? ":" + window.location.port : "") +
+                "/clanlist"
+              }
             />
           </Helmet>
           <table className="table">

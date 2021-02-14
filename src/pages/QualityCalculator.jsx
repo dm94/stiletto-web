@@ -136,7 +136,7 @@ class QualityCalculator extends Component {
     return (
       <div className="container">
         <Helmet>
-          <title>Quality Calculator - Stiletto</title>
+          <title>{t("Quality Calculator")} - Stiletto</title>
           <meta
             name="description"
             content="Check what quality you can make something before you spend the materials"
@@ -146,6 +146,16 @@ class QualityCalculator extends Component {
           <meta
             name="twitter:description"
             content="Check what quality you can make something before you spend the materials"
+          />
+          <link
+            rel="canonical"
+            href={
+              window.location.protocol
+                .concat("//")
+                .concat(window.location.hostname) +
+              (window.location.port ? ":" + window.location.port : "") +
+              "/quality"
+            }
           />
         </Helmet>
         <div className="row">
