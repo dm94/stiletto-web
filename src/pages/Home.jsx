@@ -44,7 +44,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/crafter" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static order-2 order-md-1">
               <h3 className="mb-0">{t("Crafting Calculator")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -52,7 +52,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-6 order-1 order-md-2">
               <img
                 alt="Crafting Calculator page"
                 className="img-fluid"
@@ -66,7 +66,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/auctions" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static order-2 order-md-1">
               <h3 className="mb-0">{t("Auction Timers")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -74,7 +74,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-6 order-1 order-md-2">
               <img
                 alt="Auction Timers page"
                 className="img-fluid"
@@ -88,7 +88,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/trades" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static order-2 order-md-1">
               <h3 className="mb-0">{t("Trading System")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -96,7 +96,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-6 order-1 order-md-2">
               <img
                 alt="Trading System page"
                 className="img-fluid"
@@ -110,7 +110,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/map" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static order-2 order-md-1">
               <h3 className="mb-0">{t("Resource Maps")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -118,7 +118,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-6 order-1 order-md-2">
               <img
                 alt="Resource Maps page"
                 className="img-fluid"
@@ -132,7 +132,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/walkerlist" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static order-2 order-md-1">
               <h3 className="mb-0">{t("Walker List")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -140,7 +140,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-6 order-1 order-md-2">
               <img
                 alt="Walker List page"
                 className="img-fluid"
@@ -154,7 +154,7 @@ class Home extends Component {
           onClick={() => this.setState({ redirectTo: "/diplomacy" })}
         >
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-6 p-4 d-flex flex-column position-static">
+            <div className="col-xl-6 p-4 d-flex flex-column position-static order-2 order-md-1">
               <h3 className="mb-0">{t("Clan Diplomacy")}</h3>
               <p className="card-text mb-auto">
                 {t(
@@ -162,7 +162,7 @@ class Home extends Component {
                 )}
               </p>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-6 order-1 order-md-2">
               <img
                 alt="Clan Diplomacy page"
                 className="img-fluid"
