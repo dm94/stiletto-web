@@ -1435,8 +1435,7 @@
             "name": "Earth Wax",
             "count": 12
           }
-        ],
-        "output": 6
+        ]
       }
     ]
   }, {
@@ -2493,7 +2492,8 @@
             "name": "Fiber Weave",
             "count": 2
           }
-        ]
+        ],
+        "output": 6
       }
     ]
   }, {
