@@ -21,7 +21,12 @@ class MemberListItem extends Component {
   render() {
     return (
       <tr>
-        <td className="text-center">{this.props.member.discordtag}</td>
+        <td className="text-center">
+          {this.props.member.leaderid == this.props.member.discordid && (
+            <i className="fas fa-crown"></i>
+          )}{" "}
+          {this.props.member.discordtag}
+        </td>
         <td className="text-center">{this.props.member.nickname}</td>
         <td>{this.kickButton()}</td>
       </tr>

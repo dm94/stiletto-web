@@ -235,11 +235,19 @@ class PrivateProfile extends Component {
               <div className="card-header">{t("Your details")}</div>
               <div className="card-body text-secondary">
                 <ul className="list-group mb-3">
-                  <li className={getStyle("listitem-profile")}>
+                  <li
+                    className={getStyle(
+                      "list-group-item d-flex justify-content-between lh-condensed"
+                    )}
+                  >
                     <div className="my-0">{t("Discord Tag")}</div>
                     <div className="text-muted">{this.state.discordtag}</div>
                   </li>
-                  <li className={getStyle("listitem-profile")}>
+                  <li
+                    className={getStyle(
+                      "list-group-item d-flex justify-content-between lh-condensed"
+                    )}
+                  >
                     <div className="my-0">{t("Nick in Game")}</div>
                     <div className="text-muted">
                       {this.state.nickname != null
@@ -247,7 +255,11 @@ class PrivateProfile extends Component {
                         : t("Not defined")}
                     </div>
                   </li>
-                  <li className={getStyle("listitem-profile")}>
+                  <li
+                    className={getStyle(
+                      "list-group-item d-flex justify-content-between lh-condensed"
+                    )}
+                  >
                     <div className="my-0">{t("Clan")}</div>
                     <div className="text-muted">
                       {this.state.clanname != null
@@ -293,15 +305,12 @@ class PrivateProfile extends Component {
                 </div>
                 <div className="modal-footer">
                   <button
-                    className="btn btn-outline-secondary"
+                    className="btn btn-secondary"
                     onClick={this.hideModal}
                   >
                     {t("Cancel")}
                   </button>
-                  <button
-                    className="btn btn-outline-danger"
-                    onClick={this.deleteUser}
-                  >
+                  <button className="btn btn-danger" onClick={this.deleteUser}>
                     {t("Delete user")}
                   </button>
                 </div>
@@ -313,10 +322,7 @@ class PrivateProfile extends Component {
           <div className="col-xl-6">
             <div className={getStyle("card border-secondary mb-3")}>
               <div className="card-body">
-                <Link
-                  className="btn btn-lg btn-outline-secondary btn-block"
-                  to="/maps"
-                >
+                <Link className="btn btn-lg btn-secondary btn-block" to="/maps">
                   {t("Resources maps")}
                 </Link>
               </div>
@@ -346,7 +352,7 @@ class PrivateProfile extends Component {
                   </div>
                   <div className="col">
                     <button
-                      className="btn btn-outline-primary"
+                      className="btn btn-primary"
                       onClick={this.changeLanguage}
                     >
                       {t("Change language")}
@@ -389,7 +395,7 @@ class PrivateProfile extends Component {
                   />
                 </div>
                 <button
-                  className="btn btn-lg btn-outline-success btn-block"
+                  className="btn btn-lg btn-success btn-block"
                   type="submit"
                   value="Submit"
                 >
@@ -492,19 +498,19 @@ class PrivateProfile extends Component {
             <div className="card-header">{t("Manage Clan")}</div>
             <div className="card-body">
               <Link
-                className="btn btn-lg btn-outline-secondary btn-block"
+                className="btn btn-lg btn-secondary btn-block"
                 to="/members"
               >
                 <i className="fas fa-users"></i> {t("Members")}
               </Link>
               <Link
-                className="btn btn-lg btn-outline-secondary btn-block"
+                className="btn btn-lg btn-secondary btn-block"
                 to="/walkerlist"
               >
                 {t("Walker List")}
               </Link>
               <Link
-                className="btn btn-lg btn-outline-secondary btn-block"
+                className="btn btn-lg btn-secondary btn-block"
                 to="/diplomacy"
               >
                 <i className="far fa-flag"></i> {t("Diplomacy")}

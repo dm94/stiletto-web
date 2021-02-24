@@ -17,6 +17,9 @@ class Others extends Component {
             .parseFromString(response)
             .getElementsByTagName("item"),
         });
+      })
+      .catch(function () {
+        console.log("Error loading game data");
       });
   }
 
@@ -167,7 +170,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card-no-border")}>
+              <div className={getStyle("card mb-3")}>
                 <div className="card-body">
                   <a
                     className="btn btn-success btn-block"
@@ -181,7 +184,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card-no-border")}>
+              <div className={getStyle("card mb-3")}>
                 <div className="card-body">
                   <a
                     className="btn btn-success btn-block"
@@ -195,7 +198,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card-no-border")}>
+              <div className={getStyle("card mb-3")}>
                 <div className="card-body">
                   <a
                     className="btn btn-danger btn-block"
@@ -209,7 +212,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card-no-border")}>
+              <div className={getStyle("card mb-3")}>
                 <div className="card-body">
                   <a
                     className="btn btn-primary btn-block"
@@ -223,7 +226,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card-no-border")}>
+              <div className={getStyle("card mb-3")}>
                 <div className="card-body">
                   <a
                     className="btn btn-primary btn-block"
@@ -237,7 +240,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card-no-border")}>
+              <div className={getStyle("card mb-3")}>
                 <div className="card-body">
                   <a
                     className="btn btn-primary btn-block"

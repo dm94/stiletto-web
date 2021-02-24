@@ -337,9 +337,9 @@ class ResourceMap extends Component {
           </div>
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
             <ul className="nav nav-tabs" role="tablist">
-              <li className="nav-item" role="presentation">
+              <li className={getStyle("nav-item")} role="presentation">
                 <a
-                  className="nav-link active"
+                  className="nav-link"
                   id="add-resource-tab"
                   data-toggle="tab"
                   href="#addresource"
@@ -350,9 +350,9 @@ class ResourceMap extends Component {
                   {t("Create resource")}
                 </a>
               </li>
-              <li className="nav-item" role="presentation">
+              <li className={getStyle("nav-item")} role="presentation">
                 <a
-                  className="nav-link"
+                  className="nav-link active"
                   id="resource-list-tab"
                   data-toggle="tab"
                   href="#resourcelist"
@@ -366,7 +366,7 @@ class ResourceMap extends Component {
               <li
                 className={
                   this.state.user_discord_id === this.props.map.discordid
-                    ? "nav-item"
+                    ? getStyle("nav-item")
                     : "nav-item d-none"
                 }
               >
@@ -385,7 +385,7 @@ class ResourceMap extends Component {
             </ul>
             <div className="tab-content">
               <div
-                className="tab-pane fade show active"
+                className="tab-pane fade"
                 id="addresource"
                 role="tabpanel"
                 aria-labelledby="add-resource-tab"
@@ -408,7 +408,7 @@ class ResourceMap extends Component {
                 />
               </div>
               <div
-                className="tab-pane fade"
+                className="tab-pane fade show active"
                 id="resourcelist"
                 role="tabpanel"
                 aria-labelledby="resource-list-tab"

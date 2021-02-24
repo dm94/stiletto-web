@@ -38,6 +38,11 @@ class Trade extends Component {
       <div className="col-xl-3 text-center">
         <div className={getStyle("card mb-4 shadow-sm border-secondary")}>
           <div className="card-header">
+            {this.props.trade.type === "Supply" ? (
+              <i className="far fa-arrow-alt-circle-up"></i>
+            ) : (
+              <i className="far fa-arrow-alt-circle-down"></i>
+            )}{" "}
             {t(this.props.trade.type)} - {this.props.trade.region}
           </div>
           <div className="card-body">

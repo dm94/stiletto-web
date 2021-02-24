@@ -258,7 +258,6 @@ function CrafterApp() {
                 Donkey Crew
               </a>
             </div>
-            <div className="col-xl-2 text-center">{darkMode(t)}</div>
           </div>
         </div>
       </footer>

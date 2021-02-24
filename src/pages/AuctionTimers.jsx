@@ -76,7 +76,7 @@ class AuctionTimers extends Component {
                     this.setState({ playSound: true });
                   }}
                 >
-                  {t("Sound On")}
+                  <i className="fas fa-volume-up"></i> {t("Sound On")}
                 </button>
                 <button
                   className={
@@ -88,7 +88,7 @@ class AuctionTimers extends Component {
                     this.setState({ playSound: false });
                   }}
                 >
-                  {t("Sound Off")}
+                  <i className="fas fa-volume-mute"></i> {t("Sound Off")}
                 </button>
               </div>
             </div>

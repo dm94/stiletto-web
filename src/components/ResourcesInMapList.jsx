@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { getStyle } from "../BGDarkSyles";
+import Icon from "./Icon";
 
 class ResourcesInTheMapList extends Component {
   constructor(props) {
@@ -21,25 +22,31 @@ class ResourcesInTheMapList extends Component {
         (r) => r.resourcetype === this.state.resourceTypeFilter
       );
       return resourcesFiltered.map((resource) => (
-        <li key={resource.resourceid}>
+        <li className="list-group-item text-center" key={resource.resourceid}>
           <button
-            className={getStyle("list-group-item btn-block")}
+            className={getStyle("btn btn-block")}
             onClick={() => this.props.onSelect(resource.x, resource.y)}
           >
-            {t(resource.resourcetype)} | Q: {resource.quality} | X: {resource.x}{" "}
-            | Y: {resource.y}
+            <Icon
+              key={"icon-rmap-" + resource.resourceid}
+              name={resource.resourcetype}
+            />
+            {t(resource.resourcetype)} | Q: {resource.quality}
           </button>
         </li>
       ));
     } else {
       return this.props.resources.map((resource) => (
-        <li key={resource.resourceid}>
+        <li className="list-group-item text-center" key={resource.resourceid}>
           <button
-            className={getStyle("list-group-item btn-block")}
+            className={getStyle("btn btn-block")}
             onClick={() => this.props.onSelect(resource.x, resource.y)}
           >
-            {t(resource.resourcetype)} | Q: {resource.quality} | X: {resource.x}{" "}
-            | Y: {resource.y}
+            <Icon
+              key={"icon-rmap-" + resource.resourceid}
+              name={resource.resourcetype}
+            />
+            {t(resource.resourcetype)} | Q: {resource.quality}
           </button>
         </li>
       ));
@@ -61,11 +68,12 @@ class ResourcesInTheMapList extends Component {
         key={r}
         className={
           r === this.state.resourceTypeFilter
-            ? "btn btn-outline-secondary active"
-            : "btn btn-outline-secondary"
+            ? "btn btn-secondary active"
+            : "btn btn-secondary"
         }
         onClick={() => this.filterTheResources(r)}
       >
+        <Icon key={"icon-rlist-" + r} name={r} />
         {t(r)}
       </button>
     ));
@@ -79,7 +87,7 @@ class ResourcesInTheMapList extends Component {
           <div className="btn-group btn-group-sm" role="group">
             {this.filterlist(t)}
           </div>
-          {this.list(t)}
+          <ul className="list-group">{this.list(t)}</ul>
         </div>
       );
     } else {

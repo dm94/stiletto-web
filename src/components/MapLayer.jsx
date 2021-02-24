@@ -13,6 +13,7 @@ import "leaflet/dist/leaflet.css";
 import { withTranslation } from "react-i18next";
 import { EditControl } from "react-leaflet-draw";
 import "leaflet-draw/dist/leaflet.draw.css";
+import Icon from "./Icon";
 
 var myMarker = L.icon({
   iconUrl:
@@ -68,6 +69,10 @@ class MapLayer extends Component {
         >
           <Popup>
             <div className="mb-0">
+              <Icon
+                key={"icon" + resource.resourceid}
+                name={resource.resourcetype}
+              />
               {t(resource.resourcetype)}{" "}
               {resource.quality > 0 && "- Q:" + resource.quality}
             </div>
@@ -88,9 +93,13 @@ class MapLayer extends Component {
               {t("Delete")}
             </button>
           </Popup>
-          <Tooltip>
-            {t(resource.resourcetype)}{" "}
-            {resource.quality > 0 && "- Q:" + resource.quality}
+          <Tooltip
+            permanent={resource.quality && resource.quality > 0 ? true : false}
+            className="text-danger bg-transparent border-0"
+            offset={[0, 7]}
+            direction="top"
+          >
+            <span className="font-weight-bold h5">{resource.quality}</span>
           </Tooltip>
         </Marker>
       ));
@@ -155,9 +164,6 @@ class MapLayer extends Component {
           >
             {t("Hide Grid")}
           </button>
-          <div className="border border-warning rounded p-1">
-            {t("The data you draw is not saved, only the markers are saved")}
-          </div>
         </div>
         <MapExtended
           minZoom={0}
