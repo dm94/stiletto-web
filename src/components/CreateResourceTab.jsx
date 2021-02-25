@@ -88,7 +88,7 @@ class CreateResourceTab extends Component {
               className="form-control-range"
               id="quality"
               value={this.state.qualityInput}
-              max="200"
+              max="100"
               onChange={(evt) =>
                 this.setState({
                   qualityInput: evt.target.value,
