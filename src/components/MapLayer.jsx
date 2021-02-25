@@ -31,7 +31,7 @@ class MapLayer extends Component {
       coordinateXInput: 0,
       coordinateYInput: 0,
       hasLocation: false,
-      gridOpacity: 1,
+      gridOpacity: 0,
     };
   }
 
