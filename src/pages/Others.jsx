@@ -255,10 +255,9 @@ class Others extends Component {
             </div>
             <div className="col-md-12">
               <iframe
-                className="w-100"
+                className="w-100 border-0"
                 src="https://steamdb.info/embed/?appid=903950"
                 title="Steam DB"
-                style={{ border: "none" }}
               ></iframe>
             </div>
           </div>
