@@ -136,7 +136,7 @@ class Home extends Component {
           <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
             <iframe
               className="border-0 w-100"
-              src="http://www.strawpoll.me/embed_1/42703444"
+              src="https://www.strawpoll.me/embed_1/42703444"
               title="https://www.strawpoll.me/42703444"
               style={{ height: 407 }}
             >

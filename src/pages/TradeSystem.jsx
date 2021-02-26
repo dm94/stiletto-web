@@ -56,38 +56,6 @@ class TradeSystem extends Component {
     });
   }
 
-  resourcesList(t) {
-    if (this.state.items != null) {
-      return this.state.items.map((item) => (
-        <option key={item.name} value={item.name}>
-          {t(item.name)}
-        </option>
-      ));
-    }
-  }
-
-  tradeList(t) {
-    if (this.state.trades != null) {
-      if (this.state.isFiltered) {
-        if (this.state.filteredTrades.length > 0) {
-          return this.state.filteredTrades.map((trade) => (
-            <Trade key={"trade" + trade.idtrade} trade={trade} />
-          ));
-        } else {
-          return <div>{t("No trade offers were found with this filter")}</div>;
-        }
-      } else {
-        return this.state.trades.map((trade) => (
-          <Trade
-            key={"trade" + trade.idtrade}
-            trade={trade}
-            onDelete={this.deleteTrade}
-          />
-        ));
-      }
-    }
-  }
-
   deleteTrade = (idTrade) => {
     const options = {
       method: "delete",
@@ -301,6 +269,38 @@ class TradeSystem extends Component {
           </form>
         </div>
       );
+    }
+  }
+
+  resourcesList(t) {
+    if (this.state.items != null) {
+      return this.state.items.map((item) => (
+        <option key={item.name} value={item.name}>
+          {t(item.name)}
+        </option>
+      ));
+    }
+  }
+
+  tradeList(t) {
+    if (this.state.trades != null) {
+      if (this.state.isFiltered) {
+        if (this.state.filteredTrades.length > 0) {
+          return this.state.filteredTrades.map((trade) => (
+            <Trade key={"trade" + trade.idtrade} trade={trade} />
+          ));
+        } else {
+          return <div>{t("No trade offers were found with this filter")}</div>;
+        }
+      } else {
+        return this.state.trades.map((trade) => (
+          <Trade
+            key={"trade" + trade.idtrade}
+            trade={trade}
+            onDelete={this.deleteTrade}
+          />
+        ));
+      }
     }
   }
 
