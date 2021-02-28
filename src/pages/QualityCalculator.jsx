@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getStyle } from "../BGDarkSyles";
 import Ingredient from "../components/Ingredient";
 import IngredientQualityInputs from "../components/IngredientQualityInputs";
 import Axios from "axios";
@@ -124,7 +123,7 @@ class QualityCalculator extends Component {
       average = maxQuality / this.state.ingredients.length;
     }
     return (
-      <p className="text-center m-0 text-primary">
+      <p className="text-center m-0">
         {t("Quality")}:
         <span className="ml-1">{average > 0 ? Math.floor(average) : 0}</span>
       </p>
@@ -162,7 +161,7 @@ class QualityCalculator extends Component {
           <div className="col-xl-3">
             <div className="col-12">
               <input
-                className={getStyle("form-control mb-1")}
+                className="form-control mb-1"
                 type="search"
                 placeholder={t("Search")}
                 aria-label={t("Search")}
@@ -172,7 +171,7 @@ class QualityCalculator extends Component {
             </div>
             <div className="col-12">
               <select
-                className={getStyle("custom-select")}
+                className="custom-select"
                 value={this.state.itemSelected.name}
                 onChange={(evt) => {
                   const itemFiltered = this.state.items.filter(
@@ -201,10 +200,10 @@ class QualityCalculator extends Component {
           <div className="col-xl-9">
             <div className="row">
               <div className="col-12">
-                <div className={getStyle("card border-info")}>
+                <div className="card border-info">
                   <div className="text-center card-header">
                     <button
-                      className={getStyle("close")}
+                      className="close"
                       onClick={() =>
                         this.setState({
                           itemSelected: "",

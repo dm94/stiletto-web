@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "../BGDarkSyles";
 
 class Timer extends Component {
   constructor(props) {
@@ -56,7 +55,7 @@ class Timer extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className={getStyle("card border-secondary m-2")}>
+      <div className="card border-secondary m-2">
         <div
           className={
             this.state.isFinish ? "card-body bg-warning " : "card-body"
@@ -73,7 +72,7 @@ class Timer extends Component {
                   onChange={(e) => this.setState({ hours: e.target.value })}
                   max="24"
                   min="0"
-                  className={getStyle("text-right form-control")}
+                  className="text-right form-control"
                 />
               </h1>
             </div>
@@ -87,7 +86,7 @@ class Timer extends Component {
                   onChange={(e) => this.setState({ minutes: e.target.value })}
                   max="59"
                   min="0"
-                  className={getStyle("text-right form-control")}
+                  className="text-right form-control"
                 />
               </h1>
             </div>
@@ -101,7 +100,7 @@ class Timer extends Component {
                   onChange={(e) => this.setState({ seconds: e.target.value })}
                   max="59"
                   min="0"
-                  className={getStyle("text-right form-control")}
+                  className="text-right form-control"
                 />
               </h1>
             </div>
@@ -110,7 +109,7 @@ class Timer extends Component {
               <input
                 type="text"
                 id="description"
-                className={getStyle("form-control")}
+                className="form-control"
                 placeholder={t("Description")}
               />
             </div>

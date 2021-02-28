@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Ingredient from "../components/Ingredient";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "../BGDarkSyles";
 
 class ListIngredients extends Component {
   render() {
@@ -43,7 +42,7 @@ class TotalMaterials extends Component {
   render() {
     const { t } = this.props;
     return (
-      <div className={getStyle("card border-warning m-3")}>
+      <div className="card border-warning m-3">
         <div className="card-header border-warning">
           <div className="font-weight-normal">{t("Total materials")}</div>
         </div>

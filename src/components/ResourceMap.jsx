@@ -5,7 +5,6 @@ import { withTranslation } from "react-i18next";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
 import Axios from "axios";
-import { getStyle } from "../BGDarkSyles";
 
 class ResourceMap extends Component {
   constructor(props) {
@@ -172,7 +171,7 @@ class ResourceMap extends Component {
               <label htmlFor="mapname">{t("Map Name")}</label>
               <input
                 type="text"
-                className={getStyle("form-control")}
+                className="form-control"
                 id="mapname"
                 onChange={(evt) => this.setState({ mapname: evt.target.value })}
                 value={this.state.mapname}
@@ -184,7 +183,7 @@ class ResourceMap extends Component {
               <label htmlFor="mapdate">{t("Date of burning")}</label>
               <input
                 type="date"
-                className={getStyle("form-control")}
+                className="form-control"
                 id="mapdate"
                 onChange={(evt) =>
                   this.setState({ dateofburning: evt.target.value })
@@ -230,7 +229,7 @@ class ResourceMap extends Component {
               <label htmlFor="password">{t("Password")}</label>
               <input
                 type="text"
-                className={getStyle("form-control")}
+                className="form-control"
                 id="password"
                 onChange={(evt) => this.setState({ pass: evt.target.value })}
                 value={this.state.pass}
@@ -302,7 +301,7 @@ class ResourceMap extends Component {
         <div className="col-xl-3 col-sm-12">
           <div className="bd-search d-flex align-items-center">
             <button
-              className="btn btn-lg btn-primary btn-block"
+              className="btn btn-sm btn-primary btn-block"
               onClick={() => this.props.onReturn()}
             >
               {t("Back to the list of maps")}
@@ -337,7 +336,7 @@ class ResourceMap extends Component {
           </div>
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
             <ul className="nav nav-tabs" role="tablist">
-              <li className={getStyle("nav-item")} role="presentation">
+              <li className="nav-item" role="presentation">
                 <a
                   className="nav-link"
                   id="add-resource-tab"
@@ -350,7 +349,7 @@ class ResourceMap extends Component {
                   {t("Create resource")}
                 </a>
               </li>
-              <li className={getStyle("nav-item")} role="presentation">
+              <li className="nav-item" role="presentation">
                 <a
                   className="nav-link active"
                   id="resource-list-tab"
@@ -366,7 +365,7 @@ class ResourceMap extends Component {
               <li
                 className={
                   this.state.user_discord_id === this.props.map.discordid
-                    ? getStyle("nav-item")
+                    ? "nav-item"
                     : "nav-item d-none"
                 }
               >

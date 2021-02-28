@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
-import { getStyle } from "../BGDarkSyles";
 
 class CreateMapPanel extends Component {
   state = { mapNameInput: "", mapDateInput: "", mapSelectInput: "Canyon" };
@@ -10,7 +9,7 @@ class CreateMapPanel extends Component {
     const { t } = this.props;
     return (
       <div className="col-xl-12">
-        <div className={getStyle("card border-secondary mb-3")}>
+        <div className="card border-secondary mb-3">
           <div className="card-header">{t("New Map")}</div>
           <div className="card-body text-succes">
             <form
@@ -28,7 +27,7 @@ class CreateMapPanel extends Component {
                   <label htmlFor="map_name">{t("Map Name")}</label>
                   <input
                     type="text"
-                    className={getStyle("form-control")}
+                    className="form-control"
                     id="map_name"
                     name="map_name"
                     maxLength="30"
@@ -45,7 +44,7 @@ class CreateMapPanel extends Component {
                   <label htmlFor="map_date">{t("Date of burning")}</label>
                   <input
                     type="date"
-                    className={getStyle("form-control")}
+                    className="form-control"
                     id="map_date"
                     name="map_date"
                     value={this.state.mapDateInput}

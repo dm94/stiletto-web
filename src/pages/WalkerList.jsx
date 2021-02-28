@@ -5,7 +5,6 @@ import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getStyle } from "../BGDarkSyles";
 const queryString = require("query-string");
 
 class WalkerList extends Component {
@@ -197,7 +196,7 @@ class WalkerList extends Component {
         return (
           <div className="row">
             <div className="col-xl-4">
-              <div className={getStyle("card border-secondary mb-3")}>
+              <div className="card border-secondary mb-3">
                 <div className="card-body">
                   <div className="text-info mb-3">
                     {t(
@@ -209,7 +208,7 @@ class WalkerList extends Component {
                       <label htmlFor="discordlist">{t("Discord ID")}</label>
                       <select
                         id="discordlist"
-                        className={getStyle("custom-select")}
+                        className="custom-select"
                         value={this.state.inputDiscodId}
                         onChange={(evt) =>
                           this.setState({
@@ -250,7 +249,7 @@ class WalkerList extends Component {
         return (
           <div className="row">
             <div className="col-xl-4">
-              <div className={getStyle("card border-secondary mb-3")}>
+              <div className="card border-secondary mb-3">
                 <div className="card-body">
                   <div className="text-info mb-3">
                     {t(
@@ -276,7 +275,7 @@ class WalkerList extends Component {
   discordBotSection(t) {
     return (
       <div className="col-xl-4">
-        <div className={getStyle("card border-secondary mb-3")}>
+        <div className="card border-secondary mb-3">
           <div className="card-header">{t("Discord Bot")}</div>
           <div className="card-body">
             <div className="mb-3">
@@ -350,7 +349,7 @@ class WalkerList extends Component {
             />
           </Helmet>
           {this.serverLinkButton(t)}
-          <table className={getStyle("table")}>
+          <table className="table">
             <thead>
               <tr>
                 <th className="text-center" scope="col">
@@ -359,7 +358,7 @@ class WalkerList extends Component {
                 <th scope="col">
                   <div className="input-group input-group-sm w-50 mb-0 mx-auto">
                     <input
-                      className={getStyle("form-control")}
+                      className="form-control"
                       id="search-name"
                       type="search"
                       placeholder="Name.."

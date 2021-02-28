@@ -5,7 +5,6 @@ import Trade from "../components/Trade";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getStyle } from "../BGDarkSyles";
 
 class TradeSystem extends Component {
   constructor(props) {
@@ -138,7 +137,7 @@ class TradeSystem extends Component {
     if (this.state.user_discord_id == null || this.state.token == null) {
       return (
         <div className="col-xl-6">
-          <div className={getStyle("card border-secondary mb-3")}>
+          <div className="card border-secondary mb-3">
             <div className="card-body text-succes">
               {t(
                 "If you want to publish your own exchange offers you have to be connected"
@@ -151,7 +150,7 @@ class TradeSystem extends Component {
       return (
         <div className="col-xl-12">
           <form onSubmit={this.createTrade}>
-            <div className={getStyle("card border-secondary mb-3")}>
+            <div className="card border-secondary mb-3">
               <div className="card-header">{t("Publish an trade")}</div>
               <div className="card-body">
                 <div className="row">
@@ -351,7 +350,7 @@ class TradeSystem extends Component {
         </Helmet>
         {this.loggedPart(t)}
         <div className="col-md-12">
-          <div className={getStyle("card mb-3 border-primary")}>
+          <div className="card mb-3 border-primary">
             <div className="card-header">{t("Published Trades")}</div>
             <div className="card-body">
               <div className="row">

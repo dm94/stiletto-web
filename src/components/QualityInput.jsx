@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "../BGDarkSyles";
 
 class QualityInput extends Component {
   state = {};
@@ -13,7 +12,7 @@ class QualityInput extends Component {
           id={"quantity" + this.props.input.id}
           max={this.props.ingredient.count}
           min={0}
-          className={getStyle("form-control")}
+          className="form-control"
           placeholder={t("Quantity")}
           aria-label={t("Quantity")}
           onChange={(evt) =>
@@ -32,7 +31,7 @@ class QualityInput extends Component {
           type="number"
           max={100}
           min={0}
-          className={getStyle("form-control")}
+          className="form-control"
           placeholder={t("Quality")}
           aria-label={t("Quality")}
           onChange={(evt) =>

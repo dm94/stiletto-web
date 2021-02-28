@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Ingredients from "./Ingredients";
 import { withTranslation } from "react-i18next";
 import Icon from "./Icon";
-import { getStyle } from "../BGDarkSyles";
 
 class SelectedItem extends Component {
   constructor(props) {
@@ -89,7 +88,7 @@ class SelectedItem extends Component {
     const { t } = this.props;
     return (
       <div className="col-xl-6 col-sm-12">
-        <div className={getStyle("card")}>
+        <div className="card">
           <div className="text-center card-header">
             <button
               className="close"
@@ -100,7 +99,7 @@ class SelectedItem extends Component {
             <div className="input-group w-75">
               <input
                 type="number"
-                className={getStyle("form-control text-right")}
+                className="form-control text-right"
                 value={this.props.item.count}
                 onChange={(e) => {
                   this.props.onChangeCount(
@@ -116,7 +115,7 @@ class SelectedItem extends Component {
                 max="9999"
                 readOnly={this.state.disableEdit}
               />
-              <span className={getStyle("input-group-text")}>
+              <span className="input-group-text">
                 x {t(this.props.item.name)}
               </span>
             </div>

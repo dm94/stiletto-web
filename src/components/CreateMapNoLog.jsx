@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import CreateMapPanel from "./CreateMapPanel";
 import { withTranslation } from "react-i18next";
-import { getStyle } from "../BGDarkSyles";
 import Axios from "axios";
 
 class CreateMapNoLog extends Component {
@@ -85,7 +84,7 @@ class CreateMapNoLog extends Component {
     return (
       <div className="row">
         <div className="col-xl-12">
-          <div className={getStyle("card border-secondary mb-3")}>
+          <div className="card border-secondary mb-3">
             <div className="card-header">
               {t("Open a map that has already been created")}
             </div>
@@ -95,7 +94,7 @@ class CreateMapNoLog extends Component {
                   <label htmlFor="map_id">{t("Map ID")}</label>
                   <input
                     type="number"
-                    className={getStyle("form-control")}
+                    className="form-control"
                     id="map_id"
                     name="map_id"
                     maxLength="4"
@@ -112,7 +111,7 @@ class CreateMapNoLog extends Component {
                   <label htmlFor="map_id">{t("Map Pass")}</label>
                   <input
                     type="text"
-                    className={getStyle("form-control")}
+                    className="form-control"
                     id="map_pass"
                     name="map_pass"
                     maxLength="30"

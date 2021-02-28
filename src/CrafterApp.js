@@ -17,8 +17,8 @@ import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
 import Map from "./pages/Map";
 import QualityCalculator from "./pages/QualityCalculator";
-import { getStyle } from "./BGDarkSyles";
 import DiscordButton from "./components/DiscordButton";
+import { Helmet } from "react-helmet";
 
 function CrafterApp() {
   const [t] = useTranslation();
@@ -28,6 +28,16 @@ function CrafterApp() {
     : "modal d-none";
   return (
     <Router>
+      <Helmet>
+        <link
+          rel="stylesheet"
+          href={
+            localStorage.getItem("darkmode") !== "false"
+              ? "./css/darkly.min.css"
+              : "./css/journal.min.css"
+          }
+        />
+      </Helmet>
       <header>
         <div className="navbar navbar-expand-md navbar-dark bg-dark">
           <div className="container-fluid">
@@ -80,18 +90,15 @@ function CrafterApp() {
                   >
                     {t("Profile")}
                   </Link>
-                  <div
-                    className={getStyle("dropdown-menu")}
-                    aria-labelledby="clanDropdown"
-                  >
-                    <Link className={getStyle("dropdown-item")} to="/profile">
+                  <div className="dropdown-menu" aria-labelledby="clanDropdown">
+                    <Link className="dropdown-item" to="/profile">
                       {t("User Profile")}
                     </Link>
-                    <Link className={getStyle("dropdown-item")} to="/clanlist">
+                    <Link className="dropdown-item" to="/clanlist">
                       {t("Clan List")}
                     </Link>
                     <Link
-                      className={getStyle("dropdown-item")}
+                      className="dropdown-item"
                       to={
                         localStorage.getItem("discordid") != null
                           ? "/maps"
@@ -150,7 +157,7 @@ function CrafterApp() {
         </div>
       </header>
       <main role="main" className="flex-shrink-0">
-        <div className={getStyle("container-fluid pt-4")}>
+        <div className="container-fluid pt-4">
           <Analytics id={process.env.REACT_APP_GA_ID}>
             <Switch>
               <Route exact path="/" component={Home} />
@@ -170,7 +177,7 @@ function CrafterApp() {
           </Analytics>
           <div className={showHideClassName}>
             <div className="modal-dialog">
-              <div className={getStyle("modal-content")}>
+              <div className="modal-content">
                 <div className="modal-header">{t("Change language")}</div>
                 <div className="modal-body">
                   <div className="row text-center">
@@ -258,6 +265,7 @@ function CrafterApp() {
                 Donkey Crew
               </a>
             </div>
+            <div className="col-xl-2">{darkMode(t)}</div>
           </div>
         </div>
       </footer>
@@ -280,19 +288,7 @@ function switchLanguage(lng) {
 }
 
 function darkMode(t) {
-  if (localStorage.getItem("darkmode") !== "true") {
-    return (
-      <button
-        className="btn btn-sm btn-outline-light"
-        onClick={() => {
-          localStorage.setItem("darkmode", true);
-          window.location.reload();
-        }}
-      >
-        <i className="far fa-moon"></i> {t("Dark Theme Mode")}
-      </button>
-    );
-  } else {
+  if (localStorage.getItem("darkmode") !== "false") {
     return (
       <button
         className="btn btn-sm btn-outline-light"
@@ -302,6 +298,18 @@ function darkMode(t) {
         }}
       >
         <i className="far fa-sun"></i> {t("Light Theme Mode")}
+      </button>
+    );
+  } else {
+    return (
+      <button
+        className="btn btn-sm btn-outline-light"
+        onClick={() => {
+          localStorage.setItem("darkmode", true);
+          window.location.reload();
+        }}
+      >
+        <i className="far fa-moon"></i> {t("Dark Theme Mode")}
       </button>
     );
   }

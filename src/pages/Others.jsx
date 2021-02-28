@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getStyle } from "../BGDarkSyles";
 var XMLParser = require("react-xml-parser");
 
 class Others extends Component {
@@ -47,7 +46,7 @@ class Others extends Component {
         data = data.slice(0, 4);
       }
       return data.map((update) => (
-        <li className={getStyle("list-group-item")} key={update.title}>
+        <li className="list-group-item" key={update.title}>
           <a
             className="text-danger"
             href={update.link + "?curator_clanid=9919055"}
@@ -122,7 +121,7 @@ class Others extends Component {
               </div>
             </div>
           </div>
-          <div className={getStyle("card")}>
+          <div className="card">
             <div className="card-header">{t("Latest updates")}</div>
             <ul className="list-group">{this.showUpdates()}</ul>
           </div>
@@ -170,7 +169,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card mb-3")}>
+              <div className="card mb-3">
                 <div className="card-body">
                   <a
                     className="btn btn-success btn-block"
@@ -184,7 +183,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card mb-3")}>
+              <div className="card mb-3">
                 <div className="card-body">
                   <a
                     className="btn btn-success btn-block"
@@ -198,7 +197,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card mb-3")}>
+              <div className="card mb-3">
                 <div className="card-body">
                   <a
                     className="btn btn-danger btn-block"
@@ -212,7 +211,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card mb-3")}>
+              <div className="card mb-3">
                 <div className="card-body">
                   <a
                     className="btn btn-primary btn-block"
@@ -226,7 +225,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card mb-3")}>
+              <div className="card mb-3">
                 <div className="card-body">
                   <a
                     className="btn btn-primary btn-block"
@@ -240,7 +239,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-4">
-              <div className={getStyle("card mb-3")}>
+              <div className="card mb-3">
                 <div className="card-body">
                   <a
                     className="btn btn-primary btn-block"
