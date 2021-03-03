@@ -210,16 +210,6 @@ class Home extends Component {
           </a>
         </div>
         <Others />
-        <div className="mx-auto">
-          <iframe
-            className="border-0"
-            src="https://www.strawpoll.me/embed_1/42703444"
-            title="https://www.strawpoll.me/42703444"
-            style={{ height: 407, width: 600 }}
-          >
-            Loading poll...
-          </iframe>
-        </div>
       </div>
     );
   }

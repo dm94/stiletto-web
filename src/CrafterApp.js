@@ -136,12 +136,12 @@ function CrafterApp() {
                   width="30%"
                   src={
                     localStorage.getItem("i18nextLng").includes("es")
-                      ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                      ? "./img/es.jpg"
                       : localStorage.getItem("i18nextLng").includes("ru")
-                      ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
+                      ? "./img/ru.jpg"
                       : localStorage.getItem("i18nextLng").includes("fr")
-                      ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
-                      : "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+                      ? "./img/fr.jpg"
+                      : "./img/en.jpg"
                   }
                   alt="Change language"
                 />
@@ -179,7 +179,7 @@ function CrafterApp() {
                     <div className="col">
                       <img
                         className="img-thumbnail"
-                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/es.jpg"
+                        src="./img/es.jpg"
                         alt="Spanish language"
                         onClick={() => switchLanguage("es")}
                       />
@@ -188,7 +188,7 @@ function CrafterApp() {
                     <div className="col">
                       <img
                         className="img-thumbnail"
-                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/en.jpg"
+                        src="./img/en.jpg"
                         alt="English language"
                         onClick={() => switchLanguage("en")}
                       />
@@ -197,7 +197,7 @@ function CrafterApp() {
                     <div className="col">
                       <img
                         className="img-thumbnail"
-                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/ru.jpg"
+                        src="./img/ru.jpg"
                         alt="Russian language"
                         onClick={() => switchLanguage("ru")}
                       />
@@ -206,7 +206,7 @@ function CrafterApp() {
                     <div className="col">
                       <img
                         className="img-thumbnail"
-                        src="https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/fr.jpg"
+                        src="./img/fr.jpg"
                         alt="French language"
                         onClick={() => switchLanguage("fr")}
                       />
