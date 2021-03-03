@@ -110,7 +110,7 @@ class AuctionTimers extends Component {
                 </div>
                 <div className="col">
                   <button
-                    className="btn btn-warning btn-block"
+                    className="btn btn-danger btn-block"
                     onClick={() =>
                       this.setState((state) => ({ timers: state.timers - 1 }))
                     }

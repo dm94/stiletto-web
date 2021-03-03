@@ -65,10 +65,10 @@ class Home extends Component {
                 className="carousel-caption d-none d-md-block"
                 onClick={() => this.setState({ redirectTo: "/crafter" })}
               >
-                <h2 className="font-weight-bold font-italic">
+                <h2 className="font-weight-bold font-italic text-info">
                   {t("Crafting Calculator")}
                 </h2>
-                <p>
+                <p className="text-info">
                   {t(
                     "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish"
                   )}
@@ -86,10 +86,10 @@ class Home extends Component {
                 className="carousel-caption d-none d-md-block"
                 onClick={() => this.setState({ redirectTo: "/auctions" })}
               >
-                <h2 className="font-weight-bold font-italic">
+                <h2 className="font-weight-bold font-italic text-info">
                   {t("Auction Timers")}
                 </h2>
-                <p>
+                <p className="text-info">
                   {t(
                     "See how much time is left to finish the auctions of the maps you want easily"
                   )}
@@ -104,13 +104,13 @@ class Home extends Component {
                 role="img"
               ></svg>
               <div
-                className="carousel-caption d-none d-md-block"
+                className="carousel-caption d-none d-md-block text-info"
                 onClick={() => this.setState({ redirectTo: "/trades" })}
               >
                 <h2 className="font-weight-bold font-italic">
                   {t("Trading System")}
                 </h2>
-                <p>
+                <p className="text-info">
                   {t(
                     "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with"
                   )}
@@ -129,10 +129,10 @@ class Home extends Component {
                 className="carousel-caption d-none d-md-block"
                 onClick={() => this.setState({ redirectTo: "/map" })}
               >
-                <h2 className="font-weight-bold font-italic">
+                <h2 className="font-weight-bold font-italic text-info">
                   {t("Resource Maps")}
                 </h2>
-                <p>
+                <p className="text-info">
                   {t(
                     "Create and edit maps to add resources or strategic points."
                   )}
@@ -151,10 +151,10 @@ class Home extends Component {
                 className="carousel-caption d-none d-md-block"
                 onClick={() => this.setState({ redirectTo: "/walkerlist" })}
               >
-                <h2 className="font-weight-bold font-italic">
+                <h2 className="font-weight-bold font-italic text-info">
                   {t("Walker List")}
                 </h2>
-                <p>
+                <p className="text-info">
                   {t(
                     "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way"
                   )}
@@ -173,10 +173,10 @@ class Home extends Component {
                 className="carousel-caption d-none d-md-block"
                 onClick={() => this.setState({ redirectTo: "/diplomacy" })}
               >
-                <h2 className="font-weight-bold font-italic">
+                <h2 className="font-weight-bold font-italic text-info">
                   {t("Clan Diplomacy")}
                 </h2>
-                <p>
+                <p className="text-info">
                   {t(
                     "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members."
                   )}
