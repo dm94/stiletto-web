@@ -124,11 +124,6 @@ function CrafterApp() {
                     {t("Quality")}
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link className="nav-link" to="/others">
-                    {t("About")}
-                  </Link>
-                </li>
               </ul>
               <button
                 className="btn btn-sm"

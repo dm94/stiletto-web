@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import Others from "./Others";
 
 class Home extends Component {
   state = { redirectTo: null };
@@ -11,7 +12,7 @@ class Home extends Component {
       return <Redirect to={this.state.redirectTo} />;
     }
     return (
-      <div className="row">
+      <div className="container-fluid">
         <Helmet>
           <title>Stiletto for the Last Oasis</title>
           <meta
@@ -39,110 +40,185 @@ class Home extends Component {
             }
           />
         </Helmet>
-        <div
-          className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/crafter" })}
-        >
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-12 p-4 d-flex flex-column position-static order-2 order-md-1">
-              <h3 className="mb-0">{t("Crafting Calculator")}</h3>
-              <p className="card-text mb-auto">
-                {t(
-                  "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish"
-                )}
-              </p>
+        <div id="carouselHome" className="carousel slide" data-ride="carousel">
+          <ol className="carousel-indicators">
+            <li
+              data-target="#carouselHome"
+              data-slide-to="0"
+              class="active"
+            ></li>
+            <li data-target="#carouselHome" data-slide-to="1"></li>
+            <li data-target="#carouselHome" data-slide-to="2"></li>
+            <li data-target="#carouselHome" data-slide-to="3"></li>
+            <li data-target="#carouselHome" data-slide-to="4"></li>
+            <li data-target="#carouselHome" data-slide-to="5"></li>
+          </ol>
+          <div className="carousel-inner">
+            <div className="carousel-item active">
+              <svg
+                className="d-block w-100"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+                role="img"
+              ></svg>
+              <div
+                className="carousel-caption d-none d-md-block"
+                onClick={() => this.setState({ redirectTo: "/crafter" })}
+              >
+                <h2 className="font-weight-bold font-italic">
+                  {t("Crafting Calculator")}
+                </h2>
+                <p>
+                  {t(
+                    "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish"
+                  )}
+                </p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <svg
+                className="d-block w-100"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+                role="img"
+              ></svg>
+              <div
+                className="carousel-caption d-none d-md-block"
+                onClick={() => this.setState({ redirectTo: "/auctions" })}
+              >
+                <h2 className="font-weight-bold font-italic">
+                  {t("Auction Timers")}
+                </h2>
+                <p>
+                  {t(
+                    "See how much time is left to finish the auctions of the maps you want easily"
+                  )}
+                </p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <svg
+                className="d-block w-100"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+                role="img"
+              ></svg>
+              <div
+                className="carousel-caption d-none d-md-block"
+                onClick={() => this.setState({ redirectTo: "/trades" })}
+              >
+                <h2 className="font-weight-bold font-italic">
+                  {t("Trading System")}
+                </h2>
+                <p>
+                  {t(
+                    "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with"
+                  )}
+                </p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <svg
+                className="d-block w-100"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+                role="img"
+              ></svg>
+              <div
+                className="carousel-caption d-none d-md-block"
+                onClick={() => this.setState({ redirectTo: "/map" })}
+              >
+                <h2 className="font-weight-bold font-italic">
+                  {t("Resource Maps")}
+                </h2>
+                <p>
+                  {t(
+                    "Create and edit maps to add resources or strategic points."
+                  )}
+                </p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <svg
+                className="d-block w-100"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+                role="img"
+              ></svg>
+              <div
+                className="carousel-caption d-none d-md-block"
+                onClick={() => this.setState({ redirectTo: "/walkerlist" })}
+              >
+                <h2 className="font-weight-bold font-italic">
+                  {t("Walker List")}
+                </h2>
+                <p>
+                  {t(
+                    "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way"
+                  )}
+                </p>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <svg
+                className="d-block w-100"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+                role="img"
+              ></svg>
+              <div
+                className="carousel-caption d-none d-md-block"
+                onClick={() => this.setState({ redirectTo: "/diplomacy" })}
+              >
+                <h2 className="font-weight-bold font-italic">
+                  {t("Clan Diplomacy")}
+                </h2>
+                <p>
+                  {t(
+                    "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members."
+                  )}
+                </p>
+              </div>
             </div>
           </div>
+          <a
+            className="carousel-control-prev"
+            href="#carouselHome"
+            role="button"
+            data-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Previous</span>
+          </a>
+          <a
+            className="carousel-control-next"
+            href="#carouselHome"
+            role="button"
+            data-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="sr-only">Next</span>
+          </a>
         </div>
-        <div
-          className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/auctions" })}
-        >
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-12 p-4 d-flex flex-column position-static order-2 order-md-1">
-              <h3 className="mb-0">{t("Auction Timers")}</h3>
-              <p className="card-text mb-auto">
-                {t(
-                  "See how much time is left to finish the auctions of the maps you want easily"
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/trades" })}
-        >
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-12 p-4 d-flex flex-column position-static order-2 order-md-1">
-              <h3 className="mb-0">{t("Trading System")}</h3>
-              <p className="card-text mb-auto">
-                {t(
-                  "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with"
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/map" })}
-        >
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-12 p-4 d-flex flex-column position-static order-2 order-md-1">
-              <h3 className="mb-0">{t("Resource Maps")}</h3>
-              <p className="card-text mb-auto">
-                {t(
-                  "Create and edit maps to add resources or strategic points."
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/walkerlist" })}
-        >
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-12 p-4 d-flex flex-column position-static order-2 order-md-1">
-              <h3 className="mb-0">{t("Walker List")}</h3>
-              <p className="card-text mb-auto">
-                {t(
-                  "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way"
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/diplomacy" })}
-        >
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div className="col-xl-12 p-4 d-flex flex-column position-static order-2 order-md-1">
-              <h3 className="mb-0">{t("Clan Diplomacy")}</h3>
-              <p className="card-text mb-auto">
-                {t(
-                  "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members."
-                )}
-              </p>
-            </div>
-          </div>
-        </div>
-        <div
-          className="col-md-6"
-          onClick={() => this.setState({ redirectTo: "/crafter" })}
-        >
-          <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <iframe
-              className="border-0 w-100"
-              src="https://www.strawpoll.me/embed_1/42703444"
-              title="https://www.strawpoll.me/42703444"
-              style={{ height: 407 }}
-            >
-              Loading poll...
-            </iframe>
-          </div>
+        <Others />
+        <div className="mx-auto">
+          <iframe
+            className="border-0"
+            src="https://www.strawpoll.me/embed_1/42703444"
+            title="https://www.strawpoll.me/42703444"
+            style={{ height: 407, width: 600 }}
+          >
+            Loading poll...
+          </iframe>
         </div>
       </div>
     );

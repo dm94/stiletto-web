@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 var XMLParser = require("react-xml-parser");
 
 class Others extends Component {
@@ -66,33 +65,6 @@ class Others extends Component {
     const { t } = this.props;
     return (
       <div className="row">
-        <Helmet>
-          <title>{t("Other Info")} - Stiletto</title>
-          <meta
-            name="description"
-            content="Here you have different information such as the latest updates"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Other Info - Stiletto" />
-          <meta
-            name="twitter:description"
-            content="Here you have different information such as the latest updates"
-          />
-          <meta
-            name="twitter:image"
-            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
-          />
-          <link
-            rel="canonical"
-            href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
-              "/others"
-            }
-          />
-        </Helmet>
         <div className="col-md-4">
           <div className="col-md-12">
             <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -129,7 +101,7 @@ class Others extends Component {
         <div className="col-md-8">
           <div className="row">
             <div className="col-md-6">
-              <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div className="border rounded overflow-hidden mb-4">
                 <div className="p-4 d-flex flex-column position-static">
                   <h3 className="mb-0 pb-2">{t("Report Bugs")}</h3>
                   <p className="card-text mb-auto">
@@ -138,7 +110,7 @@ class Others extends Component {
                     )}
                   </p>
                   <a
-                    className="btn btn-success m-2"
+                    className="btn btn-success m-2 btn-block"
                     href="https://github.com/dm94/stiletto-web/issues"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -149,7 +121,7 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div className="border rounded overflow-hidden mb-4">
                 <div className="p-4 d-flex flex-column">
                   <h3 className="mb-0 pb-2">{t("Discord Bot")}</h3>
                   <p className="card-text mb-auto">
