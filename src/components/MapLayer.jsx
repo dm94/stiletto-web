@@ -95,11 +95,13 @@ class MapLayer extends Component {
           </Popup>
           <Tooltip
             permanent={resource.quality && resource.quality > 0 ? true : false}
-            className="text-danger bg-transparent border-0"
+            className="bg-transparent border-0"
             offset={[0, 7]}
             direction="top"
           >
-            <span className="font-weight-bold h5">{resource.quality}</span>
+            <span className="font-weight-bold h4" style={{ color: "#39d28c" }}>
+              {resource.quality}
+            </span>
           </Tooltip>
         </Marker>
       ));

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Icon from "./Icon";
 
-class ResourcesInTheMapList extends Component {
+class ResourcesInMapList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +18,7 @@ class ResourcesInTheMapList extends Component {
   list(t) {
     if (this.state.resourceTypeFilter !== "All") {
       let resourcesFiltered = this.props.resources.filter(
-        (r) => r.resourcetype === this.state.resourceTypeFilter
+        (r) => r.x != null && r.resourcetype === this.state.resourceTypeFilter
       );
       return resourcesFiltered.map((resource) => (
         <li className="list-group-item text-center" key={resource.resourceid}>
@@ -30,36 +30,42 @@ class ResourcesInTheMapList extends Component {
               key={"icon-rmap-" + resource.resourceid}
               name={resource.resourcetype}
             />
-            {t(resource.resourcetype)} | Q: {resource.quality}
+            {t(resource.resourcetype)}{" "}
+            {resource.quality > 0 && "| Q: " + resource.quality}
           </button>
         </li>
       ));
     } else {
-      return this.props.resources.map((resource) => (
-        <li className="list-group-item text-center" key={resource.resourceid}>
-          <button
-            className="btn btn-block"
-            onClick={() => this.props.onSelect(resource.x, resource.y)}
-          >
-            <Icon
-              key={"icon-rmap-" + resource.resourceid}
-              name={resource.resourcetype}
-            />
-            {t(resource.resourcetype)} | Q: {resource.quality}
-          </button>
-        </li>
-      ));
+      return this.props.resources
+        .filter((r) => r.x != null)
+        .map((resource) => (
+          <li className="list-group-item text-center" key={resource.resourceid}>
+            <button
+              className="btn btn-block"
+              onClick={() => this.props.onSelect(resource.x, resource.y)}
+            >
+              <Icon
+                key={"icon-rmap-" + resource.resourceid}
+                name={resource.resourcetype}
+              />
+              {t(resource.resourcetype)}{" "}
+              {resource.quality > 0 && "| Q: " + resource.quality}
+            </button>
+          </li>
+        ));
     }
   }
 
   filterlist(t) {
     let resourceTypes = ["All"];
 
-    this.props.resources.map((resource) => {
-      if (resourceTypes.indexOf(resource.resourcetype) === -1) {
-        resourceTypes.push(resource.resourcetype);
-      }
-    });
+    this.props.resources
+      .filter((r) => r.x != null)
+      .map((resource) => {
+        if (resourceTypes.indexOf(resource.resourcetype) === -1) {
+          resourceTypes.push(resource.resourcetype);
+        }
+      });
 
     return resourceTypes.map((r) => (
       <button
@@ -95,4 +101,4 @@ class ResourcesInTheMapList extends Component {
   }
 }
 
-export default withTranslation()(ResourcesInTheMapList);
+export default withTranslation()(ResourcesInMapList);
