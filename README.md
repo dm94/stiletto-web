@@ -46,7 +46,7 @@ Command to generate it:
 
 #### API
 
-New API incoming
+For now the API will be kept private
 
 #### Others
 
