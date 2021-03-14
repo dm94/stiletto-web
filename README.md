@@ -6,7 +6,7 @@ You can see this website in operation here: [www.stiletto.live](https://www.stil
 
 ### Working
 
-- See the list of objects and calculate what it costs to do it in different amounts
+- Crafting Calculator: See the list of objects and calculate what it costs to do it in different amounts
 - Showing the total cost of making all the objects
 - Linking the web with discord
 - Create clans, edit clans and link them to a discord server
