@@ -20,15 +20,19 @@ class ClanList extends Component {
   }
 
   componentDidMount() {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans").then((response) => {
-      if (response.status === 202) {
-        this.setState({ clans: response.data, isLoaded: true });
-      } else if (response.status === 503) {
-        this.setState({
-          error: "Error connecting to database",
-        });
-      }
-    });
+    Axios.get(process.env.REACT_APP_API_URL + "/clans")
+      .then((response) => {
+        if (response.status === 202) {
+          this.setState({ clans: response.data, isLoaded: true });
+        } else if (response.status === 503) {
+          this.setState({
+            error: "Error connecting to database",
+          });
+        }
+      })
+      .catch(() => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
   }
 
   sendRequest = (clanid) => {
@@ -55,7 +59,7 @@ class ClanList extends Component {
           this.setState({ redirect: true });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
