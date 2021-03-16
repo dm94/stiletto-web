@@ -161,11 +161,11 @@ class Others extends Component {
             </div>
             <iframe
               className="col-12 mx-auto border-0"
-              src="https://www.strawpoll.me/embed_1/42703444"
-              title="https://www.strawpoll.me/42703444"
-              style={{ height: 420 }}
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdlljZ_CUgUtSOn2TZCBHbuQhzxApbgBGngRusWWdirHKA1fw/viewform?embedded=true"
+              style={{ width: 640, height: 538 }}
+              title="https://forms.gle/AbCEMNNZFjcV163p7"
             >
-              Loading poll...
+              Cargando…
             </iframe>
           </div>
         </div>
