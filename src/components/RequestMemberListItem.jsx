@@ -2,27 +2,14 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 
 class RequestMemberListItem extends Component {
-  acceptButton(t) {
+  showButton(t) {
     if (this.props.member.leaderid == localStorage.getItem("discordid")) {
       return (
         <button
-          className="btn btn-block btn-success"
-          onClick={(e) => this.props.onAccept(this.props.member.discordid)}
+          className="btn btn-block btn-primary"
+          onClick={() => this.props.onShowRequest(this.props.member)}
         >
-          {t("Accept")}
-        </button>
-      );
-    }
-  }
-
-  rejectButton(t) {
-    if (this.props.member.leaderid == localStorage.getItem("discordid")) {
-      return (
-        <button
-          className="btn btn-block btn-danger"
-          onClick={(e) => this.props.onReject(this.props.member.discordid)}
-        >
-          {t("Reject")}
+          {t("Show request")}
         </button>
       );
     }
@@ -34,8 +21,7 @@ class RequestMemberListItem extends Component {
       <tr>
         <td className="text-center">{this.props.member.discordtag}</td>
         <td className="text-center">{this.props.member.nickname}</td>
-        <td>{this.acceptButton(t)}</td>
-        <td>{this.rejectButton(t)}</td>
+        <td>{this.showButton(t)}</td>
       </tr>
     );
   }

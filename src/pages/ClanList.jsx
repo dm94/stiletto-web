@@ -16,6 +16,9 @@ class ClanList extends Component {
       clans: null,
       redirect: false,
       error: null,
+      showRequestModal: false,
+      clanRequestId: 0,
+      textAreaModelValue: "",
     };
   }
 
@@ -35,13 +38,18 @@ class ClanList extends Component {
       });
   }
 
-  sendRequest = (clanid) => {
+  sendRequest = () => {
     const options = {
       method: "post",
-      url: process.env.REACT_APP_API_URL + "/clans/" + clanid + "/requests",
+      url:
+        process.env.REACT_APP_API_URL +
+        "/clans/" +
+        this.state.clanRequestId +
+        "/requests",
       params: {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
+        message: this.state.textAreaModelValue,
       },
     };
 
@@ -62,6 +70,7 @@ class ClanList extends Component {
       .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
+    this.setState({ showRequestModal: false, textAreaModelValue: "" });
   };
 
   list() {
@@ -70,7 +79,9 @@ class ClanList extends Component {
         <ClanListItem
           key={clan.clanid}
           clan={clan}
-          onSendRequest={this.sendRequest}
+          onSendRequest={(id) =>
+            this.setState({ clanRequestId: id, showRequestModal: true })
+          }
         />
       ));
     }
@@ -154,7 +165,55 @@ class ClanList extends Component {
       localStorage.getItem("discordid") != null &&
       localStorage.getItem("token") != null
     ) {
-      return this.clanList(t);
+      let showHideClassName = this.state.showRequestModal
+        ? "modal d-block"
+        : "modal d-none";
+      return (
+        <div>
+          {this.clanList(t)}
+          <div className={showHideClassName}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title" id="sendRequest">
+                    {t("Send request")}
+                  </h5>
+                </div>
+                <div className="modal-body">
+                  <div class="form-group">
+                    <label for="modalTextArea">{t("Request message")}</label>
+                    <textarea
+                      class="form-control bg-light"
+                      id="modalTextArea"
+                      rows="3"
+                      value={this.state.textAreaModelValue}
+                      onChange={(evt) =>
+                        this.setState({
+                          textAreaModelValue: evt.target.value,
+                        })
+                      }
+                    ></textarea>
+                  </div>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    className="btn btn-secondary"
+                    onClick={() => this.setState({ showRequestModal: false })}
+                  >
+                    {t("Cancel")}
+                  </button>
+                  <button
+                    className="btn btn-success"
+                    onClick={this.sendRequest}
+                  >
+                    {t("Send request")}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
     return (
       <ModalMessage

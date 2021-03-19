@@ -21,6 +21,8 @@ class MemberList extends Component {
       isLoadedRequestList: false,
       redirectMessage: null,
       selectNewOwner: localStorage.getItem("discordid"),
+      showRequestModal: false,
+      requestData: null,
     };
   }
 
@@ -123,7 +125,12 @@ class MemberList extends Component {
       });
   };
 
-  acceptMember = (memberdiscordid) => {
+  acceptMember = () => {
+    this.setState({ showRequestModal: false });
+    if (this.state.requestData == null) {
+      return;
+    }
+
     const options = {
       method: "put",
       url:
@@ -131,7 +138,7 @@ class MemberList extends Component {
         "/clans/" +
         this.state.clanid +
         "/requests/" +
-        memberdiscordid,
+        this.state.requestData.discordid,
       params: {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
@@ -143,7 +150,7 @@ class MemberList extends Component {
       .then((response) => {
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
-            (m) => m.discordid !== memberdiscordid
+            (m) => m.discordid !== this.state.requestData.discordid
           );
           this.setState({ requestMembers: requestMembers });
           this.componentDidMount();
@@ -155,13 +162,18 @@ class MemberList extends Component {
         } else if (response.status === 503) {
           this.setState({ error: "Error connecting to database" });
         }
+        this.setState({ requestData: null });
       })
       .catch((error) => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
 
-  rejectMember = (memberdiscordid) => {
+  rejectMember = () => {
+    this.setState({ showRequestModal: false });
+    if (this.state.requestData == null) {
+      return;
+    }
     const options = {
       method: "put",
       url:
@@ -169,7 +181,7 @@ class MemberList extends Component {
         "/clans/" +
         this.state.clanid +
         "/requests/" +
-        memberdiscordid,
+        this.state.requestData.discordid,
       params: {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
@@ -181,7 +193,7 @@ class MemberList extends Component {
       .then((response) => {
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
-            (m) => m.discordid !== memberdiscordid
+            (m) => m.discordid !== this.state.requestData.discordid
           );
           this.setState({ requestMembers: requestMembers });
           this.componentDidMount();
@@ -193,6 +205,7 @@ class MemberList extends Component {
         } else if (response.status === 503) {
           this.setState({ error: "Error connecting to database" });
         }
+        this.setState({ requestData: null });
       })
       .catch((error) => {
         this.setState({ error: "Error when connecting to the API" });
@@ -284,8 +297,9 @@ class MemberList extends Component {
           <RequestMemberListItem
             key={member.discordid}
             member={member}
-            onAccept={this.acceptMember}
-            onReject={this.rejectMember}
+            onShowRequest={(r) =>
+              this.setState({ requestData: r, showRequestModal: true })
+            }
           />
         ));
       } else {
@@ -429,6 +443,9 @@ class MemberList extends Component {
       return <LoadingScreen />;
     }
 
+    let showHideClassName = this.state.showRequestModal
+      ? "modal d-block"
+      : "modal d-none";
     return (
       <div className="row">
         <Helmet>
@@ -504,16 +521,7 @@ class MemberList extends Component {
                     this.state.members[0].leaderid ===
                       localStorage.getItem("discordid") ? (
                       <th className="text-center" scope="col">
-                        {t("Accept")}
-                      </th>
-                    ) : (
-                      ""
-                    )}
-                    {this.state.members != null &&
-                    this.state.members[0].leaderid ===
-                      localStorage.getItem("discordid") ? (
-                      <th className="text-center" scope="col">
-                        {t("Reject")}
+                        {t("Show request")}
                       </th>
                     ) : (
                       ""
@@ -522,6 +530,36 @@ class MemberList extends Component {
                 </thead>
                 <tbody>{this.requestList(t)}</tbody>
               </table>
+            </div>
+          </div>
+        </div>
+        <div className={showHideClassName}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="sendRequest">
+                  {t("Request")}
+                </h5>
+              </div>
+              <div className="modal-body">
+                {this.state.requestData != null
+                  ? this.state.requestData.message
+                  : ""}
+              </div>
+              <div className="modal-footer">
+                <button
+                  className="btn btn-block btn-success"
+                  onClick={() => this.acceptMember()}
+                >
+                  {t("Accept")}
+                </button>
+                <button
+                  className="btn btn-block btn-danger"
+                  onClick={() => this.rejectMember()}
+                >
+                  {t("Reject")}
+                </button>
+              </div>
             </div>
           </div>
         </div>
