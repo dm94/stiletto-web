@@ -197,7 +197,7 @@ class QualityCalculator extends Component {
               </select>
             </div>
           </div>
-          <div className="col-xl-9">
+          <div className="col-xl-9 mt-2">
             <div className="row">
               <div className="col-12">
                 <div className="card border-info">

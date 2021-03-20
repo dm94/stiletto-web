@@ -310,7 +310,7 @@ class PrivateProfile extends Component {
             <div className="card border-secondary mb-3">
               <div className="card-body">
                 <Link className="btn btn-lg btn-secondary btn-block" to="/maps">
-                  {t("Resources maps")}
+                  {t("Resource Maps")}
                 </Link>
               </div>
             </div>

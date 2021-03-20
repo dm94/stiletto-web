@@ -88,7 +88,7 @@ function CrafterApp() {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    {t("Profile")}
+                    {t("User Profile")}
                   </Link>
                   <div className="dropdown-menu" aria-labelledby="clanDropdown">
                     <Link className="dropdown-item" to="/profile">

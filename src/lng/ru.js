@@ -47,6 +47,8 @@ let ru = {
     "Add name in the game": "Добавить имя в игру",
     "Your name in Last Oasis": "Твое имя в Last Oasis",
     Add: "Добавить",
+    Share: "Поделиться",
+    Copy: "Скопировать",
     "Join a clan": "Присоединиться к клану",
     "Clan Name": "Имя клана",
     "Flag Color": "Цвет флага",

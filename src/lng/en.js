@@ -47,6 +47,8 @@ let en = {
     "Add name in the game": "Add name in the game",
     "Your name in Last Oasis": "Your name in Last Oasis",
     Add: "Add",
+    Share: "Share",
+    Copy: "Copy",
     "Join a clan": "Join a clan",
     "Clan Name": "Clan Name",
     "Flag Color": "Flag Color",
