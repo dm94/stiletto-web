@@ -4,6 +4,9 @@ import SelectedItem from "../components/SelectedItem";
 import TotalMaterials from "../components/TotalMaterials";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import Axios from "axios";
+import ModalMessage from "../components/ModalMessage";
+const queryString = require("query-string");
 
 class ItemSelector extends Component {
   state = {
@@ -12,6 +15,7 @@ class ItemSelector extends Component {
     searchText: "",
     filteredItems: [],
     totalIngredients: [],
+    error: "",
   };
 
   componentDidMount() {
@@ -20,7 +24,33 @@ class ItemSelector extends Component {
     )
       .then((response) => response.json())
       .then((items) => this.setState({ items }));
+
+    const parsed = queryString.parse(this.props.location.search);
+    let recipe = parsed.recipe;
+    if (recipe != null && recipe.length > 0) {
+      this.getRecipes(parsed.recipe);
+    }
   }
+
+  getRecipes = (recipeToken) => {
+    Axios.get(process.env.REACT_APP_API_URL + "/recipes/" + recipeToken)
+      .then((response) => {
+        if (response.status === 200) {
+          if (response.data.items != null) {
+            let data = JSON.parse(response.data.items);
+            data.forEach((i) => {
+              this.handleAdd(i.name);
+              this.changeCount(i.name, parseInt(i.count));
+            });
+          }
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
+        }
+      })
+      .catch(() => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
+  };
 
   handleInputChangeSearchItem = (event) => {
     const { t } = this.props;
@@ -125,6 +155,19 @@ class ItemSelector extends Component {
 
   render() {
     const { t } = this.props;
+
+    if (this.state.error) {
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: t(this.state.error),
+            redirectPage: "/",
+          }}
+        />
+      );
+    }
+
     return (
       <div className="row flex-xl-nowrap">
         <Helmet>
@@ -207,6 +250,7 @@ class ItemSelector extends Component {
             <TotalMaterials
               key="totalmaterialsid"
               selectedItems={this.state.selectedItems}
+              onError={(e) => this.setState({ error: e })}
             />
           </div>
         </main>
