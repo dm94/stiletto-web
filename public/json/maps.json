@@ -3,19 +3,19 @@
     "idMap": 1,
     "name": "Canyon",
     "type": "Medium",
-    "image": "https://api2.comunidadgzone.es/maps/Canyon.jpg"
+    "image": "https://api.stiletto.live/maps/Canyon.jpg"
   },
   {
     "idMap": 2,
     "name": "CanyonB",
     "type": "Medium",
-    "image": "https://api2.comunidadgzone.es/maps/CanyonB.jpg"
+    "image": "https://api.stiletto.live/maps/CanyonB.jpg"
   },
   {
     "idMap": 3,
     "name": "SleepingGiants",
     "type": "Difficult",
-    "image": "https://api2.comunidadgzone.es/maps/SleepingGiants.jpg"
+    "image": "https://api.stiletto.live/maps/SleepingGiants.jpg"
   },
   {
     "idMap": 4,
