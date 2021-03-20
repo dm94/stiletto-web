@@ -27,8 +27,8 @@ class ItemSelector extends Component {
 
     const parsed = queryString.parse(this.props.location.search);
     let recipe = parsed.recipe;
-    if (recipe != null && recipe.length > 0) {
-      this.getRecipes(parsed.recipe);
+    if (recipe != null) {
+      this.getRecipes(recipe);
     }
   }
 
