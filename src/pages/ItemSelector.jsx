@@ -23,34 +23,35 @@ class ItemSelector extends Component {
       "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
     )
       .then((response) => response.json())
-      .then((items) => this.setState({ items }));
-
-    const parsed = queryString.parse(this.props.location.search);
-    let recipe = parsed.recipe;
-    if (recipe != null) {
-      this.getRecipes(recipe);
-    }
+      .then((items) => {
+        this.setState({ items: items });
+        this.getRecipes();
+      });
   }
 
-  getRecipes = (recipeToken) => {
-    Axios.get(process.env.REACT_APP_API_URL + "/recipes/" + recipeToken)
-      .then((response) => {
-        if (response.status === 200) {
-          if (response.data.items != null) {
-            let data = JSON.parse(response.data.items);
-            data.forEach((i) => {
-              this.handleAdd(i.name);
-              this.changeCount(i.name, parseInt(i.count));
-            });
+  getRecipes() {
+    const parsed = queryString.parse(this.props.location.search);
+    let recipe = parsed.recipe;
+    if (recipe != null && recipe.length > 0) {
+      Axios.get(process.env.REACT_APP_API_URL + "/recipes/" + recipe)
+        .then((response) => {
+          if (response.status === 200) {
+            if (response.data.items != null) {
+              let allItems = JSON.parse(response.data.items);
+              console.log(allItems);
+              allItems.forEach((it) => {
+                this.handleAdd(it.name, parseInt(it.count));
+              });
+            }
+          } else if (response.status === 503) {
+            this.setState({ error: "Error connecting to database" });
           }
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
-  };
+        })
+        .catch(() => {
+          this.setState({ error: "Error when connecting to the API" });
+        });
+    }
+  }
 
   handleInputChangeSearchItem = (event) => {
     const { t } = this.props;
@@ -83,7 +84,10 @@ class ItemSelector extends Component {
     }
   }
 
-  handleAdd = (itemName) => {
+  handleAdd = (itemName, count) => {
+    if (count == null) {
+      count = 1;
+    }
     let selectedItem = this.state.items.filter((it) => it.name === itemName);
     if (
       this.state.selectedItems.filter((it) => it.name === itemName).length > 0
@@ -91,7 +95,7 @@ class ItemSelector extends Component {
       let selectedItem = this.state.selectedItems.filter(
         (it) => it.name === itemName
       );
-      this.changeCount(itemName, parseInt(selectedItem[0].count) + 1);
+      this.changeCount(itemName, parseInt(selectedItem[0].count) + count);
     } else {
       if (selectedItem[0] != null) {
         const selectedItems = this.state.selectedItems.concat([
@@ -100,7 +104,7 @@ class ItemSelector extends Component {
             category: selectedItem[0].category,
             crafting: selectedItem[0].crafting,
             damage: selectedItem[0].damage,
-            count: 1,
+            count: count,
           },
         ]);
         this.setState({ selectedItems });
