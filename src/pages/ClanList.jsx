@@ -180,10 +180,12 @@ class ClanList extends Component {
                   </h5>
                 </div>
                 <div className="modal-body">
-                  <div class="form-group">
-                    <label for="modalTextArea">{t("Request message")}</label>
+                  <div className="form-group">
+                    <label htmlFor="modalTextArea">
+                      {t("Request message")}
+                    </label>
                     <textarea
-                      class="form-control bg-light"
+                      className="form-control bg-light"
                       id="modalTextArea"
                       rows="3"
                       value={this.state.textAreaModelValue}
