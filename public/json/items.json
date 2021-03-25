@@ -792,7 +792,7 @@
     ]
   },
   {
-    "name": "Large Water Container",
+    "name": "Large Water Bag",
     "category": "buildings/construction/container",
     "crafting": [
       {
@@ -840,7 +840,7 @@
     ]
   },
   {
-    "name": "Medium Liquid Container",
+    "name": "Medium Water Bag",
     "category": "buildings/construction/container",
     "crafting": [
       {

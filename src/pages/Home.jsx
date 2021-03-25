@@ -40,7 +40,11 @@ class Home extends Component {
             }
           />
         </Helmet>
-        <div id="carouselHome" className="carousel slide" data-ride="carousel">
+        <div
+          id="carouselHome"
+          className="carousel slide d-none d-md-block"
+          data-ride="carousel"
+        >
           <ol className="carousel-indicators">
             <li
               data-target="#carouselHome"
@@ -148,7 +152,7 @@ class Home extends Component {
                 role="img"
               ></svg>
               <div
-                className="carousel-caption d-none d-md-block"
+                className="carousel-caption"
                 onClick={() => this.setState({ redirectTo: "/walkerlist" })}
               >
                 <h2 className="font-weight-bold font-italic text-info">
@@ -170,7 +174,7 @@ class Home extends Component {
                 role="img"
               ></svg>
               <div
-                className="carousel-caption d-none d-md-block"
+                className="carousel-caption"
                 onClick={() => this.setState({ redirectTo: "/diplomacy" })}
               >
                 <h2 className="font-weight-bold font-italic text-info">
