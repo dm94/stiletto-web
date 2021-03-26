@@ -13,6 +13,7 @@ class TradeSystem extends Component {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
       isLoaded: false,
+      clusters: null,
       trades: null,
       error: null,
       items: null,
@@ -39,7 +40,18 @@ class TradeSystem extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
+        this.setState({ error: "Error connecting to the API" });
+      });
+    Axios.get(process.env.REACT_APP_API_URL + "/clusters")
+      .then((response) => {
+        if (response.status === 200) {
+          this.setState({ clusters: response.data, isLoaded: true });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
+        }
+      })
+      .catch(() => {
         this.setState({ error: "Error connecting to the API" });
       });
     Axios.get(
@@ -199,11 +211,7 @@ class TradeSystem extends Component {
                         })
                       }
                     >
-                      <option value="EU">EU</option>
-                      <option value="NA">NA</option>
-                      <option value="SA">SA</option>
-                      <option value="ASIA">ASIA</option>
-                      <option value="OCE">OCE</option>
+                      {this.clusterList()}
                     </select>
                   </div>
                   <div className="form-group col-xl-2">
@@ -276,6 +284,16 @@ class TradeSystem extends Component {
       return this.state.items.map((item) => (
         <option key={item.name} value={item.name}>
           {t(item.name)}
+        </option>
+      ));
+    }
+  }
+
+  clusterList() {
+    if (this.state.clusters != null) {
+      return this.state.clusters.map((cl) => (
+        <option key={cl.name} value={cl.name}>
+          {[cl.region] + " " + cl.name + " (" + cl.clan_limit + ")"}
         </option>
       ));
     }
@@ -403,11 +421,7 @@ class TradeSystem extends Component {
                       })
                     }
                   >
-                    <option value="EU">EU</option>
-                    <option value="NA">NA</option>
-                    <option value="SA">SA</option>
-                    <option value="ASIA">ASIA</option>
-                    <option value="OCE">OCE</option>
+                    {this.clusterList()}
                   </select>
                 </div>
                 <div className="col-xl-3 btn-group">
