@@ -1383,6 +1383,10 @@
     ]
   }, {
     "name": "Remote Ballista",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "buildings/construction/weapons/ranged",
     "crafting": [{
         "ingredients": [{
@@ -1397,6 +1401,30 @@
           }, {
             "name": "Wood Shaft",
             "count": 5
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Steering Levers Cage",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
+    "category": "buildings/construction",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 210
+          }, {
+            "name": "Stone",
+            "count": 60
+          }, {
+            "name": "Rope",
+            "count": 30
+          }, {
+            "name": "Bone Splinter",
+            "count": 15
           }
         ]
       }
@@ -3578,6 +3606,27 @@
       }
     ]
   }, {
+    "name": "Compacted Torque Battery",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
+    "category": "items/gear/torque/battery",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Worm Sand",
+            "count": 30
+          }, {
+            "name": "Ceramic Shard",
+            "count": 24
+          }, {
+            "name": "Obsidian",
+            "count": 16
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Primitive Bandage",
     "category": "items/interactables/bandages",
     "crafting": [{
@@ -4354,6 +4403,10 @@
     ]
   }, {
     "name": "Throwing Net",
+    "cost": {
+      "name": "Fragment",
+      "count": 30
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4364,6 +4417,27 @@
             "count": 4
           }, {
             "name": "Rupu Vine",
+            "count": 8
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Net Pouch",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
+    "category": "items/weapons",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Nomad Cloth",
+            "count": 4
+          }, {
+            "name": "Earth Wax",
+            "count": 25
+          }, {
+            "name": "Bone Glue",
             "count": 8
           }
         ]
@@ -5361,6 +5435,9 @@
         "station": "Woodworking Station"
       }
     ]
+  }, {
+    "name": "Worm Sand",
+    "category": "materials"
   }, {
     "name": "Worm Scale",
     "category": "materials"
