@@ -15984,6 +15984,206 @@
       }
     ]
   }, {
+    "name": "Raptor Walker Upgrade - Cargo - Tier 2",
+    "category": "walkers/raptor/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Bone Splinter",
+            "count": 24
+          }, {
+            "name": "Fiber",
+            "count": 160
+          }, {
+            "name": "Rupu Vine",
+            "count": 24
+          }, {
+            "name": "Lightwood",
+            "count": 30
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Durability - Tier 2",
+    "category": "walkers/raptor/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Bone Splinter",
+            "count": 24
+          }, {
+            "name": "Lightwood",
+            "count": 30
+          }, {
+            "name": "Rupu Pelt",
+            "count": 40
+          }, {
+            "name": "Chitin Plate",
+            "count": 5
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Gear - Tier 2",
+    "category": "walkers/raptor/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Bone Splinter",
+            "count": 24
+          }, {
+            "name": "Fiber",
+            "count": 160
+          }, {
+            "name": "Rupu Vine",
+            "count": 24
+          }, {
+            "name": "Lightwood",
+            "count": 30
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Torque - Tier 2",
+    "category": "walkers/raptor/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Bone Splinter",
+            "count": 24
+          }, {
+            "name": "Fiber",
+            "count": 160
+          }, {
+            "name": "Lightwood",
+            "count": 30
+          }, {
+            "name": "Rope",
+            "count": 20
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Water - Tier 2",
+    "category": "walkers/raptor/upgrades/tier2",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Bone Splinter",
+            "count": 24
+          }, {
+            "name": "Fiber",
+            "count": 160
+          }, {
+            "name": "Lightwood",
+            "count": 30
+          }, {
+            "name": "Rope",
+            "count": 20
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Cargo - Tier 3",
+    "category": "walkers/raptor/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Ceramic Shard",
+            "count": 40
+          }, {
+            "name": "Nomad Cloth",
+            "count": 20
+          }, {
+            "name": "Wood Shaft",
+            "count": 45
+          }, {
+            "name": "Lightwood",
+            "count": 60
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Durability - Tier 3",
+    "category": "walkers/raptor/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Ceramic Shard",
+            "count": 64
+          }, {
+            "name": "Lightwood",
+            "count": 60
+          }, {
+            "name": "Earth Wax",
+            "count": 128
+          }, {
+            "name": "Chitin Plate",
+            "count": 35
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Gear - Tier 3",
+    "category": "walkers/raptor/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Ceramic Shard",
+            "count": 40
+          }, {
+            "name": "Nomad Cloth",
+            "count": 20
+          }, {
+            "name": "Lightwood",
+            "count": 60
+          }, {
+            "name": "Wood Shaft",
+            "count": 45
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Torque - Tier 3",
+    "category": "walkers/raptor/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Ceramic Shard",
+            "count": 40
+          }, {
+            "name": "Lightwood",
+            "count": 60
+          }, {
+            "name": "Worm Sand",
+            "count": 85
+          }, {
+            "name": "Nomad Cloth",
+            "count": 20
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Raptor Walker Upgrade - Water - Tier 3",
+    "category": "walkers/raptor/upgrades/tier3",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Ceramic Shard",
+            "count": 40
+          }, {
+            "name": "Lightwood",
+            "count": 60
+          }, {
+            "name": "Wood Shaft",
+            "count": 45
+          }, {
+            "name": "Nomad Cloth",
+            "count": 20
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Small Base Walker Packer",
     "category": "buildings/construction/walker",
     "cost": {
