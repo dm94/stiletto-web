@@ -131,7 +131,14 @@ class Home extends Component {
               ></svg>
               <div
                 className="carousel-caption d-none d-md-block"
-                onClick={() => this.setState({ redirectTo: "/map" })}
+                onClick={() =>
+                  this.setState({
+                    redirectTo:
+                      localStorage.getItem("discordid") != null
+                        ? "/maps"
+                        : "/map",
+                  })
+                }
               >
                 <h2 className="font-weight-bold font-italic text-info">
                   {t("Resource Maps")}
