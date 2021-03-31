@@ -189,7 +189,7 @@ class MapLayer extends Component {
           <ImageOverlay
             bounds={[
               [85.5, -180],
-              [-70.5, 101],
+              [-78, 130],
             ]}
             opacity={this.state.gridOpacity}
             url={process.env.REACT_APP_API_GENERAL_URL + "/maps/Grid.png"}
