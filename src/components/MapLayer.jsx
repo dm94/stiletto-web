@@ -11,8 +11,6 @@ import {
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import { withTranslation } from "react-i18next";
-import { EditControl } from "react-leaflet-draw";
-import "leaflet-draw/dist/leaflet.draw.css";
 import Icon from "./Icon";
 
 var myMarker = L.icon({
@@ -175,17 +173,6 @@ class MapLayer extends Component {
           center={this.props.center}
           attributionControl={false}
         >
-          <FeatureGroup>
-            <EditControl
-              position="topright"
-              onEdited={this._onEditPath}
-              onCreated={this._onCreate}
-              onDeleted={this._onDeleted}
-              draw={{
-                marker: false,
-              }}
-            />
-          </FeatureGroup>
           <ImageOverlay
             bounds={[
               [85.5, -180],
