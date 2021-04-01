@@ -1,13 +1,6 @@
 import React, { Component, Fragment } from "react";
 import L from "leaflet";
-import {
-  TileLayer,
-  Marker,
-  Popup,
-  Tooltip,
-  ImageOverlay,
-  FeatureGroup,
-} from "react-leaflet";
+import { TileLayer, Marker, Popup, Tooltip, ImageOverlay } from "react-leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import { withTranslation } from "react-i18next";
