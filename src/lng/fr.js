@@ -1,4 +1,4 @@
-let fr = {
+let all = {
   translations: {
     Crafting: "Artisanat",
     Clan: "Clan",
@@ -1391,4 +1391,4 @@ let fr = {
   },
 };
 
-export default fr;
+export default all;
