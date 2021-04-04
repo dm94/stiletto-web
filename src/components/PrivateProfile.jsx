@@ -203,7 +203,7 @@ class PrivateProfile extends Component {
       return (
         <div className="row">
           <Helmet>
-            <title>{t("Perfil")} - Stiletto</title>
+            <title>{t("Profile")} - Stiletto</title>
             <meta
               name="description"
               content="Private profile where you can configure some things"

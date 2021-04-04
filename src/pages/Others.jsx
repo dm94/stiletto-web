@@ -93,21 +93,15 @@ class Others extends Component {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="border rounded overflow-hidden mb-4">
-                <div className="p-4 d-flex flex-column position-static">
-                  <h3 className="mb-0 pb-2">{t("Report Bugs")}</h3>
-                  <p className="card-text mb-auto">
-                    {t(
-                      "If you find a bug, let me know on GitHub so it can be fixed!"
-                    )}
-                  </p>
+              <div className="card mb-3">
+                <div className="card-body">
                   <a
-                    className="btn btn-success m-2 btn-block"
-                    href="https://github.com/dm94/stiletto-web/issues"
+                    className="btn btn-danger m-2 btn-block"
+                    href="https://crowdin.com/project/stiletto"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {t("Report")}
+                    {t("Help to translate the website")}
                   </a>
                 </div>
               </div>

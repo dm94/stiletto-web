@@ -12,6 +12,12 @@ let en = {
     "Auction Timers": "Auction Timers",
     About: "About",
     "Github project": "Github project",
+    "Light Theme Mode": "Light Theme Mode",
+    Profile: "Profile",
+    "Members List": "Members List",
+    Crafter: "Crafter",
+    "Walkers Upgrades Cost": "Walkers Upgrades Cost",
+    "Help to translate the website": "Help to translate the website",
     "This website uses utilities related to the game 'Last Oasis' but is not affiliated with":
       "This website uses utilities related to the game 'Last Oasis' but is not affiliated with",
     "This website uses cookies to enhance the user experience.":
@@ -96,6 +102,8 @@ let en = {
     Actions: "Actions",
     "Send request": "Send request",
     "Walker ID": "Walker ID",
+    Request: "Request",
+    "Request message": "Request message",
     "You don't have access here, try to log in again":
       "You don't have access here, try to log in again",
     "Error when kicking a member": "Error when kicking a member",
@@ -211,6 +219,10 @@ let en = {
       "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.",
     "Source Code is published on GitHub for full disclosure where you can also report any issues found.":
       "Source Code is published on GitHub for full disclosure where you can also report any issues found.",
+    "Point Of Interest": "Point Of Interest",
+    "Trade Station": "Trade Station",
+    Proxy: "Proxy",
+    All: "All",
     Aloe: "Aloe",
     "Animal Fat": "Animal Fat",
     Apple: "Apple",
@@ -1395,6 +1407,179 @@ let en = {
       "Balang Walker Upgrade - Water - Tier 4",
     "Large Base Walker Packer": "Large Base Walker Packer",
     "Small Base Walker Packer": "Small Base Walker Packer",
+    "Poaching Hut": "Poaching Hut",
+    "Giant Wall": "Giant Wall",
+    "Giant Wall Gate": "Giant Wall Gate",
+    "Steering Levers Cage": "Steering Levers Cage",
+    "Compacted Torque Battery": "Compacted Torque Battery",
+    "Net Pouch": "Net Pouch",
+    "Bent Wooden Planks": "Bent Wooden Planks",
+    "Fiery Concoction": "Fiery Concoction",
+    Lightwood: "Lightwood",
+    "Wood Log": "Wood Log",
+    "Worm Sand": "Worm Sand",
+    "Armory Module": "Armory Module",
+    "Battery Module": "Battery Module",
+    "Bullrush Module": "Bullrush Module",
+    "Craftsman Module": "Craftsman Module",
+    "Foraging Module": "Foraging Module",
+    "Fireproof Module": "Fireproof Module",
+    "Fortress Module": "Fortress Module",
+    "Harpoon Protection Module": "Harpoon Protection Module",
+    "Hearth Module": "Hearth Module",
+    "Hull Hardening Module": "Hull Hardening Module",
+    "Lifeforce Module": "Lifeforce Module",
+    "Lumberjack Module": "Lumberjack Module",
+    "Merchant Module": "Merchant Module",
+    "Pack Mule Module": "Pack Mule Module",
+    "Sandy Module": "Sandy Module",
+    "Scavenger Module": "Scavenger Module",
+    "Torque Module": "Torque Module",
+    "Watery Module": "Watery Module",
+    "Weightless Module": "Weightless Module",
+    "Giant Wall Packer": "Giant Wall Packer",
+    "Buffalo Walker Legs Armored (1 of 2)":
+      "Buffalo Walker Legs Armored (1 of 2)",
+    "Buffalo Walker Legs Heavy (1 of 2)": "Buffalo Walker Legs Heavy (1 of 2)",
+    "Buffalo Walker Upgrade - Cargo - Tier 1":
+      "Buffalo Walker Upgrade - Cargo - Tier 1",
+    "Buffalo Walker Upgrade - Durability - Tier 1":
+      "Buffalo Walker Upgrade - Durability - Tier 1",
+    "Buffalo Walker Upgrade - Gear - Tier 1":
+      "Buffalo Walker Upgrade - Gear - Tier 1",
+    "Buffalo Walker Upgrade - Mobility - Tier 1":
+      "Buffalo Walker Upgrade - Mobility - Tier 1",
+    "Buffalo Walker Upgrade - Torque - Tier 1":
+      "Buffalo Walker Upgrade - Torque - Tier 1",
+    "Buffalo Walker Upgrade - Water - Tier 1":
+      "Buffalo Walker Upgrade - Water - Tier 1",
+    "Cobra Walker Upgrade - Water - Tier 1":
+      "Cobra Walker Upgrade - Water - Tier 1",
+    "Dinghy Walker Upgrade - Cargo - Tier 1":
+      "Dinghy Walker Upgrade - Cargo - Tier 1",
+    "Dinghy Walker Upgrade - Durability - Tier 1":
+      "Dinghy Walker Upgrade - Durability - Tier 1",
+    "Dinghy Walker Upgrade - Gear - Tier 1":
+      "Dinghy Walker Upgrade - Gear - Tier 1",
+    "Dinghy Walker Upgrade - Mobility - Tier 1":
+      "Dinghy Walker Upgrade - Mobility - Tier 1",
+    "Dinghy Walker Upgrade - Torque - Tier 1":
+      "Dinghy Walker Upgrade - Torque - Tier 1",
+    "Dinghy Walker Upgrade - Water - Tier 1":
+      "Dinghy Walker Upgrade - Water - Tier 1",
+    "Hornet Walker Legs Armored (1 of 2)":
+      "Hornet Walker Legs Armored (1 of 2)",
+    "Hornet Walker Legs Heavy (1 of 2)": "Hornet Walker Legs Heavy (1 of 2)",
+    "Hornet Walker Upgrade - Cargo - Tier 1":
+      "Hornet Walker Upgrade - Cargo - Tier 1",
+    "Hornet Walker Upgrade - Durability - Tier 1":
+      "Hornet Walker Upgrade - Durability - Tier 1",
+    "Hornet Walker Upgrade - Gear - Tier 1":
+      "Hornet Walker Upgrade - Gear - Tier 1",
+    "Hornet Walker Upgrade - Mobility - Tier 1":
+      "Hornet Walker Upgrade - Mobility - Tier 1",
+    "Hornet Walker Upgrade - Torque - Tier 1":
+      "Hornet Walker Upgrade - Torque - Tier 1",
+    "Hornet Walker Upgrade - Water - Tier 1":
+      "Hornet Walker Upgrade - Water - Tier 1",
+    "Stiletto Walker Legs Armored (1 of 2)":
+      "Stiletto Walker Legs Armored (1 of 2)",
+    "Titan Walker Upgrade - Cargo - Tier 1":
+      "Titan Walker Upgrade - Cargo - Tier 1",
+    "Titan Walker Upgrade - Durability - Tier 1":
+      "Titan Walker Upgrade - Durability - Tier 1",
+    "Titan Walker Upgrade - Gear - Tier 1":
+      "Titan Walker Upgrade - Gear - Tier 1",
+    "Titan Walker Upgrade - Mobility - Tier 1":
+      "Titan Walker Upgrade - Mobility - Tier 1",
+    "Titan Walker Upgrade - Torque - Tier 1":
+      "Titan Walker Upgrade - Torque - Tier 1",
+    "Titan Walker Upgrade - Water - Tier 1":
+      "Titan Walker Upgrade - Water - Tier 1",
+    "Toboggan Walker Upgrade - Cargo - Tier 1":
+      "Toboggan Walker Upgrade - Cargo - Tier 1",
+    "Toboggan Walker Upgrade - Durability - Tier 1":
+      "Toboggan Walker Upgrade - Durability - Tier 1",
+    "Toboggan Walker Upgrade - Gear - Tier 1":
+      "Toboggan Walker Upgrade - Gear - Tier 1",
+    "Toboggan Walker Upgrade - Mobility - Tier 1":
+      "Toboggan Walker Upgrade - Mobility - Tier 1",
+    "Toboggan Walker Upgrade - Torque - Tier 1":
+      "Toboggan Walker Upgrade - Torque - Tier 1",
+    "Toboggan Walker Upgrade - Water - Tier 1":
+      "Toboggan Walker Upgrade - Water - Tier 1",
+    "Tusker Walker Upgrade - Cargo - Tier 1":
+      "Tusker Walker Upgrade - Cargo - Tier 1",
+    "Tusker Walker Upgrade - Durability - Tier 1":
+      "Tusker Walker Upgrade - Durability - Tier 1",
+    "Tusker Walker Upgrade - Gear - Tier 1":
+      "Tusker Walker Upgrade - Gear - Tier 1",
+    "Tusker Walker Upgrade - Mobility - Tier 1":
+      "Tusker Walker Upgrade - Mobility - Tier 1",
+    "Tusker Walker Upgrade - Torque - Tier 1":
+      "Tusker Walker Upgrade - Torque - Tier 1",
+    "Tusker Walker Upgrade - Water - Tier 1":
+      "Tusker Walker Upgrade - Water - Tier 1",
+    "Silur Walker Legs Armored (1 of 2)": "Silur Walker Legs Armored (1 of 2)",
+    "Silur Walker Legs Heavy (1 of 2)": "Silur Walker Legs Heavy (1 of 2)",
+    "Hercul Walker Wings (1 of 2)": "Hercul Walker Wings (1 of 2)",
+    "Hercul Walker Legs Armored (1 of 2)":
+      "Hercul Walker Legs Armored (1 of 2)",
+    "Hercul Walker Wings Heavy (1 of 2)": "Hercul Walker Wings Heavy (1 of 2)",
+    "Hercul Walker Wings Medium (1 of 2)":
+      "Hercul Walker Wings Medium (1 of 2)",
+    "Hercul Walker Wings Raider (1 of 2)":
+      "Hercul Walker Wings Raider (1 of 2)",
+    "Hercul Walker Wings Rugged (1 of 2)":
+      "Hercul Walker Wings Rugged (1 of 2)",
+    "Hercul Walker Wings Skirmish (1 of 2)":
+      "Hercul Walker Wings Skirmish (1 of 2)",
+    "Hercul Walker Wings Small (1 of 2)": "Hercul Walker Wings Small (1 of 2)",
+    "Balang Walker Wings (1 of 2)": "Balang Walker Wings (1 of 2)",
+    "Balang Walker Wings Small (1 of 2)": "Balang Walker Wings Small (1 of 2)",
+    "Raptor Sky Walker Body": "Raptor Sky Walker Body",
+    "Raptor Sky Walker Legs (1 of 2)": "Raptor Sky Walker Legs (1 of 2)",
+    "Raptor Sky Walker Wings (1 of 2)": "Raptor Sky Walker Wings (1 of 2)",
+    "Raptor Walker Upgrade - Cargo - Tier 1":
+      "Raptor Walker Upgrade - Cargo - Tier 1",
+    "Raptor Walker Upgrade - Durability - Tier 1":
+      "Raptor Walker Upgrade - Durability - Tier 1",
+    "Raptor Walker Upgrade - Gear - Tier 1":
+      "Raptor Walker Upgrade - Gear - Tier 1",
+    "Raptor Walker Upgrade - Torque - Tier 1":
+      "Raptor Walker Upgrade - Torque - Tier 1",
+    "Raptor Walker Upgrade - Water - Tier 1":
+      "Raptor Walker Upgrade - Water - Tier 1",
+    "Raptor Walker Upgrade - Cargo - Tier 2":
+      "Raptor Walker Upgrade - Cargo - Tier 2",
+    "Raptor Walker Upgrade - Durability - Tier 2":
+      "Raptor Walker Upgrade - Durability - Tier 2",
+    "Raptor Walker Upgrade - Gear - Tier 2":
+      "Raptor Walker Upgrade - Gear - Tier 2",
+    "Raptor Walker Upgrade - Torque - Tier 2":
+      "Raptor Walker Upgrade - Torque - Tier 2",
+    "Raptor Walker Upgrade - Water - Tier 2":
+      "Raptor Walker Upgrade - Water - Tier 2",
+    "Raptor Walker Upgrade - Cargo - Tier 3":
+      "Raptor Walker Upgrade - Cargo - Tier 3",
+    "Raptor Walker Upgrade - Durability - Tier 3":
+      "Raptor Walker Upgrade - Durability - Tier 3",
+    "Raptor Walker Upgrade - Gear - Tier 3":
+      "Raptor Walker Upgrade - Gear - Tier 3",
+    "Raptor Walker Upgrade - Torque - Tier 3":
+      "Raptor Walker Upgrade - Torque - Tier 3",
+    "Raptor Walker Upgrade - Water - Tier 3":
+      "Raptor Walker Upgrade - Water - Tier 3",
+    "Raptor Walker Upgrade - Cargo - Tier 4":
+      "Raptor Walker Upgrade - Cargo - Tier 4",
+    "Raptor Walker Upgrade - Durability - Tier 4":
+      "Raptor Walker Upgrade - Durability - Tier 4",
+    "Raptor Walker Upgrade - Gear - Tier 4":
+      "Raptor Walker Upgrade - Gear - Tier 4",
+    "Raptor Walker Upgrade - Torque - Tier 4":
+      "Raptor Walker Upgrade - Torque - Tier 4",
+    "Raptor Walker Upgrade - Water - Tier 4":
+      "Raptor Walker Upgrade - Water - Tier 4",
   },
 };
 

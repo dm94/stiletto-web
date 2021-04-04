@@ -486,17 +486,20 @@ class MemberList extends Component {
                       {t("Discord Tag")}
                     </th>
                     <th className="text-center" scope="col">
-                      {t("Nick in game")}
+                      {t("Nick in Game")}
                     </th>
-                    {this.state.members != null &&
-                    this.state.members[0].leaderid ===
-                      localStorage.getItem("discordid") ? (
-                      <th className="text-center" scope="col">
-                        {t("Kick")}
-                      </th>
-                    ) : (
-                      ""
-                    )}
+                    <th
+                      className={
+                        this.state.members != null &&
+                        this.state.members[0].leaderid ===
+                          localStorage.getItem("discordid")
+                          ? "text-center"
+                          : "d-none"
+                      }
+                      scope="col"
+                    >
+                      {t("Kick")}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>{this.list()}</tbody>
@@ -515,17 +518,20 @@ class MemberList extends Component {
                       {t("Discord Tag")}
                     </th>
                     <th className="text-center" scope="col">
-                      {t("Nick in game")}
+                      {t("Nick in Game")}
                     </th>
-                    {this.state.members != null &&
-                    this.state.members[0].leaderid ===
-                      localStorage.getItem("discordid") ? (
-                      <th className="text-center" scope="col">
-                        {t("Show request")}
-                      </th>
-                    ) : (
-                      ""
-                    )}
+                    <th
+                      className={
+                        this.state.members != null &&
+                        this.state.members[0].leaderid ===
+                          localStorage.getItem("discordid")
+                          ? "text-center"
+                          : "d-none"
+                      }
+                      scope="col"
+                    >
+                      {t("Show request")}
+                    </th>
                   </tr>
                 </thead>
                 <tbody>{this.requestList(t)}</tbody>
