@@ -1,0 +1,3 @@
+files:
+  - source: /src/lng/en.js
+    translation: /src/lng/%two_letters_code%.js
