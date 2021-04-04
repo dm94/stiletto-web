@@ -11,7 +11,7 @@ let all = {
         Trades: 'Métiers',
         'Auction Timers': 'Minuteurs d\'enchères',
         About: 'Autres informations',
-        'Github project': 'Projet Github',
+        'Github project': 'Github project',
         'Light Theme Mode': 'Light Theme Mode',
         Profile: 'Profile',
         'Members List': 'Members List',
