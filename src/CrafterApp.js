@@ -141,6 +141,8 @@ function CrafterApp() {
                       ? "./img/ru.jpg"
                       : localStorage.getItem("i18nextLng").includes("fr")
                       ? "./img/fr.jpg"
+                      : localStorage.getItem("i18nextLng").includes("de")
+                      ? "./img/de.jpg"
                       : "./img/en.jpg"
                   }
                   alt="Change language"
@@ -176,7 +178,7 @@ function CrafterApp() {
                 <div className="modal-header">{t("Change language")}</div>
                 <div className="modal-body">
                   <div className="row text-center">
-                    <div className="col">
+                    <div className="col-3">
                       <img
                         className="img-thumbnail"
                         src="./img/es.jpg"
@@ -185,7 +187,7 @@ function CrafterApp() {
                       />
                       <p>{t("Spanish")}</p>
                     </div>
-                    <div className="col">
+                    <div className="col-3">
                       <img
                         className="img-thumbnail"
                         src="./img/en.jpg"
@@ -194,7 +196,7 @@ function CrafterApp() {
                       />
                       <p>{t("English")}</p>
                     </div>
-                    <div className="col">
+                    <div className="col-3">
                       <img
                         className="img-thumbnail"
                         src="./img/ru.jpg"
@@ -203,7 +205,7 @@ function CrafterApp() {
                       />
                       <p>{t("Russian")}</p>
                     </div>
-                    <div className="col">
+                    <div className="col-3">
                       <img
                         className="img-thumbnail"
                         src="./img/fr.jpg"
@@ -211,6 +213,15 @@ function CrafterApp() {
                         onClick={() => switchLanguage("fr")}
                       />
                       <p>{t("French")}</p>
+                    </div>
+                    <div className="col-3">
+                      <img
+                        className="img-thumbnail"
+                        src="./img/de.jpg"
+                        alt="German language"
+                        onClick={() => switchLanguage("de")}
+                      />
+                      <p>{t("German")}</p>
                     </div>
                   </div>
                 </div>

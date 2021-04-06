@@ -71,6 +71,7 @@ let all = {
     English: "English",
     Russian: "Russian",
     French: "French",
+    German: "German",
     Transactions: "Transactions",
     Transaction: "Transaction",
     Total: "Total",

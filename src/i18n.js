@@ -4,6 +4,7 @@ import en from "./lng/en";
 import es from "./lng/es";
 import fr from "./lng/fr";
 import ru from "./lng/ru";
+import de from "./lng/de";
 
 i18n.use(LanguageDetector).init({
   resources: {
@@ -11,6 +12,7 @@ i18n.use(LanguageDetector).init({
     es: es,
     ru: ru,
     fr: fr,
+    de: de,
   },
   fallbackLng: "en",
   debug: false,
