@@ -61,6 +61,7 @@ let all = {
         English: 'Englisch',
         Russian: 'Russisch',
         French: 'Französisch',
+        German: 'German',
         Transactions: 'Transaktionen',
         Transaction: 'Transaktion',
         Total: 'gesamt',
