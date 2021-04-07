@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import CreateMapNoLog from "../components/CreateMapNoLog";
 import ResourceMapNoLog from "../components/ResourceMapNoLog";
 const queryString = require("query-string");
@@ -27,8 +26,6 @@ class Map extends Component {
       return (
         <ResourceMapNoLog mapId={this.state.mapId} pass={this.state.pass} />
       );
-    } else if (localStorage.getItem("discordid") != null) {
-      return <Redirect to="/maps" />;
     } else {
       return (
         <CreateMapNoLog
