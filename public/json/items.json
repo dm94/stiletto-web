@@ -2061,6 +2061,7 @@
     ]
   }, {
     "name": "Cauterizing Station",
+    "parent": "Jojo Mojo",
     "category": "crafting/station/vitamins",
     "crafting": [{
         "ingredients": [{
@@ -3653,6 +3654,7 @@
     ]
   }, {
     "name": "Bonebreaker",
+    "parent": "Fury Fumes",
     "category": "items/vitamins",
     "crafting": [{
         "ingredients": [{
@@ -3671,6 +3673,7 @@
     ]
   }, {
     "name": "Desert Mule",
+    "parent": "Vision Powder",
     "category": "items/vitamins",
     "crafting": [{
         "ingredients": [{
@@ -3686,6 +3689,7 @@
     ]
   }, {
     "name": "Fury Fumes",
+    "parent": "Jojo Mojo",
     "category": "items/vitamins",
     "trade_price": 400,
     "crafting": [{
@@ -3705,6 +3709,7 @@
     ]
   }, {
     "name": "Jojo Mojo",
+    "parent": "Vision Powder",
     "category": "items/vitamins",
     "trade_price": 125,
     "crafting": [{
@@ -3724,6 +3729,7 @@
     ]
   }, {
     "name": "Race Dust",
+    "parent": "Jojo Mojo",
     "category": "items/vitamins",
     "trade_price": 500,
     "crafting": [{
@@ -3746,6 +3752,7 @@
     ]
   }, {
     "name": "Rupu Repellent",
+    "parent": "Desert Mule",
     "category": "items/vitamins",
     "trade_price": 600,
     "crafting": [{
@@ -3768,6 +3775,7 @@
     ]
   }, {
     "name": "Sinus Destroyer",
+    "parent": "Race Dust",
     "category": "items/vitamins",
     "crafting": [{
         "ingredients": [{
@@ -3789,6 +3797,7 @@
     ]
   }, {
     "name": "Vision Powder",
+    "parent": "Vitamins",
     "category": "items/vitamins",
     "trade_price": 150,
     "crafting": [{
