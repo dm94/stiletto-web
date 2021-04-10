@@ -59,13 +59,14 @@ class ResourcesInMapList extends Component {
   filterlist(t) {
     let resourceTypes = ["All"];
 
-    this.props.resources
-      .filter((r) => r.x != null)
-      .map((resource) => {
-        if (resourceTypes.indexOf(resource.resourcetype) === -1) {
-          resourceTypes.push(resource.resourcetype);
-        }
-      });
+    this.props.resources.forEach((resource) => {
+      if (
+        resource.x != null &&
+        resourceTypes.indexOf(resource.resourcetype) === -1
+      ) {
+        resourceTypes.push(resource.resourcetype);
+      }
+    });
 
     return resourceTypes.map((r) => (
       <button

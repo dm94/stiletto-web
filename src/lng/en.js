@@ -16,6 +16,7 @@ let all = {
     Profile: "Profile",
     "Members List": "Members List",
     Crafter: "Crafter",
+    "Tech Tree": "Tech Tree",
     "Walkers Upgrades Cost": "Walkers Upgrades Cost",
     "Help to translate the website": "Help to translate the website",
     "This website uses utilities related to the game 'Last Oasis' but is not affiliated with":
@@ -63,6 +64,8 @@ let all = {
     "Manage Clan": "Manage Clan",
     "Leave clan": "Leave clan",
     "Error when connecting to the API": "Error when connecting to the API",
+    "The page you are looking for does not exist":
+      "The page you are looking for does not exist",
     "This user cannot be found": "This user cannot be found",
     "You do not have permission to access this page":
       "You do not have permission to access this page",
@@ -221,6 +224,9 @@ let all = {
     "Source Code is published on GitHub for full disclosure where you can also report any issues found.":
       "Source Code is published on GitHub for full disclosure where you can also report any issues found.",
     Vitamins: "Vitamins",
+    Equipment: "Equipment",
+    Construction: "Construction",
+    Walkers: "Walkers",
     "Point Of Interest": "Point Of Interest",
     "Trade Station": "Trade Station",
     Proxy: "Proxy",

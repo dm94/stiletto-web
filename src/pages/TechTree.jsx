@@ -4,16 +4,23 @@ import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
 import LoadingScreen from "../components/LoadingScreen";
+import ModalMessage from "../components/ModalMessage";
 
 class TechTree extends Component {
-  state = {
-    items: [],
-    savedData: {},
-    isLoaded: false,
-    usersSavedData: [
-      { discordid: "000000000", vitamins: ["Vision Powder", "Jojo Mojo"] },
-    ],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      user_discord_id: localStorage.getItem("discordid"),
+      token: localStorage.getItem("token"),
+      items: [],
+      savedData: {},
+      isLoaded: false,
+      error: null,
+      usersSavedData: [
+        { discordid: "000000000", vitamins: ["Vision Powder", "Jojo Mojo"] },
+      ],
+    };
+  }
 
   componentDidMount() {
     Axios.get(
@@ -32,6 +39,28 @@ class TechTree extends Component {
 
   render() {
     const { t } = this.props;
+
+    if (this.state.error) {
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: t(this.state.error),
+            redirectPage: "/profile",
+          }}
+        />
+      );
+    } else if (this.state.user_discord_id == null || this.state.token == null) {
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: t("You need to be logged in to enter this part"),
+            redirectPage: "/profile",
+          }}
+        />
+      );
+    }
 
     if (!this.state.isLoaded) {
       return <LoadingScreen></LoadingScreen>;
@@ -64,18 +93,162 @@ class TechTree extends Component {
         </Helmet>
         <div className="row">
           <div className="col-12">
-            <SkillProvider>
-              <SkillTreeGroup>
-                {({ skillCount }) => (
-                  <SkillTree
-                    treeId="Vitamins"
-                    title={t("Vitamins")}
-                    savedData={this.state.savedData}
-                    data={this.getChildrens("Vitamins")}
-                  />
-                )}
-              </SkillTreeGroup>
-            </SkillProvider>
+            <nav>
+              <div className="nav nav-tabs" id="nav-tab" role="tablist">
+                <a
+                  className="nav-item nav-link active"
+                  id="nav-vitamins-tab"
+                  data-toggle="tab"
+                  href="#nav-vitamins"
+                  role="tab"
+                  aria-controls="nav-vitamins"
+                  aria-selected="true"
+                >
+                  {t("Vitamins")}
+                </a>
+                <a
+                  className="nav-item nav-link"
+                  id="nav-equipment-tab"
+                  data-toggle="tab"
+                  href="#nav-equipment"
+                  role="tab"
+                  aria-controls="nav-equipment"
+                  aria-selected="false"
+                >
+                  {t("Equipment")}
+                </a>
+                <a
+                  className="nav-item nav-link"
+                  id="nav-crafting-tab"
+                  data-toggle="tab"
+                  href="#nav-crafting"
+                  role="tab"
+                  aria-controls="nav-crafting"
+                  aria-selected="false"
+                >
+                  {t("Crafting")}
+                </a>
+                <a
+                  className="nav-item nav-link"
+                  id="nav-construction-tab"
+                  data-toggle="tab"
+                  href="#nav-construction"
+                  role="tab"
+                  aria-controls="nav-construction"
+                  aria-selected="false"
+                >
+                  {t("Construction")}
+                </a>
+                <a
+                  className="nav-item nav-link"
+                  id="nav-walkers-tab"
+                  data-toggle="tab"
+                  href="#nav-walkers"
+                  role="tab"
+                  aria-controls="nav-walkers"
+                  aria-selected="false"
+                >
+                  {t("Walkers")}
+                </a>
+              </div>
+            </nav>
+            <div className="tab-content" id="nav-tabContent">
+              <div
+                className="tab-pane fade show active"
+                id="nav-vitamins"
+                role="tabpanel"
+                aria-labelledby="nav-vitamins-tab"
+              >
+                <SkillProvider>
+                  <SkillTreeGroup>
+                    {({ skillCount }) => (
+                      <SkillTree
+                        treeId="Vitamins"
+                        title={t("Vitamins")}
+                        savedData={this.state.savedData}
+                        data={this.getChildrens("Vitamins")}
+                      />
+                    )}
+                  </SkillTreeGroup>
+                </SkillProvider>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="nav-equipment"
+                role="tabpanel"
+                aria-labelledby="nav-equipment-tab"
+              >
+                <SkillProvider>
+                  <SkillTreeGroup>
+                    {({ skillCount }) => (
+                      <SkillTree
+                        treeId="Equipment"
+                        title={t("Equipment")}
+                        savedData={this.state.savedData}
+                        data={this.getChildrens("Equipment")}
+                      />
+                    )}
+                  </SkillTreeGroup>
+                </SkillProvider>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="nav-crafting"
+                role="tabpanel"
+                aria-labelledby="nav-crafting-tab"
+              >
+                <SkillProvider>
+                  <SkillTreeGroup>
+                    {({ skillCount }) => (
+                      <SkillTree
+                        treeId="Crafting"
+                        title={t("Crafting")}
+                        savedData={this.state.savedData}
+                        data={this.getChildrens("Crafting")}
+                      />
+                    )}
+                  </SkillTreeGroup>
+                </SkillProvider>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="nav-construction"
+                role="tabpanel"
+                aria-labelledby="nav-construction-tab"
+              >
+                <SkillProvider>
+                  <SkillTreeGroup>
+                    {({ skillCount }) => (
+                      <SkillTree
+                        treeId="Construction"
+                        title={t("Construction")}
+                        savedData={this.state.savedData}
+                        data={this.getChildrens("Construction")}
+                      />
+                    )}
+                  </SkillTreeGroup>
+                </SkillProvider>
+              </div>
+              <div
+                className="tab-pane fade"
+                id="nav-walkers"
+                role="tabpanel"
+                aria-labelledby="nav-walkers-tab"
+              >
+                <SkillProvider>
+                  <SkillTreeGroup>
+                    {({ skillCount }) => (
+                      <SkillTree
+                        treeId="Walkers"
+                        title={t("Walkers")}
+                        savedData={this.state.savedData}
+                        data={this.getChildrens("Walkers")}
+                      />
+                    )}
+                  </SkillTreeGroup>
+                </SkillProvider>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -90,14 +263,11 @@ class TechTree extends Component {
       learned = learned.concat(user.vitamins);
     });
 
-    console.log(learned);
-
     this.state.items.forEach((i) => {
       if (learned.includes(i.name)) {
         saveData[i.name] = {
           optional: false,
           nodeState: "selected",
-          learnedBy: ["0000000000", "fdsffffff"],
         };
       }
     });
