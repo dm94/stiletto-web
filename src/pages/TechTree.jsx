@@ -154,7 +154,7 @@ class TechTree extends Component {
             </nav>
             <div className="tab-content" id="nav-tabContent">
               <div
-                className="tab-pane fade show active"
+                className="tab-pane fade show active mw-100 overflow-auto"
                 id="nav-vitamins"
                 role="tabpanel"
                 aria-labelledby="nav-vitamins-tab"
@@ -173,7 +173,7 @@ class TechTree extends Component {
                 </SkillProvider>
               </div>
               <div
-                className="tab-pane fade"
+                className="tab-pane fade mw-100 overflow-auto"
                 id="nav-equipment"
                 role="tabpanel"
                 aria-labelledby="nav-equipment-tab"
@@ -192,7 +192,7 @@ class TechTree extends Component {
                 </SkillProvider>
               </div>
               <div
-                className="tab-pane fade"
+                className="tab-pane fade mw-100 overflow-auto"
                 id="nav-crafting"
                 role="tabpanel"
                 aria-labelledby="nav-crafting-tab"
@@ -211,7 +211,7 @@ class TechTree extends Component {
                 </SkillProvider>
               </div>
               <div
-                className="tab-pane fade"
+                className="tab-pane fade mw-100 overflow-auto"
                 id="nav-construction"
                 role="tabpanel"
                 aria-labelledby="nav-construction-tab"
@@ -230,7 +230,7 @@ class TechTree extends Component {
                 </SkillProvider>
               </div>
               <div
-                className="tab-pane fade"
+                className="tab-pane fade mw-100 overflow-auto"
                 id="nav-walkers"
                 role="tabpanel"
                 aria-labelledby="nav-walkers-tab"
