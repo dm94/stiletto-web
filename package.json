@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "3.5.4",
+  "version": "3.5.5",
   "license": "UNLICENSED",
   "author": "Daniel Martín",
   "description": "Web with different utilities for the game Last Oasis",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "axios": ">=0.21.1",
+    "beautiful-skill-tree": "^1.7.1",
     "bootstrap": "^4.5.3",
     "i18next": "^19.8.3",
     "i18next-browser-languagedetector": "^6.0.1",

@@ -16,8 +16,10 @@ import Diplomacy from "./pages/Diplomacy";
 import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
 import Map from "./pages/Map";
+import TechTree from "./pages/TechTree";
 import QualityCalculator from "./pages/QualityCalculator";
 import DiscordButton from "./components/DiscordButton";
+import ModalMessage from "./components/ModalMessage";
 import { Helmet } from "react-helmet";
 
 function CrafterApp() {
@@ -170,6 +172,16 @@ function CrafterApp() {
               <Route path="/others" component={Others} />
               <Route path="/map" component={Map} />
               <Route path="/quality" component={QualityCalculator} />
+              <Route path="/tech" component={TechTree} />
+              <Route path="*">
+                <ModalMessage
+                  message={{
+                    isError: true,
+                    text: t("The page you are looking for does not exist"),
+                    redirectPage: "/",
+                  }}
+                />
+              </Route>
             </Switch>
           </Analytics>
           <div className={showHideClassName}>
