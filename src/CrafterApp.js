@@ -169,7 +169,7 @@ function CrafterApp() {
               <Route path="/auctions" component={AuctionTimers} />
               <Route path="/others" component={Others} />
               <Route path="/map" component={Map} />
-              <Route patch="/quality" component={QualityCalculator} />
+              <Route path="/quality" component={QualityCalculator} />
             </Switch>
           </Analytics>
           <div className={showHideClassName}>
