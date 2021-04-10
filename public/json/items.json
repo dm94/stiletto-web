@@ -2708,6 +2708,11 @@
     ]
   }, {
     "name": "Gas Mask",
+    "parent": "Primitive Bandage",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "items/armor/head",
     "crafting": [{
         "ingredients": [{
@@ -2725,6 +2730,11 @@
     ]
   }, {
     "name": "Baskwood Armor",
+    "parent": "Fiber Shirt And Trousers",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "items/armors/baskwood armor",
     "crafting": [{
         "ingredients": [{
@@ -2742,6 +2752,11 @@
     ]
   }, {
     "name": "Baskwood Boots",
+    "parent": "Baskwood Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/armors/baskwood armor",
     "crafting": [{
         "ingredients": [{
@@ -2762,6 +2777,11 @@
     ]
   }, {
     "name": "Baskwood Bracers",
+    "parent": "Baskwood Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/armors/baskwood armor",
     "crafting": [{
         "ingredients": [{
@@ -2782,6 +2802,11 @@
     ]
   }, {
     "name": "Carapace Armor",
+    "parent": "Forester's Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 5
+    },
     "category": "items/armors/carapace armor",
     "crafting": [{
         "ingredients": [{
@@ -2802,6 +2827,11 @@
     ]
   }, {
     "name": "Carapace Boots",
+    "parent": "Carapace Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "items/armors/carapace armor",
     "crafting": [{
         "ingredients": [{
@@ -2822,6 +2852,11 @@
     ]
   }, {
     "name": "Carapace Gauntlets",
+    "parent": "Carapace Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "items/armors/carapace armor",
     "crafting": [{
         "ingredients": [{
@@ -2842,6 +2877,11 @@
     ]
   }, {
     "name": "Cloak",
+    "parent": "Redwood Wood Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/armors/cloak",
     "crafting": [{
         "ingredients": [{
@@ -2862,6 +2902,11 @@
     ]
   }, {
     "name": "Feather Boots",
+    "parent": "Fast Grappling Hook",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "category": "items/armors/feather boots",
     "crafting": [{
         "ingredients": [{
@@ -2876,6 +2921,11 @@
     ]
   }, {
     "name": "Fiber Arm Wraps",
+    "parent": "Fiber Shirt And Trousers",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/armors/fiber armor",
     "crafting": [{
         "ingredients": [{
@@ -2890,6 +2940,7 @@
     ]
   }, {
     "name": "Fiber Headwrap",
+    "parent": "Fiber Shirt And Trousers",
     "category": "items/armors/fiber armor",
     "crafting": [{
         "ingredients": [{
@@ -2901,6 +2952,7 @@
     ]
   }, {
     "name": "Fiber Sandals",
+    "parent": "Fiber Shirt And Trousers",
     "category": "items/armors/fiber armor",
     "crafting": [{
         "ingredients": [{
@@ -2915,6 +2967,7 @@
     ]
   }, {
     "name": "Fiber Shirt And Trousers",
+    "parent": "Primitive Bandage",
     "category": "items/armors/fiber armor",
     "crafting": [{
         "ingredients": [{
@@ -2926,6 +2979,11 @@
     ]
   }, {
     "name": "Brittle Bone Armor",
+    "parent": "Forester's Armor",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "items/armors/forester's armor",
     "crafting": [{
         "ingredients": [{
@@ -2940,6 +2998,7 @@
     ]
   }, {
     "name": "Forester's Armor",
+    "parent": "Fiber Shirt And Trousers",
     "category": "items/armors/forester's armor",
     "crafting": [{
         "ingredients": [{
@@ -2957,6 +3016,11 @@
     ]
   }, {
     "name": "Forester's Sandals",
+    "parent": "Forester's Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/armors/forester's armor",
     "crafting": [{
         "ingredients": [{
@@ -2974,6 +3038,11 @@
     ]
   }, {
     "name": "Forester's Sleeves",
+    "parent": "Forester's Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/armors/forester's armor",
     "crafting": [{
         "ingredients": [{
@@ -2991,6 +3060,11 @@
     ]
   }, {
     "name": "Iron Studded Armor",
+    "parent": "Baskwood Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "category": "items/armors/iron studded armor",
     "crafting": [{
         "ingredients": [{
@@ -3011,6 +3085,11 @@
     ]
   }, {
     "name": "Iron Studded Boots",
+    "parent": "Iron Studded Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 8
+    },
     "category": "items/armors/iron studded armor",
     "crafting": [{
         "ingredients": [{
@@ -3031,6 +3110,11 @@
     ]
   }, {
     "name": "Iron Studded Gauntlets",
+    "parent": "Iron Studded Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 8
+    },
     "category": "items/armors/iron studded armor",
     "crafting": [{
         "ingredients": [{
@@ -3051,6 +3135,11 @@
     ]
   }, {
     "name": "Redwood Wood Armor",
+    "parent": "Triple Stitch Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "items/armors/redwood wood armor",
     "crafting": [{
         "ingredients": [{
@@ -3071,6 +3160,11 @@
     ]
   }, {
     "name": "Redwood Wood Boots",
+    "parent": "Redwood Wood Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/armors/redwood wood armor",
     "crafting": [{
         "ingredients": [{
@@ -3091,6 +3185,11 @@
     ]
   }, {
     "name": "Redwood Wood Bracers",
+    "parent": "Redwood Wood Armor",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/armors/redwood wood armor",
     "crafting": [{
         "ingredients": [{
@@ -3111,6 +3210,11 @@
     ]
   }, {
     "name": "Cloaked Rupu Fur Armor",
+    "parent": "Rupu Fur Armor",
+    "cost": {
+      "name": "Fragment",
+      "count": 25
+    },
     "category": "items/armors/rupu fur armor",
     "crafting": [{
         "ingredients": [{
@@ -3128,6 +3232,7 @@
     ]
   }, {
     "name": "Rupu Fur Armor",
+    "parent": "Fiber Shirt And Trousers",
     "category": "items/armors/rupu fur armor",
     "crafting": [{
         "ingredients": [{
@@ -3142,6 +3247,7 @@
     ]
   }, {
     "name": "Rupu Fur Sandals",
+    "parent": "Rupu Fur Armor",
     "category": "items/armors/rupu fur armor",
     "crafting": [{
         "ingredients": [{
@@ -3156,6 +3262,7 @@
     ]
   }, {
     "name": "Rupu Fur Sleeves",
+    "parent": "Rupu Fur Armor",
     "category": "items/armors/rupu fur armor",
     "crafting": [{
         "ingredients": [{
@@ -3170,6 +3277,11 @@
     ]
   }, {
     "name": "Triple Stitch Armor",
+    "parent": "Rupu Fur Armor",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "items/armors/triple stitch armor",
     "crafting": [{
         "ingredients": [{
@@ -3184,6 +3296,11 @@
     ]
   }, {
     "name": "Triple Stitch Boots",
+    "parent": "Triple Stitch Armor",
+    "cost": {
+      "name": "Fragment",
+      "count": 12
+    },
     "category": "items/armors/triple stitch armor",
     "crafting": [{
         "ingredients": [{
@@ -3201,6 +3318,11 @@
     ]
   }, {
     "name": "Triple Stitch Bracers",
+    "parent": "Triple Stitch Armor",
+    "cost": {
+      "name": "Fragment",
+      "count": 12
+    },
     "category": "items/armors/triple stitch armor",
     "crafting": [{
         "ingredients": [{
@@ -3252,6 +3374,7 @@
     ]
   }, {
     "name": "Durable Water Sack",
+    "parent": "Makeshift Bottle",
     "category": "items/gear/backpacks/belt",
     "crafting": [{
         "ingredients": [{
@@ -3266,6 +3389,11 @@
     ]
   }, {
     "name": "Heavy Backpack",
+    "parent": "Medium Backpack",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "category": "items/gear/backpacks/belt",
     "crafting": [{
         "ingredients": [{
@@ -3280,6 +3408,11 @@
     ]
   }, {
     "name": "Light Backpack",
+    "parent": "Foraging Pouch",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/gear/backpacks/belt",
     "crafting": [{
         "ingredients": [{
@@ -3294,6 +3427,11 @@
     ]
   }, {
     "name": "Split Durable Water Sack",
+    "parent": "Durable Water Sack",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "category": "items/gear/backpacks/belt",
     "crafting": [{
         "ingredients": [{
@@ -3314,6 +3452,11 @@
     ]
   }, {
     "name": "Medium Backpack",
+    "parent": "Light Backpack",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "items/gear/backpacks/belts",
     "crafting": [{
         "ingredients": [{
@@ -3331,6 +3474,11 @@
     ]
   }, {
     "name": "Torque Backpack",
+    "parent": "Fast Grappling Hook",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/gear/backpacks/belts",
     "crafting": [{
         "ingredients": [{
@@ -3351,6 +3499,11 @@
     ]
   }, {
     "name": "Water Circulator",
+    "parent": "Durable Water Sack",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "category": "items/gear/backpacks/belts",
     "crafting": [{
         "ingredients": [{
@@ -3368,6 +3521,11 @@
     ]
   }, {
     "name": "Wingsuit",
+    "parent": "Long Grappling Hook",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "category": "items/gear/belts",
     "crafting": [{
         "ingredients": [{
@@ -3382,6 +3540,11 @@
     ]
   }, {
     "name": "Bone Bottle",
+    "parent": "Makeshift Bottle",
+    "cost": {
+      "name": "Fragment",
+      "count": 25
+    },
     "category": "items/gear/bottles",
     "crafting": [{
         "ingredients": [{
@@ -3399,6 +3562,11 @@
     ]
   }, {
     "name": "Ceramic Flask",
+    "parent": "Bone Bottle",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/gear/bottles",
     "crafting": [{
         "ingredients": [{
@@ -3416,6 +3584,7 @@
     ]
   }, {
     "name": "Improvised Bottle",
+    "parent": "Makeshift Bottle",
     "category": "items/gear/bottles",
     "crafting": [{
         "ingredients": [{
@@ -3433,6 +3602,7 @@
     ]
   }, {
     "name": "Makeshift Bottle",
+    "parent": "Equipment",
     "category": "items/gear/bottles",
     "crafting": [{
         "ingredients": [{
@@ -3447,6 +3617,11 @@
     ]
   }, {
     "name": "Obsidian Flask",
+    "parent": "Bone Bottle",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/gear/bottles",
     "crafting": [{
         "ingredients": [{
@@ -3463,7 +3638,34 @@
       }
     ]
   }, {
+    "name": "Infused Obsidian Bottle",
+    "parent": "Obsidian Flask",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
+    "category": "items/gear/bottles",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Obsidian",
+            "count": 28
+          }, {
+            "name": "Nibiran Mineral",
+            "count": 1
+          }, {
+            "name": "Bone Glue",
+            "count": 4
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Split Bone Bottle",
+    "parent": "Bone Bottle",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "items/gear/bottles",
     "crafting": [{
         "ingredients": [{
@@ -3481,6 +3683,11 @@
     ]
   }, {
     "name": "Split Ceramic Flask",
+    "parent": "Ceramic Flask",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "items/gear/bottles",
     "crafting": [{
         "ingredients": [{
@@ -3498,6 +3705,11 @@
     ]
   }, {
     "name": "Foraging Pouch",
+    "parent": "Makeshift Bottle",
+    "cost": {
+      "name": "Fragment",
+      "count": 5
+    },
     "category": "items/gear/container",
     "crafting": [{
         "ingredients": [{
@@ -3509,6 +3721,11 @@
     ]
   }, {
     "name": "Large Gathering Pouch",
+    "parent": "Foraging Pouch",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/gear/container",
     "crafting": [{
         "ingredients": [{
@@ -3523,6 +3740,11 @@
     ]
   }, {
     "name": "Beltless Grappling Hook",
+    "parent": "Fast Grappling Hook",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/gear/grappling/hook",
     "crafting": [{
         "ingredients": [{
@@ -3543,6 +3765,11 @@
     ]
   }, {
     "name": "Fast Grappling Hook",
+    "parent": "Repaired Grappling Hook",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/gear/grappling/hook",
     "crafting": [{
         "ingredients": [{
@@ -3557,6 +3784,11 @@
     ]
   }, {
     "name": "Long Grappling Hook",
+    "parent": "Fast Grappling Hook",
+    "cost": {
+      "name": "Fragment",
+      "count": 50
+    },
     "category": "items/gear/grappling/hook",
     "crafting": [{
         "ingredients": [{
@@ -3574,6 +3806,7 @@
     ]
   }, {
     "name": "Repaired Grappling Hook",
+    "parent": "Equipment",
     "category": "items/gear/grappling/hook",
     "crafting": [{
         "ingredients": [{
@@ -3591,6 +3824,11 @@
     ]
   }, {
     "name": "Torque Battery",
+    "parent": "Foraging Pouch",
+    "cost": {
+      "name": "Fragment",
+      "count": 25
+    },
     "category": "items/gear/torque/battery",
     "crafting": [{
         "ingredients": [{
@@ -3608,6 +3846,7 @@
     ]
   }, {
     "name": "Compacted Torque Battery",
+    "parent": "Torque Battery",
     "cost": {
       "name": "Tablet",
       "count": 3
@@ -3629,6 +3868,7 @@
     ]
   }, {
     "name": "Primitive Bandage",
+    "parent": "Equipment",
     "category": "items/interactables/bandages",
     "crafting": [{
         "ingredients": [{
@@ -3640,6 +3880,7 @@
     ]
   }, {
     "name": "Sterile Bandage",
+    "parent": "Primitive Bandage",
     "category": "items/interactables/bandages",
     "crafting": [{
         "ingredients": [{
@@ -3690,6 +3931,10 @@
   }, {
     "name": "Fury Fumes",
     "parent": "Jojo Mojo",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "items/vitamins",
     "trade_price": 400,
     "crafting": [{
@@ -3710,6 +3955,10 @@
   }, {
     "name": "Jojo Mojo",
     "parent": "Vision Powder",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/vitamins",
     "trade_price": 125,
     "crafting": [{
@@ -3730,6 +3979,10 @@
   }, {
     "name": "Race Dust",
     "parent": "Jojo Mojo",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/vitamins",
     "trade_price": 500,
     "crafting": [{
@@ -3753,6 +4006,10 @@
   }, {
     "name": "Rupu Repellent",
     "parent": "Desert Mule",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/vitamins",
     "trade_price": 600,
     "crafting": [{
@@ -3776,6 +4033,10 @@
   }, {
     "name": "Sinus Destroyer",
     "parent": "Race Dust",
+    "cost": {
+      "name": "Tablet",
+      "count": 3
+    },
     "category": "items/vitamins",
     "crafting": [{
         "ingredients": [{
@@ -3814,6 +4075,7 @@
     ]
   }, {
     "name": "Beat Stick",
+    "parent": "Equipment",
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3828,6 +4090,11 @@
     ]
   }, {
     "name": "Blunt Quarterstaff",
+    "parent": "Beat Stick",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3842,6 +4109,7 @@
     ]
   }, {
     "name": "Bonespike Sword",
+    "parent": "Beat Stick",
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3859,6 +4127,11 @@
     ]
   }, {
     "name": "Bouldercut Battle Axe",
+    "parent": "Rawbone Battle Axe",
+    "cost": {
+      "name": "Tablet",
+      "count": 7
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3879,6 +4152,11 @@
     ]
   }, {
     "name": "Firestone Bladestaff",
+    "parent": "Rawbone Quarterstaff",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3899,6 +4177,11 @@
     ]
   }, {
     "name": "Firestone Bludgeon",
+    "parent": "Rawbone Club",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3919,6 +4202,11 @@
     ]
   }, {
     "name": "Firestone Bozdogan",
+    "parent": "Rawbone Maul",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3939,6 +4227,11 @@
     ]
   }, {
     "name": "Firestone Hammerstaff",
+    "parent": "Rawbone Quarterstaff",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3959,6 +4252,7 @@
     ]
   }, {
     "name": "Firestone Kopesh",
+    "parent": "Bonespike Sword",
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3979,6 +4273,11 @@
     ]
   }, {
     "name": "Firestone Longblade",
+    "parent": "Long Bonespike Swordstaff",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -3999,6 +4298,11 @@
     ]
   }, {
     "name": "Ironblade Quarterstaff",
+    "parent": "Wyndanblade Quarterstaff",
+    "cost": {
+      "name": "Tablet",
+      "count": 22
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4019,6 +4323,11 @@
     ]
   }, {
     "name": "Jaggertooth Club",
+    "parent": "Beat Stick",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4036,6 +4345,11 @@
     ]
   }, {
     "name": "Jaggertooth Maul",
+    "parent": "Jaggertooth Club",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4053,6 +4367,11 @@
     ]
   }, {
     "name": "Javelin",
+    "parent": "Beat Stick",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4070,6 +4389,11 @@
     ]
   }, {
     "name": "Long Bonespike Swordstaff",
+    "parent": "Bonespike Sword",
+    "cost": {
+      "name": "Fragment",
+      "count": 30
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4087,6 +4411,11 @@
     ]
   }, {
     "name": "Long Ceramic Hoofmace",
+    "parent": "Rawbone Maul",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4107,6 +4436,11 @@
     ]
   }, {
     "name": "Nibiran Battle Axe",
+    "parent": "Bouldercut Battle Axe",
+    "cost": {
+      "name": "Tablet",
+      "count": 12
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4127,6 +4461,11 @@
     ]
   }, {
     "name": "Nibiran Curved Dagger",
+    "parent": "Wyndan Sabre",
+    "cost": {
+      "name": "Tablet",
+      "count": 12
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4147,6 +4486,11 @@
     ]
   }, {
     "name": "Nibiran Decapitator",
+    "parent": "Wyndan Flame Sword",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4167,6 +4511,11 @@
     ]
   }, {
     "name": "Nibiran Hammer",
+    "parent": "Wyndan Hammer",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4187,6 +4536,11 @@
     ]
   }, {
     "name": "Nibiran Quarterstaff",
+    "parent": "Wyndanblade Quarterstaff",
+    "cost": {
+      "name": "Tablet",
+      "count": 22
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4207,6 +4561,11 @@
     ]
   }, {
     "name": "Nibiran Warhammer",
+    "parent": "Wyndan Warhammer",
+    "cost": {
+      "name": "Tablet",
+      "count": 15
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4227,6 +4586,11 @@
     ]
   }, {
     "name": "Paddleblade Quarterstaff",
+    "parent": "Rawbone Quarterstaff",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4247,6 +4611,11 @@
     ]
   }, {
     "name": "Rawbone Club",
+    "parent": "Jaggertooth Club",
+    "cost": {
+      "name": "Fragment",
+      "count": 20
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4264,6 +4633,11 @@
     ]
   }, {
     "name": "Rawbone Maul",
+    "parent": "Jaggertooth Maul",
+    "cost": {
+      "name": "Fragment",
+      "count": 25
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4284,6 +4658,11 @@
     ]
   }, {
     "name": "Rawbone Quarterstaff",
+    "parent": "Traveller's Staff",
+    "cost": {
+      "name": "Fragment",
+      "count": 30
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4301,6 +4680,11 @@
     ]
   }, {
     "name": "Sawtooth Sword",
+    "parent": "Long Bonespike Swordstaff",
+    "cost": {
+      "name": "Fragment",
+      "count": 40
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4318,6 +4702,11 @@
     ]
   }, {
     "name": "Short Ceramic Hoofmace",
+    "parent": "Rawbone Club",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4338,6 +4727,11 @@
     ]
   }, {
     "name": "Short Malletblade",
+    "parent": "Bonespike Sword",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4355,6 +4749,11 @@
     ]
   }, {
     "name": "Singblade",
+    "parent": "Long Bonespike Swordstaff",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4375,6 +4774,11 @@
     ]
   }, {
     "name": "Spikebone Club",
+    "parent": "Rawbone Club",
+    "cost": {
+      "name": "Fragment",
+      "count": 25
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4395,6 +4799,11 @@
     ]
   }, {
     "name": "Spikebone Maul",
+    "parent": "Rawbone Maul",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4412,6 +4821,7 @@
     ]
   }, {
     "name": "Throwing Net",
+    "parent": "Javelin",
     "cost": {
       "name": "Fragment",
       "count": 30
@@ -4433,6 +4843,7 @@
     ]
   }, {
     "name": "Net Pouch",
+    "parent": "Throwing Net",
     "cost": {
       "name": "Tablet",
       "count": 1
@@ -4454,6 +4865,7 @@
     ]
   }, {
     "name": "Torch",
+    "parent": "Woodcutter's Hatchet",
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4471,6 +4883,11 @@
     ]
   }, {
     "name": "Traveller's Staff",
+    "parent": "Blunt Quarterstaff",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4485,6 +4902,11 @@
     ]
   }, {
     "name": "Wyndan Flame Sword",
+    "parent": "Singblade",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4505,6 +4927,11 @@
     ]
   }, {
     "name": "Wyndan Hammer",
+    "parent": "Short Ceramic Hoofmace",
+    "cost": {
+      "name": "Tablet",
+      "count": 5
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4525,6 +4952,11 @@
     ]
   }, {
     "name": "Wyndan Sabre",
+    "parent": "Short Malletblade",
+    "cost": {
+      "name": "Tablet",
+      "count": 5
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4545,6 +4977,11 @@
     ]
   }, {
     "name": "Wyndan Warhammer",
+    "parent": "Long Ceramic Hoofmace",
+    "cost": {
+      "name": "Tablet",
+      "count": 8
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4565,6 +5002,11 @@
     ]
   }, {
     "name": "Wyndanblade Quarterstaff",
+    "parent": "Paddleblade Quarterstaff",
+    "cost": {
+      "name": "Tablet",
+      "count": 8
+    },
     "category": "items/weapons",
     "crafting": [{
         "ingredients": [{
@@ -4582,6 +5024,11 @@
     ]
   }, {
     "name": "Firebomb",
+    "parent": "Javelin",
+    "cost": {
+      "name": "Tablet",
+      "count": 5
+    },
     "category": "items/weapons/explosive",
     "crafting": [{
         "ingredients": [{
@@ -4599,6 +5046,11 @@
     ]
   }, {
     "name": "Firestone Axe",
+    "parent": "Rawbone Hand Axe",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons/tools/axe",
     "crafting": [{
         "ingredients": [{
@@ -4619,6 +5071,11 @@
     ]
   }, {
     "name": "Firestone Battleaxe",
+    "parent": "Rawbone Battle Axe",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
     "category": "items/weapons/tools/axe",
     "crafting": [{
         "ingredients": [{
@@ -4639,6 +5096,11 @@
     ]
   }, {
     "name": "Advanced Hatchet",
+    "parent": "Heavy Rawbone Hand Axe",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "items/weapons/tools/axes",
     "crafting": [{
         "ingredients": [{
@@ -4659,6 +5121,11 @@
     ]
   }, {
     "name": "Bouldercut Hand Axe",
+    "parent": "Advanced Hatchet",
+    "cost": {
+      "name": "Tablet",
+      "count": 5
+    },
     "category": "items/weapons/tools/axes",
     "crafting": [{
         "ingredients": [{
@@ -4679,6 +5146,11 @@
     ]
   }, {
     "name": "Heavy Rawbone Hand Axe",
+    "parent": "Rawbone Hand Axe",
+    "cost": {
+      "name": "Fragment",
+      "count": 32
+    },
     "category": "items/weapons/tools/axes",
     "crafting": [{
         "ingredients": [{
@@ -4696,6 +5168,11 @@
     ]
   }, {
     "name": "Nibiran Hand Axe",
+    "parent": "Bouldercut Hand Axe",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "category": "items/weapons/tools/axes",
     "crafting": [{
         "ingredients": [{
@@ -4716,6 +5193,11 @@
     ]
   }, {
     "name": "Rawbone Battle Axe",
+    "parent": "Rawbone Hand Axe",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "items/weapons/tools/axes",
     "crafting": [{
         "ingredients": [{
@@ -4733,6 +5215,7 @@
     ]
   }, {
     "name": "Rawbone Hand Axe",
+    "parent": "Woodcutter's Hatchet",
     "category": "items/weapons/tools/axes",
     "crafting": [{
         "ingredients": [{
@@ -4750,6 +5233,7 @@
     ]
   }, {
     "name": "Woodcutter's Hatchet",
+    "parent": "Beat Stick",
     "category": "items/weapons/tools/axes",
     "crafting": [{
         "ingredients": [{
@@ -4764,6 +5248,7 @@
     ]
   }, {
     "name": "Advanced Pickaxe",
+    "parent": "Simple Pickaxe",
     "category": "items/weapons/tools/pickaxes",
     "crafting": [{
         "ingredients": [{
@@ -4781,6 +5266,11 @@
     ]
   }, {
     "name": "Master Pickaxe",
+    "parent": "Advanced Pickaxe",
+    "cost": {
+      "name": "Tablet",
+      "count": 8
+    },
     "category": "items/weapons/tools/pickaxes",
     "crafting": [{
         "ingredients": [{
@@ -4798,6 +5288,7 @@
     ]
   }, {
     "name": "Simple Pickaxe",
+    "parent": "Woodcutter's Hatchet",
     "category": "items/weapons/tools/pickaxes",
     "crafting": [{
         "ingredients": [{
@@ -4815,6 +5306,7 @@
     ]
   }, {
     "name": "Simple Repair Hammer",
+    "parent": "Woodcutter's Hatchet",
     "category": "items/weapons/tools/repair hammer",
     "crafting": [{
         "ingredients": [{
@@ -4829,6 +5321,11 @@
     ]
   }, {
     "name": "Scythe",
+    "parent": "Simple Sickle",
+    "cost": {
+      "name": "Fragment",
+      "count": 50
+    },
     "category": "items/weapons/tools/sickles",
     "crafting": [{
         "ingredients": [{
@@ -4849,6 +5346,7 @@
     ]
   }, {
     "name": "Simple Sickle",
+    "parent": "Woodcutter's Hatchet",
     "category": "items/weapons/tools/sickles",
     "crafting": [{
         "ingredients": [{
