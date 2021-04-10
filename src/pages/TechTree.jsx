@@ -3,19 +3,27 @@ import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
+import LoadingScreen from "../components/LoadingScreen";
 
 class TechTree extends Component {
   state = {
     items: [],
+    savedData: {},
+    isLoaded: false,
+    usersSavedData: [
+      { discordid: "000000000", vitamins: ["Vision Powder", "Jojo Mojo"] },
+    ],
   };
 
   componentDidMount() {
     Axios.get(
       "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
-    ).then((response) => {
-      const items = response.data.filter((it) => it.parent != null);
-      this.setState({ items });
-    });
+    )
+      .then((response) => {
+        const items = response.data.filter((it) => it.parent != null);
+        this.setState({ items: items });
+      })
+      .then(() => this.updateSaveData());
   }
 
   handleSave(storage, treeId, skills) {
@@ -24,21 +32,11 @@ class TechTree extends Component {
 
   render() {
     const { t } = this.props;
-    const data = this.getChildrens("Vitamins");
-    const savedData = {
-      "Vision Powder": {
-        optional: false,
-        nodeState: "unlocked",
-      },
-      "Sinus Destroyer": {
-        optional: false,
-        nodeState: "locked",
-      },
-      "Jojo Mojo": {
-        optional: false,
-        nodeState: "unlocked",
-      },
-    };
+
+    if (!this.state.isLoaded) {
+      return <LoadingScreen></LoadingScreen>;
+    }
+
     return (
       <div className="container">
         <Helmet>
@@ -70,10 +68,10 @@ class TechTree extends Component {
               <SkillTreeGroup>
                 {({ skillCount }) => (
                   <SkillTree
-                    treeId="vitamins"
-                    title="Vitamins"
-                    data={data}
-                    savedData={savedData}
+                    treeId="Vitamins"
+                    title={t("Vitamins")}
+                    savedData={this.state.savedData}
+                    data={this.getChildrens("Vitamins")}
                   />
                 )}
               </SkillTreeGroup>
@@ -84,7 +82,31 @@ class TechTree extends Component {
     );
   }
 
+  updateSaveData() {
+    let learned = [];
+    let saveData = {};
+
+    this.state.usersSavedData.forEach((user) => {
+      learned = learned.concat(user.vitamins);
+    });
+
+    console.log(learned);
+
+    this.state.items.forEach((i) => {
+      if (learned.includes(i.name)) {
+        saveData[i.name] = {
+          optional: false,
+          nodeState: "selected",
+          learnedBy: ["0000000000", "fdsffffff"],
+        };
+      }
+    });
+
+    this.setState({ savedData: saveData, isLoaded: true });
+  }
+
   getChildrens(parent) {
+    const { t } = this.props;
     let childrens = [];
 
     let items = this.state.items.filter((it) => it.parent === parent);
@@ -92,7 +114,7 @@ class TechTree extends Component {
     items.forEach((i) => {
       let item = {
         id: i.name,
-        title: i.name,
+        title: t(i.name),
         tooltip: { content: i.category },
         children: this.getChildrens(i.name),
       };

@@ -220,6 +220,7 @@ let all = {
       "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.",
     "Source Code is published on GitHub for full disclosure where you can also report any issues found.":
       "Source Code is published on GitHub for full disclosure where you can also report any issues found.",
+    Vitamins: "Vitamins",
     "Point Of Interest": "Point Of Interest",
     "Trade Station": "Trade Station",
     Proxy: "Proxy",
