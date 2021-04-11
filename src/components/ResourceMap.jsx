@@ -336,7 +336,15 @@ class ResourceMap extends Component {
           </div>
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
             <ul className="nav nav-tabs" role="tablist">
-              <li className="nav-item" role="presentation">
+              <li
+                className={
+                  this.props.map.allowedit === 1 ||
+                  this.state.user_discord_id === this.props.map.discordid
+                    ? "nav-item"
+                    : "nav-item d-none"
+                }
+                role="presentation"
+              >
                 <a
                   className="nav-link"
                   id="add-resource-tab"
