@@ -1756,6 +1756,7 @@
     ]
   }, {
     "name": "Advanced Fiberworking Station",
+    "parent": "Fiberworking Station",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1773,6 +1774,11 @@
     ]
   }, {
     "name": "Advanced Furnace",
+    "parent": "Furnace",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1793,6 +1799,7 @@
     ]
   }, {
     "name": "Advanced Woodworking Station",
+    "parent": "Woodworking Station",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1816,6 +1823,11 @@
     ]
   }, {
     "name": "Artificer Woodworking Station",
+    "parent": "Advanced Woodworking Station",
+    "cost": {
+      "name": "Tablet",
+      "count": 12
+    },
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1839,6 +1851,7 @@
     ]
   }, {
     "name": "Camp Fire",
+    "parent": "Crafting",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1856,6 +1869,7 @@
     ]
   }, {
     "name": "Fiberworking Station",
+    "parent": "Camp Fire",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1873,6 +1887,7 @@
     ]
   }, {
     "name": "Furnace",
+    "parent": "Soil Excavator",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1896,6 +1911,11 @@
     ]
   }, {
     "name": "Lumbermill",
+    "parent": "Advanced Woodworking Station",
+    "cost": {
+      "name": "Tablet",
+      "count": 40
+    },
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1916,6 +1936,11 @@
     ]
   }, {
     "name": "Obsidian Machine",
+    "parent": "Soil Excavator",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1933,6 +1958,11 @@
     ]
   }, {
     "name": "Purification Station",
+    "parent": "Purified Water",
+    "cost": {
+      "name": "Fragment",
+      "count": 35
+    },
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1947,6 +1977,11 @@
     ]
   }, {
     "name": "Quarry",
+    "parent": "Clay",
+    "cost": {
+      "name": "Tablet",
+      "count": 35
+    },
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1967,6 +2002,7 @@
     ]
   }, {
     "name": "Soil Excavator",
+    "parent": "Camp Fire",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -1987,6 +2023,7 @@
     ]
   }, {
     "name": "Stomping Station",
+    "parent": "Soil Excavator",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -2007,6 +2044,7 @@
     ]
   }, {
     "name": "Torque Windmill",
+    "parent": "Soil Excavator",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -2027,6 +2065,11 @@
     ]
   }, {
     "name": "Water Condenser",
+    "parent": "Purified Water",
+    "cost": {
+      "name": "Tablet",
+      "count": 32
+    },
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -2044,6 +2087,7 @@
     ]
   }, {
     "name": "Woodworking Station",
+    "parent": "Camp Fire",
     "category": "crafting/station",
     "crafting": [{
         "ingredients": [{
@@ -5415,6 +5459,7 @@
     "category": "materials"
   }, {
     "name": "Bone Glue",
+    "parent": "Purified Water",
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5480,6 +5525,7 @@
     "trade_price": 67.54
   }, {
     "name": "Clay",
+    "parent": "Soil Excavator",
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5504,6 +5550,7 @@
     "category": "materials"
   }, {
     "name": "Earth Wax",
+    "parent": "Soil Excavator",
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5553,6 +5600,7 @@
     "category": "materials"
   }, {
     "name": "Fiber Weave",
+    "parent": "Fiberworking Station",
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5572,6 +5620,11 @@
     "trade_price": 2500
   }, {
     "name": "Fragment",
+    "parent": "Woodworking Station",
+    "cost": {
+      "name": "Fragment",
+      "count": 50
+    },
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5630,6 +5683,11 @@
     "category": "materials"
   }, {
     "name": "Liquid Fuel",
+    "parent": "Purification Station",
+    "cost": {
+      "name": "Tablet",
+      "count": 6
+    },
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5652,6 +5710,7 @@
     "category": "materials"
   }, {
     "name": "Nomad Cloth",
+    "parent": "Advanced Fiberworking Station",
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5687,6 +5746,7 @@
     "trade_price": 12.27
   }, {
     "name": "Purified Water",
+    "parent": "Camp Fire",
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5785,6 +5845,11 @@
     "category": "materials"
   }, {
     "name": "Reinforced Plank",
+    "parent": "Woodworking Station",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5823,6 +5888,7 @@
     ]
   }, {
     "name": "Rope",
+    "parent": "Fiber Weave",
     "category": "materials",
     "crafting": [{
         "ingredients": [{
@@ -5929,6 +5995,7 @@
     "category": "materials"
   }, {
     "name": "Wood Shaft",
+    "parent": "Woodworking Station",
     "category": "materials",
     "crafting": [{
         "ingredients": [{
