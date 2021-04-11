@@ -5,6 +5,8 @@ import Axios from "axios";
 import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
+import Ingredients from "../components/Ingredients";
+import Ingredient from "../components/Ingredient";
 
 class TechTree extends Component {
   constructor(props) {
@@ -17,7 +19,7 @@ class TechTree extends Component {
       isLoaded: false,
       error: null,
       usersSavedData: [
-        { discordid: "000000000", vitamins: ["Vision Powder", "Jojo Mojo"] },
+        { discordtag: "Test#0000", learned: ["Vision Powder", "Jojo Mojo"] },
       ],
     };
   }
@@ -66,8 +68,15 @@ class TechTree extends Component {
       return <LoadingScreen></LoadingScreen>;
     }
 
+    const theme = {
+      border: "4px solid rgb(127,127,127)",
+      treeBackgroundColor: "rgba(60, 60, 60, 0.8)",
+      nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
+      nodeActiveBackgroundColor: "rgb(84, 170, 79)",
+    };
+
     return (
-      <div className="container">
+      <div className="container-fluid">
         <Helmet>
           <title>{t("Tech Tree")} - Stiletto</title>
           <meta
@@ -91,166 +100,138 @@ class TechTree extends Component {
             }
           />
         </Helmet>
-        <div className="row">
-          <div className="col-12">
-            <nav>
-              <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                <a
-                  className="nav-item nav-link active"
-                  id="nav-vitamins-tab"
-                  data-toggle="tab"
-                  href="#nav-vitamins"
-                  role="tab"
-                  aria-controls="nav-vitamins"
-                  aria-selected="true"
-                >
-                  {t("Vitamins")}
-                </a>
-                <a
-                  className="nav-item nav-link"
-                  id="nav-equipment-tab"
-                  data-toggle="tab"
-                  href="#nav-equipment"
-                  role="tab"
-                  aria-controls="nav-equipment"
-                  aria-selected="false"
-                >
-                  {t("Equipment")}
-                </a>
-                <a
-                  className="nav-item nav-link"
-                  id="nav-crafting-tab"
-                  data-toggle="tab"
-                  href="#nav-crafting"
-                  role="tab"
-                  aria-controls="nav-crafting"
-                  aria-selected="false"
-                >
-                  {t("Crafting")}
-                </a>
-                <a
-                  className="nav-item nav-link"
-                  id="nav-construction-tab"
-                  data-toggle="tab"
-                  href="#nav-construction"
-                  role="tab"
-                  aria-controls="nav-construction"
-                  aria-selected="false"
-                >
-                  {t("Construction")}
-                </a>
-                <a
-                  className="nav-item nav-link"
-                  id="nav-walkers-tab"
-                  data-toggle="tab"
-                  href="#nav-walkers"
-                  role="tab"
-                  aria-controls="nav-walkers"
-                  aria-selected="false"
-                >
-                  {t("Walkers")}
-                </a>
-              </div>
-            </nav>
-            <div className="tab-content" id="nav-tabContent">
-              <div
-                className="tab-pane fade show active mw-100 overflow-auto"
-                id="nav-vitamins"
-                role="tabpanel"
-                aria-labelledby="nav-vitamins-tab"
-              >
-                <SkillProvider>
-                  <SkillTreeGroup>
-                    {({ skillCount }) => (
-                      <SkillTree
-                        treeId="Vitamins"
-                        title={t("Vitamins")}
-                        savedData={this.state.savedData}
-                        data={this.getChildrens("Vitamins")}
-                      />
-                    )}
-                  </SkillTreeGroup>
-                </SkillProvider>
-              </div>
-              <div
-                className="tab-pane fade mw-100 overflow-auto"
-                id="nav-equipment"
-                role="tabpanel"
-                aria-labelledby="nav-equipment-tab"
-              >
-                <SkillProvider>
-                  <SkillTreeGroup>
-                    {({ skillCount }) => (
-                      <SkillTree
-                        treeId="Equipment"
-                        title={t("Equipment")}
-                        savedData={this.state.savedData}
-                        data={this.getChildrens("Equipment")}
-                      />
-                    )}
-                  </SkillTreeGroup>
-                </SkillProvider>
-              </div>
-              <div
-                className="tab-pane fade mw-100 overflow-auto"
-                id="nav-crafting"
-                role="tabpanel"
-                aria-labelledby="nav-crafting-tab"
-              >
-                <SkillProvider>
-                  <SkillTreeGroup>
-                    {({ skillCount }) => (
-                      <SkillTree
-                        treeId="Crafting"
-                        title={t("Crafting")}
-                        savedData={this.state.savedData}
-                        data={this.getChildrens("Crafting")}
-                      />
-                    )}
-                  </SkillTreeGroup>
-                </SkillProvider>
-              </div>
-              <div
-                className="tab-pane fade mw-100 overflow-auto"
-                id="nav-construction"
-                role="tabpanel"
-                aria-labelledby="nav-construction-tab"
-              >
-                <SkillProvider>
-                  <SkillTreeGroup>
-                    {({ skillCount }) => (
-                      <SkillTree
-                        treeId="Construction"
-                        title={t("Construction")}
-                        savedData={this.state.savedData}
-                        data={this.getChildrens("Construction")}
-                      />
-                    )}
-                  </SkillTreeGroup>
-                </SkillProvider>
-              </div>
-              <div
-                className="tab-pane fade mw-100 overflow-auto"
-                id="nav-walkers"
-                role="tabpanel"
-                aria-labelledby="nav-walkers-tab"
-              >
-                <SkillProvider>
-                  <SkillTreeGroup>
-                    {({ skillCount }) => (
-                      <SkillTree
-                        treeId="Walkers"
-                        title={t("Walkers")}
-                        savedData={this.state.savedData}
-                        data={this.getChildrens("Walkers")}
-                      />
-                    )}
-                  </SkillTreeGroup>
-                </SkillProvider>
-              </div>
-            </div>
+        <nav className="nav-fill">
+          <div className="nav nav-tabs" id="nav-tab" role="tablist">
+            <a
+              className="nav-item nav-link active"
+              id="nav-vitamins-tab"
+              data-toggle="tab"
+              href="#nav-vitamins"
+              role="tab"
+              aria-controls="nav-vitamins"
+              aria-selected="true"
+            >
+              {t("Vitamins")}
+            </a>
+            <a
+              className="nav-item nav-link"
+              id="nav-equipment-tab"
+              data-toggle="tab"
+              href="#nav-equipment"
+              role="tab"
+              aria-controls="nav-equipment"
+              aria-selected="false"
+            >
+              {t("Equipment")}
+            </a>
+            <a
+              className="nav-item nav-link"
+              id="nav-crafting-tab"
+              data-toggle="tab"
+              href="#nav-crafting"
+              role="tab"
+              aria-controls="nav-crafting"
+              aria-selected="false"
+            >
+              {t("Crafting")}
+            </a>
+            <a
+              className="nav-item nav-link"
+              id="nav-construction-tab"
+              data-toggle="tab"
+              href="#nav-construction"
+              role="tab"
+              aria-controls="nav-construction"
+              aria-selected="false"
+            >
+              {t("Construction")}
+            </a>
+            <a
+              className="nav-item nav-link"
+              id="nav-walkers-tab"
+              data-toggle="tab"
+              href="#nav-walkers"
+              role="tab"
+              aria-controls="nav-walkers"
+              aria-selected="false"
+            >
+              {t("Walkers")}
+            </a>
           </div>
-        </div>
+        </nav>
+        <SkillProvider>
+          <SkillTreeGroup theme={theme}>
+            {() => (
+              <div className="tab-content overflow-auto" id="nav-tabContent">
+                <div
+                  className="tab-pane fade overflow-auto show active"
+                  id="nav-vitamins"
+                  role="tabpanel"
+                  aria-labelledby="nav-vitamins-tab"
+                >
+                  <SkillTree
+                    treeId="Vitamins"
+                    title={t("Vitamins")}
+                    savedData={this.state.savedData}
+                    data={this.getChildrens("Vitamins")}
+                  />
+                </div>
+                <div
+                  className="tab-pane fade overflow-auto"
+                  id="nav-equipment"
+                  role="tabpanel"
+                  aria-labelledby="nav-equipment-tab"
+                >
+                  <SkillTree
+                    treeId="Equipment"
+                    title={t("Equipment")}
+                    savedData={this.state.savedData}
+                    data={this.getChildrens("Equipment")}
+                  />
+                </div>
+                <div
+                  className="tab-pane fade overflow-auto"
+                  id="nav-crafting"
+                  role="tabpanel"
+                  aria-labelledby="nav-crafting-tab"
+                >
+                  <SkillTree
+                    treeId="Crafting"
+                    title={t("Crafting")}
+                    savedData={this.state.savedData}
+                    data={this.getChildrens("Crafting")}
+                  />
+                </div>
+                <div
+                  className="tab-pane fade overflow-auto"
+                  id="nav-construction"
+                  role="tabpanel"
+                  aria-labelledby="nav-construction-tab"
+                >
+                  <SkillTree
+                    treeId="Construction"
+                    title={t("Construction")}
+                    savedData={this.state.savedData}
+                    data={this.getChildrens("Construction")}
+                  />
+                </div>
+                <div
+                  className="tab-pane fade overflow-auto"
+                  id="nav-walkers"
+                  role="tabpanel"
+                  aria-labelledby="nav-walkers-tab"
+                >
+                  <SkillTree
+                    treeId="Walkers"
+                    title={t("Walkers")}
+                    savedData={this.state.savedData}
+                    data={this.getChildrens("Walkers")}
+                  />
+                </div>
+              </div>
+            )}
+          </SkillTreeGroup>
+        </SkillProvider>
       </div>
     );
   }
@@ -260,7 +241,7 @@ class TechTree extends Component {
     let saveData = {};
 
     this.state.usersSavedData.forEach((user) => {
-      learned = learned.concat(user.vitamins);
+      learned = learned.concat(user.learned);
     });
 
     this.state.items.forEach((i) => {
@@ -285,7 +266,7 @@ class TechTree extends Component {
       let item = {
         id: i.name,
         title: t(i.name),
-        tooltip: { content: i.category },
+        tooltip: { content: this.getContentItem(i) },
         children: this.getChildrens(i.name),
       };
 
@@ -293,6 +274,57 @@ class TechTree extends Component {
     });
 
     return childrens;
+  }
+
+  getContentItem(item) {
+    const { t } = this.props;
+    return (
+      <div className="mx-auto">
+        <p className="text-center border-bottom border-warning">
+          {t("Who have learned it?")}
+        </p>
+        <ul className="list-inline">{this.getWhoHasLearnedIt(item.name)}</ul>
+        <p className="text-center border-bottom border-warning">
+          {t("Cost to learn")}
+        </p>
+        {item.cost != null ? (
+          <Ingredient
+            key={"cost-" + item.cost.name}
+            ingredient={item.cost}
+            value={1}
+          />
+        ) : (
+          t("Not defined")
+        )}
+        <p className="text-center border-bottom border-warning mt-2">
+          {t("Recipe")}
+        </p>
+        <div className="row">{this.showIngredient(item)}</div>
+      </div>
+    );
+  }
+
+  getWhoHasLearnedIt(name) {
+    return this.state.usersSavedData
+      .filter((user) => user.learned.includes(name))
+      .map((user) => (
+        <li className="list-inline-item" key={name + "-" + user.discordtag}>
+          {user.discordtag} -{" "}
+        </li>
+      ));
+  }
+
+  showIngredient(item) {
+    if (item != null && item.crafting != null) {
+      return item.crafting.map((ingredients, index) => (
+        <div
+          className={item.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}
+          key={"ingredients-" + index + "-" + item.name}
+        >
+          <Ingredients crafting={ingredients} value={1} />
+        </div>
+      ));
+    }
   }
 }
 
