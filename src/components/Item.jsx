@@ -13,10 +13,10 @@ class Item extends Component {
         }
       >
         <div className="row">
-          <div className="col-md-8 col-xl-10">{t(this.props.item.name)}</div>
-          <div className="col-md-7 col-xl-2">
+          <div className="col-auto">{t(this.props.item.name)}</div>
+          <div className="col">
             <button
-              className="btn btn-success btn-sm"
+              className="btn btn-success btn-sm float-right"
               onClick={() => this.props.onAdd(this.props.item.name)}
             >
               <i className="fas fa-plus"></i>

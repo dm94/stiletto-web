@@ -201,7 +201,7 @@ class ItemSelector extends Component {
             }
           />
         </Helmet>
-        <div className="col-md-2 col-xl-3">
+        <div className="col">
           <form role="search" className="bd-search d-flex align-items-center">
             <input
               className="form-control"
@@ -248,7 +248,7 @@ class ItemSelector extends Component {
             </ul>
           </nav>
         </div>
-        <main role="main" className="col-md-9 col-xl-8">
+        <main role="main" className="col-md-9 col-lg-8 col-xl-8">
           <div className="col-12 card-group">{this.showSelectedItems()}</div>
           <div className="col-12">
             <TotalMaterials
