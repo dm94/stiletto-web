@@ -330,7 +330,7 @@ let all = {
     "Obsidian Canister": "Obsidian Canister",
     "Obsidian Pot": "Obsidian Pot",
     "Small Water Bag": "Small Water Bag",
-    SmallChest: "SmallChest",
+    "Small Chest": "Small Chest",
     "Water Pitcher": "Water Pitcher",
     "Clan Flag": "Clan Flag",
     "Clan Flag Hanging": "Clan Flag Hanging",
