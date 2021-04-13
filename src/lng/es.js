@@ -302,7 +302,7 @@ let all = {
         'Obsidian Canister': 'Obsidian Canister',
         'Obsidian Pot': 'Obsidian Pot',
         'Small Water Bag': 'Bolsa de agua pequeña',
-        'Small Chest': 'Small Chest',
+        'Small Chest': 'Cofre pequeño',
         'Water Pitcher': 'Cántaro de agua',
         'Clan Flag': 'Bandera del clan',
         'Clan Flag Hanging': 'Bandera de clan colgando',
