@@ -32,9 +32,13 @@ class QualityCalculator extends Component {
     const { t } = this.props;
     if (event != null) {
       const searchText = event.currentTarget.value;
-      const filteredItems = this.state.items.filter((it) =>
-        t(it.name).toLowerCase().match(searchText.toLowerCase())
-      );
+      const filteredItems = this.state.items.filter((it) => {
+        return searchText.split(" ").every((internalItem) => {
+          return (
+            t(it.name).toLowerCase().indexOf(internalItem.toLowerCase()) !== -1
+          );
+        });
+      });
       this.setState({ searchText });
       this.setState({ filteredItems: filteredItems });
     }
