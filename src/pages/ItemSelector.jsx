@@ -134,8 +134,8 @@ class ItemSelector extends Component {
     let all = [];
     let selectedItem = this.state.items.filter((it) => it.name === itemName);
     if (selectedItem[0] != null && selectedItem[0].crafting != null) {
-      let recipeObject = {};
       selectedItem[0].crafting.forEach((recipe) => {
+        let recipeObject = {};
         if (recipe.ingredients != null) {
           let ingredients = [];
           recipe.ingredients.forEach((ingredient) => {
@@ -153,8 +153,8 @@ class ItemSelector extends Component {
         if (recipe.station != null) {
           recipeObject.station = recipe.station;
         }
+        all.push(recipeObject);
       });
-      all.push(recipeObject);
     }
     return all;
   };
