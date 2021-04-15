@@ -9,15 +9,15 @@ import * as serviceWorker from "./serviceWorkerRegistration";
 
 let showUpdate = false;
 
+serviceWorker.register({
+  onUpdate: () => {
+    showUpdate = true;
+  },
+});
+
 render(
   <I18nextProvider i18n={i18n}>
     <CrafterApp showUpdate={showUpdate} />
   </I18nextProvider>,
   document.getElementById("root")
 );
-
-serviceWorker.register({
-  onUpdate: () => {
-    showUpdate = true;
-  },
-});
