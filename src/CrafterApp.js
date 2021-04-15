@@ -205,7 +205,7 @@ function CrafterApp(props) {
                   <button
                     type="button"
                     className="btn btn-primary"
-                    onClick={() => window.location.reload()}
+                    onClick={() => updateWeb()}
                   >
                     {t("Update")}
                   </button>
@@ -328,6 +328,15 @@ function CrafterApp(props) {
       </CookieConsent>
     </Router>
   );
+}
+
+function updateWeb() {
+  caches.keys().then(function (names) {
+    for (let name of names) {
+      caches.delete(name);
+    }
+  });
+  window.location.reload();
 }
 
 function switchLanguage(lng) {
