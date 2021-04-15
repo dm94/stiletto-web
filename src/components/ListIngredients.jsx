@@ -19,6 +19,7 @@ class ListIngredients extends Component {
             totalIngredients.push({
               name: ingredient.name,
               count: ingredient.count * item.count,
+              ingredients: ingredient.ingredients,
             });
           }
         });

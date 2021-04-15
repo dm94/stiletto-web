@@ -106,7 +106,7 @@ class ItemSelector extends Component {
           {
             name: selectedItem[0].name,
             category: selectedItem[0].category,
-            crafting: selectedItem[0].crafting,
+            crafting: this.getIngredients(selectedItem[0].name),
             damage: selectedItem[0].damage,
             count: count,
           },
@@ -117,28 +117,38 @@ class ItemSelector extends Component {
   };
 
   changeCount = (itemName, count) => {
-    let selectedItem = this.state.selectedItems.filter(
-      (it) => it.name === itemName
-    );
-    let otherItems = this.state.selectedItems.filter(
-      (it) => it.name !== itemName
-    );
-    if (selectedItem[0] != null) {
-      if (count <= 0) {
-        this.removeSelectedItem(itemName);
-      } else {
-        const selectedItems = otherItems.concat([
-          {
-            name: selectedItem[0].name,
-            category: selectedItem[0].category,
-            crafting: selectedItem[0].crafting,
-            damage: selectedItem[0].damage,
-            count: count,
-          },
-        ]);
-        this.setState({ selectedItems });
-      }
+    if (count <= 0) {
+      this.removeSelectedItem(itemName);
+    } else {
+      const allitems = this.state.selectedItems.map((item) => {
+        if (item.name === itemName) {
+          item.count = count;
+        }
+      });
+
+      this.setState({ allitems });
     }
+  };
+
+  getIngredients = (itemName) => {
+    let all = [];
+    let selectedItem = this.state.items.filter((it) => it.name === itemName);
+    if (selectedItem[0] != null && selectedItem[0].crafting != null) {
+      selectedItem[0].crafting.forEach((recipe) => {
+        if (recipe.ingredients != null) {
+          let ingredients = [];
+          recipe.ingredients.forEach((ingredient) => {
+            let subIngredients = this.getIngredients(ingredient.name);
+            if (subIngredients.length > 0) {
+              ingredient["ingredients"] = subIngredients;
+            }
+            ingredients.push(ingredient);
+          });
+          all.push({ ingredients: ingredients });
+        }
+      });
+    }
+    return all;
   };
 
   showSelectedItems() {

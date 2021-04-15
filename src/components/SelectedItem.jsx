@@ -13,14 +13,14 @@ class SelectedItem extends Component {
 
   showIngredient() {
     if (this.props.item.crafting != null) {
-      return this.props.item.crafting.map((ingredients) => (
+      return this.props.item.crafting.map((ingredients, i) => (
         <div
           className={
             this.props.item.crafting.length > 1
-              ? "col-xl-6 border"
+              ? "col-xl-6 border border-success"
               : "col-xl-12"
           }
-          key={this.props.item.name}
+          key={this.props.item.name + this.props.item.count + i}
         >
           <Ingredients
             crafting={ingredients}
