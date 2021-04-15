@@ -132,12 +132,12 @@ class Others extends Component {
                   <h3 className="mb-0 pb-2">{t("Privacy Agreement")}</h3>
                   <p className="card-text mb-auto">
                     {t(
-                      "Cookies: This site only uses Google cookies to view web traffic."
+                      "Cookies - This site only uses Google cookies to view web traffic."
                     )}
                   </p>
                   <p className="card-text mb-auto">
                     {t(
-                      "Private data: The only registration data saved is Discord ID and Discord Tag."
+                      "Private data - The only registration data saved is Discord ID and Discord Tag."
                     )}
                   </p>
                   <p className="card-text mb-auto">

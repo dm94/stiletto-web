@@ -22,12 +22,14 @@ import DiscordButton from "./components/DiscordButton";
 import ModalMessage from "./components/ModalMessage";
 import { Helmet } from "react-helmet";
 
-function CrafterApp() {
+function CrafterApp(props) {
   const [t] = useTranslation();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
+  const [newUpdate, setUpdateModal] = useState(props.showUpdate);
   let showHideClassName = showChangeLanguageModal
     ? "modal d-block"
     : "modal d-none";
+  let showUpdateModal = newUpdate ? "modal d-block" : "modal d-none";
   return (
     <Router>
       <Helmet>
@@ -184,6 +186,33 @@ function CrafterApp() {
               </Route>
             </Switch>
           </Analytics>
+          <div className={showUpdateModal}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title">{t("New web update")}</h5>
+                </div>
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={() => {
+                      setUpdateModal(false);
+                    }}
+                  >
+                    {t("Cancel")}
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() => window.location.reload()}
+                  >
+                    {t("Update")}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
           <div className={showHideClassName}>
             <div className="modal-dialog">
               <div className="modal-content">

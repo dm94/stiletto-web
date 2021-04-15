@@ -124,6 +124,7 @@ class ItemSelector extends Component {
         if (item.name === itemName) {
           item.count = count;
         }
+        return item;
       });
 
       this.setState({ allitems });
