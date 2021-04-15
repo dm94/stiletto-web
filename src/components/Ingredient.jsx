@@ -55,7 +55,12 @@ class Ingredient extends Component {
           <label className="sr-only">----------------------------</label>
           <Ingredients
             crafting={ingredients}
-            value={this.props.ingredient.count * this.props.value}
+            value={
+              ingredients.output != null
+                ? (this.props.ingredient.count * this.props.value) /
+                  ingredients.output
+                : this.props.ingredient.count * this.props.value
+            }
           />
           <label className="sr-only">----------------------------</label>
         </ul>
