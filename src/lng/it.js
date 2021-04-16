@@ -1,5 +1,7 @@
 let all = {
     translations: {
+        'New web update': 'New web update',
+        Update: 'Update',
         Crafting: 'Crafting',
         Clan: 'Clan',
         'User Profile': 'User Profile',
@@ -191,8 +193,8 @@ let all = {
         'Official Discord': 'Official Discord',
         Wiki: 'Wiki',
         'Privacy Agreement': 'Privacy Agreement',
-        'Cookies: This site only uses Google cookies to view web traffic.': 'Cookies: This site only uses Google cookies to view web traffic.',
-        'Private data: The only registration data saved is Discord ID and Discord Tag': 'Private data: The only registration data saved is Discord ID and Discord Tag',
+        'Cookies - This site only uses Google cookies to view web traffic.': 'Cookies - This site only uses Google cookies to view web traffic.',
+        'Private data - The only registration data saved is Discord ID and Discord Tag': 'Private data - The only registration data saved is Discord ID and Discord Tag',
         'Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.': 'Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.',
         'Source Code is published on GitHub for full disclosure where you can also report any issues found.': 'Source Code is published on GitHub for full disclosure where you can also report any issues found.',
         Vitamins: 'Vitamins',
