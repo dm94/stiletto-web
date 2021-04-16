@@ -1,5 +1,7 @@
 let all = {
     translations: {
+        'New web update': 'New web update',
+        Update: 'Update',
         Crafting: 'Herstellen',
         Clan: 'Gilde',
         'User Profile': 'Benutzerprofil',
@@ -191,8 +193,8 @@ let all = {
         'Official Discord': 'Offizieller Discord',
         Wiki: 'Wiki',
         'Privacy Agreement': 'Datenschutzvereinbarung',
-        'Cookies: This site only uses Google cookies to view web traffic.': 'Cookies: Diese Website verwendet nur Google-Cookies, um Web-Traffic anzuzeigen.',
-        'Private data: The only registration data saved is Discord ID and Discord Tag': 'Private Daten: Die einzigen gespeicherten Registrierungsdaten sind Discord ID und Discord Tag',
+        'Cookies - This site only uses Google cookies to view web traffic.': 'Cookies - This site only uses Google cookies to view web traffic.',
+        'Private data - The only registration data saved is Discord ID and Discord Tag': 'Private data - The only registration data saved is Discord ID and Discord Tag',
         'Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.': 'Daten wie Diplomacy, Map-Ressourcen oder Clan-Mitglieder werden in einer Datenbank gespeichert und die erforderlichen Sicherheitsmaßnahmen werden vorgenommen, damit niemand auf diese Daten zugreifen kann.',
         'Source Code is published on GitHub for full disclosure where you can also report any issues found.': 'Der Quellcode wird auf GitHub zur vollständigen Offenlegung veröffentlicht, wo Sie auch festgestellte Probleme melden können.',
         Vitamins: 'Vitamins',
