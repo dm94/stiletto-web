@@ -37,7 +37,7 @@ class TotalMaterials extends Component {
       });
   };
 
-  shareButton(t) {
+  footerPart(t) {
     if (this.state.recipeToken.length > 0) {
       let url =
         window.location.protocol.concat("//").concat(window.location.hostname) +
@@ -49,7 +49,7 @@ class TotalMaterials extends Component {
           <input type="text" className="form-control" value={url} disabled />
           <div className="input-group-append">
             <button
-              className="btn btn-success"
+              className="btn btn-primary"
               type="button"
               onClick={() => {
                 navigator.clipboard.writeText(url);
@@ -57,25 +57,30 @@ class TotalMaterials extends Component {
             >
               {t("Copy")}
             </button>
+            {this.shareButton(t)}
           </div>
         </div>
       );
     } else {
-      return (
-        <button
-          className="btn btn-success float-right"
-          onClick={this.addRecipe}
-          disabled={
-            !(
-              this.props.selectedItems.length > 0 &&
-              this.props.selectedItems.length < 21
-            )
-          }
-        >
-          {t("Share")}
-        </button>
-      );
+      return this.shareButton(t);
     }
+  }
+
+  shareButton(t) {
+    return (
+      <button
+        className="btn btn-success float-right"
+        onClick={this.addRecipe}
+        disabled={
+          !(
+            this.props.selectedItems.length > 0 &&
+            this.props.selectedItems.length < 21
+          )
+        }
+      >
+        {t("Share")}
+      </button>
+    );
   }
 
   itemsList() {
@@ -107,7 +112,7 @@ class TotalMaterials extends Component {
             </li>
           </div>
         </div>
-        <div className="card-footer">{this.shareButton(t)}</div>
+        <div className="card-footer">{this.footerPart(t)}</div>
       </div>
     );
   }
