@@ -7252,7 +7252,29 @@
   },
   {
     "name": "Fiber",
-    "category": "materials"
+    "category": "materials",
+    "crafting": [
+      {
+        "ingredients": [
+          {
+            "name": "Cattail",
+            "count": 10
+          }
+        ],
+        "output": 3,
+        "station": "Advanced Fiberworking Station"
+      },
+      {
+        "ingredients": [
+          {
+            "name": "Rupu Pelt",
+            "count": 2
+          }
+        ],
+        "output": 4,
+        "station": "Fiberworking Station"
+      }
+    ]
   },
   {
     "name": "Fiber Weave",
