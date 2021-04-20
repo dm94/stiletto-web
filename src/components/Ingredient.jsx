@@ -27,7 +27,7 @@ class Ingredient extends Component {
             key={this.props.ingredient.name}
             name={this.props.ingredient.name}
           />
-          {this.props.ingredient.count * this.props.value}x{" "}
+          {Math.ceil(this.props.ingredient.count * this.props.value)}x{" "}
           {t(this.props.ingredient.name)}
         </div>
         <div
