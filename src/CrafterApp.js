@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Analytics from "react-router-ga";
 import i18next from "i18next";
-import ItemSelector from "./pages/ItemSelector";
+import Crafter from "./pages/Crafter";
 import DiscordConnection from "./pages/DiscordConnection";
 import ClanList from "./pages/ClanList";
 import MemberList from "./pages/MemberList";
@@ -21,6 +21,7 @@ import QualityCalculator from "./pages/QualityCalculator";
 import DiscordButton from "./components/DiscordButton";
 import ModalMessage from "./components/ModalMessage";
 import { Helmet } from "react-helmet";
+import * as serviceWorker from "./serviceWorkerRegistration";
 
 function CrafterApp(props) {
   const [t] = useTranslation();
@@ -30,6 +31,11 @@ function CrafterApp(props) {
     ? "modal d-block"
     : "modal d-none";
   let showUpdateModal = newUpdate ? "modal d-block" : "modal d-none";
+  serviceWorker.register({
+    onUpdate: () => {
+      setUpdateModal(true);
+    },
+  });
   return (
     <Router>
       <Helmet>
@@ -163,7 +169,7 @@ function CrafterApp(props) {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/profile" component={DiscordConnection} />
-              <Route path="/crafter" component={ItemSelector} />
+              <Route path="/crafter" component={Crafter} />
               <Route path="/members" component={MemberList} />
               <Route path="/clanlist" component={ClanList} />
               <Route path="/walkerlist" component={WalkerList} />

@@ -8,7 +8,7 @@ import Axios from "axios";
 import ModalMessage from "../components/ModalMessage";
 const queryString = require("query-string");
 
-class ItemSelector extends Component {
+class Crafter extends Component {
   state = {
     items: [],
     selectedItems: [],
@@ -286,4 +286,4 @@ class ItemSelector extends Component {
   }
 }
 
-export default withTranslation()(ItemSelector);
+export default withTranslation()(Crafter);
