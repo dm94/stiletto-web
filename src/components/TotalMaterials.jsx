@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
 import ListIngredients from "./ListIngredients";
+import Icon from "./Icon";
 
 class TotalMaterials extends Component {
   constructor(props) {
@@ -86,7 +87,7 @@ class TotalMaterials extends Component {
   itemsList() {
     return this.props.selectedItems.map((item) => (
       <li className="list-inline-item" key={item.name}>
-        {item.count}x {item.name} -
+        <Icon key={item.name} name={item.name} /> {item.count}x {item.name} -
       </li>
     ));
   }

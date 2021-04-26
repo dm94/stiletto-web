@@ -116,6 +116,7 @@ class SelectedItem extends Component {
                 readOnly={this.state.disableEdit}
               />
               <span className="input-group-text">
+                <Icon key={this.props.item.name} name={this.props.item.name} />{" "}
                 x {t(this.props.item.name)}
               </span>
             </div>

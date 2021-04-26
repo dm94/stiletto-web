@@ -23,7 +23,7 @@ class MemberListItem extends Component {
       <tr>
         <td className="text-center">
           {this.props.member.leaderid == this.props.member.discordid && (
-            <i className="fas fa-crown"></i>
+            <i className="fas fa-crown text-warning"></i>
           )}{" "}
           {this.props.member.discordtag}
         </td>

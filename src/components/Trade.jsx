@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import Icon from "./Icon";
 
 class Trade extends Component {
   constructor(props) {
@@ -49,6 +50,10 @@ class Trade extends Component {
               {this.props.trade.amount !== "0"
                 ? this.props.trade.amount + "x "
                 : ""}{" "}
+              <Icon
+                key={this.props.trade.resource}
+                name={this.props.trade.resource}
+              />
               {t(this.props.trade.resource)}{" "}
               {this.props.trade.quality !== "0"
                 ? "Q: " + this.props.trade.quality
