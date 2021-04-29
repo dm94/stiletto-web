@@ -67,16 +67,12 @@ class MapLayer extends Component {
               {t(resource.resourcetype)}{" "}
               {resource.quality > 0 && "- Q:" + resource.quality}
             </div>
-            <div className="mb-1 text-muted">
+            <div className="mb-1 text-muted text-center">
               [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
             </div>
             <div className="mb-1">{resource.description}</div>
             <button
-              className={
-                resource.token != null
-                  ? "btn btn-danger"
-                  : "btn btn-danger d-none"
-              }
+              className={resource.token != null ? "btn btn-danger" : "d-none"}
               onClick={() =>
                 this.props.deleteResource(resource.resourceid, resource.token)
               }

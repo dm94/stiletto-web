@@ -23,10 +23,10 @@ import ModalMessage from "./components/ModalMessage";
 import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
 
-function CrafterApp(props) {
+function CrafterApp() {
   const [t] = useTranslation();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
-  const [newUpdate, setUpdateModal] = useState(props.showUpdate);
+  const [newUpdate, setUpdateModal] = useState(false);
   let showHideClassName = showChangeLanguageModal
     ? "modal d-block"
     : "modal d-none";
@@ -88,36 +88,22 @@ function CrafterApp(props) {
                     {t("Crafting")}
                   </Link>
                 </li>
-                <li className="nav-item dropdown">
+                <li className="nav-item">
                   <Link
-                    className="nav-link dropdown-toggle"
-                    to="/profile"
-                    id="clanDropdown"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
+                    className="nav-link"
+                    to={
+                      localStorage.getItem("discordid") != null
+                        ? "/maps"
+                        : "/map"
+                    }
                   >
-                    {t("User Profile")}
+                    {t("Resource Maps")}
                   </Link>
-                  <div className="dropdown-menu" aria-labelledby="clanDropdown">
-                    <Link className="dropdown-item" to="/profile">
-                      {t("User Profile")}
-                    </Link>
-                    <Link className="dropdown-item" to="/clanlist">
-                      {t("Clan List")}
-                    </Link>
-                    <Link
-                      className="dropdown-item"
-                      to={
-                        localStorage.getItem("discordid") != null
-                          ? "/maps"
-                          : "/map"
-                      }
-                    >
-                      {t("Resource Maps")}
-                    </Link>
-                  </div>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/clanlist">
+                    {t("Clan List")}
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link" to="/trades">
@@ -193,7 +179,7 @@ function CrafterApp(props) {
             </Switch>
           </Analytics>
           <div className={showUpdateModal}>
-            <div className="modal-dialog">
+            <div className="modal-dialog border border-success">
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">{t("New web update")}</h5>
@@ -201,7 +187,7 @@ function CrafterApp(props) {
                 <div className="modal-footer">
                   <button
                     type="button"
-                    className="btn btn-secondary"
+                    className="btn btn-danger"
                     onClick={() => {
                       setUpdateModal(false);
                     }}
@@ -210,7 +196,7 @@ function CrafterApp(props) {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className="btn btn-success"
                     onClick={() => updateWeb()}
                   >
                     {t("Update")}
