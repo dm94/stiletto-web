@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-
 class Others extends Component {
   render() {
     const { t } = this.props;
@@ -153,18 +152,24 @@ class Others extends Component {
                 </div>
               </div>
             </div>
-            <iframe
-              className="col-12 mx-auto border-0"
-              src="https://docs.google.com/forms/d/e/1FAIpQLSdlljZ_CUgUtSOn2TZCBHbuQhzxApbgBGngRusWWdirHKA1fw/viewform?embedded=true"
-              style={{ width: 640, height: 538 }}
-              title="https://forms.gle/AbCEMNNZFjcV163p7"
-            >
-              Cargando…
-            </iframe>
+            {this.showGoogleForm()}
           </div>
         </div>
       </div>
     );
+  }
+
+  showGoogleForm() {
+    if (localStorage.getItem("acceptscookies")) {
+      return (
+        <iframe
+          className="col-12 mx-auto border-0"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdlljZ_CUgUtSOn2TZCBHbuQhzxApbgBGngRusWWdirHKA1fw/viewform?embedded=true"
+          style={{ width: 640, height: 538 }}
+          title="https://forms.gle/AbCEMNNZFjcV163p7"
+        ></iframe>
+      );
+    }
   }
 }
 

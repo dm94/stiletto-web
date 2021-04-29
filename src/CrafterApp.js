@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CookieConsent from "react-cookie-consent";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Analytics from "react-router-ga";
@@ -18,15 +17,19 @@ import Others from "./pages/Others";
 import Map from "./pages/Map";
 import TechTree from "./pages/TechTree";
 import QualityCalculator from "./pages/QualityCalculator";
-import DiscordButton from "./components/DiscordButton";
 import ModalMessage from "./components/ModalMessage";
 import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
+import CookieConsent from "./components/CookieConsent";
 
 function CrafterApp() {
   const [t] = useTranslation();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
   const [newUpdate, setUpdateModal] = useState(false);
+  const [logged] = useState(
+    localStorage.getItem("discordid") != null &&
+      localStorage.getItem("token") != null
+  );
   let showHideClassName = showChangeLanguageModal
     ? "modal d-block"
     : "modal d-none";
@@ -36,6 +39,7 @@ function CrafterApp() {
       setUpdateModal(true);
     },
   });
+
   return (
     <Router>
       <Helmet>
@@ -144,7 +148,10 @@ function CrafterApp() {
                   alt="Change language"
                 />
               </button>
-              <DiscordButton />
+              <Link className="btn btn-outline-light" to="/profile">
+                <i className="far fa-user"></i>{" "}
+                {logged ? t("Profile") : t("Login with discord")}
+              </Link>
             </div>
           </div>
         </div>
@@ -308,16 +315,7 @@ function CrafterApp() {
           </div>
         </div>
       </footer>
-      <CookieConsent
-        location="bottom"
-        buttonText="OK"
-        cookieName="acceptscookies"
-        style={{ background: "#2B373B" }}
-        buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
-        expires={150}
-      >
-        {t("This website uses cookies to enhance the user experience.")}
-      </CookieConsent>
+      <CookieConsent />
     </Router>
   );
 }
