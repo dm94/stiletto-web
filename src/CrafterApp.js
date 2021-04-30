@@ -21,15 +21,12 @@ import ModalMessage from "./components/ModalMessage";
 import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
 import CookieConsent from "./components/CookieConsent";
+import DiscordButton from "./components/DiscordButton";
 
 function CrafterApp() {
   const [t] = useTranslation();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
   const [newUpdate, setUpdateModal] = useState(false);
-  const [logged] = useState(
-    localStorage.getItem("discordid") != null &&
-      localStorage.getItem("token") != null
-  );
   let showHideClassName = showChangeLanguageModal
     ? "modal d-block"
     : "modal d-none";
@@ -148,10 +145,7 @@ function CrafterApp() {
                   alt="Change language"
                 />
               </button>
-              <Link className="btn btn-outline-light" to="/profile">
-                <i className="far fa-user"></i>{" "}
-                {logged ? t("Profile") : t("Login with discord")}
-              </Link>
+              <DiscordButton />
             </div>
           </div>
         </div>

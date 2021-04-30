@@ -104,7 +104,7 @@ class DiscordConnection extends Component {
               }
             />
           </Helmet>
-          <div className="col-xl-6">
+          <div className="col-6 mx-auto">
             <div
               className={
                 localStorage.getItem("darkmode") !== "true"
@@ -119,28 +119,6 @@ class DiscordConnection extends Component {
                 >
                   <i className="fab fa-discord"></i> {t("Login with discord")}
                 </a>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-6">
-            <div
-              className={
-                localStorage.getItem("darkmode") !== "true"
-                  ? "card border-secondary mb-3"
-                  : "card border-secondary mb-3 text-white bg-dark"
-              }
-            >
-              <div className="card-body text-succes">
-                <button
-                  className="btn btn-lg btn-outline-primary btn-block"
-                  onClick={() => {
-                    localStorage.setItem("discordid", "000000000000000000");
-                    localStorage.setItem("token", "test");
-                    this.setState({});
-                  }}
-                >
-                  {t("Connect in demo mode")}
-                </button>
               </div>
             </div>
           </div>
