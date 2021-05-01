@@ -72,6 +72,7 @@ class TotalMaterials extends Component {
       <button
         className="btn btn-success float-right"
         onClick={this.addRecipe}
+        title={t("Generate a link to share it")}
         disabled={
           !(
             this.props.selectedItems.length > 0 &&
@@ -79,7 +80,7 @@ class TotalMaterials extends Component {
           )
         }
       >
-        {t("Share")}
+        <i className="fas fa-share-alt"></i> {t("Share")}
       </button>
     );
   }
@@ -92,11 +93,65 @@ class TotalMaterials extends Component {
     ));
   }
 
+  copyMaterials(t) {
+    let text = t("To make") + ":\n\n";
+
+    this.props.selectedItems.forEach(
+      (item) => (text += item.count + "x " + t(item.name) + " - ")
+    );
+
+    text += "\n\n" + t("You need the following materials") + ":\n\n";
+
+    let totalIngredients = [];
+    this.props.selectedItems.forEach((item) => {
+      if (item.crafting != null && item.crafting[0].ingredients != null) {
+        item.crafting[0].ingredients.forEach((ingredient) => {
+          if (
+            totalIngredients.find((ingre) => ingre.name === ingredient.name)
+          ) {
+            totalIngredients.forEach((ingre) => {
+              if (ingre.name === ingredient.name) {
+                ingre.count += ingredient.count * item.count;
+              }
+            });
+          } else {
+            totalIngredients.push({
+              name: ingredient.name,
+              count: ingredient.count * item.count,
+              ingredients: ingredient.ingredients,
+            });
+          }
+        });
+      }
+    });
+    totalIngredients.forEach(
+      (ingredient) =>
+        (text += "\t" + ingredient.count + "x " + t(ingredient.name) + "\n")
+    );
+
+    text +=
+      "\n" +
+      t("List of all necessary materials by") +
+      " " +
+      window.location.hostname +
+      (window.location.port ? ":" + window.location.port : "");
+
+    navigator.clipboard.writeText(text);
+  }
+
   render() {
     const { t } = this.props;
     return (
       <div className="card border-warning m-3">
         <div className="card-header border-warning">
+          <button
+            className="btn btn-sm btn-primary float-right"
+            title={t("Copy to clipboard")}
+            onClick={() => this.copyMaterials(t)}
+            disabled={!(this.props.selectedItems.length > 0)}
+          >
+            <i className="fas fa-copy"></i>
+          </button>
           <div className="font-weight-normal">{t("Total materials")}</div>
         </div>
         <div className="card-body" id="list-all-items">
