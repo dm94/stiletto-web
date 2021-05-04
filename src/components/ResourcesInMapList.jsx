@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import Icon from "./Icon";
 
@@ -89,15 +89,15 @@ class ResourcesInMapList extends Component {
     const { t } = this.props;
     if (this.props.resources != null) {
       return (
-        <div>
+        <Fragment>
           <div className="btn-group btn-group-sm" role="group">
             {this.filterlist(t)}
           </div>
           <ul className="list-group">{this.list(t)}</ul>
-        </div>
+        </Fragment>
       );
     } else {
-      return <div></div>;
+      return "";
     }
   }
 }

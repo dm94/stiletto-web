@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanListItem from "../components/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
@@ -169,7 +169,7 @@ class ClanList extends Component {
         ? "modal d-block"
         : "modal d-none";
       return (
-        <div>
+        <Fragment>
           {this.clanList(t)}
           <div className={showHideClassName}>
             <div className="modal-dialog">
@@ -214,7 +214,7 @@ class ClanList extends Component {
               </div>
             </div>
           </div>
-        </div>
+        </Fragment>
       );
     }
     return (

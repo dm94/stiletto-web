@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 
 class WalkerListItem extends Component {
@@ -31,13 +31,13 @@ class WalkerListItem extends Component {
 
   showWalkerData() {
     return (
-      <React.Fragment>
+      <Fragment>
         <td className="text-center">{this.props.walker.walkerID}</td>
         <td className="text-center">{this.props.walker.name}</td>
         <td className="text-center">{this.props.walker.ownerUser}</td>
         <td className="text-center">{this.props.walker.lastUser}</td>
         <td className="text-center">{this.props.walker.datelastuse}</td>
-      </React.Fragment>
+      </Fragment>
     );
   }
 

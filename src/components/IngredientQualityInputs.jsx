@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import QualityInput from "./QualityInput";
 
 class IngredientQualityInputs extends Component {
@@ -81,7 +81,7 @@ class IngredientQualityInputs extends Component {
 
   render() {
     return (
-      <div>
+      <Fragment>
         {this.allInputs()}
         <div className="btn-group" role="group">
           <button
@@ -118,7 +118,7 @@ class IngredientQualityInputs extends Component {
             -
           </button>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }

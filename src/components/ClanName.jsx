@@ -1,10 +1,9 @@
-import React, { Component } from "react";
-
+import React, { Component, Fragment } from "react";
 class ClanName extends Component {
   render() {
     if (this.props.clan.symbol != null) {
       return (
-        <div>
+        <Fragment>
           <img
             width="48"
             height="48"
@@ -19,11 +18,11 @@ class ClanName extends Component {
             id={"symbol-img-" + this.props.clan.name}
           />
           <span className="pb-3 mb-0 ml-2">{this.props.clan.name}</span>
-        </div>
+        </Fragment>
       );
     } else {
       return (
-        <div>
+        <Fragment>
           <svg
             className="bd-placeholder-img mr-2"
             width="32"
@@ -40,7 +39,7 @@ class ClanName extends Component {
             ></rect>
           </svg>
           <span className="pb-3 mb-0">{this.props.clan.name}</span>
-        </div>
+        </Fragment>
       );
     }
   }

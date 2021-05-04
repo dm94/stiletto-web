@@ -97,7 +97,7 @@ class ResourceMap extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
@@ -128,7 +128,7 @@ class ResourceMap extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
@@ -157,7 +157,7 @@ class ResourceMap extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };

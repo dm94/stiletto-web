@@ -140,7 +140,7 @@ class TradeSystem extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Try again later" });
       });
   };

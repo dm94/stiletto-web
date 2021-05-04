@@ -58,7 +58,7 @@ class ClanMaps extends Component {
           <img
             src={map.image}
             className={
-              map.name == this.state.mapSelectInput
+              map.name === this.state.mapSelectInput
                 ? "img-fluid img-thumbnail"
                 : "img-fluid"
             }
@@ -166,7 +166,7 @@ class ClanMaps extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };

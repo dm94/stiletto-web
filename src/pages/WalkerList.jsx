@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import WalkerListItem from "../components/WalkerListItem";
@@ -56,7 +56,7 @@ class WalkerList extends Component {
             this.setState({ error: "Error connecting to database" });
           }
         })
-        .catch((error) => {
+        .catch(() => {
           this.setState({ error: "Error when connecting to the API" });
         });
     }
@@ -76,7 +76,7 @@ class WalkerList extends Component {
         }
         this.setState({ isLoaded: true });
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   }
@@ -101,7 +101,7 @@ class WalkerList extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
@@ -155,7 +155,7 @@ class WalkerList extends Component {
           this.setState({ error: "Error when connecting with the database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
@@ -320,7 +320,7 @@ class WalkerList extends Component {
         return <LoadingScreen />;
       }
       return (
-        <div>
+        <Fragment>
           <Helmet>
             <title>{t("Walker List")} - Stiletto</title>
             <meta
@@ -405,7 +405,7 @@ class WalkerList extends Component {
             </thead>
             <tbody>{this.walkerList()}</tbody>
           </table>
-        </div>
+        </Fragment>
       );
     }
     return (

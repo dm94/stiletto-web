@@ -52,7 +52,7 @@ class MemberList extends Component {
         }
         this.setState({ isLoaded: true });
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
 
@@ -81,7 +81,7 @@ class MemberList extends Component {
         }
         this.setState({ isLoadedRequestList: true });
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({
           error: "Error when connecting to the API",
         });
@@ -120,7 +120,7 @@ class MemberList extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
@@ -164,7 +164,7 @@ class MemberList extends Component {
         }
         this.setState({ requestData: null });
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
@@ -207,7 +207,7 @@ class MemberList extends Component {
         }
         this.setState({ requestData: null });
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
@@ -236,7 +236,7 @@ class MemberList extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
@@ -270,7 +270,7 @@ class MemberList extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };

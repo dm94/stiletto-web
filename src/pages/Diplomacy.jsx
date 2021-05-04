@@ -36,21 +36,25 @@ class Diplomacy extends Component {
           token: localStorage.getItem("token"),
         },
       }
-    ).then((response) => {
-      if (response.status === 202) {
-        this.setState({ listOfRelations: response.data, isLoaded: true });
-        if (
-          this.state.listOfRelations != null &&
-          this.state.listOfRelations[0].leaderid == this.state.user_discord_id
-        ) {
-          this.setState({ isLeader: true });
+    )
+      .then((response) => {
+        if (response.status === 202) {
+          this.setState({ listOfRelations: response.data, isLoaded: true });
+          if (
+            this.state.listOfRelations != null &&
+            this.state.listOfRelations[0].leaderid == this.state.user_discord_id
+          ) {
+            this.setState({ isLeader: true });
+          }
+        } else if (response.status === 405) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
         }
-      } else if (response.status === 405) {
-        this.setState({ error: "Unauthorized" });
-      } else if (response.status === 503) {
-        this.setState({ error: "Error connecting to database" });
-      }
-    });
+      })
+      .catch(() => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
   }
 
   createRelationship = () => {
@@ -81,7 +85,7 @@ class Diplomacy extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Try again later" });
       });
   };
@@ -111,7 +115,7 @@ class Diplomacy extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Try again later" });
       });
   };

@@ -84,7 +84,7 @@ class PrivateProfile extends Component {
           this.setError("Error connecting to database");
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setConnectionError();
       });
   };
@@ -113,7 +113,7 @@ class PrivateProfile extends Component {
           this.setError("Error connecting to database");
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setConnectionError();
       });
   };
@@ -141,7 +141,7 @@ class PrivateProfile extends Component {
           this.setError("Error connecting to database");
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setConnectionError();
       });
   };
@@ -172,7 +172,7 @@ class PrivateProfile extends Component {
           this.setError("Error connecting to database");
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setConnectionError();
       });
   };

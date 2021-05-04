@@ -13,7 +13,7 @@ class Trade extends Component {
   cardFooter(t) {
     if (
       this.state.user_discord_id == null ||
-      this.state.user_discord_id != this.props.trade.discordid
+      this.state.user_discord_id !== this.props.trade.discordid
     ) {
       return (
         <div className="card-footer">
