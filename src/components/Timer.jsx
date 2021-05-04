@@ -4,7 +4,6 @@ import { withTranslation } from "react-i18next";
 class Timer extends Component {
   constructor(props) {
     super(props);
-    this.tick = this.tick.bind(this);
     this.state = {
       hours: 0,
       minutes: 10,
