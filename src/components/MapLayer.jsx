@@ -27,22 +27,15 @@ class MapLayer extends Component {
   }
 
   getMarketDesign = (resource) => {
-    var res = resource.replace(" ", "_");
-    var marker = null;
-    var img = new Image();
-    img.src =
-      process.env.REACT_APP_API_GENERAL_URL + "/markers/" + res + ".png";
-    if (img.complete) {
-      marker = L.icon({
-        iconUrl:
-          process.env.REACT_APP_API_GENERAL_URL + "/markers/" + res + ".png",
-        iconSize: [25, 41],
-        iconAnchor: [13, 44],
-        popupAnchor: [-6, -20],
-      });
-    } else {
-      marker = myMarker;
-    }
+    let res = resource.replace(" ", "_");
+    let marker = L.icon({
+      iconUrl:
+        process.env.REACT_APP_API_GENERAL_URL + "/markers/" + res + ".png",
+      iconSize: [25, 41],
+      iconAnchor: [13, 44],
+      popupAnchor: [-6, -20],
+    });
+
     return marker;
   };
 
@@ -118,7 +111,7 @@ class MapLayer extends Component {
           {Math.floor(this.state.coordinateXInput) +
             "," +
             Math.floor(this.state.coordinateYInput)}
-          ]
+          ]{t("This marker is used for positioning when creating a resource")}
         </Popup>
         <Tooltip>{t("Temporal Marker")}</Tooltip>
       </Marker>

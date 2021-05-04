@@ -224,7 +224,7 @@ class Crafter extends Component {
             }
           />
         </Helmet>
-        <div className="col">
+        <div className="col mb-2">
           <form role="search" className="bd-search d-flex align-items-center">
             <input
               className="form-control"

@@ -301,7 +301,7 @@ class ResourceMap extends Component {
         <div className="col-xl-3 col-sm-12">
           <div className="bd-search d-flex align-items-center">
             <button
-              className="btn btn-sm btn-primary btn-block"
+              className="btn btn-sm btn-primary btn-block mb-2"
               onClick={() => this.props.onReturn()}
             >
               {t("Back to the list of maps")}
