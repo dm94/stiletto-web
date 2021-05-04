@@ -57,9 +57,9 @@ class CreateMapNoLog extends Component {
   };
 
   shareMapLink() {
-    var http = window.location.protocol;
-    var slashes = http.concat("//");
-    var host = slashes.concat(window.location.hostname);
+    let http = window.location.protocol;
+    let slashes = http.concat("//");
+    let host = slashes.concat(window.location.hostname);
     return (
       <input
         className="btn btn-success btn-sm btn-block"

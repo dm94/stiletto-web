@@ -50,9 +50,9 @@ class DiscordConnection extends Component {
   showClanInfo() {
     const { t } = this.props;
     const parsed = queryString.parse(this.props.location.search);
-    var http = window.location.protocol;
-    var slashes = http.concat("//");
-    var host = slashes.concat(window.location.hostname);
+    let http = window.location.protocol;
+    let slashes = http.concat("//");
+    let host = slashes.concat(window.location.hostname);
     let urlLink =
       "https://discord.com/api/oauth2/authorize?client_id=" +
       process.env.REACT_APP_DISCORD_CLIENT_ID +

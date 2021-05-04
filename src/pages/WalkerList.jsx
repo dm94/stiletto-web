@@ -29,9 +29,9 @@ class WalkerList extends Component {
   componentDidMount() {
     const parsed = queryString.parse(this.props.location.search);
     if (parsed.code != null) {
-      var http = window.location.protocol;
-      var slashes = http.concat("//");
-      var host = slashes.concat(window.location.hostname);
+      let http = window.location.protocol;
+      let slashes = http.concat("//");
+      let host = slashes.concat(window.location.hostname);
       const options = {
         method: "get",
         url: process.env.REACT_APP_API_URL + "/walkers/auth",
@@ -235,9 +235,9 @@ class WalkerList extends Component {
           </div>
         );
       } else {
-        var http = window.location.protocol;
-        var slashes = http.concat("//");
-        var host = slashes.concat(window.location.hostname);
+        let http = window.location.protocol;
+        let slashes = http.concat("//");
+        let host = slashes.concat(window.location.hostname);
         let urlLink =
           "https://discord.com/api/oauth2/authorize?client_id=" +
           process.env.REACT_APP_DISCORD_CLIENT_ID +

@@ -6,7 +6,7 @@ import "leaflet/dist/leaflet.css";
 import { withTranslation } from "react-i18next";
 import Icon from "./Icon";
 
-var myMarker = L.icon({
+let myMarker = L.icon({
   iconUrl:
     "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/marker.png",
   iconSize: [25, 41],
@@ -79,7 +79,7 @@ class MapLayer extends Component {
             offset={[0, 7]}
             direction="top"
           >
-            <span className="font-weight-bold h4" style={{ color: "#39d28c" }}>
+            <span className="font-weight-bold h5" style={{ color: "#e94e0f" }}>
               {resource.quality}
             </span>
           </Tooltip>

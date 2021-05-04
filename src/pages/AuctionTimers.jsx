@@ -10,8 +10,8 @@ class AuctionTimers extends Component {
   };
 
   showTimers() {
-    var timers = [];
-    for (var i = 0; i < this.state.timers; i++) {
+    let timers = [];
+    for (let i = 0; i < this.state.timers; i++) {
       timers.push(
         <Timer key={i} onPlay={this.playAlarm} value={this.state.playSound} />
       );
@@ -20,7 +20,7 @@ class AuctionTimers extends Component {
   }
 
   playAlarm() {
-    var audio = new Audio(
+    let audio = new Audio(
       "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/alarm.mp3"
     );
     audio.play();

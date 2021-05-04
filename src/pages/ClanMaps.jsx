@@ -126,7 +126,7 @@ class ClanMaps extends Component {
 
   getNameMap = (typemap) => {
     if (this.state.maps != null) {
-      var m = this.state.maps.filter((m) => {
+      let m = this.state.maps.filter((m) => {
         return m.idMap === typemap;
       });
       if (m[0] != null) {

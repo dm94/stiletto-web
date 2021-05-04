@@ -122,7 +122,7 @@ class Diplomacy extends Component {
 
   listOfAllies() {
     if (this.state.listOfRelations != null) {
-      var allies = this.state.listOfRelations.filter(
+      let allies = this.state.listOfRelations.filter(
         (r) => r.typed == 1 || r.typed == 31
       );
 
@@ -140,11 +140,11 @@ class Diplomacy extends Component {
 
   listOfEnemies() {
     if (this.state.listOfRelations != null) {
-      var allies = this.state.listOfRelations.filter(
+      let enemies = this.state.listOfRelations.filter(
         (r) => r.typed == 2 || r.typed == 32
       );
 
-      return allies.map((d) => (
+      return enemies.map((d) => (
         <div key={"enemy" + d.id} className="col-12">
           <ClanSelect
             clan={d}
@@ -158,11 +158,11 @@ class Diplomacy extends Component {
 
   listOfNAP() {
     if (this.state.listOfRelations != null) {
-      var allies = this.state.listOfRelations.filter(
+      let nap = this.state.listOfRelations.filter(
         (r) => r.typed == 0 || r.typed == 30
       );
 
-      return allies.map((d) => (
+      return nap.map((d) => (
         <div key={"npa" + d.id} className="col-12">
           <ClanSelect
             clan={d}
@@ -256,7 +256,7 @@ class Diplomacy extends Component {
 
   symbolsList() {
     const symbols = [];
-    for (var i = 1; i < 31; i++) {
+    for (let i = 1; i < 31; i++) {
       symbols.push("C" + i);
     }
     return symbols.map((symbol) => (
