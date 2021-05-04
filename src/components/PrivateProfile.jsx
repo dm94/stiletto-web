@@ -181,14 +181,14 @@ class PrivateProfile extends Component {
     i18next.changeLanguage(this.state.language);
   };
 
-  setConnectionError() {
+  setConnectionError = () => {
     this.setError("Error when connecting to the API");
-  }
+  };
 
-  setError(error) {
+  setError = (error) => {
     const { t } = this.props;
     this.setState({ error: t(error) });
-  }
+  };
 
   showClanSection() {
     const { t } = this.props;

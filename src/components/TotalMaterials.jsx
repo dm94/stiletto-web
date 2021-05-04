@@ -93,7 +93,7 @@ class TotalMaterials extends Component {
     ));
   }
 
-  copyMaterials(t) {
+  copyMaterials = (t) => {
     let text = t("To make") + ":\n\n";
 
     this.props.selectedItems.forEach(
@@ -137,7 +137,7 @@ class TotalMaterials extends Component {
       (window.location.port ? ":" + window.location.port : "");
 
     navigator.clipboard.writeText(text);
-  }
+  };
 
   render() {
     const { t } = this.props;

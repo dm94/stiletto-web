@@ -29,7 +29,7 @@ class Crafter extends Component {
       });
   }
 
-  getRecipes() {
+  getRecipes = () => {
     const parsed = queryString.parse(this.props.location.search);
     let recipe = parsed.recipe;
     if (recipe != null && recipe.length > 0) {
@@ -51,7 +51,7 @@ class Crafter extends Component {
           this.setState({ error: "Error when connecting to the API" });
         });
     }
-  }
+  };
 
   handleInputChangeSearchItem = (event) => {
     const { t } = this.props;
@@ -173,12 +173,12 @@ class Crafter extends Component {
     }
   }
 
-  removeSelectedItem(itemName) {
+  removeSelectedItem = (itemName) => {
     const selectedItems = this.state.selectedItems.filter(
       (it) => it.name !== itemName
     );
     this.setState({ selectedItems });
-  }
+  };
 
   render() {
     const { t } = this.props;

@@ -238,7 +238,7 @@ class TechTree extends Component {
     );
   }
 
-  updateSaveData() {
+  updateSaveData = () => {
     let learned = [];
     let saveData = {};
 
@@ -256,7 +256,7 @@ class TechTree extends Component {
     });
 
     this.setState({ savedData: saveData, isLoaded: true });
-  }
+  };
 
   getChildrens(parent) {
     const { t } = this.props;

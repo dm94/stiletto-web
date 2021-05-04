@@ -10,10 +10,10 @@ class ResourcesInMapList extends Component {
     };
   }
 
-  filterTheResources(r) {
+  filterTheResources = (r) => {
     this.setState({ resourceTypeFilter: r });
     this.props.onFilter(r);
-  }
+  };
 
   list(t) {
     if (this.state.resourceTypeFilter !== "All") {

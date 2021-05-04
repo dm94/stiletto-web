@@ -26,7 +26,7 @@ class MapLayer extends Component {
     };
   }
 
-  getMarketDesign(resource) {
+  getMarketDesign = (resource) => {
     var res = resource.replace(" ", "_");
     var marker = null;
     var img = new Image();
@@ -44,7 +44,7 @@ class MapLayer extends Component {
       marker = myMarker;
     }
     return marker;
-  }
+  };
 
   getMarkers(t) {
     if (

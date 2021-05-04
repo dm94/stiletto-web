@@ -119,12 +119,12 @@ class ClanMaps extends Component {
           });
         }
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
   };
 
-  getNameMap(typemap) {
+  getNameMap = (typemap) => {
     if (this.state.maps != null) {
       var m = this.state.maps.filter((m) => {
         return m.idMap === typemap;
@@ -134,7 +134,7 @@ class ClanMaps extends Component {
       }
     }
     return "Crater";
-  }
+  };
 
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
     event.preventDefault();

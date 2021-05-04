@@ -22,7 +22,7 @@ class Timer extends Component {
     clearInterval(this.timer);
   }
 
-  tick() {
+  tick = () => {
     if (this.state.isOn) {
       if (
         this.state.hours == 0 &&
@@ -50,7 +50,7 @@ class Timer extends Component {
         }
       }
     }
-  }
+  };
 
   render() {
     const { t } = this.props;

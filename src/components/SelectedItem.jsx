@@ -77,12 +77,12 @@ class SelectedItem extends Component {
     }
   }
 
-  change(count) {
+  change = (count) => {
     this.props.onChangeCount(
       this.props.item.name,
       parseInt(this.props.item.count) + count
     );
-  }
+  };
 
   render() {
     const { t } = this.props;
