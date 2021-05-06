@@ -22,6 +22,7 @@ import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
 import CookieConsent from "./components/CookieConsent";
 import DiscordButton from "./components/DiscordButton";
+import ResourceMapNoLog from "./components/ResourceMapNoLog";
 
 function CrafterApp() {
   const [t] = useTranslation();
@@ -165,6 +166,7 @@ function CrafterApp() {
               <Route path="/diplomacy" component={Diplomacy} />
               <Route path="/auctions" component={AuctionTimers} />
               <Route path="/others" component={Others} />
+              <Route path="/map/:id" component={ResourceMapNoLog} />
               <Route path="/map" component={Map} />
               <Route path="/quality" component={QualityCalculator} />
               <Route path="/tech" component={TechTree} />

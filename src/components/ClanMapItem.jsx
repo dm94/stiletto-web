@@ -62,9 +62,9 @@ class ClanMapItem extends Component {
           href={
             host +
             (window.location.port ? ":" + window.location.port : "") +
-            "/map?mapid=" +
+            "/map/" +
             this.props.map.mapid +
-            "&pass=" +
+            "?pass=" +
             this.props.map.pass
           }
           target="_blank"

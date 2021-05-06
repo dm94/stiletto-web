@@ -5,9 +5,9 @@ import ModalMessage from "../components/ModalMessage";
 import MapLayer from "../components/MapLayer";
 import ResourcesInMapList from "../components/ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
-
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+const queryString = require("query-string");
 
 class ResourceMapNoLog extends Component {
   constructor(props) {
@@ -27,28 +27,39 @@ class ResourceMapNoLog extends Component {
     };
   }
   componentDidMount() {
-    if (this.props.mapId != null && this.props.pass != null) {
+    let parsed = null;
+    if (this.props.location != null && this.props.location.search != null) {
+      parsed = queryString.parse(this.props.location.search);
+    }
+
+    if (
+      (this.props.mapId != null || this.props.match.params.id != null) &&
+      (this.props.pass != null || parsed.pass != null)
+    ) {
       Axios.get(
         "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.json"
       ).then((response) => {
         this.setState({ items: response.data });
       });
 
+      let mapId =
+        this.props.mapId != null
+          ? this.props.mapId
+          : this.props.match.params.id;
+      let pass = this.props.pass ? this.props.pass : parsed.pass;
+
       this.setState({
-        mapId: this.props.mapId,
-        pass: this.props.pass,
+        mapId: mapId,
+        pass: pass,
       });
 
       Axios.get(
-        process.env.REACT_APP_API_URL +
-          "/maps/" +
-          this.props.mapId +
-          "/resources",
+        process.env.REACT_APP_API_URL + "/maps/" + mapId + "/resources",
         {
           params: {
             discordid: localStorage.getItem("discordid"),
             token: localStorage.getItem("token"),
-            mappass: this.props.pass,
+            mappass: pass,
           },
         }
       ).then((response) => {
