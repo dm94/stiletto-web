@@ -24,6 +24,7 @@ class ResourceMapNoLog extends Component {
       coordinateXInput: 0,
       coordinateYInput: 0,
       resourcesFiltered: null,
+      error: null,
     };
   }
   componentDidMount() {
@@ -73,6 +74,8 @@ class ResourceMapNoLog extends Component {
           this.setState({ error: "Error connecting to database" });
         }
       });
+    } else {
+      this.setState({ error: "Unauthorized" });
     }
   }
 
@@ -170,6 +173,17 @@ class ResourceMapNoLog extends Component {
             redirectPage: null,
           }}
           onClickOk={() => this.setState({ textMessage: null })}
+        />
+      );
+    }
+    if (this.state.error != null) {
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: t(this.state.error),
+            redirectPage: "/",
+          }}
         />
       );
     }
