@@ -14,19 +14,19 @@
   {
     "idMap": 3,
     "name": "SleepingGiants",
-    "type": "Difficult",
+    "type": "Hard",
     "image": "https://api.stiletto.live/maps/SleepingGiants.jpg"
   },
   {
     "idMap": 4,
     "name": "SleepingGiantsB",
-    "type": "Difficult",
+    "type": "Hard",
     "image": "https://api.stiletto.live/maps/SleepingGiantsB.jpg"
   },
   {
     "idMap": 5,
     "name": "Volcanic",
-    "type": "Difficult",
+    "type": "Hard",
     "image": "https://api.stiletto.live/maps/Volcanic.jpg"
   },
   {
@@ -38,7 +38,7 @@
   {
     "idMap": 7,
     "name": "Volcanyon",
-    "type": "Difficult",
+    "type": "Hard",
     "image": "https://api.stiletto.live/maps/Volcanyon.jpg"
   },
   {
@@ -46,5 +46,11 @@
     "name": "AncientCity",
     "type": "Event",
     "image": "https://api.stiletto.live/maps/AncientCity.jpg"
+  },
+  {
+    "idMap": 9,
+    "name": "KaliSpires",
+    "type": "Hard",
+    "image": "https://api.stiletto.live/maps/KaliSpires.jpg"
   }
 ]
