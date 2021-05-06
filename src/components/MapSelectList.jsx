@@ -6,7 +6,7 @@ class MapSelectList extends Component {
     if (this.props.maps != null) {
       return this.props.maps.map((map) => (
         <div
-          className="m-2 col-sm-2 col-xl text-center"
+          className="p-2 col-sm-4 col-xl-2 text-center"
           key={"selectmap" + map.idMap}
         >
           <img

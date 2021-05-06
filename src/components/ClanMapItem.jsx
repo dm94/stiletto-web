@@ -81,7 +81,7 @@ class ClanMapItem extends Component {
     let dateBurning = new Date(this.props.map.dateofburning);
     return (
       <div
-        className="m-2 col-sm-2 col-xl-2 text-center"
+        className="p-2 col-sm-6 col-xl-2 text-center"
         key={"clanmap" + this.props.map.mapid}
         onMouseOver={() => this.setState({ isHover: true })}
         onMouseLeave={() => this.setState({ isHover: false })}
