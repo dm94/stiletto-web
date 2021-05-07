@@ -199,7 +199,7 @@ let all = {
         Wiki: 'Wiki',
         'Privacy Agreement': 'Política de privacidad',
         'Cookies - This site only uses Google cookies to view web traffic.': 'Cookies - Esta web solo usa las cookies de Google para analizar el trafico de la web.',
-        'Private data - The only registration data saved is Discord ID and Discord Tag': 'Datos privados - Los únicos datos de registro que se guardan son el DIscord ID y el Discord Tag',
+        'Private data - The only registration data saved is Discord ID and Discord Tag': 'Datos privados - Los únicos datos de registro que se guardan son el Discord ID y el Discord Tag',
         'Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.': 'Los datos que se añaden a la web como la diplomacia, recursos del mapa o miembros de un clan se almacenan en una base de datos y se toman las medidas de seguridad necesarias para que nadie pueda acceder a esos datos.',
         'Source Code is published on GitHub for full disclosure where you can also report any issues found.': 'Si crees que esta pagina no es segura, todo su código esta publicado en GitHub y proporciono todos los medios para que reportes el fallo.',
         Vitamins: 'Vitaminas',
