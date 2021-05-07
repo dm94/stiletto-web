@@ -286,6 +286,19 @@ function CrafterApp() {
             <div className="col-xl-10">
               Copyright © 2020 Stiletto{" | "}
               <a
+                title="GitHub package.json version"
+                href="https://github.com/dm94/stiletto-web"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  alt="GitHub package.json version"
+                  src="https://img.shields.io/github/package-json/v/dm94/stiletto-web"
+                />
+              </a>
+              {" | "}
+              <a
+                title="GitHub last commit"
                 href="https://github.com/dm94/stiletto-web"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -293,7 +306,19 @@ function CrafterApp() {
                 <img
                   alt="GitHub last commit"
                   src="https://img.shields.io/github/last-commit/dm94/stiletto-web"
-                ></img>
+                />
+              </a>
+              {" | "}
+              <a
+                title="Crowdin"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://crowdin.com/project/stiletto"
+              >
+                <img
+                  alt="Crowdin translations"
+                  src="https://badges.crowdin.net/stiletto/localized.svg"
+                />
               </a>
               {" | "}
               {t(

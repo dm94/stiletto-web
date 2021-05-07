@@ -1,3 +1,10 @@
+![GitHub package.json version](https://img.shields.io/github/package-json/v/dm94/stiletto-web)
+[![Discord](https://img.shields.io/discord/317737508064591874?color=7289DA&logo=Discord&logoColor=FFFFFF)](https://discord.gg/FcecRtZ)
+[![Crowdin](https://badges.crowdin.net/stiletto/localized.svg)](https://crowdin.com/project/stiletto)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.stiletto.live%2F)](https://www.stiletto.live/)
+
+---
+
 ## Stiletto Web
 
 Web with different utilities for the game Last Oasis, but is not affiliated with [Donkey Crew](https://www.donkey.team/)
