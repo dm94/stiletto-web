@@ -3601,15 +3601,15 @@
         "ingredients": [
           {
             "name": "Clay",
-            "count": 5
+            "count": 20
           },
           {
             "name": "Earth Wax",
-            "count": 5
+            "count": 20
           },
           {
             "name": "Mushroom Flesh",
-            "count": 15
+            "count": 60
           }
         ],
         "station": "Camp Fire"
