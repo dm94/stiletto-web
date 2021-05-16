@@ -7,6 +7,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Ingredients from "../components/Ingredients";
 import Ingredient from "../components/Ingredient";
+import "../css/tech-tree.css";
 
 class TechTree extends Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class TechTree extends Component {
     }
 
     const theme = {
+      h1FontSize: "50",
       border: "1px solid rgb(127,127,127)",
       treeBackgroundColor: "rgba(60, 60, 60, 0.8)",
       nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
