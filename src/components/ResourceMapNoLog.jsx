@@ -212,7 +212,8 @@ class ResourceMapNoLog extends Component {
                 .concat("//")
                 .concat(window.location.hostname) +
               (window.location.port ? ":" + window.location.port : "") +
-              "/map"
+              "/map/" +
+              this.state.mapId
             }
           />
         </Helmet>

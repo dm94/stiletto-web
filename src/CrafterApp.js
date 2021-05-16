@@ -45,8 +45,8 @@ function CrafterApp() {
           rel="stylesheet"
           href={
             localStorage.getItem("darkmode") !== "false"
-              ? "./css/darkly.min.css"
-              : "./css/journal.min.css"
+              ? "/css/darkly.min.css"
+              : "/css/journal.min.css"
           }
         />
       </Helmet>
@@ -134,14 +134,14 @@ function CrafterApp() {
                   width="30%"
                   src={
                     localStorage.getItem("i18nextLng").includes("es")
-                      ? "./img/es.jpg"
+                      ? "/img/es.jpg"
                       : localStorage.getItem("i18nextLng").includes("ru")
-                      ? "./img/ru.jpg"
+                      ? "/img/ru.jpg"
                       : localStorage.getItem("i18nextLng").includes("fr")
-                      ? "./img/fr.jpg"
+                      ? "/img/fr.jpg"
                       : localStorage.getItem("i18nextLng").includes("de")
-                      ? "./img/de.jpg"
-                      : "./img/en.jpg"
+                      ? "/img/de.jpg"
+                      : "/img/en.jpg"
                   }
                   alt="Change language"
                 />
@@ -217,7 +217,7 @@ function CrafterApp() {
                     <div className="col-3">
                       <img
                         className="img-thumbnail"
-                        src="./img/es.jpg"
+                        src="/img/es.jpg"
                         alt="Spanish language"
                         onClick={() => switchLanguage("es")}
                       />
@@ -226,7 +226,7 @@ function CrafterApp() {
                     <div className="col-3">
                       <img
                         className="img-thumbnail"
-                        src="./img/en.jpg"
+                        src="/img/en.jpg"
                         alt="English language"
                         onClick={() => switchLanguage("en")}
                       />
@@ -235,7 +235,7 @@ function CrafterApp() {
                     <div className="col-3">
                       <img
                         className="img-thumbnail"
-                        src="./img/ru.jpg"
+                        src="/img/ru.jpg"
                         alt="Russian language"
                         onClick={() => switchLanguage("ru")}
                       />
@@ -244,7 +244,7 @@ function CrafterApp() {
                     <div className="col-3">
                       <img
                         className="img-thumbnail"
-                        src="./img/fr.jpg"
+                        src="/img/fr.jpg"
                         alt="French language"
                         onClick={() => switchLanguage("fr")}
                       />
@@ -253,7 +253,7 @@ function CrafterApp() {
                     <div className="col-3">
                       <img
                         className="img-thumbnail"
-                        src="./img/de.jpg"
+                        src="/img/de.jpg"
                         alt="German language"
                         onClick={() => switchLanguage("de")}
                       />
