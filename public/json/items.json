@@ -3641,7 +3641,7 @@
             "count": 5
           },
           {
-            "name": "Insect",
+            "name": "Insects",
             "count": 18
           }
         ],
@@ -7458,6 +7458,11 @@
     "name": "Pearl",
     "category": "materials",
     "trade_price": 12.27
+  },
+  {
+    "name": "Proxy License",
+    "category": "materials",
+    "trade_price": 100000
   },
   {
     "name": "Purified Water",
@@ -20791,7 +20796,7 @@
     "parent": "Balang Walker Body",
     "category": "walkers/silur",
     "cost": {
-      "name": "Tablets",
+      "name": "Tablet",
       "count": 4
     },
     "crafting": [
@@ -22383,7 +22388,7 @@
             "count": 45
           },
           {
-            "name": "Wood Silk",
+            "name": "Worm Silk",
             "count": 25
           },
           {

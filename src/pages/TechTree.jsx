@@ -35,10 +35,6 @@ class TechTree extends Component {
       .then(() => this.updateSaveData());
   }
 
-  handleSave(storage, treeId, skills) {
-    return storage.setItem(`skills-${treeId}`, JSON.stringify(skills));
-  }
-
   render() {
     const { t } = this.props;
 
@@ -48,16 +44,6 @@ class TechTree extends Component {
           message={{
             isError: true,
             text: t(this.state.error),
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    } else if (this.state.user_discord_id == null || this.state.token == null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: t("You need to be logged in to enter this part"),
             redirectPage: "/profile",
           }}
         />
@@ -173,7 +159,6 @@ class TechTree extends Component {
                     <SkillTree
                       treeId="Vitamins"
                       title={t("Vitamins")}
-                      savedData={this.state.savedData}
                       data={this.getChildrens("Vitamins")}
                     />
                   </div>
@@ -186,7 +171,6 @@ class TechTree extends Component {
                     <SkillTree
                       treeId="Equipment"
                       title={t("Equipment")}
-                      savedData={this.state.savedData}
                       data={this.getChildrens("Equipment")}
                     />
                   </div>
@@ -199,7 +183,6 @@ class TechTree extends Component {
                     <SkillTree
                       treeId="Crafting"
                       title={t("Crafting")}
-                      savedData={this.state.savedData}
                       data={this.getChildrens("Crafting")}
                     />
                   </div>
@@ -212,7 +195,6 @@ class TechTree extends Component {
                     <SkillTree
                       treeId="Construction"
                       title={t("Construction")}
-                      savedData={this.state.savedData}
                       data={this.getChildrens("Construction")}
                     />
                   </div>
@@ -225,7 +207,6 @@ class TechTree extends Component {
                     <SkillTree
                       treeId="Walkers"
                       title={t("Walkers")}
-                      savedData={this.state.savedData}
                       data={this.getChildrens("Walkers")}
                     />
                   </div>
