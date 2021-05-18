@@ -58,5 +58,11 @@
     "name": "WormMap",
     "type": "Event",
     "image": "https://api.stiletto.live/maps/WormMap.jpg"
+  },
+  {
+    "idMap": 11,
+    "name": "MiniOasis",
+    "type": "Easy",
+    "image": "https://api.stiletto.live/maps/MiniOasis.jpg"
   }
 ]
