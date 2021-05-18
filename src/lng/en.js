@@ -583,8 +583,8 @@ let all = {
     "Lava Fuel": "Lava Fuel",
     "Buffalo Walker Body": "Buffalo Walker Body",
     "Buffalo Walker Legs (1 of 2)": "Buffalo Walker Legs (1 of 2)",
-    "Buffalo Walker Legs Armored": "Buffalo Walker Legs Armored",
-    "Buffalo Walker Legs Heavy": "Buffalo Walker Legs Heavy",
+    "Buffalo Walker Legs Armored (1 of 2)": "Buffalo Walker Legs Armored (1 of 2)",
+    "Buffalo Walker Legs Heavy (1 of 2)": "Buffalo Walker Legs Heavy (1 of 2)",
     "Buffalo Walker Heavy Wings (1 of 2)":
       "Buffalo Walker Heavy Wings (1 of 2)",
     "Buffalo Walker Medium Wings (1 of 2)":
@@ -709,9 +709,9 @@ let all = {
     "Dinghy Walker Upgrade - Water - Tier 4":
       "Dinghy Walker Upgrade - Water - Tier 4",
     "Domus Walker Body": "Domus Walker Body",
-    "Armored Domus Walker Legs (1 of 2)": "Armored Domus Walker Legs (1 of 2)",
+    "Domus Walker Legs Armored (1 of 2)": "Domus Walker Legs Armored (1 of 2)",
     "Domus Walker Legs (1 of 2)": "Domus Walker Legs (1 of 2)",
-    "Heavy Domus Walker Legs (1 of 2)": "Heavy Domus Walker Legs (1 of 2)",
+    "Domus Walker Legs Heavy (1 of 2)": "Domus Walker Legs Heavy (1 of 2)",
     "Domus Walker Heavy Wings (1 of 2)": "Domus Walker Heavy Wings (1 of 2)",
     "Domus Walker Large Wings (1 of 2)": "Domus Walker Large Wings (1 of 2)",
     "Domus Walker Medium Wings (1 of 2)": "Domus Walker Medium Wings (1 of 2)",
@@ -758,9 +758,9 @@ let all = {
     "Domus Walker Upgrade - Water - Tier 4":
       "Domus Walker Upgrade - Water - Tier 4",
     "Falco Walker Body": "Falco Walker Body",
-    "Armored Falco Walker Legs (1 of 2)": "Armored Falco Walker Legs (1 of 2)",
+    "Falco Walker Legs Armored (1 of 2)": "Falco Walker Legs Armored (1 of 2)",
     "Falco Walker Legs (1 of 2)": "Falco Walker Legs (1 of 2)",
-    "Heavy Falco Walker Legs (1 of 2)": "Heavy Falco Walker Legs (1 of 2)",
+    "Falco Walker Legs Heavy (1 of 2)": "Falco Walker Legs Heavy (1 of 2)",
     "Falco Walker Wings (1 of 2)": "Falco Walker Wings (1 of 2)",
     "Falco Walker Wings Heavy (1 of 2)": "Falco Walker Wings Heavy (1 of 2)",
     "Falco Walker Wings Large (1 of 2)": "Falco Walker Wings Large (1 of 2)",
@@ -869,8 +869,8 @@ let all = {
       "Firefly Walker Upgrade - Water - Tier 4",
     "Hornet Walker Body": "Hornet Walker Body",
     "Hornet Walker Legs (1 of 2)": "Hornet Walker Legs (1 of 2)",
-    "Hornet Walker Legs Armored": "Hornet Walker Legs Armored",
-    "Hornet Walker Legs Heavy": "Hornet Walker Legs Heavy",
+    "Hornet Walker Legs Armored (1 of 2)": "Hornet Walker Legs Armored (1 of 2)",
+    "Hornet Walker Legs Heavy (1 of 2)": "Hornet Walker Legs Heavy (1 of 2)",
     "Hornet Walker Heavy Wings (1 of 2)": "Hornet Walker Heavy Wings (1 of 2)",
     "Hornet Walker Large Wings (1 of 2)": "Hornet Walker Large Wings (1 of 2)",
     "Hornet Walker Medium Wings (1 of 2)":
@@ -985,8 +985,8 @@ let all = {
     "Mollusk Walker Upgrade - Water - Tier 4":
       "Mollusk Walker Upgrade - Water - Tier 4",
     "Panda Walker Body": "Panda Walker Body",
-    "Armored Panda Walker Legs (1 of 2)": "Armored Panda Walker Legs (1 of 2)",
-    "Heavy Panda Walker Legs (1 of 2)": "Heavy Panda Walker Legs (1 of 2)",
+    "Panda Walker Legs Armored (1 of 2)": "Panda Walker Legs Armored (1 of 2)",
+    "Panda Walker Legs Heavy (1 of 2)": "Panda Walker Legs Heavy (1 of 2)",
     "Panda Walker Legs (1 of 2)": "Panda Walker Legs (1 of 2)",
     "Panda Walker Heavy Wings (1 of 2)": "Panda Walker Heavy Wings (1 of 2)",
     "Panda Walker Large Wings (1 of 2)": "Panda Walker Large Wings (1 of 2)",
@@ -1034,14 +1034,14 @@ let all = {
     "Panda Walker Upgrade - Water - Tier 4":
       "Panda Walker Upgrade - Water - Tier 4",
     "Proxy Walker Body": "Proxy Walker Body",
-    "Armored Proxy Walker Legs (1 of 2)": "Armored Proxy Walker Legs (1 of 2)",
-    "Heavy Proxy Walker Legs (1 of 2)": "Heavy Proxy Walker Legs (1 of 2)",
+    "Proxy Walker Legs Armored (1 of 2)": "Proxy Walker Legs Armored (1 of 2)",
+    "Proxy Walker Legs Heavy (1 of 2)": "Proxy Walker Legs Heavy (1 of 2)",
     "Proxy Walker Legs (1 of 2)": "Proxy Walker Legs (1 of 2)",
     "Schmetterling Walker Body": "Schmetterling Walker Body",
-    "Armored Schmetterling Walker Legs (1 of 2)":
-      "Armored Schmetterling Walker Legs (1 of 2)",
-    "Heavy Schmetterling Walker Legs (1 of 2)":
-      "Heavy Schmetterling Walker Legs (1 of 2)",
+    "Schmetterling Walker Legs Armored (1 of 2)":
+      "Schmetterling Walker Legs Armored (1 of 2)",
+    "Schmetterling Walker Legs Heavy (1 of 2)":
+      "Schmetterling Walker Legs Heavy (1 of 2)",
     "Schmetterling Walker Legs (1 of 2)": "Schmetterling Walker Legs (1 of 2)",
     "Schmetterling Walker Heavy Wings (1 of 2)":
       "Schmetterling Walker Heavy Wings (1 of 2)",
@@ -1109,8 +1109,8 @@ let all = {
       "Schmetterling Walker Upgrade - Water - Tier 4",
     "Nomad Spider Walker Body": "Nomad Spider Walker Body",
     "Spider Walker With Ballista": "Spider Walker With Ballista",
-    "Armored Spider Walker Legs (1 of 2)":
-      "Armored Spider Walker Legs (1 of 2)",
+    "Spider Walker Legs Armored (1 of 2)":
+      "Spider Walker Legs Armored (1 of 2)",
     "Spider Walker Legs (1 of 2)": "Spider Walker Legs (1 of 2)",
     "Spider Walker Upgrade - Cargo - Tier 1":
       "Spider Walker Upgrade - Cargo - Tier 1",
@@ -1160,7 +1160,7 @@ let all = {
       "Spider Walker Upgrade - Water - Tier 4",
     "Stiletto Walker Body": "Stiletto Walker Body",
     "Stiletto Walker Legs (1 of 2)": "Stiletto Walker Legs (1 of 2)",
-    "Stiletto Walker Legs Armored": "Stiletto Walker Legs Armored",
+    "Stiletto Walker Legs Armored (1 of 2)": "Stiletto Walker Legs Armored (1 of 2)",
     "Stiletto Walker Heavy Wings (1 of 2)":
       "Stiletto Walker Heavy Wings (1 of 2)",
     "Stiletto Walker Medium Wings (1 of 2)":
@@ -1211,8 +1211,8 @@ let all = {
     "Stiletto Walker Upgrade - Water - Tier 4":
       "Stiletto Walker Upgrade - Water - Tier 4",
     "Titan Walker Body": "Titan Walker Body",
-    "Armored Titan Walker Legs (1 of 2)": "Armored Titan Walker Legs (1 of 2)",
-    "Heavy Titan Walker Legs (1 of 2)": "Heavy Titan Walker Legs (1 of 2)",
+    "Titan Walker Legs Armored (1 of 2)": "Titan Walker Legs Armored (1 of 2)",
+    "Titan Walker Legs Heavy (1 of 2)": "Titan Walker Legs Heavy (1 of 2)",
     "Titan Walker Legs (1 of 2)": "Titan Walker Legs (1 of 2)",
     "Titan Walker Heavy Wings (1 of 2)": "Titan Walker Heavy Wings (1 of 2)",
     "Titan Walker Large Wings (1 of 2)": "Titan Walker Large Wings (1 of 2)",
@@ -1260,10 +1260,10 @@ let all = {
     "Titan Walker Upgrade - Water - Tier 4":
       "Titan Walker Upgrade - Water - Tier 4",
     "Toboggan Walker Body": "Toboggan Walker Body",
-    "Armored Toboggan Walker Legs (1 of 2)":
-      "Armored Toboggan Walker Legs (1 of 2)",
-    "Heavy Toboggan Walker Legs (1 of 2)":
-      "Heavy Toboggan Walker Legs (1 of 2)",
+    "Toboggan Walker Legs Armored (1 of 2)":
+      "Toboggan Walker Legs Armored (1 of 2)",
+    "Toboggan Walker Legs Heavy (1 of 2)":
+      "Toboggan Walker Legs Heavy (1 of 2)",
     "Toboggan Walker Legs (1 of 2)": "Toboggan Walker Legs (1 of 2)",
     "Toboggan Walker Heavy Wings (1 of 2)":
       "Toboggan Walker Heavy Wings (1 of 2)",
@@ -1323,9 +1323,9 @@ let all = {
     "Walker Climber": "Walker Climber",
     "Walker Packing Compartment": "Walker Packing Compartment",
     "Tusker Walker Body": "Tusker Walker Body",
-    "Armored Tusker Walker Legs (1 of 2)":
-      "Armored Tusker Walker Legs (1 of 2)",
-    "Heavy Tusker Walker Legs (1 of 2)": "Heavy Tusker Walker Legs (1 of 2)",
+    "Tusker Walker Legs Armored (1 of 2)":
+      "Tusker Walker Legs Armored (1 of 2)",
+    "Tusker Walker Legs Heavy (1 of 2)": "Tusker Walker Legs Heavy (1 of 2)",
     "Tusker Walker Legs (1 of 2)": "Tusker Walker Legs (1 of 2)",
     "Tusker Walker Heavy Wings (1 of 2)": "Tusker Walker Heavy Wings (1 of 2)",
     "Tusker Walker Large Wings (1 of 2)": "Tusker Walker Large Wings (1 of 2)",
@@ -1389,21 +1389,21 @@ let all = {
       "Silur Walker Upgrade - Torque - Tier 4",
     "Silur Walker Upgrade - Water - Tier 4":
       "Silur Walker Upgrade - Water - Tier 4",
-    "Silur Walker Legs Armored": "Silur Walker Legs Armored",
-    "Silur Walker Legs Heavy": "Silur Walker Legs Heavy",
+    "Silur Walker Legs Armored (1 of 2)": "Silur Walker Legs Armored (1 of 2)",
+    "Silur Walker Legs Heavy (1 of 2)": "Silur Walker Legs Heavy (1 of 2)",
     "Battle Fan": "Battle Fan",
     "Hardened Hellfire Bolt": "Hardened Hellfire Bolt",
     "Base Maintenance Chest": "Base Maintenance Chest",
     "Hercul Walker Body": "Hercul Walker Body",
     "Hercul Walker Legs (1 of 2)": "Hercul Walker Legs (1 of 2)",
-    "Hercul Walker Wings": "Hercul Walker Wings",
-    "Hercul Walker Legs Armored": "Hercul Walker Legs Armored",
-    "Hercul Walker Wings Heavy": "Hercul Walker Wings Heavy",
-    "Hercul Walker Wings Medium": "Hercul Walker Wings Medium",
-    "Hercul Walker Wings Raider": "Hercul Walker Wings Raider",
-    "Hercul Walker Wings Rugged": "Hercul Walker Wings Rugged",
-    "Hercul Walker Wings Skirmish": "Hercul Walker Wings Skirmish",
-    "Hercul Walker Wings Small": "Hercul Walker Wings Small",
+    "Hercul Walker Wings (1 of 2)": "Hercul Walker Wings (1 of 2)",
+    "Hercul Walker Legs Armored (1 of 2)": "Hercul Walker Legs Armored (1 of 2)",
+    "Hercul Walker Wings Heavy (1 of 2)": "Hercul Walker Wings Heavy (1 of 2)",
+    "Hercul Walker Wings Medium (1 of 2)": "Hercul Walker Wings Medium (1 of 2)",
+    "Hercul Walker Wings Raider (1 of 2)": "Hercul Walker Wings Raider (1 of 2)",
+    "Hercul Walker Wings Rugged (1 of 2)": "Hercul Walker Wings Rugged (1 of 2)",
+    "Hercul Walker Wings Skirmish (1 of 2)": "Hercul Walker Wings Skirmish (1 of 2)",
+    "Hercul Walker Wings Small (1 of 2)": "Hercul Walker Wings Small (1 of 2)",
     "Hercul Walker Upgrade - Torque - Tier 2":
       "Hercul Walker Upgrade - Torque - Tier 2",
     "Hercul Walker Upgrade - Water - Tier 2":

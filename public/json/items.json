@@ -6505,6 +6505,9 @@
           }, {
             "name": "Tar",
             "count": 5
+          }, {
+            "name": "Worm Scale",
+            "count": 30
           }
         ]
       }
@@ -6567,13 +6570,13 @@
             "count": 70
           }, {
             "name": "Worm Silk",
-            "count": 60
+            "count": 70
           }, {
             "name": "Hide",
             "count": 120
           }, {
-            "name": "Redwood Wood",
-            "count": 24
+            "name": "Worm Scale",
+            "count": 6
           }
         ]
       }
@@ -8194,7 +8197,7 @@
       }
     ]
   }, {
-    "name": "Armored Domus Walker Legs (1 of 2)",
+    "name": "Domus Walker Legs Armored (1 of 2)",
     "parent": "Domus Walker Body",
     "category": "walkers/domus/parts/legs",
     "cost": {
@@ -8236,8 +8239,8 @@
       }
     ]
   }, {
-    "name": "Heavy Domus Walker Legs (1 of 2)",
-    "parent": "Armored Domus Walker Legs (1 of 2)",
+    "name": "Domus Walker Legs Heavy (1 of 2)",
+    "parent": "Domus Walker Legs Armored (1 of 2)",
     "category": "walkers/domus/parts/legs",
     "crafting": [{
         "ingredients": [{
@@ -8824,7 +8827,7 @@
       }
     ]
   }, {
-    "name": "Armored Falco Walker Legs (1 of 2)",
+    "name": "Falco Walker Legs Armored (1 of 2)",
     "parent": "Falco Walker Body",
     "cost": {
       "name": "Tablet",
@@ -8866,8 +8869,8 @@
       }
     ]
   }, {
-    "name": "Heavy Falco Walker Legs (1 of 2)",
-    "parent": "Armored Falco Walker Legs (1 of 2)",
+    "name": "Falco Walker Legs Heavy (1 of 2)",
+    "parent": "Falco Walker Legs Armored (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 6
@@ -8883,6 +8886,9 @@
           }, {
             "name": "Tar",
             "count": 5
+          }, {
+            "name": "Worm Scale",
+            "count": 60
           }
         ]
       }
@@ -10076,6 +10082,9 @@
           }, {
             "name": "Tar",
             "count": 5
+          }, {
+            "name": "Worm Scale",
+            "count": 40
           }
         ]
       }
@@ -10160,16 +10169,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
-            "count": 66
+            "count": 60
           }, {
             "name": "Worm Silk",
-            "count": 58
+            "count": 60
           }, {
             "name": "Hide",
             "count": 90
           }, {
-            "name": "Iron Ore",
-            "count": 34
+            "name": "Worm Scale",
+            "count": 6
           }
         ]
       }
@@ -10889,13 +10898,13 @@
             "count": 90
           }, {
             "name": "Worm Silk",
-            "count": 24
+            "count": 30
           }, {
             "name": "Hide",
             "count": 50
           }, {
-            "name": "Redwood Wood",
-            "count": 28
+            "name": "Worm Scale",
+            "count": 5
           }
         ]
       }
@@ -11501,7 +11510,7 @@
       }
     ]
   }, {
-    "name": "Armored Panda Walker Legs (1 of 2)",
+    "name": "Panda Walker Legs Armored (1 of 2)",
     "parent": "Panda Walker Body",
     "category": "walkers/panda/parts/legs",
     "cost": {
@@ -11535,8 +11544,8 @@
       }
     ]
   }, {
-    "name": "Heavy Panda Walker Legs (1 of 2)",
-    "parent": "Armored Panda Walker Legs (1 of 2)",
+    "name": "Panda Walker Legs Heavy (1 of 2)",
+    "parent": "Panda Walker Legs Armored (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 6
@@ -12152,7 +12161,7 @@
       }
     ]
   }, {
-    "name": "Armored Proxy Walker Legs (1 of 2)",
+    "name": "Proxy Walker Legs Armored (1 of 2)",
     "parent": "Proxy Walker Body",
     "category": "walkers/proxy/parts/legs",
     "cost": {
@@ -12177,8 +12186,8 @@
       }
     ]
   }, {
-    "name": "Heavy Proxy Walker Legs (1 of 2)",
-    "parent": "Armored Proxy Walker Legs (1 of 2)",
+    "name": "Proxy Walker Legs Heavy (1 of 2)",
+    "parent": "Proxy Walker Legs Armored (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 3
@@ -12187,7 +12196,7 @@
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
-            "count": 214
+            "count": 207
           }, {
             "name": "Redwood Wood",
             "count": 80
@@ -12196,7 +12205,10 @@
             "count": 14
           }, {
             "name": "Worm Silk",
-            "count": 14
+            "count": 7
+          }, {
+            "name": "Worm Scale",
+            "count": 15
           }
         ]
       }
@@ -12253,7 +12265,7 @@
       }
     ]
   }, {
-    "name": "Armored Schmetterling Walker Legs (1 of 2)",
+    "name": "Schmetterling Walker Legs Armored (1 of 2)",
     "parent": "Schmetterling Walker Body",
     "category": "walkers/schmetterling/parts/legs",
     "cost": {
@@ -12278,8 +12290,8 @@
       }
     ]
   }, {
-    "name": "Heavy Schmetterling Walker Legs (1 of 2)",
-    "parent": "Armored Schmetterling Walker Legs (1 of 2)",
+    "name": "Schmetterling Walker Legs Heavy (1 of 2)",
+    "parent": "Schmetterling Walker Legs Armored (1 of 2)",
     "category": "walkers/schmetterling/parts/legs",
     "crafting": [{
         "ingredients": [{
@@ -12997,7 +13009,7 @@
       }
     ]
   }, {
-    "name": "Armored Spider Walker Legs (1 of 2)",
+    "name": "Spider Walker Legs Armored (1 of 2)",
     "parent": "Nomad Spider Walker Body",
     "cost": {
       "name": "Fragment",
@@ -13626,11 +13638,11 @@
             "name": "Rope",
             "count": 70
           }, {
-            "name": "Nomad Cloth",
-            "count": 20
+            "name": "Worm Silk",
+            "count": 60
           }, {
-            "name": "Redwood Wood",
-            "count": 32
+            "name": "Worm Scale",
+            "count": 5
           }
         ]
       }
@@ -14142,7 +14154,7 @@
       }
     ]
   }, {
-    "name": "Armored Titan Walker Legs (1 of 2)",
+    "name": "Titan Walker Legs Armored (1 of 2)",
     "parent": "Titan Walker Body",
     "category": "walkers/titan/parts/legs",
     "cost": {
@@ -14167,8 +14179,8 @@
       }
     ]
   }, {
-    "name": "Heavy Titan Walker Legs (1 of 2)",
-    "parent": "Armored Titan Walker Legs (1 of 2)",
+    "name": "Titan Walker Legs Heavy (1 of 2)",
+    "parent": "Titan Walker Legs Armored (1 of 2)",
     "category": "walkers/titan/parts/legs",
     "crafting": [{
         "ingredients": [{
@@ -14874,7 +14886,7 @@
       }
     ]
   }, {
-    "name": "Armored Toboggan Walker Legs (1 of 2)",
+    "name": "Toboggan Walker Legs Armored (1 of 2)",
     "parent": "Toboggan Walker Body",
     "cost": {
       "name": "Tablet",
@@ -14899,8 +14911,8 @@
       }
     ]
   }, {
-    "name": "Heavy Toboggan Walker Legs (1 of 2)",
-    "parent": "Armored Toboggan Walker Legs (1 of 2)",
+    "name": "Toboggan Walker Legs Heavy (1 of 2)",
+    "parent": "Toboggan Walker Legs Armored (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 5
@@ -14916,6 +14928,9 @@
           }, {
             "name": "Tar",
             "count": 3
+          }, {
+            "name": "Worm Scale",
+            "count": 30
           }
         ]
       }
@@ -15764,7 +15779,7 @@
       }
     ]
   }, {
-    "name": "Armored Tusker Walker Legs (1 of 2)",
+    "name": "Tusker Walker Legs Armored (1 of 2)",
     "parent": "Tusker Walker Body",
     "category": "walkers/tusker/parts/legs",
     "cost": {
@@ -15789,8 +15804,8 @@
       }
     ]
   }, {
-    "name": "Heavy Tusker Walker Legs (1 of 2)",
-    "parent": "Armored Tusker Walker Legs (1 of 2)",
+    "name": "Tusker Walker Legs Heavy (1 of 2)",
+    "parent": "Tusker Walker Legs Armored (1 of 2)",
     "category": "walkers/tusker/parts/legs",
     "crafting": [{
         "ingredients": [{
@@ -16905,16 +16920,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
-            "count": 70
-          }, {
-            "name": "Worm Silk",
             "count": 60
           }, {
-            "name": "Hide",
-            "count": 120
+            "name": "Worm Silk",
+            "count": 70
           }, {
-            "name": "Redwood Wood",
-            "count": 24
+            "name": "Hide",
+            "count": 100
+          }, {
+            "name": "Worm Scale",
+            "count": 5
           }
         ]
       }
