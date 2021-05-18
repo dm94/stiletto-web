@@ -52,5 +52,11 @@
     "name": "KaliSpires",
     "type": "Hard",
     "image": "https://api.stiletto.live/maps/KaliSpires.jpg"
+  },
+  {
+    "idMap": 10,
+    "name": "WormMap",
+    "type": "Event",
+    "image": "https://api.stiletto.live/maps/WormMap.jpg"
   }
 ]
