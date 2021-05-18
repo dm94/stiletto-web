@@ -583,7 +583,8 @@ let all = {
     "Lava Fuel": "Lava Fuel",
     "Buffalo Walker Body": "Buffalo Walker Body",
     "Buffalo Walker Legs (1 of 2)": "Buffalo Walker Legs (1 of 2)",
-    "Buffalo Walker Legs Armored (1 of 2)": "Buffalo Walker Legs Armored (1 of 2)",
+    "Buffalo Walker Legs Armored (1 of 2)":
+      "Buffalo Walker Legs Armored (1 of 2)",
     "Buffalo Walker Legs Heavy (1 of 2)": "Buffalo Walker Legs Heavy (1 of 2)",
     "Buffalo Walker Heavy Wings (1 of 2)":
       "Buffalo Walker Heavy Wings (1 of 2)",
@@ -869,7 +870,6 @@ let all = {
       "Firefly Walker Upgrade - Water - Tier 4",
     "Hornet Walker Body": "Hornet Walker Body",
     "Hornet Walker Legs (1 of 2)": "Hornet Walker Legs (1 of 2)",
-    "Hornet Walker Legs Armored (1 of 2)": "Hornet Walker Legs Armored (1 of 2)",
     "Hornet Walker Legs Heavy (1 of 2)": "Hornet Walker Legs Heavy (1 of 2)",
     "Hornet Walker Heavy Wings (1 of 2)": "Hornet Walker Heavy Wings (1 of 2)",
     "Hornet Walker Large Wings (1 of 2)": "Hornet Walker Large Wings (1 of 2)",
@@ -1160,7 +1160,8 @@ let all = {
       "Spider Walker Upgrade - Water - Tier 4",
     "Stiletto Walker Body": "Stiletto Walker Body",
     "Stiletto Walker Legs (1 of 2)": "Stiletto Walker Legs (1 of 2)",
-    "Stiletto Walker Legs Armored (1 of 2)": "Stiletto Walker Legs Armored (1 of 2)",
+    "Stiletto Walker Legs Armored (1 of 2)":
+      "Stiletto Walker Legs Armored (1 of 2)",
     "Stiletto Walker Heavy Wings (1 of 2)":
       "Stiletto Walker Heavy Wings (1 of 2)",
     "Stiletto Walker Medium Wings (1 of 2)":
@@ -1397,12 +1398,17 @@ let all = {
     "Hercul Walker Body": "Hercul Walker Body",
     "Hercul Walker Legs (1 of 2)": "Hercul Walker Legs (1 of 2)",
     "Hercul Walker Wings (1 of 2)": "Hercul Walker Wings (1 of 2)",
-    "Hercul Walker Legs Armored (1 of 2)": "Hercul Walker Legs Armored (1 of 2)",
+    "Hercul Walker Legs Armored (1 of 2)":
+      "Hercul Walker Legs Armored (1 of 2)",
     "Hercul Walker Wings Heavy (1 of 2)": "Hercul Walker Wings Heavy (1 of 2)",
-    "Hercul Walker Wings Medium (1 of 2)": "Hercul Walker Wings Medium (1 of 2)",
-    "Hercul Walker Wings Raider (1 of 2)": "Hercul Walker Wings Raider (1 of 2)",
-    "Hercul Walker Wings Rugged (1 of 2)": "Hercul Walker Wings Rugged (1 of 2)",
-    "Hercul Walker Wings Skirmish (1 of 2)": "Hercul Walker Wings Skirmish (1 of 2)",
+    "Hercul Walker Wings Medium (1 of 2)":
+      "Hercul Walker Wings Medium (1 of 2)",
+    "Hercul Walker Wings Raider (1 of 2)":
+      "Hercul Walker Wings Raider (1 of 2)",
+    "Hercul Walker Wings Rugged (1 of 2)":
+      "Hercul Walker Wings Rugged (1 of 2)",
+    "Hercul Walker Wings Skirmish (1 of 2)":
+      "Hercul Walker Wings Skirmish (1 of 2)",
     "Hercul Walker Wings Small (1 of 2)": "Hercul Walker Wings Small (1 of 2)",
     "Hercul Walker Upgrade - Torque - Tier 2":
       "Hercul Walker Upgrade - Torque - Tier 2",
@@ -1466,9 +1472,6 @@ let all = {
     "Watery Module": "Watery Module",
     "Weightless Module": "Weightless Module",
     "Giant Wall Packer": "Giant Wall Packer",
-    "Buffalo Walker Legs Armored (1 of 2)":
-      "Buffalo Walker Legs Armored (1 of 2)",
-    "Buffalo Walker Legs Heavy (1 of 2)": "Buffalo Walker Legs Heavy (1 of 2)",
     "Buffalo Walker Upgrade - Cargo - Tier 1":
       "Buffalo Walker Upgrade - Cargo - Tier 1",
     "Buffalo Walker Upgrade - Durability - Tier 1":
@@ -1497,7 +1500,6 @@ let all = {
       "Dinghy Walker Upgrade - Water - Tier 1",
     "Hornet Walker Legs Armored (1 of 2)":
       "Hornet Walker Legs Armored (1 of 2)",
-    "Hornet Walker Legs Heavy (1 of 2)": "Hornet Walker Legs Heavy (1 of 2)",
     "Hornet Walker Upgrade - Cargo - Tier 1":
       "Hornet Walker Upgrade - Cargo - Tier 1",
     "Hornet Walker Upgrade - Durability - Tier 1":
@@ -1510,8 +1512,6 @@ let all = {
       "Hornet Walker Upgrade - Torque - Tier 1",
     "Hornet Walker Upgrade - Water - Tier 1":
       "Hornet Walker Upgrade - Water - Tier 1",
-    "Stiletto Walker Legs Armored (1 of 2)":
-      "Stiletto Walker Legs Armored (1 of 2)",
     "Titan Walker Upgrade - Cargo - Tier 1":
       "Titan Walker Upgrade - Cargo - Tier 1",
     "Titan Walker Upgrade - Durability - Tier 1":
@@ -1548,21 +1548,6 @@ let all = {
       "Tusker Walker Upgrade - Torque - Tier 1",
     "Tusker Walker Upgrade - Water - Tier 1":
       "Tusker Walker Upgrade - Water - Tier 1",
-    "Silur Walker Legs Armored (1 of 2)": "Silur Walker Legs Armored (1 of 2)",
-    "Silur Walker Legs Heavy (1 of 2)": "Silur Walker Legs Heavy (1 of 2)",
-    "Hercul Walker Wings (1 of 2)": "Hercul Walker Wings (1 of 2)",
-    "Hercul Walker Legs Armored (1 of 2)":
-      "Hercul Walker Legs Armored (1 of 2)",
-    "Hercul Walker Wings Heavy (1 of 2)": "Hercul Walker Wings Heavy (1 of 2)",
-    "Hercul Walker Wings Medium (1 of 2)":
-      "Hercul Walker Wings Medium (1 of 2)",
-    "Hercul Walker Wings Raider (1 of 2)":
-      "Hercul Walker Wings Raider (1 of 2)",
-    "Hercul Walker Wings Rugged (1 of 2)":
-      "Hercul Walker Wings Rugged (1 of 2)",
-    "Hercul Walker Wings Skirmish (1 of 2)":
-      "Hercul Walker Wings Skirmish (1 of 2)",
-    "Hercul Walker Wings Small (1 of 2)": "Hercul Walker Wings Small (1 of 2)",
     "Balang Walker Wings (1 of 2)": "Balang Walker Wings (1 of 2)",
     "Balang Walker Wings Small (1 of 2)": "Balang Walker Wings Small (1 of 2)",
     "Raptor Sky Walker Body": "Raptor Sky Walker Body",
