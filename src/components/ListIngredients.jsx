@@ -5,7 +5,11 @@ class ListIngredients extends Component {
   render() {
     let totalIngredients = [];
     this.props.selectedItems.forEach((item) => {
-      if (item.crafting != null && item.crafting[0].ingredients != null) {
+      if (
+        item.crafting != null &&
+        item.crafting[0] != null &&
+        item.crafting[0].ingredients != null
+      ) {
         item.crafting[0].ingredients.forEach((ingredient) => {
           if (
             totalIngredients.find((ingre) => ingre.name === ingredient.name)

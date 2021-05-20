@@ -38,6 +38,7 @@ class SelectedItem extends Component {
   showStation(t) {
     if (
       this.props.item.crafting != null &&
+      this.props.item.crafting[0] != null &&
       this.props.item.crafting[0].station != null
     ) {
       return (

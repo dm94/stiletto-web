@@ -75,7 +75,13 @@
     "name": "Pearl"
   },
   {
+    "name": "Poaching Hut"
+  },
+  {
     "name": "Point Of Interest"
+  },
+  {
+    "name": "Proxy"
   },
   {
     "name": "Redwood Wood"
@@ -111,9 +117,6 @@
     "name": "Wood"
   },
   {
-    "name": "Poaching Hut"
-  },
-  {
-    "name": "Proxy"
+    "name": "Worm Sand"
   }
 ]
