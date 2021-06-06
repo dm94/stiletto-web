@@ -586,18 +586,18 @@ let all = {
     "Buffalo Walker Legs Armored (1 of 2)":
       "Buffalo Walker Legs Armored (1 of 2)",
     "Buffalo Walker Legs Heavy (1 of 2)": "Buffalo Walker Legs Heavy (1 of 2)",
-    "Buffalo Walker Heavy Wings (1 of 2)":
-      "Buffalo Walker Heavy Wings (1 of 2)",
-    "Buffalo Walker Medium Wings (1 of 2)":
-      "Buffalo Walker Medium Wings (1 of 2)",
-    "Buffalo Walker Raider Wings (1 of 2)":
-      "Buffalo Walker Raider Wings (1 of 2)",
-    "Buffalo Walker Rugged Wings (1 of 2)":
-      "Buffalo Walker Rugged Wings (1 of 2)",
-    "Buffalo Walker Skirmish Wings (1 of 2)":
-      "Buffalo Walker Skirmish Wings (1 of 2)",
-    "Buffalo Walker Small Wings (1 of 2)":
-      "Buffalo Walker Small Wings (1 of 2)",
+    "Buffalo Walker Wings Heavy (1 of 2)":
+      "Buffalo Walker Wings Heavy (1 of 2)",
+    "Buffalo Walker Wings Medium (1 of 2)":
+      "Buffalo Walker Wings Medium (1 of 2)",
+    "Buffalo Walker Wings Raider (1 of 2)":
+      "Buffalo Walker Wings Raider (1 of 2)",
+    "Buffalo Walker Wings Rugged (1 of 2)":
+      "Buffalo Walker Wings Rugged (1 of 2)",
+    "Buffalo Walker Wings Skirmish (1 of 2)":
+      "Buffalo Walker Wings Skirmish (1 of 2)",
+    "Buffalo Walker Wings Small (1 of 2)":
+      "Buffalo Walker Wings Small (1 of 2)",
     "Buffalo Walker Wings (1 of 2)": "Buffalo Walker Wings (1 of 2)",
     "Buffalo Walker Upgrade - Cargo - Tier 2":
       "Buffalo Walker Upgrade - Cargo - Tier 2",
@@ -671,7 +671,7 @@ let all = {
       "Cobra Walker Upgrade - Water - Tier 4",
     "Dinghy Walker Body": "Dinghy Walker Body",
     "Dinghy Walker Legs (1 of 2)": "Dinghy Walker Legs (1 of 2)",
-    "Dinghy Walker Small Wings (1 of 2)": "Dinghy Walker Small Wings (1 of 2)",
+    "Dinghy Walker Wings Small (1 of 2)": "Dinghy Walker Wings Small (1 of 2)",
     "Dinghy Walker Wings (1 of 2)": "Dinghy Walker Wings (1 of 2)",
     "Dinghy Walker Upgrade - Cargo - Tier 2":
       "Dinghy Walker Upgrade - Cargo - Tier 2",
@@ -713,14 +713,14 @@ let all = {
     "Domus Walker Legs Armored (1 of 2)": "Domus Walker Legs Armored (1 of 2)",
     "Domus Walker Legs (1 of 2)": "Domus Walker Legs (1 of 2)",
     "Domus Walker Legs Heavy (1 of 2)": "Domus Walker Legs Heavy (1 of 2)",
-    "Domus Walker Heavy Wings (1 of 2)": "Domus Walker Heavy Wings (1 of 2)",
+    "Domus Walker Wings Heavy (1 of 2)": "Domus Walker Wings Heavy (1 of 2)",
     "Domus Walker Large Wings (1 of 2)": "Domus Walker Large Wings (1 of 2)",
-    "Domus Walker Medium Wings (1 of 2)": "Domus Walker Medium Wings (1 of 2)",
-    "Domus Walker Raider Wings (1 of 2)": "Domus Walker Raider Wings (1 of 2)",
-    "Domus Walker Rugged Wings (1 of 2)": "Domus Walker Rugged Wings (1 of 2)",
-    "Domus Walker Skirmish Wings (1 of 2)":
-      "Domus Walker Skirmish Wings (1 of 2)",
-    "Domus Walker Small Wings (1 of 2)": "Domus Walker Small Wings (1 of 2)",
+    "Domus Walker Wings Medium (1 of 2)": "Domus Walker Wings Medium (1 of 2)",
+    "Domus Walker Wings Raider (1 of 2)": "Domus Walker Wings Raider (1 of 2)",
+    "Domus Walker Wings Rugged (1 of 2)": "Domus Walker Wings Rugged (1 of 2)",
+    "Domus Walker Wings Skirmish (1 of 2)":
+      "Domus Walker Wings Skirmish (1 of 2)",
+    "Domus Walker Wings Small (1 of 2)": "Domus Walker Wings Small (1 of 2)",
     "Domus Walker Wings (1 of 2)": "Domus Walker Wings (1 of 2)",
     "Domus Walker Upgrade - Cargo - Tier 2":
       "Domus Walker Upgrade - Cargo - Tier 2",
@@ -871,17 +871,17 @@ let all = {
     "Hornet Walker Body": "Hornet Walker Body",
     "Hornet Walker Legs (1 of 2)": "Hornet Walker Legs (1 of 2)",
     "Hornet Walker Legs Heavy (1 of 2)": "Hornet Walker Legs Heavy (1 of 2)",
-    "Hornet Walker Heavy Wings (1 of 2)": "Hornet Walker Heavy Wings (1 of 2)",
+    "Hornet Walker Wings Heavy (1 of 2)": "Hornet Walker Wings Heavy (1 of 2)",
     "Hornet Walker Large Wings (1 of 2)": "Hornet Walker Large Wings (1 of 2)",
-    "Hornet Walker Medium Wings (1 of 2)":
-      "Hornet Walker Medium Wings (1 of 2)",
-    "Hornet Walker Raider Wings (1 of 2)":
-      "Hornet Walker Raider Wings (1 of 2)",
-    "Hornet Walker Rugged Wings (1 of 2)":
-      "Hornet Walker Rugged Wings (1 of 2)",
-    "Hornet Walker Skirmish Wings (1 of 2)":
-      "Hornet Walker Skirmish Wings (1 of 2)",
-    "Hornet Walker Small Wings (1 of 2)": "Hornet Walker Small Wings (1 of 2)",
+    "Hornet Walker Wings Medium (1 of 2)":
+      "Hornet Walker Wings Medium (1 of 2)",
+    "Hornet Walker Wings Raider (1 of 2)":
+      "Hornet Walker Wings Raider (1 of 2)",
+    "Hornet Walker Wings Rugged (1 of 2)":
+      "Hornet Walker Wings Rugged (1 of 2)",
+    "Hornet Walker Wings Skirmish (1 of 2)":
+      "Hornet Walker Wings Skirmish (1 of 2)",
+    "Hornet Walker Wings Small (1 of 2)": "Hornet Walker Wings Small (1 of 2)",
     "Hornet Walker Wings (1 of 2)": "Hornet Walker Wings (1 of 2)",
     "Hornet Walker Upgrade - Cargo - Tier 2":
       "Hornet Walker Upgrade - Cargo - Tier 2",
@@ -988,14 +988,14 @@ let all = {
     "Panda Walker Legs Armored (1 of 2)": "Panda Walker Legs Armored (1 of 2)",
     "Panda Walker Legs Heavy (1 of 2)": "Panda Walker Legs Heavy (1 of 2)",
     "Panda Walker Legs (1 of 2)": "Panda Walker Legs (1 of 2)",
-    "Panda Walker Heavy Wings (1 of 2)": "Panda Walker Heavy Wings (1 of 2)",
+    "Panda Walker Wings Heavy (1 of 2)": "Panda Walker Wings Heavy (1 of 2)",
     "Panda Walker Large Wings (1 of 2)": "Panda Walker Large Wings (1 of 2)",
-    "Panda Walker Medium Wings (1 of 2)": "Panda Walker Medium Wings (1 of 2)",
-    "Panda Walker Raider Wings (1 of 2)": "Panda Walker Raider Wings (1 of 2)",
-    "Panda Walker Rugged Wings (1 of 2)": "Panda Walker Rugged Wings (1 of 2)",
-    "Panda Walker Skirmish Wings (1 of 2)":
-      "Panda Walker Skirmish Wings (1 of 2)",
-    "Panda Walker Small Wings (1 of 2)": "Panda Walker Small Wings (1 of 2)",
+    "Panda Walker Wings Medium (1 of 2)": "Panda Walker Wings Medium (1 of 2)",
+    "Panda Walker Wings Raider (1 of 2)": "Panda Walker Wings Raider (1 of 2)",
+    "Panda Walker Wings Rugged (1 of 2)": "Panda Walker Wings Rugged (1 of 2)",
+    "Panda Walker Wings Skirmish (1 of 2)":
+      "Panda Walker Wings Skirmish (1 of 2)",
+    "Panda Walker Wings Small (1 of 2)": "Panda Walker Wings Small (1 of 2)",
     "Panda Walker Wings (1 of 2)": "Panda Walker Wings (1 of 2)",
     "Panda Walker Upgrade - Cargo - Tier 2":
       "Panda Walker Upgrade - Cargo - Tier 2",
@@ -1043,20 +1043,20 @@ let all = {
     "Schmetterling Walker Legs Heavy (1 of 2)":
       "Schmetterling Walker Legs Heavy (1 of 2)",
     "Schmetterling Walker Legs (1 of 2)": "Schmetterling Walker Legs (1 of 2)",
-    "Schmetterling Walker Heavy Wings (1 of 2)":
-      "Schmetterling Walker Heavy Wings (1 of 2)",
+    "Schmetterling Walker Wings Heavy (1 of 2)":
+      "Schmetterling Walker Wings Heavy (1 of 2)",
     "Schmetterling Walker Large Wings (1 of 2)":
       "Schmetterling Walker Large Wings (1 of 2)",
-    "Schmetterling Walker Medium Wings (1 of 2)":
-      "Schmetterling Walker Medium Wings (1 of 2)",
-    "Schmetterling Walker Raider Wings (1 of 2)":
-      "Schmetterling Walker Raider Wings (1 of 2)",
-    "Schmetterling Walker Rugged Wings (1 of 2)":
-      "Schmetterling Walker Rugged Wings (1 of 2)",
-    "Schmetterling Walker Skirmish Wings (1 of 2)":
-      "Schmetterling Walker Skirmish Wings (1 of 2)",
-    "Schmetterling Walker Small Wings (1 of 2)":
-      "Schmetterling Walker Small Wings (1 of 2)",
+    "Schmetterling Walker Wings Medium (1 of 2)":
+      "Schmetterling Walker Wings Medium (1 of 2)",
+    "Schmetterling Walker Wings Raider (1 of 2)":
+      "Schmetterling Walker Wings Raider (1 of 2)",
+    "Schmetterling Walker Wings Rugged (1 of 2)":
+      "Schmetterling Walker Wings Rugged (1 of 2)",
+    "Schmetterling Walker Wings Skirmish (1 of 2)":
+      "Schmetterling Walker Wings Skirmish (1 of 2)",
+    "Schmetterling Walker Wings Small (1 of 2)":
+      "Schmetterling Walker Wings Small (1 of 2)",
     "Schmetterling Walker Wings (1 of 2)":
       "Schmetterling Walker Wings (1 of 2)",
     "Schmetterling Walker Upgrade - Cargo - Tier 1":
@@ -1162,18 +1162,18 @@ let all = {
     "Stiletto Walker Legs (1 of 2)": "Stiletto Walker Legs (1 of 2)",
     "Stiletto Walker Legs Armored (1 of 2)":
       "Stiletto Walker Legs Armored (1 of 2)",
-    "Stiletto Walker Heavy Wings (1 of 2)":
-      "Stiletto Walker Heavy Wings (1 of 2)",
-    "Stiletto Walker Medium Wings (1 of 2)":
-      "Stiletto Walker Medium Wings (1 of 2)",
-    "Stiletto Walker Raider Wings (1 of 2)":
-      "Stiletto Walker Raider Wings (1 of 2)",
-    "Stiletto Walker Rugged Wings (1 of 2)":
-      "Stiletto Walker Rugged Wings (1 of 2)",
-    "Stiletto Walker Skirmish Wings (1 of 2)":
-      "Stiletto Walker Skirmish Wings (1 of 2)",
-    "Stiletto Walker Small Wings (1 of 2)":
-      "Stiletto Walker Small Wings (1 of 2)",
+    "Stiletto Walker Wings Heavy (1 of 2)":
+      "Stiletto Walker Wings Heavy (1 of 2)",
+    "Stiletto Walker Wings Medium (1 of 2)":
+      "Stiletto Walker Wings Medium (1 of 2)",
+    "Stiletto Walker Wings Raider (1 of 2)":
+      "Stiletto Walker Wings Raider (1 of 2)",
+    "Stiletto Walker Wings Rugged (1 of 2)":
+      "Stiletto Walker Wings Rugged (1 of 2)",
+    "Stiletto Walker Wings Skirmish (1 of 2)":
+      "Stiletto Walker Wings Skirmish (1 of 2)",
+    "Stiletto Walker Wings Small (1 of 2)":
+      "Stiletto Walker Wings Small (1 of 2)",
     "Stiletto Walker Wings (1 of 2)": "Stiletto Walker Wings (1 of 2)",
     "Stiletto Walker Upgrade - Cargo - Tier 2":
       "Stiletto Walker Upgrade - Cargo - Tier 2",
@@ -1215,14 +1215,14 @@ let all = {
     "Titan Walker Legs Armored (1 of 2)": "Titan Walker Legs Armored (1 of 2)",
     "Titan Walker Legs Heavy (1 of 2)": "Titan Walker Legs Heavy (1 of 2)",
     "Titan Walker Legs (1 of 2)": "Titan Walker Legs (1 of 2)",
-    "Titan Walker Heavy Wings (1 of 2)": "Titan Walker Heavy Wings (1 of 2)",
+    "Titan Walker Wings Heavy (1 of 2)": "Titan Walker Wings Heavy (1 of 2)",
     "Titan Walker Large Wings (1 of 2)": "Titan Walker Large Wings (1 of 2)",
-    "Titan Walker Medium Wings (1 of 2)": "Titan Walker Medium Wings (1 of 2)",
-    "Titan Walker Raider Wings (1 of 2)": "Titan Walker Raider Wings (1 of 2)",
-    "Titan Walker Rugged Wings (1 of 2)": "Titan Walker Rugged Wings (1 of 2)",
-    "Titan Walker Skirmish Wings (1 of 2)":
-      "Titan Walker Skirmish Wings (1 of 2)",
-    "Titan Walker Small Wings (1 of 2)": "Titan Walker Small Wings (1 of 2)",
+    "Titan Walker Wings Medium (1 of 2)": "Titan Walker Wings Medium (1 of 2)",
+    "Titan Walker Wings Raider (1 of 2)": "Titan Walker Wings Raider (1 of 2)",
+    "Titan Walker Wings Rugged (1 of 2)": "Titan Walker Wings Rugged (1 of 2)",
+    "Titan Walker Wings Skirmish (1 of 2)":
+      "Titan Walker Wings Skirmish (1 of 2)",
+    "Titan Walker Wings Small (1 of 2)": "Titan Walker Wings Small (1 of 2)",
     "Titan Walker Wings (1 of 2)": "Titan Walker Wings (1 of 2)",
     "Titan Walker Upgrade - Cargo - Tier 2":
       "Titan Walker Upgrade - Cargo - Tier 2",
@@ -1266,20 +1266,20 @@ let all = {
     "Toboggan Walker Legs Heavy (1 of 2)":
       "Toboggan Walker Legs Heavy (1 of 2)",
     "Toboggan Walker Legs (1 of 2)": "Toboggan Walker Legs (1 of 2)",
-    "Toboggan Walker Heavy Wings (1 of 2)":
-      "Toboggan Walker Heavy Wings (1 of 2)",
+    "Toboggan Walker Wings Heavy (1 of 2)":
+      "Toboggan Walker Wings Heavy (1 of 2)",
     "Toboggan Walker Large Wings (1 of 2)":
       "Toboggan Walker Large Wings (1 of 2)",
-    "Toboggan Walker Medium Wings (1 of 2)":
-      "Toboggan Walker Medium Wings (1 of 2)",
-    "Toboggan Walker Raider Wings (1 of 2)":
-      "Toboggan Walker Raider Wings (1 of 2)",
-    "Toboggan Walker Rugged Wings (1 of 2)":
-      "Toboggan Walker Rugged Wings (1 of 2)",
-    "Toboggan Walker Skirmish Wings (1 of 2)":
-      "Toboggan Walker Skirmish Wings (1 of 2)",
-    "Toboggan Walker Small Wings (1 of 2)":
-      "Toboggan Walker Small Wings (1 of 2)",
+    "Toboggan Walker Wings Medium (1 of 2)":
+      "Toboggan Walker Wings Medium (1 of 2)",
+    "Toboggan Walker Wings Raider (1 of 2)":
+      "Toboggan Walker Wings Raider (1 of 2)",
+    "Toboggan Walker Wings Rugged (1 of 2)":
+      "Toboggan Walker Wings Rugged (1 of 2)",
+    "Toboggan Walker Wings Skirmish (1 of 2)":
+      "Toboggan Walker Wings Skirmish (1 of 2)",
+    "Toboggan Walker Wings Small (1 of 2)":
+      "Toboggan Walker Wings Small (1 of 2)",
     "Toboggan Walker Wings (1 of 2)": "Toboggan Walker Wings (1 of 2)",
     "Toboggan Walker Upgrade - Cargo - Tier 2":
       "Toboggan Walker Upgrade - Cargo - Tier 2",
@@ -1328,17 +1328,17 @@ let all = {
       "Tusker Walker Legs Armored (1 of 2)",
     "Tusker Walker Legs Heavy (1 of 2)": "Tusker Walker Legs Heavy (1 of 2)",
     "Tusker Walker Legs (1 of 2)": "Tusker Walker Legs (1 of 2)",
-    "Tusker Walker Heavy Wings (1 of 2)": "Tusker Walker Heavy Wings (1 of 2)",
+    "Tusker Walker Wings Heavy (1 of 2)": "Tusker Walker Wings Heavy (1 of 2)",
     "Tusker Walker Large Wings (1 of 2)": "Tusker Walker Large Wings (1 of 2)",
-    "Tusker Walker Medium Wings (1 of 2)":
-      "Tusker Walker Medium Wings (1 of 2)",
-    "Tusker Walker Raider Wings (1 of 2)":
-      "Tusker Walker Raider Wings (1 of 2)",
-    "Tusker Walker Rugged Wings (1 of 2)":
-      "Tusker Walker Rugged Wings (1 of 2)",
-    "Tusker Walker Skirmish Wings (1 of 2)":
-      "Tusker Walker Skirmish Wings (1 of 2)",
-    "Tusker Walker Small Wings (1 of 2)": "Tusker Walker Small Wings (1 of 2)",
+    "Tusker Walker Wings Medium (1 of 2)":
+      "Tusker Walker Wings Medium (1 of 2)",
+    "Tusker Walker Wings Raider (1 of 2)":
+      "Tusker Walker Wings Raider (1 of 2)",
+    "Tusker Walker Wings Rugged (1 of 2)":
+      "Tusker Walker Wings Rugged (1 of 2)",
+    "Tusker Walker Wings Skirmish (1 of 2)":
+      "Tusker Walker Wings Skirmish (1 of 2)",
+    "Tusker Walker Wings Small (1 of 2)": "Tusker Walker Wings Small (1 of 2)",
     "Tusker Walker Wings (1 of 2)": "Tusker Walker Wings (1 of 2)",
     "Tusker Walker Upgrade - Cargo - Tier 2":
       "Tusker Walker Upgrade - Cargo - Tier 2",

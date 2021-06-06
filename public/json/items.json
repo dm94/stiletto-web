@@ -6513,7 +6513,7 @@
       }
     ]
   }, {
-    "name": "Buffalo Walker Heavy Wings (1 of 2)",
+    "name": "Buffalo Walker Wings Heavy (1 of 2)",
     "parent": "Buffalo Walker Body",
     "cost": {
       "name": "Tablet",
@@ -6535,8 +6535,8 @@
       }
     ]
   }, {
-    "name": "Buffalo Walker Medium Wings (1 of 2)",
-    "parent": "Buffalo Walker Small Wings (1 of 2)",
+    "name": "Buffalo Walker Wings Medium (1 of 2)",
+    "parent": "Buffalo Walker Wings Small (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 5
@@ -6557,8 +6557,8 @@
       }
     ]
   }, {
-    "name": "Buffalo Walker Raider Wings (1 of 2)",
-    "parent": "Buffalo Walker Skirmish Wings (1 of 2)",
+    "name": "Buffalo Walker Wings Raider (1 of 2)",
+    "parent": "Buffalo Walker Wings Skirmish (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 20
@@ -6582,8 +6582,8 @@
       }
     ]
   }, {
-    "name": "Buffalo Walker Rugged Wings (1 of 2)",
-    "parent": "Buffalo Walker Heavy Wings (1 of 2)",
+    "name": "Buffalo Walker Wings Rugged (1 of 2)",
+    "parent": "Buffalo Walker Wings Heavy (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 5
@@ -6607,7 +6607,7 @@
       }
     ]
   }, {
-    "name": "Buffalo Walker Skirmish Wings (1 of 2)",
+    "name": "Buffalo Walker Wings Skirmish (1 of 2)",
     "parent": "Buffalo Walker Body",
     "cost": {
       "name": "Tablet",
@@ -6629,7 +6629,7 @@
       }
     ]
   }, {
-    "name": "Buffalo Walker Small Wings (1 of 2)",
+    "name": "Buffalo Walker Wings Small (1 of 2)",
     "parent": "Buffalo Walker Body",
     "category": "walkers/buffalo/parts/wings",
     "crafting": [{
@@ -7645,7 +7645,7 @@
       }
     ]
   }, {
-    "name": "Dinghy Walker Small Wings (1 of 2)",
+    "name": "Dinghy Walker Wings Small (1 of 2)",
     "parent": "Dinghy Walker Body",
     "category": "walkers/dinghy/parts/wings",
     "crafting": [{
@@ -8172,26 +8172,26 @@
             "name": "Wood",
             "count": 4110
           }, {
+            "name": "Wood Shaft",
+            "count": 235
+          }, {
             "name": "Fiber",
             "count": 1350
           }, {
-            "name": "Stone",
-            "count": 510
-          }, {
             "name": "Rope",
             "count": 140
-          }, {
-            "name": "Wood Shaft",
-            "count": 235
           }, {
             "name": "Obsidian",
             "count": 90
           }, {
             "name": "Walker Mechanism",
-            "count": 2
+            "count": 3
           }, {
             "name": "Bone Glue",
             "count": 9
+          }, {
+            "name": "Stone",
+            "count": 510
           }
         ]
       }
@@ -8242,6 +8242,10 @@
     "name": "Domus Walker Legs Heavy (1 of 2)",
     "parent": "Domus Walker Legs Armored (1 of 2)",
     "category": "walkers/domus/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 40
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Redwood Wood",
@@ -8253,16 +8257,20 @@
             "name": "Tar",
             "count": 34
           }, {
-            "name": "Worm Silk",
-            "count": 12
+            "name": "Worm Scale",
+            "count": 32
           }
         ]
       }
     ]
   }, {
-    "name": "Domus Walker Heavy Wings (1 of 2)",
+    "name": "Domus Walker Wings Heavy (1 of 2)",
     "parent": "Domus Walker Body",
     "category": "walkers/domus/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 35
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -8281,9 +8289,13 @@
       }
     ]
   }, {
-    "name": "Domus Walker Large Wings (1 of 2)",
-    "parent": "Domus Walker Medium Wings (1 of 2)",
+    "name": "Domus Walker Wings Large (1 of 2)",
+    "parent": "Domus Walker Wings Medium (1 of 2)",
     "category": "walkers/domus/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 40
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -8299,8 +8311,12 @@
       }
     ]
   }, {
-    "name": "Domus Walker Medium Wings (1 of 2)",
-    "parent": "Domus Walker Small Wings (1 of 2)",
+    "name": "Domus Walker Wings Medium (1 of 2)",
+    "parent": "Domus Walker Wings Small (1 of 2)",
+    "cost": {
+      "name": "Tablet",
+      "count": 35
+    },
     "category": "walkers/domus/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -8317,9 +8333,13 @@
       }
     ]
   }, {
-    "name": "Domus Walker Raider Wings (1 of 2)",
-    "parent": "Domus Walker Skirmish Wings (1 of 2)",
+    "name": "Domus Walker Wings Raider (1 of 2)",
+    "parent": "Domus Walker Wings Skirmish (1 of 2)",
     "category": "walkers/domus/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 70
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -8329,39 +8349,47 @@
             "count": 110
           }, {
             "name": "Iron Ingot",
-            "count": 56
+            "count": 30
           }, {
-            "name": "Redwood Wood",
-            "count": 40
+            "name": "Worm Scale",
+            "count": 15
           }
         ]
       }
     ]
   }, {
-    "name": "Domus Walker Rugged Wings (1 of 2)",
-    "parent": "Domus Walker Heavy Wings (1 of 2)",
+    "name": "Domus Walker Wings Rugged (1 of 2)",
+    "parent": "Domus Walker Wings Heavy (1 of 2)",
     "category": "walkers/domus/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 35
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
-            "count": 16
+            "count": 15
           }, {
             "name": "Worm Silk",
             "count": 92
           }, {
             "name": "Iron Ingot",
-            "count": 20
+            "count": 10
           }, {
-            "name": "Redwood Wood",
-            "count": 36
+            "name": "Worm Scale",
+            "count": 8
           }
         ]
       }
     ]
   }, {
-    "name": "Domus Walker Skirmish Wings (1 of 2)",
+    "name": "Domus Walker Wings Skirmish (1 of 2)",
     "parent": "Domus Walker Body",
     "category": "walkers/domus/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 40
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -8380,9 +8408,13 @@
       }
     ]
   }, {
-    "name": "Domus Walker Small Wings (1 of 2)",
+    "name": "Domus Walker Wings Small (1 of 2)",
     "parent": "Domus Walker Body",
     "category": "walkers/domus/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -8518,6 +8550,10 @@
     "name": "Domus Walker Upgrade - Water - Tier 2",
     "parent": "Domus Walker Body",
     "category": "walkers/domus/upgrades/tier2",
+    "cost": {
+      "name": "Tablet",
+      "count": 15
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Bone Splinter",
@@ -8639,6 +8675,10 @@
     "name": "Domus Walker Upgrade - Water - Tier 3",
     "parent": "Domus Walker Upgrade - Water - Tier 2",
     "category": "walkers/domus/upgrades/tier3",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
@@ -8775,6 +8815,10 @@
     "name": "Domus Walker Upgrade - Water - Tier 4",
     "parent": "Domus Walker Upgrade - Water - Tier 3",
     "category": "walkers/domus/upgrades/tier4",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Iron Ingot",
@@ -8911,6 +8955,10 @@
     "name": "Falco Walker Wings Heavy (1 of 2)",
     "parent": "Falco Walker Body",
     "category": "walkers/falco/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -8932,6 +8980,10 @@
     "name": "Falco Walker Wings Large (1 of 2)",
     "parent": "Falco Walker Wings Medium (1 of 2)",
     "category": "walkers/falco/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 15
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -8950,6 +9002,10 @@
     "name": "Falco Walker Wings Medium (1 of 2)",
     "parent": "Falco Walker Wings Small (1 of 2)",
     "category": "walkers/falco/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -8968,6 +9024,60 @@
     "name": "Falco Walker Wings Raider (1 of 2)",
     "parent": "Falco Walker Wings Skirmish (1 of 2)",
     "category": "walkers/falco/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Reinforced Plank",
+            "count": 80
+          }, {
+            "name": "Worm Silk",
+            "count": 80
+          }, {
+            "name": "Hide",
+            "count": 110
+          }, {
+            "name": "Worm Scale",
+            "count": 15
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Falco Walker Wings Rugged (1 of 2)",
+    "parent": "Falco Walker Wings Heavy (1 of 2)",
+    "category": "walkers/falco/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
+    "crafting": [{
+        "ingredients": [{
+            "name": "Reinforced Plank",
+            "count": 75
+          }, {
+            "name": "Worm Silk",
+            "count": 60
+          }, {
+            "name": "Hide",
+            "count": 100
+          }, {
+            "name": "Worm Scale",
+            "count": 8
+          }
+        ]
+      }
+    ]
+  }, {
+    "name": "Falco Walker Wings Skirmish (1 of 2)",
+    "parent": "Falco Walker Body",
+    "category": "walkers/falco/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 15
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -8977,49 +9087,10 @@
             "count": 70
           }, {
             "name": "Hide",
-            "count": 110
+            "count": 120
           }, {
             "name": "Iron Ore",
-            "count": 50
-          }
-        ]
-      }
-    ]
-  }, {
-    "name": "Falco Walker Wings Rugged (1 of 2)",
-    "parent": "Falco Walker Wings Heavy (1 of 2)",
-    "category": "walkers/falco/parts/wings",
-    "crafting": [{
-        "ingredients": [{
-            "name": "Reinforced Plank",
-            "count": 74
-          }, {
-            "name": "Worm Silk",
-            "count": 60
-          }, {
-            "name": "Hide",
-            "count": 100
-          }, {
-            "name": "Redwood Wood",
             "count": 20
-          }
-        ]
-      }
-    ]
-  }, {
-    "name": "Falco Walker Wings Skirmish (1 of 2)",
-    "parent": "Falco Walker Body",
-    "category": "walkers/falco/parts/wings",
-    "crafting": [{
-        "ingredients": [{
-            "name": "Reinforced Plank",
-            "count": 78
-          }, {
-            "name": "Worm Silk",
-            "count": 68
-          }, {
-            "name": "Hide",
-            "count": 120
           }
         ]
       }
@@ -9028,6 +9099,10 @@
     "name": "Falco Walker Wings Small (1 of 2)",
     "parent": "Falco Walker Body",
     "category": "walkers/falco/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 5
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -9428,8 +9503,8 @@
             "name": "Ceramic Shard",
             "count": 192
           }, {
-            "name": "Chitin Plate",
-            "count": 56
+            "name": "Worm Scale",
+            "count": 5
           }, {
             "name": "Nomad Cloth",
             "count": 80
@@ -9513,6 +9588,10 @@
     "name": "Falco Walker Upgrade - Water - Tier 4",
     "parent": "Falco Walker Upgrade - Water - Tier 3",
     "category": "walkers/falco/upgrades/tier4",
+    "cost": {
+      "name": "Tablet",
+      "count": 30
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Iron Ingot",
@@ -10090,7 +10169,7 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Heavy Wings (1 of 2)",
+    "name": "Hornet Walker Wings Heavy (1 of 2)",
     "parent": "Hornet Walker Body",
     "cost": {
       "name": "Tablet",
@@ -10115,8 +10194,8 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Large Wings (1 of 2)",
-    "parent": "Hornet Walker Medium Wings (1 of 2)",
+    "name": "Hornet Walker Wings Large (1 of 2)",
+    "parent": "Hornet Walker Wings Medium (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 10
@@ -10137,8 +10216,8 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Medium Wings (1 of 2)",
-    "parent": "Hornet Walker Small Wings (1 of 2)",
+    "name": "Hornet Walker Wings Medium (1 of 2)",
+    "parent": "Hornet Walker Wings Small (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 7
@@ -10159,8 +10238,8 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Raider Wings (1 of 2)",
-    "parent": "Hornet Walker Skirmish Wings (1 of 2)",
+    "name": "Hornet Walker Wings Raider (1 of 2)",
+    "parent": "Hornet Walker Wings Skirmish (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 20
@@ -10184,8 +10263,8 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Rugged Wings (1 of 2)",
-    "parent": "Hornet Walker Heavy Wings (1 of 2)",
+    "name": "Hornet Walker Wings Rugged (1 of 2)",
+    "parent": "Hornet Walker Wings Heavy (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 5
@@ -10209,7 +10288,7 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Skirmish Wings (1 of 2)",
+    "name": "Hornet Walker Wings Skirmish (1 of 2)",
     "parent": "Hornet Walker Body",
     "cost": {
       "name": "Tablet",
@@ -10234,7 +10313,7 @@
       }
     ]
   }, {
-    "name": "Hornet Walker Small Wings (1 of 2)",
+    "name": "Hornet Walker Wings Small (1 of 2)",
     "parent": "Hornet Walker Body",
     "cost": {
       "name": "Tablet",
@@ -11554,13 +11633,16 @@
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
-            "count": 79
+            "count": 70
           }, {
             "name": "Chitin Plate",
             "count": 18
           }, {
             "name": "Tar",
             "count": 12
+          }, {
+            "name": "Worm Scale",
+            "count": 40
           }
         ]
       }
@@ -11583,9 +11665,13 @@
       }
     ]
   }, {
-    "name": "Panda Walker Heavy Wings (1 of 2)",
+    "name": "Panda Walker Wings Heavy (1 of 2)",
     "parent": "Panda Walker Body",
     "category": "walkers/panda/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -11604,9 +11690,13 @@
       }
     ]
   }, {
-    "name": "Panda Walker Large Wings (1 of 2)",
-    "parent": "Panda Walker Medium Wings (1 of 2)",
+    "name": "Panda Walker Wings Large (1 of 2)",
+    "parent": "Panda Walker Wings Medium (1 of 2)",
     "category": "walkers/panda/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 15
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -11622,9 +11712,13 @@
       }
     ]
   }, {
-    "name": "Panda Walker Medium Wings (1 of 2)",
-    "parent": "Panda Walker Small Wings (1 of 2)",
+    "name": "Panda Walker Wings Medium (1 of 2)",
+    "parent": "Panda Walker Wings Small (1 of 2)",
     "category": "walkers/panda/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -11640,51 +11734,63 @@
       }
     ]
   }, {
-    "name": "Panda Walker Raider Wings (1 of 2)",
-    "parent": "Panda Walker Skirmish Wings (1 of 2)",
+    "name": "Panda Walker Wings Raider (1 of 2)",
+    "parent": "Panda Walker Wings Skirmish (1 of 2)",
     "category": "walkers/panda/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
             "count": 92
           }, {
             "name": "Worm Silk",
-            "count": 85
+            "count": 130
           }, {
             "name": "Hide",
-            "count": 142
+            "count": 100
           }, {
-            "name": "Iron Ore",
-            "count": 63
+            "name": "Worm Scale",
+            "count": 20
           }
         ]
       }
     ]
   }, {
-    "name": "Panda Walker Rugged Wings (1 of 2)",
-    "parent": "Panda Walker Heavy Wings (1 of 2)",
+    "name": "Panda Walker Wings Rugged (1 of 2)",
+    "parent": "Panda Walker Wings Heavy (1 of 2)",
     "category": "walkers/panda/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 10
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
-            "count": 83
+            "count": 80
           }, {
             "name": "Worm Silk",
-            "count": 71
+            "count": 70
           }, {
             "name": "Hide",
-            "count": 116
+            "count": 80
           }, {
-            "name": "Redwood Wood",
-            "count": 31
+            "name": "Worm Scale",
+            "count": 10
           }
         ]
       }
     ]
   }, {
-    "name": "Panda Walker Skirmish Wings (1 of 2)",
+    "name": "Panda Walker Wings Skirmish (1 of 2)",
     "parent": "Panda Walker Body",
     "category": "walkers/panda/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 15
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -11703,9 +11809,13 @@
       }
     ]
   }, {
-    "name": "Panda Walker Small Wings (1 of 2)",
+    "name": "Panda Walker Wings Small (1 of 2)",
     "parent": "Panda Walker Body",
     "category": "walkers/panda/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 5
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -12103,6 +12213,10 @@
     "name": "Panda Walker Upgrade - Water - Tier 4",
     "parent": "Panda Walker Upgrade - Water - Tier 3",
     "category": "walkers/panda/upgrades/tier4",
+    "cost": {
+      "name": "Tablet",
+      "count": 30
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Iron Ingot",
@@ -12293,6 +12407,10 @@
     "name": "Schmetterling Walker Legs Heavy (1 of 2)",
     "parent": "Schmetterling Walker Legs Armored (1 of 2)",
     "category": "walkers/schmetterling/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 40
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -12304,8 +12422,8 @@
             "name": "Redwood Wood",
             "count": 80
           }, {
-            "name": "Worm Silk",
-            "count": 20
+            "name": "Worm Scale",
+            "count": 70
           }
         ]
       }
@@ -12328,9 +12446,13 @@
       }
     ]
   }, {
-    "name": "Schmetterling Walker Heavy Wings (1 of 2)",
+    "name": "Schmetterling Walker Wings Heavy (1 of 2)",
     "parent": "Schmetterling Walker Body",
     "category": "walkers/schmetterling/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 35
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -12349,9 +12471,13 @@
       }
     ]
   }, {
-    "name": "Schmetterling Walker Large Wings (1 of 2)",
-    "parent": "Schmetterling Walker Medium Wings (1 of 2)",
+    "name": "Schmetterling Walker Wings Large (1 of 2)",
+    "parent": "Schmetterling Walker Wings Medium (1 of 2)",
     "category": "walkers/schmetterling/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 40
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -12367,9 +12493,13 @@
       }
     ]
   }, {
-    "name": "Schmetterling Walker Medium Wings (1 of 2)",
-    "parent": "Schmetterling Walker Small Wings (1 of 2)",
+    "name": "Schmetterling Walker Wings Medium (1 of 2)",
+    "parent": "Schmetterling Walker Wings Small (1 of 2)",
     "category": "walkers/schmetterling/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 35
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -12385,51 +12515,63 @@
       }
     ]
   }, {
-    "name": "Schmetterling Walker Raider Wings (1 of 2)",
-    "parent": "Schmetterling Walker Skirmish Wings (1 of 2)",
+    "name": "Schmetterling Walker Wings Raider (1 of 2)",
+    "parent": "Schmetterling Walker Wings Skirmish (1 of 2)",
     "category": "walkers/schmetterling/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 60
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
             "count": 200
           }, {
             "name": "Worm Silk",
-            "count": 90
+            "count": 180
           }, {
             "name": "Iron Ingot",
-            "count": 50
+            "count": 40
           }, {
-            "name": "Redwood Wood",
-            "count": 70
+            "name": "Worm Scale",
+            "count": 22
           }
         ]
       }
     ]
   }, {
-    "name": "Schmetterling Walker Rugged Wings (1 of 2)",
-    "parent": "Schmetterling Walker Heavy Wings (1 of 2)",
+    "name": "Schmetterling Walker Wings Rugged (1 of 2)",
+    "parent": "Schmetterling Walker Wings Heavy (1 of 2)",
     "category": "walkers/schmetterling/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 35
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
             "count": 182
           }, {
             "name": "Worm Silk",
-            "count": 90
+            "count": 130
           }, {
             "name": "Iron Ore",
             "count": 10
           }, {
-            "name": "Redwood Wood",
-            "count": 60
+            "name": "Worm Scale",
+            "count": 10
           }
         ]
       }
     ]
   }, {
-    "name": "Schmetterling Walker Skirmish Wings (1 of 2)",
+    "name": "Schmetterling Walker Wings Skirmish (1 of 2)",
     "parent": "Schmetterling Walker Body",
     "category": "walkers/schmetterling/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 40
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -12448,9 +12590,13 @@
       }
     ]
   }, {
-    "name": "Schmetterling Walker Small Wings (1 of 2)",
+    "name": "Schmetterling Walker Wings Small (1 of 2)",
     "parent": "Schmetterling Walker Body",
     "category": "walkers/schmetterling/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -12688,6 +12834,10 @@
     "name": "Schmetterling Walker Upgrade - Water - Tier 2",
     "parent": "Schmetterling Walker Body",
     "category": "walkers/schmetterling/upgrades/tier2",
+    "cost": {
+      "name": "Tablet",
+      "count": 15
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Bone Splinter",
@@ -12809,6 +12959,10 @@
     "name": "Schmetterling Walker Upgrade - Water - Tier 3",
     "parent": "Schmetterling Walker Upgrade - Water - Tier 2",
     "category": "walkers/schmetterling/upgrades/tier3",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
@@ -12860,8 +13014,8 @@
             "name": "Ceramic Shard",
             "count": 300
           }, {
-            "name": "Chitin Plate",
-            "count": 88
+            "name": "Worm Scale",
+            "count": 10
           }, {
             "name": "Nomad Cloth",
             "count": 150
@@ -12945,6 +13099,10 @@
     "name": "Schmetterling Walker Upgrade - Water - Tier 4",
     "parent": "Schmetterling Walker Upgrade - Water - Tier 3",
     "category": "walkers/schmetterling/upgrades/tier4",
+    "cost": {
+      "name": "Tablet",
+      "count": 25
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Iron Ingot",
@@ -13579,7 +13737,7 @@
       }
     ]
   }, {
-    "name": "Stiletto Walker Heavy Wings (1 of 2)",
+    "name": "Stiletto Walker Wings Heavy (1 of 2)",
     "parent": "Stiletto Walker Body",
     "cost": {
       "name": "Tablet",
@@ -13601,8 +13759,8 @@
       }
     ]
   }, {
-    "name": "Stiletto Walker Medium Wings (1 of 2)",
-    "parent": "Stiletto Walker Small Wings (1 of 2)",
+    "name": "Stiletto Walker Wings Medium (1 of 2)",
+    "parent": "Stiletto Walker Wings Small (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 2
@@ -13623,8 +13781,8 @@
       }
     ]
   }, {
-    "name": "Stiletto Walker Raider Wings (1 of 2)",
-    "parent": "Stiletto Walker Skirmish Wings (1 of 2)",
+    "name": "Stiletto Walker Wings Raider (1 of 2)",
+    "parent": "Stiletto Walker Wings Skirmish (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 15
@@ -13648,8 +13806,8 @@
       }
     ]
   }, {
-    "name": "Stiletto Walker Rugged Wings (1 of 2)",
-    "parent": "Stiletto Walker Heavy Wings (1 of 2)",
+    "name": "Stiletto Walker Wings Rugged (1 of 2)",
+    "parent": "Stiletto Walker Wings Heavy (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 3
@@ -13673,7 +13831,7 @@
       }
     ]
   }, {
-    "name": "Stiletto Walker Skirmish Wings (1 of 2)",
+    "name": "Stiletto Walker Wings Skirmish (1 of 2)",
     "parent": "Stiletto Walker Body",
     "cost": {
       "name": "Tablet",
@@ -13698,7 +13856,7 @@
       }
     ]
   }, {
-    "name": "Stiletto Walker Small Wings (1 of 2)",
+    "name": "Stiletto Walker Wings Small (1 of 2)",
     "parent": "Stiletto Walker Body",
     "cost": {
       "name": "Tablet",
@@ -14182,19 +14340,23 @@
     "name": "Titan Walker Legs Heavy (1 of 2)",
     "parent": "Titan Walker Legs Armored (1 of 2)",
     "category": "walkers/titan/parts/legs",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
             "count": 120
           }, {
             "name": "Redwood Wood",
-            "count": 100
+            "count": 80
           }, {
             "name": "Tar",
             "count": 40
           }, {
-            "name": "Worm Silk",
-            "count": 14
+            "name": "Worm Scale",
+            "count": 70
           }
         ]
       }
@@ -14217,9 +14379,13 @@
       }
     ]
   }, {
-    "name": "Titan Walker Heavy Wings (1 of 2)",
+    "name": "Titan Walker Wings Heavy (1 of 2)",
     "parent": "Titan Walker Body",
     "category": "walkers/titan/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -14238,9 +14404,13 @@
       }
     ]
   }, {
-    "name": "Titan Walker Large Wings (1 of 2)",
-    "parent": "Titan Walker Medium Wings (1 of 2)",
+    "name": "Titan Walker Wings Large (1 of 2)",
+    "parent": "Titan Walker Wings Medium (1 of 2)",
     "category": "walkers/titan/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 30
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -14256,9 +14426,13 @@
       }
     ]
   }, {
-    "name": "Titan Walker Medium Wings (1 of 2)",
-    "parent": "Titan Walker Small Wings (1 of 2)",
+    "name": "Titan Walker Wings Medium (1 of 2)",
+    "parent": "Titan Walker Wings Small (1 of 2)",
     "category": "walkers/titan/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Wood Shaft",
@@ -14274,51 +14448,63 @@
       }
     ]
   }, {
-    "name": "Titan Walker Raider Wings (1 of 2)",
-    "parent": "Titan Walker Skirmish Wings (1 of 2)",
+    "name": "Titan Walker Wings Raider (1 of 2)",
+    "parent": "Titan Walker Wings Skirmish (1 of 2)",
     "category": "walkers/titan/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 50
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
             "count": 240
           }, {
             "name": "Worm Silk",
-            "count": 120
+            "count": 180
           }, {
             "name": "Iron Ingot",
-            "count": 60
+            "count": 40
           }, {
-            "name": "Redwood Wood",
-            "count": 72
+            "name": "Worm Scale",
+            "count": 22
           }
         ]
       }
     ]
   }, {
-    "name": "Titan Walker Rugged Wings (1 of 2)",
-    "parent": "Titan Walker Heavy Wings (1 of 2)",
+    "name": "Titan Walker Wings Rugged (1 of 2)",
+    "parent": "Titan Walker Wings Heavy (1 of 2)",
     "category": "walkers/titan/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 20
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
             "count": 200
           }, {
             "name": "Worm Silk",
-            "count": 115
+            "count": 130
           }, {
             "name": "Iron Ingot",
-            "count": 16
+            "count": 15
           }, {
-            "name": "Redwood Wood",
-            "count": 70
+            "name": "Worm Scale",
+            "count": 12
           }
         ]
       }
     ]
   }, {
-    "name": "Titan Walker Skirmish Wings (1 of 2)",
+    "name": "Titan Walker Wings Skirmish (1 of 2)",
     "parent": "Titan Walker Body",
     "category": "walkers/titan/parts/wings",
+    "cost": {
+      "name": "Tablet",
+      "count": 30
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Reinforced Plank",
@@ -14337,7 +14523,7 @@
       }
     ]
   }, {
-    "name": "Titan Walker Small Wings (1 of 2)",
+    "name": "Titan Walker Wings Small (1 of 2)",
     "parent": "Titan Walker Body",
     "category": "walkers/titan/parts/wings",
     "crafting": [{
@@ -14577,6 +14763,10 @@
     "name": "Titan Walker Upgrade - Water - Tier 2",
     "parent": "Titan Walker Body",
     "category": "walkers/titan/upgrades/tier2",
+    "cost": {
+      "name": "Tablet",
+      "count": 30
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Bone Splinter",
@@ -14698,6 +14888,10 @@
     "name": "Titan Walker Upgrade - Water - Tier 3",
     "parent": "Titan Walker Upgrade - Water - Tier 2",
     "category": "walkers/titan/upgrades/tier3",
+    "cost": {
+      "name": "Tablet",
+      "count": 50
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Ceramic Shard",
@@ -14749,8 +14943,8 @@
             "name": "Ceramic Shard",
             "count": 300
           }, {
-            "name": "Chitin Plate",
-            "count": 88
+            "name": "Worm Scale",
+            "count": 10
           }, {
             "name": "Nomad Cloth",
             "count": 150
@@ -14834,6 +15028,10 @@
     "name": "Titan Walker Upgrade - Water - Tier 4",
     "parent": "Titan Walker Upgrade - Water - Tier 3",
     "category": "walkers/titan/upgrades/tier4",
+    "cost": {
+      "name": "Tablet",
+      "count": 100
+    },
     "crafting": [{
         "ingredients": [{
             "name": "Iron Ingot",
@@ -14953,7 +15151,7 @@
       }
     ]
   }, {
-    "name": "Toboggan Walker Heavy Wings (1 of 2)",
+    "name": "Toboggan Walker Wings Heavy (1 of 2)",
     "parent": "Toboggan Walker Body",
     "cost": {
       "name": "Tablet",
@@ -14978,8 +15176,8 @@
       }
     ]
   }, {
-    "name": "Toboggan Walker Large Wings (1 of 2)",
-    "parent": "Toboggan Walker Medium Wings (1 of 2)",
+    "name": "Toboggan Walker Wings Large (1 of 2)",
+    "parent": "Toboggan Walker Wings Medium (1 of 2)",
     "category": "walkers/toboggan/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -14990,14 +15188,14 @@
             "count": 42
           }, {
             "name": "Hide",
-            "count": 85
+            "count": 84
           }
         ]
       }
     ]
   }, {
-    "name": "Toboggan Walker Medium Wings (1 of 2)",
-    "parent": "Toboggan Walker Small Wings (1 of 2)",
+    "name": "Toboggan Walker Wings Medium (1 of 2)",
+    "parent": "Toboggan Walker Wings Small (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 2
@@ -15018,8 +15216,8 @@
       }
     ]
   }, {
-    "name": "Toboggan Walker Raider Wings (1 of 2)",
-    "parent": "Toboggan Walker Skirmish Wings (1 of 2)",
+    "name": "Toboggan Walker Wings Raider (1 of 2)",
+    "parent": "Toboggan Walker Wings Skirmish (1 of 2)",
     "category": "walkers/toboggan/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -15027,20 +15225,20 @@
             "count": 70
           }, {
             "name": "Worm Silk",
-            "count": 64
+            "count": 65
           }, {
             "name": "Hide",
             "count": 100
           }, {
-            "name": "Iron Ore",
-            "count": 32
+            "name": "Worm Scale",
+            "count": 8
           }
         ]
       }
     ]
   }, {
-    "name": "Toboggan Walker Rugged Wings (1 of 2)",
-    "parent": "Toboggan Walker Heavy Wings (1 of 2)",
+    "name": "Toboggan Walker Wings Rugged (1 of 2)",
+    "parent": "Toboggan Walker Wings Heavy (1 of 2)",
     "cost": {
       "name": "Tablet",
       "count": 2
@@ -15064,7 +15262,7 @@
       }
     ]
   }, {
-    "name": "Toboggan Walker Skirmish Wings (1 of 2)",
+    "name": "Toboggan Walker Wings Skirmish (1 of 2)",
     "parent": "Toboggan Walker Body",
     "category": "walkers/toboggan/parts/wings",
     "crafting": [{
@@ -15085,7 +15283,7 @@
       }
     ]
   }, {
-    "name": "Toboggan Walker Small Wings (1 of 2)",
+    "name": "Toboggan Walker Wings Small (1 of 2)",
     "parent": "Toboggan Walker Body",
     "cost": {
       "name": "Tablet",
@@ -15774,6 +15972,9 @@
           }, {
             "name": "Bone Glue",
             "count": 5
+          }, {
+            "name": "Walker Mechanism",
+            "count": 5
           }
         ]
       }
@@ -15818,8 +16019,8 @@
             "name": "Tar",
             "count": 44
           }, {
-            "name": "Worm Silk",
-            "count": 14
+            "name": "Worm Scale",
+            "count": 30
           }
         ]
       }
@@ -15842,7 +16043,7 @@
       }
     ]
   }, {
-    "name": "Tusker Walker Heavy Wings (1 of 2)",
+    "name": "Tusker Walker Wings Heavy (1 of 2)",
     "parent": "Tusker Walker Body",
     "category": "walkers/tusker/parts/wings",
     "crafting": [{
@@ -15863,8 +16064,8 @@
       }
     ]
   }, {
-    "name": "Tusker Walker Large Wings (1 of 2)",
-    "parent": "Tusker Walker Medium Wings (1 of 2)",
+    "name": "Tusker Walker Wings Large (1 of 2)",
+    "parent": "Tusker Walker Wings Medium (1 of 2)",
     "category": "walkers/tusker/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -15881,8 +16082,8 @@
       }
     ]
   }, {
-    "name": "Tusker Walker Medium Wings (1 of 2)",
-    "parent": "Tusker Walker Small Wings (1 of 2)",
+    "name": "Tusker Walker Wings Medium (1 of 2)",
+    "parent": "Tusker Walker Wings Small (1 of 2)",
     "category": "walkers/tusker/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -15899,8 +16100,8 @@
       }
     ]
   }, {
-    "name": "Tusker Walker Raider Wings (1 of 2)",
-    "parent": "Tusker Walker Skirmish Wings (1 of 2)",
+    "name": "Tusker Walker Wings Raider (1 of 2)",
+    "parent": "Tusker Walker Wings Skirmish (1 of 2)",
     "category": "walkers/tusker/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -15908,20 +16109,20 @@
             "count": 180
           }, {
             "name": "Iron Ingot",
-            "count": 30
+            "count": 25
           }, {
             "name": "Worm Silk",
             "count": 120
           }, {
-            "name": "Redwood Wood",
-            "count": 40
+            "name": "Worm Scale",
+            "count": 15
           }
         ]
       }
     ]
   }, {
-    "name": "Tusker Walker Rugged Wings (1 of 2)",
-    "parent": "Tusker Walker Heavy Wings (1 of 2)",
+    "name": "Tusker Walker Wings Rugged (1 of 2)",
+    "parent": "Tusker Walker Wings Heavy (1 of 2)",
     "category": "walkers/tusker/parts/wings",
     "crafting": [{
         "ingredients": [{
@@ -15934,14 +16135,14 @@
             "name": "Worm Silk",
             "count": 80
           }, {
-            "name": "Redwood Wood",
-            "count": 30
+            "name": "Worm Scale",
+            "count": 8
           }
         ]
       }
     ]
   }, {
-    "name": "Tusker Walker Skirmish Wings (1 of 2)",
+    "name": "Tusker Walker Wings Skirmish (1 of 2)",
     "parent": "Tusker Walker Body",
     "category": "walkers/tusker/parts/wings",
     "crafting": [{
@@ -15962,7 +16163,7 @@
       }
     ]
   }, {
-    "name": "Tusker Walker Small Wings (1 of 2)",
+    "name": "Tusker Walker Wings Small (1 of 2)",
     "parent": "Tusker Walker Body",
     "category": "walkers/tusker/parts/wings",
     "crafting": [{
@@ -16374,8 +16575,8 @@
             "name": "Ceramic Shard",
             "count": 300
           }, {
-            "name": "Chitin Plate",
-            "count": 88
+            "name": "Worm Scale",
+            "count": 10
           }, {
             "name": "Nomad Cloth",
             "count": 150
