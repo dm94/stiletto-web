@@ -275,7 +275,7 @@ let all = {
         Wood: 'Дерево(Wood)',
         'Wood Shaft': 'Деревянная опора(Wood Shaft)',
         'Worm Scale': 'Worm Scale',
-        'Worm Silk': 'Worm Silk',
+        'Worm Silk': 'Шёлк червя(Worn Silk)',
         Base: 'Баз)',
         'Enemy Base': 'Вражеская база',
         'Friend Base': 'Дружественная база',

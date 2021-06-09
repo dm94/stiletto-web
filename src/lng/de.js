@@ -275,7 +275,7 @@ let all = {
         Wood: 'Holz',
         'Wood Shaft': 'Holz Schaft',
         'Worm Scale': 'Worm Scale',
-        'Worm Silk': 'Worm Silk',
+        'Worm Silk': 'Wurmseide',
         Base: 'Basis',
         'Enemy Base': 'Feindliche Basis',
         'Friend Base': 'Freund-Basis',
