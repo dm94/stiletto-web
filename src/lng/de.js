@@ -274,7 +274,7 @@ let all = {
         'Walker Mechanism': 'Walker Mechanism',
         Wood: 'Holz',
         'Wood Shaft': 'Holz Schaft',
-        'Worm Scale': 'Worn Scale',
+        'Worm Scale': 'Worm Scale',
         'Worm Silk': 'Wurmseide',
         Base: 'Basis',
         'Enemy Base': 'Feindliche Basis',

@@ -274,7 +274,7 @@ let all = {
         'Walker Mechanism': 'Walker Mechanism',
         Wood: 'Дерево(Wood)',
         'Wood Shaft': 'Деревянная опора(Wood Shaft)',
-        'Worm Scale': 'Worn Scale',
+        'Worm Scale': 'Worm Scale',
         'Worm Silk': 'Шёлк червя(Worn Silk)',
         Base: 'Баз)',
         'Enemy Base': 'Вражеская база',
