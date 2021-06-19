@@ -47,8 +47,6 @@ class ClanList extends Component {
         this.state.clanRequestId +
         "/requests",
       params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
         message: this.state.textAreaModelValue,
       },
       headers: {

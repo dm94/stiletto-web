@@ -30,10 +30,6 @@ class ClanMaps extends Component {
       .then((maps) => this.setState({ maps }));
 
     Axios.get(process.env.REACT_APP_API_URL + "/maps", {
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-      },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -102,10 +98,6 @@ class ClanMaps extends Component {
     const options = {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/maps/" + mapid,
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-      },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

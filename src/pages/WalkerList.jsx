@@ -37,8 +37,6 @@ class WalkerList extends Component {
         url: process.env.REACT_APP_API_URL + "/walkers/auth",
         params: {
           code: parsed.code,
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
           redirect:
             host +
             (window.location.port ? ":" + window.location.port : "") +
@@ -145,8 +143,6 @@ class WalkerList extends Component {
       method: "post",
       url: process.env.REACT_APP_API_URL + "/walkers/auth",
       params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
         discordserverid: this.state.inputDiscodId,
       },
       headers: {

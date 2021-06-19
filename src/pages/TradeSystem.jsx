@@ -71,10 +71,6 @@ class TradeSystem extends Component {
     const options = {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/trades/" + idTrade,
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-      },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -113,8 +109,6 @@ class TradeSystem extends Component {
       method: "post",
       url: process.env.REACT_APP_API_URL + "/trades",
       params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
         resource: this.state.resourceTypeInput,
         type: this.state.tradeTypeInput,
         amount: this.state.amountInput,

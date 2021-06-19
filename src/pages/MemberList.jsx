@@ -33,10 +33,6 @@ class MemberList extends Component {
         this.state.clanid +
         "/members",
       {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-        },
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -66,10 +62,6 @@ class MemberList extends Component {
         this.state.clanid +
         "/requests",
       {
-        params: {
-          discordid: this.state.user_discord_id,
-          token: this.state.token,
-        },
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -106,8 +98,6 @@ class MemberList extends Component {
         "/members/" +
         memberdiscordid,
       params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
         accion: "kick",
       },
       headers: {
@@ -152,8 +142,6 @@ class MemberList extends Component {
         "/requests/" +
         this.state.requestData.discordid,
       params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
         accion: "accept",
       },
       headers: {
@@ -199,8 +187,6 @@ class MemberList extends Component {
         "/requests/" +
         this.state.requestData.discordid,
       params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
         accion: "reject",
       },
       headers: {
@@ -236,10 +222,6 @@ class MemberList extends Component {
     const options = {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/clans/" + this.state.clanid,
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-      },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -275,8 +257,6 @@ class MemberList extends Component {
         "/members/" +
         this.state.selectNewOwner,
       params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
         accion: "owner",
       },
       headers: {

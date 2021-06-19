@@ -34,9 +34,6 @@ class PrivateProfile extends Component {
     Axios.get(
       process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
       {
-        params: {
-          token: this.state.token,
-        },
         headers: {
           Authorization: `Bearer ${this.state.token}`,
         },
@@ -71,9 +68,6 @@ class PrivateProfile extends Component {
       method: "delete",
       url:
         process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
-      params: {
-        token: this.state.token,
-      },
       headers: {
         Authorization: `Bearer ${this.state.token}`,
       },
@@ -106,7 +100,6 @@ class PrivateProfile extends Component {
       url:
         process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
       params: {
-        token: this.state.token,
         dataupdate: this.state.nameInGameInput,
       },
       headers: {
@@ -137,10 +130,6 @@ class PrivateProfile extends Component {
     const options = {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/clans",
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-      },
       headers: {
         Authorization: `Bearer ${this.state.token}`,
       },
@@ -163,13 +152,12 @@ class PrivateProfile extends Component {
       });
   };
 
-  createClan = () => {
+  createClan = (event) => {
+    event.preventDefault();
     const options = {
       method: "post",
       url: process.env.REACT_APP_API_URL + "/clans",
       params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
         clanname: this.state.addClanNameInput,
         clancolor: this.state.addClanColorInput,
         clandiscord: this.state.addClanDiscordInput,

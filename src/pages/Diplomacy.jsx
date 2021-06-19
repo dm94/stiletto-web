@@ -31,10 +31,6 @@ class Diplomacy extends Component {
         this.state.clanid +
         "/relationships",
       {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-        },
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -60,7 +56,8 @@ class Diplomacy extends Component {
       });
   }
 
-  createRelationship = () => {
+  createRelationship = (event) => {
+    event.preventDefault();
     const options = {
       method: "post",
       url:
@@ -69,8 +66,6 @@ class Diplomacy extends Component {
         this.state.clanid +
         "/relationships",
       params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
         nameotherclan: this.state.nameOtherClanInput,
         clanflag: this.state.clanFlagInput,
         typed: this.state.typedInput,
@@ -83,7 +78,7 @@ class Diplomacy extends Component {
 
     Axios.request(options)
       .then((response) => {
-        if (response.status === 201) {
+        if (response.status === 202) {
           this.componentDidMount();
         } else if (response.status === 405) {
           this.setState({ error: "Method Not Allowed" });
@@ -105,10 +100,6 @@ class Diplomacy extends Component {
         this.state.clanid +
         "/relationships/" +
         id,
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-      },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
