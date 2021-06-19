@@ -34,6 +34,9 @@ class ClanMaps extends Component {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
       },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     }).then((response) => {
       if (response.status === 200) {
         this.setState({ clanMaps: response.data });
@@ -103,6 +106,9 @@ class ClanMaps extends Component {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     };
 
     Axios.request(options)
@@ -149,6 +155,9 @@ class ClanMaps extends Component {
         mapname: mapNameInput,
         mapdate: mapDateInput,
         maptype: mapSelectInput,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 

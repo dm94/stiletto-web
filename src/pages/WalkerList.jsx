@@ -44,6 +44,9 @@ class WalkerList extends Component {
             (window.location.port ? ":" + window.location.port : "") +
             "/walkerlist",
         },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       };
 
       Axios.request(options)
@@ -64,6 +67,9 @@ class WalkerList extends Component {
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((response) => {
@@ -142,6 +148,9 @@ class WalkerList extends Component {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         discordserverid: this.state.inputDiscodId,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 

@@ -75,6 +75,9 @@ class TradeSystem extends Component {
         discordid: this.state.user_discord_id,
         token: this.state.token,
       },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     };
 
     Axios.request(options).then((response) => {
@@ -118,6 +121,9 @@ class TradeSystem extends Component {
         region: this.state.regionInput,
         quality: this.state.qualityInput,
         price: this.state.priceInput,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 

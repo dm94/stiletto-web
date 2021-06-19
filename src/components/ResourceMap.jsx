@@ -46,6 +46,9 @@ class ResourceMap extends Component {
           token: localStorage.getItem("token"),
           mappass: this.props.map.pass,
         },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       }
     ).then((response) => {
       if (response.status === 200) {
@@ -77,6 +80,9 @@ class ResourceMap extends Component {
         y: this.state.coordinateYInput,
         description: descriptionInput,
         mappass: this.state.pass,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 
@@ -115,6 +121,9 @@ class ResourceMap extends Component {
         mapdate: this.state.dateofburning,
         allowediting: this.state.allowEditing ? 1 : 0,
         mappass: this.state.pass,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 

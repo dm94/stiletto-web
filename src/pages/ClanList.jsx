@@ -51,6 +51,9 @@ class ClanList extends Component {
         token: localStorage.getItem("token"),
         message: this.state.textAreaModelValue,
       },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     };
 
     Axios.request(options)

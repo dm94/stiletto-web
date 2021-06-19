@@ -62,6 +62,9 @@ class ResourceMapNoLog extends Component {
             token: localStorage.getItem("token"),
             mappass: pass,
           },
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
       ).then((response) => {
         if (response.status === 200) {

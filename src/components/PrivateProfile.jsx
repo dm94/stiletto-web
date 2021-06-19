@@ -37,6 +37,9 @@ class PrivateProfile extends Component {
         params: {
           token: this.state.token,
         },
+        headers: {
+          Authorization: `Bearer ${this.state.token}`,
+        },
       }
     )
       .then((response) => {
@@ -71,6 +74,9 @@ class PrivateProfile extends Component {
       params: {
         token: this.state.token,
       },
+      headers: {
+        Authorization: `Bearer ${this.state.token}`,
+      },
     };
 
     Axios.request(options)
@@ -103,6 +109,9 @@ class PrivateProfile extends Component {
         token: this.state.token,
         dataupdate: this.state.nameInGameInput,
       },
+      headers: {
+        Authorization: `Bearer ${this.state.token}`,
+      },
     };
 
     Axios.request(options)
@@ -131,6 +140,9 @@ class PrivateProfile extends Component {
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
+      },
+      headers: {
+        Authorization: `Bearer ${this.state.token}`,
       },
     };
 
@@ -161,6 +173,9 @@ class PrivateProfile extends Component {
         clanname: this.state.addClanNameInput,
         clancolor: this.state.addClanColorInput,
         clandiscord: this.state.addClanDiscordInput,
+      },
+      headers: {
+        Authorization: `Bearer ${this.state.token}`,
       },
     };
 

@@ -36,6 +36,9 @@ class CreateMapNoLog extends Component {
         mapdate: mapDateInput,
         maptype: mapSelectInput,
       },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     };
 
     Axios.request(options)

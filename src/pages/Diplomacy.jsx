@@ -35,6 +35,9 @@ class Diplomacy extends Component {
           discordid: localStorage.getItem("discordid"),
           token: localStorage.getItem("token"),
         },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       }
     )
       .then((response) => {
@@ -73,6 +76,9 @@ class Diplomacy extends Component {
         typed: this.state.typedInput,
         symbol: this.state.clanFlagSymbolInput,
       },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     };
 
     Axios.request(options)
@@ -102,6 +108,9 @@ class Diplomacy extends Component {
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 

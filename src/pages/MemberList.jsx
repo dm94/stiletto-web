@@ -37,6 +37,9 @@ class MemberList extends Component {
           discordid: this.state.user_discord_id,
           token: this.state.token,
         },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       }
     )
       .then((response) => {
@@ -66,6 +69,9 @@ class MemberList extends Component {
         params: {
           discordid: this.state.user_discord_id,
           token: this.state.token,
+        },
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       }
     )
@@ -103,6 +109,9 @@ class MemberList extends Component {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
         accion: "kick",
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 
@@ -146,6 +155,9 @@ class MemberList extends Component {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
         accion: "accept",
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 
@@ -191,6 +203,9 @@ class MemberList extends Component {
         token: localStorage.getItem("token"),
         accion: "reject",
       },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     };
 
     Axios.request(options)
@@ -224,6 +239,9 @@ class MemberList extends Component {
       params: {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 
@@ -260,6 +278,9 @@ class MemberList extends Component {
         discordid: localStorage.getItem("discordid"),
         token: localStorage.getItem("token"),
         accion: "owner",
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 
