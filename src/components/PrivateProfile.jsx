@@ -51,8 +51,9 @@ class PrivateProfile extends Component {
             isLoaded: true,
           });
         } else if (response.status === 205) {
-          localStorage.clear();
-          this.setError("This user cannot be found");
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
+          this.setError("Log in again");
         }
         this.setState({ isLoaded: true });
       })
@@ -75,11 +76,13 @@ class PrivateProfile extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 204) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({ redirect: true });
         } else if (response.status === 401) {
-          localStorage.clear();
-          this.setError("This user cannot be found");
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
+          this.setError("Log in again");
         } else if (response.status === 503) {
           this.setError("Error connecting to database");
         }
@@ -107,8 +110,9 @@ class PrivateProfile extends Component {
         if (response.status === 202) {
           this.setState({ nickname: this.state.nameInGameInput });
         } else if (response.status === 401) {
-          localStorage.clear();
-          this.setError("This user cannot be found");
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
+          this.setError("Log in again");
         } else if (response.status === 503) {
           this.setError("Error connecting to database");
         }
@@ -135,8 +139,9 @@ class PrivateProfile extends Component {
         if (response.status === 204) {
           this.setState({ clanname: null });
         } else if (response.status === 401) {
-          localStorage.clear();
-          this.setError("This user cannot be found");
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
+          this.setError("Log in again");
         } else if (response.status === 503) {
           this.setError("Error connecting to database");
         }
@@ -164,8 +169,9 @@ class PrivateProfile extends Component {
         if (response.status === 201) {
           this.componentDidMount();
         } else if (response.status === 401) {
-          localStorage.clear();
-          this.setError("This user cannot be found");
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
+          this.setError("Log in again");
         } else if (response.status === 405) {
           this.setError("You already have a clan");
         } else if (response.status === 503) {
@@ -261,7 +267,8 @@ class PrivateProfile extends Component {
                   type="button"
                   className="btn btn-lg btn-outline-warning btn-block"
                   onClick={() => {
-                    localStorage.clear();
+                    localStorage.removeItem("discordid");
+                    localStorage.removeItem("token");
                     this.setState({ redirect: true });
                   }}
                 >

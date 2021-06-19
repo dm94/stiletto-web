@@ -38,7 +38,8 @@ class ClanMaps extends Component {
       if (response.status === 200) {
         this.setState({ clanMaps: response.data });
       } else if (response.status === 401) {
-        localStorage.clear();
+        localStorage.removeItem("discordid");
+        localStorage.removeItem("token");
         this.setState({
           error: "You don't have access here, try to log in again",
         });
@@ -113,7 +114,8 @@ class ClanMaps extends Component {
           });
           this.componentDidMount();
         } else if (response.status === 401) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({
             error: "You don't have access here, try to log in again",
           });
@@ -160,7 +162,8 @@ class ClanMaps extends Component {
         if (response.status === 201) {
           this.componentDidMount();
         } else if (response.status === 401) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({ error: "Login again" });
         } else if (response.status === 503) {
           this.setState({ error: "Error connecting to database" });

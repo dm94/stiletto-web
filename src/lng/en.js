@@ -69,7 +69,7 @@ let all = {
     "Error when connecting to the API": "Error when connecting to the API",
     "The page you are looking for does not exist":
       "The page you are looking for does not exist",
-    "This user cannot be found": "This user cannot be found",
+    "Log in again": "Log in again",
     "You do not have permission to access this page":
       "You do not have permission to access this page",
     "Change language": "Change language",

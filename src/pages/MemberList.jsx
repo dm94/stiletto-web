@@ -43,7 +43,8 @@ class MemberList extends Component {
         if (response.status === 202) {
           this.setState({ members: response.data });
         } else if (response.status === 405 || response.status === 401) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({
             error: "You don't have access here, try to log in again",
           });
@@ -72,7 +73,8 @@ class MemberList extends Component {
         if (response.status === 202) {
           this.setState({ requestMembers: response.data });
         } else if (response.status === 405 || response.status === 401) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({
             error: "You don't have access here, try to log in again",
           });
@@ -112,7 +114,8 @@ class MemberList extends Component {
           );
           this.setState({ members: members });
         } else if (response.status === 405 || response.status === 401) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({
             error: "You don't have access here, try to log in again",
           });
@@ -155,7 +158,8 @@ class MemberList extends Component {
           this.setState({ requestMembers: requestMembers });
           this.componentDidMount();
         } else if (response.status === 405 || response.status === 401) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({
             error: "You don't have access here, try to log in again",
           });
@@ -198,7 +202,8 @@ class MemberList extends Component {
           this.setState({ requestMembers: requestMembers });
           this.componentDidMount();
         } else if (response.status === 405 || response.status === 401) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({
             error: "You don't have access here, try to log in again",
           });
@@ -228,7 +233,8 @@ class MemberList extends Component {
           localStorage.setItem("clanid", "null");
           this.setState({ redirectMessage: "Clan deleted correctly" });
         } else if (response.status === 405) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({
             error: "You don't have access here, try to log in again",
           });
@@ -262,7 +268,8 @@ class MemberList extends Component {
         if (response.status === 202) {
           this.setState({ redirectMessage: "Clan updated correctly" });
         } else if (response.status === 405 || response.status === 401) {
-          localStorage.clear();
+          localStorage.removeItem("discordid");
+          localStorage.removeItem("token");
           this.setState({
             error: "You don't have access here, try to log in again",
           });
