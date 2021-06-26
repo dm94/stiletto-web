@@ -17,7 +17,7 @@ class WalkerList extends Component {
       walkers: null,
       redirect: false,
       error: null,
-      inputDiscodId: "",
+      inputDiscodId: null,
       showLinkDiscordButton: false,
       isFiltered: false,
       searchInput: "",
@@ -50,7 +50,13 @@ class WalkerList extends Component {
       Axios.request(options)
         .then((response) => {
           if (response.status === 202) {
-            this.setState({ discordList: response.data });
+            this.setState({
+              discordList: response.data,
+              inputDiscodId:
+                response.data != null && response.data.length > 0
+                  ? response.data[0].id
+                  : "",
+            });
           } else if (response.status === 401) {
             this.setState({ error: "Unauthorized" });
           } else if (response.status === 503) {
