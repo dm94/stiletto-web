@@ -59,7 +59,7 @@ let all = {
         'Leave clan': 'Salirse del clan',
         'Error when connecting to the API': 'Error al conectarse con la API',
         'The page you are looking for does not exist': 'La página que estas buscando no existe',
-        'Log in again': 'Log in again',
+        'Log in again': 'Conéctate de nuevo',
         'You do not have permission to access this page': 'No tienes permiso para acceder a esta página',
         'Change language': 'Cambiar idioma',
         Spanish: 'Español',
