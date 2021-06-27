@@ -360,7 +360,7 @@ class WalkerList extends Component {
             />
           </Helmet>
           {this.serverLinkButton(t)}
-          <table className="table">
+          <table className="table table-sm">
             <thead>
               <tr>
                 <th className="text-center" scope="col">
@@ -411,6 +411,9 @@ class WalkerList extends Component {
                 </th>
                 <th className="text-center" scope="col">
                   {t("Last Use")}
+                </th>
+                <th className="text-center" scope="col">
+                  {t("Delete")}
                 </th>
               </tr>
             </thead>
