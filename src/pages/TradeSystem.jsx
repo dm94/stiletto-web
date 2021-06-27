@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import LoadingScreen from "../components/LoadingScreen";
-import ModalMessage from "../components/ModalMessage";
-import Trade from "../components/Trade";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import LoadingScreen from "../components/LoadingScreen";
+import ModalMessage from "../components/ModalMessage";
+import Trade from "../components/Trade";
+import { getItems } from "../services";
 
 class TradeSystem extends Component {
   constructor(props) {
@@ -32,6 +33,7 @@ class TradeSystem extends Component {
   }
 
   componentDidMount() {
+    this.updateRecipes();
     Axios.get(process.env.REACT_APP_API_URL + "/trades")
       .then((response) => {
         if (response.status === 200) {
@@ -54,17 +56,19 @@ class TradeSystem extends Component {
       .catch(() => {
         this.setState({ error: "Error connecting to the API" });
       });
-    Axios.get(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
-    ).then((response) => {
-      const items = response.data.filter(
+  }
+
+  async updateRecipes() {
+    let items = await getItems();
+    if (items != null) {
+      items = items.filter(
         (it) =>
           it.category === "materials" ||
           it.category === "crafting/station" ||
           it.category === "modules"
       );
-      this.setState({ items });
-    });
+      this.setState({ items: items });
+    }
   }
 
   deleteTrade = (idTrade) => {

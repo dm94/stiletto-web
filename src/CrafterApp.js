@@ -342,6 +342,7 @@ function CrafterApp() {
 }
 
 function updateWeb() {
+  localStorage.removeItem("allItems");
   caches.keys().then(function (names) {
     for (let name of names) {
       caches.delete(name);

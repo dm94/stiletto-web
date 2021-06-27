@@ -3,6 +3,7 @@ import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import MemberListItem from "../components/MemberListItem";
 import RequestMemberListItem from "../components/RequestMemberListItem";
+import { getMembers } from "../services";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
@@ -27,34 +28,7 @@ class MemberList extends Component {
   }
 
   componentDidMount() {
-    Axios.get(
-      process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/members",
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    )
-      .then((response) => {
-        if (response.status === 202) {
-          this.setState({ members: response.data });
-        } else if (response.status === 405 || response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-        this.setState({ isLoaded: true });
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+    this.updateMembers();
 
     Axios.get(
       process.env.REACT_APP_API_URL +
@@ -86,6 +60,15 @@ class MemberList extends Component {
           error: "Error when connecting to the API",
         });
       });
+  }
+
+  async updateMembers() {
+    const response = await getMembers();
+    if (response.success) {
+      this.setState({ members: response.message, isLoaded: true });
+    } else {
+      this.setState({ error: response.message, isLoaded: true });
+    }
   }
 
   kickMember = (memberdiscordid) => {

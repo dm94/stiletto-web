@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Axios from "axios";
 import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Ingredients from "../components/Ingredients";
 import Ingredient from "../components/Ingredient";
+import { getItems } from "../services";
 import "../css/tech-tree.css";
 
 class TechTree extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
       items: [],
       savedData: {},
       isLoaded: false,
@@ -26,14 +24,16 @@ class TechTree extends Component {
   }
 
   componentDidMount() {
-    Axios.get(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
-    )
-      .then((response) => {
-        const items = response.data.filter((it) => it.parent != null);
-        this.setState({ items: items });
-      })
-      .then(() => this.updateSaveData());
+    this.updateRecipes();
+  }
+
+  async updateRecipes() {
+    let items = await getItems();
+    if (items != null) {
+      items = items.filter((it) => it.parent != null);
+      this.setState({ items: items });
+      this.updateSaveData();
+    }
   }
 
   render() {

@@ -6,6 +6,7 @@ import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import ModalMessage from "../components/ModalMessage";
+import { getItems } from "../services";
 const queryString = require("query-string");
 
 class Crafter extends Component {
@@ -19,14 +20,15 @@ class Crafter extends Component {
   };
 
   componentDidMount() {
-    fetch(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
-    )
-      .then((response) => response.json())
-      .then((items) => {
-        this.setState({ items: items });
-        this.getRecipes();
-      });
+    this.updateRecipes();
+  }
+
+  async updateRecipes() {
+    const items = await getItems();
+    if (items != null) {
+      this.setState({ items: items });
+      this.getRecipes();
+    }
   }
 
   getRecipes = () => {
@@ -38,7 +40,6 @@ class Crafter extends Component {
           if (response.status === 200) {
             if (response.data.items != null) {
               let allItems = JSON.parse(response.data.items);
-              console.log(allItems);
               allItems.forEach((it) => {
                 this.handleAdd(it.name, parseInt(it.count));
               });

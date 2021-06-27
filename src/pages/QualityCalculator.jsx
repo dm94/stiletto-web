@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Ingredient from "../components/Ingredient";
-import IngredientQualityInputs from "../components/IngredientQualityInputs";
 import Axios from "axios";
 import Icon from "../components/Icon";
-
+import { getItems } from "../services";
+import Ingredient from "../components/Ingredient";
+import IngredientQualityInputs from "../components/IngredientQualityInputs";
 class QualityCalculator extends Component {
   state = {
     items: [],
@@ -18,14 +18,15 @@ class QualityCalculator extends Component {
   };
 
   componentDidMount() {
-    Axios.get(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json"
-    ).then((response) => {
-      const items = response.data.filter(
-        (it) => !it.category.includes("upgrades")
-      );
-      this.setState({ items });
-    });
+    this.updateRecipes();
+  }
+
+  async updateRecipes() {
+    let items = await getItems();
+    if (items != null) {
+      items = items.filter((it) => !it.category.includes("upgrades"));
+      this.setState({ items: items });
+    }
   }
 
   handleInputChangeSearchItem = (event) => {
@@ -188,9 +189,10 @@ class QualityCalculator extends Component {
                     ) {
                       this.setState({
                         itemSelected: itemFiltered[0],
-                        ingredients: itemFiltered[0].crafting[0].ingredients.filter(
-                          (ing) => ing.name !== "Purified Water"
-                        ),
+                        ingredients:
+                          itemFiltered[0].crafting[0].ingredients.filter(
+                            (ing) => ing.name !== "Purified Water"
+                          ),
                         qualities: [],
                       });
                     }
