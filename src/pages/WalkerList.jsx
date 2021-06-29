@@ -5,6 +5,7 @@ import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getMembers, getItems } from "../services";
 const queryString = require("query-string");
 
 class WalkerList extends Component {
@@ -23,6 +24,8 @@ class WalkerList extends Component {
       searchInput: "",
       walkersFiltered: [],
       discordList: [],
+      members: [],
+      walkerTypes: [],
     };
   }
 
@@ -67,6 +70,10 @@ class WalkerList extends Component {
           this.setState({ error: "Error when connecting to the API" });
         });
     }
+
+    this.updateMembers();
+    this.updateWalkerTypes();
+
     Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
       params: {
         discordid: this.state.user_discord_id,
@@ -89,6 +96,29 @@ class WalkerList extends Component {
       .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
+  }
+
+  async updateMembers() {
+    const response = await getMembers();
+
+    if (response.success) {
+      this.setState({ members: response.message });
+    } else {
+      this.setState({ error: response.message });
+    }
+  }
+
+  async updateWalkerTypes() {
+    const response = await getItems();
+
+    if (response != null) {
+      let walkerTypeList = response
+        .filter((item) => item.name.includes("Walker Body"))
+        .map((item) => {
+          return item.name.replace("Walker Body", "").trim();
+        });
+      this.setState({ walkerTypes: walkerTypeList });
+    }
   }
 
   deleteWalker = (walkerid) => {
@@ -122,6 +152,7 @@ class WalkerList extends Component {
         <WalkerListItem
           key={walker.walkerID}
           walker={walker}
+          walkerListTypes={this.state.walkerTypes}
           onRemove={this.deleteWalker}
         />
       ));
@@ -135,6 +166,7 @@ class WalkerList extends Component {
           <WalkerListItem
             key={walker.walkerID}
             walker={walker}
+            walkerListTypes={this.state.walkerTypes}
             onRemove={this.deleteWalker}
           />
         ));
@@ -364,7 +396,7 @@ class WalkerList extends Component {
             <thead>
               <tr>
                 <th className="text-center" scope="col">
-                  {t("Walker ID")}
+                  {t("Type")}
                 </th>
                 <th scope="col">
                   <div className="input-group input-group-sm w-50 mb-0 mx-auto">
@@ -404,16 +436,13 @@ class WalkerList extends Component {
                   </div>
                 </th>
                 <th className="text-center" scope="col">
-                  {t("Owner")}
+                  {t("Use")}
                 </th>
                 <th className="text-center" scope="col">
-                  {t("Last User")}
+                  {t("Ready")}
                 </th>
                 <th className="text-center" scope="col">
-                  {t("Last Use")}
-                </th>
-                <th className="text-center" scope="col">
-                  {t("Delete")}
+                  {t("View")}
                 </th>
               </tr>
             </thead>

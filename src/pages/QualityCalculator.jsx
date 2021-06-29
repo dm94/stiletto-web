@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Axios from "axios";
 import Icon from "../components/Icon";
 import { getItems } from "../services";
 import Ingredient from "../components/Ingredient";
