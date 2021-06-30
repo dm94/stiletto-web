@@ -5,6 +5,7 @@ import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getMembers, getItems } from "../services";
 const queryString = require("query-string");
 
 class WalkerList extends Component {
@@ -23,6 +24,8 @@ class WalkerList extends Component {
       searchInput: "",
       walkersFiltered: [],
       discordList: [],
+      members: [],
+      walkerTypes: [],
     };
   }
 
@@ -67,17 +70,17 @@ class WalkerList extends Component {
           this.setState({ error: "Error when connecting to the API" });
         });
     }
+
+    this.updateMembers();
+    this.updateWalkerTypes();
+
     Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-      },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 200) {
           this.setState({ walkers: response.data });
         } else if (response.status === 401) {
           this.setState({ error: "The data entered is incorrect" });
@@ -91,13 +94,66 @@ class WalkerList extends Component {
       });
   }
 
+  async updateMembers() {
+    const response = await getMembers();
+
+    if (response.success) {
+      this.setState({ members: response.message });
+    } else {
+      this.setState({ error: response.message });
+    }
+  }
+
+  async updateWalkerTypes() {
+    const response = await getItems();
+
+    if (response != null) {
+      let walkerTypeList = response
+        .filter((item) => item.name.includes("Walker Body"))
+        .map((item) => {
+          return item.name.replace("Walker Body", "").trim();
+        });
+      this.setState({ walkerTypes: walkerTypeList });
+    }
+  }
+
+  updateWalker = (walker) => {
+    const options = {
+      method: "put",
+      url: process.env.REACT_APP_API_URL + "/walkers/" + walker.walkerID,
+      params: {
+        owner: walker.owner,
+        use: walker.walker_use,
+        type: walker.type,
+        description: walker.description,
+        ready: walker.isReady ? 1 : 0,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    };
+
+    Axios.request(options)
+      .then((response) => {
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
+        }
+      })
+      .catch(() => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
+  };
+
   deleteWalker = (walkerid) => {
     const options = {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/walkers/" + walkerid,
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 
@@ -120,9 +176,12 @@ class WalkerList extends Component {
     if (this.state.isFiltered) {
       return this.state.walkersFiltered.map((walker) => (
         <WalkerListItem
-          key={walker.walkerID}
+          key={"witem" + walker.walkerID}
           walker={walker}
+          walkerListTypes={this.state.walkerTypes}
+          memberList={this.state.members}
           onRemove={this.deleteWalker}
+          onSave={this.updateWalker}
         />
       ));
     } else {
@@ -133,9 +192,12 @@ class WalkerList extends Component {
       ) {
         return this.state.walkers.map((walker) => (
           <WalkerListItem
-            key={walker.walkerID}
+            key={"witem" + walker.walkerID}
             walker={walker}
+            walkerListTypes={this.state.walkerTypes}
+            memberList={this.state.members}
             onRemove={this.deleteWalker}
+            onSave={this.updateWalker}
           />
         ));
       }
@@ -364,7 +426,7 @@ class WalkerList extends Component {
             <thead>
               <tr>
                 <th className="text-center" scope="col">
-                  {t("Walker ID")}
+                  {t("Type")}
                 </th>
                 <th scope="col">
                   <div className="input-group input-group-sm w-50 mb-0 mx-auto">
@@ -404,16 +466,13 @@ class WalkerList extends Component {
                   </div>
                 </th>
                 <th className="text-center" scope="col">
-                  {t("Owner")}
+                  {t("Use")}
                 </th>
                 <th className="text-center" scope="col">
-                  {t("Last User")}
+                  {t("Ready")}
                 </th>
                 <th className="text-center" scope="col">
-                  {t("Last Use")}
-                </th>
-                <th className="text-center" scope="col">
-                  {t("Delete")}
+                  {t("View")}
                 </th>
               </tr>
             </thead>
