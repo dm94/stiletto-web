@@ -75,16 +75,12 @@ class WalkerList extends Component {
     this.updateWalkerTypes();
 
     Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-      },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     })
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 200) {
           this.setState({ walkers: response.data });
         } else if (response.status === 401) {
           this.setState({ error: "The data entered is incorrect" });
@@ -121,13 +117,43 @@ class WalkerList extends Component {
     }
   }
 
+  updateWalker = (walker) => {
+    const options = {
+      method: "put",
+      url: process.env.REACT_APP_API_URL + "/walkers/" + walker.walkerID,
+      params: {
+        owner: walker.owner,
+        use: walker.walker_use,
+        type: walker.type,
+        description: walker.description,
+        ready: walker.isReady ? 1 : 0,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    };
+
+    Axios.request(options)
+      .then((response) => {
+        if (response.status === 202) {
+          this.componentDidMount();
+        } else if (response.status === 401) {
+          this.setState({ error: "Unauthorized" });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
+        }
+      })
+      .catch(() => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
+  };
+
   deleteWalker = (walkerid) => {
     const options = {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/walkers/" + walkerid,
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
 
@@ -150,10 +176,12 @@ class WalkerList extends Component {
     if (this.state.isFiltered) {
       return this.state.walkersFiltered.map((walker) => (
         <WalkerListItem
-          key={walker.walkerID}
+          key={"witem" + walker.walkerID}
           walker={walker}
           walkerListTypes={this.state.walkerTypes}
+          memberList={this.state.members}
           onRemove={this.deleteWalker}
+          onSave={this.updateWalker}
         />
       ));
     } else {
@@ -164,10 +192,12 @@ class WalkerList extends Component {
       ) {
         return this.state.walkers.map((walker) => (
           <WalkerListItem
-            key={walker.walkerID}
+            key={"witem" + walker.walkerID}
             walker={walker}
             walkerListTypes={this.state.walkerTypes}
+            memberList={this.state.members}
             onRemove={this.deleteWalker}
+            onSave={this.updateWalker}
           />
         ));
       }

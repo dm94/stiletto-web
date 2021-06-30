@@ -8,6 +8,13 @@ class WalkerListItem extends Component {
     this.state = {
       isOpen: false,
       walker: this.props.walker,
+      canEdit:
+        this.props.memberList != null &&
+        this.props.memberList.some(
+          (member) =>
+            member.leaderid === localStorage.getItem("discordid") ||
+            member.nickname === this.props.walker.ownerUser
+        ),
     };
   }
 
@@ -17,7 +24,7 @@ class WalkerListItem extends Component {
         <tr>
           <td colSpan="5">
             <div className="row">
-              <div className="col-4">
+              <div className="col-12 col-lg-4">
                 <div className="card">
                   <div className="card-body">
                     <div className="input-group">
@@ -36,7 +43,7 @@ class WalkerListItem extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-12 col-lg-4">
                 <div className="card">
                   <div className="card-body">
                     <div className="input-group">
@@ -55,7 +62,7 @@ class WalkerListItem extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-12 col-lg-4">
                 <div className="card">
                   <div className="card-body">
                     <div className="input-group">
@@ -74,23 +81,48 @@ class WalkerListItem extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-3">
+              <div className="col-12 col-lg-3">
                 <div className="card">
                   <div className="card-body">
                     <div className="input-group">
                       <div className="input-group-prepend">
                         <span className="input-group-text">{t("Owner")}</span>
                       </div>
-                      <input
-                        type="text"
+                      <select
                         className="form-control"
-                        value={this.props.walker.ownerUser}
-                      />
+                        id="inputOwner"
+                        value={
+                          this.state.walker.ownerUser != null
+                            ? this.state.walker.ownerUser
+                            : ""
+                        }
+                        onChange={(evt) => {
+                          let walkerCopy = this.state.walker;
+                          walkerCopy.ownerUser = evt.target.value;
+                          this.setState({ walker: walkerCopy });
+                        }}
+                        disabled={!this.state.canEdit}
+                      >
+                        {this.props.memberList != null ? (
+                          this.props.memberList.map((member) => {
+                            return (
+                              <option
+                                key={member.discordid}
+                                value={member.nickname}
+                              >
+                                {member.nickname}
+                              </option>
+                            );
+                          })
+                        ) : (
+                          <option>{t("No options")}</option>
+                        )}
+                      </select>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col-3">
+              <div className="col-12 col-lg-3">
                 <div className="card">
                   <div className="card-body">
                     <div className="input-group">
@@ -100,12 +132,13 @@ class WalkerListItem extends Component {
                       <select
                         className="form-control"
                         id="inputUse"
-                        value={this.state.walker.use}
+                        value={this.state.walker.walker_use}
                         onChange={(evt) => {
                           let walkerCopy = this.state.walker;
-                          walkerCopy.use = evt.target.value;
+                          walkerCopy.walker_use = evt.target.value;
                           this.setState({ walker: walkerCopy });
                         }}
+                        disabled={!this.state.canEdit}
                       >
                         <option>{t("Personal")}</option>
                         <option>{t("PVP")}</option>
@@ -115,7 +148,7 @@ class WalkerListItem extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-3">
+              <div className="col-12 col-lg-3">
                 <div className="card">
                   <div className="card-body">
                     <div className="input-group">
@@ -131,11 +164,40 @@ class WalkerListItem extends Component {
                           walkerCopy.type = evt.target.value;
                           this.setState({ walker: walkerCopy });
                         }}
+                        disabled={!this.state.canEdit}
                       >
                         {this.props.walkerListTypes.map((name) => {
-                          return <option value={name}>{name}</option>;
+                          return (
+                            <option key={name} value={name}>
+                              {name}
+                            </option>
+                          );
                         })}
                       </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-lg-3">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="input-group">
+                      <div className="input-group-prepend">
+                        <span className="input-group-text">
+                          {t("Description")}
+                        </span>
+                      </div>
+                      <textarea
+                        className="form-control"
+                        value={this.state.walker.description}
+                        onChange={(evt) => {
+                          let walkerCopy = this.state.walker;
+                          walkerCopy.description = evt.target.value;
+                          this.setState({ walker: walkerCopy });
+                        }}
+                        maxLength="200"
+                        disabled={!this.state.canEdit}
+                      ></textarea>
                     </div>
                   </div>
                 </div>
@@ -177,9 +239,28 @@ class WalkerListItem extends Component {
                   </div>
                 </div>
                 <div className="row mt-3">
-                  <div className="col-xs-12 col-lg-3 mx-auto">
-                    <button className="btn btn-block btn-success">
-                      {t("Save")}
+                  <div className="col-12 col-lg-3 mx-auto">
+                    <button
+                      className="btn btn-block btn-success"
+                      onClick={() => {
+                        this.props.onSave(this.state.walker);
+                        this.setState({ isOpen: false });
+                      }}
+                    >
+                      <i className="fas fa-save"></i> {t("Save")}
+                    </button>
+                  </div>
+                </div>
+                <div className="row mt-3">
+                  <div className="col-5 col-lg-2 mx-auto">
+                    <button
+                      className="btn btn-block btn-danger"
+                      onClick={() => {
+                        this.props.onRemove(this.props.walker.walkerID);
+                      }}
+                      disabled={!this.state.canEdit}
+                    >
+                      <i className="fas fa-trash-alt"></i> {t("Delete")}
                     </button>
                   </div>
                 </div>
@@ -209,9 +290,9 @@ class WalkerListItem extends Component {
             </td>
             <td className="text-center">{this.props.walker.name}</td>
             <td className="text-center">
-              {this.props.walker.use == null
+              {this.props.walker.walker_use == null
                 ? t("Not Defined")
-                : this.props.walker.use}
+                : this.props.walker.walker_use}
             </td>
             <td className="text-center">
               {this.props.walker.isReady ? (
