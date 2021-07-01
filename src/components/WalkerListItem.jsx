@@ -94,9 +94,12 @@ class WalkerListItem extends Component {
                             : ""
                         }
                         onChange={(evt) => {
-                          let walkerCopy = this.state.walker;
-                          walkerCopy.ownerUser = evt.target.value;
-                          this.setState({ walker: walkerCopy });
+                          const valueInput = evt.target.value;
+                          this.setState((state) => {
+                            let walkerCopy = state.walker;
+                            walkerCopy.ownerUser = valueInput;
+                            this.setState({ walker: walkerCopy });
+                          });
                         }}
                         disabled={!this.state.canEdit}
                       >
@@ -131,9 +134,12 @@ class WalkerListItem extends Component {
                         id="inputUse"
                         value={this.state.walker.walker_use}
                         onChange={(evt) => {
-                          let walkerCopy = this.state.walker;
-                          walkerCopy.walker_use = evt.target.value;
-                          this.setState({ walker: walkerCopy });
+                          const valueInput = evt.target.value;
+                          this.setState((state) => {
+                            let walkerCopy = state.walker;
+                            walkerCopy.walker_use = valueInput;
+                            this.setState({ walker: walkerCopy });
+                          });
                         }}
                         disabled={!this.state.canEdit}
                       >
@@ -157,9 +163,12 @@ class WalkerListItem extends Component {
                         id="inputType"
                         value={this.state.walker.type}
                         onChange={(evt) => {
-                          let walkerCopy = this.state.walker;
-                          walkerCopy.type = evt.target.value;
-                          this.setState({ walker: walkerCopy });
+                          const valueInput = evt.target.value;
+                          this.setState((state) => {
+                            let walkerCopy = state.walker;
+                            walkerCopy.type = valueInput;
+                            this.setState({ walker: walkerCopy });
+                          });
                         }}
                         disabled={!this.state.canEdit}
                       >
@@ -188,9 +197,12 @@ class WalkerListItem extends Component {
                         className="form-control"
                         value={this.state.walker.description}
                         onChange={(evt) => {
-                          let walkerCopy = this.state.walker;
-                          walkerCopy.description = evt.target.value;
-                          this.setState({ walker: walkerCopy });
+                          const valueInput = evt.target.value;
+                          this.setState((state) => {
+                            let walkerCopy = state.walker;
+                            walkerCopy.description = valueInput;
+                            this.setState({ walker: walkerCopy });
+                          });
                         }}
                         maxLength="200"
                         disabled={!this.state.canEdit}
@@ -209,9 +221,11 @@ class WalkerListItem extends Component {
                           : "btn btn-success"
                       }
                       onClick={() => {
-                        let walkerCopy = this.state.walker;
-                        walkerCopy.isReady = true;
-                        this.setState({ walker: walkerCopy });
+                        this.setState((state) => {
+                          let walkerCopy = state.walker;
+                          walkerCopy.isReady = true;
+                          this.setState({ walker: walkerCopy });
+                        });
                       }}
                     >
                       <i className="fas fa-check"></i>
@@ -226,9 +240,11 @@ class WalkerListItem extends Component {
                           : "btn btn-danger active"
                       }
                       onClick={() => {
-                        let walkerCopy = this.state.walker;
-                        walkerCopy.isReady = false;
-                        this.setState({ walker: walkerCopy });
+                        this.setState((state) => {
+                          let walkerCopy = state.walker;
+                          walkerCopy.isReady = false;
+                          this.setState({ walker: walkerCopy });
+                        });
                       }}
                     >
                       <i className="fas fa-times"></i>
