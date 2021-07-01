@@ -129,7 +129,7 @@ class SelectedItem extends Component {
           </div>
           <div className="card-footer">
             <div className="row">
-              <div class="col-4 col-lg-2 p-1">
+              <div className="col-4 col-lg-2 p-1">
                 <button
                   className="btn btn-success btn-block"
                   onClick={() => this.change(1)}
@@ -137,7 +137,7 @@ class SelectedItem extends Component {
                   +1
                 </button>
               </div>
-              <div class="col-4 col-lg-2 p-1">
+              <div className="col-4 col-lg-2 p-1">
                 {" "}
                 <button
                   className="btn btn-success btn-block"
@@ -146,7 +146,7 @@ class SelectedItem extends Component {
                   +10
                 </button>{" "}
               </div>
-              <div class="col-4 col-lg-2 p-1">
+              <div className="col-4 col-lg-2 p-1">
                 <button
                   className="btn btn-success btn-block"
                   onClick={() => this.change(100)}
@@ -154,7 +154,7 @@ class SelectedItem extends Component {
                   +100
                 </button>
               </div>
-              <div class="col-4 col-lg-2 p-1">
+              <div className="col-4 col-lg-2 p-1">
                 <button
                   className="btn btn-danger btn-block"
                   onClick={() => this.change(-1)}
@@ -162,7 +162,7 @@ class SelectedItem extends Component {
                   -1
                 </button>
               </div>
-              <div class="col-4 col-lg-2 p-1">
+              <div className="col-4 col-lg-2 p-1">
                 <button
                   className="btn btn-danger btn-block"
                   onClick={() => this.change(-10)}
@@ -170,7 +170,7 @@ class SelectedItem extends Component {
                   -10
                 </button>
               </div>
-              <div class="col-4 col-lg-2 p-1">
+              <div className="col-4 col-lg-2 p-1">
                 <button
                   className="btn btn-danger btn-block"
                   onClick={() => this.change(-100)}
