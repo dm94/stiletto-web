@@ -28,7 +28,7 @@ class ClanMapItem extends Component {
             variant="primary"
             onClick={() => this.props.onOpen(this.props.map)}
           >
-            <i class="fas fa-eye"></i> {t("Show map")}
+            <i className="fas fa-eye"></i> {t("Show map")}
           </button>
           {this.deleteMapButton(t)}
           {this.ShareMapButton(t)}
@@ -45,7 +45,7 @@ class ClanMapItem extends Component {
           variant="primary"
           onClick={() => this.props.onDelete(this.props.map.mapid)}
         >
-          <i class="fas fa-trash-alt"></i> {t("Delete map")}
+          <i className="fas fa-trash-alt"></i> {t("Delete map")}
         </button>
       );
     }
@@ -70,7 +70,7 @@ class ClanMapItem extends Component {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fas fa-share-alt"></i> {t("Share map")}
+          <i className="fas fa-share-alt"></i> {t("Share map")}
         </a>
       );
     }

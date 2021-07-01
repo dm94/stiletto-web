@@ -313,7 +313,8 @@ class ResourceMap extends Component {
               className="btn btn-sm btn-primary btn-block mb-2"
               onClick={() => this.props.onReturn()}
             >
-              <i class="fas fa-arrow-left"></i> {t("Back to the list of maps")}
+              <i className="fas fa-arrow-left"></i>{" "}
+              {t("Back to the list of maps")}
             </button>
             <button
               className="btn d-md-none p-0 ml-3"
