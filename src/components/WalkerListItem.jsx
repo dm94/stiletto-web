@@ -9,12 +9,9 @@ class WalkerListItem extends Component {
       isOpen: false,
       walker: this.props.walker,
       canEdit:
-        this.props.memberList != null &&
-        this.props.memberList.some(
-          (member) =>
-            member.leaderid === localStorage.getItem("discordid") ||
-            member.nickname === this.props.walker.ownerUser
-        ),
+        this.props.isLeader ||
+        this.props.walker.ownerUser === this.props.nickname ||
+        this.props.walker.lastUser === this.props.nickname,
     };
   }
 

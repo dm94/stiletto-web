@@ -7,14 +7,12 @@ import { getMembers } from "../services";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getUserProfile } from "../services";
 
 class MemberList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
-      clanid: localStorage.getItem("clanid"),
       isLoaded: false,
       members: null,
       requestMembers: null,
@@ -24,10 +22,21 @@ class MemberList extends Component {
       selectNewOwner: localStorage.getItem("discordid"),
       showRequestModal: false,
       requestData: null,
+      isLeader: false,
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const response = await getUserProfile();
+    if (response.success) {
+      this.setState({
+        clanid: response.message.clanid,
+        isLeader: response.message.discordid === response.message.leaderid,
+      });
+    } else {
+      this.setState({ error: response.message, isLoaded: true });
+    }
+
     this.updateMembers();
 
     Axios.get(
@@ -213,7 +222,7 @@ class MemberList extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 204) {
-          localStorage.setItem("clanid", "null");
+          localStorage.removeItem("profile");
           this.setState({ redirectMessage: "Clan deleted correctly" });
         } else if (response.status === 405) {
           localStorage.removeItem("discordid");
@@ -312,10 +321,7 @@ class MemberList extends Component {
   }
 
   deleteClanButton(t) {
-    if (
-      this.state.members != null &&
-      this.state.members[0].leaderid === localStorage.getItem("discordid")
-    ) {
+    if (this.state.members != null && this.state.isLeader) {
       return (
         <div className="col-xl-3">
           <div className="card mb-3">
@@ -340,10 +346,7 @@ class MemberList extends Component {
   }
 
   transferOwnerPanel(t) {
-    if (
-      this.state.members != null &&
-      this.state.members[0].leaderid === localStorage.getItem("discordid")
-    ) {
+    if (this.state.members != null && this.state.isLeader) {
       return (
         <div className="col-xl-3">
           <div className="card mb-3">
@@ -414,11 +417,7 @@ class MemberList extends Component {
           }}
         />
       );
-    } else if (
-      this.state.clanid == "null" ||
-      this.state.user_discord_id == null ||
-      this.state.token == null
-    ) {
+    } else if (this.state.clanid == null) {
       return (
         <ModalMessage
           message={{
@@ -481,9 +480,7 @@ class MemberList extends Component {
                     </th>
                     <th
                       className={
-                        this.state.members != null &&
-                        this.state.members[0].leaderid ===
-                          localStorage.getItem("discordid")
+                        this.state.members != null && this.state.isLeader
                           ? "text-center"
                           : "d-none"
                       }
@@ -513,9 +510,7 @@ class MemberList extends Component {
                     </th>
                     <th
                       className={
-                        this.state.members != null &&
-                        this.state.members[0].leaderid ===
-                          localStorage.getItem("discordid")
+                        this.state.members != null && this.state.isLeader
                           ? "text-center"
                           : "d-none"
                       }

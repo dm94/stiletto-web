@@ -5,14 +5,13 @@ import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getUserProfile } from "../services";
 
 class Diplomacy extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
-      clanid: localStorage.getItem("clanid"),
+      clanid: null,
       isLoaded: false,
       error: null,
       listOfRelations: null,
@@ -24,7 +23,17 @@ class Diplomacy extends Component {
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    const response = await getUserProfile();
+    if (response.success) {
+      this.setState({
+        clanid: response.message.clanid,
+        isLeader: response.message.discordid === response.message.leaderid,
+      });
+    } else {
+      this.setState({ error: response.message, isLoaded: true });
+    }
+
     Axios.get(
       process.env.REACT_APP_API_URL +
         "/clans/" +
@@ -39,12 +48,6 @@ class Diplomacy extends Component {
       .then((response) => {
         if (response.status === 202) {
           this.setState({ listOfRelations: response.data, isLoaded: true });
-          if (
-            this.state.listOfRelations != null &&
-            this.state.listOfRelations[0].leaderid == this.state.user_discord_id
-          ) {
-            this.setState({ isLeader: true });
-          }
         } else if (response.status === 405) {
           this.setState({ error: "Unauthorized" });
         } else if (response.status === 503) {
@@ -240,7 +243,7 @@ class Diplomacy extends Component {
                   </div>
                 </div>
                 <button
-                  className="btn btn-lg btn-outline-primary btn-block"
+                  className="btn btn-lg btn-outline-info btn-block"
                   type="submit"
                   value="Submit"
                 >
@@ -293,11 +296,7 @@ class Diplomacy extends Component {
           }}
         />
       );
-    } else if (
-      this.state.clanid == "null" ||
-      this.state.user_discord_id == null ||
-      this.state.token == null
-    ) {
+    } else if (this.state.clanid === null) {
       return (
         <ModalMessage
           message={{

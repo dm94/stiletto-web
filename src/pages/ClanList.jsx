@@ -5,13 +5,12 @@ import ModalMessage from "../components/ModalMessage";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getUserProfile } from "../services";
 
 class ClanList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
       isLoaded: false,
       clans: null,
       redirect: false,
@@ -19,10 +18,12 @@ class ClanList extends Component {
       showRequestModal: false,
       clanRequestId: 0,
       textAreaModelValue: "",
+      clanuserid: null,
+      isLogged: false,
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     Axios.get(process.env.REACT_APP_API_URL + "/clans")
       .then((response) => {
         if (response.status === 202) {
@@ -36,6 +37,17 @@ class ClanList extends Component {
       .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
+    if (localStorage.getItem("token")) {
+      this.setState({ isLogged: true });
+    }
+
+    const response = await getUserProfile();
+    if (response.success) {
+      console.log(response.message);
+      this.setState({ clanuserid: response.message.clanid });
+    } else {
+      this.setState({ error: response.message });
+    }
   }
 
   sendRequest = () => {
@@ -76,6 +88,7 @@ class ClanList extends Component {
 
   list() {
     if (this.state.clans != null) {
+      console.log(this.state.clanuserid);
       return this.state.clans.map((clan) => (
         <ClanListItem
           key={clan.clanid}
@@ -83,6 +96,8 @@ class ClanList extends Component {
           onSendRequest={(id) =>
             this.setState({ clanRequestId: id, showRequestModal: true })
           }
+          clanuserid={this.state.clanuserid}
+          isLogged={this.state.isLogged}
         />
       ));
     }
@@ -162,70 +177,52 @@ class ClanList extends Component {
         />
       );
     }
-    if (
-      localStorage.getItem("discordid") != null &&
-      localStorage.getItem("token") != null
-    ) {
-      let showHideClassName = this.state.showRequestModal
-        ? "modal d-block"
-        : "modal d-none";
-      return (
-        <Fragment>
-          {this.clanList(t)}
-          <div className={showHideClassName}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="sendRequest">
-                    {t("Send request")}
-                  </h5>
+
+    let showHideClassName = this.state.showRequestModal
+      ? "modal d-block"
+      : "modal d-none";
+    return (
+      <Fragment>
+        {this.clanList(t)}
+        <div className={showHideClassName}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="sendRequest">
+                  {t("Send request")}
+                </h5>
+              </div>
+              <div className="modal-body">
+                <div className="form-group">
+                  <label htmlFor="modalTextArea">{t("Request message")}</label>
+                  <textarea
+                    className="form-control bg-light"
+                    id="modalTextArea"
+                    rows="3"
+                    value={this.state.textAreaModelValue}
+                    onChange={(evt) =>
+                      this.setState({
+                        textAreaModelValue: evt.target.value,
+                      })
+                    }
+                  ></textarea>
                 </div>
-                <div className="modal-body">
-                  <div className="form-group">
-                    <label htmlFor="modalTextArea">
-                      {t("Request message")}
-                    </label>
-                    <textarea
-                      className="form-control bg-light"
-                      id="modalTextArea"
-                      rows="3"
-                      value={this.state.textAreaModelValue}
-                      onChange={(evt) =>
-                        this.setState({
-                          textAreaModelValue: evt.target.value,
-                        })
-                      }
-                    ></textarea>
-                  </div>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    className="btn btn-secondary"
-                    onClick={() => this.setState({ showRequestModal: false })}
-                  >
-                    {t("Cancel")}
-                  </button>
-                  <button
-                    className="btn btn-success"
-                    onClick={this.sendRequest}
-                  >
-                    {t("Send request")}
-                  </button>
-                </div>
+              </div>
+              <div className="modal-footer">
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => this.setState({ showRequestModal: false })}
+                >
+                  {t("Cancel")}
+                </button>
+                <button className="btn btn-success" onClick={this.sendRequest}>
+                  {t("Send request")}
+                </button>
               </div>
             </div>
           </div>
-        </Fragment>
-      );
-    }
-    return (
-      <ModalMessage
-        message={{
-          isError: true,
-          text: "Login to access this section",
-          redirectPage: "/profile",
-        }}
-      />
+        </div>
+      </Fragment>
     );
   }
 }

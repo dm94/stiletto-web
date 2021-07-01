@@ -5,15 +5,13 @@ import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getMembers, getItems } from "../services";
+import { getMembers, getItems, getUserProfile } from "../services";
 const queryString = require("query-string");
 
 class WalkerList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
       isLoaded: false,
       walkers: null,
       redirect: false,
@@ -26,10 +24,12 @@ class WalkerList extends Component {
       discordList: [],
       members: [],
       walkerTypes: [],
+      isLeader: false,
+      nickname: null,
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const parsed = queryString.parse(this.props.location.search);
     if (parsed.code != null) {
       let http = window.location.protocol;
@@ -69,6 +69,17 @@ class WalkerList extends Component {
         .catch(() => {
           this.setState({ error: "Error when connecting to the API" });
         });
+    }
+
+    const response = await getUserProfile();
+    if (response.success) {
+      this.setState({
+        clanid: response.message.clanid,
+        isLeader: response.message.discordid === response.message.leaderid,
+        nickname: response.message.nickname,
+      });
+    } else {
+      this.setState({ error: response.message, isLoaded: true });
     }
 
     this.updateMembers();
@@ -180,6 +191,8 @@ class WalkerList extends Component {
           walker={walker}
           walkerListTypes={this.state.walkerTypes}
           memberList={this.state.members}
+          isLeader={this.state.isLeader}
+          nickname={this.state.nickname}
           onRemove={this.deleteWalker}
           onSave={this.updateWalker}
         />
@@ -196,6 +209,8 @@ class WalkerList extends Component {
             walker={walker}
             walkerListTypes={this.state.walkerTypes}
             memberList={this.state.members}
+            isLeader={this.state.isLeader}
+            nickname={this.state.nickname}
             onRemove={this.deleteWalker}
             onSave={this.updateWalker}
           />
@@ -262,7 +277,7 @@ class WalkerList extends Component {
       this.state.walkers[0] != null &&
       this.state.walkers[0].discordid == null
     ) {
-      if (this.state.walkers[0].leaderid !== this.state.user_discord_id) {
+      if (!this.state.isLeader) {
         return;
       }
       if (this.state.discordList != null && this.state.discordList.length > 0) {
@@ -384,11 +399,7 @@ class WalkerList extends Component {
         />
       );
     }
-    if (
-      localStorage.getItem("discordid") != null &&
-      localStorage.getItem("token") != null &&
-      localStorage.getItem("clanid") != "null"
-    ) {
+    if (this.state.clanid != null) {
       if (!this.state.isLoaded) {
         return <LoadingScreen />;
       }

@@ -4,30 +4,27 @@ import ClanName from "./ClanName";
 import { withTranslation } from "react-i18next";
 
 class ClanListItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      clanuserid: localStorage.getItem("clanid"),
-    };
-  }
-
   sendRequestButton() {
     const { t } = this.props;
-    if (this.state.clanuserid == "null") {
-      return (
-        <button
-          className="btn btn-block btn-primary"
-          onClick={(e) => this.props.onSendRequest(this.props.clan.clanid)}
-        >
-          {t("Send request")}
-        </button>
-      );
-    } else if (this.state.clanuserid == this.props.clan.clanid) {
-      return (
-        <Link className="btn btn-block btn-primary" to="/members">
-          {t("Members")}
-        </Link>
-      );
+    if (this.props.isLogged) {
+      if (this.props.clanuserid == null) {
+        return (
+          <button
+            className="btn btn-block btn-primary"
+            onClick={(e) => this.props.onSendRequest(this.props.clan.clanid)}
+          >
+            {t("Send request")}
+          </button>
+        );
+      } else if (this.props.clanuserid === this.props.clan.clanid) {
+        return (
+          <Link className="btn btn-block btn-primary" to="/members">
+            {t("Members")}
+          </Link>
+        );
+      }
+    } else {
+      return "";
     }
   }
 

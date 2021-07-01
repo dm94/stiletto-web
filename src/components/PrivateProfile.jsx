@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import LoadingScreen from "./LoadingScreen";
-import { Link, Redirect } from "react-router-dom";
-import ModalMessage from "./ModalMessage";
 import { withTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import LoadingScreen from "./LoadingScreen";
+import { Link, Redirect } from "react-router-dom";
+import ModalMessage from "./ModalMessage";
+import { getUserProfile } from "../services";
 
 class PrivateProfile extends Component {
   constructor(props) {
@@ -16,7 +17,6 @@ class PrivateProfile extends Component {
       discordtag: "Loading...",
       nickname: "Loading...",
       clanname: "Loading...",
-      clanid: localStorage.getItem("clanid"),
       showDeleteModal: false,
       clanleaderid: null,
       isLoaded: false,
@@ -30,36 +30,20 @@ class PrivateProfile extends Component {
     };
   }
 
-  componentDidMount() {
-    Axios.get(
-      process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
-      {
-        headers: {
-          Authorization: `Bearer ${this.state.token}`,
-        },
-      }
-    )
-      .then((response) => {
-        if (response.status === 202) {
-          localStorage.setItem("clanid", response.data.clanid);
-          this.setState({
-            discordtag: response.data.discordtag,
-            clanname: response.data.clanname,
-            clanid: response.data.clanid,
-            nickname: response.data.nickname,
-            clanleaderid: response.data.leaderid,
-            isLoaded: true,
-          });
-        } else if (response.status === 205) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
-          this.setError("Log in again");
-        }
-        this.setState({ isLoaded: true });
-      })
-      .catch((er) => {
-        this.setConnectionError();
+  async componentDidMount() {
+    const response = await getUserProfile();
+    if (response.success) {
+      this.setState({
+        discordtag: response.message.discordtag,
+        clanname: response.message.clanname,
+        clanid: response.message.clanid,
+        nickname: response.message.nickname,
+        clanleaderid: response.message.leaderid,
+        isLoaded: true,
       });
+    } else {
+      this.setState({ error: response.message, isLoaded: true });
+    }
   }
 
   deleteUser = (event) => {
