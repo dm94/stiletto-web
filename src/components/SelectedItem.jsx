@@ -95,12 +95,12 @@ class SelectedItem extends Component {
               className="close"
               onClick={(e) => this.props.onChangeCount(this.props.item.name, 0)}
             >
-              <span aria-hidden="true">&times;</span>
+              <span aria-hidden="true">X</span>
             </button>
             <div className="input-group w-75">
               <input
                 type="number"
-                className="form-control text-right"
+                className="form-control text-center"
                 value={this.props.item.count}
                 onChange={(e) => {
                   this.props.onChangeCount(
@@ -129,42 +129,55 @@ class SelectedItem extends Component {
           </div>
           <div className="card-footer">
             <div className="row">
-              <button
-                className="btn btn-success col"
-                onClick={() => this.change(1)}
-              >
-                +1
-              </button>
-              <button
-                className="btn btn-success col"
-                onClick={() => this.change(10)}
-              >
-                +10
-              </button>
-              <button
-                className="btn btn-success col"
-                onClick={() => this.change(100)}
-              >
-                +100
-              </button>
-              <button
-                className="btn btn-danger col"
-                onClick={() => this.change(-1)}
-              >
-                -1
-              </button>
-              <button
-                className="btn btn-danger col"
-                onClick={() => this.change(-10)}
-              >
-                -10
-              </button>
-              <button
-                className="btn btn-danger col"
-                onClick={() => this.change(-100)}
-              >
-                -100
-              </button>
+              <div class="col-4 col-lg-2 p-1">
+                <button
+                  className="btn btn-success btn-block"
+                  onClick={() => this.change(1)}
+                >
+                  +1
+                </button>
+              </div>
+              <div class="col-4 col-lg-2 p-1">
+                {" "}
+                <button
+                  className="btn btn-success btn-block"
+                  onClick={() => this.change(10)}
+                >
+                  +10
+                </button>{" "}
+              </div>
+              <div class="col-4 col-lg-2 p-1">
+                <button
+                  className="btn btn-success btn-block"
+                  onClick={() => this.change(100)}
+                >
+                  +100
+                </button>
+              </div>
+              <div class="col-4 col-lg-2 p-1">
+                <button
+                  className="btn btn-danger btn-block"
+                  onClick={() => this.change(-1)}
+                >
+                  -1
+                </button>
+              </div>
+              <div class="col-4 col-lg-2 p-1">
+                <button
+                  className="btn btn-danger btn-block"
+                  onClick={() => this.change(-10)}
+                >
+                  -10
+                </button>
+              </div>
+              <div class="col-4 col-lg-2 p-1">
+                <button
+                  className="btn btn-danger btn-block"
+                  onClick={() => this.change(-100)}
+                >
+                  -100
+                </button>
+              </div>
             </div>
           </div>
         </div>

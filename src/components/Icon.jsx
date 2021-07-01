@@ -14,7 +14,7 @@ class Icon extends Component {
           }
           onError={() => this.setState({ loaded: false })}
           className="mr-2"
-          width="16"
+          width={this.props.width ? this.props.width : "16"}
           alt=""
         />
       );

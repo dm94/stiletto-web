@@ -217,7 +217,7 @@ class QualityCalculator extends Component {
                         })
                       }
                     >
-                      <span aria-hidden="true">&times;</span>
+                      <span aria-hidden="true">X</span>
                     </button>
                     {this.state.itemSelected !== "" &&
                       t(this.state.itemSelected.name)}

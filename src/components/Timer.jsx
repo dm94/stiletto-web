@@ -117,13 +117,13 @@ class Timer extends Component {
                 className="btn btn-success btn-block"
                 onClick={() => this.setState({ isOn: true, isFinish: false })}
               >
-                {t("Start")}
+                <i class="fas fa-play"></i> {t("Start")}
               </button>
               <button
                 className="btn btn-danger btn-block"
                 onClick={() => this.setState({ isOn: false })}
               >
-                {t("Stop")}
+                <i class="fas fa-stop"></i> {t("Stop")}
               </button>
             </div>
           </div>

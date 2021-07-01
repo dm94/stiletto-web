@@ -296,6 +296,7 @@ class WalkerListItem extends Component {
                 <Icon
                   key={this.props.walker.type}
                   name={this.props.walker.type}
+                  width="30"
                 />
               ) : (
                 ""

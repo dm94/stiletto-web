@@ -7,7 +7,7 @@ import LoadingScreen from "./LoadingScreen";
 import { Link, Redirect } from "react-router-dom";
 import ModalMessage from "./ModalMessage";
 import { getUserProfile } from "../services";
-
+import Icon from "./Icon";
 class PrivateProfile extends Component {
   constructor(props) {
     super(props);
@@ -225,7 +225,7 @@ class PrivateProfile extends Component {
           <div className="col-xl-6">
             <div className="card border-secondary mb-3">
               <div className="card-header">{t("Your details")}</div>
-              <div className="card-body text-secondary">
+              <div className="card-body">
                 <ul className="list-group mb-3">
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
                     <div className="my-0">{t("Discord Tag")}</div>
@@ -252,7 +252,7 @@ class PrivateProfile extends Component {
               <div className="card-footer">
                 <button
                   type="button"
-                  className="btn btn-lg btn-outline-warning btn-block"
+                  className="btn btn-lg btn-warning btn-block"
                   onClick={() => {
                     localStorage.removeItem("discordid");
                     localStorage.removeItem("token");
@@ -263,7 +263,7 @@ class PrivateProfile extends Component {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-lg btn-outline-danger btn-block"
+                  className="btn btn-lg btn-danger btn-block"
                   onClick={this.showModal}
                 >
                   {t("Delete user")}
@@ -329,6 +329,7 @@ class PrivateProfile extends Component {
                       <option value="es">{t("Spanish")}</option>
                       <option value="ru">{t("Russian")}</option>
                       <option value="fr">{t("French")}</option>
+                      <option value="de">{t("German")}</option>
                     </select>
                   </div>
                   <div className="col">
@@ -461,7 +462,7 @@ class PrivateProfile extends Component {
                   </div>
                 </div>
                 <button
-                  className="btn btn-lg btn-outline-success btn-block"
+                  className="btn btn-lg btn-success btn-block"
                   type="submit"
                   value="Submit"
                 >
@@ -488,6 +489,7 @@ class PrivateProfile extends Component {
                 className="btn btn-lg btn-secondary btn-block"
                 to="/walkerlist"
               >
+                <Icon key="Base Wings" name="Base Wings" width="30" />
                 {t("Walker List")}
               </Link>
               <Link
@@ -509,7 +511,7 @@ class PrivateProfile extends Component {
       return (
         <div className="card-footer">
           <button
-            className="btn btn-lg btn-outline-danger btn-block"
+            className="btn btn-lg btn-danger btn-block"
             onClick={this.leaveClan}
           >
             {t("Leave clan")}

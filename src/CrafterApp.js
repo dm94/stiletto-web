@@ -23,6 +23,7 @@ import * as serviceWorker from "./serviceWorkerRegistration";
 import CookieConsent from "./components/CookieConsent";
 import DiscordButton from "./components/DiscordButton";
 import ResourceMapNoLog from "./components/ResourceMapNoLog";
+import "./css/style.min.css";
 
 function CrafterApp() {
   const [t] = useTranslation();
@@ -54,7 +55,7 @@ function CrafterApp() {
         <div className="navbar navbar-expand-md navbar-dark bg-dark">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-              Stiletto
+              <span>Stiletto</span>.live
             </Link>
             <button
               className="navbar-toggler"
