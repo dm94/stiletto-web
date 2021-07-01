@@ -112,6 +112,7 @@ let all = {
         Search: 'Recherchez',
         Clean: 'Clean',
         Owner: 'Propriétaire',
+        Use: 'Use',
         'Last User': 'Dernier utilisateur',
         'Last Use': 'Dernière utilisation',
         'You need to have a clan to access this section': 'Vous devez avoir un clan pour accéder à cette section',

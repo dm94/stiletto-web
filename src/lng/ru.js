@@ -112,6 +112,7 @@ let all = {
         Search: 'Поиск',
         Clean: 'Чистый',
         Owner: 'Владелец',
+        Use: 'Use',
         'Last User': 'Последний пользователь',
         'Last Use': 'Последнее использование',
         'You need to have a clan to access this section': 'Вам нужен клан, чтобы получить доступ к этому разделу.',
