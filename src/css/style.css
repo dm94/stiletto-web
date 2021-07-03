@@ -6,7 +6,8 @@
   font-weight: normal;
 }
 
-.card-header {
+.card-header,
+.modal-header {
   font-family: "Okami";
   font-size: 1.5em;
 }
