@@ -66,11 +66,8 @@ class DiscordConnection extends Component {
       localStorage.setItem("token", parsed.token);
     }
 
-    if (
-      localStorage.getItem("discordid") != null &&
-      localStorage.getItem("token") != null
-    ) {
-      return <PrivateProfile key={localStorage.getItem("discordid")} />;
+    if (localStorage.getItem("token") != null) {
+      return <PrivateProfile key="profile" />;
     } else {
       return (
         <div className="row">

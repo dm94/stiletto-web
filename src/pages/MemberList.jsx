@@ -8,6 +8,7 @@ import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { getUserProfile } from "../services";
+import DiscordConfig from "../components/DiscordConfig";
 
 class MemberList extends Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class MemberList extends Component {
       showRequestModal: false,
       requestData: null,
       isLeader: false,
+      showBotConfig: false,
+      clanid: null,
     };
   }
 
@@ -465,6 +468,25 @@ class MemberList extends Component {
             }
           />
         </Helmet>
+        <div className={this.state.isLeader ? "col-12" : "col-12 d-none"}>
+          <div className="row">
+            <div className="col-12 col-lg-2 ml-auto mb-2">
+              <div className="btn-group" role="group">
+                <button type="button" className="btn btn-primary">
+                  <i className="fab fa-discord"></i>
+                </button>
+                <button
+                  className="btn btn-info"
+                  onClick={() => {
+                    this.setState({ showBotConfig: true });
+                  }}
+                >
+                  {t("Discord Bot Configuration")}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="col-xl-6">
           <div className="card mb-3">
             <div className="card-header">{t("Member List")}</div>
@@ -557,6 +579,16 @@ class MemberList extends Component {
         </div>
         {this.transferOwnerPanel(t)}
         {this.deleteClanButton(t)}
+        {this.state.showBotConfig ? (
+          <DiscordConfig
+            key="discordbotconfig"
+            clanid={this.state.clanid}
+            onClose={() => this.setState({ showBotConfig: false })}
+            onError={(error) => this.setState({ error: error })}
+          />
+        ) : (
+          ""
+        )}
       </div>
     );
   }

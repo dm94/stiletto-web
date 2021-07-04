@@ -234,6 +234,19 @@ let all = {
       "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data.",
     "Source Code is published on GitHub for full disclosure where you can also report any issues found.":
       "Source Code is published on GitHub for full disclosure where you can also report any issues found.",
+    "Discord Bot Configuration": "Discord Bot Configuration",
+    "Bot language": "Bot language",
+    "If you want the bot to read the clan log, it is necessary for other functions.":
+      "If you want the bot to read the clan log, it is necessary for other functions.",
+    "Read discord clan log.": "Read discord clan log.",
+    "Read the clan log and if a member was kicked, kick from here too.":
+      "Read the clan log and if a member was kicked, kick from here too.",
+    "Automatic kick members from the clan":
+      "Automatic kick members from the clan",
+    "Automatically if a PVP walker is used it is marked as not ready.":
+      "Automatically if a PVP walker is used it is marked as not ready.",
+    Close: "Close",
+    Save: "Save",
     Vitamins: "Vitamins",
     Equipment: "Equipment",
     Construction: "Construction",

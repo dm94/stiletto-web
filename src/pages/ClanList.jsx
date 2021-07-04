@@ -43,7 +43,6 @@ class ClanList extends Component {
 
     const response = await getUserProfile();
     if (response.success) {
-      console.log(response.message);
       this.setState({ clanuserid: response.message.clanid });
     } else {
       this.setState({ error: response.message });
@@ -88,7 +87,6 @@ class ClanList extends Component {
 
   list() {
     if (this.state.clans != null) {
-      console.log(this.state.clanuserid);
       return this.state.clans.map((clan) => (
         <ClanListItem
           key={clan.clanid}
