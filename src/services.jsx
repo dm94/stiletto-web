@@ -23,15 +23,14 @@ export const getUserProfile = async () => {
 
     const response = await apiRequest(options);
     if (response != null) {
-      if (response.status === 202) {
+      if (response.status === 200) {
         if (response.data != null) {
-          if (response.data.discordid != null) {
-            localStorage.setItem("discordid", response.data.discordid);
-          }
+          localStorage.setItem("discordid", response.data.discordid);
           localStorage.setItem("profile", JSON.stringify(response.data));
           localStorage.setItem("profile-lastCheck", Date.now());
+          return { success: true, message: response.data };
         }
-        return { success: true, message: response.data };
+        return { success: true, message: "" };
       } else if (response.status === 205 || response.status === 401) {
         localStorage.removeItem("discordid");
         localStorage.removeItem("token");
@@ -51,6 +50,10 @@ export const getUserProfile = async () => {
         message: "Error when connecting to the API",
       };
     }
+    return {
+      success: false,
+      message: "Error when connecting to the API",
+    };
   }
 };
 
