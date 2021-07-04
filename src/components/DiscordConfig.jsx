@@ -24,8 +24,18 @@ class DiscordConfig extends Component {
     };
     Axios.request(options)
       .then((response) => {
-        console.log(response.data);
         if (response.status === 200) {
+          if (response.data != null) {
+            this.setState({
+              botLanguaje: response.data.botlanguaje
+                ? response.data.botlanguaje
+                : "en",
+              readClanLog: response.data.readclanlog === "1" ? true : false,
+              automaticKick: response.data.automatickick === "1" ? true : false,
+              setNotReadyPVP:
+                response.data.setnotreadypvp === "1" ? true : false,
+            });
+          }
         } else if (response.status === 401) {
           localStorage.removeItem("discordid");
           localStorage.removeItem("token");
@@ -35,7 +45,7 @@ class DiscordConfig extends Component {
         }
       })
       .catch(() => {
-        //this.props.onError("Error when connecting to the API");
+        this.props.onError("Error when connecting to the API");
       });
   }
 
@@ -60,14 +70,16 @@ class DiscordConfig extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 200) {
+          this.props.onClose();
         } else if (response.status === 401) {
           localStorage.removeItem("discordid");
           localStorage.removeItem("token");
           this.props.onError("You don't have access here, try to log in again");
+          this.props.onClose();
         } else if (response.status === 503) {
           this.props.onError("Error connecting to database");
+          this.props.onClose();
         }
-        this.props.onClose();
       })
       .catch(() => {
         this.props.onError("Error when connecting to the API");
@@ -112,11 +124,6 @@ class DiscordConfig extends Component {
               </div>
               <div
                 className="custom-control custom-switch my-1"
-                onClick={() =>
-                  this.setState((state) => {
-                    this.setState({ readClanLog: !state.readClanLog });
-                  })
-                }
                 role="button"
                 title={t(
                   "If you want the bot to read the clan log, it is necessary for other functions."
@@ -143,11 +150,6 @@ class DiscordConfig extends Component {
               </div>
               <div
                 className="custom-control custom-switch my-1"
-                onClick={() =>
-                  this.setState((state) => {
-                    this.setState({ automaticKick: !state.automaticKick });
-                  })
-                }
                 role="button"
                 title={t(
                   "Read the clan log and if a member was kicked, kick from here too."
@@ -172,15 +174,7 @@ class DiscordConfig extends Component {
                   {t("Automatic kick members from the clan")}
                 </label>
               </div>
-              <div
-                className="custom-control custom-switch my-1"
-                onClick={() =>
-                  this.setState((state) => {
-                    this.setState({ setNotReadyPVP: !state.setNotReadyPVP });
-                  })
-                }
-                role="button"
-              >
+              <div className="custom-control custom-switch my-1" role="button">
                 <input
                   type="checkbox"
                   className="custom-control-input"

@@ -137,7 +137,7 @@ class WalkerList extends Component {
         use: walker.walker_use,
         type: walker.type,
         description: walker.description,
-        ready: walker.isReady ? 1 : 0,
+        ready: walker.isReady,
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

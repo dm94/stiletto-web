@@ -208,7 +208,7 @@ class ResourceMap extends Component {
               <div className="btn-group">
                 <button
                   className={
-                    this.state.allowEditing
+                    this.state.allowEditing == true
                       ? "btn btn-success active"
                       : "btn btn-success"
                   }
@@ -221,7 +221,7 @@ class ResourceMap extends Component {
                 </button>
                 <button
                   className={
-                    this.state.allowEditing
+                    this.state.allowEditing == true
                       ? "btn btn-danger"
                       : "btn btn-danger active"
                   }
