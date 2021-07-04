@@ -25,6 +25,7 @@ class MemberList extends Component {
       requestData: null,
       isLeader: false,
       showBotConfig: false,
+      clanid: null,
     };
   }
 
@@ -471,8 +472,8 @@ class MemberList extends Component {
           <div className="row">
             <div className="col-12 col-lg-2 ml-auto mb-2">
               <div className="btn-group" role="group">
-                <button type="button" className="btn btn-primary" disabled>
-                  <i class="fab fa-discord"></i>
+                <button type="button" className="btn btn-primary">
+                  <i className="fab fa-discord"></i>
                 </button>
                 <button
                   className="btn btn-info"
@@ -581,7 +582,9 @@ class MemberList extends Component {
         {this.state.showBotConfig ? (
           <DiscordConfig
             key="discordbotconfig"
+            clanid={this.state.clanid}
             onClose={() => this.setState({ showBotConfig: false })}
+            onError={(error) => this.setState({ error: error })}
           />
         ) : (
           ""

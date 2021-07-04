@@ -6,10 +6,7 @@ class DiscordButton extends Component {
   state = {};
   render() {
     const { t } = this.props;
-    if (
-      localStorage.getItem("discordid") != null &&
-      localStorage.getItem("token") != null
-    ) {
+    if (localStorage.getItem("token") != null) {
       return (
         <Link className="btn btn-outline-light" to="/profile">
           <i className="far fa-user"></i> {t("Profile")}

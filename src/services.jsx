@@ -15,10 +15,7 @@ export const getUserProfile = async () => {
   } else {
     const options = {
       method: "get",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/users/" +
-        localStorage.getItem("discordid"),
+      url: process.env.REACT_APP_API_URL + "/users",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -28,6 +25,9 @@ export const getUserProfile = async () => {
     if (response != null) {
       if (response.status === 202) {
         if (response.data != null) {
+          if (response.data.discordid != null) {
+            localStorage.setItem("discordid", response.data.discordid);
+          }
           localStorage.setItem("profile", JSON.stringify(response.data));
           localStorage.setItem("profile-lastCheck", Date.now());
         }
