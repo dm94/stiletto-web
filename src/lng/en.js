@@ -245,6 +245,8 @@ let all = {
       "Automatic kick members from the clan",
     "Automatically if a PVP walker is used it is marked as not ready.":
       "Automatically if a PVP walker is used it is marked as not ready.",
+    "Warns if someone brings out a walker they don't own.":
+      "Warns if someone brings out a walker they don't own.",
     Close: "Close",
     Save: "Save",
     Vitamins: "Vitamins",

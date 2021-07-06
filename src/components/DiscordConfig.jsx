@@ -62,6 +62,7 @@ class DiscordConfig extends Component {
         clanlog: this.state.readClanLog,
         kick: this.state.automaticKick,
         readypvp: this.state.setNotReadyPVP,
+        walkeralarm: this.state.walkerAlarm,
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -194,6 +195,32 @@ class DiscordConfig extends Component {
                   {t(
                     "Automatically if a PVP walker is used it is marked as not ready."
                   )}
+                </label>
+              </div>
+              <div
+                className="custom-control custom-switch my-1"
+                role="button"
+                title={t(
+                  "Read the clan log and if a member was kicked, kick from here too."
+                )}
+              >
+                <input
+                  type="checkbox"
+                  className="custom-control-input"
+                  id="walkerAlarm"
+                  checked={this.state.walkerAlarm}
+                  onChange={() =>
+                    this.setState((state) => {
+                      this.setState({ walkerAlarm: !state.walkerAlarm });
+                    })
+                  }
+                />
+                <label
+                  className="custom-control-label"
+                  role="button"
+                  htmlFor="walkerAlarm"
+                >
+                  {t("Warns if someone brings out a walker they don't own.")}
                 </label>
               </div>
             </div>
