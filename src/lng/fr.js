@@ -213,6 +213,7 @@ let all = {
         'Read the clan log and if a member was kicked, kick from here too.': 'Read the clan log and if a member was kicked, kick from here too.',
         'Automatic kick members from the clan': 'Automatic kick members from the clan',
         'Automatically if a PVP walker is used it is marked as not ready.': 'Automatically if a PVP walker is used it is marked as not ready.',
+        'Warns if someone brings out a walker they don\'t own.': 'Warns if someone brings out a walker they don\'t own.',
         Close: 'Close',
         Save: 'Save',
         Vitamins: 'Vitamins',
