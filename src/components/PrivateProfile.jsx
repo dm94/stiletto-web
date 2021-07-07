@@ -274,9 +274,16 @@ class PrivateProfile extends Component {
                   </h5>
                 </div>
                 <div className="modal-body">
-                  {t(
-                    "This option is not reversible, your user and all his data will be deleted."
-                  )}
+                  <p>
+                    {t(
+                      "This option is not reversible, your user and all his data will be deleted."
+                    )}
+                  </p>
+                  <p>
+                    {t(
+                      "The administrator will be notified to delete the user, the user will not be deleted directly."
+                    )}
+                  </p>
                 </div>
                 <div className="modal-footer">
                   <button

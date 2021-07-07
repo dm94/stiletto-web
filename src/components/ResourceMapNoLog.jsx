@@ -25,6 +25,7 @@ class ResourceMapNoLog extends Component {
       coordinateYInput: 0,
       resourcesFiltered: null,
       error: null,
+      mapData: null,
     };
   }
   componentDidMount() {
@@ -69,6 +70,22 @@ class ResourceMapNoLog extends Component {
       ).then((response) => {
         if (response.status === 200) {
           this.setState({ resourcesInTheMap: response.data });
+        } else if (response.status === 401) {
+          this.setState({
+            error: "Unauthorized",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
+        }
+      });
+
+      Axios.get(process.env.REACT_APP_API_URL + "/maps/" + mapId, {
+        params: {
+          mappass: pass,
+        },
+      }).then((response) => {
+        if (response.status === 200) {
+          this.setState({ mapData: response.data });
         } else if (response.status === 401) {
           this.setState({
             error: "Unauthorized",
@@ -267,10 +284,9 @@ class ResourceMapNoLog extends Component {
               </li>
               <li
                 className={
-                  this.state.resourcesInTheMap != null &&
-                  this.state.resourcesInTheMap[0] != null &&
-                  this.state.resourcesInTheMap[0].allowedit != null &&
-                  this.state.resourcesInTheMap[0].allowedit === 1
+                  this.state.mapData != null &&
+                  this.state.mapData.allowedit != null &&
+                  parseInt(this.state.mapData.allowedit) === 1
                     ? "nav-item"
                     : "d-none"
                 }
