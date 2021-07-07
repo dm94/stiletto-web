@@ -12,7 +12,7 @@ export const getUserProfile = async () => {
     lastCheck >= Date.now() - timeCheck
   ) {
     return { success: true, message: JSON.parse(profile) };
-  } else {
+  } else if (localStorage.getItem("token")) {
     const options = {
       method: "get",
       url: process.env.REACT_APP_API_URL + "/users",
@@ -55,6 +55,10 @@ export const getUserProfile = async () => {
       message: "Error when connecting to the API",
     };
   }
+  return {
+    success: false,
+    message: "You need to be logged in to view this section",
+  };
 };
 
 export const getMembers = async () => {

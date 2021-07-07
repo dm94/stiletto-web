@@ -28,6 +28,10 @@ class ClanList extends Component {
       .then((response) => {
         if (response.status === 202) {
           this.setState({ clans: response.data, isLoaded: true });
+        } else if (response.status === 401) {
+          this.setState({
+            error: "You need to be logged in to view this section",
+          });
         } else if (response.status === 503) {
           this.setState({
             error: "Error connecting to database",
@@ -41,11 +45,13 @@ class ClanList extends Component {
       this.setState({ isLogged: true });
     }
 
-    const response = await getUserProfile();
-    if (response.success) {
-      this.setState({ clanuserid: response.message.clanid });
-    } else {
-      this.setState({ error: response.message });
+    if (localStorage.getItem("token")) {
+      const response = await getUserProfile();
+      if (response.success) {
+        this.setState({ clanuserid: response.message.clanid });
+      } else {
+        this.setState({ error: response.message });
+      }
     }
   }
 
