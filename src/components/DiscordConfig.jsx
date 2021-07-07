@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
+import { closeSession } from "../services";
 
 class DiscordConfig extends Component {
   state = {
@@ -37,8 +38,7 @@ class DiscordConfig extends Component {
             });
           }
         } else if (response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.props.onError("You don't have access here, try to log in again");
         } else if (response.status === 503) {
           this.props.onError("Error connecting to database");
@@ -73,8 +73,7 @@ class DiscordConfig extends Component {
         if (response.status === 200) {
           this.props.onClose();
         } else if (response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.props.onError("You don't have access here, try to log in again");
           this.props.onClose();
         } else if (response.status === 503) {

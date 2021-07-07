@@ -6,6 +6,7 @@ import CreateMapPanel from "../components/CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { closeSession } from "../services";
 
 class ClanMaps extends Component {
   constructor(props) {
@@ -37,8 +38,7 @@ class ClanMaps extends Component {
       if (response.status === 200) {
         this.setState({ clanMaps: response.data });
       } else if (response.status === 401) {
-        localStorage.removeItem("discordid");
-        localStorage.removeItem("token");
+        closeSession();
         this.setState({
           error: "You don't have access here, try to log in again",
         });
@@ -112,8 +112,7 @@ class ClanMaps extends Component {
           });
           this.componentDidMount();
         } else if (response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.setState({
             error: "You don't have access here, try to log in again",
           });
@@ -163,8 +162,7 @@ class ClanMaps extends Component {
         if (response.status === 201) {
           this.componentDidMount();
         } else if (response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.setState({ error: "Login again" });
         } else if (response.status === 503) {
           this.setState({ error: "Error connecting to database" });

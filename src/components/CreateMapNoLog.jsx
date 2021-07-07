@@ -71,7 +71,7 @@ class CreateMapNoLog extends Component {
         value={
           host +
           (window.location.port ? ":" + window.location.port : "") +
-          "/map" +
+          "/map/" +
           this.state.mapIdInput +
           "?pass=" +
           this.state.mapPassInput

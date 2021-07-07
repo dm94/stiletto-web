@@ -348,6 +348,7 @@ class ResourceMap extends Component {
             <ul className="nav nav-tabs" role="tablist">
               <li
                 className={
+                  this.props.map.allowedit ||
                   parseInt(this.props.map.allowedit) === 1 ||
                   this.state.user_discord_id === this.props.map.discordid
                     ? "nav-item"

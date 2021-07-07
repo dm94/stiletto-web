@@ -95,9 +95,7 @@ function CrafterApp() {
                   <Link
                     className="nav-link"
                     to={
-                      localStorage.getItem("discordid") != null
-                        ? "/maps"
-                        : "/map"
+                      localStorage.getItem("profile") != null ? "/maps" : "/map"
                     }
                   >
                     {t("Resource Maps")}

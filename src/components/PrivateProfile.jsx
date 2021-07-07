@@ -6,7 +6,7 @@ import Axios from "axios";
 import LoadingScreen from "./LoadingScreen";
 import { Link, Redirect } from "react-router-dom";
 import ModalMessage from "./ModalMessage";
-import { getUserProfile } from "../services";
+import { getUserProfile, closeSession } from "../services";
 import Icon from "./Icon";
 class PrivateProfile extends Component {
   constructor(props) {
@@ -60,12 +60,10 @@ class PrivateProfile extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 204) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.setState({ redirect: true });
         } else if (response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.setError("Log in again");
         } else if (response.status === 503) {
           this.setError("Error connecting to database");
@@ -96,8 +94,7 @@ class PrivateProfile extends Component {
         if (response.status === 202) {
           this.setState({ nickname: this.state.nameInGameInput });
         } else if (response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.setError("Log in again");
         } else if (response.status === 503) {
           this.setError("Error connecting to database");
@@ -124,8 +121,7 @@ class PrivateProfile extends Component {
         if (response.status === 204) {
           this.setState({ clanname: null });
         } else if (response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.setError("Log in again");
         } else if (response.status === 503) {
           this.setError("Error connecting to database");
@@ -156,8 +152,7 @@ class PrivateProfile extends Component {
         if (response.status === 201) {
           this.componentDidMount();
         } else if (response.status === 401) {
-          localStorage.removeItem("discordid");
-          localStorage.removeItem("token");
+          closeSession();
           this.setError("Log in again");
         } else if (response.status === 405) {
           this.setError("You already have a clan");
@@ -254,8 +249,7 @@ class PrivateProfile extends Component {
                   type="button"
                   className="btn btn-lg btn-warning btn-block"
                   onClick={() => {
-                    localStorage.removeItem("discordid");
-                    localStorage.removeItem("token");
+                    closeSession();
                     this.setState({ redirect: true });
                   }}
                 >
