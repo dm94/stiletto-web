@@ -213,7 +213,7 @@ let all = {
         'Read the clan log and if a member was kicked, kick from here too.': 'Lee el log del clan y si un miembro es expulsado lo expulsa de la web.',
         'Automatic kick members from the clan': 'Expulsar miembros automáticamente del clan',
         'Automatically if a PVP walker is used it is marked as not ready.': 'Marcar como sin preparar los walkers de PVP que sean usados.',
-        'Warns if someone brings out a walker they don\'t own.': 'Warns if someone brings out a walker they don\'t own.',
+        'Warns if someone brings out a walker they don\'t own.': 'Avisar si alguien usa un walker que no es suyo.',
         Close: 'Cerrar',
         Save: 'Guardar',
         Vitamins: 'Vitaminas',
