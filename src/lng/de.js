@@ -35,6 +35,7 @@ let all = {
         'Clan Diplomacy': 'Clan Dimplomatie',
         'Use this section to control your clan, make alliances or send wars and to easily show it to your clan members.': 'Nutze diese Sektion um die Diplomatie deines Clans zu kontrollieren. Setze Allianzen oder Kriege einfach fest und teile sie mit deinen Clanmitgliedern.',
         'Create and edit maps to add resources or strategic points.': 'Kreiere und bearbeite Karten um Ressourcen und strategische Punkte hinzuzufügen.',
+        'The administrator will be notified to delete the user, the user will not be deleted directly.': 'The administrator will be notified to delete the user, the user will not be deleted directly.',
         'Your details': 'Persönliche Angaben',
         'Discord Tag': 'Discord Tag',
         'Nick in Game': 'Ingame Name',
