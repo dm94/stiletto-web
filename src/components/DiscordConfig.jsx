@@ -9,6 +9,7 @@ class DiscordConfig extends Component {
     botLanguaje: "en",
     automaticKick: false,
     setNotReadyPVP: false,
+    walkeralarm: false,
   };
 
   componentDidMount() {
@@ -35,6 +36,7 @@ class DiscordConfig extends Component {
               automaticKick: response.data.automatickick === "1" ? true : false,
               setNotReadyPVP:
                 response.data.setnotreadypvp === "1" ? true : false,
+              walkeralarm: response.data.walkeralarm === "1" ? true : false,
             });
           }
         } else if (response.status === 401) {
@@ -62,7 +64,7 @@ class DiscordConfig extends Component {
         clanlog: this.state.readClanLog,
         kick: this.state.automaticKick,
         readypvp: this.state.setNotReadyPVP,
-        walkeralarm: this.state.walkerAlarm,
+        walkeralarm: this.state.walkeralarm,
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -207,10 +209,10 @@ class DiscordConfig extends Component {
                   type="checkbox"
                   className="custom-control-input"
                   id="walkerAlarm"
-                  checked={this.state.walkerAlarm}
+                  checked={this.state.walkeralarm}
                   onChange={() =>
                     this.setState((state) => {
-                      this.setState({ walkerAlarm: !state.walkerAlarm });
+                      this.setState({ walkeralarm: !state.walkeralarm });
                     })
                   }
                 />

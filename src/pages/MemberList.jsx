@@ -106,6 +106,8 @@ class MemberList extends Component {
             (m) => m.discordid !== memberdiscordid
           );
           this.setState({ members: members });
+          localStorage.removeItem("memberList");
+          localStorage.getIremoveItemtem("memberList-lastCheck");
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
           this.setState({
@@ -149,6 +151,8 @@ class MemberList extends Component {
             (m) => m.discordid !== this.state.requestData.discordid
           );
           this.setState({ requestMembers: requestMembers });
+          localStorage.removeItem("memberList");
+          localStorage.getIremoveItemtem("memberList-lastCheck");
           this.componentDidMount();
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
@@ -222,6 +226,8 @@ class MemberList extends Component {
       .then((response) => {
         if (response.status === 204) {
           localStorage.removeItem("profile");
+          localStorage.removeItem("memberList");
+          localStorage.getIremoveItemtem("memberList-lastCheck");
           this.setState({ redirectMessage: "Clan deleted correctly" });
         } else if (response.status === 405) {
           closeSession();
@@ -257,6 +263,8 @@ class MemberList extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 202) {
+          localStorage.removeItem("memberList");
+          localStorage.getIremoveItemtem("memberList-lastCheck");
           this.setState({ redirectMessage: "Clan updated correctly" });
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
@@ -470,7 +478,7 @@ class MemberList extends Component {
                   <i className="fab fa-discord"></i>
                 </button>
                 <button
-                  className="btn btn-info"
+                  className={this.state.isLeader ? "btn btn-info" : "d-none"}
                   onClick={() => {
                     this.setState({ showBotConfig: true });
                   }}
