@@ -1,0 +1,20 @@
+#map-sidebar {
+  z-index: 2000;
+  left: -500px;
+  transition-property: left;
+  transition-duration: 1s;
+}
+
+#map-sidebar.open {
+  left: 0px;
+}
+
+#toggle-sidebar-button {
+  position: absolute;
+  left: 500px;
+}
+
+#map-sidebar.open #toggle-sidebar-button {
+  position: relative;
+  left: 0;
+}

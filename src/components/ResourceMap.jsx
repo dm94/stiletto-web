@@ -5,6 +5,7 @@ import { withTranslation } from "react-i18next";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
 import Axios from "axios";
+import "../css/map-sidebar.min.css";
 
 class ResourceMap extends Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class ResourceMap extends Component {
       dateofburning: this.props.map.dateofburning,
       allowEditing: this.props.map.allowedit,
       resourcesFiltered: null,
+      isOpenSidebar: false,
     };
   }
 
@@ -307,8 +309,15 @@ class ResourceMap extends Component {
 
     return (
       <div className="row flex-xl-nowrap">
-        <div className="col-xl-3 col-sm-12">
-          <div className="bd-search d-flex align-items-center">
+        <div
+          id="map-sidebar"
+          className={
+            this.state.isOpenSidebar
+              ? "col-xl-3 col-sm-12 position-absolute bg-secondary p-1 open"
+              : "position-absolute bg-secondary p-1"
+          }
+        >
+          <div>
             <button
               className="btn btn-sm btn-primary btn-block mb-2"
               onClick={() => this.props.onReturn()}
@@ -317,35 +326,25 @@ class ResourceMap extends Component {
               {t("Back to the list of maps")}
             </button>
             <button
-              className="btn d-md-none p-0 ml-3"
-              type="button"
-              data-toggle="collapse"
-              data-target="#items-nav"
-              aria-controls="items-nav"
-              aria-expanded="false"
-              aria-label="Toggle items"
+              id="toggle-sidebar-button"
+              className="btn btn-info ml-2 mb-2 float-right"
+              onClick={() =>
+                this.setState((state) => ({
+                  isOpenSidebar: !state.isOpenSidebar,
+                }))
+              }
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                role="img"
-                focusable="false"
-              >
-                <title>{t("Menu")}</title>
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  strokeWidth="2"
-                  d="M4 7h22M4 15h22M4 23h22"
-                ></path>
-              </svg>
+              <i
+                className={
+                  this.state.isOpenSidebar
+                    ? "fas fa-chevron-left"
+                    : "fas fa-chevron-right"
+                }
+              ></i>
             </button>
           </div>
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
-            <ul className="nav nav-tabs" role="tablist">
+            <ul className="nav nav-pills nav-fill" role="tablist">
               <li
                 className={
                   this.props.map.allowedit ||
@@ -401,7 +400,7 @@ class ResourceMap extends Component {
                 </a>
               </li>
             </ul>
-            <div className="tab-content">
+            <div className="tab-content border border-primary">
               <div
                 className="tab-pane fade"
                 id="addresource"
@@ -433,7 +432,7 @@ class ResourceMap extends Component {
               >
                 <ul
                   className="list-group overflow-auto"
-                  style={{ height: "100vh" }}
+                  style={{ height: "60vh" }}
                 >
                   <ResourcesInMapList
                     resources={this.state.resourcesInTheMap}
@@ -453,7 +452,7 @@ class ResourceMap extends Component {
             </div>
           </nav>
         </div>
-        <div className="col-xl-9 col-sm-12">
+        <div className="col-12">
           <MapLayer
             key={this.props.map.mapid}
             resourcesInTheMap={
