@@ -190,7 +190,10 @@ class QualityCalculator extends Component {
                         itemSelected: itemFiltered[0],
                         ingredients:
                           itemFiltered[0].crafting[0].ingredients.filter(
-                            (ing) => ing.name !== "Purified Water"
+                            (ing) =>
+                              ing.name !== "Purified Water" &&
+                              ing.name !== "Walker Mechanism" &&
+                              ing.name !== "Lava"
                           ),
                         qualities: [],
                       });
