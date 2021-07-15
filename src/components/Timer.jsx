@@ -24,9 +24,9 @@ class Timer extends Component {
   tick = () => {
     if (this.state.isOn) {
       if (
-        this.state.hours == 0 &&
-        this.state.minutes == 0 &&
-        this.state.seconds == 0
+        this.state.hours <= 0 &&
+        this.state.minutes <= 0 &&
+        this.state.seconds <= 0
       ) {
         this.setState({ isFinish: true, isOn: false });
         if (this.props.value) {
@@ -35,10 +35,10 @@ class Timer extends Component {
       }
       if (this.state.seconds > 0) {
         this.setState({ seconds: this.state.seconds - 1 });
-      } else if (this.state.seconds == 0) {
+      } else if (this.state.seconds <= 0) {
         if (this.state.minutes > 0) {
           this.setState({ minutes: this.state.minutes - 1, seconds: 59 });
-        } else if (this.state.minutes == 0) {
+        } else if (this.state.minutes <= 0) {
           if (this.state.hours > 0) {
             this.setState({
               hours: this.state.hours - 1,

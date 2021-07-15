@@ -20,9 +20,7 @@ class AuctionTimers extends Component {
   }
 
   playAlarm() {
-    let audio = new Audio(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/alarm.mp3"
-    );
+    let audio = new Audio("./cobra.mp3");
     audio.play();
   }
 
