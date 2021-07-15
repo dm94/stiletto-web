@@ -24,8 +24,9 @@ class Crafter extends Component {
   }
 
   async updateRecipes() {
-    const items = await getItems();
+    let items = await getItems();
     if (items != null) {
+      items = items.filter((it) => it.crafting != null);
       this.setState({ items: items });
       this.getRecipes();
     }
