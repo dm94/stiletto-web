@@ -17,6 +17,7 @@ import Others from "./pages/Others";
 import Map from "./pages/Map";
 import TechTree from "./pages/TechTree";
 import QualityCalculator from "./pages/QualityCalculator";
+import Privacy from "./pages/Privacy";
 import ModalMessage from "./components/ModalMessage";
 import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
@@ -174,6 +175,7 @@ function CrafterApp() {
               <Route path="/map" component={Map} />
               <Route path="/quality" component={QualityCalculator} />
               <Route path="/tech" component={TechTree} />
+              <Route path="/privacy" component={Privacy} />
               <Route path="*">
                 <ModalMessage
                   message={{
@@ -288,7 +290,11 @@ function CrafterApp() {
         <div className="container-fluid py-3 bg-dark text-white">
           <div className="row">
             <div className="col-xl-10">
-              Copyright © 2020 Stiletto{" | "}
+              Copyright © 2020-2021 Stiletto{" | "}{" "}
+              <Link className="text-white" to="/privacy">
+                {t("Privacy Policy")}
+              </Link>{" "}
+              {" | "}
               <a
                 title="GitHub package.json version"
                 href="https://github.com/dm94/stiletto-web"
