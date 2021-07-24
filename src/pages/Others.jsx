@@ -59,7 +59,7 @@ class Others extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {t("Buy me a coffee")}
+                      {t("Help keep the website running")}
                     </a>
                   </div>
                 </div>
@@ -102,6 +102,24 @@ class Others extends Component {
             <div className="col-12 col-md-6">{this.showDiscord(t)}</div>
           </div>
         </div>
+        <div className="col-12">
+          <div className="row">
+            <div className="col-12">
+              <h3 className="text-center text-info">
+                {t("Sponsored servers")}
+              </h3>
+            </div>
+            <div className="col-12 col-md-4 p-3 mx-auto">
+              <img
+                className="img-fluid"
+                src="/img/banner-lastoasis.jpg"
+                alt="Last Oasis Banner"
+                height="100"
+                width="600"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -110,10 +128,11 @@ class Others extends Component {
     if (localStorage.getItem("acceptscookies")) {
       return (
         <iframe
+          title="discord"
           src="https://discord.com/widget?id=317737508064591874&theme=dark"
           className="w-100"
           height="500"
-          allowtransparency="true"
+          allowTransparency="true"
           frameBorder="0"
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         ></iframe>

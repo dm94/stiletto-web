@@ -223,7 +223,7 @@ let all = {
       "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.",
     "Go to Discord bot": "Go to Discord bot",
     "Dm94Dani´s Discord": "Dm94Dani´s Discord",
-    "Buy me a coffee": "Buy me a coffee",
+    "Help keep the website running": "Help keep the website running",
     "Steam Page": "Steam Page",
     "Official Discord": "Official Discord",
     Wiki: "Wiki",
@@ -260,6 +260,7 @@ let all = {
       "Automatically if a PVP walker is used it is marked as not ready.",
     "Warns if someone brings out a walker they don't own.":
       "Warns if someone brings out a walker they don't own.",
+    "Sponsored servers": "Sponsored servers",
     Close: "Close",
     Save: "Save",
     Vitamins: "Vitamins",
