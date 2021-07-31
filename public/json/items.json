@@ -2011,6 +2011,28 @@
       }
     ]
   }, {
+    "name": "Dyeing Station",
+    "parent": "Crafting",
+    "cost": {
+      "name": "Fragment",
+      "count": 5
+    },
+    "category": "crafting/station",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Wood",
+            "count": 20
+          }, {
+            "name": "Fiber",
+            "count": 30
+          }, {
+            "name": "Stone",
+            "count": 10
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Fiberworking Station",
     "parent": "Camp Fire",
     "category": "crafting/station",
