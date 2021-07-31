@@ -101,13 +101,13 @@ class MemberList extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("memberList");
+        localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
           let members = this.state.members.filter(
             (m) => m.discordid !== memberdiscordid
           );
           this.setState({ members: members });
-          localStorage.removeItem("memberList");
-          localStorage.getIremoveItemtem("memberList-lastCheck");
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
           this.setState({
@@ -146,13 +146,13 @@ class MemberList extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("memberList");
+        localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
             (m) => m.discordid !== this.state.requestData.discordid
           );
           this.setState({ requestMembers: requestMembers });
-          localStorage.removeItem("memberList");
-          localStorage.getIremoveItemtem("memberList-lastCheck");
           this.componentDidMount();
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
@@ -192,6 +192,8 @@ class MemberList extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("memberList");
+        localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
             (m) => m.discordid !== this.state.requestData.discordid
@@ -224,10 +226,10 @@ class MemberList extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("profile");
+        localStorage.removeItem("memberList");
+        localStorage.removeItem("memberList-lastCheck");
         if (response.status === 204) {
-          localStorage.removeItem("profile");
-          localStorage.removeItem("memberList");
-          localStorage.getIremoveItemtem("memberList-lastCheck");
           this.setState({ redirectMessage: "Clan deleted correctly" });
         } else if (response.status === 405) {
           closeSession();
@@ -262,9 +264,10 @@ class MemberList extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("profile");
+        localStorage.removeItem("memberList");
+        localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
-          localStorage.removeItem("memberList");
-          localStorage.getIremoveItemtem("memberList-lastCheck");
           this.setState({ redirectMessage: "Clan updated correctly" });
         } else if (response.status === 405 || response.status === 401) {
           closeSession();

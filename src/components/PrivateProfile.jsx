@@ -59,6 +59,8 @@ class PrivateProfile extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("profile");
+        localStorage.removeItem("memberList");
         if (response.status === 204) {
           closeSession();
           this.setState({ redirect: true });
@@ -91,6 +93,8 @@ class PrivateProfile extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("profile");
+        localStorage.removeItem("memberList");
         if (response.status === 202) {
           this.setState({ nickname: this.state.nameInGameInput });
         } else if (response.status === 401) {
@@ -118,6 +122,8 @@ class PrivateProfile extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("profile");
+        localStorage.removeItem("memberList");
         if (response.status === 204) {
           this.setState({ clanname: null });
         } else if (response.status === 401) {
@@ -149,6 +155,8 @@ class PrivateProfile extends Component {
 
     Axios.request(options)
       .then((response) => {
+        localStorage.removeItem("profile");
+        localStorage.removeItem("memberList");
         if (response.status === 201) {
           this.componentDidMount();
         } else if (response.status === 401) {
@@ -158,6 +166,8 @@ class PrivateProfile extends Component {
           this.setError("You already have a clan");
         } else if (response.status === 503) {
           this.setError("Error connecting to database");
+        } else {
+          this.componentDidMount();
         }
       })
       .catch(() => {
