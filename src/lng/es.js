@@ -406,6 +406,7 @@ let all = {
         'Advanced Woodworking Station': 'Estación de carpintería avanzada',
         'Artificer Woodworking Station': 'Estación artesanal de carpintería',
         'Camp Fire': 'Fogata',
+        'Dyeing Station': 'Dyeing Station',
         'Fiberworking Station': 'Estación de procesamiento textil',
         Furnace: 'Horno',
         Lumbermill: 'Aserradero',

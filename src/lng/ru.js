@@ -406,6 +406,7 @@ let all = {
         'Advanced Woodworking Station': 'Улучшенный столярный станок(Advanced Woodworking Station)',
         'Artificer Woodworking Station': 'Станок мастера для древообработки(Artificer Woodworking Station)',
         'Camp Fire': 'Очаг(Camp Fire)',
+        'Dyeing Station': 'Dyeing Station',
         'Fiberworking Station': 'Ткацкий станок(Fiberworking Station)',
         Furnace: 'Печь(Furnace)',
         Lumbermill: 'Лесопилка(Lumbermill)',
