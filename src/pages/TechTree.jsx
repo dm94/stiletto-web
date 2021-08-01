@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import { NavLink } from "react-router-dom";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
-import Ingredients from "../components/Ingredients";
-import Ingredient from "../components/Ingredient";
 import SkillTreeTab from "../components/SkillTreeTab";
 import { getItems } from "../services";
 import "../css/tech-tree.css";
@@ -17,18 +16,34 @@ class TechTree extends Component {
       savedData: {},
       isLoaded: false,
       error: null,
-      usersSavedData: [],
-      tabSelect: "Vitamins",
+      tabSelect:
+        this.props.match.params.tree != null
+          ? this.props.match.params.tree
+          : "Vitamins",
     };
   }
 
   async componentDidMount() {
+    if (this.props.match.params.tree != null) {
+      this.setState({ tabSelect: this.props.match.params.tree });
+    }
+    console.log(this.props.match);
     let items = await getItems();
     if (items != null) {
       items = items.filter((it) => it.parent != null);
-      this.setState({ items: items });
-      this.updateSaveData();
+      this.setState({ items: items, isLoaded: true });
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.match.params.tree !== this.state.tabSelect) {
+      window.location.reload();
+    }
+  }
+
+  deleteTree() {
+    localStorage.removeItem(`skills-${this.state.tabSelect}`);
+    window.location.reload();
   }
 
   render() {
@@ -86,59 +101,67 @@ class TechTree extends Component {
             }
           />
         </Helmet>
-        <h2>{t("Testing phase. May have performance problems")}</h2>
+        <h2>{t("For now, the data is only saved on your computer")}</h2>
         <nav className="nav-fill">
           <div className="nav nav-tabs" id="nav-tab" role="tablist">
-            <a
-              className="nav-item nav-link active"
-              id="nav-vitamins-tab"
-              data-toggle="tab"
-              href="#nav-vitamins"
-              role="tab"
-              onClick={() => this.setState({ tabSelect: "Vitamins" })}
-            >
-              {t("Vitamins")}
-            </a>
-            <a
-              className="nav-item nav-link"
-              id="nav-equipment-tab"
-              data-toggle="tab"
-              href="#nav-equipment"
-              role="tab"
-              onClick={() => this.setState({ tabSelect: "Equipment" })}
-            >
-              {t("Equipment")}
-            </a>
-            <a
-              className="nav-item nav-link"
-              id="nav-crafting-tab"
-              data-toggle="tab"
-              href="#nav-crafting"
-              role="tab"
-              onClick={() => this.setState({ tabSelect: "Crafting" })}
-            >
-              {t("Crafting")}
-            </a>
-            <a
-              className="nav-item nav-link"
-              id="nav-construction-tab"
-              data-toggle="tab"
-              href="#nav-construction"
-              role="tab"
-              onClick={() => this.setState({ tabSelect: "Construction" })}
-            >
-              {t("Construction")}
-            </a>
-            <a
-              className="nav-item nav-link"
-              id="nav-walkers-tab"
-              data-toggle="tab"
-              href="#nav-walkers"
-              role="tab"
-              onClick={() => this.setState({ tabSelect: "Walkers" })}
-            >
-              {t("Walkers")}
-            </a>
+            <div className="nav-item">
+              <NavLink
+                className="nav-link"
+                role="button"
+                to={{
+                  pathname: "/tech/Vitamins",
+                }}
+                activeClassName="active"
+              >
+                {t("Vitamins")}
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink
+                className="nav-link"
+                role="button"
+                to={{
+                  pathname: "/tech/Equipment",
+                }}
+                activeClassName="active"
+              >
+                {t("Equipment")}
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink
+                className="nav-link"
+                role="button"
+                to={{
+                  pathname: "/tech/Crafting",
+                }}
+                activeClassName="active"
+              >
+                {t("Crafting")}
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink
+                className="nav-link"
+                role="button"
+                to={{
+                  pathname: "/tech/Construction",
+                }}
+                activeClassName="active"
+              >
+                {t("Construction")}
+              </NavLink>
+            </div>
+            <div className="nav-item">
+              <NavLink
+                className="nav-link"
+                role="button"
+                to={{ pathname: "/tech/Walkers" }}
+                activeClassName="active"
+              >
+                {t("Walkers")}
+              </NavLink>
+            </div>
           </div>
         </nav>
         <div className="overflow-auto">
@@ -146,104 +169,21 @@ class TechTree extends Component {
             <SkillTreeTab
               treeId={this.state.tabSelect}
               title={t(this.state.tabSelect)}
-              data={this.getChildrens(this.state.tabSelect)}
               theme={theme}
+              items={this.state.items}
             />
           </div>
         </div>
-      </div>
-    );
-  }
-
-  updateSaveData = () => {
-    let learned = [];
-    let saveData = {};
-
-    this.state.usersSavedData.forEach((user) => {
-      learned = learned.concat(user.learned);
-    });
-
-    this.state.items.forEach((i) => {
-      if (learned.includes(i.name)) {
-        saveData[i.name] = {
-          optional: false,
-          nodeState: "selected",
-        };
-      }
-    });
-
-    this.setState({ savedData: saveData, isLoaded: true });
-  };
-
-  getChildrens(parent) {
-    const { t } = this.props;
-    let childrens = [];
-
-    let items = this.state.items.filter((it) => it.parent === parent);
-
-    items.forEach((i) => {
-      let item = {
-        id: i.name,
-        title: t(i.name),
-        tooltip: { content: this.getContentItem(i) },
-        children: this.getChildrens(i.name),
-      };
-
-      childrens.push(item);
-    });
-
-    return childrens;
-  }
-
-  getContentItem(item) {
-    const { t } = this.props;
-    return (
-      <div className="mx-auto">
-        <p className="text-center border-bottom border-warning">
-          {t("Who have learned it?")}
-        </p>
-        <ul className="list-inline">{this.getWhoHasLearnedIt(item.name)}</ul>
-        <p className="text-center border-bottom border-warning">
-          {t("Cost to learn")}
-        </p>
-        {item.cost != null ? (
-          <Ingredient
-            key={"cost-" + item.cost.name}
-            ingredient={item.cost}
-            value={1}
-          />
-        ) : (
-          t("Not defined")
-        )}
-        <p className="text-center border-bottom border-warning mt-2">
-          {t("Recipe")}
-        </p>
-        <div className="row">{this.showIngredient(item)}</div>
-      </div>
-    );
-  }
-
-  getWhoHasLearnedIt(name) {
-    return this.state.usersSavedData
-      .filter((user) => user.learned.includes(name))
-      .map((user) => (
-        <li className="list-inline-item" key={name + "-" + user.discordtag}>
-          {user.discordtag} -{" "}
-        </li>
-      ));
-  }
-
-  showIngredient(item) {
-    if (item != null && item.crafting != null) {
-      return item.crafting.map((ingredients, index) => (
-        <div
-          className={item.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}
-          key={"ingredients-" + index + "-" + item.name}
-        >
-          <Ingredients crafting={ingredients} value={1} />
+        <div className="w-100">
+          <button
+            className="btn btn-danger float-right my-2"
+            onClick={() => this.deleteTree()}
+          >
+            {t("Delete Tree Data")}
+          </button>
         </div>
-      ));
-    }
+      </div>
+    );
   }
 }
 

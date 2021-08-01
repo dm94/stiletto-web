@@ -126,8 +126,13 @@ export const getMembers = async () => {
 
 export const getItems = async () => {
   const items = localStorage.getItem("allItems");
+  const lastCheck = localStorage.getItem("items-lastCheck");
 
-  if (items != null) {
+  if (
+    items != null &&
+    lastCheck != null &&
+    lastCheck >= Date.now() - 86400000
+  ) {
     return JSON.parse(items);
   } else {
     const options = {

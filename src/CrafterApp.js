@@ -174,7 +174,8 @@ function CrafterApp() {
               <Route path="/map/:id" component={ResourceMapNoLog} />
               <Route path="/map" component={Map} />
               <Route path="/quality" component={QualityCalculator} />
-              <Route path="/tech" component={TechTree} />
+              <Route path="/tech/:tree" component={TechTree} />
+              <Route path="/tech/" component={TechTree} />
               <Route path="/privacy" component={Privacy} />
               <Route path="*">
                 <ModalMessage
