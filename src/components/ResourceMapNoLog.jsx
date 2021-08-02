@@ -243,7 +243,7 @@ class ResourceMapNoLog extends Component {
           id="map-sidebar"
           className={
             this.state.isOpenSidebar
-              ? "col-xl-3 col-sm-12 position-absolute bg-secondary p-1 open"
+              ? "position-absolute bg-secondary p-1 open"
               : "position-absolute bg-secondary p-1"
           }
         >

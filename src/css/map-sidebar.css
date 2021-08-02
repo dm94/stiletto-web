@@ -3,6 +3,13 @@
   left: -500px;
   transition-property: left;
   transition-duration: 1s;
+  width: 500px;
+}
+
+@media only screen and (max-width: 500px) {
+  #map-sidebar {
+    width: 100%;
+  }
 }
 
 #map-sidebar.open {
