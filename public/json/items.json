@@ -3882,6 +3882,21 @@
       }
     ]
   }, {
+    "name": "Flare - White",
+    "parent": "Equipment",
+    "category": "items",
+    "crafting": [{
+        "ingredients": [{
+            "name": "Charcoal",
+            "count": 5
+          }, {
+            "name": "Cattail",
+            "count": 5
+          }
+        ]
+      }
+    ]
+  }, {
     "name": "Obsidian Flask",
     "parent": "Bone Bottle",
     "cost": {
