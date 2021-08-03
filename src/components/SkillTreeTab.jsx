@@ -16,7 +16,7 @@ class SkillTreeTab extends Component {
               <SkillTree
                 treeId={this.props.treeId}
                 title={this.props.title}
-                data={this.getChildrens(this.props.title)}
+                data={this.getChildrens(this.props.treeId)}
                 handleSave={this.handleSave}
               />
             )}
@@ -53,7 +53,16 @@ class SkillTreeTab extends Component {
         <p className="text-center border-bottom border-warning">
           {t("Who have learned it?")}
         </p>
-        <SkillNodeBtn key={"btn-" + item.name} item={item}></SkillNodeBtn>
+        {this.props.clan != null ? (
+          <SkillNodeBtn
+            key={"btn-" + item.name}
+            item={item}
+            clan={this.props.clan}
+            tree={this.props.treeId}
+          ></SkillNodeBtn>
+        ) : (
+          t("You need a clan for this function")
+        )}
         <p className="text-center border-bottom border-warning mt-1">
           {t("Cost to learn")}
         </p>

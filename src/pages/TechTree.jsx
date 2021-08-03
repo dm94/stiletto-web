@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
+import Axios from "axios";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import SkillTreeTab from "../components/SkillTreeTab";
-import { getItems } from "../services";
+import { getItems, getUserProfile, closeSession } from "../services";
 import "../css/tech-tree.css";
 
 class TechTree extends Component {
@@ -13,21 +14,62 @@ class TechTree extends Component {
     super(props);
     this.state = {
       items: [],
-      savedData: {},
       isLoaded: false,
       error: null,
       tabSelect:
         this.props.match.params.tree != null
           ? this.props.match.params.tree
           : "Vitamins",
+      clan: null,
     };
   }
 
   async componentDidMount() {
+    if (localStorage.getItem("token") != null) {
+      let data = await getUserProfile();
+      let clanid = data.message.clanid;
+
+      this.setState({ clan: clanid });
+
+      Axios.get(
+        process.env.REACT_APP_API_URL +
+          "/users/" +
+          localStorage.getItem("discordid") +
+          "/tech",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      )
+        .then((response) => {
+          if (response.status === 200) {
+            if (response.data != null) {
+              this.updateLearnedTree("Vitamins", response.data.Vitamins);
+              this.updateLearnedTree("Equipment", response.data.Equipment);
+              this.updateLearnedTree("Crafting", response.data.Crafting);
+              this.updateLearnedTree(
+                "Construction",
+                response.data.Construction
+              );
+              this.updateLearnedTree("Walkers", response.data.Walkers);
+            }
+          } else if (response.status === 401) {
+            closeSession();
+            this.setState({
+              error: "You don't have access here, try to log in again",
+            });
+          } else if (response.status === 503) {
+            this.setState({ error: "Error connecting to database" });
+          }
+        })
+        .catch(() => {
+          this.setState({ error: "Error when connecting to the API" });
+        });
+    }
     if (this.props.match.params.tree != null) {
       this.setState({ tabSelect: this.props.match.params.tree });
     }
-    console.log(this.props.match);
     let items = await getItems();
     if (items != null) {
       items = items.filter((it) => it.parent != null);
@@ -35,15 +77,95 @@ class TechTree extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.match.params.tree !== this.state.tabSelect) {
+  updateLearnedTree(tree, data) {
+    let all = {};
+
+    if (data != null) {
+      data.forEach((tech) => {
+        all[tech] = { optional: false, nodeState: "selected" };
+      });
+
+      localStorage.setItem(`skills-${tree}`, JSON.stringify(all));
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.tree !== this.props.match.params.tree) {
       window.location.reload();
     }
   }
 
   deleteTree() {
-    localStorage.removeItem(`skills-${this.state.tabSelect}`);
-    window.location.reload();
+    const options = {
+      method: "put",
+      url:
+        process.env.REACT_APP_API_URL +
+        "/users/" +
+        localStorage.getItem("discordid") +
+        "/tech",
+      params: {
+        tree: this.state.tabSelect,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      data: [],
+    };
+
+    Axios.request(options)
+      .then(() => {
+        localStorage.removeItem(`skills-${this.state.tabSelect}`);
+        window.location.reload();
+      })
+      .catch(() => {
+        localStorage.removeItem(`skills-${this.state.tabSelect}`);
+        window.location.reload();
+      });
+  }
+
+  saveTree() {
+    let data = JSON.parse(
+      localStorage.getItem(`skills-${this.state.tabSelect}`)
+    );
+    let learned = [];
+
+    for (let item in data) {
+      if (data[item].nodeState === "selected") {
+        learned.push(item);
+      }
+    }
+    const options = {
+      method: "put",
+      url:
+        process.env.REACT_APP_API_URL +
+        "/users/" +
+        localStorage.getItem("discordid") +
+        "/tech",
+      params: {
+        tree: this.state.tabSelect,
+      },
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      data: learned,
+    };
+
+    Axios.request(options)
+      .then((response) => {
+        if (response.status === 200) {
+          window.location.reload();
+        } else if (response.status === 401) {
+          closeSession();
+          this.setState({
+            error: "You don't have access here, try to log in again",
+          });
+        } else if (response.status === 503) {
+          this.setState({ error: "Error connecting to database" });
+        }
+      })
+      .catch(() => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
   }
 
   render() {
@@ -104,7 +226,6 @@ class TechTree extends Component {
             }
           />
         </Helmet>
-        <h2>{t("For now, the data is only saved on your computer")}</h2>
         <nav className="nav-fill">
           <div className="nav nav-tabs" id="nav-tab" role="tablist">
             <div className="nav-item">
@@ -167,6 +288,7 @@ class TechTree extends Component {
             </div>
           </div>
         </nav>
+        {this.saveDeleteButtons(t)}
         <div className="overflow-auto">
           <div className="tab-content">
             <SkillTreeTab
@@ -174,10 +296,24 @@ class TechTree extends Component {
               title={t(this.state.tabSelect)}
               theme={theme}
               items={this.state.items}
+              clan={this.state.clan}
             />
           </div>
         </div>
+      </div>
+    );
+  }
+
+  saveDeleteButtons(t) {
+    if (localStorage.getItem("token") != null) {
+      return (
         <div className="w-100">
+          <button
+            className="btn btn-success float-left my-2"
+            onClick={() => this.saveTree()}
+          >
+            {t("Save Tree Data")}
+          </button>
           <button
             className="btn btn-danger float-right my-2"
             onClick={() => this.deleteTree()}
@@ -185,8 +321,10 @@ class TechTree extends Component {
             {t("Delete Tree Data")}
           </button>
         </div>
-      </div>
-    );
+      );
+    }
+
+    return "";
   }
 }
 
