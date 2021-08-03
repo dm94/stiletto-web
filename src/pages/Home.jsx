@@ -21,7 +21,7 @@ class Home extends Component {
           />
           <meta name="theme-color" content="#FFFFFF"></meta>
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Stiletto" />
+          <meta name="twitter:title" content="Stiletto for Last Oasis" />
           <meta
             name="twitter:description"
             content="Stiletto the page with utilities for the game Last Oasis"

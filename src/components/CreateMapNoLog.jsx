@@ -88,7 +88,7 @@ class CreateMapNoLog extends Component {
     return (
       <Fragment>
         <Helmet>
-          <title>{t("Resource Maps")} - Stiletto</title>
+          <title>{t("Resource Maps")} - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content={t(
@@ -96,7 +96,10 @@ class CreateMapNoLog extends Component {
             )}
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Resource Maps - Stiletto" />
+          <meta
+            name="twitter:title"
+            content="Resource Maps - Stiletto for Last Oasis"
+          />
           <meta
             name="twitter:description"
             content={t(

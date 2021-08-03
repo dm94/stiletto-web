@@ -201,13 +201,16 @@ class PrivateProfile extends Component {
       return (
         <div className="row">
           <Helmet>
-            <title>{t("Profile")} - Stiletto</title>
+            <title>{t("Profile")} - Stiletto for Last Oasis</title>
             <meta
               name="description"
               content="Private profile where you can configure some things"
             />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Perfil - Stiletto" />
+            <meta
+              name="twitter:title"
+              content="Perfil - Stiletto for Last Oasis"
+            />
             <meta
               name="twitter:description"
               content="Private profile where you can configure some things"

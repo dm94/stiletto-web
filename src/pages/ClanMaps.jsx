@@ -180,13 +180,16 @@ class ClanMaps extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>{t("Map List")} - Stiletto</title>
+          <title>{t("Map List")} - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base."
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Map List - Stiletto" />
+          <meta
+            name="twitter:title"
+            content="Map List - Stiletto for Last Oasis"
+          />
           <meta
             name="twitter:description"
             content="Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base."

@@ -406,13 +406,16 @@ class WalkerList extends Component {
       return (
         <Fragment>
           <Helmet>
-            <title>{t("Walker List")} - Stiletto</title>
+            <title>{t("Walker List")} - Stiletto for Last Oasis</title>
             <meta
               name="description"
               content="This is the list of all the walkers of your clan"
             />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Walker List - Stiletto" />
+            <meta
+              name="twitter:title"
+              content="Walker List - Stiletto for Last Oasis"
+            />
             <meta
               name="twitter:description"
               content="This is the list of all the walkers of your clan"

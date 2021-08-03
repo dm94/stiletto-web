@@ -112,10 +112,13 @@ class ClanList extends Component {
       return (
         <div className="table-responsive">
           <Helmet>
-            <title>{t("Clan List")} - Stiletto</title>
+            <title>{t("Clan List")} - Stiletto for Last Oasis</title>
             <meta name="description" content="List of clans" />
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content="Clan List - Stiletto" />
+            <meta
+              name="twitter:title"
+              content="Clan List - Stiletto for Last Oasis"
+            />
             <meta name="twitter:description" content="List of clans" />
             <meta
               name="twitter:image"

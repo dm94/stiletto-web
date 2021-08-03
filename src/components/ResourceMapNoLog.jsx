@@ -212,13 +212,13 @@ class ResourceMapNoLog extends Component {
     return (
       <div className="row flex-xl-nowrap">
         <Helmet>
-          <title>{t("Map")} - Stiletto</title>
+          <title>{t("Map")} - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="Map of resources shared through a link"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Map - Stiletto" />
+          <meta name="twitter:title" content="Map - Stiletto for Last Oasis" />
           <meta
             name="twitter:description"
             content="Map of resources shared through a link"

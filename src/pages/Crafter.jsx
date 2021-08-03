@@ -200,13 +200,18 @@ class Crafter extends Component {
     return (
       <div className="row flex-xl-nowrap">
         <Helmet>
-          <title>{t("Crafter")} - Stiletto</title>
+          <title>
+            {t("Last Oasis Crafting Calculator")} - Stiletto for Last Oasis
+          </title>
           <meta
             name="description"
             content="See the materials needed to build each thing"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Crafter - Stiletto" />
+          <meta
+            name="twitter:title"
+            content="Crafter - Stiletto for Last Oasis"
+          />
           <meta
             name="twitter:description"
             content="See the materials needed to build each thing"

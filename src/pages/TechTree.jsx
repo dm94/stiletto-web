@@ -79,13 +79,16 @@ class TechTree extends Component {
     return (
       <div className="container-fluid">
         <Helmet>
-          <title>{t("Tech Tree")} - Stiletto</title>
+          <title>{t("Tech Tree")} - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="View and control your clan's technology tree."
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Tech Tree - Stiletto" />
+          <meta
+            name="twitter:title"
+            content="Tech Tree - Stiletto for Last Oasis"
+          />
           <meta
             name="twitter:description"
             content="View and control your clan's technology tree."

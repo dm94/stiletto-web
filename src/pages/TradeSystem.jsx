@@ -347,13 +347,16 @@ class TradeSystem extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>{t("Trades")} - Stiletto</title>
+          <title>{t("Trades")} - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="Publish your trade offers or what you need to make it easy for others to trade with you"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Trades - Stiletto" />
+          <meta
+            name="twitter:title"
+            content="Trades - Stiletto for Last Oasis"
+          />
           <meta
             name="twitter:description"
             content="Publish your trade offers or what you need to make it easy for others to trade with you"

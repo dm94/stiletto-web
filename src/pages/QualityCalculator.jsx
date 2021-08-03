@@ -139,13 +139,16 @@ class QualityCalculator extends Component {
     return (
       <div className="container">
         <Helmet>
-          <title>{t("Quality Calculator")} - Stiletto</title>
+          <title>{t("Quality Calculator")} - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="Check what quality you can make something before you spend the materials"
           />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Quality calculator - Stiletto" />
+          <meta
+            name="twitter:title"
+            content="Quality calculator - Stiletto for Last Oasis"
+          />
           <meta
             name="twitter:description"
             content="Check what quality you can make something before you spend the materials"
