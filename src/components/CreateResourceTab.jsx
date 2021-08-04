@@ -25,10 +25,8 @@ class CreateResourceTab extends Component {
     tool = parseInt(tool);
     harvested = parseInt(harvested);
 
-    if (harvested === 100 && tool < 100) {
-      quality = 200 - tool;
-    } else if (harvested >= tool) {
-      quality = (harvested + tool) / 2;
+    if (harvested >= tool) {
+      quality = harvested * 2 - tool;
     } else {
       quality = harvested;
     }
