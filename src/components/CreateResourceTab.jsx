@@ -5,6 +5,8 @@ class CreateResourceTab extends Component {
   state = {
     resourceTypeInput: "Aloe",
     qualityInput: 0,
+    toolQualityInput: 0,
+    resourceHarvestedQualityInput: 0,
     descriptionInput: null,
   };
 
@@ -17,6 +19,21 @@ class CreateResourceTab extends Component {
       ));
     }
   }
+
+  calculateQuality = (tool, harvested) => {
+    let quality = 0;
+    tool = parseInt(tool);
+    harvested = parseInt(harvested);
+
+    if (harvested === 100 && tool < 100) {
+      quality = 200 - tool;
+    } else if (harvested >= tool) {
+      quality = (harvested + tool) / 2;
+    } else {
+      quality = harvested;
+    }
+    this.setState({ qualityInput: Math.floor(quality) });
+  };
 
   render() {
     const { t } = this.props;
@@ -79,6 +96,50 @@ class CreateResourceTab extends Component {
             />
           </div>
           <div className="form-group">
+            <label htmlFor="toolQuality">
+              {t("Quality of your tool")} {t("(Not necessary)")}:{" "}
+              {this.state.toolQualityInput}
+            </label>
+            <input
+              type="range"
+              className="form-control-range"
+              id="toolQuality"
+              value={this.state.toolQualityInput}
+              max="100"
+              onChange={(evt) => {
+                this.setState({
+                  toolQualityInput: evt.target.value,
+                });
+                this.calculateQuality(
+                  evt.target.value,
+                  this.state.resourceHarvestedQualityInput
+                );
+              }}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="resourceHarvestedQuality">
+              {t("Quality of Harvested Resource")} {t("(Not necessary)")}:{" "}
+              {this.state.resourceHarvestedQualityInput}
+            </label>
+            <input
+              type="range"
+              className="form-control-range"
+              id="resourceHarvestedQuality"
+              value={this.state.resourceHarvestedQualityInput}
+              max="100"
+              onChange={(evt) => {
+                this.setState({
+                  resourceHarvestedQualityInput: evt.target.value,
+                });
+                this.calculateQuality(
+                  this.state.toolQualityInput,
+                  evt.target.value
+                );
+              }}
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="quality">
               {t("Quality")}: {this.state.qualityInput}
             </label>
@@ -87,7 +148,7 @@ class CreateResourceTab extends Component {
               className="form-control-range"
               id="quality"
               value={this.state.qualityInput}
-              max="100"
+              max="200"
               onChange={(evt) =>
                 this.setState({
                   qualityInput: evt.target.value,
