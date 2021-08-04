@@ -8,6 +8,7 @@ import ModalMessage from "../components/ModalMessage";
 import SkillTreeTab from "../components/SkillTreeTab";
 import { getItems, getUserProfile, closeSession } from "../services";
 import "../css/tech-tree.css";
+import DoubleScrollbar from "../components/DoubleScrollbar";
 
 class TechTree extends Component {
   constructor(props) {
@@ -289,7 +290,7 @@ class TechTree extends Component {
           </div>
         </nav>
         {this.saveDeleteButtons(t)}
-        <div className="overflow-auto">
+        <DoubleScrollbar>
           <div className="tab-content">
             <SkillTreeTab
               treeId={this.state.tabSelect}
@@ -299,7 +300,7 @@ class TechTree extends Component {
               clan={this.state.clan}
             />
           </div>
-        </div>
+        </DoubleScrollbar>
       </div>
     );
   }
@@ -309,13 +310,13 @@ class TechTree extends Component {
       return (
         <div className="w-100">
           <button
-            className="btn btn-success float-left my-2"
+            className="btn btn-success float-left m-2"
             onClick={() => this.saveTree()}
           >
             {t("Save Tree Data")}
           </button>
           <button
-            className="btn btn-danger float-right my-2"
+            className="btn btn-danger float-right m-2"
             onClick={() => this.deleteTree()}
           >
             {t("Delete Tree Data")}

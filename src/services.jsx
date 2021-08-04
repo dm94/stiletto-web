@@ -1,6 +1,6 @@
 import Axios from "axios";
 
-const timeCheck = 600000;
+const timeCheck = 300000;
 
 export const getUserProfile = async () => {
   const profile = localStorage.getItem("profile");
