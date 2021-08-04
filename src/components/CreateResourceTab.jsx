@@ -97,7 +97,7 @@ class CreateResourceTab extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="toolQuality">
-              {t("Quality of your tool")} {t("(Not necessary)")}:{" "}
+              {t("Quality of your tool")} ({t("Not necessary")}):{" "}
               {this.state.toolQualityInput}
             </label>
             <input
@@ -119,7 +119,7 @@ class CreateResourceTab extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="resourceHarvestedQuality">
-              {t("Quality of Harvested Resource")} {t("(Not necessary)")}:{" "}
+              {t("Quality of Harvested Resource")} ({t("Not necessary")}):{" "}
               {this.state.resourceHarvestedQualityInput}
             </label>
             <input
