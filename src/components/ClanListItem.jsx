@@ -31,11 +31,11 @@ class ClanListItem extends Component {
   render() {
     return (
       <tr>
-        <td className="text-center">
+        <td className="pl-3">
           <ClanName key={this.props.clan.name} clan={this.props.clan} />
         </td>
-        <td className="text-center">{this.props.clan.discordTag}</td>
-        <td className="text-center">
+        <td>{this.props.clan.discordTag}</td>
+        <td>
           <a
             href={"https://discord.gg/" + this.props.clan.invitelink}
             target="_blank"

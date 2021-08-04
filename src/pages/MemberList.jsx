@@ -313,14 +313,16 @@ class MemberList extends Component {
       } else {
         return (
           <tr>
-            <td colSpan="4">{t("There are no pending requests")}</td>
+            <td colSpan="4" className="text-center">
+              {t("There are no pending requests")}
+            </td>
           </tr>
         );
       }
     } else {
       return (
         <tr>
-          <td colSpan="4">
+          <td colSpan="4" className="text-center">
             {t("Loading the list of requests to enter the clan")}
           </td>
         </tr>

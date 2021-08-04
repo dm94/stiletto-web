@@ -290,7 +290,7 @@ class TechTree extends Component {
           </div>
         </nav>
         {this.saveDeleteButtons(t)}
-        <DoubleScrollbar>
+        <DoubleScrollbar className="w-100">
           <div className="tab-content">
             <SkillTreeTab
               treeId={this.state.tabSelect}
@@ -308,19 +308,21 @@ class TechTree extends Component {
   saveDeleteButtons(t) {
     if (localStorage.getItem("token") != null) {
       return (
-        <div className="w-100">
-          <button
-            className="btn btn-success float-left m-2"
-            onClick={() => this.saveTree()}
-          >
-            {t("Save Tree Data")}
-          </button>
-          <button
-            className="btn btn-danger float-right m-2"
-            onClick={() => this.deleteTree()}
-          >
-            {t("Delete Tree Data")}
-          </button>
+        <div className="row">
+          <div className="btn-group mx-auto" role="group">
+            <button
+              className="btn btn-success mr-auto m-2"
+              onClick={() => this.saveTree()}
+            >
+              {t("Save Tree Data")}
+            </button>
+            <button
+              className="btn btn-danger ml-auto m-2"
+              onClick={() => this.deleteTree()}
+            >
+              {t("Delete Tree Data")}
+            </button>
+          </div>
         </div>
       );
     }

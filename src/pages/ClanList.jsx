@@ -135,18 +135,12 @@ class ClanList extends Component {
               }
             />
           </Helmet>
-          <table className="table">
+          <table className="table table-striped">
             <thead className="thead-light">
               <tr>
-                <th className="text-center" scope="col">
-                  {t("Clan Name")}
-                </th>
-                <th className="text-center" scope="col">
-                  {t("Leader")}
-                </th>
-                <th className="text-center" scope="col">
-                  {t("Discord Invite Link")}
-                </th>
+                <th scope="col">{t("Clan Name")}</th>
+                <th scope="col">{t("Leader")}</th>
+                <th scope="col">{t("Discord Invite Link")}</th>
                 <th className="text-center" scope="col">
                   {t("Actions")}
                 </th>
