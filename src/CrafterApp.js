@@ -269,6 +269,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
+                  <p className="mr-auto">v. {process.env.REACT_APP_VERSION}</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"
