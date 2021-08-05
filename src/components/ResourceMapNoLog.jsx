@@ -8,6 +8,7 @@ import CreateResourceTab from "../components/CreateResourceTab";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import "../css/map-sidebar.min.css";
+import { updateResourceTime } from "../services";
 const queryString = require("query-string");
 
 class ResourceMapNoLog extends Component {
@@ -130,7 +131,12 @@ class ResourceMapNoLog extends Component {
       });
   };
 
-  createResource = (resourceTypeInput, qualityInput, descriptionInput) => {
+  createResource = (
+    resourceTypeInput,
+    qualityInput,
+    descriptionInput,
+    lastHarvested
+  ) => {
     const options = {
       method: "post",
       url:
@@ -148,6 +154,7 @@ class ResourceMapNoLog extends Component {
         y: this.state.coordinateYInput,
         description: descriptionInput,
         mappass: this.state.pass,
+        harvested: lastHarvested,
       },
     };
 
@@ -364,6 +371,10 @@ class ResourceMapNoLog extends Component {
                 : this.state.resourcesInTheMap
             }
             deleteResource={this.deleteResource}
+            updateResource={(mapid, resourceid, token, date) => {
+              updateResourceTime(mapid, resourceid, token, date);
+              this.componentDidMount();
+            }}
             changeInput={(x, y) => {
               this.setState({
                 coordinateXInput: x,

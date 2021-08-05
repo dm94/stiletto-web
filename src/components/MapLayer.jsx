@@ -39,6 +39,57 @@ class MapLayer extends Component {
     return marker;
   };
 
+  getResourceEstimatedQuality(t, resource) {
+    const diff = Math.abs(new Date() - new Date(resource.lastharvested));
+    const minutes = Math.floor(diff / 1000 / 60);
+    let estimatedQuality = minutes / 10;
+
+    if (estimatedQuality > resource.quality) {
+      estimatedQuality = resource.quality;
+    }
+    const remainingQuality = resource.quality - estimatedQuality;
+    let now = new Date();
+    let date =
+      now.getFullYear() +
+      "-" +
+      (now.getMonth() + 1) +
+      "-" +
+      now.getDate() +
+      " " +
+      now.getHours() +
+      ":" +
+      now.getMinutes();
+    return (
+      <div>
+        <button
+          className="btn btn-info btn-sm btn-block"
+          onClick={() =>
+            this.props.updateResource(
+              resource.mapid,
+              resource.resourceid,
+              resource.token,
+              date
+            )
+          }
+        >
+          {t("Harvested now")}
+        </button>
+        <div className="mb-1">
+          {t("Last Harvested")}: {resource.lastharvested}
+        </div>
+        <div className="mb-1">
+          {t("Estimated current Quality")}: {Math.floor(estimatedQuality)}
+        </div>
+        <div className="mb-1">
+          {t("Max quality in")}:{" "}
+          {remainingQuality !== 0
+            ? remainingQuality * 10 + " " + t("Minutes")
+            : t("Now")}
+        </div>
+      </div>
+    );
+  }
+
   getMarkers(t) {
     if (
       this.props.resourcesInTheMap != null &&
@@ -60,10 +111,13 @@ class MapLayer extends Component {
               {t(resource.resourcetype)}{" "}
               {resource.quality > 0 && "- Q:" + resource.quality}
             </div>
-            <div className="mb-1 text-muted text-center">
+            <div className="mb-1 text-muted">
               [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
             </div>
             <div className="mb-1">{resource.description}</div>
+            {resource.quality > 0 && resource.lastharvested != null
+              ? this.getResourceEstimatedQuality(t, resource)
+              : ""}
             <button
               className={resource.token != null ? "btn btn-danger" : "d-none"}
               onClick={() =>

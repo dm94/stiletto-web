@@ -41,15 +41,20 @@ class Home extends Component {
           />
         </Helmet>
         <div className="row mb-4">
+          <div className="col-12 p-3">
+            <h1 className="lo-title text-center">
+              {t("Stiletto the best website for Last Oasis")}
+            </h1>
+          </div>
           <div className="col-6 col-xl-4">
             <h2
-              className="font-weight-bold font-italic text-info"
+              className="lo-title"
               role="button"
               onClick={() => this.setState({ redirectTo: "/crafter" })}
             >
               {t("Crafting Calculator")}
             </h2>
-            <p className="text-info">
+            <p>
               {t(
                 "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish"
               )}
@@ -58,12 +63,12 @@ class Home extends Component {
           <div className="col-6 col-xl-4">
             <h2
               role="button"
-              className="font-weight-bold font-italic text-info"
+              className="lo-title"
               onClick={() => this.setState({ redirectTo: "/auctions" })}
             >
               {t("Auction Timers")}
             </h2>
-            <p className="text-info">
+            <p>
               {t(
                 "See how much time is left to finish the auctions of the maps you want easily"
               )}
@@ -72,12 +77,12 @@ class Home extends Component {
           <div className="col-6 col-xl-4">
             <h2
               role="button"
-              className="font-weight-bold font-italic text-info"
+              className="lo-title"
               onClick={() => this.setState({ redirectTo: "/trades" })}
             >
               {t("Trading System")}
             </h2>
-            <p className="text-info">
+            <p>
               {t(
                 "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with"
               )}
@@ -86,12 +91,12 @@ class Home extends Component {
           <div className="col-6 col-xl-4">
             <h2
               role="button"
-              className="font-weight-bold font-italic text-info"
+              className="lo-title"
               onClick={() => this.setState({ redirectTo: "/walkerlist" })}
             >
               {t("Walker List")}
             </h2>
-            <p className="text-info">
+            <p>
               {t(
                 "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way"
               )}
@@ -100,7 +105,7 @@ class Home extends Component {
           <div className="col-6 col-xl-4">
             <h2
               role="button"
-              className="font-weight-bold font-italic text-info"
+              className="lo-title"
               onClick={() =>
                 this.setState({
                   redirectTo:
@@ -112,23 +117,19 @@ class Home extends Component {
             >
               {t("Resource Maps")}
             </h2>
-            <p className="text-info">
+            <p>
               {t("Create and edit maps to add resources or strategic points.")}
             </p>
           </div>
           <div className="col-6 col-xl-4">
             <h2
               role="button"
-              className="font-weight-bold font-italic text-info"
-              onClick={() => this.setState({ redirectTo: "/diplomacy" })}
+              className="lo-title"
+              onClick={() => this.setState({ redirectTo: "/tech/Vitamins" })}
             >
-              {t("Clan Diplomacy")}
+              {t("Tech Tree")}
             </h2>
-            <p className="text-info">
-              {t(
-                "Use this section to control your clan, make alliances or send wars and to easily show it to your clan members."
-              )}
-            </p>
+            <p>{t("View and control your clan's technology tree.")}</p>
           </div>
         </div>
         <Others />

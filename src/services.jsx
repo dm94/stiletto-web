@@ -124,6 +124,26 @@ export const getMembers = async () => {
   }
 };
 
+export const updateResourceTime = (mapId, resoruceId, token, date) => {
+  const options = {
+    method: "put",
+    url:
+      process.env.REACT_APP_API_URL +
+      "/maps/" +
+      mapId +
+      "/resources/" +
+      resoruceId,
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    params: {
+      token: token,
+      harvested: date,
+    },
+  };
+  apiRequest(options);
+};
+
 export const getItems = async () => {
   const items = localStorage.getItem("allItems");
   const lastCheck = localStorage.getItem("items-lastCheck");
@@ -155,6 +175,7 @@ export const closeSession = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("profile-lastCheck");
   localStorage.removeItem("profile");
+  localStorage.removeItem("memberList");
 };
 
 async function apiRequest(options) {

@@ -17,10 +17,16 @@
 }
 
 .navbar-brand {
-  font-family: "Okami";
+  font-family: "Okami", sans-serif;
   font-weight: 400;
 }
 
 .navbar-brand span {
   font-size: 1.5rem !important;
+}
+
+.lo-title {
+  font-family: "Okami", sans-serif;
+  font-weight: 500;
+  color: #ff3d09;
 }

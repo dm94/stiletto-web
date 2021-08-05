@@ -8,6 +8,7 @@ class CreateResourceTab extends Component {
     toolQualityInput: 0,
     resourceHarvestedQualityInput: 0,
     descriptionInput: null,
+    lastHarvestedInput: null,
   };
 
   resourcesList(t) {
@@ -43,7 +44,8 @@ class CreateResourceTab extends Component {
             this.props.onCreateResource(
               this.state.resourceTypeInput,
               this.state.qualityInput,
-              this.state.descriptionInput
+              this.state.descriptionInput,
+              this.state.lastHarvestedInput
             );
             this.setState({
               resourceTypeInput: "Aloe",
@@ -167,6 +169,20 @@ class CreateResourceTab extends Component {
                 })
               }
               maxLength="100"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="Last Harvested">{t("Last Harvested")}</label>
+            <input
+              type="datetime-local"
+              className="form-control"
+              name="Last Harvested"
+              value={this.props.lastHarvestedInput}
+              onChange={(evt) =>
+                this.setState({
+                  lastHarvestedInput: evt.target.value,
+                })
+              }
             />
           </div>
           <button

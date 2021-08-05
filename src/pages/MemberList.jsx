@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { getUserProfile, closeSession } from "../services";
 import DiscordConfig from "../components/DiscordConfig";
+import ClanConfig from "../components/ClanConfig";
 
 class MemberList extends Component {
   constructor(props) {
@@ -26,6 +27,7 @@ class MemberList extends Component {
       isLeader: false,
       showBotConfig: false,
       clanid: null,
+      showClanConfig: false,
     };
   }
 
@@ -480,9 +482,24 @@ class MemberList extends Component {
         </Helmet>
         <div className={this.state.isLeader ? "col-12" : "col-12 d-none"}>
           <div className="row">
+            <div className="col-12 col-lg-2 mr-auto mb-2">
+              <div className="btn-group" role="group">
+                <button type="button" className="btn btn-primary" disabled>
+                  <i className="fas fa-users-cog"></i>
+                </button>
+                <button
+                  className={this.state.isLeader ? "btn btn-info" : "d-none"}
+                  onClick={() => {
+                    this.setState({ showClanConfig: true });
+                  }}
+                >
+                  {t("Clan Configuration")}
+                </button>
+              </div>
+            </div>
             <div className="col-12 col-lg-2 ml-auto mb-2">
               <div className="btn-group" role="group">
-                <button type="button" className="btn btn-primary">
+                <button type="button" className="btn btn-primary" disabled>
                   <i className="fab fa-discord"></i>
                 </button>
                 <button
@@ -594,6 +611,16 @@ class MemberList extends Component {
             key="discordbotconfig"
             clanid={this.state.clanid}
             onClose={() => this.setState({ showBotConfig: false })}
+            onError={(error) => this.setState({ error: error })}
+          />
+        ) : (
+          ""
+        )}
+        {this.state.showClanConfig ? (
+          <ClanConfig
+            key="clanconfig"
+            clanid={this.state.clanid}
+            onClose={() => this.setState({ showClanConfig: false })}
             onError={(error) => this.setState({ error: error })}
           />
         ) : (
