@@ -190,7 +190,7 @@ class Crafter extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t(this.state.error),
+            text: this.state.error,
             redirectPage: "/",
           }}
         />

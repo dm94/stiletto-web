@@ -291,7 +291,7 @@ class Diplomacy extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t(this.state.error),
+            text: this.state.error,
             redirectPage: "/profile",
           }}
         />
@@ -301,7 +301,7 @@ class Diplomacy extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t("You need to have a clan to access this section"),
+            text: "You need to have a clan to access this section",
             redirectPage: "/profile",
           }}
         />

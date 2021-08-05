@@ -29,6 +29,9 @@ class ModalMessage extends Component {
 
   render() {
     const { t } = this.props;
+    if (this.props.message.text === "Error when connecting to the API") {
+      localStorage.clear();
+    }
     if (this.state.redirect) {
       return <Redirect to={this.props.message.redirectPage} />;
     }
@@ -41,7 +44,7 @@ class ModalMessage extends Component {
                 {this.props.message.isError ? t("Error") : t("Information")}
               </h5>
             </div>
-            <div className="modal-body">{this.props.message.text}</div>
+            <div className="modal-body">{t(this.props.message.text)}</div>
             <div className="modal-footer">
               {this.props.message.redirectPage == null
                 ? this.onlyOkButton()

@@ -162,7 +162,7 @@ class ClanList extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t(this.state.error),
+            text: this.state.error,
             redirectPage: "/profile",
           }}
         />
@@ -172,7 +172,7 @@ class ClanList extends Component {
         <ModalMessage
           message={{
             isError: false,
-            text: t("Application to enter the clan sent"),
+            text: "Application to enter the clan sent",
             redirectPage: "/profile",
           }}
         />

@@ -269,7 +269,7 @@ class ClanMaps extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t(this.state.error),
+            text: this.state.error,
             redirectPage: "/profile",
           }}
         />
@@ -279,7 +279,7 @@ class ClanMaps extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t("Login again"),
+            text: "Login again",
             redirectPage: "/profile",
           }}
         />

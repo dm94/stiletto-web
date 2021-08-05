@@ -198,7 +198,7 @@ class ResourceMapNoLog extends Component {
         <ModalMessage
           message={{
             isError: false,
-            text: t(this.state.textMessage),
+            text: this.state.textMessage,
             redirectPage: null,
           }}
           onClickOk={() => this.setState({ textMessage: null })}
@@ -210,7 +210,7 @@ class ResourceMapNoLog extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t(this.state.error),
+            text: this.state.error,
             redirectPage: "/",
           }}
         />

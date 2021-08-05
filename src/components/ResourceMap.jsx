@@ -284,7 +284,7 @@ class ResourceMap extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t("Login with discord"),
+            text: "Login with discord",
             redirectPage: "/profile",
           }}
         />
@@ -294,7 +294,7 @@ class ResourceMap extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t(this.state.error),
+            text: this.state.error,
             redirectPage: "/profile",
           }}
         />
@@ -304,7 +304,7 @@ class ResourceMap extends Component {
         <ModalMessage
           message={{
             isError: false,
-            text: t(this.state.textSuccess),
+            text: this.state.textSuccess,
             redirectPage: null,
           }}
           onClickOk={() => this.setState({ textSuccess: null })}

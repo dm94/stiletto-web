@@ -414,7 +414,7 @@ class MemberList extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t(this.state.error),
+            text: this.state.error,
             redirectPage: "/profile",
           }}
         />
@@ -424,7 +424,7 @@ class MemberList extends Component {
         <ModalMessage
           message={{
             isError: false,
-            text: t(this.state.redirectMessage),
+            text: this.state.redirectMessage,
             redirectPage: "/profile",
           }}
         />
@@ -434,7 +434,7 @@ class MemberList extends Component {
         <ModalMessage
           message={{
             isError: true,
-            text: t("You do not have permission to access this page"),
+            text: "You do not have permission to access this page",
             redirectPage: "/profile",
           }}
         />

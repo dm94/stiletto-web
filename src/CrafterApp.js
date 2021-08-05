@@ -181,7 +181,7 @@ function CrafterApp() {
                 <ModalMessage
                   message={{
                     isError: true,
-                    text: t("The page you are looking for does not exist"),
+                    text: "The page you are looking for does not exist",
                     redirectPage: "/",
                   }}
                 />
