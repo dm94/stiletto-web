@@ -2,6 +2,7 @@
 [![Discord](https://img.shields.io/discord/317737508064591874?color=7289DA&logo=Discord&logoColor=FFFFFF)](https://discord.gg/FcecRtZ)
 [![Crowdin](https://badges.crowdin.net/stiletto/localized.svg)](https://crowdin.com/project/stiletto)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.stiletto.live%2F)](https://www.stiletto.live/)
+[![Website](https://wakatime.com/badge/github/dm94/stiletto-web.svg)](https://www.stiletto.live/)
 
 ---
 
