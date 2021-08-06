@@ -27,7 +27,7 @@ class ResourceMap extends Component {
       dateofburning: this.props.map.dateofburning,
       allowEditing: this.props.map.allowedit,
       resourcesFiltered: null,
-      isOpenSidebar: false,
+      isOpenSidebar: window.innerWidth >= 1440,
     };
   }
 
@@ -311,7 +311,6 @@ class ResourceMap extends Component {
         />
       );
     }
-
     return (
       <div className="row flex-xl-nowrap">
         <div
@@ -436,7 +435,7 @@ class ResourceMap extends Component {
                 aria-labelledby="resource-list-tab"
               >
                 <ul
-                  className="list-group overflow-auto"
+                  className="list-group overflow-auto w-100"
                   style={{ height: "60vh" }}
                 >
                   <ResourcesInMapList

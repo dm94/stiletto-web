@@ -317,7 +317,7 @@ class ResourceMapNoLog extends Component {
                 aria-labelledby="resource-list-tab"
               >
                 <ul
-                  className="list-group overflow-auto"
+                  className="list-group overflow-auto w-100"
                   style={{ height: "60vh" }}
                 >
                   <ResourcesInMapList

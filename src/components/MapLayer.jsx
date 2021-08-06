@@ -27,7 +27,7 @@ class MapLayer extends Component {
   }
 
   getMarketDesign = (resource) => {
-    let res = resource.replace(" ", "_");
+    let res = resource.replaceAll(" ", "_");
     let marker = L.icon({
       iconUrl:
         process.env.REACT_APP_API_GENERAL_URL + "/markers/" + res + ".png",
