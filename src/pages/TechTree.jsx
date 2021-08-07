@@ -7,7 +7,6 @@ import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import SkillTreeTab from "../components/SkillTreeTab";
 import { getItems, getUserProfile, closeSession } from "../services";
-import "../css/tech-tree.css";
 import DoubleScrollbar from "../components/DoubleScrollbar";
 
 class TechTree extends Component {
@@ -291,7 +290,7 @@ class TechTree extends Component {
         </nav>
         {this.saveDeleteButtons(t)}
         <DoubleScrollbar className="w-100">
-          <div className="tab-content">
+          <div className="tab-content-tree">
             <SkillTreeTab
               treeId={this.state.tabSelect}
               title={t(this.state.tabSelect)}

@@ -30,3 +30,11 @@
   font-weight: 500;
   color: #ff3d09;
 }
+
+.tab-content-tree h1 {
+  font-size: 1.5em !important;
+}
+
+.tab-content-tree {
+  min-height: 200vh;
+}
