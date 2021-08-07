@@ -199,7 +199,7 @@ let all = {
         'made on': 'Se fabrica en:',
         'Cost to learn': 'Costo para aprender',
         Recipe: 'Receta',
-        'Who have learned it?': '¿Quién lo ha aprendido?',
+        'Who has learned it?': '¿Quién lo ha aprendido?',
         'Latest updates': 'Últimas actualizaciones',
         'Report Bugs': 'Reportar fallos',
         'If you find a bug, let me know on GitHub so it can be fixed!': 'Agradecería si encuentras un error y me lo cuentas en GitHub o en otra plataforma para que pueda arreglarlo',

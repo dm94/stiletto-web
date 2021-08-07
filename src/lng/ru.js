@@ -199,7 +199,7 @@ let all = {
         'made on': 'Сделано:',
         'Cost to learn': 'Cost to learn',
         Recipe: 'Recipe',
-        'Who have learned it?': 'Who have learned it?',
+        'Who has learned it?': 'Who has learned it?',
         'Latest updates': 'Последние обновления',
         'Report Bugs': 'Сообщить об ошибках',
         'If you find a bug, let me know on GitHub so it can be fixed!': 'Я был бы признателен, если бы вы нашли ошибку и рассказали мне о ней на github или другой платформе, чтобы я мог ее исправить.',

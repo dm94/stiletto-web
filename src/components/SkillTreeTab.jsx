@@ -9,20 +9,18 @@ class SkillTreeTab extends Component {
   state = {};
   render() {
     return (
-      <div>
-        <SkillProvider>
-          <SkillTreeGroup theme={this.props.theme}>
-            {() => (
-              <SkillTree
-                treeId={this.props.treeId}
-                title={this.props.title}
-                data={this.getChildrens(this.props.treeId)}
-                handleSave={this.handleSave}
-              />
-            )}
-          </SkillTreeGroup>
-        </SkillProvider>
-      </div>
+      <SkillProvider>
+        <SkillTreeGroup theme={this.props.theme}>
+          {() => (
+            <SkillTree
+              treeId={this.props.treeId}
+              title={this.props.title}
+              data={this.getChildrens(this.props.treeId)}
+              handleSave={this.handleSave}
+            />
+          )}
+        </SkillTreeGroup>
+      </SkillProvider>
     );
   }
 
@@ -51,7 +49,7 @@ class SkillTreeTab extends Component {
     return (
       <div className="mx-auto">
         <p className="text-center border-bottom border-warning">
-          {t("Who have learned it?")}
+          {t("Who has learned it?")}
         </p>
         {this.props.clan != null ? (
           <SkillNodeBtn

@@ -222,7 +222,7 @@ let all = {
     "made on": "It's made on:",
     "Cost to learn": "Cost to learn",
     Recipe: "Recipe",
-    "Who have learned it?": "Who have learned it?",
+    "Who has learned it?": "Who has learned it?",
     "Latest updates": "Latest updates",
     "Report Bugs": "Report Bugs",
     "If you find a bug, let me know on GitHub so it can be fixed!":
