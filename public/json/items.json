@@ -5999,7 +5999,8 @@
           }
         ],
         "output": 3,
-        "station": "Advanced Fiberworking Station"
+        "station": "Advanced Fiberworking Station",
+        "time": 3
       }, {
         "ingredients": [{
             "count": 2,
@@ -6007,7 +6008,8 @@
           }
         ],
         "output": 4,
-        "station": "Fiberworking Station"
+        "station": "Fiberworking Station",
+        "time": 5
       }
     ],
     "name": "Fiber"
@@ -6022,7 +6024,19 @@
             "name": "Wood"
           }
         ],
-        "station": "Fiberworking Station"
+        "station": "Fiberworking Station",
+        "time": 5
+      }, {
+        "ingredients": [{
+            "count": 15,
+            "name": "Fiber"
+          }, {
+            "count": 2,
+            "name": "Wood"
+          }
+        ],
+        "station": "Advanced Fiberworking Station",
+        "time": 2
       }
     ],
     "name": "Fiber Weave",
@@ -6158,7 +6172,8 @@
             "name": "Bone Glue"
           }
         ],
-        "station": "Advanced Fiberworking Station"
+        "station": "Advanced Fiberworking Station",
+        "time": 60
       }, {
         "ingredients": [{
             "count": 18,
@@ -6168,7 +6183,8 @@
             "name": "Earth Wax"
           }
         ],
-        "station": "Advanced Fiberworking Station"
+        "station": "Advanced Fiberworking Station",
+        "time": 28
       }
     ],
     "name": "Nomad Cloth",
@@ -6338,7 +6354,16 @@
             "name": "Cattail"
           }
         ],
-        "station": "Fiberworking Station"
+        "station": "Advanced Fiberworking Station",
+        "time": 18
+      }, {
+        "ingredients": [{
+            "count": 8,
+            "name": "Cattail"
+          }
+        ],
+        "station": "Fiberworking Station",
+        "time": 24
       }, {
         "ingredients": [{
             "count": 40,
@@ -6348,7 +6373,19 @@
             "name": "Rupu Vine"
           }
         ],
-        "station": "Fiberworking Station"
+        "station": "Fiberworking Station",
+        "time": 38
+      }, {
+        "ingredients": [{
+            "count": 40,
+            "name": "Fiber"
+          }, {
+            "count": 2,
+            "name": "Rupu Vine"
+          }
+        ],
+        "station": "Advanced Fiberworking Station",
+        "time": 26
       }
     ],
     "name": "Rope",
@@ -6466,7 +6503,8 @@
             "name": "Earth Wax"
           }
         ],
-        "station": "Woodworking Station"
+        "station": "Woodworking Station",
+        "time": 40
       }
     ],
     "name": "Walker Mechanism",
@@ -6485,7 +6523,8 @@
             "name": "Fiber"
           }
         ],
-        "station": "Woodworking Station"
+        "station": "Woodworking Station",
+        "time": 5
       }
     ],
     "name": "Wood Shaft",
