@@ -51,7 +51,13 @@ class SkillNodeBtn extends Component {
       this.state.usersSavedData != null &&
       this.state.usersSavedData.length > 0
     ) {
-      return <p>{this.state.usersSavedData.toString()}</p>;
+      return (
+        <ul className="list-group list-group-horizontal flex-wrap">
+          {this.state.usersSavedData.map((user) => (
+            <li className="list-group-item">{user}</li>
+          ))}
+        </ul>
+      );
     } else if (this.state.loaded) {
       return <p>{t("No one has learnt it")}</p>;
     } else {

@@ -11,7 +11,7 @@ class SelectedItem extends Component {
     };
   }
 
-  showIngredient() {
+  showIngredient(t) {
     if (this.props.item.crafting != null) {
       return this.props.item.crafting.map((ingredients, i) => (
         <div
@@ -30,25 +30,19 @@ class SelectedItem extends Component {
                 : this.props.item.count
             }
           />
+          {this.showStation(t, ingredients)}
         </div>
       ));
     }
   }
 
-  showStation(t) {
-    if (
-      this.props.item.crafting != null &&
-      this.props.item.crafting[0] != null &&
-      this.props.item.crafting[0].station != null
-    ) {
+  showStation(t, ingredients) {
+    if (ingredients != null && ingredients.station != null) {
       return (
         <div className="text-right mb-0 text-muted">
           {t("made on")}{" "}
-          <Icon
-            key={this.props.item.crafting[0].station}
-            name={this.props.item.crafting[0].station}
-          />{" "}
-          {t(this.props.item.crafting[0].station)}
+          <Icon key={ingredients.station} name={ingredients.station} />{" "}
+          {t(ingredients.station)}
         </div>
       );
     }
@@ -123,8 +117,7 @@ class SelectedItem extends Component {
             </div>
           </div>
           <div className="card-body">
-            <div className="list-unstyled row">{this.showIngredient()}</div>
-            {this.showStation(t)}
+            <div className="list-unstyled row">{this.showIngredient(t)}</div>
             {this.showDamage(t)}
           </div>
           <div className="card-footer">
