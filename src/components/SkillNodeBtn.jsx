@@ -53,8 +53,13 @@ class SkillNodeBtn extends Component {
     ) {
       return (
         <ul className="list-group list-group-horizontal flex-wrap">
-          {this.state.usersSavedData.map((user) => (
-            <li className="list-group-item">{user}</li>
+          {this.state.usersSavedData.map((user, i) => (
+            <li
+              key={user + this.props.item.name + i}
+              className="list-group-item"
+            >
+              {user}
+            </li>
           ))}
         </ul>
       );

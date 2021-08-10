@@ -133,7 +133,7 @@ class WalkerList extends Component {
       method: "put",
       url: process.env.REACT_APP_API_URL + "/walkers/" + walker.walkerID,
       params: {
-        owner: walker.owner,
+        owner: walker.ownerUser,
         use: walker.walker_use,
         type: walker.type,
         description: walker.description,
