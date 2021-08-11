@@ -6,6 +6,7 @@ import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { getMembers, getItems, getUserProfile } from "../services";
+import Pagination from "../components/Pagination";
 const queryString = require("query-string");
 
 class WalkerList extends Component {
@@ -20,12 +21,13 @@ class WalkerList extends Component {
       showLinkDiscordButton: false,
       isFiltered: false,
       searchInput: "",
-      walkersFiltered: [],
       discordList: [],
       members: [],
       walkerTypes: [],
       isLeader: false,
       nickname: null,
+      page: 1,
+      hasMoreWalkers: false,
     };
   }
 
@@ -85,14 +87,25 @@ class WalkerList extends Component {
     this.updateMembers();
     this.updateWalkerTypes();
 
+    this.updateWalkers();
+  }
+
+  updateWalkers(page = this.state.page) {
+    this.setState({ isLoaded: false, page: page });
     Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
+      params: {
+        pageSize: 20,
+        page: page,
+        name: this.state.searchInput.length > 0 ? this.state.searchInput : null,
+      },
     })
       .then((response) => {
         if (response.status === 200) {
-          this.setState({ walkers: response.data });
+          let hasMore = response.data != null && response.data.length >= 20;
+          this.setState({ walkers: response.data, hasMoreWalkers: hasMore });
         } else if (response.status === 401) {
           this.setState({ error: "The data entered is incorrect" });
         } else if (response.status === 503) {
@@ -184,8 +197,8 @@ class WalkerList extends Component {
   };
 
   walkerList() {
-    if (this.state.isFiltered) {
-      return this.state.walkersFiltered.map((walker) => (
+    if (this.state.walkers != null) {
+      return this.state.walkers.map((walker) => (
         <WalkerListItem
           key={"witem" + walker.walkerID}
           walker={walker}
@@ -197,25 +210,6 @@ class WalkerList extends Component {
           onSave={this.updateWalker}
         />
       ));
-    } else {
-      if (
-        this.state.walkers != null &&
-        this.state.walkers[0] != null &&
-        this.state.walkers[0].discordid != null
-      ) {
-        return this.state.walkers.map((walker) => (
-          <WalkerListItem
-            key={"witem" + walker.walkerID}
-            walker={walker}
-            walkerListTypes={this.state.walkerTypes}
-            memberList={this.state.members}
-            isLeader={this.state.isLeader}
-            nickname={this.state.nickname}
-            onRemove={this.deleteWalker}
-            onSave={this.updateWalker}
-          />
-        ));
-      }
     }
   }
 
@@ -250,15 +244,16 @@ class WalkerList extends Component {
 
   searchWalkers = (event) => {
     event.preventDefault();
-    let walkersFiltered = this.state.walkers.filter((w) =>
-      w.name.toLowerCase().match(this.state.searchInput.toLowerCase())
-    );
-    this.setState({ walkersFiltered: walkersFiltered, isFiltered: true });
+    this.setState({ isFiltered: true, page: 1 }, () => {
+      this.updateWalkers();
+    });
   };
 
   clearSearch = (event) => {
     event.preventDefault();
-    this.setState({ walkersFiltered: [], isFiltered: false, searchInput: "" });
+    this.setState({ isFiltered: false, page: 1, searchInput: "" }, () => {
+      this.updateWalkers();
+    });
   };
 
   discordServerList() {
@@ -492,6 +487,12 @@ class WalkerList extends Component {
             </thead>
             <tbody>{this.walkerList()}</tbody>
           </table>
+          <Pagination
+            currentPage={this.state.page}
+            hasMore={this.state.hasMoreWalkers}
+            onPrev={() => this.updateWalkers(this.state.page - 1)}
+            onNext={() => this.updateWalkers(this.state.page + 1)}
+          ></Pagination>
         </Fragment>
       );
     }
