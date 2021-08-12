@@ -14,18 +14,23 @@ class Pagination extends Component {
             }
           >
             <button
-              class="page-link"
+              className="page-link"
               onClick={() => this.props.onPrev()}
               aria-disabled={!(this.props.currentPage > 1)}
             >
               {t("Previous Page")}
             </button>
           </li>
+          <li className="page-item active" aria-current="page">
+            <button className="page-link" disabled>
+              {this.props.currentPage}
+            </button>
+          </li>
           <li
             className={this.props.hasMore ? "page-item" : "page-item disabled"}
           >
             <button
-              class="page-link"
+              className="page-link"
               onClick={() => this.props.onNext()}
               aria-disabled={this.props.hasMore}
             >
