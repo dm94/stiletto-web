@@ -6087,7 +6087,7 @@
         "station": "Advanced Woodworking Station"
       }
     ],
-    "name": "Raddom Knowlegde Tablet",
+    "name": "Random Knowlegde Tablet",
     "parent": "Fragment"
   }, {
     "category": "materials",
@@ -18258,5 +18258,61 @@
     ],
     "name": "Poaching Hut",
     "parent": "Small Chest"
+  }, {
+    "category": "buildings/furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Fence 5"
+  }, {
+    "category": "buildings/furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 150,
+            "name": "Wood"
+          }, {
+            "count": 20,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Premade Throne"
+  }, {
+    "category": "buildings/furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 8,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Roofing 2"
+  }, {
+    "category": "buildings/furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 60,
+            "name": "Wood"
+          }, {
+            "count": 35,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Walker Totem"
   }
 ]

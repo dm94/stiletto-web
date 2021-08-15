@@ -161,7 +161,11 @@ class WalkerListItem extends Component {
                       <select
                         className="form-control"
                         id="inputType"
-                        value={this.state.walker.type}
+                        value={
+                          this.state.walker.type != null
+                            ? this.state.walker.type
+                            : ""
+                        }
                         onChange={(evt) => {
                           const valueInput = evt.target.value;
                           this.setState((state) => {
@@ -195,7 +199,11 @@ class WalkerListItem extends Component {
                       </div>
                       <textarea
                         className="form-control"
-                        value={this.state.walker.description}
+                        value={
+                          this.state.walker.description != null
+                            ? this.state.walker.description
+                            : ""
+                        }
                         onChange={(evt) => {
                           const valueInput = evt.target.value;
                           this.setState((state) => {
