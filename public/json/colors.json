@@ -1,0 +1,642 @@
+[{
+    "color": "Fossil Grey",
+    "ingredients": [{
+        "count": 1,
+        "name": "Pearl"
+      }, {
+        "count": 5,
+        "name": "Ash"
+      }
+    ]
+  }, {
+    "color": "Concrete Grey",
+    "ingredients": [{
+        "count": 2,
+        "name": "Charcoal"
+      }, {
+        "count": 5,
+        "name": "Ash"
+      }
+    ]
+  }, {
+    "color": "Steel Grey",
+    "ingredients": [{
+        "count": 1,
+        "name": "Cotton"
+      }, {
+        "count": 5,
+        "name": "Ash"
+      }
+    ]
+  }, {
+    "color": "Ivory Grey",
+    "ingredients": [{
+        "count": 2,
+        "name": "Bone Splinter"
+      }, {
+        "count": 5,
+        "name": "Ash"
+      }
+    ]
+  }, {
+    "color": "Ash Grey",
+    "ingredients": [{
+        "count": 5,
+        "name": "Sand"
+      }, {
+        "count": 5,
+        "name": "Ash"
+      }
+    ]
+  }, {
+    "color": "Foggy Grey",
+    "ingredients": [{
+        "count": 2,
+        "name": "Animal Fat"
+      }, {
+        "count": 5,
+        "name": "Ash"
+      }
+    ]
+  }, {
+    "color": "Muddy Grey",
+    "ingredients": [{
+        "count": 2,
+        "name": "Clay"
+      }, {
+        "count": 5,
+        "name": "Ash"
+      }
+    ]
+  }, {
+    "color": "Shadow Grey",
+    "ingredients": [{
+        "count": 2,
+        "name": "Tar"
+      }, {
+        "count": 5,
+        "name": "Ash"
+      }
+    ]
+  }, {
+    "color": "Icing Red",
+    "ingredients": [{
+        "count": 2,
+        "name": "Magma Seeds"
+      }, {
+        "count": 1,
+        "name": "Blood Turnip"
+      }
+    ]
+  }, {
+    "color": "Worm Blood Red",
+    "ingredients": [{
+        "count": 5,
+        "name": "Worm Sand"
+      }, {
+        "count": 1,
+        "name": "Blood Turnip"
+      }
+    ]
+  }, {
+    "color": "Dawn Sky Red",
+    "ingredients": [{
+        "count": 2,
+        "name": "Pearl"
+      }, {
+        "count": 1,
+        "name": "Blood Turnip"
+      }
+    ]
+  }, {
+    "color": "Flamingo Red",
+    "ingredients": [{
+        "count": 2,
+        "name": "Huge Cactus Fruit"
+      }, {
+        "count": 1,
+        "name": "Blood Turnip"
+      }
+    ]
+  }, {
+    "color": "Redwood Red",
+    "ingredients": [{
+        "count": 2,
+        "name": "Cotton"
+      }, {
+        "count": 1,
+        "name": "Blood Turnip"
+      }
+    ]
+  }, {
+    "color": "Blush Red",
+    "ingredients": [{
+        "count": 2,
+        "name": "Tar"
+      }, {
+        "count": 1,
+        "name": "Blood Turnip"
+      }
+    ]
+  }, {
+    "color": "Dark Coral Red",
+    "ingredients": [{
+        "count": 2,
+        "name": "Lava Poppy"
+      }, {
+        "count": 1,
+        "name": "Blood Turnip"
+      }
+    ]
+  }, {
+    "color": "Alizarin Red",
+    "ingredients": [{
+        "count": 5,
+        "name": "Ash"
+      }, {
+        "count": 1,
+        "name": "Blood Turnip"
+      }
+    ]
+  }, {
+    "color": "Salmon Orange",
+    "ingredients": [{
+        "count": 2,
+        "name": "Lava Poppy"
+      }, {
+        "count": 5,
+        "name": "Corn"
+      }
+    ]
+  }, {
+    "color": "Melon Orange",
+    "ingredients": [{
+        "count": 1,
+        "name": "Redwood"
+      }, {
+        "count": 5,
+        "name": "Corn"
+      }
+    ]
+  }, {
+    "color": "Peach Orange",
+    "ingredients": [{
+        "count": 1,
+        "name": "Pearl"
+      }, {
+        "count": 5,
+        "name": "Corn"
+      }
+    ]
+  }, {
+    "color": "Clay Orange",
+    "ingredients": [{
+        "count": 2,
+        "name": "Clay"
+      }, {
+        "count": 5,
+        "name": "Corn"
+      }
+    ]
+  }, {
+    "color": "Honey Orange",
+    "ingredients": [{
+        "count": 2,
+        "name": "Beesewax"
+      }, {
+        "count": 5,
+        "name": "Corn"
+      }
+    ]
+  }, {
+    "color": "Squash Skin Orange",
+    "ingredients": [{
+        "count": 2,
+        "name": "Cotton"
+      }, {
+        "count": 5,
+        "name": "Corn"
+      }
+    ]
+  }, {
+    "color": "Zest Orange",
+    "ingredients": [{
+        "count": 1,
+        "name": "Rupu Gel"
+      }, {
+        "count": 5,
+        "name": "Corn"
+      }
+    ]
+  }, {
+    "color": "Burnt Sand Orange",
+    "ingredients": [{
+        "count": 1,
+        "name": "Earth Wax"
+      }, {
+        "count": 5,
+        "name": "Corn"
+      }
+    ]
+  }, {
+    "color": "Cornseed Yellow",
+    "ingredients": [{
+        "count": 5,
+        "name": "Corn"
+      }, {
+        "count": 2,
+        "name": "Apple"
+      }
+    ]
+  }, {
+    "color": "Banana Yellow",
+    "ingredients": [{
+        "count": 1,
+        "name": "Tar"
+      }, {
+        "count": 2,
+        "name": "Apple"
+      }
+    ]
+  }, {
+    "color": "Daybreak Yellow",
+    "ingredients": [{
+        "count": 2,
+        "name": "Palm Leaves"
+      }, {
+        "count": 2,
+        "name": "Apple"
+      }
+    ]
+  }, {
+    "color": "Antique Yellow",
+    "ingredients": [{
+        "count": 1,
+        "name": "Cotton"
+      }, {
+        "count": 2,
+        "name": "Apple"
+      }
+    ]
+  }, {
+    "color": "Mustard Yellow",
+    "ingredients": [{
+        "count": 5,
+        "name": "Ash"
+      }, {
+        "count": 2,
+        "name": "Apple"
+      }
+    ]
+  }, {
+    "color": "Lime Ice Yellow",
+    "ingredients": [{
+        "count": 1,
+        "name": "Pearl"
+      }, {
+        "count": 2,
+        "name": "Apple"
+      }
+    ]
+  }, {
+    "color": "Lemon Yellow",
+    "ingredients": [{
+        "count": 1,
+        "name": "Feather"
+      }, {
+        "count": 2,
+        "name": "Apple"
+      }
+    ]
+  }, {
+    "color": "Oil Yellow",
+    "ingredients": [{
+        "count": 2,
+        "name": "Animal Fat"
+      }, {
+        "count": 2,
+        "name": "Apple"
+      }
+    ]
+  }, {
+    "color": "Sour Green",
+    "ingredients": [{
+        "count": 5,
+        "name": "Magma Seeds"
+      }, {
+        "count": 2,
+        "name": "Cactus Flesh"
+      }
+    ]
+  }, {
+    "color": "Moss Green",
+    "ingredients": [{
+        "count": 2,
+        "name": "Sulfur"
+      }, {
+        "count": 2,
+        "name": "Cactus Flesh"
+      }
+    ]
+  }, {
+    "color": "Beryl Green",
+    "ingredients": [{
+        "count": 5,
+        "name": "Corn"
+      }, {
+        "count": 2,
+        "name": "Cactus Flesh"
+      }
+    ]
+  }, {
+    "color": "Olive Green",
+    "ingredients": [{
+        "count": 2,
+        "name": "Blood Turnip"
+      }, {
+        "count": 2,
+        "name": "Cactus Flesh"
+      }
+    ]
+  }, {
+    "color": "Pastel Green",
+    "ingredients": [{
+        "count": 2,
+        "name": "Cotton"
+      }, {
+        "count": 2,
+        "name": "Cactus Flesh"
+      }
+    ]
+  }, {
+    "color": "Ashen Green",
+    "ingredients": [{
+        "count": 5,
+        "name": "Aloe Vera"
+      }, {
+        "count": 2,
+        "name": "Cactus Flesh"
+      }
+    ]
+  }, {
+    "color": "Fern Green",
+    "ingredients": [{
+        "count": 10,
+        "name": "Cattail"
+      }, {
+        "count": 2,
+        "name": "Cactus Flesh"
+      }
+    ]
+  }, {
+    "color": "Mint Green",
+    "ingredients": [{
+        "count": 5,
+        "name": "Palm Leaves"
+      }, {
+        "count": 2,
+        "name": "Cactus Flesh"
+      }
+    ]
+  }, {
+    "color": "Grassland Teal",
+    "ingredients": [{
+        "count": 1,
+        "name": "Pearl"
+      }, {
+        "count": 5,
+        "name": "Aloe Vera"
+      }
+    ]
+  }, {
+    "color": "Nibiran Teal",
+    "ingredients": [{
+        "count": 1,
+        "name": "Nibiran Mineral"
+      }, {
+        "count": 5,
+        "name": "Aloe Vera"
+      }
+    ]
+  }, {
+    "color": "Riverside Teal",
+    "ingredients": [{
+        "count": 2,
+        "name": "Cactus Flesh"
+      }, {
+        "count": 5,
+        "name": "Aloe Vera"
+      }
+    ]
+  }, {
+    "color": "Eucalyptus Teal",
+    "ingredients": [{
+        "count": 2,
+        "name": "Insects"
+      }, {
+        "count": 5,
+        "name": "Aloe Vera"
+      }
+    ]
+  }, {
+    "color": "Sea Forest Teal",
+    "ingredients": [{
+        "count": 1,
+        "name": "Thornberry"
+      }, {
+        "count": 5,
+        "name": "Aloe Vera"
+      }
+    ]
+  }, {
+    "color": "Malachite Teal",
+    "ingredients": [{
+        "count": 1,
+        "name": "Obsidian"
+      }, {
+        "count": 5,
+        "name": "Aloe Vera"
+      }
+    ]
+  }, {
+    "color": "Aloe Sap Teal",
+    "ingredients": [{
+        "count": 2,
+        "name": "Apple"
+      }, {
+        "count": 5,
+        "name": "Aloe Vera"
+      }
+    ]
+  }, {
+    "color": "Turquoise Teal",
+    "ingredients": [{
+        "count": 2,
+        "name": "Animal Fat"
+      }, {
+        "count": 5,
+        "name": "Aloe Vera"
+      }
+    ]
+  }, {
+    "color": "Seafoam Blue",
+    "ingredients": [{
+        "count": 5,
+        "name": "Aloe Vera"
+      }, {
+        "count": 1,
+        "name": "Thornberry"
+      }
+    ]
+  }, {
+    "color": "Glacial Blue",
+    "ingredients": [{
+        "count": 2,
+        "name": "Pearl"
+      }, {
+        "count": 1,
+        "name": "Thornberry"
+      }
+    ]
+  }, {
+    "color": "Underwater Blue",
+    "ingredients": [{
+        "count": 5,
+        "name": "Ash"
+      }, {
+        "count": 1,
+        "name": "Thornberry"
+      }
+    ]
+  }, {
+    "color": "Titanium Blue",
+    "ingredients": [{
+        "count": 2,
+        "name": "Cotton"
+      }, {
+        "count": 1,
+        "name": "Thornberry"
+      }
+    ]
+  }, {
+    "color": "Pastel Cloud Blue",
+    "ingredients": [{
+        "count": 3,
+        "name": "Beesewax"
+      }, {
+        "count": 1,
+        "name": "Thornberry"
+      }
+    ]
+  }, {
+    "color": "Steel Sky Blue",
+    "ingredients": [{
+        "count": 5,
+        "name": "Charcoal"
+      }, {
+        "count": 1,
+        "name": "Thornberry"
+      }
+    ]
+  }, {
+    "color": "Lapis Blue",
+    "ingredients": [{
+        "count": 3,
+        "name": "Tar"
+      }, {
+        "count": 1,
+        "name": "Thornberry"
+      }
+    ]
+  }, {
+    "color": "Regal Blue",
+    "ingredients": [{
+        "count": 5,
+        "name": "Corn"
+      }, {
+        "count": 1,
+        "name": "Thornberry"
+      }
+    ]
+  }, {
+    "color": "Nightsade Purple",
+    "ingredients": [{
+        "count": 5,
+        "name": "Ash"
+      }, {
+        "count": 2,
+        "name": "Mushroom Flesh"
+      }
+    ]
+  }, {
+    "color": "Pillow Purple",
+    "ingredients": [{
+        "count": 2,
+        "name": "Lava Poppy"
+      }, {
+        "count": 2,
+        "name": "Mushroom Flesh"
+      }
+    ]
+  }, {
+    "color": "Thistle Purple",
+    "ingredients": [{
+        "count": 1,
+        "name": "Cotton"
+      }, {
+        "count": 2,
+        "name": "Mushroom Flesh"
+      }
+    ]
+  }, {
+    "color": "Dusk Sky Purple",
+    "ingredients": [{
+        "count": 2,
+        "name": "Chitin Plate"
+      }, {
+        "count": 2,
+        "name": "Mushroom Flesh"
+      }
+    ]
+  }, {
+    "color": "Grapevine Purple",
+    "ingredients": [{
+        "count": 2,
+        "name": "Rupu Vine"
+      }, {
+        "count": 2,
+        "name": "Mushroom Flesh"
+      }
+    ]
+  }, {
+    "color": "Neon Purple",
+    "ingredients": [{
+        "count": 2,
+        "name": "Blood Turnip"
+      }, {
+        "count": 2,
+        "name": "Mushroom Flesh"
+      }
+    ]
+  }, {
+    "color": "Afterglow Purple",
+    "ingredients": [{
+        "count": 2,
+        "name": "Magma Seeds"
+      }, {
+        "count": 2,
+        "name": "Mushroom Flesh"
+      }
+    ]
+  }, {
+    "color": "Radiant Pearl Purple",
+    "ingredients": [{
+        "count": 1,
+        "name": "Pearl"
+      }, {
+        "count": 2,
+        "name": "Mushroom Flesh"
+      }
+    ]
+  }
+]
