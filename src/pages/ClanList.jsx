@@ -5,6 +5,7 @@ import ModalMessage from "../components/ModalMessage";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import Pagination from "../components/Pagination";
 import { getUserProfile } from "../services";
 
 class ClanList extends Component {
@@ -20,14 +21,31 @@ class ClanList extends Component {
       textAreaModelValue: "",
       clanuserid: null,
       isLogged: false,
+      page: 1,
+      hasMoreClans: false,
     };
   }
 
   async componentDidMount() {
-    Axios.get(process.env.REACT_APP_API_URL + "/clans")
+    this.updateClans();
+  }
+
+  async updateClans(page = this.state.page) {
+    this.setState({ isLoaded: false, page: page });
+    Axios.get(process.env.REACT_APP_API_URL + "/clans", {
+      params: {
+        pageSize: 10,
+        page: page,
+      },
+    })
       .then((response) => {
         if (response.status === 202) {
-          this.setState({ clans: response.data, isLoaded: true });
+          let hasMore = response.data != null && response.data.length >= 10;
+          this.setState({
+            clans: response.data,
+            isLoaded: true,
+            hasMoreClans: hasMore,
+          });
         } else if (response.status === 401) {
           this.setState({
             error: "You need to be logged in to view this section",
@@ -148,6 +166,12 @@ class ClanList extends Component {
             </thead>
             <tbody>{this.list()}</tbody>
           </table>
+          <Pagination
+            currentPage={this.state.page}
+            hasMore={this.state.hasMoreClans}
+            onPrev={() => this.updateClans(this.state.page - 1)}
+            onNext={() => this.updateClans(this.state.page + 1)}
+          ></Pagination>
         </div>
       );
     } else {
