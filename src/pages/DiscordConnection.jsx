@@ -102,13 +102,7 @@ class DiscordConnection extends Component {
             />
           </Helmet>
           <div className="col-6 mx-auto">
-            <div
-              className={
-                localStorage.getItem("darkmode") !== "true"
-                  ? "card border-secondary mb-3"
-                  : "card border-secondary mb-3 text-white bg-dark"
-              }
-            >
+            <div className="card border-secondary mb-3">
               <div className="card-body text-succes">
                 <a
                   className="btn btn-lg btn-outline-primary btn-block"

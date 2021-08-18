@@ -43,7 +43,7 @@ class Trade extends Component {
             ) : (
               <i className="far fa-arrow-alt-circle-down"></i>
             )}{" "}
-            {t(this.props.trade.type)} - {this.props.trade.region}
+            {t(this.props.trade.type)} {"//"} {this.props.trade.region}
           </div>
           <div className="card-body">
             <h5 className="card-title">

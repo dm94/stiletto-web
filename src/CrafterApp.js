@@ -158,7 +158,13 @@ function CrafterApp() {
       </header>
       <main role="main" className="flex-shrink-0">
         <div className="container-fluid pt-4">
-          <Analytics id={process.env.REACT_APP_GA_ID}>
+          <Analytics
+            id={
+              localStorage.getItem("acceptscookies")
+                ? process.env.REACT_APP_GA_ID
+                : ""
+            }
+          >
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/profile" component={DiscordConnection} />
@@ -269,7 +275,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.15.13</p>
+                  <p className="mr-auto">v. 3.15.14</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"

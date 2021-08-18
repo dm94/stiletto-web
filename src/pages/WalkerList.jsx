@@ -32,6 +32,11 @@ class WalkerList extends Component {
   }
 
   async componentDidMount() {
+    if (localStorage.getItem("token") == null) {
+      this.setState({ error: "You need to be logged in to view this section" });
+      return;
+    }
+
     const parsed = queryString.parse(this.props.location.search);
     if (parsed.code != null) {
       let http = window.location.protocol;

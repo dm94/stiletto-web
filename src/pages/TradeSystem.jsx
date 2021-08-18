@@ -6,6 +6,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Trade from "../components/Trade";
 import { getItems } from "../services";
+import Pagination from "../components/Pagination";
 
 class TradeSystem extends Component {
   constructor(props) {
@@ -25,19 +26,22 @@ class TradeSystem extends Component {
       qualityInput: 0,
       priceInput: 0,
       filteredTrades: [],
-      resourceTypeFilterInput: "Aloe",
-      tradeTypeFilterInput: "Supply",
-      regionFilterInput: "EU",
-      isFiltered: false,
+      resourceTypeFilterInput: null,
+      tradeTypeFilterInput: null,
+      regionFilterInput: null,
+      page: 1,
+      hasMore: false,
     };
   }
 
   componentDidMount() {
     this.updateRecipes();
-    Axios.get(process.env.REACT_APP_API_URL + "/trades")
+    this.updateTrades();
+
+    Axios.get(process.env.REACT_APP_API_URL + "/clusters")
       .then((response) => {
         if (response.status === 200) {
-          this.setState({ trades: response.data, isLoaded: true });
+          this.setState({ clusters: response.data, isLoaded: true });
         } else if (response.status === 503) {
           this.setState({ error: "Error connecting to database" });
         }
@@ -45,10 +49,27 @@ class TradeSystem extends Component {
       .catch(() => {
         this.setState({ error: "Error connecting to the API" });
       });
-    Axios.get(process.env.REACT_APP_API_URL + "/clusters")
+  }
+
+  updateTrades(page = this.state.page) {
+    this.setState({ isLoaded: false, page: page });
+    Axios.get(process.env.REACT_APP_API_URL + "/trades", {
+      params: {
+        pageSize: 10,
+        page: page,
+        type: this.state.tradeTypeFilterInput,
+        resource: this.state.resourceTypeFilterInput,
+        region: this.state.regionFilterInput,
+      },
+    })
       .then((response) => {
         if (response.status === 200) {
-          this.setState({ clusters: response.data, isLoaded: true });
+          let hasMore = response.data != null && response.data.length >= 10;
+          this.setState({
+            trades: response.data,
+            isLoaded: true,
+            hasMore: hasMore,
+          });
         } else if (response.status === 503) {
           this.setState({ error: "Error connecting to database" });
         }
@@ -89,22 +110,6 @@ class TradeSystem extends Component {
         this.setState({ error: "Error connecting to database" });
       }
     });
-  };
-
-  onClickCleanTrades = (event) => {
-    event.preventDefault();
-    this.setState({ filteredTrades: [], isFiltered: false });
-  };
-
-  onClickFilterTrades = (event) => {
-    event.preventDefault();
-    let filteredTrades = this.state.trades.filter(
-      (it) =>
-        it.region === this.state.regionFilterInput &&
-        it.resource === this.state.resourceTypeFilterInput &&
-        it.type === this.state.tradeTypeFilterInput
-    );
-    this.setState({ filteredTrades: filteredTrades, isFiltered: true });
   };
 
   createTrade = (event) => {
@@ -308,23 +313,13 @@ class TradeSystem extends Component {
 
   tradeList(t) {
     if (this.state.trades != null) {
-      if (this.state.isFiltered) {
-        if (this.state.filteredTrades.length > 0) {
-          return this.state.filteredTrades.map((trade) => (
-            <Trade key={"trade" + trade.idtrade} trade={trade} />
-          ));
-        } else {
-          return <div>{t("No trade offers were found with this filter")}</div>;
-        }
-      } else {
-        return this.state.trades.map((trade) => (
-          <Trade
-            key={"trade" + trade.idtrade}
-            trade={trade}
-            onDelete={this.deleteTrade}
-          />
-        ));
-      }
+      return this.state.trades.map((trade) => (
+        <Trade
+          key={"trade" + trade.idtrade}
+          trade={trade}
+          onDelete={this.deleteTrade}
+        />
+      ));
     }
   }
 
@@ -389,7 +384,11 @@ class TradeSystem extends Component {
                   <select
                     id="tradeTypeFilter"
                     className="custom-select"
-                    value={this.state.tradeTypeFilterInput}
+                    value={
+                      this.state.tradeTypeFilterInput
+                        ? this.state.tradeTypeFilterInput
+                        : ""
+                    }
                     onChange={(evt) =>
                       this.setState({
                         tradeTypeFilterInput: evt.target.value,
@@ -407,7 +406,11 @@ class TradeSystem extends Component {
                   <select
                     id="resourcetypefilter"
                     className="custom-select"
-                    value={this.state.resourceTypeFilterInput}
+                    value={
+                      this.state.resourceTypeFilterInput
+                        ? this.state.resourceTypeFilterInput
+                        : ""
+                    }
                     onChange={(evt) =>
                       this.setState({
                         resourceTypeFilterInput: evt.target.value,
@@ -424,7 +427,11 @@ class TradeSystem extends Component {
                   <select
                     id="regionFilterInput"
                     className="custom-select"
-                    value={this.state.regionFilterInput}
+                    value={
+                      this.state.regionFilterInput
+                        ? this.state.regionFilterInput
+                        : ""
+                    }
                     onChange={(evt) =>
                       this.setState({
                         regionFilterInput: evt.target.value,
@@ -437,13 +444,20 @@ class TradeSystem extends Component {
                 <div className="col-xl-3 btn-group">
                   <button
                     className="btn btn-lg btn-primary"
-                    onClick={(e) => this.onClickFilterTrades(e)}
+                    onClick={(e) => this.updateTrades()}
                   >
                     {t("Filter trades")}
                   </button>
                   <button
                     className="btn btn-lg btn-secondary"
-                    onClick={(e) => this.onClickCleanTrades(e)}
+                    onClick={() => {
+                      this.updateTrades();
+                      this.setState({
+                        resourceTypeFilterInput: null,
+                        tradeTypeFilterInput: null,
+                        regionFilterInput: null,
+                      });
+                    }}
                   >
                     {t("Clean filter")}
                   </button>
@@ -454,6 +468,12 @@ class TradeSystem extends Component {
         </div>
         <div className="col-md-12">
           <div className="row">{this.tradeList(t)}</div>
+          <Pagination
+            currentPage={this.state.page}
+            hasMore={this.state.hasMore}
+            onPrev={() => this.updateTrades(this.state.page - 1)}
+            onNext={() => this.updateTrades(this.state.page + 1)}
+          ></Pagination>
         </div>
       </div>
     );
