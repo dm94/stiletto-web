@@ -85,7 +85,9 @@ class TechTree extends Component {
         all[tech] = { optional: false, nodeState: "selected" };
       });
 
-      localStorage.setItem(`skills-${tree}`, JSON.stringify(all));
+      if (localStorage.getItem("acceptscookies")) {
+        localStorage.setItem(`skills-${tree}`, JSON.stringify(all));
+      }
     }
   }
 

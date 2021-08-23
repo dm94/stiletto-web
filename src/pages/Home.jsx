@@ -46,7 +46,7 @@ class Home extends Component {
               {t("Stiletto the best website for Last Oasis")}
             </h1>
           </div>
-          <div className="col-6 col-xl-4">
+          <div className="col-12 col-xl-4">
             <h2
               className="lo-title"
               role="button"
@@ -60,7 +60,7 @@ class Home extends Component {
               )}
             </p>
           </div>
-          <div className="col-6 col-xl-4">
+          <div className="col-12 col-xl-4">
             <h2
               role="button"
               className="lo-title"
@@ -74,7 +74,7 @@ class Home extends Component {
               )}
             </p>
           </div>
-          <div className="col-6 col-xl-4">
+          <div className="col-12 col-xl-4">
             <h2
               role="button"
               className="lo-title"
@@ -88,7 +88,7 @@ class Home extends Component {
               )}
             </p>
           </div>
-          <div className="col-6 col-xl-4">
+          <div className="col-12 col-xl-4">
             <h2
               role="button"
               className="lo-title"
@@ -102,7 +102,7 @@ class Home extends Component {
               )}
             </p>
           </div>
-          <div className="col-6 col-xl-4">
+          <div className="col-12 col-xl-4">
             <h2
               role="button"
               className="lo-title"
@@ -121,7 +121,7 @@ class Home extends Component {
               {t("Create and edit maps to add resources or strategic points.")}
             </p>
           </div>
-          <div className="col-6 col-xl-4">
+          <div className="col-12 col-xl-4">
             <h2
               role="button"
               className="lo-title"

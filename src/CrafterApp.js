@@ -275,7 +275,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.15.14</p>
+                  <p className="mr-auto">v. 3.15.15</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"
@@ -379,8 +379,10 @@ function darkMode(t) {
       <button
         className="btn btn-sm btn-outline-light"
         onClick={() => {
-          localStorage.setItem("darkmode", false);
-          window.location.reload();
+          if (localStorage.getItem("acceptscookies")) {
+            localStorage.setItem("darkmode", false);
+            window.location.reload();
+          }
         }}
       >
         <i className="far fa-sun"></i> {t("Light Theme Mode")}
@@ -391,8 +393,10 @@ function darkMode(t) {
       <button
         className="btn btn-sm btn-outline-light"
         onClick={() => {
-          localStorage.setItem("darkmode", true);
-          window.location.reload();
+          if (localStorage.getItem("acceptscookies")) {
+            localStorage.setItem("darkmode", true);
+            window.location.reload();
+          }
         }}
       >
         <i className="far fa-moon"></i> {t("Dark Theme Mode")}

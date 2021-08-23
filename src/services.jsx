@@ -26,8 +26,10 @@ export const getUserProfile = async () => {
       if (response.status === 200) {
         if (response.data != null) {
           localStorage.setItem("discordid", response.data.discordid);
-          localStorage.setItem("profile", JSON.stringify(response.data));
-          localStorage.setItem("profile-lastCheck", Date.now());
+          if (localStorage.getItem("acceptscookies")) {
+            localStorage.setItem("profile", JSON.stringify(response.data));
+            localStorage.setItem("profile-lastCheck", Date.now());
+          }
           return { success: true, message: response.data };
         }
         return { success: true, message: "" };
@@ -92,7 +94,7 @@ export const getMembers = async () => {
       const response = await apiRequest(options);
       if (response != null) {
         if (response.status === 202) {
-          if (response.data != null) {
+          if (response.data != null && localStorage.getItem("acceptscookies")) {
             localStorage.setItem("memberList", JSON.stringify(response.data));
             localStorage.setItem("memberList-lastCheck", Date.now());
           }
@@ -162,7 +164,9 @@ export const getItems = async () => {
 
     const response = await apiRequest(options);
     if (response != null && response.data != null) {
-      localStorage.setItem("allItems", JSON.stringify(response.data));
+      if (localStorage.getItem("acceptscookies")) {
+        localStorage.setItem("allItems", JSON.stringify(response.data));
+      }
       return response.data;
     } else {
       return null;
