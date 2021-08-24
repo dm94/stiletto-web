@@ -23,8 +23,22 @@ class QualityCalculator extends Component {
   async updateRecipes() {
     let items = await getItems();
     if (items != null) {
-      items = items.filter((it) => !it.category.includes("upgrades"));
-      this.setState({ items: items });
+      items = items.filter(
+        (it) => !it.category.includes("upgrades") && it.crafting
+      );
+      this.setState({
+        items: items,
+        itemSelected: items.length > 0 ? items[0] : null,
+        ingredients:
+          items && items.length > 0 && items[0] && items[0].crafting
+            ? items[0].crafting[0].ingredients.filter(
+                (ing) =>
+                  ing.name !== "Purified Water" &&
+                  ing.name !== "Walker Mechanism" &&
+                  ing.name !== "Lava"
+              )
+            : [],
+      });
     }
   }
 
@@ -40,7 +54,23 @@ class QualityCalculator extends Component {
         });
       });
       this.setState({ searchText });
-      this.setState({ filteredItems: filteredItems });
+      this.setState({
+        filteredItems: filteredItems,
+        itemSelected:
+          filteredItems && filteredItems.length > 0 ? filteredItems[0] : null,
+        ingredients:
+          filteredItems &&
+          filteredItems.length > 0 &&
+          filteredItems[0] &&
+          filteredItems[0].crafting
+            ? filteredItems[0].crafting[0].ingredients.filter(
+                (ing) =>
+                  ing.name !== "Purified Water" &&
+                  ing.name !== "Walker Mechanism" &&
+                  ing.name !== "Lava"
+              )
+            : [],
+      });
     }
   };
 
@@ -71,7 +101,7 @@ class QualityCalculator extends Component {
   };
 
   showIngredients(t) {
-    if (this.state.ingredients.length > 0) {
+    if (this.state.ingredients && this.state.ingredients.length > 0) {
       return this.state.ingredients.map((ingredient) => (
         <div key={"column" + ingredient.name} className="col-xl-6 col-sm-12">
           <Ingredient ingredient={ingredient} value={1} />
@@ -87,6 +117,7 @@ class QualityCalculator extends Component {
 
   showStation(t) {
     if (
+      this.state.itemSelected &&
       this.state.itemSelected.crafting != null &&
       this.state.itemSelected.crafting[0].station != null
     ) {
@@ -179,7 +210,9 @@ class QualityCalculator extends Component {
             <div className="col-12">
               <select
                 className="custom-select"
-                value={this.state.itemSelected.name}
+                value={
+                  this.state.itemSelected ? this.state.itemSelected.name : ""
+                }
                 onChange={(evt) => {
                   const itemFiltered = this.state.items.filter(
                     (it) => it.name === evt.target.value
@@ -225,8 +258,9 @@ class QualityCalculator extends Component {
                     >
                       <span aria-hidden="true">X</span>
                     </button>
-                    {this.state.itemSelected !== "" &&
-                      t(this.state.itemSelected.name)}
+                    {this.state.itemSelected
+                      ? t(this.state.itemSelected.name)
+                      : ""}
                   </div>
                   <div className="card-body">
                     <div className="row">

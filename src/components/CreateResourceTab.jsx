@@ -2,14 +2,18 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 
 class CreateResourceTab extends Component {
-  state = {
-    resourceTypeInput: "Aloe",
-    qualityInput: 0,
-    toolQualityInput: 0,
-    resourceHarvestedQualityInput: 0,
-    descriptionInput: null,
-    lastHarvestedInput: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      resourceTypeInput:
+        this.props.items != null ? this.props.items[0].name : "Aloe",
+      qualityInput: 0,
+      toolQualityInput: 0,
+      resourceHarvestedQualityInput: 0,
+      descriptionInput: null,
+      lastHarvestedInput: null,
+    };
+  }
 
   resourcesList(t) {
     if (this.props.items != null) {
