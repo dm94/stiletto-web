@@ -30,7 +30,7 @@ class QualityCalculator extends Component {
         items: items,
         itemSelected: items.length > 0 ? items[0] : null,
         ingredients:
-          items && items.length > 0 && items[0] && items[0].crafting
+          items.length > 0 && items[0] && items[0].crafting
             ? items[0].crafting[0].ingredients.filter(
                 (ing) =>
                   ing.name !== "Purified Water" &&

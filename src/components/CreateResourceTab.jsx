@@ -10,8 +10,8 @@ class CreateResourceTab extends Component {
       qualityInput: 0,
       toolQualityInput: 0,
       resourceHarvestedQualityInput: 0,
-      descriptionInput: null,
-      lastHarvestedInput: null,
+      descriptionInput: "",
+      lastHarvestedInput: "",
     };
   }
 
@@ -54,7 +54,10 @@ class CreateResourceTab extends Component {
             this.setState({
               resourceTypeInput: "Aloe",
               qualityInput: 0,
-              descriptionInput: null,
+              descriptionInput: "",
+              toolQualityInput: 0,
+              resourceHarvestedQualityInput: 0,
+              lastHarvestedInput: "",
             });
           }}
         >
@@ -166,7 +169,7 @@ class CreateResourceTab extends Component {
               type="text"
               className="form-control"
               name="descriptionInput"
-              value={this.props.descriptionInput}
+              value={this.state.descriptionInput}
               onChange={(evt) =>
                 this.setState({
                   descriptionInput: evt.target.value,
@@ -181,7 +184,7 @@ class CreateResourceTab extends Component {
               type="datetime-local"
               className="form-control"
               name="Last Harvested"
-              value={this.props.lastHarvestedInput}
+              value={this.state.lastHarvestedInput}
               onChange={(evt) =>
                 this.setState({
                   lastHarvestedInput: evt.target.value,

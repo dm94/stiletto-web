@@ -42,7 +42,7 @@ class MapLayer extends Component {
   getResourceEstimatedQuality(t, resource) {
     const diff = Math.abs(new Date() - new Date(resource.lastharvested));
     const minutes = Math.floor(diff / 1000 / 60);
-    let estimatedQuality = minutes / 10;
+    let estimatedQuality = (minutes - 45) / 10;
 
     if (estimatedQuality > resource.quality) {
       estimatedQuality = resource.quality;
@@ -59,6 +59,9 @@ class MapLayer extends Component {
       now.getHours() +
       ":" +
       now.getMinutes();
+
+    let fullDate = new Date(now.getTime() + remainingQuality * 10 * 60000);
+
     return (
       <div>
         <button
@@ -78,13 +81,19 @@ class MapLayer extends Component {
           {t("Last Harvested")}: {resource.lastharvested}
         </div>
         <div className="mb-1">
-          {t("Estimated current Quality")}: {Math.floor(estimatedQuality)}
+          {t("Estimated current Quality")}:{" "}
+          {estimatedQuality < 0
+            ? t("No respawn yet")
+            : Math.floor(estimatedQuality)}
         </div>
         <div className="mb-1">
           {t("Max quality in")}:{" "}
           {remainingQuality !== 0
             ? remainingQuality * 10 + " " + t("Minutes")
             : t("Now")}
+        </div>
+        <div className="mb-1">
+          {t("Date")}: {fullDate.toLocaleString()}
         </div>
       </div>
     );
