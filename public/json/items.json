@@ -8128,13 +8128,13 @@
     "category": "walkers/dinghy/upgrades/tier3",
     "crafting": [{
         "ingredients": [{
-            "count": 45,
+            "count": 40,
             "name": "Ceramic Shard"
           }, {
             "count": 80,
             "name": "Earth Wax"
           }, {
-            "count": 4,
+            "count": 5,
             "name": "Bone Glue"
           }, {
             "count": 35,
