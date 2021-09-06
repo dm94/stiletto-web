@@ -1,6 +1,13 @@
 import React, { Component, Fragment } from "react";
 import L from "leaflet";
-import { TileLayer, Marker, Popup, Tooltip, ImageOverlay } from "react-leaflet";
+import {
+  TileLayer,
+  Marker,
+  Popup,
+  Tooltip,
+  ImageOverlay,
+  Circle,
+} from "react-leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import { withTranslation } from "react-i18next";
@@ -23,6 +30,7 @@ class MapLayer extends Component {
       coordinateYInput: 0,
       hasLocation: false,
       gridOpacity: 0,
+      poachingHutRadius: 150,
     };
   }
 
@@ -106,47 +114,87 @@ class MapLayer extends Component {
       this.props.resourcesInTheMap[0].resourceid != null
     ) {
       return this.props.resourcesInTheMap.map((resource) => (
-        <Marker
-          key={"resource" + resource.resourceid}
-          position={[resource.x, resource.y]}
-          icon={this.getMarketDesign(resource.resourcetype)}
-        >
-          <Popup>
-            <div className="mb-0">
-              <Icon
-                key={"icon" + resource.resourceid}
-                name={resource.resourcetype}
-              />
-              {t(resource.resourcetype)}{" "}
-              {resource.quality > 0 && "- Q:" + resource.quality}
-            </div>
-            <div className="mb-1 text-muted">
-              [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
-            </div>
-            <div className="mb-1">{resource.description}</div>
-            {resource.quality > 0 && resource.lastharvested != null
-              ? this.getResourceEstimatedQuality(t, resource)
-              : ""}
-            <button
-              className={resource.token != null ? "btn btn-danger" : "d-none"}
-              onClick={() =>
-                this.props.deleteResource(resource.resourceid, resource.token)
-              }
-            >
-              {t("Delete")}
-            </button>
-          </Popup>
-          <Tooltip
-            permanent={resource.quality && resource.quality > 0 ? true : false}
-            className="bg-transparent border-0"
-            offset={[0, 7]}
-            direction="top"
+        <Fragment>
+          <Marker
+            key={"resource" + resource.resourceid}
+            position={[resource.x, resource.y]}
+            icon={this.getMarketDesign(resource.resourcetype)}
           >
-            <span className="font-weight-bold h5" style={{ color: "#e94e0f" }}>
-              {resource.quality}
-            </span>
-          </Tooltip>
-        </Marker>
+            <Popup>
+              <div className="mb-0">
+                <Icon
+                  key={"icon" + resource.resourceid}
+                  name={resource.resourcetype}
+                />
+                {t(resource.resourcetype)}{" "}
+                {resource.quality > 0 && "- Q:" + resource.quality}
+              </div>
+              <div className="mb-1 text-muted">
+                [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
+              </div>
+              <div className="mb-1">{resource.description}</div>
+              {resource.quality > 0 && resource.lastharvested != null
+                ? this.getResourceEstimatedQuality(t, resource)
+                : ""}
+              {resource.token != null && (
+                <button
+                  className="btn btn-danger"
+                  onClick={() =>
+                    this.props.deleteResource(
+                      resource.resourceid,
+                      resource.token
+                    )
+                  }
+                >
+                  {t("Delete")}
+                </button>
+              )}
+              {resource.resourcetype === "Poaching Hut" ||
+              resource.resourcetype === "Enemy Poaching Hut" ? (
+                <div className="border-top border-warning mt-2">
+                  <input
+                    className="form-control form-control-sm"
+                    id="formPoachingRadius"
+                    value={this.state.poachingHutRadius}
+                    onChange={(e) =>
+                      this.setState({ poachingHutRadius: e.target.value })
+                    }
+                    type="range"
+                    min="0"
+                    max="250"
+                  ></input>
+                </div>
+              ) : (
+                ""
+              )}
+            </Popup>
+            <Tooltip
+              permanent={
+                resource.quality && resource.quality > 0 ? true : false
+              }
+              className="bg-transparent border-0"
+              offset={[0, 7]}
+              direction="top"
+            >
+              <span
+                className="font-weight-bold h5"
+                style={{ color: "#e94e0f" }}
+              >
+                {resource.quality}
+              </span>
+            </Tooltip>
+          </Marker>
+          {resource.resourcetype === "Poaching Hut" ||
+          resource.resourcetype === "Enemy Poaching Hut" ? (
+            <Circle
+              center={[resource.x, resource.y]}
+              pathOptions={{ fillColor: "blue" }}
+              radius={this.state.poachingHutRadius * 10000}
+            />
+          ) : (
+            ""
+          )}
+        </Fragment>
       ));
     }
     return null;
