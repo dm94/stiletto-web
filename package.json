@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "3.15.19",
+  "version": "3.16.0",
   "license": "UNLICENSED",
   "author": "Daniel Martín",
   "description": "Web with different utilities for the game Last Oasis",
@@ -31,6 +31,7 @@
     "react-router-dom": "^5.2.0",
     "react-router-ga": "^1.2.3",
     "react-scripts": "^4.0.3",
+    "react-tiny-virtual-list": "^2.2.0",
     "workbox": "0.0.0",
     "workbox-core": "^6.1.5",
     "workbox-expiration": "^6.1.5",

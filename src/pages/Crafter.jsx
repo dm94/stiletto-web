@@ -272,7 +272,7 @@ class Crafter extends Component {
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
             <ul
               className="nav overflow-auto list-group"
-              style={{ height: "100vh" }}
+              style={{ height: "95vh" }}
             >
               {this.showAllItems()}
             </ul>
