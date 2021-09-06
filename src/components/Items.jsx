@@ -7,7 +7,7 @@ class Items extends Component {
     return (
       <VirtualList
         itemCount={this.props.items.length}
-        itemSize={75}
+        itemSize={60}
         height="100%"
         width="100%"
         overscanCount={20}
