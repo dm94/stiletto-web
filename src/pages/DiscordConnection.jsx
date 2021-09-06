@@ -64,6 +64,7 @@ class DiscordConnection extends Component {
     if (parsed.discordid != null && parsed.token != null) {
       localStorage.setItem("discordid", parsed.discordid);
       localStorage.setItem("token", parsed.token);
+      localStorage.setItem("acceptscookies", true);
     }
 
     if (localStorage.getItem("token") != null) {
