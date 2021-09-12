@@ -34,7 +34,7 @@ class CreateMapNoLog extends Component {
         token: localStorage.getItem("token"),
         mapname: mapNameInput,
         mapdate: mapDateInput,
-        maptype: mapSelectInput,
+        maptype: mapSelectInput + "_new",
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

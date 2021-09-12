@@ -145,7 +145,7 @@ class ClanMaps extends Component {
         token: this.state.token,
         mapname: mapNameInput,
         mapdate: mapDateInput,
-        maptype: mapSelectInput,
+        maptype: mapSelectInput + "_new",
       },
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,

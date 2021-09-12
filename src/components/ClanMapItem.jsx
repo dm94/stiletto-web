@@ -90,7 +90,7 @@ class ClanMapItem extends Component {
           src={
             process.env.REACT_APP_API_GENERAL_URL +
             "/maps/" +
-            this.props.value +
+            this.props.value.replace("_new", "") +
             ".jpg"
           }
           className="img-fluid"

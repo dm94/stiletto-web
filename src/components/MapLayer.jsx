@@ -228,6 +228,12 @@ class MapLayer extends Component {
       </Marker>
     ) : null;
 
+    let isNewMap =
+      this.props.resourcesInTheMap != null &&
+      this.props.resourcesInTheMap[0] != null &&
+      this.props.resourcesInTheMap[0].typemap != null &&
+      this.props.resourcesInTheMap[0].typemap.includes("_new");
+
     return (
       <div id="map">
         <div className="btn-group">
@@ -260,19 +266,28 @@ class MapLayer extends Component {
         </div>
         <MapExtended
           minZoom={0}
-          maxZoom={5}
+          maxZoom={6}
           style={{ width: "100%", height: "800px" }}
           onClick={this.handleClick}
-          center={this.props.center}
           attributionControl={false}
         >
           <ImageOverlay
-            bounds={[
-              [85.5, -180],
-              [-78, 130],
-            ]}
+            bounds={
+              isNewMap
+                ? [
+                    [85.5, -180],
+                    [-84.9, 177.3],
+                  ]
+                : [
+                    [85.5, -180],
+                    [-78, 130],
+                  ]
+            }
             opacity={this.state.gridOpacity}
-            url={process.env.REACT_APP_API_GENERAL_URL + "/maps/Grid.png"}
+            url={
+              process.env.REACT_APP_API_GENERAL_URL +
+              (isNewMap ? "/maps/Grid_new.png" : "/maps/Grid.png")
+            }
           />
           <TileLayer
             url={
