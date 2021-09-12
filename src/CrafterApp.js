@@ -146,6 +146,16 @@ function CrafterApp() {
                       ? "/img/fr.jpg"
                       : localStorage.getItem("i18nextLng").includes("de")
                       ? "/img/de.jpg"
+                      : localStorage.getItem("i18nextLng").includes("it")
+                      ? "/img/it.jpg"
+                      : localStorage.getItem("i18nextLng").includes("ja")
+                      ? "/img/ja.jpg"
+                      : localStorage.getItem("i18nextLng").includes("pl")
+                      ? "/img/pl.jpg"
+                      : localStorage.getItem("i18nextLng").includes("zh")
+                      ? "/img/zh.jpg"
+                      : localStorage.getItem("i18nextLng").includes("pt")
+                      ? "/img/pt.jpg"
                       : "/img/en.jpg"
                   }
                   alt="Change language"
@@ -272,10 +282,55 @@ function CrafterApp() {
                       />
                       <p>{t("German")}</p>
                     </div>
+                    <div className="col-3">
+                      <img
+                        className="img-thumbnail"
+                        src="/img/zh.jpg"
+                        alt="Chinese Simplified language"
+                        onClick={() => switchLanguage("zh")}
+                      />
+                      <p>{t("Chinese Simplified")}</p>
+                    </div>
+                    <div className="col-3">
+                      <img
+                        className="img-thumbnail"
+                        src="/img/it.jpg"
+                        alt="Italian language"
+                        onClick={() => switchLanguage("it")}
+                      />
+                      <p>{t("Italian")}</p>
+                    </div>
+                    <div className="col-3">
+                      <img
+                        className="img-thumbnail"
+                        src="/img/ja.jpg"
+                        alt="Japanese language"
+                        onClick={() => switchLanguage("ja")}
+                      />
+                      <p>{t("Japanese")}</p>
+                    </div>
+                    <div className="col-3">
+                      <img
+                        className="img-thumbnail"
+                        src="/img/pl.jpg"
+                        alt="Polish language"
+                        onClick={() => switchLanguage("pl")}
+                      />
+                      <p>{t("Polish")}</p>
+                    </div>
+                    <div className="col-3">
+                      <img
+                        className="img-thumbnail"
+                        src="/img/pt.jpg"
+                        alt="Polish language"
+                        onClick={() => switchLanguage("pt")}
+                      />
+                      <p>{t("Portuguese, Brazilian")}</p>
+                    </div>
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.17.0</p>
+                  <p className="mr-auto">v. 3.17.1</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"
