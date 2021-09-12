@@ -4,7 +4,7 @@ import HttpApi from "i18next-http-backend";
 i18n.use(HttpApi).init({
   lng: localStorage.getItem("i18nextLng"),
   fallbackLng: "en",
-  debug: true,
+  debug: false,
   preload: ["en", "es", "de", "fr", "ru"],
   keySeparator: false,
 
