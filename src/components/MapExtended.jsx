@@ -4,7 +4,7 @@ import { Map } from "react-leaflet";
 class MapExtended extends Map {
   createLeafletElement(props) {
     let leafletMapElement = super.createLeafletElement(props);
-    let img = [6020, 6020];
+    let img = [4065, 4065];
 
     let rc = new RasterCoords(leafletMapElement, img);
 

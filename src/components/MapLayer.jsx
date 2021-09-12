@@ -265,10 +265,10 @@ class MapLayer extends Component {
           </button>
         </div>
         <MapExtended
-          minZoom={0}
           maxZoom={6}
           style={{ width: "100%", height: "800px" }}
           onClick={this.handleClick}
+          center={this.props.center}
           attributionControl={false}
         >
           <ImageOverlay
