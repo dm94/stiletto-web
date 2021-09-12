@@ -1,26 +1,18 @@
 import i18n from "i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-import en from "./lng/en";
-import es from "./lng/es";
-import fr from "./lng/fr";
-import ru from "./lng/ru";
-import de from "./lng/de";
+import HttpApi from "i18next-http-backend";
 
-i18n.use(LanguageDetector).init({
-  resources: {
-    en: en,
-    es: es,
-    ru: ru,
-    fr: fr,
-    de: de,
-  },
+i18n.use(HttpApi).init({
+  lng: localStorage.getItem("i18nextLng"),
   fallbackLng: "en",
-  debug: false,
-
-  ns: ["translations"],
-  defaultNS: "translations",
-
+  debug: true,
+  preload: ["en", "es", "de", "fr", "ru"],
   keySeparator: false,
+
+  defaultNS: "translation",
+  backend: {
+    loadPath: "/locales/{{lng}}/{{ns}}.json",
+    crossDomain: true,
+  },
 
   interpolation: {
     escapeValue: false,

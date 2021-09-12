@@ -275,7 +275,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.16.1</p>
+                  <p className="mr-auto">v. 3.17.0</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"
@@ -370,6 +370,7 @@ function updateWeb() {
 }
 
 function switchLanguage(lng) {
+  localStorage.setItem("i18nextLng", lng);
   i18next.changeLanguage(lng);
 }
 
