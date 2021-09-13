@@ -138,24 +138,26 @@ function CrafterApp() {
                   className="rounded"
                   width="30%"
                   src={
-                    localStorage.getItem("i18nextLng").includes("es")
-                      ? "/img/es.jpg"
-                      : localStorage.getItem("i18nextLng").includes("ru")
-                      ? "/img/ru.jpg"
-                      : localStorage.getItem("i18nextLng").includes("fr")
-                      ? "/img/fr.jpg"
-                      : localStorage.getItem("i18nextLng").includes("de")
-                      ? "/img/de.jpg"
-                      : localStorage.getItem("i18nextLng").includes("it")
-                      ? "/img/it.jpg"
-                      : localStorage.getItem("i18nextLng").includes("ja")
-                      ? "/img/ja.jpg"
-                      : localStorage.getItem("i18nextLng").includes("pl")
-                      ? "/img/pl.jpg"
-                      : localStorage.getItem("i18nextLng").includes("zh")
-                      ? "/img/zh.jpg"
-                      : localStorage.getItem("i18nextLng").includes("pt")
-                      ? "/img/pt.jpg"
+                    localStorage.getItem("i18nextLng") != null
+                      ? localStorage.getItem("i18nextLng").includes("es")
+                        ? "/img/es.jpg"
+                        : localStorage.getItem("i18nextLng").includes("ru")
+                        ? "/img/ru.jpg"
+                        : localStorage.getItem("i18nextLng").includes("fr")
+                        ? "/img/fr.jpg"
+                        : localStorage.getItem("i18nextLng").includes("de")
+                        ? "/img/de.jpg"
+                        : localStorage.getItem("i18nextLng").includes("it")
+                        ? "/img/it.jpg"
+                        : localStorage.getItem("i18nextLng").includes("ja")
+                        ? "/img/ja.jpg"
+                        : localStorage.getItem("i18nextLng").includes("pl")
+                        ? "/img/pl.jpg"
+                        : localStorage.getItem("i18nextLng").includes("zh")
+                        ? "/img/zh.jpg"
+                        : localStorage.getItem("i18nextLng").includes("pt")
+                        ? "/img/pt.jpg"
+                        : "/img/en.jpg"
                       : "/img/en.jpg"
                   }
                   alt="Change language"
@@ -330,7 +332,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.17.3</p>
+                  <p className="mr-auto">v. 3.17.4</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"
