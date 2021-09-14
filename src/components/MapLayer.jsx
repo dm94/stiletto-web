@@ -266,7 +266,7 @@ class MapLayer extends Component {
         </div>
         <MapExtended
           maxZoom={6}
-          style={{ width: "100%", height: "800px" }}
+          style={{ width: "100%", height: "calc(100vh - 200px)" }}
           onClick={this.handleClick}
           center={this.props.center}
           attributionControl={false}

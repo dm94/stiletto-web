@@ -2,46 +2,28 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 
 class ClanMapItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isHover: false,
-    };
-  }
-
   showButton() {
     const { t } = this.props;
-    if (this.state.isHover) {
-      return (
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-          }}
-          className="btn-group-vertical"
+    return (
+      <div className="btn-group-vertical w-100 m-0 p-0 h-100">
+        <button
+          className="btn btn-primary btn-block"
+          variant="primary"
+          onClick={() => this.props.onOpen(this.props.map)}
         >
-          <button
-            className="btn btn-primary btn-sm"
-            variant="primary"
-            onClick={() => this.props.onOpen(this.props.map)}
-          >
-            <i className="fas fa-eye"></i> {t("Show map")}
-          </button>
-          {this.deleteMapButton(t)}
-          {this.ShareMapButton(t)}
-        </div>
-      );
-    }
+          <i className="fas fa-eye"></i> {t("Show map")}
+        </button>
+        {this.deleteMapButton(t)}
+        {this.ShareMapButton(t)}
+      </div>
+    );
   }
 
   deleteMapButton(t) {
     if (this.props.map.discordid === localStorage.getItem("discordid")) {
       return (
         <button
-          className="btn btn-danger btn-sm"
+          className="btn btn-danger btn-block"
           variant="primary"
           onClick={() => this.props.onDelete(this.props.map.mapid)}
         >
@@ -57,21 +39,22 @@ class ClanMapItem extends Component {
       let slashes = http.concat("//");
       let host = slashes.concat(window.location.hostname);
       return (
-        <a
-          className="btn btn-success btn-sm"
-          href={
-            host +
-            (window.location.port ? ":" + window.location.port : "") +
-            "/map/" +
-            this.props.map.mapid +
-            "?pass=" +
-            this.props.map.pass
+        <button
+          className="btn btn-success btn-block"
+          variant="primary"
+          onClick={() =>
+            window.open(
+              host +
+                (window.location.port ? ":" + window.location.port : "") +
+                "/map/" +
+                this.props.map.mapid +
+                "?pass=" +
+                this.props.map.pass
+            )
           }
-          target="_blank"
-          rel="noopener noreferrer"
         >
           <i className="fas fa-share-alt"></i> {t("Share map")}
-        </a>
+        </button>
       );
     }
   }
@@ -81,30 +64,35 @@ class ClanMapItem extends Component {
     let dateBurning = new Date(this.props.map.dateofburning);
     return (
       <div
-        className="p-2 col-sm-6 col-xl-2 text-center"
+        className="p-2 col-sm-12 col-xl-4 text-center"
         key={"clanmap" + this.props.map.mapid}
-        onMouseOver={() => this.setState({ isHover: true })}
-        onMouseLeave={() => this.setState({ isHover: false })}
       >
-        <img
-          src={
-            process.env.REACT_APP_API_GENERAL_URL +
-            "/maps/" +
-            this.props.value.replace("_new", "") +
-            ".jpg"
-          }
-          className="img-fluid"
-          alt={this.props.map.name}
-        />
-        {this.showButton()}
-        <h6 className="mb-0">{this.props.map.name}</h6>
-        <p className="m-0 fw-lighter">
-          {this.props.map.discordTag !== null ? this.props.map.discordTag : ""}
-        </p>
-        <p className="m-0">
-          <small className={dateBurning <= date ? "text-danger" : "text-muted"}>
+        <div className="row">
+          <div className="col-6 pr-0">
+            <img
+              src={
+                process.env.REACT_APP_API_GENERAL_URL +
+                "/maps/" +
+                this.props.value.replace("_new", "") +
+                ".jpg"
+              }
+              className="img-fluid"
+              alt={this.props.map.name}
+              onClick={() => this.props.onOpen(this.props.map)}
+            />
+          </div>
+          <div className="col-6 pl-0">{this.showButton()}</div>
+        </div>
+        <h5 className="mb-0">
+          {this.props.map.name}{" "}
+          <small
+            className={dateBurning <= date ? "text-danger" : "text-success"}
+          >
             {this.props.map.dateofburning}
           </small>
+        </h5>
+        <p className="m-0 fw-lighter">
+          {this.props.map.discordTag !== null ? this.props.map.discordTag : ""}
         </p>
       </div>
     );
