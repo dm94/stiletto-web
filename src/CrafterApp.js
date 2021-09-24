@@ -1,29 +1,13 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import Analytics from "react-router-ga";
 import i18next from "i18next";
-import Crafter from "./pages/Crafter";
-import DiscordConnection from "./pages/DiscordConnection";
-import ClanList from "./pages/ClanList";
-import MemberList from "./pages/MemberList";
-import WalkerList from "./pages/WalkerList";
-import ClanMaps from "./pages/ClanMaps";
-import Home from "./pages/Home";
-import TradeSystem from "./pages/TradeSystem";
-import Diplomacy from "./pages/Diplomacy";
-import AuctionTimers from "./pages/AuctionTimers";
-import Others from "./pages/Others";
-import Map from "./pages/Map";
-import TechTree from "./pages/TechTree";
-import QualityCalculator from "./pages/QualityCalculator";
-import Privacy from "./pages/Privacy";
-import ModalMessage from "./components/ModalMessage";
 import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
 import CookieConsent from "./components/CookieConsent";
 import DiscordButton from "./components/DiscordButton";
-import ResourceMapNoLog from "./components/ResourceMapNoLog";
+import Routes from "./router";
 import "./css/style.min.css";
 
 function CrafterApp() {
@@ -42,7 +26,13 @@ function CrafterApp() {
 
   return (
     <Router>
-      <Helmet>
+      <Helmet
+        htmlAttributes={{
+          lang: localStorage.getItem("i18nextLng")
+            ? localStorage.getItem("i18nextLng")
+            : "en",
+        }}
+      >
         <link
           rel="stylesheet"
           href={
@@ -86,45 +76,50 @@ function CrafterApp() {
               </svg>
             </button>
             <div className="collapse navbar-collapse" id="navbar-main-menu">
-              <ul className="navbar-nav mr-auto mb-2 mb-md-0">
+              <ul
+                className="navbar-nav mr-auto mb-2 mb-md-0"
+                itemScope="itemscope"
+                itemType="http://www.schema.org/SiteNavigationElement"
+              >
                 <li className="nav-item">
-                  <Link className="nav-link" to="/crafter">
-                    {t("Crafting")}
+                  <Link itemProp="url" className="nav-link" to="/crafter">
+                    <span itemProp="name">{t("Crafting")}</span>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link
+                    itemProp="url"
                     className="nav-link"
                     to={
                       localStorage.getItem("profile") != null ? "/maps" : "/map"
                     }
                   >
-                    {t("Resource Maps")}
+                    <span itemProp="name">{t("Resource Maps")}</span>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/clanlist">
-                    {t("Clan List")}
+                  <Link itemProp="url" className="nav-link" to="/clanlist">
+                    <span itemProp="name">{t("Clan List")}</span>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/trades">
-                    {t("Trades")}
+                  <Link itemProp="url" className="nav-link" to="/trades">
+                    <span itemProp="name"> {t("Trades")}</span>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/auctions">
-                    {t("Auction Timers")}
+                  <Link itemProp="url" className="nav-link" to="/auctions">
+                    <span itemProp="name">{t("Auction Timers")}</span>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/quality">
-                    {t("Quality")}
+                  <Link itemProp="url" className="nav-link" to="/quality">
+                    <span itemProp="name">{t("Quality")}</span>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/tech">
-                    {t("Tech Tree")}
+                  <Link itemProp="url" className="nav-link" to="/tech">
+                    <span itemProp="name"> {t("Tech Tree")}</span>
                   </Link>
                 </li>
               </ul>
@@ -177,34 +172,7 @@ function CrafterApp() {
                 : ""
             }
           >
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/profile" component={DiscordConnection} />
-              <Route path="/crafter" component={Crafter} />
-              <Route path="/members" component={MemberList} />
-              <Route path="/clanlist" component={ClanList} />
-              <Route path="/walkerlist" component={WalkerList} />
-              <Route path="/maps" component={ClanMaps} />
-              <Route path="/trades" component={TradeSystem} />
-              <Route path="/diplomacy" component={Diplomacy} />
-              <Route path="/auctions" component={AuctionTimers} />
-              <Route path="/others" component={Others} />
-              <Route path="/map/:id" component={ResourceMapNoLog} />
-              <Route path="/map" component={Map} />
-              <Route path="/quality" component={QualityCalculator} />
-              <Route path="/tech/:tree" component={TechTree} />
-              <Route path="/tech/" component={TechTree} />
-              <Route path="/privacy" component={Privacy} />
-              <Route path="*">
-                <ModalMessage
-                  message={{
-                    isError: true,
-                    text: "The page you are looking for does not exist",
-                    redirectPage: "/",
-                  }}
-                />
-              </Route>
-            </Switch>
+            {Routes}
           </Analytics>
           <div className={showUpdateModal}>
             <div className="modal-dialog border border-success">
@@ -332,7 +300,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.17.4</p>
+                  <p className="mr-auto">v. 3.17.6</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"
