@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://www.stiletto.live/</loc> </url>
+<url> <loc>https://www.stiletto.live/</loc> </url>
+<url> <loc>https://www.stiletto.live/profile</loc> </url>
+<url> <loc>https://www.stiletto.live/crafter</loc> </url>
+<url> <loc>https://www.stiletto.live/members</loc> </url>
+<url> <loc>https://www.stiletto.live/clanlist</loc> </url>
+<url> <loc>https://www.stiletto.live/walkerlist</loc> </url>
+<url> <loc>https://www.stiletto.live/maps</loc> </url>
+<url> <loc>https://www.stiletto.live/trades</loc> </url>
+<url> <loc>https://www.stiletto.live/diplomacy</loc> </url>
+<url> <loc>https://www.stiletto.live/auctions</loc> </url>
+<url> <loc>https://www.stiletto.live/others</loc> </url>
+<url> <loc>https://www.stiletto.live/map/:id</loc> </url>
+<url> <loc>https://www.stiletto.live/map</loc> </url>
+<url> <loc>https://www.stiletto.live/quality</loc> </url>
+<url> <loc>https://www.stiletto.live/tech/:tree</loc> </url>
+<url> <loc>https://www.stiletto.live/tech</loc> </url>
+<url> <loc>https://www.stiletto.live/privacy</loc> </url>
+<url> <loc>https://www.stiletto.live/*</loc> </url>
+</urlset>
