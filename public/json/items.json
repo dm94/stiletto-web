@@ -95,6 +95,10 @@
     "name": "Giant Wall Gate"
   }, {
     "category": "buildings/construction/bed",
+    "cost": {
+      "count": 50,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 25,
@@ -113,6 +117,10 @@
     "parent": "Hammock"
   }, {
     "category": "buildings/construction/bed",
+    "cost": {
+      "count": 25,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 40,
@@ -134,6 +142,10 @@
     "parent": "Sand Bed"
   }, {
     "category": "buildings/construction/bed",
+    "cost": {
+      "count": 1,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 25,
@@ -515,6 +527,10 @@
     "name": "Clay Wall with Windows"
   }, {
     "category": "buildings/construction/stone",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 28,
@@ -584,6 +600,10 @@
     "name": "Stone Wall with Window"
   }, {
     "category": "buildings/construction/container",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 23,
@@ -624,6 +644,10 @@
     "parent": "Large Chest"
   }, {
     "category": "buildings/construction/container",
+    "cost": {
+      "count": 1,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 25,
@@ -642,6 +666,10 @@
     "parent": "Medium Chest"
   }, {
     "category": "buildings/construction/container",
+    "cost": {
+      "count": 1,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 5,
@@ -663,6 +691,10 @@
     "parent": "Medium Water Bag"
   }, {
     "category": "buildings/construction/container",
+    "cost": {
+      "count": 15,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 25,
@@ -681,6 +713,10 @@
     "parent": "Small Chest"
   }, {
     "category": "buildings/construction/container",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -702,6 +738,10 @@
     "parent": "Small Water Bag"
   }, {
     "category": "buildings/construction/container",
+    "cost": {
+      "count": 6,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 100,
@@ -723,6 +763,10 @@
     "parent": "Obsidian Pot"
   }, {
     "category": "buildings/construction/container",
+    "cost": {
+      "count": 3,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 38,
@@ -744,6 +788,10 @@
     "parent": "Large Water Bag"
   }, {
     "category": "buildings/construction/container",
+    "cost": {
+      "count": 6,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -761,11 +809,11 @@
     "name": "Small Water Bag",
     "parent": "Small Chest"
   }, {
-	"cost": {
+    "category": "buildings/construction/container",
+    "cost": {
       "count": 6,
       "name": "Fragment"
     },
-    "category": "buildings/construction/container",
     "crafting": [{
         "ingredients": [{
             "count": 25,
@@ -1000,6 +1048,10 @@
     "name": "Light Wood Door"
   }, {
     "category": "buildings/construction/light wood",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 28,
@@ -1279,6 +1331,10 @@
     "name": "Sandbag Roof"
   }, {
     "category": "buildings/construction/sand bag",
+    "cost": {
+      "count": 3,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 55,
@@ -1358,6 +1414,10 @@
     "parent": "Ballista"
   }, {
     "category": "buildings/construction/tools",
+    "cost": {
+      "count": 5,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 30,
@@ -1376,6 +1436,10 @@
     "parent": "Ballista"
   }, {
     "category": "buildings/construction/weapons/ranged",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -1397,6 +1461,10 @@
     "parent": "Sand Bed"
   }, {
     "category": "buildings/construction/weapons/ranged",
+    "cost": {
+      "count": 4,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 140,
@@ -1421,6 +1489,10 @@
     "parent": "Slingshot"
   }, {
     "category": "buildings/construction/weapons/ranged",
+    "cost": {
+      "count": 1,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 280,
@@ -1558,6 +1630,10 @@
     "parent": "Ballista"
   }, {
     "category": "buildings/construction/weapons/ranged",
+    "cost": {
+      "count": 2,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 125,
@@ -1706,6 +1782,10 @@
     "name": "Small Ballista"
   }, {
     "category": "buildings/construction/weapons/ranged/armor",
+    "cost": {
+      "count": 10,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 164,
@@ -2010,6 +2090,10 @@
     "parent": "Clan Flag"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 25,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 120,
@@ -2075,6 +2159,10 @@
     "parent": "Woodworking Station"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 2,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 200,
@@ -2127,6 +2215,10 @@
     "parent": "Advanced Woodworking Station"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 2,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 16,
@@ -2167,6 +2259,10 @@
     "parent": "Crafting"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 9,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 14,
@@ -2185,6 +2281,10 @@
     "parent": "Camp Fire"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 3,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 85,
@@ -2300,6 +2400,10 @@
     "parent": "Clay"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -2321,6 +2425,10 @@
     "parent": "Camp Fire"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 25,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 45,
@@ -2342,6 +2450,10 @@
     "parent": "Soil Excavator"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 40,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 75,
@@ -2385,6 +2497,10 @@
     "parent": "Purified Water"
   }, {
     "category": "crafting/station",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -2403,6 +2519,10 @@
     "parent": "Camp Fire"
   }, {
     "category": "crafting/station/vitamins",
+    "cost": {
+      "count": 50,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 45,
@@ -2557,6 +2677,10 @@
     "name": "Ceramic-Tipped Harpoon"
   }, {
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 5,
@@ -2594,6 +2718,10 @@
     "name": "Flint Bolt"
   }, {
     "category": "items/ammo/ammunition/projectiles/ballista",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -3001,6 +3129,10 @@
     "parent": "Slingshot"
   }, {
     "category": "items/ammo/ammunition/projectiles/slingshot",
+    "cost": {
+      "count": 1,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -3334,6 +3466,10 @@
     "parent": "Fiber Shirt And Trousers"
   }, {
     "category": "items/armors/fiber armor",
+    "cost": {
+      "count": 3,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 12,
@@ -3346,6 +3482,10 @@
     "parent": "Fiber Shirt And Trousers"
   }, {
     "category": "items/armors/fiber armor",
+    "cost": {
+      "count": 3,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 6,
@@ -3361,6 +3501,10 @@
     "parent": "Fiber Shirt And Trousers"
   }, {
     "category": "items/armors/fiber armor",
+    "cost": {
+      "count": 6,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -3392,6 +3536,10 @@
     "parent": "Forester's Armor"
   }, {
     "category": "items/armors/forester's armor",
+    "cost": {
+      "count": 35,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -3626,6 +3774,10 @@
     "parent": "Rupu Fur Armor"
   }, {
     "category": "items/armors/rupu fur armor",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 8,
@@ -3773,6 +3925,10 @@
     "parent": "Ballista"
   }, {
     "category": "items/gear/backpacks/belt",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 8,
@@ -3983,6 +4139,10 @@
     "parent": "Bone Bottle"
   }, {
     "category": "items/gear/bottles",
+    "cost": {
+      "count": 1,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -4001,6 +4161,10 @@
     "parent": "Makeshift Bottle"
   }, {
     "category": "items/gear/bottles",
+    "cost": {
+      "count": 2,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 5,
@@ -4016,6 +4180,10 @@
     "parent": "Equipment"
   }, {
     "category": "items",
+    "cost": {
+      "count": 50,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 5,
@@ -4220,6 +4388,10 @@
     "parent": "Fast Grappling Hook"
   }, {
     "category": "items/gear/grappling/hook",
+    "cost": {
+      "count": 3,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 35,
@@ -4282,6 +4454,10 @@
     "parent": "Torque Battery"
   }, {
     "category": "items/interactables/bandages",
+    "cost": {
+      "count": 2,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 6,
@@ -4294,6 +4470,10 @@
     "parent": "Equipment"
   }, {
     "category": "items/interactables/bandages",
+    "cost": {
+      "count": 15,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -4335,6 +4515,10 @@
     "parent": "Fury Fumes"
   }, {
     "category": "items/vitamins",
+    "cost": {
+      "count": 10,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 30,
@@ -4354,6 +4538,10 @@
     "parent": "Fury Fumes"
   }, {
     "category": "items/vitamins",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 15,
@@ -4498,6 +4686,10 @@
     "parent": "Race Dust"
   }, {
     "category": "items/vitamins",
+    "cost": {
+      "count": 6,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 3,
@@ -4515,6 +4707,10 @@
     "trade_price": 150
   }, {
     "category": "items/weapons",
+    "cost": {
+      "count": 1,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 7,
@@ -4549,6 +4745,10 @@
     "parent": "Beat Stick"
   }, {
     "category": "items/weapons",
+    "cost": {
+      "count": 20,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 3,
@@ -4692,6 +4892,10 @@
     "parent": "Rawbone Quarterstaff"
   }, {
     "category": "items/weapons",
+    "cost": {
+      "count": 2,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 22,
@@ -5305,6 +5509,10 @@
     "parent": "Throwing Net"
   }, {
     "category": "items/weapons",
+    "cost": {
+      "count": 3,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 12,
@@ -5655,6 +5863,10 @@
     "parent": "Rawbone Hand Axe"
   }, {
     "category": "items/weapons/tools/axes",
+    "cost": {
+      "count": 20,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -5673,6 +5885,10 @@
     "parent": "Woodcutter's Hatchet"
   }, {
     "category": "items/weapons/tools/axes",
+    "cost": {
+      "count": 3,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 8,
@@ -5688,6 +5904,10 @@
     "parent": "Beat Stick"
   }, {
     "category": "items/weapons/tools/pickaxes",
+    "cost": {
+      "count": 1,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 12,
@@ -5728,6 +5948,10 @@
     "parent": "Advanced Pickaxe"
   }, {
     "category": "items/weapons/tools/pickaxes",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -5746,6 +5970,10 @@
     "parent": "Woodcutter's Hatchet"
   }, {
     "category": "items/weapons/tools/repair hammer",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -5786,6 +6014,10 @@
     "parent": "Simple Sickle"
   }, {
     "category": "items/weapons/tools/sickles",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -5858,6 +6090,10 @@
     "name": "Blood Turnip"
   }, {
     "category": "materials",
+    "cost": {
+      "count": 25,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 3,
@@ -5924,6 +6160,10 @@
     "trade_price": 67.54
   }, {
     "category": "materials",
+    "cost": {
+      "count": 1,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -5949,6 +6189,10 @@
     "name": "Cotton"
   }, {
     "category": "materials",
+    "cost": {
+      "count": 5,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -6019,6 +6263,10 @@
     "name": "Fiber"
   }, {
     "category": "materials",
+    "cost": {
+      "count": 1,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 15,
@@ -6167,6 +6415,10 @@
     "name": "Nibiran Mineral"
   }, {
     "category": "materials",
+    "cost": {
+      "count": 8,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 50,
@@ -6209,6 +6461,10 @@
     "trade_price": 100000
   }, {
     "category": "materials",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 4,
@@ -6352,6 +6608,10 @@
     "parent": "Woodworking Station"
   }, {
     "category": "materials",
+    "cost": {
+      "count": 25,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 8,
@@ -6518,6 +6778,10 @@
     "name": "Wood Log"
   }, {
     "category": "materials",
+    "cost": {
+      "count": 1,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 5,
@@ -6839,6 +7103,10 @@
     "parent": "Buffalo Walker Body"
   }, {
     "category": "walkers/buffalo/parts/wings",
+    "cost": {
+      "count": 3,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 46,
@@ -7073,6 +7341,10 @@
     "name": "Buffalo Walker Upgrade - Torque - Tier 2"
   }, {
     "category": "walkers/buffalo/upgrades/tier2",
+    "cost": {
+      "count": 5,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 16,
@@ -7194,6 +7466,10 @@
     "name": "Buffalo Walker Upgrade - Torque - Tier 3"
   }, {
     "category": "walkers/buffalo/upgrades/tier3",
+    "cost": {
+      "count": 9,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 32,
@@ -7525,6 +7801,10 @@
     "name": "Camelop Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/camelop/upgrades/tier4",
+    "cost": {
+      "count": 30,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 13,
@@ -7796,6 +8076,10 @@
     "name": "Cobra Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/cobra/upgrades/tier4",
+    "cost": {
+      "count": 30,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 13,
@@ -7820,6 +8104,10 @@
     "parent": "Cobra Walker Upgrade - Water - Tier 3"
   }, {
     "category": "walkers/dinghy",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 380,
@@ -7855,6 +8143,10 @@
     "name": "Dinghy Walker Legs (1 of 2)"
   }, {
     "category": "walkers/dinghy/parts/wings",
+    "cost": {
+      "count": 40,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 18,
@@ -8089,6 +8381,10 @@
     "name": "Dinghy Walker Upgrade - Torque - Tier 2"
   }, {
     "category": "walkers/dinghy/upgrades/tier2",
+    "cost": {
+      "count": 16,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -8210,6 +8506,10 @@
     "name": "Dinghy Walker Upgrade - Torque - Tier 3"
   }, {
     "category": "walkers/dinghy/upgrades/tier3",
+    "cost": {
+      "count": 2,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -8346,6 +8646,10 @@
     "name": "Dinghy Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/dinghy/upgrades/tier4",
+    "cost": {
+      "count": 4,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 8,
@@ -9823,6 +10127,10 @@
     "parent": "Falco Walker Upgrade - Water - Tier 3"
   }, {
     "category": "walkers/firefly",
+    "cost": {
+      "count": 3,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 110,
@@ -9855,6 +10163,10 @@
     "name": "Firefly Walker Legs (1 of 2)"
   }, {
     "category": "walkers/firefly/parts/wings",
+    "cost": {
+      "count": 6,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 3,
@@ -10251,6 +10563,10 @@
     "name": "Firefly Walker Upgrade - Mobility - Tier 4"
   }, {
     "category": "walkers/firefly/upgrades/tier4",
+    "cost": {
+      "count": 2,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 8,
@@ -11026,6 +11342,10 @@
     "name": "Hornet Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/hornet/upgrades/tier4",
+    "cost": {
+      "count": 12,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 13,
@@ -11050,6 +11370,10 @@
     "parent": "Hornet Walker Upgrade - Water - Tier 3"
   }, {
     "category": "walkers/mollusk",
+    "cost": {
+      "count": 27,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 570,
@@ -11735,6 +12059,10 @@
     "name": "Mollusk Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/mollusk/upgrades/tier4",
+    "cost": {
+      "count": 5,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 13,
@@ -13334,6 +13662,10 @@
     "parent": "Schmetterling Walker Upgrade - Water - Tier 3"
   }, {
     "category": "walkers/spider",
+    "cost": {
+      "count": 15,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 110,
@@ -13860,6 +14192,10 @@
     "name": "Spider Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/spider/upgrades/tier4",
+    "cost": {
+      "count": 2,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 8,
@@ -13884,6 +14220,10 @@
     "parent": "Spider Walker Upgrade - Water - Tier 3"
   }, {
     "category": "walkers/stiletto",
+    "cost": {
+      "count": 30,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 895,
@@ -14467,6 +14807,10 @@
     "name": "Stiletto Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/stiletto/upgrades/tier4",
+    "cost": {
+      "count": 5,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 13,
@@ -14733,6 +15077,10 @@
     "parent": "Titan Walker Body"
   }, {
     "category": "walkers/titan/parts/wings",
+    "cost": {
+      "count": 10,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 140,
@@ -15386,6 +15734,10 @@
     "parent": "Toboggan Walker Body"
   }, {
     "category": "walkers/toboggan/parts/wings",
+    "cost": {
+      "count": 5,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 50,
@@ -15426,6 +15778,10 @@
     "parent": "Toboggan Walker Wings Small (1 of 2)"
   }, {
     "category": "walkers/toboggan/parts/wings",
+    "cost": {
+      "count": 17,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 70,
@@ -15472,6 +15828,10 @@
     "parent": "Toboggan Walker Wings Heavy (1 of 2)"
   }, {
     "category": "walkers/toboggan/parts/wings",
+    "cost": {
+      "count": 5,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 52,
@@ -15996,6 +16356,10 @@
     "name": "Toboggan Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/toboggan/upgrades/tier4",
+    "cost": {
+      "count": 5,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 13,
@@ -16070,6 +16434,10 @@
     "parent": "Tool Pod"
   }, {
     "category": "walkers/tools",
+    "cost": {
+      "count": 25,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -16110,6 +16478,10 @@
     "parent": "Steering Levers"
   }, {
     "category": "walkers/tools",
+    "cost": {
+      "count": 10,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 30,
@@ -16215,6 +16587,10 @@
     "parent": "Tusker Walker Body"
   }, {
     "category": "walkers/tusker/parts/legs",
+    "cost": {
+      "count": 35,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 120,
@@ -16253,6 +16629,10 @@
     "name": "Tusker Walker Legs (1 of 2)"
   }, {
     "category": "walkers/tusker/parts/wings",
+    "cost": {
+      "count": 20,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 186,
@@ -16274,6 +16654,10 @@
     "parent": "Tusker Walker Body"
   }, {
     "category": "walkers/tusker/parts/wings",
+    "cost": {
+      "count": 25,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 150,
@@ -16292,6 +16676,10 @@
     "parent": "Tusker Walker Wings Medium (1 of 2)"
   }, {
     "category": "walkers/tusker/parts/wings",
+    "cost": {
+      "count": 20,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 220,
@@ -16310,6 +16698,10 @@
     "parent": "Tusker Walker Wings Small (1 of 2)"
   }, {
     "category": "walkers/tusker/parts/wings",
+    "cost": {
+      "count": 40,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 180,
@@ -16331,6 +16723,10 @@
     "parent": "Tusker Walker Wings Skirmish (1 of 2)"
   }, {
     "category": "walkers/tusker/parts/wings",
+    "cost": {
+      "count": 20,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 140,
@@ -16352,6 +16748,10 @@
     "parent": "Tusker Walker Wings Heavy (1 of 2)"
   }, {
     "category": "walkers/tusker/parts/wings",
+    "cost": {
+      "count": 25,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 164,
@@ -16373,6 +16773,10 @@
     "parent": "Tusker Walker Body"
   }, {
     "category": "walkers/tusker/parts/wings",
+    "cost": {
+      "count": 15,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 110,
@@ -16610,6 +17014,10 @@
     "name": "Tusker Walker Upgrade - Torque - Tier 2"
   }, {
     "category": "walkers/tusker/upgrades/tier2",
+    "cost": {
+      "count": 15,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 25,
@@ -16731,6 +17139,10 @@
     "name": "Tusker Walker Upgrade - Torque - Tier 3"
   }, {
     "category": "walkers/tusker/upgrades/tier3",
+    "cost": {
+      "count": 20,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 50,
@@ -16867,6 +17279,10 @@
     "name": "Tusker Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/tusker/upgrades/tier4",
+    "cost": {
+      "count": 25,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -16942,6 +17358,10 @@
     "name": "Silur Walker Legs (1 of 2)"
   }, {
     "category": "walkers/silur/upgrades/tier2",
+    "cost": {
+      "count": 2,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 16,
@@ -17003,6 +17423,10 @@
     "name": "Silur Walker Upgrade - Torque - Tier 3"
   }, {
     "category": "walkers/silur/upgrades/tier3",
+    "cost": {
+      "count": 4,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 32,
@@ -17047,6 +17471,10 @@
     "name": "Silur Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/silur/upgrades/tier4",
+    "cost": {
+      "count": 7,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 13,
@@ -17169,6 +17597,10 @@
     "parent": "Hellfire Bolt"
   }, {
     "category": "buildings/construction",
+    "cost": {
+      "count": 5,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 130,
@@ -17528,6 +17960,10 @@
     "name": "Hercul Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/hercul/upgrades/tier4",
+    "cost": {
+      "count": 16,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 13,
@@ -17650,6 +18086,10 @@
     "name": "Balang Walker Upgrade - Torque - Tier 2"
   }, {
     "category": "walkers/balang/upgrades/tier2",
+    "cost": {
+      "count": 16,
+      "name": "Fragment"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -17691,6 +18131,10 @@
     "name": "Balang Walker Upgrade - Torque - Tier 3"
   }, {
     "category": "walkers/balang/upgrades/tier3",
+    "cost": {
+      "count": 2,
+      "name": "Tablet"
+    },
     "crafting": [{
         "ingredients": [{
             "count": 20,
