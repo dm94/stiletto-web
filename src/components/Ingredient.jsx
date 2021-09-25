@@ -20,7 +20,7 @@ class Ingredient extends Component {
       host +
       (window.location.port ? ":" + window.location.port : "") +
       "/item/" +
-      this.props.ingredient.name.toLowerCase().replaceAll(" ", "_");
+      encodeURI(this.props.ingredient.name.toLowerCase());
     return (
       <div className="list-group-item">
         <div

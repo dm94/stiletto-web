@@ -18,13 +18,13 @@ class ItemWiki extends Component {
   async componentDidMount() {
     let item_name = this.props.match.params.name;
     if (item_name != null) {
+      item_name = decodeURI(item_name);
       item_name = item_name.toLowerCase();
-      item_name = item_name.replaceAll("_", " ");
     }
 
     let items = await getItems();
     if (items != null) {
-      let item = items.find((it) => it.name.toLowerCase() == item_name);
+      let item = items.find((it) => it.name.toLowerCase() === item_name);
       let allItems = items.filter((item) => {
         if (
           item.crafting != null &&
@@ -35,7 +35,7 @@ class ItemWiki extends Component {
 
           return (
             allIngredients.filter(
-              (ingredient) => ingredient.name.toLowerCase() == item_name
+              (ingredient) => ingredient.name.toLowerCase() === item_name
             ).length > 0
           );
         } else {
@@ -79,7 +79,7 @@ class ItemWiki extends Component {
             ? host +
               (window.location.port ? ":" + window.location.port : "") +
               "/item/" +
-              parent.toLowerCase().replaceAll(" ", "_")
+              encodeURI(parent.toLowerCase())
             : "wood";
         return (
           <div className="container">
@@ -173,7 +173,7 @@ class ItemWiki extends Component {
           host +
           (window.location.port ? ":" + window.location.port : "") +
           "/item/" +
-          item.name.toLowerCase().replaceAll(" ", "_");
+          encodeURI(item.name.toLowerCase());
         return (
           <li className="list-inline-item" key={item.name}>
             <a href={url}>{t(item.name)}</a> ||
