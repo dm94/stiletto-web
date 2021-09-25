@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { Helmet } from "react-helmet";
 import { getItems } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import Ingredients from "../components/Ingredients";
@@ -83,6 +84,32 @@ class ItemWiki extends Component {
             : "wood";
         return (
           <div className="container">
+            <Helmet>
+              <title>{t(name) + " - Stiletto for Last Oasis"}</title>
+              <meta
+                name="description"
+                content="All necessary information on this item"
+              />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta
+                name="twitter:title"
+                content={name + " - Stiletto for Last Oasis"}
+              />
+              <meta
+                name="twitter:description"
+                content="All necessary information for this item"
+              />
+              <link
+                rel="canonical"
+                href={
+                  window.location.protocol
+                    .concat("//")
+                    .concat(window.location.hostname) +
+                  (window.location.href ? ":" + window.location.port : "") +
+                  window.location.pathname
+                }
+              />
+            </Helmet>
             <div className="row">
               <div className="col-6">
                 <div className="card border-secondary mb-3">

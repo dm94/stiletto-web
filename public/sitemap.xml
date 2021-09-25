@@ -19,5 +19,4 @@
 <url> <loc>https://www.stiletto.live/tech</loc> </url>
 <url> <loc>https://www.stiletto.live/privacy</loc> </url>
 <url> <loc>https://www.stiletto.live/item/:name</loc> </url>
-<url> <loc>https://www.stiletto.live/*</loc> </url>
 </urlset>
