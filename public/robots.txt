@@ -7,3 +7,4 @@ Allow: /*.css$
 Allow: /*.js$
 
 Sitemap: https://www.stiletto.live/sitemap.xml
+Sitemap: https://www.stiletto.live/sitemap_items.xml
