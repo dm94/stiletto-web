@@ -17,6 +17,7 @@ import TechTree from "./pages/TechTree";
 import QualityCalculator from "./pages/QualityCalculator";
 import Privacy from "./pages/Privacy";
 import ResourceMapNoLog from "./components/ResourceMapNoLog";
+import ItemWiki from "./pages/ItemWiki";
 
 export default (
   <Switch>
@@ -37,6 +38,7 @@ export default (
     <Route path="/tech/:tree" component={TechTree} />
     <Route path="/tech/" component={TechTree} />
     <Route path="/privacy" component={Privacy} />
+    <Route path="/item/:name" component={ItemWiki} />
     <Route path="*">
       <ModalMessage
         message={{

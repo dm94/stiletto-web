@@ -12,6 +12,15 @@ class Ingredient extends Component {
 
   render() {
     const { t } = this.props;
+
+    let http = window.location.protocol;
+    let slashes = http.concat("//");
+    let host = slashes.concat(window.location.hostname);
+    let url =
+      host +
+      (window.location.port ? ":" + window.location.port : "") +
+      "/item/" +
+      this.props.ingredient.name.toLowerCase().replaceAll(" ", "_");
     return (
       <div className="list-group-item">
         <div
@@ -28,7 +37,11 @@ class Ingredient extends Component {
             name={this.props.ingredient.name}
           />
           {Math.ceil(this.props.ingredient.count * this.props.value)}x{" "}
-          {t(this.props.ingredient.name)}
+          {this.props.ingredient.ingredients != null ? (
+            t(this.props.ingredient.name)
+          ) : (
+            <a href={url}>{t(this.props.ingredient.name)}</a>
+          )}
         </div>
         <div
           className={
