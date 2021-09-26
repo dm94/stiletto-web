@@ -300,7 +300,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.18.2</p>
+                  <p className="mr-auto">v. 3.18.3</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"

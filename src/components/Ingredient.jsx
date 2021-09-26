@@ -36,7 +36,9 @@ class Ingredient extends Component {
             key={this.props.ingredient.name}
             name={this.props.ingredient.name}
           />
-          {Math.ceil(this.props.ingredient.count * this.props.value)}x{" "}
+          {this.props.ingredient.count != null && this.props.value != null
+            ? Math.ceil(this.props.ingredient.count * this.props.value) + "x "
+            : ""}
           {this.props.ingredient.ingredients != null ? (
             t(this.props.ingredient.name)
           ) : (

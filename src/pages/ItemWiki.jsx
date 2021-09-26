@@ -4,6 +4,8 @@ import { Helmet } from "react-helmet";
 import { getItems } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import Ingredients from "../components/Ingredients";
+import Ingredient from "../components/Ingredient";
+import Icon from "../components/Icon";
 import LoadingScreen from "../components/LoadingScreen";
 
 class ItemWiki extends Component {
@@ -85,10 +87,10 @@ class ItemWiki extends Component {
         return (
           <div className="container">
             <Helmet>
-              <title>{t(name) + " - Stiletto for Last Oasis"}</title>
+              <title>{name + " - Stiletto for Last Oasis"}</title>
               <meta
                 name="description"
-                content="All necessary information on this item"
+                content={"All necessary information for " + name}
               />
               <meta name="twitter:card" content="summary_large_image" />
               <meta
@@ -97,7 +99,7 @@ class ItemWiki extends Component {
               />
               <meta
                 name="twitter:description"
-                content="All necessary information for this item"
+                content={"All necessary information for " + name}
               />
               <link
                 rel="canonical"
@@ -113,7 +115,10 @@ class ItemWiki extends Component {
             <div className="row">
               <div className="col-6">
                 <div className="card border-secondary mb-3">
-                  <div className="card-header">{t(name)}</div>
+                  <div className="card-header">
+                    <Icon key={name} name={name} />
+                    {t(name)}
+                  </div>
                   <div className="card-body">
                     <ul className="list-group mb-3">
                       <li className="list-group-item d-flex justify-content-between lh-condensed">
@@ -193,17 +198,13 @@ class ItemWiki extends Component {
   showCanBeUsed(t) {
     if (this.state.canBeUsed.length > 0) {
       return this.state.canBeUsed.map((item) => {
-        let http = window.location.protocol;
-        let slashes = http.concat("//");
-        let host = slashes.concat(window.location.hostname);
-        let url =
-          host +
-          (window.location.port ? ":" + window.location.port : "") +
-          "/item/" +
-          encodeURI(item.name.toLowerCase());
         return (
           <li className="list-inline-item" key={item.name}>
-            <a href={url}>{t(item.name)}</a> ||
+            <Ingredient
+              key={item.name + "-ingredient"}
+              ingredient={item}
+              value={1}
+            />
           </li>
         );
       });
