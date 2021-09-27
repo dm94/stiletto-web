@@ -86,9 +86,18 @@ class TotalMaterials extends Component {
   }
 
   itemsList() {
+    let http = window.location.protocol;
+    let slashes = http.concat("//");
+    let host = slashes.concat(window.location.hostname);
+    let url =
+      host +
+      (window.location.port ? ":" + window.location.port : "") +
+      "/item/";
+
     return this.props.selectedItems.map((item) => (
       <li className="list-inline-item" key={item.name}>
-        <Icon key={item.name} name={item.name} /> {item.count}x {item.name} -
+        <Icon key={item.name} name={item.name} /> {item.count}x{" "}
+        <a href={url + encodeURI(item.name)}>{item.name}</a> -
       </li>
     ));
   }

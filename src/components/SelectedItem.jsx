@@ -81,6 +81,14 @@ class SelectedItem extends Component {
 
   render() {
     const { t } = this.props;
+    let http = window.location.protocol;
+    let slashes = http.concat("//");
+    let host = slashes.concat(window.location.hostname);
+    let url =
+      host +
+      (window.location.port ? ":" + window.location.port : "") +
+      "/item/" +
+      encodeURI(this.props.item.name);
     return (
       <div className="col-xl-6 col-sm-12">
         <div className="card">
@@ -111,8 +119,9 @@ class SelectedItem extends Component {
                 readOnly={this.state.disableEdit}
               />
               <span className="input-group-text">
-                <Icon key={this.props.item.name} name={this.props.item.name} />{" "}
-                x {t(this.props.item.name)}
+                <Icon key={this.props.item.name} name={this.props.item.name} />
+                {"x "}
+                <a href={url}>{t(this.props.item.name)}</a>
               </span>
             </div>
           </div>
