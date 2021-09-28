@@ -1,6 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
 
 User-Agent: Googlebot
 Allow: /*.css$

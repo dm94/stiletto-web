@@ -124,14 +124,15 @@ function CrafterApp() {
                 </li>
               </ul>
               <button
-                className="btn btn-sm"
+                className="btn btn-sm mr-2"
                 onClick={() => {
                   setChangeLanguageModal(true);
                 }}
               >
                 <img
                   className="rounded"
-                  width="30%"
+                  width="39"
+                  height="25"
                   src={
                     localStorage.getItem("i18nextLng") != null
                       ? localStorage.getItem("i18nextLng").includes("es")
@@ -300,7 +301,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.18.4</p>
+                  <p className="mr-auto">v. 3.18.5</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"
@@ -335,6 +336,8 @@ function CrafterApp() {
                 rel="noopener noreferrer"
               >
                 <img
+                  width="104"
+                  height="20"
                   alt="GitHub package.json version"
                   src="https://img.shields.io/github/package-json/v/dm94/stiletto-web"
                 />
@@ -347,6 +350,8 @@ function CrafterApp() {
                 rel="noopener noreferrer"
               >
                 <img
+                  width="140"
+                  height="20"
                   alt="GitHub last commit"
                   src="https://img.shields.io/github/last-commit/dm94/stiletto-web"
                 />
@@ -359,6 +364,8 @@ function CrafterApp() {
                 href="https://crowdin.com/project/stiletto"
               >
                 <img
+                  width="94"
+                  height="20"
                   alt="Crowdin translations"
                   src="https://badges.crowdin.net/stiletto/localized.svg"
                 />
