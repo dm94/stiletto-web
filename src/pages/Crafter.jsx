@@ -250,7 +250,7 @@ class Crafter extends Component {
               aria-expanded="false"
               aria-label="Toggle items"
             >
-              <i class="fas fa-list fa-lg"></i>
+              <i className="fas fa-list fa-lg"></i>
             </button>
           </form>
           <nav
