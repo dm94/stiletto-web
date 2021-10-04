@@ -242,7 +242,7 @@ class Crafter extends Component {
               value={this.state.searchText}
             />
             <button
-              className="btn d-md-none p-0 ml-3"
+              className="btn btn-outline-primary d-md-none ml-3"
               type="button"
               data-toggle="collapse"
               data-target="#items-nav"
@@ -250,26 +250,14 @@ class Crafter extends Component {
               aria-expanded="false"
               aria-label="Toggle items"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 30 30"
-                role="img"
-                focusable="false"
-              >
-                <title>{t("Menu")}</title>
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeMiterlimit="10"
-                  strokeWidth="2"
-                  d="M4 7h22M4 15h22M4 23h22"
-                ></path>
-              </svg>
+              <i class="fas fa-list fa-lg"></i>
             </button>
           </form>
-          <nav className="collapse show" id="items-nav" aria-label="Items Navs">
+          <nav
+            className="collapse show mt-2"
+            id="items-nav"
+            aria-label="Items Navs"
+          >
             <ul
               className="nav overflow-auto list-group"
               style={{ height: "95vh" }}
