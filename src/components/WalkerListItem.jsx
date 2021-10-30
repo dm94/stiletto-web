@@ -143,9 +143,9 @@ class WalkerListItem extends Component {
                         }}
                         disabled={!this.state.canEdit}
                       >
-                        <option>{t("Personal")}</option>
-                        <option>{t("PVP")}</option>
-                        <option>{t("Farming")}</option>
+                        <option value="Personal">{t("Personal")}</option>
+                        <option value="PVP">{t("PVP")}</option>
+                        <option value="Farming">{t("Farming")}</option>
                       </select>
                     </div>
                   </div>
@@ -176,6 +176,8 @@ class WalkerListItem extends Component {
                         }}
                         disabled={!this.state.canEdit}
                       >
+                        <option key={"no-type-select"}></option>
+                        );
                         {this.props.walkerListTypes.map((name) => {
                           return (
                             <option key={name} value={name}>
@@ -311,10 +313,13 @@ class WalkerListItem extends Component {
               )}
             </td>
             <td className="text-center">{this.props.walker.name}</td>
-            <td className="text-center">
+            <td className="d-none d-sm-table-cell text-center">
               {this.props.walker.walker_use == null
                 ? t("Not Defined")
                 : this.props.walker.walker_use}
+            </td>
+            <td className="d-none d-sm-table-cell text-center">
+              {this.props.walker.description}
             </td>
             <td className="text-center">
               {this.props.walker.isReady == true ? (

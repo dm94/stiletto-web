@@ -45,15 +45,11 @@ export const getUserProfile = async () => {
           message: "Error connecting to database",
         };
       }
-    } else {
-      return {
-        success: false,
-        message: "Error when connecting to the API",
-      };
     }
+    this.closeSession();
     return {
       success: false,
-      message: "Error when connecting to the API",
+      message: "Log in again",
     };
   }
   return {

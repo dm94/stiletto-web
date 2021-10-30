@@ -20,7 +20,6 @@ class WalkerList extends Component {
       inputDiscodId: null,
       showLinkDiscordButton: false,
       isFiltered: false,
-      searchInput: "",
       discordList: [],
       members: [],
       walkerTypes: [],
@@ -28,6 +27,10 @@ class WalkerList extends Component {
       nickname: null,
       page: 1,
       hasMoreWalkers: false,
+      searchInput: "",
+      walkerTypeSearch: "All",
+      searchDescription: "",
+      useWalkerSearch: "All",
     };
   }
 
@@ -105,6 +108,18 @@ class WalkerList extends Component {
         pageSize: 20,
         page: page,
         name: this.state.searchInput.length > 0 ? this.state.searchInput : null,
+        type:
+          this.state.walkerTypeSearch !== "All"
+            ? this.state.walkerTypeSearch
+            : null,
+        desc:
+          this.state.searchDescription.length > 0
+            ? this.state.searchDescription
+            : null,
+        use:
+          this.state.useWalkerSearch !== "All"
+            ? this.state.useWalkerSearch
+            : null,
       },
     })
       .then((response) => {
@@ -214,6 +229,16 @@ class WalkerList extends Component {
           onRemove={this.deleteWalker}
           onSave={this.updateWalker}
         />
+      ));
+    }
+  }
+
+  walkerOptionList(t) {
+    if (this.state.walkerTypes != null) {
+      return this.state.walkerTypes.map((walker) => (
+        <option key={walker} value={walker}>
+          {t(walker)}
+        </option>
       ));
     }
   }
@@ -436,51 +461,131 @@ class WalkerList extends Component {
             />
           </Helmet>
           {this.serverLinkButton(t)}
+          <div className="row">
+            <div className="col-md-12">
+              <div className="card mb-3 border-primary">
+                <div className="card-header">{t("Search Walkers")}</div>
+                <div className="card-body">
+                  <div className="row">
+                    <div className="col-xl-2">
+                      <label htmlFor="walkerTypeSearch">{t("Type")}</label>
+                      <select
+                        id="walkerTypeSearch"
+                        className="custom-select"
+                        value={
+                          this.state.walkerTypeSearch
+                            ? this.state.walkerTypeSearch
+                            : "All"
+                        }
+                        onChange={(evt) =>
+                          this.setState({
+                            walkerTypeSearch: evt.target.value,
+                          })
+                        }
+                      >
+                        <option value="All">{t("All")}</option>
+                        {this.walkerOptionList(t)}
+                      </select>
+                    </div>
+                    <div className="col-xl-2">
+                      <label htmlFor="search-name">{t("Name")}</label>
+                      <input
+                        className="form-control"
+                        id="search-name"
+                        type="search"
+                        placeholder="Name.."
+                        aria-label="Search"
+                        onChange={(evt) =>
+                          this.setState({
+                            searchInput: evt.target.value,
+                          })
+                        }
+                        value={this.state.searchInput}
+                      />
+                    </div>
+
+                    <div className="col-xl-2">
+                      <label htmlFor="useWalkerSearch">{t("Use")}</label>
+                      <select
+                        id="useWalkerSearch"
+                        className="custom-select"
+                        value={
+                          this.state.useWalkerSearch
+                            ? this.state.useWalkerSearch
+                            : "All"
+                        }
+                        onChange={(evt) =>
+                          this.setState({
+                            useWalkerSearch: evt.target.value,
+                          })
+                        }
+                      >
+                        <option value="All">{t("All")}</option>
+                        <option value="Personal">{t("Personal")}</option>
+                        <option value="PVP">{t("PVP")}</option>
+                        <option value="Farming">{t("Farming")}</option>
+                      </select>
+                    </div>
+                    <div className="col-xl-2">
+                      <label htmlFor="search-description">
+                        {t("Description")}
+                      </label>
+                      <input
+                        className="form-control"
+                        id="search-description"
+                        type="search"
+                        aria-label="Search"
+                        onChange={(evt) =>
+                          this.setState({
+                            searchDescription: evt.target.value,
+                          })
+                        }
+                        value={this.state.searchDescription}
+                      />
+                    </div>
+                    <div className="col btn-group">
+                      <button
+                        className="btn btn-lg btn-primary"
+                        onClick={(e) => this.updateWalkers()}
+                      >
+                        {t("Filter walkers")}
+                      </button>
+                      <button
+                        className="btn btn-lg btn-secondary"
+                        onClick={() => {
+                          this.setState(
+                            {
+                              searchInput: "",
+                              walkerTypeSearch: "All",
+                              searchDescription: "",
+                              useWalkerSearch: "All",
+                            },
+                            () => this.updateWalkers()
+                          );
+                        }}
+                      >
+                        {t("Clean filter")}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <table className="table table-sm">
             <thead>
               <tr>
                 <th className="text-center" scope="col">
                   {t("Type")}
                 </th>
-                <th scope="col">
-                  <div className="input-group input-group-sm w-50 mb-0 mx-auto">
-                    <input
-                      className="form-control"
-                      id="search-name"
-                      type="search"
-                      placeholder="Name.."
-                      aria-label="Search"
-                      onChange={(evt) =>
-                        this.setState({
-                          searchInput: evt.target.value,
-                        })
-                      }
-                      value={this.state.searchInput}
-                    />
-                    <div className="input-group-append">
-                      <button
-                        type="button"
-                        className="btn btn-secondary"
-                        onClick={(e) => this.searchWalkers(e)}
-                      >
-                        {t("Search")}
-                      </button>
-                      <button
-                        type="button"
-                        className={
-                          this.state.isFiltered
-                            ? "btn btn-success"
-                            : "btn btn-success d-none"
-                        }
-                        onClick={(e) => this.clearSearch(e)}
-                      >
-                        {t("Clean")}
-                      </button>
-                    </div>
-                  </div>
-                </th>
                 <th className="text-center" scope="col">
+                  {t("Name")}
+                </th>
+                <th className="d-none d-sm-table-cell text-center" scope="col">
                   {t("Use")}
+                </th>
+                <th className="d-none d-sm-table-cell text-center" scope="col">
+                  {t("Description")}
                 </th>
                 <th className="text-center" scope="col">
                   {t("Ready")}
