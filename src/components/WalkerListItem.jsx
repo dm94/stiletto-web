@@ -110,7 +110,9 @@ class WalkerListItem extends Component {
                                 key={member.discordid}
                                 value={member.nickname}
                               >
-                                {member.nickname}
+                                {member.nickname
+                                  ? member.nickname
+                                  : member.discordtag}
                               </option>
                             );
                           })
@@ -132,7 +134,11 @@ class WalkerListItem extends Component {
                       <select
                         className="form-control"
                         id="inputUse"
-                        value={this.state.walker.walker_use}
+                        value={
+                          this.state.walker.walker_use
+                            ? this.state.walker.walker_use
+                            : "None"
+                        }
                         onChange={(evt) => {
                           const valueInput = evt.target.value;
                           this.setState((state) => {
@@ -143,6 +149,7 @@ class WalkerListItem extends Component {
                         }}
                         disabled={!this.state.canEdit}
                       >
+                        <option value="None">{t("None")}</option>
                         <option value="Personal">{t("Personal")}</option>
                         <option value="PVP">{t("PVP")}</option>
                         <option value="Farming">{t("Farming")}</option>

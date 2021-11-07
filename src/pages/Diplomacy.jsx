@@ -5,7 +5,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getUserProfile } from "../services";
+import { getUserProfile, getHasPermissions } from "../services";
 
 class Diplomacy extends Component {
   constructor(props) {
@@ -20,6 +20,7 @@ class Diplomacy extends Component {
       clanFlagSymbolInput: "C1",
       nameOtherClanInput: "",
       isLeader: false,
+      hasPermissions: false,
     };
   }
 
@@ -57,6 +58,9 @@ class Diplomacy extends Component {
       .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
+
+    let hasPermissions = await getHasPermissions("diplomacy");
+    this.setState({ hasPermissions: hasPermissions });
   }
 
   createRelationship = (event) => {
@@ -81,7 +85,7 @@ class Diplomacy extends Component {
 
     Axios.request(options)
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 201) {
           this.componentDidMount();
         } else if (response.status === 405) {
           this.setState({ error: "Method Not Allowed" });
@@ -133,7 +137,7 @@ class Diplomacy extends Component {
         <div key={"ally" + d.id} className="col-12">
           <ClanSelect
             clan={d}
-            leader={this.state.isLeader}
+            leader={this.state.isLeader || this.state.hasPermissions}
             onDelete={this.deleteDiplomacy}
           />
         </div>
@@ -151,7 +155,7 @@ class Diplomacy extends Component {
         <div key={"enemy" + d.id} className="col-12">
           <ClanSelect
             clan={d}
-            leader={this.state.isLeader}
+            leader={this.state.isLeader || this.state.hasPermissions}
             onDelete={this.deleteDiplomacy}
           />
         </div>
@@ -169,7 +173,7 @@ class Diplomacy extends Component {
         <div key={"npa" + d.id} className="col-12">
           <ClanSelect
             clan={d}
-            leader={this.state.isLeader}
+            leader={this.state.isLeader || this.state.hasPermissions}
             onDelete={this.deleteDiplomacy}
           />
         </div>
@@ -178,7 +182,7 @@ class Diplomacy extends Component {
   }
 
   createNewRelationship(t) {
-    if (this.state.isLeader) {
+    if (this.state.isLeader || this.state.hasPermissions) {
       return (
         <div className="col-md-12">
           <div className="card mb-4 shadow-sm">

@@ -7,9 +7,10 @@ import { getMembers } from "../services";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getUserProfile, closeSession } from "../services";
+import { getUserProfile, closeSession, getHasPermissions } from "../services";
 import DiscordConfig from "../components/DiscordConfig";
 import ClanConfig from "../components/ClanConfig";
+import MemberPermissionsConfig from "../components/MemberPermissionsConfig";
 
 class MemberList extends Component {
   constructor(props) {
@@ -28,6 +29,10 @@ class MemberList extends Component {
       showBotConfig: false,
       clanid: null,
       showClanConfig: false,
+      hasBotPermissions: false,
+      hasRequestPermissions: false,
+      hasKickMembersPermisssions: false,
+      memberForEdit: null,
     };
   }
 
@@ -73,6 +78,15 @@ class MemberList extends Component {
           error: "Error when connecting to the API",
         });
       });
+
+    let hasBotPermissions = await getHasPermissions("bot");
+    let hasRequestPermissions = await getHasPermissions("request");
+    let hasKickMembersPermisssions = await getHasPermissions("kickmembers");
+    this.setState({
+      hasBotPermissions: hasBotPermissions,
+      hasRequestPermissions: hasRequestPermissions,
+      hasKickMembersPermisssions: hasKickMembersPermisssions,
+    });
   }
 
   async updateMembers() {
@@ -292,6 +306,11 @@ class MemberList extends Component {
           key={member.discordid}
           member={member}
           onKick={this.kickMember}
+          onClickEditPermissions={(discordid) =>
+            this.setState({ memberForEdit: discordid })
+          }
+          isLeader={this.state.isLeader}
+          hasPermissions={this.state.hasKickMembersPermisssions}
         />
       ));
     }
@@ -307,6 +326,7 @@ class MemberList extends Component {
           <RequestMemberListItem
             key={member.discordid}
             member={member}
+            isLeader={this.state.isLeader || this.state.hasRequestPermissions}
             onShowRequest={(r) =>
               this.setState({ requestData: r, showRequestModal: true })
             }
@@ -480,15 +500,25 @@ class MemberList extends Component {
             }
           />
         </Helmet>
-        <div className={this.state.isLeader ? "col-12" : "col-12 d-none"}>
+        <div
+          className={
+            this.state.isLeader || this.state.hasBotPermissions
+              ? "col-12"
+              : "col-12 d-none"
+          }
+        >
           <div className="row">
-            <div className="col-12 col-lg-2 mr-auto mb-2">
+            <div
+              className={
+                this.state.isLeader ? "col-12 col-lg-2 mr-auto mb-2" : "d-none"
+              }
+            >
               <div className="btn-group" role="group">
                 <button type="button" className="btn btn-primary" disabled>
                   <i className="fas fa-users-cog"></i>
                 </button>
                 <button
-                  className={this.state.isLeader ? "btn btn-info" : "d-none"}
+                  className="btn btn-info"
                   onClick={() => {
                     this.setState({ showClanConfig: true });
                   }}
@@ -503,7 +533,11 @@ class MemberList extends Component {
                   <i className="fab fa-discord"></i>
                 </button>
                 <button
-                  className={this.state.isLeader ? "btn btn-info" : "d-none"}
+                  className={
+                    this.state.isLeader || this.state.hasBotPermissions
+                      ? "btn btn-info"
+                      : "d-none"
+                  }
                   onClick={() => {
                     this.setState({ showBotConfig: true });
                   }}
@@ -529,13 +563,25 @@ class MemberList extends Component {
                     </th>
                     <th
                       className={
-                        this.state.members != null && this.state.isLeader
+                        this.state.members != null &&
+                        (this.state.isLeader ||
+                          this.state.hasKickMembersPermisssions)
                           ? "text-center"
                           : "d-none"
                       }
                       scope="col"
                     >
                       {t("Kick")}
+                    </th>
+                    <th
+                      className={
+                        this.state.members != null && this.state.isLeader
+                          ? "text-center"
+                          : "d-none"
+                      }
+                      scope="col"
+                    >
+                      {t("Edit")}
                     </th>
                   </tr>
                 </thead>
@@ -559,7 +605,9 @@ class MemberList extends Component {
                     </th>
                     <th
                       className={
-                        this.state.members != null && this.state.isLeader
+                        this.state.members != null &&
+                        (this.state.isLeader ||
+                          this.state.hasRequestPermissions)
                           ? "text-center"
                           : "d-none"
                       }
@@ -621,6 +669,17 @@ class MemberList extends Component {
             key="clanconfig"
             clanid={this.state.clanid}
             onClose={() => this.setState({ showClanConfig: false })}
+            onError={(error) => this.setState({ error: error })}
+          />
+        ) : (
+          ""
+        )}
+        {this.state.memberForEdit ? (
+          <MemberPermissionsConfig
+            key="discordbotconfig"
+            clanid={this.state.clanid}
+            memberid={this.state.memberForEdit}
+            onClose={() => this.setState({ memberForEdit: null })}
             onError={(error) => this.setState({ error: error })}
           />
         ) : (

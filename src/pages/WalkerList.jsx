@@ -5,7 +5,12 @@ import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getMembers, getItems, getUserProfile } from "../services";
+import {
+  getMembers,
+  getItems,
+  getUserProfile,
+  getHasPermissions,
+} from "../services";
 import Pagination from "../components/Pagination";
 const queryString = require("query-string");
 
@@ -31,6 +36,7 @@ class WalkerList extends Component {
       walkerTypeSearch: "All",
       searchDescription: "",
       useWalkerSearch: "All",
+      hasPermissions: false,
     };
   }
 
@@ -96,6 +102,9 @@ class WalkerList extends Component {
     this.updateWalkerTypes();
 
     this.updateWalkers();
+
+    let hasPermissions = await getHasPermissions("walkers");
+    this.setState({ hasPermissions: hasPermissions });
   }
 
   updateWalkers(page = this.state.page) {
@@ -224,7 +233,7 @@ class WalkerList extends Component {
           walker={walker}
           walkerListTypes={this.state.walkerTypes}
           memberList={this.state.members}
-          isLeader={this.state.isLeader}
+          isLeader={this.state.isLeader || this.state.hasPermissions}
           nickname={this.state.nickname}
           onRemove={this.deleteWalker}
           onSave={this.updateWalker}

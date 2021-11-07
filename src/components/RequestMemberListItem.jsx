@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 
 class RequestMemberListItem extends Component {
   showButton(t) {
-    if (this.props.member.leaderid == localStorage.getItem("discordid")) {
+    if (this.props.isLeader) {
       return (
         <button
           className="btn btn-block btn-primary"
