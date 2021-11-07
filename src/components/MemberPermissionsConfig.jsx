@@ -44,7 +44,8 @@ class MemberPermissionsConfig extends Component {
         "/clans/" +
         this.props.clanid +
         "/members/" +
-        this.props.memberid,
+        this.props.memberid +
+        "/permissions",
       params: {
         bot: this.state.bot,
         diplomacy: this.state.diplomacy,
@@ -151,10 +152,10 @@ class MemberPermissionsConfig extends Component {
                     type="checkbox"
                     className="custom-control-input"
                     id="diplomacyInput"
-                    checked={this.state.walkers}
+                    checked={this.state.diplomacy}
                     onChange={() =>
                       this.setState((state) => {
-                        this.setState({ walkers: !state.walkers });
+                        this.setState({ diplomacy: !state.diplomacy });
                       })
                     }
                   />
