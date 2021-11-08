@@ -61,7 +61,7 @@ export const getUserProfile = async () => {
 export const getHasPermissions = async (type) => {
   let response = await getOurPermssions();
 
-  if (response && response.success && response.message) {
+  if (response.success && response.message) {
     return response.message[type] === "1";
   }
 
