@@ -5,7 +5,10 @@ class MemberListItem extends Component {
   kickButton() {
     const { t } = this.props;
     if (this.props.isLeader || this.props.hasPermissions) {
-      if (this.props.member.discordid != localStorage.getItem("discordid")) {
+      if (
+        this.props.member.discordid != localStorage.getItem("discordid") &&
+        this.props.member.discordid != this.props.member.leaderid
+      ) {
         return (
           <td>
             <button
@@ -23,7 +26,10 @@ class MemberListItem extends Component {
   editPermissionsButton() {
     const { t } = this.props;
     if (this.props.isLeader) {
-      if (this.props.member.discordid != localStorage.getItem("discordid")) {
+      if (
+        this.props.member.discordid != localStorage.getItem("discordid") &&
+        this.props.member.discordid != this.props.member.leaderid
+      ) {
         return (
           <td className="text-center">
             <div className="btn-group" role="group">
