@@ -137,6 +137,7 @@
   "Not used in any recipe": "Non utilizzato in nessuna ricetta",
   "You need to have a clan to access this section": "Devi avere un clan per accedere a questa sezione",
   "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.": "Per gli walkers per apparire è necessario collegare il server discord con il clan, solo gli utenti con potere di amministrazione possono aggiungere il server discord.",
+  "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.": "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.",
   "Discord ID": "Id Discord",
   "Link discord server": "Link discord server",
   "Discord Bot": "Discord Bot",
