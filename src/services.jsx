@@ -1,6 +1,7 @@
 import Axios from "axios";
 
 const timeCheck = 300000;
+const smallCacheTimeCheck = 60000;
 
 export const getUserProfile = async () => {
   const profile = localStorage.getItem("profile");
@@ -165,6 +166,70 @@ export const getUserPermssions = async (clanid, discordid) => {
   }
 };
 
+export const getClanInfo = async () => {
+  const clanData = localStorage.getItem("clanInfo");
+  const lastCheck = localStorage.getItem("clanInfo-lastCheck");
+
+  if (
+    clanData != null &&
+    lastCheck != null &&
+    lastCheck >= Date.now() - smallCacheTimeCheck
+  ) {
+    return { success: true, message: JSON.parse(clanData) };
+  } else {
+    const profile = localStorage.getItem("profile");
+    let clanid = null;
+    if (profile != null) {
+      let data = JSON.parse(profile);
+      clanid = data.clanid;
+    } else {
+      let data = this.getUserProfile();
+      clanid = data.message.clanid;
+    }
+
+    if (clanid != null) {
+      const options = {
+        method: "get",
+        url: process.env.REACT_APP_API_URL + "/clans/" + clanid,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      };
+      const response = await apiRequest(options);
+      if (response != null) {
+        if (response.status === 200) {
+          if (response.data != null && localStorage.getItem("acceptscookies")) {
+            localStorage.setItem("clanInfo", JSON.stringify(response.data));
+            localStorage.setItem("clanInfo-lastCheck", Date.now());
+          }
+          return { success: true, message: response.data };
+        } else if (response.status === 405 || response.status === 401) {
+          this.closeSession();
+          return {
+            success: false,
+            message: "You don't have access here, try to log in again",
+          };
+        } else if (response.status === 503) {
+          return {
+            success: false,
+            message: "Error connecting to database",
+          };
+        }
+      } else {
+        return {
+          success: false,
+          message: "Error when connecting to the API",
+        };
+      }
+    } else {
+      return {
+        success: false,
+        message: "You need a clan to enter here",
+      };
+    }
+  }
+};
+
 export const getMembers = async () => {
   const members = localStorage.getItem("memberList");
   const lastCheck = localStorage.getItem("memberList-lastCheck");
@@ -283,6 +348,8 @@ export const closeSession = () => {
   localStorage.removeItem("profile-lastCheck");
   localStorage.removeItem("profile");
   localStorage.removeItem("memberList");
+  localStorage.removeItem("clanInfo");
+  localStorage.removeItem("clanInfo-lastCheck");
 };
 
 async function apiRequest(options) {

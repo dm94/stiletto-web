@@ -37,6 +37,8 @@ class WalkerList extends Component {
       searchDescription: "",
       useWalkerSearch: "All",
       hasPermissions: false,
+      hasPermissionsBot: false,
+      serverDiscordID: null,
     };
   }
 
@@ -88,11 +90,14 @@ class WalkerList extends Component {
     }
 
     const response = await getUserProfile();
+    let isLeader = false;
     if (response.success) {
+      isLeader = response.message.discordid === response.message.leaderid;
       this.setState({
         clanid: response.message.clanid,
-        isLeader: response.message.discordid === response.message.leaderid,
+        isLeader: isLeader,
         nickname: response.message.nickname,
+        serverDiscordID: response.message.serverdiscord,
       });
     } else {
       this.setState({ error: response.message, isLoaded: true });
@@ -105,6 +110,8 @@ class WalkerList extends Component {
 
     let hasPermissions = await getHasPermissions("walkers");
     this.setState({ hasPermissions: hasPermissions });
+    let hasPermissionsBot = await getHasPermissions("bot");
+    this.setState({ hasPermissions: hasPermissionsBot });
   }
 
   updateWalkers(page = this.state.page) {
@@ -275,6 +282,7 @@ class WalkerList extends Component {
         } else if (response.status === 503) {
           this.setState({ error: "Error when connecting with the database" });
         }
+        localStorage.removeItem("profile");
       })
       .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
@@ -307,22 +315,23 @@ class WalkerList extends Component {
 
   serverLinkButton(t) {
     if (
-      this.state.walkers != null &&
-      this.state.walkers[0] != null &&
-      this.state.walkers[0].discordid == null
+      (this.state.isLeader || this.state.hasPermissionsBot) &&
+      this.state.serverDiscordID == null
     ) {
-      if (!this.state.isLeader) {
-        return;
-      }
       if (this.state.discordList != null && this.state.discordList.length > 0) {
         return (
           <div className="row">
             <div className="col-xl-4">
               <div className="card border-secondary mb-3">
                 <div className="card-body">
-                  <div className="text-info mb-3">
+                  <div className="text-info">
                     {t(
                       "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+                    )}
+                  </div>
+                  <div className="text-warning mb-3">
+                    {t(
+                      "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot."
                     )}
                   </div>
                   <form onSubmit={this.linkDiscordServer}>
@@ -373,9 +382,14 @@ class WalkerList extends Component {
             <div className="col-xl-4">
               <div className="card border-secondary mb-3">
                 <div className="card-body">
-                  <div className="text-info mb-3">
+                  <div className="text-info">
                     {t(
                       "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+                    )}
+                  </div>
+                  <div className="text-warning mb-3">
+                    {t(
+                      "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot."
                     )}
                   </div>
                   <a
