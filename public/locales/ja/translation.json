@@ -137,6 +137,7 @@
   "Not used in any recipe": "レシピには使用されていません",
   "You need to have a clan to access this section": "このセクションにアクセスするにはクランが必要です",
   "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.": "歩行者が表示されるためには、不和サーバーをクランとリンクする必要があります。 Discordサーバーを追加できるのは管理権限を持つユーザーだけです。",
+  "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.": "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.",
   "Discord ID": "Discord ID",
   "Link discord server": "Discordサーバーへのリンク",
   "Discord Bot": "Discord Bot",
