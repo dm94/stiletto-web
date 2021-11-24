@@ -137,7 +137,7 @@
   "Not used in any recipe": "未用于任何配方",
   "You need to have a clan to access this section": "您需要一个部族才能访问此部分",
   "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.": "要让步行者出现，必须将Discord服务器与部族连接起来。 只有拥有管理权限的用户可以添加 Discord 服务器。",
-  "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.": "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.",
+  "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.": "当您添加了机器人时，您可以通过在您的Discord服务器中输入!linkserver来更容易地连接Discord 服务器。",
   "Discord ID": "Discord ID",
   "Link discord server": "链接Discord 服务器",
   "Discord Bot": "Discord Bot",
