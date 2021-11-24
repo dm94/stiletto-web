@@ -137,7 +137,7 @@
   "Not used in any recipe": "Не используется ни в одном рецепте",
   "You need to have a clan to access this section": "Вам нужен клан, чтобы получить доступ к этому разделу.",
   "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.": "Для появления ходячих необходимо связать сервер дискорда с кланом, добавить сервер дискорда могут только пользователи, обладающие административными полномочиями.",
-  "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.": "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.",
+  "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot.": "Вы можете легко связать сервер discord, набрав !linkserver на сервере discord, когда вы добавили бота.",
   "Discord ID": "Идентификатор дискорда",
   "Link discord server": "Связь с сервером discord",
   "Discord Bot": "Discord бот",
