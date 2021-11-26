@@ -192,7 +192,7 @@ class TechTree extends Component {
     const theme = {
       h1FontSize: "50",
       border: "1px solid rgb(127,127,127)",
-      treeBackgroundColor: "rgba(60, 60, 60, 0.8)",
+      treeBackgroundColor: "rgba(60, 60, 60, 0.9)",
       nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
       nodeAlternativeActiveBackgroundColor: "#834AC4",
       nodeActiveBackgroundColor: "#834AC4",

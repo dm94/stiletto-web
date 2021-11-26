@@ -4,6 +4,7 @@ import { withTranslation } from "react-i18next";
 import SkillNodeBtn from "./SkillNodeBtn";
 import Ingredients from "./Ingredients";
 import Ingredient from "./Ingredient";
+import Icon from "./Icon";
 
 class SkillTreeTab extends Component {
   state = {};
@@ -48,6 +49,9 @@ class SkillTreeTab extends Component {
     const { t } = this.props;
     return (
       <div className="mx-auto">
+        <div className="text-center mb-1">
+          <Icon key={item.name} name={item.name} width={35} />
+        </div>
         <p className="text-center border-bottom border-warning">
           {t("Who has learned it?")}
         </p>

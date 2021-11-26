@@ -38,3 +38,7 @@
 .tab-content-tree {
   min-height: 200vh;
 }
+
+.tippy-content h1 {
+  font-size: 2em;
+}
