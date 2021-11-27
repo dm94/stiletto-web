@@ -7,6 +7,7 @@ import Ingredients from "../components/Ingredients";
 import Ingredient from "../components/Ingredient";
 import Icon from "../components/Icon";
 import LoadingScreen from "../components/LoadingScreen";
+import Axios from "axios";
 
 class ItemWiki extends Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class ItemWiki extends Component {
       item: null,
       isLoaded: false,
       canBeUsed: [],
+      description: "",
     };
   }
 
@@ -47,6 +49,44 @@ class ItemWiki extends Component {
       });
       this.setState({ item: item, isLoaded: true, canBeUsed: allItems });
     }
+
+    const options = {
+      method: "get",
+      url: "https://lastoasis.fandom.com/api.php",
+      params: {
+        action: "query",
+        prop: "extracts",
+        titles: item_name,
+        exsentences: 10,
+        format: "json",
+        origin: "*",
+        formatversion: 2,
+        exlimit: 1,
+        explaintext: 1,
+      },
+    };
+    Axios.request(options)
+      .then((response) => {
+        if (response.status === 200) {
+          if (
+            response.data != null &&
+            response.data.query &&
+            response.data.query.pages
+          ) {
+            if (
+              response.data.query.pages[0] != null &&
+              response.data.query.pages[0].extract != null
+            ) {
+              this.setState({
+                description: response.data.query.pages[0].extract,
+              });
+            }
+          }
+        }
+      })
+      .catch(() => {
+        this.setState({ error: "Error when connecting to the API" });
+      });
   }
   render() {
     const { t } = this.props;
@@ -116,7 +156,7 @@ class ItemWiki extends Component {
               <div className="col-6">
                 <div className="card border-secondary mb-3">
                   <div className="card-header">
-                    <Icon key={name} name={name} />
+                    <Icon key={name} name={name} width={35} />
                     {t(name)}
                   </div>
                   <div className="card-body">
@@ -168,6 +208,7 @@ class ItemWiki extends Component {
                   </div>
                 </div>
               </div>
+              {this.showDescription(t)}
               <div className="col-6">
                 <div className="card border-secondary mb-3">
                   <div className="card-header">{t("It can be used in")}</div>
@@ -192,6 +233,21 @@ class ItemWiki extends Component {
       }
     } else {
       return <LoadingScreen />;
+    }
+  }
+
+  showDescription(t) {
+    if (this.state.description !== "") {
+      return (
+        <div className="col-12">
+          <div className="card border-secondary mb-3">
+            <div className="card-header">{t("Description by Wiki")}</div>
+            <div className="card-body">
+              <pre>{this.state.description}</pre>
+            </div>
+          </div>
+        </div>
+      );
     }
   }
 
