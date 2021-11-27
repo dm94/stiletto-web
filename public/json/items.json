@@ -597,6 +597,23 @@
         ]
       }
     ],
+    "name": "Stone Foundation"
+  }, {
+    "category": "buildings/construction/stone",
+    "crafting": [{
+        "ingredients": [{
+            "count": 28,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Stone"
+          }, {
+            "count": 1,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
     "name": "Stone Wall with Window"
   }, {
     "category": "buildings/construction/container",

@@ -311,8 +311,8 @@ class WalkerListItem extends Component {
             <td className="text-center">
               {this.props.walker.type ? (
                 <Icon
-                  key={this.props.walker.type}
-                  name={this.props.walker.type}
+                  key={this.props.walker.type + " Walker"}
+                  name={this.props.walker.type + " Walker"}
                   width="30"
                 />
               ) : (

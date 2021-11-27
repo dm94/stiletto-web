@@ -39,6 +39,7 @@ class WalkerList extends Component {
       hasPermissions: false,
       hasPermissionsBot: false,
       serverDiscordID: null,
+      isReadySearch: "All",
     };
   }
 
@@ -135,6 +136,12 @@ class WalkerList extends Component {
         use:
           this.state.useWalkerSearch !== "All"
             ? this.state.useWalkerSearch
+            : null,
+        ready:
+          this.state.isReadySearch !== "All"
+            ? this.state.isReadySearch === "Yes"
+              ? 1
+              : 0
             : null,
       },
     })
@@ -526,8 +533,7 @@ class WalkerList extends Component {
                         value={this.state.searchInput}
                       />
                     </div>
-
-                    <div className="col-xl-2">
+                    <div className="col-xl-1">
                       <label htmlFor="useWalkerSearch">{t("Use")}</label>
                       <select
                         id="useWalkerSearch"
@@ -565,6 +571,27 @@ class WalkerList extends Component {
                         }
                         value={this.state.searchDescription}
                       />
+                    </div>
+                    <div className="col-xl-1">
+                      <label htmlFor="isReadySearch">{t("Is ready?")}</label>
+                      <select
+                        id="isReadySearch"
+                        className="custom-select"
+                        value={
+                          this.state.isReadySearch
+                            ? this.state.isReadySearch
+                            : "All"
+                        }
+                        onChange={(evt) =>
+                          this.setState({
+                            isReadySearch: evt.target.value,
+                          })
+                        }
+                      >
+                        <option value="All">{t("All")}</option>
+                        <option value="Yes">{t("Yes")}</option>
+                        <option value="No">{t("No")}</option>
+                      </select>
                     </div>
                     <div className="col btn-group">
                       <button

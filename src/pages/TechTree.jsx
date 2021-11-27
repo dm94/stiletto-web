@@ -8,6 +8,7 @@ import ModalMessage from "../components/ModalMessage";
 import SkillTreeTab from "../components/SkillTreeTab";
 import { getItems, getUserProfile, closeSession } from "../services";
 import DoubleScrollbar from "../components/DoubleScrollbar";
+import Icon from "../components/Icon";
 
 class TechTree extends Component {
   constructor(props) {
@@ -239,6 +240,7 @@ class TechTree extends Component {
                 }}
                 activeClassName="active"
               >
+                <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
                 {t("Vitamins")}
               </NavLink>
             </div>
@@ -251,6 +253,7 @@ class TechTree extends Component {
                 }}
                 activeClassName="active"
               >
+                <Icon key="Equipment" name="Equipment" width={30} />
                 {t("Equipment")}
               </NavLink>
             </div>
@@ -263,6 +266,7 @@ class TechTree extends Component {
                 }}
                 activeClassName="active"
               >
+                <Icon key="Crafting" name="Crafting" width={30} />
                 {t("Crafting")}
               </NavLink>
             </div>
@@ -275,6 +279,7 @@ class TechTree extends Component {
                 }}
                 activeClassName="active"
               >
+                <Icon key="Construction" name="Construction" width={30} />
                 {t("Construction")}
               </NavLink>
             </div>
@@ -285,6 +290,7 @@ class TechTree extends Component {
                 to={{ pathname: "/tech/Walkers" }}
                 activeClassName="active"
               >
+                <Icon key="Walkers" name="Walkers" width={30} />
                 {t("Walkers")}
               </NavLink>
             </div>
