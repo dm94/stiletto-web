@@ -150,6 +150,7 @@ class QualityCalculator extends Component {
       maxQuality = maxQuality + parseInt(mat.average);
     });
     if (
+      this.state.itemSelected != null &&
       this.state.itemSelected.crafting != null &&
       this.state.itemSelected.crafting[0].station != null
     ) {
@@ -258,9 +259,18 @@ class QualityCalculator extends Component {
                     >
                       <span aria-hidden="true">X</span>
                     </button>
-                    {this.state.itemSelected
-                      ? t(this.state.itemSelected.name)
-                      : ""}
+                    {this.state.itemSelected ? (
+                      <span>
+                        <Icon
+                          key={this.state.itemSelected.name}
+                          name={this.state.itemSelected.name}
+                          width={25}
+                        />{" "}
+                        {t(this.state.itemSelected.name)}
+                      </span>
+                    ) : (
+                      ""
+                    )}
                   </div>
                   <div className="card-body">
                     <div className="row">
