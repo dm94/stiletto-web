@@ -18,6 +18,15 @@ class Trade extends Component {
       return (
         <div className="card-footer">
           Discord: {this.props.trade.discordtag}
+          <a
+            className="float-right text-info"
+            href={"https://discordapp.com/users/" + this.props.trade.discordid}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Send DM"
+          >
+            <i className="fab fa-discord"></i>
+          </a>
         </div>
       );
     } else {

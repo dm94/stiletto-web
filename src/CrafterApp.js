@@ -301,7 +301,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.20.8</p>
+                  <p className="mr-auto">v. 3.20.9</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"
@@ -324,7 +324,7 @@ function CrafterApp() {
         <div className="container-fluid py-3 bg-dark text-white">
           <div className="row">
             <div className="col-xl-10">
-              © 2021 Dm94Dani{" | "}{" "}
+              © 2020-2021 Dm94Dani{" | "}{" "}
               <Link className="text-white" to="/privacy">
                 {t("Privacy Policy")}
               </Link>{" "}

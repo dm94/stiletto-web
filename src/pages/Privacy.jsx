@@ -35,6 +35,11 @@ class Privacy extends Component {
         <div className="col-12 border rounded p-4 mb-2">
           <p>
             {t(
+              "Your Discord Tag and Discord ID can be displayed on our website for different functions such as trading or clan functions."
+            )}
+          </p>
+          <p>
+            {t(
               "Data added to the website such as diplomacy, map resources or clan members are stored in a database and the necessary security measures are taken so that no one can access these data."
             )}
           </p>
@@ -56,8 +61,13 @@ class Privacy extends Component {
               "To ensure that our policies always comply with current legal requirements, we reserve the right to make changes to ensure that we are always in line with current legislation."
             )}
           </p>
+          <p>
+            {t(
+              "If you think something is missing or should be changed, please contact me to fix it."
+            )}
+          </p>
           <p className="text-warning">
-            {t("Last modification of the policy")}: 18/07/2021
+            {t("Last modification of the policy")}: 30/11/2021
           </p>
         </div>
       </div>
