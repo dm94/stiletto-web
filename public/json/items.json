@@ -6844,7 +6844,7 @@
     "trade_price": 200
   }, {
     "category": "modules",
-    "name": "Foraging Module",
+    "name": "Forager Module",
     "trade_price": 200
   }, {
     "category": "modules",
@@ -6852,7 +6852,7 @@
     "trade_price": 200
   }, {
     "category": "modules",
-    "name": "Fortress Module",
+    "name": "Hardening Module",
     "trade_price": 200
   }, {
     "category": "modules",
@@ -6880,6 +6880,10 @@
   }, {
     "category": "modules",
     "name": "Pack Mule Module",
+    "trade_price": 200
+  }, {
+    "category": "modules",
+    "name": "Pack Speed Module",
     "trade_price": 200
   }, {
     "category": "modules",
