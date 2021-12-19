@@ -17,7 +17,7 @@ class Home extends Component {
           <title>Stiletto for the Last Oasis</title>
           <meta
             name="description"
-            content="Stiletto the page with utilities for the game Last Oasis"
+            content="Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more..."
           />
           <meta name="theme-color" content="#FFFFFF"></meta>
           <meta name="twitter:card" content="summary_large_image" />

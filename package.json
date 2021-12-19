@@ -1,8 +1,8 @@
 {
   "name": "stiletto-web",
-  "version": "3.20.9",
+  "version": "3.20.10",
   "license": "UNLICENSED",
-  "author": "Daniel Martín",
+  "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
   "private": true,
   "bugs": {
