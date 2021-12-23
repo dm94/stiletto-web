@@ -103,6 +103,7 @@ class WalkerListItem extends Component {
                         }}
                         disabled={!this.state.canEdit}
                       >
+                        <option value="clan">{t("Clan")}</option>
                         {this.props.memberList != null ? (
                           this.props.memberList.map((member) => {
                             return (
@@ -117,7 +118,7 @@ class WalkerListItem extends Component {
                             );
                           })
                         ) : (
-                          <option>{t("No options")}</option>
+                          <option value="clan">{t("Clan")}</option>
                         )}
                       </select>
                     </div>
