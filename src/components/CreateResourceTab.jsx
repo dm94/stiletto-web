@@ -6,7 +6,7 @@ class CreateResourceTab extends Component {
     super(props);
     this.state = {
       resourceTypeInput:
-        this.props.items != null ? this.props.items[0].name : "Aloe",
+        this.props.items != null ? this.props.items[0].name : "Aloe Vera",
       qualityInput: 0,
       toolQualityInput: 0,
       resourceHarvestedQualityInput: 0,
@@ -52,7 +52,7 @@ class CreateResourceTab extends Component {
               this.state.lastHarvestedInput
             );
             this.setState({
-              resourceTypeInput: "Aloe",
+              resourceTypeInput: "Aloe Vera",
               qualityInput: 0,
               descriptionInput: "",
               toolQualityInput: 0,

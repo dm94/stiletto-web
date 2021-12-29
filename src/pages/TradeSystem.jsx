@@ -19,7 +19,7 @@ class TradeSystem extends Component {
       trades: null,
       error: null,
       items: null,
-      resourceTypeInput: "Aloe",
+      resourceTypeInput: "Aloe Vera",
       tradeTypeInput: "Supply",
       amountInput: 0,
       regionInput: "EU",
@@ -84,7 +84,7 @@ class TradeSystem extends Component {
     if (items != null) {
       items = items.filter(
         (it) =>
-          it.category === "materials" ||
+          it.category === "Resources" ||
           it.category === "crafting/station" ||
           it.category === "modules"
       );
@@ -133,7 +133,7 @@ class TradeSystem extends Component {
     Axios.request(options)
       .then((response) => {
         this.setState({
-          resourceTypeInput: "Aloe",
+          resourceTypeInput: "Aloe Vera",
           tradeTypeInput: "Supply",
           amountInput: 0,
           regionInput: "EU",

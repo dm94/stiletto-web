@@ -1896,7 +1896,7 @@
         ]
       }
     ],
-    "name": "Chair Throne",
+    "name": "Chair throne",
     "parent": "Chair Simple"
   }, {
     "category": "buildings/furniture",
@@ -2549,7 +2549,7 @@
             "name": "Stone"
           }, {
             "count": 20,
-            "name": "Aloe"
+            "name": "Aloe Vera"
           }
         ]
       }
@@ -2917,7 +2917,8 @@
     ],
     "damage": 1000,
     "name": "Charged Boulder",
-    "parent": "Catapult"
+    "parent": "Catapult",
+    "trade_price": 1500
   }, {
     "category": "items/ammo/ammunition/projectiles/cobra",
     "crafting": [{
@@ -3074,7 +3075,7 @@
     "crafting": [{
         "ingredients": [{
             "count": 18,
-            "name": "Aloe"
+            "name": "Aloe Vera"
           }, {
             "count": 10,
             "name": "Purified Water"
@@ -3272,7 +3273,7 @@
     "name": "Gas Mask",
     "parent": "Primitive Bandage"
   }, {
-    "category": "items/armors/baskwood armor",
+    "category": "Armors",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -3292,9 +3293,9 @@
       }
     ],
     "name": "Baskwood Armor",
-    "parent": "Fiber Shirt And Trousers"
+    "parent": "Fiber Shirt and Trousers"
   }, {
-    "category": "items/armors/baskwood armor",
+    "category": "Armors",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3319,7 +3320,7 @@
     "name": "Baskwood Boots",
     "parent": "Baskwood Armor"
   }, {
-    "category": "items/armors/baskwood armor",
+    "category": "Armors",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3344,7 +3345,7 @@
     "name": "Baskwood Bracers",
     "parent": "Baskwood Armor"
   }, {
-    "category": "items/armors/carapace armor",
+    "category": "Armors",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -3369,7 +3370,7 @@
     "name": "Carapace Armor",
     "parent": "Forester's Armor"
   }, {
-    "category": "items/armors/carapace armor",
+    "category": "Armors",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -3394,7 +3395,7 @@
     "name": "Carapace Boots",
     "parent": "Carapace Armor"
   }, {
-    "category": "items/armors/carapace armor",
+    "category": "Armors",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -3419,7 +3420,7 @@
     "name": "Carapace Gauntlets",
     "parent": "Carapace Armor"
   }, {
-    "category": "items/armors/cloak",
+    "category": "Armors",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3444,7 +3445,7 @@
     "name": "Cloak",
     "parent": "Redwood Wood Armor"
   }, {
-    "category": "items/armors/feather boots",
+    "category": "Armors",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -3463,7 +3464,7 @@
     "name": "Feather Boots",
     "parent": "Fast Grappling Hook"
   }, {
-    "category": "items/armors/fiber armor",
+    "category": "Armors",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -3480,9 +3481,9 @@
       }
     ],
     "name": "Fiber Arm Wraps",
-    "parent": "Fiber Shirt And Trousers"
+    "parent": "Fiber Shirt and Trousers"
   }, {
-    "category": "items/armors/fiber armor",
+    "category": "Armors",
     "cost": {
       "count": 3,
       "name": "Fragment"
@@ -3496,9 +3497,9 @@
       }
     ],
     "name": "Fiber Headwrap",
-    "parent": "Fiber Shirt And Trousers"
+    "parent": "Fiber Shirt and Trousers"
   }, {
-    "category": "items/armors/fiber armor",
+    "category": "Armors",
     "cost": {
       "count": 3,
       "name": "Fragment"
@@ -3515,9 +3516,9 @@
       }
     ],
     "name": "Fiber Sandals",
-    "parent": "Fiber Shirt And Trousers"
+    "parent": "Fiber Shirt and Trousers"
   }, {
-    "category": "items/armors/fiber armor",
+    "category": "Armors",
     "cost": {
       "count": 6,
       "name": "Fragment"
@@ -3530,10 +3531,11 @@
         ]
       }
     ],
-    "name": "Fiber Shirt And Trousers",
-    "parent": "Primitive Bandage"
+    "name": "Fiber Shirt and Trousers",
+    "parent": "Primitive Bandage",
+    "trade_price": 1.6
   }, {
-    "category": "items/armors/forester's armor",
+    "category": "Armors",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -3552,7 +3554,7 @@
     "name": "Brittle Bone Armor",
     "parent": "Forester's Armor"
   }, {
-    "category": "items/armors/forester's armor",
+    "category": "Armors",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -3572,9 +3574,9 @@
       }
     ],
     "name": "Forester's Armor",
-    "parent": "Fiber Shirt And Trousers"
+    "parent": "Fiber Shirt and Trousers"
   }, {
-    "category": "items/armors/forester's armor",
+    "category": "Armors",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3596,7 +3598,7 @@
     "name": "Forester's Sandals",
     "parent": "Forester's Armor"
   }, {
-    "category": "items/armors/forester's armor",
+    "category": "Armors",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3618,7 +3620,7 @@
     "name": "Forester's Sleeves",
     "parent": "Forester's Armor"
   }, {
-    "category": "items/armors/iron studded armor",
+    "category": "Armors",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -3641,9 +3643,10 @@
       }
     ],
     "name": "Iron Studded Armor",
-    "parent": "Baskwood Armor"
+    "parent": "Baskwood Armor",
+    "trade_price": 94
   }, {
-    "category": "items/armors/iron studded armor",
+    "category": "Armors",
     "cost": {
       "count": 8,
       "name": "Tablet"
@@ -3668,7 +3671,7 @@
     "name": "Iron Studded Boots",
     "parent": "Iron Studded Armor"
   }, {
-    "category": "items/armors/iron studded armor",
+    "category": "Armors",
     "cost": {
       "count": 8,
       "name": "Tablet"
@@ -3693,7 +3696,7 @@
     "name": "Iron Studded Gauntlets",
     "parent": "Iron Studded Armor"
   }, {
-    "category": "items/armors/redwood wood armor",
+    "category": "Armors",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -3718,7 +3721,7 @@
     "name": "Redwood Wood Armor",
     "parent": "Triple Stitch Armor"
   }, {
-    "category": "items/armors/redwood wood armor",
+    "category": "Armors",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3743,7 +3746,7 @@
     "name": "Redwood Wood Boots",
     "parent": "Redwood Wood Armor"
   }, {
-    "category": "items/armors/redwood wood armor",
+    "category": "Armors",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3768,7 +3771,7 @@
     "name": "Redwood Wood Bracers",
     "parent": "Redwood Wood Armor"
   }, {
-    "category": "items/armors/rupu fur armor",
+    "category": "Armors",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -3790,7 +3793,7 @@
     "name": "Cloaked Rupu Fur Armor",
     "parent": "Rupu Fur Armor"
   }, {
-    "category": "items/armors/rupu fur armor",
+    "category": "Armors",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -3807,9 +3810,9 @@
       }
     ],
     "name": "Rupu Fur Armor",
-    "parent": "Fiber Shirt And Trousers"
+    "parent": "Fiber Shirt and Trousers"
   }, {
-    "category": "items/armors/rupu fur armor",
+    "category": "Armors",
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -3824,7 +3827,7 @@
     "name": "Rupu Fur Sandals",
     "parent": "Rupu Fur Armor"
   }, {
-    "category": "items/armors/rupu fur armor",
+    "category": "Armors",
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -3839,7 +3842,7 @@
     "name": "Rupu Fur Sleeves",
     "parent": "Rupu Fur Armor"
   }, {
-    "category": "items/armors/triple stitch armor",
+    "category": "Armors",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -3858,7 +3861,7 @@
     "name": "Triple Stitch Armor",
     "parent": "Rupu Fur Armor"
   }, {
-    "category": "items/armors/triple stitch armor",
+    "category": "Armors",
     "cost": {
       "count": 12,
       "name": "Fragment"
@@ -3880,7 +3883,7 @@
     "name": "Triple Stitch Boots",
     "parent": "Triple Stitch Armor"
   }, {
-    "category": "items/armors/triple stitch armor",
+    "category": "Armors",
     "cost": {
       "count": 12,
       "name": "Fragment"
@@ -4497,7 +4500,7 @@
             "name": "Fiber Weave"
           }, {
             "count": 2,
-            "name": "Aloe"
+            "name": "Aloe Vera"
           }
         ]
       }
@@ -4562,7 +4565,7 @@
     "crafting": [{
         "ingredients": [{
             "count": 15,
-            "name": "Aloe"
+            "name": "Aloe Vera"
           }, {
             "count": 10,
             "name": "Purified Water"
@@ -4723,7 +4726,7 @@
     "parent": "Vitamins",
     "trade_price": 150
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 1,
       "name": "Fragment"
@@ -4742,7 +4745,7 @@
     "name": "Beat Stick",
     "parent": "Equipment"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -4761,7 +4764,7 @@
     "name": "Blunt Quarterstaff",
     "parent": "Beat Stick"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 20,
       "name": "Fragment"
@@ -4783,7 +4786,7 @@
     "name": "Bonespike Sword",
     "parent": "Beat Stick"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 7,
       "name": "Tablet"
@@ -4806,9 +4809,10 @@
       }
     ],
     "name": "Bouldercut Battle Axe",
-    "parent": "Rawbone Battle Axe"
+    "parent": "Rawbone Battle Axe",
+    "trade_price": 320.4
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -4833,7 +4837,7 @@
     "name": "Firestone Bladestaff",
     "parent": "Rawbone Quarterstaff"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -4858,7 +4862,7 @@
     "name": "Firestone Bludgeon",
     "parent": "Rawbone Club"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -4883,7 +4887,7 @@
     "name": "Firestone Bozdogan",
     "parent": "Rawbone Maul"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -4908,7 +4912,7 @@
     "name": "Firestone Hammerstaff",
     "parent": "Rawbone Quarterstaff"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -4933,7 +4937,7 @@
     "name": "Firestone Kopesh",
     "parent": "Bonespike Sword"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -4958,7 +4962,7 @@
     "name": "Firestone Longblade",
     "parent": "Long Bonespike Swordstaff"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 22,
       "name": "Tablet"
@@ -4983,7 +4987,7 @@
     "name": "Ironblade Quarterstaff",
     "parent": "Wyndanblade Quarterstaff"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -5005,7 +5009,7 @@
     "name": "Jaggertooth Club",
     "parent": "Beat Stick"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -5027,7 +5031,7 @@
     "name": "Jaggertooth Maul",
     "parent": "Jaggertooth Club"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -5049,7 +5053,7 @@
     "name": "Javelin",
     "parent": "Beat Stick"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 30,
       "name": "Fragment"
@@ -5071,7 +5075,7 @@
     "name": "Long Bonespike Swordstaff",
     "parent": "Bonespike Sword"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -5096,7 +5100,7 @@
     "name": "Long Ceramic Hoofmace",
     "parent": "Rawbone Maul"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 12,
       "name": "Tablet"
@@ -5119,9 +5123,10 @@
       }
     ],
     "name": "Nibiran Battle Axe",
-    "parent": "Bouldercut Battle Axe"
+    "parent": "Bouldercut Battle Axe",
+    "trade_price": 2116.6
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 12,
       "name": "Tablet"
@@ -5144,9 +5149,10 @@
       }
     ],
     "name": "Nibiran Curved Dagger",
-    "parent": "Wyndan Sabre"
+    "parent": "Wyndan Sabre",
+    "trade_price": 1900.2
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -5169,9 +5175,10 @@
       }
     ],
     "name": "Nibiran Decapitator",
-    "parent": "Wyndan Flame Sword"
+    "parent": "Wyndan Flame Sword",
+    "trade_price": 2756.6
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -5196,7 +5203,7 @@
     "name": "Nibiran Hammer",
     "parent": "Wyndan Hammer"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 22,
       "name": "Tablet"
@@ -5219,9 +5226,10 @@
       }
     ],
     "name": "Nibiran Quarterstaff",
-    "parent": "Wyndanblade Quarterstaff"
+    "parent": "Wyndanblade Quarterstaff",
+    "trade_price": 1504.8
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 15,
       "name": "Tablet"
@@ -5244,9 +5252,10 @@
       }
     ],
     "name": "Nibiran Warhammer",
-    "parent": "Wyndan Warhammer"
+    "parent": "Wyndan Warhammer",
+    "trade_price": 2217.3
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -5271,7 +5280,7 @@
     "name": "Paddleblade Quarterstaff",
     "parent": "Rawbone Quarterstaff"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 20,
       "name": "Fragment"
@@ -5293,7 +5302,7 @@
     "name": "Rawbone Club",
     "parent": "Jaggertooth Club"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -5318,7 +5327,7 @@
     "name": "Rawbone Maul",
     "parent": "Jaggertooth Maul"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 30,
       "name": "Fragment"
@@ -5338,9 +5347,9 @@
       }
     ],
     "name": "Rawbone Quarterstaff",
-    "parent": "Traveller's Staff"
+    "parent": "Traveller’s Staff"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -5362,7 +5371,7 @@
     "name": "Sawtooth Sword",
     "parent": "Long Bonespike Swordstaff"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -5387,7 +5396,7 @@
     "name": "Short Ceramic Hoofmace",
     "parent": "Rawbone Club"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -5409,7 +5418,7 @@
     "name": "Short Malletblade",
     "parent": "Bonespike Sword"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -5434,7 +5443,7 @@
     "name": "Singblade",
     "parent": "Long Bonespike Swordstaff"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -5459,7 +5468,7 @@
     "name": "Spikebone Club",
     "parent": "Rawbone Club"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -5481,7 +5490,7 @@
     "name": "Spikebone Maul",
     "parent": "Rawbone Maul"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 30,
       "name": "Fragment"
@@ -5503,7 +5512,7 @@
     "name": "Throwing Net",
     "parent": "Javelin"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -5525,7 +5534,7 @@
     "name": "Net Pouch",
     "parent": "Throwing Net"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 3,
       "name": "Fragment"
@@ -5545,9 +5554,9 @@
       }
     ],
     "name": "Torch",
-    "parent": "Woodcutter's Hatchet"
+    "parent": "Woodcutter’s Hatchet"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -5563,10 +5572,11 @@
         ]
       }
     ],
-    "name": "Traveller's Staff",
-    "parent": "Blunt Quarterstaff"
+    "name": "Traveller’s Staff",
+    "parent": "Blunt Quarterstaff",
+    "trade_price": 2.6
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -5589,9 +5599,10 @@
       }
     ],
     "name": "Wyndan Flame Sword",
-    "parent": "Singblade"
+    "parent": "Singblade",
+    "trade_price": 336.6
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -5616,7 +5627,7 @@
     "name": "Wyndan Hammer",
     "parent": "Short Ceramic Hoofmace"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -5641,7 +5652,7 @@
     "name": "Wyndan Sabre",
     "parent": "Short Malletblade"
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 8,
       "name": "Tablet"
@@ -5664,9 +5675,10 @@
       }
     ],
     "name": "Wyndan Warhammer",
-    "parent": "Long Ceramic Hoofmace"
+    "parent": "Long Ceramic Hoofmace",
+    "trade_price": 367.8
   }, {
-    "category": "items/weapons",
+    "category": "Weapons",
     "cost": {
       "count": 8,
       "name": "Tablet"
@@ -5688,7 +5700,7 @@
     "name": "Wyndanblade Quarterstaff",
     "parent": "Paddleblade Quarterstaff"
   }, {
-    "category": "items/weapons/explosive",
+    "category": "Weapons",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -5710,7 +5722,7 @@
     "name": "Firebomb",
     "parent": "Javelin"
   }, {
-    "category": "items/weapons/tools/axe",
+    "category": "Tools",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -5735,7 +5747,7 @@
     "name": "Firestone Axe",
     "parent": "Rawbone Hand Axe"
   }, {
-    "category": "items/weapons/tools/axe",
+    "category": "Tools",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -5760,7 +5772,7 @@
     "name": "Firestone Battleaxe",
     "parent": "Rawbone Battle Axe"
   }, {
-    "category": "items/weapons/tools/axes",
+    "category": "Tools",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -5785,7 +5797,7 @@
     "name": "Advanced Hatchet",
     "parent": "Heavy Rawbone Hand Axe"
   }, {
-    "category": "items/weapons/tools/axes",
+    "category": "Tools",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -5810,7 +5822,7 @@
     "name": "Bouldercut Hand Axe",
     "parent": "Advanced Hatchet"
   }, {
-    "category": "items/weapons/tools/axes",
+    "category": "Tools",
     "cost": {
       "count": 32,
       "name": "Fragment"
@@ -5832,7 +5844,7 @@
     "name": "Heavy Rawbone Hand Axe",
     "parent": "Rawbone Hand Axe"
   }, {
-    "category": "items/weapons/tools/axes",
+    "category": "Tools",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -5855,9 +5867,10 @@
       }
     ],
     "name": "Nibiran Hand Axe",
-    "parent": "Bouldercut Hand Axe"
+    "parent": "Bouldercut Hand Axe",
+    "trade_price": 1681.3
   }, {
-    "category": "items/weapons/tools/axes",
+    "category": "Tools",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -5879,7 +5892,7 @@
     "name": "Rawbone Battle Axe",
     "parent": "Rawbone Hand Axe"
   }, {
-    "category": "items/weapons/tools/axes",
+    "category": "Tools",
     "cost": {
       "count": 20,
       "name": "Fragment"
@@ -5899,9 +5912,9 @@
       }
     ],
     "name": "Rawbone Hand Axe",
-    "parent": "Woodcutter's Hatchet"
+    "parent": "Woodcutter’s Hatchet"
   }, {
-    "category": "items/weapons/tools/axes",
+    "category": "Tools",
     "cost": {
       "count": 3,
       "name": "Fragment"
@@ -5917,10 +5930,11 @@
         ]
       }
     ],
-    "name": "Woodcutter's Hatchet",
-    "parent": "Beat Stick"
+    "name": "Woodcutter’s Hatchet",
+    "parent": "Beat Stick",
+    "trade_price": 1.2
   }, {
-    "category": "items/weapons/tools/pickaxes",
+    "category": "Tools",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -5942,7 +5956,7 @@
     "name": "Advanced Pickaxe",
     "parent": "Simple Pickaxe"
   }, {
-    "category": "items/weapons/tools/pickaxes",
+    "category": "Tools",
     "cost": {
       "count": 8,
       "name": "Tablet"
@@ -5962,9 +5976,10 @@
       }
     ],
     "name": "Master Pickaxe",
-    "parent": "Advanced Pickaxe"
+    "parent": "Advanced Pickaxe",
+    "trade_price": 38.7
   }, {
-    "category": "items/weapons/tools/pickaxes",
+    "category": "Tools",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -5984,9 +5999,9 @@
       }
     ],
     "name": "Simple Pickaxe",
-    "parent": "Woodcutter's Hatchet"
+    "parent": "Woodcutter’s Hatchet"
   }, {
-    "category": "items/weapons/tools/repair hammer",
+    "category": "Tools",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -6003,9 +6018,9 @@
       }
     ],
     "name": "Simple Repair Hammer",
-    "parent": "Woodcutter's Hatchet"
+    "parent": "Woodcutter’s Hatchet"
   }, {
-    "category": "items/weapons/tools/sickles",
+    "category": "Tools",
     "cost": {
       "count": 50,
       "name": "Fragment"
@@ -6030,7 +6045,7 @@
     "name": "Scythe",
     "parent": "Simple Sickle"
   }, {
-    "category": "items/weapons/tools/sickles",
+    "category": "Tools",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -6050,9 +6065,9 @@
       }
     ],
     "name": "Simple Sickle",
-    "parent": "Woodcutter's Hatchet"
+    "parent": "Woodcutter’s Hatchet"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Magma Seeds"
   }, {
     "category": "material",
@@ -6088,25 +6103,26 @@
     ],
     "name": "Lava Fuel"
   }, {
-    "category": "materials",
-    "name": "Aloe"
+    "category": "Resources",
+    "name": "Aloe Vera",
+    "trade_price": 0.3
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Animal Fat"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Apple"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Ash"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Beeswax"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Blood Turnip"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -6126,7 +6142,7 @@
     "name": "Bone Glue",
     "parent": "Purified Water"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -6138,16 +6154,16 @@
     ],
     "name": "Bent Wooden Planks"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Bone Splinter"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Cactus Flesh"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Cattail"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -6160,7 +6176,7 @@
     ],
     "name": "Ceramic Shard"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -6172,11 +6188,11 @@
     ],
     "name": "Charcoal"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Chitin Plate",
     "trade_price": 67.54
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -6196,16 +6212,16 @@
     "name": "Clay",
     "parent": "Soil Excavator"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Contaminated Water"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Corn"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Cotton"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 5,
       "name": "Fragment"
@@ -6253,10 +6269,10 @@
     "name": "Earth Wax",
     "parent": "Soil Excavator"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Feather"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -6279,7 +6295,7 @@
     ],
     "name": "Fiber"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 1,
       "name": "Fragment"
@@ -6311,11 +6327,11 @@
     "name": "Fiber Weave",
     "parent": "Fiberworking Station"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Fiery Concoction",
     "trade_price": 2500
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 50,
       "name": "Fragment"
@@ -6336,7 +6352,7 @@
     "parent": "Woodworking Station",
     "trade_price": 40
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -6359,7 +6375,7 @@
     "name": "Random Knowlegde Tablet",
     "parent": "Fragment"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -6371,16 +6387,16 @@
     ],
     "name": "Glass"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Hide"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Huge Cactus Fruit"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Insects"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -6392,16 +6408,16 @@
     ],
     "name": "Iron Ingot"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Iron Ore"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Lava"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Lightwood"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 6,
       "name": "Tablet"
@@ -6421,17 +6437,17 @@
     "name": "Liquid Fuel",
     "parent": "Purification Station"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Meteor Core"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Mushroom Flesh",
     "trade_price": 5.5
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Nibiran Mineral"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 8,
       "name": "Fragment"
@@ -6463,21 +6479,21 @@
     "name": "Nomad Cloth",
     "parent": "Advanced Fiberworking Station"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Obsidian"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Palm Leaves"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Pearl",
     "trade_price": 12.27
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Proxy License",
     "trade_price": 100000
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -6492,7 +6508,7 @@
       }, {
         "ingredients": [{
             "count": 1,
-            "name": "Aloe"
+            "name": "Aloe Vera"
           }
         ],
         "output": 2,
@@ -6557,7 +6573,7 @@
       }, {
         "ingredients": [{
             "count": 1,
-            "name": "Aloe"
+            "name": "Aloe Vera"
           }
         ],
         "output": 3,
@@ -6575,13 +6591,13 @@
     "name": "Purified Water",
     "parent": "Camp Fire"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Red Banana"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Redwood Wood"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -6622,9 +6638,10 @@
       }
     ],
     "name": "Reinforced Plank",
-    "parent": "Woodworking Station"
+    "parent": "Woodworking Station",
+    "trade_price": 15.5
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -6672,20 +6689,20 @@
     "name": "Rope",
     "parent": "Fiber Weave"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Rupu Gel"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Rupu Pelt",
     "trade_price": 3.4
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Rupu Vine"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Salt Rock"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -6698,17 +6715,17 @@
     ],
     "name": "Sand"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Shattered Fragment"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Stone",
-    "trade_price": 1.5
+    "trade_price": 0.1
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Sulfur"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 1000,
@@ -6736,7 +6753,7 @@
     "name": "Tablet",
     "trade_price": 1000
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -6748,13 +6765,13 @@
     ],
     "name": "Tar"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Thornberry"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Torque"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -6767,7 +6784,7 @@
     ],
     "name": "Wood"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 30,
       "name": "Fragment"
@@ -6791,10 +6808,10 @@
     "name": "Walker Mechanism",
     "parent": "Woodworking Station"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Wood Log"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "cost": {
       "count": 1,
       "name": "Fragment"
@@ -6815,16 +6832,16 @@
     "name": "Wood Shaft",
     "parent": "Woodworking Station"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Worm Fang"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Worm Sand"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Worm Scale"
   }, {
-    "category": "materials",
+    "category": "Resources",
     "name": "Worm Silk"
   }, {
     "category": "modules",
@@ -16426,7 +16443,7 @@
         ]
       }
     ],
-    "name": "Long Sawblade",
+    "name": "Long sawblade",
     "parent": "Sawblade Tool"
   }, {
     "category": "walkers/tools",
@@ -18783,5 +18800,1490 @@
       }
     ],
     "name": "Walker Totem"
+  }, {
+    "category": "Weapons",
+    "cost": {
+      "name": "Fragment",
+      "count": 15
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 135,
+            "name": "Wood"
+          }, {
+            "count": 165,
+            "name": "Fiber"
+          }, {
+            "count": 35,
+            "name": "Stone"
+          }, {
+            "count": 32,
+            "name": "Palm Leaves"
+          }
+        ]
+      }
+    ],
+    "name": "Ballista - Tier 2",
+    "parent": "Ballista"
+  }, {
+    "category": "Weapons",
+    "cost": {
+      "name": "Tablet",
+      "count": 1
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 55,
+            "name": "Stone"
+          }, {
+            "count": 35,
+            "name": "Rope"
+          }, {
+            "count": 80,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Earth Wax"
+          }
+        ]
+      }
+    ],
+    "name": "Ballista - Tier 3",
+    "parent": "Ballista - Tier 2"
+  }, {
+    "category": "Weapons",
+    "cost": {
+      "name": "Tablet",
+      "count": 2
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Redwood Wood"
+          }, {
+            "count": 10,
+            "name": "Bone Splinter"
+          }, {
+            "count": 20,
+            "name": "Rope"
+          }
+        ]
+      }
+    ],
+    "name": "Ballista - Tier 4",
+    "parent": "Ballista - Tier 3"
+  }, {
+    "category": "Weapons",
+    "crafting": [{
+        "ingredients": [{
+            "count": 30,
+            "name": "Wood"
+          }, {
+            "count": 45,
+            "name": "Stone"
+          }, {
+            "count": 30,
+            "name": "Fiber"
+          }, {
+            "count": 6,
+            "name": "Earth Wax"
+          }
+        ]
+      }
+    ],
+    "name": "Small Scattershot Gun"
+  }, {
+    "category": "Interactables",
+    "name": "Wanderer's Potion",
+    "trade_price": 1000
+  }, {
+    "category": "Interactables",
+    "name": "Armor Strongbox",
+    "trade_price": 4000
+  }, {
+    "category": "Interactables",
+    "name": "Equipment Strongbox",
+    "trade_price": 6000
+  }, {
+    "category": "Interactables",
+    "name": "Tablets Strongbox",
+    "trade_price": 15000
+  }, {
+    "category": "Interactables",
+    "name": "Tools Strongbox",
+    "trade_price": 4000
+  }, {
+    "category": "Interactables",
+    "name": "Weapons Strongbox",
+    "trade_price": 4000
+  }, {
+    "category": "Interactables",
+    "name": "Modules Strongbox",
+    "trade_price": 10000
+  }, {
+    "name": "Animals Tablet",
+    "trade_price": 1000
+  }, {
+    "name": "Celestial Tablet",
+    "trade_price": 1000
+  }, {
+    "name": "Elements Tablet",
+    "trade_price": 1000
+  }, {
+    "category": "Traps",
+    "cost": {
+      "name": "Tablet",
+      "count": 50
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Rupu Vine"
+          }, {
+            "count": 40,
+            "name": "Stone"
+          }, {
+            "count": 7,
+            "name": "Fiber Weave"
+          }, {
+            "count": 10,
+            "name": "Bone Glue"
+          }
+        ]
+      }
+    ],
+    "name": "Falling Rock Trap",
+    "parent": "Trap Door"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 10,
+            "name": "Wood Shaft"
+          }, {
+            "count": 8,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Banner 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 12,
+            "name": "Wood Shaft"
+          }, {
+            "count": 4,
+            "name": "Nomad Cloth"
+          }
+        ]
+      }
+    ],
+    "name": "Banner 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 12,
+            "name": "Wood Shaft"
+          }, {
+            "count": 4,
+            "name": "Nomad Cloth"
+          }
+        ]
+      }
+    ],
+    "name": "Banner 3"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood"
+          }, {
+            "count": 8,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Arena Fence 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood"
+          }, {
+            "count": 8,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Arena Fence 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 50,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Rupu Vine"
+          }, {
+            "count": 60,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Gate 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 8,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Roofing 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 25,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Segment 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 25,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Segment 2 (round)"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 25,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Segment 3 (round)"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 10,
+            "name": "Wood"
+          }, {
+            "count": 12,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Segment 4 (half)"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 25,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Segment 5"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 18,
+            "name": "Wood"
+          }, {
+            "count": 22,
+            "name": "Fiber"
+          }, {
+            "count": 6,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Stairs 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 12,
+            "name": "Wood"
+          }, {
+            "count": 15,
+            "name": "Fiber"
+          }, {
+            "count": 4,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Stairs 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood"
+          }, {
+            "count": 8,
+            "name": "Fiber"
+          }, {
+            "count": 2,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Stairs 3"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 10,
+            "name": "Wood"
+          }, {
+            "count": 12,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Wall 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 5,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Flag 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 5,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Flag 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 5,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Flag 3"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 5,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Flag 4"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 5,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Flag 5"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 5,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Flag 6"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood Shaft"
+          }, {
+            "count": 5,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Flag 7"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 5,
+            "name": "Rupu Pelt"
+          }
+        ]
+      }
+    ],
+    "name": "Meat Rack"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 50,
+            "name": "Wood"
+          }, {
+            "count": 30,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Haysludge Arch"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Wood"
+          }, {
+            "count": 1,
+            "name": "Rupu Pelt"
+          }
+        ]
+      }
+    ],
+    "name": "Bone Effigy"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Fiber"
+          }, {
+            "count": 5,
+            "name": "Rupu Pelt"
+          }
+        ]
+      }
+    ],
+    "name": "Bones Pile"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 50,
+            "name": "Wood"
+          }, {
+            "count": 30,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Cage"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 16,
+            "name": "Wood"
+          }, {
+            "count": 11,
+            "name": "Fiber"
+          }, {
+            "count": 5,
+            "name": "Stone"
+          }
+        ]
+      }
+    ],
+    "name": "Rupu Campfire 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 16,
+            "name": "Wood"
+          }, {
+            "count": 11,
+            "name": "Fiber"
+          }, {
+            "count": 5,
+            "name": "Stone"
+          }
+        ]
+      }
+    ],
+    "name": "Rupu Campfire 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 20,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Haysludge Fence"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 40,
+            "name": "Wood"
+          }, {
+            "count": 30,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Masked Totem 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 40,
+            "name": "Wood"
+          }, {
+            "count": 30,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Masked Totem 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 40,
+            "name": "Wood"
+          }, {
+            "count": 30,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Masked Totem 3"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 40,
+            "name": "Wood"
+          }, {
+            "count": 30,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Worshipping Wreath"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Ornate banner 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Ornate banner 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 15,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Ornate banner 3"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 10,
+            "name": "Wood"
+          }, {
+            "count": 20,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Brazier"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Cage 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Cage 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Stone"
+          }
+        ]
+      }
+    ],
+    "name": "Throne"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 20,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Crate 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Crate 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Fence 1"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Fence 2"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Fence 3"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Fence 4"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Fence 6"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 30,
+            "name": "Wood"
+          }, {
+            "count": 15,
+            "name": "Stone"
+          }
+        ]
+      }
+    ],
+    "name": "Podium"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Rag"
+  }, {
+    "category": "Furniture",
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Wreath"
+  }, {
+    "category": "Interactables",
+    "cost": {
+      "name": "Fragment",
+      "count": 1
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 3,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 22,
+            "name": "Rupu Vine"
+          }, {
+            "count": 60,
+            "name": "Stone"
+          }, {
+            "count": 150,
+            "name": "Wood"
+          }
+        ]
+      }
+    ],
+    "name": "Grappling Belt Charging Station",
+    "parent": "Cauterizing Station"
+  }, {
+    "category": "Interactables",
+    "cost": {
+      "name": "Fragment",
+      "count": 1
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 91,
+            "name": "Wood"
+          }, {
+            "count": 15,
+            "name": "Fiber Weave"
+          }, {
+            "count": 20,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Human Sling",
+    "parent": "Ballista"
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 34,
+            "name": "Wood"
+          }, {
+            "count": 10,
+            "name": "Stone"
+          }, {
+            "count": 40,
+            "name": "Fiber"
+          }
+        ]
+      }
+    ],
+    "name": "Small Rope Ladder"
+  }, {
+    "category": "Interactables",
+    "cost": {
+      "name": "Fragment",
+      "count": 1
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 188,
+            "name": "Wood"
+          }, {
+            "count": 1,
+            "name": "Worm Silk"
+          }, {
+            "count": 15,
+            "name": "Purified Water"
+          }, {
+            "count": 8,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Water Bed",
+    "parent": "Bed"
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 80,
+            "name": "Wood"
+          }, {
+            "count": 22,
+            "name": "Stone"
+          }, {
+            "count": 3,
+            "name": "Rupu Vine"
+          }
+        ]
+      }
+    ],
+    "name": "Big Roped Ladder"
+  }, {
+    "category": "Interactables",
+    "cost": {
+      "name": "Tablet",
+      "count": 100
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 290,
+            "name": "Wood"
+          }, {
+            "count": 3,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 4,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Boarding Plank",
+    "parent": "Grappling Belt Charging Station"
+  }, {
+    "category": "Crafting",
+    "crafting": [{
+        "ingredients": [{
+            "count": 80,
+            "name": "Wood"
+          }, {
+            "count": 4,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Worm Vivarium"
+  }, {
+    "category": "Containers",
+    "cost": {
+      "name": "Fragment",
+      "count": 1
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 24,
+            "name": "Fiber"
+          }, {
+            "count": 2,
+            "name": "Bone Glue"
+          }, {
+            "count": 40,
+            "name": "Wood Shaft"
+          }
+        ]
+      }
+    ],
+    "name": "Pedestal Chest",
+    "parent": "Small Chest"
+  }, {
+    "category": "Containers",
+    "cost": {
+      "name": "Fragment",
+      "count": 8
+    },
+    "crafting": [{
+        "ingredients": [{
+            "count": 20,
+            "name": "Wood Shaft"
+          }, {
+            "count": 200,
+            "name": "Wood"
+          }, {
+            "count": 60,
+            "name": "Stone"
+          }, {
+            "count": 5,
+            "name": "Beeswax"
+          }, {
+            "count": 12,
+            "name": "Nomad Cloth"
+          }
+        ]
+      }
+    ],
+    "name": "Base Container",
+    "parent": "WoodenWallsLight"
+  }, {
+    "category": "Resources",
+    "crafting": [{
+        "ingredients": [{
+            "count": 1,
+            "name": "Sulfur"
+          }
+        ],
+        "station": "Campfire"
+      }, {
+        "ingredients": [{
+            "count": 1,
+            "name": "Chitin Plate"
+          }
+        ],
+        "station": "Campfire"
+      }
+    ],
+    "name": "Toxic Remains",
+    "trade_price": 0.5
+  }, {
+    "category": "Resources",
+    "crafting": [{
+        "ingredients": [{
+            "count": 1,
+            "name": "Wood"
+          }
+        ],
+        "station": "Fuel"
+      }, {
+        "ingredients": [{
+            "count": 1,
+            "name": "Charcoal"
+          }
+        ],
+        "station": "Fuel"
+      }, {
+        "ingredients": [{
+            "count": 1,
+            "name": "Liquid Fuel"
+          }
+        ],
+        "station": "Advanced Furnace"
+      }, {
+        "ingredients": [{
+            "count": 1,
+            "name": "Rupu Gel"
+          }
+        ],
+        "station": "Advanced Furnace"
+      }, {
+        "ingredients": [{
+            "count": 1,
+            "name": "Lava Fuel"
+          }
+        ],
+        "station": "Advanced Furnace"
+      }
+    ],
+    "name": "Fuel",
+    "trade_price": 1
+  }, {
+    "category": "Resources",
+    "name": "Lava Poppy",
+    "trade_price": 0.1
+  }, {
+    "category": "Resources",
+    "name": "Peculiar Corundum",
+    "trade_price": 220
+  }, {
+    "category": "Knowledge",
+    "crafting": [{
+        "ingredients": [{
+            "count": 1,
+            "name": "Worm Fang"
+          }
+        ],
+        "station": "Trophy Exchange"
+      }, {
+        "ingredients": [{
+            "count": 10,
+            "name": "Shattered Fragment"
+          }, {
+            "count": 4,
+            "name": "Glass"
+          }, {
+            "count": 1,
+            "name": "Meteor Core"
+          }
+        ],
+        "station": "Advanced Woodworking Station"
+      }, {
+        "ingredients": [{
+            "count": 10,
+            "name": "Shattered Fragment"
+          }, {
+            "count": 4,
+            "name": "Glass"
+          }, {
+            "count": 1,
+            "name": "Meteor Core"
+          }
+        ],
+        "station": "Artificer Woodworking Station"
+      }
+    ],
+    "name": "Random Knowledge Tablet",
+    "trade_price": 500
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 3,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 15,
+            "name": "Rupu Vine"
+          }
+        ]
+      }
+    ],
+    "name": "Festive Turban",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 2,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 8,
+            "name": "Worm Silk"
+          }
+        ]
+      }
+    ],
+    "name": "Rupu mask",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 10,
+            "name": "Fiber Weave"
+          }, {
+            "count": 5,
+            "name": "Hide"
+          }
+        ]
+      }
+    ],
+    "name": "Tied keffiyeh scarf",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 10,
+            "name": "Fiber Weave"
+          }, {
+            "count": 5,
+            "name": "Hide"
+          }
+        ]
+      }
+    ],
+    "name": "Wrapped keffiyeh scarf",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 2,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 8,
+            "name": "Worm Silk"
+          }
+        ]
+      }
+    ],
+    "name": "Balaclava",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 2,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 8,
+            "name": "Worm Silk"
+          }
+        ]
+      }
+    ],
+    "name": "Ruffian mask",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 2,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 8,
+            "name": "Worm Silk"
+          }
+        ]
+      }
+    ],
+    "name": "Sunset headdress",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 25,
+            "name": "Wood"
+          }, {
+            "count": 3,
+            "name": "Fiber Weave"
+          }
+        ]
+      }
+    ],
+    "name": "Bucket helmet",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 2,
+            "name": "Hide"
+          }, {
+            "count": 8,
+            "name": "Rupu Vine"
+          }
+        ]
+      }
+    ],
+    "name": "Squared eyepatches",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Fiber Weave"
+          }, {
+            "count": 10,
+            "name": "Cattail"
+          }
+        ]
+      }
+    ],
+    "name": "Ornate veil cap",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 2,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 8,
+            "name": "Cotton"
+          }
+        ]
+      }
+    ],
+    "name": "Mask and eyepatch",
+    "trade_price": 13.2
+  }, {
+    "category": "Armors",
+    "crafting": [{
+        "ingredients": [{
+            "count": 2,
+            "name": "Nomad Cloth"
+          }, {
+            "count": 8,
+            "name": "Feather"
+          }
+        ]
+      }
+    ],
+    "name": "Feather mask",
+    "trade_price": 13.2
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Charcoal"
+          }, {
+            "count": 5,
+            "name": "Cattail"
+          }
+        ]
+      }
+    ],
+    "name": "Firework 1",
+    "trade_price": 3
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Charcoal"
+          }, {
+            "count": 5,
+            "name": "Cattail"
+          }
+        ]
+      }
+    ],
+    "name": "Firework 2",
+    "trade_price": 3
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Charcoal"
+          }, {
+            "count": 5,
+            "name": "Cattail"
+          }
+        ]
+      }
+    ],
+    "name": "Firework 3",
+    "trade_price": 3
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Charcoal"
+          }, {
+            "count": 5,
+            "name": "Cattail"
+          }
+        ]
+      }
+    ],
+    "name": "Firework 4",
+    "trade_price": 3
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Charcoal"
+          }, {
+            "count": 5,
+            "name": "Cattail"
+          }
+        ]
+      }
+    ],
+    "name": "Firework 5",
+    "trade_price": 3
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Charcoal"
+          }, {
+            "count": 5,
+            "name": "Cattail"
+          }
+        ]
+      }
+    ],
+    "name": "Firework 6",
+    "trade_price": 3
+  }, {
+    "category": "Interactables",
+    "crafting": [{
+        "ingredients": [{
+            "count": 5,
+            "name": "Charcoal"
+          }, {
+            "count": 5,
+            "name": "Cattail"
+          }
+        ]
+      }
+    ],
+    "name": "Firework 7",
+    "trade_price": 3
   }
 ]
