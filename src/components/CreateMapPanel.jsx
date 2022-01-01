@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
 
 class CreateMapPanel extends Component {
-  state = { mapNameInput: "", mapDateInput: "", mapSelectInput: "Canyon" };
+  state = { mapNameInput: "", mapDateInput: 1, mapSelectInput: "Canyon" };
 
   render() {
     const { t } = this.props;
@@ -13,14 +13,23 @@ class CreateMapPanel extends Component {
           <div className="card-header">{t("New Map")}</div>
           <div className="card-body text-succes">
             <form
-              onSubmit={(evt) =>
+              onSubmit={(evt) => {
+                let date = new Date();
+                date.setDate(
+                  date.getDate() + parseInt(this.state.mapDateInput)
+                );
                 this.props.onCreateMap(
                   evt,
                   this.state.mapNameInput,
-                  this.state.mapDateInput,
+                  date.toISOString().split("T")[0],
                   this.state.mapSelectInput
-                )
-              }
+                );
+                this.setState({
+                  mapNameInput: "",
+                  mapDateInput: 1,
+                  mapSelectInput: "Canyon",
+                });
+              }}
             >
               <div className="row">
                 <div className="col-xl-6 col-sm-12 form-group">
@@ -41,13 +50,15 @@ class CreateMapPanel extends Component {
                   />
                 </div>
                 <div className="col-xl-6 col-sm-12 form-group">
-                  <label htmlFor="map_date">{t("Date of burning")}</label>
+                  <label htmlFor="map_date">{t("Days for burning")}</label>
                   <input
-                    type="date"
+                    type="number"
                     className="form-control"
                     id="map_date"
                     name="map_date"
                     value={this.state.mapDateInput}
+                    min={1}
+                    max={60}
                     onChange={(evt) =>
                       this.setState({
                         mapDateInput: evt.target.value,

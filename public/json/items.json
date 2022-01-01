@@ -1,5 +1,5 @@
 [{
-    "category": "buildings/construction/barrier",
+    "category": "Traps",
     "cost": {
       "count": 20,
       "name": "Fragment"
@@ -21,7 +21,7 @@
     "name": "Barrier Base",
     "parent": "Light Wood Foundation"
   }, {
-    "category": "buildings/construction/barrier",
+    "category": "Traps",
     "crafting": [{
         "ingredients": [{
             "count": 250,
@@ -38,7 +38,7 @@
     ],
     "name": "Barrier Gate"
   }, {
-    "category": "buildings/construction/barrier",
+    "category": "Traps",
     "crafting": [{
         "ingredients": [{
             "count": 250,
@@ -55,7 +55,7 @@
     ],
     "name": "Barrier Plank"
   }, {
-    "category": "buildings/construction/giant",
+    "category": "Traps",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -77,7 +77,7 @@
     "name": "Giant Wall",
     "parent": "Barrier Base"
   }, {
-    "category": "buildings/construction/giant",
+    "category": "Traps",
     "crafting": [{
         "ingredients": [{
             "count": 50,
@@ -94,7 +94,7 @@
     ],
     "name": "Giant Wall Gate"
   }, {
-    "category": "buildings/construction/bed",
+    "category": "Interactables",
     "cost": {
       "count": 50,
       "name": "Fragment"
@@ -116,7 +116,7 @@
     "name": "Bed",
     "parent": "Hammock"
   }, {
-    "category": "buildings/construction/bed",
+    "category": "Interactables",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -141,7 +141,7 @@
     "name": "Hammock",
     "parent": "Sand Bed"
   }, {
-    "category": "buildings/construction/bed",
+    "category": "Interactables",
     "cost": {
       "count": 1,
       "name": "Fragment"
@@ -616,7 +616,7 @@
     ],
     "name": "Stone Wall with Window"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -638,7 +638,7 @@
     "name": "Ammo Chest",
     "parent": "Small Chest"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -660,7 +660,7 @@
     "name": "Gigantic Chest",
     "parent": "Large Chest"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -682,7 +682,7 @@
     "name": "Large Chest",
     "parent": "Medium Chest"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -707,7 +707,7 @@
     "name": "Large Water Bag",
     "parent": "Medium Water Bag"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 15,
       "name": "Fragment"
@@ -729,7 +729,7 @@
     "name": "Medium Chest",
     "parent": "Small Chest"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -754,7 +754,7 @@
     "name": "Medium Water Bag",
     "parent": "Small Water Bag"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 6,
       "name": "Tablet"
@@ -779,7 +779,7 @@
     "name": "Obsidian Canister",
     "parent": "Obsidian Pot"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -804,7 +804,7 @@
     "name": "Obsidian Pot",
     "parent": "Large Water Bag"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 6,
       "name": "Fragment"
@@ -826,7 +826,7 @@
     "name": "Small Water Bag",
     "parent": "Small Chest"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "cost": {
       "count": 6,
       "name": "Fragment"
@@ -848,7 +848,7 @@
     "name": "Small Chest",
     "parent": "Sand Bed"
   }, {
-    "category": "buildings/construction/container",
+    "category": "Containers",
     "crafting": [{
         "ingredients": [{
             "count": 6,
@@ -859,7 +859,7 @@
     ],
     "name": "Water Pitcher"
   }, {
-    "category": "buildings/construction/decorations",
+    "category": "Furniture",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -878,7 +878,7 @@
     "name": "Clan Flag",
     "parent": "Sand Bed"
   }, {
-    "category": "buildings/construction/decorations",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 15,
@@ -1319,7 +1319,7 @@
     "name": "Medium Wood Wall",
     "parent": "Light Wood Foundation"
   }, {
-    "category": "buildings/construction/sand bag",
+    "category": "StructuralSand",
     "crafting": [{
         "ingredients": [{
             "count": 55,
@@ -1333,7 +1333,7 @@
     ],
     "name": "Cloth Door"
   }, {
-    "category": "buildings/construction/sand bag",
+    "category": "StructuralSand",
     "crafting": [{
         "ingredients": [{
             "count": 55,
@@ -1347,7 +1347,7 @@
     ],
     "name": "Sandbag Roof"
   }, {
-    "category": "buildings/construction/sand bag",
+    "category": "StructuralSand",
     "cost": {
       "count": 3,
       "name": "Fragment"
@@ -1366,7 +1366,7 @@
     "name": "Sandbag Wall",
     "parent": "Sand Bed"
   }, {
-    "category": "buildings/construction/sand bag",
+    "category": "StructuralSand",
     "crafting": [{
         "ingredients": [{
             "count": 55,
@@ -1380,7 +1380,7 @@
     ],
     "name": "Sandbag Wall Window"
   }, {
-    "category": "buildings/construction/tools",
+    "category": "WalkerTools",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -1405,7 +1405,7 @@
     "name": "Crane",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/tools",
+    "category": "Weapons",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -1430,7 +1430,7 @@
     "name": "Hose Station",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/tools",
+    "category": "Interactables",
     "cost": {
       "count": 5,
       "name": "Fragment"
@@ -1452,7 +1452,7 @@
     "name": "Rangefinder",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -1477,7 +1477,7 @@
     "name": "Ballista",
     "parent": "Sand Bed"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "cost": {
       "count": 4,
       "name": "Tablet"
@@ -1505,7 +1505,7 @@
     "name": "Catapult",
     "parent": "Slingshot"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -1527,7 +1527,7 @@
     "name": "Gun Pod",
     "parent": "Steering Levers"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -1549,7 +1549,7 @@
     "name": "Net Thrower",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -1574,7 +1574,7 @@
     "name": "Remote Ballista",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction",
+    "category": "WalkerTools",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -1599,7 +1599,7 @@
     "name": "Steering Levers Cage",
     "parent": "Remote Ballista"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -1621,7 +1621,7 @@
     "name": "Repeater",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "cost": {
       "count": 28,
       "name": "Fragment"
@@ -1646,7 +1646,7 @@
     "name": "Scattershot Gun",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -1671,7 +1671,7 @@
     "name": "Slingshot",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/traps",
+    "category": "Traps",
     "cost": {
       "count": 15,
       "name": "Fragment"
@@ -1693,7 +1693,7 @@
     "name": "Spring Spikes Trap",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/traps",
+    "category": "Traps",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -1715,7 +1715,7 @@
     "name": "Sharp Spikes",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/traps",
+    "category": "Traps",
     "cost": {
       "count": 12,
       "name": "Fragment"
@@ -1737,7 +1737,7 @@
     "name": "Trap Door",
     "parent": "Sharp Spikes"
   }, {
-    "category": "buildings/construction/traps",
+    "category": "Traps",
     "cost": {
       "count": 15,
       "name": "Fragment"
@@ -1759,7 +1759,7 @@
     "name": "Trip Wire Trap",
     "parent": "Ballista"
   }, {
-    "category": "buildings/construction/traps",
+    "category": "Traps",
     "cost": {
       "count": 20,
       "name": "Fragment"
@@ -1778,7 +1778,7 @@
     "name": "Bomb Chest Trap",
     "parent": "Trip Wire Trap"
   }, {
-    "category": "buildings/construction/weapons/ranged",
+    "category": "Weapons",
     "crafting": [{
         "ingredients": [{
             "count": 15,
@@ -1798,7 +1798,7 @@
     ],
     "name": "Small Ballista"
   }, {
-    "category": "buildings/construction/weapons/ranged/armor",
+    "category": "Weapons",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -1820,7 +1820,7 @@
     "name": "Gun Pod Plating",
     "parent": "Gun Pod Shell"
   }, {
-    "category": "buildings/construction/weapons/ranged/armor",
+    "category": "Weapons",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -1842,7 +1842,7 @@
     "name": "Gun Pod Shell",
     "parent": "Gun Pod"
   }, {
-    "category": "buildings/furniture",
+    "category": "Furniture",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -1861,7 +1861,7 @@
     "name": "Chair Comfortable",
     "parent": "Chair Simple"
   }, {
-    "category": "buildings/furniture",
+    "category": "Furniture",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -1880,7 +1880,7 @@
     "name": "Chair Simple",
     "parent": "Clan Flag"
   }, {
-    "category": "buildings/furniture",
+    "category": "Furniture",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -1899,7 +1899,7 @@
     "name": "Chair throne",
     "parent": "Chair Simple"
   }, {
-    "category": "buildings/furniture",
+    "category": "Furniture",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -1921,7 +1921,7 @@
     "name": "Table",
     "parent": "Clan Flag"
   }, {
-    "category": "buildings/furniture/container",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -1935,7 +1935,7 @@
     ],
     "name": "Basket Open"
   }, {
-    "category": "buildings/furniture/container",
+    "category": "Furniture",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -1954,7 +1954,7 @@
     "name": "Basket Tall",
     "parent": "Clan Flag"
   }, {
-    "category": "buildings/furniture/container",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -1968,7 +1968,7 @@
     ],
     "name": "Basket Wide"
   }, {
-    "category": "buildings/furniture/decoration",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -1982,7 +1982,7 @@
     ],
     "name": "Carpet Dark"
   }, {
-    "category": "buildings/furniture/decoration",
+    "category": "Furniture",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -2001,7 +2001,7 @@
     "name": "Carpet Light",
     "parent": "Clan Flag"
   }, {
-    "category": "buildings/furniture/lighting",
+    "category": "Furniture",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -2023,7 +2023,7 @@
     "name": "Fire Goblet",
     "parent": "Lamp Standing"
   }, {
-    "category": "buildings/furniture/lighting",
+    "category": "Furniture",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -2045,7 +2045,7 @@
     "name": "Lamp Double Hanging",
     "parent": "Lamp Standing"
   }, {
-    "category": "buildings/furniture/lighting",
+    "category": "Furniture",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -2067,7 +2067,7 @@
     "name": "Lamp Overhanging",
     "parent": "Lamp Standing"
   }, {
-    "category": "buildings/furniture/lighting",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -2084,7 +2084,7 @@
     ],
     "name": "Lamp Single Hanging"
   }, {
-    "category": "buildings/furniture/lighting",
+    "category": "Furniture",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -2106,7 +2106,7 @@
     "name": "Lamp Standing",
     "parent": "Clan Flag"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -2128,7 +2128,7 @@
     "name": "Advanced Fiberworking Station",
     "parent": "Fiberworking Station"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -2153,7 +2153,7 @@
     "name": "Advanced Furnace",
     "parent": "Furnace"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 20,
       "name": "Fragment"
@@ -2175,7 +2175,7 @@
     "name": "Repairing Station",
     "parent": "Woodworking Station"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -2203,7 +2203,7 @@
     "name": "Advanced Woodworking Station",
     "parent": "Woodworking Station"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 12,
       "name": "Tablet"
@@ -2231,7 +2231,7 @@
     "name": "Artificer Woodworking Station",
     "parent": "Advanced Woodworking Station"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 2,
       "name": "Fragment"
@@ -2253,7 +2253,7 @@
     "name": "Camp Fire",
     "parent": "Crafting"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 5,
       "name": "Fragment"
@@ -2275,7 +2275,7 @@
     "name": "Dyeing Station",
     "parent": "Crafting"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 9,
       "name": "Fragment"
@@ -2297,7 +2297,7 @@
     "name": "Fiberworking Station",
     "parent": "Camp Fire"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -2325,7 +2325,7 @@
     "name": "Furnace",
     "parent": "Soil Excavator"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -2350,7 +2350,7 @@
     "name": "Lumbermill",
     "parent": "Advanced Woodworking Station"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -2372,7 +2372,7 @@
     "name": "Obsidian Machine",
     "parent": "Soil Excavator"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -2391,7 +2391,7 @@
     "name": "Purification Station",
     "parent": "Purified Water"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 35,
       "name": "Tablet"
@@ -2416,7 +2416,7 @@
     "name": "Quarry",
     "parent": "Clay"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -2441,7 +2441,7 @@
     "name": "Soil Excavator",
     "parent": "Camp Fire"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -2466,7 +2466,7 @@
     "name": "Stomping Station",
     "parent": "Soil Excavator"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -2491,7 +2491,7 @@
     "name": "Torque Windmill",
     "parent": "Soil Excavator"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 32,
       "name": "Tablet"
@@ -2513,7 +2513,7 @@
     "name": "Water Condenser",
     "parent": "Purified Water"
   }, {
-    "category": "crafting/station",
+    "category": "Crafting",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -2535,7 +2535,7 @@
     "name": "Woodworking Station",
     "parent": "Camp Fire"
   }, {
-    "category": "crafting/station/vitamins",
+    "category": "Interactables",
     "cost": {
       "count": 50,
       "name": "Fragment"
@@ -2557,7 +2557,7 @@
     "name": "Cauterizing Station",
     "parent": "Jojo Mojo"
   }, {
-    "category": "items",
+    "category": "Traps",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -2585,7 +2585,7 @@
     "name": "Defensive Tower",
     "parent": "Light Wood Foundation"
   }, {
-    "category": "items",
+    "category": "Weapons",
     "cost": {
       "count": 50,
       "name": "Fragment"
@@ -2610,7 +2610,7 @@
     "name": "Rupu Sling",
     "parent": "Light Wood Foundation"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "cost": {
       "count": 20,
       "name": "Fragment"
@@ -2631,9 +2631,10 @@
     ],
     "damage": 150,
     "name": "Bone Bolt",
-    "parent": "Flint Harpoon"
+    "parent": "Flint Harpoon",
+    "trade_price": 5
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -2651,7 +2652,7 @@
     "damage": 5,
     "name": "Bone Harpoon"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -2675,7 +2676,7 @@
     "parent": "Bone Bolt",
     "trade_price": 100
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -2693,7 +2694,7 @@
     "damage": 5,
     "name": "Ceramic-Tipped Harpoon"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -2719,7 +2720,7 @@
     "name": "Fire Bolt",
     "parent": "Flint Harpoon"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -2734,7 +2735,7 @@
     "damage": 125,
     "name": "Flint Bolt"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -2757,7 +2758,7 @@
     "name": "Flint Harpoon",
     "parent": "Ballista"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -2786,7 +2787,7 @@
     "name": "Hellfire Bolt",
     "parent": "Fire Bolt"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -2812,7 +2813,7 @@
     "name": "Iron-Tipped Bolt",
     "parent": "Bone Bolt"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -2829,7 +2830,7 @@
     ],
     "name": "Iron-Tipped Harpoon"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista/explosive",
+    "category": "Ammo",
     "cost": {
       "count": 8,
       "name": "Tablet"
@@ -2852,7 +2853,7 @@
     "name": "Explosive Bolt",
     "parent": "Ceramic-Tipped Bolt"
   }, {
-    "category": "items/ammo/ammunition/projectiles/catapult",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -2869,7 +2870,7 @@
     ],
     "name": "Catapult Boulder"
   }, {
-    "category": "items/ammo/ammunition/projectiles/catapult",
+    "category": "Ammo",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -2893,7 +2894,7 @@
     "name": "Fire Bomb",
     "parent": "Slingshot"
   }, {
-    "category": "items/ammo/ammunition/projectiles/catapult",
+    "category": "Ammo",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -2920,7 +2921,7 @@
     "parent": "Catapult",
     "trade_price": 1500
   }, {
-    "category": "items/ammo/ammunition/projectiles/cobra",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -2937,7 +2938,7 @@
     ],
     "name": "Bombolt"
   }, {
-    "category": "items/ammo/ammunition/projectiles/netthrower",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 25,
@@ -2954,7 +2955,7 @@
     ],
     "name": "Net"
   }, {
-    "category": "items/ammo/ammunition/projectiles/repeater",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 1,
@@ -2973,7 +2974,7 @@
     "damage": 30,
     "name": "Dart"
   }, {
-    "category": "items/ammo/ammunition/projectiles/repeater",
+    "category": "Ammo",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -2997,7 +2998,7 @@
     "name": "Floating Mine",
     "parent": "Repeater"
   }, {
-    "category": "items/ammo/ammunition/projectiles/repeater/explosive",
+    "category": "Ammo",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -3020,7 +3021,7 @@
     "name": "Explosive Dart",
     "parent": "Repeater"
   }, {
-    "category": "items/ammo/ammunition/projectiles/scattershot",
+    "category": "Ammo",
     "cost": {
       "count": 20,
       "name": "Fragment"
@@ -3046,7 +3047,7 @@
     "name": "Hullbreaker Scattershot",
     "parent": "Scattershot"
   }, {
-    "category": "items/ammo/ammunition/projectiles/scattershot",
+    "category": "Ammo",
     "cost": {
       "count": 5,
       "name": "Fragment"
@@ -3067,7 +3068,7 @@
     "name": "Scattershot",
     "parent": "Scattershot Gun"
   }, {
-    "category": "items/ammo/ammunition/projectiles/slingshot",
+    "category": "Ammo",
     "cost": {
       "count": 4,
       "name": "Tablet"
@@ -3093,7 +3094,7 @@
     "name": "Aloe Goo Bomb",
     "parent": "Slingshot"
   }, {
-    "category": "items/ammo/ammunition/projectiles/slingshot",
+    "category": "Ammo",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3116,7 +3117,7 @@
     "name": "Chalk Bomb",
     "parent": "Green Death Bomb"
   }, {
-    "category": "items/ammo/ammunition/projectiles/slingshot",
+    "category": "Ammo",
     "cost": {
       "count": 12,
       "name": "Tablet"
@@ -3146,7 +3147,7 @@
     "name": "Cluster Bomb",
     "parent": "Slingshot"
   }, {
-    "category": "items/ammo/ammunition/projectiles/slingshot",
+    "category": "Ammo",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -3170,7 +3171,7 @@
     "name": "Green Death Bomb",
     "parent": "Slingshot"
   }, {
-    "category": "items/ammo/ammunition/projectiles/slingshot",
+    "category": "Ammo",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -3197,7 +3198,7 @@
     "name": "Insect Bomb",
     "parent": "Slingshot"
   }, {
-    "category": "items/ammo/ammunition/projectiles/slingshot",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -3212,7 +3213,7 @@
     "damage": 100,
     "name": "Rupu Rock"
   }, {
-    "category": "items/ammo/ammunition/projectiles/slingshot",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 15,
@@ -3227,7 +3228,7 @@
     "damage": 450,
     "name": "Small Boulder"
   }, {
-    "category": "items/ammo/ammunition/projectiles/slingshot",
+    "category": "Ammo",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -3251,7 +3252,7 @@
     "name": "Sulfur Bomb",
     "parent": "Green Death Bomb"
   }, {
-    "category": "items/armor/head",
+    "category": "Armors",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -3813,6 +3814,10 @@
     "parent": "Fiber Shirt and Trousers"
   }, {
     "category": "Armors",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -3828,6 +3833,10 @@
     "parent": "Rupu Fur Armor"
   }, {
     "category": "Armors",
+    "cost": {
+      "name": "Fragment",
+      "count": 10
+    },
     "crafting": [{
         "ingredients": [{
             "count": 2,
@@ -3840,7 +3849,8 @@
       }
     ],
     "name": "Rupu Fur Sleeves",
-    "parent": "Rupu Fur Armor"
+    "parent": "Rupu Fur Armor",
+    "trade_price": 4.6
   }, {
     "category": "Armors",
     "cost": {
@@ -3905,7 +3915,7 @@
     "name": "Triple Stitch Bracers",
     "parent": "Triple Stitch Armor"
   }, {
-    "category": "items/equipment",
+    "category": "WalkerTools",
     "crafting": [{
         "ingredients": [{
             "count": 200,
@@ -3919,7 +3929,7 @@
     ],
     "name": "Kite"
   }, {
-    "category": "items/equipment/armor/personal/walker",
+    "category": "Exoskeleton",
     "cost": {
       "count": 4,
       "name": "Tablet"
@@ -3944,7 +3954,7 @@
     "name": "Exoskeleton",
     "parent": "Ballista"
   }, {
-    "category": "items/gear/backpacks/belt",
+    "category": "Equipment",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -3963,7 +3973,7 @@
     "name": "Durable Water Sack",
     "parent": "Makeshift Bottle"
   }, {
-    "category": "items/gear/backpacks/belt",
+    "category": "Equipment",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -3982,7 +3992,7 @@
     "name": "Heavy Backpack",
     "parent": "Medium Backpack"
   }, {
-    "category": "items/gear/backpacks/belt",
+    "category": "Equipment",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -4001,7 +4011,7 @@
     "name": "Light Backpack",
     "parent": "Foraging Pouch"
   }, {
-    "category": "items/gear/backpacks/belt",
+    "category": "Equipment",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -4026,7 +4036,7 @@
     "name": "Split Durable Water Sack",
     "parent": "Durable Water Sack"
   }, {
-    "category": "items/gear/backpacks/belts",
+    "category": "Equipments",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -4048,7 +4058,7 @@
     "name": "Medium Backpack",
     "parent": "Light Backpack"
   }, {
-    "category": "items/gear/backpacks/belts",
+    "category": "Equipments",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -4073,7 +4083,7 @@
     "name": "Torque Backpack",
     "parent": "Fast Grappling Hook"
   }, {
-    "category": "items/gear/backpacks/belts",
+    "category": "Equipments",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -4095,7 +4105,7 @@
     "name": "Water Circulator",
     "parent": "Durable Water Sack"
   }, {
-    "category": "items/gear/belts",
+    "category": "Equipment",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -4114,7 +4124,7 @@
     "name": "Wingsuit",
     "parent": "Long Grappling Hook"
   }, {
-    "category": "items/gear/bottles",
+    "category": "Equipment",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -4136,7 +4146,7 @@
     "name": "Bone Bottle",
     "parent": "Makeshift Bottle"
   }, {
-    "category": "items/gear/bottles",
+    "category": "Equipment",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -4158,7 +4168,7 @@
     "name": "Ceramic Flask",
     "parent": "Bone Bottle"
   }, {
-    "category": "items/gear/bottles",
+    "category": "Equipment",
     "cost": {
       "count": 1,
       "name": "Fragment"
@@ -4180,7 +4190,7 @@
     "name": "Improvised Bottle",
     "parent": "Makeshift Bottle"
   }, {
-    "category": "items/gear/bottles",
+    "category": "Equipment",
     "cost": {
       "count": 2,
       "name": "Fragment"
@@ -4218,7 +4228,7 @@
     "name": "Flare - White",
     "parent": "Equipment"
   }, {
-    "category": "items/gear/bottles",
+    "category": "Equipment",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -4240,7 +4250,7 @@
     "name": "Obsidian Flask",
     "parent": "Bone Bottle"
   }, {
-    "category": "items/gear/bottles",
+    "category": "Equipment",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -4262,7 +4272,7 @@
     "name": "Infused Obsidian Bottle",
     "parent": "Obsidian Flask"
   }, {
-    "category": "items/gear/bottles",
+    "category": "Equipment",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -4284,7 +4294,7 @@
     "name": "Split Bone Bottle",
     "parent": "Bone Bottle"
   }, {
-    "category": "items/gear/bottles",
+    "category": "Equipment",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -4306,7 +4316,7 @@
     "name": "Split Ceramic Flask",
     "parent": "Ceramic Flask"
   }, {
-    "category": "items/gear/container",
+    "category": "Equipment",
     "cost": {
       "count": 5,
       "name": "Fragment"
@@ -4322,7 +4332,7 @@
     "name": "Foraging Pouch",
     "parent": "Makeshift Bottle"
   }, {
-    "category": "items/gear/container",
+    "category": "Equipment",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -4429,7 +4439,7 @@
     "name": "Repaired Grappling Hook",
     "parent": "Equipment"
   }, {
-    "category": "items/gear/torque/battery",
+    "category": "Equipment",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -4451,7 +4461,7 @@
     "name": "Torque Battery",
     "parent": "Foraging Pouch"
   }, {
-    "category": "items/gear/torque/battery",
+    "category": "Equipment",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -4473,7 +4483,7 @@
     "name": "Compacted Torque Battery",
     "parent": "Torque Battery"
   }, {
-    "category": "items/interactables/bandages",
+    "category": "Armors",
     "cost": {
       "count": 2,
       "name": "Fragment"
@@ -4489,7 +4499,7 @@
     "name": "Primitive Bandage",
     "parent": "Equipment"
   }, {
-    "category": "items/interactables/bandages",
+    "category": "Armors",
     "cost": {
       "count": 15,
       "name": "Fragment"
@@ -4508,7 +4518,7 @@
     "name": "Sterile Bandage",
     "parent": "Primitive Bandage"
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -4534,7 +4544,7 @@
     "name": "Worm Tincture",
     "parent": "Fury Fumes"
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -4557,7 +4567,7 @@
     "name": "Bonebreaker",
     "parent": "Fury Fumes"
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -4577,7 +4587,7 @@
     "name": "Desert Mule",
     "parent": "Vision Powder"
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 35,
       "name": "Fragment"
@@ -4601,7 +4611,7 @@
     "parent": "Jojo Mojo",
     "trade_price": 400
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -4625,7 +4635,7 @@
     "parent": "Vision Powder",
     "trade_price": 125
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -4652,7 +4662,7 @@
     "parent": "Jojo Mojo",
     "trade_price": 500
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -4679,7 +4689,7 @@
     "parent": "Desert Mule",
     "trade_price": 600
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -4705,7 +4715,7 @@
     "name": "Sinus Destroyer",
     "parent": "Race Dust"
   }, {
-    "category": "items/vitamins",
+    "category": "Drugs",
     "cost": {
       "count": 6,
       "name": "Fragment"
@@ -6210,7 +6220,8 @@
       }
     ],
     "name": "Clay",
-    "parent": "Soil Excavator"
+    "parent": "Soil Excavator",
+    "trade_price": 0.1
   }, {
     "category": "Resources",
     "name": "Contaminated Water"
@@ -16421,7 +16432,7 @@
     "name": "Toboggan Walker Upgrade - Water - Tier 4",
     "parent": "Toboggan Walker Upgrade - Water - Tier 3"
   }, {
-    "category": "walkers/tools",
+    "category": "WalkerTools",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -16446,7 +16457,7 @@
     "name": "Long sawblade",
     "parent": "Sawblade Tool"
   }, {
-    "category": "walkers/tools",
+    "category": "WalkerTools",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -16471,7 +16482,7 @@
     "name": "Sawblade Tool",
     "parent": "Tool Pod"
   }, {
-    "category": "walkers/tools",
+    "category": "WalkerTools",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -16490,7 +16501,7 @@
     "name": "Steering Levers",
     "parent": "Dinghy Walker Body"
   }, {
-    "category": "walkers/tools",
+    "category": "WalkerTools",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -16515,7 +16526,7 @@
     "name": "Tool Pod",
     "parent": "Steering Levers"
   }, {
-    "category": "walkers/tools",
+    "category": "WalkerTools",
     "cost": {
       "count": 10,
       "name": "Fragment"
@@ -16537,7 +16548,7 @@
     "name": "Walker Climber",
     "parent": "Dinghy Walker Body"
   }, {
-    "category": "walkers/tools",
+    "category": "WalkerTools",
     "cost": {
       "count": 50,
       "name": "Fragment"
@@ -17608,7 +17619,7 @@
     "name": "Battle Fan",
     "parent": "Ballista"
   }, {
-    "category": "items/ammo/ammunition/projectiles/ballista",
+    "category": "Ammo",
     "cost": {
       "count": 22,
       "name": "Tablet"
@@ -18698,7 +18709,7 @@
     "name": "Large Base Walker Packer",
     "parent": "Small Base Walker Packer"
   }, {
-    "category": "buildings/construction/barrier",
+    "category": "Traps",
     "cost": {
       "count": 7,
       "name": "Tablet"
@@ -18745,7 +18756,7 @@
     "name": "Poaching Hut",
     "parent": "Small Chest"
   }, {
-    "category": "buildings/furniture",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 20,
@@ -18759,7 +18770,7 @@
     ],
     "name": "Fence 5"
   }, {
-    "category": "buildings/furniture",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 150,
@@ -18773,7 +18784,7 @@
     ],
     "name": "Premade Throne"
   }, {
-    "category": "buildings/furniture",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 5,
@@ -18787,7 +18798,7 @@
     ],
     "name": "Roofing 2"
   }, {
-    "category": "buildings/furniture",
+    "category": "Furniture",
     "crafting": [{
         "ingredients": [{
             "count": 60,
