@@ -101,14 +101,12 @@ class ItemWiki extends Component {
           this.state.item.cost != null && this.state.item.cost.name != null
             ? this.state.item.cost.name
             : t("Not defined");
-        let category =
-          this.state.item.category != null
-            ? this.state.item.category
-            : t("Not defined");
-        let parent =
-          this.state.item.parent != null
-            ? this.state.item.parent
-            : t("Not defined");
+        let category = this.state.item.category
+          ? this.state.item.category
+          : t("Not defined");
+        let parent = this.state.item.parent
+          ? this.state.item.parent
+          : t("Not defined");
         let tradePrice =
           this.state.item.trade_price != null
             ? this.state.item.trade_price + " flots"

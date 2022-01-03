@@ -24,7 +24,12 @@ class QualityCalculator extends Component {
     let items = await getItems();
     if (items != null) {
       items = items.filter(
-        (it) => !it.category.includes("upgrades") && it.crafting
+        (it) =>
+          it.category &&
+          !it.category.includes("upgrades") &&
+          it.category !== "WalkerParts" &&
+          it.category !== "Ammo" &&
+          it.crafting
       );
       this.setState({
         items: items,

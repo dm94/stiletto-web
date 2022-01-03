@@ -2250,7 +2250,7 @@
         ]
       }
     ],
-    "name": "Camp Fire",
+    "name": "Campfire",
     "parent": "Crafting"
   }, {
     "category": "Crafting",
@@ -2295,7 +2295,7 @@
       }
     ],
     "name": "Fiberworking Station",
-    "parent": "Camp Fire"
+    "parent": "Campfire"
   }, {
     "category": "Crafting",
     "cost": {
@@ -2439,7 +2439,7 @@
       }
     ],
     "name": "Soil Excavator",
-    "parent": "Camp Fire"
+    "parent": "Campfire"
   }, {
     "category": "Crafting",
     "cost": {
@@ -2533,7 +2533,7 @@
       }
     ],
     "name": "Woodworking Station",
-    "parent": "Camp Fire"
+    "parent": "Campfire"
   }, {
     "category": "Interactables",
     "cost": {
@@ -2887,7 +2887,7 @@
             "name": "Feather"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "damage": 10,
@@ -3088,7 +3088,7 @@
             "name": "Nomad Cloth"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Aloe Goo Bomb",
@@ -3111,7 +3111,7 @@
             "name": "Bone Splinter"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Chalk Bomb",
@@ -3140,7 +3140,7 @@
             "name": "Tar"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "damage": 20,
@@ -3164,7 +3164,7 @@
             "name": "Mushroom Flesh"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "damage": 20,
@@ -3191,7 +3191,7 @@
             "name": "Insects"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "damage": 20,
@@ -3245,7 +3245,7 @@
             "name": "Sulfur"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "damage": 20,
@@ -4225,7 +4225,7 @@
         ]
       }
     ],
-    "name": "Flare - White",
+    "name": "Flare - white",
     "parent": "Equipment"
   }, {
     "category": "Equipment",
@@ -4538,7 +4538,7 @@
             "name": "Worm Fang"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Worm Tincture",
@@ -4561,7 +4561,7 @@
             "name": "Ceramic Shard"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Bonebreaker",
@@ -4581,7 +4581,7 @@
             "name": "Purified Water"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Desert Mule",
@@ -4604,7 +4604,7 @@
             "name": "Glass"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Fury Fumes",
@@ -4628,7 +4628,7 @@
             "name": "Glass"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Jojo Mojo",
@@ -4655,7 +4655,7 @@
             "name": "Glass"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Race Dust",
@@ -4682,7 +4682,7 @@
             "name": "Glass"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Rupu Repellent",
@@ -4709,7 +4709,7 @@
             "name": "Glass"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Sinus Destroyer",
@@ -4729,7 +4729,7 @@
             "name": "Purified Water"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Vision Powder",
@@ -6146,7 +6146,7 @@
             "name": "Purified Water"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }
     ],
     "name": "Bone Glue",
@@ -6515,7 +6515,7 @@
             "name": "Cactus Flesh"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }, {
         "ingredients": [{
             "count": 1,
@@ -6523,7 +6523,7 @@
           }
         ],
         "output": 2,
-        "station": "Camp Fire"
+        "station": "Campfire"
       }, {
         "ingredients": [{
             "count": 20,
@@ -6533,14 +6533,14 @@
             "name": "Sand"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }, {
         "ingredients": [{
             "count": 5,
             "name": "Contaminated Water"
           }
         ],
-        "station": "Camp Fire"
+        "station": "Campfire"
       }, {
         "ingredients": [{
             "count": 1,
@@ -6600,7 +6600,7 @@
       }
     ],
     "name": "Purified Water",
-    "parent": "Camp Fire"
+    "parent": "Campfire"
   }, {
     "category": "Resources",
     "name": "Red Banana"
@@ -6968,7 +6968,7 @@
     "name": "Buffalo Walker Body",
     "parent": "Stiletto Walker Body"
   }, {
-    "category": "walkers/buffalo/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 280,
@@ -6985,7 +6985,7 @@
     ],
     "name": "Buffalo Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/buffalo/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -7010,7 +7010,7 @@
     "name": "Buffalo Walker Legs Armored (1 of 2)",
     "parent": "Buffalo Walker Body"
   }, {
-    "category": "walkers/buffalo/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 6,
       "name": "Tablet"
@@ -7035,7 +7035,7 @@
     "name": "Buffalo Walker Legs Heavy (1 of 2)",
     "parent": "Buffalo Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/buffalo/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -7057,7 +7057,7 @@
     "name": "Buffalo Walker Wings Heavy (1 of 2)",
     "parent": "Buffalo Walker Body"
   }, {
-    "category": "walkers/buffalo/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -7079,7 +7079,7 @@
     "name": "Buffalo Walker Wings Medium (1 of 2)",
     "parent": "Buffalo Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/buffalo/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -7104,7 +7104,7 @@
     "name": "Buffalo Walker Wings Raider (1 of 2)",
     "parent": "Buffalo Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/buffalo/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -7129,7 +7129,7 @@
     "name": "Buffalo Walker Wings Rugged (1 of 2)",
     "parent": "Buffalo Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/buffalo/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -7151,7 +7151,7 @@
     "name": "Buffalo Walker Wings Skirmish (1 of 2)",
     "parent": "Buffalo Walker Body"
   }, {
-    "category": "walkers/buffalo/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -7173,7 +7173,7 @@
     "name": "Buffalo Walker Wings Small (1 of 2)",
     "parent": "Buffalo Walker Body"
   }, {
-    "category": "walkers/buffalo/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 93,
@@ -7719,7 +7719,7 @@
     "name": "Camelop Walker Body",
     "parent": "Tool Pod"
   }, {
-    "category": "walkers/camelop/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 200,
@@ -7914,7 +7914,7 @@
     "name": "Cobra Walker Body",
     "parent": "Gun Pod"
   }, {
-    "category": "walkers/cobra/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 200,
@@ -8177,7 +8177,7 @@
     "name": "Dinghy Walker Body",
     "parent": "Firefly Walker Body"
   }, {
-    "category": "walkers/dinghy/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 76,
@@ -8191,7 +8191,7 @@
     ],
     "name": "Dinghy Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/dinghy/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -8213,7 +8213,7 @@
     "name": "Dinghy Walker Wings Small (1 of 2)",
     "parent": "Dinghy Walker Body"
   }, {
-    "category": "walkers/dinghy/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 25,
@@ -8759,7 +8759,7 @@
     "name": "Domus Walker Body",
     "parent": "Mollusk Walker Body"
   }, {
-    "category": "walkers/domus/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -8784,7 +8784,7 @@
     "name": "Domus Walker Legs Armored (1 of 2)",
     "parent": "Domus Walker Body"
   }, {
-    "category": "walkers/domus/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 1000,
@@ -8801,7 +8801,7 @@
     ],
     "name": "Domus Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/domus/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -8826,7 +8826,7 @@
     "name": "Domus Walker Legs Heavy (1 of 2)",
     "parent": "Domus Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/domus/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 35,
       "name": "Tablet"
@@ -8851,7 +8851,7 @@
     "name": "Domus Walker Wings Heavy (1 of 2)",
     "parent": "Domus Walker Body"
   }, {
-    "category": "walkers/domus/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -8873,7 +8873,7 @@
     "name": "Domus Walker Wings Large (1 of 2)",
     "parent": "Domus Walker Wings Medium (1 of 2)"
   }, {
-    "category": "walkers/domus/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 35,
       "name": "Tablet"
@@ -8895,7 +8895,7 @@
     "name": "Domus Walker Wings Medium (1 of 2)",
     "parent": "Domus Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/domus/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 70,
       "name": "Tablet"
@@ -8920,7 +8920,7 @@
     "name": "Domus Walker Wings Raider (1 of 2)",
     "parent": "Domus Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/domus/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 35,
       "name": "Tablet"
@@ -8945,7 +8945,7 @@
     "name": "Domus Walker Wings Rugged (1 of 2)",
     "parent": "Domus Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/domus/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -8970,7 +8970,7 @@
     "name": "Domus Walker Wings Skirmish (1 of 2)",
     "parent": "Domus Walker Body"
   }, {
-    "category": "walkers/domus/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -8992,7 +8992,7 @@
     "name": "Domus Walker Wings Small (1 of 2)",
     "parent": "Domus Walker Body"
   }, {
-    "category": "walkers/domus/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 360,
@@ -9433,7 +9433,7 @@
     "name": "Falco Walker Body",
     "parent": "Hornet Walker Body"
   }, {
-    "category": "walkers/falco/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -9458,7 +9458,7 @@
     "name": "Falco Walker Legs Armored (1 of 2)",
     "parent": "Falco Walker Body"
   }, {
-    "category": "walkers/falco/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 320,
@@ -9475,7 +9475,7 @@
     ],
     "name": "Falco Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/falco/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 6,
       "name": "Tablet"
@@ -9500,7 +9500,7 @@
     "name": "Falco Walker Legs Heavy (1 of 2)",
     "parent": "Falco Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/falco/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 107,
@@ -9514,7 +9514,7 @@
     ],
     "name": "Falco Walker Wings (1 of 2)"
   }, {
-    "category": "walkers/falco/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -9539,7 +9539,7 @@
     "name": "Falco Walker Wings Heavy (1 of 2)",
     "parent": "Falco Walker Body"
   }, {
-    "category": "walkers/falco/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 15,
       "name": "Tablet"
@@ -9561,7 +9561,7 @@
     "name": "Falco Walker Wings Large (1 of 2)",
     "parent": "Falco Walker Wings Medium (1 of 2)"
   }, {
-    "category": "walkers/falco/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -9583,7 +9583,7 @@
     "name": "Falco Walker Wings Medium (1 of 2)",
     "parent": "Falco Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/falco/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -9608,7 +9608,7 @@
     "name": "Falco Walker Wings Raider (1 of 2)",
     "parent": "Falco Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/falco/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -9633,7 +9633,7 @@
     "name": "Falco Walker Wings Rugged (1 of 2)",
     "parent": "Falco Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/falco/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 15,
       "name": "Tablet"
@@ -9658,7 +9658,7 @@
     "name": "Falco Walker Wings Skirmish (1 of 2)",
     "parent": "Falco Walker Body"
   }, {
-    "category": "walkers/falco/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -10197,7 +10197,7 @@
     "name": "Firefly Walker Body",
     "parent": "Walkers"
   }, {
-    "category": "walkers/firefly/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 7,
@@ -10211,7 +10211,7 @@
     ],
     "name": "Firefly Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/firefly/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 6,
       "name": "Fragment"
@@ -10676,7 +10676,7 @@
     "name": "Hornet Walker Body",
     "parent": "Stiletto Walker Body"
   }, {
-    "category": "walkers/hornet/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 260,
@@ -10693,7 +10693,7 @@
     ],
     "name": "Hornet Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/hornet/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -10718,7 +10718,7 @@
     "name": "Hornet Walker Legs Armored (1 of 2)",
     "parent": "Hornet Walker Body"
   }, {
-    "category": "walkers/hornet/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -10743,7 +10743,7 @@
     "name": "Hornet Walker Legs Heavy (1 of 2)",
     "parent": "Hornet Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/hornet/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -10768,7 +10768,7 @@
     "name": "Hornet Walker Wings Heavy (1 of 2)",
     "parent": "Hornet Walker Body"
   }, {
-    "category": "walkers/hornet/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -10790,7 +10790,7 @@
     "name": "Hornet Walker Wings Large (1 of 2)",
     "parent": "Hornet Walker Wings Medium (1 of 2)"
   }, {
-    "category": "walkers/hornet/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 7,
       "name": "Tablet"
@@ -10812,7 +10812,7 @@
     "name": "Hornet Walker Wings Medium (1 of 2)",
     "parent": "Hornet Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/hornet/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -10837,7 +10837,7 @@
     "name": "Hornet Walker Wings Raider (1 of 2)",
     "parent": "Hornet Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/hornet/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -10862,7 +10862,7 @@
     "name": "Hornet Walker Wings Rugged (1 of 2)",
     "parent": "Hornet Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/hornet/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -10887,7 +10887,7 @@
     "name": "Hornet Walker Wings Skirmish (1 of 2)",
     "parent": "Hornet Walker Body"
   }, {
-    "category": "walkers/hornet/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -10909,7 +10909,7 @@
     "name": "Hornet Walker Wings Small (1 of 2)",
     "parent": "Hornet Walker Body"
   }, {
-    "category": "walkers/hornet/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 87,
@@ -11449,7 +11449,7 @@
     "name": "Mollusk Walker Body",
     "parent": "Steering Levers"
   }, {
-    "category": "walkers/mollusk/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 140,
@@ -11463,7 +11463,7 @@
     ],
     "name": "Mollusk Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/mollusk/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -11488,7 +11488,7 @@
     "name": "Mollusk Walker Legs Armored (1 of 2)",
     "parent": "Mollusk Walker Body"
   }, {
-    "category": "walkers/mollusk/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 47,
@@ -11502,7 +11502,7 @@
     ],
     "name": "Mollusk Walker Wings (1 of 2)"
   }, {
-    "category": "walkers/mollusk/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -11524,7 +11524,7 @@
     "name": "Mollusk Walker Wings Heavy (1 of 2)",
     "parent": "Mollusk Walker Body"
   }, {
-    "category": "walkers/mollusk/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -11546,7 +11546,7 @@
     "name": "Mollusk Walker Wings Medium (1 of 2)",
     "parent": "Mollusk Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/mollusk/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 15,
       "name": "Tablet"
@@ -11571,7 +11571,7 @@
     "name": "Mollusk Walker Wings Raider (1 of 2)",
     "parent": "Mollusk Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/mollusk/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -11596,7 +11596,7 @@
     "name": "Mollusk Walker Wings Rugged (1 of 2)",
     "parent": "Mollusk Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/mollusk/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 7,
       "name": "Tablet"
@@ -11618,7 +11618,7 @@
     "name": "Mollusk Walker Wings Skirmish (1 of 2)",
     "parent": "Mollusk Walker Body"
   }, {
-    "category": "walkers/mollusk/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -12175,7 +12175,7 @@
     "name": "Panda Walker Body",
     "parent": "Walker Packing Compartment"
   }, {
-    "category": "walkers/panda/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -12209,7 +12209,7 @@
     "name": "Panda Walker Legs Armored (1 of 2)",
     "parent": "Panda Walker Body"
   }, {
-    "category": "walkers/panda/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 6,
       "name": "Tablet"
@@ -12234,7 +12234,7 @@
     "name": "Panda Walker Legs Heavy (1 of 2)",
     "parent": "Panda Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/panda/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 650,
@@ -12251,7 +12251,7 @@
     ],
     "name": "Panda Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/panda/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -12276,7 +12276,7 @@
     "name": "Panda Walker Wings Heavy (1 of 2)",
     "parent": "Panda Walker Body"
   }, {
-    "category": "walkers/panda/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 15,
       "name": "Tablet"
@@ -12298,7 +12298,7 @@
     "name": "Panda Walker Wings Large (1 of 2)",
     "parent": "Panda Walker Wings Medium (1 of 2)"
   }, {
-    "category": "walkers/panda/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -12320,7 +12320,7 @@
     "name": "Panda Walker Wings Medium (1 of 2)",
     "parent": "Panda Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/panda/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -12345,7 +12345,7 @@
     "name": "Panda Walker Wings Raider (1 of 2)",
     "parent": "Panda Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/panda/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -12370,7 +12370,7 @@
     "name": "Panda Walker Wings Rugged (1 of 2)",
     "parent": "Panda Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/panda/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 15,
       "name": "Tablet"
@@ -12395,7 +12395,7 @@
     "name": "Panda Walker Wings Skirmish (1 of 2)",
     "parent": "Panda Walker Body"
   }, {
-    "category": "walkers/panda/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -12417,7 +12417,7 @@
     "name": "Panda Walker Wings Small (1 of 2)",
     "parent": "Panda Walker Body"
   }, {
-    "category": "walkers/panda/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 130,
@@ -12861,7 +12861,7 @@
     "name": "Proxy Walker Body",
     "parent": "Steering Levers"
   }, {
-    "category": "walkers/proxy/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -12886,7 +12886,7 @@
     "name": "Proxy Walker Legs Armored (1 of 2)",
     "parent": "Proxy Walker Body"
   }, {
-    "category": "walkers/proxy/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -12914,7 +12914,7 @@
     "name": "Proxy Walker Legs Heavy (1 of 2)",
     "parent": "Proxy Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/proxy/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 750,
@@ -12965,7 +12965,7 @@
     "name": "Schmetterling Walker Body",
     "parent": "Buffalo Walker Body"
   }, {
-    "category": "walkers/schmetterling/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -12990,7 +12990,7 @@
     "name": "Schmetterling Walker Legs Armored (1 of 2)",
     "parent": "Schmetterling Walker Body"
   }, {
-    "category": "walkers/schmetterling/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -13015,7 +13015,7 @@
     "name": "Schmetterling Walker Legs Heavy (1 of 2)",
     "parent": "Schmetterling Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/schmetterling/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 900,
@@ -13032,7 +13032,7 @@
     ],
     "name": "Schmetterling Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/schmetterling/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 35,
       "name": "Tablet"
@@ -13057,7 +13057,7 @@
     "name": "Schmetterling Walker Wings Heavy (1 of 2)",
     "parent": "Schmetterling Walker Body"
   }, {
-    "category": "walkers/schmetterling/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -13079,7 +13079,7 @@
     "name": "Schmetterling Walker Wings Large (1 of 2)",
     "parent": "Schmetterling Walker Wings Medium (1 of 2)"
   }, {
-    "category": "walkers/schmetterling/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 35,
       "name": "Tablet"
@@ -13101,7 +13101,7 @@
     "name": "Schmetterling Walker Wings Medium (1 of 2)",
     "parent": "Schmetterling Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/schmetterling/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 60,
       "name": "Tablet"
@@ -13126,7 +13126,7 @@
     "name": "Schmetterling Walker Wings Raider (1 of 2)",
     "parent": "Schmetterling Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/schmetterling/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 35,
       "name": "Tablet"
@@ -13151,7 +13151,7 @@
     "name": "Schmetterling Walker Wings Rugged (1 of 2)",
     "parent": "Schmetterling Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/schmetterling/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -13176,7 +13176,7 @@
     "name": "Schmetterling Walker Wings Skirmish (1 of 2)",
     "parent": "Schmetterling Walker Body"
   }, {
-    "category": "walkers/schmetterling/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -13198,7 +13198,7 @@
     "name": "Schmetterling Walker Wings Small (1 of 2)",
     "parent": "Schmetterling Walker Body"
   }, {
-    "category": "walkers/schmetterling/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 300,
@@ -13757,7 +13757,7 @@
     "name": "Spider Walker With Ballista",
     "parent": "Nomad Spider Walker Body"
   }, {
-    "category": "walkers/spider/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 25,
       "name": "Fragment"
@@ -13776,7 +13776,7 @@
     "name": "Spider Walker Legs Armored (1 of 2)",
     "parent": "Nomad Spider Walker Body"
   }, {
-    "category": "walkers/spider/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 10,
@@ -14296,7 +14296,7 @@
     "name": "Stiletto Walker Body",
     "parent": "Steering Levers"
   }, {
-    "category": "walkers/stiletto/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 140,
@@ -14310,7 +14310,7 @@
     ],
     "name": "Stiletto Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/stiletto/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -14335,7 +14335,7 @@
     "name": "Stiletto Walker Legs Armored (1 of 2)",
     "parent": "Stiletto Walker Body"
   }, {
-    "category": "walkers/stiletto/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -14357,7 +14357,7 @@
     "name": "Stiletto Walker Wings Heavy (1 of 2)",
     "parent": "Stiletto Walker Body"
   }, {
-    "category": "walkers/stiletto/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -14379,7 +14379,7 @@
     "name": "Stiletto Walker Wings Medium (1 of 2)",
     "parent": "Stiletto Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/stiletto/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 15,
       "name": "Tablet"
@@ -14404,7 +14404,7 @@
     "name": "Stiletto Walker Wings Raider (1 of 2)",
     "parent": "Stiletto Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/stiletto/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -14429,7 +14429,7 @@
     "name": "Stiletto Walker Wings Rugged (1 of 2)",
     "parent": "Stiletto Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/stiletto/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 7,
       "name": "Tablet"
@@ -14454,7 +14454,7 @@
     "name": "Stiletto Walker Wings Skirmish (1 of 2)",
     "parent": "Stiletto Walker Body"
   }, {
-    "category": "walkers/stiletto/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -14476,7 +14476,7 @@
     "name": "Stiletto Walker Wings Small (1 of 2)",
     "parent": "Stiletto Walker Body"
   }, {
-    "category": "walkers/stiletto/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 47,
@@ -14914,7 +14914,7 @@
     "name": "Titan Walker Body",
     "parent": "Buffalo Walker Body"
   }, {
-    "category": "walkers/titan/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -14939,7 +14939,7 @@
     "name": "Titan Walker Legs Armored (1 of 2)",
     "parent": "Titan Walker Body"
   }, {
-    "category": "walkers/titan/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -14964,7 +14964,7 @@
     "name": "Titan Walker Legs Heavy (1 of 2)",
     "parent": "Titan Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/titan/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 900,
@@ -14981,7 +14981,7 @@
     ],
     "name": "Titan Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/titan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -15006,7 +15006,7 @@
     "name": "Titan Walker Wings Heavy (1 of 2)",
     "parent": "Titan Walker Body"
   }, {
-    "category": "walkers/titan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 30,
       "name": "Tablet"
@@ -15028,7 +15028,7 @@
     "name": "Titan Walker Wings Large (1 of 2)",
     "parent": "Titan Walker Wings Medium (1 of 2)"
   }, {
-    "category": "walkers/titan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -15050,7 +15050,7 @@
     "name": "Titan Walker Wings Medium (1 of 2)",
     "parent": "Titan Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/titan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 50,
       "name": "Tablet"
@@ -15075,7 +15075,7 @@
     "name": "Titan Walker Wings Raider (1 of 2)",
     "parent": "Titan Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/titan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -15100,7 +15100,7 @@
     "name": "Titan Walker Wings Rugged (1 of 2)",
     "parent": "Titan Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/titan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 30,
       "name": "Tablet"
@@ -15125,7 +15125,7 @@
     "name": "Titan Walker Wings Skirmish (1 of 2)",
     "parent": "Titan Walker Body"
   }, {
-    "category": "walkers/titan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -15147,7 +15147,7 @@
     "name": "Titan Walker Wings Small (1 of 2)",
     "parent": "Titan Walker Body"
   }, {
-    "category": "walkers/titan/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 300,
@@ -15690,7 +15690,7 @@
     "name": "Toboggan Walker Body",
     "parent": "Mollusk Walker Body"
   }, {
-    "category": "walkers/toboggan/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -15715,7 +15715,7 @@
     "name": "Toboggan Walker Legs Armored (1 of 2)",
     "parent": "Toboggan Walker Body"
   }, {
-    "category": "walkers/toboggan/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -15740,7 +15740,7 @@
     "name": "Toboggan Walker Legs Heavy (1 of 2)",
     "parent": "Toboggan Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/toboggan/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 240,
@@ -15757,7 +15757,7 @@
     ],
     "name": "Toboggan Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/toboggan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -15782,7 +15782,7 @@
     "name": "Toboggan Walker Wings Heavy (1 of 2)",
     "parent": "Toboggan Walker Body"
   }, {
-    "category": "walkers/toboggan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -15804,7 +15804,7 @@
     "name": "Toboggan Walker Wings Large (1 of 2)",
     "parent": "Toboggan Walker Wings Medium (1 of 2)"
   }, {
-    "category": "walkers/toboggan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -15826,7 +15826,7 @@
     "name": "Toboggan Walker Wings Medium (1 of 2)",
     "parent": "Toboggan Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/toboggan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 17,
       "name": "Tablet"
@@ -15851,7 +15851,7 @@
     "name": "Toboggan Walker Wings Raider (1 of 2)",
     "parent": "Toboggan Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/toboggan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -15876,7 +15876,7 @@
     "name": "Toboggan Walker Wings Rugged (1 of 2)",
     "parent": "Toboggan Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/toboggan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -15901,7 +15901,7 @@
     "name": "Toboggan Walker Wings Skirmish (1 of 2)",
     "parent": "Toboggan Walker Body"
   }, {
-    "category": "walkers/toboggan/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 1,
       "name": "Tablet"
@@ -15923,7 +15923,7 @@
     "name": "Toboggan Walker Wings Small (1 of 2)",
     "parent": "Toboggan Walker Body"
   }, {
-    "category": "walkers/toboggan/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 80,
@@ -16610,7 +16610,7 @@
     "name": "Tusker Walker Body",
     "parent": "Toboggan Walker Body"
   }, {
-    "category": "walkers/tusker/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -16635,7 +16635,7 @@
     "name": "Tusker Walker Legs Armored (1 of 2)",
     "parent": "Tusker Walker Body"
   }, {
-    "category": "walkers/tusker/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 35,
       "name": "Tablet"
@@ -16660,7 +16660,7 @@
     "name": "Tusker Walker Legs Heavy (1 of 2)",
     "parent": "Tusker Walker Legs Armored (1 of 2)"
   }, {
-    "category": "walkers/tusker/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 760,
@@ -16677,7 +16677,7 @@
     ],
     "name": "Tusker Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/tusker/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -16702,7 +16702,7 @@
     "name": "Tusker Walker Wings Heavy (1 of 2)",
     "parent": "Tusker Walker Body"
   }, {
-    "category": "walkers/tusker/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -16724,7 +16724,7 @@
     "name": "Tusker Walker Wings Large (1 of 2)",
     "parent": "Tusker Walker Wings Medium (1 of 2)"
   }, {
-    "category": "walkers/tusker/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -16746,7 +16746,7 @@
     "name": "Tusker Walker Wings Medium (1 of 2)",
     "parent": "Tusker Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/tusker/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Tablet"
@@ -16771,7 +16771,7 @@
     "name": "Tusker Walker Wings Raider (1 of 2)",
     "parent": "Tusker Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/tusker/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -16796,7 +16796,7 @@
     "name": "Tusker Walker Wings Rugged (1 of 2)",
     "parent": "Tusker Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/tusker/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 25,
       "name": "Tablet"
@@ -16821,7 +16821,7 @@
     "name": "Tusker Walker Wings Skirmish (1 of 2)",
     "parent": "Tusker Walker Body"
   }, {
-    "category": "walkers/tusker/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 15,
       "name": "Tablet"
@@ -16843,7 +16843,7 @@
     "name": "Tusker Walker Wings Small (1 of 2)",
     "parent": "Tusker Walker Body"
   }, {
-    "category": "walkers/tusker/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 253,
@@ -17389,7 +17389,7 @@
     "name": "Silur Walker Body",
     "parent": "Balang Walker Body"
   }, {
-    "category": "walkers/silur/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 280,
@@ -17547,7 +17547,7 @@
     "name": "Silur Walker Upgrade - Water - Tier 4",
     "parent": "Silur Walker Upgrade - Water - Tier 3"
   }, {
-    "category": "walkers/silur/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 2,
       "name": "Tablet"
@@ -17572,7 +17572,7 @@
     "name": "Silur Walker Legs Armored (1 of 2)",
     "parent": "Silur Walker Body"
   }, {
-    "category": "walkers/silur/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 4,
       "name": "Tablet"
@@ -17701,7 +17701,7 @@
     "name": "Hercul Walker Body",
     "parent": "Tool Pod"
   }, {
-    "category": "walkers/hercul/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 280,
@@ -17718,7 +17718,7 @@
     ],
     "name": "Hercul Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/hercul/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 93,
@@ -17732,7 +17732,7 @@
     ],
     "name": "Hercul Walker Wings (1 of 2)"
   }, {
-    "category": "walkers/hercul/parts/legs",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -17757,7 +17757,7 @@
     "name": "Hercul Walker Legs Armored (1 of 2)",
     "parent": "Hercul Walker Body"
   }, {
-    "category": "walkers/hercul/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -17779,7 +17779,7 @@
     "name": "Hercul Walker Wings Heavy (1 of 2)",
     "parent": "Hercul Walker Body"
   }, {
-    "category": "walkers/hercul/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -17801,7 +17801,7 @@
     "name": "Hercul Walker Wings Medium (1 of 2)",
     "parent": "Hercul Walker Wings Small (1 of 2)"
   }, {
-    "category": "walkers/hercul/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 20,
       "name": "Tablet"
@@ -17826,7 +17826,7 @@
     "name": "Hercul Walker Wings Raider (1 of 2)",
     "parent": "Hercul Walker Wings Skirmish (1 of 2)"
   }, {
-    "category": "walkers/hercul/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 5,
       "name": "Tablet"
@@ -17851,7 +17851,7 @@
     "name": "Hercul Walker Wings Rugged (1 of 2)",
     "parent": "Hercul Walker Wings Heavy (1 of 2)"
   }, {
-    "category": "walkers/hercul/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 10,
       "name": "Tablet"
@@ -17873,7 +17873,7 @@
     "name": "Hercul Walker Wings Skirmish (1 of 2)",
     "parent": "Hercul Walker Body"
   }, {
-    "category": "walkers/hercul/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 3,
       "name": "Tablet"
@@ -18064,7 +18064,7 @@
     "name": "Balang Walker Body",
     "parent": "Firefly Walker Body"
   }, {
-    "category": "walkers/balang/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 90,
@@ -18078,7 +18078,7 @@
     ],
     "name": "Balang Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/balang/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 30,
@@ -18092,7 +18092,7 @@
     ],
     "name": "Balang Walker Wings (1 of 2)"
   }, {
-    "category": "walkers/balang/parts/wings",
+    "category": "WalkerParts",
     "cost": {
       "count": 40,
       "name": "Fragment"
@@ -18295,7 +18295,7 @@
     "name": "Raptor Sky Walker Body",
     "parent": "Dinghy Walker Body"
   }, {
-    "category": "walkers/raptor/parts/legs",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 35,
@@ -18312,7 +18312,7 @@
     ],
     "name": "Raptor Sky Walker Legs (1 of 2)"
   }, {
-    "category": "walkers/raptor/parts/wings",
+    "category": "WalkerParts",
     "crafting": [{
         "ingredients": [{
             "count": 30,
@@ -18347,7 +18347,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Cargo - Tier 2"
+    "name": "Raptor Sky Walker Upgrade - Cargo - Tier 2"
   }, {
     "category": "walkers/raptor/upgrades/tier2",
     "crafting": [{
@@ -18367,7 +18367,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Durability - Tier 2"
+    "name": "Raptor Sky Walker Upgrade - Durability - Tier 2"
   }, {
     "category": "walkers/raptor/upgrades/tier2",
     "crafting": [{
@@ -18387,7 +18387,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Gear - Tier 2"
+    "name": "Raptor Sky Walker Upgrade - Gear - Tier 2"
   }, {
     "category": "walkers/raptor/upgrades/tier2",
     "crafting": [{
@@ -18407,7 +18407,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Torque - Tier 2"
+    "name": "Raptor Sky Walker Upgrade - Torque - Tier 2"
   }, {
     "category": "walkers/raptor/upgrades/tier2",
     "cost": {
@@ -18431,7 +18431,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Water - Tier 2",
+    "name": "Raptor Sky Walker Upgrade - Water - Tier 2",
     "parent": "Raptor Sky Walker Body"
   }, {
     "category": "walkers/raptor/upgrades/tier3",
@@ -18452,7 +18452,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Cargo - Tier 3"
+    "name": "Raptor Sky Walker Upgrade - Cargo - Tier 3"
   }, {
     "category": "walkers/raptor/upgrades/tier3",
     "crafting": [{
@@ -18472,7 +18472,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Durability - Tier 3"
+    "name": "Raptor Sky Walker Upgrade - Durability - Tier 3"
   }, {
     "category": "walkers/raptor/upgrades/tier3",
     "crafting": [{
@@ -18492,7 +18492,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Gear - Tier 3"
+    "name": "Raptor Sky Walker Upgrade - Gear - Tier 3"
   }, {
     "category": "walkers/raptor/upgrades/tier3",
     "crafting": [{
@@ -18512,7 +18512,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Torque - Tier 3"
+    "name": "Raptor Sky Walker Upgrade - Torque - Tier 3"
   }, {
     "category": "walkers/raptor/upgrades/tier3",
     "cost": {
@@ -18536,8 +18536,8 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Water - Tier 3",
-    "parent": "Raptor Walker Upgrade - Water - Tier 2"
+    "name": "Raptor Sky Walker Upgrade - Water - Tier 3",
+    "parent": "Raptor Sky Walker Upgrade - Water - Tier 2"
   }, {
     "category": "walkers/raptor/upgrades/tier4",
     "crafting": [{
@@ -18560,7 +18560,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Cargo - Tier 4"
+    "name": "Raptor Sky Walker Upgrade - Cargo - Tier 4"
   }, {
     "category": "walkers/raptor/upgrades/tier4",
     "crafting": [{
@@ -18583,7 +18583,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Durability - Tier 4"
+    "name": "Raptor Sky Walker Upgrade - Durability - Tier 4"
   }, {
     "category": "walkers/raptor/upgrades/tier4",
     "crafting": [{
@@ -18606,7 +18606,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Gear - Tier 4"
+    "name": "Raptor Sky Walker Upgrade - Gear - Tier 4"
   }, {
     "category": "walkers/raptor/upgrades/tier4",
     "crafting": [{
@@ -18629,7 +18629,7 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Torque - Tier 4"
+    "name": "Raptor Sky Walker Upgrade - Torque - Tier 4"
   }, {
     "category": "walkers/raptor/upgrades/tier4",
     "cost": {
@@ -18656,8 +18656,8 @@
         ]
       }
     ],
-    "name": "Raptor Walker Upgrade - Water - Tier 4",
-    "parent": "Raptor Walker Upgrade - Water - Tier 3"
+    "name": "Raptor Sky Walker Upgrade - Water - Tier 4",
+    "parent": "Raptor Sky Walker Upgrade - Water - Tier 3"
   }, {
     "category": "buildings/construction/walker",
     "cost": {

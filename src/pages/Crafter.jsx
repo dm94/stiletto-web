@@ -107,7 +107,7 @@ class Crafter extends Component {
         const selectedItems = this.state.selectedItems.concat([
           {
             name: selectedItem[0].name,
-            category: selectedItem[0].category,
+            category: selectedItem[0].category ? selectedItem[0].category : "",
             crafting: this.getIngredients(selectedItem[0].name),
             damage: selectedItem[0].damage,
             count: count,
