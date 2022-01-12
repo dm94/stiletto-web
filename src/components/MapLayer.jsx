@@ -114,7 +114,7 @@ class MapLayer extends Component {
       this.props.resourcesInTheMap[0].resourceid != null
     ) {
       return this.props.resourcesInTheMap.map((resource) => (
-        <Fragment>
+        <Fragment key={"marker-" + resource.resourceid}>
           <Marker
             key={"resource" + resource.resourceid}
             position={[resource.x, resource.y]}

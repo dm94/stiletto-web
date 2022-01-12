@@ -8,7 +8,13 @@ import CreateResourceTab from "../components/CreateResourceTab";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import "../css/map-sidebar.min.css";
-import { updateResourceTime } from "../services";
+import {
+  updateResourceTime,
+  getMarkers,
+  getResources,
+  deleteResource,
+  createResource,
+} from "../services";
 const queryString = require("query-string");
 
 class ResourceMapNoLog extends Component {
@@ -31,7 +37,8 @@ class ResourceMapNoLog extends Component {
       isOpenSidebar: false,
     };
   }
-  componentDidMount() {
+
+  async componentDidMount() {
     let parsed = null;
     if (this.props.location != null && this.props.location.search != null) {
       parsed = queryString.parse(this.props.location.search);
@@ -41,11 +48,8 @@ class ResourceMapNoLog extends Component {
       (this.props.mapId != null || this.props.match.params.id != null) &&
       (this.props.pass != null || parsed.pass != null)
     ) {
-      Axios.get(
-        "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.json"
-      ).then((response) => {
-        this.setState({ items: response.data });
-      });
+      let markers = await getMarkers();
+      this.setState({ items: markers });
 
       let mapId =
         this.props.mapId != null
@@ -58,29 +62,12 @@ class ResourceMapNoLog extends Component {
         pass: pass,
       });
 
-      Axios.get(
-        process.env.REACT_APP_API_URL + "/maps/" + mapId + "/resources",
-        {
-          params: {
-            discordid: localStorage.getItem("discordid"),
-            token: localStorage.getItem("token"),
-            mappass: pass,
-          },
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      ).then((response) => {
-        if (response.status === 200) {
-          this.setState({ resourcesInTheMap: response.data });
-        } else if (response.status === 401) {
-          this.setState({
-            error: "Unauthorized",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      });
+      let response = await getResources(mapId, pass);
+      if (response.success) {
+        this.setState({ resourcesInTheMap: response.message });
+      } else {
+        this.setState({ error: response.message });
+      }
 
       Axios.get(process.env.REACT_APP_API_URL + "/maps/" + mapId, {
         params: {
@@ -102,79 +89,40 @@ class ResourceMapNoLog extends Component {
     }
   }
 
-  deleteResource = (resourceid, resourcetoken) => {
-    const options = {
-      method: "delete",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/maps/" +
-        this.state.mapId +
-        "/resources/" +
-        resourceid,
-      params: {
-        token: resourcetoken,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 204) {
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          this.setState({ error: "Unauthorized" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+  deleteResource = async (resourceId, resourceToken) => {
+    const response = await deleteResource(
+      this.state.mapId,
+      resourceId,
+      resourceToken
+    );
+    if (response.success) {
+      this.componentDidMount();
+    } else {
+      this.setState({ error: response.message });
+    }
   };
 
-  createResource = (
+  createResource = async (
     resourceTypeInput,
     qualityInput,
     descriptionInput,
     lastHarvested
   ) => {
-    const options = {
-      method: "post",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/maps/" +
-        this.state.mapId +
-        "/resources",
-      params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
-        mapid: this.state.mapId,
-        resourcetype: resourceTypeInput,
-        quality: qualityInput,
-        x: this.state.coordinateXInput,
-        y: this.state.coordinateYInput,
-        description: descriptionInput,
-        mappass: this.state.pass,
-        harvested: lastHarvested,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        this.setState({
-          coordinateXInput: 0,
-          coordinateYInput: 0,
-        });
-        if (response.status === 202) {
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          this.setState({ error: "Unauthorized" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+    const response = await createResource(
+      this.state.mapId,
+      this.state.coordinateXInput,
+      this.state.coordinateYInput,
+      this.state.pass,
+      resourceTypeInput,
+      qualityInput,
+      descriptionInput,
+      lastHarvested
+    );
+    if (response.success) {
+      this.componentDidMount();
+    } else {
+      this.setState({ error: response.message });
+    }
   };
 
   filterResources = (r) => {

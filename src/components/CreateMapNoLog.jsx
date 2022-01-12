@@ -3,6 +3,7 @@ import CreateMapPanel from "./CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
 import { Helmet } from "react-helmet";
+import { getMaps } from "../services";
 
 class CreateMapNoLog extends Component {
   constructor(props) {
@@ -16,12 +17,9 @@ class CreateMapNoLog extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.json"
-    )
-      .then((response) => response.json())
-      .then((maps) => this.setState({ maps }));
+  async componentDidMount() {
+    const maps = await getMaps();
+    this.setState({ maps: maps });
   }
 
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {

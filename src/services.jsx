@@ -22,7 +22,7 @@ export const getUserProfile = async () => {
       },
     };
 
-    const response = await apiRequest(options);
+    const response = await request(options);
     if (response != null) {
       if (response.status === 200) {
         if (response.data != null) {
@@ -136,7 +136,7 @@ export const getUserPermssions = async (clanid, discordid) => {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     };
-    const response = await apiRequest(options);
+    const response = await request(options);
     if (response != null) {
       if (response.status === 200) {
         return { success: true, message: response.data };
@@ -195,7 +195,7 @@ export const getClanInfo = async () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       };
-      const response = await apiRequest(options);
+      const response = await request(options);
       if (response != null) {
         if (response.status === 200) {
           if (response.data != null && localStorage.getItem("acceptscookies")) {
@@ -259,7 +259,7 @@ export const getMembers = async () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       };
-      const response = await apiRequest(options);
+      const response = await request(options);
       if (response != null) {
         if (response.status === 202) {
           if (response.data != null && localStorage.getItem("acceptscookies")) {
@@ -311,7 +311,7 @@ export const updateResourceTime = (mapId, resoruceId, token, date) => {
       harvested: date,
     },
   };
-  apiRequest(options);
+  request(options);
 };
 
 export const getItems = async () => {
@@ -330,7 +330,7 @@ export const getItems = async () => {
       url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json",
     };
 
-    const response = await apiRequest(options);
+    const response = await request(options);
     if (response != null && response.data != null) {
       if (localStorage.getItem("acceptscookies")) {
         localStorage.setItem("allItems", JSON.stringify(response.data));
@@ -340,6 +340,104 @@ export const getItems = async () => {
       return null;
     }
   }
+};
+
+export const getMarkers = async () => {
+  const options = {
+    method: "get",
+    url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.min.json",
+  };
+
+  const response = await request(options);
+  if (response != null && response.data != null) {
+    if (localStorage.getItem("acceptscookies")) {
+      localStorage.setItem("allItems", JSON.stringify(response.data));
+    }
+    return response.data;
+  } else {
+    return null;
+  }
+};
+
+export const getMaps = async () => {
+  const options = {
+    method: "get",
+    url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.min.json",
+  };
+
+  const response = await request(options);
+  if (response != null && response.data != null) {
+    if (localStorage.getItem("acceptscookies")) {
+      localStorage.setItem("allItems", JSON.stringify(response.data));
+    }
+    return response.data;
+  } else {
+    return null;
+  }
+};
+
+export const getResources = async (mapId, mapPass) => {
+  const options = {
+    method: "get",
+    url: process.env.REACT_APP_API_URL + "/maps/" + mapId + "/resources",
+    params: {
+      discordid: localStorage.getItem("discordid"),
+      token: localStorage.getItem("token"),
+      mappass: mapPass,
+    },
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  };
+
+  return await apiRequest(options);
+};
+
+export const deleteResource = async (mapId, resourceId, resourceToken) => {
+  const options = {
+    method: "delete",
+    url:
+      process.env.REACT_APP_API_URL +
+      "/maps/" +
+      mapId +
+      "/resources/" +
+      resourceId,
+    params: {
+      token: resourceToken,
+    },
+  };
+
+  return await apiRequest(options);
+};
+
+export const createResource = async (
+  mapId,
+  coordinateXInput,
+  coordinateYInput,
+  mapPass,
+  resourceTypeInput,
+  qualityInput,
+  descriptionInput,
+  lastHarvested
+) => {
+  const options = {
+    method: "post",
+    url: process.env.REACT_APP_API_URL + "/maps/" + mapId + "/resources",
+    params: {
+      discordid: localStorage.getItem("discordid"),
+      token: localStorage.getItem("token"),
+      mapid: mapId,
+      resourcetype: resourceTypeInput,
+      quality: qualityInput,
+      x: coordinateXInput,
+      y: coordinateYInput,
+      description: descriptionInput,
+      mappass: mapPass,
+      harvested: lastHarvested,
+    },
+  };
+
+  return await apiRequest(options);
 };
 
 export const closeSession = () => {
@@ -352,7 +450,50 @@ export const closeSession = () => {
   localStorage.removeItem("clanInfo-lastCheck");
 };
 
-async function apiRequest(options) {
+export const apiRequest = async (options) => {
+  const response = await request(options);
+
+  if (response != null) {
+    switch (response.status) {
+      case 200:
+        return {
+          success: true,
+          message: response.data,
+        };
+      case 202:
+        return {
+          success: true,
+          message: response.data,
+        };
+      case 204:
+        return {
+          success: true,
+          message: "",
+        };
+      case 401:
+        return {
+          success: false,
+          message: "You do not have permissions",
+        };
+      case 503:
+        return {
+          success: false,
+          message: "Error connecting to database",
+        };
+      default:
+        return {
+          success: false,
+          message: "Error when connecting to the API",
+        };
+    }
+  }
+  return {
+    success: false,
+    message: "Error when connecting to the API",
+  };
+};
+
+export const request = async (options) => {
   return Axios.request(options)
     .then((response) => {
       return response;
@@ -360,4 +501,4 @@ async function apiRequest(options) {
     .catch(() => {
       return null;
     });
-}
+};

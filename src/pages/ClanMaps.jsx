@@ -6,7 +6,7 @@ import CreateMapPanel from "../components/CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { closeSession } from "../services";
+import { closeSession, getMaps } from "../services";
 
 class ClanMaps extends Component {
   constructor(props) {
@@ -23,12 +23,9 @@ class ClanMaps extends Component {
     };
   }
 
-  componentDidMount() {
-    fetch(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.json"
-    )
-      .then((response) => response.json())
-      .then((maps) => this.setState({ maps }));
+  async componentDidMount() {
+    const maps = await getMaps();
+    this.setState({ maps: maps });
 
     Axios.get(process.env.REACT_APP_API_URL + "/maps", {
       headers: {

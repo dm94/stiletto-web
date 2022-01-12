@@ -5,7 +5,13 @@ import { withTranslation } from "react-i18next";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
 import Axios from "axios";
-import { updateResourceTime } from "../services";
+import {
+  updateResourceTime,
+  getMarkers,
+  getResources,
+  deleteResource,
+  createResource,
+} from "../services";
 import "../css/map-sidebar.min.css";
 
 class ResourceMap extends Component {
@@ -31,90 +37,42 @@ class ResourceMap extends Component {
     };
   }
 
-  componentDidMount() {
-    Axios.get(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.json"
-    ).then((response) => {
-      this.setState({ items: response.data });
-    });
+  async componentDidMount() {
+    let markers = await getMarkers();
+    this.setState({ items: markers });
 
-    Axios.get(
-      process.env.REACT_APP_API_URL +
-        "/maps/" +
-        this.props.map.mapid +
-        "/resources",
-      {
-        params: {
-          discordid: localStorage.getItem("discordid"),
-          token: localStorage.getItem("token"),
-          mappass: this.props.map.pass,
-        },
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    ).then((response) => {
-      if (response.status === 200) {
-        this.setState({ resourcesInTheMap: response.data });
-      } else if (response.status === 401) {
-        this.setState({
-          error: "Unauthorized",
-        });
-      } else if (response.status === 503) {
-        this.setState({ error: "Error connecting to database" });
-      }
-    });
+    let response = await getResources(
+      this.props.map.mapid,
+      this.props.map.pass
+    );
+    if (response.success) {
+      this.setState({ resourcesInTheMap: response.message });
+    } else {
+      this.setState({ error: response.message });
+    }
   }
 
-  createResource = (
+  createResource = async (
     resourceTypeInput,
     qualityInput,
     descriptionInput,
     lastHarvested
   ) => {
-    const options = {
-      method: "post",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/maps/" +
-        this.props.map.mapid +
-        "/resources",
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        resourcetype: resourceTypeInput,
-        quality: qualityInput,
-        x: this.state.coordinateXInput,
-        y: this.state.coordinateYInput,
-        description: descriptionInput,
-        mappass: this.state.pass,
-        harvested: lastHarvested,
-      },
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        this.setState({
-          coordinateXInput: 0,
-          coordinateYInput: 0,
-          hasLocation: false,
-        });
-        if (response.status === 202) {
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          this.setState({
-            error: "Unauthorized",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+    const response = await createResource(
+      this.props.map.mapid,
+      this.state.coordinateXInput,
+      this.state.coordinateYInput,
+      this.state.pass,
+      resourceTypeInput,
+      qualityInput,
+      descriptionInput,
+      lastHarvested
+    );
+    if (response.success) {
+      this.componentDidMount();
+    } else {
+      this.setState({ error: response.message });
+    }
   };
 
   changeDataMap = (event) => {
@@ -149,33 +107,17 @@ class ResourceMap extends Component {
       });
   };
 
-  deleteResource = (resourceid, resourcetoken) => {
-    const options = {
-      method: "delete",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/maps/" +
-        this.props.map.mapid +
-        "/resources/" +
-        resourceid,
-      params: {
-        token: resourcetoken,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 204) {
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          this.setState({ error: "Unauthorized" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+  deleteResource = async (resourceId, resourceToken) => {
+    const response = await deleteResource(
+      this.props.map.mapid,
+      resourceId,
+      resourceToken
+    );
+    if (response.success) {
+      this.componentDidMount();
+    } else {
+      this.setState({ error: response.message });
+    }
   };
 
   editMapTab(t) {
