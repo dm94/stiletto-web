@@ -2674,7 +2674,7 @@
     "damage": 165,
     "name": "Ceramic-Tipped Bolt",
     "parent": "Bone Bolt",
-    "trade_price": 100
+    "trade_price": 11
   }, {
     "category": "Ammo",
     "crafting": [{
@@ -3115,7 +3115,8 @@
       }
     ],
     "name": "Chalk Bomb",
-    "parent": "Green Death Bomb"
+    "parent": "Green Death Bomb",
+    "trade_price": 3.6
   }, {
     "category": "Ammo",
     "cost": {
