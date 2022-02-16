@@ -8213,22 +8213,22 @@
             "name": "Iron Ingot"
           }
         ],
-        "output": 6,
+        "output": 5,
         "station": "Ancient Fabricator"
       },
       {
         "ingredients": [
           {
-            "count": 150,
+            "count": 15,
             "name": "Wood"
           },
           {
-            "count": 2,
+            "count": 1,
             "name": "Iron Ingot"
           }
         ],
-        "output": 10,
-        "station": "Lumbermill"
+        "output": 1,
+        "station": "Artificer Woodworking Station"
       },
       {
         "ingredients": [
