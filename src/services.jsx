@@ -35,7 +35,7 @@ export const getUserProfile = async () => {
         }
         return { success: true, message: "" };
       } else if (response.status === 205 || response.status === 401) {
-        this.closeSession();
+        closeSession();
         return {
           success: false,
           message: "Log in again",
@@ -47,7 +47,7 @@ export const getUserProfile = async () => {
         };
       }
     }
-    this.closeSession();
+    closeSession();
     return {
       success: false,
       message: "Log in again",
@@ -141,7 +141,7 @@ export const getUserPermssions = async (clanid, discordid) => {
       if (response.status === 200) {
         return { success: true, message: response.data };
       } else if (response.status === 405 || response.status === 401) {
-        this.closeSession();
+        closeSession();
         return {
           success: false,
           message: "You don't have access here, try to log in again",
@@ -204,7 +204,7 @@ export const getClanInfo = async () => {
           }
           return { success: true, message: response.data };
         } else if (response.status === 405 || response.status === 401) {
-          this.closeSession();
+          closeSession();
           return {
             success: false,
             message: "You don't have access here, try to log in again",
@@ -268,7 +268,7 @@ export const getMembers = async () => {
           }
           return { success: true, message: response.data };
         } else if (response.status === 405 || response.status === 401) {
-          this.closeSession();
+          closeSession();
           return {
             success: false,
             message: "You don't have access here, try to log in again",
