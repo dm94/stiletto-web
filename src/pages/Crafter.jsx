@@ -156,6 +156,9 @@ class Crafter extends Component {
         if (recipe.station != null) {
           recipeObject.station = recipe.station;
         }
+        if (recipe.time != null) {
+          recipeObject.time = recipe.time;
+        }
         all.push(recipeObject);
       });
     }

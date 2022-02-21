@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Ingredients from "./Ingredients";
 import { withTranslation } from "react-i18next";
 import Icon from "./Icon";
+import CraftingTime from "./CraftingTime";
+import Station from "./Station";
 
 class SelectedItem extends Component {
   constructor(props) {
@@ -30,21 +32,15 @@ class SelectedItem extends Component {
                 : this.props.item.count
             }
           />
-          {this.showStation(t, ingredients)}
+          {ingredients.station && <Station name={ingredients.station} />}
+          {ingredients.time && (
+            <CraftingTime
+              time={ingredients.time}
+              total={this.props.item.count}
+            />
+          )}
         </div>
       ));
-    }
-  }
-
-  showStation(t, ingredients) {
-    if (ingredients != null && ingredients.station != null) {
-      return (
-        <div className="text-right mb-0 text-muted">
-          {t("made on")}{" "}
-          <Icon key={ingredients.station} name={ingredients.station} />{" "}
-          {t(ingredients.station)}
-        </div>
-      );
     }
   }
 

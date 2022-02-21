@@ -5,7 +5,9 @@ import { getItems } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import Ingredients from "../components/Ingredients";
 import Ingredient from "../components/Ingredient";
+import Station from "../components/Station";
 import Icon from "../components/Icon";
+import CraftingTime from "../components/CraftingTime";
 import LoadingScreen from "../components/LoadingScreen";
 import Axios from "axios";
 
@@ -202,7 +204,9 @@ class ItemWiki extends Component {
                 <div className="card border-secondary mb-3">
                   <div className="card-header">{t("Recipe")}</div>
                   <div className="card-body">
-                    {this.showIngredient(this.state.item)}
+                    <div className="row">
+                      {this.showIngredient(this.state.item)}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -275,6 +279,8 @@ class ItemWiki extends Component {
           key={"ingredients-" + index + "-" + item.name}
         >
           <Ingredients crafting={ingredients} value={1} />
+          {ingredients.station && <Station name={ingredients.station} />}
+          {ingredients.time && <CraftingTime time={ingredients.time} />}
         </div>
       ));
     }
