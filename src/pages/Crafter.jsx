@@ -186,8 +186,6 @@ class Crafter extends Component {
   };
 
   render() {
-    const { t } = this.props;
-
     if (this.state.error) {
       return (
         <ModalMessage
@@ -204,7 +202,7 @@ class Crafter extends Component {
       <div className="row flex-xl-nowrap">
         <Helmet>
           <title>
-            {t("Last Oasis Crafting Calculator")} - Stiletto for Last Oasis
+            Last Oasis Crafting Calculator - Stiletto for Last Oasis
           </title>
           <meta
             name="description"

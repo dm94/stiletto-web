@@ -1,8 +1,7 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import CreateMapPanel from "./CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
-import { Helmet } from "react-helmet";
 import { getMaps } from "../services";
 
 class CreateMapNoLog extends Component {
@@ -84,83 +83,75 @@ class CreateMapNoLog extends Component {
       ? "modal d-block"
       : "modal d-none";
     return (
-      <Fragment>
-        <Helmet>
-          <title>{t("Resource Maps")} - Stiletto for Last Oasis</title>
-          <meta
-            name="description"
-            content={t(
-              "Create and edit maps to add resources or strategic points."
-            )}
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta
-            name="twitter:title"
-            content="Resource Maps - Stiletto for Last Oasis"
-          />
-          <meta
-            name="twitter:description"
-            content={t(
-              "Create and edit maps to add resources or strategic points."
-            )}
-          />
-          <link
-            rel="canonical"
-            href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
-              "/map"
-            }
-          />
-        </Helmet>
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="card border-secondary mb-3">
-              <div className="card-header">
-                {t("Open a map that has already been created")}
-              </div>
-              <div className="card-body text-succes">
-                <div className="row">
-                  <div className="col-xl-3 form-group">
-                    <label htmlFor="map_id">{t("Map ID")}</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      id="map_id"
-                      name="map_id"
-                      maxLength="4"
-                      value={this.state.mapIdInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          mapIdInput: evt.target.value,
-                        })
-                      }
-                      required
-                    />
-                  </div>
-                  <div className="col-xl-9 form-group">
-                    <label htmlFor="map_id">{t("Map Pass")}</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="map_pass"
-                      name="map_pass"
-                      maxLength="30"
-                      value={this.state.mapPassInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          mapPassInput: evt.target.value,
-                        })
-                      }
-                      required
-                    />
-                  </div>
+      <div className="row">
+        <div className="col-xl-12">
+          <div className="card border-secondary mb-3">
+            <div className="card-header">
+              {t("Open a map that has already been created")}
+            </div>
+            <div className="card-body text-succes">
+              <div className="row">
+                <div className="col-xl-3 form-group">
+                  <label htmlFor="map_id">{t("Map ID")}</label>
+                  <input
+                    type="number"
+                    className="form-control"
+                    id="map_id"
+                    name="map_id"
+                    maxLength="4"
+                    value={this.state.mapIdInput}
+                    onChange={(evt) =>
+                      this.setState({
+                        mapIdInput: evt.target.value,
+                      })
+                    }
+                    required
+                  />
                 </div>
+                <div className="col-xl-9 form-group">
+                  <label htmlFor="map_id">{t("Map Pass")}</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="map_pass"
+                    name="map_pass"
+                    maxLength="30"
+                    value={this.state.mapPassInput}
+                    onChange={(evt) =>
+                      this.setState({
+                        mapPassInput: evt.target.value,
+                      })
+                    }
+                    required
+                  />
+                </div>
+              </div>
+              <button
+                className="btn btn-lg btn-outline-success btn-block"
+                type="button"
+                onClick={() =>
+                  this.props.onOpen(
+                    this.state.mapIdInput,
+                    this.state.mapPassInput
+                  )
+                }
+              >
+                {t("Open map")}
+              </button>
+            </div>
+          </div>
+        </div>
+        <CreateMapPanel maps={this.state.maps} onCreateMap={this.createMap} />
+        <div className={showHideClassName}>
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title">{t("Map created")}</h5>
+              </div>
+              <div className="modal-body">{this.shareMapLink()}</div>
+              <div className="modal-footer">
                 <button
-                  className="btn btn-lg btn-outline-success btn-block"
-                  type="button"
+                  className="btn btn-outline-success btn-block"
                   onClick={() =>
                     this.props.onOpen(
                       this.state.mapIdInput,
@@ -168,37 +159,13 @@ class CreateMapNoLog extends Component {
                     )
                   }
                 >
-                  {t("Open map")}
+                  {t("Open Map")}
                 </button>
               </div>
             </div>
           </div>
-          <CreateMapPanel maps={this.state.maps} onCreateMap={this.createMap} />
-          <div className={showHideClassName}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title">{t("Map created")}</h5>
-                </div>
-                <div className="modal-body">{this.shareMapLink()}</div>
-                <div className="modal-footer">
-                  <button
-                    className="btn btn-outline-success btn-block"
-                    onClick={() =>
-                      this.props.onOpen(
-                        this.state.mapIdInput,
-                        this.state.mapPassInput
-                      )
-                    }
-                  >
-                    {t("Open Map")}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </Fragment>
+      </div>
     );
   }
 }

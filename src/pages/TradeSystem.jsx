@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
@@ -323,6 +323,38 @@ class TradeSystem extends Component {
     }
   }
 
+  helmetInfo() {
+    return (
+      <Helmet>
+        <title>Trades - Stiletto for Last Oasis</title>
+        <meta
+          name="description"
+          content="Publish your trade offers or what you need to make it easy for others to trade with you"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Trades - Stiletto for Last Oasis" />
+        <meta
+          name="twitter:description"
+          content="Publish your trade offers or what you need to make it easy for others to trade with you"
+        />
+        <meta
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
+        />
+        <link
+          rel="canonical"
+          href={
+            window.location.protocol
+              .concat("//")
+              .concat(window.location.hostname) +
+            (window.location.port ? ":" + window.location.port : "") +
+            "/trades"
+          }
+        />
+      </Helmet>
+    );
+  }
+
   render() {
     const { t } = this.props;
     if (this.state.error) {
@@ -337,40 +369,16 @@ class TradeSystem extends Component {
       );
     }
     if (!this.state.isLoaded) {
-      return <LoadingScreen />;
+      return (
+        <Fragment>
+          {this.helmetInfo()}
+          <LoadingScreen />
+        </Fragment>
+      );
     }
     return (
       <div className="row">
-        <Helmet>
-          <title>{t("Trades")} - Stiletto for Last Oasis</title>
-          <meta
-            name="description"
-            content="Publish your trade offers or what you need to make it easy for others to trade with you"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta
-            name="twitter:title"
-            content="Trades - Stiletto for Last Oasis"
-          />
-          <meta
-            name="twitter:description"
-            content="Publish your trade offers or what you need to make it easy for others to trade with you"
-          />
-          <meta
-            name="twitter:image"
-            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
-          />
-          <link
-            rel="canonical"
-            href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
-              "/trades"
-            }
-          />
-        </Helmet>
+        {this.helmetInfo()}
         {this.loggedPart(t)}
         <div className="col-md-12">
           <div className="card mb-3 border-primary">

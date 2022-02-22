@@ -30,7 +30,7 @@ class AuctionTimers extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>{t("Auction Timers")} - Stiletto for Last Oasis</title>
+          <title>Auction Timers - Stiletto for Last Oasis</title>
           <meta name="description" content="Timers for what you need" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta

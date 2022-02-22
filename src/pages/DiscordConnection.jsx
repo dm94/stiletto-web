@@ -73,7 +73,7 @@ class DiscordConnection extends Component {
       return (
         <div className="row">
           <Helmet>
-            <title>{t("Login")} - Stiletto for Last Oasis</title>
+            <title>Discord Login - Stiletto for Last Oasis</title>
             <meta
               name="description"
               content="Link discord with stiletto and use more functions"
@@ -81,7 +81,7 @@ class DiscordConnection extends Component {
             <meta name="twitter:card" content="summary_large_image" />
             <meta
               name="twitter:title"
-              content="Login - Stiletto for Last Oasis"
+              content="Discord Login - Stiletto for Last Oasis"
             />
             <meta
               name="twitter:description"

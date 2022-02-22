@@ -441,6 +441,41 @@ class WalkerList extends Component {
     );
   }
 
+  helmetInfo() {
+    return (
+      <Helmet>
+        <title>Clan Walker List - Stiletto for Last Oasis</title>
+        <meta
+          name="description"
+          content="This is the list of all the walkers of your clan"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Walker List - Stiletto for Last Oasis"
+        />
+        <meta
+          name="twitter:description"
+          content="This is the list of all the walkers of your clan"
+        />
+        <meta
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
+        />
+        <link
+          rel="canonical"
+          href={
+            window.location.protocol
+              .concat("//")
+              .concat(window.location.hostname) +
+            (window.location.port ? ":" + window.location.port : "") +
+            "/walkerlist"
+          }
+        />
+      </Helmet>
+    );
+  }
+
   render() {
     const { t } = this.props;
     if (this.state.error) {
@@ -456,40 +491,16 @@ class WalkerList extends Component {
     }
     if (this.state.clanid != null) {
       if (!this.state.isLoaded) {
-        return <LoadingScreen />;
+        return (
+          <Fragment>
+            {this.helmetInfo()}
+            <LoadingScreen />
+          </Fragment>
+        );
       }
       return (
         <Fragment>
-          <Helmet>
-            <title>{t("Walker List")} - Stiletto for Last Oasis</title>
-            <meta
-              name="description"
-              content="This is the list of all the walkers of your clan"
-            />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta
-              name="twitter:title"
-              content="Walker List - Stiletto for Last Oasis"
-            />
-            <meta
-              name="twitter:description"
-              content="This is the list of all the walkers of your clan"
-            />
-            <meta
-              name="twitter:image"
-              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
-            />
-            <link
-              rel="canonical"
-              href={
-                window.location.protocol
-                  .concat("//")
-                  .concat(window.location.hostname) +
-                (window.location.port ? ":" + window.location.port : "") +
-                "/walkerlist"
-              }
-            />
-          </Helmet>
+          {this.helmetInfo()}
           {this.serverLinkButton(t)}
           <div className="row">
             <div className="col-md-12">

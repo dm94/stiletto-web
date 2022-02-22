@@ -177,7 +177,7 @@ class ClanMaps extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>{t("Map List")} - Stiletto for Last Oasis</title>
+          <title>Interactive Map List - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base."

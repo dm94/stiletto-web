@@ -176,7 +176,7 @@ class QualityCalculator extends Component {
     return (
       <div className="container">
         <Helmet>
-          <title>{t("Quality Calculator")} - Stiletto for Last Oasis</title>
+          <title>Quality Calculator - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="Check what quality you can make something before you spend the materials"

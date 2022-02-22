@@ -318,7 +318,7 @@ class Diplomacy extends Component {
     return (
       <div className="container-fluid">
         <Helmet>
-          <title>{t("Diplomacy")} - Stiletto for Last Oasis</title>
+          <title>Clan Diplomacy - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="View your clan's list of allies, enemies and NAP"
@@ -326,7 +326,7 @@ class Diplomacy extends Component {
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
-            content="Diplomacy - Stiletto for Last Oasis"
+            content="Clan Diplomacy - Stiletto for Last Oasis"
           />
           <meta
             name="twitter:description"

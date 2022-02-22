@@ -471,7 +471,7 @@ class MemberList extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>{t("Members List")} - Stiletto for Last Oasis</title>
+          <title>Clan Member List - Stiletto for Last Oasis</title>
           <meta
             name="description"
             content="This is the list of all the members of your clan"
@@ -479,7 +479,7 @@ class MemberList extends Component {
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
-            content="Members List - Stiletto for Last Oasis"
+            content="Clan Member List - Stiletto for Last Oasis"
           />
           <meta
             name="twitter:description"

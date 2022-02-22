@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
@@ -187,7 +187,12 @@ class TechTree extends Component {
     }
 
     if (!this.state.isLoaded) {
-      return <LoadingScreen></LoadingScreen>;
+      return (
+        <Fragment>
+          {this.helmetInfo()}
+          <LoadingScreen></LoadingScreen>
+        </Fragment>
+      );
     }
 
     const theme = {
@@ -203,32 +208,7 @@ class TechTree extends Component {
 
     return (
       <div className="container-fluid">
-        <Helmet>
-          <title>{t("Tech Tree")} - Stiletto for Last Oasis</title>
-          <meta
-            name="description"
-            content="View and control your clan's technology tree."
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta
-            name="twitter:title"
-            content="Tech Tree - Stiletto for Last Oasis"
-          />
-          <meta
-            name="twitter:description"
-            content="View and control your clan's technology tree."
-          />
-          <link
-            rel="canonical"
-            href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
-              "/tech"
-            }
-          />
-        </Helmet>
+        {this.helmetInfo()}
         <nav className="nav-fill">
           <div className="nav nav-tabs" id="nav-tab" role="tablist">
             <div className="nav-item">
@@ -309,6 +289,37 @@ class TechTree extends Component {
           </div>
         </DoubleScrollbar>
       </div>
+    );
+  }
+
+  helmetInfo() {
+    return (
+      <Helmet>
+        <title>Tech Tree - Stiletto for Last Oasis</title>
+        <meta
+          name="description"
+          content="View and control your clan's technology tree."
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Tech Tree - Stiletto for Last Oasis"
+        />
+        <meta
+          name="twitter:description"
+          content="View and control your clan's technology tree."
+        />
+        <link
+          rel="canonical"
+          href={
+            window.location.protocol
+              .concat("//")
+              .concat(window.location.hostname) +
+            (window.location.port ? ":" + window.location.port : "") +
+            "/tech"
+          }
+        />
+      </Helmet>
     );
   }
 

@@ -5,7 +5,6 @@ import ModalMessage from "../components/ModalMessage";
 import MapLayer from "../components/MapLayer";
 import ResourcesInMapList from "../components/ResourcesInMapList";
 import CreateResourceTab from "../components/CreateResourceTab";
-import { Helmet } from "react-helmet";
 import Axios from "axios";
 import "../css/map-sidebar.min.css";
 import {
@@ -166,34 +165,6 @@ class ResourceMapNoLog extends Component {
     }
     return (
       <div className="row flex-xl-nowrap">
-        <Helmet>
-          <title>{t("Map")} - Stiletto for Last Oasis</title>
-          <meta
-            name="description"
-            content="Map of resources shared through a link"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content="Map - Stiletto for Last Oasis" />
-          <meta
-            name="twitter:description"
-            content="Map of resources shared through a link"
-          />
-          <meta
-            name="twitter:image"
-            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
-          />
-          <link
-            rel="canonical"
-            href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
-              "/map/" +
-              this.state.mapId
-            }
-          />
-        </Helmet>
         <div
           id="map-sidebar"
           className={

@@ -129,30 +129,7 @@ class ClanList extends Component {
     if (this.state.isLoaded) {
       return (
         <div className="table-responsive">
-          <Helmet>
-            <title>{t("Clan List")} - Stiletto for Last Oasis</title>
-            <meta name="description" content="List of clans" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta
-              name="twitter:title"
-              content="Clan List - Stiletto for Last Oasis"
-            />
-            <meta name="twitter:description" content="List of clans" />
-            <meta
-              name="twitter:image"
-              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
-            />
-            <link
-              rel="canonical"
-              href={
-                window.location.protocol
-                  .concat("//")
-                  .concat(window.location.hostname) +
-                (window.location.port ? ":" + window.location.port : "") +
-                "/clanlist"
-              }
-            />
-          </Helmet>
+          {this.helmetInfo()}
           <table className="table table-striped">
             <thead className="thead-light">
               <tr>
@@ -175,8 +152,42 @@ class ClanList extends Component {
         </div>
       );
     } else {
-      return <LoadingScreen />;
+      return (
+        <Fragment>
+          {this.helmetInfo()}
+          <LoadingScreen />
+        </Fragment>
+      );
     }
+  }
+
+  helmetInfo() {
+    return (
+      <Helmet>
+        <title>Clan List - Stiletto for Last Oasis</title>
+        <meta name="description" content="List of clans" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Clan List - Stiletto for Last Oasis"
+        />
+        <meta name="twitter:description" content="List of clans" />
+        <meta
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
+        />
+        <link
+          rel="canonical"
+          href={
+            window.location.protocol
+              .concat("//")
+              .concat(window.location.hostname) +
+            (window.location.port ? ":" + window.location.port : "") +
+            "/clanlist"
+          }
+        />
+      </Helmet>
+    );
   }
 
   render() {

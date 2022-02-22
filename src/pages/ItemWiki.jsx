@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { getItems } from "../services";
@@ -126,32 +126,7 @@ class ItemWiki extends Component {
             : "wood";
         return (
           <div className="container">
-            <Helmet>
-              <title>{name + " - Stiletto for Last Oasis"}</title>
-              <meta
-                name="description"
-                content={"All necessary information for " + name}
-              />
-              <meta name="twitter:card" content="summary_large_image" />
-              <meta
-                name="twitter:title"
-                content={name + " - Stiletto for Last Oasis"}
-              />
-              <meta
-                name="twitter:description"
-                content={"All necessary information for " + name}
-              />
-              <link
-                rel="canonical"
-                href={
-                  window.location.protocol
-                    .concat("//")
-                    .concat(window.location.hostname) +
-                  (window.location.href ? ":" + window.location.port : "") +
-                  window.location.pathname
-                }
-              />
-            </Helmet>
+            {this.helmetInfo(name)}
             <div className="row">
               <div className="col-6">
                 <div className="card border-secondary mb-3">
@@ -234,8 +209,44 @@ class ItemWiki extends Component {
         );
       }
     } else {
-      return <LoadingScreen />;
+      return (
+        <Fragment>
+          {this.helmetInfo("Wiki")}
+          <LoadingScreen />
+        </Fragment>
+      );
     }
+  }
+
+  helmetInfo(name) {
+    return (
+      <Helmet>
+        <title>{name + " - Stiletto for Last Oasis"}</title>
+        <meta
+          name="description"
+          content={"All necessary information for " + name}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={name + " - Stiletto for Last Oasis"}
+        />
+        <meta
+          name="twitter:description"
+          content={"All necessary information for " + name}
+        />
+        <link
+          rel="canonical"
+          href={
+            window.location.protocol
+              .concat("//")
+              .concat(window.location.hostname) +
+            (window.location.href ? ":" + window.location.port : "") +
+            window.location.pathname
+          }
+        />
+      </Helmet>
+    );
   }
 
   showDescription(t) {
