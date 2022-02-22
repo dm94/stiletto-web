@@ -2887,12 +2887,14 @@
             "name": "Feather"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 60
       }
     ],
     "damage": 10,
     "name": "Fire Bomb",
-    "parent": "Slingshot"
+    "parent": "Slingshot",
+    "trade_price": 38
   }, {
     "category": "Ammo",
     "cost": {
@@ -3088,11 +3090,13 @@
             "name": "Nomad Cloth"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 75
       }
     ],
     "name": "Aloe Goo Bomb",
-    "parent": "Slingshot"
+    "parent": "Slingshot",
+    "trade_price": 40.5
   }, {
     "category": "Ammo",
     "cost": {
@@ -3111,7 +3115,8 @@
             "name": "Bone Splinter"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 90
       }
     ],
     "name": "Chalk Bomb",
@@ -3141,12 +3146,14 @@
             "name": "Tar"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 75
       }
     ],
     "damage": 20,
     "name": "Cluster Bomb",
-    "parent": "Slingshot"
+    "parent": "Slingshot",
+    "trade_price": 84.7
   }, {
     "category": "Ammo",
     "cost": {
@@ -3165,12 +3172,14 @@
             "name": "Mushroom Flesh"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 75
       }
     ],
     "damage": 20,
     "name": "Green Death Bomb",
-    "parent": "Slingshot"
+    "parent": "Slingshot",
+    "trade_price": 36
   }, {
     "category": "Ammo",
     "cost": {
@@ -3192,12 +3201,14 @@
             "name": "Insects"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 75
       }
     ],
     "damage": 20,
     "name": "Insect Bomb",
-    "parent": "Slingshot"
+    "parent": "Slingshot",
+    "trade_price": 24.2
   }, {
     "category": "Ammo",
     "crafting": [{
@@ -3246,12 +3257,14 @@
             "name": "Sulfur"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 120
       }
     ],
     "damage": 20,
     "name": "Sulfur Bomb",
-    "parent": "Green Death Bomb"
+    "parent": "Green Death Bomb",
+    "trade_price": 52.2
   }, {
     "category": "Armors",
     "cost": {
@@ -4539,11 +4552,13 @@
             "name": "Worm Fang"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 100
       }
     ],
     "name": "Worm Tincture",
-    "parent": "Fury Fumes"
+    "parent": "Fury Fumes",
+    "trade_price": 1200
   }, {
     "category": "Drugs",
     "cost": {
@@ -4562,11 +4577,13 @@
             "name": "Ceramic Shard"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 135
       }
     ],
     "name": "Bonebreaker",
-    "parent": "Fury Fumes"
+    "parent": "Fury Fumes",
+    "trade_price": 151.4
   }, {
     "category": "Drugs",
     "cost": {
@@ -4582,7 +4599,8 @@
             "name": "Purified Water"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 135
       }
     ],
     "name": "Desert Mule",
@@ -4605,7 +4623,8 @@
             "name": "Glass"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 60
       }
     ],
     "name": "Fury Fumes",
@@ -4629,7 +4648,8 @@
             "name": "Glass"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 60
       }
     ],
     "name": "Jojo Mojo",
@@ -4656,7 +4676,8 @@
             "name": "Glass"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 60
       }
     ],
     "name": "Race Dust",
@@ -4683,7 +4704,8 @@
             "name": "Glass"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 60
       }
     ],
     "name": "Rupu Repellent",
@@ -4710,7 +4732,8 @@
             "name": "Glass"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 60
       }
     ],
     "name": "Sinus Destroyer",
@@ -4730,7 +4753,8 @@
             "name": "Purified Water"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 30
       }
     ],
     "name": "Vision Powder",
@@ -5536,7 +5560,7 @@
             "count": 25,
             "name": "Earth Wax"
           }, {
-            "count": 8,
+            "count": 4,
             "name": "Bone Glue"
           }
         ]
@@ -6096,7 +6120,7 @@
     ],
     "name": "Nibiran Ingot"
   }, {
-    "category": "material/explosive",
+    "category": "Resources",
     "crafting": [{
         "ingredients": [{
             "count": 17,
@@ -6109,7 +6133,8 @@
             "name": "Purified Water"
           }
         ],
-        "station": "Obsidian Machine"
+        "station": "Obsidian Machine",
+        "time": 90
       }
     ],
     "name": "Lava Fuel"
@@ -6132,7 +6157,7 @@
           }
         ],
         "station": "FuelBurning",
-        "crafting_time": 21
+        "time": 21
       }, {
         "ingredients": [{
             "count": 5,
@@ -6140,7 +6165,7 @@
           }
         ],
         "station": "FuelBurning",
-        "crafting_time": 4
+        "time": 4
       }, {
         "ingredients": [{
             "count": 1,
@@ -6148,7 +6173,7 @@
           }
         ],
         "station": "FuelLightSource",
-        "crafting_time": 72
+        "time": 72
       }, {
         "ingredients": [{
             "count": 5,
@@ -6156,7 +6181,7 @@
           }
         ],
         "station": "FuelLightSource",
-        "crafting_time": 12
+        "time": 12
       }
     ],
     "name": "Ash",
@@ -6393,7 +6418,7 @@
           }
         ],
         "station": "Woodworking",
-        "crafting_time": 30
+        "time": 30
       }, {
         "ingredients": [{
             "count": 1,
@@ -6404,7 +6429,7 @@
           }
         ],
         "station": "Advanced Woodworking Station",
-        "crafting_time": 15
+        "time": 15
       }, {
         "ingredients": [{
             "count": 1,
@@ -6415,7 +6440,7 @@
           }
         ],
         "station": "Artificer Woodworking Station",
-        "crafting_time": 5
+        "time": 5
       }
     ],
     "name": "Fragment",
@@ -6547,7 +6572,8 @@
       }
     ],
     "name": "Nomad Cloth",
-    "parent": "Advanced Fiberworking Station"
+    "parent": "Advanced Fiberworking Station",
+    "trade_price": 28
   }, {
     "category": "Resources",
     "name": "Obsidian"
@@ -6576,7 +6602,7 @@
         ],
         "output": 2,
         "station": "Campfire",
-        "crafting_time": 3
+        "time": 3
       }, {
         "ingredients": [{
             "count": 1,
@@ -6585,7 +6611,7 @@
         ],
         "output": 15,
         "station": "Stomping",
-        "crafting_time": 120
+        "time": 120
       }, {
         "ingredients": [{
             "count": 1,
@@ -6594,7 +6620,7 @@
         ],
         "output": 2,
         "station": "Stomping",
-        "crafting_time": 16
+        "time": 16
       }, {
         "ingredients": [{
             "count": 1,
@@ -6603,7 +6629,7 @@
         ],
         "output": 10,
         "station": "Stomping",
-        "crafting_time": 100
+        "time": 100
       }, {
         "ingredients": [{
             "count": 4,
@@ -6611,7 +6637,7 @@
           }
         ],
         "station": "Campfire",
-        "crafting_time": 3
+        "time": 3
       }, {
         "ingredients": [{
             "count": 1,
@@ -6620,7 +6646,7 @@
         ],
         "output": 3,
         "station": "Stomping Station",
-        "crafting_time": 24
+        "time": 24
       }, {
         "ingredients": [{
             "count": 200,
@@ -6635,7 +6661,7 @@
         ],
         "output": 200,
         "station": "Purification Station",
-        "crafting_time": 600
+        "time": 600
       }, {
         "ingredients": [{
             "count": 1,
@@ -6644,7 +6670,7 @@
         ],
         "output": 12,
         "station": "Stomping Station",
-        "crafting_time": 96
+        "time": 96
       }, {
         "ingredients": [{
             "count": 20,
@@ -6656,7 +6682,7 @@
         ],
         "output": 20,
         "station": "Campfire",
-        "crafting_time": 120
+        "time": 120
       }, {
         "ingredients": [{
             "count": 3,
@@ -6664,7 +6690,7 @@
           }
         ],
         "station": "Stomping Station",
-        "crafting_time": 8
+        "time": 8
       }, {
         "ingredients": [{
             "count": 1,
@@ -6673,7 +6699,7 @@
         ],
         "output": 3,
         "station": "Stomping Station",
-        "crafting_time": 40
+        "time": 40
       }, {
         "ingredients": [{
             "count": 5,
@@ -6682,7 +6708,7 @@
         ],
         "output": 5,
         "station": "Campfire",
-        "crafting_time": 120
+        "time": 120
       }
     ],
     "name": "Purified Water",
@@ -6808,7 +6834,7 @@
         ],
         "output": 100,
         "station": "Soil Excavator",
-        "crafting_time": 29
+        "time": 29
       }, {
         "ingredients": [{
             "count": 1,
@@ -6817,7 +6843,7 @@
         ],
         "output": 10,
         "station": "Stomping Station",
-        "crafting_time": 5
+        "time": 5
       }
     ],
     "name": "Sand"
@@ -6867,10 +6893,12 @@
             "name": "Earth Wax"
           }
         ],
-        "station": "Furnace"
+        "station": "Furnace",
+        "time": 1320
       }
     ],
-    "name": "Tar"
+    "name": "Tar",
+    "trade_price": 3.2
   }, {
     "category": "Resources",
     "name": "Thornberry"
@@ -6909,7 +6937,7 @@
           }
         ],
         "station": "Woodworking Station",
-        "crafting_time": 40
+        "time": 40
       }, {
         "ingredients": [{
             "count": 1,
@@ -6923,7 +6951,7 @@
           }
         ],
         "station": "Advanced Woodworking Station",
-        "crafting_time": 30
+        "time": 30
       }, {
         "ingredients": [{
             "count": 1,
@@ -6937,7 +6965,7 @@
           }
         ],
         "station": "Artificer Woodworking Station",
-        "crafting_time": 20
+        "time": 20
       }
     ],
     "name": "Walker Mechanism",
@@ -6961,7 +6989,7 @@
           }
         ],
         "station": "Woodworking Station",
-        "crafting_time": 5
+        "time": 5
       }, {
         "ingredients": [{
             "count": 5,
@@ -6972,7 +7000,7 @@
           }
         ],
         "station": "Advanced Woodworking Station",
-        "crafting_time": 2.5
+        "time": 2.5
       }, {
         "ingredients": [{
             "count": 5,
@@ -6983,7 +7011,7 @@
           }
         ],
         "station": "Artificer Woodworking Station",
-        "crafting_time": 1
+        "time": 1
       }
     ],
     "name": "Wood Shaft",
@@ -7001,7 +7029,7 @@
         ],
         "output": 10,
         "station": "Soil Excavator",
-        "crafting_time": 29
+        "time": 29
       }
     ],
     "name": "Worm Sand",
@@ -20141,7 +20169,8 @@
             "name": "Worm Fang"
           }
         ],
-        "station": "Trophy Exchange"
+        "station": "Trophy Exchange",
+        "time": 1
       }, {
         "ingredients": [{
             "count": 10,
@@ -20154,7 +20183,8 @@
             "name": "Meteor Core"
           }
         ],
-        "station": "Advanced Woodworking Station"
+        "station": "Advanced Woodworking Station",
+        "time": 70
       }, {
         "ingredients": [{
             "count": 10,
@@ -20167,7 +20197,8 @@
             "name": "Meteor Core"
           }
         ],
-        "station": "Artificer Woodworking Station"
+        "station": "Artificer Woodworking Station",
+        "time": 30
       }
     ],
     "name": "Random Knowledge Tablet",
