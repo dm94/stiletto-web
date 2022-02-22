@@ -6115,10 +6115,12 @@
             "name": "Nibiran Mineral"
           }
         ],
-        "station": "Advanced Furnace"
+        "station": "Advanced Furnace",
+        "time": 340
       }
     ],
-    "name": "Nibiran Ingot"
+    "name": "Nibiran Ingot",
+    "trade_price": 102.5
   }, {
     "category": "Resources",
     "crafting": [{
@@ -6207,11 +6209,13 @@
             "name": "Purified Water"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 45
       }
     ],
     "name": "Bone Glue",
-    "parent": "Purified Water"
+    "parent": "Purified Water",
+    "trade_price": 1.9
   }, {
     "category": "Resources",
     "crafting": [{
@@ -6220,10 +6224,12 @@
             "name": "Wood Log"
           }
         ],
-        "station": "Lumbermill"
+        "station": "Lumbermill",
+        "time": 60
       }
     ],
-    "name": "Bent Wooden Planks"
+    "name": "Bent Wooden Planks",
+    "trade_price": 0.1
   }, {
     "category": "Resources",
     "name": "Bone Splinter"
@@ -6242,10 +6248,12 @@
           }
         ],
         "output": 0.77,
-        "station": "Furnace"
+        "station": "Furnace",
+        "time": 720
       }
     ],
-    "name": "Ceramic Shard"
+    "name": "Ceramic Shard",
+    "trade_price": 7.2
   }, {
     "category": "Resources",
     "crafting": [{
@@ -6254,7 +6262,8 @@
             "name": "Wood"
           }
         ],
-        "station": "Furnace"
+        "station": "Furnace",
+        "time": 300
       }
     ],
     "name": "Charcoal"
@@ -6277,7 +6286,8 @@
             "name": "Ash"
           }
         ],
-        "station": "Soil Excavator"
+        "station": "Soil Excavator",
+        "time": 8
       }
     ],
     "name": "Clay",
@@ -6300,46 +6310,52 @@
     },
     "crafting": [{
         "ingredients": [{
-            "count": 2,
-            "name": "Purified Water"
-          }, {
             "count": 1,
             "name": "Terrain: Black Soil"
+          }, {
+            "count": 2,
+            "name": "Purified Water"
           }
         ],
-        "station": "Soil Excavator"
+        "station": "Soil Excavator",
+        "time": 16
       }, {
         "ingredients": [{
             "count": 15,
             "name": "Palm Leaves"
           }
         ],
-        "station": "Stomping Station"
-      }, {
-        "ingredients": [{
-            "count": 10,
-            "name": "Mushroom Flesh"
-          }
-        ],
-        "station": "Stomping Station"
+        "station": "Stomping Station",
+        "time": 25
       }, {
         "ingredients": [{
             "count": 10,
             "name": "Rupu Vine"
           }
         ],
-        "station": "Stomping Station"
+        "station": "Stomping Station",
+        "time": 25
       }, {
         "ingredients": [{
             "count": 5,
             "name": "Beeswax"
           }
         ],
-        "station": "Stomping Station"
+        "station": "Stomping Station",
+        "time": 25
+      }, {
+        "ingredients": [{
+            "count": 10,
+            "name": "Mushroom Flesh"
+          }
+        ],
+        "station": "Stomping Station",
+        "time": 25
       }
     ],
     "name": "Earth Wax",
-    "parent": "Soil Excavator"
+    "parent": "Soil Excavator",
+    "trade_price": 1.4
   }, {
     "category": "Resources",
     "name": "Feather"
@@ -6477,10 +6493,12 @@
             "name": "Sand"
           }
         ],
-        "station": "Advanced Furnace"
+        "station": "Advanced Furnace",
+        "time": 1080
       }
     ],
-    "name": "Glass"
+    "name": "Glass",
+    "trade_price": 1.4
   }, {
     "category": "Resources",
     "name": "Hide"
@@ -6498,10 +6516,12 @@
             "name": "Iron Ore"
           }
         ],
-        "station": "Advanced Furnace"
+        "station": "Advanced Furnace",
+        "time": 2100
       }
     ],
-    "name": "Iron Ingot"
+    "name": "Iron Ingot",
+    "trade_price": 12
   }, {
     "category": "Resources",
     "name": "Iron Ore"
@@ -6735,7 +6755,8 @@
           }
         ],
         "output": 5,
-        "station": "Ancient Fabricator"
+        "station": "Ancient Fabricator",
+        "time": 250
       }, {
         "ingredients": [{
             "count": 15,
@@ -6746,7 +6767,8 @@
           }
         ],
         "output": 1,
-        "station": "Artificer Woodworking Station"
+        "station": "Artificer Woodworking Station",
+        "time": 60
       }, {
         "ingredients": [{
             "count": 1,
@@ -6757,7 +6779,8 @@
           }
         ],
         "output": 10,
-        "station": "Lumbermill"
+        "station": "Lumbermill",
+        "time": 450
       }
     ],
     "name": "Reinforced Plank",
@@ -6904,7 +6927,8 @@
     "name": "Thornberry"
   }, {
     "category": "Resources",
-    "name": "Torque"
+    "name": "Torque",
+    "trade_price": 0.1
   }, {
     "category": "Resources",
     "crafting": [{
@@ -6914,10 +6938,12 @@
           }
         ],
         "output": 300,
-        "station": "Lumbermill"
+        "station": "Lumbermill",
+        "time": 60
       }
     ],
-    "name": "Wood"
+    "name": "Wood",
+    "trade_price": 0.1
   }, {
     "category": "Resources",
     "cost": {
@@ -20100,14 +20126,16 @@
             "name": "Sulfur"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 1
       }, {
         "ingredients": [{
             "count": 1,
             "name": "Chitin Plate"
           }
         ],
-        "station": "Campfire"
+        "station": "Campfire",
+        "time": 1
       }
     ],
     "name": "Toxic Remains",
@@ -20120,35 +20148,40 @@
             "name": "Wood"
           }
         ],
-        "station": "Fuel"
+        "station": "Fuel",
+        "time": 2
       }, {
         "ingredients": [{
             "count": 1,
             "name": "Charcoal"
           }
         ],
-        "station": "Fuel"
+        "station": "Fuel",
+        "time": 20
       }, {
         "ingredients": [{
             "count": 1,
             "name": "Liquid Fuel"
           }
         ],
-        "station": "Advanced Furnace"
+        "station": "Advanced Furnace",
+        "time": 60
       }, {
         "ingredients": [{
             "count": 1,
             "name": "Rupu Gel"
           }
         ],
-        "station": "Advanced Furnace"
+        "station": "Advanced Furnace",
+        "time": 100
       }, {
         "ingredients": [{
             "count": 1,
             "name": "Lava Fuel"
           }
         ],
-        "station": "Advanced Furnace"
+        "station": "Advanced Furnace",
+        "time": 80
       }
     ],
     "name": "Fuel",
