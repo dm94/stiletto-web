@@ -848,7 +848,7 @@
     "name": "Small Chest",
     "parent": "Sand Bed"
   }, {
-    "category": "Containers",
+    "category": "Ammo",
     "crafting": [{
         "ingredients": [{
             "count": 6,
@@ -857,7 +857,9 @@
         ]
       }
     ],
-    "name": "Water Pitcher"
+    "damage": 2,
+    "name": "Water Pitcher",
+    "trade_price": 1
   }, {
     "category": "Furniture",
     "cost": {
@@ -2828,7 +2830,9 @@
         ]
       }
     ],
-    "name": "Iron-Tipped Harpoon"
+    "damage": 5,
+    "name": "Iron-Tipped Harpoon",
+    "trade_price": 30.6
   }, {
     "category": "Ammo",
     "cost": {
@@ -2868,7 +2872,9 @@
         ]
       }
     ],
-    "name": "Catapult Boulder"
+    "damage": 700,
+    "name": "Catapult Boulder",
+    "trade_price": 8
   }, {
     "category": "Ammo",
     "cost": {
@@ -2935,10 +2941,13 @@
             "count": 5,
             "name": "Obsidian"
           }
-        ]
+        ],
+        "output": 2
       }
     ],
-    "name": "Bombolt"
+    "damage": 500,
+    "name": "Bombolt",
+    "trade_price": 11.7
   }, {
     "category": "Ammo",
     "crafting": [{
@@ -3016,12 +3025,14 @@
             "count": 6,
             "name": "Lava"
           }
-        ]
+        ],
+        "output": 8
       }
     ],
     "damage": 35,
     "name": "Explosive Dart",
-    "parent": "Repeater"
+    "parent": "Repeater",
+    "trade_price": 49.8
   }, {
     "category": "Ammo",
     "cost": {
@@ -3094,6 +3105,7 @@
         "time": 75
       }
     ],
+    "damage": -5,
     "name": "Aloe Goo Bomb",
     "parent": "Slingshot",
     "trade_price": 40.5
