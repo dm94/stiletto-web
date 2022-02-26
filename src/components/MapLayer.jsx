@@ -55,22 +55,18 @@ class MapLayer extends Component {
     if (state === "prompt") {
       await Notification.requestPermission();
     }
-    state = (await navigator.permissions.query({ name: "notifications" }))
-      .state;
-    if (state !== "granted") {
-      return alert(
-        "You need to grant notifications permission for this demo to work."
-      );
-    }
-    const registration = await navigator.serviceWorker.getRegistration();
-    if (registration) {
-      registration.showNotification(
-        `You can farm the resource ${resource.resourcetype} with Q${resource.quality}`,
-        {
-          tag: resource.resourceid,
-          body: `Scheduled at ${new Date().toLocaleTimeString()}.`,
-        }
-      );
+    if (Notification.permission === "granted") {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then((registration) => {
+          registration.showNotification(
+            `You can farm the resource ${resource.resourcetype} with Q${resource.quality}`,
+            {
+              tag: resource.resourceid,
+              body: `Scheduled at ${new Date().toLocaleTimeString()}.`,
+            }
+          );
+        });
     }
   };
 
