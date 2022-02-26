@@ -49,26 +49,68 @@ class MapLayer extends Component {
   };
 
   addResourceToNotification = async (fullDate, resource) => {
-    let { state } = await navigator.permissions.query({
-      name: "notifications",
-    });
-    if (state === "prompt") {
-      await Notification.requestPermission();
-    }
-    if (Notification.permission === "granted") {
-      navigator.serviceWorker
-        .register("/service-worker.js")
-        .then((registration) => {
-          registration.showNotification(
-            `You can farm the resource ${resource.resourcetype} with Q${resource.quality}`,
-            {
-              tag: resource.resourceid,
-              body: `Scheduled at ${new Date().toLocaleTimeString()}.`,
-            }
-          );
-        });
+    if (this.state.browserNotification) {
+      let { state } = await navigator.permissions.query({
+        name: "notifications",
+      });
+      if (state === "prompt") {
+        await Notification.requestPermission();
+      }
+      if (Notification.permission === "granted") {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((registration) => {
+            registration.showNotification(
+              `You can farm the resource ${resource.resourcetype} with Q${resource.quality}`,
+              {
+                tag: resource.resourceid,
+                // eslint-disable-next-line no-undef
+                showTrigger: new TimestampTrigger(fullDate),
+                data: {
+                  url: window.location.href,
+                },
+                actions: [
+                  {
+                    action: "open",
+                    title: "Open app",
+                  },
+                  {
+                    action: "close",
+                    title: "Close notification",
+                  },
+                ],
+              }
+            );
+          });
+      }
     }
   };
+
+  notificationButton(fullDate, resource) {
+    if ("showTrigger" in Notification.prototype) {
+      return (
+        <button
+          className={
+            this.state.browserNotification
+              ? "float-right btn btn-success btn-sm"
+              : "float-right btn btn-danger btn-sm"
+          }
+          onClick={() => {
+            this.setState({
+              browserNotification: !this.state.browserNotification,
+            });
+            this.addResourceToNotification(fullDate, resource);
+          }}
+        >
+          <i
+            className={
+              this.state.browserNotification ? "fa fa-bell" : "fa fa-bell-slash"
+            }
+          ></i>
+        </button>
+      );
+    }
+  }
 
   getResourceEstimatedQuality(t, resource) {
     const diff = Math.abs(new Date() - new Date(resource.lastharvested));
@@ -117,25 +159,7 @@ class MapLayer extends Component {
             ? t("No respawn yet")
             : Math.floor(estimatedQuality)}
         </div>
-        <button
-          className={
-            this.state.browserNotification
-              ? "float-right btn btn-success btn-sm"
-              : "float-right btn btn-danger btn-sm"
-          }
-          onClick={() => {
-            this.setState({
-              browserNotification: !this.state.browserNotification,
-            });
-            this.addResourceToNotification(fullDate, resource);
-          }}
-        >
-          <i
-            className={
-              this.state.browserNotification ? "fa fa-bell" : "fa fa-bell-slash"
-            }
-          ></i>
-        </button>
+        {this.notificationButton(fullDate, resource)}
         <div className="mb-1">
           {t("Max quality in")}:{" "}
           {remainingQuality !== 0
