@@ -31,6 +31,7 @@ class MapLayer extends Component {
       hasLocation: false,
       gridOpacity: 0,
       poachingHutRadius: 150,
+      browserNotification: false,
     };
   }
 
@@ -45,6 +46,32 @@ class MapLayer extends Component {
     });
 
     return marker;
+  };
+
+  addResourceToNotification = async (fullDate, resource) => {
+    let { state } = await navigator.permissions.query({
+      name: "notifications",
+    });
+    if (state === "prompt") {
+      await Notification.requestPermission();
+    }
+    state = (await navigator.permissions.query({ name: "notifications" }))
+      .state;
+    if (state !== "granted") {
+      return alert(
+        "You need to grant notifications permission for this demo to work."
+      );
+    }
+    const registration = await navigator.serviceWorker.getRegistration();
+    if (registration) {
+      registration.showNotification(
+        `You can farm the resource ${resource.resourcetype} with Q${resource.quality}`,
+        {
+          tag: resource.resourceid,
+          body: `Scheduled at ${new Date().toLocaleTimeString()}.`,
+        }
+      );
+    }
   };
 
   getResourceEstimatedQuality(t, resource) {
@@ -94,6 +121,25 @@ class MapLayer extends Component {
             ? t("No respawn yet")
             : Math.floor(estimatedQuality)}
         </div>
+        <button
+          className={
+            this.state.browserNotification
+              ? "float-right btn btn-success btn-sm"
+              : "float-right btn btn-danger btn-sm"
+          }
+          onClick={() => {
+            this.setState({
+              browserNotification: !this.state.browserNotification,
+            });
+            this.addResourceToNotification(fullDate, resource);
+          }}
+        >
+          <i
+            className={
+              this.state.browserNotification ? "fa fa-bell" : "fa fa-bell-slash"
+            }
+          ></i>
+        </button>
         <div className="mb-1">
           {t("Max quality in")}:{" "}
           {remainingQuality !== 0
