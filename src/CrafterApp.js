@@ -153,6 +153,8 @@ function CrafterApp() {
                         ? "/img/zh.jpg"
                         : localStorage.getItem("i18nextLng").includes("pt")
                         ? "/img/pt.jpg"
+                        : localStorage.getItem("i18nextLng").includes("uk")
+                        ? "/img/uk.jpg"
                         : "/img/en.jpg"
                       : "/img/en.jpg"
                   }
@@ -293,15 +295,24 @@ function CrafterApp() {
                       <img
                         className="img-thumbnail"
                         src="/img/pt.jpg"
-                        alt="Polish language"
+                        alt="Portuguese language"
                         onClick={() => switchLanguage("pt")}
                       />
                       <p>{t("Portuguese, Brazilian")}</p>
                     </div>
+                    <div className="col-3">
+                      <img
+                        className="img-thumbnail"
+                        src="/img/uk.jpg"
+                        alt="Ukrainian language"
+                        onClick={() => switchLanguage("uk")}
+                      />
+                      <p>{t("Ukrainian")}</p>
+                    </div>
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.21.1</p>
+                  <p className="mr-auto">v. 3.22.0</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"

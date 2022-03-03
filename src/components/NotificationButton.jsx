@@ -48,9 +48,9 @@ class NotificationButton extends Component {
             : "float-right btn btn-danger btn-sm"
         }
         onClick={() => {
-          this.setState({
-            browserNotification: !this.state.browserNotification,
-          });
+          this.setState((state) => ({
+            browserNotification: !state.browserNotification,
+          }));
           this.addResourceToNotification();
         }}
         aria-label={t("Schedule a notification")}
