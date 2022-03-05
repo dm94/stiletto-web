@@ -87,12 +87,14 @@ class IngredientQualityInputs extends Component {
             type="button"
             className="btn btn-success"
             onClick={() => {
-              let all = this.state.inputGroups;
-              all.push({
-                id: all.length > 0 ? all[all.length - 1].id + 1 : 1,
-                mats: { quantity: 0, quality: 0 },
+              this.setState((state) => {
+                let all = state.inputGroups;
+                all.push({
+                  id: all.length > 0 ? all[all.length - 1].id + 1 : 1,
+                  mats: { quantity: 0, quality: 0 },
+                });
+                this.setState({ inputGroups: all });
               });
-              this.setState({ inputGroups: all });
             }}
             disabled={this.state.disableAdd}
           >
@@ -106,10 +108,12 @@ class IngredientQualityInputs extends Component {
             className="btn btn-danger"
             onClick={() => {
               if (this.state.inputGroups.length > 0) {
-                let all = this.state.inputGroups;
-                all.pop();
-                this.setState({
-                  inputGroups: all,
+                this.setState((state) => {
+                  let all = state.inputGroups;
+                  all.pop();
+                  this.setState({
+                    inputGroups: all,
+                  });
                 });
               } else {
                 this.setState({
