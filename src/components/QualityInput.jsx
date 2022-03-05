@@ -29,8 +29,8 @@ class QualityInput extends Component {
         <input
           id={"quality" + this.props.input.id}
           type="number"
-          max={100}
-          min={0}
+          max="100"
+          min="0"
           className="form-control"
           placeholder={t("Quality")}
           aria-label={t("Quality")}

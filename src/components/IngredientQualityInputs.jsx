@@ -7,6 +7,7 @@ class IngredientQualityInputs extends Component {
     this.state = {
       inputGroups: [],
       averageQuality: 0,
+      disableAdd: false,
     };
   }
 
@@ -24,6 +25,7 @@ class IngredientQualityInputs extends Component {
     } else {
       mats = { quantity: 0, quality: 0 };
     }
+
     mats[type] = parseInt(val);
     otherMats.push({ id: id, mats: mats });
 
@@ -38,17 +40,14 @@ class IngredientQualityInputs extends Component {
       }
     });
 
-    if (sumQuantity < this.props.ingredient.count) {
-      sumQuantity = this.props.ingredient.count;
-    }
-
     this.setState({
       inputGroups: otherMats,
-      averageQuality: Math.floor(maxQuality / sumQuantity),
+      averageQuality: Math.floor(maxQuality / this.props.ingredient.count),
+      disableAdd: sumQuantity >= this.props.ingredient.count,
     });
     this.props.onChangeAverage(
       this.props.ingredient.name,
-      Math.floor(maxQuality / sumQuantity)
+      Math.floor(maxQuality / this.props.ingredient.count)
     );
   };
 
@@ -93,8 +92,9 @@ class IngredientQualityInputs extends Component {
                 id: all.length > 0 ? all[all.length - 1].id + 1 : 1,
                 mats: { quantity: 0, quality: 0 },
               });
-              this.setState((state) => ({ inputGroups: all }));
+              this.setState({ inputGroups: all });
             }}
+            disabled={this.state.disableAdd}
           >
             +
           </button>
@@ -105,15 +105,19 @@ class IngredientQualityInputs extends Component {
             type="button"
             className="btn btn-danger"
             onClick={() => {
-              let all = this.state.inputGroups;
-              if (all.length > 0) {
-                this.setState({ inputGroups: all.splice(all.length - 1) });
+              if (this.state.inputGroups.length > 0) {
+                let all = this.state.inputGroups;
+                all.pop();
+                this.setState({
+                  inputGroups: all,
+                });
               } else {
                 this.setState({
                   inputGroups: { id: 0, mats: { quantity: 0, quality: 0 } },
                 });
               }
             }}
+            disabled={this.state.inputGroups.length < 2}
           >
             -
           </button>
