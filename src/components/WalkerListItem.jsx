@@ -153,6 +153,7 @@ class WalkerListItem extends Component {
                         <option value="None">{t("None")}</option>
                         <option value="Personal">{t("Personal")}</option>
                         <option value="PVP">{t("PVP")}</option>
+                        <option value="RAM">{t("RAM")}</option>
                         <option value="Farming">{t("Farming")}</option>
                       </select>
                     </div>
