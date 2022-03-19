@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "3.22.4",
+  "version": "3.22.5",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -31,7 +31,7 @@
     "react-leaflet": "^2.8.0",
     "react-router-dom": "^5.2.0",
     "react-router-ga": "^1.2.3",
-    "react-scripts": "^4.0.3",
+    "react-scripts": "^5.0.0",
     "react-tiny-virtual-list": "^2.2.0",
     "workbox": "0.0.0",
     "workbox-core": "^6.1.5",
@@ -44,7 +44,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -60,5 +61,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "cypress": "^9.5.2"
   }
 }

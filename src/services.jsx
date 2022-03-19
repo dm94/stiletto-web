@@ -381,8 +381,6 @@ export const getResources = async (mapId, mapPass) => {
     method: "get",
     url: process.env.REACT_APP_API_URL + "/maps/" + mapId + "/resources",
     params: {
-      discordid: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
       mappass: mapPass,
     },
     headers: {
@@ -424,8 +422,6 @@ export const createResource = async (
     method: "post",
     url: process.env.REACT_APP_API_URL + "/maps/" + mapId + "/resources",
     params: {
-      discordid: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
       mapid: mapId,
       resourcetype: resourceTypeInput,
       quality: qualityInput,

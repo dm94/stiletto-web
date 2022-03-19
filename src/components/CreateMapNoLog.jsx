@@ -27,8 +27,6 @@ class CreateMapNoLog extends Component {
       method: "post",
       url: process.env.REACT_APP_API_URL + "/maps",
       params: {
-        discordid: localStorage.getItem("discordid"),
-        token: localStorage.getItem("token"),
         mapname: mapNameInput,
         mapdate: mapDateInput,
         maptype: mapSelectInput + "_new",
