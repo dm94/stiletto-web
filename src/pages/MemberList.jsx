@@ -449,7 +449,13 @@ class MemberList extends Component {
           }}
         />
       );
-    } else if (this.state.clanid == null) {
+    }
+
+    if (!this.state.isLoaded) {
+      return <LoadingScreen />;
+    }
+
+    if (this.state.clanid == null) {
       return (
         <ModalMessage
           message={{
@@ -459,10 +465,6 @@ class MemberList extends Component {
           }}
         />
       );
-    }
-
-    if (!this.state.isLoaded) {
-      return <LoadingScreen />;
     }
 
     let showHideClassName = this.state.showRequestModal

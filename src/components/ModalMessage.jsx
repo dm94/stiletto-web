@@ -40,6 +40,9 @@ class ModalMessage extends Component {
     if (this.state.redirect) {
       return <Redirect to={this.props.message.redirectPage} />;
     }
+
+    console.log(t(this.props.message.text));
+
     return (
       <div className="modal d-block">
         <div className="modal-dialog">

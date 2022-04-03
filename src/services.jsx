@@ -3,16 +3,40 @@ import Axios from "axios";
 const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
 
-export const getUserProfile = async () => {
-  const profile = localStorage.getItem("profile");
-  const lastCheck = localStorage.getItem("profile-lastCheck");
+export const getCachedData = (name, time = timeCheck) => {
+  if (name == null) {
+    return null;
+  }
+
+  const data = localStorage.getItem("name");
+  const lastDataCheck = localStorage.getItem(name + "-lastCheck");
 
   if (
-    profile != null &&
-    lastCheck != null &&
-    lastCheck >= Date.now() - timeCheck
+    data != null &&
+    lastDataCheck != null &&
+    lastDataCheck >= Date.now() - time
   ) {
-    return { success: true, message: JSON.parse(profile) };
+    return JSON.parse(data);
+  }
+  return null;
+};
+
+export const addCachedData = (name, data) => {
+  if (name == null || data == null) {
+    return;
+  }
+
+  if (localStorage.getItem("acceptscookies")) {
+    localStorage.setItem(name, JSON.stringify(data));
+    localStorage.setItem(name + "-lastCheck", Date.now());
+  }
+};
+
+export const getUserProfile = async () => {
+  const cachedData = getCachedData("profile");
+
+  if (cachedData != null) {
+    return { success: true, message: cachedData };
   } else if (localStorage.getItem("token")) {
     const options = {
       method: "get",
@@ -27,10 +51,7 @@ export const getUserProfile = async () => {
       if (response.status === 200) {
         if (response.data != null) {
           localStorage.setItem("discordid", response.data.discordid);
-          if (localStorage.getItem("acceptscookies")) {
-            localStorage.setItem("profile", JSON.stringify(response.data));
-            localStorage.setItem("profile-lastCheck", Date.now());
-          }
+          addCachedData("profile", response.data);
           return { success: true, message: response.data };
         }
         return { success: true, message: "" };
@@ -70,15 +91,10 @@ export const getHasPermissions = async (type) => {
 };
 
 export const getOurPermssions = async () => {
-  const permissions = localStorage.getItem("permissions");
-  const lastCheck = localStorage.getItem("permissions-lastCheck");
+  const cachedData = getCachedData("permissions");
 
-  if (
-    permissions != null &&
-    lastCheck != null &&
-    lastCheck >= Date.now() - timeCheck
-  ) {
-    return { success: true, message: JSON.parse(permissions) };
+  if (cachedData != null) {
+    return { success: true, message: cachedData };
   } else {
     const profile = localStorage.getItem("profile");
     let clanid = null;
@@ -96,13 +112,7 @@ export const getOurPermssions = async () => {
     if (clanid != null && discordid != null) {
       let response = await getUserPermssions(clanid, discordid);
       if (response != null && response.success) {
-        if (
-          response.message != null &&
-          localStorage.getItem("acceptscookies")
-        ) {
-          localStorage.setItem("permissions", JSON.stringify(response.message));
-          localStorage.setItem("permissions-lastCheck", Date.now());
-        }
+        addCachedData("permissions", response.message);
         return {
           success: true,
           message: response.message,
@@ -167,15 +177,10 @@ export const getUserPermssions = async (clanid, discordid) => {
 };
 
 export const getClanInfo = async () => {
-  const clanData = localStorage.getItem("clanInfo");
-  const lastCheck = localStorage.getItem("clanInfo-lastCheck");
+  const cachedData = getCachedData("clanInfo", smallCacheTimeCheck);
 
-  if (
-    clanData != null &&
-    lastCheck != null &&
-    lastCheck >= Date.now() - smallCacheTimeCheck
-  ) {
-    return { success: true, message: JSON.parse(clanData) };
+  if (cachedData != null) {
+    return { success: true, message: cachedData };
   } else {
     const profile = localStorage.getItem("profile");
     let clanid = null;
@@ -183,7 +188,7 @@ export const getClanInfo = async () => {
       let data = JSON.parse(profile);
       clanid = data.clanid;
     } else {
-      let data = this.getUserProfile();
+      let data = await getUserProfile();
       clanid = data.message.clanid;
     }
 
@@ -198,10 +203,7 @@ export const getClanInfo = async () => {
       const response = await request(options);
       if (response != null) {
         if (response.status === 200) {
-          if (response.data != null && localStorage.getItem("acceptscookies")) {
-            localStorage.setItem("clanInfo", JSON.stringify(response.data));
-            localStorage.setItem("clanInfo-lastCheck", Date.now());
-          }
+          addCachedData("clanInfo", response.data);
           return { success: true, message: response.data };
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
@@ -231,15 +233,10 @@ export const getClanInfo = async () => {
 };
 
 export const getMembers = async () => {
-  const members = localStorage.getItem("memberList");
-  const lastCheck = localStorage.getItem("memberList-lastCheck");
+  const cachedData = getCachedData("memberList");
 
-  if (
-    members != null &&
-    lastCheck != null &&
-    lastCheck >= Date.now() - timeCheck
-  ) {
-    return { success: true, message: JSON.parse(members) };
+  if (cachedData != null) {
+    return { success: true, message: cachedData };
   } else {
     const profile = localStorage.getItem("profile");
     let clanid = null;
@@ -247,7 +244,7 @@ export const getMembers = async () => {
       let data = JSON.parse(profile);
       clanid = data.clanid;
     } else {
-      let data = this.getUserProfile();
+      let data = await getUserProfile();
       clanid = data.message.clanid;
     }
 
@@ -262,10 +259,7 @@ export const getMembers = async () => {
       const response = await request(options);
       if (response != null) {
         if (response.status === 202) {
-          if (response.data != null && localStorage.getItem("acceptscookies")) {
-            localStorage.setItem("memberList", JSON.stringify(response.data));
-            localStorage.setItem("memberList-lastCheck", Date.now());
-          }
+          addCachedData("memberList", response.data);
           return { success: true, message: response.data };
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
@@ -315,15 +309,10 @@ export const updateResourceTime = (mapId, resoruceId, token, date) => {
 };
 
 export const getItems = async () => {
-  const items = localStorage.getItem("allItems");
-  const lastCheck = localStorage.getItem("items-lastCheck");
+  const cachedData = getCachedData("allItems", 86400000);
 
-  if (
-    items != null &&
-    lastCheck != null &&
-    lastCheck >= Date.now() - 86400000
-  ) {
-    return JSON.parse(items);
+  if (cachedData != null) {
+    return cachedData;
   } else {
     const options = {
       method: "get",
@@ -332,9 +321,7 @@ export const getItems = async () => {
 
     const response = await request(options);
     if (response != null && response.data != null) {
-      if (localStorage.getItem("acceptscookies")) {
-        localStorage.setItem("allItems", JSON.stringify(response.data));
-      }
+      addCachedData("allItems", response.data);
       return response.data;
     } else {
       return null;
@@ -343,36 +330,44 @@ export const getItems = async () => {
 };
 
 export const getMarkers = async () => {
-  const options = {
-    method: "get",
-    url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.min.json",
-  };
+  const cachedData = getCachedData("markers", 86400000);
 
-  const response = await request(options);
-  if (response != null && response.data != null) {
-    if (localStorage.getItem("acceptscookies")) {
-      localStorage.setItem("allItems", JSON.stringify(response.data));
-    }
-    return response.data;
+  if (cachedData != null) {
+    return cachedData;
   } else {
-    return null;
+    const options = {
+      method: "get",
+      url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.min.json",
+    };
+
+    const response = await request(options);
+    if (response != null && response.data != null) {
+      addCachedData("markers", response.data);
+      return response.data;
+    } else {
+      return null;
+    }
   }
 };
 
 export const getMaps = async () => {
-  const options = {
-    method: "get",
-    url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.min.json",
-  };
+  const cachedData = getCachedData("maps", 86400000);
 
-  const response = await request(options);
-  if (response != null && response.data != null) {
-    if (localStorage.getItem("acceptscookies")) {
-      localStorage.setItem("allItems", JSON.stringify(response.data));
-    }
-    return response.data;
+  if (cachedData != null) {
+    return cachedData;
   } else {
-    return null;
+    const options = {
+      method: "get",
+      url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.min.json",
+    };
+
+    const response = await request(options);
+    if (response != null && response.data != null) {
+      addCachedData("maps", response.data);
+      return response.data;
+    } else {
+      return null;
+    }
   }
 };
 
@@ -437,13 +432,8 @@ export const createResource = async (
 };
 
 export const closeSession = () => {
-  localStorage.removeItem("discordid");
-  localStorage.removeItem("token");
-  localStorage.removeItem("profile-lastCheck");
-  localStorage.removeItem("profile");
-  localStorage.removeItem("memberList");
-  localStorage.removeItem("clanInfo");
-  localStorage.removeItem("clanInfo-lastCheck");
+  localStorage.clear();
+  window.location.reload();
 };
 
 export const apiRequest = async (options) => {
@@ -452,10 +442,6 @@ export const apiRequest = async (options) => {
   if (response != null) {
     switch (response.status) {
       case 200:
-        return {
-          success: true,
-          message: response.data,
-        };
       case 202:
         return {
           success: true,
@@ -467,6 +453,7 @@ export const apiRequest = async (options) => {
           message: "",
         };
       case 401:
+      case 405:
         return {
           success: false,
           message: "You do not have permissions",
