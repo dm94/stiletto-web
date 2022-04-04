@@ -91,7 +91,7 @@ function CrafterApp() {
                     itemProp="url"
                     className="nav-link"
                     to={
-                      localStorage.getItem("profile") != null ? "/maps" : "/map"
+                      localStorage.getItem("token") != null ? "/maps" : "/map"
                     }
                   >
                     <span itemProp="name">{t("Resource Maps")}</span>
