@@ -103,7 +103,7 @@ class DiscordConnection extends Component {
               }
             />
           </Helmet>
-          <div className="col-6 mx-auto">
+          <div className="col-12 col-md-6 mx-auto">
             <div className="card border-secondary mb-3">
               <div className="card-body text-succes">
                 <a
