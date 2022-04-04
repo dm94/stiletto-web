@@ -47,6 +47,13 @@ function CrafterApp() {
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
               <span>Stiletto</span>.live
+              <img
+                width="35"
+                height="35"
+                alt="Stiletto.live"
+                className="align-top"
+                src="/img/icon-01.png"
+              />
             </Link>
             <button
               className="navbar-toggler"
@@ -312,7 +319,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.22.6</p>
+                  <p className="mr-auto">v. 3.22.7</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"

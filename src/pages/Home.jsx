@@ -41,11 +41,6 @@ class Home extends Component {
           />
         </Helmet>
         <div className="row mb-4">
-          <div className="col-12 p-3">
-            <h1 className="lo-title text-center">
-              {t("Stiletto the best website for Last Oasis")}
-            </h1>
-          </div>
           <div className="col-12 col-xl-4">
             <h2
               className="lo-title"
