@@ -124,6 +124,11 @@ class ItemWiki extends Component {
               "/item/" +
               encodeURI(parent.toLowerCase())
             : "wood";
+        let craftUrl =
+          host +
+          (window.location.port ? ":" + window.location.port : "") +
+          "/crafter?craft=" +
+          encodeURI(name.toLowerCase());
         return (
           <div className="container">
             {this.helmetInfo(name)}
@@ -177,7 +182,12 @@ class ItemWiki extends Component {
               </div>
               <div className="col-6">
                 <div className="card border-secondary mb-3">
-                  <div className="card-header">{t("Recipe")}</div>
+                  <div className="card-header">
+                    {t("Recipe")}{" "}
+                    <a href={craftUrl} className="float-right">
+                      <i className="fas fa-tools"></i>
+                    </a>
+                  </div>
                   <div className="card-body">
                     <div className="row">
                       {this.showIngredient(this.state.item)}

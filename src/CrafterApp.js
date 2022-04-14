@@ -129,6 +129,11 @@ function CrafterApp() {
                     <span itemProp="name"> {t("Tech Tree")}</span>
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link itemProp="url" className="nav-link" to="/wiki">
+                    <span itemProp="name"> {t("Wiki")}</span>
+                  </Link>
+                </li>
               </ul>
               <button
                 className="btn btn-sm mr-2"
@@ -319,7 +324,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.22.7</p>
+                  <p className="mr-auto">v. 3.23.0</p>
                   <button
                     className={
                       localStorage.getItem("darkmode") !== "true"

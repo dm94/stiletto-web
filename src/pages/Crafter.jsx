@@ -52,23 +52,36 @@ class Crafter extends Component {
         .catch(() => {
           this.setState({ error: "Error when connecting to the API" });
         });
+    } else {
+      let itemName = parsed.craft;
+
+      if (itemName != null && itemName.length > 0) {
+        itemName = decodeURI(itemName);
+        itemName = itemName.toLowerCase();
+        this.setState({ searchText: itemName });
+        this.updateSearch(itemName);
+      }
     }
   };
 
   handleInputChangeSearchItem = (event) => {
-    const { t } = this.props;
     if (event != null) {
       const searchText = event.currentTarget.value;
-      const filteredItems = this.state.items.filter((it) => {
-        return searchText.split(" ").every((internalItem) => {
-          return (
-            t(it.name).toLowerCase().indexOf(internalItem.toLowerCase()) !== -1
-          );
-        });
-      });
       this.setState({ searchText });
-      this.setState({ filteredItems });
+      this.updateSearch(searchText);
     }
+  };
+
+  updateSearch = (searchText) => {
+    const { t } = this.props;
+    const filteredItems = this.state.items.filter((it) => {
+      return searchText.split(" ").every((internalItem) => {
+        return (
+          t(it.name).toLowerCase().indexOf(internalItem.toLowerCase()) !== -1
+        );
+      });
+    });
+    this.setState({ filteredItems });
   };
 
   showAllItems() {
