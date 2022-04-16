@@ -37,7 +37,7 @@ class ClanList extends Component {
     this.setState({ isLoaded: false, page: page });
     Axios.get(process.env.REACT_APP_API_URL + "/clans", {
       params: {
-        pageSize: 10,
+        pageSize: 20,
         page: page,
         name: this.state.searchInput.length > 0 ? this.state.searchInput : null,
         region:
