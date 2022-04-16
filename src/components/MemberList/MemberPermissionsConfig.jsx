@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
-import { closeSession, getUserPermssions } from "../services";
+import { closeSession, getUserPermssions } from "../../services";
 
 class MemberPermissionsConfig extends Component {
   constructor(props) {

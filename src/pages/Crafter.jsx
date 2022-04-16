@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import Items from "../components/Items";
-import SelectedItem from "../components/SelectedItem";
-import TotalMaterials from "../components/TotalMaterials";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import ModalMessage from "../components/ModalMessage";
 import { getItems } from "../services";
+import ModalMessage from "../components/ModalMessage";
+import Items from "../components/Crafter/Items";
+import SelectedItem from "../components/Crafter/SelectedItem";
+import TotalMaterials from "../components/Crafter/TotalMaterials";
 const queryString = require("query-string");
 
 class Crafter extends Component {

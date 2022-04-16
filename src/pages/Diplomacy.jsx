@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import ModalMessage from "../components/ModalMessage";
-import ClanSelect from "../components/ClanSelect";
-import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { getUserProfile, getHasPermissions } from "../services";
-
+import LoadingScreen from "../components/LoadingScreen";
+import ClanSelect from "../components/Diplomacy/ClanSelect";
 class Diplomacy extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +31,7 @@ class Diplomacy extends Component {
         isLeader: response.message.discordid === response.message.leaderid,
       });
     } else {
-      this.setState({ error: response.message, isLoaded: true });
+      this.setState({ error: response.message });
     }
 
     Axios.get(
@@ -290,6 +289,9 @@ class Diplomacy extends Component {
 
   render() {
     const { t } = this.props;
+    if (!this.state.isLoaded) {
+      return <LoadingScreen />;
+    }
     if (this.state.error) {
       return (
         <ModalMessage
@@ -310,9 +312,6 @@ class Diplomacy extends Component {
           }}
         />
       );
-    }
-    if (!this.state.isLoaded) {
-      return <LoadingScreen />;
     }
 
     return (

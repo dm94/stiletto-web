@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ClanName from "./ClanName";
+import ClanName from "../ClanName";
 
 class ClanSelect extends Component {
   constructor(props) {

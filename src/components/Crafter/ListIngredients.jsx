@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Ingredient from "./Ingredient";
+import Ingredient from "../Ingredient";
 
 class ListIngredients extends Component {
   render() {

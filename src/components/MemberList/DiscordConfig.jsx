@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
-import { closeSession } from "../services";
+import { closeSession } from "../../services";
 
 class DiscordConfig extends Component {
   state = {

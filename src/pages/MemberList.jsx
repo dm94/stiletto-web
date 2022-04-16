@@ -1,16 +1,21 @@
 import React, { Component } from "react";
-import ModalMessage from "../components/ModalMessage";
-import LoadingScreen from "../components/LoadingScreen";
-import MemberListItem from "../components/MemberListItem";
-import RequestMemberListItem from "../components/RequestMemberListItem";
-import { getMembers } from "../services";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getUserProfile, closeSession, getHasPermissions } from "../services";
-import DiscordConfig from "../components/DiscordConfig";
+
+import {
+  getUserProfile,
+  closeSession,
+  getHasPermissions,
+  getMembers,
+} from "../services";
+import ModalMessage from "../components/ModalMessage";
+import LoadingScreen from "../components/LoadingScreen";
 import ClanConfig from "../components/ClanConfig";
-import MemberPermissionsConfig from "../components/MemberPermissionsConfig";
+import MemberListItem from "../components/MemberList/MemberListItem";
+import RequestMemberListItem from "../components/MemberList/RequestMemberListItem";
+import DiscordConfig from "../components/MemberList/DiscordConfig";
+import MemberPermissionsConfig from "../components/MemberList/MemberPermissionsConfig";
 
 class MemberList extends Component {
   constructor(props) {

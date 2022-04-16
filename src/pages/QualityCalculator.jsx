@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Icon from "../components/Icon";
 import { getItems } from "../services";
+import Icon from "../components/Icon";
 import Ingredient from "../components/Ingredient";
 import IngredientQualityInputs from "../components/QualityCalculator/IngredientQualityInputs";
 class QualityCalculator extends Component {

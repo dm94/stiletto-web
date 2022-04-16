@@ -3,12 +3,12 @@ import { withTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import LoadingScreen from "./LoadingScreen";
 import { Link, Redirect } from "react-router-dom";
-import ModalMessage from "./ModalMessage";
-import { getUserProfile, closeSession } from "../services";
-import Icon from "./Icon";
-import ClanConfig from "../components/ClanConfig";
+import { getUserProfile, closeSession } from "../../services";
+import LoadingScreen from "../LoadingScreen";
+import ModalMessage from "../ModalMessage";
+import Icon from "../Icon";
+import ClanConfig from "../ClanConfig";
 
 class PrivateProfile extends Component {
   constructor(props) {

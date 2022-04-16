@@ -16,7 +16,7 @@ import Map from "./pages/Map";
 import TechTree from "./pages/TechTree";
 import QualityCalculator from "./pages/QualityCalculator";
 import Privacy from "./pages/Privacy";
-import ResourceMapNoLog from "./components/ResourceMapNoLog";
+import ResourceMapNoLog from "./components/ClanMaps/ResourceMapNoLog";
 import ItemWiki from "./pages/ItemWiki";
 import Wiki from "./pages/Wiki";
 

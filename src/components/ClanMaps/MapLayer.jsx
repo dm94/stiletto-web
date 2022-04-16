@@ -8,10 +8,10 @@ import {
   ImageOverlay,
   Circle,
 } from "react-leaflet";
+import { withTranslation } from "react-i18next";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
-import { withTranslation } from "react-i18next";
-import Icon from "./Icon";
+import Icon from "../Icon";
 import NotificationButton from "./NotificationButton";
 
 let myMarker = L.icon({

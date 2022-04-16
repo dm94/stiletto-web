@@ -3,12 +3,12 @@ import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import Axios from "axios";
+import { getItems, getUserProfile, closeSession } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
-import SkillTreeTab from "../components/SkillTreeTab";
-import { getItems, getUserProfile, closeSession } from "../services";
-import DoubleScrollbar from "../components/DoubleScrollbar";
 import Icon from "../components/Icon";
+import SkillTreeTab from "../components/TechTree/SkillTreeTab";
+import DoubleScrollbar from "../components/TechTree/DoubleScrollbar";
 
 class TechTree extends Component {
   constructor(props) {

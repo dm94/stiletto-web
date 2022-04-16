@@ -2,11 +2,11 @@ import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import { getItems } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
-import Trade from "../components/Trade";
-import { getItems } from "../services";
 import Pagination from "../components/Pagination";
+import Trade from "../components/TradeSystem/Trade";
 
 class TradeSystem extends Component {
   constructor(props) {

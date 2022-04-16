@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import Icon from "./Icon";
+import Icon from "../Icon";
 
 class Trade extends Component {
   constructor(props) {

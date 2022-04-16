@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import Axios from "axios";
 import { getItems } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import Ingredients from "../components/Ingredients";
@@ -9,7 +10,6 @@ import Station from "../components/Station";
 import Icon from "../components/Icon";
 import CraftingTime from "../components/CraftingTime";
 import LoadingScreen from "../components/LoadingScreen";
-import Axios from "axios";
 
 class ItemWiki extends Component {
   constructor(props) {

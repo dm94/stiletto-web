@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
-import CreateMapNoLog from "../components/CreateMapNoLog";
-import ResourceMapNoLog from "../components/ResourceMapNoLog";
 import { Helmet } from "react-helmet";
+import CreateMapNoLog from "../components/ClanMaps/CreateMapNoLog";
+import ResourceMapNoLog from "../components/ClanMaps/ResourceMapNoLog";
 const queryString = require("query-string");
 
 class Map extends Component {

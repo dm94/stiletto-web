@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Timer from "../components/Timer";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import Timer from "../components/AuctionTimers/Timer";
 
 class AuctionTimers extends Component {
   state = {

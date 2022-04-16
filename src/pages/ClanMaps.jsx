@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import ModalMessage from "../components/ModalMessage";
-import ClanMapItem from "../components/ClanMapItem";
-import ResourceMap from "../components/ResourceMap";
-import CreateMapPanel from "../components/CreateMapPanel";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { closeSession, getMaps } from "../services";
+import ModalMessage from "../components/ModalMessage";
+import ClanMapItem from "../components/ClanMaps/ClanMapItem";
+import ResourceMap from "../components/ClanMaps/ResourceMap";
+import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
 
 class ClanMaps extends Component {
   constructor(props) {

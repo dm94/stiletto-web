@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from "react";
-import LoadingScreen from "../components/LoadingScreen";
-import ClanListItem from "../components/ClanList/ClanListItem";
-import ModalMessage from "../components/ModalMessage";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import Pagination from "../components/Pagination";
 import { getUserProfile } from "../services";
+import LoadingScreen from "../components/LoadingScreen";
+import ClanListItem from "../components/ClanList/ClanListItem";
+import ModalMessage from "../components/ModalMessage";
+import Pagination from "../components/Pagination";
 
 class ClanList extends Component {
   constructor(props) {

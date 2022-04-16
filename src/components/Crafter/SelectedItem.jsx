@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Ingredients from "./Ingredients";
 import { withTranslation } from "react-i18next";
-import Icon from "./Icon";
-import CraftingTime from "./CraftingTime";
-import Station from "./Station";
+import Ingredients from "../Ingredients";
+import Icon from "../Icon";
+import CraftingTime from "../CraftingTime";
+import Station from "../Station";
 
 class SelectedItem extends Component {
   constructor(props) {

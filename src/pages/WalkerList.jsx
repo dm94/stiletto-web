@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
-import WalkerListItem from "../components/WalkerListItem";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
@@ -12,6 +11,7 @@ import {
   getHasPermissions,
 } from "../services";
 import Pagination from "../components/Pagination";
+import WalkerListItem from "../components/WalkerList/WalkerListItem";
 const queryString = require("query-string");
 
 class WalkerList extends Component {

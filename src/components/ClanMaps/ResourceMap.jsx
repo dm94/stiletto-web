@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import ModalMessage from "./ModalMessage";
-import MapLayer from "./MapLayer";
-import { withTranslation } from "react-i18next";
-import ResourcesInMapList from "./ResourcesInMapList";
-import CreateResourceTab from "../components/CreateResourceTab";
 import Axios from "axios";
+import { withTranslation } from "react-i18next";
 import {
   updateResourceTime,
   getMarkers,
   getResources,
   deleteResource,
   createResource,
-} from "../services";
-import "../css/map-sidebar.min.css";
+} from "../../services";
+import ModalMessage from "../ModalMessage";
+import MapLayer from "./MapLayer";
+import ResourcesInMapList from "./ResourcesInMapList";
+import CreateResourceTab from "./CreateResourceTab";
+import "../../css/map-sidebar.min.css";
 
 class ResourceMap extends Component {
   constructor(props) {

@@ -1,19 +1,19 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import LoadingScreen from "../components/LoadingScreen";
-import ModalMessage from "../components/ModalMessage";
-import MapLayer from "../components/MapLayer";
-import ResourcesInMapList from "../components/ResourcesInMapList";
-import CreateResourceTab from "../components/CreateResourceTab";
 import Axios from "axios";
-import "../css/map-sidebar.min.css";
 import {
   updateResourceTime,
   getMarkers,
   getResources,
   deleteResource,
   createResource,
-} from "../services";
+} from "../../services";
+import LoadingScreen from "../LoadingScreen";
+import ModalMessage from "../ModalMessage";
+import MapLayer from "./MapLayer";
+import ResourcesInMapList from "./ResourcesInMapList";
+import CreateResourceTab from "./CreateResourceTab";
+import "../../css/map-sidebar.min.css";
 const queryString = require("query-string");
 
 class ResourceMapNoLog extends Component {

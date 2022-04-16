@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ClanName from "../ClanName";
 import { withTranslation } from "react-i18next";
+import ClanName from "../ClanName";
 
 class ClanListItem extends Component {
   sendRequestButton() {

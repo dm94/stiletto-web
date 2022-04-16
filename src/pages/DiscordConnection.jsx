@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import PrivateProfile from "../components/PrivateProfile";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import LoadingScreen from "../components/LoadingScreen";
+import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 const queryString = require("query-string");
 
 class DiscordConnection extends Component {

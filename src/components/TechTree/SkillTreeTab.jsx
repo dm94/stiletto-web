@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
 import { withTranslation } from "react-i18next";
+import Ingredients from "../Ingredients";
+import Ingredient from "../Ingredient";
+import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
-import Ingredients from "./Ingredients";
-import Ingredient from "./Ingredient";
-import Icon from "./Icon";
 
 class SkillTreeTab extends Component {
   state = {};
