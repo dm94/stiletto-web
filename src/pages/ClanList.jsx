@@ -7,6 +7,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import ClanListItem from "../components/ClanList/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";
+import ClusterList from "../components/ClusterList";
 
 class ClanList extends Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class ClanList extends Component {
       isLogged: false,
       page: 1,
       hasMoreClans: false,
+      searchInput: "",
+      regionSearch: "All",
     };
   }
 
@@ -36,6 +39,9 @@ class ClanList extends Component {
       params: {
         pageSize: 10,
         page: page,
+        name: this.state.searchInput.length > 0 ? this.state.searchInput : null,
+        region:
+          this.state.regionSearch !== "All" ? this.state.regionSearch : null,
       },
     })
       .then((response) => {
@@ -130,6 +136,66 @@ class ClanList extends Component {
       return (
         <div className="table-responsive">
           {this.helmetInfo()}
+          <div className="col-md-12">
+            <div className="card mb-3 border-primary">
+              <div className="card-header">{t("Search Clans")}</div>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-xl-2">
+                    <label htmlFor="regionInput">{t("Region")}</label>
+                    <ClusterList
+                      onError={(error) => this.setState({ error: error })}
+                      value={this.state.regionSearch}
+                      onChange={(value) =>
+                        this.setState({
+                          regionSearch: value,
+                        })
+                      }
+                      filter={true}
+                    />
+                  </div>
+                  <div className="col-xl-3">
+                    <label htmlFor="search-name">{t("Name")}</label>
+                    <input
+                      className="form-control"
+                      id="search-name"
+                      type="search"
+                      placeholder="Name.."
+                      aria-label="Search"
+                      onChange={(evt) =>
+                        this.setState({
+                          searchInput: evt.target.value,
+                        })
+                      }
+                      value={this.state.searchInput}
+                    />
+                  </div>
+                  <div className="col-2 btn-group">
+                    <button
+                      className="btn btn-primary"
+                      onClick={(e) => this.updateClans()}
+                    >
+                      {t("Search")}
+                    </button>
+                    <button
+                      className="btn btn-secondary"
+                      onClick={() => {
+                        this.setState(
+                          {
+                            searchInput: "",
+                            regionSearch: "All",
+                          },
+                          () => this.updateClans()
+                        );
+                      }}
+                    >
+                      {t("Clean filter")}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <table className="table table-striped">
             <thead className="thead-light">
               <tr>

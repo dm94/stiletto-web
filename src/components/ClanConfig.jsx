@@ -157,19 +157,17 @@ class ClanConfig extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="regionFilterInput">{t("Region")}</label>
-                  <select
-                    id="regionFilterInput"
-                    className="custom-select"
-                    value={this.state.regionInput ? this.state.regionInput : ""}
-                    onChange={(evt) =>
+                  <label htmlFor="regionInput">{t("Region")}</label>
+                  <ClusterList
+                    onError={(error) => this.setState({ error: error })}
+                    value={this.state.regionInput}
+                    onChange={(value) =>
                       this.setState({
-                        regionInput: evt.target.value,
+                        regionInput: value,
                       })
                     }
-                  >
-                    <ClusterList onError={this.props.onError} />
-                  </select>
+                    filter={false}
+                  />
                 </div>
                 <div className="form-group">
                   <div

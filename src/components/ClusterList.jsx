@@ -14,7 +14,7 @@ class ClusterList extends Component {
     this.setState({ clusters: markers });
   }
 
-  render() {
+  clusterList() {
     if (this.state.clusters != null) {
       return this.state.clusters.map((cl) => (
         <option
@@ -24,9 +24,21 @@ class ClusterList extends Component {
           {[cl.region] + " " + cl.name + " (" + cl.clan_limit + ")"}
         </option>
       ));
-    } else {
-      return "";
     }
+  }
+
+  render() {
+    return (
+      <select
+        id="regionInput"
+        className="custom-select"
+        value={this.props.value ? this.props.value : ""}
+        onChange={(evt) => this.props.onChange(evt.target.value)}
+      >
+        {this.props.filter && <option value="All">All</option>}
+        {this.clusterList()}
+      </select>
+    );
   }
 }
 

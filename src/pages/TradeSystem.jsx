@@ -198,20 +198,16 @@ class TradeSystem extends Component {
                   </div>
                   <div className="form-group col-xl-2">
                     <label htmlFor="regionInput">{t("Region")}</label>
-                    <select
-                      id="regionInput"
-                      className="custom-select"
+                    <ClusterList
+                      onError={(error) => this.setState({ error: error })}
                       value={this.state.regionInput}
-                      onChange={(evt) =>
+                      onChange={(value) =>
                         this.setState({
-                          regionInput: evt.target.value,
+                          regionInput: value,
                         })
                       }
-                    >
-                      <ClusterList
-                        onError={(error) => this.setState({ error: error })}
-                      />
-                    </select>
+                      filter={false}
+                    />
                   </div>
                   <div className="form-group col-xl-2">
                     <label htmlFor="amountInput">{t("Quantity")}</label>
@@ -409,24 +405,16 @@ class TradeSystem extends Component {
                   <label htmlFor="regionFilterInput">{t("Region")}</label>
                 </div>
                 <div className="col-xl-2">
-                  <select
-                    id="regionFilterInput"
-                    className="custom-select"
-                    value={
-                      this.state.regionFilterInput
-                        ? this.state.regionFilterInput
-                        : ""
-                    }
-                    onChange={(evt) =>
+                  <ClusterList
+                    onError={(error) => this.setState({ error: error })}
+                    value={this.state.regionFilterInput}
+                    onChange={(value) =>
                       this.setState({
-                        regionFilterInput: evt.target.value,
+                        regionFilterInput: value,
                       })
                     }
-                  >
-                    <ClusterList
-                      onError={(error) => this.setState({ error: error })}
-                    />
-                  </select>
+                    filter={true}
+                  />
                 </div>
                 <div className="col-xl-3 btn-group">
                   <button
