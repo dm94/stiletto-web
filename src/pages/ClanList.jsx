@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import LoadingScreen from "../components/LoadingScreen";
-import ClanListItem from "../components/ClanListItem";
+import ClanListItem from "../components/ClanList/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
@@ -134,6 +134,7 @@ class ClanList extends Component {
             <thead className="thead-light">
               <tr>
                 <th scope="col">{t("Clan Name")}</th>
+                <th scope="col">{t("Region")}</th>
                 <th scope="col">{t("Leader")}</th>
                 <th scope="col">{t("Discord Invite Link")}</th>
                 <th className="text-center" scope="col">

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ClanName from "./ClanName";
+import ClanName from "../ClanName";
 import { withTranslation } from "react-i18next";
 
 class ClanListItem extends Component {
@@ -34,6 +34,7 @@ class ClanListItem extends Component {
         <td className="pl-3">
           <ClanName key={this.props.clan.name} clan={this.props.clan} />
         </td>
+        <td>{this.props.clan.region}</td>
         <td>{this.props.clan.discordTag}</td>
         <td>
           <a

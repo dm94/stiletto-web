@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Icon from "../components/Icon";
 import { getItems } from "../services";
 import Ingredient from "../components/Ingredient";
-import IngredientQualityInputs from "../components/IngredientQualityInputs";
+import IngredientQualityInputs from "../components/QualityCalculator/IngredientQualityInputs";
 class QualityCalculator extends Component {
   state = {
     items: [],

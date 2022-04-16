@@ -8,6 +8,8 @@ import { Link, Redirect } from "react-router-dom";
 import ModalMessage from "./ModalMessage";
 import { getUserProfile, closeSession } from "../services";
 import Icon from "./Icon";
+import ClanConfig from "../components/ClanConfig";
+
 class PrivateProfile extends Component {
   constructor(props) {
     super(props);
@@ -23,10 +25,8 @@ class PrivateProfile extends Component {
       redirect: false,
       nameInGameInput: "",
       error: null,
-      addClanNameInput: "",
-      addClanColorInput: "",
-      addClanDiscordInput: "",
       language: localStorage.getItem("i18nextLng"),
+      showClanConfig: false,
     };
   }
 
@@ -138,43 +138,6 @@ class PrivateProfile extends Component {
       });
   };
 
-  createClan = (event) => {
-    event.preventDefault();
-    const options = {
-      method: "post",
-      url: process.env.REACT_APP_API_URL + "/clans",
-      params: {
-        clanname: this.state.addClanNameInput,
-        clancolor: this.state.addClanColorInput,
-        clandiscord: this.state.addClanDiscordInput,
-      },
-      headers: {
-        Authorization: `Bearer ${this.state.token}`,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("profile");
-        localStorage.removeItem("memberList");
-        if (response.status === 201) {
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          closeSession();
-          this.setError("Log in again");
-        } else if (response.status === 405) {
-          this.setError("You already have a clan");
-        } else if (response.status === 503) {
-          this.setError("Error connecting to database");
-        } else {
-          this.componentDidMount();
-        }
-      })
-      .catch(() => {
-        this.setConnectionError();
-      });
-  };
-
   changeLanguage = () => {
     i18next.changeLanguage(this.state.language);
   };
@@ -230,6 +193,19 @@ class PrivateProfile extends Component {
               }
             />
           </Helmet>
+          {this.state.showClanConfig ? (
+            <ClanConfig
+              key="clanconfig"
+              clanid={this.state.clanid}
+              onClose={() => {
+                this.setState({ showClanConfig: false });
+                this.componentDidMount();
+              }}
+              onError={(error) => this.setState({ error: error })}
+            />
+          ) : (
+            ""
+          )}
           <div className="col-xl-6">
             <div className="card border-secondary mb-3">
               <div className="card-header">{t("Your details")}</div>
@@ -421,74 +397,15 @@ class PrivateProfile extends Component {
                 {t("Join a clan")}
               </Link>
             </div>
-            <div className="card-body text-succes">
-              <form onSubmit={this.createClan}>
-                <div className="form-group">
-                  <label htmlFor="clan_name">{t("Clan Name")}</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="clan_name"
-                    name="clan_name"
-                    maxLength="20"
-                    value={this.state.addClanNameInput}
-                    onChange={(evt) =>
-                      this.setState({
-                        addClanNameInput: evt.target.value,
-                      })
-                    }
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="flag_color">{t("Flag Color")}</label>
-                  <input
-                    type="color"
-                    className="form-control"
-                    id="flag_color"
-                    name="flag_color"
-                    value={this.state.addClanColorInput}
-                    onChange={(evt) =>
-                      this.setState({
-                        addClanColorInput: evt.target.value,
-                      })
-                    }
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="discord_invite">
-                    {t("Discord Invite Link")} {t("(Optional)")}
-                  </label>
-                  <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        https://discord.gg/
-                      </span>
-                    </div>
-                    <input
-                      type="text"
-                      className="form-control"
-                      id="discord_invite"
-                      name="discord_invite"
-                      maxLength="10"
-                      value={this.state.addClanDiscordInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          addClanDiscordInput: evt.target.value,
-                        })
-                      }
-                    />
-                  </div>
-                </div>
-                <button
-                  className="btn btn-lg btn-success btn-block"
-                  type="submit"
-                  value="Submit"
-                >
-                  {t("Create a clan")}
-                </button>
-              </form>
+            <div className="card-footer">
+              <button
+                className="btn btn-lg btn-success btn-block"
+                onClick={() => {
+                  this.setState({ showClanConfig: true });
+                }}
+              >
+                {t("Create a clan")}
+              </button>
             </div>
           </div>
         </div>

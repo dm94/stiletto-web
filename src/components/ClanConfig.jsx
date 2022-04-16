@@ -6,46 +6,81 @@ import { closeSession } from "../services";
 class ClanConfig extends Component {
   state = {
     addClanNameInput: "",
-    addClanColorInput: "",
+    addClanColorInput: "#000000",
     addClanDiscordInput: "",
-    clanFlagSymbolInput: "",
+    clanFlagSymbolInput: "C1",
+    regionInput: "EU-Official",
+    recruitInput: true,
+    clusters: null,
   };
 
+  clusterList() {
+    if (this.state.clusters != null) {
+      return this.state.clusters.map((cl) => (
+        <option
+          key={cl.region + "-" + cl.name}
+          value={cl.region + "-" + cl.name}
+        >
+          {[cl.region] + " " + cl.name + " (" + cl.clan_limit + ")"}
+        </option>
+      ));
+    }
+  }
+
   componentDidMount() {
-    const options = {
-      method: "get",
-      url: process.env.REACT_APP_API_URL + "/clans/" + this.props.clanid,
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    };
-    Axios.request(options)
+    Axios.get(process.env.REACT_APP_API_URL + "/clusters")
       .then((response) => {
         if (response.status === 200) {
-          if (response.data != null) {
-            this.setState({
-              addClanNameInput: response.data.name,
-              addClanColorInput: response.data.flagcolor,
-              addClanDiscordInput: response.data.invitelink,
-              clanFlagSymbolInput: response.data.symbol,
-            });
-          }
-        } else if (response.status === 401) {
-          closeSession();
-          this.props.onError("You don't have access here, try to log in again");
+          this.setState({ clusters: response.data });
         } else if (response.status === 503) {
           this.props.onError("Error connecting to database");
         }
       })
       .catch(() => {
-        this.props.onError("Error when connecting to the API");
+        this.props.onError("Error connecting to the API");
       });
+
+    if (this.props.clanid) {
+      const options = {
+        method: "get",
+        url: process.env.REACT_APP_API_URL + "/clans/" + this.props.clanid,
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      };
+      Axios.request(options)
+        .then((response) => {
+          if (response.status === 200) {
+            if (response.data != null) {
+              this.setState({
+                addClanNameInput: response.data.name,
+                addClanColorInput: response.data.flagcolor,
+                addClanDiscordInput: response.data.invitelink,
+                clanFlagSymbolInput: response.data.symbol,
+                regionInput: response.data.region,
+                recruitInput: response.data.recruitment === "1" ? true : false,
+              });
+            }
+          } else if (response.status === 401) {
+            closeSession();
+            this.props.onError(
+              "You don't have access here, try to log in again"
+            );
+          } else if (response.status === 503) {
+            this.props.onError("Error connecting to database");
+          }
+        })
+        .catch(() => {
+          this.props.onError("Error when connecting to the API");
+        });
+    }
   }
 
-  updateClan = () => {
+  updateClan = (e) => {
+    e.preventDefault();
     const options = {
-      method: "put",
-      url: process.env.REACT_APP_API_URL + "/clans/" + this.props.clanid,
+      method: "post",
+      url: process.env.REACT_APP_API_URL + "/clans",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -54,18 +89,25 @@ class ClanConfig extends Component {
         clancolor: this.state.addClanColorInput,
         clandiscord: this.state.addClanDiscordInput,
         symbol: this.state.clanFlagSymbolInput,
+        region: this.state.regionInput,
+        recruit: this.state.recruitInput,
       },
     };
+    if (this.props.clanid) {
+      options.method = "put";
+      options.url =
+        process.env.REACT_APP_API_URL + "/clans/" + this.props.clanid;
+    }
+
     Axios.request(options)
       .then((response) => {
-        if (response.status === 200) {
+        if (response.status === 200 || response.status === 201) {
           this.props.onClose();
         } else if (response.status === 401) {
           this.props.onClose();
           closeSession();
           this.props.onError("You don't have access here, try to log in again");
-        } else if (response.status === 503) {
-          this.props.onClose();
+        } else if (response.status === 503 || response.status === 205) {
           this.props.onError("Error connecting to database");
         }
       })
@@ -121,70 +163,119 @@ class ClanConfig extends Component {
               </button>
             </div>
             <div className="modal-body">
-              <div className="form-group">
-                <label htmlFor="clan_name">{t("Clan Name")}</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="clan_name"
-                  name="clan_name"
-                  maxLength="20"
-                  value={this.state.addClanNameInput}
-                  onChange={(evt) =>
-                    this.setState({
-                      addClanNameInput: evt.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="flag_color">{t("Flag Color")}</label>
-                <input
-                  type="color"
-                  className="form-control"
-                  id="flag_color"
-                  name="flag_color"
-                  value={this.state.addClanColorInput}
-                  onChange={(evt) =>
-                    this.setState({
-                      addClanColorInput: evt.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="discord_invite">
-                  {t("Discord Invite Link")} {t("(Optional)")}
-                </label>
-                <div className="input-group mb-3">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text">
-                      https://discord.gg/
-                    </span>
-                  </div>
+              <form onSubmit={this.updateClan} id="clanconfig">
+                <div className="form-group">
+                  <label htmlFor="clan_name">{t("Clan Name")}</label>
                   <input
                     type="text"
                     className="form-control"
-                    id="discord_invite"
-                    name="discord_invite"
-                    maxLength="10"
-                    value={this.state.addClanDiscordInput}
+                    id="clan_name"
+                    name="clan_name"
+                    maxLength="20"
+                    value={this.state.addClanNameInput}
                     onChange={(evt) =>
                       this.setState({
-                        addClanDiscordInput: evt.target.value,
+                        addClanNameInput: evt.target.value,
                       })
                     }
+                    required
                   />
                 </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="sigilClanFlagInput">{t("Symbol")}</label>
-                <div className="col-12">
-                  <div className="row">{this.symbolsList()}</div>
+                <div className="form-group">
+                  <label htmlFor="regionFilterInput">{t("Region")}</label>
+                  <select
+                    id="regionFilterInput"
+                    className="custom-select"
+                    value={this.state.regionInput ? this.state.regionInput : ""}
+                    onChange={(evt) =>
+                      this.setState({
+                        regionInput: evt.target.value,
+                      })
+                    }
+                  >
+                    {this.clusterList()}
+                  </select>
                 </div>
-              </div>
+                <div className="form-group">
+                  <div
+                    className="custom-control custom-switch my-1"
+                    role="button"
+                  >
+                    <input
+                      type="checkbox"
+                      className="custom-control-input"
+                      id="recruitmentInput"
+                      checked={this.state.recruitInput}
+                      onChange={() => {
+                        this.setState((state) => ({
+                          recruitInput: !state.recruitInput,
+                        }));
+                      }}
+                    />
+                    <label
+                      className="custom-control-label"
+                      role="button"
+                      htmlFor="recruitmentInput"
+                    >
+                      {t("Looking for new members?")}{" "}
+                      {t(
+                        "By disabling this option the clan does not appear in the clan list."
+                      )}
+                    </label>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="discord_invite">
+                    {t("Discord Invite Link")} {t("(Optional)")}
+                  </label>
+                  <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">
+                        https://discord.gg/
+                      </span>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      id="discord_invite"
+                      name="discord_invite"
+                      maxLength="10"
+                      value={this.state.addClanDiscordInput}
+                      onChange={(evt) =>
+                        this.setState({
+                          addClanDiscordInput: evt.target.value,
+                        })
+                      }
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="flag_color">
+                    {t("Flag Color")} {t("(Optional)")}
+                  </label>
+                  <input
+                    type="color"
+                    className="form-control"
+                    id="flag_color"
+                    name="flag_color"
+                    value={this.state.addClanColorInput}
+                    onChange={(evt) =>
+                      this.setState({
+                        addClanColorInput: evt.target.value,
+                      })
+                    }
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="sigilClanFlagInput">
+                    {t("Symbol")} {t("(Optional)")}
+                  </label>
+                  <div className="col-12">
+                    <div className="row">{this.symbolsList()}</div>
+                  </div>
+                </div>
+              </form>
             </div>
             <div className="modal-footer">
               <button
@@ -195,11 +286,12 @@ class ClanConfig extends Component {
                 {t("Close")}
               </button>
               <button
-                type="button"
                 className="btn btn-primary"
-                onClick={this.updateClan}
+                form="clanconfig"
+                type="submit"
+                value="Submit"
               >
-                {t("Save")}
+                {this.props.clanid ? t("Save") : t("Create a clan")}
               </button>
             </div>
           </div>
