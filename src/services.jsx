@@ -8,7 +8,7 @@ export const getCachedData = (name, time = timeCheck) => {
     return null;
   }
 
-  const data = localStorage.getItem("name");
+  const data = localStorage.getItem(name);
   const lastDataCheck = localStorage.getItem(name + "-lastCheck");
 
   if (
@@ -343,6 +343,26 @@ export const getMarkers = async () => {
     const response = await request(options);
     if (response != null && response.data != null) {
       addCachedData("markers", response.data);
+      return response.data;
+    } else {
+      return null;
+    }
+  }
+};
+
+export const getClusters = async () => {
+  const cachedData = getCachedData("clusters", 86400000);
+  if (cachedData != null) {
+    return cachedData;
+  } else {
+    const options = {
+      method: "get",
+      url: process.env.REACT_APP_API_URL + "/clusters",
+    };
+
+    const response = await request(options);
+    if (response != null && response.data != null) {
+      addCachedData("clusters", response.data);
       return response.data;
     } else {
       return null;

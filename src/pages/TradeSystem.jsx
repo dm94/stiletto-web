@@ -7,6 +7,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";
 import Trade from "../components/TradeSystem/Trade";
+import ClusterList from "../components/ClusterList";
 
 class TradeSystem extends Component {
   constructor(props) {
@@ -15,7 +16,6 @@ class TradeSystem extends Component {
       user_discord_id: localStorage.getItem("discordid"),
       token: localStorage.getItem("token"),
       isLoaded: false,
-      clusters: null,
       trades: null,
       error: null,
       items: null,
@@ -37,18 +37,6 @@ class TradeSystem extends Component {
   componentDidMount() {
     this.updateRecipes();
     this.updateTrades();
-
-    Axios.get(process.env.REACT_APP_API_URL + "/clusters")
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({ clusters: response.data, isLoaded: true });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error connecting to the API" });
-      });
   }
 
   updateTrades(page = this.state.page) {
@@ -220,7 +208,9 @@ class TradeSystem extends Component {
                         })
                       }
                     >
-                      {this.clusterList()}
+                      <ClusterList
+                        onError={(error) => this.setState({ error: error })}
+                      />
                     </select>
                   </div>
                   <div className="form-group col-xl-2">
@@ -293,19 +283,6 @@ class TradeSystem extends Component {
       return this.state.items.map((item) => (
         <option key={item.name} value={item.name}>
           {t(item.name)}
-        </option>
-      ));
-    }
-  }
-
-  clusterList() {
-    if (this.state.clusters != null) {
-      return this.state.clusters.map((cl) => (
-        <option
-          key={cl.region + "-" + cl.name}
-          value={cl.region + "-" + cl.name}
-        >
-          {[cl.region] + " " + cl.name + " (" + cl.clan_limit + ")"}
         </option>
       ));
     }
@@ -446,7 +423,9 @@ class TradeSystem extends Component {
                       })
                     }
                   >
-                    {this.clusterList()}
+                    <ClusterList
+                      onError={(error) => this.setState({ error: error })}
+                    />
                   </select>
                 </div>
                 <div className="col-xl-3 btn-group">

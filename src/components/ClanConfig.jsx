@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
 import { closeSession } from "../services";
+import ClusterList from "./ClusterList";
 
 class ClanConfig extends Component {
   state = {
@@ -11,35 +12,9 @@ class ClanConfig extends Component {
     clanFlagSymbolInput: "C1",
     regionInput: "EU-Official",
     recruitInput: true,
-    clusters: null,
   };
 
-  clusterList() {
-    if (this.state.clusters != null) {
-      return this.state.clusters.map((cl) => (
-        <option
-          key={cl.region + "-" + cl.name}
-          value={cl.region + "-" + cl.name}
-        >
-          {[cl.region] + " " + cl.name + " (" + cl.clan_limit + ")"}
-        </option>
-      ));
-    }
-  }
-
   componentDidMount() {
-    Axios.get(process.env.REACT_APP_API_URL + "/clusters")
-      .then((response) => {
-        if (response.status === 200) {
-          this.setState({ clusters: response.data });
-        } else if (response.status === 503) {
-          this.props.onError("Error connecting to database");
-        }
-      })
-      .catch(() => {
-        this.props.onError("Error connecting to the API");
-      });
-
     if (this.props.clanid) {
       const options = {
         method: "get",
@@ -193,7 +168,7 @@ class ClanConfig extends Component {
                       })
                     }
                   >
-                    {this.clusterList()}
+                    <ClusterList onError={this.props.onError} />
                   </select>
                 </div>
                 <div className="form-group">
