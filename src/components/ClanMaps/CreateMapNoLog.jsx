@@ -30,10 +30,13 @@ class CreateMapNoLog extends Component {
         mapdate: mapDateInput,
         maptype: mapSelectInput + "_new",
       },
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
     };
+
+    if (localStorage.getItem("token") != null) {
+      options.headers = {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      };
+    }
 
     Axios.request(options)
       .then((response) => {
