@@ -564,6 +564,7 @@ class WalkerList extends Component {
                         <option value="Personal">{t("Personal")}</option>
                         <option value="PVP">{t("PVP")}</option>
                         <option value="Farming">{t("Farming")}</option>
+                        <option value="RAM">{t("RAM")}</option>
                       </select>
                     </div>
                     <div className="col-xl-2">

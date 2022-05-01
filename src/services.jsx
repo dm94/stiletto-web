@@ -2,6 +2,7 @@ import Axios from "axios";
 
 const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
+const resourceCacheTimeCheck = 86400000;
 
 export const getCachedData = (name, time = timeCheck) => {
   if (name == null) {
@@ -91,7 +92,7 @@ export const getHasPermissions = async (type) => {
 };
 
 export const getOurPermssions = async () => {
-  const cachedData = getCachedData("permissions");
+  const cachedData = getCachedData("permissions", smallCacheTimeCheck);
 
   if (cachedData != null) {
     return { success: true, message: cachedData };
@@ -309,7 +310,7 @@ export const updateResourceTime = (mapId, resoruceId, token, date) => {
 };
 
 export const getItems = async () => {
-  const cachedData = getCachedData("allItems", 86400000);
+  const cachedData = getCachedData("allItems", resourceCacheTimeCheck);
 
   if (cachedData != null) {
     return cachedData;
@@ -330,7 +331,7 @@ export const getItems = async () => {
 };
 
 export const getMarkers = async () => {
-  const cachedData = getCachedData("markers", 86400000);
+  const cachedData = getCachedData("markers", resourceCacheTimeCheck);
 
   if (cachedData != null) {
     return cachedData;
@@ -351,7 +352,7 @@ export const getMarkers = async () => {
 };
 
 export const getClusters = async () => {
-  const cachedData = getCachedData("clusters", 86400000);
+  const cachedData = getCachedData("clusters", resourceCacheTimeCheck);
   if (cachedData != null) {
     return cachedData;
   } else {
@@ -371,7 +372,7 @@ export const getClusters = async () => {
 };
 
 export const getMaps = async () => {
-  const cachedData = getCachedData("maps", 86400000);
+  const cachedData = getCachedData("maps", resourceCacheTimeCheck);
 
   if (cachedData != null) {
     return cachedData;
