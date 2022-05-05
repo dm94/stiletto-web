@@ -112,7 +112,7 @@ class WalkerList extends Component {
     let hasPermissions = await getHasPermissions("walkers");
     this.setState({ hasPermissions: hasPermissions });
     let hasPermissionsBot = await getHasPermissions("bot");
-    this.setState({ hasPermissions: hasPermissionsBot });
+    this.setState({ hasPermissionsBot: hasPermissionsBot });
   }
 
   updateWalkers(page = this.state.page) {
