@@ -148,6 +148,7 @@ class ClanList extends Component {
                       value={this.state.regionSearch}
                       onChange={(value) =>
                         this.setState({
+                          page: 1,
                           regionSearch: value,
                         })
                       }
@@ -164,6 +165,7 @@ class ClanList extends Component {
                       aria-label="Search"
                       onChange={(evt) =>
                         this.setState({
+                          page: 1,
                           searchInput: evt.target.value,
                         })
                       }
