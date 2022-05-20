@@ -199,6 +199,7 @@ class PrivateProfile extends Component {
               clanid={this.state.clanid}
               onClose={() => {
                 this.setState({ showClanConfig: false });
+                localStorage.removeItem("profile");
                 this.componentDidMount();
               }}
               onError={(error) => this.setState({ error: error })}
