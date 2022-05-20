@@ -321,98 +321,27 @@ class WalkerList extends Component {
   }
 
   serverLinkButton(t) {
-    if (
-      (this.state.isLeader || this.state.hasPermissionsBot) &&
-      this.state.serverDiscordID == null
-    ) {
-      if (this.state.discordList != null && this.state.discordList.length > 0) {
-        return (
-          <div className="row">
-            <div className="col-xl-4">
-              <div className="card border-secondary mb-3">
-                <div className="card-body">
-                  <div className="text-info">
-                    {t(
-                      "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
-                    )}
-                  </div>
-                  <div className="text-warning mb-3">
-                    {t(
-                      "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot."
-                    )}
-                  </div>
-                  <form onSubmit={this.linkDiscordServer}>
-                    <div className="form-group">
-                      <label htmlFor="discordlist">{t("Discord ID")}</label>
-                      <select
-                        id="discordlist"
-                        className="custom-select"
-                        value={this.state.inputDiscodId}
-                        onChange={(evt) =>
-                          this.setState({
-                            inputDiscodId: evt.target.value,
-                          })
-                        }
-                        required
-                      >
-                        {this.discordServerList()}
-                      </select>
-                    </div>
-                    <button
-                      className="btn btn-lg btn-outline-success btn-block"
-                      type="submit"
-                      value="Submit"
-                    >
-                      {t("Link discord server")}
-                    </button>
-                  </form>
-                </div>
+    return (
+      <div className="row">
+        <div className="col-xl-4">
+          <div className="card border-secondary mb-3">
+            <div className="card-body">
+              <div className="text-info">
+                {t(
+                  "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+                )}
+              </div>
+              <div className="text-warning mb-3">
+                {t(
+                  "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot."
+                )}
               </div>
             </div>
-            {this.discordBotSection(t)}
           </div>
-        );
-      } else {
-        let http = window.location.protocol;
-        let slashes = http.concat("//");
-        let host = slashes.concat(window.location.hostname);
-        let urlLink =
-          "https://discord.com/api/oauth2/authorize?client_id=" +
-          process.env.REACT_APP_DISCORD_CLIENT_ID +
-          "&redirect_uri=" +
-          host +
-          (window.location.port ? ":" + window.location.port : "") +
-          "/walkerlist" +
-          "&scope=identify%20guilds&response_type=code";
-        return (
-          <div className="row">
-            <div className="col-xl-4">
-              <div className="card border-secondary mb-3">
-                <div className="card-body">
-                  <div className="text-info">
-                    {t(
-                      "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
-                    )}
-                  </div>
-                  <div className="text-warning mb-3">
-                    {t(
-                      "You can link the discord server more easily by typing !linkserver in your discord server when you have added the bot."
-                    )}
-                  </div>
-                  <a
-                    className="btn btn-lg btn-outline-success btn-block"
-                    href={urlLink}
-                  >
-                    {t("Link discord server")}
-                  </a>
-                </div>
-              </div>
-            </div>
-            {this.discordBotSection(t)}
-          </div>
-        );
-      }
-    }
+        </div>
+        {this.discordBotSection(t)}
+      </div>
+    );
   }
 
   discordBotSection(t) {
