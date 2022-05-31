@@ -25,7 +25,9 @@ class Diplomacy extends Component {
 
   async componentDidMount() {
     const response = await getUserProfile();
+    let clanid = null;
     if (response.success) {
+      clanid = response.message.clanid;
       this.setState({
         clanid: response.message.clanid,
         isLeader: response.message.discordid === response.message.leaderid,
@@ -34,32 +36,34 @@ class Diplomacy extends Component {
       this.setState({ error: response.message });
     }
 
-    Axios.get(
-      process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/relationships",
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    )
-      .then((response) => {
-        if (response.status === 202) {
-          this.setState({ listOfRelations: response.data, isLoaded: true });
-        } else if (response.status === 405) {
-          this.setState({ error: "Unauthorized" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
+    if (clanid != null) {
+      Axios.get(
+        process.env.REACT_APP_API_URL +
+          "/clans/" +
+          this.state.clanid +
+          "/relationships",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
         }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+      )
+        .then((response) => {
+          if (response.status === 202) {
+            this.setState({ listOfRelations: response.data, isLoaded: true });
+          } else if (response.status === 405) {
+            this.setState({ error: "Unauthorized" });
+          } else if (response.status === 503) {
+            this.setState({ error: "Error connecting to database" });
+          }
+        })
+        .catch(() => {
+          this.setState({ error: "Error when connecting to the API" });
+        });
 
-    let hasPermissions = await getHasPermissions("diplomacy");
-    this.setState({ hasPermissions: hasPermissions });
+      let hasPermissions = await getHasPermissions("diplomacy");
+      this.setState({ hasPermissions: hasPermissions });
+    }
   }
 
   createRelationship = (event) => {
