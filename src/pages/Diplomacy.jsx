@@ -289,9 +289,6 @@ class Diplomacy extends Component {
 
   render() {
     const { t } = this.props;
-    if (!this.state.isLoaded) {
-      return <LoadingScreen />;
-    }
     if (this.state.error) {
       return (
         <ModalMessage
@@ -302,7 +299,8 @@ class Diplomacy extends Component {
           }}
         />
       );
-    } else if (this.state.clanid === null) {
+    }
+    if (this.state.clanid === null) {
       return (
         <ModalMessage
           message={{
@@ -313,7 +311,9 @@ class Diplomacy extends Component {
         />
       );
     }
-
+    if (!this.state.isLoaded) {
+      return <LoadingScreen />;
+    }
     return (
       <div className="container-fluid">
         <Helmet>
