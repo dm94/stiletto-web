@@ -171,7 +171,7 @@ class ItemWiki extends Component {
                       ) : (
                         ""
                       )}
-                      {this.state.item.stackSize ? (
+                      {this.state.item.weight ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Weight")}</div>
                           <div className="text-muted">
