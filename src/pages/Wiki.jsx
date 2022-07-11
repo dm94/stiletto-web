@@ -12,17 +12,12 @@ class Wiki extends Component {
     error: "",
   };
 
-  componentDidMount() {
-    this.updateRecipes();
-  }
-
-  async updateRecipes() {
+  updateRecipes = async () => {
     let items = await getItems();
     if (items != null) {
-      items = items.filter((it) => it.crafting != null);
       this.setState({ items: items });
     }
-  }
+  };
 
   handleInputChangeSearchItem = (event) => {
     if (event != null) {
@@ -31,7 +26,10 @@ class Wiki extends Component {
     }
   };
 
-  searchItems = () => {
+  searchItems = async () => {
+    if (this.state.items == null || this.state.items.length <= 0) {
+      await this.updateRecipes();
+    }
     const { t } = this.props;
     const filteredItems = this.state.items.filter((it) => {
       return this.state.searchText.split(" ").every((internalItem) => {

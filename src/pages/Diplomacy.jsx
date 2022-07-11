@@ -287,6 +287,7 @@ class Diplomacy extends Component {
           id={"symbol-img-" + symbol}
           onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
         />
+        <p className="text-center">{symbol}</p>
       </div>
     ));
   }
