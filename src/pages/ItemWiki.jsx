@@ -342,31 +342,31 @@ class ItemWiki extends Component {
             <div className="card-header">{t("Armor info")}</div>
             <div className="card-body">
               <ul className="list-group">
-                {this.state.item.armorInfo.soak ? (
+                {this.state.item.armorInfo.absorbing ? (
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Soak")}</div>
+                    <div className="my-0">{t("Absorbing")}</div>
                     <div className="text-muted">
-                      {t(this.state.item.armorInfo.soak)}
+                      {t(this.state.item.armorInfo.absorbing)}
                     </div>
                   </li>
                 ) : (
                   ""
                 )}
-                {this.state.item.armorInfo.reduce ? (
+                {this.state.item.armorInfo.reduction ? (
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Reduce")}</div>
+                    <div className="my-0">{t("Reduction")}</div>
                     <div className="text-muted">
-                      {t(this.state.item.armorInfo.reduce)}
+                      {t(this.state.item.armorInfo.reduction)}
                     </div>
                   </li>
                 ) : (
                   ""
                 )}
-                {this.state.item.armorInfo.movementSpeedReduction ? (
+                {this.state.item.armorInfo.speedReduction ? (
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
                     <div className="my-0">{t("Speed reduction")}</div>
                     <div className="text-muted">
-                      {t(this.state.item.armorInfo.movementSpeedReduction)}
+                      {t(this.state.item.armorInfo.speedReduction)}
                     </div>
                   </li>
                 ) : (
@@ -442,7 +442,7 @@ class ItemWiki extends Component {
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
                     <div className="my-0">{t("Penetration")}</div>
                     <div className="text-muted">
-                      {this.state.item.weaponInfo.penetration}
+                      {this.state.item.weaponInfo.penetration} %
                     </div>
                   </li>
                 ) : (
