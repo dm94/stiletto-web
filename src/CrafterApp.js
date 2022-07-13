@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import Analytics from "react-router-ga";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
@@ -9,9 +8,10 @@ import CookieConsent from "./components/CookieConsent";
 import DiscordButton from "./components/DiscordButton";
 import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
+import usePageTracking from "./page-tracking";
 import "./css/style.min.css";
 
-function CrafterApp() {
+const CrafterApp = () => {
   const [t] = useTranslation();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
   const [newUpdate, setUpdateModal] = useState(false);
@@ -25,10 +25,11 @@ function CrafterApp() {
     },
   });
 
-  let language = getStoredItem("i18nextLng");
+  usePageTracking();
 
+  let language = getStoredItem("i18nextLng");
   return (
-    <Router>
+    <React.Fragment>
       <Helmet
         htmlAttributes={{
           lang: language ? language : "en",
@@ -179,15 +180,7 @@ function CrafterApp() {
       </header>
       <main role="main" className="flex-shrink-0">
         <div className="container-fluid pt-4">
-          <Analytics
-            id={
-              localStorage.getItem("acceptscookies")
-                ? process.env.REACT_APP_GA_ID
-                : ""
-            }
-          >
-            {Routes}
-          </Analytics>
+          {Routes}
           <div className={showUpdateModal}>
             <div className="modal-dialog border border-success">
               <div className="modal-content">
@@ -323,7 +316,7 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.24.0</p>
+                  <p className="mr-auto">v. 3.25.0</p>
                   <button
                     className={
                       getStoredItem("darkmode") !== "true"
@@ -409,14 +402,14 @@ function CrafterApp() {
         </div>
       </footer>
       <CookieConsent />
-    </Router>
+    </React.Fragment>
   );
-}
+};
 
 function updateWeb() {
   localStorage.removeItem("allItems");
   sessionStorage.removeItem("allItems");
-  caches.keys().then(function (names) {
+  caches.keys().then(function(names) {
     for (let name of names) {
       caches.delete(name);
     }

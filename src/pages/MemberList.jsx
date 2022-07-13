@@ -51,6 +51,7 @@ class MemberList extends Component {
       });
     } else {
       this.setState({ error: response.message, isLoaded: true });
+      return;
     }
 
     this.updateMembers();

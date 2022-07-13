@@ -285,6 +285,9 @@ class TradeSystem extends Component {
   }
 
   tradeList(t) {
+    if (!this.state.isLoaded) {
+      return <LoadingScreen />;
+    }
     if (this.state.trades != null) {
       return this.state.trades.map((trade) => (
         <Trade
@@ -341,14 +344,7 @@ class TradeSystem extends Component {
         />
       );
     }
-    if (!this.state.isLoaded) {
-      return (
-        <Fragment>
-          {this.helmetInfo()}
-          <LoadingScreen />
-        </Fragment>
-      );
-    }
+
     return (
       <div className="row">
         {this.helmetInfo()}
