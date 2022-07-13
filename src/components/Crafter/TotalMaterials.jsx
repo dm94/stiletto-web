@@ -92,7 +92,10 @@ class TotalMaterials extends Component {
     return this.props.selectedItems.map((item) => (
       <li className="list-inline-item" key={item.name}>
         <Icon key={item.name} name={item.name} /> {item.count}x{" "}
-        <a href={url + encodeURI(item.name)}>{item.name}</a> -
+        <a href={url + encodeURI(item.name.replaceAll(" ", "_"))}>
+          {item.name}
+        </a>{" "}
+        -
       </li>
     ));
   }

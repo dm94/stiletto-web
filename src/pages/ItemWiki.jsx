@@ -26,6 +26,7 @@ class ItemWiki extends Component {
     let item_name = this.props.match.params.name;
     if (item_name != null) {
       item_name = decodeURI(item_name);
+      item_name = item_name.replaceAll("_", " ");
       item_name = item_name.toLowerCase();
     }
 
@@ -122,7 +123,7 @@ class ItemWiki extends Component {
             ? host +
               (window.location.port ? ":" + window.location.port : "") +
               "/item/" +
-              encodeURI(parent.toLowerCase())
+              encodeURI(parent.toLowerCase().replaceAll(" ", "_"))
             : "wood";
         let craftUrl =
           host +

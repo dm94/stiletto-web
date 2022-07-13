@@ -84,7 +84,7 @@ class SelectedItem extends Component {
       host +
       (window.location.port ? ":" + window.location.port : "") +
       "/item/" +
-      encodeURI(this.props.item.name);
+      encodeURI(this.props.item.name.replaceAll(" ", "_"));
     return (
       <div className="col-xl-6 col-sm-12">
         <div className="card">
