@@ -1,8 +1,9 @@
 import i18n from "i18next";
 import HttpApi from "i18next-http-backend";
+import { getStoredItem } from "./services";
 
 i18n.use(HttpApi).init({
-  lng: localStorage.getItem("i18nextLng"),
+  lng: getStoredItem("i18nextLng"),
   fallbackLng: "en",
   debug: false,
   preload: ["en", "es", "de", "fr"],

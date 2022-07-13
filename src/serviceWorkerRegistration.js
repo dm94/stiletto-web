@@ -88,6 +88,7 @@ function registerValidSW(swUrl, config) {
               // Execute callback
               if (config && config.onSuccess) {
                 localStorage.removeItem("allItems");
+                sessionStorage.removeItem("allItems");
                 config.onSuccess(registration);
               }
             }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { getStoredItem } from "../../services";
 
 class Item extends Component {
   render() {
@@ -7,7 +8,7 @@ class Item extends Component {
     return (
       <li
         className={
-          localStorage.getItem("darkmode") !== "true"
+          getStoredItem("darkmode") !== "true"
             ? "list-group-item"
             : "list-group-item list-group-item-dark"
         }

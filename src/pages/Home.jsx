@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Others from "./Others";
+import { getStoredItem } from "../services";
 
 class Home extends Component {
   state = { redirectTo: null };
@@ -104,9 +105,7 @@ class Home extends Component {
               onClick={() =>
                 this.setState({
                   redirectTo:
-                    localStorage.getItem("discordid") != null
-                      ? "/maps"
-                      : "/map",
+                    getStoredItem("discordid") != null ? "/maps" : "/map",
                 })
               }
             >

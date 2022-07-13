@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getItems } from "../services";
+import { getItems, getStoredItem } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";
@@ -13,8 +13,8 @@ class TradeSystem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
+      user_discord_id: getStoredItem("discordid"),
+      token: getStoredItem("token"),
       isLoaded: false,
       trades: null,
       error: null,
@@ -85,7 +85,7 @@ class TradeSystem extends Component {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/trades/" + idTrade,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
@@ -114,7 +114,7 @@ class TradeSystem extends Component {
         price: this.state.priceInput,
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 

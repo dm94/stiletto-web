@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
-import { closeSession } from "../services";
+import { closeSession, getStoredItem } from "../services";
 import ClusterList from "./ClusterList";
 
 class ClanConfig extends Component {
@@ -20,7 +20,7 @@ class ClanConfig extends Component {
         method: "get",
         url: process.env.REACT_APP_API_URL + "/clans/" + this.props.clanid,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${getStoredItem("token")}`,
         },
       };
       Axios.request(options)
@@ -57,7 +57,7 @@ class ClanConfig extends Component {
       method: "post",
       url: process.env.REACT_APP_API_URL + "/clans",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
       params: {
         clanname: this.state.addClanNameInput,

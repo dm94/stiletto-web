@@ -7,6 +7,7 @@ import {
   getResources,
   deleteResource,
   createResource,
+  getStoredItem,
 } from "../../services";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
@@ -19,8 +20,8 @@ class ResourceMap extends Component {
     super(props);
 
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
+      user_discord_id: getStoredItem("discordid"),
+      token: getStoredItem("token"),
       coordinateXInput: 0,
       coordinateYInput: 0,
       items: null,
@@ -88,7 +89,7 @@ class ResourceMap extends Component {
         mappass: this.state.pass,
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 

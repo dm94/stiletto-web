@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import { getStoredItem } from "../services";
 
 class DiscordButton extends Component {
   state = {};
   render() {
     const { t } = this.props;
-    if (localStorage.getItem("token") != null) {
+    if (getStoredItem("token") != null) {
       return (
         <Link className="btn btn-outline-light" to="/profile">
           <i className="far fa-user"></i> {t("Profile")}

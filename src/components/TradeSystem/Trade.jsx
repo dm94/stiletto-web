@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Icon from "../Icon";
+import { getStoredItem } from "../../services";
 
 class Trade extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
+      user_discord_id: getStoredItem("discordid"),
     };
   }
 

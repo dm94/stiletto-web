@@ -4,7 +4,7 @@ import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
 import { Link, Redirect } from "react-router-dom";
-import { getUserProfile, closeSession } from "../../services";
+import { getUserProfile, closeSession, getStoredItem } from "../../services";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";
@@ -14,8 +14,8 @@ class PrivateProfile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
+      user_discord_id: getStoredItem("discordid"),
+      token: getStoredItem("token"),
       discordtag: "Loading...",
       nickname: "Loading...",
       clanname: "Loading...",
@@ -25,7 +25,7 @@ class PrivateProfile extends Component {
       redirect: false,
       nameInGameInput: "",
       error: null,
-      language: localStorage.getItem("i18nextLng"),
+      language: getStoredItem("i18nextLng"),
       showClanConfig: false,
     };
   }
@@ -60,7 +60,9 @@ class PrivateProfile extends Component {
     Axios.request(options)
       .then((response) => {
         localStorage.removeItem("profile");
+        sessionStorage.removeItem("profile");
         localStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList");
         if (response.status === 204) {
           closeSession();
           this.setState({ redirect: true });
@@ -94,7 +96,9 @@ class PrivateProfile extends Component {
     Axios.request(options)
       .then((response) => {
         localStorage.removeItem("profile");
+        sessionStorage.removeItem("profile");
         localStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList");
         if (response.status === 202) {
           this.setState({ nickname: this.state.nameInGameInput });
         } else if (response.status === 401) {
@@ -123,7 +127,9 @@ class PrivateProfile extends Component {
     Axios.request(options)
       .then((response) => {
         localStorage.removeItem("profile");
+        sessionStorage.removeItem("profile");
         localStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList");
         if (response.status === 204) {
           this.setState({ clanname: null });
         } else if (response.status === 401) {
@@ -157,8 +163,8 @@ class PrivateProfile extends Component {
       ? "modal d-block"
       : "modal d-none";
     if (
-      localStorage.getItem("discordid") != null &&
-      localStorage.getItem("token") != null &&
+      getStoredItem("discordid") != null &&
+      getStoredItem("token") != null &&
       !this.state.redirect
     ) {
       return (
@@ -200,6 +206,7 @@ class PrivateProfile extends Component {
               onClose={() => {
                 this.setState({ showClanConfig: false });
                 localStorage.removeItem("profile");
+                sessionStorage.removeItem("profile");
                 this.componentDidMount();
               }}
               onError={(error) => this.setState({ error: error })}

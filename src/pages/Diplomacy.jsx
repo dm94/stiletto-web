@@ -3,7 +3,7 @@ import ModalMessage from "../components/ModalMessage";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getUserProfile, getHasPermissions } from "../services";
+import { getUserProfile, getHasPermissions, getStoredItem } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanSelect from "../components/Diplomacy/ClanSelect";
 class Diplomacy extends Component {
@@ -44,7 +44,7 @@ class Diplomacy extends Component {
           "/relationships",
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${getStoredItem("token")}`,
           },
         }
       )
@@ -82,7 +82,7 @@ class Diplomacy extends Component {
         symbol: this.state.clanFlagSymbolInput,
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
@@ -111,7 +111,7 @@ class Diplomacy extends Component {
         "/relationships/" +
         id,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 

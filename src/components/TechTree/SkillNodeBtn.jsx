@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
+import { getStoredItem } from "../../services";
 
 class SkillNodeBtn extends Component {
   constructor(props) {
@@ -12,12 +13,12 @@ class SkillNodeBtn extends Component {
   }
 
   getLearned() {
-    if (localStorage.getItem("token") != null) {
+    if (getStoredItem("token") != null) {
       Axios.get(
         process.env.REACT_APP_API_URL + "/clans/" + this.props.clan + "/tech",
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${getStoredItem("token")}`,
           },
           params: {
             tree: this.props.tree,

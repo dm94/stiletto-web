@@ -4,13 +4,44 @@ const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
 const resourceCacheTimeCheck = 86400000;
 
+export const getStoredItem = (name) => {
+  if (name == null) {
+    return null;
+  }
+
+  let data = localStorage.getItem(name);
+
+  if (data == null) {
+    data = sessionStorage.getItem(name);
+    if (data != null) {
+      if (localStorage.getItem("acceptscookies")) {
+        storeItem(name, data);
+      }
+    }
+  }
+
+  return data;
+};
+
+export const storeItem = (name, data) => {
+  if (name == null || data == null) {
+    return;
+  }
+
+  if (localStorage.getItem("acceptscookies")) {
+    localStorage.setItem(name, data);
+  } else {
+    sessionStorage.setItem(name, data);
+  }
+};
+
 export const getCachedData = (name, time = timeCheck) => {
   if (name == null) {
     return null;
   }
 
-  const data = localStorage.getItem(name);
-  const lastDataCheck = localStorage.getItem(name + "-lastCheck");
+  let data = getStoredItem(name);
+  let lastDataCheck = getStoredItem(name + "-lastCheck");
 
   if (
     data != null &&
@@ -27,10 +58,8 @@ export const addCachedData = (name, data) => {
     return;
   }
 
-  if (localStorage.getItem("acceptscookies")) {
-    localStorage.setItem(name, JSON.stringify(data));
-    localStorage.setItem(name + "-lastCheck", Date.now());
-  }
+  storeItem(name, JSON.stringify(data));
+  storeItem(name + "-lastCheck", Date.now());
 };
 
 export const getUserProfile = async () => {
@@ -38,12 +67,12 @@ export const getUserProfile = async () => {
 
   if (cachedData != null) {
     return { success: true, message: cachedData };
-  } else if (localStorage.getItem("token")) {
+  } else if (getStoredItem("token")) {
     const options = {
       method: "get",
       url: process.env.REACT_APP_API_URL + "/users",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
@@ -51,7 +80,7 @@ export const getUserProfile = async () => {
     if (response != null) {
       if (response.status === 200) {
         if (response.data != null) {
-          localStorage.setItem("discordid", response.data.discordid);
+          addCachedData("discordid", response.data.discordid);
           addCachedData("profile", response.data);
           return { success: true, message: response.data };
         }
@@ -97,7 +126,7 @@ export const getOurPermssions = async () => {
   if (cachedData != null) {
     return { success: true, message: cachedData };
   } else {
-    const profile = localStorage.getItem("profile");
+    const profile = getStoredItem("profile");
     let clanid = null;
     let discordid = null;
     if (profile != null) {
@@ -144,7 +173,7 @@ export const getUserPermssions = async (clanid, discordid) => {
         discordid +
         "/permissions",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
     const response = await request(options);
@@ -183,7 +212,7 @@ export const getClanInfo = async () => {
   if (cachedData != null) {
     return { success: true, message: cachedData };
   } else {
-    const profile = localStorage.getItem("profile");
+    const profile = getStoredItem("profile");
     let clanid = null;
     if (profile != null) {
       let data = JSON.parse(profile);
@@ -198,7 +227,7 @@ export const getClanInfo = async () => {
         method: "get",
         url: process.env.REACT_APP_API_URL + "/clans/" + clanid,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${getStoredItem("token")}`,
         },
       };
       const response = await request(options);
@@ -239,7 +268,7 @@ export const getMembers = async () => {
   if (cachedData != null) {
     return { success: true, message: cachedData };
   } else {
-    const profile = localStorage.getItem("profile");
+    const profile = getStoredItem("profile");
     let clanid = null;
     if (profile != null) {
       let data = JSON.parse(profile);
@@ -254,7 +283,7 @@ export const getMembers = async () => {
         method: "get",
         url: process.env.REACT_APP_API_URL + "/clans/" + clanid + "/members",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${getStoredItem("token")}`,
         },
       };
       const response = await request(options);
@@ -299,7 +328,7 @@ export const updateResourceTime = (mapId, resoruceId, token, date) => {
       "/resources/" +
       resoruceId,
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
     params: {
       token: token,
@@ -406,7 +435,7 @@ export const getResources = async (mapId, mapPass) => {
       mappass: mapPass,
     },
     headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
   };
 
@@ -460,6 +489,7 @@ export const createResource = async (
 
 export const closeSession = () => {
   localStorage.clear();
+  sessionStorage.clear();
   window.location.reload();
 };
 

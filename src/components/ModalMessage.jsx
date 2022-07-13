@@ -31,6 +31,7 @@ class ModalMessage extends Component {
     const { t } = this.props;
     if (this.props.message.text === "Error when connecting to the API") {
       localStorage.removeItem("allItems");
+      sessionStorage.removeItem("allItems");
       caches.keys().then(function (names) {
         for (let name of names) {
           caches.delete(name);

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { getStoredItem } from "../../services";
 
 class MemberListItem extends Component {
   kickButton() {
     const { t } = this.props;
     if (this.props.isLeader || this.props.hasPermissions) {
       if (
-        this.props.member.discordid != localStorage.getItem("discordid") &&
+        this.props.member.discordid != getStoredItem("discordid") &&
         this.props.member.discordid != this.props.member.leaderid
       ) {
         return (
@@ -27,7 +28,7 @@ class MemberListItem extends Component {
     const { t } = this.props;
     if (this.props.isLeader) {
       if (
-        this.props.member.discordid != localStorage.getItem("discordid") &&
+        this.props.member.discordid != getStoredItem("discordid") &&
         this.props.member.discordid != this.props.member.leaderid
       ) {
         return (

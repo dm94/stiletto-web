@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { getUserProfile } from "../services";
+import { getUserProfile, getStoredItem } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanListItem from "../components/ClanList/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
@@ -65,11 +65,11 @@ class ClanList extends Component {
       .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
-    if (localStorage.getItem("token")) {
+    if (getStoredItem("token")) {
       this.setState({ isLogged: true });
     }
 
-    if (localStorage.getItem("token")) {
+    if (getStoredItem("token")) {
       const response = await getUserProfile();
       if (response.success) {
         this.setState({ clanuserid: response.message.clanid });
@@ -91,7 +91,7 @@ class ClanList extends Component {
         message: this.state.textAreaModelValue,
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 

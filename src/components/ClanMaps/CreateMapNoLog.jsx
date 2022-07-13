@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
-import { getMaps } from "../../services";
+import { getMaps, getStoredItem } from "../../services";
 import CreateMapPanel from "./CreateMapPanel";
 class CreateMapNoLog extends Component {
   constructor(props) {
@@ -32,9 +32,9 @@ class CreateMapNoLog extends Component {
       },
     };
 
-    if (localStorage.getItem("token") != null) {
+    if (getStoredItem("token") != null) {
       options.headers = {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       };
     }
 

@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import Axios from "axios";
 import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
+import { getStoredItem, storeItem } from "../services";
 const queryString = require("query-string");
 
 class DiscordConnection extends Component {
@@ -28,10 +29,10 @@ class DiscordConnection extends Component {
       Axios.request(options).then((response) => {
         if (response.status === 202) {
           if (response.data.discordid != null) {
-            localStorage.setItem("discordid", response.data.discordid);
+            storeItem("discordid", response.data.discordid);
           }
           if (response.data.token != null) {
-            localStorage.setItem("token", response.data.token);
+            storeItem("token", response.data.token);
           }
           this.setState({
             discordid: response.data.discordid,
@@ -63,12 +64,11 @@ class DiscordConnection extends Component {
       "/profile" +
       "&scope=identify%20guilds&response_type=code";
     if (parsed.discordid != null && parsed.token != null) {
-      localStorage.setItem("discordid", parsed.discordid);
-      localStorage.setItem("token", parsed.token);
-      localStorage.setItem("acceptscookies", true);
+      storeItem("discordid", parsed.discordid);
+      storeItem("token", parsed.token);
     }
 
-    if (localStorage.getItem("token") != null) {
+    if (getStoredItem("token") != null) {
       return <PrivateProfile key="profile" />;
     } else {
       return (

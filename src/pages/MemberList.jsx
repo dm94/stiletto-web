@@ -8,6 +8,7 @@ import {
   closeSession,
   getHasPermissions,
   getMembers,
+  getStoredItem,
 } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
@@ -27,7 +28,7 @@ class MemberList extends Component {
       error: null,
       isLoadedRequestList: false,
       redirectMessage: null,
-      selectNewOwner: localStorage.getItem("discordid"),
+      selectNewOwner: getStoredItem("discordid"),
       showRequestModal: false,
       requestData: null,
       isLeader: false,
@@ -61,7 +62,7 @@ class MemberList extends Component {
         "/requests",
       {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${getStoredItem("token")}`,
         },
       }
     )
@@ -116,14 +117,16 @@ class MemberList extends Component {
         accion: "kick",
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
     Axios.request(options)
       .then((response) => {
         localStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList");
         localStorage.removeItem("memberList-lastCheck");
+        sessionStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
           let members = this.state.members.filter(
             (m) => m.discordid !== memberdiscordid
@@ -161,13 +164,15 @@ class MemberList extends Component {
         accion: "accept",
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
     Axios.request(options)
       .then((response) => {
         localStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList-lastCheck");
         localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
@@ -207,13 +212,15 @@ class MemberList extends Component {
         accion: "reject",
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
     Axios.request(options)
       .then((response) => {
         localStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList-lastCheck");
         localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
           let requestMembers = this.state.requestMembers.filter(
@@ -241,13 +248,16 @@ class MemberList extends Component {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/clans/" + this.state.clanid,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
     Axios.request(options)
       .then((response) => {
         localStorage.removeItem("profile");
+        sessionStorage.removeItem("profile");
+        sessionStorage.removeItem("memberList-lastCheck");
+        sessionStorage.removeItem("memberList");
         localStorage.removeItem("memberList");
         localStorage.removeItem("memberList-lastCheck");
         if (response.status === 204) {
@@ -279,14 +289,17 @@ class MemberList extends Component {
         accion: "owner",
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
     Axios.request(options)
       .then((response) => {
         localStorage.removeItem("profile");
+        sessionStorage.removeItem("profile");
         localStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList");
+        sessionStorage.removeItem("memberList-lastCheck");
         localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
           this.setState({ redirectMessage: "Clan updated correctly" });

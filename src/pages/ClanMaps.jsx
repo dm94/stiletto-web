@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { closeSession, getMaps } from "../services";
+import { closeSession, getMaps, getStoredItem } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import ClanMapItem from "../components/ClanMaps/ClanMapItem";
 import ResourceMap from "../components/ClanMaps/ResourceMap";
@@ -12,8 +12,8 @@ class ClanMaps extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_discord_id: localStorage.getItem("discordid"),
-      token: localStorage.getItem("token"),
+      user_discord_id: getStoredItem("discordid"),
+      token: getStoredItem("token"),
       maps: null,
       clanMaps: null,
       error: null,
@@ -29,7 +29,7 @@ class ClanMaps extends Component {
 
     Axios.get(process.env.REACT_APP_API_URL + "/maps", {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     }).then((response) => {
       if (response.status === 200) {
@@ -96,7 +96,7 @@ class ClanMaps extends Component {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/maps/" + mapid,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
@@ -146,9 +146,9 @@ class ClanMaps extends Component {
       },
     };
 
-    if (localStorage.getItem("token") != null) {
+    if (getStoredItem("token") != null) {
       options.headers = {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       };
     }
 

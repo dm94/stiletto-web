@@ -3,7 +3,13 @@ import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
 import Axios from "axios";
-import { getItems, getUserProfile, closeSession } from "../services";
+import {
+  getItems,
+  getUserProfile,
+  closeSession,
+  getStoredItem,
+  storeItem,
+} from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
@@ -26,7 +32,7 @@ class TechTree extends Component {
   }
 
   async componentDidMount() {
-    if (localStorage.getItem("token") != null) {
+    if (getStoredItem("token") != null) {
       let data = await getUserProfile();
       let clanid = data.message.clanid;
 
@@ -35,11 +41,11 @@ class TechTree extends Component {
       Axios.get(
         process.env.REACT_APP_API_URL +
           "/users/" +
-          localStorage.getItem("discordid") +
+          getStoredItem("discordid") +
           "/tech",
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${getStoredItem("token")}`,
           },
         }
       )
@@ -86,9 +92,7 @@ class TechTree extends Component {
         all[tech] = { optional: false, nodeState: "selected" };
       });
 
-      if (localStorage.getItem("acceptscookies")) {
-        localStorage.setItem(`skills-${tree}`, JSON.stringify(all));
-      }
+      storeItem(`skills-${tree}`, JSON.stringify(all));
     }
   }
 
@@ -104,13 +108,13 @@ class TechTree extends Component {
       url:
         process.env.REACT_APP_API_URL +
         "/users/" +
-        localStorage.getItem("discordid") +
+        getStoredItem("discordid") +
         "/tech",
       params: {
         tree: this.state.tabSelect,
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
       data: [],
     };
@@ -118,18 +122,18 @@ class TechTree extends Component {
     Axios.request(options)
       .then(() => {
         localStorage.removeItem(`skills-${this.state.tabSelect}`);
+        sessionStorage.removeItem(`skills-${this.state.tabSelect}`);
         window.location.reload();
       })
       .catch(() => {
         localStorage.removeItem(`skills-${this.state.tabSelect}`);
+        sessionStorage.removeItem(`skills-${this.state.tabSelect}`);
         window.location.reload();
       });
   }
 
   saveTree() {
-    let data = JSON.parse(
-      localStorage.getItem(`skills-${this.state.tabSelect}`)
-    );
+    let data = JSON.parse(getStoredItem(`skills-${this.state.tabSelect}`));
     let learned = [];
 
     for (let item in data) {
@@ -142,13 +146,13 @@ class TechTree extends Component {
       url:
         process.env.REACT_APP_API_URL +
         "/users/" +
-        localStorage.getItem("discordid") +
+        getStoredItem("discordid") +
         "/tech",
       params: {
         tree: this.state.tabSelect,
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
       data: learned,
     };
@@ -324,7 +328,7 @@ class TechTree extends Component {
   }
 
   saveDeleteButtons(t) {
-    if (localStorage.getItem("token") != null) {
+    if (getStoredItem("token") != null) {
       return (
         <div className="row">
           <div className="btn-group mx-auto" role="group">

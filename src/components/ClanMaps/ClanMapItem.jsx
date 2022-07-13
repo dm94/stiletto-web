@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { getStoredItem } from "../../services";
 
 class ClanMapItem extends Component {
   showButton() {
@@ -20,7 +21,7 @@ class ClanMapItem extends Component {
   }
 
   deleteMapButton(t) {
-    if (this.props.map.discordid === localStorage.getItem("discordid")) {
+    if (this.props.map.discordid === getStoredItem("discordid")) {
       return (
         <button
           className="btn btn-danger btn-block"
@@ -34,7 +35,7 @@ class ClanMapItem extends Component {
   }
 
   ShareMapButton(t) {
-    if (this.props.map.discordid === localStorage.getItem("discordid")) {
+    if (this.props.map.discordid === getStoredItem("discordid")) {
       let http = window.location.protocol;
       let slashes = http.concat("//");
       let host = slashes.concat(window.location.hostname);

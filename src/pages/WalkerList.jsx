@@ -9,6 +9,7 @@ import {
   getItems,
   getUserProfile,
   getHasPermissions,
+  getStoredItem,
 } from "../services";
 import Pagination from "../components/Pagination";
 import WalkerListItem from "../components/WalkerList/WalkerListItem";
@@ -44,7 +45,7 @@ class WalkerList extends Component {
   }
 
   async componentDidMount() {
-    if (localStorage.getItem("token") == null) {
+    if (getStoredItem("token") == null) {
       this.setState({ error: "You need to be logged in to view this section" });
       return;
     }
@@ -65,7 +66,7 @@ class WalkerList extends Component {
             "/walkerlist",
         },
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${getStoredItem("token")}`,
         },
       };
 
@@ -119,7 +120,7 @@ class WalkerList extends Component {
     this.setState({ isLoaded: false, page: page });
     Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
       params: {
         pageSize: 20,
@@ -196,7 +197,7 @@ class WalkerList extends Component {
         ready: walker.isReady,
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
@@ -220,7 +221,7 @@ class WalkerList extends Component {
       method: "delete",
       url: process.env.REACT_APP_API_URL + "/walkers/" + walkerid,
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
@@ -276,7 +277,7 @@ class WalkerList extends Component {
         discordserverid: this.state.inputDiscodId,
       },
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
@@ -290,6 +291,7 @@ class WalkerList extends Component {
           this.setState({ error: "Error when connecting with the database" });
         }
         localStorage.removeItem("profile");
+        sessionStorage.removeItem("profile");
       })
       .catch(() => {
         this.setState({ error: "Error when connecting to the API" });

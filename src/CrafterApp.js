@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
 import CookieConsent from "./components/CookieConsent";
 import DiscordButton from "./components/DiscordButton";
+import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
 import "./css/style.min.css";
 
@@ -24,19 +25,19 @@ function CrafterApp() {
     },
   });
 
+  let language = getStoredItem("i18nextLng");
+
   return (
     <Router>
       <Helmet
         htmlAttributes={{
-          lang: localStorage.getItem("i18nextLng")
-            ? localStorage.getItem("i18nextLng")
-            : "en",
+          lang: language ? language : "en",
         }}
       >
         <link
           rel="stylesheet"
           href={
-            localStorage.getItem("darkmode") !== "false"
+            getStoredItem("darkmode") !== "false"
               ? "/css/darkly.min.css"
               : "/css/journal.min.css"
           }
@@ -97,9 +98,7 @@ function CrafterApp() {
                   <Link
                     itemProp="url"
                     className="nav-link"
-                    to={
-                      localStorage.getItem("token") != null ? "/maps" : "/map"
-                    }
+                    to={getStoredItem("token") != null ? "/maps" : "/map"}
                   >
                     <span itemProp="name">{t("Resource Maps")}</span>
                   </Link>
@@ -146,26 +145,26 @@ function CrafterApp() {
                   width="39"
                   height="25"
                   src={
-                    localStorage.getItem("i18nextLng") != null
-                      ? localStorage.getItem("i18nextLng").includes("es")
+                    language != null
+                      ? language.includes("es")
                         ? "/img/es.jpg"
-                        : localStorage.getItem("i18nextLng").includes("ru")
+                        : language.includes("ru")
                         ? "/img/ru.jpg"
-                        : localStorage.getItem("i18nextLng").includes("fr")
+                        : language.includes("fr")
                         ? "/img/fr.jpg"
-                        : localStorage.getItem("i18nextLng").includes("de")
+                        : language.includes("de")
                         ? "/img/de.jpg"
-                        : localStorage.getItem("i18nextLng").includes("it")
+                        : language.includes("it")
                         ? "/img/it.jpg"
-                        : localStorage.getItem("i18nextLng").includes("ja")
+                        : language.includes("ja")
                         ? "/img/ja.jpg"
-                        : localStorage.getItem("i18nextLng").includes("pl")
+                        : language.includes("pl")
                         ? "/img/pl.jpg"
-                        : localStorage.getItem("i18nextLng").includes("zh")
+                        : language.includes("zh")
                         ? "/img/zh.jpg"
-                        : localStorage.getItem("i18nextLng").includes("pt")
+                        : language.includes("pt")
                         ? "/img/pt.jpg"
-                        : localStorage.getItem("i18nextLng").includes("uk")
+                        : language.includes("uk")
                         ? "/img/uk.jpg"
                         : "/img/en.jpg"
                       : "/img/en.jpg"
@@ -324,10 +323,10 @@ function CrafterApp() {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.23.10</p>
+                  <p className="mr-auto">v. 3.24.0</p>
                   <button
                     className={
-                      localStorage.getItem("darkmode") !== "true"
+                      getStoredItem("darkmode") !== "true"
                         ? "btn btn-outline-secondary"
                         : "btn btn-outline-light"
                     }
@@ -416,6 +415,7 @@ function CrafterApp() {
 
 function updateWeb() {
   localStorage.removeItem("allItems");
+  sessionStorage.removeItem("allItems");
   caches.keys().then(function (names) {
     for (let name of names) {
       caches.delete(name);
@@ -425,20 +425,18 @@ function updateWeb() {
 }
 
 function switchLanguage(lng) {
-  localStorage.setItem("i18nextLng", lng);
+  storeItem("i18nextLng", lng);
   i18next.changeLanguage(lng);
 }
 
 function darkMode(t) {
-  if (localStorage.getItem("darkmode") !== "false") {
+  if (getStoredItem("darkmode") !== "false") {
     return (
       <button
         className="btn btn-sm btn-outline-light"
         onClick={() => {
-          if (localStorage.getItem("acceptscookies")) {
-            localStorage.setItem("darkmode", false);
-            window.location.reload();
-          }
+          storeItem("darkmode", false);
+          window.location.reload();
         }}
       >
         <i className="far fa-sun"></i> {t("Light Theme Mode")}
@@ -449,10 +447,8 @@ function darkMode(t) {
       <button
         className="btn btn-sm btn-outline-light"
         onClick={() => {
-          if (localStorage.getItem("acceptscookies")) {
-            localStorage.setItem("darkmode", true);
-            window.location.reload();
-          }
+          storeItem("darkmode", true);
+          window.location.reload();
         }}
       >
         <i className="far fa-moon"></i> {t("Dark Theme Mode")}
