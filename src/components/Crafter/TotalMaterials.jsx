@@ -3,6 +3,7 @@ import { withTranslation } from "react-i18next";
 import Axios from "axios";
 import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
+import { sendEvent } from "../../page-tracking";
 
 class TotalMaterials extends Component {
   constructor(props) {
@@ -13,6 +14,10 @@ class TotalMaterials extends Component {
   }
 
   addRecipe = () => {
+    sendEvent({
+      category: "Share",
+      action: "Generate a recipe code",
+    });
     let items = this.props.selectedItems.map((item) => {
       return { name: item.name, count: item.count };
     });
@@ -101,6 +106,10 @@ class TotalMaterials extends Component {
   }
 
   copyMaterials = (t) => {
+    sendEvent({
+      category: "Share",
+      action: "Copy materials",
+    });
     let text = t("To make") + ":\n\n";
 
     this.props.selectedItems.forEach(

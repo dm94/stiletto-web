@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import { withTranslation } from "react-i18next";
+import { sendEvent } from "../page-tracking";
 
 class ModalMessage extends Component {
   state = { redirect: false };
@@ -43,6 +44,12 @@ class ModalMessage extends Component {
     }
 
     console.log(t(this.props.message.text));
+    sendEvent({
+      category: "Modal",
+      action: this.props.message.isError ? "Error" : "Information",
+      label: this.props.message.text,
+      nonInteraction: true,
+    });
 
     return (
       <div className="modal d-block">

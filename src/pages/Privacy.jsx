@@ -19,6 +19,11 @@ class Privacy extends Component {
           </p>
           <p>
             {t(
+              "Events - We use google to analyse some events in order to use them to improve the website."
+            )}
+          </p>
+          <p>
+            {t(
               "Private data - The only registration data saved is Discord ID and Discord Tag."
             )}
           </p>

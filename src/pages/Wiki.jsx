@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { getItems } from "../services";
+import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
 
 class Wiki extends Component {
@@ -27,6 +28,11 @@ class Wiki extends Component {
   };
 
   searchItems = async () => {
+    sendEvent({
+      category: "User",
+      action: "Wiki search",
+      label: this.state.searchText,
+    });
     if (this.state.items == null || this.state.items.length <= 0) {
       await this.updateRecipes();
     }

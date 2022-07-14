@@ -2,16 +2,12 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ReactGA from "react-ga";
 
-const usePageTracking = () => {
+export const usePageTracking = () => {
   const location = useLocation();
   const [initialized, setInitialized] = useState(false);
 
   useEffect(() => {
-    if (
-      !window.location.href.includes("localhost") &&
-      localStorage.getItem("acceptscookies") &&
-      process.env.REACT_APP_GA_ID
-    ) {
+    if (localStorage.getItem("acceptscookies") && process.env.REACT_APP_GA_ID) {
       ReactGA.initialize(process.env.REACT_APP_GA_ID);
     }
     setInitialized(true);
@@ -19,7 +15,6 @@ const usePageTracking = () => {
 
   useEffect(() => {
     if (
-      !window.location.href.includes("localhost") &&
       localStorage.getItem("acceptscookies") &&
       process.env.REACT_APP_GA_ID &&
       initialized
@@ -29,4 +24,8 @@ const usePageTracking = () => {
   }, [initialized, location]);
 };
 
-export default usePageTracking;
+export const sendEvent = (data) => {
+  if (localStorage.getItem("acceptscookies") && process.env.REACT_APP_GA_ID) {
+    ReactGA.event(data);
+  }
+};

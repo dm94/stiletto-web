@@ -8,7 +8,7 @@ import CookieConsent from "./components/CookieConsent";
 import DiscordButton from "./components/DiscordButton";
 import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
-import usePageTracking from "./page-tracking";
+import { usePageTracking } from "./page-tracking";
 import "./css/style.min.css";
 
 const CrafterApp = () => {
@@ -316,7 +316,7 @@ const CrafterApp = () => {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.25.0</p>
+                  <p className="mr-auto">v. 3.25.2</p>
                   <button
                     className={
                       getStoredItem("darkmode") !== "true"
@@ -409,7 +409,7 @@ const CrafterApp = () => {
 function updateWeb() {
   localStorage.removeItem("allItems");
   sessionStorage.removeItem("allItems");
-  caches.keys().then(function(names) {
+  caches.keys().then(function (names) {
     for (let name of names) {
       caches.delete(name);
     }
