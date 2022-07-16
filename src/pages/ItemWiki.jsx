@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Axios from "axios";
 import { getItems } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import Ingredients from "../components/Ingredients";
@@ -12,6 +11,8 @@ import CraftingTime from "../components/CraftingTime";
 import LoadingScreen from "../components/LoadingScreen";
 import ModuleInfo from "../components/Wiki/ModuleInfo";
 import ToolInfo from "../components/Wiki/ToolInfo";
+import GenericInfo from "../components/Wiki/GenericInfo";
+import WikiDescription from "../components/Wiki/WikiDescription";
 
 class ItemWiki extends Component {
   constructor(props) {
@@ -20,7 +21,6 @@ class ItemWiki extends Component {
       item: null,
       isLoaded: false,
       canBeUsed: [],
-      description: "",
     };
   }
 
@@ -54,44 +54,6 @@ class ItemWiki extends Component {
       });
       this.setState({ item: item, isLoaded: true, canBeUsed: allItems });
     }
-
-    const options = {
-      method: "get",
-      url: "https://lastoasis.fandom.com/api.php",
-      params: {
-        action: "query",
-        prop: "extracts",
-        titles: item_name,
-        exsentences: 10,
-        format: "json",
-        origin: "*",
-        formatversion: 2,
-        exlimit: 1,
-        explaintext: 1,
-      },
-    };
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 200) {
-          if (
-            response.data != null &&
-            response.data.query &&
-            response.data.query.pages
-          ) {
-            if (
-              response.data.query.pages[0] != null &&
-              response.data.query.pages[0].extract != null
-            ) {
-              this.setState({
-                description: response.data.query.pages[0].extract,
-              });
-            }
-          }
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
   }
 
   render() {
@@ -241,10 +203,34 @@ class ItemWiki extends Component {
                 ""
               )}
               {this.showDescription(t)}
-              {this.showStructureInfo(t)}
-              {this.showProyectileInfo(t)}
-              {this.showWeaponInfo(t)}
-              {this.showArmorInfo(t)}
+              {this.state.item.structureInfo && (
+                <GenericInfo
+                  key="structureInfo"
+                  name="Structure Info"
+                  dataInfo={this.state.item.structureInfo}
+                />
+              )}
+              {this.state.item.projectileDamage && (
+                <GenericInfo
+                  key="proyectileInfo"
+                  name="Projectile Info"
+                  dataInfo={this.state.item.projectileDamage}
+                />
+              )}
+              {this.state.item.weaponInfo && (
+                <GenericInfo
+                  key="weaponinfo"
+                  name="Weapon Info"
+                  dataInfo={this.state.item.weaponInfo}
+                />
+              )}
+              {this.state.item.armorInfo && (
+                <GenericInfo
+                  key="armorinfo"
+                  name="Armor Info"
+                  dataInfo={this.state.item.armorInfo}
+                />
+              )}
               {this.state.item.toolInfo && (
                 <ToolInfo key="toolinfo" toolInfo={this.state.item.toolInfo} />
               )}
@@ -254,9 +240,12 @@ class ItemWiki extends Component {
                   moduleInfo={this.state.item.moduleInfo}
                 />
               )}
-
-              {this.showWikiDescription(t)}
+              <WikiDescription
+                key="wikidescription"
+                name={this.state.item.name}
+              />
               {this.showCanBeUsedPart(t)}
+              {this.showDropsPart(t)}
             </div>
           </div>
         );
@@ -312,6 +301,33 @@ class ItemWiki extends Component {
     );
   }
 
+  showDropsPart(t) {
+    if (this.state.item.drops) {
+      return (
+        <Fragment>
+          <div className="col-12">
+            <div className="card border-secondary mb-3">
+              <div className="card-header">{t("Drops")}</div>
+            </div>
+          </div>
+          {this.showDrops()}
+        </Fragment>
+      );
+    }
+  }
+
+  showDrops() {
+    return this.state.item.drops.map((drop, index) => {
+      return (
+        <GenericInfo
+          key={"drop" + index}
+          name={"Drop " + index}
+          dataInfo={drop}
+        />
+      );
+    });
+  }
+
   showDescription(t) {
     if (this.state.item.description) {
       return (
@@ -319,250 +335,6 @@ class ItemWiki extends Component {
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Description")}</div>
             <div className="card-body">{this.state.item.description}</div>
-          </div>
-        </div>
-      );
-    }
-  }
-
-  showStructureInfo(t) {
-    if (this.state.item.structureInfo) {
-      return (
-        <div className="col-12 col-md-6 col-xl-3">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Structure info")}</div>
-            <div className="card-body">
-              <ul className="list-group">
-                {this.state.item.structureInfo.type ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Type")}</div>
-                    <div className="text-muted">
-                      {t(this.state.item.structureInfo.type)}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.structureInfo.hp ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Health")}</div>
-                    <div className="text-muted">
-                      {t(this.state.item.structureInfo.hp)}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-              </ul>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
-
-  showArmorInfo(t) {
-    if (this.state.item.armorInfo) {
-      return (
-        <div className="col-12 col-md-6 col-xl-3">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Armor info")}</div>
-            <div className="card-body">
-              <ul className="list-group">
-                {this.state.item.armorInfo.absorbing ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Absorbing")}</div>
-                    <div className="text-muted">
-                      {t(this.state.item.armorInfo.absorbing)}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.armorInfo.reduction ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Reduction")}</div>
-                    <div className="text-muted">
-                      {t(this.state.item.armorInfo.reduction)}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.armorInfo.speedReduction ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Speed reduction")}</div>
-                    <div className="text-muted">
-                      {t(this.state.item.armorInfo.speedReduction)}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-              </ul>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
-
-  showWeaponInfo(t) {
-    if (this.state.item.weaponInfo) {
-      return (
-        <div className="col-12 col-md-6 col-xl-3">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Weapon info")}</div>
-            <div className="card-body">
-              <ul className="list-group">
-                {this.state.item.weaponInfo.weaponSpeed ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Speed")}</div>
-                    <div className="text-muted">
-                      {this.state.item.weaponInfo.weaponSpeed}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.weaponInfo.impact ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Impact")}</div>
-                    <div className="text-muted">
-                      {this.state.item.weaponInfo.impact}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.weaponInfo.stability ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Stability")}</div>
-                    <div className="text-muted">
-                      {this.state.item.weaponInfo.stability}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.weaponInfo.weaponLength ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Length")}</div>
-                    <div className="text-muted">
-                      {this.state.item.weaponInfo.weaponLength}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.weaponInfo.damage ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Damage")}</div>
-                    <div className="text-muted">
-                      {this.state.item.weaponInfo.damage}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.weaponInfo.penetration ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Penetration")}</div>
-                    <div className="text-muted">
-                      {this.state.item.weaponInfo.penetration} %
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-              </ul>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
-
-  showProyectileInfo(t) {
-    if (this.state.item.projectileDamage) {
-      return (
-        <div className="col-12 col-md-6 col-xl-3">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Projectile info")}</div>
-            <div className="card-body">
-              <ul className="list-group">
-                {this.state.item.projectileDamage.damage ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Damage")}</div>
-                    <div className="text-muted">
-                      {this.state.item.projectileDamage.damage}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.projectileDamage.penetration ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Penetration")}</div>
-                    <div className="text-muted">
-                      {this.state.item.projectileDamage.penetration}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.projectileDamage.effectivenessVsSoak ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("vs Soak")}</div>
-                    <div className="text-muted">
-                      {this.state.item.projectileDamage.effectivenessVsSoak}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-                {this.state.item.projectileDamage.effectivenessVsReduce ? (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("vs Reduce")}</div>
-                    <div className="text-muted">
-                      {this.state.item.projectileDamage.effectivenessVsReduce}
-                    </div>
-                  </li>
-                ) : (
-                  ""
-                )}
-              </ul>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
-
-  showWikiDescription(t) {
-    if (this.state.description !== "") {
-      return (
-        <div className="col-12">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Description by Wiki")}</div>
-            <div className="card-body">
-              <pre>{this.state.description}</pre>
-            </div>
-            <div className="card-footer">
-              <a
-                type="button"
-                className="btn btn-lg btn-info btn-block"
-                target="_blank"
-                rel="noopener noreferrer"
-                href={
-                  "https://lastoasis.fandom.com/wiki/Special:Search?query=" +
-                  this.state.item.name +
-                  "&scope=internal&navigationSearch=true"
-                }
-              >
-                {t("Wiki")}
-              </a>
-            </div>
           </div>
         </div>
       );
