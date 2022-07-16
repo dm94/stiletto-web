@@ -10,6 +10,8 @@ import Station from "../components/Station";
 import Icon from "../components/Icon";
 import CraftingTime from "../components/CraftingTime";
 import LoadingScreen from "../components/LoadingScreen";
+import ModuleInfo from "../components/Wiki/ModuleInfo";
+import ToolInfo from "../components/Wiki/ToolInfo";
 
 class ItemWiki extends Component {
   constructor(props) {
@@ -91,40 +93,25 @@ class ItemWiki extends Component {
         this.setState({ error: "Error when connecting to the API" });
       });
   }
+
   render() {
     const { t } = this.props;
     if (this.state.isLoaded) {
       if (this.state.item != null) {
         let name = this.state.item.name;
-        let countCostToLearn =
-          this.state.item.cost != null && this.state.item.cost.count != null
-            ? this.state.item.cost.count
-            : "";
-        let typeCostToLearn =
-          this.state.item.cost != null && this.state.item.cost.name != null
-            ? this.state.item.cost.name
-            : t("Not defined");
-        let category = this.state.item.category
-          ? this.state.item.category
-          : t("Not defined");
-        let parent = this.state.item.parent
-          ? this.state.item.parent
-          : t("Not defined");
-        let tradePrice =
-          this.state.item.trade_price != null
-            ? this.state.item.trade_price + " flots"
-            : t("Not defined");
-
         let http = window.location.protocol;
         let slashes = http.concat("//");
         let host = slashes.concat(window.location.hostname);
-        let parent_url =
-          this.state.item.parent != null
-            ? host +
-              (window.location.port ? ":" + window.location.port : "") +
-              "/item/" +
-              encodeURI(parent.toLowerCase().replaceAll(" ", "_"))
-            : "wood";
+        let parent_url = "";
+        if (this.state.item.parent) {
+          parent_url =
+            host +
+            (window.location.port ? ":" + window.location.port : "") +
+            "/item/" +
+            encodeURI(
+              this.state.item.parent.toLowerCase().replaceAll(" ", "_")
+            );
+        }
         let craftUrl =
           host +
           (window.location.port ? ":" + window.location.port : "") +
@@ -134,7 +121,7 @@ class ItemWiki extends Component {
           <div className="container">
             {this.helmetInfo(name)}
             <div className="row">
-              <div className="col-6">
+              <div className="col-12 col-md-6">
                 <div className="card border-secondary mb-3">
                   <div className="card-header">
                     <Icon key={name} name={name} width={35} />
@@ -142,26 +129,52 @@ class ItemWiki extends Component {
                   </div>
                   <div className="card-body">
                     <ul className="list-group mb-3">
-                      <li className="list-group-item d-flex justify-content-between lh-condensed">
-                        <div className="my-0">{t("Cost to learn")}</div>
-                        <div className="text-muted">
-                          {countCostToLearn + " " + t(typeCostToLearn)}
-                        </div>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-between lh-condensed">
-                        <div className="my-0">{t("Category")}</div>
-                        <div className="text-muted">{category}</div>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-between lh-condensed">
-                        <div className="my-0">{t("Parent")}</div>
-                        <div className="text-muted">
-                          <a href={parent_url}>{t(parent)}</a>
-                        </div>
-                      </li>
-                      <li className="list-group-item d-flex justify-content-between lh-condensed">
-                        <div className="my-0">{t("Trade Price")}</div>
-                        <div className="text-muted">{tradePrice}</div>
-                      </li>
+                      {this.state.item.cost ? (
+                        <li className="list-group-item d-flex justify-content-between lh-condensed">
+                          <div className="my-0">{t("Cost to learn")}</div>
+                          <div className="text-muted">
+                            {(this.state.item.cost.count
+                              ? this.state.item.cost.count
+                              : "") +
+                              " " +
+                              (this.state.item.cost.name
+                                ? t(this.state.item.cost.name)
+                                : "")}
+                          </div>
+                        </li>
+                      ) : (
+                        ""
+                      )}
+                      {this.state.item.category ? (
+                        <li className="list-group-item d-flex justify-content-between lh-condensed">
+                          <div className="my-0">{t("Category")}</div>
+                          <div className="text-muted">
+                            {this.state.item.category}
+                          </div>
+                        </li>
+                      ) : (
+                        ""
+                      )}
+                      {this.state.item.parent ? (
+                        <li className="list-group-item d-flex justify-content-between lh-condensed">
+                          <div className="my-0">{t("Parent")}</div>
+                          <div className="text-muted">
+                            <a href={parent_url}>{t(this.state.item.parent)}</a>
+                          </div>
+                        </li>
+                      ) : (
+                        ""
+                      )}
+                      {this.state.item.trade_price ? (
+                        <li className="list-group-item d-flex justify-content-between lh-condensed">
+                          <div className="my-0">{t("Trade Price")}</div>
+                          <div className="text-muted">
+                            {this.state.item.trade_price} flots
+                          </div>
+                        </li>
+                      ) : (
+                        ""
+                      )}
                       {this.state.item.stackSize ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Character Stack")}</div>
@@ -208,27 +221,40 @@ class ItemWiki extends Component {
                   </div>
                 </div>
               </div>
-              <div className="col-6">
-                <div className="card border-secondary mb-3">
-                  <div className="card-header">
-                    {t("Recipe")}{" "}
-                    <a href={craftUrl} className="float-right">
-                      <i className="fas fa-tools"></i>
-                    </a>
-                  </div>
-                  <div className="card-body">
-                    <div className="row">
-                      {this.showIngredient(this.state.item)}
+              {this.state.item.crafting ? (
+                <div className="col-12 col-xl-6">
+                  <div className="card border-secondary mb-3">
+                    <div className="card-header">
+                      {t("Recipe")}{" "}
+                      <a href={craftUrl} className="float-right">
+                        <i className="fas fa-tools"></i>
+                      </a>
+                    </div>
+                    <div className="card-body">
+                      <div className="row">
+                        {this.showIngredient(this.state.item)}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              ) : (
+                ""
+              )}
               {this.showDescription(t)}
               {this.showStructureInfo(t)}
               {this.showProyectileInfo(t)}
               {this.showWeaponInfo(t)}
               {this.showArmorInfo(t)}
-              {this.showToolInfoPart(t)}
+              {this.state.item.toolInfo && (
+                <ToolInfo key="toolinfo" toolInfo={this.state.item.toolInfo} />
+              )}
+              {this.state.item.moduleInfo && (
+                <ModuleInfo
+                  key="moduleinfo"
+                  moduleInfo={this.state.item.moduleInfo}
+                />
+              )}
+
               {this.showWikiDescription(t)}
               {this.showCanBeUsedPart(t)}
             </div>
@@ -289,7 +315,7 @@ class ItemWiki extends Component {
   showDescription(t) {
     if (this.state.item.description) {
       return (
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Description")}</div>
             <div className="card-body">{this.state.item.description}</div>
@@ -302,7 +328,7 @@ class ItemWiki extends Component {
   showStructureInfo(t) {
     if (this.state.item.structureInfo) {
       return (
-        <div className="col-6 col-xl-3">
+        <div className="col-12 col-md-6 col-xl-3">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Structure info")}</div>
             <div className="card-body">
@@ -338,7 +364,7 @@ class ItemWiki extends Component {
   showArmorInfo(t) {
     if (this.state.item.armorInfo) {
       return (
-        <div className="col-6 col-xl-3">
+        <div className="col-12 col-md-6 col-xl-3">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Armor info")}</div>
             <div className="card-body">
@@ -384,7 +410,7 @@ class ItemWiki extends Component {
   showWeaponInfo(t) {
     if (this.state.item.weaponInfo) {
       return (
-        <div className="col-6 col-xl-3">
+        <div className="col-12 col-md-6 col-xl-3">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Weapon info")}</div>
             <div className="card-body">
@@ -457,39 +483,10 @@ class ItemWiki extends Component {
     }
   }
 
-  showToolInfoPart(t) {
-    if (this.state.item.toolInfo) {
-      return (
-        <div className="col-6 col-xl-3">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Tool info")}</div>
-            <div className="card-body">
-              <ul className="list-group">{this.showToolInfo(t)}</ul>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
-
-  showToolInfo(t) {
-    return this.state.item.toolInfo.map((toolInfo) => {
-      return (
-        <li
-          key={toolInfo.toolType + toolInfo.tier}
-          className="list-group-item d-flex justify-content-between lh-condensed"
-        >
-          <div className="my-0">{t(toolInfo.toolType)}</div>
-          <div className="text-muted">{toolInfo.tier}</div>
-        </li>
-      );
-    });
-  }
-
   showProyectileInfo(t) {
     if (this.state.item.projectileDamage) {
       return (
-        <div className="col-6 col-xl-3">
+        <div className="col-12 col-md-6 col-xl-3">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Projectile info")}</div>
             <div className="card-body">
@@ -589,7 +586,7 @@ class ItemWiki extends Component {
   showCanBeUsedPart(t) {
     if (this.state.canBeUsed.length > 0) {
       return (
-        <div className="col-6">
+        <div className="col-12 col-md-6">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("It can be used in")}</div>
             <div className="card-body">
