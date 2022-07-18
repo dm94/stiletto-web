@@ -13,6 +13,7 @@ import ModuleInfo from "../components/Wiki/ModuleInfo";
 import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
 import WikiDescription from "../components/Wiki/WikiDescription";
+import DropsInfo from "../components/Wiki/DropsInfo";
 
 class ItemWiki extends Component {
   constructor(props) {
@@ -245,7 +246,7 @@ class ItemWiki extends Component {
                 name={this.state.item.name}
               />
               {this.showCanBeUsedPart(t)}
-              {this.showDropsPart(t)}
+              <DropsInfo key="dropInfo" drops={this.state.item.drops} />
             </div>
           </div>
         );
@@ -299,33 +300,6 @@ class ItemWiki extends Component {
         />
       </Helmet>
     );
-  }
-
-  showDropsPart(t) {
-    if (this.state.item.drops) {
-      return (
-        <Fragment>
-          <div className="col-12">
-            <div className="card border-secondary mb-3">
-              <div className="card-header">{t("Drops")}</div>
-            </div>
-          </div>
-          {this.showDrops()}
-        </Fragment>
-      );
-    }
-  }
-
-  showDrops() {
-    return this.state.item.drops.map((drop, index) => {
-      return (
-        <GenericInfo
-          key={"drop" + index}
-          name={"Drop " + index}
-          dataInfo={drop}
-        />
-      );
-    });
   }
 
   showDescription(t) {
