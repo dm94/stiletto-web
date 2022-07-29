@@ -30,8 +30,7 @@ class ResourcesInMapList extends Component {
               key={"icon-rmap-" + resource.resourceid}
               name={resource.resourcetype}
             />
-            {t(resource.resourcetype)}{" "}
-            {resource.quality > 0 && "| Q: " + resource.quality}
+            {t(resource.resourcetype)}
           </button>
         </li>
       ));
@@ -49,7 +48,6 @@ class ResourcesInMapList extends Component {
                 name={resource.resourcetype}
               />
               {t(resource.resourcetype)}{" "}
-              {resource.quality > 0 && "| Q: " + resource.quality}
             </button>
           </li>
         ));

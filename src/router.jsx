@@ -14,7 +14,6 @@ import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
 import Map from "./pages/Map";
 import TechTree from "./pages/TechTree";
-import QualityCalculator from "./pages/QualityCalculator";
 import Privacy from "./pages/Privacy";
 import ResourceMapNoLog from "./components/ClanMaps/ResourceMapNoLog";
 import ItemWiki from "./pages/ItemWiki";
@@ -35,7 +34,6 @@ export default (
     <Route path="/others" component={Others} />
     <Route path="/map/:id" component={ResourceMapNoLog} />
     <Route path="/map" component={Map} />
-    <Route path="/quality" component={QualityCalculator} />
     <Route path="/tech/:tree" component={TechTree} />
     <Route path="/tech/" component={TechTree} />
     <Route path="/privacy" component={Privacy} />
