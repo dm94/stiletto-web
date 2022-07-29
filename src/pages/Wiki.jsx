@@ -9,6 +9,7 @@ class Wiki extends Component {
   state = {
     items: [],
     searchText: "",
+    textSearched: "",
     filteredItems: [],
     error: "",
   };
@@ -44,16 +45,31 @@ class Wiki extends Component {
         );
       });
     });
-    this.setState({ filteredItems });
+    this.setState({
+      filteredItems: filteredItems,
+      textSearched: this.state.searchText,
+    });
   };
 
-  showItems = () => {
+  showItems = (t) => {
     if (this.state.filteredItems != null) {
-      return this.state.filteredItems.map((item) => (
-        <div className="col-12 col-xl-3 col-lg-6" key={"wiki-" + item.name}>
-          <Ingredient ingredient={item} value={1} />
-        </div>
-      ));
+      if (this.state.filteredItems.length > 0) {
+        return this.state.filteredItems.map((item) => (
+          <div className="col-12 col-xl-3 col-lg-6" key={"wiki-" + item.name}>
+            <Ingredient ingredient={item} value={1} />
+          </div>
+        ));
+      } else if (this.state.textSearched.length > 0) {
+        return (
+          <div className="col-12 " key="wiki-notfound">
+            <div className="card">
+              <div className="card-header text-center">
+                {t("Nothing found")}
+              </div>
+            </div>
+          </div>
+        );
+      }
     }
   };
 
@@ -116,7 +132,7 @@ class Wiki extends Component {
           </div>
         </div>
         <div className="col-12">
-          <div className="row mb-2">{this.showItems()}</div>
+          <div className="row mb-2">{this.showItems(t)}</div>
         </div>
       </div>
     );

@@ -31,14 +31,10 @@ class DropsInfo extends Component {
             {drop.chance ? (
               <div className="card-body">
                 <ul className="list-group">
-                  {drop.chance ? (
-                    <li className="list-group-item d-flex justify-content-between lh-condensed">
-                      <div className="my-0 text-capitalize">{t("Chance")}</div>
-                      <div className="text-muted">{drop.chance}</div>
-                    </li>
-                  ) : (
-                    ""
-                  )}
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0 text-capitalize">{t("Chance")}</div>
+                    <div className="text-muted">{drop.chance}</div>
+                  </li>
                   {drop.minQuantity ? (
                     <li className="list-group-item d-flex justify-content-between lh-condensed">
                       <div className="my-0 text-capitalize">
