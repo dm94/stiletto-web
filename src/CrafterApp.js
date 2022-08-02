@@ -115,16 +115,6 @@ const CrafterApp = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link itemProp="url" className="nav-link" to="/auctions">
-                    <span itemProp="name">{t("Auction Timers")}</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link itemProp="url" className="nav-link" to="/quality">
-                    <span itemProp="name">{t("Quality")}</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link itemProp="url" className="nav-link" to="/tech">
                     <span itemProp="name"> {t("Tech Tree")}</span>
                   </Link>
@@ -316,7 +306,7 @@ const CrafterApp = () => {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v. 3.25.5</p>
+                  <p className="mr-auto">v. 4.0.0</p>
                   <button
                     className={
                       getStoredItem("darkmode") !== "true"

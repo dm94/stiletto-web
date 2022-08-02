@@ -12,7 +12,6 @@ import { withTranslation } from "react-i18next";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import Icon from "../Icon";
-import NotificationButton from "./NotificationButton";
 
 let myMarker = L.icon({
   iconUrl:
@@ -49,73 +48,6 @@ class MapLayer extends Component {
     return marker;
   };
 
-  getResourceEstimatedQuality(t, resource) {
-    const diff = Math.abs(new Date() - new Date(resource.lastharvested));
-    const minutes = Math.floor(diff / 1000 / 60);
-    let estimatedQuality = (minutes - 45) / 10;
-
-    if (estimatedQuality > resource.quality) {
-      estimatedQuality = resource.quality;
-    }
-    const remainingQuality = resource.quality - estimatedQuality;
-    let now = new Date();
-    let date =
-      now.getFullYear() +
-      "-" +
-      (now.getMonth() + 1) +
-      "-" +
-      now.getDate() +
-      " " +
-      now.getHours() +
-      ":" +
-      now.getMinutes();
-
-    let fullDate = new Date(now.getTime() + remainingQuality * 10 * 60000);
-
-    return (
-      <div>
-        <button
-          className="btn btn-info btn-sm btn-block"
-          onClick={() =>
-            this.props.updateResource(
-              resource.mapid,
-              resource.resourceid,
-              resource.token,
-              date
-            )
-          }
-        >
-          {t("Harvested now")}
-        </button>
-        <div className="mb-1">
-          {t("Last Harvested")}: {resource.lastharvested}
-        </div>
-        <div className="mb-1">
-          {t("Estimated current Quality")}:{" "}
-          {estimatedQuality < 0
-            ? t("No respawn yet")
-            : Math.floor(estimatedQuality)}
-        </div>
-        {this.state.showNotifactionButton && (
-          <NotificationButton
-            key={"notifationbutton-" + resource.resourceid}
-            fullDate={fullDate}
-            resource={resource}
-          />
-        )}
-        <div className="mb-1">
-          {t("Max quality in")}:{" "}
-          {remainingQuality !== 0
-            ? remainingQuality * 10 + " " + t("Minutes")
-            : t("Now")}
-        </div>
-        <div className="mb-1">
-          {t("Date")}: {fullDate.toLocaleString()}
-        </div>
-      </div>
-    );
-  }
-
   getMarkers(t) {
     if (
       this.props.resourcesInTheMap != null &&
@@ -142,9 +74,6 @@ class MapLayer extends Component {
                 [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
               </div>
               <div className="mb-1">{resource.description}</div>
-              {resource.quality > 0 && resource.lastharvested != null
-                ? this.getResourceEstimatedQuality(t, resource)
-                : ""}
               {resource.token != null && (
                 <button
                   className="btn btn-danger"

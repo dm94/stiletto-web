@@ -73,8 +73,8 @@ class TradeSystem extends Component {
       items = items.filter(
         (it) =>
           it.category === "Resources" ||
-          it.category === "crafting/station" ||
-          it.category === "modules"
+          it.category === "Ammo" ||
+          it.category === "Grappling Hooks"
       );
       this.setState({ items: items });
     }
@@ -220,23 +220,6 @@ class TradeSystem extends Component {
                       onChange={(evt) =>
                         this.setState({
                           amountInput: evt.target.value,
-                        })
-                      }
-                    />
-                  </div>
-                  <div className="form-group col-xl-2">
-                    <label htmlFor="qualityInput">
-                      {t("Quality")}: {this.state.qualityInput}
-                    </label>
-                    <input
-                      id="qualityInput"
-                      type="range"
-                      className="form-control-range"
-                      value={this.state.qualityInput}
-                      max="100"
-                      onChange={(evt) =>
-                        this.setState({
-                          qualityInput: evt.target.value,
                         })
                       }
                     />

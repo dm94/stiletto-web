@@ -12,12 +12,27 @@ class Wiki extends Component {
     textSearched: "",
     filteredItems: [],
     error: "",
+    categories: [],
+    categoryFilter: "All",
+  };
+
+  componentDidMount = () => {
+    this.updateRecipes();
   };
 
   updateRecipes = async () => {
     let items = await getItems();
     if (items != null) {
-      this.setState({ items: items });
+      let allCategories = [];
+
+      items.forEach((item) => {
+        if (item.category && !allCategories.includes(item.category)) {
+          allCategories.push(item.category);
+        }
+      });
+      allCategories.sort();
+
+      this.setState({ items: items, categories: allCategories });
     }
   };
 
@@ -38,7 +53,15 @@ class Wiki extends Component {
       await this.updateRecipes();
     }
     const { t } = this.props;
-    const filteredItems = this.state.items.filter((it) => {
+    let filteredItems = this.state.items;
+
+    if (this.state.categoryFilter && this.state.categoryFilter !== "All") {
+      filteredItems = filteredItems.filter((item) => {
+        return item.category && item.category === this.state.categoryFilter;
+      });
+    }
+
+    filteredItems = filteredItems.filter((it) => {
       return this.state.searchText.split(" ").every((internalItem) => {
         return (
           t(it.name).toLowerCase().indexOf(internalItem.toLowerCase()) !== -1
@@ -73,6 +96,16 @@ class Wiki extends Component {
     }
   };
 
+  showCategories = (t) => {
+    if (this.state.categories != null && this.state.categories.length > 0) {
+      return this.state.categories.map((category) => (
+        <option key={"option-" + category} value={category}>
+          {t(category)}
+        </option>
+      ));
+    }
+  };
+
   render() {
     const { t } = this.props;
 
@@ -99,7 +132,7 @@ class Wiki extends Component {
           <div className="card">
             <div className="card-header text-center">
               <div className="col-xs-12 col-xl-6 mx-auto">
-                <div className="input-group mb-3">
+                <div className="input-group">
                   <input
                     type="search"
                     className="form-control"
@@ -126,6 +159,32 @@ class Wiki extends Component {
                       {t("Search")}
                     </button>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="card-body">
+              <div className="col-xl-4 col-6">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="category-filter">
+                      {t("Filter by category")}
+                    </label>
+                  </div>
+                  <select
+                    id="category-filter"
+                    className="custom-select"
+                    value={this.state.categoryFilter}
+                    onChange={(evt) =>
+                      this.setState({
+                        categoryFilter: evt.target.value,
+                      })
+                    }
+                  >
+                    <option key="all" value="All">
+                      {t("All")}
+                    </option>
+                    {this.showCategories(t)}
+                  </select>
                 </div>
               </div>
             </div>
