@@ -164,9 +164,12 @@ class Wiki extends Component {
             </div>
             <div className="card-body">
               <div className="col-xl-4 col-6">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <label class="input-group-text" for="category-filter">
+                <div className="input-group">
+                  <div className="input-group-prepend">
+                    <label
+                      className="input-group-text"
+                      htmlFor="category-filter"
+                    >
                       {t("Filter by category")}
                     </label>
                   </div>
