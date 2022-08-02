@@ -177,9 +177,9 @@ class WalkerList extends Component {
 
     if (response != null) {
       let walkerTypeList = response
-        .filter((item) => item.name.includes("Walker Body"))
+        .filter((item) => item.category === "Walkers")
         .map((item) => {
-          return item.name.replace("Walker Body", "").trim();
+          return item.name.replace("Walker", "").trim();
         });
       this.setState({ walkerTypes: walkerTypeList });
     }
