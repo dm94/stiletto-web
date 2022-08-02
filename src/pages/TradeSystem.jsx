@@ -73,8 +73,8 @@ class TradeSystem extends Component {
       items = items.filter(
         (it) =>
           it.category === "Resources" ||
-          it.category === "crafting/station" ||
-          it.category === "modules"
+          it.category === "Ammo" ||
+          it.category === "Grappling Hooks"
       );
       this.setState({ items: items });
     }
