@@ -14,6 +14,7 @@ import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
 import WikiDescription from "../components/Wiki/WikiDescription";
 import DropsInfo from "../components/Wiki/DropsInfo";
+import SchematicDropInfo from "../components/Wiki/SchematicDropInfo";
 
 class ItemWiki extends Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class ItemWiki extends Component {
       item: null,
       isLoaded: false,
       canBeUsed: [],
+      allItems: [],
     };
   }
 
@@ -36,7 +38,7 @@ class ItemWiki extends Component {
     let items = await getItems();
     if (items != null) {
       let item = items.find((it) => it.name.toLowerCase() === item_name);
-      let allItems = items.filter((item) => {
+      let canBeUsed = items.filter((item) => {
         if (
           item.crafting != null &&
           item.crafting[0] != null &&
@@ -53,7 +55,12 @@ class ItemWiki extends Component {
           return false;
         }
       });
-      this.setState({ item: item, isLoaded: true, canBeUsed: allItems });
+      this.setState({
+        item: item,
+        isLoaded: true,
+        canBeUsed: canBeUsed,
+        allItems: items,
+      });
     }
   }
 
@@ -253,6 +260,11 @@ class ItemWiki extends Component {
                   moduleInfo={this.state.item.moduleInfo}
                 />
               )}
+              <SchematicDropInfo
+                key="schematicInfo"
+                name={this.state.item.name}
+                items={this.state.allItems}
+              />
               <WikiDescription
                 key="wikidescription"
                 name={this.state.item.name}
