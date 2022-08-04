@@ -42,8 +42,10 @@ class SchematicDropInfo extends Component {
         encodeURI(schematic.name.toLowerCase().replaceAll(" ", "_"));
       return (
         <li className="list-inline-item" key={schematic.name + "-" + index}>
-          <Icon key={schematic.name} name={schematic.name} />
-          <a href={url}>{t(schematic.name)}</a>
+          <div className="list-group-item">
+            <Icon key={schematic.name} name={schematic.name} />
+            <a href={url}>{t(schematic.name)}</a>
+          </div>
         </li>
       );
     });

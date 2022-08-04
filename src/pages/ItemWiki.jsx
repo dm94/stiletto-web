@@ -215,7 +215,9 @@ class ItemWiki extends Component {
                   <div className="card border-secondary mb-3">
                     <div className="card-header">{t("It is used to")}</div>
                     <div className="card-body">
-                      <div className="row">{this.showSchematicItems(t)}</div>
+                      <ul className="list-inline">
+                        {this.showSchematicItems(t)}
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -395,10 +397,12 @@ class ItemWiki extends Component {
           "/item/" +
           encodeURI(itemCraft.toLowerCase().replaceAll(" ", "_"));
         return (
-          <div className="col" key={"craft-" + index}>
-            <Icon key={itemCraft} name={itemCraft} />
-            <a href={url}>{t(itemCraft)}</a>
-          </div>
+          <li className="list-inline-item" key={itemCraft + "-" + index}>
+            <div className="list-group-item">
+              <Icon key={itemCraft} name={itemCraft} />
+              <a href={url}>{t(itemCraft)}</a>
+            </div>
+          </li>
         );
       });
     }
