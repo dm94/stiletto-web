@@ -7,7 +7,7 @@ class DropsInfo extends Component {
       const { t } = this.props;
       return (
         <Fragment>
-          <div className="col-12">
+          <div className="col-12 col-md-6">
             <div className="card border-secondary mb-3">
               <div className="card-header">{t("Obtainable from")}</div>
               <div className="card-body">
