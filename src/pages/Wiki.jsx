@@ -141,7 +141,7 @@ class Wiki extends Component {
           <div className="card">
             <div className="card-header text-center">
               <div className="col-xs-12 col-xl-6 mx-auto">
-                <div className="input-group">
+                <div className="input-group" itemprop="potentialAction">
                   <input
                     type="search"
                     className="form-control"

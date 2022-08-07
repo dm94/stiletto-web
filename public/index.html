@@ -64,7 +64,10 @@
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://www.stiletto.live/wiki?s={query}",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.stiletto.live/wiki/?s={search}"
+          },
           "query": "required",
           "query-input": "required name=search"
         }
