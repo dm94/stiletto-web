@@ -148,6 +148,8 @@ class Wiki extends Component {
                     placeholder={t("Search")}
                     aria-label={t("Search")}
                     aria-describedby="search-addon"
+                    itemProp="query-input"
+                    name="search"
                     onChange={(e) =>
                       this.setState({ searchText: e.currentTarget.value })
                     }

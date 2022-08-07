@@ -307,7 +307,7 @@ const CrafterApp = () => {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v4.0.6</p>
+                  <p className="mr-auto">v4.0.7</p>
                   <button
                     className={
                       getStoredItem("darkmode") !== "true"
