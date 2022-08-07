@@ -5,6 +5,8 @@ import { getItems } from "../services";
 import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
 
+const queryString = require("query-string");
+
 class Wiki extends Component {
   state = {
     items: [],
@@ -18,6 +20,13 @@ class Wiki extends Component {
 
   componentDidMount = () => {
     this.updateRecipes();
+    let parsed = null;
+    if (this.props.location != null && this.props.location.search != null) {
+      parsed = queryString.parse(this.props.location.search);
+    }
+    if (parsed && parsed.s != null) {
+      this.setState({ searchText: parsed.s }, () => this.searchItems());
+    }
   };
 
   updateRecipes = async () => {

@@ -28,6 +28,7 @@ const CrafterApp = () => {
   usePageTracking();
 
   let language = getStoredItem("i18nextLng");
+
   return (
     <React.Fragment>
       <Helmet
@@ -306,7 +307,7 @@ const CrafterApp = () => {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v4.0.5</p>
+                  <p className="mr-auto">v4.0.6</p>
                   <button
                     className={
                       getStoredItem("darkmode") !== "true"
