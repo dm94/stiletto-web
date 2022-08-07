@@ -53,10 +53,11 @@ class Wiki extends Component {
   };
 
   searchItems = async () => {
+    let search = this.state.searchText;
     sendEvent({
       category: "User",
       action: "Wiki search",
-      label: this.state.searchText,
+      label: search,
     });
     if (this.state.items == null || this.state.items.length <= 0) {
       await this.updateRecipes();
@@ -71,7 +72,7 @@ class Wiki extends Component {
     }
 
     filteredItems = filteredItems.filter((it) => {
-      return this.state.searchText.split(" ").every((internalItem) => {
+      return search.split(" ").every((internalItem) => {
         return (
           t(it.name).toLowerCase().indexOf(internalItem.toLowerCase()) !== -1
         );
@@ -79,7 +80,7 @@ class Wiki extends Component {
     });
     this.setState({
       filteredItems: filteredItems,
-      textSearched: this.state.searchText,
+      textSearched: search,
     });
   };
 
@@ -141,7 +142,7 @@ class Wiki extends Component {
           <div className="card">
             <div className="card-header text-center">
               <div className="col-xs-12 col-xl-6 mx-auto">
-                <div className="input-group" itemprop="potentialAction">
+                <div className="input-group" itemProp="potentialAction">
                   <input
                     type="search"
                     className="form-control"
