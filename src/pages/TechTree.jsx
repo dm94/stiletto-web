@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, Suspense } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { NavLink } from "react-router-dom";
@@ -13,8 +13,11 @@ import {
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
-import SkillTreeTab from "../components/TechTree/SkillTreeTab";
 import DoubleScrollbar from "../components/TechTree/DoubleScrollbar";
+
+const SkillTreeTab = React.lazy(() =>
+  import("../components/TechTree/SkillTreeTab")
+);
 
 class TechTree extends Component {
   constructor(props) {
@@ -194,7 +197,7 @@ class TechTree extends Component {
       return (
         <Fragment>
           {this.helmetInfo()}
-          <LoadingScreen></LoadingScreen>
+          <LoadingScreen />
         </Fragment>
       );
     }
@@ -283,13 +286,15 @@ class TechTree extends Component {
         {this.saveDeleteButtons(t)}
         <DoubleScrollbar className="w-100">
           <div className="tab-content-tree">
-            <SkillTreeTab
-              treeId={this.state.tabSelect}
-              title={t(this.state.tabSelect)}
-              theme={theme}
-              items={this.state.items}
-              clan={this.state.clan}
-            />
+            <Suspense fallback={<LoadingScreen />}>
+              <SkillTreeTab
+                treeId={this.state.tabSelect}
+                title={t(this.state.tabSelect)}
+                theme={theme}
+                items={this.state.items}
+                clan={this.state.clan}
+              />
+            </Suspense>
           </div>
         </DoubleScrollbar>
       </div>

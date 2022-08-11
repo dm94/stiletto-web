@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, Suspense } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { getItems } from "../services";
@@ -9,12 +9,25 @@ import Station from "../components/Station";
 import Icon from "../components/Icon";
 import CraftingTime from "../components/CraftingTime";
 import LoadingScreen from "../components/LoadingScreen";
+import LoadingPart from "../components/LoadingPart";
 import ModuleInfo from "../components/Wiki/ModuleInfo";
 import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
-import WikiDescription from "../components/Wiki/WikiDescription";
-import DropsInfo from "../components/Wiki/DropsInfo";
-import SchematicDropInfo from "../components/Wiki/SchematicDropInfo";
+
+const WikiDescription = React.lazy(() =>
+  import("../components/Wiki/WikiDescription")
+);
+const SchematicDropInfo = React.lazy(() =>
+  import("../components/Wiki/SchematicDropInfo")
+);
+const DropsInfo = React.lazy(() => import("../components/Wiki/DropsInfo"));
+const CanBeUsedInfo = React.lazy(() =>
+  import("../components/Wiki/CanBeUsedInfo")
+);
+
+const SchematicItems = React.lazy(() =>
+  import("../components/Wiki/SchematicItems")
+);
 
 class ItemWiki extends Component {
   constructor(props) {
@@ -38,27 +51,9 @@ class ItemWiki extends Component {
     let items = await getItems();
     if (items != null) {
       let item = items.find((it) => it.name.toLowerCase() === item_name);
-      let canBeUsed = items.filter((item) => {
-        if (
-          item.crafting != null &&
-          item.crafting[0] != null &&
-          item.crafting[0].ingredients != null
-        ) {
-          let allIngredients = item.crafting[0].ingredients;
-
-          return (
-            allIngredients.filter(
-              (ingredient) => ingredient.name.toLowerCase() === item_name
-            ).length > 0
-          );
-        } else {
-          return false;
-        }
-      });
       this.setState({
         item: item,
         isLoaded: true,
-        canBeUsed: canBeUsed,
         allItems: items,
       });
     }
@@ -210,20 +205,17 @@ class ItemWiki extends Component {
               ) : (
                 ""
               )}
-              {this.state.item.learn ? (
-                <div className="col-12 col-xl-6">
-                  <div className="card border-secondary mb-3">
-                    <div className="card-header">{t("It is used to")}</div>
-                    <div className="card-body">
-                      <ul className="list-inline">
-                        {this.showSchematicItems(t)}
-                      </ul>
+              <Suspense
+                fallback={
+                  <div className="col-12 col-xl-6">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
                     </div>
                   </div>
-                </div>
-              ) : (
-                ""
-              )}
+                }
+              >
+                <SchematicItems key="schematicItems" item={this.state.item} />
+              </Suspense>
               {this.showDescription(t)}
               {this.state.item.structureInfo && (
                 <GenericInfo
@@ -262,17 +254,61 @@ class ItemWiki extends Component {
                   moduleInfo={this.state.item.moduleInfo}
                 />
               )}
-              <SchematicDropInfo
-                key="schematicInfo"
-                name={this.state.item.name}
-                items={this.state.allItems}
-              />
-              <WikiDescription
-                key="wikidescription"
-                name={this.state.item.name}
-              />
-              {this.showCanBeUsedPart(t)}
-              <DropsInfo key="dropInfo" drops={this.state.item.drops} />
+              <Suspense
+                fallback={
+                  <div className="col-12 col-md-6">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
+                    </div>
+                  </div>
+                }
+              >
+                <SchematicDropInfo
+                  key="schematicInfo"
+                  name={this.state.item.name}
+                  items={this.state.allItems}
+                />
+              </Suspense>
+              <Suspense
+                fallback={
+                  <div className="col-12">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
+                    </div>
+                  </div>
+                }
+              >
+                <WikiDescription
+                  key="wikidescription"
+                  name={this.state.item.name}
+                />
+              </Suspense>
+              <Suspense
+                fallback={
+                  <div className="col-12 col-md-6">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
+                    </div>
+                  </div>
+                }
+              >
+                <CanBeUsedInfo
+                  key="CanBeUsedInfo"
+                  name={this.state.item.name}
+                  items={this.state.allItems}
+                />
+              </Suspense>
+              <Suspense
+                fallback={
+                  <div className="col-12 col-md-6">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
+                    </div>
+                  </div>
+                }
+              >
+                <DropsInfo key="dropInfo" drops={this.state.item.drops} />
+              </Suspense>
             </div>
           </div>
         );
@@ -355,21 +391,6 @@ class ItemWiki extends Component {
     });
   }
 
-  showCanBeUsedPart(t) {
-    if (this.state.canBeUsed.length > 0) {
-      return (
-        <div className="col-12 col-md-6">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("It can be used in")}</div>
-            <div className="card-body">
-              <ul className="list-inline">{this.showCanBeUsed(t)}</ul>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
-
   showIngredient(item) {
     if (item != null && item.crafting != null) {
       return item.crafting.map((ingredients, index) => (
@@ -382,29 +403,6 @@ class ItemWiki extends Component {
           {ingredients.time && <CraftingTime time={ingredients.time} />}
         </div>
       ));
-    }
-  }
-
-  showSchematicItems(t) {
-    if (this.state.item.learn) {
-      return this.state.item.learn.map((itemCraft, index) => {
-        let http = window.location.protocol;
-        let slashes = http.concat("//");
-        let host = slashes.concat(window.location.hostname);
-        let url =
-          host +
-          (window.location.port ? ":" + window.location.port : "") +
-          "/item/" +
-          encodeURI(itemCraft.toLowerCase().replaceAll(" ", "_"));
-        return (
-          <li className="list-inline-item" key={itemCraft + "-" + index}>
-            <div className="list-group-item">
-              <Icon key={itemCraft} name={itemCraft} />
-              <a href={url}>{t(itemCraft)}</a>
-            </div>
-          </li>
-        );
-      });
     }
   }
 }
