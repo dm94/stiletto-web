@@ -6,7 +6,7 @@ i18n.use(HttpApi).init({
   lng: getStoredItem("i18nextLng"),
   fallbackLng: "en",
   debug: false,
-  preload: ["en", "es", "de", "fr"],
+  preload: ["en"],
   keySeparator: false,
 
   defaultNS: "translation",
