@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import Axios from "axios";
 import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
+import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../services";
 const queryString = require("query-string");
 
@@ -12,6 +13,7 @@ class DiscordConnection extends Component {
     super(props);
     this.state = {
       isLoaded: false,
+      error: null,
     };
   }
 
@@ -121,6 +123,17 @@ class DiscordConnection extends Component {
   }
 
   render() {
+    if (this.state.error) {
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: this.state.error,
+            redirectPage: "/",
+          }}
+        />
+      );
+    }
     if (this.state.isLoaded) {
       return <div className="h-100 container">{this.showClanInfo()}</div>;
     }

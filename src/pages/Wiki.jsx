@@ -122,7 +122,7 @@ class Wiki extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>Wiki - Stiletto for Last Oasis</title>
+          <title>Last Oasis Wiki - Stiletto</title>
           <meta name="description" content="Last oasis Wiki" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Wiki - Stiletto for Last Oasis" />
