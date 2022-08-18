@@ -65,22 +65,22 @@ export const calcRarityValue = (rarity, type, category, value) => {
     }
     switch (rarity) {
       case "Uncommon":
-        if (rarityData?.Uncommon[factorName]) {
+        if (rarityData.Uncommon[factorName]) {
           value = value * rarityData.Uncommon[factorName];
         }
         break;
       case "Rare":
-        if (rarityData?.Rare[factorName]) {
+        if (rarityData.Rare[factorName]) {
           value = value * rarityData.Rare[factorName];
         }
         break;
       case "Epic":
-        if (rarityData?.Epic[factorName]) {
+        if (rarityData.Epic[factorName]) {
           value = value * rarityData.Epic[factorName];
         }
         break;
       case "Legendary":
-        if (rarityData?.Legendary[factorName]) {
+        if (rarityData.Legendary[factorName]) {
           value = value * rarityData.Legendary[factorName];
         }
         break;
@@ -99,22 +99,22 @@ export const calcRarityValue = (rarity, type, category, value) => {
 const sumCalcs = (factorName, rarity, value) => {
   switch (rarity) {
     case "Uncommon":
-      if (rarityData?.Uncommon[factorName]) {
+      if (rarityData.Uncommon[factorName]) {
         value = value + rarityData.Uncommon[factorName];
       }
       break;
     case "Rare":
-      if (rarityData?.Rare[factorName]) {
+      if (rarityData.Rare[factorName]) {
         value = value + rarityData.Rare[factorName];
       }
       break;
     case "Epic":
-      if (rarityData?.Epic[factorName]) {
+      if (rarityData.Epic[factorName]) {
         value = value + rarityData.Epic[factorName];
       }
       break;
     case "Legendary":
-      if (rarityData?.Legendary[factorName]) {
+      if (rarityData.Legendary[factorName]) {
         value = value + rarityData.Legendary[factorName];
       }
       break;
