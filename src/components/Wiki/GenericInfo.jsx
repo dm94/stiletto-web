@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
+import { calcRarityValue } from "../../rarityCalc";
 
 class GenericInfo extends Component {
   render() {
@@ -22,13 +23,19 @@ class GenericInfo extends Component {
   showValues(t) {
     return Object.keys(this.props.dataInfo).map((key, index) => {
       if (this.props.dataInfo[key]) {
+        let value = calcRarityValue(
+          this.props.rarity,
+          key,
+          this.props.category,
+          this.props.dataInfo[key]
+        );
         return (
           <li
             key={key + "-" + index}
             className="list-group-item d-flex justify-content-between lh-condensed"
           >
             <div className="my-0 text-capitalize">{t(key)}</div>
-            <div className="text-muted">{this.props.dataInfo[key]}</div>
+            <div className="text-muted">{value}</div>
           </li>
         );
       } else {

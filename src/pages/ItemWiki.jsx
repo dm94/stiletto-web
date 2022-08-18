@@ -13,6 +13,7 @@ import LoadingPart from "../components/LoadingPart";
 import ModuleInfo from "../components/Wiki/ModuleInfo";
 import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
+import { calcRarityValue } from "../rarityCalc";
 
 const WikiDescription = React.lazy(() =>
   import("../components/Wiki/WikiDescription")
@@ -37,6 +38,7 @@ class ItemWiki extends Component {
       isLoaded: false,
       canBeUsed: [],
       allItems: [],
+      rarity: "Common",
     };
   }
 
@@ -82,6 +84,9 @@ class ItemWiki extends Component {
           (window.location.port ? ":" + window.location.port : "") +
           "/crafter?craft=" +
           encodeURI(name.toLowerCase());
+
+        let category = this.state.item.category;
+
         return (
           <div className="container">
             {this.helmetInfo(name)}
@@ -113,9 +118,7 @@ class ItemWiki extends Component {
                       {this.state.item.category ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Category")}</div>
-                          <div className="text-muted">
-                            {this.state.item.category}
-                          </div>
+                          <div className="text-muted">{t(category)}</div>
                         </li>
                       ) : (
                         ""
@@ -154,7 +157,12 @@ class ItemWiki extends Component {
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Weight")}</div>
                           <div className="text-muted">
-                            {this.state.item.weight}
+                            {calcRarityValue(
+                              this.state.rarity,
+                              "weight",
+                              category,
+                              this.state.item.weight
+                            )}
                           </div>
                         </li>
                       ) : (
@@ -176,13 +184,96 @@ class ItemWiki extends Component {
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Durability")}</div>
                           <div className="text-muted">
-                            {this.state.item.durability}
+                            {calcRarityValue(
+                              this.state.rarity,
+                              "durability",
+                              category,
+                              this.state.item.durability
+                            )}
                           </div>
                         </li>
                       ) : (
                         ""
                       )}
                     </ul>
+                  </div>
+                  <div className="card-footer text-center">
+                    <div
+                      className="btn-group"
+                      role="group"
+                      aria-label="Rarities"
+                    >
+                      <button
+                        type="button"
+                        title={t("Common")}
+                        className={
+                          this.state.rarity === "Common"
+                            ? "btn btn-outline-light active"
+                            : "btn btn-outline-light"
+                        }
+                        onClick={() => {
+                          this.setState({ rarity: "Common" });
+                        }}
+                      >
+                        C
+                      </button>
+                      <button
+                        type="button"
+                        title={t("Uncommon")}
+                        className={
+                          this.state.rarity === "Uncommon"
+                            ? "btn btn-outline-success active"
+                            : "btn btn-outline-success"
+                        }
+                        onClick={() => {
+                          this.setState({ rarity: "Uncommon" });
+                        }}
+                      >
+                        U
+                      </button>
+                      <button
+                        type="button"
+                        title={t("Rare")}
+                        className={
+                          this.state.rarity === "Rare"
+                            ? "btn btn-outline-info active"
+                            : "btn btn-outline-info"
+                        }
+                        onClick={() => {
+                          this.setState({ rarity: "Rare" });
+                        }}
+                      >
+                        R
+                      </button>
+                      <button
+                        type="button"
+                        title={t("Epic")}
+                        className={
+                          this.state.rarity === "Epic"
+                            ? "btn btn-outline-danger active"
+                            : "btn btn-outline-danger"
+                        }
+                        onClick={() => {
+                          this.setState({ rarity: "Epic" });
+                        }}
+                      >
+                        E
+                      </button>
+                      <button
+                        type="button"
+                        title={t("Legendary")}
+                        className={
+                          this.state.rarity === "Legendary"
+                            ? "btn btn-outline-warning active"
+                            : "btn btn-outline-warning"
+                        }
+                        onClick={() => {
+                          this.setState({ rarity: "Legendary" });
+                        }}
+                      >
+                        L
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -222,6 +313,8 @@ class ItemWiki extends Component {
                   key="structureInfo"
                   name="Structure Info"
                   dataInfo={this.state.item.structureInfo}
+                  rarity={this.state.rarity}
+                  category={category}
                 />
               )}
               {this.state.item.projectileDamage && (
@@ -229,6 +322,8 @@ class ItemWiki extends Component {
                   key="proyectileInfo"
                   name="Projectile Info"
                   dataInfo={this.state.item.projectileDamage}
+                  rarity={this.state.rarity}
+                  category={category}
                 />
               )}
               {this.state.item.weaponInfo && (
@@ -236,6 +331,8 @@ class ItemWiki extends Component {
                   key="weaponinfo"
                   name="Weapon Info"
                   dataInfo={this.state.item.weaponInfo}
+                  rarity={this.state.rarity}
+                  category={category}
                 />
               )}
               {this.state.item.armorInfo && (
@@ -243,6 +340,8 @@ class ItemWiki extends Component {
                   key="armorinfo"
                   name="Armor Info"
                   dataInfo={this.state.item.armorInfo}
+                  rarity={this.state.rarity}
+                  category={category}
                 />
               )}
               {this.state.item.toolInfo && (
