@@ -40,7 +40,11 @@ class DiscordConnection extends Component {
             discordid: response.data.discordid,
             token: response.data.token,
           });
-          window.location.href = window.location.origin;
+          let http = window.location.protocol;
+          let slashes = http.concat("//");
+          let host = slashes.concat(window.location.hostname);
+          window.location.href =
+            host + (window.location.port ? ":" + window.location.port : "");
         } else if (response.status === 401) {
           this.setState({ error: "Unauthorized" });
         } else if (response.status === 503) {
