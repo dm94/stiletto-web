@@ -35,7 +35,15 @@ class GenericInfo extends Component {
             className="list-group-item d-flex justify-content-between lh-condensed"
           >
             <div className="my-0 text-capitalize">{t(key)}</div>
-            <div className="text-muted">{value}</div>
+            <div
+              className={
+                value != this.props.dataInfo[key]
+                  ? this.props.textColor
+                  : "text-muted"
+              }
+            >
+              {value}
+            </div>
           </li>
         );
       } else {

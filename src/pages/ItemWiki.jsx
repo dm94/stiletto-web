@@ -39,6 +39,7 @@ class ItemWiki extends Component {
       canBeUsed: [],
       allItems: [],
       rarity: "Common",
+      textColor: "text-muted",
     };
   }
 
@@ -156,7 +157,7 @@ class ItemWiki extends Component {
                       {this.state.item.weight ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Weight")}</div>
-                          <div className="text-muted">
+                          <div className={this.state.textColor}>
                             {calcRarityValue(
                               this.state.rarity,
                               "weight",
@@ -183,7 +184,7 @@ class ItemWiki extends Component {
                       {this.state.item.durability ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Durability")}</div>
-                          <div className="text-muted">
+                          <div className={this.state.textColor}>
                             {calcRarityValue(
                               this.state.rarity,
                               "durability",
@@ -212,7 +213,10 @@ class ItemWiki extends Component {
                             : "btn btn-outline-light"
                         }
                         onClick={() => {
-                          this.setState({ rarity: "Common" });
+                          this.setState({
+                            rarity: "Common",
+                            textColor: "text-muted",
+                          });
                         }}
                       >
                         C
@@ -226,7 +230,10 @@ class ItemWiki extends Component {
                             : "btn btn-outline-success"
                         }
                         onClick={() => {
-                          this.setState({ rarity: "Uncommon" });
+                          this.setState({
+                            rarity: "Uncommon",
+                            textColor: "text-success",
+                          });
                         }}
                       >
                         U
@@ -240,7 +247,10 @@ class ItemWiki extends Component {
                             : "btn btn-outline-info"
                         }
                         onClick={() => {
-                          this.setState({ rarity: "Rare" });
+                          this.setState({
+                            rarity: "Rare",
+                            textColor: "text-info",
+                          });
                         }}
                       >
                         R
@@ -254,7 +264,10 @@ class ItemWiki extends Component {
                             : "btn btn-outline-danger"
                         }
                         onClick={() => {
-                          this.setState({ rarity: "Epic" });
+                          this.setState({
+                            rarity: "Epic",
+                            textColor: "text-danger",
+                          });
                         }}
                       >
                         E
@@ -268,7 +281,10 @@ class ItemWiki extends Component {
                             : "btn btn-outline-warning"
                         }
                         onClick={() => {
-                          this.setState({ rarity: "Legendary" });
+                          this.setState({
+                            rarity: "Legendary",
+                            textColor: "text-warning",
+                          });
                         }}
                       >
                         L
@@ -314,6 +330,7 @@ class ItemWiki extends Component {
                   name="Structure Info"
                   dataInfo={this.state.item.structureInfo}
                   rarity={this.state.rarity}
+                  textColor={this.state.textColor}
                   category={category}
                 />
               )}
@@ -323,6 +340,7 @@ class ItemWiki extends Component {
                   name="Projectile Info"
                   dataInfo={this.state.item.projectileDamage}
                   rarity={this.state.rarity}
+                  textColor={this.state.textColor}
                   category={category}
                 />
               )}
@@ -332,6 +350,7 @@ class ItemWiki extends Component {
                   name="Weapon Info"
                   dataInfo={this.state.item.weaponInfo}
                   rarity={this.state.rarity}
+                  textColor={this.state.textColor}
                   category={category}
                 />
               )}
@@ -341,6 +360,7 @@ class ItemWiki extends Component {
                   name="Armor Info"
                   dataInfo={this.state.item.armorInfo}
                   rarity={this.state.rarity}
+                  textColor={this.state.textColor}
                   category={category}
                 />
               )}
