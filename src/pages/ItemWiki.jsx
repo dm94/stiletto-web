@@ -475,8 +475,8 @@ class ItemWiki extends Component {
             window.location.protocol
               .concat("//")
               .concat(window.location.hostname) +
-            (window.location.href ? ":" + window.location.port : "") +
-            window.location.pathname
+            (window.location.port ? ":" + window.location.port : "") +
+            "/item"
           }
         />
       </Helmet>
