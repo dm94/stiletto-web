@@ -42,6 +42,27 @@ class Trade extends Component {
     }
   }
 
+  showQuality(t) {
+    switch (this.props.trade.quality) {
+      case "0":
+        return <span className="badge badge-light mb-2">{t("Common")}</span>;
+      case "1":
+        return (
+          <span className="badge badge-success mb-2">{t("Uncommon")}</span>
+        );
+      case "2":
+        return <span className="badge badge-info mb-2">{t("Rare")}</span>;
+      case "3":
+        return <span className="badge badge-danger mb-2">{t("Epic")}</span>;
+      case "4":
+        return (
+          <span className="badge badge-danger mb-2">{t("Legendary")}</span>
+        );
+      default:
+        return <span className="badge badge-warning mb-2">{t("Common")}</span>;
+    }
+  }
+
   render() {
     const { t } = this.props;
     return (
@@ -56,6 +77,7 @@ class Trade extends Component {
             {t(this.props.trade.type)} {"//"} {this.props.trade.region}
           </div>
           <div className="card-body">
+            {this.showQuality(t)}
             <h5 className="card-title">
               {this.props.trade.amount !== "0"
                 ? this.props.trade.amount + "x "
@@ -64,10 +86,7 @@ class Trade extends Component {
                 key={this.props.trade.resource}
                 name={this.props.trade.resource}
               />
-              {t(this.props.trade.resource)}{" "}
-              {this.props.trade.quality !== "0"
-                ? "Q: " + this.props.trade.quality
-                : ""}
+              {t(this.props.trade.resource)}
             </h5>
             <p>
               {this.props.trade.price !== "0"
