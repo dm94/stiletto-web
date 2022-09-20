@@ -56,10 +56,10 @@ class Trade extends Component {
         return <span className="badge badge-danger mb-2">{t("Epic")}</span>;
       case "4":
         return (
-          <span className="badge badge-danger mb-2">{t("Legendary")}</span>
+          <span className="badge badge-warning mb-2">{t("Legendary")}</span>
         );
       default:
-        return <span className="badge badge-warning mb-2">{t("Common")}</span>;
+        return <span className="badge badge-light mb-2">{t("Common")}</span>;
     }
   }
 
