@@ -160,7 +160,7 @@ class TradeSystem extends Component {
         <div className="col-xl-12">
           <form onSubmit={this.createTrade}>
             <div className="card border-secondary mb-3">
-              <div className="card-header">{t("Publish an trade")}</div>
+              <div className="card-header">{t("Publish a trade")}</div>
               <div className="card-body">
                 <div className="row">
                   <div className="form-group col-xl-2">
