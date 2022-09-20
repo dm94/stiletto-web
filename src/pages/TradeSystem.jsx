@@ -225,6 +225,26 @@ class TradeSystem extends Component {
                     />
                   </div>
                   <div className="form-group col-xl-2">
+                    <label htmlFor="qualityInput">{t("Quality")}</label>
+                    <select
+                      id="qualityInput"
+                      type="range"
+                      className="custom-select"
+                      value={this.state.qualityInput}
+                      onChange={(evt) =>
+                        this.setState({
+                          qualityInput: evt.target.value,
+                        })
+                      }
+                    >
+                      <option value="0">{t("Common")}</option>
+                      <option value="1">{t("Uncommon")}</option>
+                      <option value="2">{t("Rare")}</option>
+                      <option value="3">{t("Epic")}</option>
+                      <option value="4">{t("Legendary")}</option>
+                    </select>
+                  </div>
+                  <div className="form-group col-xl-2">
                     <label htmlFor="priceInput">{t("Price per unit")}</label>
                     <input
                       id="priceInput"
