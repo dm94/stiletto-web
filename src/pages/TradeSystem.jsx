@@ -74,7 +74,13 @@ class TradeSystem extends Component {
         (it) =>
           it.category === "Resources" ||
           it.category === "Ammo" ||
-          it.category === "Grappling Hooks"
+          it.category === "Armors" ||
+          it.category === "Grappling Hooks" ||
+          it.category === "Schematics" ||
+          it.category === "Tools" ||
+          it.category === "Liquids" ||
+          it.name === "Sterile Bandage" ||
+          it.name === "Primitive Bandage"
       );
       this.setState({ items: items });
     }
