@@ -58,7 +58,7 @@ class CreateMapPanel extends Component {
                     name="map_date"
                     value={this.state.mapDateInput}
                     min={1}
-                    max={60}
+                    max={365}
                     onChange={(evt) =>
                       this.setState({
                         mapDateInput: evt.target.value,

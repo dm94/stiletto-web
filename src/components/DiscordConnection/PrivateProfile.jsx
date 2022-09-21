@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getUserProfile, closeSession, getStoredItem } from "../../services";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
@@ -39,6 +39,7 @@ class PrivateProfile extends Component {
         clanid: response.message.clanid,
         nickname: response.message.nickname,
         clanleaderid: response.message.leaderid,
+        user_discord_id: response.message.discordid,
         isLoaded: true,
       });
     } else {
@@ -162,11 +163,8 @@ class PrivateProfile extends Component {
     let showHideClassName = this.state.showDeleteModal
       ? "modal d-block"
       : "modal d-none";
-    if (
-      getStoredItem("discordid") != null &&
-      getStoredItem("token") != null &&
-      !this.state.redirect
-    ) {
+
+    if (getStoredItem("token") != null && !this.state.redirect) {
       return (
         <div className="row">
           <Helmet>
@@ -351,7 +349,15 @@ class PrivateProfile extends Component {
         </div>
       );
     } else {
-      return <Redirect to="/" from="/clan" />;
+      return (
+        <ModalMessage
+          message={{
+            isError: true,
+            text: "Login again",
+            redirectPage: "/",
+          }}
+        />
+      );
     }
   }
 

@@ -5,6 +5,8 @@ import { getItems } from "../services";
 import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
 
+const queryString = require("query-string");
+
 class Wiki extends Component {
   state = {
     items: [],
@@ -18,6 +20,13 @@ class Wiki extends Component {
 
   componentDidMount = () => {
     this.updateRecipes();
+    let parsed = null;
+    if (this.props.location != null && this.props.location.search != null) {
+      parsed = queryString.parse(this.props.location.search);
+    }
+    if (parsed && parsed.s != null) {
+      this.setState({ searchText: parsed.s }, () => this.searchItems());
+    }
   };
 
   updateRecipes = async () => {
@@ -44,10 +53,11 @@ class Wiki extends Component {
   };
 
   searchItems = async () => {
+    let search = this.state.searchText;
     sendEvent({
       category: "User",
       action: "Wiki search",
-      label: this.state.searchText,
+      label: search,
     });
     if (this.state.items == null || this.state.items.length <= 0) {
       await this.updateRecipes();
@@ -62,7 +72,7 @@ class Wiki extends Component {
     }
 
     filteredItems = filteredItems.filter((it) => {
-      return this.state.searchText.split(" ").every((internalItem) => {
+      return search.split(" ").every((internalItem) => {
         return (
           t(it.name).toLowerCase().indexOf(internalItem.toLowerCase()) !== -1
         );
@@ -70,7 +80,7 @@ class Wiki extends Component {
     });
     this.setState({
       filteredItems: filteredItems,
-      textSearched: this.state.searchText,
+      textSearched: search,
     });
   };
 
@@ -112,7 +122,7 @@ class Wiki extends Component {
     return (
       <div className="row">
         <Helmet>
-          <title>Wiki - Stiletto for Last Oasis</title>
+          <title>Last Oasis Wiki - Stiletto</title>
           <meta name="description" content="Last oasis Wiki" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Wiki - Stiletto for Last Oasis" />
@@ -132,13 +142,15 @@ class Wiki extends Component {
           <div className="card">
             <div className="card-header text-center">
               <div className="col-xs-12 col-xl-6 mx-auto">
-                <div className="input-group">
+                <div className="input-group" itemProp="potentialAction">
                   <input
                     type="search"
                     className="form-control"
                     placeholder={t("Search")}
                     aria-label={t("Search")}
                     aria-describedby="search-addon"
+                    itemProp="query-input"
+                    name="search"
                     onChange={(e) =>
                       this.setState({ searchText: e.currentTarget.value })
                     }

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, Suspense } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { getItems } from "../services";
@@ -9,11 +9,26 @@ import Station from "../components/Station";
 import Icon from "../components/Icon";
 import CraftingTime from "../components/CraftingTime";
 import LoadingScreen from "../components/LoadingScreen";
+import LoadingPart from "../components/LoadingPart";
 import ModuleInfo from "../components/Wiki/ModuleInfo";
 import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
-import WikiDescription from "../components/Wiki/WikiDescription";
-import DropsInfo from "../components/Wiki/DropsInfo";
+import { calcRarityValue } from "../rarityCalc";
+
+const WikiDescription = React.lazy(() =>
+  import("../components/Wiki/WikiDescription")
+);
+const SchematicDropInfo = React.lazy(() =>
+  import("../components/Wiki/SchematicDropInfo")
+);
+const DropsInfo = React.lazy(() => import("../components/Wiki/DropsInfo"));
+const CanBeUsedInfo = React.lazy(() =>
+  import("../components/Wiki/CanBeUsedInfo")
+);
+
+const SchematicItems = React.lazy(() =>
+  import("../components/Wiki/SchematicItems")
+);
 
 class ItemWiki extends Component {
   constructor(props) {
@@ -22,6 +37,9 @@ class ItemWiki extends Component {
       item: null,
       isLoaded: false,
       canBeUsed: [],
+      allItems: [],
+      rarity: "Common",
+      textColor: "text-muted",
     };
   }
 
@@ -36,24 +54,11 @@ class ItemWiki extends Component {
     let items = await getItems();
     if (items != null) {
       let item = items.find((it) => it.name.toLowerCase() === item_name);
-      let allItems = items.filter((item) => {
-        if (
-          item.crafting != null &&
-          item.crafting[0] != null &&
-          item.crafting[0].ingredients != null
-        ) {
-          let allIngredients = item.crafting[0].ingredients;
-
-          return (
-            allIngredients.filter(
-              (ingredient) => ingredient.name.toLowerCase() === item_name
-            ).length > 0
-          );
-        } else {
-          return false;
-        }
+      this.setState({
+        item: item,
+        isLoaded: true,
+        allItems: items,
       });
-      this.setState({ item: item, isLoaded: true, canBeUsed: allItems });
     }
   }
 
@@ -80,6 +85,9 @@ class ItemWiki extends Component {
           (window.location.port ? ":" + window.location.port : "") +
           "/crafter?craft=" +
           encodeURI(name.toLowerCase());
+
+        let category = this.state.item.category;
+
         return (
           <div className="container">
             {this.helmetInfo(name)}
@@ -111,9 +119,7 @@ class ItemWiki extends Component {
                       {this.state.item.category ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Category")}</div>
-                          <div className="text-muted">
-                            {this.state.item.category}
-                          </div>
+                          <div className="text-muted">{t(category)}</div>
                         </li>
                       ) : (
                         ""
@@ -151,8 +157,13 @@ class ItemWiki extends Component {
                       {this.state.item.weight ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Weight")}</div>
-                          <div className="text-muted">
-                            {this.state.item.weight}
+                          <div className={this.state.textColor}>
+                            {calcRarityValue(
+                              this.state.rarity,
+                              "weight",
+                              category,
+                              this.state.item.weight
+                            )}
                           </div>
                         </li>
                       ) : (
@@ -173,14 +184,112 @@ class ItemWiki extends Component {
                       {this.state.item.durability ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Durability")}</div>
-                          <div className="text-muted">
-                            {this.state.item.durability}
+                          <div className={this.state.textColor}>
+                            {calcRarityValue(
+                              this.state.rarity,
+                              "durability",
+                              category,
+                              this.state.item.durability
+                            )}
                           </div>
                         </li>
                       ) : (
                         ""
                       )}
                     </ul>
+                  </div>
+                  <div className="card-footer text-center">
+                    <div
+                      className="btn-group"
+                      role="group"
+                      aria-label="Rarities"
+                    >
+                      <button
+                        type="button"
+                        title={t("Common")}
+                        className={
+                          this.state.rarity === "Common"
+                            ? "btn btn-outline-light active"
+                            : "btn btn-outline-light"
+                        }
+                        onClick={() => {
+                          this.setState({
+                            rarity: "Common",
+                            textColor: "text-muted",
+                          });
+                        }}
+                      >
+                        C
+                      </button>
+                      <button
+                        type="button"
+                        title={t("Uncommon")}
+                        className={
+                          this.state.rarity === "Uncommon"
+                            ? "btn btn-outline-success active"
+                            : "btn btn-outline-success"
+                        }
+                        onClick={() => {
+                          this.setState({
+                            rarity: "Uncommon",
+                            textColor: "text-success",
+                          });
+                        }}
+                      >
+                        U
+                      </button>
+                      <button
+                        type="button"
+                        title={t("Rare")}
+                        className={
+                          this.state.rarity === "Rare"
+                            ? "btn btn-outline-info active"
+                            : "btn btn-outline-info"
+                        }
+                        onClick={() => {
+                          this.setState({
+                            rarity: "Rare",
+                            textColor: "text-info",
+                          });
+                        }}
+                      >
+                        R
+                      </button>
+                      <button
+                        type="button"
+                        title={t("Epic")}
+                        className={
+                          this.state.rarity === "Epic"
+                            ? "btn btn-outline-danger active"
+                            : "btn btn-outline-danger"
+                        }
+                        onClick={() => {
+                          this.setState({
+                            rarity: "Epic",
+                            textColor: "text-danger",
+                          });
+                        }}
+                      >
+                        E
+                      </button>
+                      <button
+                        type="button"
+                        title={t("Legendary")}
+                        className={
+                          this.state.rarity === "Legendary"
+                            ? "btn btn-outline-warning active"
+                            : "btn btn-outline-warning"
+                        }
+                        onClick={() => {
+                          this.setState({
+                            rarity: "Legendary",
+                            textColor: "text-warning",
+                          });
+                        }}
+                      >
+                        L
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -203,24 +312,26 @@ class ItemWiki extends Component {
               ) : (
                 ""
               )}
-              {this.state.item.learn ? (
-                <div className="col-12 col-xl-6">
-                  <div className="card border-secondary mb-3">
-                    <div className="card-header">{t("It is used to")}</div>
-                    <div className="card-body">
-                      <div className="row">{this.showSchematicItems(t)}</div>
+              <Suspense
+                fallback={
+                  <div className="col-12 col-xl-6">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
                     </div>
                   </div>
-                </div>
-              ) : (
-                ""
-              )}
+                }
+              >
+                <SchematicItems key="schematicItems" item={this.state.item} />
+              </Suspense>
               {this.showDescription(t)}
               {this.state.item.structureInfo && (
                 <GenericInfo
                   key="structureInfo"
                   name="Structure Info"
                   dataInfo={this.state.item.structureInfo}
+                  rarity={this.state.rarity}
+                  textColor={this.state.textColor}
+                  category={category}
                 />
               )}
               {this.state.item.projectileDamage && (
@@ -228,6 +339,9 @@ class ItemWiki extends Component {
                   key="proyectileInfo"
                   name="Projectile Info"
                   dataInfo={this.state.item.projectileDamage}
+                  rarity={this.state.rarity}
+                  textColor={this.state.textColor}
+                  category={category}
                 />
               )}
               {this.state.item.weaponInfo && (
@@ -235,6 +349,9 @@ class ItemWiki extends Component {
                   key="weaponinfo"
                   name="Weapon Info"
                   dataInfo={this.state.item.weaponInfo}
+                  rarity={this.state.rarity}
+                  textColor={this.state.textColor}
+                  category={category}
                 />
               )}
               {this.state.item.armorInfo && (
@@ -242,6 +359,9 @@ class ItemWiki extends Component {
                   key="armorinfo"
                   name="Armor Info"
                   dataInfo={this.state.item.armorInfo}
+                  rarity={this.state.rarity}
+                  textColor={this.state.textColor}
+                  category={category}
                 />
               )}
               {this.state.item.toolInfo && (
@@ -253,12 +373,61 @@ class ItemWiki extends Component {
                   moduleInfo={this.state.item.moduleInfo}
                 />
               )}
-              <WikiDescription
-                key="wikidescription"
-                name={this.state.item.name}
-              />
-              {this.showCanBeUsedPart(t)}
-              <DropsInfo key="dropInfo" drops={this.state.item.drops} />
+              <Suspense
+                fallback={
+                  <div className="col-12 col-md-6">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
+                    </div>
+                  </div>
+                }
+              >
+                <SchematicDropInfo
+                  key="schematicInfo"
+                  name={this.state.item.name}
+                  items={this.state.allItems}
+                />
+              </Suspense>
+              <Suspense
+                fallback={
+                  <div className="col-12">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
+                    </div>
+                  </div>
+                }
+              >
+                <WikiDescription
+                  key="wikidescription"
+                  name={this.state.item.name}
+                />
+              </Suspense>
+              <Suspense
+                fallback={
+                  <div className="col-12 col-md-6">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
+                    </div>
+                  </div>
+                }
+              >
+                <CanBeUsedInfo
+                  key="CanBeUsedInfo"
+                  name={this.state.item.name}
+                  items={this.state.allItems}
+                />
+              </Suspense>
+              <Suspense
+                fallback={
+                  <div className="col-12 col-md-6">
+                    <div className="card border-secondary mb-3">
+                      <LoadingPart />
+                    </div>
+                  </div>
+                }
+              >
+                <DropsInfo key="dropInfo" drops={this.state.item.drops} />
+              </Suspense>
             </div>
           </div>
         );
@@ -306,8 +475,8 @@ class ItemWiki extends Component {
             window.location.protocol
               .concat("//")
               .concat(window.location.hostname) +
-            (window.location.href ? ":" + window.location.port : "") +
-            window.location.pathname
+            (window.location.port ? ":" + window.location.port : "") +
+            "/item"
           }
         />
       </Helmet>
@@ -341,21 +510,6 @@ class ItemWiki extends Component {
     });
   }
 
-  showCanBeUsedPart(t) {
-    if (this.state.canBeUsed.length > 0) {
-      return (
-        <div className="col-12 col-md-6">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("It can be used in")}</div>
-            <div className="card-body">
-              <ul className="list-inline">{this.showCanBeUsed(t)}</ul>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
-
   showIngredient(item) {
     if (item != null && item.crafting != null) {
       return item.crafting.map((ingredients, index) => (
@@ -368,27 +522,6 @@ class ItemWiki extends Component {
           {ingredients.time && <CraftingTime time={ingredients.time} />}
         </div>
       ));
-    }
-  }
-
-  showSchematicItems(t) {
-    if (this.state.item.learn) {
-      return this.state.item.learn.map((itemCraft, index) => {
-        let http = window.location.protocol;
-        let slashes = http.concat("//");
-        let host = slashes.concat(window.location.hostname);
-        let url =
-          host +
-          (window.location.port ? ":" + window.location.port : "") +
-          "/item/" +
-          encodeURI(itemCraft.toLowerCase().replaceAll(" ", "_"));
-        return (
-          <div className="col" key={"craft-" + index}>
-            <Icon key={itemCraft} name={itemCraft} />
-            <a href={url}>{t(itemCraft)}</a>
-          </div>
-        );
-      });
     }
   }
 }

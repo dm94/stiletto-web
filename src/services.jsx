@@ -80,7 +80,7 @@ export const getUserProfile = async () => {
     if (response != null) {
       if (response.status === 200) {
         if (response.data != null) {
-          addCachedData("discordid", response.data.discordid);
+          storeItem("discordid", response.data.discordid);
           addCachedData("profile", response.data);
           return { success: true, message: response.data };
         }

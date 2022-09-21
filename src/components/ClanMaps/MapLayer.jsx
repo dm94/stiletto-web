@@ -35,6 +35,58 @@ class MapLayer extends Component {
     };
   }
 
+  getResourceEstimatedQuality(t, resource) {
+    let quality = 4;
+    const diff = Math.abs(new Date() - new Date(resource.lastharvested));
+    const minutes = Math.floor(diff / 1000 / 60);
+    let estimatedQuality = (minutes - 45) / 10;
+
+    const remainingQuality = quality - estimatedQuality;
+    let now = new Date();
+    let date =
+      now.getFullYear() +
+      "-" +
+      (now.getMonth() + 1) +
+      "-" +
+      now.getDate() +
+      " " +
+      now.getHours() +
+      ":" +
+      now.getMinutes();
+
+    let fullDate = new Date(now.getTime() + remainingQuality * 10 * 60000);
+
+    return (
+      <div>
+        <button
+          className="btn btn-info btn-sm btn-block"
+          onClick={() =>
+            this.props.updateResource(
+              resource.mapid,
+              resource.resourceid,
+              resource.token,
+              date
+            )
+          }
+        >
+          {t("Harvested now")}
+        </button>
+        <div className="mb-1">
+          {t("Last Harvested")}: {resource.lastharvested}
+        </div>
+        <div className="mb-1">
+          {t("Spawns in")}:{" "}
+          {remainingQuality !== 0
+            ? remainingQuality * 10 + " " + t("Minutes")
+            : t("Now")}
+        </div>
+        <div className="mb-1">
+          {t("Date")}: {fullDate.toLocaleString()}
+        </div>
+      </div>
+    );
+  }
+
   getMarketDesign = (resource) => {
     let res = resource.replaceAll(" ", "_");
     let marker = L.icon({
@@ -67,13 +119,15 @@ class MapLayer extends Component {
                   key={"icon" + resource.resourceid}
                   name={resource.resourcetype}
                 />
-                {t(resource.resourcetype)}{" "}
-                {resource.quality > 0 && "- Q:" + resource.quality}
+                {t(resource.resourcetype)}
               </div>
               <div className="mb-1 text-muted">
                 [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
               </div>
               <div className="mb-1">{resource.description}</div>
+              {resource.lastharvested != null
+                ? this.getResourceEstimatedQuality(t, resource)
+                : ""}
               {resource.token != null && (
                 <button
                   className="btn btn-danger"
@@ -106,21 +160,6 @@ class MapLayer extends Component {
                 ""
               )}
             </Popup>
-            <Tooltip
-              permanent={
-                resource.quality && resource.quality > 0 ? true : false
-              }
-              className="bg-transparent border-0"
-              offset={[0, 7]}
-              direction="top"
-            >
-              <span
-                className="font-weight-bold h5"
-                style={{ color: "#e94e0f" }}
-              >
-                {resource.quality}
-              </span>
-            </Tooltip>
           </Marker>
           {resource.resourcetype === "Poaching Hut" ||
           resource.resourcetype === "Enemy Poaching Hut" ? (

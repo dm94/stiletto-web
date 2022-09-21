@@ -7,12 +7,14 @@ class DropsInfo extends Component {
       const { t } = this.props;
       return (
         <Fragment>
-          <div className="col-12">
+          <div className="col-12 col-md-6">
             <div className="card border-secondary mb-3">
-              <div className="card-header">{t("Drops")}</div>
+              <div className="card-header">{t("Obtainable from")}</div>
+              <div className="card-body">
+                <ul className="list-inline">{this.showDrops(t)}</ul>
+              </div>
             </div>
           </div>
-          {this.showDrops(t)}
         </Fragment>
       );
     }
@@ -20,6 +22,16 @@ class DropsInfo extends Component {
   }
 
   showDrops(t) {
+    return this.props.drops.map((drop, index) => {
+      return (
+        <li className="list-inline-item" key={drop.location + "-" + index}>
+          <div className="list-group-item">{t(drop.location)}</div>
+        </li>
+      );
+    });
+  }
+
+  showDropsWithDetails(t) {
     return this.props.drops.map((drop, index) => {
       return (
         <div
