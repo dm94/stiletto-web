@@ -110,13 +110,19 @@ class Others extends Component {
               </h3>
             </div>
             <div className="col-12 col-md-4 p-3 mx-auto">
-              <img
-                className="img-fluid"
-                src="/img/banner-lastoasis.jpg"
-                alt="Last Oasis Banner"
-                height="100"
-                width="600"
-              />
+              <a
+                href="https://discord.gg/FcecRtZ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="img-fluid"
+                  src="/img/banner-lastoasis.jpg"
+                  alt="Last Oasis Banner"
+                  height="100"
+                  width="600"
+                />
+              </a>
             </div>
           </div>
         </div>

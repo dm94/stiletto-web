@@ -52,21 +52,7 @@ class Home extends Component {
             </h2>
             <p>
               {t(
-                "Here you can see and automatically calculate the materials needed to build each item. It is in English and Spanish"
-              )}
-            </p>
-          </div>
-          <div className="col-12 col-xl-4">
-            <h2
-              role="button"
-              className="lo-title"
-              onClick={() => this.setState({ redirectTo: "/auctions" })}
-            >
-              {t("Auction Timers")}
-            </h2>
-            <p>
-              {t(
-                "See how much time is left to finish the auctions of the maps you want easily"
+                "Here you can see and automatically calculate the materials needed to build each item."
               )}
             </p>
           </div>
@@ -88,20 +74,6 @@ class Home extends Component {
             <h2
               role="button"
               className="lo-title"
-              onClick={() => this.setState({ redirectTo: "/walkerlist" })}
-            >
-              {t("Walker List")}
-            </h2>
-            <p>
-              {t(
-                "Check when your walkers were last used and who used them in a simple and quick way. I have created a discord bot that apart from giving other functions allows you to control the walkers log in an easier way"
-              )}
-            </p>
-          </div>
-          <div className="col-12 col-xl-4">
-            <h2
-              role="button"
-              className="lo-title"
               onClick={() =>
                 this.setState({
                   redirectTo:
@@ -114,16 +86,6 @@ class Home extends Component {
             <p>
               {t("Create and edit maps to add resources or strategic points.")}
             </p>
-          </div>
-          <div className="col-12 col-xl-4">
-            <h2
-              role="button"
-              className="lo-title"
-              onClick={() => this.setState({ redirectTo: "/tech/Vitamins" })}
-            >
-              {t("Tech Tree")}
-            </h2>
-            <p>{t("View and control your clan's technology tree.")}</p>
           </div>
         </div>
         <Others />

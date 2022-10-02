@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
@@ -13,8 +13,11 @@ import "./css/style.min.css";
 
 const CrafterApp = () => {
   const [t] = useTranslation();
+  const history = useHistory();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
   const [newUpdate, setUpdateModal] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [redirectTo, setRedirectTo] = useState(null);
   let showHideClassName = showChangeLanguageModal
     ? "modal d-block"
     : "modal d-none";
@@ -28,6 +31,12 @@ const CrafterApp = () => {
   usePageTracking();
 
   let language = getStoredItem("i18nextLng");
+
+  if (redirectTo != null) {
+    history.push(redirectTo);
+    setRedirectTo(null);
+    setSearchText("");
+  }
 
   return (
     <React.Fragment>
@@ -116,16 +125,33 @@ const CrafterApp = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link itemProp="url" className="nav-link" to="/tech">
-                    <span itemProp="name"> {t("Tech Tree")}</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link itemProp="url" className="nav-link" to="/wiki">
                     <span itemProp="name"> {t("Wiki")}</span>
                   </Link>
                 </li>
               </ul>
+              <div
+                className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
+                role="search"
+              >
+                <input
+                  type="search"
+                  className="form-control"
+                  placeholder={t("Search items")}
+                  aria-label={t("Search items")}
+                  aria-describedby="search-addon"
+                  itemProp="query-input"
+                  name="search"
+                  onChange={(e) => setSearchText(e.currentTarget.value)}
+                  onKeyPress={(e) => {
+                    let keyPress = e.key || e.keyCode;
+                    if (keyPress === 13 || keyPress === "Enter") {
+                      setRedirectTo("/wiki?s=" + searchText);
+                    }
+                  }}
+                  value={searchText}
+                />
+              </div>
               <button
                 className="btn btn-sm mr-2"
                 onClick={() => {
@@ -307,7 +333,7 @@ const CrafterApp = () => {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v4.2.0</p>
+                  <p className="mr-auto">v4.2.1</p>
                   <button
                     className={
                       getStoredItem("darkmode") !== "true"
