@@ -134,23 +134,34 @@ const CrafterApp = () => {
                 className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3"
                 role="search"
               >
-                <input
-                  type="search"
-                  className="form-control"
-                  placeholder={t("Search items")}
-                  aria-label={t("Search items")}
-                  aria-describedby="search-addon"
-                  itemProp="query-input"
-                  name="search"
-                  onChange={(e) => setSearchText(e.currentTarget.value)}
-                  onKeyPress={(e) => {
-                    let keyPress = e.key || e.keyCode;
-                    if (keyPress === 13 || keyPress === "Enter") {
-                      setRedirectTo("/wiki?s=" + searchText);
-                    }
-                  }}
-                  value={searchText}
-                />
+                <div className="input-group" itemProp="potentialAction">
+                  <input
+                    type="search"
+                    className="form-control"
+                    placeholder={t("Search items")}
+                    aria-label={t("Search items")}
+                    aria-describedby="search-addon"
+                    itemProp="query-input"
+                    name="search"
+                    onChange={(e) => setSearchText(e.currentTarget.value)}
+                    onKeyPress={(e) => {
+                      let keyPress = e.key || e.keyCode;
+                      if (keyPress === 13 || keyPress === "Enter") {
+                        setRedirectTo("/wiki?s=" + searchText);
+                      }
+                    }}
+                    value={searchText}
+                  />
+                  <div className="input-group-append">
+                    <button
+                      type="button"
+                      className="btn btn-outline-info"
+                      onClick={() => setRedirectTo("/wiki?s=" + searchText)}
+                    >
+                      <i className="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
               <button
                 className="btn btn-sm mr-2"
@@ -333,7 +344,7 @@ const CrafterApp = () => {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v4.2.1</p>
+                  <p className="mr-auto">v4.2.2</p>
                   <button
                     className={
                       getStoredItem("darkmode") !== "true"
