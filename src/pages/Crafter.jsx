@@ -146,7 +146,7 @@ class Crafter extends Component {
     }
   };
 
-  getIngredients = (itemName) => {
+  getIngredients = (itemName, secondTree = false) => {
     let all = [];
     let selectedItem = this.state.items.filter((it) => it.name === itemName);
     if (selectedItem[0] != null && selectedItem[0].crafting != null) {
@@ -155,9 +155,11 @@ class Crafter extends Component {
         if (recipe.ingredients != null) {
           let ingredients = [];
           recipe.ingredients.forEach((ingredient) => {
-            let subIngredients = this.getIngredients(ingredient.name);
-            if (subIngredients.length > 0) {
-              ingredient["ingredients"] = subIngredients;
+            if (!secondTree) {
+              let subIngredients = this.getIngredients(ingredient.name, true);
+              if (subIngredients.length > 0) {
+                ingredient["ingredients"] = subIngredients;
+              }
             }
             ingredients.push(ingredient);
           });
