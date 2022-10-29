@@ -116,8 +116,7 @@ class SelectedItem extends Component {
               />
               <span className="input-group-text">
                 <Icon key={this.props.item.name} name={this.props.item.name} />
-                {"x "}
-                <a href={url}>{t(this.props.item.name)}</a>
+                <a href={url}>{t(this.props.item.name, { ns: "items" })}</a>
               </span>
             </div>
           </div>
@@ -129,7 +128,7 @@ class SelectedItem extends Component {
             <div className="row">
               <div className="col-4 col-lg-2 p-1">
                 <button
-                  className="btn btn-success btn-block"
+                  className="btn btn-success btn-block p-2"
                   onClick={() => this.change(1)}
                 >
                   +1
@@ -138,7 +137,7 @@ class SelectedItem extends Component {
               <div className="col-4 col-lg-2 p-1">
                 {" "}
                 <button
-                  className="btn btn-success btn-block"
+                  className="btn btn-success btn-block p-2"
                   onClick={() => this.change(10)}
                 >
                   +10
@@ -146,7 +145,7 @@ class SelectedItem extends Component {
               </div>
               <div className="col-4 col-lg-2 p-1">
                 <button
-                  className="btn btn-success btn-block"
+                  className="btn btn-success btn-block p-2"
                   onClick={() => this.change(100)}
                 >
                   +100
@@ -154,7 +153,7 @@ class SelectedItem extends Component {
               </div>
               <div className="col-4 col-lg-2 p-1">
                 <button
-                  className="btn btn-danger btn-block"
+                  className="btn btn-danger btn-block p-2"
                   onClick={() => this.change(-1)}
                 >
                   -1
@@ -162,7 +161,7 @@ class SelectedItem extends Component {
               </div>
               <div className="col-4 col-lg-2 p-1">
                 <button
-                  className="btn btn-danger btn-block"
+                  className="btn btn-danger btn-block p-2"
                   onClick={() => this.change(-10)}
                 >
                   -10
@@ -170,7 +169,7 @@ class SelectedItem extends Component {
               </div>
               <div className="col-4 col-lg-2 p-1">
                 <button
-                  className="btn btn-danger btn-block"
+                  className="btn btn-danger btn-block p-2"
                   onClick={() => this.change(-100)}
                 >
                   -100

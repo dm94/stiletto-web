@@ -35,20 +35,6 @@ class Others extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
-              <div className="card mb-3">
-                <div className="card-body">
-                  <a
-                    className="btn btn-primary btn-block"
-                    href="https://lastoasis.gamepedia.com/Last_Oasis_Wiki"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t("Wiki")}
-                  </a>
-                </div>
-              </div>
-            </div>
             <div className="col-12 col-md-6">
               <div className="col-12">
                 <div className="card mb-3">
@@ -110,13 +96,19 @@ class Others extends Component {
               </h3>
             </div>
             <div className="col-12 col-md-4 p-3 mx-auto">
-              <img
-                className="img-fluid"
-                src="/img/banner-lastoasis.jpg"
-                alt="Last Oasis Banner"
-                height="100"
-                width="600"
-              />
+              <a
+                href="https://discord.gg/FcecRtZ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="img-fluid"
+                  src="/img/banner-lastoasis.jpg"
+                  alt="Last Oasis Banner"
+                  height="100"
+                  width="600"
+                />
+              </a>
             </div>
           </div>
         </div>

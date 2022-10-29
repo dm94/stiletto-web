@@ -287,7 +287,7 @@ class TradeSystem extends Component {
     if (this.state.items != null) {
       return this.state.items.map((item) => (
         <option key={item.name} value={item.name}>
-          {t(item.name)}
+          {t(item.name, { ns: "items" })}
         </option>
       ));
     }

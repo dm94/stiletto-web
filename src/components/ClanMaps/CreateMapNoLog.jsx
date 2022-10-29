@@ -159,7 +159,7 @@ class CreateMapNoLog extends Component {
                     )
                   }
                 >
-                  {t("Open Map")}
+                  {t("Open map")}
                 </button>
               </div>
             </div>

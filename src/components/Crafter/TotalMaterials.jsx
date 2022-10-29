@@ -85,7 +85,7 @@ class TotalMaterials extends Component {
     );
   }
 
-  itemsList() {
+  itemsList(t) {
     let http = window.location.protocol;
     let slashes = http.concat("//");
     let host = slashes.concat(window.location.hostname);
@@ -98,7 +98,7 @@ class TotalMaterials extends Component {
       <li className="list-inline-item" key={item.name}>
         <Icon key={item.name} name={item.name} /> {item.count}x{" "}
         <a href={url + encodeURI(item.name.replaceAll(" ", "_"))}>
-          {item.name}
+          {t(item.name, { ns: "items" })}
         </a>{" "}
         -
       </li>
@@ -113,7 +113,8 @@ class TotalMaterials extends Component {
     let text = t("To make") + ":\n\n";
 
     this.props.selectedItems.forEach(
-      (item) => (text += item.count + "x " + t(item.name) + " - ")
+      (item) =>
+        (text += item.count + "x " + t(item.name, { ns: "items" }) + " - ")
     );
 
     text += "\n\n" + t("You need the following materials") + ":\n\n";
@@ -172,7 +173,7 @@ class TotalMaterials extends Component {
           <div className="font-weight-normal">{t("Total materials")}</div>
         </div>
         <div className="card-body" id="list-all-items">
-          <ul className="list-inline">{this.itemsList()}</ul>
+          <ul className="list-inline">{this.itemsList(t)}</ul>
           <div className="list-unstyled">
             <ListIngredients
               ref={this.componentRef}
