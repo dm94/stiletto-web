@@ -96,7 +96,7 @@ class ItemWiki extends Component {
                 <div className="card border-secondary mb-3">
                   <div className="card-header">
                     <Icon key={name} name={name} width={35} />
-                    {t(name)}
+                    {t(name, { ns: "items" })}
                   </div>
                   <div className="card-body">
                     <ul className="list-group mb-3">
@@ -119,7 +119,9 @@ class ItemWiki extends Component {
                       {this.state.item.category ? (
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Category")}</div>
-                          <div className="text-muted">{t(category)}</div>
+                          <div className="text-muted">
+                            {t(category, { ns: "items" })}
+                          </div>
                         </li>
                       ) : (
                         ""
@@ -128,7 +130,9 @@ class ItemWiki extends Component {
                         <li className="list-group-item d-flex justify-content-between lh-condensed">
                           <div className="my-0">{t("Parent")}</div>
                           <div className="text-muted">
-                            <a href={parent_url}>{t(this.state.item.parent)}</a>
+                            <a href={parent_url}>
+                              {t(this.state.item.parent, { ns: "items" })}
+                            </a>
                           </div>
                         </li>
                       ) : (

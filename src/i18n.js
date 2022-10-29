@@ -9,6 +9,7 @@ i18n.use(HttpApi).init({
   preload: ["en"],
   keySeparator: false,
 
+  ns: ["translation", "items"],
   defaultNS: "translation",
   backend: {
     loadPath: "/locales/{{lng}}/{{ns}}.json",

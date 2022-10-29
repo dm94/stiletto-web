@@ -19,7 +19,7 @@ class CreateResourceTab extends Component {
     if (this.props.items != null) {
       return this.props.items.map((item) => (
         <option key={item.name} value={item.name}>
-          {t(item.name)}
+          {t(item.name, { ns: "items" })}
         </option>
       ));
     }

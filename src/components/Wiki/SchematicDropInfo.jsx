@@ -44,7 +44,7 @@ class SchematicDropInfo extends Component {
         <li className="list-inline-item" key={schematic.name + "-" + index}>
           <div className="list-group-item">
             <Icon key={schematic.name} name={schematic.name} />
-            <a href={url}>{t(schematic.name)}</a>
+            <a href={url}>{t(schematic.name, { ns: "items" })}</a>
           </div>
         </li>
       );

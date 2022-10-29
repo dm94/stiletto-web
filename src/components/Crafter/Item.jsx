@@ -14,7 +14,9 @@ class Item extends Component {
         }
       >
         <div className="row">
-          <div className="col-auto">{t(this.props.item.name)}</div>
+          <div className="col-auto">
+            {t(this.props.item.name, { ns: "items" })}
+          </div>
           <div className="col">
             <button
               className="btn btn-success btn-sm float-right"

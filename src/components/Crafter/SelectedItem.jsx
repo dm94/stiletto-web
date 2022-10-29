@@ -116,7 +116,7 @@ class SelectedItem extends Component {
               />
               <span className="input-group-text">
                 <Icon key={this.props.item.name} name={this.props.item.name} />
-                <a href={url}>{t(this.props.item.name)}</a>
+                <a href={url}>{t(this.props.item.name, { ns: "items" })}</a>
               </span>
             </div>
           </div>
