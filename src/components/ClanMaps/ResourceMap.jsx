@@ -32,7 +32,7 @@ class ResourceMap extends Component {
       center: null,
       mapname: this.props.map.name,
       dateofburning: this.props.map.dateofburning,
-      allowEditing: this.props.map.allowedit,
+      allowEditing: this.props.map.allowedit == 1,
       resourcesFiltered: null,
       isOpenSidebar: window.innerWidth >= 1440,
     };
@@ -158,7 +158,7 @@ class ResourceMap extends Component {
               <div className="btn-group">
                 <button
                   className={
-                    this.state.allowEditing == true
+                    this.state.allowEditing
                       ? "btn btn-success active"
                       : "btn btn-success"
                   }
@@ -171,7 +171,7 @@ class ResourceMap extends Component {
                 </button>
                 <button
                   className={
-                    this.state.allowEditing == true
+                    this.state.allowEditing
                       ? "btn btn-danger"
                       : "btn btn-danger active"
                   }

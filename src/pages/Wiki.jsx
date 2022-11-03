@@ -45,13 +45,6 @@ class Wiki extends Component {
     }
   };
 
-  handleInputChangeSearchItem = (event) => {
-    if (event != null) {
-      const searchText = event.currentTarget.value;
-      this.setState({ searchText });
-    }
-  };
-
   searchItems = async () => {
     let search = this.state.searchText;
     sendEvent({

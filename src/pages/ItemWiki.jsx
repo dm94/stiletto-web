@@ -502,20 +502,6 @@ class ItemWiki extends Component {
     }
   }
 
-  showCanBeUsed(t) {
-    return this.state.canBeUsed.map((item) => {
-      return (
-        <li className="list-inline-item" key={item.name}>
-          <Ingredient
-            key={item.name + "-ingredient"}
-            ingredient={item}
-            value={1}
-          />
-        </li>
-      );
-    });
-  }
-
   showIngredient(item) {
     if (item != null && item.crafting != null) {
       return item.crafting.map((ingredients, index) => (

@@ -78,7 +78,7 @@ class TotalMaterials extends Component {
         className="btn btn-success float-right"
         onClick={this.addRecipe}
         title={t("Generate a link to share it")}
-        disabled={!(this.props.selectedItems.length > 0)}
+        disabled={this.props.selectedItems.length <= 0}
       >
         <i className="fas fa-share-alt"></i> {t("Share")}
       </button>

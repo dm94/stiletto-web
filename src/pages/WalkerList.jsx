@@ -267,61 +267,6 @@ class WalkerList extends Component {
     }
   }
 
-  linkDiscordServer = (event) => {
-    event.preventDefault();
-
-    const options = {
-      method: "post",
-      url: process.env.REACT_APP_API_URL + "/walkers/auth",
-      params: {
-        discordserverid: this.state.inputDiscodId,
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 202) {
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          this.setState({ error: "Unauthorized" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error when connecting with the database" });
-        }
-        localStorage.removeItem("profile");
-        sessionStorage.removeItem("profile");
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
-  };
-
-  searchWalkers = (event) => {
-    event.preventDefault();
-    this.setState({ isFiltered: true, page: 1 }, () => {
-      this.updateWalkers();
-    });
-  };
-
-  clearSearch = (event) => {
-    event.preventDefault();
-    this.setState({ isFiltered: false, page: 1, searchInput: "" }, () => {
-      this.updateWalkers();
-    });
-  };
-
-  discordServerList() {
-    if (this.state.discordList != null) {
-      return this.state.discordList.map((item) => (
-        <option key={item.id} value={item.id}>
-          {item.name}
-        </option>
-      ));
-    }
-  }
-
   serverLinkButton(t) {
     return (
       <div className="row">

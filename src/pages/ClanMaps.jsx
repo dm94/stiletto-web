@@ -45,34 +45,6 @@ class ClanMaps extends Component {
     });
   }
 
-  mapSelect() {
-    if (this.state.maps != null) {
-      return this.state.maps.map((map) => (
-        <div
-          className="m-2 col-sm-2 col-xl text-center"
-          key={"selectmap" + map.idMap}
-        >
-          <img
-            src={map.image}
-            className={
-              map.name === this.state.mapSelectInput
-                ? "img-fluid img-thumbnail"
-                : "img-fluid"
-            }
-            alt={map.name}
-            id={map.name}
-            onClick={(evt) =>
-              this.setState({
-                mapSelectInput: evt.target.id,
-              })
-            }
-          />
-          <h6>{map.name}</h6>
-        </div>
-      ));
-    }
-  }
-
   clanMapList() {
     if (this.state.clanMaps != null && this.state.maps != null) {
       return this.state.clanMaps.map((map) => (
@@ -118,18 +90,6 @@ class ClanMaps extends Component {
       .catch(() => {
         this.setState({ error: "Error when connecting to the API" });
       });
-  };
-
-  getNameMap = (typemap) => {
-    if (this.state.maps != null) {
-      let m = this.state.maps.filter((m) => {
-        return m.idMap === typemap;
-      });
-      if (m[0] != null) {
-        return m[0].name;
-      }
-    }
-    return "Crater";
   };
 
   createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {

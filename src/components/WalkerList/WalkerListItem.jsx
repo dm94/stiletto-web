@@ -254,7 +254,7 @@ class WalkerListItem extends Component {
                     </button>
                     <button
                       className={
-                        this.props.walker.isReady == true
+                        this.props.walker.isReady
                           ? "btn btn-danger"
                           : "btn btn-danger active"
                       }
@@ -331,7 +331,7 @@ class WalkerListItem extends Component {
               {this.props.walker.description}
             </td>
             <td className="text-center">
-              {this.props.walker.isReady == true ? (
+              {this.props.walker.isReady ? (
                 <i className="fas fa-check text-success"></i>
               ) : (
                 <i className="fas fa-times text-danger"></i>

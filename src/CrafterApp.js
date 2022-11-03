@@ -98,7 +98,7 @@ const CrafterApp = () => {
               <ul
                 className="navbar-nav mr-auto mb-2 mb-md-0"
                 itemScope="itemscope"
-                itemType="http://www.schema.org/SiteNavigationElement"
+                itemType="https://www.schema.org/SiteNavigationElement"
               >
                 <li className="nav-item">
                   <Link itemProp="url" className="nav-link" to="/crafter">
@@ -173,31 +173,7 @@ const CrafterApp = () => {
                   className="rounded"
                   width="39"
                   height="25"
-                  src={
-                    language != null
-                      ? language.includes("es")
-                        ? "/img/es.jpg"
-                        : language.includes("ru")
-                        ? "/img/ru.jpg"
-                        : language.includes("fr")
-                        ? "/img/fr.jpg"
-                        : language.includes("de")
-                        ? "/img/de.jpg"
-                        : language.includes("it")
-                        ? "/img/it.jpg"
-                        : language.includes("ja")
-                        ? "/img/ja.jpg"
-                        : language.includes("pl")
-                        ? "/img/pl.jpg"
-                        : language.includes("zh")
-                        ? "/img/zh.jpg"
-                        : language.includes("pt")
-                        ? "/img/pt.jpg"
-                        : language.includes("uk")
-                        ? "/img/uk.jpg"
-                        : "/img/en.jpg"
-                      : "/img/en.jpg"
-                  }
+                  src={getLanguageFlag(language)}
                   alt="Change language"
                 />
               </button>
@@ -344,7 +320,7 @@ const CrafterApp = () => {
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <p className="mr-auto">v4.3.0</p>
+                  <p className="mr-auto">v4.3.1</p>
                   <button
                     className={
                       getStoredItem("darkmode") !== "true"
@@ -433,6 +409,30 @@ const CrafterApp = () => {
     </React.Fragment>
   );
 };
+
+function getLanguageFlag(lng) {
+  const supportedLanguages = [
+    "en",
+    "es",
+    "ru",
+    "fr",
+    "de",
+    "it",
+    "ja",
+    "pl",
+    "zh",
+    "pt",
+    "uk",
+  ];
+  if (lng != null) {
+    const lngFound = supportedLanguages.find((l) => lng.includes(l));
+    if (lngFound) {
+      return "/img/" + lngFound + ".jpg";
+    }
+  }
+
+  return "/img/en.jpg";
+}
 
 function updateWeb() {
   localStorage.removeItem("allItems");

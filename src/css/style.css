@@ -8,12 +8,12 @@
 
 .card-header,
 .modal-header {
-  font-family: "Okami";
+  font-family: "Okami", sans-serif;
   font-size: 1.5em;
 }
 
 .card-header .input-group {
-  font-family: Roboto, "Helvetica Neue";
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .navbar-brand {
