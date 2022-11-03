@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet";
 import { getItems } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import Ingredients from "../components/Ingredients";
-import Ingredient from "../components/Ingredient";
 import Station from "../components/Station";
 import Icon from "../components/Icon";
 import CraftingTime from "../components/CraftingTime";
