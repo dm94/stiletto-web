@@ -13,6 +13,7 @@ import LoadingPart from "../components/LoadingPart";
 import ModuleInfo from "../components/Wiki/ModuleInfo";
 import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
+import Comments from "../components/Wiki/Comments";
 import { calcRarityValue } from "../rarityCalc";
 
 const WikiDescription = React.lazy(() =>
@@ -432,6 +433,7 @@ class ItemWiki extends Component {
               >
                 <DropsInfo key="dropInfo" drops={this.state.item.drops} />
               </Suspense>
+              <Comments key="comments" name={this.state.item.name} />
             </div>
           </div>
         );
