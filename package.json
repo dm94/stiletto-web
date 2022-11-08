@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "4.4.0",
+  "version": "4.4.1",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -17,6 +17,7 @@
     "axios": ">=0.21.1",
     "beautiful-skill-tree": "^1.7.1",
     "bootstrap": "^4.5.3",
+    "dotenv-expand": "^9.0.0",
     "i18next": "^19.9.2",
     "i18next-browser-languagedetector": "^6.1.2",
     "i18next-http-backend": "^1.3.1",
