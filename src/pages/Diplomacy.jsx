@@ -273,10 +273,7 @@ class Diplomacy extends Component {
       <div className="col-1" key={"symbol-" + symbol}>
         <img
           src={
-            process.env.REACT_APP_API_GENERAL_URL +
-            "/symbols/" +
-            symbol +
-            ".png"
+            process.env.REACT_APP_RESOURCES_URL + "/symbols/" + symbol + ".png"
           }
           className={
             symbol === this.state.clanFlagSymbolInput

@@ -101,7 +101,7 @@ class ClanConfig extends Component {
       <div className="col-3" key={"symbol-" + symbol}>
         <img
           src={
-            process.env.REACT_APP_API_GENERAL_URL +
+            process.env.REACT_APP_RESOURCES_URL +
             "/symbols/" +
             symbol +
             ".png"

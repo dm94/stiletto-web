@@ -90,8 +90,7 @@ class MapLayer extends Component {
   getMarketDesign = (resource) => {
     let res = resource.replaceAll(" ", "_");
     let marker = L.icon({
-      iconUrl:
-        process.env.REACT_APP_API_GENERAL_URL + "/markers/" + res + ".png",
+      iconUrl: process.env.REACT_APP_RESOURCES_URL + "/markers/" + res + ".png",
       iconSize: [25, 41],
       iconAnchor: [13, 44],
       popupAnchor: [-6, -20],
@@ -262,13 +261,13 @@ class MapLayer extends Component {
             }
             opacity={this.state.gridOpacity}
             url={
-              process.env.REACT_APP_API_GENERAL_URL +
+              process.env.REACT_APP_RESOURCES_URL +
               (isNewMap ? "/maps/Grid_new.png" : "/maps/Grid.png")
             }
           />
           <TileLayer
             url={
-              process.env.REACT_APP_API_GENERAL_URL +
+              process.env.REACT_APP_RESOURCES_URL +
               "/maps/" +
               (this.props.resourcesInTheMap != null &&
               this.props.resourcesInTheMap[0] != null &&

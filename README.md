@@ -40,9 +40,10 @@ The website uses several json files to read the game data so that it is always u
 
 #### Environmental variables
 
-- REACT_APP_API_URL= API ADDRESS
+- REACT_APP_PUBLIC_URL=https://www.stiletto.live
+- REACT_APP_RESOURCES_URL= URL API ADDRESS FOR ICONS AND MAPS
+- REACT_APP_API_URL= URL API
 - REACT_APP_DISCORD_CLIENT_ID= DISCORD CLIENT ID
-- REACT_APP_API_GENERAL_URL= URL API ADDRESS FOR ICONS AND MAPS
 - REACT_APP_GA_ID= Google Analytics ID
 
 #### Generate maps

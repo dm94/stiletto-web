@@ -8,7 +8,7 @@ class ClanName extends Component {
             width="48"
             height="48"
             src={
-              process.env.REACT_APP_API_GENERAL_URL +
+              process.env.REACT_APP_RESOURCES_URL +
               "/symbols/" +
               this.props.clan.symbol +
               ".png"

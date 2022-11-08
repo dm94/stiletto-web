@@ -42,7 +42,7 @@ class Icon extends Component {
       return (
         <img
           src={
-            process.env.REACT_APP_API_GENERAL_URL +
+            process.env.REACT_APP_RESOURCES_URL +
             "/items/" +
             name.trim() +
             " icon.png"
