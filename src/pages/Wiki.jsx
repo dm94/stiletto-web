@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import queryString from "query-string";
 import { getItems } from "../services";
 import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
-
-const queryString = require("query-string");
 
 class Wiki extends Component {
   constructor(props) {

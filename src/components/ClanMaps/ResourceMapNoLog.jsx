@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
+import queryString from "query-string";
 import {
   updateResourceTime,
   getMarkers,
@@ -14,7 +15,6 @@ import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
 import "../../css/map-sidebar.min.css";
-const queryString = require("query-string");
 
 class ResourceMapNoLog extends Component {
   constructor(props) {

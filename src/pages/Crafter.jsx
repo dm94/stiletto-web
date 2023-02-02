@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import queryString from "query-string";
 import Axios from "axios";
 import { getItems } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import Items from "../components/Crafter/Items";
 import SelectedItem from "../components/Crafter/SelectedItem";
 import TotalMaterials from "../components/Crafter/TotalMaterials";
-const queryString = require("query-string");
 
 class Crafter extends Component {
   state = {

@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import queryString from "query-string";
 import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../services";
-const queryString = require("query-string");
 
 class DiscordConnection extends Component {
   constructor(props) {
