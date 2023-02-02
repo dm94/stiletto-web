@@ -34,13 +34,13 @@ class Crafter extends Component {
 
   getRecipes = () => {
     const parsed = queryString.parse(this.props.location.search);
-    let recipe = parsed.recipe;
+    const recipe = parsed.recipe;
     if (recipe != null && recipe.length > 0) {
       Axios.get(process.env.REACT_APP_API_URL + "/recipes/" + recipe)
         .then((response) => {
           if (response.status === 200) {
             if (response.data.items != null) {
-              let allItems = JSON.parse(response.data.items);
+              const allItems = JSON.parse(response.data.items);
               allItems.forEach((it) => {
                 this.handleAdd(it.name, parseInt(it.count));
               });
@@ -107,27 +107,22 @@ class Crafter extends Component {
     if (count == null) {
       count = 1;
     }
-    let selectedItem = this.state.items.filter((it) => it.name === itemName);
+    const selectedItem = this.state.items.filter((it) => it.name === itemName);
     if (
       this.state.selectedItems.filter((it) => it.name === itemName).length > 0
     ) {
-      let selectedItem = this.state.selectedItems.filter(
-        (it) => it.name === itemName
-      );
       this.changeCount(itemName, parseInt(selectedItem[0].count) + count);
-    } else {
-      if (selectedItem[0] != null) {
-        const selectedItems = this.state.selectedItems.concat([
-          {
-            name: selectedItem[0].name,
-            category: selectedItem[0].category ? selectedItem[0].category : "",
-            crafting: this.getIngredients(selectedItem[0].name),
-            damage: selectedItem[0].damage,
-            count: count,
-          },
-        ]);
-        this.setState({ selectedItems });
-      }
+    } else if (selectedItem[0] != null) {
+      const selectedItems = this.state.selectedItems.concat([
+        {
+          name: selectedItem[0].name,
+          category: selectedItem[0].category ? selectedItem[0].category : "",
+          crafting: this.getIngredients(selectedItem[0].name),
+          damage: selectedItem[0].damage,
+          count: count,
+        },
+      ]);
+      this.setState({ selectedItems });
     }
   };
 
@@ -147,16 +142,16 @@ class Crafter extends Component {
   };
 
   getIngredients = (itemName, secondTree = false) => {
-    let all = [];
-    let selectedItem = this.state.items.filter((it) => it.name === itemName);
+    const all = [];
+    const selectedItem = this.state.items.filter((it) => it.name === itemName);
     if (selectedItem[0] != null && selectedItem[0].crafting != null) {
       selectedItem[0].crafting.forEach((recipe) => {
-        let recipeObject = {};
+        const recipeObject = {};
         if (recipe.ingredients != null) {
-          let ingredients = [];
+          const ingredients = [];
           recipe.ingredients.forEach((ingredient) => {
             if (!secondTree) {
-              let subIngredients = this.getIngredients(ingredient.name, true);
+              const subIngredients = this.getIngredients(ingredient.name, true);
               if (subIngredients.length > 0) {
                 ingredient["ingredients"] = subIngredients;
               }

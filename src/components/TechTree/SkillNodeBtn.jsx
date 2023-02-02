@@ -28,7 +28,7 @@ class SkillNodeBtn extends Component {
       )
         .then((response) => {
           if (response.data) {
-            let all = [];
+            const all = [];
             response.data.forEach((user) => {
               all.push(user.discordtag);
             });
@@ -54,9 +54,9 @@ class SkillNodeBtn extends Component {
     ) {
       return (
         <ul className="list-group list-group-horizontal flex-wrap">
-          {this.state.usersSavedData.map((user, i) => (
+          {this.state.usersSavedData.map((user) => (
             <li
-              key={user + this.props.item.name + i}
+              key={`skill-${this.props.item.name}-user-${user}`}
               className="list-group-item"
             >
               {user}

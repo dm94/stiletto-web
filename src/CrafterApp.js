@@ -18,10 +18,10 @@ const CrafterApp = () => {
   const [newUpdate, setUpdateModal] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [redirectTo, setRedirectTo] = useState(null);
-  let showHideClassName = showChangeLanguageModal
+  const showHideClassName = showChangeLanguageModal
     ? "modal d-block"
     : "modal d-none";
-  let showUpdateModal = newUpdate ? "modal d-block" : "modal d-none";
+  const showUpdateModal = newUpdate ? "modal d-block" : "modal d-none";
   serviceWorker.register({
     onUpdate: () => {
       setUpdateModal(true);
@@ -30,7 +30,7 @@ const CrafterApp = () => {
 
   usePageTracking();
 
-  let language = getStoredItem("i18nextLng");
+  const language = getStoredItem("i18nextLng");
 
   if (redirectTo != null) {
     history.push(redirectTo);
@@ -145,7 +145,7 @@ const CrafterApp = () => {
                     name="search"
                     onChange={(e) => setSearchText(e.currentTarget.value)}
                     onKeyPress={(e) => {
-                      let keyPress = e.key || e.keyCode;
+                      const keyPress = e.key || e.keyCode;
                       if (keyPress === 13 || keyPress === "Enter") {
                         setRedirectTo("/wiki?s=" + searchText);
                       }
@@ -437,8 +437,8 @@ function getLanguageFlag(lng) {
 function updateWeb() {
   localStorage.removeItem("allItems");
   sessionStorage.removeItem("allItems");
-  caches.keys().then(function (names) {
-    for (let name of names) {
+  caches.keys().then((names) => {
+    for (const name of names) {
       caches.delete(name);
     }
   });

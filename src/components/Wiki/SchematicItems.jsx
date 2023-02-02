@@ -23,10 +23,10 @@ class SchematicItems extends Component {
 
   showSchematicItems(t) {
     return this.props.item.learn.map((itemCraft, index) => {
-      let http = window.location.protocol;
-      let slashes = http.concat("//");
-      let host = slashes.concat(window.location.hostname);
-      let url =
+      const http = window.location.protocol;
+      const slashes = http.concat("//");
+      const host = slashes.concat(window.location.hostname);
+      const url =
         host +
         (window.location.port ? ":" + window.location.port : "") +
         "/item/" +

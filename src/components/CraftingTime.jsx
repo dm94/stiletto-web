@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class CraftingTime extends Component {
   render() {
     let totalTime = 0;
-    let totalToCraft = this.props.total ? this.props.total : 1;
-    let time = this.props.time;
+    const totalToCraft = this.props.total ? this.props.total : 1;
+    const time = this.props.time;
 
     if (totalToCraft && time) {
       totalTime = time * totalToCraft;
@@ -24,13 +24,13 @@ class CraftingTime extends Component {
 
   secondsToHms(d) {
     d = Number(d);
-    let h = Math.floor(d / 3600);
-    let m = Math.floor((d % 3600) / 60);
-    let s = Math.floor((d % 3600) % 60);
+    const h = Math.floor(d / 3600);
+    const m = Math.floor((d % 3600) / 60);
+    const s = Math.floor((d % 3600) % 60);
 
-    let hDisplay = h > 0 ? h + " h " : "";
-    let mDisplay = m > 0 ? m + " m " : "";
-    let sDisplay = s > 0 ? s + " s" : "";
+    const hDisplay = h > 0 ? h + " h " : "";
+    const mDisplay = m > 0 ? m + " m " : "";
+    const sDisplay = s > 0 ? s + " s" : "";
     return hDisplay + mDisplay + sDisplay;
   }
 }

@@ -8,7 +8,7 @@ import {
   getUserProfile,
   closeSession,
   getStoredItem,
-  storeItem,
+  storeItem
 } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
@@ -36,8 +36,8 @@ class TechTree extends Component {
 
   async componentDidMount() {
     if (getStoredItem("token") != null) {
-      let data = await getUserProfile();
-      let clanid = data.message.clanid;
+      const data = await getUserProfile();
+      const clanid = data.message.clanid;
 
       this.setState({ clan: clanid });
 
@@ -88,7 +88,7 @@ class TechTree extends Component {
   }
 
   updateLearnedTree(tree, data) {
-    let all = {};
+    const all = {};
 
     if (data != null) {
       data.forEach((tech) => {
@@ -136,10 +136,10 @@ class TechTree extends Component {
   }
 
   saveTree() {
-    let data = JSON.parse(getStoredItem(`skills-${this.state.tabSelect}`));
-    let learned = [];
+    const data = JSON.parse(getStoredItem(`skills-${this.state.tabSelect}`));
+    const learned = [];
 
-    for (let item in data) {
+    for (const item in data) {
       if (data[item].nodeState === "selected") {
         learned.push(item);
       }

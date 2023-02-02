@@ -11,7 +11,7 @@ class ClanListItem extends Component {
         return (
           <button
             className="btn btn-block btn-primary"
-            onClick={(e) => this.props.onSendRequest(this.props.clan.clanid)}
+            onClick={() => this.props.onSendRequest(this.props.clan.clanid)}
           >
             {t("Send request")}
           </button>

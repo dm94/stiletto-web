@@ -18,7 +18,7 @@ class TotalMaterials extends Component {
       category: "Share",
       action: "Generate a recipe code",
     });
-    let items = this.props.selectedItems.map((item) => {
+    const items = this.props.selectedItems.map((item) => {
       return { name: item.name, count: item.count };
     });
     const options = {
@@ -45,7 +45,7 @@ class TotalMaterials extends Component {
 
   footerPart(t) {
     if (this.state.recipeToken.length > 0) {
-      let url =
+      const url =
         window.location.protocol.concat("//").concat(window.location.hostname) +
         (window.location.port ? ":" + window.location.port : "") +
         "/crafter?recipe=" +
@@ -86,10 +86,10 @@ class TotalMaterials extends Component {
   }
 
   itemsList(t) {
-    let http = window.location.protocol;
-    let slashes = http.concat("//");
-    let host = slashes.concat(window.location.hostname);
-    let url =
+    const http = window.location.protocol;
+    const slashes = http.concat("//");
+    const host = slashes.concat(window.location.hostname);
+    const url =
       host +
       (window.location.port ? ":" + window.location.port : "") +
       "/item/";
@@ -119,10 +119,10 @@ class TotalMaterials extends Component {
 
     text += "\n\n" + t("You need the following materials") + ":\n\n";
 
-    let totalIngredients = [];
+    const totalIngredients = [];
     this.props.selectedItems.forEach((item) => {
       if (item.crafting != null && item.crafting[0].ingredients != null) {
-        let output =
+        const output =
           item.crafting[0].output != null ? item.crafting[0].output : 1;
         item.crafting[0].ingredients.forEach((ingredient) => {
           if (
@@ -166,7 +166,7 @@ class TotalMaterials extends Component {
             className="btn btn-sm btn-primary float-right"
             title={t("Copy to clipboard")}
             onClick={() => this.copyMaterials(t)}
-            disabled={!(this.props.selectedItems.length > 0)}
+            disabled={this.props.selectedItems.length <= 0}
           >
             <i className="fas fa-copy"></i>
           </button>

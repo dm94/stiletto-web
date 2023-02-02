@@ -6,14 +6,14 @@ import {
   Popup,
   Tooltip,
   ImageOverlay,
-  Circle,
+  Circle
 } from "react-leaflet";
 import { withTranslation } from "react-i18next";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import Icon from "../Icon";
 
-let myMarker = L.icon({
+const myMarker = L.icon({
   iconUrl:
     "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/img/marker.png",
   iconSize: [25, 41],
@@ -36,14 +36,14 @@ class MapLayer extends Component {
   }
 
   getResourceEstimatedQuality(t, resource) {
-    let quality = 4;
+    const quality = 4;
     const diff = Math.abs(new Date() - new Date(resource.lastharvested));
     const minutes = Math.floor(diff / 1000 / 60);
-    let estimatedQuality = (minutes - 45) / 10;
+    const estimatedQuality = (minutes - 45) / 10;
 
     const remainingQuality = quality - estimatedQuality;
-    let now = new Date();
-    let date =
+    const now = new Date();
+    const date =
       now.getFullYear() +
       "-" +
       (now.getMonth() + 1) +
@@ -54,7 +54,7 @@ class MapLayer extends Component {
       ":" +
       now.getMinutes();
 
-    let fullDate = new Date(now.getTime() + remainingQuality * 10 * 60000);
+    const fullDate = new Date(now.getTime() + remainingQuality * 10 * 60000);
 
     return (
       <div>
@@ -88,8 +88,8 @@ class MapLayer extends Component {
   }
 
   getMarketDesign = (resource) => {
-    let res = resource.replaceAll(" ", "_");
-    let marker = L.icon({
+    const res = resource.replaceAll(" ", "_");
+    const marker = L.icon({
       iconUrl: process.env.REACT_APP_RESOURCES_URL + "/markers/" + res + ".png",
       iconSize: [25, 41],
       iconAnchor: [13, 44],
@@ -142,34 +142,34 @@ class MapLayer extends Component {
               )}
               {resource.resourcetype === "Poaching Hut" ||
               resource.resourcetype === "Enemy Poaching Hut" ? (
-                <div className="border-top border-warning mt-2">
-                  <input
-                    className="form-control form-control-sm"
-                    id="formPoachingRadius"
-                    value={this.state.poachingHutRadius}
-                    onChange={(e) =>
-                      this.setState({ poachingHutRadius: e.target.value })
-                    }
-                    type="range"
-                    min="0"
-                    max="250"
-                  ></input>
-                </div>
-              ) : (
-                ""
-              )}
+                  <div className="border-top border-warning mt-2">
+                    <input
+                      className="form-control form-control-sm"
+                      id="formPoachingRadius"
+                      value={this.state.poachingHutRadius}
+                      onChange={(e) =>
+                        this.setState({ poachingHutRadius: e.target.value })
+                      }
+                      type="range"
+                      min="0"
+                      max="250"
+                    ></input>
+                  </div>
+                ) : (
+                  ""
+                )}
             </Popup>
           </Marker>
           {resource.resourcetype === "Poaching Hut" ||
           resource.resourcetype === "Enemy Poaching Hut" ? (
-            <Circle
-              center={[resource.x, resource.y]}
-              pathOptions={{ fillColor: "blue" }}
-              radius={this.state.poachingHutRadius * 10000}
-            />
-          ) : (
-            ""
-          )}
+              <Circle
+                center={[resource.x, resource.y]}
+                pathOptions={{ fillColor: "blue" }}
+                radius={this.state.poachingHutRadius * 10000}
+              />
+            ) : (
+              ""
+            )}
         </Fragment>
       ));
     }
@@ -190,7 +190,7 @@ class MapLayer extends Component {
 
   render() {
     const { t } = this.props;
-    let position = [this.state.coordinateXInput, this.state.coordinateYInput];
+    const position = [this.state.coordinateXInput, this.state.coordinateYInput];
     const marker = this.state.hasLocation ? (
       <Marker position={position} icon={myMarker}>
         <Popup>
@@ -204,7 +204,7 @@ class MapLayer extends Component {
       </Marker>
     ) : null;
 
-    let isNewMap =
+    const isNewMap =
       this.props.resourcesInTheMap != null &&
       this.props.resourcesInTheMap[0] != null &&
       this.props.resourcesInTheMap[0].typemap != null &&
@@ -251,13 +251,13 @@ class MapLayer extends Component {
             bounds={
               isNewMap
                 ? [
-                    [85.5, -180],
-                    [-84.9, 177.3],
-                  ]
+                  [85.5, -180],
+                  [-84.9, 177.3],
+                ]
                 : [
-                    [85.5, -180],
-                    [-78, 130],
-                  ]
+                  [85.5, -180],
+                  [-78, 130],
+                ]
             }
             opacity={this.state.gridOpacity}
             url={

@@ -24,16 +24,17 @@ class Diplomacy extends Component {
   }
 
   async componentDidMount() {
-    const response = await getUserProfile();
+    const userProfile = await getUserProfile();
     let clanid = null;
-    if (response.success) {
-      clanid = response.message.clanid;
+    if (userProfile.success) {
+      clanid = userProfile.message.clanid;
       this.setState({
-        clanid: response.message.clanid,
-        isLeader: response.message.discordid === response.message.leaderid,
+        clanid: userProfile.message.clanid,
+        isLeader:
+          userProfile.message.discordid === userProfile.message.leaderid,
       });
     } else {
-      this.setState({ error: response.message });
+      this.setState({ error: userProfile.message });
     }
 
     if (clanid != null) {
@@ -61,7 +62,7 @@ class Diplomacy extends Component {
           this.setState({ error: "Error when connecting to the API" });
         });
 
-      let hasPermissions = await getHasPermissions("diplomacy");
+      const hasPermissions = await getHasPermissions("diplomacy");
       this.setState({ hasPermissions: hasPermissions });
     }
   }
@@ -132,7 +133,7 @@ class Diplomacy extends Component {
 
   listOfAllies() {
     if (this.state.listOfRelations != null) {
-      let allies = this.state.listOfRelations.filter(
+      const allies = this.state.listOfRelations.filter(
         (r) => r.typed == 1 || r.typed == 31
       );
 
@@ -150,7 +151,7 @@ class Diplomacy extends Component {
 
   listOfEnemies() {
     if (this.state.listOfRelations != null) {
-      let enemies = this.state.listOfRelations.filter(
+      const enemies = this.state.listOfRelations.filter(
         (r) => r.typed == 2 || r.typed == 32
       );
 
@@ -168,7 +169,7 @@ class Diplomacy extends Component {
 
   listOfNAP() {
     if (this.state.listOfRelations != null) {
-      let nap = this.state.listOfRelations.filter(
+      const nap = this.state.listOfRelations.filter(
         (r) => r.typed == 0 || r.typed == 30
       );
 

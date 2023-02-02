@@ -47,25 +47,25 @@ class ResourceMapNoLog extends Component {
       (this.props.mapId != null || this.props.match.params.id != null) &&
       (this.props.pass != null || parsed.pass != null)
     ) {
-      let markers = await getMarkers();
+      const markers = await getMarkers();
       this.setState({ items: markers });
 
-      let mapId =
+      const mapId =
         this.props.mapId != null
           ? this.props.mapId
           : this.props.match.params.id;
-      let pass = this.props.pass ? this.props.pass : parsed.pass;
+      const pass = this.props.pass ? this.props.pass : parsed.pass;
 
       this.setState({
         mapId: mapId,
         pass: pass,
       });
 
-      let response = await getResources(mapId, pass);
-      if (response.success) {
-        this.setState({ resourcesInTheMap: response.message });
+      const resourcesData = await getResources(mapId, pass);
+      if (resourcesData.success) {
+        this.setState({ resourcesInTheMap: resourcesData.message });
       } else {
-        this.setState({ error: response.message });
+        this.setState({ error: resourcesData.message });
       }
 
       Axios.get(process.env.REACT_APP_API_URL + "/maps/" + mapId, {
@@ -128,7 +128,7 @@ class ResourceMapNoLog extends Component {
     if (r === "All") {
       this.setState({ resourcesFiltered: null });
     } else {
-      let resourcesFiltered = this.state.resourcesInTheMap.filter(
+      const resourcesFiltered = this.state.resourcesInTheMap.filter(
         (resource) => resource.resourcetype === r
       );
       this.setState({ resourcesFiltered: resourcesFiltered });

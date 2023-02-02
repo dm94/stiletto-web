@@ -58,9 +58,9 @@ class CreateMapNoLog extends Component {
   };
 
   shareMapLink() {
-    let http = window.location.protocol;
-    let slashes = http.concat("//");
-    let host = slashes.concat(window.location.hostname);
+    const http = window.location.protocol;
+    const slashes = http.concat("//");
+    const host = slashes.concat(window.location.hostname);
     return (
       <input
         className="btn btn-success btn-sm btn-block"
@@ -79,7 +79,7 @@ class CreateMapNoLog extends Component {
   }
   render() {
     const { t } = this.props;
-    let showHideClassName = this.state.showShareMap
+    const showHideClassName = this.state.showShareMap
       ? "modal d-block"
       : "modal d-none";
     return (

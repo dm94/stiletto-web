@@ -14,7 +14,7 @@ class CreateMapPanel extends Component {
           <div className="card-body text-succes">
             <form
               onSubmit={(evt) => {
-                let date = new Date();
+                const date = new Date();
                 date.setDate(
                   date.getDate() + parseInt(this.state.mapDateInput)
                 );

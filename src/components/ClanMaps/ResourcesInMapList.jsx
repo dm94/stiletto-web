@@ -17,7 +17,7 @@ class ResourcesInMapList extends Component {
 
   list(t) {
     if (this.state.resourceTypeFilter !== "All") {
-      let resourcesFiltered = this.props.resources.filter(
+      const resourcesFiltered = this.props.resources.filter(
         (r) => r.x != null && r.resourcetype === this.state.resourceTypeFilter
       );
       return resourcesFiltered.map((resource) => (
@@ -55,7 +55,7 @@ class ResourcesInMapList extends Component {
   }
 
   filterlist(t) {
-    let resourceTypes = ["All"];
+    const resourceTypes = ["All"];
 
     this.props.resources.forEach((resource) => {
       if (

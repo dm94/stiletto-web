@@ -46,7 +46,7 @@ class ClanList extends Component {
     })
       .then((response) => {
         if (response.status === 202) {
-          let hasMore = response.data != null && response.data.length >= 10;
+          const hasMore = response.data != null && response.data.length >= 10;
           this.setState({
             clans: response.data,
             isLoaded: true,
@@ -175,7 +175,7 @@ class ClanList extends Component {
                   <div className="col-2 btn-group">
                     <button
                       className="btn btn-primary"
-                      onClick={(e) => this.updateClans()}
+                      onClick={() => this.updateClans()}
                     >
                       {t("Search")}
                     </button>
@@ -283,7 +283,7 @@ class ClanList extends Component {
       );
     }
 
-    let showHideClassName = this.state.showRequestModal
+    const showHideClassName = this.state.showRequestModal
       ? "modal d-block"
       : "modal d-none";
     return (

@@ -21,9 +21,9 @@ class GenericInfo extends Component {
   }
 
   showValues(t) {
-    return Object.keys(this.props.dataInfo).map((key, index) => {
+    return Object.keys(this.props.dataInfo).map((key) => {
       if (this.props.dataInfo[key]) {
-        let value = calcRarityValue(
+        const value = calcRarityValue(
           this.props.rarity,
           key,
           this.props.category,
@@ -31,7 +31,7 @@ class GenericInfo extends Component {
         );
         return (
           <li
-            key={key + "-" + index}
+            key={`infolist-${this.props.name}-${key}`}
             className="list-group-item d-flex justify-content-between lh-condensed"
           >
             <div className="my-0 text-capitalize">{t(key)}</div>

@@ -45,7 +45,9 @@ class WikiDescription extends Component {
           }
         }
       })
-      .catch(() => {});
+      .catch(() => {
+        console.log("No description found in the wiki");
+      });
   }
 
   render() {

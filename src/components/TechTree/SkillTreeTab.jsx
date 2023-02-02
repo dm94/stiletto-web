@@ -27,12 +27,12 @@ class SkillTreeTab extends Component {
 
   getChildrens(parent) {
     const { t } = this.props;
-    let childrens = [];
+    const childrens = [];
 
-    let items = this.props.items.filter((it) => it.parent === parent);
+    const items = this.props.items.filter((it) => it.parent === parent);
 
     items.forEach((i) => {
-      let item = {
+      const item = {
         id: i.name,
         title: t(i.name),
         tooltip: { content: this.getContentItem(i) },
@@ -91,10 +91,10 @@ class SkillTreeTab extends Component {
 
   showIngredient(item) {
     if (item != null && item.crafting != null) {
-      return item.crafting.map((ingredients, index) => (
+      return item.crafting.map((ingredients) => (
         <div
           className={item.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}
-          key={"ingredients-" + index + "-" + item.name}
+          key={`skill-ingredient-${item.name}`}
         >
           <Ingredients crafting={ingredients} value={1} />
         </div>

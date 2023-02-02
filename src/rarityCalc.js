@@ -55,7 +55,7 @@ const rarityData = {
 };
 
 export const calcRarityValue = (rarity, type, category, value) => {
-  let factorName = getFactorName(type, category);
+  const factorName = getFactorName(type, category);
   if (factorName != null) {
     if (
       factorName === "WeaponItemSpeedBonus" ||
