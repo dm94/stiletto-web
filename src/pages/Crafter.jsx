@@ -107,18 +107,19 @@ class Crafter extends Component {
     if (count == null) {
       count = 1;
     }
-    const selectedItem = this.state.items.filter((it) => it.name === itemName);
-    if (
-      this.state.selectedItems.filter((it) => it.name === itemName).length > 0
-    ) {
-      this.changeCount(itemName, parseInt(selectedItem[0].count) + count);
-    } else if (selectedItem[0] != null) {
+    let selectedItem = this.state.items.find((it) => it.name === itemName);
+    if (this.state.selectedItems.some((it) => it.name === itemName)) {
+      selectedItem = this.state.selectedItems.find(
+        (it) => it.name === itemName
+      );
+      this.changeCount(itemName, parseInt(selectedItem.count) + count);
+    } else if (selectedItem != null) {
       const selectedItems = this.state.selectedItems.concat([
         {
-          name: selectedItem[0].name,
-          category: selectedItem[0].category ? selectedItem[0].category : "",
-          crafting: this.getIngredients(selectedItem[0].name),
-          damage: selectedItem[0].damage,
+          name: selectedItem.name,
+          category: selectedItem.category ? selectedItem.category : "",
+          crafting: this.getIngredients(selectedItem.name),
+          damage: selectedItem.damage,
           count: count,
         },
       ]);
