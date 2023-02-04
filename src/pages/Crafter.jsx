@@ -250,6 +250,7 @@ class Crafter extends Component {
               type="search"
               placeholder="Search"
               aria-label="Search"
+              data-cy="crafter-search"
               onChange={this.handleInputChangeSearchItem}
               value={this.state.searchText}
             />

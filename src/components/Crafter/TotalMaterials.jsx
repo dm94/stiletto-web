@@ -78,6 +78,7 @@ class TotalMaterials extends Component {
         className="btn btn-success float-right"
         onClick={this.addRecipe}
         title={t("Generate a link to share it")}
+        data-cy="share-crafter-btn"
         disabled={this.props.selectedItems.length <= 0}
       >
         <i className="fas fa-share-alt"></i> {t("Share")}
@@ -165,6 +166,7 @@ class TotalMaterials extends Component {
           <button
             className="btn btn-sm btn-primary float-right"
             title={t("Copy to clipboard")}
+            data-cy="crafter-copy-clipboard"
             onClick={() => this.copyMaterials(t)}
             disabled={this.props.selectedItems.length <= 0}
           >
