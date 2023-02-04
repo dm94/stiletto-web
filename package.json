@@ -74,7 +74,7 @@
     "prettier": "^2.8.3"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "lint": "eslint --ext .js,.jsx ."
 }
