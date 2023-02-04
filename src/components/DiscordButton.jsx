@@ -14,10 +14,10 @@ class DiscordButton extends Component {
         </Link>
       );
     } else {
-      let http = window.location.protocol;
-      let slashes = http.concat("//");
-      let host = slashes.concat(window.location.hostname);
-      let urlLink =
+      const http = window.location.protocol;
+      const slashes = http.concat("//");
+      const host = slashes.concat(window.location.hostname);
+      const urlLink =
         "https://discord.com/api/oauth2/authorize?client_id=" +
         process.env.REACT_APP_DISCORD_CLIENT_ID +
         "&redirect_uri=" +

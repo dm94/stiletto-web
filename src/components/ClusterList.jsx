@@ -10,7 +10,7 @@ class ClusterList extends Component {
   }
 
   async componentDidMount() {
-    let markers = await getClusters();
+    const markers = await getClusters();
     this.setState({ clusters: markers });
   }
 

@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import queryString from "query-string";
 import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../services";
-const queryString = require("query-string");
 
 class DiscordConnection extends Component {
   constructor(props) {
@@ -40,9 +40,9 @@ class DiscordConnection extends Component {
             discordid: response.data.discordid,
             token: response.data.token,
           });
-          let http = window.location.protocol;
-          let slashes = http.concat("//");
-          let host = slashes.concat(window.location.hostname);
+          const http = window.location.protocol;
+          const slashes = http.concat("//");
+          const host = slashes.concat(window.location.hostname);
           window.location.href =
             host + (window.location.port ? ":" + window.location.port : "");
         } else if (response.status === 401) {
@@ -58,10 +58,10 @@ class DiscordConnection extends Component {
   showClanInfo() {
     const { t } = this.props;
     const parsed = queryString.parse(this.props.location.search);
-    let http = window.location.protocol;
-    let slashes = http.concat("//");
-    let host = slashes.concat(window.location.hostname);
-    let urlLink =
+    const http = window.location.protocol;
+    const slashes = http.concat("//");
+    const host = slashes.concat(window.location.hostname);
+    const urlLink =
       "https://discord.com/api/oauth2/authorize?client_id=" +
       process.env.REACT_APP_DISCORD_CLIENT_ID +
       "&redirect_uri=" +

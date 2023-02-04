@@ -40,8 +40,8 @@ export const getCachedData = (name, time = timeCheck) => {
     return null;
   }
 
-  let data = getStoredItem(name);
-  let lastDataCheck = getStoredItem(name + "-lastCheck");
+  const data = getStoredItem(name);
+  const lastDataCheck = getStoredItem(name + "-lastCheck");
 
   if (
     data != null &&
@@ -111,7 +111,7 @@ export const getUserProfile = async () => {
 };
 
 export const getHasPermissions = async (type) => {
-  let response = await getOurPermssions();
+  const response = await getOurPermssions();
 
   if (response.success && response.message) {
     return response.message[type] === "1";
@@ -130,17 +130,17 @@ export const getOurPermssions = async () => {
     let clanid = null;
     let discordid = null;
     if (profile != null) {
-      let data = JSON.parse(profile);
+      const data = JSON.parse(profile);
       clanid = data.clanid;
       discordid = data.discordid;
     } else {
-      let data = await getUserProfile();
+      const data = await getUserProfile();
       clanid = data.message.clanid;
       discordid = data.message.discordid;
     }
 
     if (clanid != null && discordid != null) {
-      let response = await getUserPermssions(clanid, discordid);
+      const response = await getUserPermssions(clanid, discordid);
       if (response != null && response.success) {
         addCachedData("permissions", response.message);
         return {
@@ -215,10 +215,10 @@ export const getClanInfo = async () => {
     const profile = getStoredItem("profile");
     let clanid = null;
     if (profile != null) {
-      let data = JSON.parse(profile);
+      const data = JSON.parse(profile);
       clanid = data.clanid;
     } else {
-      let data = await getUserProfile();
+      const data = await getUserProfile();
       clanid = data.message.clanid;
     }
 
@@ -271,10 +271,10 @@ export const getMembers = async () => {
     const profile = getStoredItem("profile");
     let clanid = null;
     if (profile != null) {
-      let data = JSON.parse(profile);
+      const data = JSON.parse(profile);
       clanid = data.clanid;
     } else {
-      let data = await getUserProfile();
+      const data = await getUserProfile();
       clanid = data.message.clanid;
     }
 
@@ -344,9 +344,9 @@ export const getItems = async () => {
   if (cachedData != null) {
     return cachedData;
   } else {
-    let http = window.location.protocol;
-    let slashes = http.concat("//");
-    let host = slashes.concat(window.location.hostname);
+    const http = window.location.protocol;
+    const slashes = http.concat("//");
+    const host = slashes.concat(window.location.hostname);
     const options = {
       method: "get",
       url:

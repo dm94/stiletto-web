@@ -14,7 +14,7 @@ class MemberListItem extends Component {
           <td>
             <button
               className="btn btn-block btn-danger"
-              onClick={(e) => this.props.onKick(this.props.member.discordid)}
+              onClick={() => this.props.onKick(this.props.member.discordid)}
             >
               {t("Kick")}
             </button>
@@ -39,7 +39,7 @@ class MemberListItem extends Component {
               </button>
               <button
                 className="btn btn-block btn-info"
-                onClick={(e) =>
+                onClick={() =>
                   this.props.onClickEditPermissions(this.props.member.discordid)
                 }
               >

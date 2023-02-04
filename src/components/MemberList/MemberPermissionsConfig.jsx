@@ -16,13 +16,13 @@ class MemberPermissionsConfig extends Component {
   }
 
   async componentDidMount() {
-    let request = await getUserPermssions(
+    const request = await getUserPermssions(
       this.props.clanid,
       this.props.memberid
     );
     if (request) {
       if (request.success) {
-        let allPermissions = request.message;
+        const allPermissions = request.message;
         this.setState({
           bot: allPermissions.bot === "1",
           diplomacy: allPermissions.diplomacy === "1",

@@ -160,7 +160,7 @@ class PrivateProfile extends Component {
 
   showClanSection() {
     const { t } = this.props;
-    let showHideClassName = this.state.showDeleteModal
+    const showHideClassName = this.state.showDeleteModal
       ? "modal d-block"
       : "modal d-none";
 

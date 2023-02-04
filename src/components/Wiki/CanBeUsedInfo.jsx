@@ -12,14 +12,14 @@ class CanBeUsedInfo extends Component {
 
   componentDidMount() {
     if (this.props.items && this.props.name) {
-      let name = this.props.name.toLowerCase();
-      let canBeUsed = this.props.items.filter((item) => {
+      const name = this.props.name.toLowerCase();
+      const canBeUsed = this.props.items.filter((item) => {
         if (
           item.crafting != null &&
           item.crafting[0] != null &&
           item.crafting[0].ingredients != null
         ) {
-          let allIngredients = item.crafting[0].ingredients;
+          const allIngredients = item.crafting[0].ingredients;
 
           return (
             allIngredients.filter(

@@ -52,8 +52,8 @@ class ClanMaps extends Component {
           key={"clanmap" + map.mapid}
           map={map}
           value={map.typemap}
-          onOpen={(map) => {
-            this.setState({ mapThatIsOpen: map });
+          onOpen={(mapData) => {
+            this.setState({ mapThatIsOpen: mapData });
           }}
           onDelete={(mapid) => {
             this.setState({ showDeleteModal: true, idMapDeleteModal: mapid });
@@ -134,7 +134,7 @@ class ClanMaps extends Component {
   };
 
   panel(t) {
-    let showHideClassName = this.state.showDeleteModal
+    const showHideClassName = this.state.showDeleteModal
       ? "modal d-block"
       : "modal d-none";
     return (

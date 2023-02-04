@@ -1,24 +1,26 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import queryString from "query-string";
 import { getItems } from "../services";
 import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
 
-const queryString = require("query-string");
-
 class Wiki extends Component {
-  state = {
-    items: [],
-    searchText: "",
-    textSearched: "",
-    filteredItems: [],
-    error: "",
-    categories: [],
-    categoryFilter: "All",
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      searchText: "",
+      textSearched: "",
+      filteredItems: [],
+      error: "",
+      categories: [],
+      categoryFilter: "All",
+    };
+  }
 
-  componentDidMount = () => {
+  componentDidMount() {
     this.updateRecipes();
     let parsed = null;
     if (this.props.location != null && this.props.location.search != null) {
@@ -27,12 +29,12 @@ class Wiki extends Component {
     if (parsed && parsed.s != null) {
       this.setState({ searchText: parsed.s }, () => this.searchItems());
     }
-  };
+  }
 
   updateRecipes = async () => {
-    let items = await getItems();
+    const items = await getItems();
     if (items != null) {
-      let allCategories = [];
+      const allCategories = [];
 
       items.forEach((item) => {
         if (item.category && !allCategories.includes(item.category)) {
@@ -46,7 +48,7 @@ class Wiki extends Component {
   };
 
   searchItems = async () => {
-    let search = this.state.searchText;
+    const search = this.state.searchText;
     sendEvent({
       category: "User",
       action: "Wiki search",
@@ -135,7 +137,11 @@ class Wiki extends Component {
           <div className="card">
             <div className="card-header text-center">
               <div className="col-xs-12 col-xl-6 mx-auto">
-                <div className="input-group" itemProp="potentialAction">
+                <div
+                  className="input-group"
+                  itemProp="potentialAction"
+                  data-cy="wiki-search"
+                >
                   <input
                     type="search"
                     className="form-control"
@@ -148,7 +154,7 @@ class Wiki extends Component {
                       this.setState({ searchText: e.currentTarget.value })
                     }
                     onKeyPress={(e) => {
-                      let keyPress = e.key || e.keyCode;
+                      const keyPress = e.key || e.keyCode;
                       if (keyPress === 13 || keyPress === "Enter") {
                         this.searchItems();
                       }

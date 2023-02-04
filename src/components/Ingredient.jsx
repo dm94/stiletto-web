@@ -13,10 +13,10 @@ class Ingredient extends Component {
   render() {
     const { t } = this.props;
 
-    let http = window.location.protocol;
-    let slashes = http.concat("//");
-    let host = slashes.concat(window.location.hostname);
-    let url =
+    const http = window.location.protocol;
+    const slashes = http.concat("//");
+    const host = slashes.concat(window.location.hostname);
+    const url =
       host +
       (window.location.port ? ":" + window.location.port : "") +
       "/item/" +
@@ -58,14 +58,10 @@ class Ingredient extends Component {
 
   showSubList() {
     if (this.props.ingredient.ingredients != null && this.state.showList) {
-      return this.props.ingredient.ingredients.map((ingredients, i) => (
+      return this.props.ingredient.ingredients.map((ingredients) => (
         <ul
           className="list-group list-group-horizontal"
-          key={
-            this.props.ingredient.name +
-            this.props.ingredient.count * this.props.value +
-            i
-          }
+          key={`ingredient-sublist-${this.props.ingredient.name}-${this.props.value}`}
         >
           <label className="sr-only">----------------------------</label>
           <Ingredients

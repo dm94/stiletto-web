@@ -14,8 +14,8 @@ class DoubleScrollbar extends Component {
   }
 
   componentDidMount() {
-    let outerDiv = this.refs.outerDiv;
-    let childWrapper = this.refs.childrenWrapper;
+    const outerDiv = this.refs.outerDiv;
+    const childWrapper = this.refs.childrenWrapper;
 
     // Set initial width
     this.calculateWidth();
@@ -24,11 +24,11 @@ class DoubleScrollbar extends Component {
     window.addEventListener("resize", this.boundCalculateWidth);
 
     // assoc the scrolls
-    outerDiv.onscroll = function () {
+    outerDiv.onscroll = () => {
       childWrapper.scrollLeft = outerDiv.scrollLeft;
     };
 
-    childWrapper.onscroll = function () {
+    childWrapper.onscroll = () => {
       outerDiv.scrollLeft = childWrapper.scrollLeft;
     };
   }
@@ -65,9 +65,9 @@ class DoubleScrollbar extends Component {
   }
 
   render() {
-    let outerDivStyle = { overflowX: "auto", overflowY: "hidden" };
-    let innerDivStyle = { paddingTop: "1px", width: this.state.width };
-    let childDivStyle = { overflow: "auto", overflowY: "hidden" };
+    const outerDivStyle = { overflowX: "auto", overflowY: "hidden" };
+    const innerDivStyle = { paddingTop: "1px", width: this.state.width };
+    const childDivStyle = { overflow: "auto", overflowY: "hidden" };
 
     return (
       <div>

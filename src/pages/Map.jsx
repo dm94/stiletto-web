@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import { Helmet } from "react-helmet";
+import queryString from "query-string";
 import CreateMapNoLog from "../components/ClanMaps/CreateMapNoLog";
 import ResourceMapNoLog from "../components/ClanMaps/ResourceMapNoLog";
-const queryString = require("query-string");
 
 class Map extends Component {
   constructor(props) {

@@ -3,14 +3,14 @@ import Ingredient from "../Ingredient";
 
 class ListIngredients extends Component {
   render() {
-    let totalIngredients = [];
+    const totalIngredients = [];
     this.props.selectedItems.forEach((item) => {
       if (
         item.crafting != null &&
         item.crafting[0] != null &&
         item.crafting[0].ingredients != null
       ) {
-        let output =
+        const output =
           item.crafting[0].output != null ? item.crafting[0].output : 1;
         item.crafting[0].ingredients.forEach((ingredient) => {
           if (

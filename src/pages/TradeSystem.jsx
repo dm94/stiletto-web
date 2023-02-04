@@ -52,7 +52,7 @@ class TradeSystem extends Component {
     })
       .then((response) => {
         if (response.status === 200) {
-          let hasMore = response.data != null && response.data.length >= 10;
+          const hasMore = response.data != null && response.data.length >= 10;
           this.setState({
             trades: response.data,
             isLoaded: true,
@@ -293,7 +293,7 @@ class TradeSystem extends Component {
     }
   }
 
-  tradeList(t) {
+  tradeList() {
     if (!this.state.isLoaded) {
       return <LoadingScreen />;
     }
@@ -424,7 +424,7 @@ class TradeSystem extends Component {
                 <div className="col-xl-3 btn-group">
                   <button
                     className="btn btn-lg btn-primary"
-                    onClick={(e) => this.updateTrades()}
+                    onClick={() => this.updateTrades()}
                   >
                     {t("Filter trades")}
                   </button>
@@ -447,7 +447,7 @@ class TradeSystem extends Component {
           </div>
         </div>
         <div className="col-md-12">
-          <div className="row">{this.tradeList(t)}</div>
+          <div className="row">{this.tradeList()}</div>
           <Pagination
             currentPage={this.state.page}
             hasMore={this.state.hasMore}

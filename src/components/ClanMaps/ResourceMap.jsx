@@ -7,7 +7,7 @@ import {
   getResources,
   deleteResource,
   createResource,
-  getStoredItem,
+  getStoredItem
 } from "../../services";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
@@ -39,10 +39,10 @@ class ResourceMap extends Component {
   }
 
   async componentDidMount() {
-    let markers = await getMarkers();
+    const markers = await getMarkers();
     this.setState({ items: markers });
 
-    let response = await getResources(
+    const response = await getResources(
       this.props.map.mapid,
       this.props.map.pass
     );
@@ -213,7 +213,7 @@ class ResourceMap extends Component {
     if (r === "All") {
       this.setState({ resourcesFiltered: null });
     } else {
-      let resourcesFiltered = this.state.resourcesInTheMap.filter(
+      const resourcesFiltered = this.state.resourcesInTheMap.filter(
         (resource) => resource.resourcetype === r
       );
       this.setState({ resourcesFiltered: resourcesFiltered });

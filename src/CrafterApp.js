@@ -18,10 +18,10 @@ const CrafterApp = () => {
   const [newUpdate, setUpdateModal] = useState(false);
   const [searchText, setSearchText] = useState("");
   const [redirectTo, setRedirectTo] = useState(null);
-  let showHideClassName = showChangeLanguageModal
+  const showHideClassName = showChangeLanguageModal
     ? "modal d-block"
     : "modal d-none";
-  let showUpdateModal = newUpdate ? "modal d-block" : "modal d-none";
+  const showUpdateModal = newUpdate ? "modal d-block" : "modal d-none";
   serviceWorker.register({
     onUpdate: () => {
       setUpdateModal(true);
@@ -30,7 +30,7 @@ const CrafterApp = () => {
 
   usePageTracking();
 
-  let language = getStoredItem("i18nextLng");
+  const language = getStoredItem("i18nextLng");
 
   if (redirectTo != null) {
     history.push(redirectTo);
@@ -100,12 +100,12 @@ const CrafterApp = () => {
                 itemScope="itemscope"
                 itemType="https://www.schema.org/SiteNavigationElement"
               >
-                <li className="nav-item">
+                <li className="nav-item" data-cy="crafter-link">
                   <Link itemProp="url" className="nav-link" to="/crafter">
                     <span itemProp="name">{t("Crafting")}</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-cy="maps-link">
                   <Link
                     itemProp="url"
                     className="nav-link"
@@ -114,17 +114,17 @@ const CrafterApp = () => {
                     <span itemProp="name">{t("Resource Maps")}</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-cy="clanlist-link">
                   <Link itemProp="url" className="nav-link" to="/clanlist">
                     <span itemProp="name">{t("Clan List")}</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-cy="trades-link">
                   <Link itemProp="url" className="nav-link" to="/trades">
                     <span itemProp="name"> {t("Trades")}</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-cy="wiki-link">
                   <Link itemProp="url" className="nav-link" to="/wiki">
                     <span itemProp="name"> {t("Wiki")}</span>
                   </Link>
@@ -145,7 +145,7 @@ const CrafterApp = () => {
                     name="search"
                     onChange={(e) => setSearchText(e.currentTarget.value)}
                     onKeyPress={(e) => {
-                      let keyPress = e.key || e.keyCode;
+                      const keyPress = e.key || e.keyCode;
                       if (keyPress === 13 || keyPress === "Enter") {
                         setRedirectTo("/wiki?s=" + searchText);
                       }
@@ -165,6 +165,7 @@ const CrafterApp = () => {
               </div>
               <button
                 className="btn btn-sm mr-2"
+                data-cy="change-languaje-btn"
                 onClick={() => {
                   setChangeLanguageModal(true);
                 }}
@@ -437,8 +438,8 @@ function getLanguageFlag(lng) {
 function updateWeb() {
   localStorage.removeItem("allItems");
   sessionStorage.removeItem("allItems");
-  caches.keys().then(function (names) {
-    for (let name of names) {
+  caches.keys().then((names) => {
+    for (const name of names) {
       caches.delete(name);
     }
   });

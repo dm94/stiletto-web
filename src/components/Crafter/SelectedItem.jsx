@@ -13,7 +13,7 @@ class SelectedItem extends Component {
     };
   }
 
-  showIngredient(t) {
+  showIngredient() {
     if (this.props.item.crafting != null) {
       return this.props.item.crafting.map((ingredients, i) => (
         <div
@@ -22,7 +22,7 @@ class SelectedItem extends Component {
               ? "col-xl-6 border border-success"
               : "col-xl-12"
           }
-          key={this.props.item.name + this.props.item.count + i}
+          key={`${this.props.item.name}-${this.props.item.count}-${i}`}
         >
           <Ingredients
             crafting={ingredients}
@@ -77,10 +77,10 @@ class SelectedItem extends Component {
 
   render() {
     const { t } = this.props;
-    let http = window.location.protocol;
-    let slashes = http.concat("//");
-    let host = slashes.concat(window.location.hostname);
-    let url =
+    const http = window.location.protocol;
+    const slashes = http.concat("//");
+    const host = slashes.concat(window.location.hostname);
+    const url =
       host +
       (window.location.port ? ":" + window.location.port : "") +
       "/item/" +
@@ -91,7 +91,7 @@ class SelectedItem extends Component {
           <div className="text-center card-header">
             <button
               className="close"
-              onClick={(e) => this.props.onChangeCount(this.props.item.name, 0)}
+              onClick={() => this.props.onChangeCount(this.props.item.name, 0)}
             >
               <span aria-hidden="true">X</span>
             </button>
@@ -121,7 +121,7 @@ class SelectedItem extends Component {
             </div>
           </div>
           <div className="card-body">
-            <div className="list-unstyled row">{this.showIngredient(t)}</div>
+            <div className="list-unstyled row">{this.showIngredient()}</div>
             {this.showDamage(t)}
           </div>
           <div className="card-footer">

@@ -51,9 +51,9 @@ class ItemWiki extends Component {
       item_name = item_name.toLowerCase();
     }
 
-    let items = await getItems();
+    const items = await getItems();
     if (items != null) {
-      let item = items.find((it) => it.name.toLowerCase() === item_name);
+      const item = items.find((it) => it.name.toLowerCase() === item_name);
       this.setState({
         item: item,
         isLoaded: true,
@@ -66,10 +66,10 @@ class ItemWiki extends Component {
     const { t } = this.props;
     if (this.state.isLoaded) {
       if (this.state.item != null) {
-        let name = this.state.item.name;
-        let http = window.location.protocol;
-        let slashes = http.concat("//");
-        let host = slashes.concat(window.location.hostname);
+        const name = this.state.item.name;
+        const http = window.location.protocol;
+        const slashes = http.concat("//");
+        const host = slashes.concat(window.location.hostname);
         let parent_url = "";
         if (this.state.item.parent) {
           parent_url =
@@ -80,16 +80,16 @@ class ItemWiki extends Component {
               this.state.item.parent.toLowerCase().replaceAll(" ", "_")
             );
         }
-        let craftUrl =
+        const craftUrl =
           host +
           (window.location.port ? ":" + window.location.port : "") +
           "/crafter?craft=" +
           encodeURI(name.toLowerCase());
 
-        let category = this.state.item.category;
+        const category = this.state.item.category;
 
         return (
-          <div className="container">
+          <div className="container" data-cy="wiki-item" data-name={name}>
             {this.helmetInfo(name)}
             <div className="row">
               <div className="col-12 col-md-6">

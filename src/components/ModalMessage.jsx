@@ -10,7 +10,7 @@ class ModalMessage extends Component {
     return (
       <button
         className="btn btn-lg btn-outline-warning btn-block"
-        onClick={(e) => this.setState({ redirect: true })}
+        onClick={() => this.setState({ redirect: true })}
       >
         OK
       </button>
@@ -21,7 +21,7 @@ class ModalMessage extends Component {
     return (
       <button
         className="btn btn-lg btn-outline-warning btn-block"
-        onClick={(e) => this.props.onClickOk()}
+        onClick={() => this.props.onClickOk()}
       >
         OK
       </button>
@@ -33,8 +33,8 @@ class ModalMessage extends Component {
     if (this.props.message.text === "Error when connecting to the API") {
       localStorage.removeItem("allItems");
       sessionStorage.removeItem("allItems");
-      caches.keys().then(function (names) {
-        for (let name of names) {
+      caches.keys().then((names) => {
+        for (const name of names) {
           caches.delete(name);
         }
       });

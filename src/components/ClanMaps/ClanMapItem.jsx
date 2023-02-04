@@ -36,9 +36,9 @@ class ClanMapItem extends Component {
 
   ShareMapButton(t) {
     if (this.props.map.discordid === getStoredItem("discordid")) {
-      let http = window.location.protocol;
-      let slashes = http.concat("//");
-      let host = slashes.concat(window.location.hostname);
+      const http = window.location.protocol;
+      const slashes = http.concat("//");
+      const host = slashes.concat(window.location.hostname);
       return (
         <button
           className="btn btn-success btn-block"
@@ -61,8 +61,8 @@ class ClanMapItem extends Component {
   }
 
   render() {
-    let date = new Date();
-    let dateBurning = new Date(this.props.map.dateofburning);
+    const date = new Date();
+    const dateBurning = new Date(this.props.map.dateofburning);
     return (
       <div
         className="p-2 col-sm-12 col-xl-4 text-center"

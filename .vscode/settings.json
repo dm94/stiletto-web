@@ -1,0 +1,11 @@
+{
+  "sonarlint.connectedMode.project": {
+    "connectionId": "dm94",
+    "projectKey": "dm94_stiletto-web"
+  },
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file"
+}

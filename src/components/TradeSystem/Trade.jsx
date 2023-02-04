@@ -34,7 +34,7 @@ class Trade extends Component {
       return (
         <button
           className="btn btn-danger"
-          onClick={(e) => this.props.onDelete(this.props.trade.idtrade)}
+          onClick={() => this.props.onDelete(this.props.trade.idtrade)}
         >
           {t("Delete")}
         </button>

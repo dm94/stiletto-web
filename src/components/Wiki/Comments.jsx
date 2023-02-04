@@ -5,7 +5,7 @@ import { getStoredItem } from "../../services";
 class Comments extends Component {
   render() {
     if (this.props.name && localStorage.getItem("acceptscookies")) {
-      let language = getStoredItem("i18nextLng");
+      const language = getStoredItem("i18nextLng");
       return (
         <div className="col-12">
           <div className="card border-secondary mb-3">

@@ -10,7 +10,7 @@ class AuctionTimers extends Component {
   };
 
   showTimers() {
-    let timers = [];
+    const timers = [];
     for (let i = 0; i < this.state.timers; i++) {
       timers.push(
         <Timer key={i} onPlay={this.playAlarm} value={this.state.playSound} />
@@ -20,7 +20,7 @@ class AuctionTimers extends Component {
   }
 
   playAlarm() {
-    let audio = new Audio("./cobra.mp3");
+    const audio = new Audio("./cobra.mp3");
     audio.play();
   }
 

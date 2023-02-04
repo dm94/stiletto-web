@@ -43,14 +43,15 @@ class MemberList extends Component {
   }
 
   async componentDidMount() {
-    const response = await getUserProfile();
-    if (response.success) {
+    const userProfile = await getUserProfile();
+    if (userProfile.success) {
       this.setState({
-        clanid: response.message.clanid,
-        isLeader: response.message.discordid === response.message.leaderid,
+        clanid: userProfile.message.clanid,
+        isLeader:
+          userProfile.message.discordid === userProfile.message.leaderid,
       });
     } else {
-      this.setState({ error: response.message, isLoaded: true });
+      this.setState({ error: userProfile.message, isLoaded: true });
       return;
     }
 
@@ -86,9 +87,9 @@ class MemberList extends Component {
         });
       });
 
-    let hasBotPermissions = await getHasPermissions("bot");
-    let hasRequestPermissions = await getHasPermissions("request");
-    let hasKickMembersPermisssions = await getHasPermissions("kickmembers");
+    const hasBotPermissions = await getHasPermissions("bot");
+    const hasRequestPermissions = await getHasPermissions("request");
+    const hasKickMembersPermisssions = await getHasPermissions("kickmembers");
     this.setState({
       hasBotPermissions: hasBotPermissions,
       hasRequestPermissions: hasRequestPermissions,
@@ -129,7 +130,7 @@ class MemberList extends Component {
         localStorage.removeItem("memberList-lastCheck");
         sessionStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
-          let members = this.state.members.filter(
+          const members = this.state.members.filter(
             (m) => m.discordid !== memberdiscordid
           );
           this.setState({ members: members });
@@ -176,7 +177,7 @@ class MemberList extends Component {
         sessionStorage.removeItem("memberList-lastCheck");
         localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
-          let requestMembers = this.state.requestMembers.filter(
+          const requestMembers = this.state.requestMembers.filter(
             (m) => m.discordid !== this.state.requestData.discordid
           );
           this.setState({ requestMembers: requestMembers });
@@ -224,7 +225,7 @@ class MemberList extends Component {
         sessionStorage.removeItem("memberList-lastCheck");
         localStorage.removeItem("memberList-lastCheck");
         if (response.status === 202) {
-          let requestMembers = this.state.requestMembers.filter(
+          const requestMembers = this.state.requestMembers.filter(
             (m) => m.discordid !== this.state.requestData.discordid
           );
           this.setState({ requestMembers: requestMembers });
@@ -486,7 +487,7 @@ class MemberList extends Component {
       );
     }
 
-    let showHideClassName = this.state.showRequestModal
+    const showHideClassName = this.state.showRequestModal
       ? "modal d-block"
       : "modal d-none";
     return (

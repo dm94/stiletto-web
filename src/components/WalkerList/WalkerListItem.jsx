@@ -96,7 +96,7 @@ class WalkerListItem extends Component {
                         onChange={(evt) => {
                           const valueInput = evt.target.value;
                           this.setState((state) => {
-                            let walkerCopy = state.walker;
+                            const walkerCopy = state.walker;
                             walkerCopy.ownerUser = valueInput;
                             this.setState({ walker: walkerCopy });
                           });
@@ -143,7 +143,7 @@ class WalkerListItem extends Component {
                         onChange={(evt) => {
                           const valueInput = evt.target.value;
                           this.setState((state) => {
-                            let walkerCopy = state.walker;
+                            const walkerCopy = state.walker;
                             walkerCopy.walker_use = valueInput;
                             this.setState({ walker: walkerCopy });
                           });
@@ -178,7 +178,7 @@ class WalkerListItem extends Component {
                         onChange={(evt) => {
                           const valueInput = evt.target.value;
                           this.setState((state) => {
-                            let walkerCopy = state.walker;
+                            const walkerCopy = state.walker;
                             walkerCopy.type = valueInput;
                             this.setState({ walker: walkerCopy });
                           });
@@ -218,7 +218,7 @@ class WalkerListItem extends Component {
                         onChange={(evt) => {
                           const valueInput = evt.target.value;
                           this.setState((state) => {
-                            let walkerCopy = state.walker;
+                            const walkerCopy = state.walker;
                             walkerCopy.description = valueInput;
                             this.setState({ walker: walkerCopy });
                           });
@@ -241,7 +241,7 @@ class WalkerListItem extends Component {
                       }
                       onClick={() => {
                         this.setState((state) => {
-                          let walkerCopy = state.walker;
+                          const walkerCopy = state.walker;
                           walkerCopy.isReady = true;
                           this.setState({ walker: walkerCopy });
                         });
@@ -260,7 +260,7 @@ class WalkerListItem extends Component {
                       }
                       onClick={() => {
                         this.setState((state) => {
-                          let walkerCopy = state.walker;
+                          const walkerCopy = state.walker;
                           walkerCopy.isReady = false;
                           this.setState({ walker: walkerCopy });
                         });

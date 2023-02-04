@@ -4,6 +4,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import queryString from "query-string";
 import {
   getMembers,
   getItems,
@@ -13,7 +14,6 @@ import {
 } from "../services";
 import Pagination from "../components/Pagination";
 import WalkerListItem from "../components/WalkerList/WalkerListItem";
-const queryString = require("query-string");
 
 class WalkerList extends Component {
   constructor(props) {
@@ -52,9 +52,9 @@ class WalkerList extends Component {
 
     const parsed = queryString.parse(this.props.location.search);
     if (parsed.code != null) {
-      let http = window.location.protocol;
-      let slashes = http.concat("//");
-      let host = slashes.concat(window.location.hostname);
+      const http = window.location.protocol;
+      const slashes = http.concat("//");
+      const host = slashes.concat(window.location.hostname);
       const options = {
         method: "get",
         url: process.env.REACT_APP_API_URL + "/walkers/auth",
@@ -110,9 +110,9 @@ class WalkerList extends Component {
 
     this.updateWalkers();
 
-    let hasPermissions = await getHasPermissions("walkers");
+    const hasPermissions = await getHasPermissions("walkers");
     this.setState({ hasPermissions: hasPermissions });
-    let hasPermissionsBot = await getHasPermissions("bot");
+    const hasPermissionsBot = await getHasPermissions("bot");
     this.setState({ hasPermissionsBot: hasPermissionsBot });
   }
 
@@ -148,7 +148,7 @@ class WalkerList extends Component {
     })
       .then((response) => {
         if (response.status === 200) {
-          let hasMore = response.data != null && response.data.length >= 20;
+          const hasMore = response.data != null && response.data.length >= 20;
           this.setState({ walkers: response.data, hasMoreWalkers: hasMore });
         } else if (response.status === 401) {
           this.setState({ error: "The data entered is incorrect" });
@@ -176,7 +176,7 @@ class WalkerList extends Component {
     const response = await getItems();
 
     if (response != null) {
-      let walkerTypeList = response
+      const walkerTypeList = response
         .filter((item) => item.category === "Walkers")
         .map((item) => {
           return item.name.replace("Walker", "").trim();
@@ -484,7 +484,7 @@ class WalkerList extends Component {
                     <div className="col btn-group">
                       <button
                         className="btn btn-lg btn-primary"
-                        onClick={(e) => this.updateWalkers()}
+                        onClick={() => this.updateWalkers()}
                       >
                         {t("Filter walkers")}
                       </button>
