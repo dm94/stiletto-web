@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 export const usePageTracking = () => {
   const location = useLocation();
@@ -19,7 +19,7 @@ export const usePageTracking = () => {
       process.env.REACT_APP_GA_ID &&
       initialized
     ) {
-      ReactGA.pageview(location.pathname + location.search);
+      ReactGA.send({ hitType: "pageview", page: location.pathname });
     }
   }, [initialized, location]);
 };

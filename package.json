@@ -26,7 +26,7 @@
     "query-string": "^8.1.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-ga": "^3.3.1",
+    "react-ga4": "^2.0.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^12.1.4",
     "react-leaflet": "^2.8.0",
@@ -74,7 +74,7 @@
     "prettier": "^2.8.3"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "lint": "eslint --ext .js,.jsx ."
 }
