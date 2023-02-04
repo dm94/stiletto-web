@@ -28,3 +28,4 @@ public/maps
 yarn.lock
 .env
 cypress.json
+cypress/videos
