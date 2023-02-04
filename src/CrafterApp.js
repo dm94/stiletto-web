@@ -100,12 +100,12 @@ const CrafterApp = () => {
                 itemScope="itemscope"
                 itemType="https://www.schema.org/SiteNavigationElement"
               >
-                <li className="nav-item">
+                <li className="nav-item" data-cy="crafter-link">
                   <Link itemProp="url" className="nav-link" to="/crafter">
                     <span itemProp="name">{t("Crafting")}</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-cy="maps-link">
                   <Link
                     itemProp="url"
                     className="nav-link"
@@ -114,17 +114,17 @@ const CrafterApp = () => {
                     <span itemProp="name">{t("Resource Maps")}</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-cy="clanlist-link">
                   <Link itemProp="url" className="nav-link" to="/clanlist">
                     <span itemProp="name">{t("Clan List")}</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-cy="trades-link">
                   <Link itemProp="url" className="nav-link" to="/trades">
                     <span itemProp="name"> {t("Trades")}</span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item" data-cy="wiki-link">
                   <Link itemProp="url" className="nav-link" to="/wiki">
                     <span itemProp="name"> {t("Wiki")}</span>
                   </Link>
@@ -165,6 +165,7 @@ const CrafterApp = () => {
               </div>
               <button
                 className="btn btn-sm mr-2"
+                data-cy="change-languaje-btn"
                 onClick={() => {
                   setChangeLanguageModal(true);
                 }}

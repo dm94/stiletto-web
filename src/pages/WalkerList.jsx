@@ -4,6 +4,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Axios from "axios";
+import queryString from "query-string";
 import {
   getMembers,
   getItems,
@@ -13,7 +14,6 @@ import {
 } from "../services";
 import Pagination from "../components/Pagination";
 import WalkerListItem from "../components/WalkerList/WalkerListItem";
-const queryString = require("query-string");
 
 class WalkerList extends Component {
   constructor(props) {

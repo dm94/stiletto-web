@@ -1,10 +1,15 @@
 {
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:cypress/recommended"
+  ],
   "env": {
     "node": true,
     "commonjs": true,
     "browser": true,
-    "es6": true
+    "es6": true,
+    "cypress/globals": true
   },
   "settings": {
     "react": {
@@ -20,6 +25,7 @@
     }
   },
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "react/no-unknown-property": "off",
     "react/no-string-refs": "warn",
     "react/prop-types": 0,

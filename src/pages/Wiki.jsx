@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import queryString from "query-string";
 import { getItems } from "../services";
 import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
-
-const queryString = require("query-string");
 
 class Wiki extends Component {
   constructor(props) {
@@ -138,7 +137,11 @@ class Wiki extends Component {
           <div className="card">
             <div className="card-header text-center">
               <div className="col-xs-12 col-xl-6 mx-auto">
-                <div className="input-group" itemProp="potentialAction">
+                <div
+                  className="input-group"
+                  itemProp="potentialAction"
+                  data-cy="wiki-search"
+                >
                   <input
                     type="search"
                     className="form-control"

@@ -89,7 +89,7 @@ class ItemWiki extends Component {
         const category = this.state.item.category;
 
         return (
-          <div className="container">
+          <div className="container" data-cy="wiki-item" data-name={name}>
             {this.helmetInfo(name)}
             <div className="row">
               <div className="col-12 col-md-6">
