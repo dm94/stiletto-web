@@ -19,7 +19,7 @@ export const usePageTracking = () => {
       process.env.REACT_APP_GA_ID &&
       initialized
     ) {
-      ReactGA.pageview(location.pathname + location.search);
+      ReactGA.send({ hitType: "pageview", page: location.pathname });
     }
   }, [initialized, location]);
 };
