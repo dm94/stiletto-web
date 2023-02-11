@@ -2,6 +2,7 @@ const item = "Sand Bed";
 
 describe("Crafter", () => {
   beforeEach(() => {
+    cy.interceptRequest();
     cy.visit("/");
     cy.get("[data-cy='crafter-link']").click();
   });
