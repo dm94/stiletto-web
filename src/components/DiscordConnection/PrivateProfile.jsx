@@ -219,7 +219,9 @@ class PrivateProfile extends Component {
                 <ul className="list-group mb-3">
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
                     <div className="my-0">{t("Discord Tag")}</div>
-                    <div className="text-muted">{this.state.discordtag}</div>
+                    <div className="text-muted" data-cy="discord-tag">
+                      {this.state.discordtag}
+                    </div>
                   </li>
                   <li className="list-group-item d-flex justify-content-between lh-condensed">
                     <div className="my-0">{t("Nick in Game")}</div>
@@ -407,13 +409,18 @@ class PrivateProfile extends Component {
         <div className="col-xl-6">
           <div className="card border-secondary mb-3">
             <div className="card-header">
-              <Link className="btn btn-lg btn-info btn-block" to="/clanlist">
+              <Link
+                className="btn btn-lg btn-info btn-block"
+                to="/clanlist"
+                data-cy="join-clan-btn"
+              >
                 {t("Join a clan")}
               </Link>
             </div>
             <div className="card-footer">
               <button
                 className="btn btn-lg btn-success btn-block"
+                data-cy="create-clan-btn"
                 onClick={() => {
                   this.setState({ showClanConfig: true });
                 }}
@@ -463,6 +470,7 @@ class PrivateProfile extends Component {
         <div className="card-footer">
           <button
             className="btn btn-lg btn-danger btn-block"
+            data-cy="leave-clan-btn"
             onClick={this.leaveClan}
           >
             {t("Leave clan")}

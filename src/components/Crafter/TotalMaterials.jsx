@@ -52,7 +52,13 @@ class TotalMaterials extends Component {
         this.state.recipeToken;
       return (
         <div className="input-group mb-3 float-left">
-          <input type="text" className="form-control" value={url} disabled />
+          <input
+            type="text"
+            className="form-control"
+            data-cy="share-crafter-input"
+            value={url}
+            disabled
+          />
           <div className="input-group-append">
             <button
               className="btn btn-primary"

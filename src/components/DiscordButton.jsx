@@ -9,7 +9,11 @@ class DiscordButton extends Component {
     const { t } = this.props;
     if (getStoredItem("token") != null) {
       return (
-        <Link className="btn btn-outline-light" to="/profile">
+        <Link
+          className="btn btn-outline-light"
+          to="/profile"
+          data-cy="profile-link"
+        >
           <i className="far fa-user"></i> {t("Profile")}
         </Link>
       );

@@ -2,6 +2,7 @@ const item = "Sand Bed";
 
 describe("Wiki", () => {
   beforeEach(() => {
+    cy.interceptRequest();
     cy.visit("/");
     cy.get("[data-cy='wiki-link']").click();
   });
