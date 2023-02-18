@@ -3,6 +3,37 @@ import { withTranslation } from "react-i18next";
 import { getStoredItem } from "../services";
 
 class ChangeLanguageModal extends Component {
+  getLanguajes = () => {
+    const supportedLanguages = [
+      { key: "en", name: "English" },
+      { key: "es", name: "Spanish" },
+      { key: "ru", name: "Russian" },
+      { key: "fr", name: "French" },
+      { key: "de", name: "German" },
+      { key: "it", name: "Italian" },
+      { key: "ja", name: "Japanese" },
+      { key: "pl", name: "Polish" },
+      { key: "zh", name: "Chinese Simplified" },
+      { key: "pt", name: "Portuguese, Brazilian" },
+      { key: "uk", name: "Ukrainian" },
+    ];
+
+    return supportedLanguages.map((languaje) => {
+      const { t } = this.props;
+      return (
+        <div className="col-3" key={languaje.key}>
+          <img
+            className="img-thumbnail"
+            src={`/img/${languaje.key}.jpg`}
+            alt={`${languaje.name} language`}
+            onClick={() => this.props.switchLanguage(languaje.key)}
+          />
+          <p>{t(languaje.name)}</p>
+        </div>
+      );
+    });
+  };
+
   render() {
     const { t } = this.props;
     return (
@@ -11,107 +42,7 @@ class ChangeLanguageModal extends Component {
           <div className="modal-content">
             <div className="modal-header">{t("Change language")}</div>
             <div className="modal-body">
-              <div className="row text-center">
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/es.jpg"
-                    alt="Spanish language"
-                    onClick={() => this.props.switchLanguage("es")}
-                  />
-                  <p>{t("Spanish")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/en.jpg"
-                    alt="English language"
-                    onClick={() => this.props.switchLanguage("en")}
-                  />
-                  <p>{t("English")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/ru.jpg"
-                    alt="Russian language"
-                    onClick={() => this.props.switchLanguage("ru")}
-                  />
-                  <p>{t("Russian")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/fr.jpg"
-                    alt="French language"
-                    onClick={() => this.props.switchLanguage("fr")}
-                  />
-                  <p>{t("French")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/de.jpg"
-                    alt="German language"
-                    onClick={() => this.props.switchLanguage("de")}
-                  />
-                  <p>{t("German")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/zh.jpg"
-                    alt="Chinese Simplified language"
-                    onClick={() => this.props.switchLanguage("zh")}
-                  />
-                  <p>{t("Chinese Simplified")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/it.jpg"
-                    alt="Italian language"
-                    onClick={() => this.props.switchLanguage("it")}
-                  />
-                  <p>{t("Italian")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/ja.jpg"
-                    alt="Japanese language"
-                    onClick={() => this.props.switchLanguage("ja")}
-                  />
-                  <p>{t("Japanese")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/pl.jpg"
-                    alt="Polish language"
-                    onClick={() => this.props.switchLanguage("pl")}
-                  />
-                  <p>{t("Polish")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/pt.jpg"
-                    alt="Portuguese language"
-                    onClick={() => this.props.switchLanguage("pt")}
-                  />
-                  <p>{t("Portuguese, Brazilian")}</p>
-                </div>
-                <div className="col-3">
-                  <img
-                    className="img-thumbnail"
-                    src="/img/uk.jpg"
-                    alt="Ukrainian language"
-                    onClick={() => this.props.switchLanguage("uk")}
-                  />
-                  <p>{t("Ukrainian")}</p>
-                </div>
-              </div>
+              <div className="row text-center">{this.getLanguajes()}</div>
             </div>
             <div className="modal-footer">
               <p className="mr-auto">v4.4.3</p>
