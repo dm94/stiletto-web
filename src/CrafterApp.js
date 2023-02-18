@@ -15,15 +15,13 @@ const CrafterApp = () => {
   const [t] = useTranslation();
   const history = useHistory();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
-  const [newUpdate, setUpdateModal] = useState(false);
   const [redirectTo, setRedirectTo] = useState(null);
   const showHideClassName = showChangeLanguageModal
     ? "modal d-block"
     : "modal d-none";
-  const showUpdateModal = newUpdate ? "modal d-block" : "modal d-none";
   serviceWorker.register({
     onUpdate: () => {
-      setUpdateModal(true);
+      updateWeb();
     },
   });
 
@@ -59,37 +57,9 @@ const CrafterApp = () => {
         }}
         setRedirectTo={(value) => setRedirectTo(value)}
       />
-
       <main role="main" className="flex-shrink-0">
         <div className="container-fluid pt-4">
           {Routes}
-          <div className={showUpdateModal}>
-            <div className="modal-dialog border border-success">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title">{t("New web update")}</h5>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={() => {
-                      setUpdateModal(false);
-                    }}
-                  >
-                    {t("Cancel")}
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    onClick={() => updateWeb()}
-                  >
-                    {t("Update")}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
           <div className={showHideClassName}>
             <div className="modal-dialog">
               <div className="modal-content">
