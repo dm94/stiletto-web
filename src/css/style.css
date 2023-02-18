@@ -42,3 +42,10 @@
 .tippy-content h1 {
   font-size: 2em;
 }
+
+.notifications {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
