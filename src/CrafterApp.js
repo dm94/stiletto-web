@@ -6,6 +6,7 @@ import { Helmet } from "react-helmet";
 import * as serviceWorker from "./serviceWorkerRegistration";
 import CookieConsent from "./components/CookieConsent";
 import Menu from "./components/Menu";
+import ChangeLanguageModal from "./components/ChangeLanguageModal";
 import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
 import { usePageTracking } from "./page-tracking";
@@ -16,9 +17,6 @@ const CrafterApp = () => {
   const history = useHistory();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
   const [redirectTo, setRedirectTo] = useState(null);
-  const showHideClassName = showChangeLanguageModal
-    ? "modal d-block"
-    : "modal d-none";
   serviceWorker.register({
     onUpdate: () => {
       updateWeb();
@@ -60,131 +58,12 @@ const CrafterApp = () => {
       <main role="main" className="flex-shrink-0">
         <div className="container-fluid pt-4">
           {Routes}
-          <div className={showHideClassName}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">{t("Change language")}</div>
-                <div className="modal-body">
-                  <div className="row text-center">
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/es.jpg"
-                        alt="Spanish language"
-                        onClick={() => switchLanguage("es")}
-                      />
-                      <p>{t("Spanish")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/en.jpg"
-                        alt="English language"
-                        onClick={() => switchLanguage("en")}
-                      />
-                      <p>{t("English")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/ru.jpg"
-                        alt="Russian language"
-                        onClick={() => switchLanguage("ru")}
-                      />
-                      <p>{t("Russian")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/fr.jpg"
-                        alt="French language"
-                        onClick={() => switchLanguage("fr")}
-                      />
-                      <p>{t("French")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/de.jpg"
-                        alt="German language"
-                        onClick={() => switchLanguage("de")}
-                      />
-                      <p>{t("German")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/zh.jpg"
-                        alt="Chinese Simplified language"
-                        onClick={() => switchLanguage("zh")}
-                      />
-                      <p>{t("Chinese Simplified")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/it.jpg"
-                        alt="Italian language"
-                        onClick={() => switchLanguage("it")}
-                      />
-                      <p>{t("Italian")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/ja.jpg"
-                        alt="Japanese language"
-                        onClick={() => switchLanguage("ja")}
-                      />
-                      <p>{t("Japanese")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/pl.jpg"
-                        alt="Polish language"
-                        onClick={() => switchLanguage("pl")}
-                      />
-                      <p>{t("Polish")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/pt.jpg"
-                        alt="Portuguese language"
-                        onClick={() => switchLanguage("pt")}
-                      />
-                      <p>{t("Portuguese, Brazilian")}</p>
-                    </div>
-                    <div className="col-3">
-                      <img
-                        className="img-thumbnail"
-                        src="/img/uk.jpg"
-                        alt="Ukrainian language"
-                        onClick={() => switchLanguage("uk")}
-                      />
-                      <p>{t("Ukrainian")}</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="modal-footer">
-                  <p className="mr-auto">v4.4.3</p>
-                  <button
-                    className={
-                      getStoredItem("darkmode") !== "true"
-                        ? "btn btn-outline-secondary"
-                        : "btn btn-outline-light"
-                    }
-                    onClick={() => {
-                      setChangeLanguageModal(false);
-                    }}
-                  >
-                    {t("Accept")}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+          {showChangeLanguageModal && (
+            <ChangeLanguageModal
+              switchLanguage={(lng) => switchLanguage(lng)}
+              hideModal={() => setChangeLanguageModal(false)}
+            />
+          )}
         </div>
       </main>
       <footer className="footer footer mt-auto">
