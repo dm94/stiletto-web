@@ -40,9 +40,9 @@ class Ingredient extends Component {
             ? Math.ceil(this.props.ingredient.count * this.props.value) + "x "
             : ""}
           {this.props.ingredient.ingredients != null ? (
-            t(this.props.ingredient.name)
+            t(this.props.ingredient.name, { ns: "items" })
           ) : (
-            <a href={url}>{t(this.props.ingredient.name)}</a>
+            <a href={url}>{t(this.props.ingredient.name, { ns: "items" })}</a>
           )}
         </div>
         <div
