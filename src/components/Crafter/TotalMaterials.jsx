@@ -4,6 +4,7 @@ import Axios from "axios";
 import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
 import { sendEvent } from "../../page-tracking";
+import { sendNotification } from "../../functions/broadcast";
 
 class TotalMaterials extends Component {
   constructor(props) {
@@ -32,14 +33,14 @@ class TotalMaterials extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 503) {
-          this.props.onError("Error connecting to database");
+          sendNotification("Error connecting to database", "Error");
         } else if (response.status === 201) {
-          console.log(response.data);
+          sendNotification("Sharing code has been generated", "Information");
           this.setState({ recipeToken: response.data.token });
         }
       })
       .catch(() => {
-        this.props.onError("Error when connecting to the API");
+        sendNotification("Error when connecting to the API", "Error");
       });
   };
 
@@ -117,6 +118,7 @@ class TotalMaterials extends Component {
       category: "Share",
       action: "Copy materials",
     });
+
     let text = t("To make") + ":\n\n";
 
     this.props.selectedItems.forEach(
@@ -162,6 +164,7 @@ class TotalMaterials extends Component {
       window.location.origin;
 
     navigator.clipboard.writeText(text);
+    sendNotification("Items copied to the clipboard", "Information");
   };
 
   render() {

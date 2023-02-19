@@ -86,7 +86,7 @@ class Trade extends Component {
                 key={this.props.trade.resource}
                 name={this.props.trade.resource}
               />
-              {t(this.props.trade.resource)}
+              {t(this.props.trade.resource, { ns: "items" })}
             </h5>
             <p>
               {this.props.trade.price !== "0"
@@ -94,7 +94,7 @@ class Trade extends Component {
                 : ""}
             </p>
             {this.props.trade.nickname != null
-              ? t("Nick in game") + ": " + this.props.trade.nickname
+              ? t("Nick in Game") + ": " + this.props.trade.nickname
               : ""}
           </div>
           {this.cardFooter(t)}

@@ -294,5 +294,11 @@
   "Is ready?": "Is ready?",
   "Search items": "Search items",
   "Error connecting to the API": "Error connecting to the API",
-  "Map created": "Map created"
+  "Map created": "Map created",
+  "Items copied to the clipboard": "Items copied to the clipboard",
+  "Common": "Common",
+  "Legendary": "Legendary",
+  "Uncommon": "Uncommon",
+  "Epic": "Epic",
+  "Rare": "Rare"
 }

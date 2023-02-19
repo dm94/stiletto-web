@@ -285,7 +285,6 @@ class Crafter extends Component {
             <TotalMaterials
               key="totalmaterialsid"
               selectedItems={this.state.selectedItems}
-              onError={(e) => this.setState({ error: e })}
             />
           </div>
         </main>

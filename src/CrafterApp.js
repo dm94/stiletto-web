@@ -11,6 +11,7 @@ import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
 import { usePageTracking } from "./page-tracking";
 import "./css/style.min.css";
+import NotificationList from "./components/Notifications/NotificationList";
 
 const CrafterApp = () => {
   const [t] = useTranslation();
@@ -133,6 +134,7 @@ const CrafterApp = () => {
         </div>
       </footer>
       <CookieConsent />
+      <NotificationList />
     </React.Fragment>
   );
 };
