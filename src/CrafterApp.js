@@ -11,23 +11,18 @@ import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
 import { usePageTracking } from "./page-tracking";
 import "./css/style.min.css";
-import Notifications from "./components/Notifications";
+import NotificationList from "./components/Notifications/NotificationList";
 
 const CrafterApp = () => {
   const [t] = useTranslation();
   const history = useHistory();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
   const [redirectTo, setRedirectTo] = useState(null);
-  const [notifications, setNotifications] = useState([]);
   serviceWorker.register({
     onUpdate: () => {
       updateWeb();
     },
   });
-  const channel = new BroadcastChannel("notifications");
-  channel.onmessage = (e) => {
-    setNotifications(notifications.concat([e.data]));
-  };
 
   usePageTracking();
 
@@ -139,7 +134,7 @@ const CrafterApp = () => {
         </div>
       </footer>
       <CookieConsent />
-      <Notifications notifications={notifications} />
+      <NotificationList />
     </React.Fragment>
   );
 };

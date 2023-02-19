@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 
 class Notifications extends Component {
   showNotifications() {
-    console.log("data", this.props.notifications);
+    const { t } = this.props;
     if (this.props.notifications) {
       return this.props.notifications.map((data) => {
         return (
@@ -14,8 +14,18 @@ class Notifications extends Component {
             aria-atomic="true"
             key={`notification-${data.date}`}
           >
-            <div className="toast-header">{data.type}</div>
-            <div className="toast-body">{data.message}</div>
+            <div className="toast-header">
+              <strong className="mr-auto">{t(data.type)}</strong>
+              <button
+                type="button"
+                className="ml-2 mb-1 close"
+                aria-label="Close"
+                onClick={() => this.props.close(data.date)}
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div className="toast-body">{t(data.message)}</div>
           </div>
         );
       });

@@ -49,3 +49,7 @@
   bottom: 0;
   z-index: 2;
 }
+
+.notifications .toast {
+  opacity: 1;
+}
