@@ -45,7 +45,7 @@ class ChangeLanguageModal extends Component {
               <div className="row text-center">{this.getLanguajes()}</div>
             </div>
             <div className="modal-footer">
-              <p className="mr-auto">v4.4.3</p>
+              <p className="mr-auto">v4.6.1</p>
               <button
                 className={
                   getStoredItem("darkmode") !== "true"
