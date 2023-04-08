@@ -15,7 +15,7 @@ class ClanMapItem extends Component {
           <i className="fas fa-eye"></i> {t("Show map")}
         </button>
         {this.deleteMapButton(t)}
-        {this.ShareMapButton(t)}
+        {this.shareMapButton(t)}
       </div>
     );
   }
@@ -34,7 +34,7 @@ class ClanMapItem extends Component {
     }
   }
 
-  ShareMapButton(t) {
+  shareMapButton(t) {
     if (this.props.map.discordid === getStoredItem("discordid")) {
       const http = window.location.protocol;
       const slashes = http.concat("//");
@@ -89,7 +89,7 @@ class ClanMapItem extends Component {
           <small
             className={dateBurning <= date ? "text-danger" : "text-success"}
           >
-            {this.props.map.dateofburning}
+            {dateBurning.toISOString().split("T")[0]}
           </small>
         </h5>
         <p className="m-0 fw-lighter">

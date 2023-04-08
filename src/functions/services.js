@@ -288,7 +288,7 @@ export const getMembers = async () => {
       };
       const response = await request(options);
       if (response != null) {
-        if (response.status === 202) {
+        if (response.status === 200 || response.status === 202) {
           addCachedData("memberList", response.data);
           return { success: true, message: response.data };
         } else if (response.status === 405 || response.status === 401) {
@@ -499,6 +499,7 @@ export const apiRequest = async (options) => {
   if (response != null) {
     switch (response.status) {
       case 200:
+      case 201:
       case 202:
         return {
           success: true,

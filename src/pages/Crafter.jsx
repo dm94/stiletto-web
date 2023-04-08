@@ -40,7 +40,7 @@ class Crafter extends Component {
         .then((response) => {
           if (response.status === 200) {
             if (response.data.items != null) {
-              const allItems = JSON.parse(response.data.items);
+              const allItems = response.data.items;
               allItems.forEach((it) => {
                 this.handleAdd(it.name, parseInt(it.count));
               });

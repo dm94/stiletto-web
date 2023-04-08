@@ -110,10 +110,14 @@ class WalkerList extends Component {
 
     this.updateWalkers();
 
-    const hasPermissions = await getHasPermissions("walkers");
-    this.setState({ hasPermissions: hasPermissions });
-    const hasPermissionsBot = await getHasPermissions("bot");
-    this.setState({ hasPermissionsBot: hasPermissionsBot });
+    if (isLeader) {
+      this.setState({ hasPermissions: true, hasPermissionsBot: true });
+    } else {
+      const hasPermissions = await getHasPermissions("walkers");
+      this.setState({ hasPermissions: hasPermissions });
+      const hasPermissionsBot = await getHasPermissions("bot");
+      this.setState({ hasPermissionsBot: hasPermissionsBot });
+    }
   }
 
   updateWalkers(page = this.state.page) {
@@ -141,8 +145,6 @@ class WalkerList extends Component {
         ready:
           this.state.isReadySearch !== "All"
             ? this.state.isReadySearch === "Yes"
-              ? 1
-              : 0
             : null,
       },
     })

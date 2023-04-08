@@ -47,7 +47,7 @@ class DiscordConfig extends Component {
         }
       })
       .catch(() => {
-        this.props.onError("Error when connecting to the API");
+        this.props.onError("Your clan does not have a linked discord");
       });
   }
 
