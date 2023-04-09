@@ -51,8 +51,7 @@ class PrivateProfile extends Component {
     event.preventDefault();
     const options = {
       method: "delete",
-      url:
-        process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
+      url: process.env.REACT_APP_API_URL + "/users/",
       headers: {
         Authorization: `Bearer ${this.state.token}`,
       },
@@ -84,8 +83,7 @@ class PrivateProfile extends Component {
 
     const options = {
       method: "put",
-      url:
-        process.env.REACT_APP_API_URL + "/users/" + this.state.user_discord_id,
+      url: process.env.REACT_APP_API_URL + "/users/",
       params: {
         dataupdate: this.state.nameInGameInput,
       },
@@ -316,7 +314,7 @@ class PrivateProfile extends Component {
                     <select
                       id="changeLanguajeSelect"
                       className="custom-select"
-                      value={this.state.language}
+                      value={this.state.language ?? "en"}
                       onChange={(evt) =>
                         this.setState({
                           language: evt.target.value,

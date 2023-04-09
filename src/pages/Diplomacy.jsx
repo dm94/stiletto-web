@@ -50,8 +50,11 @@ class Diplomacy extends Component {
         }
       )
         .then((response) => {
-          if (response.status === 202) {
-            this.setState({ listOfRelations: response.data, isLoaded: true });
+          if (response.status === 202 || response.status === 200) {
+            this.setState({
+              listOfRelations: response.data,
+              isLoaded: true,
+            });
           } else if (response.status === 405) {
             this.setState({ error: "Unauthorized" });
           } else if (response.status === 503) {
@@ -62,8 +65,12 @@ class Diplomacy extends Component {
           this.setState({ error: "Error when connecting to the API" });
         });
 
-      const hasPermissions = await getHasPermissions("diplomacy");
-      this.setState({ hasPermissions: hasPermissions });
+      if (this.state.isLeader) {
+        this.setState({ hasPermissions: true });
+      } else {
+        const hasPermissions = await getHasPermissions("diplomacy");
+        this.setState({ hasPermissions: hasPermissions });
+      }
     }
   }
 

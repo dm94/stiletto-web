@@ -7,7 +7,7 @@ import {
   getResources,
   deleteResource,
   createResource,
-  getStoredItem
+  getStoredItem,
 } from "../../services";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
@@ -32,7 +32,7 @@ class ResourceMap extends Component {
       center: null,
       mapname: this.props.map.name,
       dateofburning: this.props.map.dateofburning,
-      allowEditing: this.props.map.allowedit == 1,
+      allowEditing: this.props.map.allowedit,
       resourcesFiltered: null,
       isOpenSidebar: window.innerWidth >= 1440,
     };
@@ -85,7 +85,7 @@ class ResourceMap extends Component {
       params: {
         mapname: this.state.mapname,
         mapdate: this.state.dateofburning,
-        allowediting: this.state.allowEditing ? 1 : 0,
+        allowediting: this.state.allowEditing,
         mappass: this.state.pass,
       },
       headers: {
@@ -295,7 +295,6 @@ class ResourceMap extends Component {
               <li
                 className={
                   this.props.map.allowedit ||
-                  parseInt(this.props.map.allowedit) === 1 ||
                   this.state.user_discord_id === this.props.map.discordid
                     ? "nav-item"
                     : "nav-item d-none"

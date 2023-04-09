@@ -207,9 +207,8 @@ class ResourceMapNoLog extends Component {
               </li>
               <li
                 className={
-                  this.state.mapData != null &&
-                  this.state.mapData.allowedit != null &&
-                  parseInt(this.state.mapData.allowedit) === 1
+                  this.state?.mapData?.allowedit != null &&
+                  Boolean(this.state.mapData.allowedit)
                     ? "nav-item"
                     : "d-none"
                 }

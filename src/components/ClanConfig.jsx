@@ -33,7 +33,7 @@ class ClanConfig extends Component {
                 addClanDiscordInput: response.data.invitelink,
                 clanFlagSymbolInput: response.data.symbol,
                 regionInput: response.data.region,
-                recruitInput: response.data.recruitment === "1" ? true : false,
+                recruitInput: response.data.recruitment,
               });
             }
           } else if (response.status === 401) {
@@ -101,10 +101,7 @@ class ClanConfig extends Component {
       <div className="col-3" key={"symbol-" + symbol}>
         <img
           src={
-            process.env.REACT_APP_RESOURCES_URL +
-            "/symbols/" +
-            symbol +
-            ".png"
+            process.env.REACT_APP_RESOURCES_URL + "/symbols/" + symbol + ".png"
           }
           className={
             symbol === this.state.clanFlagSymbolInput

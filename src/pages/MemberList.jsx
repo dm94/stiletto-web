@@ -17,6 +17,7 @@ import MemberListItem from "../components/MemberList/MemberListItem";
 import RequestMemberListItem from "../components/MemberList/RequestMemberListItem";
 import DiscordConfig from "../components/MemberList/DiscordConfig";
 import MemberPermissionsConfig from "../components/MemberList/MemberPermissionsConfig";
+import { sendNotification } from "../functions/broadcast";
 
 class MemberList extends Component {
   constructor(props) {
@@ -681,7 +682,7 @@ class MemberList extends Component {
             key="discordbotconfig"
             clanid={this.state.clanid}
             onClose={() => this.setState({ showBotConfig: false })}
-            onError={(error) => this.setState({ error: error })}
+            onError={(error) => sendNotification(error, "Error")}
           />
         ) : (
           ""
@@ -691,7 +692,7 @@ class MemberList extends Component {
             key="clanconfig"
             clanid={this.state.clanid}
             onClose={() => this.setState({ showClanConfig: false })}
-            onError={(error) => this.setState({ error: error })}
+            onError={(error) => sendNotification(error, "Error")}
           />
         ) : (
           ""
@@ -702,7 +703,7 @@ class MemberList extends Component {
             clanid={this.state.clanid}
             memberid={this.state.memberForEdit}
             onClose={() => this.setState({ memberForEdit: null })}
-            onError={(error) => this.setState({ error: error })}
+            onError={(error) => sendNotification(error, "Error")}
           />
         ) : (
           ""
