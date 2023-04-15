@@ -7,6 +7,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../services";
+import { useHistory } from "react-router-dom";
 
 class DiscordConnection extends Component {
   constructor(props) {
@@ -28,29 +29,30 @@ class DiscordConnection extends Component {
         },
       };
 
-      Axios.request(options).then((response) => {
-        if (response.status === 202) {
-          if (response.data.discordid != null) {
-            storeItem("discordid", response.data.discordid);
+      if (!getStoredItem("token")) {
+        Axios.request(options).then((response) => {
+          if (response.status === 202) {
+            if (response.data.discordid != null) {
+              storeItem("discordid", response.data.discordid);
+            }
+            if (response.data.token != null) {
+              storeItem("token", response.data.token);
+            }
+
+            this.setState({
+              discordid: response.data.discordid,
+              token: response.data.token,
+            });
+
+            const history = useHistory();
+            history.replace({ from: { pathname: "/" } });
+          } else if (response.status === 401) {
+            this.setState({ error: "Unauthorized" });
+          } else if (response.status === 503) {
+            this.setState({ error: "Error connecting to database" });
           }
-          if (response.data.token != null) {
-            storeItem("token", response.data.token);
-          }
-          this.setState({
-            discordid: response.data.discordid,
-            token: response.data.token,
-          });
-          const http = window.location.protocol;
-          const slashes = http.concat("//");
-          const host = slashes.concat(window.location.hostname);
-          window.location.href =
-            host + (window.location.port ? ":" + window.location.port : "");
-        } else if (response.status === 401) {
-          this.setState({ error: "Unauthorized" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      });
+        });
+      }
     }
     this.setState({ isLoaded: true });
   }
