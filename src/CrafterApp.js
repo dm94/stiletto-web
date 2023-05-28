@@ -105,11 +105,6 @@ const CrafterApp = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link itemProp="url" className="nav-link" to="/clanlist">
-                    <span itemProp="name">{t("Clan List")}</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link itemProp="url" className="nav-link" to="/trades">
                     <span itemProp="name"> {t("Trades")}</span>
                   </Link>

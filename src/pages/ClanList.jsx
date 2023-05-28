@@ -45,7 +45,7 @@ class ClanList extends Component {
       },
     })
       .then((response) => {
-        if (response.status === 202) {
+        if (response.status === 202 || response.status === 200) {
           let hasMore = response.data != null && response.data.length >= 10;
           this.setState({
             clans: response.data,
