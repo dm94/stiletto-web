@@ -55,8 +55,7 @@ Command to generate it:
 
 #### API
 
-For now the API will be kept private
+[stiletto-node-api](https://github.com/dm94/stiletto-node-api)
 
-#### Others
-
-Everyone is allowed to make, publish & redistribute videos & content about the software.
+Old version:
+[Stiletto-PHP-API](https://github.com/dm94/Stiletto-PHP-API)
