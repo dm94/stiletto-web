@@ -71,7 +71,7 @@ const CrafterApp = () => {
         <div className="container-fluid py-3 bg-dark text-white">
           <div className="row">
             <div className="col-xl-10">
-              © 2020-2023 Dm94Dani{" | "}{" "}
+              By Dm94Dani{" | "}{" "}
               <Link className="text-white" to="/privacy">
                 {t("Privacy Policy")}
               </Link>{" "}
