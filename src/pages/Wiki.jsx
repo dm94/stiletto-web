@@ -29,11 +29,12 @@ class Wiki extends Component {
   };
 
   searchItems = async () => {
-    sendEvent({
-      category: "User",
-      action: "Wiki search",
-      label: this.state.searchText,
+    sendEvent("search", {
+      props: {
+        term: this.state.searchText,
+      },
     });
+
     if (this.state.items == null || this.state.items.length <= 0) {
       await this.updateRecipes();
     }

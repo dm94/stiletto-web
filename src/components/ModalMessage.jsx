@@ -43,12 +43,11 @@ class ModalMessage extends Component {
       return <Redirect to={this.props.message.redirectPage} />;
     }
 
-    console.log(t(this.props.message.text));
-    sendEvent({
-      category: "Modal",
-      action: this.props.message.isError ? "Error" : "Information",
-      label: this.props.message.text,
-      nonInteraction: true,
+    sendEvent("modal", {
+      props: {
+        action: this.props?.message?.isError ? "Error" : "Information",
+        label: this.props?.message?.text,
+      },
     });
 
     return (

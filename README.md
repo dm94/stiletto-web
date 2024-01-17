@@ -44,7 +44,7 @@ The website uses several json files to read the game data so that it is always u
 - REACT_APP_API_URL= API ADDRESS
 - REACT_APP_DISCORD_CLIENT_ID= DISCORD CLIENT ID
 - REACT_APP_API_GENERAL_URL= URL API ADDRESS FOR ICONS AND MAPS
-- REACT_APP_GA_ID= Google Analytics ID
+- REACT_APP_PLAUSIBLE_URL=PLAUSIBLE URL
 
 #### Generate maps
 
