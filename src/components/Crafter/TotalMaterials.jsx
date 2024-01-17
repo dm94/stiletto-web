@@ -15,10 +15,12 @@ class TotalMaterials extends Component {
   }
 
   addRecipe = () => {
-    sendEvent({
-      category: "Share",
-      action: "Generate a recipe code",
+    sendEvent("share", {
+      props: {
+        action: "addRecipe",
+      },
     });
+
     const items = this.props.selectedItems.map((item) => {
       return { name: item.name, count: item.count };
     });
@@ -114,9 +116,10 @@ class TotalMaterials extends Component {
   }
 
   copyMaterials = (t) => {
-    sendEvent({
-      category: "Share",
-      action: "Copy materials",
+    sendEvent("share", {
+      props: {
+        action: "copyMaterials",
+      },
     });
 
     let text = t("To make") + ":\n\n";

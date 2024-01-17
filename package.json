@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "4.6.2",
+  "version": "4.6.3",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -26,7 +26,6 @@
     "query-string": "^8.1.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-ga4": "^2.0.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^12.1.4",
     "react-leaflet": "^2.8.0",
