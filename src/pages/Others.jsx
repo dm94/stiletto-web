@@ -12,7 +12,7 @@ class Others extends Component {
                 <div className="card-body">
                   <a
                     className="btn btn-warning btn-block"
-                    href="https://s4.stiletto.live/"
+                    href="https://s4.stiletto.live"
                   >
                     {t("Web version for S4")}
                   </a>

@@ -4,5 +4,5 @@ User-Agent: Googlebot
 Allow: /*.css$
 Allow: /*.js$
 
-Sitemap: https://www.stiletto.live/sitemap.xml
-Sitemap: https://www.stiletto.live/sitemap_items.xml
+Sitemap: https://stiletto.deeme.dev/sitemap.xml
+Sitemap: https://stiletto.deeme.dev/sitemap_items.xml
