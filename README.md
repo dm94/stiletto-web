@@ -1,7 +1,7 @@
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/dm94/stiletto-web)
 [![Discord](https://img.shields.io/discord/317737508064591874?color=7289DA&logo=Discord&logoColor=FFFFFF)](https://discord.gg/FcecRtZ)
 [![Crowdin](https://badges.crowdin.net/stiletto/localized.svg)](https://crowdin.com/project/stiletto)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.stiletto.live%2F)](https://www.stiletto.live/)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fstiletto.deeme.dev%2F)](https://stiletto.deeme.dev)
 
 ---
 
@@ -9,7 +9,7 @@
 
 Web with different utilities for the game Last Oasis, but is not affiliated with [Donkey Crew](https://www.donkey.team/)
 It is created with JS (react), HTML, CSS (bootstrap) and PHP API
-You can see this website in operation here: [www.stiletto.live](https://www.stiletto.live/)
+You can see this website in operation here: [https://stiletto.deeme.dev](https://stiletto.deeme.dev)
 
 ### Working
 
@@ -40,7 +40,7 @@ The website uses several json files to read the game data so that it is always u
 
 #### Environmental variables
 
-- REACT_APP_PUBLIC_URL=https://www.stiletto.live
+- REACT_APP_PUBLIC_URL=https://stiletto.deeme.dev
 - REACT_APP_RESOURCES_URL= URL API ADDRESS FOR ICONS AND MAPS
 - REACT_APP_API_URL= URL API
 - REACT_APP_DISCORD_CLIENT_ID= DISCORD CLIENT ID

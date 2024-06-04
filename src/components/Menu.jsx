@@ -49,11 +49,11 @@ class Menu extends Component {
         <div className="navbar navbar-expand-md navbar-dark bg-dark">
           <div className="container-fluid">
             <Link className="navbar-brand" to="/">
-              <span>Stiletto</span>.live
+              <span>Stiletto</span>
               <img
                 width="35"
                 height="35"
-                alt="Stiletto.live"
+                alt="Stiletto"
                 className="align-top"
                 src="/img/icon-01.png"
               />
