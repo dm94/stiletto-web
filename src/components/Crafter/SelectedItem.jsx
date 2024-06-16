@@ -91,6 +91,7 @@ class SelectedItem extends Component {
           <div className="text-center card-header">
             <button
               className="close"
+              aria-label="Remove item"
               onClick={() => this.props.onChangeCount(this.props.item.name, 0)}
             >
               <span aria-hidden="true">X</span>

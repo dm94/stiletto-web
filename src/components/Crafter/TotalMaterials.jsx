@@ -193,11 +193,11 @@ class TotalMaterials extends Component {
               ref={this.componentRef}
               selectedItems={this.props.selectedItems}
             />
-            <li className="text-right text-muted">
+            <div className="text-right text-muted">
               {t("List of all necessary materials by")}{" "}
               {window.location.hostname +
                 (window.location.port ? ":" + window.location.port : "")}
-            </li>
+            </div>
           </div>
         </div>
         <div className="card-footer">{this.footerPart(t)}</div>

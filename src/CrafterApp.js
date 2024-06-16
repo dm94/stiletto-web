@@ -97,7 +97,6 @@ const CrafterApp = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  width="140"
                   height="20"
                   alt="GitHub last commit"
                   src="https://img.shields.io/github/last-commit/dm94/stiletto-web"

@@ -42,12 +42,14 @@ class Home extends Component {
           />
         </Helmet>
         <div className="row mb-4">
-          <div className="col-12 col-xl-4">
-            <h2
-              className="lo-title"
-              role="button"
-              onClick={() => this.setState({ redirectTo: "/crafter" })}
-            >
+          <div
+            tabIndex="0"
+            className="col-12 col-xl-4"
+            role="button"
+            onClick={() => this.setState({ redirectTo: "/crafter" })}
+            aria-label={t("Crafting Calculator")}
+          >
+            <h2 className="lo-title">
               {t("Crafting Calculator")}
             </h2>
             <p>
@@ -56,12 +58,14 @@ class Home extends Component {
               )}
             </p>
           </div>
-          <div className="col-12 col-xl-4">
-            <h2
-              role="button"
-              className="lo-title"
-              onClick={() => this.setState({ redirectTo: "/trades" })}
-            >
+          <div
+            tabIndex="0"
+            className="col-12 col-xl-4"
+            role="button"
+            onClick={() => this.setState({ redirectTo: "/trades" })}
+            aria-label={t("Trading System")}
+          >
+            <h2 className="lo-title">
               {t("Trading System")}
             </h2>
             <p>
@@ -70,17 +74,19 @@ class Home extends Component {
               )}
             </p>
           </div>
-          <div className="col-12 col-xl-4">
-            <h2
-              role="button"
-              className="lo-title"
-              onClick={() =>
-                this.setState({
-                  redirectTo:
-                    getStoredItem("discordid") != null ? "/maps" : "/map",
-                })
-              }
-            >
+          <div
+            tabIndex="0"
+            className="col-12 col-xl-4"
+            role="button"
+            onClick={() =>
+              this.setState({
+                redirectTo:
+                  getStoredItem("discordid") != null ? "/maps" : "/map",
+              })
+            }
+            aria-label={t("Resource Maps")}
+          >
+            <h2 className="lo-title">
               {t("Resource Maps")}
             </h2>
             <p>

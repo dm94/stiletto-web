@@ -6,7 +6,7 @@ class Item extends Component {
   render() {
     const { t } = this.props;
     return (
-      <li
+      <div
         className={
           getStoredItem("darkmode") !== "true"
             ? "list-group-item"
@@ -20,13 +20,14 @@ class Item extends Component {
           <div className="col">
             <button
               className="btn btn-success btn-sm float-right"
+              aria-label="Add item"
               onClick={() => this.props.onAdd(this.props.item.name)}
             >
               <i className="fas fa-plus"></i>
             </button>
           </div>
         </div>
-      </li>
+      </div>
     );
   }
 }

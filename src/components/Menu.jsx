@@ -53,7 +53,7 @@ class Menu extends Component {
               <img
                 width="35"
                 height="35"
-                alt="Stiletto"
+                alt="Stiletto Logo"
                 className="align-top"
                 src="/img/icon-01.png"
               />
@@ -149,6 +149,7 @@ class Menu extends Component {
                     <button
                       type="button"
                       className="btn btn-outline-info"
+                      aria-label="Search button"
                       onClick={() => this.searchItem()}
                     >
                       <i className="fa fa-search"></i>
@@ -159,6 +160,7 @@ class Menu extends Component {
               <button
                 className="btn btn-sm mr-2"
                 data-cy="change-languaje-btn"
+                aria-label="Change language"
                 onClick={() => {
                   this.props.openLanguajeModal();
                 }}
