@@ -11,18 +11,6 @@ class Others extends Component {
               <div className="card mb-3">
                 <div className="card-body">
                   <a
-                    className="btn btn-warning btn-block"
-                    href="https://s4.stiletto.live"
-                  >
-                    {t("Web version for S4")}
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card mb-3">
-                <div className="card-body">
-                  <a
                     className="btn btn-primary btn-block"
                     href="https://store.steampowered.com/app/903950/Last_Oasis/?curator_clanid=9919055"
                     target="_blank"
@@ -53,7 +41,7 @@ class Others extends Component {
                   <div className="card-body">
                     <a
                       className="btn btn-success btn-block"
-                      href="https://www.paypal.me/dm94dani/5"
+                      href="https://ko-fi.com/deeme"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
