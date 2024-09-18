@@ -8,7 +8,7 @@
 ## Stiletto Web
 
 Web with different utilities for the game Last Oasis, but is not affiliated with [Donkey Crew](https://www.donkey.team/)
-It is created with JS (react), HTML, CSS (bootstrap) and PHP API
+It is created with JS (react), HTML, CSS (bootstrap) and Fastify API
 You can see this website in operation here: [https://stiletto.deeme.dev](https://stiletto.deeme.dev)
 
 ### Working
@@ -57,7 +57,7 @@ Command to generate it:
 
 [stiletto-node-api](https://github.com/dm94/stiletto-node-api)
 
-Old version:
+Old API version:
 [Stiletto-PHP-API](https://github.com/dm94/Stiletto-PHP-API)
 
 ## More Info in this youtube video
