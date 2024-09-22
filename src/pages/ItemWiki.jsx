@@ -474,7 +474,7 @@ class ItemWiki extends Component {
           rel="canonical"
           href={
             getDomain() +
-            "/item" +
+            "/item/" +
             encodeURI(name.toLowerCase())
           }
         />
