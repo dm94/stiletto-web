@@ -475,7 +475,7 @@ class ItemWiki extends Component {
           href={
             getDomain() +
             "/item/" +
-            encodeURI(name.toLowerCase())
+            encodeURI(name.toLowerCase().replaceAll(" ", "_"))
           }
         />
       </Helmet>
