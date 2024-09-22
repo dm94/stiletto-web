@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { getStoredItem } from "../../services";
+import { getDomain } from "../../functions/utils";
 
 class ClanMapItem extends Component {
   showButton() {
@@ -10,7 +11,7 @@ class ClanMapItem extends Component {
         <button
           className="btn btn-primary btn-block"
           variant="primary"
-          onClick={() => this.props.onOpen(this.props.map)}
+          onClick={() => this.props.onOpen(this.props?.map)}
         >
           <i className="fas fa-eye"></i> {t("Show map")}
         </button>
@@ -21,7 +22,7 @@ class ClanMapItem extends Component {
   }
 
   deleteMapButton(t) {
-    if (this.props.map.discordid === getStoredItem("discordid")) {
+    if (this.props?.map?.discordid === getStoredItem("discordid")) {
       return (
         <button
           className="btn btn-danger btn-block"
@@ -36,17 +37,13 @@ class ClanMapItem extends Component {
 
   shareMapButton(t) {
     if (this.props.map.discordid === getStoredItem("discordid")) {
-      const http = window.location.protocol;
-      const slashes = http.concat("//");
-      const host = slashes.concat(window.location.hostname);
       return (
         <button
           className="btn btn-success btn-block"
           variant="primary"
           onClick={() =>
             window.open(
-              host +
-                (window.location.port ? ":" + window.location.port : "") +
+              getDomain() +
                 "/map/" +
                 this.props.map.mapid +
                 "?pass=" +

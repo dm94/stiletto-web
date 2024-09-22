@@ -5,6 +5,7 @@ import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
 import { sendEvent } from "../../page-tracking";
 import { sendNotification } from "../../functions/broadcast";
+import { getDomain } from "../../functions/utils";
 
 class TotalMaterials extends Component {
   constructor(props) {
@@ -49,8 +50,7 @@ class TotalMaterials extends Component {
   footerPart(t) {
     if (this.state.recipeToken.length > 0) {
       const url =
-        window.location.protocol.concat("//").concat(window.location.hostname) +
-        (window.location.port ? ":" + window.location.port : "") +
+        getDomain() +
         "/crafter?recipe=" +
         this.state.recipeToken;
       return (
@@ -96,15 +96,11 @@ class TotalMaterials extends Component {
   }
 
   itemsList(t) {
-    const http = window.location.protocol;
-    const slashes = http.concat("//");
-    const host = slashes.concat(window.location.hostname);
     const url =
-      host +
-      (window.location.port ? ":" + window.location.port : "") +
+    getDomain() +
       "/item/";
 
-    return this.props.selectedItems.map((item) => (
+    return this.props?.selectedItems.map((item) => (
       <li className="list-inline-item" key={item.name}>
         <Icon key={item.name} name={item.name} /> {item.count}x{" "}
         <a href={url + encodeURI(item.name.replaceAll(" ", "_"))}>

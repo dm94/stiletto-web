@@ -18,6 +18,7 @@ import RequestMemberListItem from "../components/MemberList/RequestMemberListIte
 import DiscordConfig from "../components/MemberList/DiscordConfig";
 import MemberPermissionsConfig from "../components/MemberList/MemberPermissionsConfig";
 import { sendNotification } from "../functions/broadcast";
+import { getDomain } from "../functions/utils";
 
 class MemberList extends Component {
   constructor(props) {
@@ -515,10 +516,7 @@ class MemberList extends Component {
           <link
             rel="canonical"
             href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
+              getDomain() +
               "/members"
             }
           />

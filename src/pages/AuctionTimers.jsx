@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Timer from "../components/AuctionTimers/Timer";
+import { getDomain } from "../functions/utils";
 
 class AuctionTimers extends Component {
   state = {
@@ -45,10 +46,7 @@ class AuctionTimers extends Component {
           <link
             rel="canonical"
             href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
+              getDomain() +
               "/auctions"
             }
           />

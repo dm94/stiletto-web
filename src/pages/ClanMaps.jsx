@@ -7,6 +7,7 @@ import ModalMessage from "../components/ModalMessage";
 import ClanMapItem from "../components/ClanMaps/ClanMapItem";
 import ResourceMap from "../components/ClanMaps/ResourceMap";
 import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
+import { getDomain } from "../functions/utils";
 
 class ClanMaps extends Component {
   constructor(props) {
@@ -161,10 +162,7 @@ class ClanMaps extends Component {
           <link
             rel="canonical"
             href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
+              getDomain() +
               "/maps"
             }
           />

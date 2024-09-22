@@ -8,6 +8,7 @@ import ClanListItem from "../components/ClanList/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";
 import ClusterList from "../components/ClusterList";
+import { getDomain } from "../functions/utils";
 
 class ClanList extends Component {
   constructor(props) {
@@ -248,10 +249,7 @@ class ClanList extends Component {
         <link
           rel="canonical"
           href={
-            window.location.protocol
-              .concat("//")
-              .concat(window.location.hostname) +
-            (window.location.port ? ":" + window.location.port : "") +
+            getDomain() +
             "/clanlist"
           }
         />

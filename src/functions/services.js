@@ -1,4 +1,5 @@
 import Axios from "axios";
+import { getDomain } from "./utils";
 
 const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
@@ -141,7 +142,7 @@ export const getOurPermssions = async () => {
 
     if (clanid != null && discordid != null) {
       const response = await getUserPermssions(clanid, discordid);
-      if (response != null && response.success) {
+      if (response?.success) {
         addCachedData("permissions", response.message);
         return {
           success: true,
@@ -344,19 +345,15 @@ export const getItems = async () => {
   if (cachedData != null) {
     return cachedData;
   } else {
-    const http = window.location.protocol;
-    const slashes = http.concat("//");
-    const host = slashes.concat(window.location.hostname);
     const options = {
       method: "get",
       url:
-        host +
-        (window.location.port ? ":" + window.location.port : "") +
+      getDomain() +
         "/json/items_min.json",
     };
 
     const response = await request(options);
-    if (response != null && response.data != null) {
+    if (response?.data != null) {
       addCachedData("allItems", response.data);
       return response.data;
     } else {
@@ -377,7 +374,7 @@ export const getMarkers = async () => {
     };
 
     const response = await request(options);
-    if (response != null && response.data != null) {
+    if (response?.data != null) {
       addCachedData("markers", response.data);
       return response.data;
     } else {
@@ -397,7 +394,7 @@ export const getClusters = async () => {
     };
 
     const response = await request(options);
-    if (response != null && response.data != null) {
+    if (response?.data != null) {
       addCachedData("clusters", response.data);
       return response.data;
     } else {
@@ -418,7 +415,7 @@ export const getMaps = async () => {
     };
 
     const response = await request(options);
-    if (response != null && response.data != null) {
+    if (response?.data != null) {
       addCachedData("maps", response.data);
       return response.data;
     } else {

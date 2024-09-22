@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Icon from "../Icon";
+import { getDomain } from "../../functions/utils";
 
 class SchematicDropInfo extends Component {
   render() {
@@ -32,12 +33,7 @@ class SchematicDropInfo extends Component {
 
   showSchematics(t, schematics) {
     return schematics.map((schematic) => {
-      const http = window.location.protocol;
-      const slashes = http.concat("//");
-      const host = slashes.concat(window.location.hostname);
-      const url =
-        host +
-        (window.location.port ? ":" + window.location.port : "") +
+      const url = getDomain() +
         "/item/" +
         encodeURI(schematic.name.toLowerCase().replaceAll(" ", "_"));
       return (

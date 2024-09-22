@@ -14,6 +14,7 @@ import {
 } from "../services";
 import Pagination from "../components/Pagination";
 import WalkerListItem from "../components/WalkerList/WalkerListItem";
+import { getDomain } from "../functions/utils";
 
 class WalkerList extends Component {
   constructor(props) {
@@ -52,17 +53,13 @@ class WalkerList extends Component {
 
     const parsed = queryString.parse(this.props.location.search);
     if (parsed.code != null) {
-      const http = window.location.protocol;
-      const slashes = http.concat("//");
-      const host = slashes.concat(window.location.hostname);
       const options = {
         method: "get",
         url: process.env.REACT_APP_API_URL + "/walkers/auth",
         params: {
           code: parsed.code,
           redirect:
-            host +
-            (window.location.port ? ":" + window.location.port : "") +
+          getDomain() +
             "/walkerlist",
         },
         headers: {
@@ -343,10 +340,7 @@ class WalkerList extends Component {
         <link
           rel="canonical"
           href={
-            window.location.protocol
-              .concat("//")
-              .concat(window.location.hostname) +
-            (window.location.port ? ":" + window.location.port : "") +
+            getDomain() +
             "/walkerlist"
           }
         />

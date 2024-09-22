@@ -8,6 +8,7 @@ import ModalMessage from "../components/ModalMessage";
 import Items from "../components/Crafter/Items";
 import SelectedItem from "../components/Crafter/SelectedItem";
 import TotalMaterials from "../components/Crafter/TotalMaterials";
+import { getDomain } from "../functions/utils";
 
 class Crafter extends Component {
   state = {
@@ -235,10 +236,7 @@ class Crafter extends Component {
           <link
             rel="canonical"
             href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
+              getDomain() +
               "/crafter"
             }
           />

@@ -8,6 +8,7 @@ import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";
 import Trade from "../components/TradeSystem/Trade";
 import ClusterList from "../components/ClusterList";
+import { getDomain } from "../functions/utils";
 
 class TradeSystem extends Component {
   constructor(props) {
@@ -329,10 +330,7 @@ class TradeSystem extends Component {
         <link
           rel="canonical"
           href={
-            window.location.protocol
-              .concat("//")
-              .concat(window.location.hostname) +
-            (window.location.port ? ":" + window.location.port : "") +
+            getDomain() +
             "/trades"
           }
         />

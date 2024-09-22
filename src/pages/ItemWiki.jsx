@@ -14,6 +14,7 @@ import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
 import Comments from "../components/Wiki/Comments";
 import { calcRarityValue } from "../rarityCalc";
+import { getDomain } from "../functions/utils";
 
 const WikiDescription = React.lazy(() =>
   import("../components/Wiki/WikiDescription")
@@ -67,22 +68,17 @@ class ItemWiki extends Component {
     if (this.state.isLoaded) {
       if (this.state.item != null) {
         const name = this.state.item.name;
-        const http = window.location.protocol;
-        const slashes = http.concat("//");
-        const host = slashes.concat(window.location.hostname);
         let parent_url = "";
         if (this.state.item.parent) {
           parent_url =
-            host +
-            (window.location.port ? ":" + window.location.port : "") +
+          getDomain() +
             "/item/" +
             encodeURI(
               this.state.item.parent.toLowerCase().replaceAll(" ", "_")
             );
         }
         const craftUrl =
-          host +
-          (window.location.port ? ":" + window.location.port : "") +
+        getDomain() +
           "/crafter?craft=" +
           encodeURI(name.toLowerCase());
 
@@ -477,10 +473,7 @@ class ItemWiki extends Component {
         <link
           rel="canonical"
           href={
-            window.location.protocol
-              .concat("//")
-              .concat(window.location.hostname) +
-            (window.location.port ? ":" + window.location.port : "") +
+            getDomain() +
             "/item" +
             encodeURI(name.toLowerCase())
           }
@@ -503,7 +496,7 @@ class ItemWiki extends Component {
   }
 
   showIngredient(item) {
-    if (item != null && item.crafting != null) {
+    if (item?.crafting != null) {
       return item.crafting.map((ingredients, index) => (
         <div
           className={item.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}

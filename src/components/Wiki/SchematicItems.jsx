@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Icon from "../Icon";
+import { getDomain } from "../../functions/utils";
 
 class SchematicItems extends Component {
   render() {
@@ -23,12 +24,8 @@ class SchematicItems extends Component {
 
   showSchematicItems(t) {
     return this.props.item.learn.map((itemCraft, index) => {
-      const http = window.location.protocol;
-      const slashes = http.concat("//");
-      const host = slashes.concat(window.location.hostname);
       const url =
-        host +
-        (window.location.port ? ":" + window.location.port : "") +
+      getDomain() +
         "/item/" +
         encodeURI(itemCraft.toLowerCase().replaceAll(" ", "_"));
       return (

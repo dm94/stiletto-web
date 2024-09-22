@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { getStoredItem } from "../services";
+import { getDomain } from "../functions/utils";
 
 class DiscordButton extends Component {
   state = {};
@@ -18,15 +19,11 @@ class DiscordButton extends Component {
         </Link>
       );
     } else {
-      const http = window.location.protocol;
-      const slashes = http.concat("//");
-      const host = slashes.concat(window.location.hostname);
       const urlLink =
         "https://discord.com/api/oauth2/authorize?client_id=" +
         process.env.REACT_APP_DISCORD_CLIENT_ID +
         "&redirect_uri=" +
-        host +
-        (window.location.port ? ":" + window.location.port : "") +
+        getDomain() +
         "/profile" +
         "&scope=identify%20guilds&response_type=code";
       return (

@@ -14,6 +14,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
 import DoubleScrollbar from "../components/TechTree/DoubleScrollbar";
+import { getDomain } from "../functions/utils";
 
 const SkillTreeTab = React.lazy(() =>
   import("../components/TechTree/SkillTreeTab")
@@ -321,10 +322,7 @@ class TechTree extends Component {
         <link
           rel="canonical"
           href={
-            window.location.protocol
-              .concat("//")
-              .concat(window.location.hostname) +
-            (window.location.port ? ":" + window.location.port : "") +
+            getDomain() +
             "/tech"
           }
         />

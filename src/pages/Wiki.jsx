@@ -5,6 +5,7 @@ import queryString from "query-string";
 import { getItems } from "../services";
 import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
+import { getDomain } from "../functions/utils";
 
 class Wiki extends Component {
   constructor(props) {
@@ -23,10 +24,10 @@ class Wiki extends Component {
   componentDidMount() {
     this.updateRecipes();
     let parsed = null;
-    if (this.props.location != null && this.props.location.search != null) {
+    if (this.props?.location?.search != null) {
       parsed = queryString.parse(this.props.location.search);
     }
-    if (parsed && parsed.s != null) {
+    if (parsed?.s != null) {
       this.setState({ searchText: parsed.s }, () => this.searchItems());
     }
   }
@@ -59,6 +60,7 @@ class Wiki extends Component {
     if (this.state.items == null || this.state.items.length <= 0) {
       await this.updateRecipes();
     }
+
     const { t } = this.props;
     let filteredItems = this.state.items;
 
@@ -127,10 +129,7 @@ class Wiki extends Component {
           <link
             rel="canonical"
             href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
+              getDomain() +
               "/wiki"
             }
           />

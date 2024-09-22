@@ -3,6 +3,7 @@ import { withTranslation } from "react-i18next";
 import Axios from "axios";
 import { getMaps, getStoredItem } from "../../services";
 import CreateMapPanel from "./CreateMapPanel";
+import { getDomain } from "../../functions/utils";
 class CreateMapNoLog extends Component {
   constructor(props) {
     super(props);
@@ -58,16 +59,12 @@ class CreateMapNoLog extends Component {
   };
 
   shareMapLink() {
-    const http = window.location.protocol;
-    const slashes = http.concat("//");
-    const host = slashes.concat(window.location.hostname);
     return (
       <input
         className="btn btn-success btn-sm btn-block"
         type="text"
         value={
-          host +
-          (window.location.port ? ":" + window.location.port : "") +
+          getDomain() +
           "/map/" +
           this.state.mapIdInput +
           "?pass=" +

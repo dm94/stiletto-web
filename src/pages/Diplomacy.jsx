@@ -6,6 +6,7 @@ import Axios from "axios";
 import { getUserProfile, getHasPermissions, getStoredItem } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanSelect from "../components/Diplomacy/ClanSelect";
+import { getDomain } from "../functions/utils";
 class Diplomacy extends Component {
   constructor(props) {
     super(props);
@@ -348,10 +349,7 @@ class Diplomacy extends Component {
           <link
             rel="canonical"
             href={
-              window.location.protocol
-                .concat("//")
-                .concat(window.location.hostname) +
-              (window.location.port ? ":" + window.location.port : "") +
+              getDomain() +
               "/diplomacy"
             }
           />

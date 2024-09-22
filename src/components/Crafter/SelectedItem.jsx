@@ -4,6 +4,7 @@ import Ingredients from "../Ingredients";
 import Icon from "../Icon";
 import CraftingTime from "../CraftingTime";
 import Station from "../Station";
+import { getDomain } from "../../functions/utils";
 
 class SelectedItem extends Component {
   constructor(props) {
@@ -77,12 +78,8 @@ class SelectedItem extends Component {
 
   render() {
     const { t } = this.props;
-    const http = window.location.protocol;
-    const slashes = http.concat("//");
-    const host = slashes.concat(window.location.hostname);
     const url =
-      host +
-      (window.location.port ? ":" + window.location.port : "") +
+      getDomain() +
       "/item/" +
       encodeURI(this.props.item.name.replaceAll(" ", "_"));
     return (

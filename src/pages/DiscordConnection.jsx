@@ -8,6 +8,7 @@ import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../services";
 import { useHistory } from "react-router-dom";
+import { getDomain } from "../functions/utils";
 
 class DiscordConnection extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class DiscordConnection extends Component {
   }
 
   componentDidMount() {
-    const parsed = queryString.parse(this.props.location.search);
+    const parsed = queryString.parse(this.props?.location?.search);
     if (parsed.code != null) {
       const options = {
         method: "post",
@@ -60,15 +61,11 @@ class DiscordConnection extends Component {
   showClanInfo() {
     const { t } = this.props;
     const parsed = queryString.parse(this.props.location.search);
-    const http = window.location.protocol;
-    const slashes = http.concat("//");
-    const host = slashes.concat(window.location.hostname);
     const urlLink =
       "https://discord.com/api/oauth2/authorize?client_id=" +
       process.env.REACT_APP_DISCORD_CLIENT_ID +
       "&redirect_uri=" +
-      host +
-      (window.location.port ? ":" + window.location.port : "") +
+      getDomain() +
       "/profile" +
       "&scope=identify%20guilds&response_type=code";
     if (parsed.discordid != null && parsed.token != null) {
@@ -103,10 +100,7 @@ class DiscordConnection extends Component {
             <link
               rel="canonical"
               href={
-                window.location.protocol
-                  .concat("//")
-                  .concat(window.location.hostname) +
-                (window.location.port ? ":" + window.location.port : "") +
+                getDomain() +
                 "/profile"
               }
             />

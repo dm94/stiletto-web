@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import queryString from "query-string";
 import CreateMapNoLog from "../components/ClanMaps/CreateMapNoLog";
 import ResourceMapNoLog from "../components/ClanMaps/ResourceMapNoLog";
+import { getDomain } from "../functions/utils";
 
 class Map extends Component {
   constructor(props) {
@@ -48,10 +49,7 @@ class Map extends Component {
             <link
               rel="canonical"
               href={
-                window.location.protocol
-                  .concat("//")
-                  .concat(window.location.hostname) +
-                (window.location.port ? ":" + window.location.port : "") +
+                getDomain() +
                 "/map/" +
                 this.state.mapId
               }
@@ -81,10 +79,7 @@ class Map extends Component {
             <link
               rel="canonical"
               href={
-                window.location.protocol
-                  .concat("//")
-                  .concat(window.location.hostname) +
-                (window.location.port ? ":" + window.location.port : "") +
+                getDomain() +
                 "/map"
               }
             />

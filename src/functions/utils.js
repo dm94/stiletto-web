@@ -1,0 +1,1 @@
+export const getDomain = () => window.location.protocol.concat("//").concat(window.location.hostname) + (window.location.port ? ":" + window.location.port : "");

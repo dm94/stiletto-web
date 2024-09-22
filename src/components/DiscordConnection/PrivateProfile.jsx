@@ -9,6 +9,7 @@ import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";
 import ClanConfig from "../ClanConfig";
+import { getDomain } from "../../functions/utils";
 
 class PrivateProfile extends Component {
   constructor(props) {
@@ -187,10 +188,7 @@ class PrivateProfile extends Component {
             <link
               rel="canonical"
               href={
-                window.location.protocol
-                  .concat("//")
-                  .concat(window.location.hostname) +
-                (window.location.port ? ":" + window.location.port : "") +
+                getDomain() +
                 "/profile"
               }
             />
