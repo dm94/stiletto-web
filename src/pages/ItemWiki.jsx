@@ -463,7 +463,7 @@ class ItemWiki extends Component {
         <title>{name + " - Stiletto for Last Oasis"}</title>
         <meta
           name="description"
-          content={"All necessary information for " + name}
+          content={"All information for " + name}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
@@ -472,7 +472,7 @@ class ItemWiki extends Component {
         />
         <meta
           name="twitter:description"
-          content={"All necessary information for " + name}
+          content={"All information for " + name}
         />
         <link
           rel="canonical"
@@ -481,7 +481,8 @@ class ItemWiki extends Component {
               .concat("//")
               .concat(window.location.hostname) +
             (window.location.port ? ":" + window.location.port : "") +
-            "/item"
+            "/item" +
+            encodeURI(name.toLowerCase())
           }
         />
       </Helmet>
