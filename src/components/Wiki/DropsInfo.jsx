@@ -23,9 +23,11 @@ class DropsInfo extends Component {
 
   showDrops(t) {
     return this.props.drops.map((drop, index) => {
+      const titleInfo = `Drop ${drop?.chance ?? "unknown"}% -> ${drop?.minQuantity ?? "unknown"}/${drop?.maxQuantity ?? "unknown"}`;
+
       return (
-        <li className="list-inline-item" key={drop.location + "-" + index}>
-          <div className="list-group-item">{t(drop.location)}</div>
+        <li className="list-inline-item" key={drop.location + "-" + index} title={titleInfo}>
+          <p className="list-group-item">{t(drop.location)}</p>
         </li>
       );
     });
