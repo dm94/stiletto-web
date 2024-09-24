@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 
 class ToolInfo extends Component {
   render() {
-    if (this.props.toolInfo) {
+    if (this.props?.toolInfo) {
       const { t } = this.props;
       return (
         <div className="col-12 col-md-6 col-xl-3">
@@ -20,7 +20,7 @@ class ToolInfo extends Component {
   }
 
   showToolInfo(t) {
-    return this.props.toolInfo.map((toolInfo) => {
+    return this.props?.toolInfo.map((toolInfo) => {
       return (
         <li
           key={toolInfo.toolType + toolInfo.tier}

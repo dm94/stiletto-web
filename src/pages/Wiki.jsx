@@ -25,7 +25,7 @@ class Wiki extends Component {
     this.updateRecipes();
     let parsed = null;
     if (this.props?.location?.search != null) {
-      parsed = queryString.parse(this.props.location.search);
+      parsed = queryString.parse(this.props?.location.search);
     }
     if (parsed?.s != null) {
       this.setState({ searchText: parsed.s }, () => this.searchItems());

@@ -11,9 +11,9 @@ class CanBeUsedInfo extends Component {
   }
 
   componentDidMount() {
-    if (this.props.items && this.props.name) {
-      const name = this.props.name.toLowerCase();
-      const canBeUsed = this.props.items.filter((item) => {
+    if (this.props?.items && this.props?.name) {
+      const name = this.props?.name.toLowerCase();
+      const canBeUsed = this.props?.items.filter((item) => {
         if (
           item?.crafting?.[0]?.ingredients != null
         ) {
@@ -35,7 +35,7 @@ class CanBeUsedInfo extends Component {
   }
 
   render() {
-    if (this.props.name && this.props.items) {
+    if (this.props?.name && this.props?.items) {
       if (this.state.canBeUsed.length > 0) {
         const { t } = this.props;
         return (

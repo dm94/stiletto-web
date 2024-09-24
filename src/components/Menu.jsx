@@ -37,7 +37,7 @@ class Menu extends Component {
   };
 
   searchItem = () => {
-    this.props.setRedirectTo("/wiki?s=" + this.state.searchText);
+    this.props?.setRedirectTo("/wiki?s=" + this.state.searchText);
     this.setState({ searchText: "" });
   };
 
@@ -162,14 +162,14 @@ class Menu extends Component {
                 data-cy="change-languaje-btn"
                 aria-label="Change language"
                 onClick={() => {
-                  this.props.openLanguajeModal();
+                  this.props?.openLanguajeModal();
                 }}
               >
                 <img
                   className="rounded"
                   width="39"
                   height="25"
-                  src={this.getLanguageFlag(this.props.language)}
+                  src={this.getLanguageFlag(this.props?.language)}
                   alt="Change language"
                 />
               </button>

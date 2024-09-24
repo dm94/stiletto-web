@@ -18,7 +18,7 @@ class CreateMapPanel extends Component {
                 date.setDate(
                   date.getDate() + parseInt(this.state.mapDateInput)
                 );
-                this.props.onCreateMap(
+                this.props?.onCreateMap(
                   evt,
                   this.state.mapNameInput,
                   date.toISOString().split("T")[0],
@@ -72,7 +72,7 @@ class CreateMapPanel extends Component {
                 <p className="text-center">{t("Map Type")}</p>
                 <div name="mapselect" className="row">
                   <MapSelectList
-                    maps={this.props.maps}
+                    maps={this.props?.maps}
                     mapSelectInput={this.state.mapSelectInput}
                     onSelectMap={(m) => this.setState({ mapSelectInput: m })}
                   />

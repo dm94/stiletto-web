@@ -7,11 +7,11 @@ class WalkerListItem extends Component {
     super(props);
     this.state = {
       isOpen: false,
-      walker: this.props.walker,
+      walker: this.props?.walker,
       canEdit:
-        this.props.isLeader ||
-        this.props.walker.ownerUser === this.props.nickname ||
-        this.props.walker.lastUser === this.props.nickname,
+        this.props?.isLeader ||
+        this.props?.walker.ownerUser === this.props?.nickname ||
+        this.props?.walker.lastUser === this.props?.nickname,
     };
   }
 
@@ -33,7 +33,7 @@ class WalkerListItem extends Component {
                       <input
                         type="text"
                         className="form-control"
-                        value={this.props.walker.walkerID}
+                        value={this.props?.walker.walkerID}
                         readOnly
                       />
                     </div>
@@ -52,7 +52,7 @@ class WalkerListItem extends Component {
                       <input
                         type="text"
                         className="form-control"
-                        value={this.props.walker.lastUser}
+                        value={this.props?.walker.lastUser}
                         readOnly
                       />
                     </div>
@@ -71,7 +71,7 @@ class WalkerListItem extends Component {
                       <input
                         type="text"
                         className="form-control"
-                        value={this.props.walker.datelastuse}
+                        value={this.props?.walker.datelastuse}
                         readOnly
                       />
                     </div>
@@ -104,8 +104,8 @@ class WalkerListItem extends Component {
                         disabled={!this.state.canEdit}
                       >
                         <option value="clan">{t("Clan")}</option>
-                        {this.props.memberList != null ? (
-                          this.props.memberList.map((member) => {
+                        {this.props?.memberList != null ? (
+                          this.props?.memberList.map((member) => {
                             return (
                               <option
                                 key={member.discordid}
@@ -187,7 +187,7 @@ class WalkerListItem extends Component {
                       >
                         <option key={"no-type-select"}></option>
                         );
-                        {this.props.walkerListTypes.map((name) => {
+                        {this.props?.walkerListTypes.map((name) => {
                           return (
                             <option key={name} value={name}>
                               {name}
@@ -254,7 +254,7 @@ class WalkerListItem extends Component {
                     </button>
                     <button
                       className={
-                        this.props.walker.isReady
+                        this.props?.walker.isReady
                           ? "btn btn-danger"
                           : "btn btn-danger active"
                       }
@@ -275,7 +275,7 @@ class WalkerListItem extends Component {
                     <button
                       className="btn btn-block btn-success"
                       onClick={() => {
-                        this.props.onSave(this.state.walker);
+                        this.props?.onSave(this.state.walker);
                         this.setState({ isOpen: false });
                       }}
                     >
@@ -288,7 +288,7 @@ class WalkerListItem extends Component {
                     <button
                       className="btn btn-block btn-danger"
                       onClick={() => {
-                        this.props.onRemove(this.props.walker.walkerID);
+                        this.props?.onRemove(this.props?.walker.walkerID);
                       }}
                       disabled={!this.state.canEdit}
                     >
@@ -306,32 +306,32 @@ class WalkerListItem extends Component {
 
   render() {
     const { t } = this.props;
-    if (this.props.walker.walkerID != null) {
+    if (this.props?.walker.walkerID != null) {
       return (
         <Fragment>
           <tr>
             <td className="text-center">
-              {this.props.walker.type ? (
+              {this.props?.walker.type ? (
                 <Icon
-                  key={this.props.walker.type + " Walker"}
-                  name={this.props.walker.type + " Walker"}
+                  key={this.props?.walker.type + " Walker"}
+                  name={this.props?.walker.type + " Walker"}
                   width="30"
                 />
               ) : (
                 ""
               )}
             </td>
-            <td className="text-center">{this.props.walker.name}</td>
+            <td className="text-center">{this.props?.walker.name}</td>
             <td className="d-none d-sm-table-cell text-center">
-              {this.props.walker.walker_use == null
+              {this.props?.walker.walker_use == null
                 ? t("Not Defined")
-                : this.props.walker.walker_use}
+                : this.props?.walker.walker_use}
             </td>
             <td className="d-none d-sm-table-cell text-center">
-              {this.props.walker.description}
+              {this.props?.walker.description}
             </td>
             <td className="text-center">
-              {this.props.walker.isReady ? (
+              {this.props?.walker.isReady ? (
                 <i className="fas fa-check text-success"></i>
               ) : (
                 <i className="fas fa-times text-danger"></i>

@@ -61,7 +61,7 @@ class MapLayer extends Component {
         <button
           className="btn btn-info btn-sm btn-block"
           onClick={() =>
-            this.props.updateResource(
+            this.props?.updateResource(
               resource.mapid,
               resource.resourceid,
               resource.token,
@@ -101,11 +101,11 @@ class MapLayer extends Component {
 
   getMarkers(t) {
     if (
-      this.props.resourcesInTheMap != null &&
-      this.props.resourcesInTheMap[0] != null &&
-      this.props.resourcesInTheMap[0].resourceid != null
+      this.props?.resourcesInTheMap != null &&
+      this.props?.resourcesInTheMap[0] != null &&
+      this.props?.resourcesInTheMap[0].resourceid != null
     ) {
-      return this.props.resourcesInTheMap.map((resource) => (
+      return this.props?.resourcesInTheMap.map((resource) => (
         <Fragment key={"marker-" + resource.resourceid}>
           <Marker
             key={"resource" + resource.resourceid}
@@ -131,7 +131,7 @@ class MapLayer extends Component {
                 <button
                   className="btn btn-danger"
                   onClick={() =>
-                    this.props.deleteResource(
+                    this.props?.deleteResource(
                       resource.resourceid,
                       resource.token
                     )
@@ -182,7 +182,7 @@ class MapLayer extends Component {
       coordinateXInput: Math.round(e.latlng.lat * 100) / 100,
       coordinateYInput: Math.round(e.latlng.lng * 100) / 100,
     });
-    this.props.changeInput(
+    this.props?.changeInput(
       this.state.coordinateXInput,
       this.state.coordinateYInput
     );
@@ -205,10 +205,10 @@ class MapLayer extends Component {
     ) : null;
 
     const isNewMap =
-      this.props.resourcesInTheMap != null &&
-      this.props.resourcesInTheMap[0] != null &&
-      this.props.resourcesInTheMap[0].typemap != null &&
-      this.props.resourcesInTheMap[0].typemap.includes("_new");
+      this.props?.resourcesInTheMap != null &&
+      this.props?.resourcesInTheMap[0] != null &&
+      this.props?.resourcesInTheMap[0].typemap != null &&
+      this.props?.resourcesInTheMap[0].typemap.includes("_new");
 
     return (
       <div id="map">
@@ -244,7 +244,7 @@ class MapLayer extends Component {
           maxZoom={6}
           style={{ width: "100%", height: "calc(100vh - 200px)" }}
           onClick={this.handleClick}
-          center={this.props.center}
+          center={this.props?.center}
           attributionControl={false}
         >
           <ImageOverlay
@@ -269,10 +269,10 @@ class MapLayer extends Component {
             url={
               process.env.REACT_APP_RESOURCES_URL +
               "/maps/" +
-              (this.props.resourcesInTheMap != null &&
-              this.props.resourcesInTheMap[0] != null &&
-              this.props.resourcesInTheMap[0].typemap != null
-                ? this.props.resourcesInTheMap[0].typemap
+              (this.props?.resourcesInTheMap != null &&
+              this.props?.resourcesInTheMap[0] != null &&
+              this.props?.resourcesInTheMap[0].typemap != null
+                ? this.props?.resourcesInTheMap[0].typemap
                 : "Crater") +
               "/{z}/{x}/{y}.png"
             }

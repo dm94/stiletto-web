@@ -6,17 +6,17 @@ import ClanName from "../ClanName";
 class ClanListItem extends Component {
   sendRequestButton() {
     const { t } = this.props;
-    if (this.props.isLogged) {
-      if (this.props.clanuserid == null) {
+    if (this.props?.isLogged) {
+      if (this.props?.clanuserid == null) {
         return (
           <button
             className="btn btn-block btn-primary"
-            onClick={() => this.props.onSendRequest(this.props.clan.clanid)}
+            onClick={() => this.props?.onSendRequest(this.props?.clan.clanid)}
           >
             {t("Send request")}
           </button>
         );
-      } else if (this.props.clanuserid === this.props.clan.clanid) {
+      } else if (this.props?.clanuserid === this.props?.clan.clanid) {
         return (
           <Link className="btn btn-block btn-primary" to="/members">
             {t("Members")}
@@ -32,17 +32,17 @@ class ClanListItem extends Component {
     return (
       <tr>
         <td className="pl-3">
-          <ClanName key={this.props.clan.name} clan={this.props.clan} />
+          <ClanName key={this.props?.clan.name} clan={this.props?.clan} />
         </td>
-        <td>{this.props.clan.region}</td>
-        <td>{this.props.clan.discordTag}</td>
+        <td>{this.props?.clan.region}</td>
+        <td>{this.props?.clan.discordTag}</td>
         <td>
           <a
-            href={"https://discord.gg/" + this.props.clan.invitelink}
+            href={"https://discord.gg/" + this.props?.clan.invitelink}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {this.props.clan.invitelink}
+            {this.props?.clan.invitelink}
           </a>
         </td>
         <td>{this.sendRequestButton()}</td>

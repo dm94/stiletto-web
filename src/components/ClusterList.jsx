@@ -32,10 +32,10 @@ class ClusterList extends Component {
       <select
         id="regionInput"
         className="custom-select"
-        value={this.props.value ? this.props.value : ""}
-        onChange={(evt) => this.props.onChange(evt.target.value)}
+        value={this.props?.value ? this.props?.value : ""}
+        onChange={(evt) => this.props?.onChange(evt.target.value)}
       >
-        {this.props.filter && <option value="All">All</option>}
+        {this.props?.filter && <option value="All">All</option>}
         {this.clusterList()}
       </select>
     );

@@ -39,22 +39,22 @@ class ResourceMapNoLog extends Component {
 
   async componentDidMount() {
     let parsed = null;
-    if (this.props.location != null && this.props.location.search != null) {
-      parsed = queryString.parse(this.props.location.search);
+    if (this.props?.location != null && this.props?.location.search != null) {
+      parsed = queryString.parse(this.props?.location.search);
     }
 
     if (
-      (this.props.mapId != null || this.props.match.params.id != null) &&
-      (this.props.pass != null || parsed.pass != null)
+      (this.props?.mapId != null || this.props?.match.params.id != null) &&
+      (this.props?.pass != null || parsed.pass != null)
     ) {
       const markers = await getMarkers();
       this.setState({ items: markers });
 
       const mapId =
-        this.props.mapId != null
-          ? this.props.mapId
-          : this.props.match.params.id;
-      const pass = this.props.pass ? this.props.pass : parsed.pass;
+        this.props?.mapId != null
+          ? this.props?.mapId
+          : this.props?.match.params.id;
+      const pass = this.props?.pass ? this.props?.pass : parsed.pass;
 
       this.setState({
         mapId: mapId,

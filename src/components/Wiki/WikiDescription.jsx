@@ -17,7 +17,7 @@ class WikiDescription extends Component {
       params: {
         action: "query",
         prop: "extracts",
-        titles: this.props.name,
+        titles: this.props?.name,
         exsentences: 10,
         format: "json",
         origin: "*",
@@ -68,7 +68,7 @@ class WikiDescription extends Component {
                 rel="noopener noreferrer"
                 href={
                   "https://lastoasis.fandom.com/wiki/Special:Search?query=" +
-                  this.props.name +
+                  this.props?.name +
                   "&scope=internal&navigationSearch=true"
                 }
               >

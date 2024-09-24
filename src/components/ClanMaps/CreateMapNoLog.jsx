@@ -127,7 +127,7 @@ class CreateMapNoLog extends Component {
                 className="btn btn-lg btn-outline-success btn-block"
                 type="button"
                 onClick={() =>
-                  this.props.onOpen(
+                  this.props?.onOpen(
                     this.state.mapIdInput,
                     this.state.mapPassInput
                   )
@@ -150,7 +150,7 @@ class CreateMapNoLog extends Component {
                 <button
                   className="btn btn-outline-success btn-block"
                   onClick={() =>
-                    this.props.onOpen(
+                    this.props?.onOpen(
                       this.state.mapIdInput,
                       this.state.mapPassInput
                     )

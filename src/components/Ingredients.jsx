@@ -3,11 +3,11 @@ import Ingredient from "./Ingredient";
 
 class Ingredients extends Component {
   render() {
-    return this.props.crafting.ingredients.map((ingredient) => (
+    return this.props?.crafting.ingredients.map((ingredient) => (
       <Ingredient
         key={ingredient.name}
         ingredient={ingredient}
-        value={this.props.value}
+        value={this.props?.value}
       />
     ));
   }

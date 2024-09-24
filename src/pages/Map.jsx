@@ -16,7 +16,7 @@ class Map extends Component {
   }
 
   componentDidMount() {
-    const parsed = queryString.parse(this.props.location.search);
+    const parsed = queryString.parse(this.props?.location.search);
     this.setState({
       mapId: parsed.mapid,
       pass: parsed.pass,

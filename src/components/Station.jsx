@@ -7,8 +7,8 @@ class Station extends Component {
     const { t } = this.props;
     return (
       <div className="text-right mb-0 text-muted">
-        {t("made on")} <Icon key={this.props.name} name={this.props.name} />{" "}
-        {t(this.props.name)}
+        {t("made on")} <Icon key={this.props?.name} name={this.props?.name} />{" "}
+        {t(this.props?.name)}
       </div>
     );
   }

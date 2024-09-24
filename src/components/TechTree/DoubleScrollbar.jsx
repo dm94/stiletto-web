@@ -77,7 +77,7 @@ class DoubleScrollbar extends Component {
           </div>
         </div>
         <div ref="childrenWrapper" style={childDivStyle}>
-          {this.props.children}
+          {this.props?.children}
         </div>
       </div>
     );

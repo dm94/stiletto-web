@@ -10,29 +10,29 @@ class Pagination extends Component {
         <ul className="pagination justify-content-end">
           <li
             className={
-              this.props.currentPage > 1 ? "page-item" : "page-item disabled"
+              this.props?.currentPage > 1 ? "page-item" : "page-item disabled"
             }
           >
             <button
               className="page-link"
-              onClick={() => this.props.onPrev()}
-              aria-disabled={!(this.props.currentPage > 1)}
+              onClick={() => this.props?.onPrev()}
+              aria-disabled={!(this.props?.currentPage > 1)}
             >
               {t("Previous Page")}
             </button>
           </li>
           <li className="page-item active" aria-current="page">
             <button className="page-link" disabled>
-              {this.props.currentPage}
+              {this.props?.currentPage}
             </button>
           </li>
           <li
-            className={this.props.hasMore ? "page-item" : "page-item disabled"}
+            className={this.props?.hasMore ? "page-item" : "page-item disabled"}
           >
             <button
               className="page-link"
-              onClick={() => this.props.onNext()}
-              aria-disabled={this.props.hasMore}
+              onClick={() => this.props?.onNext()}
+              aria-disabled={this.props?.hasMore}
             >
               {t("Next Page")}
             </button>

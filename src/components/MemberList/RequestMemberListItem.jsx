@@ -3,11 +3,11 @@ import { withTranslation } from "react-i18next";
 
 class RequestMemberListItem extends Component {
   showButton(t) {
-    if (this.props.isLeader) {
+    if (this.props?.isLeader) {
       return (
         <button
           className="btn btn-block btn-primary"
-          onClick={() => this.props.onShowRequest(this.props.member)}
+          onClick={() => this.props?.onShowRequest(this.props?.member)}
         >
           {t("Show request")}
         </button>
@@ -19,8 +19,8 @@ class RequestMemberListItem extends Component {
     const { t } = this.props;
     return (
       <tr>
-        <td className="text-center">{this.props.member.discordtag}</td>
-        <td className="text-center">{this.props.member.nickname}</td>
+        <td className="text-center">{this.props?.member.discordtag}</td>
+        <td className="text-center">{this.props?.member.nickname}</td>
         <td>{this.showButton(t)}</td>
       </tr>
     );

@@ -5,7 +5,7 @@ import { getDomain } from "../../functions/utils";
 
 class SchematicItems extends Component {
   render() {
-    if (this.props.item && this.props.item.learn) {
+    if (this.props?.item && this.props?.item.learn) {
       const { t } = this.props;
 
       return (
@@ -23,7 +23,7 @@ class SchematicItems extends Component {
   }
 
   showSchematicItems(t) {
-    return this.props.item.learn.map((itemCraft, index) => {
+    return this.props?.item.learn.map((itemCraft, index) => {
       const url =
       getDomain() +
         "/item/" +

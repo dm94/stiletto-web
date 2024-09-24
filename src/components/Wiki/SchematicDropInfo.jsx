@@ -5,13 +5,13 @@ import { getDomain } from "../../functions/utils";
 
 class SchematicDropInfo extends Component {
   render() {
-    if (this.props.name && this.props.items) {
+    if (this.props?.name && this.props?.items) {
       const { t } = this.props;
-      const schematics = this.props.items.filter(
+      const schematics = this.props?.items.filter(
         (it) =>
           it.category === "Schematics" &&
           it.learn &&
-          it.learn.includes(this.props.name)
+          it.learn.includes(this.props?.name)
       );
       if (schematics.length > 0) {
         return (

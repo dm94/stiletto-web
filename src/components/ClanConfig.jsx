@@ -38,15 +38,15 @@ class ClanConfig extends Component {
             }
           } else if (response.status === 401) {
             closeSession();
-            this.props.onError(
+            this.props?.onError(
               "You don't have access here, try to log in again"
             );
           } else if (response.status === 503) {
-            this.props.onError("Error connecting to database");
+            this.props?.onError("Error connecting to database");
           }
         })
         .catch(() => {
-          this.props.onError("Error when connecting to the API");
+          this.props?.onError("Error when connecting to the API");
         });
     }
   }
@@ -68,27 +68,27 @@ class ClanConfig extends Component {
         recruit: this.state.recruitInput,
       },
     };
-    if (this.props.clanid) {
+    if (this.props?.clanid) {
       options.method = "put";
       options.url =
-        process.env.REACT_APP_API_URL + "/clans/" + this.props.clanid;
+        process.env.REACT_APP_API_URL + "/clans/" + this.props?.clanid;
     }
 
     Axios.request(options)
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
-          this.props.onClose();
+          this.props?.onClose();
         } else if (response.status === 401) {
-          this.props.onClose();
+          this.props?.onClose();
           closeSession();
-          this.props.onError("You don't have access here, try to log in again");
+          this.props?.onError("You don't have access here, try to log in again");
         } else if (response.status === 503 || response.status === 205) {
-          this.props.onError("Error connecting to database");
+          this.props?.onError("Error connecting to database");
         }
       })
       .catch(() => {
-        this.props.onClose();
-        this.props.onError("Error when connecting to the API");
+        this.props?.onClose();
+        this.props?.onError("Error when connecting to the API");
       });
   };
 
@@ -128,7 +128,7 @@ class ClanConfig extends Component {
                 className="close"
                 data-dismiss="modal"
                 aria-label="Close"
-                onClick={() => this.props.onClose()}
+                onClick={() => this.props?.onClose()}
               >
                 <span aria-hidden="true">X</span>
               </button>
@@ -250,7 +250,7 @@ class ClanConfig extends Component {
               <button
                 type="button"
                 className="btn btn-secondary"
-                onClick={() => this.props.onClose()}
+                onClick={() => this.props?.onClose()}
               >
                 {t("Close")}
               </button>
@@ -260,7 +260,7 @@ class ClanConfig extends Component {
                 type="submit"
                 value="Submit"
               >
-                {this.props.clanid ? t("Save") : t("Create a clan")}
+                {this.props?.clanid ? t("Save") : t("Create a clan")}
               </button>
             </div>
           </div>

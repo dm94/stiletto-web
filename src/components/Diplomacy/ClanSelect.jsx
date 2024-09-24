@@ -17,26 +17,26 @@ class ClanSelect extends Component {
       >
         <div
           className={
-            this.props.leader && this.state.isHover ? "d-none" : "col-12"
+            this.props?.leader && this.state.isHover ? "d-none" : "col-12"
           }
         >
-          <ClanName clan={this.props.clan} />
+          <ClanName clan={this.props?.clan} />
         </div>
         <div
           className={
-            this.props.leader && this.state.isHover ? "col-10" : "d-none"
+            this.props?.leader && this.state.isHover ? "col-10" : "d-none"
           }
         >
-          <ClanName clan={this.props.clan} />
+          <ClanName clan={this.props?.clan} />
         </div>
         <div
           className={
-            this.props.leader && this.state.isHover ? "col-2" : "d-none"
+            this.props?.leader && this.state.isHover ? "col-2" : "d-none"
           }
         >
           <button
             className="btn btn-danger btn-sm"
-            onClick={() => this.props.onDelete(this.props.clan.id)}
+            onClick={() => this.props?.onDelete(this.props?.clan.id)}
           >
             <i className="fas fa-trash"></i>
           </button>

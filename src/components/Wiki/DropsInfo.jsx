@@ -3,7 +3,7 @@ import { withTranslation } from "react-i18next";
 
 class DropsInfo extends Component {
   render() {
-    if (this.props.drops) {
+    if (this.props?.drops) {
       const { t } = this.props;
       return (
         <Fragment>
@@ -22,7 +22,7 @@ class DropsInfo extends Component {
   }
 
   showDrops(t) {
-    return this.props.drops.map((drop, index) => {
+    return this.props?.drops.map((drop, index) => {
       const titleInfo = `Drop ${drop?.chance ?? "unknown"}% -> ${drop?.minQuantity ?? "unknown"}/${drop?.maxQuantity ?? "unknown"}`;
 
       return (

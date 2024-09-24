@@ -6,7 +6,7 @@ class CreateResourceTab extends Component {
     super(props);
     this.state = {
       resourceTypeInput:
-        this.props.items != null ? this.props.items[0].name : "Aloe Vera",
+        this.props?.items != null ? this.props?.items[0].name : "Aloe Vera",
       qualityInput: 0,
       toolQualityInput: 0,
       resourceHarvestedQualityInput: 0,
@@ -16,8 +16,8 @@ class CreateResourceTab extends Component {
   }
 
   resourcesList(t) {
-    if (this.props.items != null) {
-      return this.props.items.map((item) => (
+    if (this.props?.items != null) {
+      return this.props?.items.map((item) => (
         <option key={item.name} value={item.name}>
           {t(item.name, { ns: "items" })}
         </option>
@@ -32,7 +32,7 @@ class CreateResourceTab extends Component {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            this.props.onCreateResource(
+            this.props?.onCreateResource(
               this.state.resourceTypeInput,
               this.state.qualityInput,
               this.state.descriptionInput,
@@ -71,8 +71,8 @@ class CreateResourceTab extends Component {
               type="text"
               className="form-control"
               name="coordinateXInput"
-              value={this.props.coordinateXInput}
-              onChange={(evt) => this.props.onChangeX(evt.target.value)}
+              value={this.props?.coordinateXInput}
+              onChange={(evt) => this.props?.onChangeX(evt.target.value)}
               required
             />
           </div>
@@ -84,8 +84,8 @@ class CreateResourceTab extends Component {
               type="text"
               className="form-control"
               name="coordinateYInput"
-              value={this.props.coordinateYInput}
-              onChange={(evt) => this.props.onChangeY(evt.target.value)}
+              value={this.props?.coordinateYInput}
+              onChange={(evt) => this.props?.onChangeY(evt.target.value)}
               required
             />
           </div>

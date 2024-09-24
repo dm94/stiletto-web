@@ -4,7 +4,7 @@ import { getStoredItem } from "../../services";
 
 class Comments extends Component {
   render() {
-    if (this.props.name && localStorage.getItem("acceptscookies")) {
+    if (this.props?.name && localStorage.getItem("acceptscookies")) {
       const language = getStoredItem("i18nextLng");
       return (
         <div className="col-12">
@@ -17,7 +17,7 @@ class Comments extends Component {
                 category="Comments"
                 categoryId="DIC_kwDOEeGDv84CSWZY"
                 mapping="specific"
-                term={this.props.name}
+                term={this.props?.name}
                 reactionsEnabled="1"
                 emitMetadata="0"
                 inputPosition="top"

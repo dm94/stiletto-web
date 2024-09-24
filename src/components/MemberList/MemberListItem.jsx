@@ -5,16 +5,16 @@ import { getStoredItem } from "../../services";
 class MemberListItem extends Component {
   kickButton() {
     const { t } = this.props;
-    if (this.props.isLeader || this.props.hasPermissions) {
+    if (this.props?.isLeader || this.props?.hasPermissions) {
       if (
-        this.props.member.discordid != getStoredItem("discordid") &&
-        this.props.member.discordid != this.props.member.leaderid
+        this.props?.member.discordid != getStoredItem("discordid") &&
+        this.props?.member.discordid != this.props?.member.leaderid
       ) {
         return (
           <td>
             <button
               className="btn btn-block btn-danger"
-              onClick={() => this.props.onKick(this.props.member.discordid)}
+              onClick={() => this.props?.onKick(this.props?.member.discordid)}
             >
               {t("Kick")}
             </button>
@@ -26,10 +26,10 @@ class MemberListItem extends Component {
 
   editPermissionsButton() {
     const { t } = this.props;
-    if (this.props.isLeader) {
+    if (this.props?.isLeader) {
       if (
-        this.props.member.discordid != getStoredItem("discordid") &&
-        this.props.member.discordid != this.props.member.leaderid
+        this.props?.member.discordid != getStoredItem("discordid") &&
+        this.props?.member.discordid != this.props?.member.leaderid
       ) {
         return (
           <td className="text-center">
@@ -40,7 +40,7 @@ class MemberListItem extends Component {
               <button
                 className="btn btn-block btn-info"
                 onClick={() =>
-                  this.props.onClickEditPermissions(this.props.member.discordid)
+                  this.props?.onClickEditPermissions(this.props?.member.discordid)
                 }
               >
                 {t("Edit")}
@@ -56,12 +56,12 @@ class MemberListItem extends Component {
     return (
       <tr>
         <td className="text-center">
-          {this.props.member.leaderid == this.props.member.discordid && (
+          {this.props?.member.leaderid == this.props?.member.discordid && (
             <i className="fas fa-crown text-warning"></i>
           )}{" "}
-          {this.props.member.discordtag}
+          {this.props?.member.discordtag}
         </td>
-        <td className="text-center">{this.props.member.nickname}</td>
+        <td className="text-center">{this.props?.member.nickname}</td>
         {this.kickButton()}
         {this.editPermissionsButton()}
       </tr>

@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class CraftingTime extends Component {
   render() {
     let totalTime = 0;
-    const totalToCraft = this.props.total ? this.props.total : 1;
-    const time = this.props.time;
+    const totalToCraft = this.props?.total ? this.props?.total : 1;
+    const time = this.props?.time;
 
     if (totalToCraft && time) {
       totalTime = time * totalToCraft;

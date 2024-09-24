@@ -51,7 +51,7 @@ class WalkerList extends Component {
       return;
     }
 
-    const parsed = queryString.parse(this.props.location.search);
+    const parsed = queryString.parse(this.props?.location.search);
     if (parsed.code != null) {
       const options = {
         method: "get",

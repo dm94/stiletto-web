@@ -27,12 +27,12 @@ class ResourceMap extends Component {
       items: null,
       resourcesInTheMap: null,
       latlng: null,
-      pass: this.props.map.pass,
+      pass: this.props?.map.pass,
       textSuccess: null,
       center: null,
-      mapname: this.props.map.name,
-      dateofburning: this.props.map.dateofburning,
-      allowEditing: this.props.map.allowedit,
+      mapname: this.props?.map.name,
+      dateofburning: this.props?.map.dateofburning,
+      allowEditing: this.props?.map.allowedit,
       resourcesFiltered: null,
       isOpenSidebar: window.innerWidth >= 1440,
     };
@@ -43,8 +43,8 @@ class ResourceMap extends Component {
     this.setState({ items: markers });
 
     const response = await getResources(
-      this.props.map.mapid,
-      this.props.map.pass
+      this.props?.map.mapid,
+      this.props?.map.pass
     );
     if (response.success) {
       this.setState({ resourcesInTheMap: response.message });
@@ -60,7 +60,7 @@ class ResourceMap extends Component {
     lastHarvested
   ) => {
     const response = await createResource(
-      this.props.map.mapid,
+      this.props?.map.mapid,
       this.state.coordinateXInput,
       this.state.coordinateYInput,
       this.state.pass,
@@ -81,7 +81,7 @@ class ResourceMap extends Component {
 
     const options = {
       method: "put",
-      url: process.env.REACT_APP_API_URL + "/maps/" + this.props.map.mapid,
+      url: process.env.REACT_APP_API_URL + "/maps/" + this.props?.map.mapid,
       params: {
         mapname: this.state.mapname,
         mapdate: this.state.dateofburning,
@@ -110,7 +110,7 @@ class ResourceMap extends Component {
 
   deleteResource = async (resourceId, resourceToken) => {
     const response = await deleteResource(
-      this.props.map.mapid,
+      this.props?.map.mapid,
       resourceId,
       resourceToken
     );
@@ -122,7 +122,7 @@ class ResourceMap extends Component {
   };
 
   editMapTab(t) {
-    if (this.state.user_discord_id === this.props.map.discordid) {
+    if (this.state.user_discord_id === this.props?.map.discordid) {
       return (
         <div className="card-body">
           <form onSubmit={this.changeDataMap}>
@@ -267,7 +267,7 @@ class ResourceMap extends Component {
           <div>
             <button
               className="btn btn-sm btn-primary btn-block mb-2"
-              onClick={() => this.props.onReturn()}
+              onClick={() => this.props?.onReturn()}
             >
               <i className="fas fa-arrow-left"></i>{" "}
               {t("Back to the list of maps")}
@@ -294,8 +294,8 @@ class ResourceMap extends Component {
             <ul className="nav nav-pills nav-fill" role="tablist">
               <li
                 className={
-                  this.props.map.allowedit ||
-                  this.state.user_discord_id === this.props.map.discordid
+                  this.props?.map.allowedit ||
+                  this.state.user_discord_id === this.props?.map.discordid
                     ? "nav-item"
                     : "nav-item d-none"
                 }
@@ -328,7 +328,7 @@ class ResourceMap extends Component {
               </li>
               <li
                 className={
-                  this.state.user_discord_id === this.props.map.discordid
+                  this.state.user_discord_id === this.props?.map.discordid
                     ? "nav-item"
                     : "nav-item d-none"
                 }
@@ -400,7 +400,7 @@ class ResourceMap extends Component {
         </div>
         <div className="col-12">
           <MapLayer
-            key={this.props.map.mapid}
+            key={this.props?.map.mapid}
             resourcesInTheMap={
               this.state.resourcesFiltered != null
                 ? this.state.resourcesFiltered

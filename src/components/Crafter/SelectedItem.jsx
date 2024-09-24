@@ -15,29 +15,29 @@ class SelectedItem extends Component {
   }
 
   showIngredient() {
-    if (this.props.item.crafting != null) {
-      return this.props.item.crafting.map((ingredients, i) => (
+    if (this.props?.item.crafting != null) {
+      return this.props?.item.crafting.map((ingredients, i) => (
         <div
           className={
-            this.props.item.crafting.length > 1
+            this.props?.item.crafting.length > 1
               ? "col-xl-6 border border-success"
               : "col-xl-12"
           }
-          key={`${this.props.item.name}-${this.props.item.count}-${i}`}
+          key={`${this.props?.item.name}-${this.props?.item.count}-${i}`}
         >
           <Ingredients
             crafting={ingredients}
             value={
               ingredients.output != null
-                ? this.props.item.count / ingredients.output
-                : this.props.item.count
+                ? this.props?.item.count / ingredients.output
+                : this.props?.item.count
             }
           />
           {ingredients.station && <Station name={ingredients.station} />}
           {ingredients.time && (
             <CraftingTime
               time={ingredients.time}
-              total={this.props.item.count}
+              total={this.props?.item.count}
             />
           )}
         </div>
@@ -46,22 +46,22 @@ class SelectedItem extends Component {
   }
 
   showDamage(t) {
-    if (this.props.item.damage != null) {
+    if (this.props?.item.damage != null) {
       return (
         <div className="col-12 text-muted">
           <div className="row">
             <div className="col-12">{t("Damage")}</div>
             <div className="col">
-              100% = {this.props.item.damage * this.props.item.count}
+              100% = {this.props?.item.damage * this.props?.item.count}
             </div>
             <div className="col">
-              50% = {this.props.item.damage * this.props.item.count * 0.5}
+              50% = {this.props?.item.damage * this.props?.item.count * 0.5}
             </div>
             <div className="col">
-              30% = {this.props.item.damage * this.props.item.count * 0.3}
+              30% = {this.props?.item.damage * this.props?.item.count * 0.3}
             </div>
             <div className="col">
-              10% = {this.props.item.damage * this.props.item.count * 0.1}
+              10% = {this.props?.item.damage * this.props?.item.count * 0.1}
             </div>
           </div>
         </div>
@@ -70,9 +70,9 @@ class SelectedItem extends Component {
   }
 
   change = (count) => {
-    this.props.onChangeCount(
-      this.props.item.name,
-      parseInt(this.props.item.count) + count
+    this.props?.onChangeCount(
+      this.props?.item.name,
+      parseInt(this.props?.item.count) + count
     );
   };
 
@@ -81,7 +81,7 @@ class SelectedItem extends Component {
     const url =
       getDomain() +
       "/item/" +
-      encodeURI(this.props.item.name.replaceAll(" ", "_"));
+      encodeURI(this.props?.item.name.replaceAll(" ", "_"));
     return (
       <div className="col-xl-6 col-sm-12">
         <div className="card">
@@ -89,7 +89,7 @@ class SelectedItem extends Component {
             <button
               className="close"
               aria-label="Remove item"
-              onClick={() => this.props.onChangeCount(this.props.item.name, 0)}
+              onClick={() => this.props?.onChangeCount(this.props?.item.name, 0)}
             >
               <span aria-hidden="true">X</span>
             </button>
@@ -97,10 +97,10 @@ class SelectedItem extends Component {
               <input
                 type="number"
                 className="form-control text-center"
-                value={this.props.item.count}
+                value={this.props?.item.count}
                 onChange={(e) => {
-                  this.props.onChangeCount(
-                    this.props.item.name,
+                  this.props?.onChangeCount(
+                    this.props?.item.name,
                     e.target.value
                   );
                 }}
@@ -113,8 +113,8 @@ class SelectedItem extends Component {
                 readOnly={this.state.disableEdit}
               />
               <span className="input-group-text">
-                <Icon key={this.props.item.name} name={this.props.item.name} />
-                <a href={url}>{t(this.props.item.name, { ns: "items" })}</a>
+                <Icon key={this.props?.item.name} name={this.props?.item.name} />
+                <a href={url}>{t(this.props?.item.name, { ns: "items" })}</a>
               </span>
             </div>
           </div>

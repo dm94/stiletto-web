@@ -17,34 +17,34 @@ class Ingredient extends Component {
     const url =
       getDomain() +
       "/item/" +
-      encodeURI(this.props.ingredient.name.toLowerCase().replaceAll(" ", "_"));
+      encodeURI(this.props?.ingredient.name.toLowerCase().replaceAll(" ", "_"));
     return (
       <div className="list-group-item">
         <div
           className={
-            this.props.ingredient.ingredients != null ? "text-success" : ""
+            this.props?.ingredient.ingredients != null ? "text-success" : ""
           }
-          role={this.props.ingredient.ingredients != null ? "button" : ""}
+          role={this.props?.ingredient.ingredients != null ? "button" : ""}
           onClick={() =>
             this.setState((state) => ({ showList: !state.showList }))
           }
         >
           <Icon
-            key={this.props.ingredient.name}
-            name={this.props.ingredient.name}
+            key={this.props?.ingredient.name}
+            name={this.props?.ingredient.name}
           />
-          {this.props.ingredient.count != null && this.props.value != null
-            ? Math.ceil(this.props.ingredient.count * this.props.value) + "x "
+          {this.props?.ingredient.count != null && this.props?.value != null
+            ? Math.ceil(this.props?.ingredient.count * this.props?.value) + "x "
             : ""}
-          {this.props.ingredient.ingredients != null ? (
-            t(this.props.ingredient.name, { ns: "items" })
+          {this.props?.ingredient.ingredients != null ? (
+            t(this.props?.ingredient.name, { ns: "items" })
           ) : (
-            <a href={url}>{t(this.props.ingredient.name, { ns: "items" })}</a>
+            <a href={url}>{t(this.props?.ingredient.name, { ns: "items" })}</a>
           )}
         </div>
         <div
           className={
-            this.props.ingredient.ingredients != null ? "list-group" : ""
+            this.props?.ingredient.ingredients != null ? "list-group" : ""
           }
         >
           {this.showSubList()}
@@ -54,20 +54,20 @@ class Ingredient extends Component {
   }
 
   showSubList() {
-    if (this.props.ingredient.ingredients != null && this.state.showList) {
-      return this.props.ingredient.ingredients.map((ingredients) => (
+    if (this.props?.ingredient.ingredients != null && this.state.showList) {
+      return this.props?.ingredient.ingredients.map((ingredients) => (
         <ul
           className="list-group list-group-horizontal"
-          key={`ingredient-sublist-${this.props.ingredient.name}-${this.props.value}`}
+          key={`ingredient-sublist-${this.props?.ingredient.name}-${this.props?.value}`}
         >
           <label className="sr-only">----------------------------</label>
           <Ingredients
             crafting={ingredients}
             value={
               ingredients.output != null
-                ? (this.props.ingredient.count * this.props.value) /
+                ? (this.props?.ingredient.count * this.props?.value) /
                   ingredients.output
-                : this.props.ingredient.count * this.props.value
+                : this.props?.ingredient.count * this.props?.value
             }
           />
           <label className="sr-only">----------------------------</label>

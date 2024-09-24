@@ -4,8 +4,8 @@ import { withTranslation } from "react-i18next";
 class Notifications extends Component {
   showNotifications() {
     const { t } = this.props;
-    if (this.props.notifications) {
-      return this.props.notifications.map((data) => {
+    if (this.props?.notifications) {
+      return this.props?.notifications.map((data) => {
         return (
           <div
             className="toast"
@@ -20,7 +20,7 @@ class Notifications extends Component {
                 type="button"
                 className="ml-2 mb-1 close"
                 aria-label="Close"
-                onClick={() => this.props.close(data.date)}
+                onClick={() => this.props?.close(data.date)}
               >
                 <span aria-hidden="true">&times;</span>
               </button>

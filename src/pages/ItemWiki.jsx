@@ -45,7 +45,7 @@ class ItemWiki extends Component {
   }
 
   async componentDidMount() {
-    let item_name = this.props.match.params.name;
+    let item_name = this.props?.match.params.name;
     if (item_name != null) {
       item_name = decodeURI(item_name);
       item_name = item_name.replaceAll("_", " ");

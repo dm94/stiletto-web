@@ -11,12 +11,12 @@ class SkillTreeTab extends Component {
   render() {
     return (
       <SkillProvider>
-        <SkillTreeGroup theme={this.props.theme}>
+        <SkillTreeGroup theme={this.props?.theme}>
           {() => (
             <SkillTree
-              treeId={this.props.treeId}
-              title={this.props.title}
-              data={this.getChildrens(this.props.treeId)}
+              treeId={this.props?.treeId}
+              title={this.props?.title}
+              data={this.getChildrens(this.props?.treeId)}
               handleSave={this.handleSave}
             />
           )}
@@ -29,7 +29,7 @@ class SkillTreeTab extends Component {
     const { t } = this.props;
     const childrens = [];
 
-    const items = this.props.items.filter((it) => it.parent === parent);
+    const items = this.props?.items.filter((it) => it.parent === parent);
 
     items.forEach((i) => {
       const item = {
@@ -55,12 +55,12 @@ class SkillTreeTab extends Component {
         <p className="text-center border-bottom border-warning">
           {t("Who has learned it?")}
         </p>
-        {this.props.clan != null ? (
+        {this.props?.clan != null ? (
           <SkillNodeBtn
             key={"btn-" + item.name}
             item={item}
-            clan={this.props.clan}
-            tree={this.props.treeId}
+            clan={this.props?.clan}
+            tree={this.props?.treeId}
           ></SkillNodeBtn>
         ) : (
           t("You need a clan for this function")

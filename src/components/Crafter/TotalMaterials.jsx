@@ -22,7 +22,7 @@ class TotalMaterials extends Component {
       },
     });
 
-    const items = this.props.selectedItems.map((item) => {
+    const items = this.props?.selectedItems.map((item) => {
       return { name: item.name, count: item.count };
     });
     const options = {
@@ -88,7 +88,7 @@ class TotalMaterials extends Component {
         onClick={this.addRecipe}
         title={t("Generate a link to share it")}
         data-cy="share-crafter-btn"
-        disabled={this.props.selectedItems.length <= 0}
+        disabled={this.props?.selectedItems.length <= 0}
       >
         <i className="fas fa-share-alt"></i> {t("Share")}
       </button>
@@ -120,7 +120,7 @@ class TotalMaterials extends Component {
 
     let text = t("To make") + ":\n\n";
 
-    this.props.selectedItems.forEach(
+    this.props?.selectedItems.forEach(
       (item) =>
         (text += item.count + "x " + t(item.name, { ns: "items" }) + " - ")
     );
@@ -128,7 +128,7 @@ class TotalMaterials extends Component {
     text += "\n\n" + t("You need the following materials") + ":\n\n";
 
     const totalIngredients = [];
-    this.props.selectedItems.forEach((item) => {
+    this.props?.selectedItems.forEach((item) => {
       if (item?.crafting?.[0]?.ingredients != null) {
         const output =
           item.crafting[0].output != null ? item.crafting[0].output : 1;
@@ -176,7 +176,7 @@ class TotalMaterials extends Component {
             title={t("Copy to clipboard")}
             data-cy="crafter-copy-clipboard"
             onClick={() => this.copyMaterials(t)}
-            disabled={this.props.selectedItems.length <= 0}
+            disabled={this.props?.selectedItems.length <= 0}
           >
             <i className="fas fa-copy"></i>
           </button>
@@ -187,7 +187,7 @@ class TotalMaterials extends Component {
           <div className="list-unstyled">
             <ListIngredients
               ref={this.componentRef}
-              selectedItems={this.props.selectedItems}
+              selectedItems={this.props?.selectedItems}
             />
             <div className="text-right text-muted">
               {t("List of all necessary materials by")}{" "}

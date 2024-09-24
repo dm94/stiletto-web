@@ -34,7 +34,7 @@ class Crafter extends Component {
   }
 
   getRecipes = () => {
-    const parsed = queryString.parse(this.props.location.search);
+    const parsed = queryString.parse(this.props?.location.search);
     const recipe = parsed.recipe;
     if (recipe != null && recipe.length > 0) {
       Axios.get(process.env.REACT_APP_API_URL + "/recipes/" + recipe)

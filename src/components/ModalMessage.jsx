@@ -21,7 +21,7 @@ class ModalMessage extends Component {
     return (
       <button
         className="btn btn-lg btn-outline-warning btn-block"
-        onClick={() => this.props.onClickOk()}
+        onClick={() => this.props?.onClickOk()}
       >
         OK
       </button>
@@ -30,7 +30,7 @@ class ModalMessage extends Component {
 
   render() {
     const { t } = this.props;
-    if (this.props.message.text === "Error when connecting to the API") {
+    if (this.props?.message.text === "Error when connecting to the API") {
       localStorage.removeItem("allItems");
       sessionStorage.removeItem("allItems");
       caches.keys().then((names) => {
@@ -40,7 +40,7 @@ class ModalMessage extends Component {
       });
     }
     if (this.state.redirect) {
-      return <Redirect to={this.props.message.redirectPage} />;
+      return <Redirect to={this.props?.message.redirectPage} />;
     }
 
     sendEvent("modal", {
@@ -56,12 +56,12 @@ class ModalMessage extends Component {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal">
-                {this.props.message.isError ? t("Error") : t("Information")}
+                {this.props?.message.isError ? t("Error") : t("Information")}
               </h5>
             </div>
-            <div className="modal-body">{t(this.props.message.text)}</div>
+            <div className="modal-body">{t(this.props?.message.text)}</div>
             <div className="modal-footer">
-              {this.props.message.redirectPage == null
+              {this.props?.message.redirectPage == null
                 ? this.onlyOkButton()
                 : this.redirectButton()}
             </div>

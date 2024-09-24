@@ -4,7 +4,7 @@ import Ingredient from "../Ingredient";
 class ListIngredients extends Component {
   render() {
     const totalIngredients = [];
-    this.props.selectedItems.forEach((item) => {
+    this.props?.selectedItems.forEach((item) => {
       if (
         item?.crafting?.[0]?.ingredients != null
       ) {

@@ -12,19 +12,19 @@ class ResourcesInMapList extends Component {
 
   filterTheResources = (r) => {
     this.setState({ resourceTypeFilter: r });
-    this.props.onFilter(r);
+    this.props?.onFilter(r);
   };
 
   list(t) {
     if (this.state.resourceTypeFilter !== "All") {
-      const resourcesFiltered = this.props.resources.filter(
+      const resourcesFiltered = this.props?.resources.filter(
         (r) => r.x != null && r.resourcetype === this.state.resourceTypeFilter
       );
       return resourcesFiltered.map((resource) => (
         <li className="list-group-item text-center" key={resource.resourceid}>
           <button
             className="btn btn-block"
-            onClick={() => this.props.onSelect(resource.x, resource.y)}
+            onClick={() => this.props?.onSelect(resource.x, resource.y)}
           >
             <Icon
               key={"icon-rmap-" + resource.resourceid}
@@ -35,13 +35,13 @@ class ResourcesInMapList extends Component {
         </li>
       ));
     } else {
-      return this.props.resources
+      return this.props?.resources
         .filter((r) => r.x != null)
         .map((resource) => (
           <li className="list-group-item text-center" key={resource.resourceid}>
             <button
               className="btn btn-block"
-              onClick={() => this.props.onSelect(resource.x, resource.y)}
+              onClick={() => this.props?.onSelect(resource.x, resource.y)}
             >
               <Icon
                 key={"icon-rmap-" + resource.resourceid}
@@ -57,7 +57,7 @@ class ResourcesInMapList extends Component {
   filterlist(t) {
     const resourceTypes = ["All"];
 
-    this.props.resources.forEach((resource) => {
+    this.props?.resources.forEach((resource) => {
       if (
         resource.x != null &&
         resourceTypes.indexOf(resource.resourcetype) === -1
@@ -85,7 +85,7 @@ class ResourcesInMapList extends Component {
 
   render() {
     const { t } = this.props;
-    if (this.props.resources != null) {
+    if (this.props?.resources != null) {
       return (
         <Fragment>
           <div className="btn-group btn-group-sm" role="group">

@@ -28,8 +28,8 @@ class TechTree extends Component {
       isLoaded: false,
       error: null,
       tabSelect:
-        this.props.match.params.tree != null
-          ? this.props.match.params.tree
+        this.props?.match.params.tree != null
+          ? this.props?.match.params.tree
           : "Vitamins",
       clan: null,
     };
@@ -78,8 +78,8 @@ class TechTree extends Component {
           this.setState({ error: "Error when connecting to the API" });
         });
     }
-    if (this.props.match.params.tree != null) {
-      this.setState({ tabSelect: this.props.match.params.tree });
+    if (this.props?.match.params.tree != null) {
+      this.setState({ tabSelect: this.props?.match.params.tree });
     }
     let items = await getItems();
     if (items != null) {
@@ -101,7 +101,7 @@ class TechTree extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.match.params.tree !== this.props.match.params.tree) {
+    if (prevProps.match.params.tree !== this.props?.match.params.tree) {
       window.location.reload();
     }
   }

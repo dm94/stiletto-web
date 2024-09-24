@@ -17,8 +17,8 @@ class MemberPermissionsConfig extends Component {
 
   async componentDidMount() {
     const request = await getUserPermssions(
-      this.props.clanid,
-      this.props.memberid
+      this.props?.clanid,
+      this.props?.memberid
     );
     if (request) {
       if (request.success) {
@@ -31,7 +31,7 @@ class MemberPermissionsConfig extends Component {
           walkers: allPermissions.walkers === "1",
         });
       } else {
-        this.props.onError(request.message);
+        this.props?.onError(request.message);
       }
     }
   }
@@ -42,9 +42,9 @@ class MemberPermissionsConfig extends Component {
       url:
         process.env.REACT_APP_API_URL +
         "/clans/" +
-        this.props.clanid +
+        this.props?.clanid +
         "/members/" +
-        this.props.memberid +
+        this.props?.memberid +
         "/permissions",
       params: {
         bot: this.state.bot,
@@ -60,18 +60,18 @@ class MemberPermissionsConfig extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 200) {
-          this.props.onClose();
+          this.props?.onClose();
         } else if (response.status === 401) {
           closeSession();
-          this.props.onError("You don't have access here, try to log in again");
-          this.props.onClose();
+          this.props?.onError("You don't have access here, try to log in again");
+          this.props?.onClose();
         } else if (response.status === 503) {
-          this.props.onError("Error connecting to database");
-          this.props.onClose();
+          this.props?.onError("Error connecting to database");
+          this.props?.onClose();
         }
       })
       .catch(() => {
-        this.props.onError("Error when connecting to the API");
+        this.props?.onError("Error when connecting to the API");
       });
   };
 
@@ -88,7 +88,7 @@ class MemberPermissionsConfig extends Component {
                 className="close"
                 data-dismiss="modal"
                 aria-label="Close"
-                onClick={() => this.props.onClose()}
+                onClick={() => this.props?.onClose()}
               >
                 <span aria-hidden="true">X</span>
               </button>
@@ -221,7 +221,7 @@ class MemberPermissionsConfig extends Component {
               <button
                 type="button"
                 className="btn btn-secondary"
-                onClick={() => this.props.onClose()}
+                onClick={() => this.props?.onClose()}
               >
                 {t("Close")}
               </button>

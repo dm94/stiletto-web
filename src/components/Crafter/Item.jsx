@@ -15,13 +15,13 @@ class Item extends Component {
       >
         <div className="row">
           <div className="col-auto">
-            {t(this.props.item.name, { ns: "items" })}
+            {t(this.props?.item.name, { ns: "items" })}
           </div>
           <div className="col">
             <button
               className="btn btn-success btn-sm float-right"
               aria-label="Add item"
-              onClick={() => this.props.onAdd(this.props.item.name)}
+              onClick={() => this.props?.onAdd(this.props?.item.name)}
             >
               <i className="fas fa-plus"></i>
             </button>

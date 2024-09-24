@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 class ClanName extends Component {
   render() {
-    if (this.props.clan.symbol != null) {
+    if (this.props?.clan.symbol != null) {
       return (
         <Fragment>
           <img
@@ -10,14 +10,14 @@ class ClanName extends Component {
             src={
               process.env.REACT_APP_RESOURCES_URL +
               "/symbols/" +
-              this.props.clan.symbol +
+              this.props?.clan.symbol +
               ".png"
             }
-            style={{ backgroundColor: this.props.clan.flagcolor }}
-            alt={this.props.clan.symbol}
-            id={"symbol-img-" + this.props.clan.name}
+            style={{ backgroundColor: this.props?.clan.flagcolor }}
+            alt={this.props?.clan.symbol}
+            id={"symbol-img-" + this.props?.clan.name}
           />
-          <span className="pb-3 mb-0 ml-2">{this.props.clan.name}</span>
+          <span className="pb-3 mb-0 ml-2">{this.props?.clan.name}</span>
         </Fragment>
       );
     } else {
@@ -35,10 +35,10 @@ class ClanName extends Component {
             <rect
               width="90%"
               height="90%"
-              fill={this.props.clan.flagcolor}
+              fill={this.props?.clan.flagcolor}
             ></rect>
           </svg>
-          <span className="pb-3 mb-0">{this.props.clan.name}</span>
+          <span className="pb-3 mb-0">{this.props?.clan.name}</span>
         </Fragment>
       );
     }

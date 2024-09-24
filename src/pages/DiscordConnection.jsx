@@ -60,7 +60,7 @@ class DiscordConnection extends Component {
 
   showClanInfo() {
     const { t } = this.props;
-    const parsed = queryString.parse(this.props.location.search);
+    const parsed = queryString.parse(this.props?.location.search);
     const urlLink =
       "https://discord.com/api/oauth2/authorize?client_id=" +
       process.env.REACT_APP_DISCORD_CLIENT_ID +

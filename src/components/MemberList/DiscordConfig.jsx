@@ -18,7 +18,7 @@ class DiscordConfig extends Component {
       url:
         process.env.REACT_APP_API_URL +
         "/clans/" +
-        this.props.clanid +
+        this.props?.clanid +
         "/discordbot",
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
@@ -41,13 +41,13 @@ class DiscordConfig extends Component {
           }
         } else if (response.status === 401) {
           closeSession();
-          this.props.onError("You don't have access here, try to log in again");
+          this.props?.onError("You don't have access here, try to log in again");
         } else if (response.status === 503) {
-          this.props.onError("Error connecting to database");
+          this.props?.onError("Error connecting to database");
         }
       })
       .catch(() => {
-        this.props.onError("Your clan does not have a linked discord");
+        this.props?.onError("Your clan does not have a linked discord");
       });
   }
 
@@ -57,7 +57,7 @@ class DiscordConfig extends Component {
       url:
         process.env.REACT_APP_API_URL +
         "/clans/" +
-        this.props.clanid +
+        this.props?.clanid +
         "/discordbot",
       params: {
         languaje: this.state.botLanguaje,
@@ -73,18 +73,18 @@ class DiscordConfig extends Component {
     Axios.request(options)
       .then((response) => {
         if (response.status === 200) {
-          this.props.onClose();
+          this.props?.onClose();
         } else if (response.status === 401) {
           closeSession();
-          this.props.onError("You don't have access here, try to log in again");
-          this.props.onClose();
+          this.props?.onError("You don't have access here, try to log in again");
+          this.props?.onClose();
         } else if (response.status === 503) {
-          this.props.onError("Error connecting to database");
-          this.props.onClose();
+          this.props?.onError("Error connecting to database");
+          this.props?.onClose();
         }
       })
       .catch(() => {
-        this.props.onError("Error when connecting to the API");
+        this.props?.onError("Error when connecting to the API");
       });
   };
 
@@ -101,7 +101,7 @@ class DiscordConfig extends Component {
                 className="close"
                 data-dismiss="modal"
                 aria-label="Close"
-                onClick={() => this.props.onClose()}
+                onClick={() => this.props?.onClose()}
               >
                 <span aria-hidden="true">X</span>
               </button>
@@ -229,7 +229,7 @@ class DiscordConfig extends Component {
               <button
                 type="button"
                 className="btn btn-secondary"
-                onClick={() => this.props.onClose()}
+                onClick={() => this.props?.onClose()}
               >
                 {t("Close")}
               </button>

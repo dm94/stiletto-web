@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Icon extends Component {
   state = { loaded: true };
   render() {
-    let name = this.props.name;
+    let name = this.props?.name;
     if (name.includes("Tier 1")) {
       name = "Walker Upgrade Wood";
     } else if (name.includes("Tier 2")) {
@@ -50,7 +50,7 @@ class Icon extends Component {
           loading="lazy"
           onError={() => this.setState({ loaded: false })}
           className="mr-2"
-          width={this.props.width ? this.props.width : "16"}
+          width={this.props?.width ? this.props?.width : "16"}
           alt=""
         />
       );

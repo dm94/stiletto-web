@@ -15,14 +15,14 @@ class SkillNodeBtn extends Component {
   getLearned() {
     if (getStoredItem("token") != null) {
       Axios.get(
-        process.env.REACT_APP_API_URL + "/clans/" + this.props.clan + "/tech",
+        process.env.REACT_APP_API_URL + "/clans/" + this.props?.clan + "/tech",
         {
           headers: {
             Authorization: `Bearer ${getStoredItem("token")}`,
           },
           params: {
-            tree: this.props.tree,
-            tech: this.props.item.name,
+            tree: this.props?.tree,
+            tech: this.props?.item.name,
           },
         }
       )
@@ -56,7 +56,7 @@ class SkillNodeBtn extends Component {
         <ul className="list-group list-group-horizontal flex-wrap">
           {this.state.usersSavedData.map((user) => (
             <li
-              key={`skill-${this.props.item.name}-user-${user}`}
+              key={`skill-${this.props?.item.name}-user-${user}`}
               className="list-group-item"
             >
               {user}
