@@ -15,9 +15,7 @@ class CanBeUsedInfo extends Component {
       const name = this.props.name.toLowerCase();
       const canBeUsed = this.props.items.filter((item) => {
         if (
-          item.crafting != null &&
-          item.crafting[0] != null &&
-          item.crafting[0].ingredients != null
+          item?.crafting?.[0]?.ingredients != null
         ) {
           const allIngredients = item.crafting[0].ingredients;
 

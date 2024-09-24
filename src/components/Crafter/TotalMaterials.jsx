@@ -129,7 +129,7 @@ class TotalMaterials extends Component {
 
     const totalIngredients = [];
     this.props.selectedItems.forEach((item) => {
-      if (item.crafting != null && item.crafting[0].ingredients != null) {
+      if (item?.crafting?.[0]?.ingredients != null) {
         const output =
           item.crafting[0].output != null ? item.crafting[0].output : 1;
         item.crafting[0].ingredients.forEach((ingredient) => {

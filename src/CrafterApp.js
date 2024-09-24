@@ -37,7 +37,7 @@ const CrafterApp = () => {
     <React.Fragment>
       <Helmet
         htmlAttributes={{
-          lang: language ? language : "en",
+          lang: language ?? "en",
         }}
       >
         <link

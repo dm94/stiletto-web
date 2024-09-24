@@ -15,10 +15,10 @@ class ClanConfig extends Component {
   };
 
   componentDidMount() {
-    if (this.props.clanid) {
+    if (this.props?.clanid) {
       const options = {
         method: "get",
-        url: process.env.REACT_APP_API_URL + "/clans/" + this.props.clanid,
+        url: process.env.REACT_APP_API_URL + "/clans/" + this.props?.clanid,
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
         },
@@ -98,7 +98,7 @@ class ClanConfig extends Component {
       symbols.push("C" + i);
     }
     return symbols.map((symbol) => (
-      <div className="col-3" key={"symbol-" + symbol}>
+      <div role="button" className="col-3" key={"symbol-" + symbol} onClick={() => this.setState({ clanFlagSymbolInput: symbol })}>
         <img
           src={
             process.env.REACT_APP_RESOURCES_URL + "/symbols/" + symbol + ".png"
@@ -110,7 +110,6 @@ class ClanConfig extends Component {
           }
           alt={symbol}
           id={"symbol-img-" + symbol}
-          onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
         />
       </div>
     ));

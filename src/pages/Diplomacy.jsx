@@ -279,7 +279,7 @@ class Diplomacy extends Component {
       symbols.push("C" + i);
     }
     return symbols.map((symbol) => (
-      <div className="col-1" key={"symbol-" + symbol}>
+      <div role="button" className="col-1" key={"symbol-" + symbol} onClick={() => this.setState({ clanFlagSymbolInput: symbol })}>
         <img
           src={
             process.env.REACT_APP_RESOURCES_URL + "/symbols/" + symbol + ".png"
@@ -291,7 +291,6 @@ class Diplomacy extends Component {
           }
           alt={symbol}
           id={"symbol-img-" + symbol}
-          onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
         />
         <p className="text-center">{symbol}</p>
       </div>

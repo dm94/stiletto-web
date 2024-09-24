@@ -21,12 +21,11 @@ class ChangeLanguageModal extends Component {
     return supportedLanguages.map((languaje) => {
       const { t } = this.props;
       return (
-        <div className="col-3" key={languaje.key}>
+        <div role="button" className="col-3" key={languaje.key} onClick={() => this.props?.switchLanguage(languaje.key)}>
           <img
             className="img-thumbnail"
             src={`/img/${languaje.key}.jpg`}
             alt={`${languaje.name} language`}
-            onClick={() => this.props.switchLanguage(languaje.key)}
           />
           <p>{t(languaje.name)}</p>
         </div>
@@ -52,7 +51,7 @@ class ChangeLanguageModal extends Component {
                     : "btn btn-outline-light"
                 }
                 onClick={() => {
-                  this.props.hideModal();
+                  this.props?.hideModal();
                 }}
               >
                 {t("Accept")}

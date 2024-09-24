@@ -6,9 +6,7 @@ class ListIngredients extends Component {
     const totalIngredients = [];
     this.props.selectedItems.forEach((item) => {
       if (
-        item.crafting != null &&
-        item.crafting[0] != null &&
-        item.crafting[0].ingredients != null
+        item?.crafting?.[0]?.ingredients != null
       ) {
         const output =
           item.crafting[0].output != null ? item.crafting[0].output : 1;
