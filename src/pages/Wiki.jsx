@@ -77,6 +77,7 @@ class Wiki extends Component {
         );
       });
     });
+
     this.setState({
       filteredItems: filteredItems,
       textSearched: search,
@@ -113,6 +114,14 @@ class Wiki extends Component {
         </option>
       ));
     }
+  };
+
+  updateCategoryFilter = (evt) => {
+    this.setState({
+      categoryFilter: evt.target.value,
+    }, () => {
+      this.searchItems();
+    });
   };
 
   render() {
@@ -189,11 +198,7 @@ class Wiki extends Component {
                     id="category-filter"
                     className="custom-select"
                     value={this.state.categoryFilter}
-                    onChange={(evt) =>
-                      this.setState({
-                        categoryFilter: evt.target.value,
-                      })
-                    }
+                    onChange={this.updateCategoryFilter}
                   >
                     <option key="all" value="All">
                       {t("All")}
