@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router";
-import ModalMessage from "./components/ModalMessage";
 import Crafter from "./pages/Crafter";
 import DiscordConnection from "./pages/DiscordConnection";
 import ClanList from "./pages/ClanList";
@@ -18,6 +17,7 @@ import Privacy from "./pages/Privacy";
 import ResourceMapNoLog from "./components/ClanMaps/ResourceMapNoLog";
 import ItemWiki from "./pages/ItemWiki";
 import Wiki from "./pages/Wiki";
+import NotFoundPage from "./pages/NotFound";
 
 export default (
   <Switch>
@@ -39,14 +39,6 @@ export default (
     <Route path="/privacy" component={Privacy} />
     <Route path="/item/:name" component={ItemWiki} />
     <Route path="/wiki/" component={Wiki} />
-    <Route path="*">
-      <ModalMessage
-        message={{
-          isError: true,
-          text: "The page you are looking for does not exist",
-          redirectPage: "/",
-        }}
-      />
-    </Route>
+    <Route path="*" component={NotFoundPage} />
   </Switch>
 );

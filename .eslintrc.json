@@ -28,7 +28,7 @@
     "react/react-in-jsx-scope": "off",
     "react/no-unknown-property": "off",
     "react/no-string-refs": "warn",
-    "react/prop-types": 0,
+    "react/prop-types": "off",
     "arrow-spacing": ["warn", { "before": true, "after": true }],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
     "comma-dangle": [
