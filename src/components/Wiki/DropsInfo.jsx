@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const DropsInfo = ({ drops }) => {
+const DropsInfo = ({ drops = [] }) => {
   const { t } = useTranslation();
 
   const showDrops = () => {
