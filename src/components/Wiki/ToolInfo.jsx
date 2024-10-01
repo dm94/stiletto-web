@@ -1,37 +1,35 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-class ToolInfo extends Component {
-  render() {
-    if (this.props?.toolInfo) {
-      const { t } = this.props;
-      return (
-        <div className="col-12 col-md-6 col-xl-3">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Tool info")}</div>
-            <div className="card-body">
-              <ul className="list-group">{this.showToolInfo(t)}</ul>
-            </div>
+const ToolInfo = ({ toolInfo }) => {
+  const { t } = useTranslation();
+
+  const showToolInfo = () => {
+    return toolInfo?.map((tool) => (
+      <li
+        key={tool.toolType + tool.tier}
+        className="list-group-item d-flex justify-content-between lh-condensed"
+      >
+        <div className="my-0">{t(tool.toolType)}</div>
+        <div className="text-muted">{tool.tier}</div>
+      </li>
+    ));
+  };
+
+  if (toolInfo) {
+    return (
+      <div className="col-12 col-md-6 col-xl-3">
+        <div className="card border-secondary mb-3">
+          <div className="card-header">{t("Tool info")}</div>
+          <div className="card-body">
+            <ul className="list-group">{showToolInfo()}</ul>
           </div>
         </div>
-      );
-    }
-    return "";
+      </div>
+    );
   }
 
-  showToolInfo(t) {
-    return this.props?.toolInfo.map((toolInfo) => {
-      return (
-        <li
-          key={toolInfo.toolType + toolInfo.tier}
-          className="list-group-item d-flex justify-content-between lh-condensed"
-        >
-          <div className="my-0">{t(toolInfo.toolType)}</div>
-          <div className="text-muted">{toolInfo.tier}</div>
-        </li>
-      );
-    });
-  }
-}
+  return false;
+};
 
-export default withTranslation()(ToolInfo);
+export default ToolInfo;
