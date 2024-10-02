@@ -143,7 +143,7 @@ const ItemWiki = ({ match }) => {
     return <Redirect to={"/not-found"} />;
   }
 
-  const name = item.name;
+  const { name } = item;
   const parentUrl = item.parent && getItemUrl(item.parent);
   const craftUrl = getItemCraftUrl(name);
 

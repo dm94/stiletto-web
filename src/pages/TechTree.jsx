@@ -74,13 +74,17 @@ const TechTree = () => {
   };
 
   const saveTree = async () => {
-    const data = JSON.parse(getStoredItem(`skills-${tabSelect}`));
     const learned = [];
+    try {
+      const data = JSON.parse(getStoredItem(`skills-${tabSelect}`));
 
-    for (const item in data) {
-      if (data[item].nodeState === "selected") {
-        learned.push(item);
+      for (const item in data) {
+        if (data[item].nodeState === "selected") {
+          learned.push(item);
+        }
       }
+    } catch (err) {
+      console.error(err);
     }
 
     try {

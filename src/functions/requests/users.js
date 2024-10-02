@@ -20,8 +20,7 @@ export const getLearned = async () => {
     );
 
     if (response.status === 200) {
-      const data = await response.json();
-      return data;
+      return await response.json();
     } else if (response.status === 401) {
       closeSession();
       throw new Error("You don't have access here, try to log in again");

@@ -17,7 +17,9 @@ const DoubleScrollbar = ({ children }) => {
     const outerDiv = outerDivRef.current;
     const childWrapper = childrenWrapperRef.current;
 
-    if (!outerDiv || !childWrapper) return;
+    if (!outerDiv || !childWrapper) {
+      return;
+    }
 
     const syncScroll = () => {
       childWrapper.scrollLeft = outerDiv.scrollLeft;
