@@ -1,8 +1,7 @@
-import React, { Component, Fragment, Suspense } from "react";
-import { withTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
+import React, { useState, useEffect, Suspense } from "react";
+import { useTranslation } from "react-i18next";
 import { getItems } from "../services";
-import ModalMessage from "../components/ModalMessage";
+import { Redirect } from "react-router-dom";
 import Ingredients from "../components/Ingredients";
 import Station from "../components/Station";
 import Icon from "../components/Icon";
@@ -14,7 +13,8 @@ import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
 import Comments from "../components/Wiki/Comments";
 import { calcRarityValue } from "../rarityCalc";
-import { getDomain } from "../functions/utils";
+import { getItemUrl, getItemCraftUrl } from "../functions/utils";
+import HeaderMeta from "../components/HeaderMeta";
 
 const WikiDescription = React.lazy(() =>
   import("../components/Wiki/WikiDescription")
@@ -26,489 +26,321 @@ const DropsInfo = React.lazy(() => import("../components/Wiki/DropsInfo"));
 const CanBeUsedInfo = React.lazy(() =>
   import("../components/Wiki/CanBeUsedInfo")
 );
-
 const SchematicItems = React.lazy(() =>
   import("../components/Wiki/SchematicItems")
 );
 
-class ItemWiki extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      item: null,
-      isLoaded: false,
-      canBeUsed: [],
-      allItems: [],
-      rarity: "Common",
-      textColor: "text-muted",
-    };
-  }
+const ItemWiki = ({ match }) => {
+  const { t } = useTranslation();
+  const [item, setItem] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [allItems, setAllItems] = useState([]);
+  const [rarity, setRarity] = useState("Common");
+  const [textColor, setTextColor] = useState("text-muted");
 
-  async componentDidMount() {
-    let item_name = this.props?.match.params.name;
-    if (item_name != null) {
-      item_name = decodeURI(item_name);
-      item_name = item_name.replaceAll("_", " ");
-      item_name = item_name.toLowerCase();
-    }
-
-    const items = await getItems();
-    if (items != null) {
-      const item = items.find((it) => it.name.toLowerCase() === item_name);
-      this.setState({
-        item: item,
-        isLoaded: true,
-        allItems: items,
-      });
-    }
-  }
-
-  render() {
-    const { t } = this.props;
-    if (this.state.isLoaded) {
-      if (this.state.item != null) {
-        const name = this.state.item.name;
-        let parent_url = "";
-        if (this.state.item.parent) {
-          parent_url =
-          getDomain() +
-            "/item/" +
-            encodeURI(
-              this.state.item.parent.toLowerCase().replaceAll(" ", "_")
-            );
-        }
-        const craftUrl =
-        getDomain() +
-          "/crafter?craft=" +
-          encodeURI(name.toLowerCase());
-
-        const category = this.state.item.category;
-
-        return (
-          <div className="container" data-cy="wiki-item" data-name={name}>
-            {this.helmetInfo(name)}
-            <div className="row">
-              <div className="col-12 col-md-6">
-                <div className="card border-secondary mb-3">
-                  <div className="card-header">
-                    <Icon key={name} name={name} width={35} />
-                    {t(name, { ns: "items" })}
-                  </div>
-                  <div className="card-body">
-                    <ul className="list-group mb-3">
-                      {this.state.item.cost ? (
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                          <div className="my-0">{t("Cost to learn")}</div>
-                          <div className="text-muted">
-                            {(this.state.item.cost.count
-                              ? this.state.item.cost.count
-                              : "") +
-                              " " +
-                              (this.state.item.cost.name
-                                ? t(this.state.item.cost.name)
-                                : "")}
-                          </div>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.item.category ? (
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                          <div className="my-0">{t("Category")}</div>
-                          <div className="text-muted">
-                            {t(category, { ns: "items" })}
-                          </div>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.item.parent ? (
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                          <div className="my-0">{t("Parent")}</div>
-                          <div className="text-muted">
-                            <a href={parent_url}>
-                              {t(this.state.item.parent, { ns: "items" })}
-                            </a>
-                          </div>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.item.trade_price ? (
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                          <div className="my-0">{t("Trade Price")}</div>
-                          <div className="text-muted">
-                            {this.state.item.trade_price} flots
-                          </div>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.item.stackSize ? (
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                          <div className="my-0">{t("Character Stack")}</div>
-                          <div className="text-muted">
-                            {this.state.item.stackSize}
-                          </div>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.item.weight ? (
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                          <div className="my-0">{t("Weight")}</div>
-                          <div className={this.state.textColor}>
-                            {calcRarityValue(
-                              this.state.rarity,
-                              "weight",
-                              category,
-                              this.state.item.weight
-                            )}
-                          </div>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.item.experiencieReward ? (
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                          <div className="my-0">
-                            {t("Experience by crafting")}
-                          </div>
-                          <div className="text-muted">
-                            {this.state.item.experiencieReward}
-                          </div>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                      {this.state.item.durability ? (
-                        <li className="list-group-item d-flex justify-content-between lh-condensed">
-                          <div className="my-0">{t("Durability")}</div>
-                          <div className={this.state.textColor}>
-                            {calcRarityValue(
-                              this.state.rarity,
-                              "durability",
-                              category,
-                              this.state.item.durability
-                            )}
-                          </div>
-                        </li>
-                      ) : (
-                        ""
-                      )}
-                    </ul>
-                  </div>
-                  <div className="card-footer text-center">
-                    <div
-                      className="btn-group"
-                      role="group"
-                      aria-label="Rarities"
-                    >
-                      <button
-                        type="button"
-                        title={t("Common")}
-                        className={
-                          this.state.rarity === "Common"
-                            ? "btn btn-outline-light active"
-                            : "btn btn-outline-light"
-                        }
-                        onClick={() => {
-                          this.setState({
-                            rarity: "Common",
-                            textColor: "text-muted",
-                          });
-                        }}
-                      >
-                        C
-                      </button>
-                      <button
-                        type="button"
-                        title={t("Uncommon")}
-                        className={
-                          this.state.rarity === "Uncommon"
-                            ? "btn btn-outline-success active"
-                            : "btn btn-outline-success"
-                        }
-                        onClick={() => {
-                          this.setState({
-                            rarity: "Uncommon",
-                            textColor: "text-success",
-                          });
-                        }}
-                      >
-                        U
-                      </button>
-                      <button
-                        type="button"
-                        title={t("Rare")}
-                        className={
-                          this.state.rarity === "Rare"
-                            ? "btn btn-outline-info active"
-                            : "btn btn-outline-info"
-                        }
-                        onClick={() => {
-                          this.setState({
-                            rarity: "Rare",
-                            textColor: "text-info",
-                          });
-                        }}
-                      >
-                        R
-                      </button>
-                      <button
-                        type="button"
-                        title={t("Epic")}
-                        className={
-                          this.state.rarity === "Epic"
-                            ? "btn btn-outline-danger active"
-                            : "btn btn-outline-danger"
-                        }
-                        onClick={() => {
-                          this.setState({
-                            rarity: "Epic",
-                            textColor: "text-danger",
-                          });
-                        }}
-                      >
-                        E
-                      </button>
-                      <button
-                        type="button"
-                        title={t("Legendary")}
-                        className={
-                          this.state.rarity === "Legendary"
-                            ? "btn btn-outline-warning active"
-                            : "btn btn-outline-warning"
-                        }
-                        onClick={() => {
-                          this.setState({
-                            rarity: "Legendary",
-                            textColor: "text-warning",
-                          });
-                        }}
-                      >
-                        L
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {this.state.item.crafting ? (
-                <div className="col-12 col-xl-6">
-                  <div className="card border-secondary mb-3">
-                    <div className="card-header">
-                      {t("Recipe")}{" "}
-                      <a href={craftUrl} className="float-right">
-                        <i className="fas fa-tools"></i>
-                      </a>
-                    </div>
-                    <div className="card-body">
-                      <div className="row">
-                        {this.showIngredient(this.state.item)}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                ""
-              )}
-              <Suspense
-                fallback={
-                  <div className="col-12 col-xl-6">
-                    <div className="card border-secondary mb-3">
-                      <LoadingPart />
-                    </div>
-                  </div>
-                }
-              >
-                <SchematicItems key="schematicItems" item={this.state.item} />
-              </Suspense>
-              {this.showDescription(t)}
-              {this.state.item.structureInfo && (
-                <GenericInfo
-                  key="structureInfo"
-                  name="Structure Info"
-                  dataInfo={this.state.item.structureInfo}
-                  rarity={this.state.rarity}
-                  textColor={this.state.textColor}
-                  category={category}
-                />
-              )}
-              {this.state.item.projectileDamage && (
-                <GenericInfo
-                  key="proyectileInfo"
-                  name="Projectile Info"
-                  dataInfo={this.state.item.projectileDamage}
-                  rarity={this.state.rarity}
-                  textColor={this.state.textColor}
-                  category={category}
-                />
-              )}
-              {this.state.item.weaponInfo && (
-                <GenericInfo
-                  key="weaponinfo"
-                  name="Weapon Info"
-                  dataInfo={this.state.item.weaponInfo}
-                  rarity={this.state.rarity}
-                  textColor={this.state.textColor}
-                  category={category}
-                />
-              )}
-              {this.state.item.armorInfo && (
-                <GenericInfo
-                  key="armorinfo"
-                  name="Armor Info"
-                  dataInfo={this.state.item.armorInfo}
-                  rarity={this.state.rarity}
-                  textColor={this.state.textColor}
-                  category={category}
-                />
-              )}
-              {this.state.item.toolInfo && (
-                <ToolInfo key="toolinfo" toolInfo={this.state.item.toolInfo} />
-              )}
-              {this.state.item.moduleInfo && (
-                <ModuleInfo
-                  key="moduleinfo"
-                  moduleInfo={this.state.item.moduleInfo}
-                />
-              )}
-              <Suspense
-                fallback={
-                  <div className="col-12 col-md-6">
-                    <div className="card border-secondary mb-3">
-                      <LoadingPart />
-                    </div>
-                  </div>
-                }
-              >
-                <SchematicDropInfo
-                  key="schematicInfo"
-                  name={this.state.item.name}
-                  items={this.state.allItems}
-                />
-              </Suspense>
-              <Suspense
-                fallback={
-                  <div className="col-12">
-                    <div className="card border-secondary mb-3">
-                      <LoadingPart />
-                    </div>
-                  </div>
-                }
-              >
-                <WikiDescription
-                  key="wikidescription"
-                  name={this.state.item.name}
-                />
-              </Suspense>
-              <Suspense
-                fallback={
-                  <div className="col-12 col-md-6">
-                    <div className="card border-secondary mb-3">
-                      <LoadingPart />
-                    </div>
-                  </div>
-                }
-              >
-                <CanBeUsedInfo
-                  key="CanBeUsedInfo"
-                  name={this.state.item.name}
-                  items={this.state.allItems}
-                />
-              </Suspense>
-              <Suspense
-                fallback={
-                  <div className="col-12 col-md-6">
-                    <div className="card border-secondary mb-3">
-                      <LoadingPart />
-                    </div>
-                  </div>
-                }
-              >
-                <DropsInfo key="dropInfo" drops={this.state.item.drops} />
-              </Suspense>
-              <Comments key="comments" name={this.state.item.name} />
-            </div>
-          </div>
-        );
-      } else {
-        return (
-          <ModalMessage
-            message={{
-              isError: true,
-              text: "The page you are looking for does not exist",
-              redirectPage: "/",
-            }}
-          />
-        );
+  useEffect(() => {
+    const loadData = async () => {
+      let itemName = match?.params?.name;
+      if (itemName) {
+        itemName = decodeURI(itemName).replaceAll("_", " ").toLowerCase();
       }
-    } else {
-      return (
-        <Fragment>
-          {this.helmetInfo("Wiki")}
-          <LoadingScreen />
-        </Fragment>
-      );
-    }
-  }
 
-  helmetInfo(name) {
-    return (
-      <Helmet>
-        <title>{name + " - Stiletto for Last Oasis"}</title>
-        <meta
-          name="description"
-          content={"All information for " + name}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={name + " - Stiletto for Last Oasis"}
-        />
-        <meta
-          name="twitter:description"
-          content={"All information for " + name}
-        />
-        <link
-          rel="canonical"
-          href={
-            getDomain() +
-            "/item/" +
-            encodeURI(name.toLowerCase().replaceAll(" ", "_"))
-          }
-        />
-      </Helmet>
+      const items = await getItems();
+      if (items) {
+        const foundItem = items.find(
+          (it) => it.name.toLowerCase() === itemName
+        );
+        setItem(foundItem);
+        setAllItems(items);
+        setIsLoaded(true);
+      }
+    };
+
+    loadData();
+  }, [match]);
+
+  const showIngredient = (ingre) =>
+    ingre?.crafting?.map((ingredients, index) => (
+      <div
+        className={ingre.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}
+        key={`ingredients-${index}-${ingre.name}`}
+      >
+        <Ingredients crafting={ingredients} value={1} />
+        {ingredients.station && <Station name={ingredients.station} />}
+        {ingredients.time && <CraftingTime time={ingredients.time} />}
+      </div>
+    ));
+
+  const showDescription = () =>
+    item?.description && (
+      <div className="col-12 col-md-6">
+        <div className="card border-secondary mb-3">
+          <div className="card-header">{t("Description")}</div>
+          <div className="card-body">{item.description}</div>
+        </div>
+      </div>
     );
+
+  const updateRarity = (value) => {
+    setRarity(value);
+
+    switch (value) {
+      case "Common":
+        setTextColor("text-muted");
+        break;
+      case "Uncommon":
+        setTextColor("text-success");
+        break;
+      case "Rare":
+        setTextColor("text-info");
+        break;
+      case "Epic":
+        setTextColor("text-danger");
+        break;
+      default:
+        setTextColor("text-warning");
+    }
+  };
+
+  const getRarityClass = (value) => {
+    let outlineColor = "";
+
+    switch (value) {
+      case "Legendary":
+        outlineColor = "warning";
+        break;
+      case "Epic":
+        outlineColor = "danger";
+        break;
+      case "Rare":
+        outlineColor = "info";
+        break;
+      case "Uncommon":
+        outlineColor = "success";
+        break;
+      default:
+        outlineColor = "light";
+    }
+
+    return `btn btn-outline-${outlineColor} ${
+      rarity === value ? "active" : ""
+    }`;
+  };
+
+  const loadingItemPart = () => (
+    <div className="col-12 col-md-6">
+      <div className="card border-secondary mb-3">
+        <LoadingPart />
+      </div>
+    </div>
+  );
+
+  if (!isLoaded) {
+    return <LoadingScreen />;
   }
 
-  showDescription(t) {
-    if (this.state.item.description) {
-      return (
+  if (!item) {
+    return <Redirect to={"/not-found"} />;
+  }
+
+  const name = item.name;
+  const parentUrl = item.parent && getItemUrl(item.parent);
+  const craftUrl = getItemCraftUrl(name);
+
+  return (
+    <div className="container" data-cy="wiki-item" data-name={name}>
+      <HeaderMeta
+        title={`${name} - Stiletto for Last Oasis`}
+        description={`All information for ${name}`}
+        cannonical={getItemUrl(name)}
+      />
+      <div className="row">
         <div className="col-12 col-md-6">
           <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Description")}</div>
-            <div className="card-body">{this.state.item.description}</div>
+            <div className="card-header">
+              <Icon key={name} name={name} width={35} />
+              {t(name, { ns: "items" })}
+            </div>
+            <div className="card-body">
+              <ul className="list-group mb-3">
+                {item?.cost && (
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0">{t("Cost to learn")}</div>
+                    <div className="text-muted">
+                      {`${item?.cost?.count ? item.cost.count : ""} ${
+                        item?.cost?.name ? t(item?.cost?.name) : ""
+                      }`}
+                    </div>
+                  </li>
+                )}
+                {item?.category && (
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0">{t("Category")}</div>
+                    <div className="text-muted">
+                      {t(item.category, { ns: "items" })}
+                    </div>
+                  </li>
+                )}
+                {item?.parent && (
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0">{t("Parent")}</div>
+                    <div className="text-muted">
+                      <a href={parentUrl}>{t(item.parent, { ns: "items" })}</a>
+                    </div>
+                  </li>
+                )}
+                {item?.trade_price && (
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0">{t("Trade Price")}</div>
+                    <div className="text-muted">{item.trade_price} flots</div>
+                  </li>
+                )}
+                {item?.stackSize && (
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0">{t("Character Stack")}</div>
+                    <div className="text-muted">{item.stackSize}</div>
+                  </li>
+                )}
+                {item?.weight && (
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0">{t("Weight")}</div>
+                    <div className={textColor}>
+                      {calcRarityValue(
+                        rarity,
+                        "weight",
+                        item.category,
+                        item.weight
+                      )}
+                    </div>
+                  </li>
+                )}
+                {item?.experiencieReward && (
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0">{t("Experience by crafting")}</div>
+                    <div className="text-muted">{item.experiencieReward}</div>
+                  </li>
+                )}
+                {item?.durability && (
+                  <li className="list-group-item d-flex justify-content-between lh-condensed">
+                    <div className="my-0">{t("Durability")}</div>
+                    <div className={textColor}>
+                      {calcRarityValue(
+                        rarity,
+                        "durability",
+                        item.category,
+                        item.durability
+                      )}
+                    </div>
+                  </li>
+                )}
+              </ul>
+            </div>
+            <div className="card-footer text-center">
+              <fieldset className="btn-group" aria-label="Rarities">
+                {["Common", "Uncommon", "Rare", "Epic", "Legendary"].map(
+                  (rar) => (
+                    <button
+                      key={rar}
+                      type="button"
+                      title={t(rar)}
+                      className={getRarityClass(rar)}
+                      onClick={() => updateRarity(rar)}
+                    >
+                      {rar[0]}
+                    </button>
+                  )
+                )}
+              </fieldset>
+            </div>
           </div>
         </div>
-      );
-    }
-  }
+        {item.crafting && (
+          <div className="col-12 col-xl-6">
+            <div className="card border-secondary mb-3">
+              <div className="card-header">
+                {t("Recipe")}{" "}
+                <a href={craftUrl} className="float-right">
+                  <i className="fas fa-tools"></i>
+                </a>
+              </div>
+              <div className="card-body">
+                <div className="row">{showIngredient(item)}</div>
+              </div>
+            </div>
+          </div>
+        )}
+        <Suspense fallback={loadingItemPart()}>
+          <SchematicItems key="schematicItems" item={item} />
+        </Suspense>
+        {showDescription()}
+        {item?.structureInfo && (
+          <GenericInfo
+            key="structureInfo"
+            name="Structure Info"
+            dataInfo={item.structureInfo}
+            rarity={rarity}
+            textColor={textColor}
+            category={item.category}
+          />
+        )}
+        {item?.projectileDamage && (
+          <GenericInfo
+            key="proyectileInfo"
+            name="Projectile Info"
+            dataInfo={item.projectileDamage}
+            rarity={rarity}
+            textColor={textColor}
+            category={item.category}
+          />
+        )}
+        {item?.weaponInfo && (
+          <GenericInfo
+            key="weaponinfo"
+            name="Weapon Info"
+            dataInfo={item.weaponInfo}
+            rarity={rarity}
+            textColor={textColor}
+            category={item.category}
+          />
+        )}
+        {item?.armorInfo && (
+          <GenericInfo
+            key="armorinfo"
+            name="Armor Info"
+            dataInfo={item.armorInfo}
+            rarity={rarity}
+            textColor={textColor}
+            category={item.category}
+          />
+        )}
+        {item?.toolInfo && <ToolInfo key="toolinfo" toolInfo={item.toolInfo} />}
+        {item?.moduleInfo && (
+          <ModuleInfo key="moduleinfo" moduleInfo={item.moduleInfo} />
+        )}
+        <Suspense fallback={loadingItemPart()}>
+          <SchematicDropInfo
+            key="schematicInfo"
+            name={item.name}
+            items={allItems}
+          />
+        </Suspense>
+        <Suspense fallback={loadingItemPart()}>
+          <WikiDescription key="wikidescription" name={item.name} />
+        </Suspense>
+        <Suspense fallback={loadingItemPart()}>
+          <CanBeUsedInfo
+            key="CanBeUsedInfo"
+            name={item.name}
+            items={allItems}
+          />
+        </Suspense>
+        <Suspense fallback={loadingItemPart()}>
+          <DropsInfo key="dropInfo" drops={item.drops} />
+        </Suspense>
+        <Comments key="comments" name={item.name} />
+      </div>
+    </div>
+  );
+};
 
-  showIngredient(item) {
-    if (item?.crafting != null) {
-      return item.crafting.map((ingredients, index) => (
-        <div
-          className={item.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}
-          key={"ingredients-" + index + "-" + item.name}
-        >
-          <Ingredients crafting={ingredients} value={1} />
-          {ingredients.station && <Station name={ingredients.station} />}
-          {ingredients.time && <CraftingTime time={ingredients.time} />}
-        </div>
-      ));
-    }
-  }
-}
-
-export default withTranslation()(ItemWiki);
+export default ItemWiki;

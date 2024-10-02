@@ -1,143 +1,80 @@
-import React, { Component, Fragment, Suspense } from "react";
-import { withTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
-import { NavLink } from "react-router-dom";
-import Axios from "axios";
+import React, { useState, useEffect, Suspense, Fragment } from "react";
+import { useTranslation } from "react-i18next";
+import { NavLink, useParams } from "react-router-dom";
 import {
   getItems,
   getUserProfile,
-  closeSession,
   getStoredItem,
-  storeItem
+  storeItem,
 } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
 import DoubleScrollbar from "../components/TechTree/DoubleScrollbar";
 import { getDomain } from "../functions/utils";
+import { getLearned, addTech } from "../functions/requests/users";
+import HeaderMeta from "../components/HeaderMeta";
 
 const SkillTreeTab = React.lazy(() =>
   import("../components/TechTree/SkillTreeTab")
 );
 
-class TechTree extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: [],
-      isLoaded: false,
-      error: null,
-      tabSelect:
-        this.props?.match.params.tree != null
-          ? this.props?.match.params.tree
-          : "Vitamins",
-      clan: null,
-    };
-  }
+const TechTree = () => {
+  const { t } = useTranslation();
+  const { tree } = useParams();
+  const [items, setItems] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(null);
+  const [tabSelect, setTabSelect] = useState(tree || "Vitamins");
+  const [clan, setClan] = useState(null);
 
-  async componentDidMount() {
-    if (getStoredItem("token") != null) {
-      const data = await getUserProfile();
-      const clanid = data.message.clanid;
+  useEffect(() => {
+    const fetchData = async () => {
+      if (getStoredItem("token") != null) {
+        try {
+          const data = await getUserProfile();
+          setClan(data.message.clanid);
 
-      this.setState({ clan: clanid });
-
-      Axios.get(
-        process.env.REACT_APP_API_URL +
-          "/users/" +
-          getStoredItem("discordid") +
-          "/tech",
-        {
-          headers: {
-            Authorization: `Bearer ${getStoredItem("token")}`,
-          },
-        }
-      )
-        .then((response) => {
-          if (response.status === 200) {
-            if (response.data != null) {
-              this.updateLearnedTree("Vitamins", response.data.Vitamins);
-              this.updateLearnedTree("Equipment", response.data.Equipment);
-              this.updateLearnedTree("Crafting", response.data.Crafting);
-              this.updateLearnedTree(
-                "Construction",
-                response.data.Construction
-              );
-              this.updateLearnedTree("Walkers", response.data.Walkers);
-            }
-          } else if (response.status === 401) {
-            closeSession();
-            this.setState({
-              error: "You don't have access here, try to log in again",
-            });
-          } else if (response.status === 503) {
-            this.setState({ error: "Error connecting to database" });
+          const response = await getLearned();
+          if (response.data) {
+            updateLearnedTree("Vitamins", response.data.Vitamins);
+            updateLearnedTree("Equipment", response.data.Equipment);
+            updateLearnedTree("Crafting", response.data.Crafting);
+            updateLearnedTree("Construction", response.data.Construction);
+            updateLearnedTree("Walkers", response.data.Walkers);
           }
-        })
-        .catch(() => {
-          this.setState({ error: "Error when connecting to the API" });
-        });
-    }
-    if (this.props?.match.params.tree != null) {
-      this.setState({ tabSelect: this.props?.match.params.tree });
-    }
-    let items = await getItems();
-    if (items != null) {
-      items = items.filter((it) => it.parent != null);
-      this.setState({ items: items, isLoaded: true });
-    }
-  }
+        } catch (err) {
+          setError(err);
+        }
+      }
 
-  updateLearnedTree(tree, data) {
+      if (tree) {
+        setTabSelect(tree);
+      }
+
+      let fetchedItems = await getItems();
+      if (fetchedItems) {
+        fetchedItems = fetchedItems.filter((it) => it.parent != null);
+        setItems(fetchedItems);
+        setIsLoaded(true);
+      }
+    };
+
+    fetchData();
+  }, [tree]);
+
+  const updateLearnedTree = (treeName, data) => {
     const all = {};
-
-    if (data != null) {
+    if (data) {
       data.forEach((tech) => {
         all[tech] = { optional: false, nodeState: "selected" };
       });
-
-      storeItem(`skills-${tree}`, JSON.stringify(all));
+      storeItem(`skills-${treeName}`, JSON.stringify(all));
     }
-  }
+  };
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.tree !== this.props?.match.params.tree) {
-      window.location.reload();
-    }
-  }
-
-  deleteTree() {
-    const options = {
-      method: "put",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/users/" +
-        getStoredItem("discordid") +
-        "/tech",
-      params: {
-        tree: this.state.tabSelect,
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-      data: [],
-    };
-
-    Axios.request(options)
-      .then(() => {
-        localStorage.removeItem(`skills-${this.state.tabSelect}`);
-        sessionStorage.removeItem(`skills-${this.state.tabSelect}`);
-        window.location.reload();
-      })
-      .catch(() => {
-        localStorage.removeItem(`skills-${this.state.tabSelect}`);
-        sessionStorage.removeItem(`skills-${this.state.tabSelect}`);
-        window.location.reload();
-      });
-  }
-
-  saveTree() {
-    const data = JSON.parse(getStoredItem(`skills-${this.state.tabSelect}`));
+  const saveTree = async () => {
+    const data = JSON.parse(getStoredItem(`skills-${tabSelect}`));
     const learned = [];
 
     for (const item in data) {
@@ -145,215 +82,153 @@ class TechTree extends Component {
         learned.push(item);
       }
     }
-    const options = {
-      method: "put",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/users/" +
-        getStoredItem("discordid") +
-        "/tech",
-      params: {
-        tree: this.state.tabSelect,
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-      data: learned,
-    };
 
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 200) {
-          window.location.reload();
-        } else if (response.status === 401) {
-          closeSession();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
-  }
-
-  render() {
-    const { t } = this.props;
-
-    if (this.state.error) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: this.state.error,
-            redirectPage: "/profile",
-          }}
-        />
-      );
+    try {
+      await addTech(tabSelect, learned);
+    } catch (err) {
+      setError(err);
     }
+  };
 
-    if (!this.state.isLoaded) {
-      return (
-        <Fragment>
-          {this.helmetInfo()}
-          <LoadingScreen />
-        </Fragment>
-      );
+  const deleteTree = async () => {
+    try {
+      localStorage.removeItem(`skills-${tabSelect}`);
+      sessionStorage.removeItem(`skills-${tabSelect}`);
+      await addTech(tabSelect, []);
+    } catch (err) {
+      setError(err);
     }
+    window.location.reload();
+  };
 
-    const theme = {
-      h1FontSize: "50",
-      border: "1px solid rgb(127,127,127)",
-      treeBackgroundColor: "rgba(60, 60, 60, 0.9)",
-      nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
-      nodeAlternativeActiveBackgroundColor: "#834AC4",
-      nodeActiveBackgroundColor: "#834AC4",
-      nodeBorderColor: "#834AC4",
-      nodeHoverBorderColor: "#834AC4",
-    };
-
-    return (
-      <div className="container-fluid">
-        {this.helmetInfo()}
-        <nav className="nav-fill">
-          <div className="nav nav-tabs" id="nav-tab" role="tablist">
-            <div className="nav-item">
-              <NavLink
-                className="nav-link"
-                role="button"
-                to={{
-                  pathname: "/tech/Vitamins",
-                }}
-                activeClassName="active"
-              >
-                <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
-                {t("Vitamins")}
-              </NavLink>
-            </div>
-            <div className="nav-item">
-              <NavLink
-                className="nav-link"
-                role="button"
-                to={{
-                  pathname: "/tech/Equipment",
-                }}
-                activeClassName="active"
-              >
-                <Icon key="Equipment" name="Equipment" width={30} />
-                {t("Equipment")}
-              </NavLink>
-            </div>
-            <div className="nav-item">
-              <NavLink
-                className="nav-link"
-                role="button"
-                to={{
-                  pathname: "/tech/Crafting",
-                }}
-                activeClassName="active"
-              >
-                <Icon key="Crafting" name="Crafting" width={30} />
-                {t("Crafting")}
-              </NavLink>
-            </div>
-            <div className="nav-item">
-              <NavLink
-                className="nav-link"
-                role="button"
-                to={{
-                  pathname: "/tech/Construction",
-                }}
-                activeClassName="active"
-              >
-                <Icon key="Construction" name="Construction" width={30} />
-                {t("Construction")}
-              </NavLink>
-            </div>
-            <div className="nav-item">
-              <NavLink
-                className="nav-link"
-                role="button"
-                to={{ pathname: "/tech/Walkers" }}
-                activeClassName="active"
-              >
-                <Icon key="Walkers" name="Walkers" width={30} />
-                {t("Walkers")}
-              </NavLink>
-            </div>
-          </div>
-        </nav>
-        {this.saveDeleteButtons(t)}
-        <DoubleScrollbar className="w-100">
-          <div className="tab-content-tree">
-            <Suspense fallback={<LoadingScreen />}>
-              <SkillTreeTab
-                treeId={this.state.tabSelect}
-                title={t(this.state.tabSelect)}
-                theme={theme}
-                items={this.state.items}
-                clan={this.state.clan}
-              />
-            </Suspense>
-          </div>
-        </DoubleScrollbar>
-      </div>
-    );
-  }
-
-  helmetInfo() {
-    return (
-      <Helmet>
-        <title>Tech Tree - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="View and control your clan's technology tree."
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Tech Tree - Stiletto for Last Oasis"
-        />
-        <meta
-          name="twitter:description"
-          content="View and control your clan's technology tree."
-        />
-        <link
-          rel="canonical"
-          href={
-            getDomain() +
-            "/tech"
-          }
-        />
-      </Helmet>
-    );
-  }
-
-  saveDeleteButtons(t) {
+  const saveDeleteButtons = () => {
     if (getStoredItem("token") != null) {
       return (
         <div className="row">
-          <div className="btn-group mx-auto" role="group">
-            <button
-              className="btn btn-success mr-auto m-2"
-              onClick={() => this.saveTree()}
-            >
+          <fieldset className="btn-group mx-auto" role="group">
+            <button className="btn btn-success mr-auto m-2" onClick={saveTree}>
               {t("Save Tree Data")}
             </button>
-            <button
-              className="btn btn-danger ml-auto m-2"
-              onClick={() => this.deleteTree()}
-            >
+            <button className="btn btn-danger ml-auto m-2" onClick={deleteTree}>
               {t("Delete Tree Data")}
             </button>
-          </div>
+          </fieldset>
         </div>
       );
     }
-
     return "";
-  }
-}
+  };
 
-export default withTranslation()(TechTree);
+  const theme = {
+    h1FontSize: "50",
+    border: "1px solid rgb(127,127,127)",
+    treeBackgroundColor: "rgba(60, 60, 60, 0.9)",
+    nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
+    nodeAlternativeActiveBackgroundColor: "#834AC4",
+    nodeActiveBackgroundColor: "#834AC4",
+    nodeBorderColor: "#834AC4",
+    nodeHoverBorderColor: "#834AC4",
+  };
+
+  if (error) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: error,
+          redirectPage: "/profile",
+        }}
+      />
+    );
+  }
+
+  if (!isLoaded) {
+    return (
+      <Fragment>
+        <HeaderMeta
+          title="Tech Tree - Stiletto for Last Oasis"
+          description="View and control your clan's technology tree"
+          cannonical={`${getDomain()}/tech`}
+        />
+        <LoadingScreen />
+      </Fragment>
+    );
+  }
+
+  return (
+    <div className="container-fluid">
+      <HeaderMeta
+        title="Tech Tree - Stiletto for Last Oasis"
+        description="View and control your clan's technology tree"
+        cannonical={`${getDomain()}/tech`}
+      />
+      <nav className="nav-fill">
+        <div className="nav nav-tabs" id="nav-tab" role="tablist">
+          <div className="nav-item">
+            <NavLink
+              className="nav-link"
+              to="/tech/Vitamins"
+              activeClassName="active"
+            >
+              <Icon key="Vitamins" name="Vitamins" width={30} /> {t("Vitamins")}
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              className="nav-link"
+              to="/tech/Equipment"
+              activeClassName="active"
+            >
+              <Icon key="Equipment" name="Equipment" width={30} />{" "}
+              {t("Equipment")}
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              className="nav-link"
+              to="/tech/Crafting"
+              activeClassName="active"
+            >
+              <Icon key="Crafting" name="Crafting" width={30} /> {t("Crafting")}
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              className="nav-link"
+              to="/tech/Construction"
+              activeClassName="active"
+            >
+              <Icon key="Construction" name="Construction" width={30} />{" "}
+              {t("Construction")}
+            </NavLink>
+          </div>
+          <div className="nav-item">
+            <NavLink
+              className="nav-link"
+              to="/tech/Walkers"
+              activeClassName="active"
+            >
+              <Icon key="Walkers" name="Walkers" width={30} /> {t("Walkers")}
+            </NavLink>
+          </div>
+        </div>
+      </nav>
+      {saveDeleteButtons()}
+      <DoubleScrollbar className="w-100">
+        <div className="tab-content-tree">
+          <Suspense fallback={<LoadingScreen />}>
+            <SkillTreeTab
+              treeId={tabSelect}
+              title={t(tabSelect)}
+              theme={theme}
+              items={items}
+              clan={clan}
+            />
+          </Suspense>
+        </div>
+      </DoubleScrollbar>
+    </div>
+  );
+};
+
+export default TechTree;

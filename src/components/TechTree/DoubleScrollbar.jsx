@@ -1,87 +1,59 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 /* Modification of this library https://github.com/umchee/react-double-scrollbar */
 
-class DoubleScrollbar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      width: "auto",
-    };
+const DoubleScrollbar = ({ children }) => {
+  const [width, setWidth] = useState("auto");
+  const outerDivRef = useRef(null);
+  const childrenWrapperRef = useRef(null);
 
-    this.boundCalculateWidth = this.calculateWidth.bind(this);
-    this.refs = React.createRef();
-  }
+  const calculateWidth = () => {
+    const childWrapperWidth = childrenWrapperRef.current?.scrollWidth;
+    const newWidth = childWrapperWidth ? `${childWrapperWidth}px` : "auto";
+    setWidth(newWidth);
+  };
 
-  componentDidMount() {
-    const outerDiv = this.refs.outerDiv;
-    const childWrapper = this.refs.childrenWrapper;
+  useEffect(() => {
+    const outerDiv = outerDivRef.current;
+    const childWrapper = childrenWrapperRef.current;
 
-    // Set initial width
-    this.calculateWidth();
+    if (!outerDiv || !childWrapper) return;
 
-    // Update width when window size changes
-    window.addEventListener("resize", this.boundCalculateWidth);
-
-    // assoc the scrolls
-    outerDiv.onscroll = () => {
+    const syncScroll = () => {
       childWrapper.scrollLeft = outerDiv.scrollLeft;
     };
 
-    childWrapper.onscroll = () => {
+    const syncReverseScroll = () => {
       outerDiv.scrollLeft = childWrapper.scrollLeft;
     };
-  }
 
-  componentWillUnmount() {
-    window.removeEventListener("resize", this.boundCalculateWidth);
-  }
+    calculateWidth();
 
-  componentDidUpdate() {
-    this.calculateWidth();
-  }
+    window.addEventListener("resize", calculateWidth);
+    outerDiv.addEventListener("scroll", syncScroll);
+    childWrapper.addEventListener("scroll", syncReverseScroll);
 
-  calculateWidth() {
-    let width = this.getChildWrapperWidth();
+    return () => {
+      window.removeEventListener("resize", calculateWidth);
+      outerDiv.removeEventListener("scroll", syncScroll);
+      childWrapper.removeEventListener("scroll", syncReverseScroll);
+    };
+  }, []);
 
-    if (width == null) {
-      width = "auto";
-    }
+  const outerDivStyle = { overflowX: "auto", overflowY: "hidden" };
+  const innerDivStyle = { paddingTop: "1px", width };
+  const childDivStyle = { overflow: "auto", overflowY: "hidden" };
 
-    // Set the width of the inner div to the first child's
-    if (width !== this.state.width) {
-      this.setState({
-        width: width,
-      });
-    }
-  }
-
-  getChildWrapperWidth() {
-    let width = null;
-    if (this.refs.childrenWrapper && this.refs.childrenWrapper.scrollWidth) {
-      width = this.refs.childrenWrapper.scrollWidth + "px";
-    }
-    return width;
-  }
-
-  render() {
-    const outerDivStyle = { overflowX: "auto", overflowY: "hidden" };
-    const innerDivStyle = { paddingTop: "1px", width: this.state.width };
-    const childDivStyle = { overflow: "auto", overflowY: "hidden" };
-
-    return (
-      <div>
-        <div ref="outerDiv" style={outerDivStyle}>
-          <div ref="innerDiv" style={innerDivStyle}>
-            &nbsp;
-          </div>
-        </div>
-        <div ref="childrenWrapper" style={childDivStyle}>
-          {this.props?.children}
-        </div>
+  return (
+    <div>
+      <div ref={outerDivRef} style={outerDivStyle}>
+        <div style={innerDivStyle}>&nbsp;</div>
       </div>
-    );
-  }
-}
+      <div ref={childrenWrapperRef} style={childDivStyle}>
+        {children}
+      </div>
+    </div>
+  );
+};
 
 export default DoubleScrollbar;

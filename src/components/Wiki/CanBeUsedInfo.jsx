@@ -1,71 +1,53 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Ingredient from "../Ingredient";
 
-class CanBeUsedInfo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      canBeUsed: [],
-    };
-  }
+const CanBeUsedInfo = ({ name, items = [] }) => {
+  const { t } = useTranslation();
+  const [canBeUsed, setCanBeUsed] = useState([]);
 
-  componentDidMount() {
-    if (this.props?.items && this.props?.name) {
-      const name = this.props?.name.toLowerCase();
-      const canBeUsed = this.props?.items.filter((item) => {
-        if (
-          item?.crafting?.[0]?.ingredients != null
-        ) {
+  useEffect(() => {
+    if (items && name) {
+      const lowerCaseName = name.toLowerCase();
+      const filteredItems = items.filter((item) => {
+        if (item?.crafting?.[0]?.ingredients) {
           const allIngredients = item.crafting[0].ingredients;
-
-          return (
-            allIngredients.filter(
-              (ingredient) => ingredient.name.toLowerCase() === name
-            ).length > 0
+          return allIngredients.some(
+            (ingredient) => ingredient.name.toLowerCase() === lowerCaseName
           );
-        } else {
-          return false;
         }
+        return false;
       });
-      this.setState({
-        canBeUsed: canBeUsed,
-      });
+      setCanBeUsed(filteredItems);
     }
-  }
+  }, [name, items]);
 
-  render() {
-    if (this.props?.name && this.props?.items) {
-      if (this.state.canBeUsed.length > 0) {
-        const { t } = this.props;
-        return (
-          <div className="col-12 col-md-6">
-            <div className="card border-secondary mb-3">
-              <div className="card-header">{t("It can be used in")}</div>
-              <div className="card-body">
-                <ul className="list-inline">{this.showCanBeUsed()}</ul>
-              </div>
-            </div>
+  const showCanBeUsed = () => {
+    return canBeUsed.map((item) => (
+      <li className="list-inline-item" key={item.name}>
+        <Ingredient
+          key={`${item.name}-ingredient`}
+          ingredient={item}
+          value={1}
+        />
+      </li>
+    ));
+  };
+
+  if (name && items && canBeUsed.length > 0) {
+    return (
+      <div className="col-12 col-md-6">
+        <div className="card border-secondary mb-3">
+          <div className="card-header">{t("It can be used in")}</div>
+          <div className="card-body">
+            <ul className="list-inline">{showCanBeUsed()}</ul>
           </div>
-        );
-      }
-    }
-    return "";
+        </div>
+      </div>
+    );
   }
 
-  showCanBeUsed() {
-    return this.state.canBeUsed.map((item) => {
-      return (
-        <li className="list-inline-item" key={item.name}>
-          <Ingredient
-            key={item.name + "-ingredient"}
-            ingredient={item}
-            value={1}
-          />
-        </li>
-      );
-    });
-  }
-}
+  return false;
+};
 
-export default withTranslation()(CanBeUsedInfo);
+export default CanBeUsedInfo;
