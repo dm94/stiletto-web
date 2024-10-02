@@ -39,6 +39,7 @@ export default (
     <Route path="/privacy" component={Privacy} />
     <Route path="/item/:name" component={ItemWiki} />
     <Route path="/wiki/" component={Wiki} />
+    <Route path="/not-found" component={NotFoundPage} />
     <Route path="*" component={NotFoundPage} />
   </Switch>
 );

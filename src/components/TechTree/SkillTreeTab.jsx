@@ -1,52 +1,35 @@
-import React, { Component } from "react";
+import React, { useCallback } from "react";
 import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import Ingredients from "../Ingredients";
 import Ingredient from "../Ingredient";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
 
-class SkillTreeTab extends Component {
-  state = {};
-  render() {
-    return (
-      <SkillProvider>
-        <SkillTreeGroup theme={this.props?.theme}>
-          {() => (
-            <SkillTree
-              treeId={this.props?.treeId}
-              title={this.props?.title}
-              data={this.getChildrens(this.props?.treeId)}
-              handleSave={this.handleSave}
-            />
-          )}
-        </SkillTreeGroup>
-      </SkillProvider>
-    );
-  }
+const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
+  const { t } = useTranslation();
 
-  getChildrens(parent) {
-    const { t } = this.props;
-    const childrens = [];
+  const getChildrens = useCallback(
+    (parent) => {
+      const childrens = [];
+      const filteredItems = items.filter((it) => it.parent === parent);
 
-    const items = this.props?.items.filter((it) => it.parent === parent);
+      filteredItems.forEach((i) => {
+        const item = {
+          id: i.name,
+          title: t(i.name),
+          tooltip: { content: getContentItem(i) },
+          children: getChildrens(i.name),
+        };
+        childrens.push(item);
+      });
 
-    items.forEach((i) => {
-      const item = {
-        id: i.name,
-        title: t(i.name),
-        tooltip: { content: this.getContentItem(i) },
-        children: this.getChildrens(i.name),
-      };
+      return childrens;
+    },
+    [items, t]
+  );
 
-      childrens.push(item);
-    });
-
-    return childrens;
-  }
-
-  getContentItem(item) {
-    const { t } = this.props;
+  const getContentItem = (item) => {
     return (
       <div className="mx-auto">
         <div className="text-center mb-1">
@@ -55,20 +38,20 @@ class SkillTreeTab extends Component {
         <p className="text-center border-bottom border-warning">
           {t("Who has learned it?")}
         </p>
-        {this.props?.clan != null ? (
+        {clan ? (
           <SkillNodeBtn
             key={"btn-" + item.name}
             item={item}
-            clan={this.props?.clan}
-            tree={this.props?.treeId}
-          ></SkillNodeBtn>
+            clan={clan}
+            tree={treeId}
+          />
         ) : (
           t("You need a clan for this function")
         )}
         <p className="text-center border-bottom border-warning mt-1">
           {t("Cost to learn")}
         </p>
-        {item.cost != null ? (
+        {item.cost ? (
           <Ingredient
             key={"cost-" + item.cost.name}
             ingredient={item.cost}
@@ -80,17 +63,17 @@ class SkillTreeTab extends Component {
         <p className="text-center border-bottom border-warning mt-2">
           {t("Recipe")}
         </p>
-        <div className="row">{this.showIngredient(item)}</div>
+        <div className="row">{showIngredient(item)}</div>
       </div>
     );
-  }
-
-  handleSave = (storage, treeId, skills) => {
-    return storage.setItem(`skills-${treeId}`, JSON.stringify(skills));
   };
 
-  showIngredient(item) {
-    if (item != null && item.crafting != null) {
+  const handleSave = (storage, id, skills) => {
+    return storage.setItem(`skills-${id}`, JSON.stringify(skills));
+  };
+
+  const showIngredient = (item) => {
+    if (item?.crafting) {
       return item.crafting.map((ingredients) => (
         <div
           className={item.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}
@@ -100,7 +83,22 @@ class SkillTreeTab extends Component {
         </div>
       ));
     }
-  }
-}
+  };
 
-export default withTranslation()(SkillTreeTab);
+  return (
+    <SkillProvider>
+      <SkillTreeGroup theme={theme}>
+        {() => (
+          <SkillTree
+            treeId={treeId}
+            title={title}
+            data={getChildrens(treeId)}
+            handleSave={handleSave}
+          />
+        )}
+      </SkillTreeGroup>
+    </SkillProvider>
+  );
+};
+
+export default SkillTreeTab;
