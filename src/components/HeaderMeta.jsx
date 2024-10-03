@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-const HeaderMeta = ({ title, description, cannonical }) => {
+const HeaderMeta = ({ title, description, cannonical, children }) => {
   return (
     <Helmet>
       <title>{title}</title>
@@ -10,6 +10,7 @@ const HeaderMeta = ({ title, description, cannonical }) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <link rel="canonical" href={cannonical} />
+      {children}
     </Helmet>
   );
 };
