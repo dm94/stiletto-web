@@ -18,7 +18,7 @@ class ClanConfig extends Component {
     if (this.props?.clanid) {
       const options = {
         method: "get",
-        url: process.env.REACT_APP_API_URL + "/clans/" + this.props?.clanid,
+        url: `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}`,
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
         },
@@ -55,7 +55,7 @@ class ClanConfig extends Component {
     e.preventDefault();
     const options = {
       method: "post",
-      url: process.env.REACT_APP_API_URL + "/clans",
+      url: `${process.env.REACT_APP_API_URL}/clans`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -70,8 +70,7 @@ class ClanConfig extends Component {
     };
     if (this.props?.clanid) {
       options.method = "put";
-      options.url =
-        process.env.REACT_APP_API_URL + "/clans/" + this.props?.clanid;
+      options.url = `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}`;
     }
 
     Axios.request(options)
@@ -81,7 +80,9 @@ class ClanConfig extends Component {
         } else if (response.status === 401) {
           this.props?.onClose();
           closeSession();
-          this.props?.onError("You don't have access here, try to log in again");
+          this.props?.onError(
+            "You don't have access here, try to log in again"
+          );
         } else if (response.status === 503 || response.status === 205) {
           this.props?.onError("Error connecting to database");
         }
@@ -95,21 +96,24 @@ class ClanConfig extends Component {
   symbolsList() {
     const symbols = [];
     for (let i = 1; i < 31; i++) {
-      symbols.push("C" + i);
+      symbols.push(`C${i}`);
     }
     return symbols.map((symbol) => (
-      <div role="button" className="col-3" key={"symbol-" + symbol} onClick={() => this.setState({ clanFlagSymbolInput: symbol })}>
+      <div
+        role="button"
+        className="col-3"
+        key={`symbol-${symbol}`}
+        onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
+      >
         <img
-          src={
-            process.env.REACT_APP_RESOURCES_URL + "/symbols/" + symbol + ".png"
-          }
+          src={`${process.env.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
           className={
             symbol === this.state.clanFlagSymbolInput
               ? "img-fluid img-thumbnail"
               : "img-fluid"
           }
           alt={symbol}
-          id={"symbol-img-" + symbol}
+          id={`symbol-img-${symbol}`}
         />
       </div>
     ));
@@ -183,7 +187,6 @@ class ClanConfig extends Component {
                     />
                     <label
                       className="custom-control-label"
-                      role="button"
                       htmlFor="recruitmentInput"
                     >
                       {t("Looking for new members?")}{" "}

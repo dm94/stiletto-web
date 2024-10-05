@@ -55,12 +55,10 @@ class WalkerList extends Component {
     if (parsed.code != null) {
       const options = {
         method: "get",
-        url: process.env.REACT_APP_API_URL + "/walkers/auth",
+        url: `${process.env.REACT_APP_API_URL}/walkers/auth`,
         params: {
           code: parsed.code,
-          redirect:
-          getDomain() +
-            "/walkerlist",
+          redirect: `${getDomain()}/walkerlist`,
         },
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
@@ -119,7 +117,7 @@ class WalkerList extends Component {
 
   updateWalkers(page = this.state.page) {
     this.setState({ isLoaded: false, page: page });
-    Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
+    Axios.get(`${process.env.REACT_APP_API_URL}/walkers`, {
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -187,7 +185,7 @@ class WalkerList extends Component {
   updateWalker = (walker) => {
     const options = {
       method: "put",
-      url: process.env.REACT_APP_API_URL + "/walkers/" + walker.walkerID,
+      url: `${process.env.REACT_APP_API_URL}/walkers/${walker.walkerID}`,
       params: {
         owner: walker.ownerUser,
         use: walker.walker_use,
@@ -218,7 +216,7 @@ class WalkerList extends Component {
   deleteWalker = (walkerid) => {
     const options = {
       method: "delete",
-      url: process.env.REACT_APP_API_URL + "/walkers/" + walkerid,
+      url: `${process.env.REACT_APP_API_URL}/walkers/${walkerid}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -243,7 +241,7 @@ class WalkerList extends Component {
     if (this.state.walkers != null) {
       return this.state.walkers.map((walker) => (
         <WalkerListItem
-          key={"witem" + walker.walkerID}
+          key={`witem${walker.walkerID}`}
           walker={walker}
           walkerListTypes={this.state.walkerTypes}
           memberList={this.state.members}
@@ -274,12 +272,12 @@ class WalkerList extends Component {
             <div className="card-body">
               <div className="text-info">
                 {t(
-                  "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+                  "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.",
                 )}
               </div>
               <div className="text-warning mb-3">
                 {t(
-                  "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot."
+                  "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot.",
                 )}
               </div>
             </div>
@@ -298,7 +296,7 @@ class WalkerList extends Component {
           <div className="card-body">
             <div className="mb-3">
               {t(
-                "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items"
+                "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items",
               )}
             </div>
 
@@ -337,13 +335,7 @@ class WalkerList extends Component {
           name="twitter:image"
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
         />
-        <link
-          rel="canonical"
-          href={
-            getDomain() +
-            "/walkerlist"
-          }
-        />
+        <link rel="canonical" href={`${getDomain()}/walkerlist`} />
       </Helmet>
     );
   }
@@ -494,7 +486,7 @@ class WalkerList extends Component {
                               searchDescription: "",
                               useWalkerSearch: "All",
                             },
-                            () => this.updateWalkers()
+                            () => this.updateWalkers(),
                           );
                         }}
                       >
@@ -536,7 +528,7 @@ class WalkerList extends Component {
             hasMore={this.state.hasMoreWalkers}
             onPrev={() => this.updateWalkers(this.state.page - 1)}
             onNext={() => this.updateWalkers(this.state.page + 1)}
-          ></Pagination>
+          />
         </Fragment>
       );
     }

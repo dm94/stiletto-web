@@ -41,12 +41,9 @@ class Icon extends Component {
     if (this.state.loaded) {
       return (
         <img
-          src={
-            process.env.REACT_APP_RESOURCES_URL +
-            "/items/" +
-            name.trim() +
-            " icon.png"
-          }
+          src={`${
+            process.env.REACT_APP_RESOURCES_URL
+          }/items/${name.trim()} icon.png`}
           loading="lazy"
           onError={() => this.setState({ loaded: false })}
           className="mr-2"
@@ -54,9 +51,8 @@ class Icon extends Component {
           alt=""
         />
       );
-    } else {
-      return "";
     }
+    return false;
   }
 }
 

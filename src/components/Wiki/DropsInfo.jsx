@@ -12,7 +12,7 @@ const DropsInfo = ({ drops = [] }) => {
       return (
         <li
           className="list-inline-item"
-          key={drop.location + "-" + index}
+          key={`${drop.location}-${index}`}
           title={titleInfo}
         >
           <p className="list-group-item">{t(drop.location)}</p>

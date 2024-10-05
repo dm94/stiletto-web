@@ -15,9 +15,7 @@ class Ingredient extends Component {
     const { t } = this.props;
 
     const url =
-      getDomain() +
-      "/item/" +
-      encodeURI(this.props?.ingredient.name.toLowerCase().replaceAll(" ", "_"));
+      `${getDomain()}/item/${encodeURI(this.props?.ingredient.name.toLowerCase().replaceAll(" ", "_"))}`;
     return (
       <div className="list-group-item">
         <div
@@ -34,7 +32,7 @@ class Ingredient extends Component {
             name={this.props?.ingredient.name}
           />
           {this.props?.ingredient.count != null && this.props?.value != null
-            ? Math.ceil(this.props?.ingredient.count * this.props?.value) + "x "
+            ? `${Math.ceil(this.props?.ingredient.count * this.props?.value)}x `
             : ""}
           {this.props?.ingredient.ingredients != null ? (
             t(this.props?.ingredient.name, { ns: "items" })

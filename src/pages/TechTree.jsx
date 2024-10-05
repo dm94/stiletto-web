@@ -15,8 +15,8 @@ import { getDomain } from "../functions/utils";
 import { getLearned, addTech } from "../functions/requests/users";
 import HeaderMeta from "../components/HeaderMeta";
 
-const SkillTreeTab = React.lazy(() =>
-  import("../components/TechTree/SkillTreeTab")
+const SkillTreeTab = React.lazy(
+  () => import("../components/TechTree/SkillTreeTab"),
 );
 
 const TechTree = () => {
@@ -109,7 +109,7 @@ const TechTree = () => {
     if (getStoredItem("token") != null) {
       return (
         <div className="row">
-          <fieldset className="btn-group mx-auto" role="group">
+          <fieldset className="btn-group mx-auto" >
             <button className="btn btn-success mr-auto m-2" onClick={saveTree}>
               {t("Save Tree Data")}
             </button>

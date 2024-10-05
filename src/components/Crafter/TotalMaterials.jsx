@@ -27,7 +27,7 @@ class TotalMaterials extends Component {
     });
     const options = {
       method: "post",
-      url: process.env.REACT_APP_API_URL + "/recipes",
+      url: `${process.env.REACT_APP_API_URL}/recipes`,
       params: {
         items: JSON.stringify(items),
       },
@@ -49,10 +49,7 @@ class TotalMaterials extends Component {
 
   footerPart(t) {
     if (this.state.recipeToken.length > 0) {
-      const url =
-        getDomain() +
-        "/crafter?recipe=" +
-        this.state.recipeToken;
+      const url = `${getDomain()}/crafter?recipe=${this.state.recipeToken}`;
       return (
         <div className="input-group mb-3 float-left">
           <input
@@ -76,9 +73,8 @@ class TotalMaterials extends Component {
           </div>
         </div>
       );
-    } else {
-      return this.shareButton(t);
     }
+    return this.shareButton(t);
   }
 
   shareButton(t) {
@@ -90,15 +86,13 @@ class TotalMaterials extends Component {
         data-cy="share-crafter-btn"
         disabled={this.props?.selectedItems.length <= 0}
       >
-        <i className="fas fa-share-alt"></i> {t("Share")}
+        <i className="fas fa-share-alt" /> {t("Share")}
       </button>
     );
   }
 
   itemsList(t) {
-    const url =
-    getDomain() +
-      "/item/";
+    const url = `${getDomain()}/item/`;
 
     return this.props?.selectedItems.map((item) => (
       <li className="list-inline-item" key={item.name}>
@@ -118,14 +112,13 @@ class TotalMaterials extends Component {
       },
     });
 
-    let text = t("To make") + ":\n\n";
+    let text = `${t("To make")}:\n\n`;
 
     this.props?.selectedItems.forEach(
-      (item) =>
-        (text += item.count + "x " + t(item.name, { ns: "items" }) + " - ")
+      (item) => (text += `${item.count}x ${t(item.name, { ns: "items" })} - `)
     );
 
-    text += "\n\n" + t("You need the following materials") + ":\n\n";
+    text += `\n\n${t("You need the following materials")}:\n\n`;
 
     const totalIngredients = [];
     this.props?.selectedItems.forEach((item) => {
@@ -152,15 +145,12 @@ class TotalMaterials extends Component {
       }
     });
     totalIngredients.forEach(
-      (ingredient) =>
-        (text += "\t" + ingredient.count + "x " + t(ingredient.name) + "\n")
+      (ingredient) => (text += `\t${ingredient.count}x ${t(ingredient.name)}\n`)
     );
 
-    text +=
-      "\n" +
-      t("List of all necessary materials by") +
-      " " +
-      window.location.origin;
+    text += `\n${t("List of all necessary materials by")} ${
+      window.location.origin
+    }`;
 
     navigator.clipboard.writeText(text);
     sendNotification("Items copied to the clipboard", "Information");
@@ -178,7 +168,7 @@ class TotalMaterials extends Component {
             onClick={() => this.copyMaterials(t)}
             disabled={this.props?.selectedItems.length <= 0}
           >
-            <i className="fas fa-copy"></i>
+            <i className="fas fa-copy" />
           </button>
           <div className="font-weight-normal">{t("Total materials")}</div>
         </div>
@@ -192,7 +182,7 @@ class TotalMaterials extends Component {
             <div className="text-right text-muted">
               {t("List of all necessary materials by")}{" "}
               {window.location.hostname +
-                (window.location.port ? ":" + window.location.port : "")}
+                (window.location.port ? `:${window.location.port}` : "")}
             </div>
           </div>
         </div>

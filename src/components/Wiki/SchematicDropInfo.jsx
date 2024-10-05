@@ -23,7 +23,7 @@ const SchematicDropInfo = ({ name, items }) => {
 
   if (name && items) {
     const schematics = items.filter(
-      (it) => it?.category === "Schematics" && it?.learn?.includes(name)
+      (it) => it?.category === "Schematics" && it?.learn?.includes(name),
     );
 
     if (schematics.length > 0) {

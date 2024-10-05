@@ -60,10 +60,7 @@ class MemberList extends Component {
     this.updateMembers();
 
     Axios.get(
-      process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/requests",
+      `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/requests`,
       {
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
@@ -111,12 +108,7 @@ class MemberList extends Component {
   kickMember = (memberdiscordid) => {
     const options = {
       method: "put",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/members/" +
-        memberdiscordid,
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${memberdiscordid}`,
       params: {
         accion: "kick",
       },
@@ -158,12 +150,7 @@ class MemberList extends Component {
 
     const options = {
       method: "put",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/requests/" +
-        this.state.requestData.discordid,
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
       params: {
         accion: "accept",
       },
@@ -206,12 +193,7 @@ class MemberList extends Component {
     }
     const options = {
       method: "put",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/requests/" +
-        this.state.requestData.discordid,
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
       params: {
         accion: "reject",
       },
@@ -250,7 +232,7 @@ class MemberList extends Component {
   deleteClan = () => {
     const options = {
       method: "delete",
-      url: process.env.REACT_APP_API_URL + "/clans/" + this.state.clanid,
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -283,12 +265,7 @@ class MemberList extends Component {
   changeOwner = () => {
     const options = {
       method: "put",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/members/" +
-        this.state.selectNewOwner,
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${this.state.selectNewOwner}`,
       params: {
         accion: "owner",
       },
@@ -513,13 +490,7 @@ class MemberList extends Component {
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
           />
-          <link
-            rel="canonical"
-            href={
-              getDomain() +
-              "/members"
-            }
-          />
+          <link rel="canonical" href={`${getDomain()}/members`} />
         </Helmet>
         <div
           className={
@@ -536,7 +507,7 @@ class MemberList extends Component {
             >
               <div className="btn-group" role="group">
                 <button type="button" className="btn btn-primary" disabled>
-                  <i className="fas fa-users-cog"></i>
+                  <i className="fas fa-users-cog" />
                 </button>
                 <button
                   className="btn btn-info"
@@ -551,7 +522,7 @@ class MemberList extends Component {
             <div className="col-12 col-lg-2 ml-auto mb-2">
               <div className="btn-group" role="group">
                 <button type="button" className="btn btn-primary" disabled>
-                  <i className="fab fa-discord"></i>
+                  <i className="fab fa-discord" />
                 </button>
                 <button
                   className={

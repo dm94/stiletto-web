@@ -52,7 +52,7 @@ class PrivateProfile extends Component {
     event.preventDefault();
     const options = {
       method: "delete",
-      url: process.env.REACT_APP_API_URL + "/users/",
+      url: `${process.env.REACT_APP_API_URL}/users/`,
       headers: {
         Authorization: `Bearer ${this.state.token}`,
       },
@@ -84,7 +84,7 @@ class PrivateProfile extends Component {
 
     const options = {
       method: "put",
-      url: process.env.REACT_APP_API_URL + "/users/",
+      url: `${process.env.REACT_APP_API_URL}/users/`,
       params: {
         dataupdate: this.state.nameInGameInput,
       },
@@ -118,7 +118,7 @@ class PrivateProfile extends Component {
 
     const options = {
       method: "delete",
-      url: process.env.REACT_APP_API_URL + "/clans",
+      url: `${process.env.REACT_APP_API_URL}/clans`,
       headers: {
         Authorization: `Bearer ${this.state.token}`,
       },
@@ -185,13 +185,7 @@ class PrivateProfile extends Component {
               name="twitter:image"
               content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
             />
-            <link
-              rel="canonical"
-              href={
-                getDomain() +
-                "/profile"
-              }
-            />
+            <link rel="canonical" href={`${getDomain()}/profile`} />
           </Helmet>
           {this.state.showClanConfig ? (
             <ClanConfig
@@ -346,17 +340,16 @@ class PrivateProfile extends Component {
           </div>
         </div>
       );
-    } else {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: "Login again",
-            redirectPage: "/",
-          }}
-        />
-      );
     }
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: "Login again",
+          redirectPage: "/",
+        }}
+      />
+    );
   }
 
   changeNamePart(t) {
@@ -427,37 +420,33 @@ class PrivateProfile extends Component {
           </div>
         </div>
       );
-    } else {
-      return (
-        <div className="col-xl-6">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Manage Clan")}</div>
-            <div className="card-body">
-              <Link
-                className="btn btn-lg btn-secondary btn-block"
-                to="/members"
-              >
-                <i className="fas fa-users"></i> {t("Members")}
-              </Link>
-              <Link
-                className="btn btn-lg btn-secondary btn-block"
-                to="/walkerlist"
-              >
-                <Icon key="Base Wings" name="Base Wings" width="30" />
-                {t("Walker List")}
-              </Link>
-              <Link
-                className="btn btn-lg btn-secondary btn-block"
-                to="/diplomacy"
-              >
-                <i className="far fa-flag"></i> {t("Diplomacy")}
-              </Link>
-            </div>
-            {this.leaveClanButton(t)}
-          </div>
-        </div>
-      );
     }
+    return (
+      <div className="col-xl-6">
+        <div className="card border-secondary mb-3">
+          <div className="card-header">{t("Manage Clan")}</div>
+          <div className="card-body">
+            <Link className="btn btn-lg btn-secondary btn-block" to="/members">
+              <i className="fas fa-users" /> {t("Members")}
+            </Link>
+            <Link
+              className="btn btn-lg btn-secondary btn-block"
+              to="/walkerlist"
+            >
+              <Icon key="Base Wings" name="Base Wings" width="30" />
+              {t("Walker List")}
+            </Link>
+            <Link
+              className="btn btn-lg btn-secondary btn-block"
+              to="/diplomacy"
+            >
+              <i className="far fa-flag" /> {t("Diplomacy")}
+            </Link>
+          </div>
+          {this.leaveClanButton(t)}
+        </div>
+      </div>
+    );
   }
 
   leaveClanButton(t) {

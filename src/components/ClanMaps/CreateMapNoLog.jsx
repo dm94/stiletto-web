@@ -25,11 +25,11 @@ class CreateMapNoLog extends Component {
     event.preventDefault();
     const options = {
       method: "post",
-      url: process.env.REACT_APP_API_URL + "/maps",
+      url: `${process.env.REACT_APP_API_URL}/maps`,
       params: {
         mapname: mapNameInput,
         mapdate: mapDateInput,
-        maptype: mapSelectInput + "_new",
+        maptype: `${mapSelectInput}_new`,
       },
     };
 
@@ -64,11 +64,7 @@ class CreateMapNoLog extends Component {
         className="btn btn-success btn-sm btn-block"
         type="text"
         value={
-          getDomain() +
-          "/map/" +
-          this.state.mapIdInput +
-          "?pass=" +
-          this.state.mapPassInput
+          `${getDomain()}/map/${this.state.mapIdInput}?pass=${this.state.mapPassInput}`
         }
         disabled
       />

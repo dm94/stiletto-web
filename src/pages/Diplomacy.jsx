@@ -40,10 +40,7 @@ class Diplomacy extends Component {
 
     if (clanid != null) {
       Axios.get(
-        process.env.REACT_APP_API_URL +
-          "/clans/" +
-          this.state.clanid +
-          "/relationships",
+        `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships`,
         {
           headers: {
             Authorization: `Bearer ${getStoredItem("token")}`,
@@ -79,11 +76,7 @@ class Diplomacy extends Component {
     event.preventDefault();
     const options = {
       method: "post",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/relationships",
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships`,
       params: {
         nameotherclan: this.state.nameOtherClanInput,
         clanflag: this.state.clanFlagInput,
@@ -113,12 +106,7 @@ class Diplomacy extends Component {
   deleteDiplomacy = (id) => {
     const options = {
       method: "delete",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanid +
-        "/relationships/" +
-        id,
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships/${id}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -146,7 +134,7 @@ class Diplomacy extends Component {
       );
 
       return allies.map((d) => (
-        <div key={"ally" + d.id} className="col-12">
+        <div key={`ally${d.id}`} className="col-12">
           <ClanSelect
             clan={d}
             leader={this.state.isLeader || this.state.hasPermissions}
@@ -164,7 +152,7 @@ class Diplomacy extends Component {
       );
 
       return enemies.map((d) => (
-        <div key={"enemy" + d.id} className="col-12">
+        <div key={`enemy${d.id}`} className="col-12">
           <ClanSelect
             clan={d}
             leader={this.state.isLeader || this.state.hasPermissions}
@@ -182,7 +170,7 @@ class Diplomacy extends Component {
       );
 
       return nap.map((d) => (
-        <div key={"npa" + d.id} className="col-12">
+        <div key={`npa${d.id}`} className="col-12">
           <ClanSelect
             clan={d}
             leader={this.state.isLeader || this.state.hasPermissions}
@@ -276,21 +264,24 @@ class Diplomacy extends Component {
   symbolsList() {
     const symbols = [];
     for (let i = 1; i < 31; i++) {
-      symbols.push("C" + i);
+      symbols.push(`C${i}`);
     }
     return symbols.map((symbol) => (
-      <div role="button" className="col-1" key={"symbol-" + symbol} onClick={() => this.setState({ clanFlagSymbolInput: symbol })}>
+      <div
+        role="button"
+        className="col-1"
+        key={`symbol-${symbol}`}
+        onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
+      >
         <img
-          src={
-            process.env.REACT_APP_RESOURCES_URL + "/symbols/" + symbol + ".png"
-          }
+          src={`${process.env.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
           className={
             symbol === this.state.clanFlagSymbolInput
               ? "img-fluid img-thumbnail"
               : "img-fluid"
           }
           alt={symbol}
-          id={"symbol-img-" + symbol}
+          id={`symbol-img-${symbol}`}
         />
         <p className="text-center">{symbol}</p>
       </div>
@@ -345,13 +336,7 @@ class Diplomacy extends Component {
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
           />
-          <link
-            rel="canonical"
-            href={
-              getDomain() +
-              "/diplomacy"
-            }
-          />
+          <link rel="canonical" href={`${getDomain()}/diplomacy`} />
         </Helmet>
         <div className="row">
           {this.createNewRelationship(t)}

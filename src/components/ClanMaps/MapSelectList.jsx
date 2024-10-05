@@ -7,7 +7,7 @@ class MapSelectList extends Component {
       return this.props?.maps.map((map) => (
         <div
           className="p-2 col-sm-4 col-xl-2 text-center"
-          key={"selectmap" + map.idMap}
+          key={`selectmap${map.idMap}`}
         >
           <img
             src={map.image}
@@ -23,9 +23,8 @@ class MapSelectList extends Component {
           <h6>{map.name}</h6>
         </div>
       ));
-    } else {
-      return "";
     }
+    return "";
   }
 }
 

@@ -18,7 +18,7 @@ class MemberPermissionsConfig extends Component {
   async componentDidMount() {
     const request = await getUserPermssions(
       this.props?.clanid,
-      this.props?.memberid
+      this.props?.memberid,
     );
     if (request) {
       if (request.success) {
@@ -40,12 +40,7 @@ class MemberPermissionsConfig extends Component {
     const options = {
       method: "put",
       url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.props?.clanid +
-        "/members/" +
-        this.props?.memberid +
-        "/permissions",
+        `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}/members/${this.props?.memberid}/permissions`,
       params: {
         bot: this.state.bot,
         diplomacy: this.state.diplomacy,
@@ -63,7 +58,9 @@ class MemberPermissionsConfig extends Component {
           this.props?.onClose();
         } else if (response.status === 401) {
           closeSession();
-          this.props?.onError("You don't have access here, try to log in again");
+          this.props?.onError(
+            "You don't have access here, try to log in again",
+          );
           this.props?.onClose();
         } else if (response.status === 503) {
           this.props?.onError("Error connecting to database");
@@ -113,7 +110,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="botInput"
                   >
                     {t("Discord Bot settings")}
@@ -137,7 +133,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="walkersInput"
                   >
                     {t("Allow editing walkers")}
@@ -161,7 +156,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="diplomacyInput"
                   >
                     {t("Allow editing diplomacy")}
@@ -185,7 +179,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="requestInput"
                   >
                     {t("Allow management of request")}
@@ -209,7 +202,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="kickmembersInput"
                   >
                     {t("Allow kick members")}

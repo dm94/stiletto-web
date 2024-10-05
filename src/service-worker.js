@@ -24,7 +24,7 @@ precacheAndRoute(self.__WB_MANIFEST);
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
 // https://developers.google.com/web/fundamentals/architecture/app-shell
-const fileExtensionRegexp = new RegExp("/[^/?]+\\.[^/]+$");
+const fileExtensionRegexp = /\/[^\/?]+\.[^\/]+$/;
 registerRoute(
   // Return false to exempt requests from being fulfilled by index.html.
   ({ request, url }) => {
@@ -39,7 +39,7 @@ registerRoute(
     // If this looks like a URL for a resource, because it contains // a file extension, skip.
     return url.pathname.match(fileExtensionRegexp);
   },
-  createHandlerBoundToURL(process.env.PUBLIC_URL + "/index.html")
+  createHandlerBoundToURL(`${process.env.PUBLIC_URL}/index.html`),
 );
 
 // An example runtime caching route for requests that aren't handled by the
@@ -56,7 +56,7 @@ registerRoute(
       // least-recently used images are removed.
       new ExpirationPlugin({ maxEntries: 50 }),
     ],
-  })
+  }),
 );
 
 // This allows the web app to trigger skipWaiting via

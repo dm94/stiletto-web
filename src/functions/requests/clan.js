@@ -13,9 +13,8 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
     tech: tech,
   });
 
-  const url = `${
-    process.env.REACT_APP_API_URL
-  }/clans/${clan}/tech?${params.toString()}`;
+  const url = `${process.env.REACT_APP_API_URL
+    }/clans/${clan}/tech?${params.toString()}`;
 
   try {
     const response = await fetch(url, {
@@ -36,7 +35,6 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
         return user.discordtag;
       });
     }
-
   } catch (error) {
     throw new Error("Error when connecting to the API");
   }

@@ -23,7 +23,7 @@ class Item extends Component {
               aria-label="Add item"
               onClick={() => this.props?.onAdd(this.props?.item.name)}
             >
-              <i className="fas fa-plus"></i>
+              <i className="fas fa-plus" />
             </button>
           </div>
         </div>

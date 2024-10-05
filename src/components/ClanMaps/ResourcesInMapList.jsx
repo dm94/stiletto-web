@@ -27,31 +27,30 @@ class ResourcesInMapList extends Component {
             onClick={() => this.props?.onSelect(resource.x, resource.y)}
           >
             <Icon
-              key={"icon-rmap-" + resource.resourceid}
+              key={`icon-rmap-${resource.resourceid}`}
               name={resource.resourcetype}
             />
             {t(resource.resourcetype)}
           </button>
         </li>
       ));
-    } else {
-      return this.props?.resources
-        .filter((r) => r.x != null)
-        .map((resource) => (
-          <li className="list-group-item text-center" key={resource.resourceid}>
-            <button
-              className="btn btn-block"
-              onClick={() => this.props?.onSelect(resource.x, resource.y)}
-            >
-              <Icon
-                key={"icon-rmap-" + resource.resourceid}
-                name={resource.resourcetype}
-              />
-              {t(resource.resourcetype)}{" "}
-            </button>
-          </li>
-        ));
     }
+    return this.props?.resources
+      .filter((r) => r.x != null)
+      .map((resource) => (
+        <li className="list-group-item text-center" key={resource.resourceid}>
+          <button
+            className="btn btn-block"
+            onClick={() => this.props?.onSelect(resource.x, resource.y)}
+          >
+            <Icon
+              key={`icon-rmap-${resource.resourceid}`}
+              name={resource.resourcetype}
+            />
+            {t(resource.resourcetype)}{" "}
+          </button>
+        </li>
+      ));
   }
 
   filterlist(t) {
@@ -77,7 +76,7 @@ class ResourcesInMapList extends Component {
         }
         onClick={() => this.filterTheResources(r)}
       >
-        <Icon key={"icon-rlist-" + r} name={r} />
+        <Icon key={`icon-rlist-${r}`} name={r} />
         {t(r)}
       </button>
     ));
@@ -94,9 +93,8 @@ class ResourcesInMapList extends Component {
           <ul className="list-group">{this.list(t)}</ul>
         </Fragment>
       );
-    } else {
-      return "";
     }
+    return "";
   }
 }
 

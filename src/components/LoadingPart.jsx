@@ -5,7 +5,7 @@ class LoadingPart extends Component {
   render() {
     return (
       <div className="preloader-part">
-        <div className="loader"></div>
+        <div className="loader" />
       </div>
     );
   }

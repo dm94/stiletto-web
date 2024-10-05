@@ -42,7 +42,7 @@ export const getCachedData = (name, time = timeCheck) => {
   }
 
   const data = getStoredItem(name);
-  const lastDataCheck = getStoredItem(name + "-lastCheck");
+  const lastDataCheck = getStoredItem(`${name}-lastCheck`);
 
   if (
     data != null &&
@@ -60,7 +60,7 @@ export const addCachedData = (name, data) => {
   }
 
   storeItem(name, JSON.stringify(data));
-  storeItem(name + "-lastCheck", Date.now());
+  storeItem(`${name}-lastCheck`, Date.now());
 };
 
 export const getUserProfile = async () => {
@@ -68,10 +68,12 @@ export const getUserProfile = async () => {
 
   if (cachedData != null) {
     return { success: true, message: cachedData };
-  } else if (getStoredItem("token")) {
+  }
+
+  if (getStoredItem("token")) {
     const options = {
       method: "get",
-      url: process.env.REACT_APP_API_URL + "/users",
+      url: `${process.env.REACT_APP_API_URL}/users`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -86,13 +88,17 @@ export const getUserProfile = async () => {
           return { success: true, message: response.data };
         }
         return { success: true, message: "" };
-      } else if (response.status === 205 || response.status === 401) {
+      }
+
+      if (response.status === 205 || response.status === 401) {
         closeSession();
         return {
           success: false,
           message: "Log in again",
         };
-      } else if (response.status === 503) {
+      }
+
+      if (response.status === 503) {
         return {
           success: false,
           message: "Error connecting to database",
@@ -126,40 +132,38 @@ export const getOurPermssions = async () => {
 
   if (cachedData != null) {
     return { success: true, message: cachedData };
-  } else {
-    const profile = getStoredItem("profile");
-    let clanid = null;
-    let discordid = null;
-    if (profile != null) {
-      const data = JSON.parse(profile);
-      clanid = data.clanid;
-      discordid = data.discordid;
-    } else {
-      const data = await getUserProfile();
-      clanid = data.message.clanid;
-      discordid = data.message.discordid;
-    }
-
-    if (clanid != null && discordid != null) {
-      const response = await getUserPermssions(clanid, discordid);
-      if (response?.success) {
-        addCachedData("permissions", response.message);
-        return {
-          success: true,
-          message: response.message,
-        };
-      }
-      return {
-        success: false,
-        message: "You don't have access here, try to log in again",
-      };
-    } else {
-      return {
-        success: false,
-        message: "You need a clan to enter here",
-      };
-    }
   }
+  const profile = getStoredItem("profile");
+  let clanid = null;
+  let discordid = null;
+  if (profile != null) {
+    const data = JSON.parse(profile);
+    clanid = data.clanid;
+    discordid = data.discordid;
+  } else {
+    const data = await getUserProfile();
+    clanid = data.message.clanid;
+    discordid = data.message.discordid;
+  }
+
+  if (clanid != null && discordid != null) {
+    const response = await getUserPermssions(clanid, discordid);
+    if (response?.success) {
+      addCachedData("permissions", response.message);
+      return {
+        success: true,
+        message: response.message,
+      };
+    }
+    return {
+      success: false,
+      message: "You don't have access here, try to log in again",
+    };
+  }
+  return {
+    success: false,
+    message: "You need a clan to enter here",
+  };
 };
 
 export const getUserPermssions = async (clanid, discordid) => {
@@ -167,12 +171,7 @@ export const getUserPermssions = async (clanid, discordid) => {
     const options = {
       method: "get",
       url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        clanid +
-        "/members/" +
-        discordid +
-        "/permissions",
+        `${process.env.REACT_APP_API_URL}/clans/${clanid}/members/${discordid}/permissions`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -181,13 +180,17 @@ export const getUserPermssions = async (clanid, discordid) => {
     if (response != null) {
       if (response.status === 200) {
         return { success: true, message: response.data };
-      } else if (response.status === 405 || response.status === 401) {
+      }
+
+      if (response.status === 405 || response.status === 401) {
         closeSession();
         return {
           success: false,
           message: "You don't have access here, try to log in again",
         };
-      } else if (response.status === 503) {
+      }
+
+      if (response.status === 503) {
         return {
           success: false,
           message: "Error connecting to database",
@@ -212,54 +215,57 @@ export const getClanInfo = async () => {
 
   if (cachedData != null) {
     return { success: true, message: cachedData };
+  }
+  const profile = getStoredItem("profile");
+  let clanid = null;
+  if (profile != null) {
+    const data = JSON.parse(profile);
+    clanid = data.clanid;
   } else {
-    const profile = getStoredItem("profile");
-    let clanid = null;
-    if (profile != null) {
-      const data = JSON.parse(profile);
-      clanid = data.clanid;
-    } else {
-      const data = await getUserProfile();
-      clanid = data.message.clanid;
-    }
+    const data = await getUserProfile();
+    clanid = data.message.clanid;
+  }
 
-    if (clanid != null) {
-      const options = {
-        method: "get",
-        url: process.env.REACT_APP_API_URL + "/clans/" + clanid,
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      };
-      const response = await request(options);
-      if (response != null) {
-        if (response.status === 200) {
-          addCachedData("clanInfo", response.data);
-          return { success: true, message: response.data };
-        } else if (response.status === 405 || response.status === 401) {
-          closeSession();
-          return {
-            success: false,
-            message: "You don't have access here, try to log in again",
-          };
-        } else if (response.status === 503) {
-          return {
-            success: false,
-            message: "Error connecting to database",
-          };
-        }
-      } else {
+  if (clanid != null) {
+    const options = {
+      method: "get",
+      url: `${process.env.REACT_APP_API_URL}/clans/${clanid}`,
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    };
+    const response = await request(options);
+    if (response != null) {
+      if (response.status === 200) {
+        addCachedData("clanInfo", response.data);
+        return { success: true, message: response.data };
+      }
+
+      if (response.status === 405 || response.status === 401) {
+        closeSession();
         return {
           success: false,
-          message: "Error when connecting to the API",
+          message: "You don't have access here, try to log in again",
+        };
+      }
+
+      if (response.status === 503) {
+        return {
+          success: false,
+          message: "Error connecting to database",
         };
       }
     } else {
       return {
         success: false,
-        message: "You need a clan to enter here",
+        message: "Error when connecting to the API",
       };
     }
+  } else {
+    return {
+      success: false,
+      message: "You need a clan to enter here",
+    };
   }
 };
 
@@ -268,54 +274,57 @@ export const getMembers = async () => {
 
   if (cachedData != null) {
     return { success: true, message: cachedData };
+  }
+  const profile = getStoredItem("profile");
+  let clanid = null;
+  if (profile != null) {
+    const data = JSON.parse(profile);
+    clanid = data.clanid;
   } else {
-    const profile = getStoredItem("profile");
-    let clanid = null;
-    if (profile != null) {
-      const data = JSON.parse(profile);
-      clanid = data.clanid;
-    } else {
-      const data = await getUserProfile();
-      clanid = data.message.clanid;
-    }
+    const data = await getUserProfile();
+    clanid = data.message.clanid;
+  }
 
-    if (clanid != null) {
-      const options = {
-        method: "get",
-        url: process.env.REACT_APP_API_URL + "/clans/" + clanid + "/members",
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      };
-      const response = await request(options);
-      if (response != null) {
-        if (response.status === 200 || response.status === 202) {
-          addCachedData("memberList", response.data);
-          return { success: true, message: response.data };
-        } else if (response.status === 405 || response.status === 401) {
-          closeSession();
-          return {
-            success: false,
-            message: "You don't have access here, try to log in again",
-          };
-        } else if (response.status === 503) {
-          return {
-            success: false,
-            message: "Error connecting to database",
-          };
-        }
-      } else {
+  if (clanid != null) {
+    const options = {
+      method: "get",
+      url: `${process.env.REACT_APP_API_URL}/clans/${clanid}/members`,
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    };
+    const response = await request(options);
+    if (response != null) {
+      if (response.status === 200 || response.status === 202) {
+        addCachedData("memberList", response.data);
+        return { success: true, message: response.data };
+      }
+
+      if (response.status === 405 || response.status === 401) {
+        closeSession();
         return {
           success: false,
-          message: "Error when connecting to the API",
+          message: "You don't have access here, try to log in again",
+        };
+      }
+
+      if (response.status === 503) {
+        return {
+          success: false,
+          message: "Error connecting to database",
         };
       }
     } else {
       return {
         success: false,
-        message: "You need a clan to enter here",
+        message: "Error when connecting to the API",
       };
     }
+  } else {
+    return {
+      success: false,
+      message: "You need a clan to enter here",
+    };
   }
 };
 
@@ -323,11 +332,7 @@ export const updateResourceTime = (mapId, resoruceId, token, date) => {
   const options = {
     method: "put",
     url:
-      process.env.REACT_APP_API_URL +
-      "/maps/" +
-      mapId +
-      "/resources/" +
-      resoruceId,
+      `${process.env.REACT_APP_API_URL}/maps/${mapId}/resources/${resoruceId}`,
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
     },
@@ -344,22 +349,18 @@ export const getItems = async () => {
 
   if (cachedData != null) {
     return cachedData;
-  } else {
-    const options = {
-      method: "get",
-      url:
-      getDomain() +
-        "/json/items_min.json",
-    };
-
-    const response = await request(options);
-    if (response?.data != null) {
-      addCachedData("allItems", response.data);
-      return response.data;
-    } else {
-      return null;
-    }
   }
+  const options = {
+    method: "get",
+    url: `${getDomain()}/json/items_min.json`,
+  };
+
+  const response = await request(options);
+  if (response?.data != null) {
+    addCachedData("allItems", response.data);
+    return response.data;
+  }
+  return null;
 };
 
 export const getMarkers = async () => {
@@ -367,40 +368,36 @@ export const getMarkers = async () => {
 
   if (cachedData != null) {
     return cachedData;
-  } else {
-    const options = {
-      method: "get",
-      url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.min.json",
-    };
-
-    const response = await request(options);
-    if (response?.data != null) {
-      addCachedData("markers", response.data);
-      return response.data;
-    } else {
-      return null;
-    }
   }
+  const options = {
+    method: "get",
+    url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.min.json",
+  };
+
+  const response = await request(options);
+  if (response?.data != null) {
+    addCachedData("markers", response.data);
+    return response.data;
+  }
+  return null;
 };
 
 export const getClusters = async () => {
   const cachedData = getCachedData("clusters", resourceCacheTimeCheck);
   if (cachedData != null) {
     return cachedData;
-  } else {
-    const options = {
-      method: "get",
-      url: process.env.REACT_APP_API_URL + "/clusters",
-    };
-
-    const response = await request(options);
-    if (response?.data != null) {
-      addCachedData("clusters", response.data);
-      return response.data;
-    } else {
-      return null;
-    }
   }
+  const options = {
+    method: "get",
+    url: `${process.env.REACT_APP_API_URL}/clusters`,
+  };
+
+  const response = await request(options);
+  if (response?.data != null) {
+    addCachedData("clusters", response.data);
+    return response.data;
+  }
+  return null;
 };
 
 export const getMaps = async () => {
@@ -408,26 +405,24 @@ export const getMaps = async () => {
 
   if (cachedData != null) {
     return cachedData;
-  } else {
-    const options = {
-      method: "get",
-      url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.min.json",
-    };
-
-    const response = await request(options);
-    if (response?.data != null) {
-      addCachedData("maps", response.data);
-      return response.data;
-    } else {
-      return null;
-    }
   }
+  const options = {
+    method: "get",
+    url: "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.min.json",
+  };
+
+  const response = await request(options);
+  if (response?.data != null) {
+    addCachedData("maps", response.data);
+    return response.data;
+  }
+  return null;
 };
 
 export const getResources = async (mapId, mapPass) => {
   const options = {
     method: "get",
-    url: process.env.REACT_APP_API_URL + "/maps/" + mapId + "/resources",
+    url: `${process.env.REACT_APP_API_URL}/maps/${mapId}/resources`,
     params: {
       mappass: mapPass,
     },
@@ -443,11 +438,7 @@ export const deleteResource = async (mapId, resourceId, resourceToken) => {
   const options = {
     method: "delete",
     url:
-      process.env.REACT_APP_API_URL +
-      "/maps/" +
-      mapId +
-      "/resources/" +
-      resourceId,
+      `${process.env.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}`,
     params: {
       token: resourceToken,
     },
@@ -464,11 +455,11 @@ export const createResource = async (
   resourceTypeInput,
   qualityInput,
   descriptionInput,
-  lastHarvested
+  lastHarvested,
 ) => {
   const options = {
     method: "post",
-    url: process.env.REACT_APP_API_URL + "/maps/" + mapId + "/resources",
+    url: `${process.env.REACT_APP_API_URL}/maps/${mapId}/resources`,
     params: {
       mapid: mapId,
       resourcetype: resourceTypeInput,

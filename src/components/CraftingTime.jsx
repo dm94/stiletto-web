@@ -14,12 +14,11 @@ class CraftingTime extends Component {
       totalTime = this.secondsToHms(totalTime);
       return (
         <div className="text-right mb-0 text-muted">
-          <i className="fa fa-clock"></i> {totalTime}
+          <i className="fa fa-clock" /> {totalTime}
         </div>
       );
-    } else {
-      return "";
     }
+    return "";
   }
 
   secondsToHms(d) {
@@ -28,9 +27,9 @@ class CraftingTime extends Component {
     const m = Math.floor((d % 3600) / 60);
     const s = Math.floor((d % 3600) % 60);
 
-    const hDisplay = h > 0 ? h + " h " : "";
-    const mDisplay = m > 0 ? m + " m " : "";
-    const sDisplay = s > 0 ? s + " s" : "";
+    const hDisplay = h > 0 ? `${h} h ` : "";
+    const mDisplay = m > 0 ? `${m} m ` : "";
+    const sDisplay = s > 0 ? `${s} s` : "";
     return hDisplay + mDisplay + sDisplay;
   }
 }

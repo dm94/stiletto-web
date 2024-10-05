@@ -126,7 +126,7 @@ class Others extends Component {
           height="500"
           frameBorder="0"
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-        ></iframe>
+        />
       );
     } else {
       return (

@@ -70,7 +70,7 @@ const Wiki = ({ location }) => {
   const showItems = () => {
     if (filteredItems.length > 0) {
       return filteredItems.map((item) => (
-        <div className="col-12 col-xl-3 col-lg-6" key={"wiki-" + item.name}>
+        <div className="col-12 col-xl-3 col-lg-6" key={`wiki-${item.name}`}>
           <Ingredient ingredient={item} value={1} />
         </div>
       ));
@@ -87,7 +87,7 @@ const Wiki = ({ location }) => {
 
   const showCategories = () => {
     return categories.map((category) => (
-      <option key={"option-" + category} value={category}>
+      <option key={`option-${category}`} value={category}>
         {t(category)}
       </option>
     ));

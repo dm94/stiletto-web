@@ -56,7 +56,7 @@ const CrafterApp = () => {
         }}
         setRedirectTo={(value) => setRedirectTo(value)}
       />
-      <main role="main" className="flex-shrink-0">
+      <main className="flex-shrink-0">
         <div className="container-fluid pt-4">
           {Routes}
           {showChangeLanguageModal && (
@@ -118,7 +118,7 @@ const CrafterApp = () => {
               </a>
               {" | "}
               {t(
-                "This website uses utilities related to the game 'Last Oasis' but is not affiliated with"
+                "This website uses utilities related to the game 'Last Oasis' but is not affiliated with",
               )}{" "}
               <a
                 href="https://www.donkey.team/"
@@ -164,7 +164,7 @@ function darkMode(t) {
           window.location.reload();
         }}
       >
-        <i className="far fa-sun"></i> {t("Light Theme Mode")}
+        <i className="far fa-sun" /> {t("Light Theme Mode")}
       </button>
     );
   } else {
@@ -176,7 +176,7 @@ function darkMode(t) {
           window.location.reload();
         }}
       >
-        <i className="far fa-moon"></i> {t("Dark Theme Mode")}
+        <i className="far fa-moon" /> {t("Dark Theme Mode")}
       </button>
     );
   }

@@ -1,68 +1,68 @@
 const tradesRequest = () => {
   cy.intercept(
     { method: "GET", url: "/trades" },
-    { fixture: "trades.json" }
+    { fixture: "trades.json" },
   ).as("getTrades");
 
   cy.intercept(
     { method: "GET", url: "*/clusters*" },
-    { fixture: "clusters.json" }
+    { fixture: "clusters.json" },
   ).as("getClusters");
 };
 
 const clansRequest = () => {
   cy.intercept(
     { method: "GET", url: "*/clans*" },
-    { statusCode: 202, fixture: "clans.json" }
+    { statusCode: 202, fixture: "clans.json" },
   ).as("getClans");
 };
 
 const imageRequests = () => {
   cy.intercept({ method: "GET", url: "/items/*" }, { fixture: "aloe.png" }).as(
-    "itemMock"
+    "itemMock",
   );
 
   cy.intercept(
     { method: "GET", url: "*/symbols/*" },
-    { fixture: "aloe.png" }
+    { fixture: "aloe.png" },
   ).as("symbolMock");
 
   cy.intercept({ method: "GET", url: "/maps/*" }, { fixture: "map.jpg" }).as(
-    "mapMock"
+    "mapMock",
   );
 };
 
 const recipeRequets = () => {
   cy.intercept(
     { method: "POST", url: "**/recipes*" },
-    { statusCode: 201, fixture: "recipes.json" }
+    { statusCode: 201, fixture: "recipes.json" },
   ).as("addRecipe");
 };
 
 const mapRequest = () => {
   cy.intercept(
     { method: "GET", url: "/maps/*/resources*" },
-    { statusCode: 200, fixture: "get-resources.json" }
+    { statusCode: 200, fixture: "get-resources.json" },
   ).as("getResources");
 
   cy.intercept(
     { method: "POST", url: "/maps/*/resources*" },
-    { statusCode: 202, fixture: "add-resource-map.json" }
+    { statusCode: 202, fixture: "add-resource-map.json" },
   ).as("addResourceMap");
 
   cy.intercept(
     { method: "DELETE", url: "/maps/*/resources*" },
-    { statusCode: 204 }
+    { statusCode: 204 },
   ).as("deleteResource");
 
   cy.intercept(
     { method: "POST", url: "/maps" },
-    { statusCode: 201, fixture: "add-map.json" }
+    { statusCode: 201, fixture: "add-map.json" },
   ).as("addMap");
 
   cy.intercept(
     { method: "GET", url: "/maps" },
-    { statusCode: 200, fixture: "get-map.json" }
+    { statusCode: 200, fixture: "get-map.json" },
   ).as("getMap");
 };
 

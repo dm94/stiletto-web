@@ -185,7 +185,7 @@ class WalkerListItem extends Component {
                         }}
                         disabled={!this.state.canEdit}
                       >
-                        <option key={"no-type-select"}></option>
+                        <option key={"no-type-select"} />
                         );
                         {this.props?.walkerListTypes.map((name) => {
                           return (
@@ -225,7 +225,7 @@ class WalkerListItem extends Component {
                         }}
                         maxLength="200"
                         disabled={!this.state.canEdit}
-                      ></textarea>
+                      />
                     </div>
                   </div>
                 </div>
@@ -247,7 +247,7 @@ class WalkerListItem extends Component {
                         });
                       }}
                     >
-                      <i className="fas fa-check"></i>
+                      <i className="fas fa-check" />
                     </button>
                     <button className="btn btn-secondary" disabled>
                       {t("Is ready?")}
@@ -266,7 +266,7 @@ class WalkerListItem extends Component {
                         });
                       }}
                     >
-                      <i className="fas fa-times"></i>
+                      <i className="fas fa-times" />
                     </button>
                   </div>
                 </div>
@@ -279,7 +279,7 @@ class WalkerListItem extends Component {
                         this.setState({ isOpen: false });
                       }}
                     >
-                      <i className="fas fa-save"></i> {t("Save")}
+                      <i className="fas fa-save" /> {t("Save")}
                     </button>
                   </div>
                 </div>
@@ -292,7 +292,7 @@ class WalkerListItem extends Component {
                       }}
                       disabled={!this.state.canEdit}
                     >
-                      <i className="fas fa-trash-alt"></i> {t("Delete")}
+                      <i className="fas fa-trash-alt" /> {t("Delete")}
                     </button>
                   </div>
                 </div>
@@ -313,8 +313,8 @@ class WalkerListItem extends Component {
             <td className="text-center">
               {this.props?.walker.type ? (
                 <Icon
-                  key={this.props?.walker.type + " Walker"}
-                  name={this.props?.walker.type + " Walker"}
+                  key={`${this.props?.walker.type} Walker`}
+                  name={`${this.props?.walker.type} Walker`}
                   width="30"
                 />
               ) : (
@@ -332,9 +332,9 @@ class WalkerListItem extends Component {
             </td>
             <td className="text-center">
               {this.props?.walker.isReady ? (
-                <i className="fas fa-check text-success"></i>
+                <i className="fas fa-check text-success" />
               ) : (
-                <i className="fas fa-times text-danger"></i>
+                <i className="fas fa-times text-danger" />
               )}
             </td>
             <td
@@ -342,21 +342,19 @@ class WalkerListItem extends Component {
               onClick={() =>
                 this.setState((state) => ({ isOpen: !state.isOpen }))
               }
-              role="button"
             >
               {this.state.isOpen ? (
-                <i className="fas fa-eye-slash"></i>
+                <i className="fas fa-eye-slash" />
               ) : (
-                <i className="fas fa-eye"></i>
+                <i className="fas fa-eye" />
               )}
             </td>
           </tr>
           {this.walkerInfo(t)}
         </Fragment>
       );
-    } else {
-      return "";
     }
+    return "";
   }
 }
 

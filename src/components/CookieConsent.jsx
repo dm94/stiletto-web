@@ -23,9 +23,8 @@ class CookieConsent extends Component {
           </button>
         </div>
       );
-    } else {
-      return "";
     }
+    return "";
   }
 }
 

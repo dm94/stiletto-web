@@ -72,16 +72,14 @@ class SelectedItem extends Component {
   change = (count) => {
     this.props?.onChangeCount(
       this.props?.item.name,
-      parseInt(this.props?.item.count) + count
+      Number.parseInt(this.props?.item.count) + count,
     );
   };
 
   render() {
     const { t } = this.props;
     const url =
-      getDomain() +
-      "/item/" +
-      encodeURI(this.props?.item.name.replaceAll(" ", "_"));
+      `${getDomain()}/item/${encodeURI(this.props?.item.name.replaceAll(" ", "_"))}`;
     return (
       <div className="col-xl-6 col-sm-12">
         <div className="card">
@@ -89,7 +87,9 @@ class SelectedItem extends Component {
             <button
               className="close"
               aria-label="Remove item"
-              onClick={() => this.props?.onChangeCount(this.props?.item.name, 0)}
+              onClick={() =>
+                this.props?.onChangeCount(this.props?.item.name, 0)
+              }
             >
               <span aria-hidden="true">X</span>
             </button>
@@ -101,7 +101,7 @@ class SelectedItem extends Component {
                 onChange={(e) => {
                   this.props?.onChangeCount(
                     this.props?.item.name,
-                    e.target.value
+                    e.target.value,
                   );
                 }}
                 onMouseEnter={() => this.setState({ disableEdit: false })}
@@ -113,7 +113,10 @@ class SelectedItem extends Component {
                 readOnly={this.state.disableEdit}
               />
               <span className="input-group-text">
-                <Icon key={this.props?.item.name} name={this.props?.item.name} />
+                <Icon
+                  key={this.props?.item.name}
+                  name={this.props?.item.name}
+                />
                 <a href={url}>{t(this.props?.item.name, { ns: "items" })}</a>
               </span>
             </div>

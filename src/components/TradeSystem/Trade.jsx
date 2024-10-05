@@ -21,25 +21,24 @@ class Trade extends Component {
           Discord: {this.props?.trade.discordtag}
           <a
             className="float-right text-info"
-            href={"https://discordapp.com/users/" + this.props?.trade.discordid}
+            href={`https://discordapp.com/users/${this.props?.trade.discordid}`}
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Send DM"
           >
-            <i className="fab fa-discord"></i>
+            <i className="fab fa-discord" />
           </a>
         </div>
       );
-    } else {
-      return (
-        <button
-          className="btn btn-danger"
-          onClick={() => this.props?.onDelete(this.props?.trade.idtrade)}
-        >
-          {t("Delete")}
-        </button>
-      );
     }
+    return (
+      <button
+        className="btn btn-danger"
+        onClick={() => this.props?.onDelete(this.props?.trade.idtrade)}
+      >
+        {t("Delete")}
+      </button>
+    );
   }
 
   showQuality(t) {
@@ -70,9 +69,9 @@ class Trade extends Component {
         <div className="card mb-4 shadow-sm border-secondary">
           <div className="card-header">
             {this.props?.trade.type === "Supply" ? (
-              <i className="far fa-arrow-alt-circle-up"></i>
+              <i className="far fa-arrow-alt-circle-up" />
             ) : (
-              <i className="far fa-arrow-alt-circle-down"></i>
+              <i className="far fa-arrow-alt-circle-down" />
             )}{" "}
             {t(this.props?.trade.type)} {"//"} {this.props?.trade.region}
           </div>
@@ -80,7 +79,7 @@ class Trade extends Component {
             {this.showQuality(t)}
             <h5 className="card-title">
               {this.props?.trade.amount !== "0"
-                ? this.props?.trade.amount + "x "
+                ? `${this.props?.trade.amount}x `
                 : ""}{" "}
               <Icon
                 key={this.props?.trade.resource}
@@ -90,11 +89,11 @@ class Trade extends Component {
             </h5>
             <p>
               {this.props?.trade.price !== "0"
-                ? this.props?.trade.price + " Flots/" + t("Unit")
+                ? `${this.props?.trade.price} Flots/${t("Unit")}`
                 : ""}
             </p>
             {this.props?.trade.nickname != null
-              ? t("Nick in Game") + ": " + this.props?.trade.nickname
+              ? `${t("Nick in Game")}: ${this.props?.trade.nickname}`
               : ""}
           </div>
           {this.cardFooter(t)}
