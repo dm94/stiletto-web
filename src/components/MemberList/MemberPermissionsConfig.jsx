@@ -16,10 +16,12 @@ class MemberPermissionsConfig extends Component {
   }
 
   async componentDidMount() {
-    const request = await getUserPermssions(
-      this.props?.clanid,
-      this.props?.memberid,
-    );
+    const { clanid, memberid } = this.props;
+    if (!clanid || !memberid) {
+      return;
+    }
+
+    const request = await getUserPermssions(clanid, memberid);
     if (request) {
       if (request.success) {
         const allPermissions = request.message;
@@ -37,15 +39,11 @@ class MemberPermissionsConfig extends Component {
   }
 
   updateMemberPermissions = () => {
-    const options = {
-      method: "put",
-      url:
-async componentDidMount() {
-  const { clanid, memberid } = this.props;
-  if (!clanid || !memberid) return;
+    const { clanid, memberid } = this.props;
+    if (!clanid || !memberid) {
+      return;
+    }
 
-  const request = await getUserPermssions(clanid, memberid);
-  if (request?.success) {
     const options = {
       method: "put",
       url: `${process.env.REACT_APP_API_URL}/clans/${clanid}/members/${memberid}/permissions`,
@@ -67,7 +65,7 @@ async componentDidMount() {
         } else if (response.status === 401) {
           closeSession();
           this.props?.onError(
-            "You don't have access here, try to log in again",
+            "You don't have access here, try to log in again"
           );
           this.props?.onClose();
         } else if (response.status === 503) {
@@ -102,7 +100,6 @@ async componentDidMount() {
               <div className="form-group">
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow to change bot settings")}
                 >
                   <input
@@ -116,16 +113,12 @@ async componentDidMount() {
                       })
                     }
                   />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="botInput"
-                  >
+                  <label className="custom-control-label" htmlFor="botInput">
                     {t("Discord Bot settings")}
                   </label>
                 </div>
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow editing walkers")}
                 >
                   <input
@@ -148,7 +141,6 @@ async componentDidMount() {
                 </div>
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow editing diplomacy")}
                 >
                   <input
@@ -171,7 +163,6 @@ async componentDidMount() {
                 </div>
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow management of request")}
                 >
                   <input
@@ -194,7 +185,6 @@ async componentDidMount() {
                 </div>
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow kick members")}
                 >
                   <input
