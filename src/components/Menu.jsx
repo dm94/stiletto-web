@@ -29,7 +29,7 @@ class Menu extends Component {
     if (lng != null) {
       const lngFound = supportedLanguages.find((l) => lng.includes(l));
       if (lngFound) {
-        return "/img/" + lngFound + ".jpg";
+        return `/img/${lngFound}.jpg`;
       }
     }
 
@@ -37,7 +37,7 @@ class Menu extends Component {
   };
 
   searchItem = () => {
-    this.props?.setRedirectTo("/wiki?s=" + this.state.searchText);
+    this.props?.setRedirectTo(`/wiki?s=${this.state.searchText}`);
     this.setState({ searchText: "" });
   };
 
@@ -82,7 +82,7 @@ class Menu extends Component {
                   strokeMiterlimit="10"
                   strokeWidth="2"
                   d="M4 7h22M4 15h22M4 23h22"
-                ></path>
+                />
               </svg>
             </button>
             <div className="collapse navbar-collapse" id="navbar-main-menu">
@@ -152,12 +152,13 @@ class Menu extends Component {
                       aria-label="Search button"
                       onClick={() => this.searchItem()}
                     >
-                      <i className="fa fa-search"></i>
+                      <i className="fa fa-search" />
                     </button>
                   </div>
                 </div>
               </div>
               <button
+                type="button"
                 className="btn btn-sm mr-2"
                 data-cy="change-languaje-btn"
                 aria-label="Change language"

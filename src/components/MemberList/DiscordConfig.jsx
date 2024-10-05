@@ -15,11 +15,7 @@ class DiscordConfig extends Component {
   componentDidMount() {
     const options = {
       method: "get",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.props?.clanid +
-        "/discordbot",
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}/discordbot`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -32,16 +28,17 @@ class DiscordConfig extends Component {
               botLanguaje: response.data.botlanguaje
                 ? response.data.botlanguaje
                 : "en",
-              readClanLog: response.data.readclanlog === "1" ? true : false,
-              automaticKick: response.data.automatickick === "1" ? true : false,
-              setNotReadyPVP:
-                response.data.setnotreadypvp === "1" ? true : false,
-              walkeralarm: response.data.walkeralarm === "1" ? true : false,
+              readClanLog: response.data.readclanlog === "1",
+              automaticKick: response.data.automatickick === "1",
+              setNotReadyPVP: response.data.setnotreadypvp === "1",
+              walkeralarm: response.data.walkeralarm === "1",
             });
           }
         } else if (response.status === 401) {
           closeSession();
-          this.props?.onError("You don't have access here, try to log in again");
+          this.props?.onError(
+            "You don't have access here, try to log in again"
+          );
         } else if (response.status === 503) {
           this.props?.onError("Error connecting to database");
         }
@@ -54,11 +51,7 @@ class DiscordConfig extends Component {
   updateBotConfig = () => {
     const options = {
       method: "put",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.props?.clanid +
-        "/discordbot",
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}/discordbot`,
       params: {
         languaje: this.state.botLanguaje,
         clanlog: this.state.readClanLog,
@@ -76,7 +69,9 @@ class DiscordConfig extends Component {
           this.props?.onClose();
         } else if (response.status === 401) {
           closeSession();
-          this.props?.onError("You don't have access here, try to log in again");
+          this.props?.onError(
+            "You don't have access here, try to log in again"
+          );
           this.props?.onClose();
         } else if (response.status === 503) {
           this.props?.onError("Error connecting to database");
@@ -126,7 +121,6 @@ class DiscordConfig extends Component {
               </div>
               <div
                 className="custom-control custom-switch my-1"
-                role="button"
                 title={t(
                   "If you want the bot to read the clan log, it is necessary for other functions."
                 )}
@@ -142,11 +136,7 @@ class DiscordConfig extends Component {
                     })
                   }
                 />
-                <label
-                  className="custom-control-label"
-                  role="button"
-                  htmlFor="readClanLog"
-                >
+                <label className="custom-control-label" htmlFor="readClanLog">
                   {t("Read discord clan log.")}
                 </label>
               </div>
@@ -168,11 +158,7 @@ class DiscordConfig extends Component {
                     })
                   }
                 />
-                <label
-                  className="custom-control-label"
-                  role="button"
-                  htmlFor="automaticKick"
-                >
+                <label className="custom-control-label" htmlFor="automaticKick">
                   {t("Automatic kick members from the clan")}
                 </label>
               </div>
@@ -190,7 +176,6 @@ class DiscordConfig extends Component {
                 />
                 <label
                   className="custom-control-label"
-                  role="button"
                   htmlFor="setNotReadyPVP"
                 >
                   {t(
@@ -216,11 +201,7 @@ class DiscordConfig extends Component {
                     })
                   }
                 />
-                <label
-                  className="custom-control-label"
-                  role="button"
-                  htmlFor="walkerAlarm"
-                >
+                <label className="custom-control-label" htmlFor="walkerAlarm">
                   {t("Warns if someone brings out a walker they don't own.")}
                 </label>
               </div>

@@ -13,7 +13,7 @@ const CanBeUsedInfo = ({ name, items = [] }) => {
         if (item?.crafting?.[0]?.ingredients) {
           const allIngredients = item.crafting[0].ingredients;
           return allIngredients.some(
-            (ingredient) => ingredient.name.toLowerCase() === lowerCaseName
+            (ingredient) => ingredient.name.toLowerCase() === lowerCaseName,
           );
         }
         return false;

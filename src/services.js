@@ -43,5 +43,5 @@ export {
   storeItem,
   getCachedData,
   addCachedData,
-  getUserProfile
+  getUserProfile,
 };

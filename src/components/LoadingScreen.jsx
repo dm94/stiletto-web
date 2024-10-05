@@ -5,7 +5,7 @@ class LoadingScreen extends Component {
   render() {
     return (
       <div className="preloader">
-        <div className="loader"></div>
+        <div className="loader" />
       </div>
     );
   }

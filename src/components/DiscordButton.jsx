@@ -15,23 +15,19 @@ class DiscordButton extends Component {
           to="/profile"
           data-cy="profile-link"
         >
-          <i className="far fa-user"></i> {t("Profile")}
+          <i className="far fa-user" /> {t("Profile")}
         </Link>
       );
-    } else {
-      const urlLink =
-        "https://discord.com/api/oauth2/authorize?client_id=" +
-        process.env.REACT_APP_DISCORD_CLIENT_ID +
-        "&redirect_uri=" +
-        getDomain() +
-        "/profile" +
-        "&scope=identify%20guilds&response_type=code";
-      return (
-        <a className="btn btn-outline-light" href={urlLink}>
-          <i className="fab fa-discord"></i> {t("Login with discord")}
-        </a>
-      );
     }
+    const urlLink = `https://discord.com/api/oauth2/authorize?client_id=${
+      process.env.REACT_APP_DISCORD_CLIENT_ID
+    }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
+
+    return (
+      <a className="btn btn-outline-light" href={urlLink}>
+        <i className="fab fa-discord" /> {t("Login with discord")}
+      </a>
+    );
   }
 }
 

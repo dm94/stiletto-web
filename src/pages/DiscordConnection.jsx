@@ -24,7 +24,7 @@ class DiscordConnection extends Component {
     if (parsed.code != null) {
       const options = {
         method: "post",
-        url: process.env.REACT_APP_API_URL + "/users/auth",
+        url: `${process.env.REACT_APP_API_URL}/users/auth`,
         params: {
           code: parsed.code,
         },
@@ -61,13 +61,9 @@ class DiscordConnection extends Component {
   showClanInfo() {
     const { t } = this.props;
     const parsed = queryString.parse(this.props?.location.search);
-    const urlLink =
-      "https://discord.com/api/oauth2/authorize?client_id=" +
-      process.env.REACT_APP_DISCORD_CLIENT_ID +
-      "&redirect_uri=" +
-      getDomain() +
-      "/profile" +
-      "&scope=identify%20guilds&response_type=code";
+    const urlLink = `https://discord.com/api/oauth2/authorize?client_id=${
+      process.env.REACT_APP_DISCORD_CLIENT_ID
+    }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
     if (parsed.discordid != null && parsed.token != null) {
       storeItem("discordid", parsed.discordid);
       storeItem("token", parsed.token);
@@ -75,51 +71,45 @@ class DiscordConnection extends Component {
 
     if (getStoredItem("token") != null) {
       return <PrivateProfile key="profile" />;
-    } else {
-      return (
-        <div className="row">
-          <Helmet>
-            <title>Discord Login - Stiletto for Last Oasis</title>
-            <meta
-              name="description"
-              content="Link discord with stiletto and use more functions"
-            />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta
-              name="twitter:title"
-              content="Discord Login - Stiletto for Last Oasis"
-            />
-            <meta
-              name="twitter:description"
-              content="Link discord with stiletto and use more functions"
-            />
-            <meta
-              name="twitter:image"
-              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
-            />
-            <link
-              rel="canonical"
-              href={
-                getDomain() +
-                "/profile"
-              }
-            />
-          </Helmet>
-          <div className="col-12 col-md-6 mx-auto">
-            <div className="card border-secondary mb-3">
-              <div className="card-body text-succes">
-                <a
-                  className="btn btn-lg btn-outline-primary btn-block"
-                  href={urlLink}
-                >
-                  <i className="fab fa-discord"></i> {t("Login with discord")}
-                </a>
-              </div>
+    }
+
+    return (
+      <div className="row">
+        <Helmet>
+          <title>Discord Login - Stiletto for Last Oasis</title>
+          <meta
+            name="description"
+            content="Link discord with stiletto and use more functions"
+          />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Discord Login - Stiletto for Last Oasis"
+          />
+          <meta
+            name="twitter:description"
+            content="Link discord with stiletto and use more functions"
+          />
+          <meta
+            name="twitter:image"
+            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+          />
+          <link rel="canonical" href={`${getDomain()}/profile`} />
+        </Helmet>
+        <div className="col-12 col-md-6 mx-auto">
+          <div className="card border-secondary mb-3">
+            <div className="card-body text-succes">
+              <a
+                className="btn btn-lg btn-outline-primary btn-block"
+                href={urlLink}
+              >
+                <i className="fab fa-discord" /> {t("Login with discord")}
+              </a>
             </div>
           </div>
         </div>
-      );
-    }
+      </div>
+    );
   }
 
   render() {

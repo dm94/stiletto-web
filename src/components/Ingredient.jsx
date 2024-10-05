@@ -13,18 +13,18 @@ class Ingredient extends Component {
 
   render() {
     const { t } = this.props;
+    const hasIngredients = this.props?.ingredient.ingredients != null;
 
-    const url =
-      getDomain() +
-      "/item/" +
-      encodeURI(this.props?.ingredient.name.toLowerCase().replaceAll(" ", "_"));
+    const url = `${getDomain()}/item/${encodeURI(
+      this.props?.ingredient.name.toLowerCase().replaceAll(" ", "_")
+    )}`;
+
     return (
       <div className="list-group-item">
         <div
-          className={
-            this.props?.ingredient.ingredients != null ? "text-success" : ""
-          }
-          role={this.props?.ingredient.ingredients != null ? "button" : ""}
+          tabIndex={hasIngredients ? 0 : undefined}
+          className={hasIngredients ? "text-success" : ""}
+          role={hasIngredients ? "button" : ""}
           onClick={() =>
             this.setState((state) => ({ showList: !state.showList }))
           }
@@ -34,7 +34,7 @@ class Ingredient extends Component {
             name={this.props?.ingredient.name}
           />
           {this.props?.ingredient.count != null && this.props?.value != null
-            ? Math.ceil(this.props?.ingredient.count * this.props?.value) + "x "
+            ? `${Math.ceil(this.props?.ingredient.count * this.props?.value)}x `
             : ""}
           {this.props?.ingredient.ingredients != null ? (
             t(this.props?.ingredient.name, { ns: "items" })
@@ -54,13 +54,13 @@ class Ingredient extends Component {
   }
 
   showSubList() {
-    if (this.props?.ingredient.ingredients != null && this.state.showList) {
+    if (this.state.showList && this.props?.ingredient.ingredients != null) {
       return this.props?.ingredient.ingredients.map((ingredients) => (
         <ul
           className="list-group list-group-horizontal"
           key={`ingredient-sublist-${this.props?.ingredient.name}-${this.props?.value}`}
         >
-          <label className="sr-only">----------------------------</label>
+          <span className="sr-only">----------------------------</span>
           <Ingredients
             crafting={ingredients}
             value={
@@ -70,7 +70,7 @@ class Ingredient extends Component {
                 : this.props?.ingredient.count * this.props?.value
             }
           />
-          <label className="sr-only">----------------------------</label>
+          <span className="sr-only">----------------------------</span>
         </ul>
       ));
     }

@@ -11,7 +11,7 @@ const SchematicItems = ({ item }) => {
       const url = getItemUrl(itemCraft);
 
       return (
-        <li className="list-inline-item" key={itemCraft + "-" + index}>
+        <li className="list-inline-item" key={`${itemCraft}-${index}`}>
           <div className="list-group-item">
             <Icon key={itemCraft} name={itemCraft} />
             <a href={url}>{t(itemCraft)}</a>

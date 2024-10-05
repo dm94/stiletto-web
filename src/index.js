@@ -13,5 +13,5 @@ render(
       <CrafterApp />
     </Router>
   </I18nextProvider>,
-  document.getElementById("root")
+  document.getElementById("root"),
 );

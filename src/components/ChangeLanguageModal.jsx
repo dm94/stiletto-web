@@ -21,7 +21,13 @@ class ChangeLanguageModal extends Component {
     return supportedLanguages.map((languaje) => {
       const { t } = this.props;
       return (
-        <div role="button" className="col-3" key={languaje.key} onClick={() => this.props?.switchLanguage(languaje.key)}>
+        <div
+          tabIndex={0}
+          role="button"
+          className="col-3"
+          key={languaje.key}
+          onClick={() => this.props?.switchLanguage(languaje.key)}
+        >
           <img
             className="img-thumbnail"
             src={`/img/${languaje.key}.jpg`}
@@ -45,6 +51,7 @@ class ChangeLanguageModal extends Component {
             </div>
             <div className="modal-footer">
               <button
+                type="button"
                 className={
                   getStoredItem("darkmode") !== "true"
                     ? "btn btn-outline-secondary"

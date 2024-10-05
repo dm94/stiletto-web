@@ -14,7 +14,12 @@ class Items extends Component {
         overscanCount={20}
         renderItem={({ index, style }) => (
           <div key={index} style={style}>
-            <Item key={index} style={style} onAdd={this.props?.onAdd} item={this.props?.items[index]} />
+            <Item
+              key={index}
+              style={style}
+              onAdd={this.props?.onAdd}
+              item={this.props?.items[index]}
+            />
           </div>
         )}
       />

@@ -10,13 +10,15 @@ class ClanListItem extends Component {
       if (this.props?.clanuserid == null) {
         return (
           <button
+            type="button"
             className="btn btn-block btn-primary"
             onClick={() => this.props?.onSendRequest(this.props?.clan.clanid)}
           >
             {t("Send request")}
           </button>
         );
-      } else if (this.props?.clanuserid === this.props?.clan.clanid) {
+      }
+      if (this.props?.clanuserid === this.props?.clan.clanid) {
         return (
           <Link className="btn btn-block btn-primary" to="/members">
             {t("Members")}
@@ -38,7 +40,7 @@ class ClanListItem extends Component {
         <td>{this.props?.clan.discordTag}</td>
         <td>
           <a
-            href={"https://discord.gg/" + this.props?.clan.invitelink}
+            href={`https://discord.gg/${this.props?.clan.invitelink}`}
             target="_blank"
             rel="noopener noreferrer"
           >

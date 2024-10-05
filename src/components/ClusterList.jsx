@@ -18,10 +18,10 @@ class ClusterList extends Component {
     if (this.state.clusters != null) {
       return this.state.clusters.map((cl) => (
         <option
-          key={cl.region + "-" + cl.name}
-          value={cl.region + "-" + cl.name}
+          key={`${cl.region}-${cl.name}`}
+          value={`${cl.region}-${cl.name}`}
         >
-          {[cl.region] + " " + cl.name + " (" + cl.clan_limit + ")"}
+          {`${[cl.region]} ${cl.name} (${cl.clan_limit})`}
         </option>
       ));
     }

@@ -68,7 +68,7 @@ class ResourceMapNoLog extends Component {
         this.setState({ error: resourcesData.message });
       }
 
-      Axios.get(process.env.REACT_APP_API_URL + "/maps/" + mapId, {
+      Axios.get(`${process.env.REACT_APP_API_URL}/maps/${mapId}`, {
         params: {
           mappass: pass,
         },
@@ -174,6 +174,7 @@ class ResourceMapNoLog extends Component {
           }
         >
           <button
+            type="button"
             id="toggle-sidebar-button"
             className="btn btn-info ml-2 mb-2 float-right"
             onClick={() =>
@@ -188,7 +189,7 @@ class ResourceMapNoLog extends Component {
                   ? "fas fa-chevron-left"
                   : "fas fa-chevron-right"
               }
-            ></i>
+            />
           </button>
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
             <ul className="nav nav-pills nav-fill" role="tablist">
@@ -300,7 +301,7 @@ class ResourceMapNoLog extends Component {
               });
             }}
             center={this.state.center}
-          ></MapLayer>
+          />
         </div>
       </div>
     );

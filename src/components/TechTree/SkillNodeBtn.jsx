@@ -12,7 +12,7 @@ const SkillNodeBtn = ({ clan, tree, item }) => {
       const users = await getWhoHasLearntIt(clan, tree, item.name);
       setUsersSavedData(users);
       setLoaded(true);
-    } catch (err) {
+    } catch (_err) {
       setLoaded(true);
     }
   };
@@ -30,15 +30,19 @@ const SkillNodeBtn = ({ clan, tree, item }) => {
         ))}
       </ul>
     );
-  } else if (loaded) {
-    return <p>{t("No one has learnt it")}</p>;
-  } else {
-    return (
-      <button className="btn btn-primary btn-block" onClick={getLearned}>
-        {t("See who has learned it")}
-      </button>
-    );
   }
+  if (loaded) {
+    return <p>{t("No one has learnt it")}</p>;
+  }
+  return (
+    <button
+      type="button"
+      className="btn btn-primary btn-block"
+      onClick={getLearned}
+    >
+      {t("See who has learned it")}
+    </button>
+  );
 };
 
 export default SkillNodeBtn;

@@ -24,7 +24,7 @@ describe("Crafter", () => {
 
     cy.get("[data-cy='share-crafter-input']").should(
       "contain.value",
-      "63e00d26982e2b509d5cde92"
+      "63e00d26982e2b509d5cde92",
     );
   });
   it("Add an item several times and check the counter", () => {

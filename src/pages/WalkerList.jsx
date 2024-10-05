@@ -55,12 +55,10 @@ class WalkerList extends Component {
     if (parsed.code != null) {
       const options = {
         method: "get",
-        url: process.env.REACT_APP_API_URL + "/walkers/auth",
+        url: `${process.env.REACT_APP_API_URL}/walkers/auth`,
         params: {
           code: parsed.code,
-          redirect:
-          getDomain() +
-            "/walkerlist",
+          redirect: `${getDomain()}/walkerlist`,
         },
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
@@ -119,7 +117,7 @@ class WalkerList extends Component {
 
   updateWalkers(page = this.state.page) {
     this.setState({ isLoaded: false, page: page });
-    Axios.get(process.env.REACT_APP_API_URL + "/walkers", {
+    Axios.get(`${process.env.REACT_APP_API_URL}/walkers`, {
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -187,7 +185,7 @@ class WalkerList extends Component {
   updateWalker = (walker) => {
     const options = {
       method: "put",
-      url: process.env.REACT_APP_API_URL + "/walkers/" + walker.walkerID,
+      url: `${process.env.REACT_APP_API_URL}/walkers/${walker.walkerID}`,
       params: {
         owner: walker.ownerUser,
         use: walker.walker_use,
@@ -218,7 +216,7 @@ class WalkerList extends Component {
   deleteWalker = (walkerid) => {
     const options = {
       method: "delete",
-      url: process.env.REACT_APP_API_URL + "/walkers/" + walkerid,
+      url: `${process.env.REACT_APP_API_URL}/walkers/${walkerid}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -243,7 +241,7 @@ class WalkerList extends Component {
     if (this.state.walkers != null) {
       return this.state.walkers.map((walker) => (
         <WalkerListItem
-          key={"witem" + walker.walkerID}
+          key={`witem${walker.walkerID}`}
           walker={walker}
           walkerListTypes={this.state.walkerTypes}
           memberList={this.state.members}
@@ -337,13 +335,7 @@ class WalkerList extends Component {
           name="twitter:image"
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
         />
-        <link
-          rel="canonical"
-          href={
-            getDomain() +
-            "/walkerlist"
-          }
-        />
+        <link rel="canonical" href={`${getDomain()}/walkerlist`} />
       </Helmet>
     );
   }
@@ -479,12 +471,14 @@ class WalkerList extends Component {
                     </div>
                     <div className="col btn-group">
                       <button
+                        type="button"
                         className="btn btn-lg btn-primary"
                         onClick={() => this.updateWalkers()}
                       >
                         {t("Filter walkers")}
                       </button>
                       <button
+                        type="button"
                         className="btn btn-lg btn-secondary"
                         onClick={() => {
                           this.setState(
@@ -536,7 +530,7 @@ class WalkerList extends Component {
             hasMore={this.state.hasMoreWalkers}
             onPrev={() => this.updateWalkers(this.state.page - 1)}
             onNext={() => this.updateWalkers(this.state.page + 1)}
-          ></Pagination>
+          />
         </Fragment>
       );
     }

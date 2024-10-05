@@ -162,73 +162,80 @@ const rarityData = {
 
 export const calcRarityValue = (rarity, type, category, value) => {
   const factorName = getFactorName(type, category);
+  let newValue = value;
+
   if (factorName != null) {
     if (
       factorName === "WeaponItemSpeedBonus" ||
       factorName === "ArmorItemReduceBonus"
     ) {
-      return sumCalcs(factorName, rarity, value);
+      return sumCalcs(factorName, rarity, newValue);
     }
+
     switch (rarity) {
       case "Uncommon":
         if (rarityData.Uncommon[factorName]) {
-          value = value * rarityData.Uncommon[factorName];
+          newValue = newValue * rarityData.Uncommon[factorName];
         }
         break;
       case "Rare":
         if (rarityData.Rare[factorName]) {
-          value = value * rarityData.Rare[factorName];
+          newValue = newValue * rarityData.Rare[factorName];
         }
         break;
       case "Epic":
         if (rarityData.Epic[factorName]) {
-          value = value * rarityData.Epic[factorName];
+          newValue = newValue * rarityData.Epic[factorName];
         }
         break;
       case "Legendary":
         if (rarityData.Legendary[factorName]) {
-          value = value * rarityData.Legendary[factorName];
+          newValue = newValue * rarityData.Legendary[factorName];
         }
         break;
       default:
         break;
     }
     if (factorName === "ItemWeightFactor") {
-      value = (value / 100).toFixed(3);
+      newValue = (newValue / 100).toFixed(3);
     } else {
-      value = value.toFixed(0);
+      newValue = newValue.toFixed(0);
     }
   }
-  return value;
+
+  return newValue;
 };
 
 const sumCalcs = (factorName, rarity, value) => {
+  let newValue = value;
+
   switch (rarity) {
     case "Uncommon":
       if (rarityData.Uncommon[factorName]) {
-        value = value + rarityData.Uncommon[factorName];
+        newValue = newValue + rarityData.Uncommon[factorName];
       }
       break;
     case "Rare":
       if (rarityData.Rare[factorName]) {
-        value = value + rarityData.Rare[factorName];
+        newValue = newValue + rarityData.Rare[factorName];
       }
       break;
     case "Epic":
       if (rarityData.Epic[factorName]) {
-        value = value + rarityData.Epic[factorName];
+        newValue = newValue + rarityData.Epic[factorName];
       }
       break;
     case "Legendary":
       if (rarityData.Legendary[factorName]) {
-        value = value + rarityData.Legendary[factorName];
+        newValue = newValue + rarityData.Legendary[factorName];
       }
       break;
     default:
       break;
   }
-  value = value.toFixed(0);
-  return value;
+  newValue = newValue.toFixed(0);
+
+  return newValue;
 };
 
 const getFactorName = (type, category) => {

@@ -34,7 +34,7 @@ const NotificationList = () => {
   };
 
   const deleteNotification = (id) => {
-    setNotifications(notifications.filter((data) => data.date != id));
+    setNotifications(notifications.filter((data) => data.date !== id));
   };
 
   return (

@@ -36,7 +36,7 @@ class ClanList extends Component {
 
   async updateClans(page = this.state.page) {
     this.setState({ isLoaded: false, page: page });
-    Axios.get(process.env.REACT_APP_API_URL + "/clans", {
+    Axios.get(`${process.env.REACT_APP_API_URL}/clans`, {
       params: {
         pageSize: 20,
         page: page,
@@ -83,11 +83,7 @@ class ClanList extends Component {
   sendRequest = () => {
     const options = {
       method: "post",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.state.clanRequestId +
-        "/requests",
+      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanRequestId}/requests`,
       params: {
         message: this.state.textAreaModelValue,
       },
@@ -175,12 +171,14 @@ class ClanList extends Component {
                   </div>
                   <div className="col-2 btn-group">
                     <button
+                      type="button"
                       className="btn btn-primary"
                       onClick={() => this.updateClans()}
                     >
                       {t("Search")}
                     </button>
                     <button
+                      type="button"
                       className="btn btn-secondary"
                       onClick={() => {
                         this.setState(
@@ -218,17 +216,16 @@ class ClanList extends Component {
             hasMore={this.state.hasMoreClans}
             onPrev={() => this.updateClans(this.state.page - 1)}
             onNext={() => this.updateClans(this.state.page + 1)}
-          ></Pagination>
+          />
         </div>
       );
-    } else {
-      return (
-        <Fragment>
-          {this.helmetInfo()}
-          <LoadingScreen />
-        </Fragment>
-      );
     }
+    return (
+      <Fragment>
+        {this.helmetInfo()}
+        <LoadingScreen />
+      </Fragment>
+    );
   }
 
   helmetInfo() {
@@ -246,13 +243,7 @@ class ClanList extends Component {
           name="twitter:image"
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
         />
-        <link
-          rel="canonical"
-          href={
-            getDomain() +
-            "/clanlist"
-          }
-        />
+        <link rel="canonical" href={`${getDomain()}/clanlist`} />
       </Helmet>
     );
   }
@@ -269,7 +260,8 @@ class ClanList extends Component {
           }}
         />
       );
-    } else if (this.state.redirect) {
+    }
+    if (this.state.redirect) {
       return (
         <ModalMessage
           message={{
@@ -308,17 +300,22 @@ class ClanList extends Component {
                         textAreaModelValue: evt.target.value,
                       })
                     }
-                  ></textarea>
+                  />
                 </div>
               </div>
               <div className="modal-footer">
                 <button
+                  type="button"
                   className="btn btn-secondary"
                   onClick={() => this.setState({ showRequestModal: false })}
                 >
                   {t("Cancel")}
                 </button>
-                <button className="btn btn-success" onClick={this.sendRequest}>
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  onClick={this.sendRequest}
+                >
                   {t("Send request")}
                 </button>
               </div>

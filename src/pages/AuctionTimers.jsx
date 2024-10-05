@@ -43,13 +43,7 @@ class AuctionTimers extends Component {
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
           />
-          <link
-            rel="canonical"
-            href={
-              getDomain() +
-              "/auctions"
-            }
-          />
+          <link rel="canonical" href={`${getDomain()}/auctions`} />
         </Helmet>
         <div className="col-md-8">
           <div className="card">
@@ -65,6 +59,7 @@ class AuctionTimers extends Component {
             <div className="card-body text-center">
               <div className="btn-group">
                 <button
+                  type="button"
                   className={
                     this.state.playSound
                       ? "btn btn-secondary active"
@@ -74,9 +69,10 @@ class AuctionTimers extends Component {
                     this.setState({ playSound: true });
                   }}
                 >
-                  <i className="fas fa-volume-up"></i> {t("Sound On")}
+                  <i className="fas fa-volume-up" /> {t("Sound On")}
                 </button>
                 <button
+                  type="button"
                   className={
                     this.state.playSound
                       ? "btn btn-secondary"
@@ -86,7 +82,7 @@ class AuctionTimers extends Component {
                     this.setState({ playSound: false });
                   }}
                 >
-                  <i className="fas fa-volume-mute"></i> {t("Sound Off")}
+                  <i className="fas fa-volume-mute" /> {t("Sound Off")}
                 </button>
               </div>
             </div>
@@ -99,6 +95,7 @@ class AuctionTimers extends Component {
               <div className="row">
                 <div className="col">
                   <button
+                    type="button"
                     className="btn btn-primary btn-block"
                     onClick={() =>
                       this.setState((state) => ({ timers: state.timers + 1 }))
@@ -109,6 +106,7 @@ class AuctionTimers extends Component {
                 </div>
                 <div className="col">
                   <button
+                    type="button"
                     className="btn btn-danger btn-block"
                     onClick={() =>
                       this.setState((state) => ({ timers: state.timers - 1 }))

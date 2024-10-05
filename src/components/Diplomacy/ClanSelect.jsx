@@ -35,10 +35,11 @@ class ClanSelect extends Component {
           }
         >
           <button
+            type="button"
             className="btn btn-danger btn-sm"
             onClick={() => this.props?.onDelete(this.props?.clan.id)}
           >
-            <i className="fas fa-trash"></i>
+            <i className="fas fa-trash" />
           </button>
         </div>
       </div>

@@ -20,9 +20,8 @@ const GenericInfo = ({ dataInfo, name, rarity, category, textColor }) => {
             </div>
           </li>
         );
-      } else {
-        return false;
       }
+      return false;
     });
   };
 

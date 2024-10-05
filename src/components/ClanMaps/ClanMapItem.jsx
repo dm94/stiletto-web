@@ -9,11 +9,12 @@ class ClanMapItem extends Component {
     return (
       <div className="btn-group-vertical w-100 m-0 p-0 h-100">
         <button
+          type="button"
           className="btn btn-primary btn-block"
           variant="primary"
           onClick={() => this.props?.onOpen(this.props?.map)}
         >
-          <i className="fas fa-eye"></i> {t("Show map")}
+          <i className="fas fa-eye" /> {t("Show map")}
         </button>
         {this.deleteMapButton(t)}
         {this.shareMapButton(t)}
@@ -25,11 +26,12 @@ class ClanMapItem extends Component {
     if (this.props?.map?.discordid === getStoredItem("discordid")) {
       return (
         <button
+          type="button"
           className="btn btn-danger btn-block"
           variant="primary"
           onClick={() => this.props?.onDelete(this.props?.map.mapid)}
         >
-          <i className="fas fa-trash-alt"></i> {t("Delete map")}
+          <i className="fas fa-trash-alt" /> {t("Delete map")}
         </button>
       );
     }
@@ -39,19 +41,18 @@ class ClanMapItem extends Component {
     if (this.props?.map.discordid === getStoredItem("discordid")) {
       return (
         <button
+          type="button"
           className="btn btn-success btn-block"
           variant="primary"
           onClick={() =>
             window.open(
-              getDomain() +
-                "/map/" +
-                this.props?.map.mapid +
-                "?pass=" +
+              `${getDomain()}/map/${this.props?.map.mapid}?pass=${
                 this.props?.map.pass
+              }`
             )
           }
         >
-          <i className="fas fa-share-alt"></i> {t("Share map")}
+          <i className="fas fa-share-alt" /> {t("Share map")}
         </button>
       );
     }
@@ -63,17 +64,14 @@ class ClanMapItem extends Component {
     return (
       <div
         className="p-2 col-sm-12 col-xl-4 text-center"
-        key={"clanmap" + this.props?.map.mapid}
+        key={`clanmap${this.props?.map.mapid}`}
       >
         <div className="row">
           <div className="col-6 pr-0">
             <img
-              src={
-                process.env.REACT_APP_RESOURCES_URL +
-                "/maps/" +
-                this.props?.value.replace("_new", "") +
-                ".jpg"
-              }
+              src={`${
+                process.env.REACT_APP_RESOURCES_URL
+              }/maps/${this.props?.value.replace("_new", "")}.jpg`}
               className="img-fluid"
               alt={this.props?.map.name}
               onClick={() => this.props?.onOpen(this.props?.map)}
@@ -90,7 +88,9 @@ class ClanMapItem extends Component {
           </small>
         </h5>
         <p className="m-0 fw-lighter">
-          {this.props?.map.discordTag !== null ? this.props?.map.discordTag : ""}
+          {this.props?.map.discordTag !== null
+            ? this.props?.map.discordTag
+            : ""}
         </p>
       </div>
     );

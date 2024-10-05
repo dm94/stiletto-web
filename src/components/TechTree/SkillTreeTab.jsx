@@ -26,7 +26,7 @@ const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
 
       return childrens;
     },
-    [items, t]
+    [items, t],
   );
 
   const getContentItem = (item) => {
@@ -40,7 +40,7 @@ const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
         </p>
         {clan ? (
           <SkillNodeBtn
-            key={"btn-" + item.name}
+            key={`btn-${item.name}`}
             item={item}
             clan={clan}
             tree={treeId}
@@ -53,7 +53,7 @@ const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
         </p>
         {item.cost ? (
           <Ingredient
-            key={"cost-" + item.cost.name}
+            key={`cost-${item.cost.name}`}
             ingredient={item.cost}
             value={1}
           />

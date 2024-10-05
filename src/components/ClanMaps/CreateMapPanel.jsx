@@ -16,13 +16,13 @@ class CreateMapPanel extends Component {
               onSubmit={(evt) => {
                 const date = new Date();
                 date.setDate(
-                  date.getDate() + parseInt(this.state.mapDateInput)
+                  date.getDate() + Number.parseInt(this.state.mapDateInput),
                 );
                 this.props?.onCreateMap(
                   evt,
                   this.state.mapNameInput,
                   date.toISOString().split("T")[0],
-                  this.state.mapSelectInput
+                  this.state.mapSelectInput,
                 );
                 this.setState({
                   mapNameInput: "",

@@ -6,7 +6,7 @@ import {
   Popup,
   Tooltip,
   ImageOverlay,
-  Circle
+  Circle,
 } from "react-leaflet";
 import { withTranslation } from "react-i18next";
 import MapExtended from "./MapExtended";
@@ -43,22 +43,16 @@ class MapLayer extends Component {
 
     const remainingQuality = quality - estimatedQuality;
     const now = new Date();
-    const date =
-      now.getFullYear() +
-      "-" +
-      (now.getMonth() + 1) +
-      "-" +
-      now.getDate() +
-      " " +
-      now.getHours() +
-      ":" +
-      now.getMinutes();
+    const date = `${now.getFullYear()}-${
+      now.getMonth() + 1
+    }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
 
     const fullDate = new Date(now.getTime() + remainingQuality * 10 * 60000);
 
     return (
       <div>
         <button
+          type="button"
           className="btn btn-info btn-sm btn-block"
           onClick={() =>
             this.props?.updateResource(
@@ -77,7 +71,7 @@ class MapLayer extends Component {
         <div className="mb-1">
           {t("Spawns in")}:{" "}
           {remainingQuality !== 0
-            ? remainingQuality * 10 + " " + t("Minutes")
+            ? `${remainingQuality * 10} ${t("Minutes")}`
             : t("Now")}
         </div>
         <div className="mb-1">
@@ -90,7 +84,7 @@ class MapLayer extends Component {
   getMarketDesign = (resource) => {
     const res = resource.replaceAll(" ", "_");
     const marker = L.icon({
-      iconUrl: process.env.REACT_APP_RESOURCES_URL + "/markers/" + res + ".png",
+      iconUrl: `${process.env.REACT_APP_RESOURCES_URL}/markers/${res}.png`,
       iconSize: [25, 41],
       iconAnchor: [13, 44],
       popupAnchor: [-6, -20],
@@ -106,22 +100,22 @@ class MapLayer extends Component {
       this.props?.resourcesInTheMap[0].resourceid != null
     ) {
       return this.props?.resourcesInTheMap.map((resource) => (
-        <Fragment key={"marker-" + resource.resourceid}>
+        <Fragment key={`marker-${resource.resourceid}`}>
           <Marker
-            key={"resource" + resource.resourceid}
+            key={`resource${resource.resourceid}`}
             position={[resource.x, resource.y]}
             icon={this.getMarketDesign(resource.resourcetype)}
           >
             <Popup>
               <div className="mb-0">
                 <Icon
-                  key={"icon" + resource.resourceid}
+                  key={`icon${resource.resourceid}`}
                   name={resource.resourcetype}
                 />
                 {t(resource.resourcetype)}
               </div>
               <div className="mb-1 text-muted">
-                [{Math.floor(resource.x) + "," + Math.floor(resource.y)}]
+                [{`${Math.floor(resource.x)},${Math.floor(resource.y)}`}]
               </div>
               <div className="mb-1">{resource.description}</div>
               {resource.lastharvested != null
@@ -129,6 +123,7 @@ class MapLayer extends Component {
                 : ""}
               {resource.token != null && (
                 <button
+                  type="button"
                   className="btn btn-danger"
                   onClick={() =>
                     this.props?.deleteResource(
@@ -142,34 +137,34 @@ class MapLayer extends Component {
               )}
               {resource.resourcetype === "Poaching Hut" ||
               resource.resourcetype === "Enemy Poaching Hut" ? (
-                  <div className="border-top border-warning mt-2">
-                    <input
-                      className="form-control form-control-sm"
-                      id="formPoachingRadius"
-                      value={this.state.poachingHutRadius}
-                      onChange={(e) =>
-                        this.setState({ poachingHutRadius: e.target.value })
-                      }
-                      type="range"
-                      min="0"
-                      max="250"
-                    ></input>
-                  </div>
-                ) : (
-                  ""
-                )}
+                <div className="border-top border-warning mt-2">
+                  <input
+                    className="form-control form-control-sm"
+                    id="formPoachingRadius"
+                    value={this.state.poachingHutRadius}
+                    onChange={(e) =>
+                      this.setState({ poachingHutRadius: e.target.value })
+                    }
+                    type="range"
+                    min="0"
+                    max="250"
+                  />
+                </div>
+              ) : (
+                ""
+              )}
             </Popup>
           </Marker>
           {resource.resourcetype === "Poaching Hut" ||
           resource.resourcetype === "Enemy Poaching Hut" ? (
-              <Circle
-                center={[resource.x, resource.y]}
-                pathOptions={{ fillColor: "blue" }}
-                radius={this.state.poachingHutRadius * 10000}
-              />
-            ) : (
-              ""
-            )}
+            <Circle
+              center={[resource.x, resource.y]}
+              pathOptions={{ fillColor: "blue" }}
+              radius={this.state.poachingHutRadius * 10000}
+            />
+          ) : (
+            ""
+          )}
         </Fragment>
       ));
     }
@@ -195,9 +190,9 @@ class MapLayer extends Component {
       <Marker position={position} icon={myMarker}>
         <Popup>
           [
-          {Math.floor(this.state.coordinateXInput) +
-            "," +
-            Math.floor(this.state.coordinateYInput)}
+          {`${Math.floor(this.state.coordinateXInput)},${Math.floor(
+            this.state.coordinateYInput
+          )}`}
           ]{t("This marker is used for positioning when creating a resource")}
         </Popup>
         <Tooltip>{t("Temporal Marker")}</Tooltip>
@@ -205,10 +200,7 @@ class MapLayer extends Component {
     ) : null;
 
     const isNewMap =
-      this.props?.resourcesInTheMap != null &&
-      this.props?.resourcesInTheMap[0] != null &&
-      this.props?.resourcesInTheMap[0].typemap != null &&
-      this.props?.resourcesInTheMap[0].typemap.includes("_new");
+      this.props?.resourcesInTheMap?.[0]?.typemap?.includes("_new");
 
     return (
       <div id="map">
@@ -251,13 +243,13 @@ class MapLayer extends Component {
             bounds={
               isNewMap
                 ? [
-                  [85.5, -180],
-                  [-84.9, 177.3],
-                ]
+                    [85.5, -180],
+                    [-84.9, 177.3],
+                  ]
                 : [
-                  [85.5, -180],
-                  [-78, 130],
-                ]
+                    [85.5, -180],
+                    [-78, 130],
+                  ]
             }
             opacity={this.state.gridOpacity}
             url={
@@ -266,16 +258,13 @@ class MapLayer extends Component {
             }
           />
           <TileLayer
-            url={
-              process.env.REACT_APP_RESOURCES_URL +
-              "/maps/" +
-              (this.props?.resourcesInTheMap != null &&
+            url={`${process.env.REACT_APP_RESOURCES_URL}/maps/${
+              this.props?.resourcesInTheMap != null &&
               this.props?.resourcesInTheMap[0] != null &&
               this.props?.resourcesInTheMap[0].typemap != null
                 ? this.props?.resourcesInTheMap[0].typemap
-                : "Crater") +
-              "/{z}/{x}/{y}.png"
-            }
+                : "Crater"
+            }/{z}/{x}/{y}.png`}
             noWrap={true}
           />
           {marker}

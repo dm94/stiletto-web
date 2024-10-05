@@ -37,7 +37,7 @@ export const sendEvent = (data) => {
 
   window.plausible =
     window.plausible ||
-    function() {
+    function () {
       (window.plausible.q = window.plausible.q || []).push(arguments);
     };
 

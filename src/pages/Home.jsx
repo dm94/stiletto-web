@@ -21,7 +21,7 @@ class Home extends Component {
             name="description"
             content="Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more..."
           />
-          <meta name="theme-color" content="#FFFFFF"></meta>
+          <meta name="theme-color" content="#FFFFFF" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:title" content="Stiletto for Last Oasis" />
           <meta
@@ -32,12 +32,7 @@ class Home extends Component {
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
           />
-          <link
-            rel="canonical"
-            href={
-              getDomain()
-            }
-          />
+          <link rel="canonical" href={getDomain()} />
         </Helmet>
         <div className="row mb-4">
           <div
@@ -47,12 +42,10 @@ class Home extends Component {
             onClick={() => this.setState({ redirectTo: "/crafter" })}
             aria-label={t("Crafting Calculator")}
           >
-            <h2 className="lo-title">
-              {t("Crafting Calculator")}
-            </h2>
+            <h2 className="lo-title">{t("Crafting Calculator")}</h2>
             <p>
               {t(
-                "Here you can see and automatically calculate the materials needed to build each item."
+                "Here you can see and automatically calculate the materials needed to build each item.",
               )}
             </p>
           </div>
@@ -63,12 +56,10 @@ class Home extends Component {
             onClick={() => this.setState({ redirectTo: "/trades" })}
             aria-label={t("Trading System")}
           >
-            <h2 className="lo-title">
-              {t("Trading System")}
-            </h2>
+            <h2 className="lo-title">{t("Trading System")}</h2>
             <p>
               {t(
-                "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with"
+                "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with",
               )}
             </p>
           </div>
@@ -84,9 +75,7 @@ class Home extends Component {
             }
             aria-label={t("Resource Maps")}
           >
-            <h2 className="lo-title">
-              {t("Resource Maps")}
-            </h2>
+            <h2 className="lo-title">{t("Resource Maps")}</h2>
             <p>
               {t("Create and edit maps to add resources or strategic points.")}
             </p>

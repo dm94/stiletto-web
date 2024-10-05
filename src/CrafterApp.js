@@ -10,7 +10,7 @@ import ChangeLanguageModal from "./components/ChangeLanguageModal";
 import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
 import { usePageTracking } from "./page-tracking";
-import "./css/style.min.css";
+import "./css/style.css";
 import NotificationList from "./components/Notifications/NotificationList";
 
 const CrafterApp = () => {
@@ -56,7 +56,7 @@ const CrafterApp = () => {
         }}
         setRedirectTo={(value) => setRedirectTo(value)}
       />
-      <main role="main" className="flex-shrink-0">
+      <main className="flex-shrink-0">
         <div className="container-fluid pt-4">
           {Routes}
           {showChangeLanguageModal && (
@@ -118,7 +118,7 @@ const CrafterApp = () => {
               </a>
               {" | "}
               {t(
-                "This website uses utilities related to the game 'Last Oasis' but is not affiliated with"
+                "This website uses utilities related to the game 'Last Oasis' but is not affiliated with",
               )}{" "}
               <a
                 href="https://www.donkey.team/"
@@ -143,7 +143,9 @@ function updateWeb() {
   sessionStorage.removeItem("allItems");
   caches.keys().then((names) => {
     for (const name of names) {
-      caches.delete(name);
+      if (name.includes("lastCheck")) {
+        caches.delete(name);
+      }
     }
   });
   window.location.reload();
@@ -158,28 +160,31 @@ function darkMode(t) {
   if (getStoredItem("darkmode") !== "false") {
     return (
       <button
+        type="button"
         className="btn btn-sm btn-outline-light"
         onClick={() => {
           storeItem("darkmode", false);
           window.location.reload();
         }}
       >
-        <i className="far fa-sun"></i> {t("Light Theme Mode")}
-      </button>
-    );
-  } else {
-    return (
-      <button
-        className="btn btn-sm btn-outline-light"
-        onClick={() => {
-          storeItem("darkmode", true);
-          window.location.reload();
-        }}
-      >
-        <i className="far fa-moon"></i> {t("Dark Theme Mode")}
+        <i className="far fa-sun" /> {t("Light Theme Mode")}
       </button>
     );
   }
+
+  return (
+    <button
+      type="button"
+      className="btn btn-sm btn-outline-light"
+      onClick={() => {
+        storeItem("darkmode", true);
+        window.location.reload();
+      }}
+    >
+      <i className="far fa-moon" /> {t("Dark Theme Mode")}
+    </button>
+  );
+
 }
 
 export default CrafterApp;

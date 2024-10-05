@@ -36,7 +36,7 @@ class CreateResourceTab extends Component {
               this.state.resourceTypeInput,
               this.state.qualityInput,
               this.state.descriptionInput,
-              this.state.lastHarvestedInput
+              this.state.lastHarvestedInput,
             );
             this.setState({
               resourceTypeInput: "Aloe Vera",

@@ -16,15 +16,19 @@ export const getLearned = async () => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
 
     if (response.status === 200) {
       return await response.json();
-    } else if (response.status === 401) {
+    }
+
+    if (response.status === 401) {
       closeSession();
       throw new Error("You don't have access here, try to log in again");
-    } else if (response.status === 503) {
+    }
+
+    if (response.status === 503) {
       throw new Error("Error connecting to database");
     }
   } catch (error) {
@@ -45,9 +49,8 @@ export const addTech = async (tabSelect, learned) => {
       tree: tabSelect,
     });
 
-    const url = `${
-      process.env.REACT_APP_API_URL
-    }/users/${discordId}/tech?${params.toString()}`;
+    const url = `${process.env.REACT_APP_API_URL
+      }/users/${discordId}/tech?${params.toString()}`;
 
     const response = await fetch(url, {
       method: "PUT",

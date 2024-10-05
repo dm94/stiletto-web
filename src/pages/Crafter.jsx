@@ -37,13 +37,13 @@ class Crafter extends Component {
     const parsed = queryString.parse(this.props?.location.search);
     const recipe = parsed.recipe;
     if (recipe != null && recipe.length > 0) {
-      Axios.get(process.env.REACT_APP_API_URL + "/recipes/" + recipe)
+      Axios.get(`${process.env.REACT_APP_API_URL}/recipes/${recipe}`)
         .then((response) => {
           if (response.status === 200) {
             if (response.data.items != null) {
               const allItems = response.data.items;
               allItems.forEach((it) => {
-                this.handleAdd(it.name, parseInt(it.count));
+                this.handleAdd(it.name, Number.parseInt(it.count));
               });
             }
           } else if (response.status === 503) {
@@ -97,11 +97,10 @@ class Crafter extends Component {
           onAdd={this.handleAdd}
         />
       );
-    } else {
-      return (
-        <Items key="itemList" items={this.state.items} onAdd={this.handleAdd} />
-      );
     }
+    return (
+      <Items key="itemList" items={this.state.items} onAdd={this.handleAdd} />
+    );
   }
 
   handleAdd = (itemName, count) => {
@@ -113,7 +112,7 @@ class Crafter extends Component {
       selectedItem = this.state.selectedItems.find(
         (it) => it.name === itemName
       );
-      this.changeCount(itemName, parseInt(selectedItem.count) + count);
+      this.changeCount(itemName, Number.parseInt(selectedItem.count) + count);
     } else if (selectedItem != null) {
       const selectedItems = this.state.selectedItems.concat([
         {
@@ -155,7 +154,7 @@ class Crafter extends Component {
             if (!secondTree) {
               const subIngredients = this.getIngredients(ingredient.name, true);
               if (subIngredients.length > 0) {
-                ingredient["ingredients"] = subIngredients;
+                ingredient.ingredients = subIngredients;
               }
             }
             ingredients.push(ingredient);
@@ -233,13 +232,7 @@ class Crafter extends Component {
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
           />
-          <link
-            rel="canonical"
-            href={
-              getDomain() +
-              "/crafter"
-            }
-          />
+          <link rel="canonical" href={`${getDomain()}/crafter`} />
         </Helmet>
         <div className="col mb-2">
           <form role="search" className="bd-search d-flex align-items-center">
@@ -261,7 +254,7 @@ class Crafter extends Component {
               aria-expanded="false"
               aria-label="Toggle items"
             >
-              <i className="fas fa-list fa-lg"></i>
+              <i className="fas fa-list fa-lg" />
             </button>
           </form>
           <nav
@@ -277,7 +270,7 @@ class Crafter extends Component {
             </ul>
           </nav>
         </div>
-        <main role="main" className="col-md-9 col-lg-8 col-xl-8">
+        <main className="col-md-9 col-lg-8 col-xl-8">
           <div className="col-12 card-group">{this.showSelectedItems()}</div>
           <div className="col-12">
             <TotalMaterials

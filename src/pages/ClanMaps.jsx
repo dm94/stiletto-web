@@ -28,7 +28,7 @@ class ClanMaps extends Component {
     const maps = await getMaps();
     this.setState({ maps: maps });
 
-    Axios.get(process.env.REACT_APP_API_URL + "/maps", {
+    Axios.get(`${process.env.REACT_APP_API_URL}/maps`, {
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -50,7 +50,7 @@ class ClanMaps extends Component {
     if (this.state.clanMaps != null && this.state.maps != null) {
       return this.state.clanMaps.map((map) => (
         <ClanMapItem
-          key={"clanmap" + map.mapid}
+          key={`clanmap${map.mapid}`}
           map={map}
           value={map.typemap}
           onOpen={(mapData) => {
@@ -67,7 +67,7 @@ class ClanMaps extends Component {
   deleteMap = (mapid) => {
     const options = {
       method: "delete",
-      url: process.env.REACT_APP_API_URL + "/maps/" + mapid,
+      url: `${process.env.REACT_APP_API_URL}/maps/${mapid}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -97,13 +97,13 @@ class ClanMaps extends Component {
     event.preventDefault();
     const options = {
       method: "post",
-      url: process.env.REACT_APP_API_URL + "/maps",
+      url: `${process.env.REACT_APP_API_URL}/maps`,
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,
         mapname: mapNameInput,
         mapdate: mapDateInput,
-        maptype: mapSelectInput + "_new",
+        maptype: `${mapSelectInput}_new`,
       },
     };
 
@@ -159,13 +159,7 @@ class ClanMaps extends Component {
             name="twitter:image"
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
           />
-          <link
-            rel="canonical"
-            href={
-              getDomain() +
-              "/maps"
-            }
-          />
+          <link rel="canonical" href={`${getDomain()}/maps`} />
         </Helmet>
         <div className="col-xl-12">
           <div className="card border-secondary mb-3">
@@ -187,6 +181,7 @@ class ClanMaps extends Component {
               </div>
               <div className="modal-footer">
                 <button
+                  type="button"
                   className="btn btn-outline-secondary"
                   onClick={() =>
                     this.setState({
@@ -198,6 +193,7 @@ class ClanMaps extends Component {
                   {t("Cancel")}
                 </button>
                 <button
+                  type="button"
                   className="btn btn-outline-danger"
                   onClick={() => this.deleteMap(this.state.idMapDeleteModal)}
                 >
@@ -216,7 +212,7 @@ class ClanMaps extends Component {
     if (this.state.mapThatIsOpen) {
       return (
         <ResourceMap
-          key={"mapOpen" + this.state.mapThatIsOpen.mapid}
+          key={`mapOpen${this.state.mapThatIsOpen.mapid}`}
           onReturn={() => this.setState({ mapThatIsOpen: null })}
           map={this.state.mapThatIsOpen}
         />
@@ -232,7 +228,8 @@ class ClanMaps extends Component {
           }}
         />
       );
-    } else if (this.state.user_discord_id == null || this.state.token == null) {
+    }
+    if (this.state.user_discord_id == null || this.state.token == null) {
       return (
         <ModalMessage
           message={{

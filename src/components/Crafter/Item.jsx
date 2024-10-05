@@ -19,11 +19,12 @@ class Item extends Component {
           </div>
           <div className="col">
             <button
+              type="button"
               className="btn btn-success btn-sm float-right"
               aria-label="Add item"
               onClick={() => this.props?.onAdd(this.props?.item.name)}
             >
-              <i className="fas fa-plus"></i>
+              <i className="fas fa-plus" />
             </button>
           </div>
         </div>

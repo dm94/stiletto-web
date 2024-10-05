@@ -42,7 +42,7 @@ class TradeSystem extends Component {
 
   updateTrades(page = this.state.page) {
     this.setState({ isLoaded: false, page: page });
-    Axios.get(process.env.REACT_APP_API_URL + "/trades", {
+    Axios.get(`${process.env.REACT_APP_API_URL}/trades`, {
       params: {
         pageSize: 10,
         page: page,
@@ -90,7 +90,7 @@ class TradeSystem extends Component {
   deleteTrade = (idTrade) => {
     const options = {
       method: "delete",
-      url: process.env.REACT_APP_API_URL + "/trades/" + idTrade,
+      url: `${process.env.REACT_APP_API_URL}/trades/${idTrade}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -111,7 +111,7 @@ class TradeSystem extends Component {
     event.preventDefault();
     const options = {
       method: "post",
-      url: process.env.REACT_APP_API_URL + "/trades",
+      url: `${process.env.REACT_APP_API_URL}/trades`,
       params: {
         resource: this.state.resourceTypeInput,
         type: this.state.tradeTypeInput,
@@ -301,7 +301,7 @@ class TradeSystem extends Component {
     if (this.state.trades != null) {
       return this.state.trades.map((trade) => (
         <Trade
-          key={"trade" + trade.idtrade}
+          key={`trade${trade.idtrade}`}
           trade={trade}
           onDelete={this.deleteTrade}
         />
@@ -327,13 +327,7 @@ class TradeSystem extends Component {
           name="twitter:image"
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
         />
-        <link
-          rel="canonical"
-          href={
-            getDomain() +
-            "/trades"
-          }
-        />
+        <link rel="canonical" href={`${getDomain()}/trades`} />
       </Helmet>
     );
   }
@@ -421,12 +415,14 @@ class TradeSystem extends Component {
                 </div>
                 <div className="col-xl-3 btn-group">
                   <button
+                    type="button"
                     className="btn btn-lg btn-primary"
                     onClick={() => this.updateTrades()}
                   >
                     {t("Filter trades")}
                   </button>
                   <button
+                    type="button"
                     className="btn btn-lg btn-secondary"
                     onClick={() => {
                       this.updateTrades();
@@ -451,7 +447,7 @@ class TradeSystem extends Component {
             hasMore={this.state.hasMore}
             onPrev={() => this.updateTrades(this.state.page - 1)}
             onNext={() => this.updateTrades(this.state.page + 1)}
-          ></Pagination>
+          />
         </div>
       </div>
     );

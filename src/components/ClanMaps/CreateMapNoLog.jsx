@@ -25,11 +25,11 @@ class CreateMapNoLog extends Component {
     event.preventDefault();
     const options = {
       method: "post",
-      url: process.env.REACT_APP_API_URL + "/maps",
+      url: `${process.env.REACT_APP_API_URL}/maps`,
       params: {
         mapname: mapNameInput,
         mapdate: mapDateInput,
-        maptype: mapSelectInput + "_new",
+        maptype: `${mapSelectInput}_new`,
       },
     };
 
@@ -63,13 +63,9 @@ class CreateMapNoLog extends Component {
       <input
         className="btn btn-success btn-sm btn-block"
         type="text"
-        value={
-          getDomain() +
-          "/map/" +
-          this.state.mapIdInput +
-          "?pass=" +
+        value={`${getDomain()}/map/${this.state.mapIdInput}?pass=${
           this.state.mapPassInput
-        }
+        }`}
         disabled
       />
     );
@@ -148,6 +144,7 @@ class CreateMapNoLog extends Component {
               <div className="modal-body">{this.shareMapLink()}</div>
               <div className="modal-footer">
                 <button
+                  type="button"
                   className="btn btn-outline-success btn-block"
                   onClick={() =>
                     this.props?.onOpen(

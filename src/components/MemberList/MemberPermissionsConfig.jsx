@@ -16,10 +16,12 @@ class MemberPermissionsConfig extends Component {
   }
 
   async componentDidMount() {
-    const request = await getUserPermssions(
-      this.props?.clanid,
-      this.props?.memberid
-    );
+    const { clanid, memberid } = this.props;
+    if (!clanid || !memberid) {
+      return;
+    }
+
+    const request = await getUserPermssions(clanid, memberid);
     if (request) {
       if (request.success) {
         const allPermissions = request.message;
@@ -37,15 +39,14 @@ class MemberPermissionsConfig extends Component {
   }
 
   updateMemberPermissions = () => {
+    const { clanid, memberid } = this.props;
+    if (!clanid || !memberid) {
+      return;
+    }
+
     const options = {
       method: "put",
-      url:
-        process.env.REACT_APP_API_URL +
-        "/clans/" +
-        this.props?.clanid +
-        "/members/" +
-        this.props?.memberid +
-        "/permissions",
+      url: `${process.env.REACT_APP_API_URL}/clans/${clanid}/members/${memberid}/permissions`,
       params: {
         bot: this.state.bot,
         diplomacy: this.state.diplomacy,
@@ -63,7 +64,9 @@ class MemberPermissionsConfig extends Component {
           this.props?.onClose();
         } else if (response.status === 401) {
           closeSession();
-          this.props?.onError("You don't have access here, try to log in again");
+          this.props?.onError(
+            "You don't have access here, try to log in again"
+          );
           this.props?.onClose();
         } else if (response.status === 503) {
           this.props?.onError("Error connecting to database");
@@ -97,7 +100,6 @@ class MemberPermissionsConfig extends Component {
               <div className="form-group">
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow to change bot settings")}
                 >
                   <input
@@ -111,17 +113,12 @@ class MemberPermissionsConfig extends Component {
                       })
                     }
                   />
-                  <label
-                    className="custom-control-label"
-                    role="button"
-                    htmlFor="botInput"
-                  >
+                  <label className="custom-control-label" htmlFor="botInput">
                     {t("Discord Bot settings")}
                   </label>
                 </div>
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow editing walkers")}
                 >
                   <input
@@ -137,7 +134,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="walkersInput"
                   >
                     {t("Allow editing walkers")}
@@ -145,7 +141,6 @@ class MemberPermissionsConfig extends Component {
                 </div>
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow editing diplomacy")}
                 >
                   <input
@@ -161,7 +156,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="diplomacyInput"
                   >
                     {t("Allow editing diplomacy")}
@@ -169,7 +163,6 @@ class MemberPermissionsConfig extends Component {
                 </div>
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow management of request")}
                 >
                   <input
@@ -185,7 +178,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="requestInput"
                   >
                     {t("Allow management of request")}
@@ -193,7 +185,6 @@ class MemberPermissionsConfig extends Component {
                 </div>
                 <div
                   className="custom-control custom-switch my-1"
-                  role="button"
                   title={t("Allow kick members")}
                 >
                   <input
@@ -209,7 +200,6 @@ class MemberPermissionsConfig extends Component {
                   />
                   <label
                     className="custom-control-label"
-                    role="button"
                     htmlFor="kickmembersInput"
                   >
                     {t("Allow kick members")}

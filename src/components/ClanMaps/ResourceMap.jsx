@@ -81,7 +81,7 @@ class ResourceMap extends Component {
 
     const options = {
       method: "put",
-      url: process.env.REACT_APP_API_URL + "/maps/" + this.props?.map.mapid,
+      url: `${process.env.REACT_APP_API_URL}/maps/${this.props?.map.mapid}`,
       params: {
         mapname: this.state.mapname,
         mapdate: this.state.dateofburning,
@@ -136,7 +136,7 @@ class ResourceMap extends Component {
                 value={this.state.mapname}
                 maxLength="30"
                 required
-              ></input>
+              />
             </div>
             <div className="form-group">
               <label htmlFor="mapdate">{t("Date of burning")}</label>
@@ -149,7 +149,7 @@ class ResourceMap extends Component {
                 }
                 value={this.state.dateofburning}
                 required
-              ></input>
+              />
             </div>
             <div className="form-group">
               <label htmlFor="mapdate">
@@ -194,7 +194,7 @@ class ResourceMap extends Component {
                 value={this.state.pass}
                 maxLength="20"
                 required
-              ></input>
+              />
             </div>
             <button
               className="btn btn-lg btn-outline-success btn-block"
@@ -232,7 +232,8 @@ class ResourceMap extends Component {
           }}
         />
       );
-    } else if (this.state.error != null) {
+    }
+    if (this.state.error != null) {
       return (
         <ModalMessage
           message={{
@@ -242,7 +243,8 @@ class ResourceMap extends Component {
           }}
         />
       );
-    } else if (this.state.textSuccess != null) {
+    }
+    if (this.state.textSuccess != null) {
       return (
         <ModalMessage
           message={{
@@ -266,13 +268,15 @@ class ResourceMap extends Component {
         >
           <div>
             <button
+              type="button"
               className="btn btn-sm btn-primary btn-block mb-2"
               onClick={() => this.props?.onReturn()}
             >
-              <i className="fas fa-arrow-left"></i>{" "}
+              <i className="fas fa-arrow-left" />{" "}
               {t("Back to the list of maps")}
             </button>
             <button
+              type="button"
               id="toggle-sidebar-button"
               className="btn btn-info ml-2 mb-2 float-right"
               onClick={() =>
@@ -287,7 +291,7 @@ class ResourceMap extends Component {
                     ? "fas fa-chevron-left"
                     : "fas fa-chevron-right"
                 }
-              ></i>
+              />
             </button>
           </div>
           <nav className="collapse show" id="items-nav" aria-label="Items Navs">
@@ -418,7 +422,7 @@ class ResourceMap extends Component {
               });
             }}
             center={this.state.center}
-          ></MapLayer>
+          />
         </div>
       </div>
     );
