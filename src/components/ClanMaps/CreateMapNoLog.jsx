@@ -63,9 +63,9 @@ class CreateMapNoLog extends Component {
       <input
         className="btn btn-success btn-sm btn-block"
         type="text"
-        value={
-          `${getDomain()}/map/${this.state.mapIdInput}?pass=${this.state.mapPassInput}`
-        }
+        value={`${getDomain()}/map/${this.state.mapIdInput}?pass=${
+          this.state.mapPassInput
+        }`}
         disabled
       />
     );
@@ -144,6 +144,7 @@ class CreateMapNoLog extends Component {
               <div className="modal-body">{this.shareMapLink()}</div>
               <div className="modal-footer">
                 <button
+                  type="button"
                   className="btn btn-outline-success btn-block"
                   onClick={() =>
                     this.props?.onOpen(

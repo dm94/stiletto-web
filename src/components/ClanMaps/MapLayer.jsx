@@ -52,6 +52,7 @@ class MapLayer extends Component {
     return (
       <div>
         <button
+          type="button"
           className="btn btn-info btn-sm btn-block"
           onClick={() =>
             this.props?.updateResource(
@@ -122,6 +123,7 @@ class MapLayer extends Component {
                 : ""}
               {resource.token != null && (
                 <button
+                  type="button"
                   className="btn btn-danger"
                   onClick={() =>
                     this.props?.deleteResource(

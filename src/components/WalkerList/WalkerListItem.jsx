@@ -234,6 +234,7 @@ class WalkerListItem extends Component {
                 <div className="row mt-3">
                   <div className="btn-group mx-auto">
                     <button
+                      type="button"
                       className={
                         this.state.walker.isReady
                           ? "btn btn-success active"
@@ -249,10 +250,15 @@ class WalkerListItem extends Component {
                     >
                       <i className="fas fa-check" />
                     </button>
-                    <button className="btn btn-secondary" disabled>
+                    <button
+                      type="button"
+                      className="btn btn-secondary"
+                      disabled
+                    >
                       {t("Is ready?")}
                     </button>
                     <button
+                      type="button"
                       className={
                         this.props?.walker.isReady
                           ? "btn btn-danger"
@@ -273,6 +279,7 @@ class WalkerListItem extends Component {
                 <div className="row mt-3">
                   <div className="col-12 col-lg-3 mx-auto">
                     <button
+                      type="button"
                       className="btn btn-block btn-success"
                       onClick={() => {
                         this.props?.onSave(this.state.walker);
@@ -286,6 +293,7 @@ class WalkerListItem extends Component {
                 <div className="row mt-3">
                   <div className="col-5 col-lg-2 mx-auto">
                     <button
+                      type="button"
                       className="btn btn-block btn-danger"
                       onClick={() => {
                         this.props?.onRemove(this.props?.walker.walkerID);

@@ -6,8 +6,11 @@ class MapSelectList extends Component {
     if (this.props?.maps != null) {
       return this.props?.maps.map((map) => (
         <div
+          tabIndex={0}
+          role="button"
           className="p-2 col-sm-4 col-xl-2 text-center"
           key={`selectmap${map.idMap}`}
+          onClick={(evt) => this.props?.onSelectMap(evt.target.id)}
         >
           <img
             src={map.image}
@@ -18,7 +21,6 @@ class MapSelectList extends Component {
             }
             alt={map.name}
             id={map.name}
-            onClick={(evt) => this.props?.onSelectMap(evt.target.id)}
           />
           <h6>{map.name}</h6>
         </div>

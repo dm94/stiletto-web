@@ -158,6 +158,7 @@ class Menu extends Component {
                 </div>
               </div>
               <button
+                type="button"
                 className="btn btn-sm mr-2"
                 data-cy="change-languaje-btn"
                 aria-label="Change language"

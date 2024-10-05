@@ -13,6 +13,7 @@ class MemberListItem extends Component {
         return (
           <td>
             <button
+              type="button"
               className="btn btn-block btn-danger"
               onClick={() => this.props?.onKick(this.props?.member.discordid)}
             >
@@ -38,10 +39,11 @@ class MemberListItem extends Component {
                 <i className="fas fa-user-cog" />
               </button>
               <button
+                type="button"
                 className="btn btn-block btn-info"
                 onClick={() =>
                   this.props?.onClickEditPermissions(
-                    this.props?.member.discordid,
+                    this.props?.member.discordid
                   )
                 }
               >

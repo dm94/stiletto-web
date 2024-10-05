@@ -23,6 +23,7 @@ class ResourcesInMapList extends Component {
       return resourcesFiltered.map((resource) => (
         <li className="list-group-item text-center" key={resource.resourceid}>
           <button
+            type="button"
             className="btn btn-block"
             onClick={() => this.props?.onSelect(resource.x, resource.y)}
           >
@@ -35,11 +36,13 @@ class ResourcesInMapList extends Component {
         </li>
       ));
     }
+
     return this.props?.resources
       .filter((r) => r.x != null)
       .map((resource) => (
         <li className="list-group-item text-center" key={resource.resourceid}>
           <button
+            type="button"
             className="btn btn-block"
             onClick={() => this.props?.onSelect(resource.x, resource.y)}
           >
@@ -87,9 +90,9 @@ class ResourcesInMapList extends Component {
     if (this.props?.resources != null) {
       return (
         <Fragment>
-          <div className="btn-group btn-group-sm" role="group">
+          <fieldset className="btn-group btn-group-sm">
             {this.filterlist(t)}
-          </div>
+          </fieldset>
           <ul className="list-group">{this.list(t)}</ul>
         </Fragment>
       );

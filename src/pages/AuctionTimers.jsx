@@ -59,6 +59,7 @@ class AuctionTimers extends Component {
             <div className="card-body text-center">
               <div className="btn-group">
                 <button
+                  type="button"
                   className={
                     this.state.playSound
                       ? "btn btn-secondary active"
@@ -71,6 +72,7 @@ class AuctionTimers extends Component {
                   <i className="fas fa-volume-up" /> {t("Sound On")}
                 </button>
                 <button
+                  type="button"
                   className={
                     this.state.playSound
                       ? "btn btn-secondary"
@@ -93,6 +95,7 @@ class AuctionTimers extends Component {
               <div className="row">
                 <div className="col">
                   <button
+                    type="button"
                     className="btn btn-primary btn-block"
                     onClick={() =>
                       this.setState((state) => ({ timers: state.timers + 1 }))
@@ -103,6 +106,7 @@ class AuctionTimers extends Component {
                 </div>
                 <div className="col">
                   <button
+                    type="button"
                     className="btn btn-danger btn-block"
                     onClick={() =>
                       this.setState((state) => ({ timers: state.timers - 1 }))

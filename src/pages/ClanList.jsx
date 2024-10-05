@@ -171,12 +171,14 @@ class ClanList extends Component {
                   </div>
                   <div className="col-2 btn-group">
                     <button
+                      type="button"
                       className="btn btn-primary"
                       onClick={() => this.updateClans()}
                     >
                       {t("Search")}
                     </button>
                     <button
+                      type="button"
                       className="btn btn-secondary"
                       onClick={() => {
                         this.setState(
@@ -303,12 +305,17 @@ class ClanList extends Component {
               </div>
               <div className="modal-footer">
                 <button
+                  type="button"
                   className="btn btn-secondary"
                   onClick={() => this.setState({ showRequestModal: false })}
                 >
                   {t("Cancel")}
                 </button>
-                <button className="btn btn-success" onClick={this.sendRequest}>
+                <button
+                  type="button"
+                  className="btn btn-success"
+                  onClick={this.sendRequest}
+                >
                   {t("Send request")}
                 </button>
               </div>

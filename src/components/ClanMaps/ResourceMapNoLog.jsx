@@ -92,7 +92,7 @@ class ResourceMapNoLog extends Component {
     const response = await deleteResource(
       this.state.mapId,
       resourceId,
-      resourceToken,
+      resourceToken
     );
     if (response.success) {
       this.componentDidMount();
@@ -105,7 +105,7 @@ class ResourceMapNoLog extends Component {
     resourceTypeInput,
     qualityInput,
     descriptionInput,
-    lastHarvested,
+    lastHarvested
   ) => {
     const response = await createResource(
       this.state.mapId,
@@ -115,7 +115,7 @@ class ResourceMapNoLog extends Component {
       resourceTypeInput,
       qualityInput,
       descriptionInput,
-      lastHarvested,
+      lastHarvested
     );
     if (response.success) {
       this.componentDidMount();
@@ -129,7 +129,7 @@ class ResourceMapNoLog extends Component {
       this.setState({ resourcesFiltered: null });
     } else {
       const resourcesFiltered = this.state.resourcesInTheMap.filter(
-        (resource) => resource.resourcetype === r,
+        (resource) => resource.resourcetype === r
       );
       this.setState({ resourcesFiltered: resourcesFiltered });
     }
@@ -174,6 +174,7 @@ class ResourceMapNoLog extends Component {
           }
         >
           <button
+            type="button"
             id="toggle-sidebar-button"
             className="btn btn-info ml-2 mb-2 float-right"
             onClick={() =>

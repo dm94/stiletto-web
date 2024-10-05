@@ -274,12 +274,17 @@ class PrivateProfile extends Component {
                 </div>
                 <div className="modal-footer">
                   <button
+                    type="button"
                     className="btn btn-secondary"
                     onClick={this.hideModal}
                   >
                     {t("Cancel")}
                   </button>
-                  <button className="btn btn-danger" onClick={this.deleteUser}>
+                  <button
+                    type="button"
+                    className="btn btn-danger"
+                    onClick={this.deleteUser}
+                  >
                     {t("Delete user")}
                   </button>
                 </div>
@@ -328,6 +333,7 @@ class PrivateProfile extends Component {
                   </div>
                   <div className="col">
                     <button
+                      type="button"
                       className="btn btn-primary"
                       onClick={this.changeLanguage}
                     >
@@ -408,6 +414,7 @@ class PrivateProfile extends Component {
             </div>
             <div className="card-footer">
               <button
+                type="button"
                 className="btn btn-lg btn-success btn-block"
                 data-cy="create-clan-btn"
                 onClick={() => {
@@ -454,6 +461,7 @@ class PrivateProfile extends Component {
       return (
         <div className="card-footer">
           <button
+            type="button"
             className="btn btn-lg btn-danger btn-block"
             data-cy="leave-clan-btn"
             onClick={this.leaveClan}

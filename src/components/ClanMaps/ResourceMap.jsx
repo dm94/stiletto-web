@@ -268,6 +268,7 @@ class ResourceMap extends Component {
         >
           <div>
             <button
+              type="button"
               className="btn btn-sm btn-primary btn-block mb-2"
               onClick={() => this.props?.onReturn()}
             >
@@ -275,6 +276,7 @@ class ResourceMap extends Component {
               {t("Back to the list of maps")}
             </button>
             <button
+              type="button"
               id="toggle-sidebar-button"
               className="btn btn-info ml-2 mb-2 float-right"
               onClick={() =>

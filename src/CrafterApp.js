@@ -10,7 +10,7 @@ import ChangeLanguageModal from "./components/ChangeLanguageModal";
 import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
 import { usePageTracking } from "./page-tracking";
-import "./css/style.min.css";
+import "./css/style.css";
 import NotificationList from "./components/Notifications/NotificationList";
 
 const CrafterApp = () => {
@@ -158,6 +158,7 @@ function darkMode(t) {
   if (getStoredItem("darkmode") !== "false") {
     return (
       <button
+        type="button"
         className="btn btn-sm btn-outline-light"
         onClick={() => {
           storeItem("darkmode", false);
@@ -167,19 +168,21 @@ function darkMode(t) {
         <i className="far fa-sun" /> {t("Light Theme Mode")}
       </button>
     );
-  } else {
-    return (
-      <button
-        className="btn btn-sm btn-outline-light"
-        onClick={() => {
-          storeItem("darkmode", true);
-          window.location.reload();
-        }}
-      >
-        <i className="far fa-moon" /> {t("Dark Theme Mode")}
-      </button>
-    );
   }
+
+  return (
+    <button
+      type="button"
+      className="btn btn-sm btn-outline-light"
+      onClick={() => {
+        storeItem("darkmode", true);
+        window.location.reload();
+      }}
+    >
+      <i className="far fa-moon" /> {t("Dark Theme Mode")}
+    </button>
+  );
+
 }
 
 export default CrafterApp;

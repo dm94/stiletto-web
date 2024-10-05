@@ -11,7 +11,7 @@ import TradeSystem from "./pages/TradeSystem";
 import Diplomacy from "./pages/Diplomacy";
 import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
-import Map from "./pages/Map";
+import MapPage from "./pages/Map";
 import TechTree from "./pages/TechTree";
 import Privacy from "./pages/Privacy";
 import ResourceMapNoLog from "./components/ClanMaps/ResourceMapNoLog";
@@ -33,7 +33,7 @@ export default (
     <Route path="/auctions" component={AuctionTimers} />
     <Route path="/others" component={Others} />
     <Route path="/map/:id" component={ResourceMapNoLog} />
-    <Route path="/map" component={Map} />
+    <Route path="/map" component={MapPage} />
     <Route path="/tech/:tree" component={TechTree} />
     <Route path="/tech/" component={TechTree} />
     <Route path="/privacy" component={Privacy} />

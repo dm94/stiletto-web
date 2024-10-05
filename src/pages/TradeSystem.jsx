@@ -415,12 +415,14 @@ class TradeSystem extends Component {
                 </div>
                 <div className="col-xl-3 btn-group">
                   <button
+                    type="button"
                     className="btn btn-lg btn-primary"
                     onClick={() => this.updateTrades()}
                   >
                     {t("Filter trades")}
                   </button>
                   <button
+                    type="button"
                     className="btn btn-lg btn-secondary"
                     onClick={() => {
                       this.updateTrades();

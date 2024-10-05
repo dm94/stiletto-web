@@ -99,8 +99,8 @@ class ClanConfig extends Component {
       symbols.push(`C${i}`);
     }
     return symbols.map((symbol) => (
-      <div
-        role="button"
+      <button
+        type="button"
         className="col-3"
         key={`symbol-${symbol}`}
         onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
@@ -115,7 +115,7 @@ class ClanConfig extends Component {
           alt={symbol}
           id={`symbol-img-${symbol}`}
         />
-      </div>
+      </button>
     ));
   }
 
@@ -170,10 +170,7 @@ class ClanConfig extends Component {
                   />
                 </div>
                 <div className="form-group">
-                  <div
-                    className="custom-control custom-switch my-1"
-                    role="button"
-                  >
+                  <div className="custom-control custom-switch my-1">
                     <input
                       type="checkbox"
                       className="custom-control-input"

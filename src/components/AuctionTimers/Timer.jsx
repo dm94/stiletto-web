@@ -114,12 +114,14 @@ class Timer extends Component {
             </div>
             <div className="col-md-4">
               <button
+                type="button"
                 className="btn btn-success btn-block"
                 onClick={() => this.setState({ isOn: true, isFinish: false })}
               >
                 <i className="fas fa-play" /> {t("Start")}
               </button>
               <button
+                type="button"
                 className="btn btn-danger btn-block"
                 onClick={() => this.setState({ isOn: false })}
               >

@@ -9,6 +9,7 @@ class ModalMessage extends Component {
   redirectButton() {
     return (
       <button
+        type="button"
         className="btn btn-lg btn-outline-warning btn-block"
         onClick={() => this.setState({ redirect: true })}
       >
@@ -20,6 +21,7 @@ class ModalMessage extends Component {
   onlyOkButton() {
     return (
       <button
+        type="button"
         className="btn btn-lg btn-outline-warning btn-block"
         onClick={() => this.props?.onClickOk()}
       >

@@ -9,6 +9,7 @@ class ClanMapItem extends Component {
     return (
       <div className="btn-group-vertical w-100 m-0 p-0 h-100">
         <button
+          type="button"
           className="btn btn-primary btn-block"
           variant="primary"
           onClick={() => this.props?.onOpen(this.props?.map)}
@@ -25,6 +26,7 @@ class ClanMapItem extends Component {
     if (this.props?.map?.discordid === getStoredItem("discordid")) {
       return (
         <button
+          type="button"
           className="btn btn-danger btn-block"
           variant="primary"
           onClick={() => this.props?.onDelete(this.props?.map.mapid)}
@@ -39,11 +41,14 @@ class ClanMapItem extends Component {
     if (this.props?.map.discordid === getStoredItem("discordid")) {
       return (
         <button
+          type="button"
           className="btn btn-success btn-block"
           variant="primary"
           onClick={() =>
             window.open(
-              `${getDomain()}/map/${this.props?.map.mapid}?pass=${this.props?.map.pass}`,
+              `${getDomain()}/map/${this.props?.map.mapid}?pass=${
+                this.props?.map.pass
+              }`
             )
           }
         >
@@ -64,9 +69,9 @@ class ClanMapItem extends Component {
         <div className="row">
           <div className="col-6 pr-0">
             <img
-              src={
-                `${process.env.REACT_APP_RESOURCES_URL}/maps/${this.props?.value.replace("_new", "")}.jpg`
-              }
+              src={`${
+                process.env.REACT_APP_RESOURCES_URL
+              }/maps/${this.props?.value.replace("_new", "")}.jpg`}
               className="img-fluid"
               alt={this.props?.map.name}
               onClick={() => this.props?.onOpen(this.props?.map)}

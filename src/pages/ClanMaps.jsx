@@ -181,6 +181,7 @@ class ClanMaps extends Component {
               </div>
               <div className="modal-footer">
                 <button
+                  type="button"
                   className="btn btn-outline-secondary"
                   onClick={() =>
                     this.setState({
@@ -192,6 +193,7 @@ class ClanMaps extends Component {
                   {t("Cancel")}
                 </button>
                 <button
+                  type="button"
                   className="btn btn-outline-danger"
                   onClick={() => this.deleteMap(this.state.idMapDeleteModal)}
                 >

@@ -35,7 +35,11 @@ const SkillNodeBtn = ({ clan, tree, item }) => {
     return <p>{t("No one has learnt it")}</p>;
   }
   return (
-    <button className="btn btn-primary btn-block" onClick={getLearned}>
+    <button
+      type="button"
+      className="btn btn-primary btn-block"
+      onClick={getLearned}
+    >
       {t("See who has learned it")}
     </button>
   );

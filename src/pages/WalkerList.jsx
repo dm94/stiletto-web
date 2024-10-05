@@ -272,12 +272,12 @@ class WalkerList extends Component {
             <div className="card-body">
               <div className="text-info">
                 {t(
-                  "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.",
+                  "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
                 )}
               </div>
               <div className="text-warning mb-3">
                 {t(
-                  "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot.",
+                  "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot."
                 )}
               </div>
             </div>
@@ -296,7 +296,7 @@ class WalkerList extends Component {
           <div className="card-body">
             <div className="mb-3">
               {t(
-                "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items",
+                "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items"
               )}
             </div>
 
@@ -471,12 +471,14 @@ class WalkerList extends Component {
                     </div>
                     <div className="col btn-group">
                       <button
+                        type="button"
                         className="btn btn-lg btn-primary"
                         onClick={() => this.updateWalkers()}
                       >
                         {t("Filter walkers")}
                       </button>
                       <button
+                        type="button"
                         className="btn btn-lg btn-secondary"
                         onClick={() => {
                           this.setState(
@@ -486,7 +488,7 @@ class WalkerList extends Component {
                               searchDescription: "",
                               useWalkerSearch: "All",
                             },
-                            () => this.updateWalkers(),
+                            () => this.updateWalkers()
                           );
                         }}
                       >

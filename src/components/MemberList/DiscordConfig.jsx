@@ -121,7 +121,6 @@ class DiscordConfig extends Component {
               </div>
               <div
                 className="custom-control custom-switch my-1"
-                role="button"
                 title={t(
                   "If you want the bot to read the clan log, it is necessary for other functions."
                 )}

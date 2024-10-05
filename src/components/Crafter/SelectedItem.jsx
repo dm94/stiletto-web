@@ -72,19 +72,21 @@ class SelectedItem extends Component {
   change = (count) => {
     this.props?.onChangeCount(
       this.props?.item.name,
-      Number.parseInt(this.props?.item.count) + count,
+      Number.parseInt(this.props?.item.count) + count
     );
   };
 
   render() {
     const { t } = this.props;
-    const url =
-      `${getDomain()}/item/${encodeURI(this.props?.item.name.replaceAll(" ", "_"))}`;
+    const url = `${getDomain()}/item/${encodeURI(
+      this.props?.item.name.replaceAll(" ", "_")
+    )}`;
     return (
       <div className="col-xl-6 col-sm-12">
         <div className="card">
           <div className="text-center card-header">
             <button
+              type="button"
               className="close"
               aria-label="Remove item"
               onClick={() =>
@@ -101,7 +103,7 @@ class SelectedItem extends Component {
                 onChange={(e) => {
                   this.props?.onChangeCount(
                     this.props?.item.name,
-                    e.target.value,
+                    e.target.value
                   );
                 }}
                 onMouseEnter={() => this.setState({ disableEdit: false })}
@@ -129,6 +131,7 @@ class SelectedItem extends Component {
             <div className="row">
               <div className="col-4 col-lg-2 p-1">
                 <button
+                  type="button"
                   className="btn btn-success btn-block p-2"
                   onClick={() => this.change(1)}
                 >
@@ -138,6 +141,7 @@ class SelectedItem extends Component {
               <div className="col-4 col-lg-2 p-1">
                 {" "}
                 <button
+                  type="button"
                   className="btn btn-success btn-block p-2"
                   onClick={() => this.change(10)}
                 >
@@ -146,6 +150,7 @@ class SelectedItem extends Component {
               </div>
               <div className="col-4 col-lg-2 p-1">
                 <button
+                  type="button"
                   className="btn btn-success btn-block p-2"
                   onClick={() => this.change(100)}
                 >
@@ -154,6 +159,7 @@ class SelectedItem extends Component {
               </div>
               <div className="col-4 col-lg-2 p-1">
                 <button
+                  type="button"
                   className="btn btn-danger btn-block p-2"
                   onClick={() => this.change(-1)}
                 >
@@ -162,6 +168,7 @@ class SelectedItem extends Component {
               </div>
               <div className="col-4 col-lg-2 p-1">
                 <button
+                  type="button"
                   className="btn btn-danger btn-block p-2"
                   onClick={() => this.change(-10)}
                 >
@@ -170,6 +177,7 @@ class SelectedItem extends Component {
               </div>
               <div className="col-4 col-lg-2 p-1">
                 <button
+                  type="button"
                   className="btn btn-danger btn-block p-2"
                   onClick={() => this.change(-100)}
                 >

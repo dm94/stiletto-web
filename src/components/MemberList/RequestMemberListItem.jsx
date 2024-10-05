@@ -6,6 +6,7 @@ class RequestMemberListItem extends Component {
     if (this.props?.isLeader) {
       return (
         <button
+          type="button"
           className="btn btn-block btn-primary"
           onClick={() => this.props?.onShowRequest(this.props?.member)}
         >

@@ -26,6 +26,7 @@ class ClanName extends Component {
           preserveAspectRatio="xMidYMid slice"
           focusable="false"
           role="img"
+          title={`Color ${this.props?.clan.flagcolor}`}
         >
           <rect width="90%" height="90%" fill={this.props?.clan.flagcolor} />
         </svg>

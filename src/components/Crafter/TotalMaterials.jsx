@@ -80,6 +80,7 @@ class TotalMaterials extends Component {
   shareButton(t) {
     return (
       <button
+        type="button"
         className="btn btn-success float-right"
         onClick={this.addRecipe}
         title={t("Generate a link to share it")}
@@ -114,9 +115,9 @@ class TotalMaterials extends Component {
 
     let text = `${t("To make")}:\n\n`;
 
-    this.props?.selectedItems.forEach(
-      (item) => (text += `${item.count}x ${t(item.name, { ns: "items" })} - `)
-    );
+    this.props?.selectedItems.forEach((item) => {
+      text += `${item.count}x ${t(item.name, { ns: "items" })} - `;
+    });
 
     text += `\n\n${t("You need the following materials")}:\n\n`;
 
@@ -162,6 +163,7 @@ class TotalMaterials extends Component {
       <div className="card border-warning m-3">
         <div className="card-header border-warning">
           <button
+            type="button"
             className="btn btn-sm btn-primary float-right"
             title={t("Copy to clipboard")}
             data-cy="crafter-copy-clipboard"

@@ -22,6 +22,7 @@ class ChangeLanguageModal extends Component {
       const { t } = this.props;
       return (
         <div
+          tabIndex={0}
           role="button"
           className="col-3"
           key={languaje.key}
@@ -50,6 +51,7 @@ class ChangeLanguageModal extends Component {
             </div>
             <div className="modal-footer">
               <button
+                type="button"
                 className={
                   getStoredItem("darkmode") !== "true"
                     ? "btn btn-outline-secondary"

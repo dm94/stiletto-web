@@ -364,6 +364,7 @@ class MemberList extends Component {
             </div>
             <div className="card-footer">
               <button
+                type="button"
                 className="btn btn-block btn-danger"
                 onClick={() => this.deleteClan()}
               >
@@ -404,6 +405,7 @@ class MemberList extends Component {
             </div>
             <div className="card-footer">
               <button
+                type="button"
                 className="btn btn-block btn-danger"
                 onClick={() => this.changeOwner()}
               >
@@ -510,6 +512,7 @@ class MemberList extends Component {
                   <i className="fas fa-users-cog" />
                 </button>
                 <button
+                  type="button"
                   className="btn btn-info"
                   onClick={() => {
                     this.setState({ showClanConfig: true });
@@ -525,6 +528,7 @@ class MemberList extends Component {
                   <i className="fab fa-discord" />
                 </button>
                 <button
+                  type="button"
                   className={
                     this.state.isLeader || this.state.hasBotPermissions
                       ? "btn btn-info"
@@ -629,12 +633,14 @@ class MemberList extends Component {
               </div>
               <div className="modal-footer">
                 <button
+                  type="button"
                   className="btn btn-block btn-success"
                   onClick={() => this.acceptMember()}
                 >
                   {t("Accept")}
                 </button>
                 <button
+                  type="button"
                   className="btn btn-block btn-danger"
                   onClick={() => this.rejectMember()}
                 >
