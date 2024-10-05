@@ -40,7 +40,15 @@ class MemberPermissionsConfig extends Component {
     const options = {
       method: "put",
       url:
-        `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}/members/${this.props?.memberid}/permissions`,
+async componentDidMount() {
+  const { clanid, memberid } = this.props;
+  if (!clanid || !memberid) return;
+
+  const request = await getUserPermssions(clanid, memberid);
+  if (request?.success) {
+    const options = {
+      method: "put",
+      url: `${process.env.REACT_APP_API_URL}/clans/${clanid}/members/${memberid}/permissions`,
       params: {
         bot: this.state.bot,
         diplomacy: this.state.diplomacy,
