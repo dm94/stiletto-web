@@ -143,7 +143,9 @@ function updateWeb() {
   sessionStorage.removeItem("allItems");
   caches.keys().then((names) => {
     for (const name of names) {
-      caches.delete(name);
+      if (name.includes("lastCheck")) {
+        caches.delete(name);
+      }
     }
   });
   window.location.reload();
