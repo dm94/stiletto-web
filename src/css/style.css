@@ -55,3 +55,7 @@
 .notifications .toast {
   opacity: 1;
 }
+
+.content-v-a {
+  content-visibility: auto;
+}

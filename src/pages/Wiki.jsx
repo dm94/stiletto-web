@@ -11,7 +11,6 @@ const Wiki = ({ location }) => {
   const { t } = useTranslation();
   const [items, setItems] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [textSearched, setTextSearched] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
   const [categories, setCategories] = useState([]);
   const [categoryFilter, setCategoryFilter] = useState("All");
@@ -64,7 +63,6 @@ const Wiki = ({ location }) => {
     });
 
     setFilteredItems(filtered);
-    setTextSearched(search);
   };
 
   const showItems = () => {
@@ -74,15 +72,15 @@ const Wiki = ({ location }) => {
           <Ingredient ingredient={item} value={1} />
         </div>
       ));
-    } else if (textSearched.length > 0) {
-      return (
-        <div className="col-12" key="wiki-notfound">
-          <div className="card">
-            <div className="card-header text-center">{t("Nothing found")}</div>
-          </div>
-        </div>
-      );
     }
+
+    return (
+      <div className="col-12" key="wiki-notfound">
+        <div className="card">
+          <div className="card-header text-center">{t("Nothing found")}</div>
+        </div>
+      </div>
+    );
   };
 
   const showCategories = () => {
@@ -168,7 +166,7 @@ const Wiki = ({ location }) => {
         </div>
       </div>
       <div className="col-12">
-        <div className="row mb-2">{showItems()}</div>
+        <div className="row mb-2 content-v-a">{showItems()}</div>
       </div>
     </div>
   );
