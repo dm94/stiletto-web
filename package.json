@@ -33,7 +33,7 @@
     "react-scripts": "^5.0.1",
     "react-tiny-virtual-list": "^2.2.0",
     "workbox": "0.0.0",
-    "workbox-core": "^6.5.4",
+    "workbox-core": "^7.3.0",
     "workbox-expiration": "^6.5.4",
     "workbox-precaching": "^6.5.4",
     "workbox-routing": "^7.3.0",
