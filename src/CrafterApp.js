@@ -10,6 +10,7 @@ import ChangeLanguageModal from "./components/ChangeLanguageModal";
 import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
 import { usePageTracking } from "./page-tracking";
+import "./css/normalize.css";
 import "./css/style.css";
 import NotificationList from "./components/Notifications/NotificationList";
 

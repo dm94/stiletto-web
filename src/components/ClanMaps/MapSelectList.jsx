@@ -1,33 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 
-class MapSelectList extends Component {
-  state = {};
-  render() {
-    if (this.props?.maps != null) {
-      return this.props?.maps.map((map) => (
-        <div
-          tabIndex={0}
-          role="button"
-          className="p-2 col-sm-4 col-xl-2 text-center"
-          key={`selectmap${map.idMap}`}
-          onClick={(evt) => this.props?.onSelectMap(evt.target.id)}
-        >
-          <img
-            src={map.image}
-            className={
-              map.name === this.props?.mapSelectInput
-                ? "img-fluid img-thumbnail"
-                : "img-fluid"
-            }
-            alt={map.name}
-            id={map.name}
-          />
-          <h6>{map.name}</h6>
-        </div>
-      ));
-    }
-    return "";
+const MapSelectList = ({ maps, mapSelectInput, onSelectMap }) => {
+  if (maps) {
+    return maps.map((map) => (
+      <button
+        type="button"
+        className="p-2 col-sm-4 col-xl-2 text-center"
+        key={`selectmap${map.idMap}`}
+        onClick={(evt) => onSelectMap(evt.target.id)}
+      >
+        <img
+          src={map.image}
+          className={
+            map.name === mapSelectInput
+              ? "img-fluid img-thumbnail"
+              : "img-fluid"
+          }
+          alt={map.name}
+          id={map.name}
+        />
+        <h6>{map.name}</h6>
+      </button>
+    ));
   }
-}
+  return "";
+};
 
 export default MapSelectList;

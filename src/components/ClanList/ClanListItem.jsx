@@ -1,56 +1,54 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import ClanName from "../ClanName";
 
-class ClanListItem extends Component {
-  sendRequestButton() {
-    const { t } = this.props;
-    if (this.props?.isLogged) {
-      if (this.props?.clanuserid == null) {
+const ClanListItem = ({ isLogged, clanuserid, clan, onSendRequest }) => {
+  const { t } = useTranslation();
+
+  const sendRequestButton = () => {
+    if (isLogged) {
+      if (clanuserid == null) {
         return (
           <button
             type="button"
             className="btn btn-block btn-primary"
-            onClick={() => this.props?.onSendRequest(this.props?.clan.clanid)}
+            onClick={() => onSendRequest(clan.clanid)}
           >
             {t("Send request")}
           </button>
         );
       }
-      if (this.props?.clanuserid === this.props?.clan.clanid) {
+      if (clanuserid === clan.clanid) {
         return (
           <Link className="btn btn-block btn-primary" to="/members">
             {t("Members")}
           </Link>
         );
       }
-    } else {
-      return "";
     }
-  }
+    return false;
+  };
 
-  render() {
-    return (
-      <tr>
-        <td className="pl-3">
-          <ClanName key={this.props?.clan.name} clan={this.props?.clan} />
-        </td>
-        <td>{this.props?.clan.region}</td>
-        <td>{this.props?.clan.discordTag}</td>
-        <td>
-          <a
-            href={`https://discord.gg/${this.props?.clan.invitelink}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {this.props?.clan.invitelink}
-          </a>
-        </td>
-        <td>{this.sendRequestButton()}</td>
-      </tr>
-    );
-  }
-}
+  return (
+    <tr>
+      <td className="pl-3">
+        <ClanName key={clan.name} clan={clan} />
+      </td>
+      <td>{clan.region}</td>
+      <td>{clan.discordTag}</td>
+      <td>
+        <a
+          href={`https://discord.gg/${clan.invitelink}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {clan.invitelink}
+        </a>
+      </td>
+      <td>{sendRequestButton()}</td>
+    </tr>
+  );
+};
 
-export default withTranslation()(ClanListItem);
+export default ClanListItem;
