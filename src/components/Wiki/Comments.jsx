@@ -1,6 +1,7 @@
 import React from "react";
 import Giscus from "@giscus/react";
 import { getStoredItem } from "../../services";
+import { isDarkMode } from "../../functions/utils";
 
 const Comments = ({ name }) => {
   if (name && localStorage.getItem("acceptscookies")) {
@@ -20,7 +21,7 @@ const Comments = ({ name }) => {
               reactionsEnabled="1"
               emitMetadata="0"
               inputPosition="top"
-              theme={getStoredItem("darkmode") !== "false" ? "dark" : "light"}
+              theme={isDarkMode() ? "dark" : "light"}
               lang={language}
               loading="lazy"
             />

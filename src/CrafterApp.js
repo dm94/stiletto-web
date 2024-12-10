@@ -10,11 +10,16 @@ import ChangeLanguageModal from "./components/ChangeLanguageModal";
 import { getStoredItem, storeItem } from "./services";
 import Routes from "./router";
 import { usePageTracking } from "./page-tracking";
-import "./css/normalize.css";
-import "./css/style.css";
+import { isDarkMode } from "./functions/utils";
 import NotificationList from "./components/Notifications/NotificationList";
 
 const CrafterApp = () => {
+  if (isDarkMode()) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+
   const [t] = useTranslation();
   const history = useHistory();
   const [showChangeLanguageModal, setChangeLanguageModal] = useState(false);
@@ -41,14 +46,6 @@ const CrafterApp = () => {
           lang: language ?? "en",
         }}
       >
-        <link
-          rel="stylesheet"
-          href={
-            getStoredItem("darkmode") !== "false"
-              ? "/css/darkly.min.css"
-              : "/css/journal.min.css"
-          }
-        />
       </Helmet>
       <Menu
         language={language}
@@ -129,7 +126,6 @@ const CrafterApp = () => {
                 Donkey Crew
               </a>
             </div>
-            <div className="col-xl-2">{darkMode(t)}</div>
           </div>
         </div>
       </footer>
@@ -158,13 +154,14 @@ function switchLanguage(lng) {
 }
 
 function darkMode(t) {
-  if (getStoredItem("darkmode") !== "false") {
+  if (isDarkMode()) {
     return (
       <button
         type="button"
         className="btn btn-sm btn-outline-light"
         onClick={() => {
           storeItem("darkmode", false);
+          document.documentElement.setAttribute("data-theme", "light");
           window.location.reload();
         }}
       >
@@ -179,6 +176,7 @@ function darkMode(t) {
       className="btn btn-sm btn-outline-light"
       onClick={() => {
         storeItem("darkmode", true);
+        document.documentElement.setAttribute("data-theme", "dark");
         window.location.reload();
       }}
     >

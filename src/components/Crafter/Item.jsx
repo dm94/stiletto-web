@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import { getStoredItem } from "../../services";
+import { isDarkMode } from "../../functions/utils";
 
 class Item extends Component {
   render() {
@@ -8,9 +8,9 @@ class Item extends Component {
     return (
       <div
         className={
-          getStoredItem("darkmode") !== "true"
-            ? "list-group-item"
-            : "list-group-item list-group-item-dark"
+          isDarkMode()
+            ? "list-group-item list-group-item-dark"
+            : "list-group-item"
         }
       >
         <div className="row">
