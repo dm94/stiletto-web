@@ -1,138 +1,119 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
-class Timer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hours: 0,
-      minutes: 10,
-      seconds: 0,
-      isOn: false,
-      isFinish: false,
-    };
-  }
+const Timer = ({ value, onPlay }) => {
+  const { t } = useTranslation();
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(10);
+  const [seconds, setSeconds] = useState(0);
+  const [isOn, setIsOn] = useState(false);
+  const [isFinish, setIsFinish] = useState(false);
 
-  componentDidMount() {
-    this.timer = setInterval(this.tick, 1000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timer);
-  }
-
-  tick = () => {
-    if (this.state.isOn) {
-      if (
-        this.state.hours <= 0 &&
-        this.state.minutes <= 0 &&
-        this.state.seconds <= 0
-      ) {
-        this.setState({ isFinish: true, isOn: false });
-        if (this.props?.value) {
-          this.props?.onPlay();
-        }
-      }
-      if (this.state.seconds > 0) {
-        this.setState({ seconds: this.state.seconds - 1 });
-      } else if (this.state.seconds <= 0) {
-        if (this.state.minutes > 0) {
-          this.setState({ minutes: this.state.minutes - 1, seconds: 59 });
-        } else if (this.state.minutes <= 0) {
-          if (this.state.hours > 0) {
-            this.setState({
-              hours: this.state.hours - 1,
-              minutes: 59,
-              seconds: 60,
-            });
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (isOn) {
+        if (hours <= 0 && minutes <= 0 && seconds <= 0) {
+          setIsFinish(true);
+          setIsOn(false);
+          if (value) {
+            onPlay();
+          }
+        } else if (seconds > 0) {
+          setSeconds(seconds - 1);
+        } else if (seconds <= 0) {
+          if (minutes > 0) {
+            setMinutes(minutes - 1);
+            setSeconds(59);
+          } else if (minutes <= 0 && hours > 0) {
+            setHours(hours - 1);
+            setMinutes(59);
+            setSeconds(59);
           }
         }
       }
-    }
-  };
+    }, 1000);
 
-  render() {
-    const { t } = this.props;
-    return (
-      <div className="card border-secondary m-2">
-        <div
-          className={
-            this.state.isFinish ? "card-body bg-warning " : "card-body"
-          }
-        >
-          <div className="row">
-            <div className="col-md-1">
-              <label htmlFor="hours">{t("Hours")}</label>
-              <h1>
-                <input
-                  type="number"
-                  id="hours"
-                  value={this.state.hours}
-                  onChange={(e) => this.setState({ hours: e.target.value })}
-                  max="24"
-                  min="0"
-                  className="text-right form-control"
-                />
-              </h1>
-            </div>
-            <div className="col-md-1">
-              <label htmlFor="minutes">{t("Minutes")}</label>
-              <h1>
-                <input
-                  type="number"
-                  id="minutes"
-                  value={this.state.minutes}
-                  onChange={(e) => this.setState({ minutes: e.target.value })}
-                  max="59"
-                  min="0"
-                  className="text-right form-control"
-                />
-              </h1>
-            </div>
-            <div className="col-md-1">
-              <label htmlFor="seconds">{t("Seconds")}</label>
-              <h1>
-                <input
-                  type="number"
-                  id="seconds"
-                  value={this.state.seconds}
-                  onChange={(e) => this.setState({ seconds: e.target.value })}
-                  max="59"
-                  min="0"
-                  className="text-right form-control"
-                />
-              </h1>
-            </div>
-            <div className="col-md-5">
-              <label htmlFor="description">{t("Description")}</label>
+    return () => clearInterval(timer);
+  }, [hours, minutes, seconds, isOn, value, onPlay]);
+
+  return (
+    <div className="card border-secondary m-2">
+      <div className={isFinish ? "card-body bg-warning " : "card-body"}>
+        <div className="row">
+          <div className="col-md-1">
+            <label htmlFor="hours">{t("Hours")}</label>
+            <h1>
               <input
-                type="text"
-                id="description"
-                className="form-control"
-                placeholder={t("Description")}
+                type="number"
+                id="hours"
+                value={hours}
+                onChange={(e) => setHours(Number(e.target.value))}
+                max="24"
+                min="0"
+                className="text-right form-control"
               />
-            </div>
-            <div className="col-md-4">
-              <button
-                type="button"
-                className="btn btn-success btn-block"
-                onClick={() => this.setState({ isOn: true, isFinish: false })}
-              >
-                <i className="fas fa-play" /> {t("Start")}
-              </button>
-              <button
-                type="button"
-                className="btn btn-danger btn-block"
-                onClick={() => this.setState({ isOn: false })}
-              >
-                <i className="fas fa-stop" /> {t("Stop")}
-              </button>
-            </div>
+            </h1>
+          </div>
+          <div className="col-md-1">
+            <label htmlFor="minutes">{t("Minutes")}</label>
+            <h1>
+              <input
+                type="number"
+                id="minutes"
+                value={minutes}
+                onChange={(e) => setMinutes(Number(e.target.value))}
+                max="59"
+                min="0"
+                className="text-right form-control"
+              />
+            </h1>
+          </div>
+          <div className="col-md-1">
+            <label htmlFor="seconds">{t("Seconds")}</label>
+            <h1>
+              <input
+                type="number"
+                id="seconds"
+                value={seconds}
+                onChange={(e) => setSeconds(Number(e.target.value))}
+                max="59"
+                min="0"
+                className="text-right form-control"
+              />
+            </h1>
+          </div>
+          <div className="col-md-5">
+            <label htmlFor="description">{t("Description")}</label>
+            <input
+              type="text"
+              id="description"
+              className="form-control"
+              placeholder={t("Description")}
+            />
+          </div>
+          <div className="col-md-4">
+            <button
+              type="button"
+              className="btn btn-success btn-block"
+              onClick={() => {
+                setIsOn(true);
+                setIsFinish(false);
+              }}
+            >
+              <i className="fas fa-play" /> {t("Start")}
+            </button>
+            <button
+              type="button"
+              className="btn btn-danger btn-block"
+              onClick={() => setIsOn(false)}
+            >
+              <i className="fas fa-stop" /> {t("Stop")}
+            </button>
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default withTranslation()(Timer);
+export default Timer;

@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "4.7.2",
+  "version": "4.7.3",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -49,9 +49,6 @@
     "format": "biome format --write",
     "lint": "biome lint --write ./src"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
@@ -66,7 +63,6 @@
     "cypress": "^13.16.0"
   },
   "engines": {
-    "node": "18.x"
-  },
-  "lint": "eslint --ext .js,.jsx ."
+    "node": ">=20.x"
+  }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import { getStoredItem } from "../services";
+import { isDarkMode } from "../functions/utils";
 
 class ChangeLanguageModal extends Component {
   getLanguajes = () => {
@@ -21,9 +21,8 @@ class ChangeLanguageModal extends Component {
     return supportedLanguages.map((languaje) => {
       const { t } = this.props;
       return (
-        <div
-          tabIndex={0}
-          role="button"
+        <button
+          type="button"
           className="col-3"
           key={languaje.key}
           onClick={() => this.props?.switchLanguage(languaje.key)}
@@ -34,7 +33,7 @@ class ChangeLanguageModal extends Component {
             alt={`${languaje.name} language`}
           />
           <p>{t(languaje.name)}</p>
-        </div>
+        </button>
       );
     });
   };
@@ -53,9 +52,9 @@ class ChangeLanguageModal extends Component {
               <button
                 type="button"
                 className={
-                  getStoredItem("darkmode") !== "true"
-                    ? "btn btn-outline-secondary"
-                    : "btn btn-outline-light"
+                  isDarkMode()
+                    ? "btn btn-outline-light"
+                    : "btn btn-outline-secondary"
                 }
                 onClick={() => {
                   this.props?.hideModal();

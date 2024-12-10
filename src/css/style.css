@@ -1,11 +1,63 @@
-@import "normalize.css";
-
 @font-face {
   font-family: "Okami";
   src: url("../fonts/okami.otf") format("opentype");
   font-display: swap;
   font-style: normal;
   font-weight: normal;
+}
+
+[data-theme="light"] {
+  --blue: #eb6864;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #f57a00;
+  --orange: #fd7e14;
+  --yellow: #f5e625;
+  --green: #22b24c;
+  --teal: #20c997;
+  --cyan: #369;
+  --white: #fff;
+  --gray: #777;
+  --gray-dark: #333;
+  --primary: #eb6864;
+  --secondary: #aaa;
+  --success: #22b24c;
+  --info: #369;
+  --warning: #f5e625;
+  --danger: #f57a00;
+  --light: #f8f9fa;
+  --dark: #222;
+}
+
+[data-theme="dark"] {
+  --blue: #375a7f;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #e74c3c;
+  --orange: #fd7e14;
+  --yellow: #f39c12;
+  --green: #00bc8c;
+  --teal: #20c997;
+  --cyan: #3498db;
+  --white: #fff;
+  --gray: #888;
+  --gray-dark: #303030;
+  --primary: #375a7f;
+  --secondary: #444;
+  --success: #00bc8c;
+  --info: #3498db;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --light: #adb5bd;
+  --dark: #303030;
+}
+
+html {
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100%;
 }
 
 .card-header,
