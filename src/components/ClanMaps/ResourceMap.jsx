@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Axios from "axios";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import {
   updateResourceTime,
   getMarkers,
@@ -15,126 +15,133 @@ import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
 import "../../css/map-sidebar.min.css";
 
-class ResourceMap extends Component {
-  constructor(props) {
-    super(props);
+const ResourceMap = ({ map, onReturn }) => {
+  const { t } = useTranslation();
+  const [userDiscordId] = useState(getStoredItem("discordid"));
+  const [token] = useState(getStoredItem("token"));
+  const [coordinateXInput, setCoordinateXInput] = useState(0);
+  const [coordinateYInput, setCoordinateYInput] = useState(0);
+  const [items, setItems] = useState(null);
+  const [resourcesInTheMap, setResourcesInTheMap] = useState(null);
+  const [pass, setPass] = useState(map?.pass);
+  const [textSuccess, setTextSuccess] = useState(null);
+  const [center, setCenter] = useState(null);
+  const [mapName, setMapName] = useState(map?.name);
+  const [dateOfBurning, setDateOfBurning] = useState(map?.dateofburning);
+  const [allowEditing, setAllowEditing] = useState(map?.allowedit);
+  const [resourcesFiltered, setResourcesFiltered] = useState(null);
+  const [isOpenSidebar, setIsOpenSidebar] = useState(window.innerWidth >= 1440);
+  const [error, setError] = useState(null);
 
-    this.state = {
-      user_discord_id: getStoredItem("discordid"),
-      token: getStoredItem("token"),
-      coordinateXInput: 0,
-      coordinateYInput: 0,
-      items: null,
-      resourcesInTheMap: null,
-      latlng: null,
-      pass: this.props?.map.pass,
-      textSuccess: null,
-      center: null,
-      mapname: this.props?.map.name,
-      dateofburning: this.props?.map.dateofburning,
-      allowEditing: this.props?.map.allowedit,
-      resourcesFiltered: null,
-      isOpenSidebar: window.innerWidth >= 1440,
-    };
-  }
+  const fetchData = useCallback(async () => {
+    try {
+      const markers = await getMarkers();
+      setItems(markers);
 
-  async componentDidMount() {
-    const markers = await getMarkers();
-    this.setState({ items: markers });
-
-    const response = await getResources(
-      this.props?.map.mapid,
-      this.props?.map.pass
-    );
-    if (response.success) {
-      this.setState({ resourcesInTheMap: response.message });
-    } else {
-      this.setState({ error: response.message });
+      const response = await getResources(map.mapid, map.pass);
+      if (response.success) {
+        setResourcesInTheMap(response.message);
+      } else {
+        setError(response.message);
+      }
+    } catch {
+      setError("Failed to fetch data");
     }
-  }
+  }, [map.mapid, map.pass]);
 
-  createResource = async (
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  const handleCreateResource = async (
     resourceTypeInput,
     qualityInput,
     descriptionInput,
     lastHarvested
   ) => {
     const response = await createResource(
-      this.props?.map.mapid,
-      this.state.coordinateXInput,
-      this.state.coordinateYInput,
-      this.state.pass,
+      map.mapid,
+      coordinateXInput,
+      coordinateYInput,
+      pass,
       resourceTypeInput,
       qualityInput,
       descriptionInput,
       lastHarvested
     );
     if (response.success) {
-      this.componentDidMount();
+      fetchData();
     } else {
-      this.setState({ error: response.message });
+      setError(response.message);
     }
   };
 
-  changeDataMap = (event) => {
+  const handleChangeDataMap = async (event) => {
     event.preventDefault();
 
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/maps/${this.props?.map.mapid}`,
+      url: `${process.env.REACT_APP_API_URL}/maps/${map.mapid}`,
       params: {
-        mapname: this.state.mapname,
-        mapdate: this.state.dateofburning,
-        allowediting: this.state.allowEditing,
-        mappass: this.state.pass,
+        mapname: mapName,
+        mapdate: dateOfBurning,
+        allowediting: allowEditing,
+        mappass: pass,
       },
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
     };
 
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 202) {
-          this.setState({ textSuccess: "Map updated" });
-        } else if (response.status === 401) {
-          this.setState({ error: "Unauthorized" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
-  };
-
-  deleteResource = async (resourceId, resourceToken) => {
-    const response = await deleteResource(
-      this.props?.map.mapid,
-      resourceId,
-      resourceToken
-    );
-    if (response.success) {
-      this.componentDidMount();
-    } else {
-      this.setState({ error: response.message });
+    try {
+      const response = await Axios.request(options);
+      if (response.status === 202) {
+        setTextSuccess("Map updated");
+      } else if (response.status === 401) {
+        setError("Unauthorized");
+      } else if (response.status === 503) {
+        setError("Error connecting to database");
+      }
+    } catch {
+      setError("Error when connecting to the API");
     }
   };
 
-  editMapTab(t) {
-    if (this.state.user_discord_id === this.props?.map.discordid) {
+  const handleDeleteResource = async (resourceId, resourceToken) => {
+    const response = await deleteResource(map.mapid, resourceId, resourceToken);
+    if (response.success) {
+      fetchData();
+    } else {
+      setError(response.message);
+    }
+  };
+
+  const handleFilterResources = (resourceType) => {
+    if (resourceType === "All") {
+      setResourcesFiltered(null);
+    } else {
+      setResourcesFiltered(
+        resourcesInTheMap.filter(
+          (resource) => resource.resourcetype === resourceType
+        )
+      );
+    }
+  };
+
+  const renderEditMapTab = () => {
+    if (userDiscordId === map.discordid) {
       return (
         <div className="card-body">
-          <form onSubmit={this.changeDataMap}>
+          <form onSubmit={handleChangeDataMap}>
             <div className="form-group">
               <label htmlFor="mapname">{t("Map Name")}</label>
               <input
                 type="text"
                 className="form-control"
                 id="mapname"
-                onChange={(evt) => this.setState({ mapname: evt.target.value })}
-                value={this.state.mapname}
+                value={mapName}
                 maxLength="30"
+                onChange={(e) => setMapName(e.target.value)}
                 required
               />
             </div>
@@ -144,41 +151,25 @@ class ResourceMap extends Component {
                 type="date"
                 className="form-control"
                 id="mapdate"
-                onChange={(evt) =>
-                  this.setState({ dateofburning: evt.target.value })
-                }
-                value={this.state.dateofburning}
+                value={dateOfBurning}
+                onChange={(e) => setDateOfBurning(e.target.value)}
                 required
               />
             </div>
             <div className="form-group">
-              <label htmlFor="mapdate">
-                {t("Enable editing with the link")}
-              </label>
+              <p>{t("Enable editing with the link")}</p>
               <div className="btn-group">
                 <button
-                  className={
-                    this.state.allowEditing
-                      ? "btn btn-success active"
-                      : "btn btn-success"
-                  }
-                  onClick={() => {
-                    this.setState({ allowEditing: true });
-                  }}
                   type="button"
+                  className={`btn btn-success ${allowEditing ? "active" : ""}`}
+                  onClick={() => setAllowEditing(true)}
                 >
                   {t("Allow Editing")}
                 </button>
                 <button
-                  className={
-                    this.state.allowEditing
-                      ? "btn btn-danger"
-                      : "btn btn-danger active"
-                  }
-                  onClick={() => {
-                    this.setState({ allowEditing: false });
-                  }}
                   type="button"
+                  className={`btn btn-danger ${!allowEditing ? "active" : ""}`}
+                  onClick={() => setAllowEditing(false)}
                 >
                   {t("Read Only")}
                 </button>
@@ -190,121 +181,92 @@ class ResourceMap extends Component {
                 type="text"
                 className="form-control"
                 id="password"
-                onChange={(evt) => this.setState({ pass: evt.target.value })}
-                value={this.state.pass}
+                value={pass}
                 maxLength="20"
+                onChange={(e) => setPass(e.target.value)}
                 required
               />
             </div>
-            <button
-              className="btn btn-lg btn-outline-success btn-block"
-              type="submit"
-              value="Submit"
-            >
+            <button className="btn btn-lg btn-outline-success btn-block">
               {t("Update Data")}
             </button>
           </form>
         </div>
       );
     }
-  }
-
-  filterResources = (r) => {
-    if (r === "All") {
-      this.setState({ resourcesFiltered: null });
-    } else {
-      const resourcesFiltered = this.state.resourcesInTheMap.filter(
-        (resource) => resource.resourcetype === r
-      );
-      this.setState({ resourcesFiltered: resourcesFiltered });
-    }
+    return false;
   };
 
-  render() {
-    const { t } = this.props;
-    if (this.state.user_discord_id == null || this.state.token == null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: "Login with discord",
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    }
-    if (this.state.error != null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: this.state.error,
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    }
-    if (this.state.textSuccess != null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: false,
-            text: this.state.textSuccess,
-            redirectPage: null,
-          }}
-          onClickOk={() => this.setState({ textSuccess: null })}
-        />
-      );
-    }
+  if (!userDiscordId || !token) {
     return (
-      <div className="row flex-xl-nowrap">
-        <div
-          id="map-sidebar"
-          className={
-            this.state.isOpenSidebar
-              ? "col-xl-3 col-sm-12 position-absolute bg-secondary p-1 open"
-              : "position-absolute bg-secondary p-1"
-          }
-        >
-          <div>
-            <button
-              type="button"
-              className="btn btn-sm btn-primary btn-block mb-2"
-              onClick={() => this.props?.onReturn()}
-            >
-              <i className="fas fa-arrow-left" />{" "}
-              {t("Back to the list of maps")}
-            </button>
-            <button
-              type="button"
-              id="toggle-sidebar-button"
-              className="btn btn-info ml-2 mb-2 float-right"
-              onClick={() =>
-                this.setState((state) => ({
-                  isOpenSidebar: !state.isOpenSidebar,
-                }))
-              }
-            >
-              <i
-                className={
-                  this.state.isOpenSidebar
-                    ? "fas fa-chevron-left"
-                    : "fas fa-chevron-right"
-                }
-              />
-            </button>
-          </div>
-          <nav className="collapse show" id="items-nav" aria-label="Items Navs">
-            <ul className="nav nav-pills nav-fill" role="tablist">
-              <li
-                className={
-                  this.props?.map.allowedit ||
-                  this.state.user_discord_id === this.props?.map.discordid
-                    ? "nav-item"
-                    : "nav-item d-none"
-                }
-                role="presentation"
-              >
+      <ModalMessage
+        message={{
+          isError: true,
+          text: "Login with discord",
+          redirectPage: "/profile",
+        }}
+      />
+    );
+  }
+
+  if (error) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: error,
+          redirectPage: "/profile",
+        }}
+      />
+    );
+  }
+
+  if (textSuccess) {
+    return (
+      <ModalMessage
+        message={{
+          isError: false,
+          text: textSuccess,
+          redirectPage: null,
+        }}
+        onClickOk={() => setTextSuccess(null)}
+      />
+    );
+  }
+
+  return (
+    <div className="row flex-xl-nowrap">
+      <div
+        id="map-sidebar"
+        className={
+          isOpenSidebar
+            ? "col-xl-3 col-sm-12 position-absolute bg-secondary p-1 open"
+            : "position-absolute bg-secondary p-1"
+        }
+      >
+        <div>
+          <button
+            type="button"
+            className="btn btn-sm btn-primary btn-block mb-2"
+            onClick={onReturn}
+          >
+            <i className="fas fa-arrow-left" /> {t("Back to the list of maps")}
+          </button>
+          <button
+            type="button"
+            id="toggle-sidebar-button"
+            className="btn btn-info ml-2 mb-2 float-right"
+            onClick={() => setIsOpenSidebar((prev) => !prev)}
+          >
+            <i
+              className={`fas fa-chevron-${isOpenSidebar ? "left" : "right"}`}
+            />
+          </button>
+        </div>
+        <nav className="collapse show" id="items-nav" aria-label="Items Navs">
+          <ul className="nav nav-pills nav-fill" role="tablist">
+            {(map.allowedit || userDiscordId === map.discordid) && (
+              <li className="nav-item" role="presentation">
                 <a
                   className="nav-link"
                   id="add-resource-tab"
@@ -317,26 +279,22 @@ class ResourceMap extends Component {
                   {t("Create resource")}
                 </a>
               </li>
-              <li className="nav-item" role="presentation">
-                <a
-                  className="nav-link active"
-                  id="resource-list-tab"
-                  data-toggle="tab"
-                  href="#resourcelist"
-                  role="tab"
-                  aria-controls="resourcelist"
-                  aria-selected="false"
-                >
-                  {t("List")}
-                </a>
-              </li>
-              <li
-                className={
-                  this.state.user_discord_id === this.props?.map.discordid
-                    ? "nav-item"
-                    : "nav-item d-none"
-                }
+            )}
+            <li className="nav-item" role="presentation">
+              <a
+                className="nav-link active"
+                id="resource-list-tab"
+                data-toggle="tab"
+                href="#resourcelist"
+                role="tab"
+                aria-controls="resourcelist"
+                aria-selected="false"
               >
+                {t("List")}
+              </a>
+            </li>
+            {userDiscordId === map.discordid && (
+              <li className="nav-item" role="presentation">
                 <a
                   className="nav-link"
                   id="edit-map-tab"
@@ -349,84 +307,70 @@ class ResourceMap extends Component {
                   {t("Edit")}
                 </a>
               </li>
-            </ul>
-            <div className="tab-content border border-primary">
-              <div
-                className="tab-pane fade"
-                id="addresource"
-                role="tabpanel"
-                aria-labelledby="add-resource-tab"
-              >
-                <CreateResourceTab
-                  items={this.state.items}
-                  onCreateResource={this.createResource}
-                  coordinateXInput={this.state.coordinateXInput}
-                  coordinateYInput={this.state.coordinateYInput}
-                  onChangeX={(x) =>
-                    this.setState({
-                      coordinateXInput: x,
-                    })
-                  }
-                  onChangeY={(y) =>
-                    this.setState({
-                      coordinateYInput: y,
-                    })
-                  }
-                />
-              </div>
-              <div
-                className="tab-pane fade show active"
-                id="resourcelist"
-                role="tabpanel"
-                aria-labelledby="resource-list-tab"
-              >
-                <ul
-                  className="list-group overflow-auto w-100"
-                  style={{ height: "60vh" }}
-                >
-                  <ResourcesInMapList
-                    resources={this.state.resourcesInTheMap}
-                    onSelect={(x, y) => this.setState({ center: [x, y] })}
-                    onFilter={this.filterResources}
-                  />
-                </ul>
-              </div>
-              <div
-                className="tab-pane fade"
-                id="editmap"
-                role="tabpanel"
-                aria-labelledby="edit-map-tab"
-              >
-                {this.editMapTab(t)}
-              </div>
+            )}
+          </ul>
+          <div className="tab-content border border-primary">
+            <div
+              className="tab-pane fade"
+              id="addresource"
+              role="tabpanel"
+              aria-labelledby="add-resource-tab"
+            >
+              <CreateResourceTab
+                items={items}
+                onCreateResource={handleCreateResource}
+                coordinateXInput={coordinateXInput}
+                coordinateYInput={coordinateYInput}
+                onChangeX={setCoordinateXInput}
+                onChangeY={setCoordinateYInput}
+              />
             </div>
-          </nav>
-        </div>
-        <div className="col-12">
-          <MapLayer
-            key={this.props?.map.mapid}
-            resourcesInTheMap={
-              this.state.resourcesFiltered != null
-                ? this.state.resourcesFiltered
-                : this.state.resourcesInTheMap
-            }
-            deleteResource={this.deleteResource}
-            updateResource={(mapid, resourceid, token, date) => {
-              updateResourceTime(mapid, resourceid, token, date);
-              this.componentDidMount();
-            }}
-            changeInput={(x, y) => {
-              this.setState({
-                coordinateXInput: x,
-                coordinateYInput: y,
-              });
-            }}
-            center={this.state.center}
-          />
-        </div>
+            <div
+              className="tab-pane fade show active"
+              id="resourcelist"
+              role="tabpanel"
+              aria-labelledby="resource-list-tab"
+            >
+              <ul
+                className="list-group overflow-auto w-100"
+                style={{ height: "60vh" }}
+              >
+                <ResourcesInMapList
+                  resources={resourcesFiltered || resourcesInTheMap}
+                  onSelect={(x, y) => setCenter([x, y])}
+                  onFilter={handleFilterResources}
+                />
+              </ul>
+            </div>
+            <div
+              className="tab-pane fade"
+              id="editmap"
+              role="tabpanel"
+              aria-labelledby="edit-map-tab"
+            >
+              {renderEditMapTab()}
+            </div>
+          </div>
+        </nav>
       </div>
-    );
-  }
-}
+      <div className="col-12">
+        <MapLayer
+          key={map.mapid}
+          resourcesInTheMap={resourcesInTheMap}
+          deleteResource={handleDeleteResource}
+          updateResource={(mapid, resourceid, token, date) => {
+            updateResourceTime(mapid, resourceid, token, date);
+            fetchData();
+          }}
+          changeInput={(x, y) => {
+            setCoordinateXInput(x);
+            setCoordinateYInput(y);
+          }}
+          center={center}
+        />
+      </div>
+    </div>
+  );
+};
 
-export default withTranslation()(ResourceMap);
+export default ResourceMap;
