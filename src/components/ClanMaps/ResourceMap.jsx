@@ -154,7 +154,7 @@ const ResourceMap = ({ map, onReturn }) => {
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-danger ${!allowEditing ? "active" : ""}`}
+                  className={`btn btn-danger ${allowEditing ? "" : "active"}`}
                   onClick={() => setAllowEditing(false)}
                 >
                   {t("Read Only")}
