@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import Axios from "axios";
 import { useTranslation } from "react-i18next";
 import {
   updateResourceTime,
@@ -13,6 +12,7 @@ import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
+import { editMap } from "../../functions/requests/maps";
 import "../../css/map-sidebar.min.css";
 
 const ResourceMap = ({ map, onReturn }) => {
@@ -79,29 +79,15 @@ const ResourceMap = ({ map, onReturn }) => {
   const handleChangeDataMap = async (event) => {
     event.preventDefault();
 
-    const options = {
-      method: "put",
-      url: `${process.env.REACT_APP_API_URL}/maps/${map.mapid}`,
-      params: {
-        mapname: mapName,
-        mapdate: dateOfBurning,
-        allowediting: allowEditing,
-        mappass: pass,
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
-
     try {
-      const response = await Axios.request(options);
-      if (response.status === 202) {
-        setTextSuccess("Map updated");
-      } else if (response.status === 401) {
-        setError("Unauthorized");
-      } else if (response.status === 503) {
-        setError("Error connecting to database");
-      }
+      const response = await editMap(
+        map.mapid,
+        mapName,
+        dateOfBurning,
+        allowEditing,
+        pass
+      );
+      setTextSuccess(response);
     } catch {
       setError("Error when connecting to the API");
     }
@@ -187,7 +173,10 @@ const ResourceMap = ({ map, onReturn }) => {
                 required
               />
             </div>
-            <button className="btn btn-lg btn-outline-success btn-block">
+            <button
+              type="submit"
+              className="btn btn-lg btn-outline-success btn-block"
+            >
               {t("Update Data")}
             </button>
           </form>

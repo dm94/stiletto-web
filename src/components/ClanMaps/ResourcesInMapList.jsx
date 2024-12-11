@@ -1,104 +1,76 @@
-import React, { Component, Fragment } from "react";
-import { withTranslation } from "react-i18next";
+import React, { useState, Fragment } from "react";
+import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 
-class ResourcesInMapList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      resourceTypeFilter: "All",
-    };
-  }
+const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
+  const { t } = useTranslation();
+  const [resourceTypeFilter, setResourceTypeFilter] = useState("All");
 
-  filterTheResources = (r) => {
-    this.setState({ resourceTypeFilter: r });
-    this.props?.onFilter(r);
+  const filterTheResources = (type) => {
+    setResourceTypeFilter(type);
+    onFilter?.(type);
   };
 
-  list(t) {
-    if (this.state.resourceTypeFilter !== "All") {
-      const resourcesFiltered = this.props?.resources.filter(
-        (r) => r.x != null && r.resourcetype === this.state.resourceTypeFilter
-      );
-      return resourcesFiltered.map((resource) => (
-        <li className="list-group-item text-center" key={resource.resourceid}>
-          <button
-            type="button"
-            className="btn btn-block"
-            onClick={() => this.props?.onSelect(resource.x, resource.y)}
-          >
-            <Icon
-              key={`icon-rmap-${resource.resourceid}`}
-              name={resource.resourcetype}
-            />
-            {t(resource.resourcetype)}
-          </button>
-        </li>
-      ));
-    }
+  const renderList = () => {
+    const filteredResources =
+      resourceTypeFilter === "All"
+        ? resources?.filter((r) => r.x != null)
+        : resources?.filter(
+            (r) => r.x != null && r.resourcetype === resourceTypeFilter
+          );
 
-    return this.props?.resources
-      .filter((r) => r.x != null)
-      .map((resource) => (
-        <li className="list-group-item text-center" key={resource.resourceid}>
-          <button
-            type="button"
-            className="btn btn-block"
-            onClick={() => this.props?.onSelect(resource.x, resource.y)}
-          >
-            <Icon
-              key={`icon-rmap-${resource.resourceid}`}
-              name={resource.resourcetype}
-            />
-            {t(resource.resourcetype)}{" "}
-          </button>
-        </li>
-      ));
-  }
+    return filteredResources?.map((resource) => (
+      <li className="list-group-item text-center" key={resource.resourceid}>
+        <button
+          type="button"
+          className="btn btn-block"
+          onClick={() => onSelect?.(resource.x, resource.y)}
+        >
+          <Icon name={resource.resourcetype} />
+          {t(resource.resourcetype)}
+        </button>
+      </li>
+    ));
+  };
 
-  filterlist(t) {
+  const renderFilterList = () => {
     const resourceTypes = ["All"];
-
-    this.props?.resources.forEach((resource) => {
+    for (const resource of resources) {
       if (
         resource.x != null &&
-        resourceTypes.indexOf(resource.resourcetype) === -1
+        !resourceTypes.includes(resource.resourcetype)
       ) {
         resourceTypes.push(resource.resourcetype);
       }
-    });
+    }
 
-    return resourceTypes.map((r) => (
+    return resourceTypes.map((type) => (
       <button
         type="button"
-        key={r}
-        className={
-          r === this.state.resourceTypeFilter
-            ? "btn btn-secondary active"
-            : "btn btn-secondary"
-        }
-        onClick={() => this.filterTheResources(r)}
+        key={type}
+        className={`btn btn-secondary ${
+          type === resourceTypeFilter ? "active" : ""
+        }`}
+        onClick={() => filterTheResources(type)}
       >
-        <Icon key={`icon-rlist-${r}`} name={r} />
-        {t(r)}
+        <Icon name={type} />
+        {t(type)}
       </button>
     ));
+  };
+
+  if (!resources) {
+    return false;
   }
 
-  render() {
-    const { t } = this.props;
-    if (this.props?.resources != null) {
-      return (
-        <Fragment>
-          <fieldset className="btn-group btn-group-sm">
-            {this.filterlist(t)}
-          </fieldset>
-          <ul className="list-group">{this.list(t)}</ul>
-        </Fragment>
-      );
-    }
-    return "";
-  }
-}
+  return (
+    <Fragment>
+      <fieldset className="btn-group btn-group-sm">
+        {renderFilterList()}
+      </fieldset>
+      <ul className="list-group">{renderList()}</ul>
+    </Fragment>
+  );
+};
 
-export default withTranslation()(ResourcesInMapList);
+export default ResourcesInMapList;
