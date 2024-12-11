@@ -35,11 +35,15 @@ class ModalMessage extends Component {
     if (this.props?.message.text === "Error when connecting to the API") {
       localStorage.removeItem("allItems");
       sessionStorage.removeItem("allItems");
-      caches.keys().then((names) => {
-        for (const name of names) {
-          caches.delete(name);
-        }
-      });
+      if (window?.caches) {
+        window?.caches?.keys().then((names) => {
+          for (const name of names) {
+            if (name.includes("lastCheck")) {
+              caches?.delete(name);
+            }
+          }
+        });
+      }
     }
     if (this.state.redirect) {
       return <Redirect to={this.props?.message.redirectPage} />;

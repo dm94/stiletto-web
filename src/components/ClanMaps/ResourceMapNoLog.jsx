@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import Axios from "axios";
+import React, { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import {
   updateResourceTime,
@@ -14,207 +13,185 @@ import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
+import { getMap } from "../../functions/requests/maps";
 import "../../css/map-sidebar.min.css";
 
-class ResourceMapNoLog extends Component {
-  constructor(props) {
-    super(props);
+const ResourceMapNoLog = (props) => {
+  const { t } = useTranslation();
+  const [resourcesInTheMap, setResourcesInTheMap] = useState(null);
+  const [mapId, setMapId] = useState(null);
+  const [pass, setPass] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [textMessage, setTextMessage] = useState(null);
+  const [center, setCenter] = useState(null);
+  const [items, setItems] = useState(null);
+  const [coordinateXInput, setCoordinateXInput] = useState(0);
+  const [coordinateYInput, setCoordinateYInput] = useState(0);
+  const [resourcesFiltered, setResourcesFiltered] = useState(null);
+  const [error, setError] = useState(null);
+  const [mapData, setMapData] = useState(null);
+  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
 
-    this.state = {
-      resourcesInTheMap: null,
-      mapId: null,
-      pass: null,
-      isLoaded: false,
-      textMessage: null,
-      center: null,
-      items: null,
-      coordinateXInput: 0,
-      coordinateYInput: 0,
-      resourcesFiltered: null,
-      error: null,
-      mapData: null,
-      isOpenSidebar: false,
-    };
-  }
-
-  async componentDidMount() {
+  const fetchData = useCallback(async () => {
     let parsed = null;
-    if (this.props?.location != null && this.props?.location.search != null) {
-      parsed = queryString.parse(this.props?.location.search);
+    if (props?.location?.search) {
+      parsed = queryString.parse(props.location.search);
     }
 
     if (
-      (this.props?.mapId != null || this.props?.match.params.id != null) &&
-      (this.props?.pass != null || parsed.pass != null)
+      (props?.mapId || props?.match?.params?.id) &&
+      (props?.pass || parsed?.pass)
     ) {
       const markers = await getMarkers();
-      this.setState({ items: markers });
+      setItems(markers);
 
-      const mapId =
-        this.props?.mapId != null
-          ? this.props?.mapId
-          : this.props?.match.params.id;
-      const pass = this.props?.pass ? this.props?.pass : parsed.pass;
+      const currentMapId = props?.mapId || props?.match?.params?.id;
+      const currentPass = props?.pass || parsed?.pass;
 
-      this.setState({
-        mapId: mapId,
-        pass: pass,
-      });
+      setMapId(currentMapId);
+      setPass(currentPass);
 
-      const resourcesData = await getResources(mapId, pass);
+      const resourcesData = await getResources(currentMapId, currentPass);
       if (resourcesData.success) {
-        this.setState({ resourcesInTheMap: resourcesData.message });
+        setResourcesInTheMap(resourcesData.message);
       } else {
-        this.setState({ error: resourcesData.message });
+        setError(resourcesData.message);
       }
 
-      Axios.get(`${process.env.REACT_APP_API_URL}/maps/${mapId}`, {
-        params: {
-          mappass: pass,
-        },
-      }).then((response) => {
-        if (response.status === 200) {
-          this.setState({ mapData: response.data });
-        } else if (response.status === 401) {
-          this.setState({
-            error: "Unauthorized",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      });
+      const response = await getMap(currentMapId, currentPass);
+      if (response.success) {
+        setMapData(response.data);
+      } else {
+        setError(response.message);
+      }
     } else {
-      this.setState({ error: "Unauthorized" });
+      setError("Unauthorized");
     }
-  }
+    setIsLoaded(true);
+  }, [props]);
 
-  deleteResource = async (resourceId, resourceToken) => {
-    const response = await deleteResource(
-      this.state.mapId,
-      resourceId,
-      resourceToken
-    );
-    if (response.success) {
-      this.componentDidMount();
-    } else {
-      this.setState({ error: response.message });
-    }
-  };
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
-  createResource = async (
-    resourceTypeInput,
-    qualityInput,
-    descriptionInput,
-    lastHarvested
-  ) => {
-    const response = await createResource(
-      this.state.mapId,
-      this.state.coordinateXInput,
-      this.state.coordinateYInput,
-      this.state.pass,
+  const handleDeleteResource = useCallback(
+    async (resourceId, resourceToken) => {
+      const response = await deleteResource(mapId, resourceId, resourceToken);
+      if (response.success) {
+        fetchData();
+      } else {
+        setError(response.message);
+      }
+    },
+    [mapId, fetchData]
+  );
+
+  const handleCreateResource = useCallback(
+    async (
       resourceTypeInput,
       qualityInput,
       descriptionInput,
       lastHarvested
-    );
-    if (response.success) {
-      this.componentDidMount();
-    } else {
-      this.setState({ error: response.message });
-    }
-  };
+    ) => {
+      const response = await createResource(
+        mapId,
+        coordinateXInput,
+        coordinateYInput,
+        pass,
+        resourceTypeInput,
+        qualityInput,
+        descriptionInput,
+        lastHarvested
+      );
+      if (response.success) {
+        fetchData();
+      } else {
+        setError(response.message);
+      }
+    },
+    [mapId, coordinateXInput, coordinateYInput, pass, fetchData]
+  );
 
-  filterResources = (r) => {
-    if (r === "All") {
-      this.setState({ resourcesFiltered: null });
-    } else {
-      const resourcesFiltered = this.state.resourcesInTheMap.filter(
-        (resource) => resource.resourcetype === r
-      );
-      this.setState({ resourcesFiltered: resourcesFiltered });
-    }
-  };
+  const handleFilterResources = useCallback(
+    (resourceType) => {
+      if (resourceType === "All") {
+        setResourcesFiltered(null);
+      } else {
+        const filtered = resourcesInTheMap?.filter(
+          (resource) => resource.resourcetype === resourceType
+        );
+        setResourcesFiltered(filtered);
+      }
+    },
+    [resourcesInTheMap]
+  );
 
-  render() {
-    const { t } = this.props;
-    if (this.state.isLoaded) {
-      return <LoadingScreen />;
-    }
-    if (this.state.textMessage != null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: false,
-            text: this.state.textMessage,
-            redirectPage: null,
-          }}
-          onClickOk={() => this.setState({ textMessage: null })}
-        />
-      );
-    }
-    if (this.state.error != null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: this.state.error,
-            redirectPage: "/",
-          }}
-        />
-      );
-    }
+  if (!isLoaded) {
+    return <LoadingScreen />;
+  }
+
+  if (textMessage) {
     return (
-      <div className="row flex-xl-nowrap">
-        <div
-          id="map-sidebar"
-          className={
-            this.state.isOpenSidebar
-              ? "position-absolute bg-secondary p-1 open"
-              : "position-absolute bg-secondary p-1"
-          }
+      <ModalMessage
+        message={{
+          isError: false,
+          text: textMessage,
+          redirectPage: null,
+        }}
+        onClickOk={() => setTextMessage(null)}
+      />
+    );
+  }
+
+  if (error) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: error,
+          redirectPage: "/",
+        }}
+      />
+    );
+  }
+
+  return (
+    <div className="row flex-xl-nowrap">
+      <div
+        id="map-sidebar"
+        className={`position-absolute bg-secondary p-1 ${
+          isOpenSidebar ? "open" : ""
+        }`}
+      >
+        <button
+          type="button"
+          id="toggle-sidebar-button"
+          className="btn btn-info ml-2 mb-2 float-right"
+          onClick={() => setIsOpenSidebar((prev) => !prev)}
         >
-          <button
-            type="button"
-            id="toggle-sidebar-button"
-            className="btn btn-info ml-2 mb-2 float-right"
-            onClick={() =>
-              this.setState((state) => ({
-                isOpenSidebar: !state.isOpenSidebar,
-              }))
+          <i
+            className={
+              isOpenSidebar ? "fas fa-chevron-left" : "fas fa-chevron-right"
             }
-          >
-            <i
-              className={
-                this.state.isOpenSidebar
-                  ? "fas fa-chevron-left"
-                  : "fas fa-chevron-right"
-              }
-            />
-          </button>
-          <nav className="collapse show" id="items-nav" aria-label="Items Navs">
-            <ul className="nav nav-pills nav-fill" role="tablist">
-              <li className="nav-item" role="presentation">
-                <a
-                  className="nav-link active"
-                  id="resource-list-tab"
-                  data-toggle="tab"
-                  href="#resourcelist"
-                  role="tab"
-                  aria-controls="resourcelist"
-                  aria-selected="false"
-                >
-                  {t("List")}
-                </a>
-              </li>
-              <li
-                className={
-                  this.state?.mapData?.allowedit != null &&
-                  Boolean(this.state.mapData.allowedit)
-                    ? "nav-item"
-                    : "d-none"
-                }
-                role="presentation"
+          />
+        </button>
+        <nav className="collapse show" id="items-nav" aria-label="Items Navs">
+          <ul className="nav nav-pills nav-fill">
+            <li className="nav-item">
+              <a
+                className="nav-link active"
+                id="resource-list-tab"
+                data-toggle="tab"
+                href="#resourcelist"
+                role="tab"
+                aria-controls="resourcelist"
+                aria-selected="false"
               >
+                {t("List")}
+              </a>
+            </li>
+            {mapData?.allowedit && (
+              <li className="nav-item">
                 <a
                   className="nav-link"
                   id="add-resource-tab"
@@ -227,85 +204,65 @@ class ResourceMapNoLog extends Component {
                   {t("Create resource")}
                 </a>
               </li>
-            </ul>
-            <div className="tab-content border border-primary">
-              <div
-                className="tab-pane fade show active"
-                id="resourcelist"
-                role="tabpanel"
-                aria-labelledby="resource-list-tab"
+            )}
+          </ul>
+          <div className="tab-content border border-primary">
+            <div
+              className="tab-pane fade show active"
+              id="resourcelist"
+              role="tabpanel"
+              aria-labelledby="resource-list-tab"
+            >
+              <ul
+                className="list-group overflow-auto w-100"
+                style={{ height: "60vh" }}
               >
-                <ul
-                  className="list-group overflow-auto w-100"
-                  style={{ height: "60vh" }}
-                >
-                  <ResourcesInMapList
-                    resources={this.state.resourcesInTheMap}
-                    onSelect={(x, y) => this.setState({ center: [x, y] })}
-                    onFilter={this.filterResources}
-                  />
-                </ul>
-              </div>
-              <div
-                className="tab-pane fade"
-                id="addresource"
-                role="tabpanel"
-                aria-labelledby="add-resource-tab"
-              >
-                <CreateResourceTab
-                  items={this.state.items}
-                  onCreateResource={this.createResource}
-                  coordinateXInput={this.state.coordinateXInput}
-                  coordinateYInput={this.state.coordinateYInput}
-                  onChangeX={(x) =>
-                    this.setState({
-                      coordinateXInput: x,
-                    })
-                  }
-                  onChangeY={(y) =>
-                    this.setState({
-                      coordinateYInput: y,
-                    })
-                  }
+                <ResourcesInMapList
+                  resources={resourcesInTheMap}
+                  onSelect={(x, y) => setCenter([x, y])}
+                  onFilter={handleFilterResources}
                 />
-              </div>
+              </ul>
             </div>
-          </nav>
-        </div>
-        <div className="col-12">
-          <div className="col-xl-12 text-center">
-            <h1>
-              {this.state.resourcesInTheMap != null &&
-              this.state.resourcesInTheMap[0] != null &&
-              this.state.resourcesInTheMap[0].name != null
-                ? this.state.resourcesInTheMap[0].name
-                : ""}
-            </h1>
+            <div
+              className="tab-pane fade"
+              id="addresource"
+              role="tabpanel"
+              aria-labelledby="add-resource-tab"
+            >
+              <CreateResourceTab
+                items={items}
+                onCreateResource={handleCreateResource}
+                coordinateXInput={coordinateXInput}
+                coordinateYInput={coordinateYInput}
+                onChangeX={setCoordinateXInput}
+                onChangeY={setCoordinateYInput}
+              />
+            </div>
           </div>
-          <MapLayer
-            key={this.state.mapId}
-            resourcesInTheMap={
-              this.state.resourcesFiltered != null
-                ? this.state.resourcesFiltered
-                : this.state.resourcesInTheMap
-            }
-            deleteResource={this.deleteResource}
-            updateResource={(mapid, resourceid, token, date) => {
-              updateResourceTime(mapid, resourceid, token, date);
-              this.componentDidMount();
-            }}
-            changeInput={(x, y) => {
-              this.setState({
-                coordinateXInput: x,
-                coordinateYInput: y,
-              });
-            }}
-            center={this.state.center}
-          />
-        </div>
+        </nav>
       </div>
-    );
-  }
-}
+      <div className="col-12">
+        <div className="col-xl-12 text-center">
+          <h1>{resourcesInTheMap?.[0]?.name || ""}</h1>
+        </div>
+        <MapLayer
+          key={mapId}
+          resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
+          deleteResource={handleDeleteResource}
+          updateResource={(mapId, resourceId, token, date) => {
+            updateResourceTime(mapId, resourceId, token, date);
+            fetchData();
+          }}
+          changeInput={(x, y) => {
+            setCoordinateXInput(x);
+            setCoordinateYInput(y);
+          }}
+          center={center}
+        />
+      </div>
+    </div>
+  );
+};
 
-export default withTranslation()(ResourceMapNoLog);
+export default ResourceMapNoLog;

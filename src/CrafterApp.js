@@ -138,13 +138,15 @@ const CrafterApp = () => {
 function updateWeb() {
   localStorage.removeItem("allItems");
   sessionStorage.removeItem("allItems");
-  caches.keys().then((names) => {
-    for (const name of names) {
-      if (name.includes("lastCheck")) {
-        caches.delete(name);
+  if (window?.caches) {
+    window?.caches?.keys().then((names) => {
+      for (const name of names) {
+        if (name.includes("lastCheck")) {
+          caches?.delete(name);
+        }
       }
-    }
-  });
+    });
+  }
   window.location.reload();
 }
 

@@ -42,9 +42,9 @@ class Crafter extends Component {
           if (response.status === 200) {
             if (response.data.items != null) {
               const allItems = response.data.items;
-              allItems.forEach((it) => {
+              for (const it of allItems) {
                 this.handleAdd(it.name, Number.parseInt(it.count));
-              });
+              }
             }
           } else if (response.status === 503) {
             this.setState({ error: "Error connecting to database" });
@@ -104,15 +104,19 @@ class Crafter extends Component {
   }
 
   handleAdd = (itemName, count) => {
-    if (count == null) {
-      count = 1;
+    let newCount = count;
+    if (newCount == null) {
+      newCount = 1;
     }
     let selectedItem = this.state.items.find((it) => it.name === itemName);
     if (this.state.selectedItems.some((it) => it.name === itemName)) {
       selectedItem = this.state.selectedItems.find(
         (it) => it.name === itemName
       );
-      this.changeCount(itemName, Number.parseInt(selectedItem.count) + count);
+      this.changeCount(
+        itemName,
+        Number.parseInt(selectedItem.count) + newCount
+      );
     } else if (selectedItem != null) {
       const selectedItems = this.state.selectedItems.concat([
         {
@@ -120,7 +124,7 @@ class Crafter extends Component {
           category: selectedItem.category ? selectedItem.category : "",
           crafting: this.getIngredients(selectedItem.name),
           damage: selectedItem.damage,
-          count: count,
+          count: newCount,
         },
       ]);
       this.setState({ selectedItems });
@@ -145,12 +149,13 @@ class Crafter extends Component {
   getIngredients = (itemName, secondTree = false) => {
     const all = [];
     const selectedItem = this.state.items.filter((it) => it.name === itemName);
-    if (selectedItem[0] != null && selectedItem[0].crafting != null) {
-      selectedItem[0].crafting.forEach((recipe) => {
+    if (selectedItem?.[0]?.crafting) {
+      for (const recipe of selectedItem[0].crafting) {
         const recipeObject = {};
         if (recipe.ingredients != null) {
           const ingredients = [];
-          recipe.ingredients.forEach((ingredient) => {
+
+          for (const ingredient of recipe.ingredients) {
             if (!secondTree) {
               const subIngredients = this.getIngredients(ingredient.name, true);
               if (subIngredients.length > 0) {
@@ -158,7 +163,8 @@ class Crafter extends Component {
               }
             }
             ingredients.push(ingredient);
-          });
+          }
+
           recipeObject.ingredients = ingredients;
         }
         if (recipe.output != null) {
@@ -171,7 +177,7 @@ class Crafter extends Component {
           recipeObject.time = recipe.time;
         }
         all.push(recipeObject);
-      });
+      }
     }
     return all;
   };
@@ -235,7 +241,7 @@ class Crafter extends Component {
           <link rel="canonical" href={`${getDomain()}/crafter`} />
         </Helmet>
         <div className="col mb-2">
-          <form role="search" className="bd-search d-flex align-items-center">
+          <form className="bd-search d-flex align-items-center">
             <input
               className="form-control"
               type="search"
@@ -262,12 +268,12 @@ class Crafter extends Component {
             id="items-nav"
             aria-label="Items Navs"
           >
-            <ul
+            <div
               className="nav overflow-auto list-group"
               style={{ height: "95vh" }}
             >
               {this.showAllItems()}
-            </ul>
+            </div>
           </nav>
         </div>
         <main className="col-md-9 col-lg-8 col-xl-8">
