@@ -5,6 +5,10 @@
 
 ---
 
+This project is currently up and running but the intention is to update the vast majority of the code. [More information about the changes](https://github.com/dm94/stiletto-web/issues/93)
+
+---
+
 ## Stiletto Web
 
 Web with different utilities for the game Last Oasis, but is not affiliated with [Donkey Crew](https://www.donkey.team/)
