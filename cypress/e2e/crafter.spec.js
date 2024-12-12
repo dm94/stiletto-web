@@ -9,7 +9,7 @@ describe("Crafter", () => {
   it("Add an item and share it", () => {
     cy.get("[data-cy='crafter-search']").type(item);
 
-    cy.get("li[class='list-group-item']")
+    cy.get("div[class='list-group-item']")
       .first()
       .within(() => {
         cy.get("button").click();
@@ -33,7 +33,7 @@ describe("Crafter", () => {
     cy.get("[data-cy='crafter-search']").type(item);
 
     Cypress._.times(count, () => {
-      cy.get("li[class='list-group-item']")
+      cy.get("div[class='list-group-item']")
         .first()
         .within(() => {
           cy.get("button").click();
@@ -49,7 +49,7 @@ describe("Crafter", () => {
   it("Add an item and copy it", () => {
     cy.get("[data-cy='crafter-search']").type(item);
 
-    cy.get("li[class='list-group-item']")
+    cy.get("div[class='list-group-item']")
       .first()
       .within(() => {
         cy.get("button").click();
