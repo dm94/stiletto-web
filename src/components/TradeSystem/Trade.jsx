@@ -1,27 +1,20 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import { getStoredItem } from "../../services";
 
-class Trade extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user_discord_id: getStoredItem("discordid"),
-    };
-  }
+const Trade = ({ trade, onDelete }) => {
+  const { t } = useTranslation();
+  const userDiscordId = getStoredItem("discordid");
 
-  cardFooter(t) {
-    if (
-      this.state.user_discord_id == null ||
-      this.state.user_discord_id !== this.props?.trade.discordid
-    ) {
+  const renderCardFooter = () => {
+    if (!userDiscordId || userDiscordId !== trade?.discordid) {
       return (
         <div className="card-footer">
-          Discord: {this.props?.trade.discordtag}
+          Discord: {trade?.discordtag}
           <a
             className="float-right text-info"
-            href={`https://discordapp.com/users/${this.props?.trade.discordid}`}
+            href={`https://discordapp.com/users/${trade?.discordid}`}
             target="_blank"
             rel="noreferrer noopener"
             aria-label="Send DM"
@@ -31,77 +24,66 @@ class Trade extends Component {
         </div>
       );
     }
+
     return (
       <button
         type="button"
         className="btn btn-danger"
-        onClick={() => this.props?.onDelete(this.props?.trade.idtrade)}
+        onClick={() => onDelete?.(trade?.idtrade)}
       >
         {t("Delete")}
       </button>
     );
-  }
+  };
 
-  showQuality(t) {
-    switch (this.props?.trade.quality) {
-      case "0":
-        return <span className="badge badge-light mb-2">{t("Common")}</span>;
-      case "1":
-        return (
-          <span className="badge badge-success mb-2">{t("Uncommon")}</span>
-        );
-      case "2":
-        return <span className="badge badge-info mb-2">{t("Rare")}</span>;
-      case "3":
-        return <span className="badge badge-danger mb-2">{t("Epic")}</span>;
-      case "4":
-        return (
-          <span className="badge badge-warning mb-2">{t("Legendary")}</span>
-        );
-      default:
-        return <span className="badge badge-light mb-2">{t("Common")}</span>;
-    }
-  }
+  const getQualityBadge = () => {
+    const qualities = {
+      0: { class: "light", text: "Common" },
+      1: { class: "success", text: "Uncommon" },
+      2: { class: "info", text: "Rare" },
+      3: { class: "danger", text: "Epic" },
+      4: { class: "warning", text: "Legendary" },
+    };
 
-  render() {
-    const { t } = this.props;
+    const quality = qualities[trade?.quality] || qualities["0"];
     return (
-      <div className="col-xl-3 text-center">
-        <div className="card mb-4 shadow-sm border-secondary">
-          <div className="card-header">
-            {this.props?.trade.type === "Supply" ? (
-              <i className="far fa-arrow-alt-circle-up" />
-            ) : (
-              <i className="far fa-arrow-alt-circle-down" />
-            )}{" "}
-            {t(this.props?.trade.type)} {"//"} {this.props?.trade.region}
-          </div>
-          <div className="card-body">
-            {this.showQuality(t)}
-            <h5 className="card-title">
-              {this.props?.trade.amount !== "0"
-                ? `${this.props?.trade.amount}x `
-                : ""}{" "}
-              <Icon
-                key={this.props?.trade.resource}
-                name={this.props?.trade.resource}
-              />
-              {t(this.props?.trade.resource, { ns: "items" })}
-            </h5>
-            <p>
-              {this.props?.trade.price !== "0"
-                ? `${this.props?.trade.price} Flots/${t("Unit")}`
-                : ""}
-            </p>
-            {this.props?.trade.nickname != null
-              ? `${t("Nick in Game")}: ${this.props?.trade.nickname}`
-              : ""}
-          </div>
-          {this.cardFooter(t)}
-        </div>
-      </div>
+      <span className={`badge badge-${quality.class} mb-2`}>
+        {t(quality.text)}
+      </span>
     );
-  }
-}
+  };
 
-export default withTranslation()(Trade);
+  if (!trade) {
+    return "";
+  }
+
+  return (
+    <div className="col-xl-3 text-center">
+      <div className="card mb-4 shadow-sm border-secondary">
+        <div className="card-header">
+          {trade.type === "Supply" ? (
+            <i className="far fa-arrow-alt-circle-up" />
+          ) : (
+            <i className="far fa-arrow-alt-circle-down" />
+          )}{" "}
+          {t(trade.type)} {"//"} {trade.region}
+        </div>
+        <div className="card-body">
+          {getQualityBadge()}
+          <h5 className="card-title">
+            {trade.amount !== "0" ? `${trade.amount}x ` : ""}{" "}
+            <Icon key={trade.resource} name={trade.resource} />
+            {t(trade.resource, { ns: "items" })}
+          </h5>
+          <p>
+            {trade.price !== "0" ? `${trade.price} Flots/${t("Unit")}` : ""}
+          </p>
+          {trade.nickname ? `${t("Nick in Game")}: ${trade.nickname}` : ""}
+        </div>
+        {renderCardFooter()}
+      </div>
+    </div>
+  );
+};
+
+export default Trade;

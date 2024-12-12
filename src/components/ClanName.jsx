@@ -1,40 +1,41 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import { config } from "../config/config";
-class ClanName extends Component {
-  render() {
-    if (this.props?.clan.symbol != null) {
-      return (
-        <Fragment>
-          <img
-            width="48"
-            height="48"
-            src={`${config.REACT_APP_RESOURCES_URL}/symbols/${this.props?.clan.symbol}.png`}
-            style={{ backgroundColor: this.props?.clan.flagcolor }}
-            alt={this.props?.clan.symbol}
-            id={`symbol-img-${this.props?.clan.name}`}
-          />
-          <span className="pb-3 mb-0 ml-2">{this.props?.clan.name}</span>
-        </Fragment>
-      );
-    }
+
+const ClanName = ({ clan }) => {
+  if (clan?.symbol) {
     return (
       <Fragment>
-        <svg
-          className="bd-placeholder-img mr-2"
-          width="32"
-          height="32"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMidYMid slice"
-          focusable="false"
-          role="img"
-          title={`Color ${this.props?.clan.flagcolor}`}
-        >
-          <rect width="90%" height="90%" fill={this.props?.clan.flagcolor} />
-        </svg>
-        <span className="pb-3 mb-0">{this.props?.clan.name}</span>
+        <img
+          width="48"
+          height="48"
+          src={`${config.REACT_APP_RESOURCES_URL}/symbols/${clan.symbol}.png`}
+          style={{ backgroundColor: clan.flagcolor }}
+          alt={clan.symbol}
+          id={`symbol-img-${clan.name}`}
+        />
+        <span className="pb-3 mb-0 ml-2">{clan.name}</span>
       </Fragment>
     );
   }
-}
+
+  return (
+    <Fragment>
+      <svg
+        className="bd-placeholder-img mr-2"
+        width="32"
+        height="32"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+        role="img"
+        aria-label={`Clan color ${clan.flagcolor}`}
+        title={`Color ${clan.flagcolor}`}
+      >
+        <rect width="90%" height="90%" fill={clan.flagcolor} />
+      </svg>
+      <span className="pb-3 mb-0">{clan.name}</span>
+    </Fragment>
+  );
+};
 
 export default ClanName;

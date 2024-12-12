@@ -1,41 +1,39 @@
-import { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-class Notifications extends Component {
-  showNotifications() {
-    const { t } = this.props;
-    if (this.props?.notifications) {
-      return this.props?.notifications.map((data) => {
-        return (
-          <div
-            className="toast"
-            role="alert"
-            aria-live="assertive"
-            aria-atomic="true"
-            key={`notification-${data.date}`}
-          >
-            <div className="toast-header">
-              <strong className="mr-auto">{t(data.type)}</strong>
-              <button
-                type="button"
-                className="ml-2 mb-1 close"
-                aria-label="Close"
-                onClick={() => this.props?.close(data.date)}
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div className="toast-body">{t(data.message)}</div>
-          </div>
-        );
-      });
+const Notifications = ({ notifications, close }) => {
+  const { t } = useTranslation();
+
+  const renderNotifications = () => {
+    if (!notifications) {
+      return "";
     }
-    return "";
-  }
 
-  render() {
-    return <div className="notifications">{this.showNotifications()}</div>;
-  }
-}
+    return notifications.map((data) => (
+      <div
+        className="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+        key={`notification-${data.date}`}
+      >
+        <div className="toast-header">
+          <strong className="mr-auto">{t(data.type)}</strong>
+          <button
+            type="button"
+            className="ml-2 mb-1 close"
+            aria-label="Close"
+            onClick={() => close?.(data.date)}
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div className="toast-body">{t(data.message)}</div>
+      </div>
+    ));
+  };
 
-export default withTranslation()(Notifications);
+  return <div className="notifications">{renderNotifications()}</div>;
+};
+
+export default Notifications;

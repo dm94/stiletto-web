@@ -62,15 +62,18 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
       key={`clanmap${map?.mapid}`}
     >
       <div className="row">
-        <button className="col-6 pr-0">
+        <button
+          type="button"
+          className="col-6 pr-0"
+          onClick={() => onOpen(map)}
+        >
           <img
-            src={`${config.REACT_APP_RESOURCES_URL}/maps/${value.replace(
+            src={`${config.REACT_APP_RESOURCES_URL}/maps/${value?.replace(
               "_new",
               ""
             )}.jpg`}
             className="img-fluid"
             alt={map?.name}
-            onClick={() => onOpen(map)}
           />
         </button>
         <div className="col-6 pl-0">{showButton()}</div>
@@ -81,9 +84,7 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
           {dateBurning.toISOString().split("T")[0]}
         </small>
       </h5>
-      <p className="m-0 fw-lighter">
-        {map?.discordTag !== null ? map?.discordTag : ""}
-      </p>
+      <p className="m-0 fw-lighter">{map?.discordTag ?? ""}</p>
     </div>
   );
 };

@@ -1,37 +1,37 @@
-import React, { Component } from "react";
+import React from "react";
 
-class CraftingTime extends Component {
-  render() {
-    let totalTime = 0;
-    const totalToCraft = this.props?.total ? this.props?.total : 1;
-    const time = this.props?.time;
+const CraftingTime = ({ total = 1, time }) => {
+  const convertSecondsToTime = (seconds) => {
+    const totalSeconds = Number(seconds);
+    const hours = Math.floor(totalSeconds / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
+    const remainingSeconds = Math.floor((totalSeconds % 3600) % 60);
 
-    if (totalToCraft && time) {
-      totalTime = time * totalToCraft;
+    const hoursDisplay = hours > 0 ? `${hours} h ` : "";
+    const minutesDisplay = minutes > 0 ? `${minutes} m ` : "";
+    const secondsDisplay = remainingSeconds > 0 ? `${remainingSeconds} s` : "";
+
+    return hoursDisplay + minutesDisplay + secondsDisplay;
+  };
+
+  const calculateTotalTime = () => {
+    if (!time) {
+      return 0;
     }
+    return time * total;
+  };
 
-    if (totalTime > 0) {
-      totalTime = this.secondsToHms(totalTime);
-      return (
-        <div className="text-right mb-0 text-muted">
-          <i className="fa fa-clock" /> {totalTime}
-        </div>
-      );
-    }
-    return "";
+  const totalTime = calculateTotalTime();
+
+  if (totalTime > 0) {
+    return (
+      <div className="text-right mb-0 text-muted">
+        <i className="fa fa-clock" /> {convertSecondsToTime(totalTime)}
+      </div>
+    );
   }
 
-  secondsToHms(d) {
-    const all = Number(d);
-    const h = Math.floor(all / 3600);
-    const m = Math.floor((all % 3600) / 60);
-    const s = Math.floor((all % 3600) % 60);
-
-    const hDisplay = h > 0 ? `${h} h ` : "";
-    const mDisplay = m > 0 ? `${m} m ` : "";
-    const sDisplay = s > 0 ? `${s} s` : "";
-    return hDisplay + mDisplay + sDisplay;
-  }
-}
+  return "";
+};
 
 export default CraftingTime;

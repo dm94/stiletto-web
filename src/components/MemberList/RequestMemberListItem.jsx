@@ -1,31 +1,32 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-class RequestMemberListItem extends Component {
-  showButton(t) {
-    if (this.props?.isLeader) {
-      return (
-        <button
-          type="button"
-          className="btn btn-block btn-primary"
-          onClick={() => this.props?.onShowRequest(this.props?.member)}
-        >
-          {t("Show request")}
-        </button>
-      );
+const RequestMemberListItem = ({ isLeader, member, onShowRequest }) => {
+  const { t } = useTranslation();
+
+  const renderButton = () => {
+    if (!isLeader) {
+      return "";
     }
-  }
 
-  render() {
-    const { t } = this.props;
     return (
-      <tr>
-        <td className="text-center">{this.props?.member.discordtag}</td>
-        <td className="text-center">{this.props?.member.nickname}</td>
-        <td>{this.showButton(t)}</td>
-      </tr>
+      <button
+        type="button"
+        className="btn btn-block btn-primary"
+        onClick={() => onShowRequest(member)}
+      >
+        {t("Show request")}
+      </button>
     );
-  }
-}
+  };
 
-export default withTranslation()(RequestMemberListItem);
+  return (
+    <tr>
+      <td className="text-center">{member?.discordtag}</td>
+      <td className="text-center">{member?.nickname}</td>
+      <td>{renderButton()}</td>
+    </tr>
+  );
+};
+
+export default RequestMemberListItem;

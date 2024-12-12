@@ -1,31 +1,30 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-class CookieConsent extends Component {
-  state = {};
-  render() {
-    const { t } = this.props;
-    if (!localStorage.getItem("acceptscookies")) {
-      return (
-        <div className="fixed-bottom w-100 mw-100 bg-dark text-white p-3 d-flex">
-          <div className="mr-auto my-auto">
-            {t("This website uses cookies to enhance the user experience.")}
-          </div>
-          <button
-            type="button"
-            className="btn btn-success"
-            onClick={() => {
-              localStorage.setItem("acceptscookies", true);
-              window.location.reload();
-            }}
-          >
-            {t("Accept")}
-          </button>
+const CookieConsent = () => {
+  const { t } = useTranslation();
+
+  if (!localStorage.getItem("acceptscookies")) {
+    return (
+      <div className="fixed-bottom w-100 mw-100 bg-dark text-white p-3 d-flex">
+        <div className="mr-auto my-auto">
+          {t("This website uses cookies to enhance the user experience.")}
         </div>
-      );
-    }
-    return "";
+        <button
+          type="button"
+          className="btn btn-success"
+          onClick={() => {
+            localStorage.setItem("acceptscookies", true);
+            window.location.reload();
+          }}
+        >
+          {t("Accept")}
+        </button>
+      </div>
+    );
   }
-}
 
-export default withTranslation()(CookieConsent);
+  return "";
+};
+
+export default CookieConsent;
