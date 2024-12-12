@@ -1,60 +1,57 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { config } from "../config/config";
 
-class Icon extends Component {
-  state = { loaded: true };
-  render() {
-    let name = this.props?.name;
-    if (name.includes("Tier 1")) {
-      name = "Walker Upgrade Wood";
-    } else if (name.includes("Tier 2")) {
-      name = "Walker Upgrade Bone";
-    } else if (name.includes("Tier 3")) {
-      name = "Walker Upgrade Ceramic";
-    } else if (name.includes("Tier 4")) {
-      name = "Walker Upgrade Iron";
-    } else if (name.includes("Wings Small")) {
-      name = "Walker Wings Small";
-    } else if (name.includes("Wings Medium")) {
-      name = "Walker Wings Medium";
-    } else if (name.includes("Wings Large")) {
-      name = "Walker Wings Large";
-    } else if (name.includes("Wings Skirmish")) {
-      name = "Walker Wings Skirmish";
-    } else if (name.includes("Wings Raider")) {
-      name = "Walker Wings Raider";
-    } else if (name.includes("Wings Heavy")) {
-      name = "Walker Wings Heavy";
-    } else if (name.includes("Wings Rugged")) {
-      name = "Walker Wings Rugged";
-    } else if (name.includes(" Wings")) {
-      name = "Walker Wings";
-    } else if (name.includes("Legs Armored")) {
-      name = "Walker Legs Armored";
-    } else if (name.includes("Legs Heavy")) {
-      name = "Walker Legs Heavy";
-    } else if (name.includes("Legs")) {
-      name = "Walker Legs";
-    } else if (name.includes("Grappling Hook")) {
-      name = "Grappling Hook";
+const Icon = ({ name: initialName, width = "16" }) => {
+  const [loaded, setLoaded] = useState(true);
+
+  const getProcessedName = (name) => {
+    const nameMap = {
+      "Tier 1": "Walker Upgrade Wood",
+      "Tier 2": "Walker Upgrade Bone",
+      "Tier 3": "Walker Upgrade Ceramic",
+      "Tier 4": "Walker Upgrade Iron",
+      "Wings Small": "Walker Wings Small",
+      "Wings Medium": "Walker Wings Medium",
+      "Wings Large": "Walker Wings Large",
+      "Wings Skirmish": "Walker Wings Skirmish",
+      "Wings Raider": "Walker Wings Raider",
+      "Wings Heavy": "Walker Wings Heavy",
+      "Wings Rugged": "Walker Wings Rugged",
+      " Wings": "Walker Wings",
+      "Legs Armored": "Walker Legs Armored",
+      "Legs Heavy": "Walker Legs Heavy",
+      Legs: "Walker Legs",
+      "Grappling Hook": "Grappling Hook",
+    };
+
+    let processedName = name;
+
+    for (const [key, value] of Object.entries(nameMap)) {
+      if (name.includes(key)) {
+        processedName = value;
+        break;
+      }
     }
-    name = name.replaceAll("Body", "");
-    if (this.state.loaded) {
-      return (
-        <img
-          src={`${
-            config.REACT_APP_RESOURCES_URL
-          }/items/${name.trim()} icon.png`}
-          loading="lazy"
-          onError={() => this.setState({ loaded: false })}
-          className="mr-2"
-          width={this.props?.width ? this.props?.width : "16"}
-          alt=""
-        />
-      );
-    }
+
+    return processedName.replaceAll("Body", "").trim();
+  };
+
+  if (!loaded) {
     return false;
   }
-}
+
+  return (
+    <img
+      src={`${config.REACT_APP_RESOURCES_URL}/items/${getProcessedName(
+        initialName
+      )} icon.png`}
+      loading="lazy"
+      onError={() => setLoaded(false)}
+      className="mr-2"
+      width={width}
+      alt={initialName}
+    />
+  );
+};
 
 export default Icon;

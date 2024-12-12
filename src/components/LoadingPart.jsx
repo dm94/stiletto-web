@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import "../css/LoadingScreen.css";
 
-class LoadingPart extends Component {
-  render() {
-    return (
-      <div className="preloader-part">
-        <div className="loader" />
-      </div>
-    );
-  }
-}
+const LoadingPart = () => {
+  return (
+    <div className="preloader-part">
+      <div className="loader" />
+    </div>
+  );
+};
 
 export default LoadingPart;

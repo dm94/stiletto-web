@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
-import Axios from "axios";
 import { Link } from "react-router-dom";
 import { getUserProfile, closeSession, getStoredItem } from "../../services";
 import LoadingScreen from "../LoadingScreen";
@@ -10,363 +9,129 @@ import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";
 import ClanConfig from "../ClanConfig";
 import { getDomain } from "../../functions/utils";
-import { config } from "../../config/config";
+import { deleteUser, addNick } from "../../functions/requests/users";
+import { leaveClan } from "../../functions/requests/clan";
+import { supportedLanguages } from "../../config/languages";
 
-class PrivateProfile extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user_discord_id: getStoredItem("discordid"),
-      token: getStoredItem("token"),
-      discordtag: "Loading...",
-      nickname: "Loading...",
-      clanname: "Loading...",
-      showDeleteModal: false,
-      clanleaderid: null,
-      isLoaded: false,
-      redirect: false,
-      nameInGameInput: "",
-      error: null,
-      language: getStoredItem("i18nextLng"),
-      showClanConfig: false,
+const PrivateProfile = () => {
+  const { t } = useTranslation();
+  const [userData, setUserData] = useState({
+    user_discord_id: getStoredItem("discordid"),
+    token: getStoredItem("token"),
+    discordtag: "Loading...",
+    nickname: "Loading...",
+    clanname: "Loading...",
+    clanid: "",
+    clanleaderid: "",
+    language: getStoredItem("i18nextLng"),
+  });
+
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [redirect, setRedirect] = useState(false);
+  const [nameInGameInput, setNameInGameInput] = useState("");
+  const [error, setError] = useState("");
+  const [showClanConfig, setShowClanConfig] = useState(false);
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      const response = await getUserProfile();
+      if (response.success) {
+        setUserData({
+          ...userData,
+          discordtag: response.message.discordtag,
+          clanname: response.message.clanname,
+          clanid: response.message.clanid,
+          nickname: response.message.nickname,
+          clanleaderid: response.message.leaderid,
+          user_discord_id: response.message.discordid,
+        });
+        setIsLoaded(true);
+      } else {
+        setError(response.message);
+        setIsLoaded(true);
+      }
     };
-  }
+    fetchUserProfile();
+  }, []);
 
-  async componentDidMount() {
-    const response = await getUserProfile();
-    if (response.success) {
-      this.setState({
-        discordtag: response.message.discordtag,
-        clanname: response.message.clanname,
-        clanid: response.message.clanid,
-        nickname: response.message.nickname,
-        clanleaderid: response.message.leaderid,
-        user_discord_id: response.message.discordid,
-        isLoaded: true,
-      });
-    } else {
-      this.setState({ error: response.message, isLoaded: true });
+  const clearStorageData = () => {
+    localStorage.removeItem("profile");
+    sessionStorage.removeItem("profile");
+    localStorage.removeItem("memberList");
+    sessionStorage.removeItem("memberList");
+  };
+
+  const handleDeleteUser = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await deleteUser();
+      clearStorageData();
+
+      if (response.status === 204) {
+        closeSession();
+        setRedirect(true);
+      } else if (response.status === 401) {
+        closeSession();
+        setError(t("Log in again"));
+      } else if (response.status === 503) {
+        setError(t("Error connecting to database"));
+      }
+    } catch {
+      setError(t("Error when connecting to the API"));
     }
-  }
+  };
 
-  deleteUser = (event) => {
+  const handleAddNickInGame = async (event) => {
     event.preventDefault();
-    const options = {
-      method: "delete",
-      url: `${config.REACT_APP_API_URL}/users/`,
-      headers: {
-        Authorization: `Bearer ${this.state.token}`,
-      },
-    };
+    try {
+      const response = await addNick(nameInGameInput);
+      clearStorageData();
 
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("profile");
-        sessionStorage.removeItem("profile");
-        localStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList");
-        if (response.status === 204) {
-          closeSession();
-          this.setState({ redirect: true });
-        } else if (response.status === 401) {
-          closeSession();
-          this.setError("Log in again");
-        } else if (response.status === 503) {
-          this.setError("Error connecting to database");
-        }
-      })
-      .catch(() => {
-        this.setConnectionError();
-      });
-  };
-
-  addNickInGame = (event) => {
-    event.preventDefault();
-
-    const options = {
-      method: "put",
-      url: `${config.REACT_APP_API_URL}/users/`,
-      params: {
-        dataupdate: this.state.nameInGameInput,
-      },
-      headers: {
-        Authorization: `Bearer ${this.state.token}`,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("profile");
-        sessionStorage.removeItem("profile");
-        localStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList");
-        if (response.status === 202) {
-          this.setState({ nickname: this.state.nameInGameInput });
-        } else if (response.status === 401) {
-          closeSession();
-          this.setError("Log in again");
-        } else if (response.status === 503) {
-          this.setError("Error connecting to database");
-        }
-      })
-      .catch(() => {
-        this.setConnectionError();
-      });
-  };
-
-  leaveClan = (event) => {
-    event.preventDefault();
-
-    const options = {
-      method: "delete",
-      url: `${config.REACT_APP_API_URL}/clans`,
-      headers: {
-        Authorization: `Bearer ${this.state.token}`,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("profile");
-        sessionStorage.removeItem("profile");
-        localStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList");
-        if (response.status === 204) {
-          this.setState({ clanname: null });
-        } else if (response.status === 401) {
-          closeSession();
-          this.setError("Log in again");
-        } else if (response.status === 503) {
-          this.setError("Error connecting to database");
-        }
-      })
-      .catch(() => {
-        this.setConnectionError();
-      });
-  };
-
-  changeLanguage = () => {
-    i18next.changeLanguage(this.state.language);
-  };
-
-  setConnectionError = () => {
-    this.setError("Error when connecting to the API");
-  };
-
-  setError = (error) => {
-    const { t } = this.props;
-    this.setState({ error: t(error) });
-  };
-
-  showClanSection() {
-    const { t } = this.props;
-    const showHideClassName = this.state.showDeleteModal
-      ? "modal d-block"
-      : "modal d-none";
-
-    if (getStoredItem("token") != null && !this.state.redirect) {
-      return (
-        <div className="row">
-          <Helmet>
-            <title>{t("Profile")} - Stiletto for Last Oasis</title>
-            <meta
-              name="description"
-              content="Private profile where you can configure some things"
-            />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta
-              name="twitter:title"
-              content="Perfil - Stiletto for Last Oasis"
-            />
-            <meta
-              name="twitter:description"
-              content="Private profile where you can configure some things"
-            />
-            <meta
-              name="twitter:image"
-              content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
-            />
-            <link rel="canonical" href={`${getDomain()}/profile`} />
-          </Helmet>
-          {this.state.showClanConfig ? (
-            <ClanConfig
-              key="clanconfig"
-              clanid={this.state.clanid}
-              onClose={() => {
-                this.setState({ showClanConfig: false });
-                localStorage.removeItem("profile");
-                sessionStorage.removeItem("profile");
-                this.componentDidMount();
-              }}
-              onError={(error) => this.setState({ error: error })}
-            />
-          ) : (
-            ""
-          )}
-          <div className="col-xl-6">
-            <div className="card border-secondary mb-3">
-              <div className="card-header">{t("Your details")}</div>
-              <div className="card-body">
-                <ul className="list-group mb-3">
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Discord Tag")}</div>
-                    <div className="text-muted" data-cy="discord-tag">
-                      {this.state.discordtag}
-                    </div>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Nick in Game")}</div>
-                    <div className="text-muted">
-                      {this.state.nickname != null
-                        ? this.state.nickname
-                        : t("Not defined")}
-                    </div>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Clan")}</div>
-                    <div className="text-muted">
-                      {this.state.clanname != null
-                        ? this.state.clanname
-                        : t("No Clan")}
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="card-footer">
-                <button
-                  type="button"
-                  className="btn btn-lg btn-warning btn-block"
-                  onClick={() => {
-                    closeSession();
-                    this.setState({ redirect: true });
-                  }}
-                >
-                  {t("Close session")}
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-lg btn-danger btn-block"
-                  onClick={this.showModal}
-                >
-                  {t("Delete user")}
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className={showHideClassName}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title" id="deleteusermodal">
-                    {t("Are you sure?")}
-                  </h5>
-                </div>
-                <div className="modal-body">
-                  <p>
-                    {t(
-                      "This option is not reversible, your user and all his data will be deleted."
-                    )}
-                  </p>
-                  <p>
-                    {t(
-                      "The administrator will be notified to delete the user, the user will not be deleted directly."
-                    )}
-                  </p>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={this.hideModal}
-                  >
-                    {t("Cancel")}
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-danger"
-                    onClick={this.deleteUser}
-                  >
-                    {t("Delete user")}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          {this.changeNamePart(t)}
-          {this.manageClanPart(t)}
-          <div className="col-xl-6">
-            <div className="card border-secondary mb-3">
-              <div className="card-body">
-                <Link className="btn btn-lg btn-secondary btn-block" to="/maps">
-                  {t("Resource Maps")}
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-6">
-            <div className="card border-secondary mb-3">
-              <div className="card-header">{t("Change language")}</div>
-              <div className="card-body">
-                <div className="row">
-                  <div className="col">
-                    <select
-                      id="changeLanguajeSelect"
-                      className="custom-select"
-                      value={this.state.language ?? "en"}
-                      onChange={(evt) =>
-                        this.setState({
-                          language: evt.target.value,
-                        })
-                      }
-                    >
-                      <option value="zh">{t("Chinese Simplified")}</option>
-                      <option value="en">{t("English")}</option>
-                      <option value="fr">{t("French")}</option>
-                      <option value="de">{t("German")}</option>
-                      <option value="it">{t("Italian")}</option>
-                      <option value="jp">{t("Japanese")}</option>
-                      <option value="pl">{t("Polish")}</option>
-                      <option value="pt">{t("Portuguese, Brazilian")}</option>
-                      <option value="ru">{t("Russian")}</option>
-                      <option value="es">{t("Spanish")}</option>
-                      <option value="uk">{t("Ukrainian")}</option>
-                    </select>
-                  </div>
-                  <div className="col">
-                    <button
-                      type="button"
-                      className="btn btn-primary"
-                      onClick={this.changeLanguage}
-                    >
-                      {t("Change language")}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
+      if (response.status === 202) {
+        setUserData({ ...userData, nickname: nameInGameInput });
+      } else if (response.status === 401) {
+        closeSession();
+        setError(t("Log in again"));
+      } else if (response.status === 503) {
+        setError(t("Error connecting to database"));
+      }
+    } catch {
+      setError(t("Error when connecting to the API"));
     }
-    return (
-      <ModalMessage
-        message={{
-          isError: true,
-          text: "Login again",
-          redirectPage: "/",
-        }}
-      />
-    );
-  }
+  };
 
-  changeNamePart(t) {
-    if (this.state.nickname == null || this.state.nickname === "Loading...") {
+  const handleLeaveClan = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await leaveClan();
+      clearStorageData();
+
+      if (response.status === 204) {
+        setUserData({ ...userData, clanname: "" });
+      } else if (response.status === 401) {
+        closeSession();
+        setError(t("Log in again"));
+      } else if (response.status === 503) {
+        setError(t("Error connecting to database"));
+      }
+    } catch {
+      setError(t("Error when connecting to the API"));
+    }
+  };
+
+  const handleLanguageChange = () => {
+    i18next.changeLanguage(userData.language);
+  };
+
+  const renderChangeNamePart = () => {
+    if (userData.nickname === "Loading..." || !userData.nickname) {
       return (
         <div className="col-xl-6">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Add name in the game")}</div>
             <div className="card-body text-succes">
-              <form onSubmit={this.addNickInGame}>
+              <form onSubmit={handleAddNickInGame}>
                 <div className="form-group">
                   <label htmlFor="user_game_name">
                     {t("Your name in Last Oasis")}
@@ -375,19 +140,14 @@ class PrivateProfile extends Component {
                     type="text"
                     className="form-control"
                     name="nameInGameInput"
-                    value={this.state.nameInGameInput}
-                    onChange={(evt) =>
-                      this.setState({
-                        nameInGameInput: evt.target.value,
-                      })
-                    }
+                    value={nameInGameInput}
+                    onChange={(e) => setNameInGameInput(e.target.value)}
                     required
                   />
                 </div>
                 <button
                   className="btn btn-lg btn-success btn-block"
                   type="submit"
-                  value="Submit"
                 >
                   {t("Add")}
                 </button>
@@ -397,10 +157,11 @@ class PrivateProfile extends Component {
         </div>
       );
     }
-  }
+    return "";
+  };
 
-  manageClanPart(t) {
-    if (this.state.clanname == null || this.state.clanname === "Loading...") {
+  const renderManageClanPart = () => {
+    if (userData.clanname === "Loading..." || !userData.clanname) {
       return (
         <div className="col-xl-6">
           <div className="card border-secondary mb-3">
@@ -418,9 +179,7 @@ class PrivateProfile extends Component {
                 type="button"
                 className="btn btn-lg btn-success btn-block"
                 data-cy="create-clan-btn"
-                onClick={() => {
-                  this.setState({ showClanConfig: true });
-                }}
+                onClick={() => setShowClanConfig(true)}
               >
                 {t("Create a clan")}
               </button>
@@ -429,6 +188,7 @@ class PrivateProfile extends Component {
         </div>
       );
     }
+
     return (
       <div className="col-xl-6">
         <div className="card border-secondary mb-3">
@@ -451,47 +211,212 @@ class PrivateProfile extends Component {
               <i className="far fa-flag" /> {t("Diplomacy")}
             </Link>
           </div>
-          {this.leaveClanButton(t)}
+          {userData.clanleaderid !== userData.user_discord_id && (
+            <div className="card-footer">
+              <button
+                type="button"
+                className="btn btn-lg btn-danger btn-block"
+                data-cy="leave-clan-btn"
+                onClick={handleLeaveClan}
+              >
+                {t("Leave clan")}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     );
-  }
-
-  leaveClanButton(t) {
-    if (this.state.clanleaderid !== this.state.user_discord_id) {
-      return (
-        <div className="card-footer">
-          <button
-            type="button"
-            className="btn btn-lg btn-danger btn-block"
-            data-cy="leave-clan-btn"
-            onClick={this.leaveClan}
-          >
-            {t("Leave clan")}
-          </button>
-        </div>
-      );
-    }
-  }
-
-  showModal = () => {
-    this.setState({ showDeleteModal: true });
   };
 
-  hideModal = () => {
-    this.setState({ showDeleteModal: false });
-  };
+  if (error) {
+    return (
+      <ModalMessage
+        message={{ isError: true, text: error, redirectPage: "/" }}
+      />
+    );
+  }
 
-  render() {
-    if (this.state.error) {
-      return (
-        <ModalMessage
-          message={{ isError: true, text: this.state.error, redirectPage: "/" }}
+  if (!isLoaded) {
+    return <LoadingScreen />;
+  }
+
+  if (!getStoredItem("token") || redirect) {
+    return (
+      <ModalMessage
+        message={{ isError: true, text: "Login again", redirectPage: "/" }}
+      />
+    );
+  }
+
+  return (
+    <div className="row">
+      <Helmet>
+        <title>{t("Profile")} - Stiletto for Last Oasis</title>
+        <meta
+          name="description"
+          content="Private profile where you can configure some things"
         />
-      );
-    }
-    return this.state.isLoaded ? this.showClanSection() : <LoadingScreen />;
-  }
-}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Perfil - Stiletto for Last Oasis" />
+        <meta
+          name="twitter:description"
+          content="Private profile where you can configure some things"
+        />
+        <meta
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+        />
+        <link rel="canonical" href={`${getDomain()}/profile`} />
+      </Helmet>
 
-export default withTranslation()(PrivateProfile);
+      {showClanConfig && (
+        <ClanConfig
+          key="clanconfig"
+          clanid={userData.clanid}
+          onClose={() => {
+            setShowClanConfig(false);
+            clearStorageData();
+          }}
+          onError={setError}
+        />
+      )}
+
+      <div className="col-xl-6">
+        <div className="card border-secondary mb-3">
+          <div className="card-header">{t("Your details")}</div>
+          <div className="card-body">
+            <ul className="list-group mb-3">
+              <li className="list-group-item d-flex justify-content-between lh-condensed">
+                <div className="my-0">{t("Discord Tag")}</div>
+                <div className="text-muted" data-cy="discord-tag">
+                  {userData.discordtag}
+                </div>
+              </li>
+              <li className="list-group-item d-flex justify-content-between lh-condensed">
+                <div className="my-0">{t("Nick in Game")}</div>
+                <div className="text-muted">
+                  {userData.nickname || t("Not defined")}
+                </div>
+              </li>
+              <li className="list-group-item d-flex justify-content-between lh-condensed">
+                <div className="my-0">{t("Clan")}</div>
+                <div className="text-muted">
+                  {userData.clanname || t("No Clan")}
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className="card-footer">
+            <button
+              type="button"
+              className="btn btn-lg btn-warning btn-block"
+              onClick={() => {
+                closeSession();
+                setRedirect(true);
+              }}
+            >
+              {t("Close session")}
+            </button>
+            <button
+              type="button"
+              className="btn btn-lg btn-danger btn-block"
+              onClick={() => setShowDeleteModal(true)}
+            >
+              {t("Delete user")}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className={showDeleteModal ? "modal d-block" : "modal d-none"}>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="deleteusermodal">
+                {t("Are you sure?")}
+              </h5>
+            </div>
+            <div className="modal-body">
+              <p>
+                {t(
+                  "This option is not reversible, your user and all his data will be deleted."
+                )}
+              </p>
+              <p>
+                {t(
+                  "The administrator will be notified to delete the user, the user will not be deleted directly."
+                )}
+              </p>
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-secondary"
+                onClick={() => setShowDeleteModal(false)}
+              >
+                {t("Cancel")}
+              </button>
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={handleDeleteUser}
+              >
+                {t("Delete user")}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {renderChangeNamePart()}
+      {renderManageClanPart()}
+
+      <div className="col-xl-6">
+        <div className="card border-secondary mb-3">
+          <div className="card-body">
+            <Link className="btn btn-lg btn-secondary btn-block" to="/maps">
+              {t("Resource Maps")}
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-xl-6">
+        <div className="card border-secondary mb-3">
+          <div className="card-header">{t("Change language")}</div>
+          <div className="card-body">
+            <div className="row">
+              <div className="col">
+                <select
+                  id="changeLanguajeSelect"
+                  className="custom-select"
+                  value={userData.language || "en"}
+                  onChange={(e) =>
+                    setUserData({ ...userData, language: e.target.value })
+                  }
+                >
+                  {supportedLanguages.map((language) => (
+                    <option key={language.key} value={language.key}>
+                      {t(language.name)}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="col">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleLanguageChange}
+                >
+                  {t("Change language")}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PrivateProfile;

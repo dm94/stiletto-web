@@ -8,7 +8,7 @@ const NotificationList = () => {
 
   useEffect(() => {
     channel.onmessage = (e) => {
-      setNotifications(notifications.concat([e.data]));
+      setNotifications((prevNotifications) => [...prevNotifications, e.data]);
     };
 
     return () => {
@@ -26,11 +26,11 @@ const NotificationList = () => {
 
   const checkOldNotifications = () => {
     const minTime = Date.now() - 5000;
-    notifications.forEach((data) => {
+    for (const data of notifications) {
       if (data.date < minTime) {
         deleteNotification(data.date);
       }
-    });
+    }
   };
 
   const deleteNotification = (id) => {

@@ -1,76 +1,84 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React from "react";
+import { useTranslation } from "react-i18next";
 import { getStoredItem } from "../../services";
 
-class MemberListItem extends Component {
-  kickButton() {
-    const { t } = this.props;
-    if (this.props?.isLeader || this.props?.hasPermissions) {
-      if (
-        this.props?.member.discordid !== getStoredItem("discordid") &&
-        this.props?.member.discordid !== this.props?.member.leaderid
-      ) {
-        return (
-          <td>
-            <button
-              type="button"
-              className="btn btn-block btn-danger"
-              onClick={() => this.props?.onKick(this.props?.member.discordid)}
-            >
-              {t("Kick")}
-            </button>
-          </td>
-        );
-      }
-    }
-  }
+const MemberListItem = ({
+  member,
+  isLeader,
+  hasPermissions,
+  onKick,
+  onClickEditPermissions,
+}) => {
+  const { t } = useTranslation();
 
-  editPermissionsButton() {
-    const { t } = this.props;
-    if (this.props?.isLeader) {
-      if (
-        this.props?.member.discordid !== getStoredItem("discordid") &&
-        this.props?.member.discordid !== this.props?.member.leaderid
-      ) {
-        return (
-          <td className="text-center">
-            <div className="btn-group" role="group">
-              <button type="button" className="btn btn-primary" disabled>
-                <i className="fas fa-user-cog" />
-              </button>
-              <button
-                type="button"
-                className="btn btn-block btn-info"
-                onClick={() =>
-                  this.props?.onClickEditPermissions(
-                    this.props?.member.discordid
-                  )
-                }
-              >
-                {t("Edit")}
-              </button>
-            </div>
-          </td>
-        );
-      }
+  const renderKickButton = () => {
+    if (!isLeader && !hasPermissions) {
+      return false;
     }
-  }
 
-  render() {
+    if (
+      member.discordid === getStoredItem("discordid") ||
+      member.discordid === member.leaderid
+    ) {
+      return false;
+    }
+
     return (
-      <tr>
-        <td className="text-center">
-          {this.props?.member.leaderid === this.props?.member.discordid && (
-            <i className="fas fa-crown text-warning" />
-          )}{" "}
-          {this.props?.member.discordtag}
-        </td>
-        <td className="text-center">{this.props?.member.nickname}</td>
-        {this.kickButton()}
-        {this.editPermissionsButton()}
-      </tr>
+      <td>
+        <button
+          type="button"
+          className="btn btn-block btn-danger"
+          onClick={() => onKick(member.discordid)}
+        >
+          {t("Kick")}
+        </button>
+      </td>
     );
-  }
-}
+  };
 
-export default withTranslation()(MemberListItem);
+  const renderEditPermissionsButton = () => {
+    if (!isLeader) {
+      return false;
+    }
+
+    if (
+      member.discordid === getStoredItem("discordid") ||
+      member.discordid === member.leaderid
+    ) {
+      return false;
+    }
+
+    return (
+      <td className="text-center">
+        <div className="btn-group" role="group">
+          <button type="button" className="btn btn-primary" disabled>
+            <i className="fas fa-user-cog" />
+          </button>
+          <button
+            type="button"
+            className="btn btn-block btn-info"
+            onClick={() => onClickEditPermissions(member.discordid)}
+          >
+            {t("Edit")}
+          </button>
+        </div>
+      </td>
+    );
+  };
+
+  return (
+    <tr>
+      <td className="text-center">
+        {member.leaderid === member.discordid && (
+          <i className="fas fa-crown text-warning" />
+        )}{" "}
+        {member.discordtag}
+      </td>
+      <td className="text-center">{member.nickname}</td>
+      {renderKickButton()}
+      {renderEditPermissionsButton()}
+    </tr>
+  );
+};
+
+export default MemberListItem;

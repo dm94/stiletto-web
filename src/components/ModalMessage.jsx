@@ -1,81 +1,76 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { withTranslation } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { sendEvent } from "../page-tracking";
 
-class ModalMessage extends Component {
-  state = { redirect: false };
+const ModalMessage = ({ message, onClickOk }) => {
+  const [redirect, setRedirect] = useState(false);
+  const { t } = useTranslation();
 
-  redirectButton() {
-    return (
-      <button
-        type="button"
-        className="btn btn-lg btn-outline-warning btn-block"
-        onClick={() => this.setState({ redirect: true })}
-      >
-        OK
-      </button>
-    );
-  }
+  const handleRedirect = () => setRedirect(true);
 
-  onlyOkButton() {
-    return (
-      <button
-        type="button"
-        className="btn btn-lg btn-outline-warning btn-block"
-        onClick={() => this.props?.onClickOk()}
-      >
-        OK
-      </button>
-    );
-  }
+  const RedirectButton = () => (
+    <button
+      type="button"
+      className="btn btn-lg btn-outline-warning btn-block"
+      onClick={handleRedirect}
+    >
+      OK
+    </button>
+  );
 
-  render() {
-    const { t } = this.props;
-    if (this.props?.message.text === "Error when connecting to the API") {
-      localStorage.removeItem("allItems");
-      sessionStorage.removeItem("allItems");
-      if (window?.caches) {
-        window?.caches?.keys().then((names) => {
-          for (const name of names) {
-            if (name.includes("lastCheck")) {
-              caches?.delete(name);
-            }
+  const OkButton = () => (
+    <button
+      type="button"
+      className="btn btn-lg btn-outline-warning btn-block"
+      onClick={() => onClickOk?.()}
+    >
+      OK
+    </button>
+  );
+
+  if (message?.text === "Error when connecting to the API") {
+    localStorage.removeItem("allItems");
+    sessionStorage.removeItem("allItems");
+    if (window?.caches) {
+      window.caches.keys().then((names) => {
+        for (const name of names) {
+          if (name.includes("lastCheck")) {
+            caches?.delete(name);
           }
-        });
-      }
+        }
+      });
     }
-    if (this.state.redirect) {
-      return <Redirect to={this.props?.message.redirectPage} />;
-    }
+  }
 
-    sendEvent("modal", {
-      props: {
-        action: this.props?.message?.isError ? "Error" : "Information",
-        label: this.props?.message?.text,
-      },
-    });
+  if (redirect) {
+    return <Redirect to={message?.redirectPage} />;
+  }
 
-    return (
-      <div className="modal d-block">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="modal">
-                {this.props?.message.isError ? t("Error") : t("Information")}
-              </h5>
-            </div>
-            <div className="modal-body">{t(this.props?.message.text)}</div>
-            <div className="modal-footer">
-              {this.props?.message.redirectPage == null
-                ? this.onlyOkButton()
-                : this.redirectButton()}
-            </div>
+  sendEvent("modal", {
+    props: {
+      action: message?.isError ? "Error" : "Information",
+      label: message?.text,
+    },
+  });
+
+  return (
+    <div className="modal d-block">
+      <div className="modal-dialog">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title" id="modal">
+              {message?.isError ? t("Error") : t("Information")}
+            </h5>
+          </div>
+          <div className="modal-body">{t(message?.text)}</div>
+          <div className="modal-footer">
+            {message?.redirectPage == null ? <OkButton /> : <RedirectButton />}
           </div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default withTranslation()(ModalMessage);
+export default ModalMessage;

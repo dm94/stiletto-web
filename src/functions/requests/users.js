@@ -74,3 +74,41 @@ export const addTech = async (tabSelect, learned) => {
     throw new Error("Error when connecting to the API");
   }
 };
+
+export const deleteUser = async () => {
+  const token = getStoredItem("token");
+
+  if (!token) {
+    throw new Error("Not logged in");
+  }
+
+  try {
+    return await fetch(`${config.REACT_APP_API_URL}/users/`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}`, },
+    });
+
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+}
+
+export const addNick = async (newNick) => {
+  const token = getStoredItem("token");
+
+  if (!token) {
+    throw new Error("Not logged in");
+  }
+
+  try {
+    return await fetch(
+      `${config.REACT_APP_API_URL}/users/?dataupdate=${newNick}`,
+      {
+        method: "PUT",
+        headers: { Authorization: `Bearer ${token}`, },
+      }
+    )
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+}

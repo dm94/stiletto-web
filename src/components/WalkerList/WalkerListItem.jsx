@@ -1,369 +1,295 @@
-import React, { Component, Fragment } from "react";
-import { withTranslation } from "react-i18next";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 
-class WalkerListItem extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOpen: false,
-      walker: this.props?.walker,
-      canEdit:
-        this.props?.isLeader ||
-        this.props?.walker.ownerUser === this.props?.nickname ||
-        this.props?.walker.lastUser === this.props?.nickname,
-    };
-  }
+const WalkerListItem = ({
+  walker,
+  isLeader,
+  nickname,
+  memberList,
+  walkerListTypes,
+  onSave,
+  onRemove,
+}) => {
+  const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [walkerState, setWalkerState] = useState(walker);
+  const canEdit =
+    isLeader || walker.ownerUser === nickname || walker.lastUser === nickname;
 
-  walkerInfo(t) {
-    if (this.state.isOpen) {
-      return (
-        <tr>
-          <td colSpan="5">
-            <div className="row">
-              <div className="col-12 col-lg-4">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">
-                          {t("Walker ID")}
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={this.props?.walker.walkerID}
-                        readOnly
-                      />
+  const handleWalkerUpdate = (field, value) => {
+    setWalkerState((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const renderWalkerInfo = () => {
+    if (!isOpen) {
+      return false;
+    }
+
+    return (
+      <tr>
+        <td colSpan="5">
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <div className="card">
+                <div className="card-body">
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">{t("Walker ID")}</span>
                     </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-lg-4">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">
-                          {t("Last User")}
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={this.props?.walker.lastUser}
-                        readOnly
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-lg-4">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">
-                          {t("Last Use")}
-                        </span>
-                      </div>
-                      <input
-                        type="text"
-                        className="form-control"
-                        value={this.props?.walker.datelastuse}
-                        readOnly
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-lg-3">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">{t("Owner")}</span>
-                      </div>
-                      <select
-                        className="form-control"
-                        id="inputOwner"
-                        value={
-                          this.state.walker.ownerUser != null
-                            ? this.state.walker.ownerUser
-                            : ""
-                        }
-                        onChange={(evt) => {
-                          const valueInput = evt.target.value;
-                          this.setState((state) => {
-                            const walkerCopy = state.walker;
-                            walkerCopy.ownerUser = valueInput;
-                            this.setState({ walker: walkerCopy });
-                          });
-                        }}
-                        disabled={!this.state.canEdit}
-                      >
-                        <option value="clan">{t("Clan")}</option>
-                        {this.props?.memberList != null ? (
-                          this.props?.memberList.map((member) => {
-                            return (
-                              <option
-                                key={member.discordid}
-                                value={member.nickname}
-                              >
-                                {member.nickname
-                                  ? member.nickname
-                                  : member.discordtag}
-                              </option>
-                            );
-                          })
-                        ) : (
-                          <option value="clan">{t("Clan")}</option>
-                        )}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-lg-3">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">{t("Use")}</span>
-                      </div>
-                      <select
-                        className="form-control"
-                        id="inputUse"
-                        value={
-                          this.state.walker.walker_use
-                            ? this.state.walker.walker_use
-                            : "None"
-                        }
-                        onChange={(evt) => {
-                          const valueInput = evt.target.value;
-                          this.setState((state) => {
-                            const walkerCopy = state.walker;
-                            walkerCopy.walker_use = valueInput;
-                            this.setState({ walker: walkerCopy });
-                          });
-                        }}
-                        disabled={!this.state.canEdit}
-                      >
-                        <option value="None">{t("None")}</option>
-                        <option value="Personal">{t("Personal")}</option>
-                        <option value="PVP">{t("PVP")}</option>
-                        <option value="RAM">{t("RAM")}</option>
-                        <option value="Farming">{t("Farming")}</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-lg-3">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">{t("Type")}</span>
-                      </div>
-                      <select
-                        className="form-control"
-                        id="inputType"
-                        value={
-                          this.state.walker.type != null
-                            ? this.state.walker.type
-                            : ""
-                        }
-                        onChange={(evt) => {
-                          const valueInput = evt.target.value;
-                          this.setState((state) => {
-                            const walkerCopy = state.walker;
-                            walkerCopy.type = valueInput;
-                            this.setState({ walker: walkerCopy });
-                          });
-                        }}
-                        disabled={!this.state.canEdit}
-                      >
-                        <option key={"no-type-select"} />
-                        );
-                        {this.props?.walkerListTypes.map((name) => {
-                          return (
-                            <option key={name} value={name}>
-                              {name}
-                            </option>
-                          );
-                        })}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12 col-lg-3">
-                <div className="card">
-                  <div className="card-body">
-                    <div className="input-group">
-                      <div className="input-group-prepend">
-                        <span className="input-group-text">
-                          {t("Description")}
-                        </span>
-                      </div>
-                      <textarea
-                        className="form-control"
-                        value={
-                          this.state.walker.description != null
-                            ? this.state.walker.description
-                            : ""
-                        }
-                        onChange={(evt) => {
-                          const valueInput = evt.target.value;
-                          this.setState((state) => {
-                            const walkerCopy = state.walker;
-                            walkerCopy.description = valueInput;
-                            this.setState({ walker: walkerCopy });
-                          });
-                        }}
-                        maxLength="200"
-                        disabled={!this.state.canEdit}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-12">
-                <div className="row mt-3">
-                  <div className="btn-group mx-auto">
-                    <button
-                      type="button"
-                      className={
-                        this.state.walker.isReady
-                          ? "btn btn-success active"
-                          : "btn btn-success"
-                      }
-                      onClick={() => {
-                        this.setState((state) => {
-                          const walkerCopy = state.walker;
-                          walkerCopy.isReady = true;
-                          this.setState({ walker: walkerCopy });
-                        });
-                      }}
-                    >
-                      <i className="fas fa-check" />
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-secondary"
-                      disabled
-                    >
-                      {t("Is ready?")}
-                    </button>
-                    <button
-                      type="button"
-                      className={
-                        this.props?.walker.isReady
-                          ? "btn btn-danger"
-                          : "btn btn-danger active"
-                      }
-                      onClick={() => {
-                        this.setState((state) => {
-                          const walkerCopy = state.walker;
-                          walkerCopy.isReady = false;
-                          this.setState({ walker: walkerCopy });
-                        });
-                      }}
-                    >
-                      <i className="fas fa-times" />
-                    </button>
-                  </div>
-                </div>
-                <div className="row mt-3">
-                  <div className="col-12 col-lg-3 mx-auto">
-                    <button
-                      type="button"
-                      className="btn btn-block btn-success"
-                      onClick={() => {
-                        this.props?.onSave(this.state.walker);
-                        this.setState({ isOpen: false });
-                      }}
-                    >
-                      <i className="fas fa-save" /> {t("Save")}
-                    </button>
-                  </div>
-                </div>
-                <div className="row mt-3">
-                  <div className="col-5 col-lg-2 mx-auto">
-                    <button
-                      type="button"
-                      className="btn btn-block btn-danger"
-                      onClick={() => {
-                        this.props?.onRemove(this.props?.walker.walkerID);
-                      }}
-                      disabled={!this.state.canEdit}
-                    >
-                      <i className="fas fa-trash-alt" /> {t("Delete")}
-                    </button>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={walker.walkerID}
+                      readOnly
+                    />
                   </div>
                 </div>
               </div>
             </div>
-          </td>
-        </tr>
-      );
-    }
-  }
+            <div className="col-12 col-lg-4">
+              <div className="card">
+                <div className="card-body">
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">{t("Last User")}</span>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={walker.lastUser}
+                      readOnly
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-lg-4">
+              <div className="card">
+                <div className="card-body">
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">{t("Last Use")}</span>
+                    </div>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={walker.datelastuse}
+                      readOnly
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-lg-3">
+              <div className="card">
+                <div className="card-body">
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">{t("Owner")}</span>
+                    </div>
+                    <select
+                      className="form-control"
+                      id="inputOwner"
+                      value={walkerState.ownerUser || ""}
+                      onChange={(e) =>
+                        handleWalkerUpdate("ownerUser", e.target.value)
+                      }
+                      disabled={!canEdit}
+                    >
+                      <option value="clan">{t("Clan")}</option>
+                      {memberList?.map((member) => (
+                        <option key={member.discordid} value={member.nickname}>
+                          {member.nickname || member.discordtag}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-lg-3">
+              <div className="card">
+                <div className="card-body">
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">{t("Use")}</span>
+                    </div>
+                    <select
+                      className="form-control"
+                      id="inputUse"
+                      value={walkerState.walker_use || "None"}
+                      onChange={(e) =>
+                        handleWalkerUpdate("walker_use", e.target.value)
+                      }
+                      disabled={!canEdit}
+                    >
+                      {["None", "Personal", "PVP", "RAM", "Farming"].map(
+                        (use) => (
+                          <option key={use} value={use}>
+                            {t(use)}
+                          </option>
+                        )
+                      )}
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-lg-3">
+              <div className="card">
+                <div className="card-body">
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">{t("Type")}</span>
+                    </div>
+                    <select
+                      className="form-control"
+                      id="inputType"
+                      value={walkerState.type || ""}
+                      onChange={(e) =>
+                        handleWalkerUpdate("type", e.target.value)
+                      }
+                      disabled={!canEdit}
+                    >
+                      <option value="" />
+                      {walkerListTypes.map((name) => (
+                        <option key={name} value={name}>
+                          {name}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-12 col-lg-3">
+              <div className="card">
+                <div className="card-body">
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">
+                        {t("Description")}
+                      </span>
+                    </div>
+                    <textarea
+                      className="form-control"
+                      value={walkerState.description || ""}
+                      onChange={(e) =>
+                        handleWalkerUpdate("description", e.target.value)
+                      }
+                      maxLength="200"
+                      disabled={!canEdit}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-12">
+              <div className="row mt-3">
+                <div className="btn-group mx-auto">
+                  <button
+                    type="button"
+                    className={`btn btn-success ${
+                      walkerState.isReady ? "active" : ""
+                    }`}
+                    onClick={() => handleWalkerUpdate("isReady", true)}
+                  >
+                    <i className="fas fa-check" />
+                  </button>
+                  <button type="button" className="btn btn-secondary" disabled>
+                    {t("Is ready?")}
+                  </button>
+                  <button
+                    type="button"
+                    className={`btn btn-danger ${
+                      !walkerState.isReady ? "active" : ""
+                    }`}
+                    onClick={() => handleWalkerUpdate("isReady", false)}
+                  >
+                    <i className="fas fa-times" />
+                  </button>
+                </div>
+              </div>
+              <div className="row mt-3">
+                <div className="col-12 col-lg-3 mx-auto">
+                  <button
+                    type="button"
+                    className="btn btn-block btn-success"
+                    onClick={() => {
+                      onSave(walkerState);
+                      setIsOpen(false);
+                    }}
+                  >
+                    <i className="fas fa-save" /> {t("Save")}
+                  </button>
+                </div>
+              </div>
+              <div className="row mt-3">
+                <div className="col-5 col-lg-2 mx-auto">
+                  <button
+                    type="button"
+                    className="btn btn-block btn-danger"
+                    onClick={() => onRemove(walker.walkerID)}
+                    disabled={!canEdit}
+                  >
+                    <i className="fas fa-trash-alt" /> {t("Delete")}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    );
+  };
 
-  render() {
-    const { t } = this.props;
-    if (this.props?.walker.walkerID != null) {
-      return (
-        <Fragment>
-          <tr>
-            <td className="text-center">
-              {this.props?.walker.type ? (
-                <Icon
-                  key={`${this.props?.walker.type} Walker`}
-                  name={`${this.props?.walker.type} Walker`}
-                  width="30"
-                />
-              ) : (
-                ""
-              )}
-            </td>
-            <td className="text-center">{this.props?.walker.name}</td>
-            <td className="d-none d-sm-table-cell text-center">
-              {this.props?.walker.walker_use == null
-                ? t("Not Defined")
-                : this.props?.walker.walker_use}
-            </td>
-            <td className="d-none d-sm-table-cell text-center">
-              {this.props?.walker.description}
-            </td>
-            <td className="text-center">
-              {this.props?.walker.isReady ? (
-                <i className="fas fa-check text-success" />
-              ) : (
-                <i className="fas fa-times text-danger" />
-              )}
-            </td>
-            <td
-              className="text-center text-info"
-              onClick={() =>
-                this.setState((state) => ({ isOpen: !state.isOpen }))
-              }
-            >
-              {this.state.isOpen ? (
-                <i className="fas fa-eye-slash" />
-              ) : (
-                <i className="fas fa-eye" />
-              )}
-            </td>
-          </tr>
-          {this.walkerInfo(t)}
-        </Fragment>
-      );
-    }
-    return "";
-  }
-}
+  if (!walker.walkerID) return "";
 
-export default withTranslation()(WalkerListItem);
+  return (
+    <>
+      <tr>
+        <td className="text-center">
+          {walker.type && (
+            <Icon
+              key={`${walker.type} Walker`}
+              name={`${walker.type} Walker`}
+              width="30"
+            />
+          )}
+        </td>
+        <td className="text-center">{walker.name}</td>
+        <td className="d-none d-sm-table-cell text-center">
+          {walker.walker_use || t("Not Defined")}
+        </td>
+        <td className="d-none d-sm-table-cell text-center">
+          {walker.description}
+        </td>
+        <td className="text-center">
+          <i
+            className={`fas fa-${
+              walker.isReady ? "check text-success" : "times text-danger"
+            }`}
+          />
+        </td>
+        <td
+          className="text-center text-info"
+          onClick={() => setIsOpen(!isOpen)}
+          role="button"
+          tabIndex={0}
+          onKeyPress={(e) => {
+            if (e.key === "Enter") setIsOpen(!isOpen);
+          }}
+        >
+          <i className={`fas fa-eye${isOpen ? "-slash" : ""}`} />
+        </td>
+      </tr>
+      {renderWalkerInfo()}
+    </>
+  );
+};
+
+export default WalkerListItem;
