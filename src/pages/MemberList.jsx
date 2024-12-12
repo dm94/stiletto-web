@@ -111,7 +111,7 @@ class MemberList extends Component {
       method: "put",
       url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${memberdiscordid}`,
       params: {
-        accion: "kick",
+        action: "kick",
       },
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
@@ -153,7 +153,7 @@ class MemberList extends Component {
       method: "put",
       url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
       params: {
-        accion: "accept",
+        action: "accept",
       },
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
@@ -196,7 +196,7 @@ class MemberList extends Component {
       method: "put",
       url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
       params: {
-        accion: "reject",
+        action: "reject",
       },
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
@@ -268,7 +268,7 @@ class MemberList extends Component {
       method: "put",
       url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${this.state.selectNewOwner}`,
       params: {
-        accion: "owner",
+        action: "owner",
       },
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
