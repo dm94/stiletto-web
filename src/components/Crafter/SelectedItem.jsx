@@ -11,6 +11,9 @@ const SelectedItem = ({ item, onChangeCount }) => {
   const { t } = useTranslation();
 
   const showIngredient = () => {
+    if (!item) {
+      return false;
+    }
     if (!item?.crafting) {
       return false;
     }
