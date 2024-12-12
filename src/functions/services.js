@@ -1,5 +1,6 @@
 import Axios from "axios";
 import { getDomain } from "./utils";
+import { config } from "../config/config";
 
 const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
@@ -73,7 +74,7 @@ export const getUserProfile = async () => {
   if (getStoredItem("token")) {
     const options = {
       method: "get",
-      url: `${process.env.REACT_APP_API_URL}/users`,
+      url: `${config.REACT_APP_API_URL}/users`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -171,7 +172,7 @@ export const getUserPermssions = async (clanid, discordid) => {
     const options = {
       method: "get",
       url:
-        `${process.env.REACT_APP_API_URL}/clans/${clanid}/members/${discordid}/permissions`,
+        `${config.REACT_APP_API_URL}/clans/${clanid}/members/${discordid}/permissions`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -229,7 +230,7 @@ export const getClanInfo = async () => {
   if (clanid != null) {
     const options = {
       method: "get",
-      url: `${process.env.REACT_APP_API_URL}/clans/${clanid}`,
+      url: `${config.REACT_APP_API_URL}/clans/${clanid}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -288,7 +289,7 @@ export const getMembers = async () => {
   if (clanid != null) {
     const options = {
       method: "get",
-      url: `${process.env.REACT_APP_API_URL}/clans/${clanid}/members`,
+      url: `${config.REACT_APP_API_URL}/clans/${clanid}/members`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -332,7 +333,7 @@ export const updateResourceTime = (mapId, resoruceId, token, date) => {
   const options = {
     method: "put",
     url:
-      `${process.env.REACT_APP_API_URL}/maps/${mapId}/resources/${resoruceId}`,
+      `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resoruceId}`,
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
     },
@@ -389,7 +390,7 @@ export const getClusters = async () => {
   }
   const options = {
     method: "get",
-    url: `${process.env.REACT_APP_API_URL}/clusters`,
+    url: `${config.REACT_APP_API_URL}/clusters`,
   };
 
   const response = await request(options);
@@ -422,7 +423,7 @@ export const getMaps = async () => {
 export const getResources = async (mapId, mapPass) => {
   const options = {
     method: "get",
-    url: `${process.env.REACT_APP_API_URL}/maps/${mapId}/resources`,
+    url: `${config.REACT_APP_API_URL}/maps/${mapId}/resources`,
     params: {
       mappass: mapPass,
     },
@@ -438,7 +439,7 @@ export const deleteResource = async (mapId, resourceId, resourceToken) => {
   const options = {
     method: "delete",
     url:
-      `${process.env.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}`,
+      `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}`,
     params: {
       token: resourceToken,
     },
@@ -459,7 +460,7 @@ export const createResource = async (
 ) => {
   const options = {
     method: "post",
-    url: `${process.env.REACT_APP_API_URL}/maps/${mapId}/resources`,
+    url: `${config.REACT_APP_API_URL}/maps/${mapId}/resources`,
     params: {
       mapid: mapId,
       resourcetype: resourceTypeInput,

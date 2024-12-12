@@ -7,6 +7,7 @@ import { getUserProfile, getHasPermissions, getStoredItem } from "../services";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanSelect from "../components/Diplomacy/ClanSelect";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 class Diplomacy extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +41,7 @@ class Diplomacy extends Component {
 
     if (clanid != null) {
       Axios.get(
-        `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships`,
+        `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships`,
         {
           headers: {
             Authorization: `Bearer ${getStoredItem("token")}`,
@@ -76,7 +77,7 @@ class Diplomacy extends Component {
     event.preventDefault();
     const options = {
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships`,
       params: {
         nameotherclan: this.state.nameOtherClanInput,
         clanflag: this.state.clanFlagInput,
@@ -106,7 +107,7 @@ class Diplomacy extends Component {
   deleteDiplomacy = (id) => {
     const options = {
       method: "delete",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships/${id}`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships/${id}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -274,7 +275,7 @@ class Diplomacy extends Component {
         onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
       >
         <img
-          src={`${process.env.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
+          src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
           className={
             symbol === this.state.clanFlagSymbolInput
               ? "img-fluid img-thumbnail"

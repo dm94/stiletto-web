@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
 import { closeSession, getUserPermssions, getStoredItem } from "../../services";
+import { config } from "../../config/config";
 
 class MemberPermissionsConfig extends Component {
   constructor(props) {
@@ -46,7 +47,7 @@ class MemberPermissionsConfig extends Component {
 
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/clans/${clanid}/members/${memberid}/permissions`,
+      url: `${config.REACT_APP_API_URL}/clans/${clanid}/members/${memberid}/permissions`,
       params: {
         bot: this.state.bot,
         diplomacy: this.state.diplomacy,

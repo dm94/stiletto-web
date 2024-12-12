@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { config } from "./config/config";
 
 export const initPlausible = () => {
-  const PLAUSIBLE_URL = process.env.REACT_APP_PLAUSIBLE_URL;
+  const PLAUSIBLE_URL = config.REACT_APP_PLAUSIBLE_URL;
 
   if (!PLAUSIBLE_URL || PLAUSIBLE_URL.length <= 0) {
     return;

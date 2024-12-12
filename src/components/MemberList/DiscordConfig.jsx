@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
 import Axios from "axios";
 import { closeSession, getStoredItem } from "../../services";
+import { config } from "../../config/config";
 
 class DiscordConfig extends Component {
   state = {
@@ -15,7 +16,7 @@ class DiscordConfig extends Component {
   componentDidMount() {
     const options = {
       method: "get",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}/discordbot`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.props?.clanid}/discordbot`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -51,7 +52,7 @@ class DiscordConfig extends Component {
   updateBotConfig = () => {
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}/discordbot`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.props?.clanid}/discordbot`,
       params: {
         languaje: this.state.botLanguaje,
         clanlog: this.state.readClanLog,

@@ -1,4 +1,5 @@
 import { getStoredItem, closeSession } from "../services";
+import { config } from "../../config/config";
 
 export const getLearned = async () => {
   const token = getStoredItem("token");
@@ -10,7 +11,7 @@ export const getLearned = async () => {
 
   try {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}/users/${discordId}/tech`,
+      `${config.REACT_APP_API_URL}/users/${discordId}/tech`,
       {
         method: "GET",
         headers: {
@@ -31,7 +32,7 @@ export const getLearned = async () => {
     if (response.status === 503) {
       throw new Error("Error connecting to database");
     }
-  } catch (error) {
+  } catch {
     throw new Error("Error when connecting to the API");
   }
 };
@@ -49,7 +50,7 @@ export const addTech = async (tabSelect, learned) => {
       tree: tabSelect,
     });
 
-    const url = `${process.env.REACT_APP_API_URL
+    const url = `${config.REACT_APP_API_URL
       }/users/${discordId}/tech?${params.toString()}`;
 
     const response = await fetch(url, {
@@ -69,7 +70,7 @@ export const addTech = async (tabSelect, learned) => {
     } else if (response.status === 503) {
       throw new Error("Error connecting to database");
     }
-  } catch (error) {
+  } catch {
     throw new Error("Error when connecting to the API");
   }
 };

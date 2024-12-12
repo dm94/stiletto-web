@@ -1,5 +1,5 @@
 import { getStoredItem } from "../services";
-
+import { config } from "../../config/config";
 export const getWhoHasLearntIt = async (clan, tree, tech) => {
   const token = getStoredItem("token");
   let allUsers = [];
@@ -13,7 +13,7 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
     tech: tech,
   });
 
-  const url = `${process.env.REACT_APP_API_URL
+  const url = `${config.REACT_APP_API_URL
     }/clans/${clan}/tech?${params.toString()}`;
 
   try {

@@ -12,6 +12,7 @@ import L from "leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import Icon from "../Icon";
+import { config } from "../../config/config";
 
 const myMarker = L.icon({
   iconUrl:
@@ -83,7 +84,7 @@ const MapLayer = ({
   const getMarketDesign = (resource) => {
     const res = resource.replaceAll(" ", "_");
     return L.icon({
-      iconUrl: `${process.env.REACT_APP_RESOURCES_URL}/markers/${res}.png`,
+      iconUrl: `${config.REACT_APP_RESOURCES_URL}/markers/${res}.png`,
       iconSize: [25, 41],
       iconAnchor: [13, 44],
       popupAnchor: [-6, -20],
@@ -216,12 +217,12 @@ const MapLayer = ({
                 ]
           }
           opacity={gridOpacity}
-          url={`${process.env.REACT_APP_RESOURCES_URL}${
+          url={`${config.REACT_APP_RESOURCES_URL}${
             isNewMap ? "/maps/Grid_new.png" : "/maps/Grid.png"
           }`}
         />
         <TileLayer
-          url={`${process.env.REACT_APP_RESOURCES_URL}/maps/${
+          url={`${config.REACT_APP_RESOURCES_URL}/maps/${
             resourcesInTheMap?.[0]?.typemap || "Crater"
           }/{z}/{x}/{y}.png`}
           noWrap

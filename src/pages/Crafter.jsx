@@ -9,6 +9,7 @@ import Items from "../components/Crafter/Items";
 import SelectedItem from "../components/Crafter/SelectedItem";
 import TotalMaterials from "../components/Crafter/TotalMaterials";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 
 class Crafter extends Component {
   state = {
@@ -37,7 +38,7 @@ class Crafter extends Component {
     const parsed = queryString.parse(this.props?.location.search);
     const recipe = parsed.recipe;
     if (recipe != null && recipe.length > 0) {
-      Axios.get(`${process.env.REACT_APP_API_URL}/recipes/${recipe}`)
+      Axios.get(`${config.REACT_APP_API_URL}/recipes/${recipe}`)
         .then((response) => {
           if (response.status === 200) {
             if (response.data.items != null) {

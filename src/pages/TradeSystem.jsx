@@ -9,6 +9,7 @@ import Pagination from "../components/Pagination";
 import Trade from "../components/TradeSystem/Trade";
 import ClusterList from "../components/ClusterList";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 
 class TradeSystem extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class TradeSystem extends Component {
 
   updateTrades(page = this.state.page) {
     this.setState({ isLoaded: false, page: page });
-    Axios.get(`${process.env.REACT_APP_API_URL}/trades`, {
+    Axios.get(`${config.REACT_APP_API_URL}/trades`, {
       params: {
         pageSize: 10,
         page: page,
@@ -90,7 +91,7 @@ class TradeSystem extends Component {
   deleteTrade = (idTrade) => {
     const options = {
       method: "delete",
-      url: `${process.env.REACT_APP_API_URL}/trades/${idTrade}`,
+      url: `${config.REACT_APP_API_URL}/trades/${idTrade}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -111,7 +112,7 @@ class TradeSystem extends Component {
     event.preventDefault();
     const options = {
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}/trades`,
+      url: `${config.REACT_APP_API_URL}/trades`,
       params: {
         resource: this.state.resourceTypeInput,
         type: this.state.tradeTypeInput,
