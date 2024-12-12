@@ -9,6 +9,7 @@ import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../services";
 import { useHistory } from "react-router-dom";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 
 class DiscordConnection extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class DiscordConnection extends Component {
     if (parsed.code != null) {
       const options = {
         method: "post",
-        url: `${process.env.REACT_APP_API_URL}/users/auth`,
+        url: `${config.REACT_APP_API_URL}/users/auth`,
         params: {
           code: parsed.code,
         },
@@ -62,7 +63,7 @@ class DiscordConnection extends Component {
     const { t } = this.props;
     const parsed = queryString.parse(this.props?.location.search);
     const urlLink = `https://discord.com/api/oauth2/authorize?client_id=${
-      process.env.REACT_APP_DISCORD_CLIENT_ID
+      config.REACT_APP_DISCORD_CLIENT_ID
     }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
     if (parsed.discordid != null && parsed.token != null) {
       storeItem("discordid", parsed.discordid);

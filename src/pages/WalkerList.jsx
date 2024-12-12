@@ -15,6 +15,7 @@ import {
 import Pagination from "../components/Pagination";
 import WalkerListItem from "../components/WalkerList/WalkerListItem";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 
 class WalkerList extends Component {
   constructor(props) {
@@ -55,7 +56,7 @@ class WalkerList extends Component {
     if (parsed.code != null) {
       const options = {
         method: "get",
-        url: `${process.env.REACT_APP_API_URL}/walkers/auth`,
+        url: `${config.REACT_APP_API_URL}/walkers/auth`,
         params: {
           code: parsed.code,
           redirect: `${getDomain()}/walkerlist`,
@@ -117,7 +118,7 @@ class WalkerList extends Component {
 
   updateWalkers(page = this.state.page) {
     this.setState({ isLoaded: false, page: page });
-    Axios.get(`${process.env.REACT_APP_API_URL}/walkers`, {
+    Axios.get(`${config.REACT_APP_API_URL}/walkers`, {
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -185,7 +186,7 @@ class WalkerList extends Component {
   updateWalker = (walker) => {
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/walkers/${walker.walkerID}`,
+      url: `${config.REACT_APP_API_URL}/walkers/${walker.walkerID}`,
       params: {
         owner: walker.ownerUser,
         use: walker.walker_use,
@@ -216,7 +217,7 @@ class WalkerList extends Component {
   deleteWalker = (walkerid) => {
     const options = {
       method: "delete",
-      url: `${process.env.REACT_APP_API_URL}/walkers/${walkerid}`,
+      url: `${config.REACT_APP_API_URL}/walkers/${walkerid}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },

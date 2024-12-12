@@ -10,6 +10,7 @@ import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";
 import ClanConfig from "../ClanConfig";
 import { getDomain } from "../../functions/utils";
+import { config } from "../../config/config";
 
 class PrivateProfile extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ class PrivateProfile extends Component {
     event.preventDefault();
     const options = {
       method: "delete",
-      url: `${process.env.REACT_APP_API_URL}/users/`,
+      url: `${config.REACT_APP_API_URL}/users/`,
       headers: {
         Authorization: `Bearer ${this.state.token}`,
       },
@@ -84,7 +85,7 @@ class PrivateProfile extends Component {
 
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/users/`,
+      url: `${config.REACT_APP_API_URL}/users/`,
       params: {
         dataupdate: this.state.nameInGameInput,
       },
@@ -118,7 +119,7 @@ class PrivateProfile extends Component {
 
     const options = {
       method: "delete",
-      url: `${process.env.REACT_APP_API_URL}/clans`,
+      url: `${config.REACT_APP_API_URL}/clans`,
       headers: {
         Authorization: `Bearer ${this.state.token}`,
       },

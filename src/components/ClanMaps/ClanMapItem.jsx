@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { getStoredItem } from "../../services";
 import { getDomain } from "../../functions/utils";
+import { config } from "../../config/config";
 
 const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
   const { t } = useTranslation();
@@ -63,7 +64,7 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
       <div className="row">
         <button className="col-6 pr-0">
           <img
-            src={`${process.env.REACT_APP_RESOURCES_URL}/maps/${value.replace(
+            src={`${config.REACT_APP_RESOURCES_URL}/maps/${value.replace(
               "_new",
               ""
             )}.jpg`}

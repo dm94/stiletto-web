@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { config } from "../config/config";
 
 class Icon extends Component {
   state = { loaded: true };
@@ -42,7 +43,7 @@ class Icon extends Component {
       return (
         <img
           src={`${
-            process.env.REACT_APP_RESOURCES_URL
+            config.REACT_APP_RESOURCES_URL
           }/items/${name.trim()} icon.png`}
           loading="lazy"
           onError={() => this.setState({ loaded: false })}

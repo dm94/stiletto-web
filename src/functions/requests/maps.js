@@ -1,8 +1,8 @@
 import { getStoredItem } from "../services";
-
+import { config } from "../../config/config";
 
 export const createMap = async (mapNameInput, mapDateInput, mapSelectInput) => {
-  const url = new URL(`${process.env.REACT_APP_API_URL}/maps`);
+  const url = new URL(`${config.REACT_APP_API_URL}/maps`);
   url.searchParams.append("mapname", mapNameInput);
   url.searchParams.append("mapdate", mapDateInput);
   url.searchParams.append("maptype", `${mapSelectInput}_new`);
@@ -26,7 +26,7 @@ export const createMap = async (mapNameInput, mapDateInput, mapSelectInput) => {
 };
 
 export const editMap = async (mapid, mapname, mapdate, allowediting, mappass) => {
-  const url = new URL(`${process.env.REACT_APP_API_URL}/maps/${mapid}`);
+  const url = new URL(`${config.REACT_APP_API_URL}/maps/${mapid}`);
   url.searchParams.append("mapname", mapname);
   url.searchParams.append("mapdate", mapdate);
   url.searchParams.append("allowediting", allowediting);
@@ -51,7 +51,7 @@ export const editMap = async (mapid, mapname, mapdate, allowediting, mappass) =>
 }
 
 export const getMap = async (mapid, mappass) => {
-  const url = new URL(`${process.env.REACT_APP_API_URL}/maps/${mapid}`);
+  const url = new URL(`${config.REACT_APP_API_URL}/maps/${mapid}`);
   url.searchParams.append("mappass", mappass);
 
   try {

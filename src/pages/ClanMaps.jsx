@@ -8,6 +8,7 @@ import ClanMapItem from "../components/ClanMaps/ClanMapItem";
 import ResourceMap from "../components/ClanMaps/ResourceMap";
 import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 
 class ClanMaps extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class ClanMaps extends Component {
     const maps = await getMaps();
     this.setState({ maps: maps });
 
-    Axios.get(`${process.env.REACT_APP_API_URL}/maps`, {
+    Axios.get(`${config.REACT_APP_API_URL}/maps`, {
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -67,7 +68,7 @@ class ClanMaps extends Component {
   deleteMap = (mapid) => {
     const options = {
       method: "delete",
-      url: `${process.env.REACT_APP_API_URL}/maps/${mapid}`,
+      url: `${config.REACT_APP_API_URL}/maps/${mapid}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -97,7 +98,7 @@ class ClanMaps extends Component {
     event.preventDefault();
     const options = {
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}/maps`,
+      url: `${config.REACT_APP_API_URL}/maps`,
       params: {
         discordid: this.state.user_discord_id,
         token: this.state.token,

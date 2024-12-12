@@ -9,6 +9,7 @@ import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";
 import ClusterList from "../components/ClusterList";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 
 class ClanList extends Component {
   constructor(props) {
@@ -36,7 +37,7 @@ class ClanList extends Component {
 
   async updateClans(page = this.state.page) {
     this.setState({ isLoaded: false, page: page });
-    Axios.get(`${process.env.REACT_APP_API_URL}/clans`, {
+    Axios.get(`${config.REACT_APP_API_URL}/clans`, {
       params: {
         pageSize: 20,
         page: page,
@@ -83,7 +84,7 @@ class ClanList extends Component {
   sendRequest = () => {
     const options = {
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanRequestId}/requests`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanRequestId}/requests`,
       params: {
         message: this.state.textAreaModelValue,
       },

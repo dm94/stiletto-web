@@ -19,6 +19,7 @@ import DiscordConfig from "../components/MemberList/DiscordConfig";
 import MemberPermissionsConfig from "../components/MemberList/MemberPermissionsConfig";
 import { sendNotification } from "../functions/broadcast";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 
 class MemberList extends Component {
   constructor(props) {
@@ -60,7 +61,7 @@ class MemberList extends Component {
     this.updateMembers();
 
     Axios.get(
-      `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/requests`,
+      `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/requests`,
       {
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
@@ -108,7 +109,7 @@ class MemberList extends Component {
   kickMember = (memberdiscordid) => {
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${memberdiscordid}`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${memberdiscordid}`,
       params: {
         accion: "kick",
       },
@@ -150,7 +151,7 @@ class MemberList extends Component {
 
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
       params: {
         accion: "accept",
       },
@@ -193,7 +194,7 @@ class MemberList extends Component {
     }
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
       params: {
         accion: "reject",
       },
@@ -232,7 +233,7 @@ class MemberList extends Component {
   deleteClan = () => {
     const options = {
       method: "delete",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -265,7 +266,7 @@ class MemberList extends Component {
   changeOwner = () => {
     const options = {
       method: "put",
-      url: `${process.env.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${this.state.selectNewOwner}`,
+      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${this.state.selectNewOwner}`,
       params: {
         accion: "owner",
       },

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { config } from "../config/config";
 class ClanName extends Component {
   render() {
     if (this.props?.clan.symbol != null) {
@@ -7,7 +8,7 @@ class ClanName extends Component {
           <img
             width="48"
             height="48"
-            src={`${process.env.REACT_APP_RESOURCES_URL}/symbols/${this.props?.clan.symbol}.png`}
+            src={`${config.REACT_APP_RESOURCES_URL}/symbols/${this.props?.clan.symbol}.png`}
             style={{ backgroundColor: this.props?.clan.flagcolor }}
             alt={this.props?.clan.symbol}
             id={`symbol-img-${this.props?.clan.name}`}

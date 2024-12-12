@@ -3,6 +3,7 @@ import { withTranslation } from "react-i18next";
 import Axios from "axios";
 import { closeSession, getStoredItem } from "../services";
 import ClusterList from "./ClusterList";
+import { config } from "../config/config";
 
 class ClanConfig extends Component {
   state = {
@@ -18,7 +19,7 @@ class ClanConfig extends Component {
     if (this.props?.clanid) {
       const options = {
         method: "get",
-        url: `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}`,
+        url: `${config.REACT_APP_API_URL}/clans/${this.props?.clanid}`,
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
         },
@@ -55,7 +56,7 @@ class ClanConfig extends Component {
     e.preventDefault();
     const options = {
       method: "post",
-      url: `${process.env.REACT_APP_API_URL}/clans`,
+      url: `${config.REACT_APP_API_URL}/clans`,
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
@@ -70,7 +71,7 @@ class ClanConfig extends Component {
     };
     if (this.props?.clanid) {
       options.method = "put";
-      options.url = `${process.env.REACT_APP_API_URL}/clans/${this.props?.clanid}`;
+      options.url = `${config.REACT_APP_API_URL}/clans/${this.props?.clanid}`;
     }
 
     Axios.request(options)
@@ -106,7 +107,7 @@ class ClanConfig extends Component {
         onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
       >
         <img
-          src={`${process.env.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
+          src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
           className={
             symbol === this.state.clanFlagSymbolInput
               ? "img-fluid img-thumbnail"

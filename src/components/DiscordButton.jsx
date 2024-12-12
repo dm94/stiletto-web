@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { withTranslation } from "react-i18next";
 import { getStoredItem } from "../services";
 import { getDomain } from "../functions/utils";
+import { config } from "../config/config";
 
 class DiscordButton extends Component {
   state = {};
@@ -20,7 +21,7 @@ class DiscordButton extends Component {
       );
     }
     const urlLink = `https://discord.com/api/oauth2/authorize?client_id=${
-      process.env.REACT_APP_DISCORD_CLIENT_ID
+      config.REACT_APP_DISCORD_CLIENT_ID
     }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
 
     return (
