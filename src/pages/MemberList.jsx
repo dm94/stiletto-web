@@ -25,7 +25,7 @@ import {
 const MemberList = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [members, setMembers] = useState(false);
+  const [members, setMembers] = useState([]);
   const [requestMembers, setRequestMembers] = useState(false);
   const [error, setError] = useState(false);
   const [isLoadedRequestList, setIsLoadedRequestList] = useState(false);
@@ -251,7 +251,7 @@ const MemberList = () => {
 
   const renderMemberList = () => {
     if (members) {
-      return members.map((member) => (
+      return members?.map((member) => (
         <MemberListItem
           key={member.discordid}
           member={member}
