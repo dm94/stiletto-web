@@ -37,11 +37,10 @@ const ResourceMap = ({ map, onReturn }) => {
       const markers = await getMarkers();
       setItems(markers);
 
-      const response = await getResources(map.mapid, map.pass);
-      if (response.success) {
-        setResourcesInTheMap(response.message);
-      } else {
-        setError(response.message);
+      const responseResources = await getResources(map.mapid, map.pass);
+      if (responseResources.ok) {
+        const resources = await responseResources.json();
+        setResourcesInTheMap(resources);
       }
     } catch {
       setError("Failed to fetch data");

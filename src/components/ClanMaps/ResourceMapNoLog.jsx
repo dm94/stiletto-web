@@ -42,27 +42,30 @@ const ResourceMapNoLog = (props) => {
       (props?.mapId || props?.match?.params?.id) &&
       (props?.pass || parsed?.pass)
     ) {
-      const markers = await getMarkers();
-      setItems(markers);
+      try {
+        const markers = await getMarkers();
+        setItems(markers);
 
-      const currentMapId = props?.mapId || props?.match?.params?.id;
-      const currentPass = props?.pass || parsed?.pass;
+        const currentMapId = props?.mapId || props?.match?.params?.id;
+        const currentPass = props?.pass || parsed?.pass;
 
-      setMapId(currentMapId);
-      setPass(currentPass);
+        setMapId(currentMapId);
+        setPass(currentPass);
 
-      const resourcesData = await getResources(currentMapId, currentPass);
-      if (resourcesData.success) {
-        setResourcesInTheMap(resourcesData.message);
-      } else {
-        setError(resourcesData.message);
-      }
+        const responseResources = await getResources(currentMapId, currentPass);
+        if (responseResources.ok) {
+          const resources = await responseResources.json();
+          setResourcesInTheMap(resources);
+        }
 
-      const response = await getMap(currentMapId, currentPass);
-      if (response.success) {
-        setMapData(response.data);
-      } else {
-        setError(response.message);
+        const response = await getMap(currentMapId, currentPass);
+        if (response.success) {
+          setMapData(response.data);
+        } else {
+          setError(response.message);
+        }
+      } catch {
+        setError("Error when connecting to the API");
       }
     } else {
       setError("Unauthorized");
