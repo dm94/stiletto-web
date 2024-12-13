@@ -63,7 +63,7 @@ const AuctionTimers = () => {
               </button>
               <button
                 type="button"
-                className={`btn btn-secondary ${!playSound ? "active" : ""}`}
+                className={`btn btn-secondary ${playSound ? "" : "active"}`}
                 onClick={() => setPlaySound(false)}
               >
                 <i className="fas fa-volume-mute" /> {t("Sound Off")}
