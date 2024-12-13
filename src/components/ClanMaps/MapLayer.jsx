@@ -223,7 +223,7 @@ const MapLayer = ({
         />
         <TileLayer
           url={`${config.REACT_APP_RESOURCES_URL}/maps/${
-            resourcesInTheMap?.[0]?.typemap || "Crater"
+            resourcesInTheMap?.[0]?.typemap || "Crater_new"
           }/{z}/{x}/{y}.png`}
           noWrap
         />
