@@ -48,4 +48,20 @@ export const getMembers = async (clanid) => {
   } catch {
     throw new Error("Error when connecting to the API");
   }
+}
+
+export const getMemberPermissions = async (clanid, discordid) => {
+  try {
+    return await fetch(
+      `${config.REACT_APP_API_URL}/clans/${clanid}/members/${discordid}/permissions`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${getStoredItem("token")}`,
+        }
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
 } 

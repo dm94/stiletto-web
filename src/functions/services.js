@@ -1,6 +1,6 @@
 import { getDomain } from "./utils";
 import { config } from "../config/config";
-import { getMembers } from "./requests/clans/members";
+import { getMembers, getMemberPermissions } from "./requests/clans/members";
 
 const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
@@ -168,13 +168,7 @@ export const getOurPermssions = async () => {
 
 export const getUserPermssions = async (clanid, discordid) => {
   if (clanid != null && discordid != null) {
-    const options = {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      }
-    };
-    const response = await request(`${config.REACT_APP_API_URL}/clans/${clanid}/members/${discordid}/permissions`, options);
+    const response = await getMemberPermissions(clanid, discordid);
     if (response != null) {
       if (response.status === 200) {
         return { success: true, message: response.data };
