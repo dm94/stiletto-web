@@ -10,7 +10,6 @@ import DiscordConfig from "../components/MemberList/DiscordConfig";
 import MemberPermissionsConfig from "../components/MemberList/MemberPermissionsConfig";
 import { sendNotification } from "../functions/broadcast";
 import { getDomain } from "../functions/utils";
-import { config } from "../config/config";
 import { getRequests } from "../functions/requests/clans/requests";
 import { updateMember } from "../functions/requests/clans/members";
 import { deleteClan } from "../functions/requests/clan";
@@ -219,15 +218,7 @@ const MemberList = () => {
 
   const changeOwner = async () => {
     try {
-      const response = await fetch(
-        `${config.REACT_APP_API_URL}/clans/${clanid}/members/${selectNewOwner}?action=owner`,
-        {
-          method: "PUT",
-          headers: {
-            Authorization: `Bearer ${getStoredItem("token")}`,
-          },
-        }
-      );
+      const response = await updateMember(clanid, selectNewOwner, "owner");
 
       localStorage.removeItem("profile");
       sessionStorage.removeItem("profile");
