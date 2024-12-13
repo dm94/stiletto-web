@@ -128,7 +128,7 @@ const Crafter = ({ location }) => {
       ...recipe,
       ingredients: recipe.ingredients?.map((ingredient) => ({
         ...ingredient,
-        ingredients: !secondTree ? getIngredients(ingredient.name, true) : [],
+        ingredients: secondTree ? [] : getIngredients(ingredient.name, true),
       })),
     }));
   };
