@@ -22,7 +22,15 @@ export const sendRequest = async (clanId, message) => {
 
 export const getRequests = async (clanId) => {
   try {
-    return await fetch(`${config.REACT_APP_API_URL}/clans/${clanId}/requests`);
+    return await fetch(
+      `${config.REACT_APP_API_URL}/clans/${clanId}/requests`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${getStoredItem("token")}`,
+        },
+      }
+    );
   } catch {
     throw new Error("Error when connecting to the API");
   }
