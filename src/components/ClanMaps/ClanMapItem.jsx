@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { getStoredItem } from "../../services";
+import { getStoredItem } from "../../functions/services";
 import { getDomain } from "../../functions/utils";
 import { config } from "../../config/config";
 

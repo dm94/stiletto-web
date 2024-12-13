@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getItems } from "../services";
+import { getItems } from "../functions/services";
 import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
 import { getDomain } from "../functions/utils";
@@ -21,11 +21,12 @@ const Wiki = ({ location }) => {
       if (fetchedItems != null) {
         const allCategories = [];
 
-        fetchedItems.forEach((item) => {
+        for (const item of fetchedItems) {
           if (item.category && !allCategories.includes(item.category)) {
             allCategories.push(item.category);
           }
-        });
+        }
+
         allCategories.sort();
 
         setItems(fetchedItems);
@@ -35,13 +36,13 @@ const Wiki = ({ location }) => {
 
     updateRecipes();
 
-    let parsed = null;
     if (location?.search) {
-      parsed = queryString.parse(location.search);
-    }
-    if (parsed?.s) {
-      setSearchText(parsed.s);
-      searchItems(parsed.s, "All");
+      const parsed = queryString.parse(location.search);
+
+      if (parsed?.s) {
+        setSearchText(parsed.s);
+        searchItems(parsed.s, "All");
+      }
     }
   }, [location]);
 

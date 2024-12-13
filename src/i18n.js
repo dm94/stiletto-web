@@ -1,6 +1,6 @@
 import i18n from "i18next";
 import HttpApi from "i18next-http-backend";
-import { getStoredItem } from "./services";
+import { getStoredItem } from "./functions/services";
 
 i18n.use(HttpApi).init({
   lng: getStoredItem("i18nextLng"),

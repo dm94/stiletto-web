@@ -6,7 +6,7 @@ import {
   getUserProfile,
   getStoredItem,
   storeItem,
-} from "../services";
+} from "../functions/services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
@@ -66,9 +66,9 @@ const TechTree = () => {
   const updateLearnedTree = (treeName, data) => {
     const all = {};
     if (data) {
-      data.forEach((tech) => {
+      for (const tech of data) {
         all[tech] = { optional: false, nodeState: "selected" };
-      });
+      }
       storeItem(`skills-${treeName}`, JSON.stringify(all));
     }
   };

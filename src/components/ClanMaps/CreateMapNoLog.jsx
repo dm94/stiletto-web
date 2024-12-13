@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { getMaps } from "../../services";
+import { getMapNames } from "../../functions/services";
 import CreateMapPanel from "./CreateMapPanel";
 import { getDomain } from "../../functions/utils";
 import { createMap as createMapRequest } from "../../functions/requests/maps";
@@ -14,7 +14,7 @@ const CreateMapNoLog = ({ onOpen }) => {
 
   useEffect(() => {
     const fetchMaps = async () => {
-      const maps = await getMaps();
+      const maps = await getMapNames();
       setMaps(maps);
     };
     fetchMaps();

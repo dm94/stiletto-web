@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useTranslation } from "react-i18next";
-import { getItems } from "../services";
+import { getItems } from "../functions/services";
 import { Redirect } from "react-router-dom";
 import Ingredients from "../components/Ingredients";
 import Station from "../components/Station";
@@ -16,18 +16,18 @@ import { calcRarityValue } from "../rarityCalc";
 import { getItemUrl, getItemCraftUrl } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
 
-const WikiDescription = React.lazy(
-  () => import("../components/Wiki/WikiDescription"),
+const WikiDescription = React.lazy(() =>
+  import("../components/Wiki/WikiDescription")
 );
-const SchematicDropInfo = React.lazy(
-  () => import("../components/Wiki/SchematicDropInfo"),
+const SchematicDropInfo = React.lazy(() =>
+  import("../components/Wiki/SchematicDropInfo")
 );
 const DropsInfo = React.lazy(() => import("../components/Wiki/DropsInfo"));
-const CanBeUsedInfo = React.lazy(
-  () => import("../components/Wiki/CanBeUsedInfo"),
+const CanBeUsedInfo = React.lazy(() =>
+  import("../components/Wiki/CanBeUsedInfo")
 );
-const SchematicItems = React.lazy(
-  () => import("../components/Wiki/SchematicItems"),
+const SchematicItems = React.lazy(() =>
+  import("../components/Wiki/SchematicItems")
 );
 
 const ItemWiki = ({ match }) => {
@@ -48,7 +48,7 @@ const ItemWiki = ({ match }) => {
       const items = await getItems();
       if (items) {
         const foundItem = items.find(
-          (it) => it.name.toLowerCase() === itemName,
+          (it) => it.name.toLowerCase() === itemName
         );
         setItem(foundItem);
         setAllItems(items);
@@ -209,7 +209,7 @@ const ItemWiki = ({ match }) => {
                         rarity,
                         "weight",
                         item.category,
-                        item.weight,
+                        item.weight
                       )}
                     </div>
                   </li>
@@ -228,7 +228,7 @@ const ItemWiki = ({ match }) => {
                         rarity,
                         "durability",
                         item.category,
-                        item.durability,
+                        item.durability
                       )}
                     </div>
                   </li>
@@ -248,7 +248,7 @@ const ItemWiki = ({ match }) => {
                     >
                       {rar[0]}
                     </button>
-                  ),
+                  )
                 )}
               </fieldset>
             </div>

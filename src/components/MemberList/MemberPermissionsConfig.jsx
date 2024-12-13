@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { closeSession, getUserPermssions } from "../../services";
 import { updateMemberPermissions } from "../../functions/requests/clans/members";
+import { closeSession, getUserPermssions } from "../../functions/services";
 
 const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
   const { t } = useTranslation();

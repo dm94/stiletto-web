@@ -17,3 +17,35 @@ export const updateMemberPermissions = async (clanid, memberid, permissions) => 
     throw new Error("Error when connecting to the API");
   }
 }
+
+export const updateMember = async (clanid, memberid, action) => {
+  try {
+    return await fetch(
+      `${config.REACT_APP_API_URL}/clans/${clanid}/members/${memberid}?action=${action}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${getStoredItem("token")}`,
+        },
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+}
+
+export const getMembers = async (clanid) => {
+  try {
+    return await fetch(
+      `${config.REACT_APP_API_URL}/clans/${clanid}/members`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${getStoredItem("token")}`,
+        }
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+} 

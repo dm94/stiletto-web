@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { config } from "./config/config";
 
 export const initPlausible = () => {
@@ -22,15 +21,9 @@ export const initPlausible = () => {
 };
 
 export const usePageTracking = () => {
-  const location = useLocation();
-
   useEffect(() => {
     initPlausible();
   }, []);
-
-  useEffect(() => {
-    initPlausible();
-  }, [location]);
 };
 
 export const sendEvent = (data) => {

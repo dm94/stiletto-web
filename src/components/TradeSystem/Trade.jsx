@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
-import { getStoredItem } from "../../services";
+import { getStoredItem } from "../../functions/services";
 
 const Trade = ({ trade, onDelete }) => {
   const { t } = useTranslation();

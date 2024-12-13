@@ -131,9 +131,7 @@ const TotalMaterials = ({ selectedItems }) => {
       text += `\t${ingredient.count}x ${t(ingredient.name)}\n`;
     }
 
-    text += `\n${t("List of all necessary materials by")} ${
-      window.location.origin
-    }`;
+    text += `\n${t("List of all necessary materials by")} ${getDomain()}`;
 
     navigator.clipboard.writeText(text);
     sendNotification("Items copied to the clipboard", "Information");
@@ -159,9 +157,7 @@ const TotalMaterials = ({ selectedItems }) => {
         <div className="list-unstyled">
           <ListIngredients selectedItems={selectedItems} />
           <div className="text-right text-muted">
-            {t("List of all necessary materials by")}{" "}
-            {window.location.hostname +
-              (window.location.port ? `:${window.location.port}` : "")}
+            {t("List of all necessary materials by")} {getDomain()}
           </div>
         </div>
       </div>

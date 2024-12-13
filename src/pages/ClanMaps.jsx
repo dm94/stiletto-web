@@ -1,142 +1,154 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React, { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Axios from "axios";
-import { closeSession, getMaps, getStoredItem } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import ClanMapItem from "../components/ClanMaps/ClanMapItem";
 import ResourceMap from "../components/ClanMaps/ResourceMap";
 import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
 import { getDomain } from "../functions/utils";
-import { config } from "../config/config";
+import { getMaps, createMap, deleteMap } from "../functions/requests/maps";
+import {
+  closeSession,
+  getMapNames,
+  getStoredItem,
+} from "../functions/services";
 
-class ClanMaps extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user_discord_id: getStoredItem("discordid"),
-      token: getStoredItem("token"),
-      maps: null,
-      clanMaps: null,
-      error: null,
-      mapThatIsOpen: null,
-      showDeleteModal: false,
-      idMapDeleteModal: null,
-    };
-  }
+const ClanMaps = () => {
+  const { t } = useTranslation();
+  const [state, setState] = useState({
+    user_discord_id: getStoredItem("discordid"),
+    maps: false,
+    clanMaps: false,
+    error: false,
+    mapThatIsOpen: false,
+    showDeleteModal: false,
+    idMapDeleteModal: false,
+  });
 
-  async componentDidMount() {
-    const maps = await getMaps();
-    this.setState({ maps: maps });
+  const fetchMaps = useCallback(async () => {
+    const maps = await getMapNames();
+    setState((prev) => ({ ...prev, maps }));
 
-    Axios.get(`${config.REACT_APP_API_URL}/maps`, {
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    }).then((response) => {
+    try {
+      const response = await getMaps();
+
       if (response.status === 200) {
-        this.setState({ clanMaps: response.data });
+        const data = await response.json();
+        setState((prev) => ({ ...prev, clanMaps: data }));
       } else if (response.status === 401) {
         closeSession();
-        this.setState({
+        setState((prev) => ({
+          ...prev,
           error: "You don't have access here, try to log in again",
-        });
+        }));
       } else if (response.status === 503) {
-        this.setState({ error: "Error connecting to database" });
+        setState((prev) => ({
+          ...prev,
+          error: "Error connecting to database",
+        }));
       }
-    });
-  }
-
-  clanMapList() {
-    if (this.state.clanMaps != null && this.state.maps != null) {
-      return this.state.clanMaps.map((map) => (
-        <ClanMapItem
-          key={`clanmap${map.mapid}`}
-          map={map}
-          value={map.typemap}
-          onOpen={(mapData) => {
-            this.setState({ mapThatIsOpen: mapData });
-          }}
-          onDelete={(mapid) => {
-            this.setState({ showDeleteModal: true, idMapDeleteModal: mapid });
-          }}
-        />
-      ));
+    } catch {
+      setState((prev) => ({ ...prev, error: "Error connecting to database" }));
     }
-  }
+  }, []);
 
-  deleteMap = (mapid) => {
-    const options = {
-      method: "delete",
-      url: `${config.REACT_APP_API_URL}/maps/${mapid}`,
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
+  useEffect(() => {
+    fetchMaps();
+  }, [fetchMaps]);
 
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 204) {
-          this.setState({
-            showDeleteModal: false,
-            idMapDeleteModal: null,
-          });
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          closeSession();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+  const renderClanMapList = () => {
+    if (!state.clanMaps || !state.maps) {
+      return "";
+    }
+
+    return state.clanMaps.map((map) => (
+      <ClanMapItem
+        key={`clanmap${map.mapid}`}
+        map={map}
+        value={map.typemap}
+        onOpen={(mapData) => {
+          setState((prev) => ({ ...prev, mapThatIsOpen: mapData }));
+        }}
+        onDelete={(mapid) => {
+          setState((prev) => ({
+            ...prev,
+            showDeleteModal: true,
+            idMapDeleteModal: mapid,
+          }));
+        }}
+      />
+    ));
   };
 
-  createMap = (event, mapNameInput, mapDateInput, mapSelectInput) => {
+  const handleDeleteMap = async (mapid) => {
+    try {
+      const response = await deleteMap(mapid);
+
+      if (response.status === 204) {
+        setState((prev) => ({
+          ...prev,
+          showDeleteModal: false,
+          idMapDeleteModal: false,
+        }));
+        fetchMaps();
+      } else if (response.status === 401) {
+        closeSession();
+        setState((prev) => ({
+          ...prev,
+          error: "You don't have access here, try to log in again",
+        }));
+      }
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        error: "Error when connecting to the API",
+      }));
+    }
+  };
+
+  const handleCreateMap = async (
+    event,
+    mapNameInput,
+    mapDateInput,
+    mapSelectInput
+  ) => {
     event.preventDefault();
-    const options = {
-      method: "post",
-      url: `${config.REACT_APP_API_URL}/maps`,
-      params: {
-        discordid: this.state.user_discord_id,
-        token: this.state.token,
-        mapname: mapNameInput,
-        mapdate: mapDateInput,
-        maptype: `${mapSelectInput}_new`,
-      },
-    };
 
-    if (getStoredItem("token") != null) {
-      options.headers = {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      };
+    try {
+      const response = await createMap(
+        mapNameInput,
+        mapDateInput,
+        mapSelectInput
+      );
+
+      setState((prev) => ({
+        ...prev,
+        mapNameInput: "",
+        mapDateInput: "",
+        mapSelectInput: "",
+      }));
+
+      if (response.status === 201) {
+        fetchMaps();
+      } else if (response.status === 401) {
+        closeSession();
+        setState((prev) => ({ ...prev, error: "Login again" }));
+      } else if (response.status === 503) {
+        setState((prev) => ({
+          ...prev,
+          error: "Error connecting to database",
+        }));
+      }
+    } catch {
+      setState((prev) => ({
+        ...prev,
+        error: "Error when connecting to the API",
+      }));
     }
-
-    Axios.request(options)
-      .then((response) => {
-        this.setState({
-          mapNameInput: "",
-          mapDateInput: "",
-          mapSelectInput: "",
-        });
-        if (response.status === 201) {
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          closeSession();
-          this.setState({ error: "Login again" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
   };
 
-  panel(t) {
-    const showHideClassName = this.state.showDeleteModal
+  const renderPanel = () => {
+    const showHideClassName = state.showDeleteModal
       ? "modal d-block"
       : "modal d-none";
     return (
@@ -165,10 +177,10 @@ class ClanMaps extends Component {
         <div className="col-xl-12">
           <div className="card border-secondary mb-3">
             <div className="card-header">{t("Map List")}</div>
-            <div className="card-body row">{this.clanMapList()}</div>
+            <div className="card-body row">{renderClanMapList()}</div>
           </div>
         </div>
-        <CreateMapPanel maps={this.state.maps} onCreateMap={this.createMap} />
+        <CreateMapPanel maps={state.maps} onCreateMap={handleCreateMap} />
         <div className={showHideClassName}>
           <div className="modal-dialog">
             <div className="modal-content">
@@ -185,10 +197,11 @@ class ClanMaps extends Component {
                   type="button"
                   className="btn btn-outline-secondary"
                   onClick={() =>
-                    this.setState({
+                    setState((prev) => ({
+                      ...prev,
                       showDeleteModal: false,
-                      idMapDeleteModal: null,
-                    })
+                      idMapDeleteModal: false,
+                    }))
                   }
                 >
                   {t("Cancel")}
@@ -196,7 +209,7 @@ class ClanMaps extends Component {
                 <button
                   type="button"
                   className="btn btn-outline-danger"
-                  onClick={() => this.deleteMap(this.state.idMapDeleteModal)}
+                  onClick={() => handleDeleteMap(state.idMapDeleteModal)}
                 >
                   {t("Delete")}
                 </button>
@@ -206,44 +219,43 @@ class ClanMaps extends Component {
         </div>
       </div>
     );
+  };
+
+  if (state.mapThatIsOpen) {
+    return (
+      <ResourceMap
+        key={`mapOpen${state.mapThatIsOpen.mapid}`}
+        onReturn={() => setState((prev) => ({ ...prev, mapThatIsOpen: false }))}
+        map={state.mapThatIsOpen}
+      />
+    );
   }
 
-  render() {
-    const { t } = this.props;
-    if (this.state.mapThatIsOpen) {
-      return (
-        <ResourceMap
-          key={`mapOpen${this.state.mapThatIsOpen.mapid}`}
-          onReturn={() => this.setState({ mapThatIsOpen: null })}
-          map={this.state.mapThatIsOpen}
-        />
-      );
-    }
-    if (this.state.error) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: this.state.error,
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    }
-    if (this.state.user_discord_id == null || this.state.token == null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: "Login again",
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    }
-
-    return <div className="container">{this.panel(t)}</div>;
+  if (state.error) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: state.error,
+          redirectPage: "/profile",
+        }}
+      />
+    );
   }
-}
 
-export default withTranslation()(ClanMaps);
+  if (!state.user_discord_id) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: "Login again",
+          redirectPage: "/profile",
+        }}
+      />
+    );
+  }
+
+  return <div className="container">{renderPanel()}</div>;
+};
+
+export default ClanMaps;

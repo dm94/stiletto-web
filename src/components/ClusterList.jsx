@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getClusters } from "../services";
+import { getClusters } from "../functions/services";
 
 const ClusterList = ({ value = "", onChange, filter }) => {
   const [clusters, setClusters] = useState([]);

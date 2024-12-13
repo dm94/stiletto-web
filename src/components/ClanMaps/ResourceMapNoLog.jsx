@@ -1,20 +1,20 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import {
-  updateResourceTime,
-  getMarkers,
-  getResources,
-  deleteResource,
-  createResource,
-} from "../../services";
+import { getMarkers } from "../../functions/services";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
-import { getMap } from "../../functions/requests/maps";
 import "../../css/map-sidebar.min.css";
+import {
+  createResource,
+  deleteResource,
+  getMap,
+  updateResourceTime,
+  getResources,
+} from "../../functions/requests/maps";
 
 const ResourceMapNoLog = (props) => {
   const { t } = useTranslation();
@@ -76,11 +76,15 @@ const ResourceMapNoLog = (props) => {
 
   const handleDeleteResource = useCallback(
     async (resourceId, resourceToken) => {
-      const response = await deleteResource(mapId, resourceId, resourceToken);
-      if (response.success) {
-        fetchData();
-      } else {
-        setError(response.message);
+      try {
+        const response = await deleteResource(mapId, resourceId, resourceToken);
+        if (response.success) {
+          fetchData();
+        } else {
+          setError(response.message);
+        }
+      } catch {
+        setError("Error when connecting to the API");
       }
     },
     [mapId, fetchData]
@@ -93,20 +97,24 @@ const ResourceMapNoLog = (props) => {
       descriptionInput,
       lastHarvested
     ) => {
-      const response = await createResource(
-        mapId,
-        coordinateXInput,
-        coordinateYInput,
-        pass,
-        resourceTypeInput,
-        qualityInput,
-        descriptionInput,
-        lastHarvested
-      );
-      if (response.success) {
-        fetchData();
-      } else {
-        setError(response.message);
+      try {
+        const response = await createResource({
+          mapid: mapId,
+          x: coordinateXInput,
+          y: coordinateYInput,
+          mappass: pass,
+          resourcetype: resourceTypeInput,
+          quality: qualityInput,
+          description: descriptionInput,
+          harvested: lastHarvested,
+        });
+        if (response.success) {
+          fetchData();
+        } else {
+          setError(response.message);
+        }
+      } catch {
+        setError("Error when connecting to the API");
       }
     },
     [mapId, coordinateXInput, coordinateYInput, pass, fetchData]
@@ -251,8 +259,12 @@ const ResourceMapNoLog = (props) => {
           resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
           deleteResource={handleDeleteResource}
           updateResource={(mapId, resourceId, token, date) => {
-            updateResourceTime(mapId, resourceId, token, date);
-            fetchData();
+            try {
+              updateResourceTime(mapId, resourceId, token, date);
+              fetchData();
+            } catch {
+              setError("Error when connecting to the API");
+            }
           }}
           changeInput={(x, y) => {
             setCoordinateXInput(x);
