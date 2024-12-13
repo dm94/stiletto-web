@@ -7,9 +7,9 @@ export const addRecipe = async (items) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: {
-        items: items,
-      },
+      body: JSON.stringify({
+        items: JSON.stringify(items),
+      }),
     });
 
   } catch {
