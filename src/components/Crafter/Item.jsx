@@ -17,9 +17,9 @@ const Item = ({ item, onAdd }) => {
           : "list-group-item"
       }
     >
-      <div className="row">
+      <div className="row justify-content-between">
         <div className="col-auto">{t(item?.name, { ns: "items" })}</div>
-        <div className="col">
+        <div className="col-auto">
           <button
             type="button"
             className="btn btn-success btn-sm float-right"

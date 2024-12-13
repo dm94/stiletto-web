@@ -107,7 +107,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                 </Link>
               </li>
             </ul>
-            <div className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <div className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 ms-auto">
               <div className="input-group" itemProp="potentialAction">
                 <input
                   type="search"

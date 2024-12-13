@@ -111,3 +111,7 @@ html {
 .content-v-a {
   content-visibility: auto;
 }
+
+a {
+  text-decoration: none;
+}
