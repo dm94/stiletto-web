@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { closeSession } from "../../services";
 import {
   getDiscordConfig,
   updateBotConfig,
 } from "../../functions/requests/clans/discordbot";
+import { closeSession } from "../../functions/services";
 
 const DiscordConfig = ({ clanid, onClose, onError }) => {
   const { t } = useTranslation();

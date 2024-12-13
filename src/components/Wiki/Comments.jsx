@@ -1,6 +1,6 @@
 import React from "react";
 import Giscus from "@giscus/react";
-import { getStoredItem } from "../../services";
+import { getStoredItem } from "../../functions/services";
 import { isDarkMode } from "../../functions/utils";
 
 const Comments = ({ name }) => {

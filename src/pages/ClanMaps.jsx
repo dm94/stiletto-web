@@ -1,13 +1,17 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { closeSession, getMapNames, getStoredItem } from "../services";
 import ModalMessage from "../components/ModalMessage";
 import ClanMapItem from "../components/ClanMaps/ClanMapItem";
 import ResourceMap from "../components/ClanMaps/ResourceMap";
 import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
 import { getDomain } from "../functions/utils";
 import { getMaps, createMap } from "../functions/requests/maps";
+import {
+  closeSession,
+  getMapNames,
+  getStoredItem,
+} from "../functions/services";
 
 const ClanMaps = () => {
   const { t } = useTranslation();

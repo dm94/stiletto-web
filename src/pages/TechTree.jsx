@@ -6,7 +6,7 @@ import {
   getUserProfile,
   getStoredItem,
   storeItem,
-} from "../services";
+} from "../functions/services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";

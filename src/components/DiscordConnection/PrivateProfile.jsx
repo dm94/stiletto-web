@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { getUserProfile, closeSession, getStoredItem } from "../../services";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";
@@ -12,6 +11,11 @@ import { getDomain } from "../../functions/utils";
 import { deleteUser, addNick } from "../../functions/requests/users";
 import { leaveClan } from "../../functions/requests/clan";
 import { supportedLanguages } from "../../config/languages";
+import {
+  closeSession,
+  getUserProfile,
+  getStoredItem,
+} from "../../functions/services";
 
 const PrivateProfile = () => {
   const { t } = useTranslation();

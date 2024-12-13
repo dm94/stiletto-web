@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
-import { getStoredItem } from "../services";
+import { getStoredItem } from "../functions/services";
 import { supportedLanguages } from "../config/languages";
 
 const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {

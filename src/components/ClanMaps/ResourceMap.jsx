@@ -1,19 +1,18 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  updateResourceTime,
-  getMarkers,
-  getResources,
-  deleteResource,
-  createResource,
-  getStoredItem,
-} from "../../services";
+import { getMarkers, getStoredItem } from "../../functions/services";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
-import { editMap } from "../../functions/requests/maps";
 import "../../css/map-sidebar.min.css";
+import {
+  createResource,
+  deleteResource,
+  editMap,
+  updateResourceTime,
+  getResources,
+} from "../../functions/requests/maps";
 
 const ResourceMap = ({ map, onReturn }) => {
   const { t } = useTranslation();
@@ -59,20 +58,24 @@ const ResourceMap = ({ map, onReturn }) => {
     descriptionInput,
     lastHarvested
   ) => {
-    const response = await createResource(
-      map.mapid,
-      coordinateXInput,
-      coordinateYInput,
-      pass,
-      resourceTypeInput,
-      qualityInput,
-      descriptionInput,
-      lastHarvested
-    );
-    if (response.success) {
-      fetchData();
-    } else {
-      setError(response.message);
+    try {
+      const response = await createResource({
+        mapid: map?.mapid,
+        x: coordinateXInput,
+        y: coordinateYInput,
+        mappass: pass,
+        resourcetype: resourceTypeInput,
+        quality: qualityInput,
+        description: descriptionInput,
+        harvested: lastHarvested,
+      });
+      if (response.success) {
+        fetchData();
+      } else {
+        setError(response.message);
+      }
+    } catch {
+      setError("Error when connecting to the API");
     }
   };
 
@@ -94,11 +97,19 @@ const ResourceMap = ({ map, onReturn }) => {
   };
 
   const handleDeleteResource = async (resourceId, resourceToken) => {
-    const response = await deleteResource(map.mapid, resourceId, resourceToken);
-    if (response.success) {
-      fetchData();
-    } else {
-      setError(response.message);
+    try {
+      const response = await deleteResource(
+        map?.mapid,
+        resourceId,
+        resourceToken
+      );
+      if (response.success) {
+        fetchData();
+      } else {
+        setError(response.message);
+      }
+    } catch {
+      setError("Error when connecting to the API");
     }
   };
 
@@ -348,8 +359,12 @@ const ResourceMap = ({ map, onReturn }) => {
           resourcesInTheMap={resourcesInTheMap}
           deleteResource={handleDeleteResource}
           updateResource={(mapid, resourceid, token, date) => {
-            updateResourceTime(mapid, resourceid, token, date);
-            fetchData();
+            try {
+              updateResourceTime(mapid, resourceid, token, date);
+              fetchData();
+            } catch {
+              setError("Error when connecting to the API");
+            }
           }}
           changeInput={(x, y) => {
             setCoordinateXInput(x);

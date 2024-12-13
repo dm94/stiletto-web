@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getUserProfile, getStoredItem } from "../services";
+import { getUserProfile, getStoredItem } from "../functions/services";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanListItem from "../components/ClanList/ClanListItem";
 import ModalMessage from "../components/ModalMessage";

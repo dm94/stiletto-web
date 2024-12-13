@@ -7,7 +7,7 @@ import * as serviceWorker from "./serviceWorkerRegistration";
 import CookieConsent from "./components/CookieConsent";
 import Menu from "./components/Menu";
 import ChangeLanguageModal from "./components/ChangeLanguageModal";
-import { getStoredItem, storeItem } from "./services";
+import { getStoredItem, storeItem } from "./functions/services";
 import Routes from "./router";
 import { usePageTracking } from "./page-tracking";
 import { isDarkMode } from "./functions/utils";

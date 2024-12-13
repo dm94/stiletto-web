@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import queryString from "query-string";
-import { getItems } from "../services";
+import { getItems } from "../functions/services";
 import ModalMessage from "../components/ModalMessage";
 import Items from "../components/Crafter/Items";
 import SelectedItem from "../components/Crafter/SelectedItem";

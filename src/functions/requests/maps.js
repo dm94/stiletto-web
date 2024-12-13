@@ -111,3 +111,94 @@ export const deleteMap = async (mapid) => {
     throw new Error("Error when connecting to the API");
   }
 }
+
+export const createResource = async (
+  { mapid,
+    x,
+    y,
+    mappass,
+    resourcetype,
+    quality,
+    description,
+    harvested },
+) => {
+  const params = new URLSearchParams({
+    mapid,
+    resourcetype,
+    quality,
+    x,
+    y,
+    description,
+    mappass,
+    harvested,
+  });
+
+  try {
+    return await fetch(
+      `${config.REACT_APP_API_URL}/maps/${mapid}/resources?${params}`,
+      {
+        method: "POST"
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+};
+
+export const deleteResource = async (mapId, resourceId, token) => {
+  try {
+    const params = new URLSearchParams({
+      token,
+    });
+
+    return await fetch(
+      `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}?${params}`,
+      {
+        method: "DELETE"
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+};
+
+export const updateResourceTime = async (mapId, resoruceId, token, harvested) => {
+  try {
+    const params = new URLSearchParams({
+      token,
+      harvested,
+    });
+
+    return await fetch(
+      `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resoruceId}?${params}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${getStoredItem("token")}`,
+        }
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+};
+
+export const getResources = async (mapId, mappass) => {
+  try {
+    const params = new URLSearchParams({
+      mappass
+    });
+
+    return await fetch(
+      `${config.REACT_APP_API_URL}/maps/${mapId}/resources?${params}`,
+      {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${getStoredItem("token")}`,
+        }
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+};

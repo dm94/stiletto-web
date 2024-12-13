@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { closeSession, getStoredItem } from "../services";
 import ClusterList from "./ClusterList";
 import { config } from "../config/config";
 import { updateClan, createClan } from "../functions/requests/clan";
+import { closeSession, getStoredItem } from "../functions/services";
 
 const ClanConfig = ({ clanid, onClose, onError }) => {
   const { t } = useTranslation();

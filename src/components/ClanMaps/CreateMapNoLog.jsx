@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { getMapNames } from "../../services";
+import { getMapNames } from "../../functions/services";
 import CreateMapPanel from "./CreateMapPanel";
 import { getDomain } from "../../functions/utils";
 import { createMap as createMapRequest } from "../../functions/requests/maps";

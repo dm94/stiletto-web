@@ -5,12 +5,12 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import queryString from "query-string";
 import {
-  getMembers,
   getItems,
   getUserProfile,
   getHasPermissions,
   getStoredItem,
-} from "../services";
+  getCachedMembers,
+} from "../functions/services";
 import Pagination from "../components/Pagination";
 import WalkerListItem from "../components/WalkerList/WalkerListItem";
 import { getDomain } from "../functions/utils";
@@ -158,7 +158,7 @@ const WalkerList = (props) => {
 
     const loadMembersAndItems = async () => {
       const [membersResponse, itemsResponse] = await Promise.all([
-        getMembers(),
+        getCachedMembers(),
         getItems(),
       ]);
 

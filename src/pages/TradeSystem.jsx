@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getItems, getStoredItem } from "../services";
+import { getItems, getStoredItem } from "../functions/services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";

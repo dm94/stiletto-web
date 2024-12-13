@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Others from "./Others";
-import { getStoredItem } from "../services";
+import { getStoredItem } from "../functions/services";
 import { getDomain } from "../functions/utils";
 import { Link } from "react-router-dom";
 

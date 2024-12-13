@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanSelect from "../components/Diplomacy/ClanSelect";
-import { getUserProfile, getHasPermissions } from "../services";
+import { getUserProfile, getHasPermissions } from "../functions/services";
 import { getDomain } from "../functions/utils";
 import { config } from "../config/config";
 import {

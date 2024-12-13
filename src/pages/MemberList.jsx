@@ -1,13 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import {
-  getUserProfile,
-  closeSession,
-  getHasPermissions,
-  getMembers,
-  getStoredItem,
-} from "../services";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanConfig from "../components/ClanConfig";
@@ -21,6 +14,13 @@ import { config } from "../config/config";
 import { getRequests } from "../functions/requests/clans/requests";
 import { updateMember } from "../functions/requests/clans/members";
 import { deleteClan } from "../functions/requests/clan";
+import {
+  closeSession,
+  getCachedMembers,
+  getUserProfile,
+  getHasPermissions,
+  getStoredItem,
+} from "../functions/services";
 
 const MemberList = () => {
   const { t } = useTranslation();
@@ -46,7 +46,7 @@ const MemberList = () => {
   const [memberForEdit, setMemberForEdit] = useState(false);
 
   const updateMembers = useCallback(async () => {
-    const response = await getMembers();
+    const response = await getCachedMembers();
     if (response.success) {
       setMembers(response.message);
       setIsLoaded(true);
