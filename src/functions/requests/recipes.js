@@ -8,7 +8,7 @@ export const addRecipe = async (items) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        items: JSON.stringify(items),
+        items: items,
       }),
     });
 
