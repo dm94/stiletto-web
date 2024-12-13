@@ -6,7 +6,7 @@ import ClanMapItem from "../components/ClanMaps/ClanMapItem";
 import ResourceMap from "../components/ClanMaps/ResourceMap";
 import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
 import { getDomain } from "../functions/utils";
-import { getMaps, createMap } from "../functions/requests/maps";
+import { getMaps, createMap, deleteMap } from "../functions/requests/maps";
 import {
   closeSession,
   getMapNames,
@@ -80,7 +80,7 @@ const ClanMaps = () => {
     ));
   };
 
-  const deleteMap = async (mapid) => {
+  const handleDeleteMap = async (mapid) => {
     try {
       const response = await deleteMap(mapid);
 
@@ -209,7 +209,7 @@ const ClanMaps = () => {
                 <button
                   type="button"
                   className="btn btn-outline-danger"
-                  onClick={() => deleteMap(state.idMapDeleteModal)}
+                  onClick={() => handleDeleteMap(state.idMapDeleteModal)}
                 >
                   {t("Delete")}
                 </button>

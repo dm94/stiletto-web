@@ -37,7 +37,7 @@ const Crafter = ({ location }) => {
 
     if (recipe?.length) {
       try {
-        const response = getRecipe(recipe);
+        const response = await getRecipe(recipe);
 
         if (response.status === 200) {
           const data = await response.json();

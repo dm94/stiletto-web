@@ -126,7 +126,7 @@ const MemberList = () => {
   const acceptMember = async () => {
     setShowRequestModal(false);
     if (!requestData) {
-      return false;
+      return;
     }
 
     try {
@@ -161,7 +161,7 @@ const MemberList = () => {
   const rejectMember = async () => {
     setShowRequestModal(false);
     if (!requestData) {
-      return false;
+      return;
     }
 
     try {
