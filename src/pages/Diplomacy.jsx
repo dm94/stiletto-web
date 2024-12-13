@@ -1,283 +1,183 @@
-import React, { Component } from "react";
-import ModalMessage from "../components/ModalMessage";
-import { withTranslation } from "react-i18next";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Axios from "axios";
-import { getUserProfile, getHasPermissions, getStoredItem } from "../services";
+import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanSelect from "../components/Diplomacy/ClanSelect";
+import { getUserProfile, getHasPermissions } from "../services";
 import { getDomain } from "../functions/utils";
 import { config } from "../config/config";
-class Diplomacy extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      clanid: null,
-      isLoaded: false,
-      error: null,
-      listOfRelations: null,
-      typedInput: 0,
-      clanFlagInput: "",
-      clanFlagSymbolInput: "C1",
-      nameOtherClanInput: "",
-      isLeader: false,
-      hasPermissions: false,
-    };
-  }
+import {
+  getRelationships,
+  createRelationship,
+  deleteRelationship,
+} from "../functions/requests/clans/relationships";
 
-  async componentDidMount() {
-    const userProfile = await getUserProfile();
-    let clanid = null;
-    if (userProfile.success) {
-      clanid = userProfile.message.clanid;
-      this.setState({
-        clanid: userProfile.message.clanid,
-        isLeader:
-          userProfile.message.discordid === userProfile.message.leaderid,
-      });
-    } else {
-      this.setState({ error: userProfile.message });
-    }
+const Diplomacy = () => {
+  const { t } = useTranslation();
+  const [clanId, setClanId] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState("");
+  const [listOfRelations, setListOfRelations] = useState([]);
+  const [typedInput, setTypedInput] = useState(0);
+  const [clanFlagInput, setClanFlagInput] = useState("");
+  const [clanFlagSymbolInput, setClanFlagSymbolInput] = useState("C1");
+  const [nameOtherClanInput, setNameOtherClanInput] = useState("");
+  const [isLeader, setIsLeader] = useState(false);
+  const [hasPermissions, setHasPermissions] = useState(false);
 
-    if (clanid != null) {
-      Axios.get(
-        `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships`,
-        {
-          headers: {
-            Authorization: `Bearer ${getStoredItem("token")}`,
-          },
-        }
-      )
-        .then((response) => {
-          if (response.status === 202 || response.status === 200) {
-            this.setState({
-              listOfRelations: response.data,
-              isLoaded: true,
-            });
-          } else if (response.status === 405) {
-            this.setState({ error: "Unauthorized" });
-          } else if (response.status === 503) {
-            this.setState({ error: "Error connecting to database" });
-          }
-        })
-        .catch(() => {
-          this.setState({ error: "Error when connecting to the API" });
-        });
-
-      if (this.state.isLeader) {
-        this.setState({ hasPermissions: true });
-      } else {
-        const hasPermissions = await getHasPermissions("diplomacy");
-        this.setState({ hasPermissions: hasPermissions });
+  useEffect(() => {
+    const initializeComponent = async () => {
+      const userProfile = await getUserProfile();
+      if (!userProfile.success) {
+        setError(userProfile.message);
+        return;
       }
-    }
-  }
 
-  createRelationship = (event) => {
-    event.preventDefault();
-    const options = {
-      method: "post",
-      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships`,
-      params: {
-        nameotherclan: this.state.nameOtherClanInput,
-        clanflag: this.state.clanFlagInput,
-        typed: this.state.typedInput,
-        symbol: this.state.clanFlagSymbolInput,
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
+      const { clanid, discordid, leaderid } = userProfile.message;
+      setClanId(clanid);
+      setIsLeader(discordid === leaderid);
 
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 201) {
-          this.componentDidMount();
+      if (!clanid) {
+        return;
+      }
+
+      try {
+        const response = await getRelationships(clanid);
+
+        if (response.ok) {
+          const data = await response.json();
+          setListOfRelations(data);
+          setIsLoaded(true);
         } else if (response.status === 405) {
-          this.setState({ error: "Method Not Allowed" });
+          setError("Unauthorized");
         } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
+          setError("Error connecting to database");
         }
-      })
-      .catch(() => {
-        this.setState({ error: "Try again later" });
-      });
-  };
+      } catch {
+        setError("Error when connecting to the API");
+      }
 
-  deleteDiplomacy = (id) => {
-    const options = {
-      method: "delete",
-      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/relationships/${id}`,
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+      if (discordid === leaderid) {
+        setHasPermissions(true);
+      } else {
+        const permissions = await getHasPermissions("diplomacy");
+        setHasPermissions(permissions);
+      }
     };
 
-    Axios.request(options)
-      .then((response) => {
-        if (response.status === 204) {
-          this.componentDidMount();
-        } else if (response.status === 401) {
-          this.setState({ error: "Unauthorized" });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Try again later" });
+    initializeComponent();
+  }, []);
+
+  const handleCreateRelationship = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await createRelationship(clanId, {
+        nameotherclan: nameOtherClanInput,
+        clanflag: clanFlagInput,
+        typed: typedInput,
+        symbol: clanFlagSymbolInput,
       });
+
+      if (response.status === 201) {
+        window.location.reload();
+      } else if (response.status === 405) {
+        setError("Method Not Allowed");
+      } else if (response.status === 503) {
+        setError("Error connecting to database");
+      }
+    } catch {
+      setError("Try again later");
+    }
   };
 
-  listOfAllies() {
-    if (this.state.listOfRelations != null) {
-      const allies = this.state.listOfRelations.filter(
-        (r) => r.typed == 1 || r.typed == 31
-      );
+  const handleDeleteDiplomacy = async (relationShipId) => {
+    try {
+      const response = await deleteRelationship(clanId, relationShipId);
 
-      return allies.map((d) => (
-        <div key={`ally${d.id}`} className="col-12">
-          <ClanSelect
-            clan={d}
-            leader={this.state.isLeader || this.state.hasPermissions}
-            onDelete={this.deleteDiplomacy}
-          />
-        </div>
-      ));
+      if (response.status === 204) {
+        window.location.reload();
+      } else if (response.status === 401) {
+        setError("Unauthorized");
+      } else if (response.status === 503) {
+        setError("Error connecting to database");
+      }
+    } catch {
+      setError("Try again later");
     }
-  }
+  };
 
-  listOfEnemies() {
-    if (this.state.listOfRelations != null) {
-      const enemies = this.state.listOfRelations.filter(
-        (r) => r.typed == 2 || r.typed == 32
-      );
-
-      return enemies.map((d) => (
-        <div key={`enemy${d.id}`} className="col-12">
-          <ClanSelect
-            clan={d}
-            leader={this.state.isLeader || this.state.hasPermissions}
-            onDelete={this.deleteDiplomacy}
-          />
-        </div>
-      ));
+  const listOfAllies = () => {
+    if (!listOfRelations.length) {
+      return "";
     }
-  }
 
-  listOfNAP() {
-    if (this.state.listOfRelations != null) {
-      const nap = this.state.listOfRelations.filter(
-        (r) => r.typed == 0 || r.typed == 30
-      );
+    const allies = listOfRelations.filter(
+      (r) => r.typed === 1 || r.typed === 31
+    );
 
-      return nap.map((d) => (
-        <div key={`npa${d.id}`} className="col-12">
-          <ClanSelect
-            clan={d}
-            leader={this.state.isLeader || this.state.hasPermissions}
-            onDelete={this.deleteDiplomacy}
-          />
-        </div>
-      ));
+    return allies.map((d) => (
+      <div key={`ally${d.id}`} className="col-12">
+        <ClanSelect
+          clan={d}
+          leader={isLeader || hasPermissions}
+          onDelete={handleDeleteDiplomacy}
+        />
+      </div>
+    ));
+  };
+
+  const listOfEnemies = () => {
+    if (!listOfRelations.length) {
+      return "";
     }
-  }
 
-  createNewRelationship(t) {
-    if (this.state.isLeader || this.state.hasPermissions) {
-      return (
-        <div className="col-md-12">
-          <div className="card mb-4 shadow-sm">
-            <div className="card-body">
-              <form onSubmit={this.createRelationship}>
-                <div className="row">
-                  <div className="form-group col">
-                    <label htmlFor="typedInput">{t("Type")}</label>
-                    <select
-                      id="typedInput"
-                      className="custom-select"
-                      value={this.state.typedInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          typedInput: evt.target.value,
-                        })
-                      }
-                    >
-                      <option value="0">{t("NAP or Settler")}</option>
-                      <option value="1">{t("Ally")}</option>
-                      <option value="2">{t("War")}</option>
-                    </select>
-                  </div>
-                  <div className="form-group col">
-                    <label htmlFor="flag_color">{t("Flag Color")}</label>
-                    <input
-                      type="color"
-                      className="form-control"
-                      id="flag_color"
-                      name="flag_color"
-                      value={this.state.clanFlagInput}
-                      onChange={(evt) =>
-                        this.setState({
-                          clanFlagInput: evt.target.value,
-                        })
-                      }
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="form-group">
-                  <label htmlFor="nameOtherClanInput">{t("Clan Name")}</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="nameOtherClanInput"
-                    name="nameOtherClanInput"
-                    maxLength="20"
-                    value={this.state.nameOtherClanInput}
-                    onChange={(evt) =>
-                      this.setState({
-                        nameOtherClanInput: evt.target.value,
-                      })
-                    }
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="sigilClanFlagInput">{t("Symbol")}</label>
-                  <div className="col-12">
-                    <div className="row">{this.symbolsList()}</div>
-                  </div>
-                </div>
-                <button
-                  className="btn btn-lg btn-outline-info btn-block"
-                  type="submit"
-                  value="Submit"
-                >
-                  {t("Create a relationship")}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      );
-    }
-  }
+    const enemies = listOfRelations.filter(
+      (r) => r.typed === 2 || r.typed === 32
+    );
 
-  symbolsList() {
-    const symbols = [];
-    for (let i = 1; i < 31; i++) {
-      symbols.push(`C${i}`);
+    return enemies.map((d) => (
+      <div key={`enemy${d.id}`} className="col-12">
+        <ClanSelect
+          clan={d}
+          leader={isLeader || hasPermissions}
+          onDelete={handleDeleteDiplomacy}
+        />
+      </div>
+    ));
+  };
+
+  const listOfNAP = () => {
+    if (!listOfRelations.length) {
+      return "";
     }
+
+    const nap = listOfRelations.filter((r) => r.typed === 0 || r.typed === 30);
+
+    return nap.map((d) => (
+      <div key={`npa${d.id}`} className="col-12">
+        <ClanSelect
+          clan={d}
+          leader={isLeader || hasPermissions}
+          onDelete={handleDeleteDiplomacy}
+        />
+      </div>
+    ));
+  };
+
+  const symbolsList = () => {
+    const symbols = Array.from({ length: 30 }, (_, i) => `C${i + 1}`);
     return symbols.map((symbol) => (
-      <div
-        role="button"
+      <button
+        type="button"
         className="col-1"
         key={`symbol-${symbol}`}
-        onClick={() => this.setState({ clanFlagSymbolInput: symbol })}
+        onClick={() => setClanFlagSymbolInput(symbol)}
       >
         <img
           src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
           className={
-            symbol === this.state.clanFlagSymbolInput
+            symbol === clanFlagSymbolInput
               ? "img-fluid img-thumbnail"
               : "img-fluid"
           }
@@ -285,92 +185,162 @@ class Diplomacy extends Component {
           id={`symbol-img-${symbol}`}
         />
         <p className="text-center">{symbol}</p>
-      </div>
+      </button>
     ));
-  }
+  };
 
-  render() {
-    const { t } = this.props;
-    if (this.state.error) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: this.state.error,
-            redirectPage: "/profile",
-          }}
-        />
-      );
+  const createNewRelationship = () => {
+    if (!isLeader && !hasPermissions) {
+      return "";
     }
-    if (this.state.clanid === null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: "You need to have a clan to access this section",
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    }
-    if (!this.state.isLoaded) {
-      return <LoadingScreen />;
-    }
+
     return (
-      <div className="container-fluid">
-        <Helmet>
-          <title>Clan Diplomacy - Stiletto for Last Oasis</title>
-          <meta
-            name="description"
-            content="View your clan's list of allies, enemies and NAP"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta
-            name="twitter:title"
-            content="Clan Diplomacy - Stiletto for Last Oasis"
-          />
-          <meta
-            name="twitter:description"
-            content="View your clan's list of allies, enemies and NAP"
-          />
-          <meta
-            name="twitter:image"
-            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
-          />
-          <link rel="canonical" href={`${getDomain()}/diplomacy`} />
-        </Helmet>
-        <div className="row">
-          {this.createNewRelationship(t)}
-          <div className="col-md-4">
-            <div className="card mb-4 shadow-sm border-success">
-              <div className="card-header bg-success text-white text-center">
-                {t("Allies")}
+      <div className="col-md-12">
+        <div className="card mb-4 shadow-sm">
+          <div className="card-body">
+            <form onSubmit={handleCreateRelationship}>
+              <div className="row">
+                <div className="form-group col">
+                  <label htmlFor="typedInput">{t("Type")}</label>
+                  <select
+                    id="typedInput"
+                    className="custom-select"
+                    value={typedInput}
+                    onChange={(evt) => setTypedInput(evt.target.value)}
+                  >
+                    <option value="0">{t("NAP or Settler")}</option>
+                    <option value="1">{t("Ally")}</option>
+                    <option value="2">{t("War")}</option>
+                  </select>
+                </div>
+                <div className="form-group col">
+                  <label htmlFor="flag_color">{t("Flag Color")}</label>
+                  <input
+                    type="color"
+                    className="form-control"
+                    id="flag_color"
+                    name="flag_color"
+                    value={clanFlagInput}
+                    onChange={(evt) => setClanFlagInput(evt.target.value)}
+                    required
+                  />
+                </div>
               </div>
-              <div className="card-body">
-                <div className="row">{this.listOfAllies()}</div>
+              <div className="form-group">
+                <label htmlFor="nameOtherClanInput">{t("Clan Name")}</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="nameOtherClanInput"
+                  name="nameOtherClanInput"
+                  maxLength="20"
+                  value={nameOtherClanInput}
+                  onChange={(evt) => setNameOtherClanInput(evt.target.value)}
+                  required
+                />
               </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card mb-4 shadow-sm border-warning">
-              <div className="card-header bg-warning text-dark text-center">
-                {t("NAP or Settlers")}
+              <div className="form-group">
+                <label htmlFor="sigilClanFlagInput">{t("Symbol")}</label>
+                <div className="col-12">
+                  <div className="row">{symbolsList()}</div>
+                </div>
               </div>
-              <div className="card-body">{this.listOfNAP()}</div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card mb-4 shadow-sm border-danger">
-              <div className="card-header bg-danger text-white text-center">
-                {t("War")}
-              </div>
-              <div className="card-body">{this.listOfEnemies()}</div>
-            </div>
+              <button
+                className="btn btn-lg btn-outline-info btn-block"
+                type="submit"
+                value="Submit"
+              >
+                {t("Create a relationship")}
+              </button>
+            </form>
           </div>
         </div>
       </div>
     );
-  }
-}
+  };
 
-export default withTranslation()(Diplomacy);
+  if (error) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: error,
+          redirectPage: "/profile",
+        }}
+      />
+    );
+  }
+
+  if (!clanId) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: "You need to have a clan to access this section",
+          redirectPage: "/profile",
+        }}
+      />
+    );
+  }
+
+  if (!isLoaded) {
+    return <LoadingScreen />;
+  }
+
+  return (
+    <div className="container-fluid">
+      <Helmet>
+        <title>Clan Diplomacy - Stiletto for Last Oasis</title>
+        <meta
+          name="description"
+          content="View your clan's list of allies, enemies and NAP"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Clan Diplomacy - Stiletto for Last Oasis"
+        />
+        <meta
+          name="twitter:description"
+          content="View your clan's list of allies, enemies and NAP"
+        />
+        <meta
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+        />
+        <link rel="canonical" href={`${getDomain()}/diplomacy`} />
+      </Helmet>
+      <div className="row">
+        {createNewRelationship()}
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm border-success">
+            <div className="card-header bg-success text-white text-center">
+              {t("Allies")}
+            </div>
+            <div className="card-body">
+              <div className="row">{listOfAllies()}</div>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm border-warning">
+            <div className="card-header bg-warning text-dark text-center">
+              {t("NAP or Settlers")}
+            </div>
+            <div className="card-body">{listOfNAP()}</div>
+          </div>
+        </div>
+        <div className="col-md-4">
+          <div className="card mb-4 shadow-sm border-danger">
+            <div className="card-header bg-danger text-white text-center">
+              {t("War")}
+            </div>
+            <div className="card-body">{listOfEnemies()}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Diplomacy;

@@ -12,14 +12,10 @@ export const createMap = async (mapNameInput, mapDateInput, mapSelectInput) => {
     : {};
 
   try {
-    const response = await fetch(url, {
+    return await fetch(url, {
       method: "POST",
       headers,
     });
-
-    if (response.ok) {
-      return await response.json();
-    }
   } catch {
     throw new Error("Error when connecting to the API");
   }
@@ -85,5 +81,33 @@ export const getMap = async (mapid, mappass) => {
       success: false,
       message: "Error when connecting to the API",
     }
+  }
+}
+
+export const getMaps = async () => {
+  try {
+    return await fetch(`${config.REACT_APP_API_URL}/maps`, {
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    });
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+}
+
+export const deleteMap = async (mapid) => {
+  try {
+    return await fetch(
+      `${config.REACT_APP_API_URL}/maps/${mapid}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${getStoredItem("token")}`,
+        },
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
   }
 }

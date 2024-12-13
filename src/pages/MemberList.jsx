@@ -1,8 +1,6 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React, { useState, useEffect, useCallback } from "react";
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Axios from "axios";
-
 import {
   getUserProfile,
   closeSession,
@@ -20,340 +18,287 @@ import MemberPermissionsConfig from "../components/MemberList/MemberPermissionsC
 import { sendNotification } from "../functions/broadcast";
 import { getDomain } from "../functions/utils";
 import { config } from "../config/config";
+import { getRequests } from "../functions/requests/clans/requests";
+import { updateMember } from "../functions/requests/clans/members";
+import { deleteClan } from "../functions/requests/clan";
 
-class MemberList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoaded: false,
-      members: null,
-      requestMembers: null,
-      error: null,
-      isLoadedRequestList: false,
-      redirectMessage: null,
-      selectNewOwner: getStoredItem("discordid"),
-      showRequestModal: false,
-      requestData: null,
-      isLeader: false,
-      showBotConfig: false,
-      clanid: null,
-      showClanConfig: false,
-      hasBotPermissions: false,
-      hasRequestPermissions: false,
-      hasKickMembersPermisssions: false,
-      memberForEdit: null,
-    };
-  }
+const MemberList = () => {
+  const { t } = useTranslation();
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [members, setMembers] = useState(false);
+  const [requestMembers, setRequestMembers] = useState(false);
+  const [error, setError] = useState(false);
+  const [isLoadedRequestList, setIsLoadedRequestList] = useState(false);
+  const [redirectMessage, setRedirectMessage] = useState(false);
+  const [selectNewOwner, setSelectNewOwner] = useState(
+    getStoredItem("discordid")
+  );
+  const [showRequestModal, setShowRequestModal] = useState(false);
+  const [requestData, setRequestData] = useState(false);
+  const [isLeader, setIsLeader] = useState(false);
+  const [showBotConfig, setShowBotConfig] = useState(false);
+  const [clanid, setClanid] = useState(false);
+  const [showClanConfig, setShowClanConfig] = useState(false);
+  const [hasBotPermissions, setHasBotPermissions] = useState(false);
+  const [hasRequestPermissions, setHasRequestPermissions] = useState(false);
+  const [hasKickMembersPermisssions, setHasKickMembersPermisssions] =
+    useState(false);
+  const [memberForEdit, setMemberForEdit] = useState(false);
 
-  async componentDidMount() {
-    const userProfile = await getUserProfile();
-    if (userProfile.success) {
-      this.setState({
-        clanid: userProfile.message.clanid,
-        isLeader:
-          userProfile.message.discordid === userProfile.message.leaderid,
-      });
-    } else {
-      this.setState({ error: userProfile.message, isLoaded: true });
-      return;
-    }
-
-    this.updateMembers();
-
-    Axios.get(
-      `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/requests`,
-      {
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      }
-    )
-      .then((response) => {
-        if (response.status === 202) {
-          this.setState({ requestMembers: response.data });
-        } else if (response.status === 405 || response.status === 401) {
-          closeSession();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-        this.setState({ isLoadedRequestList: true });
-      })
-      .catch(() => {
-        this.setState({
-          error: "Error when connecting to the API",
-        });
-      });
-
-    const hasBotPermissions = await getHasPermissions("bot");
-    const hasRequestPermissions = await getHasPermissions("request");
-    const hasKickMembersPermisssions = await getHasPermissions("kickmembers");
-    this.setState({
-      hasBotPermissions: hasBotPermissions,
-      hasRequestPermissions: hasRequestPermissions,
-      hasKickMembersPermisssions: hasKickMembersPermisssions,
-    });
-  }
-
-  async updateMembers() {
+  const updateMembers = useCallback(async () => {
     const response = await getMembers();
     if (response.success) {
-      this.setState({ members: response.message, isLoaded: true });
+      setMembers(response.message);
+      setIsLoaded(true);
     } else {
-      this.setState({ error: response.message, isLoaded: true });
+      setError(response.message);
+      setIsLoaded(true);
     }
-  }
+  }, []);
 
-  kickMember = (memberdiscordid) => {
-    const options = {
-      method: "put",
-      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${memberdiscordid}`,
-      params: {
-        action: "kick",
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
+  useEffect(() => {
+    const initializeComponent = async () => {
+      const userProfile = await getUserProfile();
+      if (userProfile.success) {
+        setClanid(userProfile.message.clanid);
+        setIsLeader(
+          userProfile.message.discordid === userProfile.message.leaderid
+        );
+      } else {
+        setError(userProfile.message);
+        setIsLoaded(true);
+        return;
+      }
 
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList");
-        localStorage.removeItem("memberList-lastCheck");
-        sessionStorage.removeItem("memberList-lastCheck");
+      await updateMembers();
+
+      try {
+        const response = await getRequests(userProfile.message.clanid);
+
         if (response.status === 202) {
-          const members = this.state.members.filter(
-            (m) => m.discordid !== memberdiscordid
-          );
-          this.setState({ members: members });
+          const data = await response.json();
+          setRequestMembers(data);
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
+          setError("You don't have access here, try to log in again");
         } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
+          setError("Error connecting to database");
         }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+        setIsLoadedRequestList(true);
+      } catch {
+        setError("Error when connecting to the API");
+      }
+
+      const botPermissions = await getHasPermissions("bot");
+      const requestPermissions = await getHasPermissions("request");
+      const kickPermissions = await getHasPermissions("kickmembers");
+
+      setHasBotPermissions(botPermissions);
+      setHasRequestPermissions(requestPermissions);
+      setHasKickMembersPermisssions(kickPermissions);
+    };
+
+    initializeComponent();
+  }, [updateMembers]);
+
+  const kickMember = async (memberdiscordid) => {
+    try {
+      const response = await updateMember(clanid, memberdiscordid, "kick");
+
+      localStorage.removeItem("memberList");
+      sessionStorage.removeItem("memberList");
+      localStorage.removeItem("memberList-lastCheck");
+      sessionStorage.removeItem("memberList-lastCheck");
+
+      if (response.status === 202) {
+        setMembers(members.filter((m) => m.discordid !== memberdiscordid));
+      } else if (response.status === 405 || response.status === 401) {
+        closeSession();
+        setError("You don't have access here, try to log in again");
+      } else if (response.status === 503) {
+        setError("Error connecting to database");
+      }
+    } catch {
+      setError("Error when connecting to the API");
+    }
   };
 
-  acceptMember = () => {
-    this.setState({ showRequestModal: false });
-    if (this.state.requestData == null) {
-      return;
+  const acceptMember = async () => {
+    setShowRequestModal(false);
+    if (!requestData) {
+      return false;
     }
 
-    const options = {
-      method: "put",
-      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
-      params: {
-        action: "accept",
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
+    try {
+      const response = await updateMember(
+        clanid,
+        requestData.discordid,
+        "accept"
+      );
 
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList-lastCheck");
-        localStorage.removeItem("memberList-lastCheck");
-        if (response.status === 202) {
-          const requestMembers = this.state.requestMembers.filter(
-            (m) => m.discordid !== this.state.requestData.discordid
-          );
-          this.setState({ requestMembers: requestMembers });
-          this.componentDidMount();
-        } else if (response.status === 405 || response.status === 401) {
-          closeSession();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-        this.setState({ requestData: null });
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
-  };
+      localStorage.removeItem("memberList");
+      sessionStorage.removeItem("memberList");
+      sessionStorage.removeItem("memberList-lastCheck");
+      localStorage.removeItem("memberList-lastCheck");
 
-  rejectMember = () => {
-    this.setState({ showRequestModal: false });
-    if (this.state.requestData == null) {
-      return;
+      if (response.status === 202) {
+        setRequestMembers(
+          requestMembers.filter((m) => m.discordid !== requestData.discordid)
+        );
+        updateMembers();
+      } else if (response.status === 405 || response.status === 401) {
+        closeSession();
+        setError("You don't have access here, try to log in again");
+      } else if (response.status === 503) {
+        setError("Error connecting to database");
+      }
+      setRequestData(false);
+    } catch {
+      setError("Error when connecting to the API");
     }
-    const options = {
-      method: "put",
-      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/requests/${this.state.requestData.discordid}`,
-      params: {
-        action: "reject",
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
-
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList-lastCheck");
-        localStorage.removeItem("memberList-lastCheck");
-        if (response.status === 202) {
-          const requestMembers = this.state.requestMembers.filter(
-            (m) => m.discordid !== this.state.requestData.discordid
-          );
-          this.setState({ requestMembers: requestMembers });
-          this.componentDidMount();
-        } else if (response.status === 405 || response.status === 401) {
-          closeSession();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-        this.setState({ requestData: null });
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
   };
 
-  deleteClan = () => {
-    const options = {
-      method: "delete",
-      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}`,
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
+  const rejectMember = async () => {
+    setShowRequestModal(false);
+    if (!requestData) {
+      return false;
+    }
 
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("profile");
-        sessionStorage.removeItem("profile");
-        sessionStorage.removeItem("memberList-lastCheck");
-        sessionStorage.removeItem("memberList");
-        localStorage.removeItem("memberList");
-        localStorage.removeItem("memberList-lastCheck");
-        if (response.status === 204) {
-          this.setState({ redirectMessage: "Clan deleted correctly" });
-        } else if (response.status === 405) {
-          closeSession();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+    try {
+      const response = await updateMember(
+        clanid,
+        requestData.discordid,
+        "reject"
+      );
+
+      localStorage.removeItem("memberList");
+      sessionStorage.removeItem("memberList");
+      sessionStorage.removeItem("memberList-lastCheck");
+      localStorage.removeItem("memberList-lastCheck");
+
+      if (response.status === 202) {
+        setRequestMembers(
+          requestMembers.filter((m) => m.discordid !== requestData.discordid)
+        );
+        updateMembers();
+      } else if (response.status === 405 || response.status === 401) {
+        closeSession();
+        setError("You don't have access here, try to log in again");
+      } else if (response.status === 503) {
+        setError("Error connecting to database");
+      }
+      setRequestData(false);
+    } catch {
+      setError("Error when connecting to the API");
+    }
   };
 
-  changeOwner = () => {
-    const options = {
-      method: "put",
-      url: `${config.REACT_APP_API_URL}/clans/${this.state.clanid}/members/${this.state.selectNewOwner}`,
-      params: {
-        action: "owner",
-      },
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    };
+  const handleDeleteClan = async () => {
+    try {
+      const response = await deleteClan(clanid);
 
-    Axios.request(options)
-      .then((response) => {
-        localStorage.removeItem("profile");
-        sessionStorage.removeItem("profile");
-        localStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList");
-        sessionStorage.removeItem("memberList-lastCheck");
-        localStorage.removeItem("memberList-lastCheck");
-        if (response.status === 202) {
-          this.setState({ redirectMessage: "Clan updated correctly" });
-        } else if (response.status === 405 || response.status === 401) {
-          closeSession();
-          this.setState({
-            error: "You don't have access here, try to log in again",
-          });
-        } else if (response.status === 503) {
-          this.setState({ error: "Error connecting to database" });
-        }
-      })
-      .catch(() => {
-        this.setState({ error: "Error when connecting to the API" });
-      });
+      localStorage.removeItem("profile");
+      sessionStorage.removeItem("profile");
+      sessionStorage.removeItem("memberList-lastCheck");
+      sessionStorage.removeItem("memberList");
+      localStorage.removeItem("memberList");
+      localStorage.removeItem("memberList-lastCheck");
+
+      if (response.status === 204) {
+        setRedirectMessage("Clan deleted correctly");
+      } else if (response.status === 405) {
+        closeSession();
+        setError("You don't have access here, try to log in again");
+      } else if (response.status === 503) {
+        setError("Error connecting to database");
+      }
+    } catch {
+      setError("Error when connecting to the API");
+    }
   };
 
-  list() {
-    if (this.state.members != null) {
-      return this.state.members.map((member) => (
+  const changeOwner = async () => {
+    try {
+      const response = await fetch(
+        `${config.REACT_APP_API_URL}/clans/${clanid}/members/${selectNewOwner}?action=owner`,
+        {
+          method: "PUT",
+          headers: {
+            Authorization: `Bearer ${getStoredItem("token")}`,
+          },
+        }
+      );
+
+      localStorage.removeItem("profile");
+      sessionStorage.removeItem("profile");
+      localStorage.removeItem("memberList");
+      sessionStorage.removeItem("memberList");
+      sessionStorage.removeItem("memberList-lastCheck");
+      localStorage.removeItem("memberList-lastCheck");
+
+      if (response.status === 202) {
+        setRedirectMessage("Clan updated correctly");
+      } else if (response.status === 405 || response.status === 401) {
+        closeSession();
+        setError("You don't have access here, try to log in again");
+      } else if (response.status === 503) {
+        setError("Error connecting to database");
+      }
+    } catch {
+      setError("Error when connecting to the API");
+    }
+  };
+
+  const renderMemberList = () => {
+    if (members) {
+      return members.map((member) => (
         <MemberListItem
           key={member.discordid}
           member={member}
-          onKick={this.kickMember}
-          onClickEditPermissions={(discordid) =>
-            this.setState({ memberForEdit: discordid })
-          }
-          isLeader={this.state.isLeader}
-          hasPermissions={this.state.hasKickMembersPermisssions}
+          onKick={kickMember}
+          onClickEditPermissions={(discordid) => setMemberForEdit(discordid)}
+          isLeader={isLeader}
+          hasPermissions={hasKickMembersPermisssions}
         />
       ));
     }
-  }
+    return "";
+  };
 
-  requestList(t) {
-    if (this.state.isLoadedRequestList) {
-      if (
-        this.state.requestMembers != null &&
-        this.state.requestMembers.length > 0
-      ) {
-        return this.state.requestMembers.map((member) => (
+  const renderRequestList = () => {
+    if (isLoadedRequestList) {
+      if (requestMembers && requestMembers.length > 0) {
+        return requestMembers.map((member) => (
           <RequestMemberListItem
             key={member.discordid}
             member={member}
-            isLeader={this.state.isLeader || this.state.hasRequestPermissions}
-            onShowRequest={(r) =>
-              this.setState({ requestData: r, showRequestModal: true })
-            }
+            isLeader={isLeader || hasRequestPermissions}
+            onShowRequest={(r) => {
+              setRequestData(r);
+              setShowRequestModal(true);
+            }}
           />
         ));
-      } else {
-        return (
-          <tr>
-            <td colSpan="4" className="text-center">
-              {t("There are no pending requests")}
-            </td>
-          </tr>
-        );
       }
-    } else {
       return (
         <tr>
           <td colSpan="4" className="text-center">
-            {t("Loading the list of requests to enter the clan")}
+            {t("There are no pending requests")}
           </td>
         </tr>
       );
     }
-  }
+    return (
+      <tr>
+        <td colSpan="4" className="text-center">
+          {t("Loading the list of requests to enter the clan")}
+        </td>
+      </tr>
+    );
+  };
 
-  deleteClanButton(t) {
-    if (this.state.members != null && this.state.isLeader) {
+  const renderDeleteClanButton = () => {
+    if (members && isLeader) {
       return (
         <div className="col-xl-3">
           <div className="card mb-3">
@@ -367,7 +312,7 @@ class MemberList extends Component {
               <button
                 type="button"
                 className="btn btn-block btn-danger"
-                onClick={() => this.deleteClan()}
+                onClick={handleDeleteClan}
               >
                 {t("Delete")}
               </button>
@@ -376,10 +321,11 @@ class MemberList extends Component {
         </div>
       );
     }
-  }
+    return "";
+  };
 
-  transferOwnerPanel(t) {
-    if (this.state.members != null && this.state.isLeader) {
+  const renderTransferOwnerPanel = () => {
+    if (members && isLeader) {
       return (
         <div className="col-xl-3">
           <div className="card mb-3">
@@ -394,21 +340,21 @@ class MemberList extends Component {
               <select
                 id="selectNewOwner"
                 className="custom-select"
-                value={this.state.selectNewOwner}
-                onChange={(evt) =>
-                  this.setState({
-                    selectNewOwner: evt.target.value,
-                  })
-                }
+                value={selectNewOwner}
+                onChange={(evt) => setSelectNewOwner(evt.target.value)}
               >
-                {this.memberListOption()}
+                {members.map((member) => (
+                  <option key={member.discordid} value={member.discordid}>
+                    {member.discordtag}
+                  </option>
+                ))}
               </select>
             </div>
             <div className="card-footer">
               <button
                 type="button"
                 className="btn btn-block btn-danger"
-                onClick={() => this.changeOwner()}
+                onClick={changeOwner}
               >
                 {t("Change leader")}
               </button>
@@ -417,276 +363,235 @@ class MemberList extends Component {
         </div>
       );
     }
-  }
+    return "";
+  };
 
-  memberListOption() {
-    if (this.state.members != null) {
-      return this.state.members.map((member) => (
-        <option key={member.discordid} value={member.discordid}>
-          {member.discordtag}
-        </option>
-      ));
-    }
-  }
-
-  render() {
-    const { t } = this.props;
-    if (this.state.error) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: this.state.error,
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    } else if (this.state.redirectMessage) {
-      return (
-        <ModalMessage
-          message={{
-            isError: false,
-            text: this.state.redirectMessage,
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    }
-
-    if (!this.state.isLoaded) {
-      return <LoadingScreen />;
-    }
-
-    if (this.state.clanid == null) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: "You do not have permission to access this page",
-            redirectPage: "/profile",
-          }}
-        />
-      );
-    }
-
-    const showHideClassName = this.state.showRequestModal
-      ? "modal d-block"
-      : "modal d-none";
+  if (error) {
     return (
-      <div className="row">
-        <Helmet>
-          <title>Clan Member List - Stiletto for Last Oasis</title>
-          <meta
-            name="description"
-            content="This is the list of all the members of your clan"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta
-            name="twitter:title"
-            content="Clan Member List - Stiletto for Last Oasis"
-          />
-          <meta
-            name="twitter:description"
-            content="This is the list of all the members of your clan"
-          />
-          <meta
-            name="twitter:image"
-            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
-          />
-          <link rel="canonical" href={`${getDomain()}/members`} />
-        </Helmet>
-        <div
-          className={
-            this.state.isLeader || this.state.hasBotPermissions
-              ? "col-12"
-              : "col-12 d-none"
-          }
-        >
-          <div className="row">
-            <div
-              className={
-                this.state.isLeader ? "col-12 col-lg-2 mr-auto mb-2" : "d-none"
-              }
-            >
-              <div className="btn-group" role="group">
-                <button type="button" className="btn btn-primary" disabled>
-                  <i className="fas fa-users-cog" />
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-info"
-                  onClick={() => {
-                    this.setState({ showClanConfig: true });
-                  }}
-                >
-                  {t("Clan Configuration")}
-                </button>
-              </div>
-            </div>
-            <div className="col-12 col-lg-2 ml-auto mb-2">
-              <div className="btn-group" role="group">
-                <button type="button" className="btn btn-primary" disabled>
-                  <i className="fab fa-discord" />
-                </button>
-                <button
-                  type="button"
-                  className={
-                    this.state.isLeader || this.state.hasBotPermissions
-                      ? "btn btn-info"
-                      : "d-none"
-                  }
-                  onClick={() => {
-                    this.setState({ showBotConfig: true });
-                  }}
-                >
-                  {t("Discord Bot Configuration")}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-6">
-          <div className="card mb-3">
-            <div className="card-header">{t("Member List")}</div>
-            <div className="card-body">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th className="text-center" scope="col">
-                      {t("Discord Tag")}
-                    </th>
-                    <th className="text-center" scope="col">
-                      {t("Nick in Game")}
-                    </th>
-                    <th
-                      className={
-                        this.state.members != null &&
-                        (this.state.isLeader ||
-                          this.state.hasKickMembersPermisssions)
-                          ? "text-center"
-                          : "d-none"
-                      }
-                      scope="col"
-                    >
-                      {t("Kick")}
-                    </th>
-                    <th
-                      className={
-                        this.state.members != null && this.state.isLeader
-                          ? "text-center"
-                          : "d-none"
-                      }
-                      scope="col"
-                    >
-                      {t("Edit")}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>{this.list()}</tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div className="col-xl-6">
-          <div className="card mb-3">
-            <div className="card-header">{t("List of requests")}</div>
-            <div className="card-body">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th className="text-center" scope="col">
-                      {t("Discord Tag")}
-                    </th>
-                    <th className="text-center" scope="col">
-                      {t("Nick in Game")}
-                    </th>
-                    <th
-                      className={
-                        this.state.members != null &&
-                        (this.state.isLeader ||
-                          this.state.hasRequestPermissions)
-                          ? "text-center"
-                          : "d-none"
-                      }
-                      scope="col"
-                    >
-                      {t("Show request")}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>{this.requestList(t)}</tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div className={showHideClassName}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="sendRequest">
-                  {t("Request")}
-                </h5>
-              </div>
-              <div className="modal-body">
-                {this.state.requestData != null
-                  ? this.state.requestData.message
-                  : ""}
-              </div>
-              <div className="modal-footer">
-                <button
-                  type="button"
-                  className="btn btn-block btn-success"
-                  onClick={() => this.acceptMember()}
-                >
-                  {t("Accept")}
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-block btn-danger"
-                  onClick={() => this.rejectMember()}
-                >
-                  {t("Reject")}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        {this.transferOwnerPanel(t)}
-        {this.deleteClanButton(t)}
-        {this.state.showBotConfig ? (
-          <DiscordConfig
-            key="discordbotconfig"
-            clanid={this.state.clanid}
-            onClose={() => this.setState({ showBotConfig: false })}
-            onError={(error) => sendNotification(error, "Error")}
-          />
-        ) : (
-          ""
-        )}
-        {this.state.showClanConfig ? (
-          <ClanConfig
-            key="clanconfig"
-            clanid={this.state.clanid}
-            onClose={() => this.setState({ showClanConfig: false })}
-            onError={(error) => sendNotification(error, "Error")}
-          />
-        ) : (
-          ""
-        )}
-        {this.state.memberForEdit ? (
-          <MemberPermissionsConfig
-            key="discordbotconfig"
-            clanid={this.state.clanid}
-            memberid={this.state.memberForEdit}
-            onClose={() => this.setState({ memberForEdit: null })}
-            onError={(error) => sendNotification(error, "Error")}
-          />
-        ) : (
-          ""
-        )}
-      </div>
+      <ModalMessage
+        message={{
+          isError: true,
+          text: error,
+          redirectPage: "/profile",
+        }}
+      />
     );
   }
-}
 
-export default withTranslation()(MemberList);
+  if (redirectMessage) {
+    return (
+      <ModalMessage
+        message={{
+          isError: false,
+          text: redirectMessage,
+          redirectPage: "/profile",
+        }}
+      />
+    );
+  }
+
+  if (!isLoaded) {
+    return <LoadingScreen />;
+  }
+
+  if (!clanid) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: "You do not have permission to access this page",
+          redirectPage: "/profile",
+        }}
+      />
+    );
+  }
+
+  const showHideClassName = showRequestModal ? "modal d-block" : "modal d-none";
+
+  return (
+    <div className="row">
+      <Helmet>
+        <title>Clan Member List - Stiletto for Last Oasis</title>
+        <meta
+          name="description"
+          content="This is the list of all the members of your clan"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Clan Member List - Stiletto for Last Oasis"
+        />
+        <meta
+          name="twitter:description"
+          content="This is the list of all the members of your clan"
+        />
+        <meta
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+        />
+        <link rel="canonical" href={`${getDomain()}/members`} />
+      </Helmet>
+      <div
+        className={isLeader || hasBotPermissions ? "col-12" : "col-12 d-none"}
+      >
+        <div className="row">
+          <div className={isLeader ? "col-12 col-lg-2 mr-auto mb-2" : "d-none"}>
+            <div className="btn-group" role="group">
+              <button type="button" className="btn btn-primary" disabled>
+                <i className="fas fa-users-cog" />
+              </button>
+              <button
+                type="button"
+                className="btn btn-info"
+                onClick={() => setShowClanConfig(true)}
+              >
+                {t("Clan Configuration")}
+              </button>
+            </div>
+          </div>
+          <div className="col-12 col-lg-2 ml-auto mb-2">
+            <div className="btn-group" role="group">
+              <button type="button" className="btn btn-primary" disabled>
+                <i className="fab fa-discord" />
+              </button>
+              <button
+                type="button"
+                className={
+                  isLeader || hasBotPermissions ? "btn btn-info" : "d-none"
+                }
+                onClick={() => setShowBotConfig(true)}
+              >
+                {t("Discord Bot Configuration")}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="col-xl-6">
+        <div className="card mb-3">
+          <div className="card-header">{t("Member List")}</div>
+          <div className="card-body">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th className="text-center" scope="col">
+                    {t("Discord Tag")}
+                  </th>
+                  <th className="text-center" scope="col">
+                    {t("Nick in Game")}
+                  </th>
+                  <th
+                    className={
+                      members && (isLeader || hasKickMembersPermisssions)
+                        ? "text-center"
+                        : "d-none"
+                    }
+                    scope="col"
+                  >
+                    {t("Kick")}
+                  </th>
+                  <th
+                    className={members && isLeader ? "text-center" : "d-none"}
+                    scope="col"
+                  >
+                    {t("Edit")}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>{renderMemberList()}</tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div className="col-xl-6">
+        <div className="card mb-3">
+          <div className="card-header">{t("List of requests")}</div>
+          <div className="card-body">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th className="text-center" scope="col">
+                    {t("Discord Tag")}
+                  </th>
+                  <th className="text-center" scope="col">
+                    {t("Nick in Game")}
+                  </th>
+                  <th
+                    className={
+                      members && (isLeader || hasRequestPermissions)
+                        ? "text-center"
+                        : "d-none"
+                    }
+                    scope="col"
+                  >
+                    {t("Show request")}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>{renderRequestList()}</tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div className={showHideClassName}>
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="sendRequest">
+                {t("Request")}
+              </h5>
+            </div>
+            <div className="modal-body">
+              {requestData ? requestData.message : ""}
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="btn btn-block btn-success"
+                onClick={acceptMember}
+              >
+                {t("Accept")}
+              </button>
+              <button
+                type="button"
+                className="btn btn-block btn-danger"
+                onClick={rejectMember}
+              >
+                {t("Reject")}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {renderTransferOwnerPanel()}
+      {renderDeleteClanButton()}
+      {showBotConfig && (
+        <DiscordConfig
+          key="discordbotconfig"
+          clanid={clanid}
+          onClose={() => setShowBotConfig(false)}
+          onError={(error) => sendNotification(error, "Error")}
+        />
+      )}
+      {showClanConfig && (
+        <ClanConfig
+          key="clanconfig"
+          clanid={clanid}
+          onClose={() => setShowClanConfig(false)}
+          onError={(error) => sendNotification(error, "Error")}
+        />
+      )}
+      {memberForEdit && (
+        <MemberPermissionsConfig
+          key="discordbotconfig"
+          clanid={clanid}
+          memberid={memberForEdit}
+          onClose={() => setMemberForEdit(false)}
+          onError={(error) => sendNotification(error, "Error")}
+        />
+      )}
+    </div>
+  );
+};
+
+export default MemberList;

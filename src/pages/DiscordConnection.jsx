@@ -1,76 +1,70 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Axios from "axios";
 import queryString from "query-string";
 import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../services";
 import { useHistory } from "react-router-dom";
-import { getDomain } from "../functions/utils";
-import { config } from "../config/config";
+import { getDomain, getDiscordLoginUrl } from "../functions/utils";
+import { authDiscord } from "../functions/requests/users";
 
-class DiscordConnection extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoaded: false,
-      error: null,
-    };
-  }
+const DiscordConnection = ({ location }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState("");
+  const { t } = useTranslation();
+  const history = useHistory();
 
-  componentDidMount() {
-    const parsed = queryString.parse(this.props?.location?.search);
-    if (parsed.code != null) {
-      const options = {
-        method: "post",
-        url: `${config.REACT_APP_API_URL}/users/auth`,
-        params: {
-          code: parsed.code,
-        },
-      };
-
-      if (!getStoredItem("token")) {
-        Axios.request(options).then((response) => {
-          if (response.status === 202) {
-            if (response.data.discordid != null) {
-              storeItem("discordid", response.data.discordid);
-            }
-            if (response.data.token != null) {
-              storeItem("token", response.data.token);
-            }
-
-            this.setState({
-              discordid: response.data.discordid,
-              token: response.data.token,
-            });
-
-            const history = useHistory();
-            history.replace({ from: { pathname: "/" } });
-          } else if (response.status === 401) {
-            this.setState({ error: "Unauthorized" });
-          } else if (response.status === 503) {
-            this.setState({ error: "Error connecting to database" });
-          }
-        });
+  useEffect(() => {
+    const handleAuth = async () => {
+      const parsed = queryString.parse(location?.search);
+      if (!parsed.code) {
+        setIsLoaded(true);
+        return;
       }
-    }
-    this.setState({ isLoaded: true });
-  }
 
-  showClanInfo() {
-    const { t } = this.props;
-    const parsed = queryString.parse(this.props?.location.search);
-    const urlLink = `https://discord.com/api/oauth2/authorize?client_id=${
-      config.REACT_APP_DISCORD_CLIENT_ID
-    }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
-    if (parsed.discordid != null && parsed.token != null) {
+      if (getStoredItem("token")) {
+        setIsLoaded(true);
+        return;
+      }
+
+      try {
+        const response = await authDiscord(parsed.code);
+
+        if (response.status === 202) {
+          const data = await response.json();
+          if (data.discordid) {
+            storeItem("discordid", data.discordid);
+          }
+          if (data.token) {
+            storeItem("token", data.token);
+          }
+          history.replace({ from: { pathname: "/" } });
+        } else if (response.status === 401) {
+          setError("Unauthorized");
+        } else if (response.status === 503) {
+          setError("Error connecting to database");
+        }
+      } catch {
+        setError("Error connecting to server");
+      }
+      setIsLoaded(true);
+    };
+
+    handleAuth();
+  }, [location, history]);
+
+  const renderClanInfo = () => {
+    const parsed = queryString.parse(location?.search);
+    const urlLink = getDiscordLoginUrl();
+
+    if (parsed.discordid && parsed.token) {
       storeItem("discordid", parsed.discordid);
       storeItem("token", parsed.token);
     }
 
-    if (getStoredItem("token") != null) {
+    if (getStoredItem("token")) {
       return <PrivateProfile key="profile" />;
     }
 
@@ -111,25 +105,25 @@ class DiscordConnection extends Component {
         </div>
       </div>
     );
+  };
+
+  if (error) {
+    return (
+      <ModalMessage
+        message={{
+          isError: true,
+          text: error,
+          redirectPage: "/",
+        }}
+      />
+    );
   }
 
-  render() {
-    if (this.state.error) {
-      return (
-        <ModalMessage
-          message={{
-            isError: true,
-            text: this.state.error,
-            redirectPage: "/",
-          }}
-        />
-      );
-    }
-    if (this.state.isLoaded) {
-      return <div className="h-100 container">{this.showClanInfo()}</div>;
-    }
+  if (!isLoaded) {
     return <LoadingScreen />;
   }
-}
 
-export default withTranslation()(DiscordConnection);
+  return <div className="h-100 container">{renderClanInfo()}</div>;
+};
+
+export default DiscordConnection;

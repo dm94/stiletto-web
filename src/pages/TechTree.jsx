@@ -66,9 +66,9 @@ const TechTree = () => {
   const updateLearnedTree = (treeName, data) => {
     const all = {};
     if (data) {
-      data.forEach((tech) => {
+      for (const tech of data) {
         all[tech] = { optional: false, nodeState: "selected" };
-      });
+      }
       storeItem(`skills-${treeName}`, JSON.stringify(all));
     }
   };

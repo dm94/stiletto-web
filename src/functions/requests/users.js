@@ -112,3 +112,16 @@ export const addNick = async (newNick) => {
     throw new Error("Error when connecting to the API");
   }
 }
+
+export const authDiscord = async (code) => {
+  try {
+    return await fetch(
+      `${config.REACT_APP_API_URL}/users/auth?code=${code}`,
+      {
+        method: "POST",
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+}

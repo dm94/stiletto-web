@@ -401,7 +401,7 @@ export const getClusters = async () => {
   return null;
 };
 
-export const getMaps = async () => {
+export const getMapNames = async () => {
   const cachedData = getCachedData("maps", resourceCacheTimeCheck);
 
   if (cachedData != null) {

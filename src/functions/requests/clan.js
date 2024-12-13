@@ -125,3 +125,39 @@ export const createClan = async ({
     throw new Error("Error when connecting to the API");
   }
 }
+
+export const getClans = async ({
+  pageSize = 20,
+  page = 1,
+  name = undefined,
+  region = undefined,
+}) => {
+  const params = new URLSearchParams({
+    pageSize,
+    page,
+    ...(name && name?.length > 0 && { name }),
+    ...(region && region !== "All" && { region }),
+  });
+
+  try {
+    return await fetch(`${config.REACT_APP_API_URL}/clans?${params}`);
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+}
+
+export const deleteClan = async (clanId) => {
+  try {
+    return await fetch(
+      `${config.REACT_APP_API_URL}/clans/${clanId}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${getStoredItem("token")}`,
+        },
+      }
+    );
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+}
