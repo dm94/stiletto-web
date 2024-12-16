@@ -22,7 +22,7 @@
     "jquery": "^3.6.3",
     "leaflet": "^1.7.1",
     "leaflet-rastercoords": "^1.0.5",
-    "query-string": "^8.1.0",
+    "query-string": "^9.1.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
