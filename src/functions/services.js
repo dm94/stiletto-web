@@ -267,57 +267,43 @@ export const getCachedMembers = async () => {
   }
 
   const profile = getStoredItem("profile");
-  let clanid = null;
-  if (profile != null) {
-    const data = JSON.parse(profile);
-    clanid = data.clanid;
-  } else {
-    const data = await getUserProfile();
-    clanid = data.message.clanid;
+  const clanid = profile ? JSON.parse(profile).clanid : (await getUserProfile()).message.clanid;
+
+  if (!clanid) {
+    return { success: false, message: "You need a clan to enter here" };
   }
 
-  if (clanid != null) {
-    try {
-      const response = await getMembers(clanid);
-      if (response != null) {
-        if (response.status === 200 || response.status === 202) {
-          const data = await response.json();
-          addCachedData("memberList", data);
-          return { success: true, message: data };
-        }
+  try {
+    const response = await getMembers(clanid);
+    if (!response) {
+      return { success: false, message: "Error when connecting to the API" };
+    }
 
-        if (response.status === 405 || response.status === 401) {
-          closeSession();
-          return {
-            success: false,
-            message: "You don't have access here, try to log in again",
-          };
-        }
+    if (response.status === 200 || response.status === 202) {
+      const data = await response.json();
+      addCachedData("memberList", data);
+      return { success: true, message: data };
+    }
 
-        if (response.status === 503) {
-          return {
-            success: false,
-            message: "Error connecting to database",
-          };
-        }
-      } else {
-        return {
-          success: false,
-          message: "Error when connecting to the API",
-        };
-      }
-    } catch (error) {
-      console.error('API connection error:', error);
+    if (response.status === 405 || response.status === 401) {
+      closeSession();
       return {
         success: false,
-        message: `Error when connecting to the API: ${error.message}`,
-        message: "Error when connecting to the API",
+        message: "You don't have access here, try to log in again",
       };
     }
-  } else {
+
+    if (response.status === 503) {
+      return {
+        success: false,
+        message: "Error connecting to database",
+      };
+    }
+  } catch (error) {
+    console.error("Error getCachedMembers:", error);
     return {
       success: false,
-      message: "You need a clan to enter here",
+      message: "Error when connecting to the API",
     };
   }
 };
