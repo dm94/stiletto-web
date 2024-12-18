@@ -42,7 +42,7 @@ const Others = () => {
             <div className="card mb-3">
               <div className="card-body">
                 <a
-                  className="btn btn-primary btn-block"
+                  className="btn btn-primary btn-block w-100"
                   href="https://store.steampowered.com/app/903950/Last_Oasis/?curator_clanid=9919055"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -56,7 +56,7 @@ const Others = () => {
             <div className="card mb-3">
               <div className="card-body">
                 <a
-                  className="btn btn-primary btn-block"
+                  className="btn btn-primary btn-block w-100"
                   href="https://discord.gg/lastoasis"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -71,7 +71,7 @@ const Others = () => {
               <div className="card mb-3">
                 <div className="card-body">
                   <a
-                    className="btn btn-success btn-block"
+                    className="btn btn-success btn-block w-100"
                     href="https://ko-fi.com/deeme"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -85,7 +85,7 @@ const Others = () => {
               <div className="card mb-3">
                 <div className="card-body">
                   <a
-                    className="btn btn-danger btn-block"
+                    className="btn btn-danger btn-block w-100"
                     href="https://crowdin.com/project/stiletto"
                     target="_blank"
                     rel="noopener noreferrer"
