@@ -96,8 +96,8 @@ const Crafter = ({ location }) => {
 
     const selectedItem = itemsList.find((it) => it.name === itemName);
     if (selectedItem) {
-      setSelectedItems((prevItems) => [
-        ...prevItems,
+      setSelectedItems([
+        ...itemsList,
         {
           ...selectedItem,
           name: selectedItem.name,
