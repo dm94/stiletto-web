@@ -306,9 +306,11 @@ export const getCachedMembers = async () => {
           message: "Error when connecting to the API",
         };
       }
-    } catch {
+    } catch (error) {
+      console.error('API connection error:', error);
       return {
         success: false,
+        message: `Error when connecting to the API: ${error.message}`,
         message: "Error when connecting to the API",
       };
     }
