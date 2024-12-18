@@ -12,7 +12,7 @@ import { getRecipe } from "../functions/requests/recipes";
 
 const Crafter = ({ location }) => {
   const { t } = useTranslation();
-  const [items, setItems] = useState([]);
+  const [allItems, setAllItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
@@ -26,12 +26,13 @@ const Crafter = ({ location }) => {
     const itemsData = await getItems();
     if (itemsData) {
       const craftableItems = itemsData.filter((it) => it.crafting);
-      setItems(craftableItems);
-      getRecipes();
+      setAllItems(craftableItems);
+
+      await getRecipes(craftableItems);
     }
   };
 
-  const getRecipes = async () => {
+  const getRecipes = async (items) => {
     const parsed = queryString.parse(location?.search);
     const { recipe, craft } = parsed;
 
@@ -43,7 +44,7 @@ const Crafter = ({ location }) => {
           const data = await response.json();
           if (data.items) {
             for (const item of data.items) {
-              handleAdd(item.name, Number.parseInt(item.count));
+              handleAdd(item.name, Number.parseInt(item.count), items);
             }
           }
         } else if (response.status === 503) {
@@ -68,7 +69,7 @@ const Crafter = ({ location }) => {
   };
 
   const updateSearch = (searchText) => {
-    const filtered = items.filter((item) => {
+    const filtered = allItems.filter((item) => {
       return searchText.split(" ").every((searchTerm) => {
         return t(item.name).toLowerCase().includes(searchTerm.toLowerCase());
       });
@@ -82,23 +83,26 @@ const Crafter = ({ location }) => {
         <Items key="itemListFiltered" items={filteredItems} onAdd={handleAdd} />
       );
     }
-    return <Items key="itemList" items={items} onAdd={handleAdd} />;
+    return <Items key="itemList" items={allItems} onAdd={handleAdd} />;
   };
 
-  const handleAdd = (itemName, count = 1) => {
-    const selectedItem = items.find((it) => it.name === itemName);
+  const handleAdd = (itemName, count = 1, itemsList = allItems) => {
     const existingItem = selectedItems.find((it) => it.name === itemName);
 
     if (existingItem) {
       changeCount(itemName, Number.parseInt(existingItem.count) + count);
-    } else if (selectedItem) {
-      setSelectedItems([
-        ...selectedItems,
+      return;
+    }
+
+    const selectedItem = itemsList.find((it) => it.name === itemName);
+    if (selectedItem) {
+      setSelectedItems((prevItems) => [
+        ...prevItems,
         {
+          ...selectedItem,
           name: selectedItem.name,
           category: selectedItem.category || "",
           crafting: getIngredients(selectedItem.name),
-          damage: selectedItem.damage,
           count,
         },
       ]);
@@ -111,15 +115,15 @@ const Crafter = ({ location }) => {
       return;
     }
 
-    setSelectedItems(
-      selectedItems.map((item) =>
+    setSelectedItems((prevItems) =>
+      prevItems.map((item) =>
         item.name === itemName ? { ...item, count } : item
       )
     );
   };
 
   const getIngredients = (itemName, secondTree = false) => {
-    const selectedItem = items.find((it) => it.name === itemName);
+    const selectedItem = allItems.find((it) => it.name === itemName);
     if (!selectedItem?.crafting) {
       return [];
     }
@@ -145,7 +149,9 @@ const Crafter = ({ location }) => {
   };
 
   const removeSelectedItem = (itemName) => {
-    setSelectedItems(selectedItems.filter((it) => it.name !== itemName));
+    setSelectedItems((prevItems) =>
+      prevItems.filter((it) => it.name !== itemName)
+    );
   };
 
   if (error) {
