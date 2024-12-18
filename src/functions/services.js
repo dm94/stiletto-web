@@ -262,10 +262,10 @@ export const getClanInfo = async () => {
 
 export const getCachedMembers = async () => {
   const cachedData = getCachedData("memberList");
-
   if (cachedData != null) {
     return { success: true, message: cachedData };
   }
+
   const profile = getStoredItem("profile");
   let clanid = null;
   if (profile != null) {
@@ -277,28 +277,36 @@ export const getCachedMembers = async () => {
   }
 
   if (clanid != null) {
-    const response = await getMembers(clanid);
-    if (response != null) {
-      if (response.status === 200 || response.status === 202) {
-        addCachedData("memberList", response.data);
-        return { success: true, message: response.data };
-      }
+    try {
+      const response = await getMembers(clanid);
+      if (response != null) {
+        if (response.status === 200 || response.status === 202) {
+          const data = await response.json();
+          addCachedData("memberList", data);
+          return { success: true, message: data };
+        }
 
-      if (response.status === 405 || response.status === 401) {
-        closeSession();
+        if (response.status === 405 || response.status === 401) {
+          closeSession();
+          return {
+            success: false,
+            message: "You don't have access here, try to log in again",
+          };
+        }
+
+        if (response.status === 503) {
+          return {
+            success: false,
+            message: "Error connecting to database",
+          };
+        }
+      } else {
         return {
           success: false,
-          message: "You don't have access here, try to log in again",
+          message: "Error when connecting to the API",
         };
       }
-
-      if (response.status === 503) {
-        return {
-          success: false,
-          message: "Error connecting to database",
-        };
-      }
-    } else {
+    } catch {
       return {
         success: false,
         message: "Error when connecting to the API",
