@@ -18,7 +18,7 @@ const Ingredient = ({ ingredient, value }) => {
     if (showList && ingredient?.ingredients != null) {
       return ingredient?.ingredients.map((ingredients) => (
         <ul
-          className="list-group list-group-horizontal"
+          className="flex flex-wrap gap-2 p-2 bg-gray-700 rounded-lg"
           key={`ingredient-sublist-${ingredient?.name}-${value}`}
         >
           <span className="sr-only">----------------------------</span>
@@ -38,10 +38,10 @@ const Ingredient = ({ ingredient, value }) => {
   };
 
   return (
-    <div className="list-group-item">
+    <div className="p-2 border-b border-gray-700 last:border-b-0">
       <div
         tabIndex={hasIngredients ? 0 : undefined}
-        className={hasIngredients ? "text-success" : ""}
+        className={`flex items-center space-x-2 ${hasIngredients ? "text-green-400 cursor-pointer hover:text-green-300" : ""}`}
         role={hasIngredients ? "button" : ""}
         onClick={() => setShowList(!showList)}
         onKeyUp={() => setShowList(!showList)}
@@ -53,10 +53,10 @@ const Ingredient = ({ ingredient, value }) => {
         {ingredient?.ingredients != null ? (
           t(ingredient?.name, { ns: "items" })
         ) : (
-          <a href={url}>{t(ingredient?.name, { ns: "items" })}</a>
+          <a href={url} className="text-blue-400 hover:text-blue-300">{t(ingredient?.name, { ns: "items" })}</a>
         )}
       </div>
-      <div className={ingredient?.ingredients != null ? "list-group" : ""}>
+      <div className={ingredient?.ingredients != null ? "mt-2" : ""}>
         {renderSubList()}
       </div>
     </div>

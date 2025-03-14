@@ -25,8 +25,8 @@ const CraftingTime = ({ total = 1, time }) => {
 
   if (totalTime > 0) {
     return (
-      <div className="text-right mb-0 text-muted">
-        <i className="fa fa-clock" /> {convertSecondsToTime(totalTime)}
+      <div className="text-right mb-0 text-gray-400">
+        <i className="fa fa-clock mr-2" /> {convertSecondsToTime(totalTime)}
       </div>
     );
   }

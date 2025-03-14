@@ -38,7 +38,7 @@ const TotalMaterials = ({ selectedItems }) => {
   const shareButton = () => (
     <button
       type="button"
-      className="btn btn-success float-right"
+      className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       onClick={addRecipeRequest}
       title={t("Generate a link to share it")}
       data-cy="share-crafter-btn"
@@ -52,24 +52,22 @@ const TotalMaterials = ({ selectedItems }) => {
     if (recipeToken.length > 0) {
       const url = `${getDomain()}/crafter?recipe=${recipeToken}`;
       return (
-        <div className="input-group mb-3 float-left">
+        <div className="flex space-x-2">
           <input
             type="text"
-            className="form-control"
+            className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
             data-cy="share-crafter-input"
             value={url}
             disabled
           />
-          <div className="input-group-append">
-            <button
-              className="btn btn-primary"
-              type="button"
-              onClick={() => navigator.clipboard.writeText(url)}
-            >
-              {t("Copy")}
-            </button>
-            {shareButton()}
-          </div>
+          <button
+            className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            type="button"
+            onClick={() => navigator.clipboard.writeText(url)}
+          >
+            {t("Copy")}
+          </button>
+          {shareButton()}
         </div>
       );
     }
@@ -80,9 +78,9 @@ const TotalMaterials = ({ selectedItems }) => {
     const url = `${getDomain()}/item/`;
 
     return selectedItems?.map((item) => (
-      <li className="list-inline-item" key={`itemsList-${item.name}`}>
+      <li className="inline-flex items-center mr-2" key={`itemsList-${item.name}`}>
         <Icon key={item.name} name={item.name} /> {item.count}x{" "}
-        <a href={url + encodeURI(item.name.replaceAll(" ", "_"))}>
+        <a href={url + encodeURI(item.name.replaceAll(" ", "_"))} className="text-blue-400 hover:text-blue-300">
           {t(item.name, { ns: "items" })}
         </a>{" "}
         -
@@ -138,11 +136,12 @@ const TotalMaterials = ({ selectedItems }) => {
   };
 
   return (
-    <div className="card border-warning m-3">
-      <div className="card-header border-warning">
+    <div className="bg-gray-800 border border-yellow-500 rounded-lg overflow-hidden">
+      <div className="p-4 border-b border-yellow-500 flex justify-between items-center">
+        <div className="font-normal text-gray-300">{t("Total materials")}</div>
         <button
           type="button"
-          className="btn btn-sm btn-primary float-right"
+          className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
           title={t("Copy to clipboard")}
           data-cy="crafter-copy-clipboard"
           onClick={copyMaterials}
@@ -150,18 +149,17 @@ const TotalMaterials = ({ selectedItems }) => {
         >
           <i className="fas fa-copy" />
         </button>
-        <div className="font-weight-normal">{t("Total materials")}</div>
       </div>
-      <div className="card-body" id="list-all-items">
-        <ul className="list-inline">{itemsList()}</ul>
-        <div className="list-unstyled">
+      <div className="p-4" id="list-all-items">
+        <ul className="flex flex-wrap gap-2 mb-4">{itemsList()}</ul>
+        <div>
           <ListIngredients selectedItems={selectedItems} />
-          <div className="text-right text-muted">
+          <div className="text-right text-gray-400">
             {t("List of all necessary materials by")} {getDomain()}
           </div>
         </div>
       </div>
-      <div className="card-footer">{footerPart()}</div>
+      <div className="p-4 bg-gray-900 border-t border-gray-700">{footerPart()}</div>
     </div>
   );
 };

@@ -10,7 +10,7 @@ const Station = ({ name }) => {
   }
 
   return (
-    <div className="text-right mb-0 text-muted">
+    <div className="text-right mb-0 text-gray-400">
       {t("made on")} <Icon key={name} name={name} /> {t(name)}
     </div>
   );
