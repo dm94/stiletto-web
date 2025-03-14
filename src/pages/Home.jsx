@@ -10,7 +10,7 @@ const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="container-fluid">
+    <div className="container mx-auto px-4">
       <Helmet>
         <title>Stiletto for the Last Oasis</title>
         <meta
@@ -30,9 +30,9 @@ const Home = () => {
         />
         <link rel="canonical" href={getDomain()} />
       </Helmet>
-      <div className="row mb-4">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-8">
         <Link
-          className="col-12 col-xl-4 text-center"
+          className="text-center"
           to="/crafter"
           aria-label={t("Crafting Calculator")}
         >
@@ -44,7 +44,7 @@ const Home = () => {
           </p>
         </Link>
         <Link
-          className="col-12 col-xl-4 text-center"
+          className="text-center"
           to="/trades"
           aria-label={t("Trading System")}
         >
@@ -56,7 +56,7 @@ const Home = () => {
           </p>
         </Link>
         <Link
-          className="col-12 col-xl-4 text-center"
+          className="text-center"
           to={getStoredItem("discordid") ? "/maps" : "/map"}
           aria-label={t("Resource Maps")}
         >

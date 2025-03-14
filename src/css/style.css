@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
   font-family: "Okami";
   src: url("../fonts/okami.otf") format("opentype");
@@ -6,31 +10,7 @@
   font-weight: normal;
 }
 
-[data-theme="light"] {
-  --blue: #eb6864;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #f57a00;
-  --orange: #fd7e14;
-  --yellow: #f5e625;
-  --green: #22b24c;
-  --teal: #20c997;
-  --cyan: #369;
-  --white: #fff;
-  --gray: #777;
-  --gray-dark: #333;
-  --primary: #eb6864;
-  --secondary: #aaa;
-  --success: #22b24c;
-  --info: #369;
-  --warning: #f5e625;
-  --danger: #f57a00;
-  --light: #f8f9fa;
-  --dark: #222;
-}
-
-[data-theme="dark"] {
+:root {
   --blue: #375a7f;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -54,60 +34,59 @@
   --dark: #303030;
 }
 
-html {
-  min-height: 100vh;
-  min-height: 100dvh;
-  height: 100%;
+@layer base {
+  html {
+    @apply min-h-screen min-h-[100dvh] h-full;
+  }
+
+  body {
+    background-color: var(--dark);
+  }
 }
 
-.card-header,
-.modal-header {
-  font-family: "Okami", sans-serif;
-  font-size: 1.5em;
-}
+@layer components {
+  .card-header,
+  .modal-header {
+    @apply font-['Okami'] text-2xl;
+  }
 
-.card-header .input-group {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
+  .card-header .input-group {
+    @apply font-['Roboto'] font-['Helvetica_Neue'] font-sans;
+  }
 
-.navbar-brand {
-  font-family: "Okami", sans-serif;
-  font-weight: 400;
-}
+  .navbar-brand {
+    @apply font-['Okami'] font-normal;
+  }
 
-.navbar-brand span {
-  font-size: 1.5rem !important;
-}
+  .navbar-brand span {
+    @apply text-2xl !important;
+  }
 
-.lo-title {
-  font-family: "Okami", sans-serif;
-  font-weight: 500;
-  color: #ff3d09;
-}
+  .lo-title {
+    @apply font-['Okami'] font-medium text-[#ff3d09];
+  }
 
-.tab-content-tree h1 {
-  font-size: 1.5em !important;
-}
+  .tab-content-tree h1 {
+    @apply text-2xl !important;
+  }
 
-.tab-content-tree {
-  min-height: 200vh;
-}
+  .tab-content-tree {
+    @apply min-h-[200vh];
+  }
 
-.tippy-content h1 {
-  font-size: 2em;
-}
+  .tippy-content h1 {
+    @apply text-3xl;
+  }
 
-.notifications {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  z-index: 2;
-}
+  .notifications {
+    @apply fixed right-0 bottom-0 z-10;
+  }
 
-.notifications .toast {
-  opacity: 1;
-}
+  .notifications .toast {
+    @apply opacity-100;
+  }
 
-.content-v-a {
-  content-visibility: auto;
+  .content-v-a {
+    content-visibility: auto;
+  }
 }

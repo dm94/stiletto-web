@@ -10,7 +10,7 @@ const Others = () => {
         <iframe
           title="discord"
           src="https://discord.com/widget?id=317737508064591874&theme=dark"
-          className="w-100"
+          className="w-full"
           height="500"
           frameBorder="0"
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
@@ -19,10 +19,10 @@ const Others = () => {
     }
 
     return (
-      <div className="card mb-3">
-        <div className="card-body">
+      <div className="bg-white rounded-lg shadow-lg border border-gray-300 mb-4">
+        <div className="p-4">
           <a
-            className="btn btn-success btn-block"
+            className="w-full block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             href="https://discord.deeme.dev/"
             target="_blank"
             rel="noopener noreferrer"
@@ -35,14 +35,14 @@ const Others = () => {
   };
 
   return (
-    <div className="row">
-      <div className="col-md-8 mx-auto">
-        <div className="row">
-          <div className="col-md-4">
-            <div className="card mb-3">
-              <div className="card-body">
+    <div className="container mx-auto px-4">
+      <div className="max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="md:col-span-1">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-300 mb-4">
+              <div className="p-4">
                 <a
-                  className="btn btn-primary btn-block"
+                  className="w-full block px-4 py-2 bg-blue-500 text-white text-center rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   href="https://store.steampowered.com/app/903950/Last_Oasis/?curator_clanid=9919055"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -52,11 +52,11 @@ const Others = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-4">
-            <div className="card mb-3">
-              <div className="card-body">
+          <div className="md:col-span-1">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-300 mb-4">
+              <div className="p-4">
                 <a
-                  className="btn btn-primary btn-block"
+                  className="w-full block px-4 py-2 bg-blue-500 text-white text-center rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   href="https://discord.gg/lastoasis"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -66,12 +66,12 @@ const Others = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-6">
-            <div className="col-12">
-              <div className="card mb-3">
-                <div className="card-body">
+          <div className="md:col-span-1">
+            <div className="space-y-4">
+              <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+                <div className="p-4">
                   <a
-                    className="btn btn-success btn-block"
+                    className="w-full block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                     href="https://ko-fi.com/deeme"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -80,12 +80,10 @@ const Others = () => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="col-12">
-              <div className="card mb-3">
-                <div className="card-body">
+              <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+                <div className="p-4">
                   <a
-                    className="btn btn-danger btn-block"
+                    className="w-full block px-4 py-2 bg-red-500 text-white text-center rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                     href="https://crowdin.com/project/stiletto"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -94,18 +92,16 @@ const Others = () => {
                   </a>
                 </div>
               </div>
-            </div>
-            <div className="col-12">
-              <div className="border rounded overflow-hidden mb-4">
-                <div className="p-4 d-flex flex-column">
-                  <h3 className="mb-0 pb-2">{t("Discord Bot")}</h3>
-                  <p className="card-text mb-auto">
+              <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+                <div className="p-4 flex flex-col">
+                  <h3 className="text-xl font-semibold mb-2">{t("Discord Bot")}</h3>
+                  <p className="mb-4">
                     {t(
                       "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects."
                     )}
                   </p>
                   <a
-                    className="btn btn-success m-2"
+                    className="inline-block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                     href="https://top.gg/bot/715948052979908911"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -116,22 +112,20 @@ const Others = () => {
               </div>
             </div>
           </div>
-          <div className="col-12 col-md-6">{showDiscord()}</div>
+          <div className="md:col-span-1">{showDiscord()}</div>
         </div>
       </div>
-      <div className="col-12">
-        <div className="row">
-          <div className="col-12">
-            <h3 className="text-center text-info">{t("Sponsored servers")}</h3>
-          </div>
-          <div className="col-12 col-md-4 p-3 mx-auto">
+      <div className="mt-8">
+        <div className="text-center">
+          <h3 className="text-xl font-semibold text-blue-500 mb-4">{t("Sponsored servers")}</h3>
+          <div className="max-w-md mx-auto p-4">
             <a
               href="https://discord.gg/FcecRtZ"
               target="_blank"
               rel="noopener noreferrer"
             >
               <img
-                className="img-fluid"
+                className="w-full h-auto rounded-lg"
                 src="/img/banner-lastoasis.jpg"
                 alt="Last Oasis Banner"
                 height="100"
@@ -146,3 +140,4 @@ const Others = () => {
 };
 
 export default Others;
+
