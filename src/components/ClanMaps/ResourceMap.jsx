@@ -31,6 +31,7 @@ const ResourceMap = ({ map, onReturn }) => {
   const [resourcesFiltered, setResourcesFiltered] = useState(null);
   const [isOpenSidebar, setIsOpenSidebar] = useState(window.innerWidth >= 1440);
   const [error, setError] = useState(null);
+  const [activeTab, setActiveTab] = useState('resources');
 
   const fetchData = useCallback(async () => {
     try {
@@ -127,13 +128,15 @@ const ResourceMap = ({ map, onReturn }) => {
   const renderEditMapTab = () => {
     if (userDiscordId === map.discordid) {
       return (
-        <div className="card-body">
+        <div className="p-4">
           <form onSubmit={handleChangeDataMap}>
-            <div className="form-group">
-              <label htmlFor="mapname">{t("Map Name")}</label>
+            <div className="mb-4">
+              <label htmlFor="mapname" className="block text-sm font-medium text-gray-300 mb-1">
+                {t("Map Name")}
+              </label>
               <input
                 type="text"
-                className="form-control"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 id="mapname"
                 value={mapName}
                 maxLength="30"
@@ -141,41 +144,53 @@ const ResourceMap = ({ map, onReturn }) => {
                 required
               />
             </div>
-            <div className="form-group">
-              <label htmlFor="mapdate">{t("Date of burning")}</label>
+            <div className="mb-4">
+              <label htmlFor="mapdate" className="block text-sm font-medium text-gray-300 mb-1">
+                {t("Date of burning")}
+              </label>
               <input
                 type="date"
-                className="form-control"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 id="mapdate"
                 value={dateOfBurning}
                 onChange={(e) => setDateOfBurning(e.target.value)}
                 required
               />
             </div>
-            <div className="form-group">
-              <p>{t("Enable editing with the link")}</p>
-              <div className="btn-group">
+            <div className="mb-4">
+              <p className="text-gray-300 mb-2">{t("Enable editing with the link")}</p>
+              <div className="flex space-x-2">
                 <button
                   type="button"
-                  className={`btn btn-success ${allowEditing ? "active" : ""}`}
+                  className={`flex-1 p-2 rounded-lg ${
+                    allowEditing
+                      ? "bg-green-600 text-white"
+                      : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                  }`}
                   onClick={() => setAllowEditing(true)}
                 >
                   {t("Allow Editing")}
                 </button>
                 <button
                   type="button"
-                  className={`btn btn-danger ${allowEditing ? "" : "active"}`}
+                  className={`flex-1 p-2 rounded-lg ${
+                    !allowEditing
+                      ? "bg-red-600 text-white"
+                      : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                  }`}
                   onClick={() => setAllowEditing(false)}
                 >
                   {t("Read Only")}
                 </button>
               </div>
             </div>
-            <div className="form-group">
-              <label htmlFor="password">{t("Password")}</label>
+            <div className="mb-4">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
+                {t("Password")}
+              </label>
               <input
                 type="text"
-                className="form-control"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 id="password"
                 value={pass}
                 maxLength="20"
@@ -185,7 +200,7 @@ const ResourceMap = ({ map, onReturn }) => {
             </div>
             <button
               type="submit"
-              className="btn btn-lg btn-outline-success btn-block"
+              className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
             >
               {t("Update Data")}
             </button>
@@ -234,129 +249,15 @@ const ResourceMap = ({ map, onReturn }) => {
   }
 
   return (
-    <div className="row flex-xl-nowrap">
-      <div
-        id="map-sidebar"
-        className={
-          isOpenSidebar
-            ? "col-xl-3 col-sm-12 position-absolute bg-secondary p-1 open"
-            : "position-absolute bg-secondary p-1"
-        }
-      >
-        <div>
-          <button
-            type="button"
-            className="btn btn-sm btn-primary btn-block mb-2"
-            onClick={onReturn}
-          >
-            <i className="fas fa-arrow-left" /> {t("Back to the list of maps")}
-          </button>
-          <button
-            type="button"
-            id="toggle-sidebar-button"
-            className="btn btn-info ml-2 mb-2 float-right"
-            onClick={() => setIsOpenSidebar((prev) => !prev)}
-          >
-            <i
-              className={`fas fa-chevron-${isOpenSidebar ? "left" : "right"}`}
-            />
-          </button>
-        </div>
-        <nav className="collapse show" id="items-nav" aria-label="Items Navs">
-          <ul className="nav nav-pills nav-fill" role="tablist">
-            {(map.allowedit || userDiscordId === map.discordid) && (
-              <li className="nav-item" role="presentation">
-                <a
-                  className="nav-link"
-                  id="add-resource-tab"
-                  data-toggle="tab"
-                  href="#addresource"
-                  role="tab"
-                  aria-controls="addresource"
-                  aria-selected="true"
-                >
-                  {t("Create resource")}
-                </a>
-              </li>
-            )}
-            <li className="nav-item" role="presentation">
-              <a
-                className="nav-link active"
-                id="resource-list-tab"
-                data-toggle="tab"
-                href="#resourcelist"
-                role="tab"
-                aria-controls="resourcelist"
-                aria-selected="false"
-              >
-                {t("List")}
-              </a>
-            </li>
-            {userDiscordId === map.discordid && (
-              <li className="nav-item" role="presentation">
-                <a
-                  className="nav-link"
-                  id="edit-map-tab"
-                  data-toggle="tab"
-                  href="#editmap"
-                  role="tab"
-                  aria-controls="editmap"
-                  aria-selected="false"
-                >
-                  {t("Edit")}
-                </a>
-              </li>
-            )}
-          </ul>
-          <div className="tab-content border border-primary">
-            <div
-              className="tab-pane fade"
-              id="addresource"
-              role="tabpanel"
-              aria-labelledby="add-resource-tab"
-            >
-              <CreateResourceTab
-                items={items}
-                onCreateResource={handleCreateResource}
-                coordinateXInput={coordinateXInput}
-                coordinateYInput={coordinateYInput}
-                onChangeX={setCoordinateXInput}
-                onChangeY={setCoordinateYInput}
-              />
-            </div>
-            <div
-              className="tab-pane fade show active"
-              id="resourcelist"
-              role="tabpanel"
-              aria-labelledby="resource-list-tab"
-            >
-              <ul
-                className="list-group overflow-auto w-100"
-                style={{ height: "60vh" }}
-              >
-                <ResourcesInMapList
-                  resources={resourcesFiltered || resourcesInTheMap}
-                  onSelect={(x, y) => setCenter([x, y])}
-                  onFilter={handleFilterResources}
-                />
-              </ul>
-            </div>
-            <div
-              className="tab-pane fade"
-              id="editmap"
-              role="tabpanel"
-              aria-labelledby="edit-map-tab"
-            >
-              {renderEditMapTab()}
-            </div>
-          </div>
-        </nav>
-      </div>
-      <div className="col-12">
+    <div className="relative h-screen">
+      <div className="absolute inset-0">
         <MapLayer
-          key={map.mapid}
-          resourcesInTheMap={resourcesInTheMap}
-          deleteResource={handleDeleteResource}
+          map={map}
+          items={items}
+          resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
+          onDeleteResource={handleDeleteResource}
+          center={center}
+          setCenter={setCenter}
           updateResource={(mapid, resourceid, token, date) => {
             try {
               updateResourceTime(mapid, resourceid, token, date);
@@ -365,12 +266,89 @@ const ResourceMap = ({ map, onReturn }) => {
               setError("Error when connecting to the API");
             }
           }}
-          changeInput={(x, y) => {
-            setCoordinateXInput(x);
-            setCoordinateYInput(y);
-          }}
-          center={center}
         />
+      </div>
+      <button
+        type="button"
+        onClick={() => setIsOpenSidebar(!isOpenSidebar)}
+        className="lg:hidden fixed top-4 right-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <i className={`fas ${isOpenSidebar ? 'fa-times' : 'fa-bars'}`} />
+      </button>
+      <div
+        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out ${
+          isOpenSidebar ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'
+        }`}
+      >
+        <div className="h-full flex flex-col">
+          <div className="p-4 border-b border-gray-700">
+            <button
+              type="button"
+              className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onClick={onReturn}
+            >
+              {t("Return to map list")}
+            </button>
+          </div>
+          <div className="flex border-b border-gray-700">
+            <button
+              type="button"
+              className={`flex-1 p-3 text-sm font-medium ${
+                activeTab === 'resources'
+                  ? 'text-blue-500 border-b-2 border-blue-500'
+                  : 'text-gray-400 hover:text-gray-300'
+              }`}
+              onClick={() => setActiveTab('resources')}
+            >
+              {t("Resources")}
+            </button>
+            <button
+              type="button"
+              className={`flex-1 p-3 text-sm font-medium ${
+                activeTab === 'create'
+                  ? 'text-blue-500 border-b-2 border-blue-500'
+                  : 'text-gray-400 hover:text-gray-300'
+              }`}
+              onClick={() => setActiveTab('create')}
+            >
+              {t("Create")}
+            </button>
+            {userDiscordId === map?.discordid && (
+              <button
+                type="button"
+                className={`flex-1 p-3 text-sm font-medium ${
+                  activeTab === 'settings'
+                    ? 'text-blue-500 border-b-2 border-blue-500'
+                    : 'text-gray-400 hover:text-gray-300'
+                }`}
+                onClick={() => setActiveTab('settings')}
+              >
+                {t("Settings")}
+              </button>
+            )}
+          </div>
+
+          {/* Tab Content */}
+          <div className="flex-1 overflow-y-auto">
+            {activeTab === 'resources' && (
+              <ResourcesInMapList
+                resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
+                onDeleteResource={handleDeleteResource}
+                onFilterResources={handleFilterResources}
+              />
+            )}
+            {activeTab === 'create' && (
+              <CreateResourceTab
+                coordinateXInput={coordinateXInput}
+                coordinateYInput={coordinateYInput}
+                onCreateResource={handleCreateResource}
+                onChangeX={setCoordinateXInput}
+                onChangeY={setCoordinateYInput}
+              />
+            )}
+            {activeTab === 'settings' && renderEditMapTab()}
+          </div>
+        </div>
       </div>
     </div>
   );

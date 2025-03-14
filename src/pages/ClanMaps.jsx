@@ -149,10 +149,10 @@ const ClanMaps = () => {
 
   const renderPanel = () => {
     const showHideClassName = state.showDeleteModal
-      ? "modal d-block"
-      : "modal d-none";
+      ? "fixed inset-0 z-50 overflow-y-auto"
+      : "hidden";
     return (
-      <div className="row">
+      <div className="container mx-auto px-4">
         <Helmet>
           <title>Interactive Map List - Stiletto for Last Oasis</title>
           <meta
@@ -174,28 +174,50 @@ const ClanMaps = () => {
           />
           <link rel="canonical" href={`${getDomain()}/maps`} />
         </Helmet>
-        <div className="col-xl-12">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Map List")}</div>
-            <div className="card-body row">{renderClanMapList()}</div>
+        <div className="w-full">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
+            <div className="p-4 bg-gray-900 border-b border-gray-700">
+              <h2 className="text-xl font-semibold text-gray-300">{t("Map List")}</h2>
+            </div>
+            <div className="p-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {renderClanMapList()}
+              </div>
+            </div>
           </div>
         </div>
         <CreateMapPanel maps={state.maps} onCreateMap={handleCreateMap} />
         <div className={showHideClassName}>
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="deletemapmodal">
-                  {t("Are you sure?")}
-                </h5>
+          <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+              <div className="absolute inset-0 bg-gray-900 opacity-75" />
+            </div>
+            <div className="inline-block align-bottom bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <div className="bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="sm:flex sm:items-start">
+                  <div className="mt-3 text-center sm:mt-0 sm:text-left">
+                    <h3 className="text-lg leading-6 font-medium text-gray-300" id="deletemapmodal">
+                      {t("Are you sure?")}
+                    </h3>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-400">
+                        {t("This option is not reversible")}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="modal-body">
-                {t("This option is not reversible")}
-              </div>
-              <div className="modal-footer">
+              <div className="bg-gray-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
                   type="button"
-                  className="btn btn-outline-secondary"
+                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  onClick={() => handleDeleteMap(state.idMapDeleteModal)}
+                >
+                  {t("Delete")}
+                </button>
+                <button
+                  type="button"
+                  className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-700 shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={() =>
                     setState((prev) => ({
                       ...prev,
@@ -205,13 +227,6 @@ const ClanMaps = () => {
                   }
                 >
                   {t("Cancel")}
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-outline-danger"
-                  onClick={() => handleDeleteMap(state.idMapDeleteModal)}
-                >
-                  {t("Delete")}
                 </button>
               </div>
             </div>
@@ -255,7 +270,7 @@ const ClanMaps = () => {
     );
   }
 
-  return <div className="container">{renderPanel()}</div>;
+  return <div className="container mx-auto px-4">{renderPanel()}</div>;
 };
 
 export default ClanMaps;

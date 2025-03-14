@@ -11,11 +11,11 @@ const DiscordButton = () => {
   if (getStoredItem("token")) {
     return (
       <Link
-        className="btn btn-outline-light"
+        className="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         to="/profile"
         data-cy="profile-link"
       >
-        <i className="far fa-user" /> {t("Profile")}
+        <i className="far fa-user mr-2" /> {t("Profile")}
       </Link>
     );
   }
@@ -25,8 +25,11 @@ const DiscordButton = () => {
   }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
 
   return (
-    <a className="btn btn-outline-light" href={discordAuthUrl}>
-      <i className="fab fa-discord" /> {t("Login with discord")}
+    <a 
+      className="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+      href={discordAuthUrl}
+    >
+      <i className="fab fa-discord mr-2" /> {t("Login with discord")}
     </a>
   );
 };

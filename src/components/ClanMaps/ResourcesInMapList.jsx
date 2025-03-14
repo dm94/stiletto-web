@@ -20,10 +20,10 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
           );
 
     return filteredResources?.map((resource) => (
-      <li className="list-group-item text-center" key={resource.resourceid}>
+      <li className="p-2 bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors" key={resource.resourceid}>
         <button
           type="button"
-          className="btn btn-block"
+          className="w-full p-2 text-gray-300 hover:text-white focus:outline-none"
           onClick={() => onSelect?.(resource.x, resource.y)}
         >
           <Icon name={resource.resourcetype} />
@@ -48,8 +48,10 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
       <button
         type="button"
         key={type}
-        className={`btn btn-secondary ${
-          type === resourceTypeFilter ? "active" : ""
+        className={`p-2 rounded-lg ${
+          type === resourceTypeFilter
+            ? "bg-gray-600 text-white"
+            : "bg-gray-700 text-gray-300 hover:bg-gray-600"
         }`}
         onClick={() => filterTheResources(type)}
       >
@@ -65,10 +67,12 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
 
   return (
     <Fragment>
-      <fieldset className="btn-group btn-group-sm">
+      <div className="flex flex-wrap gap-2 mb-4">
         {renderFilterList()}
-      </fieldset>
-      <ul className="list-group">{renderList()}</ul>
+      </div>
+      <ul className="space-y-2 max-h-[60vh] overflow-y-auto">
+        {renderList()}
+      </ul>
     </Fragment>
   );
 };
