@@ -31,7 +31,7 @@ const ResourceMap = ({ map, onReturn }) => {
   const [resourcesFiltered, setResourcesFiltered] = useState(null);
   const [isOpenSidebar, setIsOpenSidebar] = useState(window.innerWidth >= 1440);
   const [error, setError] = useState(null);
-  const [activeTab, setActiveTab] = useState('resources');
+  const [activeTab, setActiveTab] = useState("resources");
 
   const fetchData = useCallback(async () => {
     try {
@@ -131,7 +131,10 @@ const ResourceMap = ({ map, onReturn }) => {
         <div className="p-4">
           <form onSubmit={handleChangeDataMap}>
             <div className="mb-4">
-              <label htmlFor="mapname" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="mapname"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Map Name")}
               </label>
               <input
@@ -145,7 +148,10 @@ const ResourceMap = ({ map, onReturn }) => {
               />
             </div>
             <div className="mb-4">
-              <label htmlFor="mapdate" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="mapdate"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Date of burning")}
               </label>
               <input
@@ -158,7 +164,9 @@ const ResourceMap = ({ map, onReturn }) => {
               />
             </div>
             <div className="mb-4">
-              <p className="text-gray-300 mb-2">{t("Enable editing with the link")}</p>
+              <p className="text-gray-300 mb-2">
+                {t("Enable editing with the link")}
+              </p>
               <div className="flex space-x-2">
                 <button
                   type="button"
@@ -185,7 +193,10 @@ const ResourceMap = ({ map, onReturn }) => {
               </div>
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Password")}
               </label>
               <input
@@ -255,7 +266,7 @@ const ResourceMap = ({ map, onReturn }) => {
           map={map}
           items={items}
           resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
-          onDeleteResource={handleDeleteResource}
+          deleteResource={handleDeleteResource}
           center={center}
           setCenter={setCenter}
           updateResource={(mapid, resourceid, token, date) => {
@@ -266,6 +277,10 @@ const ResourceMap = ({ map, onReturn }) => {
               setError("Error when connecting to the API");
             }
           }}
+          changeInput={(x, y) => {
+            setCoordinateXInput(x);
+            setCoordinateYInput(y);
+          }}
         />
       </div>
       <button
@@ -273,11 +288,11 @@ const ResourceMap = ({ map, onReturn }) => {
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
         className="lg:hidden fixed top-4 right-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
-        <i className={`fas ${isOpenSidebar ? 'fa-times' : 'fa-bars'}`} />
+        <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
       <div
         className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out ${
-          isOpenSidebar ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'
+          isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
         }`}
       >
         <div className="h-full flex flex-col">
@@ -294,22 +309,22 @@ const ResourceMap = ({ map, onReturn }) => {
             <button
               type="button"
               className={`flex-1 p-3 text-sm font-medium ${
-                activeTab === 'resources'
-                  ? 'text-blue-500 border-b-2 border-blue-500'
-                  : 'text-gray-400 hover:text-gray-300'
+                activeTab === "resources"
+                  ? "text-blue-500 border-b-2 border-blue-500"
+                  : "text-gray-400 hover:text-gray-300"
               }`}
-              onClick={() => setActiveTab('resources')}
+              onClick={() => setActiveTab("resources")}
             >
               {t("Resources")}
             </button>
             <button
               type="button"
               className={`flex-1 p-3 text-sm font-medium ${
-                activeTab === 'create'
-                  ? 'text-blue-500 border-b-2 border-blue-500'
-                  : 'text-gray-400 hover:text-gray-300'
+                activeTab === "create"
+                  ? "text-blue-500 border-b-2 border-blue-500"
+                  : "text-gray-400 hover:text-gray-300"
               }`}
-              onClick={() => setActiveTab('create')}
+              onClick={() => setActiveTab("create")}
             >
               {t("Create")}
             </button>
@@ -317,28 +332,27 @@ const ResourceMap = ({ map, onReturn }) => {
               <button
                 type="button"
                 className={`flex-1 p-3 text-sm font-medium ${
-                  activeTab === 'settings'
-                    ? 'text-blue-500 border-b-2 border-blue-500'
-                    : 'text-gray-400 hover:text-gray-300'
+                  activeTab === "settings"
+                    ? "text-blue-500 border-b-2 border-blue-500"
+                    : "text-gray-400 hover:text-gray-300"
                 }`}
-                onClick={() => setActiveTab('settings')}
+                onClick={() => setActiveTab("settings")}
               >
                 {t("Settings")}
               </button>
             )}
           </div>
-
-          {/* Tab Content */}
           <div className="flex-1 overflow-y-auto">
-            {activeTab === 'resources' && (
+            {activeTab === "resources" && (
               <ResourcesInMapList
-                resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
+                resources={resourcesFiltered || resourcesInTheMap}
                 onDeleteResource={handleDeleteResource}
                 onFilterResources={handleFilterResources}
               />
             )}
-            {activeTab === 'create' && (
+            {activeTab === "create" && (
               <CreateResourceTab
+                items={items}
                 coordinateXInput={coordinateXInput}
                 coordinateYInput={coordinateYInput}
                 onCreateResource={handleCreateResource}
@@ -346,7 +360,7 @@ const ResourceMap = ({ map, onReturn }) => {
                 onChangeY={setCoordinateYInput}
               />
             )}
-            {activeTab === 'settings' && renderEditMapTab()}
+            {activeTab === "settings" && renderEditMapTab()}
           </div>
         </div>
       </div>
