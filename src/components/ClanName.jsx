@@ -12,7 +12,7 @@ const ClanName = ({ clan }) => {
           style={{ backgroundColor: clan.flagcolor }}
           alt={clan.symbol}
           id={`symbol-img-${clan.name}`}
-          className="inline-block"
+          className="inline-block rounded"
         />
         <span className="inline-block pb-3 ml-2 text-gray-300">{clan.name}</span>
       </Fragment>
