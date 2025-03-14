@@ -29,4 +29,3 @@ yarn.lock
 .env
 cypress.json
 cypress/videos
-pnpm-lock.yaml
