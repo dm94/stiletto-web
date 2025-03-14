@@ -108,23 +108,23 @@ const TechTree = () => {
   const saveDeleteButtons = () => {
     if (getStoredItem("token") != null) {
       return (
-        <div className="row">
-          <fieldset className="btn-group mx-auto">
+        <div className="w-full">
+          <div className="flex justify-center gap-4 p-4">
             <button
               type="button"
-              className="btn btn-success mr-auto m-2"
+              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
               onClick={saveTree}
             >
               {t("Save Tree Data")}
             </button>
             <button
               type="button"
-              className="btn btn-danger ml-auto m-2"
+              className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
               onClick={deleteTree}
             >
               {t("Delete Tree Data")}
             </button>
-          </fieldset>
+          </div>
         </div>
       );
     }
@@ -168,57 +168,57 @@ const TechTree = () => {
   }
 
   return (
-    <div className="container-fluid">
+    <div className="container mx-auto px-4">
       <HeaderMeta
         title="Tech Tree - Stiletto for Last Oasis"
         description="View and control your clan's technology tree"
         cannonical={`${getDomain()}/tech`}
       />
-      <nav className="nav-fill">
-        <div className="nav nav-tabs" id="nav-tab" role="tablist">
-          <div className="nav-item">
+      <nav className="w-full">
+        <div className="flex border-b border-gray-700" id="nav-tab" role="tablist">
+          <div className="flex-1">
             <NavLink
-              className="nav-link"
+              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Vitamins"
-              activeClassName="active"
+              activeClassName="text-white border-blue-500"
             >
               <Icon key="Vitamins" name="Vitamins" width={30} /> {t("Vitamins")}
             </NavLink>
           </div>
-          <div className="nav-item">
+          <div className="flex-1">
             <NavLink
-              className="nav-link"
+              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Equipment"
-              activeClassName="active"
+              activeClassName="text-white border-blue-500"
             >
               <Icon key="Equipment" name="Equipment" width={30} />{" "}
               {t("Equipment")}
             </NavLink>
           </div>
-          <div className="nav-item">
+          <div className="flex-1">
             <NavLink
-              className="nav-link"
+              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Crafting"
-              activeClassName="active"
+              activeClassName="text-white border-blue-500"
             >
               <Icon key="Crafting" name="Crafting" width={30} /> {t("Crafting")}
             </NavLink>
           </div>
-          <div className="nav-item">
+          <div className="flex-1">
             <NavLink
-              className="nav-link"
+              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Construction"
-              activeClassName="active"
+              activeClassName="text-white border-blue-500"
             >
               <Icon key="Construction" name="Construction" width={30} />{" "}
               {t("Construction")}
             </NavLink>
           </div>
-          <div className="nav-item">
+          <div className="flex-1">
             <NavLink
-              className="nav-link"
+              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Walkers"
-              activeClassName="active"
+              activeClassName="text-white border-blue-500"
             >
               <Icon key="Walkers" name="Walkers" width={30} /> {t("Walkers")}
             </NavLink>
@@ -226,8 +226,8 @@ const TechTree = () => {
         </div>
       </nav>
       {saveDeleteButtons()}
-      <DoubleScrollbar className="w-100">
-        <div className="tab-content-tree">
+      <DoubleScrollbar className="w-full">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
           <Suspense fallback={<LoadingScreen />}>
             <SkillTreeTab
               treeId={tabSelect}
