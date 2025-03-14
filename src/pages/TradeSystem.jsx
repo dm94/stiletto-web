@@ -136,9 +136,9 @@ const TradeSystem = () => {
   const renderLoggedPart = () => {
     if (!userDiscordId) {
       return (
-        <div className="col-xl-6">
-          <div className="card border-secondary mb-3">
-            <div className="card-body text-succes">
+        <div className="w-full lg:w-1/2 p-4">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+            <div className="p-4 text-green-400">
               {t(
                 "If you want to publish your own exchange offers you have to be connected"
               )}
@@ -149,17 +149,17 @@ const TradeSystem = () => {
     }
 
     return (
-      <div className="col-xl-12">
+      <div className="w-full p-4">
         <form onSubmit={handleCreateTrade}>
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Publish a trade")}</div>
-            <div className="card-body">
-              <div className="row">
-                <div className="form-group col-xl-2">
-                  <label htmlFor="tradeType">{t("Type")}</label>
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+            <div className="p-3 bg-gray-900 border-b border-gray-700">{t("Publish a trade")}</div>
+            <div className="p-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+                <div className="space-y-2">
+                  <label htmlFor="tradeType" className="block text-gray-300">{t("Type")}</label>
                   <select
                     id="tradeType"
-                    className="custom-select"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={tradeTypeInput}
                     onChange={(evt) => setTradeTypeInput(evt.target.value)}
                   >
@@ -167,13 +167,13 @@ const TradeSystem = () => {
                     <option value="Demand">{t("Demand")}</option>
                   </select>
                 </div>
-                <div className="form-group col-xl-2">
-                  <label htmlFor="resourcetype">
+                <div className="space-y-2">
+                  <label htmlFor="resourcetype" className="block text-gray-300">
                     {t("Resource or mats for")}
                   </label>
                   <select
                     id="resourcetype"
-                    className="custom-select"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={resourceTypeInput}
                     onChange={(evt) => setResourceTypeInput(evt.target.value)}
                   >
@@ -184,8 +184,8 @@ const TradeSystem = () => {
                     ))}
                   </select>
                 </div>
-                <div className="form-group col-xl-2">
-                  <label htmlFor="regionInput">{t("Region")}</label>
+                <div className="space-y-2">
+                  <label htmlFor="regionInput" className="block text-gray-300">{t("Region")}</label>
                   <ClusterList
                     onError={setError}
                     value={regionInput}
@@ -193,23 +193,23 @@ const TradeSystem = () => {
                     filter={false}
                   />
                 </div>
-                <div className="form-group col-xl-2">
-                  <label htmlFor="amountInput">{t("Quantity")}</label>
+                <div className="space-y-2">
+                  <label htmlFor="amountInput" className="block text-gray-300">{t("Quantity")}</label>
                   <input
                     type="number"
                     id="amountInput"
-                    className="form-control"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={amountInput}
                     min="0"
                     onChange={(evt) => setAmountInput(evt.target.value)}
                   />
                 </div>
-                <div className="form-group col-xl-2">
-                  <label htmlFor="qualityInput">{t("Quality")}</label>
+                <div className="space-y-2">
+                  <label htmlFor="qualityInput" className="block text-gray-300">{t("Quality")}</label>
                   <select
                     id="qualityInput"
                     type="range"
-                    className="custom-select"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={qualityInput}
                     onChange={(evt) => setQualityInput(evt.target.value)}
                   >
@@ -220,20 +220,20 @@ const TradeSystem = () => {
                     <option value="4">{t("Legendary")}</option>
                   </select>
                 </div>
-                <div className="form-group col-xl-2">
-                  <label htmlFor="priceInput">{t("Price per unit")}</label>
+                <div className="space-y-2">
+                  <label htmlFor="priceInput" className="block text-gray-300">{t("Price per unit")}</label>
                   <input
                     id="priceInput"
                     type="number"
-                    className="form-control"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     min="0"
                     value={priceInput}
                     onChange={(evt) => setPriceInput(evt.target.value)}
                   />
                 </div>
-                <div className="form-group col-xl-12">
+                <div className="col-span-full">
                   <button
-                    className="btn btn-lg btn-success btn-block"
+                    className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                     type="submit"
                     value="Submit"
                   >
@@ -277,7 +277,7 @@ const TradeSystem = () => {
   }
 
   return (
-    <div className="row">
+    <div className="container mx-auto px-4">
       <Helmet>
         <title>Trades - Stiletto for Last Oasis</title>
         <meta
@@ -297,18 +297,18 @@ const TradeSystem = () => {
         <link rel="canonical" href={`${getDomain()}/trades`} />
       </Helmet>
       {renderLoggedPart()}
-      <div className="col-md-12">
-        <div className="card mb-3 border-primary">
-          <div className="card-header">{t("Published Trades")}</div>
-          <div className="card-body">
-            <div className="row">
-              <div className="col-1">
-                <label htmlFor="tradeTypeFilter">{t("Type")}</label>
+      <div className="w-full p-4">
+        <div className="bg-gray-800 border border-blue-500 rounded-lg overflow-hidden">
+          <div className="p-3 bg-gray-900 border-b border-gray-700">{t("Published Trades")}</div>
+          <div className="p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
+              <div className="lg:col-span-1">
+                <label htmlFor="tradeTypeFilter" className="block text-gray-300">{t("Type")}</label>
               </div>
-              <div className="col-xl-2">
+              <div className="lg:col-span-2">
                 <select
                   id="tradeTypeFilter"
-                  className="custom-select"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={tradeTypeFilterInput}
                   onChange={(evt) => setTradeTypeFilterInput(evt.target.value)}
                 >
@@ -316,13 +316,13 @@ const TradeSystem = () => {
                   <option value="Demand">{t("Demand")}</option>
                 </select>
               </div>
-              <div className="col-1">
-                <label htmlFor="resourcetypefilter">{t("Resource")}</label>
+              <div className="lg:col-span-1">
+                <label htmlFor="resourcetypefilter" className="block text-gray-300">{t("Resource")}</label>
               </div>
-              <div className="col-xl-2">
+              <div className="lg:col-span-2">
                 <select
                   id="resourcetypefilter"
-                  className="custom-select"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={resourceTypeFilterInput}
                   onChange={(evt) =>
                     setResourceTypeFilterInput(evt.target.value)
@@ -335,10 +335,10 @@ const TradeSystem = () => {
                   ))}
                 </select>
               </div>
-              <div className="col-1">
-                <label htmlFor="regionFilterInput">{t("Region")}</label>
+              <div className="lg:col-span-1">
+                <label htmlFor="regionFilterInput" className="block text-gray-300">{t("Region")}</label>
               </div>
-              <div className="col-xl-2">
+              <div className="lg:col-span-2">
                 <ClusterList
                   onError={setError}
                   value={regionFilterInput}
@@ -346,17 +346,17 @@ const TradeSystem = () => {
                   filter={true}
                 />
               </div>
-              <div className="col-xl-3 btn-group">
+              <div className="lg:col-span-3 flex space-x-2">
                 <button
                   type="button"
-                  className="btn btn-lg btn-primary"
+                  className="flex-1 p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => updateTrades()}
                 >
                   {t("Filter trades")}
                 </button>
                 <button
                   type="button"
-                  className="btn btn-lg btn-secondary"
+                  className="flex-1 p-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
                   onClick={() => {
                     updateTrades();
                     setResourceTypeFilterInput("");
@@ -371,8 +371,8 @@ const TradeSystem = () => {
           </div>
         </div>
       </div>
-      <div className="col-md-12">
-        <div className="row">{renderTradeList()}</div>
+      <div className="w-full p-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">{renderTradeList()}</div>
         <Pagination
           currentPage={page}
           hasMore={hasMore}

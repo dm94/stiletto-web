@@ -11,23 +11,25 @@ const DropsInfo = ({ drops = [] }) => {
       }/${drop?.maxQuantity ?? "unknown"}`;
       return (
         <li
-          className="list-inline-item"
+          className="inline-block mr-2 mb-2"
           key={`${drop.location}-${index}`}
           title={titleInfo}
         >
-          <p className="list-group-item">{t(drop.location)}</p>
+          <div className="p-2 bg-gray-800 border border-gray-700 rounded-lg">
+            {t(drop.location)}
+          </div>
         </li>
       );
     });
   };
 
-  if (drops) {
+  if (drops && drops.length > 0) {
     return (
-      <div className="col-12 col-md-6">
-        <div className="card border-secondary mb-3">
-          <div className="card-header">{t("Obtainable from")}</div>
-          <div className="card-body">
-            <ul className="list-inline">{showDrops()}</ul>
+      <div className="w-full md:w-1/2 p-4">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+          <div className="p-3 bg-gray-900 border-b border-gray-700">{t("Obtainable from")}</div>
+          <div className="p-4">
+            <ul className="flex flex-wrap -m-2">{showDrops()}</ul>
           </div>
         </div>
       </div>
