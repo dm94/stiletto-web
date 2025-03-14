@@ -35,7 +35,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap md:flex-nowrap items-center justify-between py-2">
           <Link to="/" className="flex items-center space-x-2 text-white">
-            <span className="text-xl font-medium web-title">Stiletto</span>
+            <span className="text-2xl font-medium web-title">Stiletto</span>
             <img
               width="35"
               height="35"

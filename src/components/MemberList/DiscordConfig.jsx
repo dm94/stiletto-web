@@ -74,119 +74,143 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
   };
 
   return (
-    <div className="modal d-block" tabIndex="-1" aria-hidden="true">
-      <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">{t("Discord Bot Configuration")}</h5>
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              onClick={onClose}
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
+        <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 flex justify-between items-center">
+          <h5 className="text-white font-medium">{t("Discord Bot Configuration")}</h5>
+          <button
+            type="button"
+            className="text-gray-400 hover:text-white bg-gray-700 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200"
+            aria-label="Close"
+            onClick={onClose}
+          >
+            <span aria-hidden="true" className="text-lg font-bold leading-none" style={{ marginTop: '-1px' }}>×</span>
+          </button>
+        </div>
+        <div className="p-4 text-gray-300">
+          <div className="mb-4">
+            <label htmlFor="botlanguaje" className="block mb-2 text-sm font-medium">
+              {t("Bot language")}
+            </label>
+            <select
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              value={botConfig.botLanguaje}
+              id="botlanguaje"
+              onChange={handleBotLanguageChange}
             >
-              <span aria-hidden="true">X</span>
-            </button>
+              <option value="en">{t("English")}</option>
+              <option value="es">{t("Spanish")}</option>
+              <option value="ru">{t("Russian")}</option>
+              <option value="fr">{t("French")}</option>
+              <option value="de">{t("German")}</option>
+            </select>
           </div>
-          <div className="modal-body">
-            <div className="form-group">
-              <label htmlFor="botlanguaje">{t("Bot language")}</label>
-              <select
-                className="form-control"
-                value={botConfig.botLanguaje}
-                id="botlanguaje"
-                onChange={handleBotLanguageChange}
-              >
-                <option value="en">{t("English")}</option>
-                <option value="es">{t("Spanish")}</option>
-                <option value="ru">{t("Russian")}</option>
-                <option value="fr">{t("French")}</option>
-                <option value="de">{t("German")}</option>
-              </select>
-            </div>
-            <div
-              className="custom-control custom-switch my-1"
-              title={t(
-                "If you want the bot to read the clan log, it is necessary for other functions."
-              )}
-            >
+          
+          <div className="mb-3 flex items-center"
+            title={t(
+              "If you want the bot to read the clan log, it is necessary for other functions."
+            )}
+          >
+            <div className="relative inline-block w-10 mr-2 align-middle select-none">
               <input
                 type="checkbox"
-                className="custom-control-input"
                 id="readClanLog"
                 checked={botConfig.readClanLog}
                 onChange={() => toggleConfigOption("readClanLog")}
+                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
               />
-              <label className="custom-control-label" htmlFor="readClanLog">
-                {t("Read discord clan log.")}
-              </label>
+              <label
+                htmlFor="readClanLog"
+                className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+              />
             </div>
-            <div
-              className="custom-control custom-switch my-1"
-              title={t(
-                "Read the clan log and if a member was kicked, kick from here too."
-              )}
-            >
+            <label className="text-sm" htmlFor="readClanLog">
+              {t("Read discord clan log.")}
+            </label>
+          </div>
+          
+          <div className="mb-3 flex items-center"
+            title={t(
+              "Read the clan log and if a member was kicked, kick from here too."
+            )}
+          >
+            <div className="relative inline-block w-10 mr-2 align-middle select-none">
               <input
                 type="checkbox"
-                className="custom-control-input"
                 id="automaticKick"
                 checked={botConfig.automaticKick}
                 onChange={() => toggleConfigOption("automaticKick")}
+                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
               />
-              <label className="custom-control-label" htmlFor="automaticKick">
-                {t("Automatic kick members from the clan")}
-              </label>
+              <label
+                htmlFor="automaticKick"
+                className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+              />
             </div>
-            <div className="custom-control custom-switch my-1">
+            <label className="text-sm" htmlFor="automaticKick">
+              {t("Automatic kick members from the clan")}
+            </label>
+          </div>
+          
+          <div className="mb-3 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none">
               <input
                 type="checkbox"
-                className="custom-control-input"
                 id="setNotReadyPVP"
                 checked={botConfig.setNotReadyPVP}
                 onChange={() => toggleConfigOption("setNotReadyPVP")}
+                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
               />
-              <label className="custom-control-label" htmlFor="setNotReadyPVP">
-                {t(
-                  "Automatically if a PVP walker is used it is marked as not ready."
-                )}
-              </label>
+              <label
+                htmlFor="setNotReadyPVP"
+                className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+              />
             </div>
-            <div
-              className="custom-control custom-switch my-1"
-              title={t(
-                "Read the clan log and if a member was kicked, kick from here too."
+            <label className="text-sm" htmlFor="setNotReadyPVP">
+              {t(
+                "Automatically if a PVP walker is used it is marked as not ready."
               )}
-            >
+            </label>
+          </div>
+          
+          <div className="mb-3 flex items-center"
+            title={t(
+              "Read the clan log and if a member was kicked, kick from here too."
+            )}
+          >
+            <div className="relative inline-block w-10 mr-2 align-middle select-none">
               <input
                 type="checkbox"
-                className="custom-control-input"
                 id="walkerAlarm"
                 checked={botConfig.walkeralarm}
                 onChange={() => toggleConfigOption("walkeralarm")}
+                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
               />
-              <label className="custom-control-label" htmlFor="walkerAlarm">
-                {t("Warns if someone brings out a walker they don't own.")}
-              </label>
+              <label
+                htmlFor="walkerAlarm"
+                className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+              />
             </div>
+            <label className="text-sm" htmlFor="walkerAlarm">
+              {t("Warns if someone brings out a walker they don't own.")}
+            </label>
           </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={onClose}
-            >
-              {t("Close")}
-            </button>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handleUpdateBotConfig}
-            >
-              {t("Save")}
-            </button>
-          </div>
+        </div>
+        <div className="p-4 bg-gray-900 border-t border-gray-700 flex justify-end space-x-2">
+          <button
+            type="button"
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            onClick={onClose}
+          >
+            {t("Close")}
+          </button>
+          <button
+            type="button"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onClick={handleUpdateBotConfig}
+          >
+            {t("Save")}
+          </button>
         </div>
       </div>
     </div>

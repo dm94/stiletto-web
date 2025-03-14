@@ -273,7 +273,7 @@ const MemberList = () => {
       }
       return (
         <tr>
-          <td colSpan="4" className="text-center">
+          <td colSpan="4" className="text-center py-4 text-gray-400">
             {t("There are no pending requests")}
           </td>
         </tr>
@@ -281,7 +281,7 @@ const MemberList = () => {
     }
     return (
       <tr>
-        <td colSpan="4" className="text-center">
+        <td colSpan="4" className="text-center py-4 text-gray-400">
           {t("Loading the list of requests to enter the clan")}
         </td>
       </tr>
@@ -291,18 +291,20 @@ const MemberList = () => {
   const renderDeleteClanButton = () => {
     if (members && isLeader) {
       return (
-        <div className="col-xl-3">
-          <div className="card mb-3">
-            <div className="card-header">{t("Delete Clan")}</div>
-            <div className="card-body">
+        <div className="w-full lg:w-1/3 px-2">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg mb-4">
+            <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
+              {t("Delete Clan")}
+            </div>
+            <div className="p-4 text-gray-300">
               {t(
                 "By deleting the clan you will delete all the data linked to it, be careful because this option is not reversible"
               )}
             </div>
-            <div className="card-footer">
+            <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
               <button
                 type="button"
-                className="btn btn-block btn-danger"
+                className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
                 onClick={handleDeleteClan}
               >
                 {t("Delete")}
@@ -318,19 +320,23 @@ const MemberList = () => {
   const renderTransferOwnerPanel = () => {
     if (members && isLeader) {
       return (
-        <div className="col-xl-3">
-          <div className="card mb-3">
-            <div className="card-header">{t("Transfer Clan")}</div>
-            <div className="card-body">
-              <p>
+        <div className="w-full lg:w-1/3 px-2">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg mb-4">
+            <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
+              {t("Transfer Clan")}
+            </div>
+            <div className="p-4 text-gray-300">
+              <p className="mb-4">
                 {t(
                   "This option is not reversible, so be careful who you pass it on to in the leadership of the clan"
                 )}
               </p>
-              <label htmlFor="selectNewOwner">{t("New leader:")}</label>
+              <label htmlFor="selectNewOwner" className="block mb-2 text-sm font-medium">
+                {t("New leader:")}
+              </label>
               <select
                 id="selectNewOwner"
-                className="custom-select"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={selectNewOwner}
                 onChange={(evt) => setSelectNewOwner(evt.target.value)}
               >
@@ -341,10 +347,10 @@ const MemberList = () => {
                 ))}
               </select>
             </div>
-            <div className="card-footer">
+            <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
               <button
                 type="button"
-                className="btn btn-block btn-danger"
+                className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
                 onClick={changeOwner}
               >
                 {t("Change leader")}
@@ -397,10 +403,8 @@ const MemberList = () => {
     );
   }
 
-  const showHideClassName = showRequestModal ? "modal d-block" : "modal d-none";
-
   return (
-    <div className="row">
+    <div className="container mx-auto px-4 py-6">
       <Helmet>
         <title>Clan Member List - Stiletto for Last Oasis</title>
         <meta
@@ -422,33 +426,34 @@ const MemberList = () => {
         />
         <link rel="canonical" href={`${getDomain()}/members`} />
       </Helmet>
-      <div
-        className={isLeader || hasBotPermissions ? "col-12" : "col-12 d-none"}
-      >
-        <div className="row">
-          <div className={isLeader ? "col-12 col-lg-2 mr-auto mb-2" : "d-none"}>
-            <div className="btn-group" role="group">
-              <button type="button" className="btn btn-primary" disabled>
+      
+      <div className={isLeader || hasBotPermissions ? "w-full mb-6" : "hidden"}>
+        <div className="flex flex-wrap justify-between">
+          <div className={isLeader ? "mb-4" : "hidden"}>
+            <div className="inline-flex rounded-md shadow-sm">
+              <button type="button" className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center" disabled>
                 <i className="fas fa-users-cog" />
               </button>
               <button
                 type="button"
-                className="btn btn-info"
+                className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onClick={() => setShowClanConfig(true)}
               >
                 {t("Clan Configuration")}
               </button>
             </div>
           </div>
-          <div className="col-12 col-lg-2 ml-auto mb-2">
-            <div className="btn-group" role="group">
-              <button type="button" className="btn btn-primary" disabled>
+          <div className="mb-4">
+            <div className="inline-flex rounded-md shadow-sm">
+              <button type="button" className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center" disabled>
                 <i className="fab fa-discord" />
               </button>
               <button
                 type="button"
                 className={
-                  isLeader || hasBotPermissions ? "btn btn-info" : "d-none"
+                  isLeader || hasBotPermissions 
+                    ? "px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    : "hidden"
                 }
                 onClick={() => setShowBotConfig(true)}
               >
@@ -458,104 +463,109 @@ const MemberList = () => {
           </div>
         </div>
       </div>
-      <div className="col-xl-6">
-        <div className="card mb-3">
-          <div className="card-header">{t("Member List")}</div>
-          <div className="card-body">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th className="text-center" scope="col">
-                    {t("Discord Tag")}
-                  </th>
-                  <th className="text-center" scope="col">
-                    {t("Nick in Game")}
-                  </th>
-                  <th
-                    className={
-                      members && (isLeader || hasKickMembersPermisssions)
-                        ? "text-center"
-                        : "d-none"
-                    }
-                    scope="col"
-                  >
-                    {t("Kick")}
-                  </th>
-                  <th
-                    className={members && isLeader ? "text-center" : "d-none"}
-                    scope="col"
-                  >
-                    {t("Edit")}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>{renderMemberList()}</tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div className="col-xl-6">
-        <div className="card mb-3">
-          <div className="card-header">{t("List of requests")}</div>
-          <div className="card-body">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th className="text-center" scope="col">
-                    {t("Discord Tag")}
-                  </th>
-                  <th className="text-center" scope="col">
-                    {t("Nick in Game")}
-                  </th>
-                  <th
-                    className={
-                      members && (isLeader || hasRequestPermissions)
-                        ? "text-center"
-                        : "d-none"
-                    }
-                    scope="col"
-                  >
-                    {t("Show request")}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>{renderRequestList()}</tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div className={showHideClassName}>
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="sendRequest">
-                {t("Request")}
-              </h5>
+      
+      <div className="flex flex-wrap -mx-2">
+        <div className="w-full lg:w-1/2 px-2 mb-6">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+            <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
+              {t("Member List")}
             </div>
-            <div className="modal-body">
-              {requestData ? requestData.message : ""}
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-block btn-success"
-                onClick={acceptMember}
-              >
-                {t("Accept")}
-              </button>
-              <button
-                type="button"
-                className="btn btn-block btn-danger"
-                onClick={rejectMember}
-              >
-                {t("Reject")}
-              </button>
+            <div className="p-4">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gray-900 text-gray-300 text-left">
+                      <th className="px-4 py-2 rounded-tl-lg">{t("Discord Tag")}</th>
+                      <th className="px-4 py-2">{t("Nick in Game")}</th>
+                      <th
+                        className={
+                          members && (isLeader || hasKickMembersPermisssions)
+                            ? "px-4 py-2"
+                            : "hidden"
+                        }
+                      >
+                        {t("Kick")}
+                      </th>
+                      <th
+                        className={members && isLeader ? "px-4 py-2 rounded-tr-lg" : "hidden"}
+                      >
+                        {t("Edit")}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-700">
+                    {renderMemberList()}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
+        
+        <div className="w-full lg:w-1/2 px-2 mb-6">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+            <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
+              {t("List of requests")}
+            </div>
+            <div className="p-4">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="bg-gray-900 text-gray-300 text-left">
+                      <th className="px-4 py-2 rounded-tl-lg">{t("Discord Tag")}</th>
+                      <th className="px-4 py-2">{t("Nick in Game")}</th>
+                      <th
+                        className={
+                          members && (isLeader || hasRequestPermissions)
+                            ? "px-4 py-2 rounded-tr-lg"
+                            : "hidden"
+                        }
+                      >
+                        {t("Show request")}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-700">
+                    {renderRequestList()}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {renderTransferOwnerPanel()}
+        {renderDeleteClanButton()}
       </div>
-      {renderTransferOwnerPanel()}
-      {renderDeleteClanButton()}
+      
+      {/* Request Modal */}
+      <div className={showRequestModal ? "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" : "hidden"}>
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
+          <div className="bg-gray-900 px-4 py-3 border-b border-gray-700">
+            <h5 className="text-white font-medium">{t("Request")}</h5>
+          </div>
+          <div className="p-4 text-gray-300">
+            {requestData ? requestData.message : ""}
+          </div>
+          <div className="p-4 bg-gray-900 border-t border-gray-700 flex flex-col space-y-2">
+            <button
+              type="button"
+              className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+              onClick={acceptMember}
+            >
+              {t("Accept")}
+            </button>
+            <button
+              type="button"
+              className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+              onClick={rejectMember}
+            >
+              {t("Reject")}
+            </button>
+          </div>
+        </div>
+      </div>
+      
       {showBotConfig && (
         <DiscordConfig
           key="discordbotconfig"
