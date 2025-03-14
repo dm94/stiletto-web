@@ -16,18 +16,18 @@ import { calcRarityValue } from "../rarityCalc";
 import { getItemUrl, getItemCraftUrl } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
 
-const WikiDescription = React.lazy(() =>
-  import("../components/Wiki/WikiDescription")
+const WikiDescription = React.lazy(
+  () => import("../components/Wiki/WikiDescription"),
 );
-const SchematicDropInfo = React.lazy(() =>
-  import("../components/Wiki/SchematicDropInfo")
+const SchematicDropInfo = React.lazy(
+  () => import("../components/Wiki/SchematicDropInfo"),
 );
 const DropsInfo = React.lazy(() => import("../components/Wiki/DropsInfo"));
-const CanBeUsedInfo = React.lazy(() =>
-  import("../components/Wiki/CanBeUsedInfo")
+const CanBeUsedInfo = React.lazy(
+  () => import("../components/Wiki/CanBeUsedInfo"),
 );
-const SchematicItems = React.lazy(() =>
-  import("../components/Wiki/SchematicItems")
+const SchematicItems = React.lazy(
+  () => import("../components/Wiki/SchematicItems"),
 );
 
 const ItemWiki = ({ match }) => {
@@ -36,7 +36,7 @@ const ItemWiki = ({ match }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [allItems, setAllItems] = useState([]);
   const [rarity, setRarity] = useState("Common");
-  const [textColor, setTextColor] = useState("text-muted");
+  const [textColor, setTextColor] = useState("text-gray-400");
 
   useEffect(() => {
     const loadData = async () => {
@@ -48,7 +48,7 @@ const ItemWiki = ({ match }) => {
       const items = await getItems();
       if (items) {
         const foundItem = items.find(
-          (it) => it.name.toLowerCase() === itemName
+          (it) => it.name.toLowerCase() === itemName,
         );
         setItem(foundItem);
         setAllItems(items);
@@ -62,7 +62,11 @@ const ItemWiki = ({ match }) => {
   const showIngredient = (ingre) =>
     ingre?.crafting?.map((ingredients, index) => (
       <div
-        className={ingre.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}
+        className={
+          ingre.crafting.length > 1
+            ? "w-full lg:w-1/2 border border-gray-700"
+            : "w-full"
+        }
         key={`ingredients-${index}-${ingre.name}`}
       >
         <Ingredients crafting={ingredients} value={1} />
@@ -73,10 +77,12 @@ const ItemWiki = ({ match }) => {
 
   const showDescription = () =>
     item?.description && (
-      <div className="col-12 col-md-6">
-        <div className="card border-secondary mb-3">
-          <div className="card-header">{t("Description")}</div>
-          <div className="card-body">{item.description}</div>
+      <div className="w-full md:w-1/2">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
+          <div className="p-4 bg-gray-900 border-b border-gray-700">
+            {t("Description")}
+          </div>
+          <div className="p-4">{item.description}</div>
         </div>
       </div>
     );
@@ -86,50 +92,62 @@ const ItemWiki = ({ match }) => {
 
     switch (value) {
       case "Common":
-        setTextColor("text-muted");
+        setTextColor("text-gray-400");
         break;
       case "Uncommon":
-        setTextColor("text-success");
+        setTextColor("text-green-400");
         break;
       case "Rare":
-        setTextColor("text-info");
+        setTextColor("text-blue-400");
         break;
       case "Epic":
-        setTextColor("text-danger");
+        setTextColor("text-red-400");
         break;
       default:
-        setTextColor("text-warning");
+        setTextColor("text-yellow-400");
     }
   };
 
   const getRarityClass = (value) => {
     let outlineColor = "";
+    let hoverColor = "";
+    let focusColor = "";
 
     switch (value) {
       case "Legendary":
-        outlineColor = "warning";
+        outlineColor = "border-yellow-500";
+        hoverColor = "hover:bg-yellow-500";
+        focusColor = "focus:ring-yellow-500";
         break;
       case "Epic":
-        outlineColor = "danger";
+        outlineColor = "border-red-500";
+        hoverColor = "hover:bg-red-500";
+        focusColor = "focus:ring-red-500";
         break;
       case "Rare":
-        outlineColor = "info";
+        outlineColor = "border-blue-500";
+        hoverColor = "hover:bg-blue-500";
+        focusColor = "focus:ring-blue-500";
         break;
       case "Uncommon":
-        outlineColor = "success";
+        outlineColor = "border-green-500";
+        hoverColor = "hover:bg-green-500";
+        focusColor = "focus:ring-green-500";
         break;
       default:
-        outlineColor = "light";
+        outlineColor = "border-gray-500";
+        hoverColor = "hover:bg-gray-500";
+        focusColor = "focus:ring-gray-500";
     }
 
-    return `btn btn-outline-${outlineColor} ${
-      rarity === value ? "active" : ""
+    return `px-4 py-2 border rounded-lg text-gray-300 ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${
+      rarity === value ? "bg-opacity-20" : ""
     }`;
   };
 
   const loadingItemPart = () => (
-    <div className="col-12 col-md-6">
-      <div className="card border-secondary mb-3">
+    <div className="w-full md:w-1/2">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
         <LoadingPart />
       </div>
     </div>
@@ -148,25 +166,31 @@ const ItemWiki = ({ match }) => {
   const craftUrl = getItemCraftUrl(name);
 
   return (
-    <div className="container" data-cy="wiki-item" data-name={name}>
+    <div
+      className="container mx-auto px-4"
+      data-cy="wiki-item"
+      data-name={name}
+    >
       <HeaderMeta
         title={`${name} - Stiletto for Last Oasis`}
         description={`All information for ${name}`}
         cannonical={getItemUrl(name)}
       />
-      <div className="row">
-        <div className="col-12 col-md-6">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">
-              <Icon key={name} name={name} width={35} />
-              {t(name, { ns: "items" })}
+      <div className="flex flex-wrap -mx-4">
+        <div className="w-full md:w-1/2 px-4">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
+            <div className="p-4 bg-gray-900 border-b border-gray-700">
+              <div className="flex items-center text-neutral-300">
+                <Icon key={name} name={name} width={35} />
+                <span className="ml-2">{t(name, { ns: "items" })}</span>
+              </div>
             </div>
-            <div className="card-body">
-              <ul className="list-group mb-3">
+            <div className="p-4">
+              <ul className="space-y-2">
                 {item?.cost && (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Cost to learn")}</div>
-                    <div className="text-muted">
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("Cost to learn")}</div>
+                    <div className="text-gray-400">
                       {`${item?.cost?.count ? item.cost.count : ""} ${
                         item?.cost?.name ? t(item?.cost?.name) : ""
                       }`}
@@ -174,69 +198,80 @@ const ItemWiki = ({ match }) => {
                   </li>
                 )}
                 {item?.category && (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Category")}</div>
-                    <div className="text-muted">
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("Category")}</div>
+                    <div className="text-gray-400">
                       {t(item.category, { ns: "items" })}
                     </div>
                   </li>
                 )}
                 {item?.parent && (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Parent")}</div>
-                    <div className="text-muted">
-                      <a href={parentUrl}>{t(item.parent, { ns: "items" })}</a>
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("Parent")}</div>
+                    <div className="text-gray-400">
+                      <a href={parentUrl} className="hover:text-blue-400">
+                        {t(item.parent, { ns: "items" })}
+                      </a>
                     </div>
                   </li>
                 )}
                 {item?.trade_price && (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Trade Price")}</div>
-                    <div className="text-muted">{item.trade_price} flots</div>
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("Trade Price")}</div>
+                    <div className="text-gray-400">
+                      {item.trade_price} flots
+                    </div>
                   </li>
                 )}
                 {item?.stackSize && (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Character Stack")}</div>
-                    <div className="text-muted">{item.stackSize}</div>
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("Character Stack")}</div>
+                    <div className="text-gray-400">{item.stackSize}</div>
                   </li>
                 )}
                 {item?.weight && (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Weight")}</div>
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("Weight")}</div>
                     <div className={textColor}>
                       {calcRarityValue(
                         rarity,
                         "weight",
                         item.category,
-                        item.weight
+                        item.weight,
                       )}
                     </div>
                   </li>
                 )}
                 {item?.experiencieReward && (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Experience by crafting")}</div>
-                    <div className="text-muted">{item.experiencieReward}</div>
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">
+                      {t("Experience by crafting")}
+                    </div>
+                    <div className="text-gray-400">
+                      {item.experiencieReward}
+                    </div>
                   </li>
                 )}
                 {item?.durability && (
-                  <li className="list-group-item d-flex justify-content-between lh-condensed">
-                    <div className="my-0">{t("Durability")}</div>
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("Durability")}</div>
                     <div className={textColor}>
                       {calcRarityValue(
                         rarity,
                         "durability",
                         item.category,
-                        item.durability
+                        item.durability,
                       )}
                     </div>
                   </li>
                 )}
               </ul>
             </div>
-            <div className="card-footer text-center">
-              <fieldset className="btn-group" aria-label="Rarities">
+            <div className="p-4 bg-gray-900 border-t border-gray-700 text-center">
+              <fieldset
+                className="inline-flex rounded-lg shadow-sm"
+                aria-label="Rarities"
+              >
                 {["Common", "Uncommon", "Rare", "Epic", "Legendary"].map(
                   (rar) => (
                     <button
@@ -248,23 +283,28 @@ const ItemWiki = ({ match }) => {
                     >
                       {rar[0]}
                     </button>
-                  )
+                  ),
                 )}
               </fieldset>
             </div>
           </div>
         </div>
         {item.crafting && (
-          <div className="col-12 col-xl-6">
-            <div className="card border-secondary mb-3">
-              <div className="card-header">
-                {t("Recipe")}{" "}
-                <a href={craftUrl} className="float-right">
+          <div className="w-full lg:w-1/2 px-4">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
+              <div className="p-4 bg-gray-900 border-b border-gray-700 flex justify-between items-center">
+                <span className="text-neutral-300">{t("Recipe")}</span>
+                <a
+                  href={craftUrl}
+                  className="text-gray-400 hover:text-gray-300"
+                >
                   <i className="fas fa-tools" />
                 </a>
               </div>
-              <div className="card-body">
-                <div className="row">{showIngredient(item)}</div>
+              <div className="p-4">
+                <div className="flex flex-wrap -mx-2">
+                  {showIngredient(item)}
+                </div>
               </div>
             </div>
           </div>

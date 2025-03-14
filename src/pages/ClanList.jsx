@@ -149,8 +149,6 @@ const ClanList = () => {
     );
   }
 
-  const showHideClassName = showRequestModal ? "modal d-block" : "modal d-none";
-
   if (!isLoaded) {
     return (
       <Fragment>
@@ -162,98 +160,153 @@ const ClanList = () => {
 
   return (
     <Fragment>
-      <div className="table-responsive">
-        {helmetInfo()}
-        <div className="col-md-12">
-          <div className="card mb-3 border-primary">
-            <div className="card-header">{t("Search Clans")}</div>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-xl-2">
-                  <label htmlFor="regionInput">{t("Region")}</label>
-                  <ClusterList
-                    onError={setError}
-                    value={regionSearch}
-                    onChange={(value) => {
-                      setPage(1);
-                      setRegionSearch(value);
-                    }}
-                    filter={true}
-                  />
-                </div>
-                <div className="col-xl-3">
-                  <label htmlFor="search-name">{t("Name")}</label>
-                  <input
-                    className="form-control"
-                    id="search-name"
-                    type="search"
-                    placeholder="Name.."
-                    aria-label="Search"
-                    onChange={(evt) => {
-                      setPage(1);
-                      setSearchInput(evt.target.value);
-                    }}
-                    value={searchInput}
-                  />
-                </div>
-                <div className="col-2 btn-group">
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={() => updateClans()}
-                  >
-                    {t("Search")}
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    onClick={() => {
-                      setSearchInput("");
-                      setRegionSearch("All");
-                      updateClans();
-                    }}
-                  >
-                    {t("Clean filter")}
-                  </button>
+      <div className="p-4">
+        <div className="overflow-x-auto">
+          {helmetInfo()}
+          <div className="w-full">
+            <div className="bg-gray-800 border border-blue-500 rounded-lg mb-4">
+              <div className="p-4 border-b border-blue-500">
+                <h2 className="text-xl font-semibold text-gray-300">
+                  {t("Search Clans")}
+                </h2>
+              </div>
+              <div className="p-4">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
+                  <div className="md:col-span-2">
+                    <label
+                      htmlFor="regionInput"
+                      className="block text-sm font-medium text-gray-300 mb-1"
+                    >
+                      {t("Region")}
+                    </label>
+                    <ClusterList
+                      onError={setError}
+                      value={regionSearch}
+                      onChange={(value) => {
+                        setPage(1);
+                        setRegionSearch(value);
+                      }}
+                      filter={true}
+                    />
+                  </div>
+                  <div className="md:col-span-3">
+                    <label
+                      htmlFor="search-name"
+                      className="block text-sm font-medium text-gray-300 mb-1"
+                    >
+                      {t("Name")}
+                    </label>
+                    <input
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      id="search-name"
+                      type="search"
+                      placeholder="Name.."
+                      aria-label="Search"
+                      onChange={(evt) => {
+                        setPage(1);
+                        setSearchInput(evt.target.value);
+                      }}
+                      value={searchInput}
+                    />
+                  </div>
+                  <div className="md:col-span-7 flex items-end space-x-2">
+                    <button
+                      type="button"
+                      className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      onClick={() => updateClans()}
+                    >
+                      {t("Search")}
+                    </button>
+                    <button
+                      type="button"
+                      className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                      onClick={() => {
+                        setSearchInput("");
+                        setRegionSearch("All");
+                        updateClans();
+                      }}
+                    >
+                      {t("Clean filter")}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          <div className="bg-gray-800 rounded-lg overflow-hidden">
+            <table className="min-w-full divide-y divide-gray-700">
+              <thead className="bg-gray-700">
+                <tr>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
+                    {t("Clan Name")}
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
+                    {t("Region")}
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
+                    {t("Leader")}
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
+                    {t("Discord Invite Link")}
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
+                    {t("Actions")}
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-gray-800 divide-y divide-gray-700">
+                {renderList()}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4">
+            <Pagination
+              currentPage={page}
+              hasMore={hasMoreClans}
+              onPrev={() => updateClans(page - 1)}
+              onNext={() => updateClans(page + 1)}
+            />
+          </div>
         </div>
-        <table className="table table-striped">
-          <thead className="thead-light">
-            <tr>
-              <th scope="col">{t("Clan Name")}</th>
-              <th scope="col">{t("Region")}</th>
-              <th scope="col">{t("Leader")}</th>
-              <th scope="col">{t("Discord Invite Link")}</th>
-              <th className="text-center" scope="col">
-                {t("Actions")}
-              </th>
-            </tr>
-          </thead>
-          <tbody>{renderList()}</tbody>
-        </table>
-        <Pagination
-          currentPage={page}
-          hasMore={hasMoreClans}
-          onPrev={() => updateClans(page - 1)}
-          onNext={() => updateClans(page + 1)}
-        />
       </div>
-      <div className={showHideClassName}>
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="sendRequest">
+
+      {/* Modal */}
+      {showRequestModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-gray-800 rounded-lg max-w-md w-full mx-4">
+            <div className="p-4 border-b border-gray-700">
+              <h5
+                className="text-xl font-semibold text-gray-300"
+                id="sendRequest"
+              >
                 {t("Send request")}
               </h5>
             </div>
-            <div className="modal-body">
-              <div className="form-group">
-                <label htmlFor="modalTextArea">{t("Request message")}</label>
+            <div className="p-4">
+              <div className="mb-4">
+                <label
+                  htmlFor="modalTextArea"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  {t("Request message")}
+                </label>
                 <textarea
-                  className="form-control bg-light"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="modalTextArea"
                   rows="3"
                   value={textAreaModelValue}
@@ -261,17 +314,17 @@ const ClanList = () => {
                 />
               </div>
             </div>
-            <div className="modal-footer">
+            <div className="p-4 border-t border-gray-700 flex justify-end space-x-2">
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 onClick={() => setShowRequestModal(false)}
               >
                 {t("Cancel")}
               </button>
               <button
                 type="button"
-                className="btn btn-success"
+                className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                 onClick={handleSendRequest}
               >
                 {t("Send request")}
@@ -279,7 +332,7 @@ const ClanList = () => {
             </div>
           </div>
         </div>
-      </div>
+      )}
     </Fragment>
   );
 };

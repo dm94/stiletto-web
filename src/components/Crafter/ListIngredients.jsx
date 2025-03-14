@@ -14,7 +14,7 @@ const ListIngredients = ({ selectedItems }) => {
 
       for (const ingredient of item.crafting[0].ingredients) {
         const existingIngredient = totalIngredients.find(
-          (ingre) => ingre.name === ingredient.name
+          (ingre) => ingre.name === ingredient.name,
         );
 
         if (existingIngredient) {

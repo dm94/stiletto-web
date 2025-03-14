@@ -5,29 +5,43 @@ const Pagination = ({ currentPage, hasMore, onPrev, onNext }) => {
   const { t } = useTranslation();
 
   return (
-    <nav aria-label="pagination">
-      <ul className="pagination justify-content-end">
-        <li className={currentPage <= 1 ? "page-item disabled" : "page-item"}>
+    <nav aria-label="pagination" className="flex justify-end">
+      <ul className="flex items-center space-x-2">
+        <li>
           <button
             type="button"
-            className="page-link"
+            className={`px-4 py-2 text-sm font-medium rounded-md ${
+              currentPage <= 1
+                ? "bg-gray-700 text-gray-400 cursor-not-allowed"
+                : "bg-gray-800 text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            }`}
             onClick={onPrev}
+            disabled={currentPage <= 1}
             aria-disabled={currentPage <= 1}
           >
             {t("Previous Page")}
           </button>
         </li>
-        <li className="page-item active" aria-current="page">
-          <button type="button" className="page-link" disabled>
+        <li>
+          <button
+            type="button"
+            className="px-4 py-2 text-sm font-medium bg-blue-600 text-white rounded-md cursor-default"
+            disabled
+          >
             {currentPage}
           </button>
         </li>
-        <li className={hasMore ? "page-item" : "page-item disabled"}>
+        <li>
           <button
             type="button"
-            className="page-link"
+            className={`px-4 py-2 text-sm font-medium rounded-md ${
+              hasMore
+                ? "bg-gray-800 text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                : "bg-gray-700 text-gray-400 cursor-not-allowed"
+            }`}
             onClick={onNext}
-            aria-disabled={hasMore}
+            disabled={!hasMore}
+            aria-disabled={!hasMore}
           >
             {t("Next Page")}
           </button>

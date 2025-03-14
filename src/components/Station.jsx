@@ -6,12 +6,16 @@ const Station = ({ name }) => {
   const { t } = useTranslation();
 
   if (!name) {
-    return false;
+    return null;
   }
 
   return (
-    <div className="text-right mb-0 text-muted">
-      {t("made on")} <Icon key={name} name={name} /> {t(name)}
+    <div className="flex items-center justify-end space-x-2 text-gray-300">
+      <span>{t("It's made on")}:</span>
+      <div className="flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded-lg">
+        <Icon key={name} name={name} width="24" />
+        <span className="font-medium">{t(name)}</span>
+      </div>
     </div>
   );
 };

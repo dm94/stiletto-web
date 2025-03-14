@@ -11,6 +11,7 @@ export const getItemCraftUrl = (itemName) =>
   `${getDomain()}/crafter?craft=${encodeURI(itemName.toLowerCase())}`;
 
 export const getDiscordLoginUrl = () => {
-  return `https://discord.com/api/oauth2/authorize?client_id=${config.REACT_APP_DISCORD_CLIENT_ID
-    }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
+  return `https://discord.com/api/oauth2/authorize?client_id=${
+    config.REACT_APP_DISCORD_CLIENT_ID
+  }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
 };

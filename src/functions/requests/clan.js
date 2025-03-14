@@ -14,8 +14,9 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
     tech: tech,
   });
 
-  const url = `${config.REACT_APP_API_URL
-    }/clans/${clan}/tech?${params.toString()}`;
+  const url = `${
+    config.REACT_APP_API_URL
+  }/clans/${clan}/tech?${params.toString()}`;
 
   try {
     const response = await fetch(url, {
@@ -58,16 +59,12 @@ export const leaveClan = async () => {
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
-export const updateClan = async (clanid, {
-  clanname,
-  clancolor,
-  clandiscord,
-  symbol,
-  region,
-  recruit,
-}) => {
+export const updateClan = async (
+  clanid,
+  { clanname, clancolor, clandiscord, symbol, region, recruit },
+) => {
   const params = new URLSearchParams({
     clanname,
     clancolor,
@@ -85,13 +82,12 @@ export const updateClan = async (clanid, {
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
         },
-      }
+      },
     );
-
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const createClan = async ({
   clanname,
@@ -111,20 +107,16 @@ export const createClan = async ({
   });
 
   try {
-    return await fetch(
-      `${config.REACT_APP_API_URL}/clans?${params}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      }
-    );
-
+    return await fetch(`${config.REACT_APP_API_URL}/clans?${params}`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    });
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const getClans = async ({
   pageSize = 20,
@@ -144,20 +136,17 @@ export const getClans = async ({
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const deleteClan = async (clanId) => {
   try {
-    return await fetch(
-      `${config.REACT_APP_API_URL}/clans/${clanId}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      }
-    );
+    return await fetch(`${config.REACT_APP_API_URL}/clans/${clanId}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    });
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};

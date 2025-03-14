@@ -50,8 +50,9 @@ export const addTech = async (tabSelect, learned) => {
       tree: tabSelect,
     });
 
-    const url = `${config.REACT_APP_API_URL
-      }/users/${discordId}/tech?${params.toString()}`;
+    const url = `${
+      config.REACT_APP_API_URL
+    }/users/${discordId}/tech?${params.toString()}`;
 
     const response = await fetch(url, {
       method: "PUT",
@@ -85,13 +86,12 @@ export const deleteUser = async () => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/users/`, {
       method: "DELETE",
-      headers: { Authorization: `Bearer ${token}`, },
+      headers: { Authorization: `Bearer ${token}` },
     });
-
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const addNick = async (newNick) => {
   const token = getStoredItem("token");
@@ -105,23 +105,20 @@ export const addNick = async (newNick) => {
       `${config.REACT_APP_API_URL}/users/?dataupdate=${newNick}`,
       {
         method: "PUT",
-        headers: { Authorization: `Bearer ${token}`, },
-      }
-    )
-  } catch {
-    throw new Error("Error when connecting to the API");
-  }
-}
-
-export const authDiscord = async (code) => {
-  try {
-    return await fetch(
-      `${config.REACT_APP_API_URL}/users/auth?code=${code}`,
-      {
-        method: "POST",
-      }
+        headers: { Authorization: `Bearer ${token}` },
+      },
     );
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
+
+export const authDiscord = async (code) => {
+  try {
+    return await fetch(`${config.REACT_APP_API_URL}/users/auth?code=${code}`, {
+      method: "POST",
+    });
+  } catch {
+    throw new Error("Error when connecting to the API");
+  }
+};

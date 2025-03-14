@@ -69,16 +69,25 @@ const Wiki = ({ location }) => {
   const showItems = () => {
     if (filteredItems.length > 0) {
       return filteredItems.map((item) => (
-        <div className="col-12 col-xl-3 col-lg-6" key={`wiki-${item.name}`}>
-          <Ingredient ingredient={item} value={1} />
+        <div
+          className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
+          key={`wiki-${item.name}`}
+        >
+          <div className="bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
+            <div className="p-4">
+              <Ingredient ingredient={item} value={1} />
+            </div>
+          </div>
         </div>
       ));
     }
 
     return (
-      <div className="col-12" key="wiki-notfound">
-        <div className="card">
-          <div className="card-header text-center">{t("Nothing found")}</div>
+      <div className="w-full" key="wiki-notfound">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
+          <div className="p-6 text-center text-gray-300 text-lg">
+            {t("Nothing found")}
+          </div>
         </div>
       </div>
     );
@@ -106,53 +115,55 @@ const Wiki = ({ location }) => {
   };
 
   return (
-    <div className="row">
+    <div className="container mx-auto px-4 py-8">
       <HeaderMeta
         title="Wiki - Stiletto for Last Oasis"
         description="Last oasis Wiki"
         cannonical={`${getDomain()}/wiki`}
       />
-      <div className="col-12 mb-2">
-        <div className="card">
-          <div className="card-header text-center">
-            <div className="col-xs-12 col-xl-6 mx-auto">
+      <div className="w-full mb-8">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+          <div className="p-6 text-center">
+            <h1 className="text-2xl font-bold text-white mb-4">
+              {t("Last Oasis Wiki")}
+            </h1>
+            <div className="max-w-2xl mx-auto">
               <div
-                className="input-group"
+                className="flex"
                 itemProp="potentialAction"
                 data-cy="wiki-search"
               >
                 <input
                   type="search"
-                  className="form-control"
+                  className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder={t("Search")}
                   aria-label={t("Search")}
                   onChange={handleSearchTextChange}
                   onKeyDown={handleKeyPress}
                   value={searchText}
                 />
-                <div className="input-group-append">
-                  <button
-                    type="button"
-                    className="btn btn-outline-info"
-                    onClick={() => searchItems()}
-                  >
-                    {t("Search")}
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+                  onClick={() => searchItems()}
+                >
+                  {t("Search")}
+                </button>
               </div>
             </div>
           </div>
-          <div className="card-body">
-            <div className="col-xl-4 col-6">
-              <div className="input-group">
-                <div className="input-group-prepend">
-                  <label className="input-group-text" htmlFor="category-filter">
-                    {t("Filter by category")}
-                  </label>
-                </div>
+          <div className="p-6 border-t border-gray-700 bg-gray-850">
+            <div className="max-w-md mx-auto">
+              <div className="flex">
+                <label
+                  className="px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300"
+                  htmlFor="category-filter"
+                >
+                  {t("Filter by category")}
+                </label>
                 <select
                   id="category-filter"
-                  className="custom-select"
+                  className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-r-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={categoryFilter}
                   onChange={handleCategoryChange}
                 >
@@ -166,8 +177,8 @@ const Wiki = ({ location }) => {
           </div>
         </div>
       </div>
-      <div className="col-12">
-        <div className="row mb-2 content-v-a">{showItems()}</div>
+      <div className="w-full">
+        <div className="flex flex-wrap -m-3">{showItems()}</div>
       </div>
     </div>
   );

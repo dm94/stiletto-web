@@ -11,19 +11,15 @@ export const addRecipe = async (items) => {
         items: items,
       }),
     });
-
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const getRecipe = async (recipe) => {
   try {
-    return await fetch(
-      `${config.REACT_APP_API_URL}/recipes/${recipe}`
-    );
-
+    return await fetch(`${config.REACT_APP_API_URL}/recipes/${recipe}`);
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};

@@ -46,7 +46,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
       const response = await updateMemberPermissions(
         clanid,
         memberid,
-        permissions
+        permissions,
       );
 
       if (response.status === 200) {
@@ -69,122 +69,150 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
   };
 
   return (
-    <div className="modal d-block" tabIndex="-1" aria-hidden="true">
-      <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">{t("Change Permissions")}</h5>
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              onClick={onClose}
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
+        <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 flex justify-between items-center">
+          <h5 className="text-white font-medium">{t("Change Permissions")}</h5>
+          <button
+            type="button"
+            className="text-gray-400 hover:text-white bg-gray-700 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200"
+            aria-label="Close"
+            onClick={onClose}
+          >
+            <span
+              aria-hidden="true"
+              className="text-lg font-bold leading-none"
+              style={{ marginTop: "-1px" }}
             >
-              <span aria-hidden="true">X</span>
-            </button>
-          </div>
-          <div className="modal-body">
-            <div className="form-group">
-              <div
-                className="custom-control custom-switch my-1"
-                title={t("Allow to change bot settings")}
-              >
+              ×
+            </span>
+          </button>
+        </div>
+        <div className="p-4 text-gray-300">
+          <div className="space-y-4">
+            <div
+              className="flex items-center"
+              title={t("Allow to change bot settings")}
+            >
+              <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"
-                  className="custom-control-input"
                   id="botInput"
                   checked={permissions.bot}
                   onChange={() => togglePermission("bot")}
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
-                <label className="custom-control-label" htmlFor="botInput">
-                  {t("Discord Bot settings")}
-                </label>
+                <label
+                  htmlFor="botInput"
+                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+                />
               </div>
-              <div
-                className="custom-control custom-switch my-1"
-                title={t("Allow editing walkers")}
-              >
+              <label className="text-sm" htmlFor="botInput">
+                {t("Discord Bot settings")}
+              </label>
+            </div>
+
+            <div
+              className="flex items-center"
+              title={t("Allow editing walkers")}
+            >
+              <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"
-                  className="custom-control-input"
                   id="walkersInput"
                   checked={permissions.walkers}
                   onChange={() => togglePermission("walkers")}
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
-                <label className="custom-control-label" htmlFor="walkersInput">
-                  {t("Allow editing walkers")}
-                </label>
+                <label
+                  htmlFor="walkersInput"
+                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+                />
               </div>
-              <div
-                className="custom-control custom-switch my-1"
-                title={t("Allow editing diplomacy")}
-              >
+              <label className="text-sm" htmlFor="walkersInput">
+                {t("Allow editing walkers")}
+              </label>
+            </div>
+
+            <div
+              className="flex items-center"
+              title={t("Allow editing diplomacy")}
+            >
+              <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"
-                  className="custom-control-input"
                   id="diplomacyInput"
                   checked={permissions.diplomacy}
                   onChange={() => togglePermission("diplomacy")}
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
                 <label
-                  className="custom-control-label"
                   htmlFor="diplomacyInput"
-                >
-                  {t("Allow editing diplomacy")}
-                </label>
+                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+                />
               </div>
-              <div
-                className="custom-control custom-switch my-1"
-                title={t("Allow management of request")}
-              >
+              <label className="text-sm" htmlFor="diplomacyInput">
+                {t("Allow editing diplomacy")}
+              </label>
+            </div>
+
+            <div
+              className="flex items-center"
+              title={t("Allow management of request")}
+            >
+              <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"
-                  className="custom-control-input"
                   id="requestInput"
                   checked={permissions.request}
                   onChange={() => togglePermission("request")}
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
-                <label className="custom-control-label" htmlFor="requestInput">
-                  {t("Allow management of request")}
-                </label>
+                <label
+                  htmlFor="requestInput"
+                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+                />
               </div>
-              <div
-                className="custom-control custom-switch my-1"
-                title={t("Allow kick members")}
-              >
+              <label className="text-sm" htmlFor="requestInput">
+                {t("Allow management of request")}
+              </label>
+            </div>
+
+            <div className="flex items-center" title={t("Allow kick members")}>
+              <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"
-                  className="custom-control-input"
                   id="kickmembersInput"
                   checked={permissions.kickmembers}
                   onChange={() => togglePermission("kickmembers")}
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
                 <label
-                  className="custom-control-label"
                   htmlFor="kickmembersInput"
-                >
-                  {t("Allow kick members")}
-                </label>
+                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
+                />
               </div>
+              <label className="text-sm" htmlFor="kickmembersInput">
+                {t("Allow kick members")}
+              </label>
             </div>
           </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={onClose}
-            >
-              {t("Close")}
-            </button>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={handleUpdateMemberPermissions}
-            >
-              {t("Save")}
-            </button>
-          </div>
+        </div>
+        <div className="p-4 bg-gray-900 border-t border-gray-700 flex justify-end space-x-2">
+          <button
+            type="button"
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            onClick={onClose}
+          >
+            {t("Close")}
+          </button>
+          <button
+            type="button"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            onClick={handleUpdateMemberPermissions}
+          >
+            {t("Save")}
+          </button>
         </div>
       </div>
     </div>

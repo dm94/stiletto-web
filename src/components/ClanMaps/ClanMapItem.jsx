@@ -8,13 +8,13 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
   const { t } = useTranslation();
 
   const showButton = () => (
-    <div className="btn-group-vertical w-100 m-0 p-0 h-100">
+    <div className="flex flex-col space-y-2 w-full h-full">
       <button
         type="button"
-        className="btn btn-primary btn-block"
+        className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         onClick={() => onOpen(map)}
       >
-        <i className="fas fa-eye" /> {t("Show map")}
+        <i className="fas fa-eye mr-2" /> {t("Show map")}
       </button>
       {deleteMapButton()}
       {shareMapButton()}
@@ -26,10 +26,10 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
       return (
         <button
           type="button"
-          className="btn btn-danger btn-block"
+          className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           onClick={() => onDelete(map.mapid)}
         >
-          <i className="fas fa-trash-alt" /> {t("Delete map")}
+          <i className="fas fa-trash-alt mr-2" /> {t("Delete map")}
         </button>
       );
     }
@@ -41,12 +41,12 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
       return (
         <button
           type="button"
-          className="btn btn-success btn-block"
+          className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           onClick={() =>
             window.open(`${getDomain()}/map/${map.mapid}?pass=${map.pass}`)
           }
         >
-          <i className="fas fa-share-alt" /> {t("Share map")}
+          <i className="fas fa-share-alt mr-2" /> {t("Share map")}
         </button>
       );
     }
@@ -58,33 +58,35 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
 
   return (
     <div
-      className="p-2 col-sm-12 col-xl-4 text-center"
+      className="p-2 w-full lg:w-1/3 text-center"
       key={`clanmap${map?.mapid}`}
     >
-      <div className="row">
+      <div className="flex">
         <button
           type="button"
-          className="col-6 pr-0"
+          className="w-1/2 pr-0"
           onClick={() => onOpen(map)}
         >
           <img
             src={`${config.REACT_APP_RESOURCES_URL}/maps/${value?.replace(
               "_new",
-              ""
+              "",
             )}.jpg`}
-            className="img-fluid"
+            className="w-full h-auto"
             alt={map?.name}
           />
         </button>
-        <div className="col-6 pl-0">{showButton()}</div>
+        <div className="w-1/2 pl-0">{showButton()}</div>
       </div>
-      <h5 className="mb-0">
+      <h5 className="m-0">
         {map?.name}{" "}
-        <small className={dateBurning <= date ? "text-danger" : "text-success"}>
+        <small
+          className={dateBurning <= date ? "text-red-500" : "text-green-500"}
+        >
           {dateBurning.toISOString().split("T")[0]}
         </small>
       </h5>
-      <p className="m-0 fw-lighter">{map?.discordTag ?? ""}</p>
+      <p className="m-0 text-gray-400">{map?.discordTag ?? ""}</p>
     </div>
   );
 };

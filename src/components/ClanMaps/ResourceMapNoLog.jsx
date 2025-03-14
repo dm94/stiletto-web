@@ -31,6 +31,7 @@ const ResourceMapNoLog = (props) => {
   const [error, setError] = useState(null);
   const [mapData, setMapData] = useState(null);
   const [isOpenSidebar, setIsOpenSidebar] = useState(false);
+  const [activeTab, setActiveTab] = useState("resources");
 
   const fetchData = useCallback(async () => {
     let parsed = null;
@@ -90,7 +91,7 @@ const ResourceMapNoLog = (props) => {
         setError("Error when connecting to the API");
       }
     },
-    [mapId, fetchData]
+    [mapId, fetchData],
   );
 
   const handleCreateResource = useCallback(
@@ -98,7 +99,7 @@ const ResourceMapNoLog = (props) => {
       resourceTypeInput,
       qualityInput,
       descriptionInput,
-      lastHarvested
+      lastHarvested,
     ) => {
       try {
         const response = await createResource({
@@ -120,7 +121,7 @@ const ResourceMapNoLog = (props) => {
         setError("Error when connecting to the API");
       }
     },
-    [mapId, coordinateXInput, coordinateYInput, pass, fetchData]
+    [mapId, coordinateXInput, coordinateYInput, pass, fetchData],
   );
 
   const handleFilterResources = useCallback(
@@ -129,12 +130,12 @@ const ResourceMapNoLog = (props) => {
         setResourcesFiltered(null);
       } else {
         const filtered = resourcesInTheMap?.filter(
-          (resource) => resource.resourcetype === resourceType
+          (resource) => resource.resourcetype === resourceType,
         );
         setResourcesFiltered(filtered);
       }
     },
-    [resourcesInTheMap]
+    [resourcesInTheMap],
   );
 
   if (!isLoaded) {
@@ -167,103 +168,18 @@ const ResourceMapNoLog = (props) => {
   }
 
   return (
-    <div className="row flex-xl-nowrap">
-      <div
-        id="map-sidebar"
-        className={`position-absolute bg-secondary p-1 ${
-          isOpenSidebar ? "open" : ""
-        }`}
-      >
-        <button
-          type="button"
-          id="toggle-sidebar-button"
-          className="btn btn-info ml-2 mb-2 float-right"
-          onClick={() => setIsOpenSidebar((prev) => !prev)}
-        >
-          <i
-            className={
-              isOpenSidebar ? "fas fa-chevron-left" : "fas fa-chevron-right"
-            }
-          />
-        </button>
-        <nav className="collapse show" id="items-nav" aria-label="Items Navs">
-          <ul className="nav nav-pills nav-fill">
-            <li className="nav-item">
-              <a
-                className="nav-link active"
-                id="resource-list-tab"
-                data-toggle="tab"
-                href="#resourcelist"
-                role="tab"
-                aria-controls="resourcelist"
-                aria-selected="false"
-              >
-                {t("List")}
-              </a>
-            </li>
-            {mapData?.allowedit && (
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  id="add-resource-tab"
-                  data-toggle="tab"
-                  href="#addresource"
-                  role="tab"
-                  aria-controls="addresource"
-                  aria-selected="true"
-                >
-                  {t("Create resource")}
-                </a>
-              </li>
-            )}
-          </ul>
-          <div className="tab-content border border-primary">
-            <div
-              className="tab-pane fade show active"
-              id="resourcelist"
-              role="tabpanel"
-              aria-labelledby="resource-list-tab"
-            >
-              <ul
-                className="list-group overflow-auto w-100"
-                style={{ height: "60vh" }}
-              >
-                <ResourcesInMapList
-                  resources={resourcesInTheMap}
-                  onSelect={(x, y) => setCenter([x, y])}
-                  onFilter={handleFilterResources}
-                />
-              </ul>
-            </div>
-            <div
-              className="tab-pane fade"
-              id="addresource"
-              role="tabpanel"
-              aria-labelledby="add-resource-tab"
-            >
-              <CreateResourceTab
-                items={items}
-                onCreateResource={handleCreateResource}
-                coordinateXInput={coordinateXInput}
-                coordinateYInput={coordinateYInput}
-                onChangeX={setCoordinateXInput}
-                onChangeY={setCoordinateYInput}
-              />
-            </div>
-          </div>
-        </nav>
-      </div>
-      <div className="col-12">
-        <div className="col-xl-12 text-center">
-          <h1>{resourcesInTheMap?.[0]?.name || ""}</h1>
-        </div>
+    <div className="relative h-screen">
+      <div className="absolute inset-0">
         <MapLayer
-          key={mapId}
+          map={mapData}
+          items={items}
           resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
           deleteResource={handleDeleteResource}
-          updateResource={(mapId, resourceId, token, date) => {
+          center={center}
+          setCenter={setCenter}
+          updateResource={(mapid, resourceid, token, date) => {
             try {
-              updateResourceTime(mapId, resourceId, token, date);
+              updateResourceTime(mapid, resourceid, token, date);
               fetchData();
             } catch {
               setError("Error when connecting to the API");
@@ -273,8 +189,65 @@ const ResourceMapNoLog = (props) => {
             setCoordinateXInput(x);
             setCoordinateYInput(y);
           }}
-          center={center}
         />
+      </div>
+      <button
+        type="button"
+        onClick={() => setIsOpenSidebar(!isOpenSidebar)}
+        className="lg:hidden absolute top-1 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
+      </button>
+      <div
+        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out ${
+          isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
+        }`}
+      >
+        <div className="h-full flex flex-col">
+          <div className="flex border-b border-gray-700">
+            <button
+              type="button"
+              className={`flex-1 p-3 text-sm font-medium ${
+                activeTab === "resources"
+                  ? "text-blue-500 border-b-2 border-blue-500"
+                  : "text-gray-400 hover:text-gray-300"
+              }`}
+              onClick={() => setActiveTab("resources")}
+            >
+              {t("Resources")}
+            </button>
+            <button
+              type="button"
+              className={`flex-1 p-3 text-sm font-medium ${
+                activeTab === "create"
+                  ? "text-blue-500 border-b-2 border-blue-500"
+                  : "text-gray-400 hover:text-gray-300"
+              }`}
+              onClick={() => setActiveTab("create")}
+            >
+              {t("Create")}
+            </button>
+          </div>
+          <div className="flex-1 overflow-y-auto">
+            {activeTab === "resources" && (
+              <ResourcesInMapList
+                resources={resourcesFiltered || resourcesInTheMap}
+                onDeleteResource={handleDeleteResource}
+                onFilterResources={handleFilterResources}
+              />
+            )}
+            {activeTab === "create" && (
+              <CreateResourceTab
+                items={items}
+                coordinateXInput={coordinateXInput}
+                coordinateYInput={coordinateYInput}
+                onCreateResource={handleCreateResource}
+                onChangeX={setCoordinateXInput}
+                onChangeY={setCoordinateYInput}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

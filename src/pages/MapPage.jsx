@@ -5,7 +5,7 @@ import ResourceMapNoLog from "../components/ClanMaps/ResourceMapNoLog";
 import { getDomain } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
 
-const Map = ({ location }) => {
+const MapPage = ({ location }) => {
   const [mapId, setMapId] = useState(null);
   const [pass, setPass] = useState(null);
 
@@ -41,4 +41,4 @@ const Map = ({ location }) => {
   );
 };
 
-export default Map;
+export default MapPage;

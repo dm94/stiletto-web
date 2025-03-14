@@ -113,11 +113,11 @@ const Diplomacy = () => {
     }
 
     const allies = listOfRelations.filter(
-      (r) => r.typed === 1 || r.typed === 31
+      (r) => r.typed === 1 || r.typed === 31,
     );
 
     return allies.map((d) => (
-      <div key={`ally${d.id}`} className="col-12">
+      <div key={`ally${d.id}`} className="w-full">
         <ClanSelect
           clan={d}
           leader={isLeader || hasPermissions}
@@ -133,11 +133,11 @@ const Diplomacy = () => {
     }
 
     const enemies = listOfRelations.filter(
-      (r) => r.typed === 2 || r.typed === 32
+      (r) => r.typed === 2 || r.typed === 32,
     );
 
     return enemies.map((d) => (
-      <div key={`enemy${d.id}`} className="col-12">
+      <div key={`enemy${d.id}`} className="w-full">
         <ClanSelect
           clan={d}
           leader={isLeader || hasPermissions}
@@ -155,7 +155,7 @@ const Diplomacy = () => {
     const nap = listOfRelations.filter((r) => r.typed === 0 || r.typed === 30);
 
     return nap.map((d) => (
-      <div key={`npa${d.id}`} className="col-12">
+      <div key={`npa${d.id}`} className="w-full">
         <ClanSelect
           clan={d}
           leader={isLeader || hasPermissions}
@@ -170,7 +170,7 @@ const Diplomacy = () => {
     return symbols.map((symbol) => (
       <button
         type="button"
-        className="col-1"
+        className="w-1/12"
         key={`symbol-${symbol}`}
         onClick={() => setClanFlagSymbolInput(symbol)}
       >
@@ -178,13 +178,13 @@ const Diplomacy = () => {
           src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
           className={
             symbol === clanFlagSymbolInput
-              ? "img-fluid img-thumbnail"
-              : "img-fluid"
+              ? "w-full h-auto rounded-lg border border-gray-300"
+              : "w-full h-auto"
           }
           alt={symbol}
           id={`symbol-img-${symbol}`}
         />
-        <p className="text-center">{symbol}</p>
+        <p className="text-center text-sm text-gray-300">{symbol}</p>
       </button>
     ));
   };
@@ -195,16 +195,21 @@ const Diplomacy = () => {
     }
 
     return (
-      <div className="col-md-12">
-        <div className="card mb-4 shadow-sm">
-          <div className="card-body">
+      <div className="w-full">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg shadow-md">
+          <div className="p-4">
             <form onSubmit={handleCreateRelationship}>
-              <div className="row">
-                <div className="form-group col">
-                  <label htmlFor="typedInput">{t("Type")}</label>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div>
+                  <label
+                    htmlFor="typedInput"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    {t("Type")}
+                  </label>
                   <select
                     id="typedInput"
-                    className="custom-select"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={typedInput}
                     onChange={(evt) => setTypedInput(evt.target.value)}
                   >
@@ -213,11 +218,16 @@ const Diplomacy = () => {
                     <option value="2">{t("War")}</option>
                   </select>
                 </div>
-                <div className="form-group col">
-                  <label htmlFor="flag_color">{t("Flag Color")}</label>
+                <div>
+                  <label
+                    htmlFor="flag_color"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    {t("Flag Color")}
+                  </label>
                   <input
                     type="color"
-                    className="form-control"
+                    className="w-full p-1 bg-gray-700 border border-gray-600 rounded-lg h-10"
                     id="flag_color"
                     name="flag_color"
                     value={clanFlagInput}
@@ -226,11 +236,16 @@ const Diplomacy = () => {
                   />
                 </div>
               </div>
-              <div className="form-group">
-                <label htmlFor="nameOtherClanInput">{t("Clan Name")}</label>
+              <div className="mb-4">
+                <label
+                  htmlFor="nameOtherClanInput"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  {t("Clan Name")}
+                </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="nameOtherClanInput"
                   name="nameOtherClanInput"
                   maxLength="20"
@@ -239,19 +254,26 @@ const Diplomacy = () => {
                   required
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="sigilClanFlagInput">{t("Symbol")}</label>
-                <div className="col-12">
-                  <div className="row">{symbolsList()}</div>
+              <div className="mb-4">
+                <label
+                  htmlFor="sigilClanFlagInput"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
+                  {t("Symbol")}
+                </label>
+                <div className="w-full">
+                  <div className="flex flex-wrap">{symbolsList()}</div>
                 </div>
               </div>
-              <button
-                className="btn btn-lg btn-outline-info btn-block"
-                type="submit"
-                value="Submit"
-              >
-                {t("Create a relationship")}
-              </button>
+              <div className="flex justify-center">
+                <button
+                  className="w-full md:w-1/2 lg:w-1/3 p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  type="submit"
+                  value="Submit"
+                >
+                  {t("Create a relationship")}
+                </button>
+              </div>
             </form>
           </div>
         </div>
@@ -288,7 +310,7 @@ const Diplomacy = () => {
   }
 
   return (
-    <div className="container-fluid">
+    <div className="container mx-auto px-4 py-6">
       <Helmet>
         <title>Clan Diplomacy - Stiletto for Last Oasis</title>
         <meta
@@ -310,32 +332,43 @@ const Diplomacy = () => {
         />
         <link rel="canonical" href={`${getDomain()}/diplomacy`} />
       </Helmet>
-      <div className="row">
-        {createNewRelationship()}
-        <div className="col-md-4">
-          <div className="card mb-4 shadow-sm border-success">
-            <div className="card-header bg-success text-white text-center">
-              {t("Allies")}
-            </div>
-            <div className="card-body">
-              <div className="row">{listOfAllies()}</div>
+      <div className="flex flex-col space-y-4">
+        {/* Formulario de creación en una fila completa */}
+        {isLeader || hasPermissions ? (
+          <div className="w-full">{createNewRelationship()}</div>
+        ) : null}
+
+        {/* Las tres categorías en otra fila */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="w-full">
+            <div className="bg-gray-800 border border-green-500 rounded-lg shadow-md">
+              <div className="bg-green-600 text-white text-center p-2 rounded-t-lg">
+                {t("Allies")}
+              </div>
+              <div className="p-4">
+                <div className="space-y-2">{listOfAllies()}</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-md-4">
-          <div className="card mb-4 shadow-sm border-warning">
-            <div className="card-header bg-warning text-dark text-center">
-              {t("NAP or Settlers")}
+          <div className="w-full">
+            <div className="bg-gray-800 border border-yellow-500 rounded-lg shadow-md">
+              <div className="bg-yellow-500 text-gray-900 text-center p-2 rounded-t-lg">
+                {t("NAP or Settlers")}
+              </div>
+              <div className="p-4">
+                <div className="space-y-2">{listOfNAP()}</div>
+              </div>
             </div>
-            <div className="card-body">{listOfNAP()}</div>
           </div>
-        </div>
-        <div className="col-md-4">
-          <div className="card mb-4 shadow-sm border-danger">
-            <div className="card-header bg-danger text-white text-center">
-              {t("War")}
+          <div className="w-full">
+            <div className="bg-gray-800 border border-red-500 rounded-lg shadow-md">
+              <div className="bg-red-600 text-white text-center p-2 rounded-t-lg">
+                {t("War")}
+              </div>
+              <div className="p-4">
+                <div className="space-y-2">{listOfEnemies()}</div>
+              </div>
             </div>
-            <div className="card-body">{listOfEnemies()}</div>
           </div>
         </div>
       </div>

@@ -6,22 +6,22 @@ const ClanSelect = ({ leader, clan, onDelete }) => {
 
   return (
     <div
-      className="row"
+      className="flex items-center"
       onMouseOver={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       onFocus={() => setIsHover(true)}
       onBlur={() => setIsHover(false)}
     >
-      <div className={leader && isHover ? "d-none" : "col-12"}>
+      <div className={leader && isHover ? "hidden" : "w-full"}>
         <ClanName clan={clan} />
       </div>
-      <div className={leader && isHover ? "col-10" : "d-none"}>
+      <div className={leader && isHover ? "flex-grow" : "hidden"}>
         <ClanName clan={clan} />
       </div>
-      <div className={leader && isHover ? "col-2" : "d-none"}>
+      <div className={leader && isHover ? "ml-2" : "hidden"}>
         <button
           type="button"
-          className="btn btn-danger btn-sm"
+          className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           onClick={() => onDelete(clan?.id)}
         >
           <i className="fas fa-trash" />

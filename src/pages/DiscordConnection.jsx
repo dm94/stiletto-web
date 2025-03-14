@@ -69,7 +69,7 @@ const DiscordConnection = ({ location }) => {
     }
 
     return (
-      <div className="row">
+      <div className="w-full max-w-2xl mx-auto">
         <Helmet>
           <title>Discord Login - Stiletto for Last Oasis</title>
           <meta
@@ -91,16 +91,15 @@ const DiscordConnection = ({ location }) => {
           />
           <link rel="canonical" href={`${getDomain()}/profile`} />
         </Helmet>
-        <div className="col-12 col-md-6 mx-auto">
-          <div className="card border-secondary mb-3">
-            <div className="card-body text-succes">
-              <a
-                className="btn btn-lg btn-outline-primary btn-block"
-                href={urlLink}
-              >
-                <i className="fab fa-discord" /> {t("Login with discord")}
-              </a>
-            </div>
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+          <div className="p-6">
+            <a
+              href={urlLink}
+              className="w-full inline-flex justify-center items-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors"
+            >
+              <i className="fab fa-discord mr-2" />
+              {t("Login with discord")}
+            </a>
           </div>
         </div>
       </div>
@@ -123,7 +122,11 @@ const DiscordConnection = ({ location }) => {
     return <LoadingScreen />;
   }
 
-  return <div className="h-100 container">{renderClanInfo()}</div>;
+  return (
+    <div className="flex items-center justify-center p-4">
+      {renderClanInfo()}
+    </div>
+  );
 };
 
 export default DiscordConnection;

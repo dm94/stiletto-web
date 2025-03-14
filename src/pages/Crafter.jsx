@@ -17,6 +17,7 @@ const Crafter = ({ location }) => {
   const [searchText, setSearchText] = useState("");
   const [filteredItems, setFilteredItems] = useState([]);
   const [error, setError] = useState("");
+  const [isItemsNavVisible, setIsItemsNavVisible] = useState(false);
 
   useEffect(() => {
     updateRecipes();
@@ -117,8 +118,8 @@ const Crafter = ({ location }) => {
 
     setSelectedItems((prevItems) =>
       prevItems.map((item) =>
-        item.name === itemName ? { ...item, count } : item
-      )
+        item.name === itemName ? { ...item, count } : item,
+      ),
     );
   };
 
@@ -150,8 +151,12 @@ const Crafter = ({ location }) => {
 
   const removeSelectedItem = (itemName) => {
     setSelectedItems((prevItems) =>
-      prevItems.filter((it) => it.name !== itemName)
+      prevItems.filter((it) => it.name !== itemName),
     );
+  };
+
+  const toggleItemsNav = () => {
+    setIsItemsNavVisible(!isItemsNavVisible);
   };
 
   if (error) {
@@ -167,7 +172,7 @@ const Crafter = ({ location }) => {
   }
 
   return (
-    <div className="row flex-xl-nowrap">
+    <div className="flex flex-col lg:flex-row">
       <Helmet>
         <title>Last Oasis Crafting Calculator - Stiletto for Last Oasis</title>
         <meta
@@ -189,10 +194,10 @@ const Crafter = ({ location }) => {
         />
         <link rel="canonical" href={`${getDomain()}/crafter`} />
       </Helmet>
-      <div className="col mb-2">
-        <form className="bd-search d-flex align-items-center">
+      <div className="w-full lg:w-1/4 mb-4 lg:mb-0">
+        <form className="flex items-center">
           <input
-            className="form-control"
+            className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="search"
             placeholder="Search"
             aria-label="Search"
@@ -201,33 +206,29 @@ const Crafter = ({ location }) => {
             value={searchText}
           />
           <button
-            className="btn btn-outline-primary d-md-none ml-3"
+            className="lg:hidden ml-3 p-2 text-gray-300 hover:text-white focus:outline-none"
             type="button"
-            data-toggle="collapse"
-            data-target="#items-nav"
+            onClick={toggleItemsNav}
             aria-controls="items-nav"
-            aria-expanded="false"
+            aria-expanded={isItemsNavVisible}
             aria-label="Toggle items"
           >
             <i className="fas fa-list fa-lg" />
           </button>
         </form>
         <nav
-          className="collapse show mt-2"
+          className={`mt-2 lg:block ${isItemsNavVisible ? "block" : "hidden"}`}
           id="items-nav"
           aria-label="Items Navs"
         >
-          <div
-            className="nav overflow-auto list-group"
-            style={{ height: "95vh" }}
-          >
-            {showAllItems()}
-          </div>
+          <div className="overflow-auto h-[95vh]">{showAllItems()}</div>
         </nav>
       </div>
-      <main className="col-md-9 col-lg-8 col-xl-8">
-        <div className="col-12 card-group">{showSelectedItems()}</div>
-        <div className="col-12">
+      <main className="w-full lg:w-3/4 p-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {showSelectedItems()}
+        </div>
+        <div className="mt-4">
           <TotalMaterials
             key="totalmaterialsid"
             selectedItems={selectedItems}

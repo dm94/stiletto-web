@@ -12,21 +12,26 @@ const SelectedItem = ({ item, onChangeCount }) => {
 
   const showIngredient = () => {
     if (!item) {
-      return false;
+      return null;
     }
     if (!item?.crafting) {
-      return false;
+      return null;
     }
 
     return item.crafting.map((ingredients, i) => (
       <div
-        className={
+        className={`${
           item.crafting.length > 1
-            ? "col-xl-6 border border-success"
-            : "col-xl-12"
-        }
+            ? "w-full border-l-4 border-green-500"
+            : "w-full"
+        } p-4 bg-gray-900 rounded-lg relative`}
         key={`${item.name}-${item.count}-${i}`}
       >
+        {item.crafting.length > 1 && (
+          <div className="absolute top-2 right-2 bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs font-medium">
+            {t("Recipe")} {i + 1}
+          </div>
+        )}
         <Ingredients
           crafting={ingredients}
           value={
@@ -35,27 +40,51 @@ const SelectedItem = ({ item, onChangeCount }) => {
               : item.count
           }
         />
-        {ingredients.station && <Station name={ingredients.station} />}
-        {ingredients.time && (
-          <CraftingTime time={ingredients.time} total={item.count} />
-        )}
+        <div className="mt-4 flex flex-col space-y-2">
+          {ingredients.station && <Station name={ingredients.station} />}
+          {ingredients.time && (
+            <CraftingTime time={ingredients.time} total={item.count} />
+          )}
+        </div>
       </div>
     ));
   };
 
   const showDamage = () => {
     if (!item?.damage) {
-      return false;
+      return null;
     }
 
     return (
-      <div className="col-12 text-muted">
-        <div className="row">
-          <div className="col-12">{t("Damage")}</div>
-          <div className="col">100% = {item.damage * item.count}</div>
-          <div className="col">50% = {item.damage * item.count * 0.5}</div>
-          <div className="col">30% = {item.damage * item.count * 0.3}</div>
-          <div className="col">10% = {item.damage * item.count * 0.1}</div>
+      <div className="w-full text-gray-300 p-4 bg-gray-900 rounded-lg mt-4 border-l-4 border-red-500">
+        <div className="font-semibold text-white mb-3 text-lg">
+          {t("Damage")}
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="bg-gray-800 p-3 rounded-lg text-center">
+            <div className="text-xs text-gray-400 mb-1">100%</div>
+            <div className="text-red-400 font-bold text-lg">
+              {Math.round(item.damage * item.count)}
+            </div>
+          </div>
+          <div className="bg-gray-800 p-3 rounded-lg text-center">
+            <div className="text-xs text-gray-400 mb-1">50%</div>
+            <div className="text-red-400 font-bold text-lg">
+              {Math.round(item.damage * item.count * 0.5)}
+            </div>
+          </div>
+          <div className="bg-gray-800 p-3 rounded-lg text-center">
+            <div className="text-xs text-gray-400 mb-1">30%</div>
+            <div className="text-red-400 font-bold text-lg">
+              {Math.round(item.damage * item.count * 0.3)}
+            </div>
+          </div>
+          <div className="bg-gray-800 p-3 rounded-lg text-center">
+            <div className="text-xs text-gray-400 mb-1">10%</div>
+            <div className="text-red-400 font-bold text-lg">
+              {Math.round(item.damage * item.count * 0.1)}
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -66,99 +95,100 @@ const SelectedItem = ({ item, onChangeCount }) => {
   };
 
   const url = `${getDomain()}/item/${encodeURI(
-    item.name.replaceAll(" ", "_")
+    item.name.replaceAll(" ", "_"),
   )}`;
 
   return (
-    <div className="col-xl-6 col-sm-12">
-      <div className="card">
-        <div className="text-center card-header">
+    <div className="w-full">
+      <div className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+        <div className="p-4 text-center relative bg-gray-800 border-b border-gray-700">
           <button
             type="button"
-            className="close"
+            className="absolute top-2 right-2 text-gray-400 hover:text-white bg-gray-700 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200"
             aria-label="Remove item"
             onClick={() => onChangeCount(item.name, 0)}
           >
-            <span aria-hidden="true">X</span>
-          </button>
-          <div className="input-group w-75">
-            <input
-              type="number"
-              className="form-control text-center"
-              value={item.count}
-              onChange={(e) => onChangeCount(item.name, e.target.value)}
-              onMouseEnter={() => setDisableEdit(false)}
-              onMouseLeave={() => setDisableEdit(true)}
-              min="1"
-              max="9999"
-              readOnly={disableEdit}
-            />
-            <span className="input-group-text">
-              <Icon key={item.name} name={item.name} />
-              <a href={url}>{t(item.name, { ns: "items" })}</a>
+            <span
+              aria-hidden="true"
+              className="text-lg font-bold leading-none"
+              style={{ marginTop: "-1px" }}
+            >
+              ×
             </span>
+          </button>
+          <div className="flex items-center justify-center space-x-4">
+            <div className="relative">
+              <input
+                type="number"
+                className="w-24 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold text-lg"
+                value={item.count}
+                onChange={(e) => onChangeCount(item.name, e.target.value)}
+                onMouseEnter={() => setDisableEdit(false)}
+                onMouseLeave={() => setDisableEdit(true)}
+                min="1"
+                max="9999"
+                readOnly={disableEdit}
+              />
+            </div>
+            <div className="flex items-center space-x-3">
+              <Icon key={item.name} name={item.name} width="48" />
+              <a
+                href={url}
+                className="text-blue-400 hover:text-blue-300 transition-colors duration-200 text-xl font-medium"
+              >
+                {t(item.name, { ns: "items" })}
+              </a>
+            </div>
           </div>
         </div>
-        <div className="card-body">
-          <div className="list-unstyled row">{showIngredient()}</div>
+        <div className="p-4">
+          <div className="flex flex-wrap gap-4">{showIngredient()}</div>
           {showDamage()}
         </div>
-        <div className="card-footer">
-          <div className="row">
-            <div className="col-4 col-lg-2 p-1">
-              <button
-                type="button"
-                className="btn btn-success btn-block p-2"
-                onClick={() => handleChange(1)}
-              >
-                +1
-              </button>
-            </div>
-            <div className="col-4 col-lg-2 p-1">
-              <button
-                type="button"
-                className="btn btn-success btn-block p-2"
-                onClick={() => handleChange(10)}
-              >
-                +10
-              </button>
-            </div>
-            <div className="col-4 col-lg-2 p-1">
-              <button
-                type="button"
-                className="btn btn-success btn-block p-2"
-                onClick={() => handleChange(100)}
-              >
-                +100
-              </button>
-            </div>
-            <div className="col-4 col-lg-2 p-1">
-              <button
-                type="button"
-                className="btn btn-danger btn-block p-2"
-                onClick={() => handleChange(-1)}
-              >
-                -1
-              </button>
-            </div>
-            <div className="col-4 col-lg-2 p-1">
-              <button
-                type="button"
-                className="btn btn-danger btn-block p-2"
-                onClick={() => handleChange(-10)}
-              >
-                -10
-              </button>
-            </div>
-            <div className="col-4 col-lg-2 p-1">
-              <button
-                type="button"
-                className="btn btn-danger btn-block p-2"
-                onClick={() => handleChange(-100)}
-              >
-                -100
-              </button>
-            </div>
+        <div className="p-4 bg-gray-800 border-t border-gray-700">
+          <div className="grid grid-cols-6 gap-2">
+            <button
+              type="button"
+              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
+              onClick={() => handleChange(1)}
+            >
+              +1
+            </button>
+            <button
+              type="button"
+              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
+              onClick={() => handleChange(10)}
+            >
+              +10
+            </button>
+            <button
+              type="button"
+              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
+              onClick={() => handleChange(100)}
+            >
+              +100
+            </button>
+            <button
+              type="button"
+              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
+              onClick={() => handleChange(-1)}
+            >
+              -1
+            </button>
+            <button
+              type="button"
+              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
+              onClick={() => handleChange(-10)}
+            >
+              -10
+            </button>
+            <button
+              type="button"
+              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
+              onClick={() => handleChange(-100)}
+            >
+              -100
+            </button>
           </div>
         </div>
       </div>

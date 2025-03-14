@@ -11,10 +11,15 @@ const SchematicDropInfo = ({ name, items }) => {
       const url = getItemUrl(schematic.name);
 
       return (
-        <li className="list-inline-item" key={`schematic-${schematic.name}`}>
-          <div className="list-group-item">
+        <li
+          className="inline-block mr-2 mb-2"
+          key={`schematic-${schematic.name}`}
+        >
+          <div className="p-2 bg-gray-800 border border-gray-700 rounded-lg flex items-center space-x-2">
             <Icon key={schematic.name} name={schematic.name} />
-            <a href={url}>{t(schematic.name, { ns: "items" })}</a>
+            <a href={url} className="text-blue-400 hover:text-blue-300">
+              {t(schematic.name, { ns: "items" })}
+            </a>
           </div>
         </li>
       );
@@ -28,11 +33,15 @@ const SchematicDropInfo = ({ name, items }) => {
 
     if (schematics.length > 0) {
       return (
-        <div className="col-12 col-md-6">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Learned in")}</div>
-            <div className="card-body">
-              <ul className="list-inline">{showSchematics(schematics)}</ul>
+        <div className="w-full md:w-1/2 p-4">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+            <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
+              {t("Learned in")}
+            </div>
+            <div className="p-4">
+              <ul className="flex flex-wrap -m-2">
+                {showSchematics(schematics)}
+              </ul>
             </div>
           </div>
         </div>

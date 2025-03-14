@@ -31,11 +31,11 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
   };
 
   return (
-    <header>
-      <div className="navbar navbar-expand-md navbar-dark bg-dark">
-        <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <span>Stiletto</span>
+    <header className="bg-gray-800">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap md:flex-nowrap items-center justify-between py-2">
+          <Link to="/" className="flex items-center space-x-2 text-white">
+            <span className="text-2xl font-medium web-title">Stiletto</span>
             <img
               width="35"
               height="35"
@@ -44,13 +44,15 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
               src="/img/icon-01.png"
             />
           </Link>
+
+          {/* Mobile menu button */}
           <button
-            className="navbar-toggler"
+            className="md:hidden p-2 text-white hover:bg-gray-700 rounded-lg"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbar-main-menu"
-            aria-controls="navbar-main-menu"
-            aria-expanded="false"
+            onClick={() => {
+              const menu = document.getElementById("navbar-main-menu");
+              menu.classList.toggle("hidden");
+            }}
             aria-label="Toggle Menu"
           >
             <svg
@@ -71,84 +73,96 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
               />
             </svg>
           </button>
-          <div className="collapse navbar-collapse" id="navbar-main-menu">
-            <ul
-              className="navbar-nav mr-auto mb-2 mb-md-0"
-              itemScope="itemscope"
-              itemType="https://www.schema.org/SiteNavigationElement"
-            >
+
+          {/* Navigation menu */}
+          <div
+            id="navbar-main-menu"
+            className="hidden md:flex md:items-center w-full md:justify-around"
+          >
+            <ul className="flex flex-col md:flex-row md:space-x-4 mt-4 md:mt-0">
               <li className="nav-item" data-cy="crafter-link">
-                <Link itemProp="url" className="nav-link" to="/crafter">
-                  <span itemProp="name">{t("Crafting")}</span>
+                <Link
+                  to="/crafter"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
+                  {t("Crafting")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="maps-link">
                 <Link
-                  itemProp="url"
-                  className="nav-link"
                   to={getStoredItem("token") != null ? "/maps" : "/map"}
+                  className="block py-2 text-white hover:text-gray-300"
                 >
-                  <span itemProp="name">{t("Resource Maps")}</span>
+                  {t("Resource Maps")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="clanlist-link">
-                <Link itemProp="url" className="nav-link" to="/clanlist">
-                  <span itemProp="name">{t("Clan List")}</span>
+                <Link
+                  to="/clanlist"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
+                  {t("Clan List")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="trades-link">
-                <Link itemProp="url" className="nav-link" to="/trades">
-                  <span itemProp="name">{t("Trades")}</span>
+                <Link
+                  to="/trades"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
+                  {t("Trades")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="wiki-link">
-                <Link itemProp="url" className="nav-link" to="/wiki">
-                  <span itemProp="name">{t("Wiki")}</span>
+                <Link
+                  to="/wiki"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
+                  {t("Wiki")}
                 </Link>
               </li>
             </ul>
-            <div className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-              <div className="input-group" itemProp="potentialAction">
+
+            {/* Search bar */}
+            <div className="flex items-center mt-4 md:mt-0 flex-wrap md:flex-nowrap gap-y-1 gap-x-2">
+              <div className="relative">
                 <input
                   type="search"
-                  className="form-control"
+                  className="w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500"
                   placeholder={t("Search items")}
                   aria-label={t("Search items")}
-                  aria-describedby="search-addon"
-                  itemProp="query-input"
-                  name="search"
                   onChange={(e) => setSearchText(e.currentTarget.value)}
                   onKeyPress={handleKeyPress}
                   value={searchText}
                 />
-                <div className="input-group-append">
-                  <button
-                    type="button"
-                    className="btn btn-outline-info"
-                    aria-label="Search button"
-                    onClick={searchItem}
-                  >
-                    <i className="fa fa-search" />
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
+                  onClick={searchItem}
+                >
+                  <i className="fa fa-search" />
+                </button>
               </div>
+
+              {/* Language selector */}
+              <button
+                type="button"
+                className="p-2 text-white hover:bg-gray-700 rounded-lg"
+                data-cy="change-languaje-btn"
+                aria-label="Change language"
+                onClick={openLanguajeModal}
+              >
+                <img
+                  className="rounded"
+                  width="39"
+                  height="25"
+                  src={getLanguageFlag(language)}
+                  alt="Change language"
+                />
+              </button>
+
+              {/* Discord button */}
+              <DiscordButton />
             </div>
-            <button
-              type="button"
-              className="btn btn-sm mr-2"
-              data-cy="change-languaje-btn"
-              aria-label="Change language"
-              onClick={openLanguajeModal}
-            >
-              <img
-                className="rounded"
-                width="39"
-                height="25"
-                src={getLanguageFlag(language)}
-                alt="Change language"
-              />
-            </button>
-            <DiscordButton />
           </div>
         </div>
       </div>

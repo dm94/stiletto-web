@@ -128,110 +128,6 @@ const PrivateProfile = () => {
     i18next.changeLanguage(userData.language);
   };
 
-  const renderChangeNamePart = () => {
-    if (userData.nickname === "Loading..." || !userData.nickname) {
-      return (
-        <div className="col-xl-6">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">{t("Add name in the game")}</div>
-            <div className="card-body text-succes">
-              <form onSubmit={handleAddNickInGame}>
-                <div className="form-group">
-                  <label htmlFor="user_game_name">
-                    {t("Your name in Last Oasis")}
-                  </label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    name="nameInGameInput"
-                    value={nameInGameInput}
-                    onChange={(e) => setNameInGameInput(e.target.value)}
-                    required
-                  />
-                </div>
-                <button
-                  className="btn btn-lg btn-success btn-block"
-                  type="submit"
-                >
-                  {t("Add")}
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      );
-    }
-    return "";
-  };
-
-  const renderManageClanPart = () => {
-    if (userData.clanname === "Loading..." || !userData.clanname) {
-      return (
-        <div className="col-xl-6">
-          <div className="card border-secondary mb-3">
-            <div className="card-header">
-              <Link
-                className="btn btn-lg btn-info btn-block"
-                to="/clanlist"
-                data-cy="join-clan-btn"
-              >
-                {t("Join a clan")}
-              </Link>
-            </div>
-            <div className="card-footer">
-              <button
-                type="button"
-                className="btn btn-lg btn-success btn-block"
-                data-cy="create-clan-btn"
-                onClick={() => setShowClanConfig(true)}
-              >
-                {t("Create a clan")}
-              </button>
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <div className="col-xl-6">
-        <div className="card border-secondary mb-3">
-          <div className="card-header">{t("Manage Clan")}</div>
-          <div className="card-body">
-            <Link className="btn btn-lg btn-secondary btn-block" to="/members">
-              <i className="fas fa-users" /> {t("Members")}
-            </Link>
-            <Link
-              className="btn btn-lg btn-secondary btn-block"
-              to="/walkerlist"
-            >
-              <Icon key="Base Wings" name="Base Wings" width="30" />
-              {t("Walker List")}
-            </Link>
-            <Link
-              className="btn btn-lg btn-secondary btn-block"
-              to="/diplomacy"
-            >
-              <i className="far fa-flag" /> {t("Diplomacy")}
-            </Link>
-          </div>
-          {userData.clanleaderid !== userData.user_discord_id && (
-            <div className="card-footer">
-              <button
-                type="button"
-                className="btn btn-lg btn-danger btn-block"
-                data-cy="leave-clan-btn"
-                onClick={handleLeaveClan}
-              >
-                {t("Leave clan")}
-              </button>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  };
-
   if (error) {
     return (
       <ModalMessage
@@ -253,172 +149,296 @@ const PrivateProfile = () => {
   }
 
   return (
-    <div className="row">
+    <div className="container mx-auto px-4 py-8">
       <Helmet>
-        <title>{t("Profile")} - Stiletto for Last Oasis</title>
+        <title>Profile - Stiletto for Last Oasis</title>
         <meta
           name="description"
-          content="Private profile where you can configure some things"
+          content="Manage your profile and clan settings"
         />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Perfil - Stiletto for Last Oasis" />
+        <meta
+          name="twitter:title"
+          content="Profile - Stiletto for Last Oasis"
+        />
         <meta
           name="twitter:description"
-          content="Private profile where you can configure some things"
+          content="Manage your profile and clan settings"
         />
         <meta
           name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
         />
         <link rel="canonical" href={`${getDomain()}/profile`} />
       </Helmet>
 
-      {showClanConfig && (
-        <ClanConfig
-          key="clanconfig"
-          clanid={userData.clanid}
-          onClose={() => {
-            setShowClanConfig(false);
-            clearStorageData();
-          }}
-          onError={setError}
-        />
-      )}
-
-      <div className="col-xl-6">
-        <div className="card border-secondary mb-3">
-          <div className="card-header">{t("Your details")}</div>
-          <div className="card-body">
-            <ul className="list-group mb-3">
-              <li className="list-group-item d-flex justify-content-between lh-condensed">
-                <div className="my-0">{t("Discord Tag")}</div>
-                <div className="text-muted" data-cy="discord-tag">
-                  {userData.discordtag}
-                </div>
-              </li>
-              <li className="list-group-item d-flex justify-content-between lh-condensed">
-                <div className="my-0">{t("Nick in Game")}</div>
-                <div className="text-muted">
-                  {userData.nickname || t("Not defined")}
-                </div>
-              </li>
-              <li className="list-group-item d-flex justify-content-between lh-condensed">
-                <div className="my-0">{t("Clan")}</div>
-                <div className="text-muted">
-                  {userData.clanname || t("No Clan")}
-                </div>
-              </li>
-            </ul>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Datos del usuario */}
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+          <div className="p-3 bg-gray-900 border-b border-gray-700">
+            <h2 className="text-xl font-bold text-white">
+              {t("Your details")}
+            </h2>
           </div>
-          <div className="card-footer">
+          <div className="p-0">
+            <div className="divide-y divide-gray-700">
+              <div className="flex justify-between items-center p-3">
+                <span className="text-gray-300">{t("Discord Tag")}</span>
+                <span className="text-gray-400" data-cy="discord-tag">
+                  {userData.discordtag}
+                </span>
+              </div>
+              <div className="flex justify-between items-center p-3">
+                <span className="text-gray-300">{t("Nick in Game")}</span>
+                <span className="text-gray-400">
+                  {userData.nickname || t("Not defined")}
+                </span>
+              </div>
+              <div className="flex justify-between items-center p-3">
+                <span className="text-gray-300">{t("Clan")}</span>
+                <span className="text-gray-400">
+                  {userData.clanname || t("No Clan")}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="p-3 space-y-2">
             <button
               type="button"
-              className="btn btn-lg btn-warning btn-block"
               onClick={() => {
                 closeSession();
                 setRedirect(true);
               }}
+              className="w-full p-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 focus:outline-none"
             >
               {t("Close session")}
             </button>
             <button
               type="button"
-              className="btn btn-lg btn-danger btn-block"
               onClick={() => setShowDeleteModal(true)}
+              className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none"
             >
               {t("Delete user")}
             </button>
           </div>
         </div>
-      </div>
 
-      <div className={showDeleteModal ? "modal d-block" : "modal d-none"}>
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title" id="deleteusermodal">
-                {t("Are you sure?")}
-              </h5>
-            </div>
-            <div className="modal-body">
-              <p>
-                {t(
-                  "This option is not reversible, your user and all his data will be deleted."
+        {/* Gestión del clan */}
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+          <div className="p-3 bg-gray-900 border-b border-gray-700">
+            <h2 className="text-xl font-bold text-white">{t("Manage Clan")}</h2>
+          </div>
+          <div className="p-3 space-y-2">
+            {userData.clanname && userData.clanname !== "Loading..." ? (
+              <>
+                <Link
+                  to="/members"
+                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
+                >
+                  <i className="fas fa-users mr-2" />
+                  {t("Members")}
+                </Link>
+                <Link
+                  to="/walkerlist"
+                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
+                >
+                  <Icon
+                    key="Base Wings"
+                    name="Base Wings"
+                    width="30"
+                    className="mr-2"
+                  />
+                  {t("Walker List")}
+                </Link>
+                <Link
+                  to="/diplomacy"
+                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
+                >
+                  <i className="far fa-flag mr-2" />
+                  {t("Diplomacy")}
+                </Link>
+                {userData.clanleaderid !== userData.user_discord_id && (
+                  <button
+                    type="button"
+                    data-cy="leave-clan-btn"
+                    onClick={handleLeaveClan}
+                    className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none"
+                  >
+                    {t("Leave clan")}
+                  </button>
                 )}
-              </p>
-              <p>
-                {t(
-                  "The administrator will be notified to delete the user, the user will not be deleted directly."
-                )}
-              </p>
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                onClick={() => setShowDeleteModal(false)}
-              >
-                {t("Cancel")}
-              </button>
-              <button
-                type="button"
-                className="btn btn-danger"
-                onClick={handleDeleteUser}
-              >
-                {t("Delete user")}
-              </button>
-            </div>
+              </>
+            ) : (
+              <>
+                <Link
+                  to="/clanlist"
+                  data-cy="join-clan-btn"
+                  className="w-full inline-flex justify-center items-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
+                >
+                  {t("Join a clan")}
+                </Link>
+                <button
+                  type="button"
+                  data-cy="create-clan-btn"
+                  onClick={() => setShowClanConfig(true)}
+                  className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
+                >
+                  {t("Create a clan")}
+                </button>
+              </>
+            )}
           </div>
         </div>
-      </div>
 
-      {renderChangeNamePart()}
-      {renderManageClanPart()}
-
-      <div className="col-xl-6">
-        <div className="card border-secondary mb-3">
-          <div className="card-body">
-            <Link className="btn btn-lg btn-secondary btn-block" to="/maps">
+        {/* Enlace a mapas */}
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+          <div className="p-3">
+            <Link
+              to="/maps"
+              className="w-full inline-flex justify-center items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
+            >
               {t("Resource Maps")}
             </Link>
           </div>
         </div>
+
+        {/* Selector de idioma */}
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+          <div className="p-3 bg-gray-900 border-b border-gray-700">
+            <h2 className="text-xl font-bold text-white">
+              {t("Change language")}
+            </h2>
+          </div>
+          <div className="p-3">
+            <div className="flex space-x-2">
+              <select
+                id="changeLanguajeSelect"
+                className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
+                value={userData.language || "en"}
+                onChange={(e) =>
+                  setUserData({ ...userData, language: e.target.value })
+                }
+              >
+                {supportedLanguages.map((language) => (
+                  <option key={language.key} value={language.key}>
+                    {t(language.name)}
+                  </option>
+                ))}
+              </select>
+              <button
+                type="button"
+                onClick={handleLanguageChange}
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
+              >
+                {t("Change language")}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Añadir nombre en el juego (solo si no tiene) */}
+        {(!userData.nickname || userData.nickname === "Loading...") && (
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+            <div className="p-3 bg-gray-900 border-b border-gray-700">
+              <h2 className="text-xl font-bold text-white">
+                {t("Add name in the game")}
+              </h2>
+            </div>
+            <div className="p-3">
+              <form onSubmit={handleAddNickInGame} className="space-y-3">
+                <div>
+                  <label
+                    htmlFor="user_game_name"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
+                    {t("Your name in Last Oasis")}
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
+                    name="nameInGameInput"
+                    value={nameInGameInput}
+                    onChange={(e) => setNameInGameInput(e.target.value)}
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
+                >
+                  {t("Add")}
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
       </div>
 
-      <div className="col-xl-6">
-        <div className="card border-secondary mb-3">
-          <div className="card-header">{t("Change language")}</div>
-          <div className="card-body">
-            <div className="row">
-              <div className="col">
-                <select
-                  id="changeLanguajeSelect"
-                  className="custom-select"
-                  value={userData.language || "en"}
-                  onChange={(e) =>
-                    setUserData({ ...userData, language: e.target.value })
-                  }
-                >
-                  {supportedLanguages.map((language) => (
-                    <option key={language.key} value={language.key}>
-                      {t(language.name)}
-                    </option>
-                  ))}
-                </select>
+      {/* Modal de confirmación de borrado */}
+      {showDeleteModal && (
+        <div className="fixed inset-0 z-50 overflow-y-auto">
+          <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
+            <div
+              className="fixed inset-0 transition-opacity"
+              aria-hidden="true"
+            >
+              <div className="absolute inset-0 bg-gray-900 opacity-75" />
+            </div>
+            <div className="inline-block align-bottom bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+              <div className="bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div className="sm:flex sm:items-start">
+                  <div className="mt-3 text-center sm:mt-0 sm:text-left">
+                    <h3
+                      className="text-lg leading-6 font-medium text-gray-300"
+                      id="deleteusermodal"
+                    >
+                      {t("Are you sure?")}
+                    </h3>
+                    <div className="mt-2">
+                      <p className="text-sm text-gray-400">
+                        {t(
+                          "This option is not reversible, your user and all his data will be deleted.",
+                        )}
+                      </p>
+                      <p className="text-sm text-gray-400 mt-2">
+                        {t(
+                          "The administrator will be notified to delete the user, the user will not be deleted directly.",
+                        )}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="col">
+              <div className="bg-gray-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
                   type="button"
-                  className="btn btn-primary"
-                  onClick={handleLanguageChange}
+                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  onClick={handleDeleteUser}
                 >
-                  {t("Change language")}
+                  {t("Delete user")}
+                </button>
+                <button
+                  type="button"
+                  className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-700 shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                  onClick={() => setShowDeleteModal(false)}
+                >
+                  {t("Cancel")}
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
+
+      {showClanConfig && (
+        <ClanConfig
+          onClose={() => setShowClanConfig(false)}
+          onSuccess={() => {
+            setShowClanConfig(false);
+            window.location.reload();
+          }}
+        />
+      )}
     </div>
   );
 };

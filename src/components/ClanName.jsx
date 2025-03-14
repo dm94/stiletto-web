@@ -12,8 +12,11 @@ const ClanName = ({ clan }) => {
           style={{ backgroundColor: clan.flagcolor }}
           alt={clan.symbol}
           id={`symbol-img-${clan.name}`}
+          className="inline-block rounded"
         />
-        <span className="pb-3 mb-0 ml-2">{clan.name}</span>
+        <span className="inline-block pb-3 ml-2 text-gray-300">
+          {clan.name}
+        </span>
       </Fragment>
     );
   }
@@ -21,7 +24,7 @@ const ClanName = ({ clan }) => {
   return (
     <Fragment>
       <svg
-        className="bd-placeholder-img mr-2"
+        className="inline-block mr-2"
         width="32"
         height="32"
         xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +36,7 @@ const ClanName = ({ clan }) => {
       >
         <rect width="90%" height="90%" fill={clan.flagcolor} />
       </svg>
-      <span className="pb-3 mb-0">{clan.name}</span>
+      <span className="inline-block pb-3 text-gray-300">{clan.name}</span>
     </Fragment>
   );
 };

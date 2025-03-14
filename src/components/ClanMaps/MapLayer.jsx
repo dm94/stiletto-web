@@ -53,28 +53,28 @@ const MapLayer = ({
       <div>
         <button
           type="button"
-          className="btn btn-info btn-sm btn-block"
+          className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
           onClick={() =>
             updateResource(
               resource.mapid,
               resource.resourceid,
               resource.token,
-              date
+              date,
             )
           }
         >
           {t("Harvested now")}
         </button>
-        <div className="mb-1">
+        <div className="mb-1 text-gray-300">
           {t("Last Harvested")}: {resource.lastharvested}
         </div>
-        <div className="mb-1">
+        <div className="mb-1 text-gray-300">
           {t("Spawns in")}:{" "}
           {remainingQuality !== 0
             ? `${remainingQuality * 10} ${t("Minutes")}`
             : t("Now")}
         </div>
-        <div className="mb-1">
+        <div className="mb-1 text-gray-300">
           {t("Date")}: {fullDate.toLocaleString()}
         </div>
       </div>
@@ -100,19 +100,19 @@ const MapLayer = ({
             icon={getMarketDesign(resource.resourcetype)}
           >
             <Popup>
-              <div className="mb-0">
+              <div className="mb-0 text-gray-300">
                 <Icon name={resource.resourcetype} />
                 {t(resource.resourcetype)}
               </div>
-              <div className="mb-1 text-muted">
+              <div className="mb-1 text-gray-400">
                 [{`${Math.floor(resource.x)},${Math.floor(resource.y)}`}]
               </div>
-              <div className="mb-1">{resource.description}</div>
+              <div className="mb-1 text-gray-300">{resource.description}</div>
               {resource.lastharvested && getResourceEstimatedQuality(resource)}
               {resource.token && (
                 <button
                   type="button"
-                  className="btn btn-danger"
+                  className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                   onClick={() =>
                     deleteResource(resource.resourceid, resource.token)
                   }
@@ -122,9 +122,9 @@ const MapLayer = ({
               )}
               {(resource.resourcetype === "Poaching Hut" ||
                 resource.resourcetype === "Enemy Poaching Hut") && (
-                <div className="border-top border-warning mt-2">
+                <div className="border-t border-yellow-500 mt-2 pt-2">
                   <input
-                    className="form-control form-control-sm"
+                    className="w-full"
                     id="formPoachingRadius"
                     value={poachingHutRadius}
                     onChange={(e) => setPoachingHutRadius(e.target.value)}
@@ -156,7 +156,7 @@ const MapLayer = ({
     setCoordinateYInput(Math.round(e.latlng.lng * 100) / 100);
     changeInput(
       Math.round(e.latlng.lat * 100) / 100,
-      Math.round(e.latlng.lng * 100) / 100
+      Math.round(e.latlng.lng * 100) / 100,
     );
   };
 
@@ -177,11 +177,13 @@ const MapLayer = ({
 
   return (
     <div id="map">
-      <div className="btn-group">
+      <div className="flex space-x-2 mb-4 justify-end">
         <button
           type="button"
-          className={`btn btn-sm btn-secondary ${
-            gridOpacity === 1 ? "active" : ""
+          className={`p-2 rounded-lg ${
+            gridOpacity === 1
+              ? "bg-gray-600 text-white"
+              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
           }`}
           onClick={() => setGridOpacity(1)}
         >
@@ -189,8 +191,10 @@ const MapLayer = ({
         </button>
         <button
           type="button"
-          className={`btn btn-sm btn-secondary ${
-            gridOpacity === 0 ? "active" : ""
+          className={`p-2 rounded-lg ${
+            gridOpacity === 0
+              ? "bg-gray-600 text-white"
+              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
           }`}
           onClick={() => setGridOpacity(0)}
         >

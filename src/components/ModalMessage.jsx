@@ -12,7 +12,7 @@ const ModalMessage = ({ message, onClickOk }) => {
   const RedirectButton = () => (
     <button
       type="button"
-      className="btn btn-lg btn-outline-warning btn-block"
+      className="w-full px-4 py-2 text-sm font-medium text-yellow-500 border border-yellow-500 rounded-md hover:bg-yellow-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
       onClick={handleRedirect}
     >
       OK
@@ -22,7 +22,7 @@ const ModalMessage = ({ message, onClickOk }) => {
   const OkButton = () => (
     <button
       type="button"
-      className="btn btn-lg btn-outline-warning btn-block"
+      className="w-full px-4 py-2 text-sm font-medium text-yellow-500 border border-yellow-500 rounded-md hover:bg-yellow-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
       onClick={() => onClickOk?.()}
     >
       OK
@@ -55,18 +55,16 @@ const ModalMessage = ({ message, onClickOk }) => {
   });
 
   return (
-    <div className="modal d-block">
-      <div className="modal-dialog">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title" id="modal">
-              {message?.isError ? t("Error") : t("Information")}
-            </h5>
-          </div>
-          <div className="modal-body">{t(message?.text)}</div>
-          <div className="modal-footer">
-            {message?.redirectPage == null ? <OkButton /> : <RedirectButton />}
-          </div>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4">
+        <div className="p-4 border-b border-gray-700">
+          <h5 className="text-xl font-semibold text-white" id="modal">
+            {message?.isError ? t("Error") : t("Information")}
+          </h5>
+        </div>
+        <div className="p-4 text-gray-300">{t(message?.text)}</div>
+        <div className="p-4 border-t border-gray-700">
+          {message?.redirectPage == null ? <OkButton /> : <RedirectButton />}
         </div>
       </div>
     </div>

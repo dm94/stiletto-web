@@ -29,7 +29,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
             headers: {
               Authorization: `Bearer ${getStoredItem("token")}`,
             },
-          }
+          },
         );
 
         if (response.status === 200) {
@@ -133,7 +133,8 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
               ? "img-fluid img-thumbnail"
               : "img-fluid"
           }
-          alt={symbol}
+          alt={`Clan symbol ${symbol}`}
+          title={`Clan symbol ${symbol}`}
           id={`symbol-img-${symbol}`}
         />
       </button>
@@ -141,152 +142,179 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
   };
 
   return (
-    <div className="modal d-block" tabIndex="-1" aria-hidden="true">
-      <div className="modal-dialog modal-dialog-scrollable">
-        <div className="modal-content">
-          <div className="modal-header">
-            <h5 className="modal-title">{t("Clan Configuration")}</h5>
-            <button
-              type="button"
-              className="close"
-              data-dismiss="modal"
-              aria-label="Close"
-              onClick={onClose}
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+      <div className="bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div className="p-4 border-b border-gray-700 flex justify-between items-center">
+          <h5 className="text-xl font-semibold text-white">
+            {t("Clan Configuration")}
+          </h5>
+          <button
+            type="button"
+            className="text-gray-400 hover:text-white"
+            onClick={onClose}
+            aria-label="Close"
+            title="Close"
+          >
+            <span className="sr-only">Close</span>
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <span aria-hidden="true">X</span>
-            </button>
-          </div>
-          <div className="modal-body">
-            <form
-              onSubmit={clanid ? handleUpdateClan : handleCreateClan}
-              id="clanconfig"
-            >
-              <div className="form-group">
-                <label htmlFor="clan_name">{t("Clan Name")}</label>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="p-4">
+          <form
+            onSubmit={clanid ? handleUpdateClan : handleCreateClan}
+            id="clanconfig"
+            className="space-y-4"
+          >
+            <div>
+              <label
+                htmlFor="clan_name"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
+                {t("Clan Name")}
+              </label>
+              <input
+                type="text"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                id="clan_name"
+                name="clan_name"
+                maxLength="20"
+                value={formState.addClanNameInput}
+                onChange={(e) =>
+                  setFormState({
+                    ...formState,
+                    addClanNameInput: e.target.value,
+                  })
+                }
+                required
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="regionInput"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
+                {t("Region")}
+              </label>
+              <ClusterList
+                onError={(error) => onError?.(error)}
+                value={formState.regionInput}
+                onChange={(value) =>
+                  setFormState({ ...formState, regionInput: value })
+                }
+                filter={false}
+              />
+            </div>
+            <div>
+              <div className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500"
+                  id="recruitmentInput"
+                  checked={formState.recruitInput}
+                  onChange={() =>
+                    setFormState({
+                      ...formState,
+                      recruitInput: !formState.recruitInput,
+                    })
+                  }
+                />
+                <label
+                  className="text-sm text-gray-300"
+                  htmlFor="recruitmentInput"
+                >
+                  {t("Looking for new members?")}{" "}
+                  {t(
+                    "By disabling this option the clan does not appear in the clan list.",
+                  )}
+                </label>
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="discord_invite"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
+                {t("Discord Invite Link")} {t("(Optional)")}
+              </label>
+              <div className="flex">
+                <span className="inline-flex items-center px-3 py-2 rounded-l-md border border-r-0 border-gray-600 bg-gray-700 text-gray-300 text-sm">
+                  https://discord.gg/
+                </span>
                 <input
                   type="text"
-                  className="form-control"
-                  id="clan_name"
-                  name="clan_name"
-                  maxLength="20"
-                  value={formState.addClanNameInput}
+                  className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-r-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  id="discord_invite"
+                  name="discord_invite"
+                  maxLength="10"
+                  value={formState.addClanDiscordInput}
                   onChange={(e) =>
                     setFormState({
                       ...formState,
-                      addClanNameInput: e.target.value,
+                      addClanDiscordInput: e.target.value,
                     })
                   }
-                  required
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="regionInput">{t("Region")}</label>
-                <ClusterList
-                  onError={(error) => onError?.(error)}
-                  value={formState.regionInput}
-                  onChange={(value) =>
-                    setFormState({ ...formState, regionInput: value })
-                  }
-                  filter={false}
-                />
+            </div>
+            <div>
+              <label
+                htmlFor="flag_color"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
+                {t("Flag Color")} {t("(Optional)")}
+              </label>
+              <input
+                type="color"
+                className="w-full h-10 bg-gray-700 border border-gray-600 rounded-md cursor-pointer"
+                id="flag_color"
+                value={formState.addClanColorInput}
+                onChange={(e) =>
+                  setFormState({
+                    ...formState,
+                    addClanColorInput: e.target.value,
+                  })
+                }
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="clan_symbol"
+                className="block text-sm font-medium text-gray-300 mb-2"
+              >
+                {t("Clan Symbol")}
+              </label>
+              <div className="grid grid-cols-4 gap-2" id="clan_symbol">
+                {renderSymbolsList()}
               </div>
-              <div className="form-group">
-                <div className="custom-control custom-switch my-1">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="recruitmentInput"
-                    checked={formState.recruitInput}
-                    onChange={() =>
-                      setFormState({
-                        ...formState,
-                        recruitInput: !formState.recruitInput,
-                      })
-                    }
-                  />
-                  <label
-                    className="custom-control-label"
-                    htmlFor="recruitmentInput"
-                  >
-                    {t("Looking for new members?")}{" "}
-                    {t(
-                      "By disabling this option the clan does not appear in the clan list."
-                    )}
-                  </label>
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="discord_invite">
-                  {t("Discord Invite Link")} {t("(Optional)")}
-                </label>
-                <div className="input-group mb-3">
-                  <div className="input-group-prepend">
-                    <span className="input-group-text">
-                      https://discord.gg/
-                    </span>
-                  </div>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="discord_invite"
-                    name="discord_invite"
-                    maxLength="10"
-                    value={formState.addClanDiscordInput}
-                    onChange={(e) =>
-                      setFormState({
-                        ...formState,
-                        addClanDiscordInput: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="flag_color">
-                  {t("Flag Color")} {t("(Optional)")}
-                </label>
-                <input
-                  type="color"
-                  className="form-control"
-                  id="flag_color"
-                  name="flag_color"
-                  value={formState.addClanColorInput}
-                  onChange={(e) =>
-                    setFormState({
-                      ...formState,
-                      addClanColorInput: e.target.value,
-                    })
-                  }
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="sigilClanFlagInput">
-                  {t("Symbol")} {t("(Optional)")}
-                </label>
-                <div className="col-12">
-                  <div className="row">{renderSymbolsList()}</div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div className="modal-footer">
-            <button
-              type="button"
-              className="btn btn-secondary"
-              onClick={onClose}
-            >
-              {t("Close")}
-            </button>
-            <button
-              className="btn btn-primary"
-              form="clanconfig"
-              type="submit"
-              value="Submit"
-            >
-              {clanid ? t("Save") : t("Create a clan")}
-            </button>
-          </div>
+            </div>
+            <div className="flex justify-end space-x-3 mt-6">
+              <button
+                type="button"
+                className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                onClick={onClose}
+              >
+                {t("Cancel")}
+              </button>
+              <button
+                type="submit"
+                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              >
+                {clanid ? t("Update") : t("Create")}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

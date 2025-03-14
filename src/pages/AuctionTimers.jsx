@@ -18,14 +18,14 @@ const AuctionTimers = () => {
     const timerElements = [];
     for (let i = 0; i < timers; i++) {
       timerElements.push(
-        <Timer key={i} onPlay={playAlarm} value={playSound} />
+        <Timer key={i} onPlay={playAlarm} value={playSound} />,
       );
     }
-    return <div className="col-12">{timerElements}</div>;
+    return <div className="w-full">{timerElements}</div>;
   };
 
   return (
-    <div className="row">
+    <div className="container mx-auto px-4 py-6">
       <Helmet>
         <title>Auction Timers - Stiletto for Last Oasis</title>
         <meta name="description" content="Timers for what you need" />
@@ -41,60 +41,75 @@ const AuctionTimers = () => {
         />
         <link rel="canonical" href={`${getDomain()}/auctions`} />
       </Helmet>
-      <div className="col-md-8">
-        <div className="card">
-          <div className="card-header text-center">
-            {t(
-              "This data is not saved, if you reload the page it will be deleted"
-            )}
+
+      <div className="flex flex-wrap -mx-2 mb-6">
+        <div className="w-full lg:w-2/3 px-2 mb-4 lg:mb-0">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+            <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 text-center text-gray-300">
+              {t(
+                "This data is not saved, if you reload the page it will be deleted",
+              )}
+            </div>
           </div>
         </div>
-      </div>
-      <div className="col-md-4">
-        <div className="card">
-          <div className="card-body text-center">
-            <div className="btn-group">
-              <button
-                type="button"
-                className={`btn btn-secondary ${playSound ? "active" : ""}`}
-                onClick={() => setPlaySound(true)}
-              >
-                <i className="fas fa-volume-up" /> {t("Sound On")}
-              </button>
-              <button
-                type="button"
-                className={`btn btn-secondary ${playSound ? "" : "active"}`}
-                onClick={() => setPlaySound(false)}
-              >
-                <i className="fas fa-volume-mute" /> {t("Sound Off")}
-              </button>
+
+        <div className="w-full lg:w-1/3 px-2">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+            <div className="p-4 text-center">
+              <div className="inline-flex rounded-md shadow-sm">
+                <button
+                  type="button"
+                  className={`px-4 py-2 ${
+                    playSound
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-700 text-gray-300"
+                  } rounded-l-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
+                  onClick={() => setPlaySound(true)}
+                >
+                  <i className="fas fa-volume-up mr-2" /> {t("Sound On")}
+                </button>
+                <button
+                  type="button"
+                  className={`px-4 py-2 ${
+                    !playSound
+                      ? "bg-blue-600 text-white"
+                      : "bg-gray-700 text-gray-300"
+                  } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
+                  onClick={() => setPlaySound(false)}
+                >
+                  <i className="fas fa-volume-mute mr-2" /> {t("Sound Off")}
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       {renderTimers()}
-      <div className="col-md-12">
-        <div className="card">
-          <div className="card-body text-center">
-            <div className="row">
-              <div className="col">
-                <button
-                  type="button"
-                  className="btn btn-primary btn-block"
-                  onClick={() => setTimers(timers + 1)}
-                >
-                  +
-                </button>
-              </div>
-              <div className="col">
-                <button
-                  type="button"
-                  className="btn btn-danger btn-block"
-                  onClick={() => setTimers(timers - 1)}
-                >
-                  -
-                </button>
-              </div>
+
+      <div className="w-full mt-6">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
+          <div className="p-4 text-center">
+            <div className="grid grid-cols-2 gap-4">
+              <button
+                type="button"
+                className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-medium"
+                onClick={() => setTimers(timers + 1)}
+              >
+                <i className="fas fa-plus mr-2" />
+                {t("Add Timer")}
+              </button>
+              <button
+                type="button"
+                className={`px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 text-lg font-medium ${
+                  timers <= 1 ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+                onClick={() => setTimers(Math.max(1, timers - 1))}
+                disabled={timers <= 1}
+              >
+                <i className="fas fa-minus mr-2" />
+                {t("Remove Timer")}
+              </button>
             </div>
           </div>
         </div>
