@@ -59,7 +59,7 @@
     "cypress": "^13.16.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^4.0.14",
-    "typescript": "^5.8.2"
+    "typescript": "^4.9.0"
   },
   "engines": {
     "node": ">=20.x"
