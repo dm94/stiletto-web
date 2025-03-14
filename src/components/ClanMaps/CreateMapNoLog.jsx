@@ -44,29 +44,32 @@ const CreateMapNoLog = ({ onOpen }) => {
 
   const shareMapLink = () => (
     <input
-      className="btn btn-success btn-sm btn-block"
+      className="px-4 py-2 bg-green-600 text-white rounded-md w-full disabled:bg-green-400"
       type="text"
       value={`${getDomain()}/map/${mapIdInput}?pass=${mapPassInput}`}
       disabled
     />
   );
 
-  const showHideClassName = showShareMap ? "modal d-block" : "modal d-none";
-
   return (
-    <div className="row">
-      <div className="col-xl-12">
-        <div className="card border-secondary mb-3">
-          <div className="card-header">
+    <div className="flex gap-4 flex-col p-4">
+      <div className="w-full">
+        <div className="bg-white rounded shadow p-4 mb-4 dark:bg-gray-800 dark:text-white">
+          <div className="text-lg font-semibold mb-2 border-b pb-2">
             {t("Open a map that has already been created")}
           </div>
-          <div className="card-body text-succes">
-            <div className="row">
-              <div className="col-xl-3 form-group">
-                <label htmlFor="map_id">{t("Map ID")}</label>
+          <div className="p-4">
+            <div className="grid gap-4 md:grid-cols-3">
+              <div className="col-span-1">
+                <label
+                  htmlFor="map_id"
+                  className="block text-sm font-medium mb-2"
+                >
+                  {t("Map ID")}
+                </label>
                 <input
                   type="number"
-                  className="form-control"
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="map_id"
                   name="map_id"
                   maxLength="4"
@@ -75,11 +78,16 @@ const CreateMapNoLog = ({ onOpen }) => {
                   required
                 />
               </div>
-              <div className="col-xl-9 form-group">
-                <label htmlFor="map_id">{t("Map Pass")}</label>
+              <div className="col-span-2">
+                <label
+                  htmlFor="map_pass"
+                  className="block text-sm font-medium mb-2"
+                >
+                  {t("Map Pass")}
+                </label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="map_pass"
                   name="map_pass"
                   maxLength="30"
@@ -90,7 +98,7 @@ const CreateMapNoLog = ({ onOpen }) => {
               </div>
             </div>
             <button
-              className="btn btn-lg btn-outline-success btn-block"
+              className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white font-semibold rounded-lg w-full mt-2"
               type="button"
               onClick={() => onOpen(mapIdInput, mapPassInput)}
             >
@@ -100,25 +108,23 @@ const CreateMapNoLog = ({ onOpen }) => {
         </div>
       </div>
       <CreateMapPanel maps={maps} onCreateMap={createMap} />
-      <div className={showHideClassName}>
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">{t("Map created")}</h5>
+      {showShareMap && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded shadow p-4 dark:bg-gray-800 dark:text-white w-1/2">
+            <div className="text-lg font-semibold mb-4 border-b pb-2">
+              {t("Map created")}
             </div>
-            <div className="modal-body">{shareMapLink()}</div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-outline-success btn-block"
-                onClick={() => onOpen(mapIdInput, mapPassInput)}
-              >
-                {t("Open map")}
-              </button>
-            </div>
+            <div className="mb-4">{shareMapLink()}</div>
+            <button
+              type="button"
+              className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white font-semibold rounded-lg w-full"
+              onClick={() => onOpen(mapIdInput, mapPassInput)}
+            >
+              {t("Open map")}
+            </button>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
