@@ -11,7 +11,7 @@ import TradeSystem from "./pages/TradeSystem";
 import Diplomacy from "./pages/Diplomacy";
 import AuctionTimers from "./pages/AuctionTimers";
 import Others from "./pages/Others";
-import MapPage from "./pages/Map";
+import MapPage from "./pages/MapPage";
 import TechTree from "./pages/TechTree";
 import Privacy from "./pages/Privacy";
 import ResourceMapNoLog from "./components/ClanMaps/ResourceMapNoLog";
