@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 const CraftingTime = ({ total = 1, time }) => {
   const { t } = useTranslation();
-  
+
   const convertSecondsToTime = (seconds) => {
     const totalSeconds = Number(seconds);
     const hours = Math.floor(totalSeconds / 3600);

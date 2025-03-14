@@ -43,7 +43,7 @@ const Icon = ({ name: initialName, width = "16" }) => {
   return (
     <img
       src={`${config.REACT_APP_RESOURCES_URL}/items/${getProcessedName(
-        initialName
+        initialName,
       )} icon.png`}
       loading="lazy"
       onError={() => setLoaded(false)}

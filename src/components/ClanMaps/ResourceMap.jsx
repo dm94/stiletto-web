@@ -56,7 +56,7 @@ const ResourceMap = ({ map, onReturn }) => {
     resourceTypeInput,
     qualityInput,
     descriptionInput,
-    lastHarvested
+    lastHarvested,
   ) => {
     try {
       const response = await createResource({
@@ -88,7 +88,7 @@ const ResourceMap = ({ map, onReturn }) => {
         mapName,
         dateOfBurning,
         allowEditing,
-        pass
+        pass,
       );
       setTextSuccess(response);
     } catch {
@@ -101,7 +101,7 @@ const ResourceMap = ({ map, onReturn }) => {
       const response = await deleteResource(
         map?.mapid,
         resourceId,
-        resourceToken
+        resourceToken,
       );
       if (response.success) {
         fetchData();
@@ -119,8 +119,8 @@ const ResourceMap = ({ map, onReturn }) => {
     } else {
       setResourcesFiltered(
         resourcesInTheMap.filter(
-          (resource) => resource.resourcetype === resourceType
-        )
+          (resource) => resource.resourcetype === resourceType,
+        ),
       );
     }
   };

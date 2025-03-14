@@ -1,22 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Giscus from "@giscus/react";
 import { getStoredItem } from "../../functions/services";
 import { useTranslation } from "react-i18next";
 
 const Comments = ({ name }) => {
   const { t } = useTranslation();
-  const [newComment, setNewComment] = useState('');
+  const [newComment, setNewComment] = useState("");
   const [comments, setComments] = useState([]);
 
   const handleSubmit = () => {
     if (newComment.trim()) {
-      setComments([...comments, {
-        id: Date.now(),
-        author: 'User',
-        date: new Date(),
-        content: newComment
-      }]);
-      setNewComment('');
+      setComments([
+        ...comments,
+        {
+          id: Date.now(),
+          author: "User",
+          date: new Date(),
+          content: newComment,
+        },
+      ]);
+      setNewComment("");
     }
   };
 
@@ -25,7 +28,9 @@ const Comments = ({ name }) => {
     return (
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-          <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">{t("Comments")}</div>
+          <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
+            {t("Comments")}
+          </div>
           <div className="p-4">
             <Giscus
               id="comments"
@@ -51,16 +56,27 @@ const Comments = ({ name }) => {
   return (
     <div className="w-full p-4">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-        <div className="p-3 bg-gray-900 border-b border-gray-700">{t("Comments")}</div>
+        <div className="p-3 bg-gray-900 border-b border-gray-700">
+          {t("Comments")}
+        </div>
         <div className="p-4">
           <div className="space-y-4">
             {comments.map((comment) => (
-              <div key={comment.id} className="border-b border-gray-700 pb-4 last:border-b-0">
+              <div
+                key={comment.id}
+                className="border-b border-gray-700 pb-4 last:border-b-0"
+              >
                 <div className="flex justify-between items-start mb-2">
-                  <div className="text-gray-300 font-medium">{comment.author}</div>
-                  <div className="text-gray-400 text-sm">{new Date(comment.date).toLocaleDateString()}</div>
+                  <div className="text-gray-300 font-medium">
+                    {comment.author}
+                  </div>
+                  <div className="text-gray-400 text-sm">
+                    {new Date(comment.date).toLocaleDateString()}
+                  </div>
                 </div>
-                <div className="text-gray-300 whitespace-pre-wrap">{comment.content}</div>
+                <div className="text-gray-300 whitespace-pre-wrap">
+                  {comment.content}
+                </div>
               </div>
             ))}
           </div>

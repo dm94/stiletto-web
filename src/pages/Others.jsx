@@ -94,10 +94,12 @@ const Others = () => {
               </div>
               <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600">
                 <div className="p-4 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-2 text-gray-300">{t("Discord Bot")}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-300">
+                    {t("Discord Bot")}
+                  </h3>
                   <p className="mb-4 text-gray-300">
                     {t(
-                      "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects."
+                      "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.",
                     )}
                   </p>
                   <a
@@ -117,7 +119,9 @@ const Others = () => {
       </div>
       <div className="mt-8">
         <div className="text-center">
-          <h3 className="text-xl font-semibold text-blue-500 mb-4">{t("Sponsored servers")}</h3>
+          <h3 className="text-xl font-semibold text-blue-500 mb-4">
+            {t("Sponsored servers")}
+          </h3>
           <div className="max-w-md mx-auto p-4">
             <a
               href="https://discord.gg/FcecRtZ"
@@ -140,4 +144,3 @@ const Others = () => {
 };
 
 export default Others;
-

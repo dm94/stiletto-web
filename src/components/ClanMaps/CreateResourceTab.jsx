@@ -11,7 +11,7 @@ const CreateResourceTab = ({
 }) => {
   const { t } = useTranslation();
   const [resourceTypeInput, setResourceTypeInput] = useState(
-    items?.[0]?.name ?? "Aloe Vera"
+    items?.[0]?.name ?? "Aloe Vera",
   );
   const [qualityInput, setQualityInput] = useState(0);
   const [descriptionInput, setDescriptionInput] = useState("");
@@ -34,7 +34,7 @@ const CreateResourceTab = ({
       resourceTypeInput,
       qualityInput,
       descriptionInput,
-      lastHarvestedInput
+      lastHarvestedInput,
     );
     setResourceTypeInput("Aloe Vera");
     setQualityInput(0);
@@ -46,7 +46,10 @@ const CreateResourceTab = ({
     <div className="p-4">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="resourcetype" className="block text-sm font-medium text-gray-300 mb-1">
+          <label
+            htmlFor="resourcetype"
+            className="block text-sm font-medium text-gray-300 mb-1"
+          >
             {t("Type")}
           </label>
           <select
@@ -59,7 +62,10 @@ const CreateResourceTab = ({
           </select>
         </div>
         <div>
-          <label htmlFor="coordinateXInput" className="block text-sm font-medium text-gray-300 mb-1">
+          <label
+            htmlFor="coordinateXInput"
+            className="block text-sm font-medium text-gray-300 mb-1"
+          >
             {t("Coordinate")} X ({t("Not the same as in the game")})
           </label>
           <input
@@ -72,7 +78,10 @@ const CreateResourceTab = ({
           />
         </div>
         <div>
-          <label htmlFor="coordinateYInput" className="block text-sm font-medium text-gray-300 mb-1">
+          <label
+            htmlFor="coordinateYInput"
+            className="block text-sm font-medium text-gray-300 mb-1"
+          >
             {t("Coordinate")} Y ({t("Not the same as in the game")})
           </label>
           <input
@@ -85,7 +94,10 @@ const CreateResourceTab = ({
           />
         </div>
         <div>
-          <label htmlFor="descriptionInput" className="block text-sm font-medium text-gray-300 mb-1">
+          <label
+            htmlFor="descriptionInput"
+            className="block text-sm font-medium text-gray-300 mb-1"
+          >
             {t("Description")}
           </label>
           <input
@@ -98,7 +110,10 @@ const CreateResourceTab = ({
           />
         </div>
         <div>
-          <label htmlFor="Last Harvested" className="block text-sm font-medium text-gray-300 mb-1">
+          <label
+            htmlFor="Last Harvested"
+            className="block text-sm font-medium text-gray-300 mb-1"
+          >
             {t("Last Harvested")}
           </label>
           <input

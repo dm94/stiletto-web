@@ -46,7 +46,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
       const response = await updateMemberPermissions(
         clanid,
         memberid,
-        permissions
+        permissions,
       );
 
       if (response.status === 200) {
@@ -79,12 +79,18 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
             aria-label="Close"
             onClick={onClose}
           >
-            <span aria-hidden="true" className="text-lg font-bold leading-none" style={{ marginTop: '-1px' }}>×</span>
+            <span
+              aria-hidden="true"
+              className="text-lg font-bold leading-none"
+              style={{ marginTop: "-1px" }}
+            >
+              ×
+            </span>
           </button>
         </div>
         <div className="p-4 text-gray-300">
           <div className="space-y-4">
-            <div 
+            <div
               className="flex items-center"
               title={t("Allow to change bot settings")}
             >
@@ -105,8 +111,8 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                 {t("Discord Bot settings")}
               </label>
             </div>
-            
-            <div 
+
+            <div
               className="flex items-center"
               title={t("Allow editing walkers")}
             >
@@ -127,8 +133,8 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                 {t("Allow editing walkers")}
               </label>
             </div>
-            
-            <div 
+
+            <div
               className="flex items-center"
               title={t("Allow editing diplomacy")}
             >
@@ -149,8 +155,8 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                 {t("Allow editing diplomacy")}
               </label>
             </div>
-            
-            <div 
+
+            <div
               className="flex items-center"
               title={t("Allow management of request")}
             >
@@ -171,11 +177,8 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                 {t("Allow management of request")}
               </label>
             </div>
-            
-            <div 
-              className="flex items-center"
-              title={t("Allow kick members")}
-            >
+
+            <div className="flex items-center" title={t("Allow kick members")}>
               <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"

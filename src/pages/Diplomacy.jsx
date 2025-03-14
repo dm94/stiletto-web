@@ -113,7 +113,7 @@ const Diplomacy = () => {
     }
 
     const allies = listOfRelations.filter(
-      (r) => r.typed === 1 || r.typed === 31
+      (r) => r.typed === 1 || r.typed === 31,
     );
 
     return allies.map((d) => (
@@ -133,7 +133,7 @@ const Diplomacy = () => {
     }
 
     const enemies = listOfRelations.filter(
-      (r) => r.typed === 2 || r.typed === 32
+      (r) => r.typed === 2 || r.typed === 32,
     );
 
     return enemies.map((d) => (
@@ -201,7 +201,10 @@ const Diplomacy = () => {
             <form onSubmit={handleCreateRelationship}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <div>
-                  <label htmlFor="typedInput" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label
+                    htmlFor="typedInput"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
                     {t("Type")}
                   </label>
                   <select
@@ -216,7 +219,10 @@ const Diplomacy = () => {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="flag_color" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label
+                    htmlFor="flag_color"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
                     {t("Flag Color")}
                   </label>
                   <input
@@ -231,7 +237,10 @@ const Diplomacy = () => {
                 </div>
               </div>
               <div className="mb-4">
-                <label htmlFor="nameOtherClanInput" className="block text-sm font-medium text-gray-300 mb-1">
+                <label
+                  htmlFor="nameOtherClanInput"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
                   {t("Clan Name")}
                 </label>
                 <input
@@ -246,7 +255,10 @@ const Diplomacy = () => {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="sigilClanFlagInput" className="block text-sm font-medium text-gray-300 mb-1">
+                <label
+                  htmlFor="sigilClanFlagInput"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
                   {t("Symbol")}
                 </label>
                 <div className="w-full">
@@ -323,11 +335,9 @@ const Diplomacy = () => {
       <div className="flex flex-col space-y-4">
         {/* Formulario de creación en una fila completa */}
         {isLeader || hasPermissions ? (
-          <div className="w-full">
-            {createNewRelationship()}
-          </div>
+          <div className="w-full">{createNewRelationship()}</div>
         ) : null}
-        
+
         {/* Las tres categorías en otra fila */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="w-full">

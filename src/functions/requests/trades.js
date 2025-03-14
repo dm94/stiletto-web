@@ -17,13 +17,11 @@ export const getTrades = async ({
       ...(region && { region }),
     });
 
-    return await fetch(
-      `${config.REACT_APP_API_URL}/trades?${params}`
-    );
+    return await fetch(`${config.REACT_APP_API_URL}/trades?${params}`);
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const deleteTrade = async (idTrade) => {
   try {
@@ -36,7 +34,7 @@ export const deleteTrade = async (idTrade) => {
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const createTrade = async ({
   resource,
@@ -65,5 +63,4 @@ export const createTrade = async ({
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
-
+};

@@ -61,7 +61,7 @@ const Footer = () => {
             <span>|</span>
             <span className="flex items-center">
               {t(
-                "This website uses utilities related to the game 'Last Oasis' but is not affiliated with"
+                "This website uses utilities related to the game 'Last Oasis' but is not affiliated with",
               )}{" "}
               <a
                 href="https://www.donkey.team/"

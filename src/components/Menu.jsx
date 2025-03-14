@@ -50,8 +50,8 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
             className="md:hidden p-2 text-white hover:bg-gray-700 rounded-lg"
             type="button"
             onClick={() => {
-              const menu = document.getElementById('navbar-main-menu');
-              menu.classList.toggle('hidden');
+              const menu = document.getElementById("navbar-main-menu");
+              menu.classList.toggle("hidden");
             }}
             aria-label="Toggle Menu"
           >
@@ -75,10 +75,16 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
           </button>
 
           {/* Navigation menu */}
-          <div id="navbar-main-menu" className="hidden md:flex md:items-center w-full md:justify-around">
+          <div
+            id="navbar-main-menu"
+            className="hidden md:flex md:items-center w-full md:justify-around"
+          >
             <ul className="flex flex-col md:flex-row md:space-x-4 mt-4 md:mt-0">
               <li className="nav-item" data-cy="crafter-link">
-                <Link to="/crafter" className="block py-2 text-white hover:text-gray-300">
+                <Link
+                  to="/crafter"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
                   {t("Crafting")}
                 </Link>
               </li>
@@ -91,17 +97,26 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                 </Link>
               </li>
               <li className="nav-item" data-cy="clanlist-link">
-                <Link to="/clanlist" className="block py-2 text-white hover:text-gray-300">
+                <Link
+                  to="/clanlist"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
                   {t("Clan List")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="trades-link">
-                <Link to="/trades" className="block py-2 text-white hover:text-gray-300">
+                <Link
+                  to="/trades"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
                   {t("Trades")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="wiki-link">
-                <Link to="/wiki" className="block py-2 text-white hover:text-gray-300">
+                <Link
+                  to="/wiki"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
                   {t("Wiki")}
                 </Link>
               </li>

@@ -23,7 +23,9 @@ const RequestMemberListItem = ({ isLeader, member, onShowRequest }) => {
   return (
     <tr className="hover:bg-gray-700 transition-colors duration-150">
       <td className="px-4 py-3">
-        <span className="font-medium text-neutral-400">{member?.discordtag}</span>
+        <span className="font-medium text-neutral-400">
+          {member?.discordtag}
+        </span>
       </td>
       <td className="px-4 py-3 text-gray-300">{member?.nickname}</td>
       <td className="px-4 py-3">{renderButton()}</td>

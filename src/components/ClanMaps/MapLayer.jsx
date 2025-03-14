@@ -59,7 +59,7 @@ const MapLayer = ({
               resource.mapid,
               resource.resourceid,
               resource.token,
-              date
+              date,
             )
           }
         >
@@ -156,7 +156,7 @@ const MapLayer = ({
     setCoordinateYInput(Math.round(e.latlng.lng * 100) / 100);
     changeInput(
       Math.round(e.latlng.lat * 100) / 100,
-      Math.round(e.latlng.lng * 100) / 100
+      Math.round(e.latlng.lng * 100) / 100,
     );
   };
 

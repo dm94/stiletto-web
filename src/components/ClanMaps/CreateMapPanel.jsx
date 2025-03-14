@@ -16,7 +16,7 @@ const CreateMapPanel = ({ maps, onCreateMap }) => {
       evt,
       mapNameInput,
       date.toISOString().split("T")[0],
-      mapSelectInput
+      mapSelectInput,
     );
     setMapNameInput("");
     setMapDateInput(1);

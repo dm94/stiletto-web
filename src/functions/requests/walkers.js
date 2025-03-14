@@ -21,18 +21,15 @@ export const getWalkers = async ({
       ...(ready !== "All" && { ready: ready === "Yes" }),
     });
 
-    return await fetch(
-      `${config.REACT_APP_API_URL}/walkers?${params}`,
-      {
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      }
-    );
+    return await fetch(`${config.REACT_APP_API_URL}/walkers?${params}`, {
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    });
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const editWalker = async ({
   walkerID,
@@ -58,12 +55,12 @@ export const editWalker = async ({
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
         },
-      }
+      },
     );
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const getDiscordServers = async (code, redirect) => {
   try {
@@ -72,17 +69,15 @@ export const getDiscordServers = async (code, redirect) => {
       redirect,
     });
 
-    return await fetch(`${config.REACT_APP_API_URL}/walkers/auth?${params}`,
-      {
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      }
-    );
+    return await fetch(`${config.REACT_APP_API_URL}/walkers/auth?${params}`, {
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    });
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const deleteWalker = async (walkerID) => {
   try {
@@ -95,4 +90,4 @@ export const deleteWalker = async (walkerID) => {
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};

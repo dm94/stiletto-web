@@ -91,7 +91,7 @@ const ResourceMapNoLog = (props) => {
         setError("Error when connecting to the API");
       }
     },
-    [mapId, fetchData]
+    [mapId, fetchData],
   );
 
   const handleCreateResource = useCallback(
@@ -99,7 +99,7 @@ const ResourceMapNoLog = (props) => {
       resourceTypeInput,
       qualityInput,
       descriptionInput,
-      lastHarvested
+      lastHarvested,
     ) => {
       try {
         const response = await createResource({
@@ -121,7 +121,7 @@ const ResourceMapNoLog = (props) => {
         setError("Error when connecting to the API");
       }
     },
-    [mapId, coordinateXInput, coordinateYInput, pass, fetchData]
+    [mapId, coordinateXInput, coordinateYInput, pass, fetchData],
   );
 
   const handleFilterResources = useCallback(
@@ -130,12 +130,12 @@ const ResourceMapNoLog = (props) => {
         setResourcesFiltered(null);
       } else {
         const filtered = resourcesInTheMap?.filter(
-          (resource) => resource.resourcetype === resourceType
+          (resource) => resource.resourcetype === resourceType,
         );
         setResourcesFiltered(filtered);
       }
     },
-    [resourcesInTheMap]
+    [resourcesInTheMap],
   );
 
   if (!isLoaded) {

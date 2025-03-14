@@ -110,7 +110,7 @@ const ClanMaps = () => {
     event,
     mapNameInput,
     mapDateInput,
-    mapSelectInput
+    mapSelectInput,
   ) => {
     event.preventDefault();
 
@@ -118,7 +118,7 @@ const ClanMaps = () => {
       const response = await createMap(
         mapNameInput,
         mapDateInput,
-        mapSelectInput
+        mapSelectInput,
       );
 
       setState((prev) => ({
@@ -177,7 +177,9 @@ const ClanMaps = () => {
         <div className="w-full">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
             <div className="p-4 bg-gray-900 border-b border-gray-700">
-              <h2 className="text-xl font-semibold text-gray-300">{t("Map List")}</h2>
+              <h2 className="text-xl font-semibold text-gray-300">
+                {t("Map List")}
+              </h2>
             </div>
             <div className="p-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -189,14 +191,20 @@ const ClanMaps = () => {
         <CreateMapPanel maps={state.maps} onCreateMap={handleCreateMap} />
         <div className={showHideClassName}>
           <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+            <div
+              className="fixed inset-0 transition-opacity"
+              aria-hidden="true"
+            >
               <div className="absolute inset-0 bg-gray-900 opacity-75" />
             </div>
             <div className="inline-block align-bottom bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div className="bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 text-center sm:mt-0 sm:text-left">
-                    <h3 className="text-lg leading-6 font-medium text-gray-300" id="deletemapmodal">
+                    <h3
+                      className="text-lg leading-6 font-medium text-gray-300"
+                      id="deletemapmodal"
+                    >
                       {t("Are you sure?")}
                     </h3>
                     <div className="mt-2">

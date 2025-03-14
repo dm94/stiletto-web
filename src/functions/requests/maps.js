@@ -21,7 +21,13 @@ export const createMap = async (mapNameInput, mapDateInput, mapSelectInput) => {
   }
 };
 
-export const editMap = async (mapid, mapname, mapdate, allowediting, mappass) => {
+export const editMap = async (
+  mapid,
+  mapname,
+  mapdate,
+  allowediting,
+  mappass,
+) => {
   const url = new URL(`${config.REACT_APP_API_URL}/maps/${mapid}`);
   url.searchParams.append("mapname", mapname);
   url.searchParams.append("mapdate", mapdate);
@@ -44,7 +50,7 @@ export const editMap = async (mapid, mapname, mapdate, allowediting, mappass) =>
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const getMap = async (mapid, mappass) => {
   const url = new URL(`${config.REACT_APP_API_URL}/maps/${mapid}`);
@@ -60,29 +66,29 @@ export const getMap = async (mapid, mappass) => {
       return {
         success: true,
         data: json,
-      }
+      };
     }
 
     if (response.status === 401) {
       return {
         success: false,
         message: "Unauthorized",
-      }
+      };
     }
 
     if (response.status === 503) {
       return {
         success: false,
         message: "Error connecting to database",
-      }
+      };
     }
   } catch {
     return {
       success: false,
       message: "Error when connecting to the API",
-    }
+    };
   }
-}
+};
 
 export const getMaps = async () => {
   try {
@@ -94,34 +100,31 @@ export const getMaps = async () => {
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
 export const deleteMap = async (mapid) => {
   try {
-    return await fetch(
-      `${config.REACT_APP_API_URL}/maps/${mapid}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      }
-    );
+    return await fetch(`${config.REACT_APP_API_URL}/maps/${mapid}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    });
   } catch {
     throw new Error("Error when connecting to the API");
   }
-}
+};
 
-export const createResource = async (
-  { mapid,
-    x,
-    y,
-    mappass,
-    resourcetype,
-    quality,
-    description,
-    harvested },
-) => {
+export const createResource = async ({
+  mapid,
+  x,
+  y,
+  mappass,
+  resourcetype,
+  quality,
+  description,
+  harvested,
+}) => {
   const params = new URLSearchParams({
     mapid,
     resourcetype,
@@ -137,8 +140,8 @@ export const createResource = async (
     return await fetch(
       `${config.REACT_APP_API_URL}/maps/${mapid}/resources?${params}`,
       {
-        method: "POST"
-      }
+        method: "POST",
+      },
     );
   } catch {
     throw new Error("Error when connecting to the API");
@@ -154,15 +157,20 @@ export const deleteResource = async (mapId, resourceId, token) => {
     return await fetch(
       `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}?${params}`,
       {
-        method: "DELETE"
-      }
+        method: "DELETE",
+      },
     );
   } catch {
     throw new Error("Error when connecting to the API");
   }
 };
 
-export const updateResourceTime = async (mapId, resoruceId, token, harvested) => {
+export const updateResourceTime = async (
+  mapId,
+  resoruceId,
+  token,
+  harvested,
+) => {
   try {
     const params = new URLSearchParams({
       token,
@@ -175,8 +183,8 @@ export const updateResourceTime = async (mapId, resoruceId, token, harvested) =>
         method: "PUT",
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
-        }
-      }
+        },
+      },
     );
   } catch {
     throw new Error("Error when connecting to the API");
@@ -186,7 +194,7 @@ export const updateResourceTime = async (mapId, resoruceId, token, harvested) =>
 export const getResources = async (mapId, mappass) => {
   try {
     const params = new URLSearchParams({
-      mappass
+      mappass,
     });
 
     return await fetch(
@@ -195,8 +203,8 @@ export const getResources = async (mapId, mappass) => {
         method: "GET",
         headers: {
           Authorization: `Bearer ${getStoredItem("token")}`,
-        }
-      }
+        },
+      },
     );
   } catch {
     throw new Error("Error when connecting to the API");

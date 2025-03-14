@@ -25,7 +25,9 @@ const WikiDescription = ({ name }) => {
             {t("Description by Wiki")}
           </div>
           <div className="p-4">
-            <pre className="text-gray-300 whitespace-pre-wrap">{description}</pre>
+            <pre className="text-gray-300 whitespace-pre-wrap">
+              {description}
+            </pre>
           </div>
           <div className="p-4 bg-gray-900 border-t border-gray-700">
             <a

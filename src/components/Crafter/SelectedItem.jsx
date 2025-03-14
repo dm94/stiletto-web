@@ -41,9 +41,7 @@ const SelectedItem = ({ item, onChangeCount }) => {
           }
         />
         <div className="mt-4 flex flex-col space-y-2">
-          {ingredients.station && (
-            <Station name={ingredients.station} />
-          )}
+          {ingredients.station && <Station name={ingredients.station} />}
           {ingredients.time && (
             <CraftingTime time={ingredients.time} total={item.count} />
           )}
@@ -59,23 +57,33 @@ const SelectedItem = ({ item, onChangeCount }) => {
 
     return (
       <div className="w-full text-gray-300 p-4 bg-gray-900 rounded-lg mt-4 border-l-4 border-red-500">
-        <div className="font-semibold text-white mb-3 text-lg">{t("Damage")}</div>
+        <div className="font-semibold text-white mb-3 text-lg">
+          {t("Damage")}
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">100%</div>
-            <div className="text-red-400 font-bold text-lg">{Math.round(item.damage * item.count)}</div>
+            <div className="text-red-400 font-bold text-lg">
+              {Math.round(item.damage * item.count)}
+            </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">50%</div>
-            <div className="text-red-400 font-bold text-lg">{Math.round(item.damage * item.count * 0.5)}</div>
+            <div className="text-red-400 font-bold text-lg">
+              {Math.round(item.damage * item.count * 0.5)}
+            </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">30%</div>
-            <div className="text-red-400 font-bold text-lg">{Math.round(item.damage * item.count * 0.3)}</div>
+            <div className="text-red-400 font-bold text-lg">
+              {Math.round(item.damage * item.count * 0.3)}
+            </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">10%</div>
-            <div className="text-red-400 font-bold text-lg">{Math.round(item.damage * item.count * 0.1)}</div>
+            <div className="text-red-400 font-bold text-lg">
+              {Math.round(item.damage * item.count * 0.1)}
+            </div>
           </div>
         </div>
       </div>
@@ -87,7 +95,7 @@ const SelectedItem = ({ item, onChangeCount }) => {
   };
 
   const url = `${getDomain()}/item/${encodeURI(
-    item.name.replaceAll(" ", "_")
+    item.name.replaceAll(" ", "_"),
   )}`;
 
   return (
@@ -100,7 +108,13 @@ const SelectedItem = ({ item, onChangeCount }) => {
             aria-label="Remove item"
             onClick={() => onChangeCount(item.name, 0)}
           >
-            <span aria-hidden="true" className="text-lg font-bold leading-none" style={{ marginTop: '-1px' }}>×</span>
+            <span
+              aria-hidden="true"
+              className="text-lg font-bold leading-none"
+              style={{ marginTop: "-1px" }}
+            >
+              ×
+            </span>
           </button>
           <div className="flex items-center justify-center space-x-4">
             <div className="relative">
@@ -118,8 +132,8 @@ const SelectedItem = ({ item, onChangeCount }) => {
             </div>
             <div className="flex items-center space-x-3">
               <Icon key={item.name} name={item.name} width="48" />
-              <a 
-                href={url} 
+              <a
+                href={url}
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-200 text-xl font-medium"
               >
                 {t(item.name, { ns: "items" })}

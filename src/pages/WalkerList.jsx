@@ -78,7 +78,7 @@ const WalkerList = (props) => {
       searchDescription,
       useWalkerSearch,
       isReadySearch,
-    ]
+    ],
   );
 
   const updateWalker = async (walker) => {
@@ -125,7 +125,7 @@ const WalkerList = (props) => {
       try {
         const response = await getDiscordServers(
           code,
-          `${getDomain()}/walkerlist`
+          `${getDomain()}/walkerlist`,
         );
         if (response.status === 401) {
           setError("Unauthorized");
@@ -236,12 +236,12 @@ const WalkerList = (props) => {
         <div className="p-4">
           <div className="text-blue-400 mb-3">
             {t(
-              "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+              "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.",
             )}
           </div>
           <div className="text-yellow-400">
             {t(
-              "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot."
+              "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot.",
             )}
           </div>
         </div>
@@ -253,12 +253,14 @@ const WalkerList = (props) => {
   const renderDiscordBotSection = () => (
     <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
       <div className="p-3 bg-gray-900 border-b border-gray-700">
-        <h2 className="text-lg font-semibold text-gray-300">{t("Discord Bot")}</h2>
+        <h2 className="text-lg font-semibold text-gray-300">
+          {t("Discord Bot")}
+        </h2>
       </div>
       <div className="p-4">
         <div className="mb-3 text-gray-300">
           {t(
-            "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items"
+            "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items",
           )}
         </div>
         <a
@@ -334,15 +336,20 @@ const WalkerList = (props) => {
     <div className="container mx-auto px-4 py-6">
       {renderHelmetInfo()}
       {renderServerLinkButton()}
-      
+
       <div className="bg-gray-800 border border-blue-500 rounded-lg shadow-md mb-6">
         <div className="p-3 bg-gray-900 border-b border-gray-700">
-          <h2 className="text-lg font-semibold text-gray-300">{t("Search Walkers")}</h2>
+          <h2 className="text-lg font-semibold text-gray-300">
+            {t("Search Walkers")}
+          </h2>
         </div>
         <div className="p-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
             <div>
-              <label htmlFor="walkerTypeSearch" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="walkerTypeSearch"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Type")}
               </label>
               <select
@@ -356,7 +363,10 @@ const WalkerList = (props) => {
               </select>
             </div>
             <div>
-              <label htmlFor="search-name" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="search-name"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Name")}
               </label>
               <input
@@ -370,7 +380,10 @@ const WalkerList = (props) => {
               />
             </div>
             <div>
-              <label htmlFor="useWalkerSearch" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="useWalkerSearch"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Use")}
               </label>
               <select
@@ -387,7 +400,10 @@ const WalkerList = (props) => {
               </select>
             </div>
             <div>
-              <label htmlFor="search-description" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="search-description"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Description")}
               </label>
               <input
@@ -400,7 +416,10 @@ const WalkerList = (props) => {
               />
             </div>
             <div>
-              <label htmlFor="isReadySearch" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="isReadySearch"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Is ready?")}
               </label>
               <select
@@ -441,7 +460,7 @@ const WalkerList = (props) => {
           </div>
         </div>
       </div>
-      
+
       <div className="bg-gray-800 border border-gray-700 rounded-lg shadow-md overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-700">
           <thead className="bg-gray-900">
@@ -471,7 +490,7 @@ const WalkerList = (props) => {
           </tbody>
         </table>
       </div>
-      
+
       <div className="mt-4">
         <Pagination
           currentPage={page}

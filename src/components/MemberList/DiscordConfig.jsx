@@ -77,19 +77,30 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
         <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 flex justify-between items-center">
-          <h5 className="text-white font-medium">{t("Discord Bot Configuration")}</h5>
+          <h5 className="text-white font-medium">
+            {t("Discord Bot Configuration")}
+          </h5>
           <button
             type="button"
             className="text-gray-400 hover:text-white bg-gray-700 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200"
             aria-label="Close"
             onClick={onClose}
           >
-            <span aria-hidden="true" className="text-lg font-bold leading-none" style={{ marginTop: '-1px' }}>×</span>
+            <span
+              aria-hidden="true"
+              className="text-lg font-bold leading-none"
+              style={{ marginTop: "-1px" }}
+            >
+              ×
+            </span>
           </button>
         </div>
         <div className="p-4 text-gray-300">
           <div className="mb-4">
-            <label htmlFor="botlanguaje" className="block mb-2 text-sm font-medium">
+            <label
+              htmlFor="botlanguaje"
+              className="block mb-2 text-sm font-medium"
+            >
               {t("Bot language")}
             </label>
             <select
@@ -105,10 +116,11 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               <option value="de">{t("German")}</option>
             </select>
           </div>
-          
-          <div className="mb-3 flex items-center"
+
+          <div
+            className="mb-3 flex items-center"
             title={t(
-              "If you want the bot to read the clan log, it is necessary for other functions."
+              "If you want the bot to read the clan log, it is necessary for other functions.",
             )}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
@@ -128,10 +140,11 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               {t("Read discord clan log.")}
             </label>
           </div>
-          
-          <div className="mb-3 flex items-center"
+
+          <div
+            className="mb-3 flex items-center"
             title={t(
-              "Read the clan log and if a member was kicked, kick from here too."
+              "Read the clan log and if a member was kicked, kick from here too.",
             )}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
@@ -151,7 +164,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               {t("Automatic kick members from the clan")}
             </label>
           </div>
-          
+
           <div className="mb-3 flex items-center">
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
               <input
@@ -168,14 +181,15 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
             </div>
             <label className="text-sm" htmlFor="setNotReadyPVP">
               {t(
-                "Automatically if a PVP walker is used it is marked as not ready."
+                "Automatically if a PVP walker is used it is marked as not ready.",
               )}
             </label>
           </div>
-          
-          <div className="mb-3 flex items-center"
+
+          <div
+            className="mb-3 flex items-center"
             title={t(
-              "Read the clan log and if a member was kicked, kick from here too."
+              "Read the clan log and if a member was kicked, kick from here too.",
             )}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">

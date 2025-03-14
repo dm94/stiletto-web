@@ -37,7 +37,10 @@ const WalkerListItem = ({
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                 <div className="p-4">
                   <div className="flex flex-col space-y-2">
-                    <label htmlFor="walkerID" className="block text-sm font-medium text-gray-300">
+                    <label
+                      htmlFor="walkerID"
+                      className="block text-sm font-medium text-gray-300"
+                    >
                       {t("Walker ID")}
                     </label>
                     <input
@@ -55,7 +58,10 @@ const WalkerListItem = ({
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                 <div className="p-4">
                   <div className="flex flex-col space-y-2">
-                    <label htmlFor="lastUser" className="block text-sm font-medium text-gray-300">
+                    <label
+                      htmlFor="lastUser"
+                      className="block text-sm font-medium text-gray-300"
+                    >
                       {t("Last User")}
                     </label>
                     <input
@@ -73,7 +79,10 @@ const WalkerListItem = ({
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                 <div className="p-4">
                   <div className="flex flex-col space-y-2">
-                    <label htmlFor="lastUse" className="block text-sm font-medium text-gray-300">
+                    <label
+                      htmlFor="lastUse"
+                      className="block text-sm font-medium text-gray-300"
+                    >
                       {t("Last Use")}
                     </label>
                     <input
@@ -91,7 +100,10 @@ const WalkerListItem = ({
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                 <div className="p-4">
                   <div className="flex flex-col space-y-2">
-                    <label htmlFor="inputOwner" className="block text-sm font-medium text-gray-300">
+                    <label
+                      htmlFor="inputOwner"
+                      className="block text-sm font-medium text-gray-300"
+                    >
                       {t("Owner")}
                     </label>
                     <select
@@ -118,7 +130,10 @@ const WalkerListItem = ({
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                 <div className="p-4">
                   <div className="flex flex-col space-y-2">
-                    <label htmlFor="inputUse" className="block text-sm font-medium text-gray-300">
+                    <label
+                      htmlFor="inputUse"
+                      className="block text-sm font-medium text-gray-300"
+                    >
                       {t("Use")}
                     </label>
                     <select
@@ -135,7 +150,7 @@ const WalkerListItem = ({
                           <option key={use} value={use}>
                             {t(use)}
                           </option>
-                        )
+                        ),
                       )}
                     </select>
                   </div>
@@ -146,7 +161,10 @@ const WalkerListItem = ({
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                 <div className="p-4">
                   <div className="flex flex-col space-y-2">
-                    <label htmlFor="inputType" className="block text-sm font-medium text-gray-300">
+                    <label
+                      htmlFor="inputType"
+                      className="block text-sm font-medium text-gray-300"
+                    >
                       {t("Type")}
                     </label>
                     <select
@@ -173,7 +191,10 @@ const WalkerListItem = ({
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
                 <div className="p-4">
                   <div className="flex flex-col space-y-2">
-                    <label htmlFor="description" className="block text-sm font-medium text-gray-300">
+                    <label
+                      htmlFor="description"
+                      className="block text-sm font-medium text-gray-300"
+                    >
                       {t("Description")}
                     </label>
                     <textarea
@@ -220,7 +241,7 @@ const WalkerListItem = ({
                     <i className="fas fa-times" />
                   </button>
                 </div>
-                
+
                 <button
                   type="button"
                   className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 w-full max-w-xs"
@@ -231,7 +252,7 @@ const WalkerListItem = ({
                 >
                   <i className="fas fa-save mr-2" /> {t("Save")}
                 </button>
-                
+
                 {canEdit && (
                   <button
                     type="button"

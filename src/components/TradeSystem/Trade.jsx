@@ -51,7 +51,9 @@ const Trade = ({ trade, onDelete }) => {
 
     const quality = qualities[trade?.quality] || qualities["0"];
     return (
-      <span className={`inline-block px-2 py-1 rounded-full text-white text-sm ${quality.class} mb-2`}>
+      <span
+        className={`inline-block px-2 py-1 rounded-full text-white text-sm ${quality.class} mb-2`}
+      >
         {t(quality.text)}
       </span>
     );
@@ -71,7 +73,9 @@ const Trade = ({ trade, onDelete }) => {
             ) : (
               <i className="far fa-arrow-alt-circle-down text-red-400" />
             )}
-            <span className="text-gray-300">{t(trade.type)} {"//"} {trade.region}</span>
+            <span className="text-gray-300">
+              {t(trade.type)} {"//"} {trade.region}
+            </span>
           </div>
         </div>
         <div className="p-4 text-center">

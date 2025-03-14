@@ -29,7 +29,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
             headers: {
               Authorization: `Bearer ${getStoredItem("token")}`,
             },
-          }
+          },
         );
 
         if (response.status === 200) {
@@ -145,7 +145,9 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         <div className="p-4 border-b border-gray-700 flex justify-between items-center">
-          <h5 className="text-xl font-semibold text-white">{t("Clan Configuration")}</h5>
+          <h5 className="text-xl font-semibold text-white">
+            {t("Clan Configuration")}
+          </h5>
           <button
             type="button"
             className="text-gray-400 hover:text-white"
@@ -154,8 +156,18 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
             title="Close"
           >
             <span className="sr-only">Close</span>
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            <svg
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
             </svg>
           </button>
         </div>
@@ -166,7 +178,10 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
             className="space-y-4"
           >
             <div>
-              <label htmlFor="clan_name" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="clan_name"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Clan Name")}
               </label>
               <input
@@ -186,7 +201,10 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
               />
             </div>
             <div>
-              <label htmlFor="regionInput" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="regionInput"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Region")}
               </label>
               <ClusterList
@@ -218,13 +236,16 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                 >
                   {t("Looking for new members?")}{" "}
                   {t(
-                    "By disabling this option the clan does not appear in the clan list."
+                    "By disabling this option the clan does not appear in the clan list.",
                   )}
                 </label>
               </div>
             </div>
             <div>
-              <label htmlFor="discord_invite" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="discord_invite"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Discord Invite Link")} {t("(Optional)")}
               </label>
               <div className="flex">
@@ -248,7 +269,10 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
               </div>
             </div>
             <div>
-              <label htmlFor="flag_color" className="block text-sm font-medium text-gray-300 mb-1">
+              <label
+                htmlFor="flag_color"
+                className="block text-sm font-medium text-gray-300 mb-1"
+              >
                 {t("Flag Color")} {t("(Optional)")}
               </label>
               <input
@@ -265,7 +289,10 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
               />
             </div>
             <div>
-              <label htmlFor="clan_symbol" className="block text-sm font-medium text-gray-300 mb-2">
+              <label
+                htmlFor="clan_symbol"
+                className="block text-sm font-medium text-gray-300 mb-2"
+              >
                 {t("Clan Symbol")}
               </label>
               <div className="grid grid-cols-4 gap-2" id="clan_symbol">

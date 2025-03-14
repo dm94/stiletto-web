@@ -30,7 +30,7 @@ const MemberList = () => {
   const [isLoadedRequestList, setIsLoadedRequestList] = useState(false);
   const [redirectMessage, setRedirectMessage] = useState(false);
   const [selectNewOwner, setSelectNewOwner] = useState(
-    getStoredItem("discordid")
+    getStoredItem("discordid"),
   );
   const [showRequestModal, setShowRequestModal] = useState(false);
   const [requestData, setRequestData] = useState(false);
@@ -61,7 +61,7 @@ const MemberList = () => {
       if (userProfile.success) {
         setClanid(userProfile.message.clanid);
         setIsLeader(
-          userProfile.message.discordid === userProfile.message.leaderid
+          userProfile.message.discordid === userProfile.message.leaderid,
         );
       } else {
         setError(userProfile.message);
@@ -132,7 +132,7 @@ const MemberList = () => {
       const response = await updateMember(
         clanid,
         requestData.discordid,
-        "accept"
+        "accept",
       );
 
       localStorage.removeItem("memberList");
@@ -142,7 +142,7 @@ const MemberList = () => {
 
       if (response.status === 202) {
         setRequestMembers(
-          requestMembers.filter((m) => m.discordid !== requestData.discordid)
+          requestMembers.filter((m) => m.discordid !== requestData.discordid),
         );
         updateMembers();
       } else if (response.status === 405 || response.status === 401) {
@@ -167,7 +167,7 @@ const MemberList = () => {
       const response = await updateMember(
         clanid,
         requestData.discordid,
-        "reject"
+        "reject",
       );
 
       localStorage.removeItem("memberList");
@@ -177,7 +177,7 @@ const MemberList = () => {
 
       if (response.status === 202) {
         setRequestMembers(
-          requestMembers.filter((m) => m.discordid !== requestData.discordid)
+          requestMembers.filter((m) => m.discordid !== requestData.discordid),
         );
         updateMembers();
       } else if (response.status === 405 || response.status === 401) {
@@ -298,7 +298,7 @@ const MemberList = () => {
             </div>
             <div className="p-4 text-gray-300">
               {t(
-                "By deleting the clan you will delete all the data linked to it, be careful because this option is not reversible"
+                "By deleting the clan you will delete all the data linked to it, be careful because this option is not reversible",
               )}
             </div>
             <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
@@ -328,10 +328,13 @@ const MemberList = () => {
             <div className="p-4 text-gray-300">
               <p className="mb-4">
                 {t(
-                  "This option is not reversible, so be careful who you pass it on to in the leadership of the clan"
+                  "This option is not reversible, so be careful who you pass it on to in the leadership of the clan",
                 )}
               </p>
-              <label htmlFor="selectNewOwner" className="block mb-2 text-sm font-medium">
+              <label
+                htmlFor="selectNewOwner"
+                className="block mb-2 text-sm font-medium"
+              >
                 {t("New leader:")}
               </label>
               <select
@@ -426,12 +429,16 @@ const MemberList = () => {
         />
         <link rel="canonical" href={`${getDomain()}/members`} />
       </Helmet>
-      
+
       <div className={isLeader || hasBotPermissions ? "w-full mb-6" : "hidden"}>
         <div className="flex flex-wrap justify-between">
           <div className={isLeader ? "mb-4" : "hidden"}>
             <div className="inline-flex rounded-md shadow-sm">
-              <button type="button" className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center" disabled>
+              <button
+                type="button"
+                className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
+                disabled
+              >
                 <i className="fas fa-users-cog" />
               </button>
               <button
@@ -445,14 +452,18 @@ const MemberList = () => {
           </div>
           <div className="mb-4">
             <div className="inline-flex rounded-md shadow-sm">
-              <button type="button" className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center" disabled>
+              <button
+                type="button"
+                className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
+                disabled
+              >
                 <i className="fab fa-discord" />
               </button>
               <button
                 type="button"
                 className={
-                  isLeader || hasBotPermissions 
-                    ? "px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                  isLeader || hasBotPermissions
+                    ? "px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     : "hidden"
                 }
                 onClick={() => setShowBotConfig(true)}
@@ -463,7 +474,7 @@ const MemberList = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="flex flex-wrap -mx-2">
         <div className="w-full lg:w-1/2 px-2 mb-6">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
@@ -475,7 +486,9 @@ const MemberList = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gray-900 text-gray-300 text-left">
-                      <th className="px-4 py-2 rounded-tl-lg">{t("Discord Tag")}</th>
+                      <th className="px-4 py-2 rounded-tl-lg">
+                        {t("Discord Tag")}
+                      </th>
                       <th className="px-4 py-2">{t("Nick in Game")}</th>
                       <th
                         className={
@@ -487,7 +500,11 @@ const MemberList = () => {
                         {t("Kick")}
                       </th>
                       <th
-                        className={members && isLeader ? "px-4 py-2 rounded-tr-lg" : "hidden"}
+                        className={
+                          members && isLeader
+                            ? "px-4 py-2 rounded-tr-lg"
+                            : "hidden"
+                        }
                       >
                         {t("Edit")}
                       </th>
@@ -501,7 +518,7 @@ const MemberList = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="w-full lg:w-1/2 px-2 mb-6">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
@@ -512,7 +529,9 @@ const MemberList = () => {
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gray-900 text-gray-300 text-left">
-                      <th className="px-4 py-2 rounded-tl-lg">{t("Discord Tag")}</th>
+                      <th className="px-4 py-2 rounded-tl-lg">
+                        {t("Discord Tag")}
+                      </th>
                       <th className="px-4 py-2">{t("Nick in Game")}</th>
                       <th
                         className={
@@ -533,13 +552,19 @@ const MemberList = () => {
             </div>
           </div>
         </div>
-        
+
         {renderTransferOwnerPanel()}
         {renderDeleteClanButton()}
       </div>
-      
+
       {/* Request Modal */}
-      <div className={showRequestModal ? "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" : "hidden"}>
+      <div
+        className={
+          showRequestModal
+            ? "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            : "hidden"
+        }
+      >
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
           <div className="bg-gray-900 px-4 py-3 border-b border-gray-700">
             <h5 className="text-white font-medium">{t("Request")}</h5>
@@ -565,7 +590,7 @@ const MemberList = () => {
           </div>
         </div>
       </div>
-      
+
       {showBotConfig && (
         <DiscordConfig
           key="discordbotconfig"

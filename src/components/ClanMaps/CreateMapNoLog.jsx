@@ -24,7 +24,7 @@ const CreateMapNoLog = ({ onOpen }) => {
     event,
     mapNameInput,
     mapDateInput,
-    mapSelectInput
+    mapSelectInput,
   ) => {
     event.preventDefault();
 
@@ -32,7 +32,7 @@ const CreateMapNoLog = ({ onOpen }) => {
       const response = await createMapRequest(
         mapNameInput,
         mapDateInput,
-        mapSelectInput
+        mapSelectInput,
       );
       setMapIdInput(response.IdMap);
       setMapPassInput(response.PassMap);

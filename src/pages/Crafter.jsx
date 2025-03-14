@@ -118,8 +118,8 @@ const Crafter = ({ location }) => {
 
     setSelectedItems((prevItems) =>
       prevItems.map((item) =>
-        item.name === itemName ? { ...item, count } : item
-      )
+        item.name === itemName ? { ...item, count } : item,
+      ),
     );
   };
 
@@ -151,7 +151,7 @@ const Crafter = ({ location }) => {
 
   const removeSelectedItem = (itemName) => {
     setSelectedItems((prevItems) =>
-      prevItems.filter((it) => it.name !== itemName)
+      prevItems.filter((it) => it.name !== itemName),
     );
   };
 
@@ -217,17 +217,17 @@ const Crafter = ({ location }) => {
           </button>
         </form>
         <nav
-          className={`mt-2 lg:block ${isItemsNavVisible ? 'block' : 'hidden'}`}
+          className={`mt-2 lg:block ${isItemsNavVisible ? "block" : "hidden"}`}
           id="items-nav"
           aria-label="Items Navs"
         >
-          <div className="overflow-auto h-[95vh]">
-            {showAllItems()}
-          </div>
+          <div className="overflow-auto h-[95vh]">{showAllItems()}</div>
         </nav>
       </div>
       <main className="w-full lg:w-3/4 p-3">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">{showSelectedItems()}</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {showSelectedItems()}
+        </div>
         <div className="mt-4">
           <TotalMaterials
             key="totalmaterialsid"

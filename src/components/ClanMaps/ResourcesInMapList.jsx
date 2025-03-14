@@ -16,11 +16,14 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
       resourceTypeFilter === "All"
         ? resources?.filter((r) => r.x != null)
         : resources?.filter(
-            (r) => r.x != null && r.resourcetype === resourceTypeFilter
+            (r) => r.x != null && r.resourcetype === resourceTypeFilter,
           );
 
     return filteredResources?.map((resource) => (
-      <li className="p-2 bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors" key={resource.resourceid}>
+      <li
+        className="p-2 bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
+        key={resource.resourceid}
+      >
         <button
           type="button"
           className="w-full p-2 text-gray-300 hover:text-white focus:outline-none"
@@ -67,12 +70,8 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
 
   return (
     <Fragment>
-      <div className="flex flex-wrap gap-2 mb-4">
-        {renderFilterList()}
-      </div>
-      <ul className="space-y-2 max-h-[60vh] overflow-y-auto">
-        {renderList()}
-      </ul>
+      <div className="flex flex-wrap gap-2 mb-4">{renderFilterList()}</div>
+      <ul className="space-y-2 max-h-[60vh] overflow-y-auto">{renderList()}</ul>
     </Fragment>
   );
 };

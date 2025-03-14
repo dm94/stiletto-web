@@ -14,10 +14,14 @@ const Privacy = () => {
         cannonical={`${getDomain()}/privacy`}
       />
       <div className="w-full">
-        <h2 className="text-3xl font-bold text-gray-300 text-center mb-4">{t("Privacy Policy")}</h2>
+        <h2 className="text-3xl font-bold text-gray-300 text-center mb-4">
+          {t("Privacy Policy")}
+        </h2>
       </div>
       <div className="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
-        <h3 className="text-xl font-semibold text-gray-300 mb-4">{t("What information do we collect?")}</h3>
+        <h3 className="text-xl font-semibold text-gray-300 mb-4">
+          {t("What information do we collect?")}
+        </h3>
         <p className="text-gray-400 mb-2">
           {t(
             "Cookies - This site only uses Google cookies to view web traffic.",
@@ -35,8 +39,12 @@ const Privacy = () => {
         </p>
       </div>
       <div className="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
-        <h3 className="text-xl font-semibold text-gray-300 mb-4">{t("What do we use this data for?")}</h3>
-        <p className="text-gray-400 mb-2">{t("To improve the web experience.")}</p>
+        <h3 className="text-xl font-semibold text-gray-300 mb-4">
+          {t("What do we use this data for?")}
+        </h3>
+        <p className="text-gray-400 mb-2">
+          {t("To improve the web experience.")}
+        </p>
         <p className="text-gray-400">
           {t(
             "To provide some functions such as clan management and map management.",
@@ -66,7 +74,9 @@ const Privacy = () => {
         </p>
       </div>
       <div className="w-full bg-gray-800 border border-gray-700 rounded-lg p-4 mb-4">
-        <h3 className="text-xl font-semibold text-gray-300 mb-4">{t("Changes to the privacy policy")}</h3>
+        <h3 className="text-xl font-semibold text-gray-300 mb-4">
+          {t("Changes to the privacy policy")}
+        </h3>
         <p className="text-gray-400 mb-2">
           {t(
             "To ensure that our policies always comply with current legal requirements, we reserve the right to make changes to ensure that we are always in line with current legislation.",

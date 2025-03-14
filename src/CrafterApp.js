@@ -31,8 +31,7 @@ const CrafterApp = () => {
         htmlAttributes={{
           lang: language ?? "en",
         }}
-      >
-      </Helmet>
+      ></Helmet>
       <Menu
         language={language}
         openLanguajeModal={() => {
@@ -57,7 +56,6 @@ const CrafterApp = () => {
     </React.Fragment>
   );
 };
-
 
 function switchLanguage(lng) {
   storeItem("i18nextLng", lng);

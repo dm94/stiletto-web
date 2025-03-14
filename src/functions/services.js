@@ -76,10 +76,13 @@ export const getUserProfile = async () => {
       method: "GET",
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
-      }
+      },
     };
 
-    const response = await request(`${config.REACT_APP_API_URL}/users`, options);
+    const response = await request(
+      `${config.REACT_APP_API_URL}/users`,
+      options,
+    );
     if (response != null) {
       if (response.status === 200) {
         if (response.data != null) {
@@ -223,9 +226,12 @@ export const getClanInfo = async () => {
       method: "GET",
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
-      }
+      },
     };
-    const response = await request(`${config.REACT_APP_API_URL}/clans/${clanid}`, options);
+    const response = await request(
+      `${config.REACT_APP_API_URL}/clans/${clanid}`,
+      options,
+    );
     if (response != null) {
       if (response.status === 200) {
         addCachedData("clanInfo", response.data);
@@ -267,7 +273,9 @@ export const getCachedMembers = async () => {
   }
 
   const profile = getStoredItem("profile");
-  const clanid = profile ? JSON.parse(profile).clanid : (await getUserProfile()).message.clanid;
+  const clanid = profile
+    ? JSON.parse(profile).clanid
+    : (await getUserProfile()).message.clanid;
 
   if (!clanid) {
     return { success: false, message: "You need a clan to enter here" };
@@ -315,7 +323,7 @@ export const getItems = async () => {
     return cachedData;
   }
   const options = {
-    method: "GET"
+    method: "GET",
   };
 
   const response = await request(`${getDomain()}/json/items_min.json`, options);
@@ -333,10 +341,13 @@ export const getMarkers = async () => {
     return cachedData;
   }
   const options = {
-    method: "GET"
+    method: "GET",
   };
 
-  const response = await request("https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.min.json", options);
+  const response = await request(
+    "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.min.json",
+    options,
+  );
   if (response?.data != null) {
     addCachedData("markers", response.data);
     return response.data;
@@ -350,10 +361,13 @@ export const getClusters = async () => {
     return cachedData;
   }
   const options = {
-    method: "GET"
+    method: "GET",
   };
 
-  const response = await request(`${config.REACT_APP_API_URL}/clusters`, options);
+  const response = await request(
+    `${config.REACT_APP_API_URL}/clusters`,
+    options,
+  );
   if (response?.data != null) {
     addCachedData("clusters", response.data);
     return response.data;
@@ -368,10 +382,13 @@ export const getMapNames = async () => {
     return cachedData;
   }
   const options = {
-    method: "GET"
+    method: "GET",
   };
 
-  const response = await request("https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.min.json", options);
+  const response = await request(
+    "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.min.json",
+    options,
+  );
   if (response?.data != null) {
     addCachedData("maps", response.data);
     return response.data;
@@ -432,7 +449,7 @@ export const request = async (url, options) => {
     const data = await response.json();
     return {
       status: response.status,
-      data: data
+      data: data,
     };
   } catch {
     return null;

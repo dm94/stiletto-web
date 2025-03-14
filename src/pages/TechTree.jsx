@@ -15,8 +15,8 @@ import { getDomain } from "../functions/utils";
 import { getLearned, addTech } from "../functions/requests/users";
 import HeaderMeta from "../components/HeaderMeta";
 
-const SkillTreeTab = React.lazy(() =>
-  import("../components/TechTree/SkillTreeTab")
+const SkillTreeTab = React.lazy(
+  () => import("../components/TechTree/SkillTreeTab"),
 );
 
 const TechTree = () => {
@@ -175,7 +175,11 @@ const TechTree = () => {
         cannonical={`${getDomain()}/tech`}
       />
       <nav className="w-full">
-        <div className="flex border-b border-gray-700" id="nav-tab" role="tablist">
+        <div
+          className="flex border-b border-gray-700"
+          id="nav-tab"
+          role="tablist"
+        >
           <div className="flex-1">
             <NavLink
               className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"

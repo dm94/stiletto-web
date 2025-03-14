@@ -166,12 +166,17 @@ const ClanList = () => {
           <div className="w-full">
             <div className="bg-gray-800 border border-blue-500 rounded-lg mb-4">
               <div className="p-4 border-b border-blue-500">
-                <h2 className="text-xl font-semibold text-gray-300">{t("Search Clans")}</h2>
+                <h2 className="text-xl font-semibold text-gray-300">
+                  {t("Search Clans")}
+                </h2>
               </div>
               <div className="p-4">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
                   <div className="md:col-span-2">
-                    <label htmlFor="regionInput" className="block text-sm font-medium text-gray-300 mb-1">
+                    <label
+                      htmlFor="regionInput"
+                      className="block text-sm font-medium text-gray-300 mb-1"
+                    >
                       {t("Region")}
                     </label>
                     <ClusterList
@@ -185,7 +190,10 @@ const ClanList = () => {
                     />
                   </div>
                   <div className="md:col-span-3">
-                    <label htmlFor="search-name" className="block text-sm font-medium text-gray-300 mb-1">
+                    <label
+                      htmlFor="search-name"
+                      className="block text-sm font-medium text-gray-300 mb-1"
+                    >
                       {t("Name")}
                     </label>
                     <input
@@ -229,19 +237,34 @@ const ClanList = () => {
             <table className="min-w-full divide-y divide-gray-700">
               <thead className="bg-gray-700">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
                     {t("Clan Name")}
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
                     {t("Region")}
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
                     {t("Leader")}
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
                     {t("Discord Invite Link")}
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
+                  <th
+                    scope="col"
+                    className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider"
+                  >
                     {t("Actions")}
                   </th>
                 </tr>
@@ -267,13 +290,19 @@ const ClanList = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-gray-800 rounded-lg max-w-md w-full mx-4">
             <div className="p-4 border-b border-gray-700">
-              <h5 className="text-xl font-semibold text-gray-300" id="sendRequest">
+              <h5
+                className="text-xl font-semibold text-gray-300"
+                id="sendRequest"
+              >
                 {t("Send request")}
               </h5>
             </div>
             <div className="p-4">
               <div className="mb-4">
-                <label htmlFor="modalTextArea" className="block text-sm font-medium text-gray-300 mb-1">
+                <label
+                  htmlFor="modalTextArea"
+                  className="block text-sm font-medium text-gray-300 mb-1"
+                >
                   {t("Request message")}
                 </label>
                 <textarea

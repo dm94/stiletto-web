@@ -51,9 +51,9 @@ const MemberListItem = ({
     return (
       <td className="px-4 py-3">
         <div className="inline-flex rounded-md shadow-sm">
-          <button 
-            type="button" 
-            className="px-2 py-1 bg-blue-600 text-white rounded-l-lg flex items-center justify-center" 
+          <button
+            type="button"
+            className="px-2 py-1 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
             disabled
           >
             <i className="fas fa-user-cog" />
@@ -76,7 +76,9 @@ const MemberListItem = ({
         {member.leaderid === member.discordid && (
           <i className="fas fa-crown text-yellow-400 mr-1" />
         )}
-        <span className="font-medium text-neutral-400">{member.discordtag}</span>
+        <span className="font-medium text-neutral-400">
+          {member.discordtag}
+        </span>
       </td>
       <td className="px-4 py-3 text-gray-300">{member.nickname}</td>
       {renderKickButton()}

@@ -70,7 +70,7 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
           <img
             src={`${config.REACT_APP_RESOURCES_URL}/maps/${value?.replace(
               "_new",
-              ""
+              "",
             )}.jpg`}
             className="w-full h-auto"
             alt={map?.name}
@@ -80,7 +80,9 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
       </div>
       <h5 className="m-0">
         {map?.name}{" "}
-        <small className={dateBurning <= date ? "text-red-500" : "text-green-500"}>
+        <small
+          className={dateBurning <= date ? "text-red-500" : "text-green-500"}
+        >
           {dateBurning.toISOString().split("T")[0]}
         </small>
       </h5>

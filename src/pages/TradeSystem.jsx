@@ -78,7 +78,7 @@ const TradeSystem = () => {
           it.category === "Tools" ||
           it.category === "Liquids" ||
           it.name === "Sterile Bandage" ||
-          it.name === "Primitive Bandage"
+          it.name === "Primitive Bandage",
       );
       setItems(filteredItems);
     }
@@ -140,7 +140,7 @@ const TradeSystem = () => {
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-4 text-green-400">
               {t(
-                "If you want to publish your own exchange offers you have to be connected"
+                "If you want to publish your own exchange offers you have to be connected",
               )}
             </div>
           </div>
@@ -152,11 +152,15 @@ const TradeSystem = () => {
       <div className="w-full p-4">
         <form onSubmit={handleCreateTrade}>
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-            <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">{t("Publish a trade")}</div>
+            <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
+              {t("Publish a trade")}
+            </div>
             <div className="p-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
                 <div className="space-y-2">
-                  <label htmlFor="tradeType" className="block text-gray-300">{t("Type")}</label>
+                  <label htmlFor="tradeType" className="block text-gray-300">
+                    {t("Type")}
+                  </label>
                   <select
                     id="tradeType"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -185,7 +189,9 @@ const TradeSystem = () => {
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="regionInput" className="block text-gray-300">{t("Region")}</label>
+                  <label htmlFor="regionInput" className="block text-gray-300">
+                    {t("Region")}
+                  </label>
                   <ClusterList
                     onError={setError}
                     value={regionInput}
@@ -194,7 +200,9 @@ const TradeSystem = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="amountInput" className="block text-gray-300">{t("Quantity")}</label>
+                  <label htmlFor="amountInput" className="block text-gray-300">
+                    {t("Quantity")}
+                  </label>
                   <input
                     type="number"
                     id="amountInput"
@@ -205,7 +213,9 @@ const TradeSystem = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="qualityInput" className="block text-gray-300">{t("Quality")}</label>
+                  <label htmlFor="qualityInput" className="block text-gray-300">
+                    {t("Quality")}
+                  </label>
                   <select
                     id="qualityInput"
                     type="range"
@@ -221,7 +231,9 @@ const TradeSystem = () => {
                   </select>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="priceInput" className="block text-gray-300">{t("Price per unit")}</label>
+                  <label htmlFor="priceInput" className="block text-gray-300">
+                    {t("Price per unit")}
+                  </label>
                   <input
                     id="priceInput"
                     type="number"
@@ -299,11 +311,18 @@ const TradeSystem = () => {
       {renderLoggedPart()}
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-blue-500 rounded-lg overflow-hidden">
-          <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">{t("Published Trades")}</div>
+          <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
+            {t("Published Trades")}
+          </div>
           <div className="p-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
               <div className="lg:col-span-1">
-                <label htmlFor="tradeTypeFilter" className="block text-gray-300">{t("Type")}</label>
+                <label
+                  htmlFor="tradeTypeFilter"
+                  className="block text-gray-300"
+                >
+                  {t("Type")}
+                </label>
               </div>
               <div className="lg:col-span-2">
                 <select
@@ -317,7 +336,12 @@ const TradeSystem = () => {
                 </select>
               </div>
               <div className="lg:col-span-1">
-                <label htmlFor="resourcetypefilter" className="block text-gray-300">{t("Resource")}</label>
+                <label
+                  htmlFor="resourcetypefilter"
+                  className="block text-gray-300"
+                >
+                  {t("Resource")}
+                </label>
               </div>
               <div className="lg:col-span-2">
                 <select
@@ -336,7 +360,12 @@ const TradeSystem = () => {
                 </select>
               </div>
               <div className="lg:col-span-1">
-                <label htmlFor="regionFilterInput" className="block text-gray-300">{t("Region")}</label>
+                <label
+                  htmlFor="regionFilterInput"
+                  className="block text-gray-300"
+                >
+                  {t("Region")}
+                </label>
               </div>
               <div className="lg:col-span-2">
                 <ClusterList
@@ -372,7 +401,9 @@ const TradeSystem = () => {
         </div>
       </div>
       <div className="w-full p-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">{renderTradeList()}</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {renderTradeList()}
+        </div>
         <Pagination
           currentPage={page}
           hasMore={hasMore}

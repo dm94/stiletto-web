@@ -176,21 +176,29 @@ const PrivateProfile = () => {
         {/* Datos del usuario */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
-            <h2 className="text-xl font-bold text-white">{t("Your details")}</h2>
+            <h2 className="text-xl font-bold text-white">
+              {t("Your details")}
+            </h2>
           </div>
           <div className="p-0">
             <div className="divide-y divide-gray-700">
               <div className="flex justify-between items-center p-3">
                 <span className="text-gray-300">{t("Discord Tag")}</span>
-                <span className="text-gray-400" data-cy="discord-tag">{userData.discordtag}</span>
+                <span className="text-gray-400" data-cy="discord-tag">
+                  {userData.discordtag}
+                </span>
               </div>
               <div className="flex justify-between items-center p-3">
                 <span className="text-gray-300">{t("Nick in Game")}</span>
-                <span className="text-gray-400">{userData.nickname || t("Not defined")}</span>
+                <span className="text-gray-400">
+                  {userData.nickname || t("Not defined")}
+                </span>
               </div>
               <div className="flex justify-between items-center p-3">
                 <span className="text-gray-300">{t("Clan")}</span>
-                <span className="text-gray-400">{userData.clanname || t("No Clan")}</span>
+                <span className="text-gray-400">
+                  {userData.clanname || t("No Clan")}
+                </span>
               </div>
             </div>
           </div>
@@ -223,7 +231,7 @@ const PrivateProfile = () => {
           <div className="p-3 space-y-2">
             {userData.clanname && userData.clanname !== "Loading..." ? (
               <>
-                <Link 
+                <Link
                   to="/members"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
@@ -234,7 +242,12 @@ const PrivateProfile = () => {
                   to="/walkerlist"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
-                  <Icon key="Base Wings" name="Base Wings" width="30" className="mr-2" />
+                  <Icon
+                    key="Base Wings"
+                    name="Base Wings"
+                    width="30"
+                    className="mr-2"
+                  />
                   {t("Walker List")}
                 </Link>
                 <Link
@@ -280,7 +293,7 @@ const PrivateProfile = () => {
         {/* Enlace a mapas */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3">
-            <Link 
+            <Link
               to="/maps"
               className="w-full inline-flex justify-center items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
             >
@@ -292,7 +305,9 @@ const PrivateProfile = () => {
         {/* Selector de idioma */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
-            <h2 className="text-xl font-bold text-white">{t("Change language")}</h2>
+            <h2 className="text-xl font-bold text-white">
+              {t("Change language")}
+            </h2>
           </div>
           <div className="p-3">
             <div className="flex space-x-2">
@@ -300,7 +315,9 @@ const PrivateProfile = () => {
                 id="changeLanguajeSelect"
                 className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
                 value={userData.language || "en"}
-                onChange={(e) => setUserData({ ...userData, language: e.target.value })}
+                onChange={(e) =>
+                  setUserData({ ...userData, language: e.target.value })
+                }
               >
                 {supportedLanguages.map((language) => (
                   <option key={language.key} value={language.key}>
@@ -323,12 +340,17 @@ const PrivateProfile = () => {
         {(!userData.nickname || userData.nickname === "Loading...") && (
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-3 bg-gray-900 border-b border-gray-700">
-              <h2 className="text-xl font-bold text-white">{t("Add name in the game")}</h2>
+              <h2 className="text-xl font-bold text-white">
+                {t("Add name in the game")}
+              </h2>
             </div>
             <div className="p-3">
               <form onSubmit={handleAddNickInGame} className="space-y-3">
                 <div>
-                  <label htmlFor="user_game_name" className="block text-sm font-medium text-gray-300 mb-1">
+                  <label
+                    htmlFor="user_game_name"
+                    className="block text-sm font-medium text-gray-300 mb-1"
+                  >
                     {t("Your name in Last Oasis")}
                   </label>
                   <input
@@ -356,22 +378,32 @@ const PrivateProfile = () => {
       {showDeleteModal && (
         <div className="fixed inset-0 z-50 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <div className="fixed inset-0 transition-opacity" aria-hidden="true">
+            <div
+              className="fixed inset-0 transition-opacity"
+              aria-hidden="true"
+            >
               <div className="absolute inset-0 bg-gray-900 opacity-75" />
             </div>
             <div className="inline-block align-bottom bg-gray-800 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div className="bg-gray-800 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 text-center sm:mt-0 sm:text-left">
-                    <h3 className="text-lg leading-6 font-medium text-gray-300" id="deleteusermodal">
+                    <h3
+                      className="text-lg leading-6 font-medium text-gray-300"
+                      id="deleteusermodal"
+                    >
                       {t("Are you sure?")}
                     </h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-400">
-                        {t("This option is not reversible, your user and all his data will be deleted.")}
+                        {t(
+                          "This option is not reversible, your user and all his data will be deleted.",
+                        )}
                       </p>
                       <p className="text-sm text-gray-400 mt-2">
-                        {t("The administrator will be notified to delete the user, the user will not be deleted directly.")}
+                        {t(
+                          "The administrator will be notified to delete the user, the user will not be deleted directly.",
+                        )}
                       </p>
                     </div>
                   </div>

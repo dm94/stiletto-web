@@ -16,18 +16,18 @@ import { calcRarityValue } from "../rarityCalc";
 import { getItemUrl, getItemCraftUrl } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
 
-const WikiDescription = React.lazy(() =>
-  import("../components/Wiki/WikiDescription")
+const WikiDescription = React.lazy(
+  () => import("../components/Wiki/WikiDescription"),
 );
-const SchematicDropInfo = React.lazy(() =>
-  import("../components/Wiki/SchematicDropInfo")
+const SchematicDropInfo = React.lazy(
+  () => import("../components/Wiki/SchematicDropInfo"),
 );
 const DropsInfo = React.lazy(() => import("../components/Wiki/DropsInfo"));
-const CanBeUsedInfo = React.lazy(() =>
-  import("../components/Wiki/CanBeUsedInfo")
+const CanBeUsedInfo = React.lazy(
+  () => import("../components/Wiki/CanBeUsedInfo"),
 );
-const SchematicItems = React.lazy(() =>
-  import("../components/Wiki/SchematicItems")
+const SchematicItems = React.lazy(
+  () => import("../components/Wiki/SchematicItems"),
 );
 
 const ItemWiki = ({ match }) => {
@@ -48,7 +48,7 @@ const ItemWiki = ({ match }) => {
       const items = await getItems();
       if (items) {
         const foundItem = items.find(
-          (it) => it.name.toLowerCase() === itemName
+          (it) => it.name.toLowerCase() === itemName,
         );
         setItem(foundItem);
         setAllItems(items);
@@ -62,7 +62,11 @@ const ItemWiki = ({ match }) => {
   const showIngredient = (ingre) =>
     ingre?.crafting?.map((ingredients, index) => (
       <div
-        className={ingre.crafting.length > 1 ? "w-full lg:w-1/2 border border-gray-700" : "w-full"}
+        className={
+          ingre.crafting.length > 1
+            ? "w-full lg:w-1/2 border border-gray-700"
+            : "w-full"
+        }
         key={`ingredients-${index}-${ingre.name}`}
       >
         <Ingredients crafting={ingredients} value={1} />
@@ -75,7 +79,9 @@ const ItemWiki = ({ match }) => {
     item?.description && (
       <div className="w-full md:w-1/2">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
-          <div className="p-4 bg-gray-900 border-b border-gray-700">{t("Description")}</div>
+          <div className="p-4 bg-gray-900 border-b border-gray-700">
+            {t("Description")}
+          </div>
           <div className="p-4">{item.description}</div>
         </div>
       </div>
@@ -160,7 +166,11 @@ const ItemWiki = ({ match }) => {
   const craftUrl = getItemCraftUrl(name);
 
   return (
-    <div className="container mx-auto px-4" data-cy="wiki-item" data-name={name}>
+    <div
+      className="container mx-auto px-4"
+      data-cy="wiki-item"
+      data-name={name}
+    >
       <HeaderMeta
         title={`${name} - Stiletto for Last Oasis`}
         description={`All information for ${name}`}
@@ -199,14 +209,18 @@ const ItemWiki = ({ match }) => {
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Parent")}</div>
                     <div className="text-gray-400">
-                      <a href={parentUrl} className="hover:text-blue-400">{t(item.parent, { ns: "items" })}</a>
+                      <a href={parentUrl} className="hover:text-blue-400">
+                        {t(item.parent, { ns: "items" })}
+                      </a>
                     </div>
                   </li>
                 )}
                 {item?.trade_price && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Trade Price")}</div>
-                    <div className="text-gray-400">{item.trade_price} flots</div>
+                    <div className="text-gray-400">
+                      {item.trade_price} flots
+                    </div>
                   </li>
                 )}
                 {item?.stackSize && (
@@ -223,15 +237,19 @@ const ItemWiki = ({ match }) => {
                         rarity,
                         "weight",
                         item.category,
-                        item.weight
+                        item.weight,
                       )}
                     </div>
                   </li>
                 )}
                 {item?.experiencieReward && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Experience by crafting")}</div>
-                    <div className="text-gray-400">{item.experiencieReward}</div>
+                    <div className="text-gray-300">
+                      {t("Experience by crafting")}
+                    </div>
+                    <div className="text-gray-400">
+                      {item.experiencieReward}
+                    </div>
                   </li>
                 )}
                 {item?.durability && (
@@ -242,7 +260,7 @@ const ItemWiki = ({ match }) => {
                         rarity,
                         "durability",
                         item.category,
-                        item.durability
+                        item.durability,
                       )}
                     </div>
                   </li>
@@ -250,7 +268,10 @@ const ItemWiki = ({ match }) => {
               </ul>
             </div>
             <div className="p-4 bg-gray-900 border-t border-gray-700 text-center">
-              <fieldset className="inline-flex rounded-lg shadow-sm" aria-label="Rarities">
+              <fieldset
+                className="inline-flex rounded-lg shadow-sm"
+                aria-label="Rarities"
+              >
                 {["Common", "Uncommon", "Rare", "Epic", "Legendary"].map(
                   (rar) => (
                     <button
@@ -262,7 +283,7 @@ const ItemWiki = ({ match }) => {
                     >
                       {rar[0]}
                     </button>
-                  )
+                  ),
                 )}
               </fieldset>
             </div>
@@ -273,12 +294,17 @@ const ItemWiki = ({ match }) => {
             <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
               <div className="p-4 bg-gray-900 border-b border-gray-700 flex justify-between items-center">
                 <span className="text-neutral-300">{t("Recipe")}</span>
-                <a href={craftUrl} className="text-gray-400 hover:text-gray-300">
+                <a
+                  href={craftUrl}
+                  className="text-gray-400 hover:text-gray-300"
+                >
                   <i className="fas fa-tools" />
                 </a>
               </div>
               <div className="p-4">
-                <div className="flex flex-wrap -mx-2">{showIngredient(item)}</div>
+                <div className="flex flex-wrap -mx-2">
+                  {showIngredient(item)}
+                </div>
               </div>
             </div>
           </div>

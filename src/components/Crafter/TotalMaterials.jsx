@@ -78,9 +78,15 @@ const TotalMaterials = ({ selectedItems }) => {
     const url = `${getDomain()}/item/`;
 
     return selectedItems?.map((item) => (
-      <li className="inline-flex items-center mr-2" key={`itemsList-${item.name}`}>
+      <li
+        className="inline-flex items-center mr-2"
+        key={`itemsList-${item.name}`}
+      >
         <Icon key={item.name} name={item.name} /> {item.count}x{" "}
-        <a href={url + encodeURI(item.name.replaceAll(" ", "_"))} className="text-blue-400 hover:text-blue-300">
+        <a
+          href={url + encodeURI(item.name.replaceAll(" ", "_"))}
+          className="text-blue-400 hover:text-blue-300"
+        >
           {t(item.name, { ns: "items" })}
         </a>{" "}
         -
@@ -109,7 +115,7 @@ const TotalMaterials = ({ selectedItems }) => {
         const output = item.crafting[0].output ?? 1;
         for (const ingredient of item.crafting[0].ingredients) {
           const existingIngredient = totalIngredients.find(
-            (ingre) => ingre.name === ingredient.name
+            (ingre) => ingre.name === ingredient.name,
           );
           if (existingIngredient) {
             existingIngredient.count +=
@@ -159,7 +165,9 @@ const TotalMaterials = ({ selectedItems }) => {
           </div>
         </div>
       </div>
-      <div className="p-4 bg-gray-900 border-t border-gray-700">{footerPart()}</div>
+      <div className="p-4 bg-gray-900 border-t border-gray-700">
+        {footerPart()}
+      </div>
     </div>
   );
 };

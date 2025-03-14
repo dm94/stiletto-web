@@ -18,7 +18,7 @@ const AuctionTimers = () => {
     const timerElements = [];
     for (let i = 0; i < timers; i++) {
       timerElements.push(
-        <Timer key={i} onPlay={playAlarm} value={playSound} />
+        <Timer key={i} onPlay={playAlarm} value={playSound} />,
       );
     }
     return <div className="w-full">{timerElements}</div>;
@@ -41,18 +41,18 @@ const AuctionTimers = () => {
         />
         <link rel="canonical" href={`${getDomain()}/auctions`} />
       </Helmet>
-      
+
       <div className="flex flex-wrap -mx-2 mb-6">
         <div className="w-full lg:w-2/3 px-2 mb-4 lg:mb-0">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 text-center text-gray-300">
               {t(
-                "This data is not saved, if you reload the page it will be deleted"
+                "This data is not saved, if you reload the page it will be deleted",
               )}
             </div>
           </div>
         </div>
-        
+
         <div className="w-full lg:w-1/3 px-2">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="p-4 text-center">
@@ -60,8 +60,8 @@ const AuctionTimers = () => {
                 <button
                   type="button"
                   className={`px-4 py-2 ${
-                    playSound 
-                      ? "bg-blue-600 text-white" 
+                    playSound
+                      ? "bg-blue-600 text-white"
                       : "bg-gray-700 text-gray-300"
                   } rounded-l-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(true)}
@@ -71,8 +71,8 @@ const AuctionTimers = () => {
                 <button
                   type="button"
                   className={`px-4 py-2 ${
-                    !playSound 
-                      ? "bg-blue-600 text-white" 
+                    !playSound
+                      ? "bg-blue-600 text-white"
                       : "bg-gray-700 text-gray-300"
                   } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(false)}
@@ -84,9 +84,9 @@ const AuctionTimers = () => {
           </div>
         </div>
       </div>
-      
+
       {renderTimers()}
-      
+
       <div className="w-full mt-6">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
           <div className="p-4 text-center">

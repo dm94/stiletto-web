@@ -37,11 +37,16 @@ const Timer = ({ value, onPlay }) => {
   }, [hours, minutes, seconds, isOn, value, onPlay]);
 
   return (
-    <div className={`bg-gray-800 border ${isFinish ? 'border-yellow-500' : 'border-gray-600'} rounded-lg shadow-md m-2 overflow-hidden`}>
-      <div className={`p-4 ${isFinish ? 'bg-yellow-500 bg-opacity-20' : ''}`}>
+    <div
+      className={`bg-gray-800 border ${isFinish ? "border-yellow-500" : "border-gray-600"} rounded-lg shadow-md m-2 overflow-hidden`}
+    >
+      <div className={`p-4 ${isFinish ? "bg-yellow-500 bg-opacity-20" : ""}`}>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
           <div className="md:col-span-1">
-            <label htmlFor="hours" className="block text-sm font-medium text-gray-300 mb-1">
+            <label
+              htmlFor="hours"
+              className="block text-sm font-medium text-gray-300 mb-1"
+            >
               {t("Hours")}
             </label>
             <input
@@ -55,7 +60,10 @@ const Timer = ({ value, onPlay }) => {
             />
           </div>
           <div className="md:col-span-1">
-            <label htmlFor="minutes" className="block text-sm font-medium text-gray-300 mb-1">
+            <label
+              htmlFor="minutes"
+              className="block text-sm font-medium text-gray-300 mb-1"
+            >
               {t("Minutes")}
             </label>
             <input
@@ -69,7 +77,10 @@ const Timer = ({ value, onPlay }) => {
             />
           </div>
           <div className="md:col-span-1">
-            <label htmlFor="seconds" className="block text-sm font-medium text-gray-300 mb-1">
+            <label
+              htmlFor="seconds"
+              className="block text-sm font-medium text-gray-300 mb-1"
+            >
               {t("Seconds")}
             </label>
             <input
@@ -83,7 +94,10 @@ const Timer = ({ value, onPlay }) => {
             />
           </div>
           <div className="md:col-span-5">
-            <label htmlFor="description" className="block text-sm font-medium text-gray-300 mb-1">
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-300 mb-1"
+            >
               {t("Description")}
             </label>
             <input
