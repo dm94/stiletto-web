@@ -9,77 +9,77 @@ importers:
   .:
     dependencies:
       '@giscus/react':
-        specifier: ^2.2.6
-        version: 2.4.0(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        specifier: 2.2.6
+        version: 2.2.6(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       beautiful-skill-tree:
-        specifier: ^1.7.1
+        specifier: 1.7.1
         version: 1.7.1(react-dom@16.14.0(react@16.14.0))(react@16.14.0)(styled-components@6.1.15(react-dom@16.14.0(react@16.14.0))(react@16.14.0))
       i18next:
-        specifier: ^24.2.2
-        version: 24.2.3(typescript@4.9.5)
+        specifier: 24.2.2
+        version: 24.2.2(typescript@4.9.5)
       i18next-browser-languagedetector:
-        specifier: ^8.0.0
-        version: 8.0.4
+        specifier: 8.0.0
+        version: 8.0.0
       i18next-http-backend:
-        specifier: ^3.0.1
-        version: 3.0.2
+        specifier: 3.0.1
+        version: 3.0.1
       leaflet:
-        specifier: ^1.7.1
-        version: 1.9.4
+        specifier: 1.7.1
+        version: 1.7.1
       leaflet-rastercoords:
-        specifier: ^1.0.5
-        version: 1.0.6
+        specifier: 1.0.5
+        version: 1.0.5
       query-string:
-        specifier: ^9.1.1
+        specifier: 9.1.1
         version: 9.1.1
       react:
-        specifier: ^16.14.0
+        specifier: 16.14.0
         version: 16.14.0
       react-dom:
-        specifier: ^16.14.0
+        specifier: 16.14.0
         version: 16.14.0(react@16.14.0)
       react-helmet:
-        specifier: ^6.1.0
+        specifier: 6.1.0
         version: 6.1.0(react@16.14.0)
       react-i18next:
-        specifier: ^12.1.4
-        version: 12.3.1(i18next@24.2.3(typescript@4.9.5))(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        specifier: 12.1.4
+        version: 12.1.4(i18next@24.2.2(typescript@4.9.5))(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       react-leaflet:
-        specifier: ^2.8.0
-        version: 2.8.0(leaflet@1.9.4)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
+        specifier: 2.8.0
+        version: 2.8.0(leaflet@1.7.1)(react-dom@16.14.0(react@16.14.0))(react@16.14.0)
       react-router-dom:
-        specifier: ^5.2.0
-        version: 5.3.4(react@16.14.0)
+        specifier: 5.2.0
+        version: 5.2.0(react@16.14.0)
       react-scripts:
-        specifier: ^5.0.1
+        specifier: 5.0.1
         version: 5.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@16.14.0)(type-fest@0.21.3)(typescript@4.9.5)
       react-tiny-virtual-list:
-        specifier: ^2.2.0
+        specifier: 2.2.0
         version: 2.2.0(react@16.14.0)
     devDependencies:
       '@babel/preset-react':
-        specifier: ^7.18.6
-        version: 7.26.3(@babel/core@7.26.10)
+        specifier: 7.18.6
+        version: 7.18.6(@babel/core@7.26.10)
       '@biomejs/biome':
         specifier: 1.9.4
         version: 1.9.4
       '@tailwindcss/postcss':
-        specifier: ^4.0.14
+        specifier: 4.0.14
         version: 4.0.14
       autoprefixer:
-        specifier: ^10.4.17
-        version: 10.4.20(postcss@8.5.3)
+        specifier: 10.4.17
+        version: 10.4.17(postcss@8.5.3)
       cypress:
-        specifier: ^13.16.0
-        version: 13.17.0
+        specifier: 13.16.0
+        version: 13.16.0
       postcss:
-        specifier: ^8.5.3
+        specifier: 8.5.3
         version: 8.5.3
       tailwindcss:
-        specifier: ^4.0.14
+        specifier: 4.0.14
         version: 4.0.14
       typescript:
-        specifier: ^4.9.0
+        specifier: 4.9.5
         version: 4.9.5
 
 packages:
@@ -767,8 +767,8 @@ packages:
     peerDependencies:
       '@babel/core': ^7.0.0-0 || ^8.0.0-0 <8.0.0
 
-  '@babel/preset-react@7.26.3':
-    resolution: {integrity: sha512-Nl03d6T9ky516DGK2YMxrTqvnpUW63TnJMOMonj+Zae0JiPC5BC9xPMSL6L8fiSpA5vP88qfygavVQvnLp+6Cw==}
+  '@babel/preset-react@7.18.6':
+    resolution: {integrity: sha512-zXr6atUmyYdiWRVLOZahakYmOBHtWc2WGCkP8PYTgZi0iJXDY2CN180TdrIW4OGOAdLc7TifzDIvtx6izaRIzg==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
@@ -982,8 +982,8 @@ packages:
     resolution: {integrity: sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  '@giscus/react@2.4.0':
-    resolution: {integrity: sha512-y8d8qiZ2sBuaXRcgn/ZWfMlRs9bx26p62BU/HEKQQ+IfHo3B/kglgPjX/IqudwlX+DOlHUl1NvtFo9C8Eqo0eQ==}
+  '@giscus/react@2.2.6':
+    resolution: {integrity: sha512-qGjikDm7euLOCfMPn500d7F3UIl/qI55/dWF4ALC5Fo/7i5qktKCAwy6/zop93PjP0hJL6mi54K6x36SyvaLyQ==}
     peerDependencies:
       react: ^16 || ^17 || ^18
       react-dom: ^16 || ^17 || ^18
@@ -1828,8 +1828,8 @@ packages:
     resolution: {integrity: sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==}
     engines: {node: '>= 4.0.0'}
 
-  autoprefixer@10.4.20:
-    resolution: {integrity: sha512-XY25y5xSv/wEoqzDyXXME4AFfkZI0P23z6Fs3YgymDnKJkCGOnkL0iTxCa85UTqaSgfcqyf3UA6+c7wUvx/16g==}
+  autoprefixer@10.4.17:
+    resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -2377,8 +2377,8 @@ packages:
   csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
 
-  cypress@13.17.0:
-    resolution: {integrity: sha512-5xWkaPurwkIljojFidhw8lFScyxhtiFHl/i/3zov+1Z5CmY4t9tjIdvSXfu82Y3w7wt0uR9KkucbhkVvJZLQSA==}
+  cypress@13.16.0:
+    resolution: {integrity: sha512-g6XcwqnvzXrqiBQR/5gN+QsyRmKRhls1y5E42fyOvsmU7JuY+wM6uHJWj4ZPttjabzbnRvxcik2WemR8+xT6FA==}
     engines: {node: ^16.0.0 || ^18.0.0 || >=20.0.0}
     hasBin: true
 
@@ -3312,14 +3312,14 @@ packages:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
 
-  i18next-browser-languagedetector@8.0.4:
-    resolution: {integrity: sha512-f3frU3pIxD50/Tz20zx9TD9HobKYg47fmAETb117GKGPrhwcSSPJDoCposXlVycVebQ9GQohC3Efbpq7/nnJ5w==}
+  i18next-browser-languagedetector@8.0.0:
+    resolution: {integrity: sha512-zhXdJXTTCoG39QsrOCiOabnWj2jecouOqbchu3EfhtSHxIB5Uugnm9JaizenOy39h7ne3+fLikIjeW88+rgszw==}
 
-  i18next-http-backend@3.0.2:
-    resolution: {integrity: sha512-PdlvPnvIp4E1sYi46Ik4tBYh/v/NbYfFFgTjkwFl0is8A18s7/bx9aXqsrOax9WUbeNS6mD2oix7Z0yGGf6m5g==}
+  i18next-http-backend@3.0.1:
+    resolution: {integrity: sha512-XT2lYSkbAtDE55c6m7CtKxxrsfuRQO3rUfHzj8ZyRtY9CkIX3aRGwXGTkUhpGWce+J8n7sfu3J0f2wTzo7Lw0A==}
 
-  i18next@24.2.3:
-    resolution: {integrity: sha512-lfbf80OzkocvX7nmZtu7nSTNbrTYR52sLWxPtlXX1zAhVw8WEnFk4puUkCR4B1dNQwbSpEHHHemcZu//7EcB7A==}
+  i18next@24.2.2:
+    resolution: {integrity: sha512-NE6i86lBCKRYZa5TaUDkU5S4HFgLIEJRLr3Whf2psgaxBleQ2LC1YW1Vc+SCgkAW7VEzndT6al6+CzegSUHcTQ==}
     peerDependencies:
       typescript: ^5
     peerDependenciesMeta:
@@ -3897,11 +3897,11 @@ packages:
     resolution: {integrity: sha512-cc8oEVoctTvsFZ/Oje/kGnHbpWHYBe8IAJe4C0QNc3t8uM/0Y8+erSz/7Y1ALuXTEZTMvxXwO6YbX1ey3ujiZw==}
     engines: {node: '> 0.8'}
 
-  leaflet-rastercoords@1.0.6:
-    resolution: {integrity: sha512-uoGlGis7tKXdoeueCNwbfaclL38b/jztSwgWejHO+2EimxMbcQIr2PCG0E/kyJ9Z6WFkdoM2ypaypoHeitpKqg==}
+  leaflet-rastercoords@1.0.5:
+    resolution: {integrity: sha512-PGrxD6dhbChN45acRedZMfG1OvOKidwzUHU+lfD3Save9fNSHUeuL9c8BKg84t29Xp7mgvjoF0KIHzYoNNN+gQ==}
 
-  leaflet@1.9.4:
-    resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
+  leaflet@1.7.1:
+    resolution: {integrity: sha512-/xwPEBidtg69Q3HlqPdU3DnrXQOvQU/CCHA1tcDQVzOwm91YMYaILjNp7L4Eaw5Z4sOYdbBz6koWyibppd8Zqw==}
 
   leven@3.1.0:
     resolution: {integrity: sha512-qsda+H8jTaUaN/x5vzW2rzc+8Rw4TAQ/4KjB46IwK5VH+IlVeeeje/EoZRpiXvIqjFgK84QffqPztGI3VBLG1A==}
@@ -4143,6 +4143,13 @@ packages:
   mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
     engines: {node: '>=6'}
+
+  mini-create-react-context@0.4.1:
+    resolution: {integrity: sha512-YWCYEmd5CQeHGSAKrYvXgmzzkrvssZcuuQDDeqkT+PziKGMgE+0MCCtcKbROzocGBG1meBLl2FotlRwf4gAzbQ==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+    peerDependencies:
+      prop-types: ^15.0.0
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
   mini-css-extract-plugin@2.9.2:
     resolution: {integrity: sha512-GJuACcS//jtq4kCtd5ii/M0SZf7OZRH+BxdqXZHaJfb8TJiVl+NgQRPwiYt2EuqeSkNydn/7vP+bcE27C5mb9w==}
@@ -5024,8 +5031,8 @@ packages:
     peerDependencies:
       react: '>=16.3.0'
 
-  react-i18next@12.3.1:
-    resolution: {integrity: sha512-5v8E2XjZDFzK7K87eSwC7AJcAkcLt5xYZ4+yTPDAW1i7C93oOY1dnr4BaQM7un4Hm+GmghuiPvevWwlca5PwDA==}
+  react-i18next@12.1.4:
+    resolution: {integrity: sha512-XQND7jYtgM7ht5PH3yIZljCRpAMTlH/zmngM9ZjToqa+0BR6xuu8c7QF0WIIOEjcMTB2S3iOfpN/xG/ZrAnO6g==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
@@ -5057,13 +5064,13 @@ packages:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
     engines: {node: '>=0.10.0'}
 
-  react-router-dom@5.3.4:
-    resolution: {integrity: sha512-m4EqFMHv/Ih4kpcBCONHbkT68KoAeHN4p3lAGoNryfHi0dMy0kCzEZakiKRsvg5wHZ/JLrLW8o8KomWiz/qbYQ==}
+  react-router-dom@5.2.0:
+    resolution: {integrity: sha512-gxAmfylo2QUjcwxI63RhQ5G85Qqt4voZpUXSEqCwykV0baaOTQDR1f0PmY8AELqIyVc0NEZUj0Gov5lNGcXgsA==}
     peerDependencies:
       react: '>=15'
 
-  react-router@5.3.4:
-    resolution: {integrity: sha512-Ys9K+ppnJah3QuaRiLxk+jDWOR1MekYQrlytiXxC1RyfbdsZkS5pvKAzCCr031xHixZwpnsYNT5xysdFHQaYsA==}
+  react-router@5.2.0:
+    resolution: {integrity: sha512-smz1DUuFHRKdcJC0jobGo8cVbhO3x50tCL4icacOlcwDOEQPq4TMqwx3sY1TP+DvtTgz4nm3thuo7A+BK2U0Dw==}
     peerDependencies:
       react: '>=15'
 
@@ -7078,7 +7085,7 @@ snapshots:
       '@babel/types': 7.26.10
       esutils: 2.0.3
 
-  '@babel/preset-react@7.26.3(@babel/core@7.26.10)':
+  '@babel/preset-react@7.18.6(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
       '@babel/helper-plugin-utils': 7.26.5
@@ -7307,7 +7314,7 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
-  '@giscus/react@2.4.0(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
+  '@giscus/react@2.2.6(react-dom@16.14.0(react@16.14.0))(react@16.14.0)':
     dependencies:
       giscus: 1.6.0
       react: 16.14.0
@@ -7699,7 +7706,7 @@ snapshots:
       '@babel/core': 7.26.10
       '@babel/plugin-transform-react-constant-elements': 7.25.9(@babel/core@7.26.10)
       '@babel/preset-env': 7.26.9(@babel/core@7.26.10)
-      '@babel/preset-react': 7.26.3(@babel/core@7.26.10)
+      '@babel/preset-react': 7.18.6(@babel/core@7.26.10)
       '@svgr/core': 5.5.0
       '@svgr/plugin-jsx': 5.5.0
       '@svgr/plugin-svgo': 5.5.0
@@ -8345,7 +8352,7 @@ snapshots:
 
   at-least-node@1.0.0: {}
 
-  autoprefixer@10.4.20(postcss@8.5.3):
+  autoprefixer@10.4.17(postcss@8.5.3):
     dependencies:
       browserslist: 4.24.4
       caniuse-lite: 1.0.30001700
@@ -8482,7 +8489,7 @@ snapshots:
       '@babel/plugin-transform-react-display-name': 7.25.9(@babel/core@7.26.10)
       '@babel/plugin-transform-runtime': 7.26.10(@babel/core@7.26.10)
       '@babel/preset-env': 7.26.9(@babel/core@7.26.10)
-      '@babel/preset-react': 7.26.3(@babel/core@7.26.10)
+      '@babel/preset-react': 7.18.6(@babel/core@7.26.10)
       '@babel/preset-typescript': 7.26.0(@babel/core@7.26.10)
       '@babel/runtime': 7.26.10
       babel-plugin-macros: 3.1.0
@@ -8965,7 +8972,7 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  cypress@13.17.0:
+  cypress@13.16.0:
     dependencies:
       '@cypress/request': 3.0.8
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
@@ -10162,17 +10169,17 @@ snapshots:
 
   human-signals@2.1.0: {}
 
-  i18next-browser-languagedetector@8.0.4:
+  i18next-browser-languagedetector@8.0.0:
     dependencies:
       '@babel/runtime': 7.26.10
 
-  i18next-http-backend@3.0.2:
+  i18next-http-backend@3.0.1:
     dependencies:
       cross-fetch: 4.0.0
     transitivePeerDependencies:
       - encoding
 
-  i18next@24.2.3(typescript@4.9.5):
+  i18next@24.2.2(typescript@4.9.5):
     dependencies:
       '@babel/runtime': 7.26.10
     optionalDependencies:
@@ -10988,11 +10995,11 @@ snapshots:
 
   lazy-ass@1.6.0: {}
 
-  leaflet-rastercoords@1.0.6:
+  leaflet-rastercoords@1.0.5:
     dependencies:
-      leaflet: 1.9.4
+      leaflet: 1.7.1
 
-  leaflet@1.9.4: {}
+  leaflet@1.7.1: {}
 
   leven@3.1.0: {}
 
@@ -11201,6 +11208,13 @@ snapshots:
   mime@1.6.0: {}
 
   mimic-fn@2.1.0: {}
+
+  mini-create-react-context@0.4.1(prop-types@15.8.1)(react@16.14.0):
+    dependencies:
+      '@babel/runtime': 7.26.10
+      prop-types: 15.8.1
+      react: 16.14.0
+      tiny-warning: 1.0.3
 
   mini-css-extract-plugin@2.9.2(webpack@5.98.0):
     dependencies:
@@ -11833,7 +11847,7 @@ snapshots:
       '@csstools/postcss-text-decoration-shorthand': 1.0.0(postcss@8.5.3)
       '@csstools/postcss-trigonometric-functions': 1.0.2(postcss@8.5.3)
       '@csstools/postcss-unset-value': 1.0.2(postcss@8.5.3)
-      autoprefixer: 10.4.20(postcss@8.5.3)
+      autoprefixer: 10.4.17(postcss@8.5.3)
       browserslist: 4.24.4
       css-blank-pseudo: 3.0.3(postcss@8.5.3)
       css-has-pseudo: 3.0.4(postcss@8.5.3)
@@ -12096,11 +12110,11 @@ snapshots:
       react-fast-compare: 3.2.2
       react-side-effect: 2.1.2(react@16.14.0)
 
-  react-i18next@12.3.1(i18next@24.2.3(typescript@4.9.5))(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
+  react-i18next@12.1.4(i18next@24.2.2(typescript@4.9.5))(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
     dependencies:
       '@babel/runtime': 7.26.10
       html-parse-stringify: 3.0.1
-      i18next: 24.2.3(typescript@4.9.5)
+      i18next: 24.2.2(typescript@4.9.5)
       react: 16.14.0
     optionalDependencies:
       react-dom: 16.14.0(react@16.14.0)
@@ -12111,35 +12125,36 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-leaflet@2.8.0(leaflet@1.9.4)(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
+  react-leaflet@2.8.0(leaflet@1.7.1)(react-dom@16.14.0(react@16.14.0))(react@16.14.0):
     dependencies:
       '@babel/runtime': 7.26.10
       fast-deep-equal: 3.1.3
       hoist-non-react-statics: 3.3.2
-      leaflet: 1.9.4
+      leaflet: 1.7.1
       react: 16.14.0
       react-dom: 16.14.0(react@16.14.0)
       warning: 4.0.3
 
   react-refresh@0.11.0: {}
 
-  react-router-dom@5.3.4(react@16.14.0):
+  react-router-dom@5.2.0(react@16.14.0):
     dependencies:
       '@babel/runtime': 7.26.10
       history: 4.10.1
       loose-envify: 1.4.0
       prop-types: 15.8.1
       react: 16.14.0
-      react-router: 5.3.4(react@16.14.0)
+      react-router: 5.2.0(react@16.14.0)
       tiny-invariant: 1.3.3
       tiny-warning: 1.0.3
 
-  react-router@5.3.4(react@16.14.0):
+  react-router@5.2.0(react@16.14.0):
     dependencies:
       '@babel/runtime': 7.26.10
       history: 4.10.1
       hoist-non-react-statics: 3.3.2
       loose-envify: 1.4.0
+      mini-create-react-context: 0.4.1(prop-types@15.8.1)(react@16.14.0)
       path-to-regexp: 1.9.0
       prop-types: 15.8.1
       react: 16.14.0
