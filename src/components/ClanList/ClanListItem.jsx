@@ -12,7 +12,7 @@ const ClanListItem = ({ isLogged, clanuserid, clan, onSendRequest }) => {
         return (
           <button
             type="button"
-            className="btn btn-block btn-primary"
+            className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={() => onSendRequest(clan.clanid)}
           >
             {t("Send request")}
@@ -21,32 +21,42 @@ const ClanListItem = ({ isLogged, clanuserid, clan, onSendRequest }) => {
       }
       if (clanuserid === clan.clanid) {
         return (
-          <Link className="btn btn-block btn-primary" to="/members">
+          <Link 
+            className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-center block" 
+            to="/members"
+          >
             {t("Members")}
           </Link>
         );
       }
     }
-    return false;
+    return null;
   };
 
   return (
-    <tr>
-      <td className="pl-3">
+    <tr className="hover:bg-gray-700">
+      <td className="px-6 py-4 whitespace-nowrap">
         <ClanName key={clan.name} clan={clan} />
       </td>
-      <td>{clan.region}</td>
-      <td>{clan.discordTag}</td>
-      <td>
+      <td className="px-6 py-4 whitespace-nowrap text-gray-300">
+        {clan.region}
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap text-gray-300">
+        {clan.discordTag}
+      </td>
+      <td className="px-6 py-4 whitespace-nowrap">
         <a
           href={`https://discord.gg/${clan.invitelink}`}
           target="_blank"
           rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-300"
         >
           {clan.invitelink}
         </a>
       </td>
-      <td>{sendRequestButton()}</td>
+      <td className="px-6 py-4 whitespace-nowrap text-center">
+        {sendRequestButton()}
+      </td>
     </tr>
   );
 };
