@@ -37,77 +37,79 @@ const Timer = ({ value, onPlay }) => {
   }, [hours, minutes, seconds, isOn, value, onPlay]);
 
   return (
-    <div className="card border-secondary m-2">
-      <div className={isFinish ? "card-body bg-warning " : "card-body"}>
-        <div className="row">
-          <div className="col-md-1">
-            <label htmlFor="hours">{t("Hours")}</label>
-            <h1>
-              <input
-                type="number"
-                id="hours"
-                value={hours}
-                onChange={(e) => setHours(Number(e.target.value))}
-                max="24"
-                min="0"
-                className="text-right form-control"
-              />
-            </h1>
+    <div className={`bg-gray-800 border ${isFinish ? 'border-yellow-500' : 'border-gray-600'} rounded-lg shadow-md m-2 overflow-hidden`}>
+      <div className={`p-4 ${isFinish ? 'bg-yellow-500 bg-opacity-20' : ''}`}>
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+          <div className="md:col-span-1">
+            <label htmlFor="hours" className="block text-sm font-medium text-gray-300 mb-1">
+              {t("Hours")}
+            </label>
+            <input
+              type="number"
+              id="hours"
+              value={hours}
+              onChange={(e) => setHours(Number(e.target.value))}
+              max="24"
+              min="0"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
+            />
           </div>
-          <div className="col-md-1">
-            <label htmlFor="minutes">{t("Minutes")}</label>
-            <h1>
-              <input
-                type="number"
-                id="minutes"
-                value={minutes}
-                onChange={(e) => setMinutes(Number(e.target.value))}
-                max="59"
-                min="0"
-                className="text-right form-control"
-              />
-            </h1>
+          <div className="md:col-span-1">
+            <label htmlFor="minutes" className="block text-sm font-medium text-gray-300 mb-1">
+              {t("Minutes")}
+            </label>
+            <input
+              type="number"
+              id="minutes"
+              value={minutes}
+              onChange={(e) => setMinutes(Number(e.target.value))}
+              max="59"
+              min="0"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
+            />
           </div>
-          <div className="col-md-1">
-            <label htmlFor="seconds">{t("Seconds")}</label>
-            <h1>
-              <input
-                type="number"
-                id="seconds"
-                value={seconds}
-                onChange={(e) => setSeconds(Number(e.target.value))}
-                max="59"
-                min="0"
-                className="text-right form-control"
-              />
-            </h1>
+          <div className="md:col-span-1">
+            <label htmlFor="seconds" className="block text-sm font-medium text-gray-300 mb-1">
+              {t("Seconds")}
+            </label>
+            <input
+              type="number"
+              id="seconds"
+              value={seconds}
+              onChange={(e) => setSeconds(Number(e.target.value))}
+              max="59"
+              min="0"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
+            />
           </div>
-          <div className="col-md-5">
-            <label htmlFor="description">{t("Description")}</label>
+          <div className="md:col-span-5">
+            <label htmlFor="description" className="block text-sm font-medium text-gray-300 mb-1">
+              {t("Description")}
+            </label>
             <input
               type="text"
               id="description"
-              className="form-control"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder={t("Description")}
             />
           </div>
-          <div className="col-md-4">
+          <div className="md:col-span-4 grid grid-cols-2 gap-2">
             <button
               type="button"
-              className="btn btn-success btn-block"
+              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 flex items-center justify-center"
               onClick={() => {
                 setIsOn(true);
                 setIsFinish(false);
               }}
             >
-              <i className="fas fa-play" /> {t("Start")}
+              <i className="fas fa-play mr-2" /> {t("Start")}
             </button>
             <button
               type="button"
-              className="btn btn-danger btn-block"
+              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 flex items-center justify-center"
               onClick={() => setIsOn(false)}
             >
-              <i className="fas fa-stop" /> {t("Stop")}
+              <i className="fas fa-stop mr-2" /> {t("Stop")}
             </button>
           </div>
         </div>
