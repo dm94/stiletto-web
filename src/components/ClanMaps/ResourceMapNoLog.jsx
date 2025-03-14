@@ -7,7 +7,7 @@ import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
-import "../../css/map-sidebar.min.css";
+import "../../css/map-sidebar.css";
 import {
   createResource,
   deleteResource,
