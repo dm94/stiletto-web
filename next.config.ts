@@ -1,7 +1,20 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es'],
+  },
+  images: {
+    domains: ['stiletto-web.vercel.app'],
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin();
+
+export default withNextIntl(nextConfig);
