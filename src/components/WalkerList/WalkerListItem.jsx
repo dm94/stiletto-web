@@ -31,18 +31,19 @@ const WalkerListItem = ({
 
     return (
       <tr>
-        <td colSpan="5">
-          <div className="row">
-            <div className="col-12 col-lg-4">
-              <div className="card">
-                <div className="card-body">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">{t("Walker ID")}</span>
-                    </div>
+        <td colSpan="6" className="px-6 py-4 bg-gray-900">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            <div>
+              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                <div className="p-4">
+                  <div className="flex flex-col space-y-2">
+                    <label htmlFor="walkerID" className="block text-sm font-medium text-gray-300">
+                      {t("Walker ID")}
+                    </label>
                     <input
+                      id="walkerID"
                       type="text"
-                      className="form-control"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       value={walker.walkerID}
                       readOnly
                     />
@@ -50,16 +51,17 @@ const WalkerListItem = ({
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-4">
-              <div className="card">
-                <div className="card-body">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">{t("Last User")}</span>
-                    </div>
+            <div>
+              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                <div className="p-4">
+                  <div className="flex flex-col space-y-2">
+                    <label htmlFor="lastUser" className="block text-sm font-medium text-gray-300">
+                      {t("Last User")}
+                    </label>
                     <input
+                      id="lastUser"
                       type="text"
-                      className="form-control"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       value={walker.lastUser}
                       readOnly
                     />
@@ -67,16 +69,17 @@ const WalkerListItem = ({
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-4">
-              <div className="card">
-                <div className="card-body">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">{t("Last Use")}</span>
-                    </div>
+            <div>
+              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                <div className="p-4">
+                  <div className="flex flex-col space-y-2">
+                    <label htmlFor="lastUse" className="block text-sm font-medium text-gray-300">
+                      {t("Last Use")}
+                    </label>
                     <input
+                      id="lastUse"
                       type="text"
-                      className="form-control"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       value={walker.datelastuse}
                       readOnly
                     />
@@ -84,15 +87,15 @@ const WalkerListItem = ({
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-3">
-              <div className="card">
-                <div className="card-body">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">{t("Owner")}</span>
-                    </div>
+            <div>
+              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                <div className="p-4">
+                  <div className="flex flex-col space-y-2">
+                    <label htmlFor="inputOwner" className="block text-sm font-medium text-gray-300">
+                      {t("Owner")}
+                    </label>
                     <select
-                      className="form-control"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       id="inputOwner"
                       value={walkerState.ownerUser || ""}
                       onChange={(e) =>
@@ -111,15 +114,15 @@ const WalkerListItem = ({
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-3">
-              <div className="card">
-                <div className="card-body">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">{t("Use")}</span>
-                    </div>
+            <div>
+              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                <div className="p-4">
+                  <div className="flex flex-col space-y-2">
+                    <label htmlFor="inputUse" className="block text-sm font-medium text-gray-300">
+                      {t("Use")}
+                    </label>
                     <select
-                      className="form-control"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       id="inputUse"
                       value={walkerState.walker_use || "None"}
                       onChange={(e) =>
@@ -139,15 +142,15 @@ const WalkerListItem = ({
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-3">
-              <div className="card">
-                <div className="card-body">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">{t("Type")}</span>
-                    </div>
+            <div>
+              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                <div className="p-4">
+                  <div className="flex flex-col space-y-2">
+                    <label htmlFor="inputType" className="block text-sm font-medium text-gray-300">
+                      {t("Type")}
+                    </label>
                     <select
-                      className="form-control"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       id="inputType"
                       value={walkerState.type || ""}
                       onChange={(e) =>
@@ -166,79 +169,78 @@ const WalkerListItem = ({
                 </div>
               </div>
             </div>
-            <div className="col-12 col-lg-3">
-              <div className="card">
-                <div className="card-body">
-                  <div className="input-group">
-                    <div className="input-group-prepend">
-                      <span className="input-group-text">
-                        {t("Description")}
-                      </span>
-                    </div>
+            <div className="lg:col-span-3">
+              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+                <div className="p-4">
+                  <div className="flex flex-col space-y-2">
+                    <label htmlFor="description" className="block text-sm font-medium text-gray-300">
+                      {t("Description")}
+                    </label>
                     <textarea
-                      className="form-control"
+                      id="description"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       value={walkerState.description || ""}
                       onChange={(e) =>
                         handleWalkerUpdate("description", e.target.value)
                       }
                       maxLength="200"
                       disabled={!canEdit}
+                      rows="3"
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-12">
-              <div className="row mt-3">
-                <div className="btn-group mx-auto">
+            <div className="lg:col-span-3">
+              <div className="flex flex-col space-y-4 items-center mt-3">
+                <div className="flex space-x-2">
                   <button
                     type="button"
-                    className={`btn btn-success ${
-                      walkerState.isReady ? "active" : ""
+                    className={`p-2 rounded-l-lg focus:outline-none ${
+                      walkerState.isReady
+                        ? "bg-green-600 text-white"
+                        : "bg-gray-700 text-gray-300 hover:bg-green-600 hover:text-white"
                     }`}
                     onClick={() => handleWalkerUpdate("isReady", true)}
                   >
                     <i className="fas fa-check" />
                   </button>
-                  <button type="button" className="btn btn-secondary" disabled>
+                  <span className="p-2 bg-gray-700 text-gray-300">
                     {t("Is ready?")}
-                  </button>
+                  </span>
                   <button
                     type="button"
-                    className={`btn btn-danger ${
-                      !walkerState.isReady ? "active" : ""
+                    className={`p-2 rounded-r-lg focus:outline-none ${
+                      !walkerState.isReady
+                        ? "bg-red-600 text-white"
+                        : "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
                     }`}
                     onClick={() => handleWalkerUpdate("isReady", false)}
                   >
                     <i className="fas fa-times" />
                   </button>
                 </div>
-              </div>
-              <div className="row mt-3">
-                <div className="col-12 col-lg-3 mx-auto">
+                
+                <button
+                  type="button"
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 w-full max-w-xs"
+                  onClick={() => {
+                    onSave(walkerState);
+                    setIsOpen(false);
+                  }}
+                >
+                  <i className="fas fa-save mr-2" /> {t("Save")}
+                </button>
+                
+                {canEdit && (
                   <button
                     type="button"
-                    className="btn btn-block btn-success"
-                    onClick={() => {
-                      onSave(walkerState);
-                      setIsOpen(false);
-                    }}
-                  >
-                    <i className="fas fa-save" /> {t("Save")}
-                  </button>
-                </div>
-              </div>
-              <div className="row mt-3">
-                <div className="col-5 col-lg-2 mx-auto">
-                  <button
-                    type="button"
-                    className="btn btn-block btn-danger"
+                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-xs"
                     onClick={() => onRemove(walker.walkerID)}
-                    disabled={!canEdit}
                   >
-                    <i className="fas fa-trash-alt" /> {t("Delete")}
+                    <i className="fas fa-trash-alt mr-2" /> {t("Delete")}
                   </button>
-                </div>
+                )}
               </div>
             </div>
           </div>
@@ -247,12 +249,14 @@ const WalkerListItem = ({
     );
   };
 
-  if (!walker.walkerID) return "";
+  if (!walker.walkerID) {
+    return "";
+  }
 
   return (
     <>
-      <tr>
-        <td className="text-center">
+      <tr className="hover:bg-gray-700">
+        <td className="px-6 py-4 text-center whitespace-nowrap">
           {walker.type && (
             <Icon
               key={`${walker.type} Walker`}
@@ -261,30 +265,31 @@ const WalkerListItem = ({
             />
           )}
         </td>
-        <td className="text-center">{walker.name}</td>
-        <td className="d-none d-sm-table-cell text-center">
+        <td className="px-6 py-4 text-center whitespace-nowrap text-gray-300">
+          {walker.name}
+        </td>
+        <td className="hidden sm:table-cell px-6 py-4 text-center whitespace-nowrap text-gray-300">
           {walker.walker_use || t("Not Defined")}
         </td>
-        <td className="d-none d-sm-table-cell text-center">
+        <td className="hidden sm:table-cell px-6 py-4 text-center text-gray-300">
           {walker.description}
         </td>
-        <td className="text-center">
+        <td className="px-6 py-4 text-center whitespace-nowrap">
           <i
             className={`fas fa-${
-              walker.isReady ? "check text-success" : "times text-danger"
+              walker.isReady ? "check text-green-500" : "times text-red-500"
             }`}
           />
         </td>
-        <td
-          className="text-center text-info"
-          onClick={() => setIsOpen(!isOpen)}
-          role="button"
-          tabIndex={0}
-          onKeyPress={(e) => {
-            if (e.key === "Enter") setIsOpen(!isOpen);
-          }}
-        >
-          <i className={`fas fa-eye${isOpen ? "-slash" : ""}`} />
+        <td className="px-6 py-4 text-center whitespace-nowrap">
+          <button
+            className="text-blue-400 hover:text-blue-300 focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            type="button"
+            aria-label={isOpen ? t("Hide details") : t("Show details")}
+          >
+            <i className={`fas fa-eye${isOpen ? "-slash" : ""}`} />
+          </button>
         </td>
       </tr>
       {renderWalkerInfo()}

@@ -231,20 +231,18 @@ const WalkerList = (props) => {
   };
 
   const renderServerLinkButton = () => (
-    <div className="row">
-      <div className="col-xl-4">
-        <div className="card border-secondary mb-3">
-          <div className="card-body">
-            <div className="text-info">
-              {t(
-                "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
-              )}
-            </div>
-            <div className="text-warning mb-3">
-              {t(
-                "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot."
-              )}
-            </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
+        <div className="p-4">
+          <div className="text-blue-400 mb-3">
+            {t(
+              "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server."
+            )}
+          </div>
+          <div className="text-yellow-400">
+            {t(
+              "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot."
+            )}
           </div>
         </div>
       </div>
@@ -253,24 +251,24 @@ const WalkerList = (props) => {
   );
 
   const renderDiscordBotSection = () => (
-    <div className="col-xl-4">
-      <div className="card border-secondary mb-3">
-        <div className="card-header">{t("Discord Bot")}</div>
-        <div className="card-body">
-          <div className="mb-3">
-            {t(
-              "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items"
-            )}
-          </div>
-          <a
-            className="btn btn-lg btn-outline-success btn-block"
-            href="https://top.gg/bot/715948052979908911"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t("Discord Bot")}
-          </a>
+    <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
+      <div className="p-3 bg-gray-900 border-b border-gray-700">
+        <h2 className="text-lg font-semibold text-gray-300">{t("Discord Bot")}</h2>
+      </div>
+      <div className="p-4">
+        <div className="mb-3 text-gray-300">
+          {t(
+            "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items"
+          )}
         </div>
+        <a
+          className="w-full inline-flex justify-center items-center p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          href="https://top.gg/bot/715948052979908911"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {t("Discord Bot")}
+        </a>
       </div>
     </div>
   );
@@ -333,137 +331,156 @@ const WalkerList = (props) => {
   }
 
   return (
-    <Fragment>
+    <div className="container mx-auto px-4 py-6">
       {renderHelmetInfo()}
       {renderServerLinkButton()}
-      <div className="row">
-        <div className="col-md-12">
-          <div className="card mb-3 border-primary">
-            <div className="card-header">{t("Search Walkers")}</div>
-            <div className="card-body">
-              <div className="row">
-                <div className="col-xl-2">
-                  <label htmlFor="walkerTypeSearch">{t("Type")}</label>
-                  <select
-                    id="walkerTypeSearch"
-                    className="custom-select"
-                    value={walkerTypeSearch || "All"}
-                    onChange={(e) => setWalkerTypeSearch(e.target.value)}
-                  >
-                    <option value="All">{t("All")}</option>
-                    {renderWalkerOptionList()}
-                  </select>
-                </div>
-                <div className="col-xl-2">
-                  <label htmlFor="search-name">{t("Name")}</label>
-                  <input
-                    className="form-control"
-                    id="search-name"
-                    type="search"
-                    placeholder="Name.."
-                    aria-label="Search"
-                    onChange={(e) => setSearchInput(e.target.value)}
-                    value={searchInput}
-                  />
-                </div>
-                <div className="col-xl-1">
-                  <label htmlFor="useWalkerSearch">{t("Use")}</label>
-                  <select
-                    id="useWalkerSearch"
-                    className="custom-select"
-                    value={useWalkerSearch || "All"}
-                    onChange={(e) => setUseWalkerSearch(e.target.value)}
-                  >
-                    <option value="All">{t("All")}</option>
-                    <option value="Personal">{t("Personal")}</option>
-                    <option value="PVP">{t("PVP")}</option>
-                    <option value="Farming">{t("Farming")}</option>
-                    <option value="RAM">{t("RAM")}</option>
-                  </select>
-                </div>
-                <div className="col-xl-2">
-                  <label htmlFor="search-description">{t("Description")}</label>
-                  <input
-                    className="form-control"
-                    id="search-description"
-                    type="search"
-                    aria-label="Search"
-                    onChange={(e) => setSearchDescription(e.target.value)}
-                    value={searchDescription}
-                  />
-                </div>
-                <div className="col-xl-1">
-                  <label htmlFor="isReadySearch">{t("Is ready?")}</label>
-                  <select
-                    id="isReadySearch"
-                    className="custom-select"
-                    value={isReadySearch || "All"}
-                    onChange={(e) => setIsReadySearch(e.target.value)}
-                  >
-                    <option value="All">{t("All")}</option>
-                    <option value="Yes">{t("Yes")}</option>
-                    <option value="No">{t("No")}</option>
-                  </select>
-                </div>
-                <div className="col btn-group">
-                  <button
-                    type="button"
-                    className="btn btn-lg btn-primary"
-                    onClick={() => updateWalkers()}
-                  >
-                    {t("Filter walkers")}
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-lg btn-secondary"
-                    onClick={() => {
-                      setSearchInput("");
-                      setWalkerTypeSearch("All");
-                      setSearchDescription("");
-                      setUseWalkerSearch("All");
-                      updateWalkers();
-                    }}
-                  >
-                    {t("Clean filter")}
-                  </button>
-                </div>
+      
+      <div className="bg-gray-800 border border-blue-500 rounded-lg shadow-md mb-6">
+        <div className="p-3 bg-gray-900 border-b border-gray-700">
+          <h2 className="text-lg font-semibold text-gray-300">{t("Search Walkers")}</h2>
+        </div>
+        <div className="p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+            <div>
+              <label htmlFor="walkerTypeSearch" className="block text-sm font-medium text-gray-300 mb-1">
+                {t("Type")}
+              </label>
+              <select
+                id="walkerTypeSearch"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={walkerTypeSearch || "All"}
+                onChange={(e) => setWalkerTypeSearch(e.target.value)}
+              >
+                <option value="All">{t("All")}</option>
+                {renderWalkerOptionList()}
+              </select>
+            </div>
+            <div>
+              <label htmlFor="search-name" className="block text-sm font-medium text-gray-300 mb-1">
+                {t("Name")}
+              </label>
+              <input
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                id="search-name"
+                type="search"
+                placeholder="Name.."
+                aria-label="Search"
+                onChange={(e) => setSearchInput(e.target.value)}
+                value={searchInput}
+              />
+            </div>
+            <div>
+              <label htmlFor="useWalkerSearch" className="block text-sm font-medium text-gray-300 mb-1">
+                {t("Use")}
+              </label>
+              <select
+                id="useWalkerSearch"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={useWalkerSearch || "All"}
+                onChange={(e) => setUseWalkerSearch(e.target.value)}
+              >
+                <option value="All">{t("All")}</option>
+                <option value="Personal">{t("Personal")}</option>
+                <option value="PVP">{t("PVP")}</option>
+                <option value="Farming">{t("Farming")}</option>
+                <option value="RAM">{t("RAM")}</option>
+              </select>
+            </div>
+            <div>
+              <label htmlFor="search-description" className="block text-sm font-medium text-gray-300 mb-1">
+                {t("Description")}
+              </label>
+              <input
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                id="search-description"
+                type="search"
+                aria-label="Search"
+                onChange={(e) => setSearchDescription(e.target.value)}
+                value={searchDescription}
+              />
+            </div>
+            <div>
+              <label htmlFor="isReadySearch" className="block text-sm font-medium text-gray-300 mb-1">
+                {t("Is ready?")}
+              </label>
+              <select
+                id="isReadySearch"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                value={isReadySearch || "All"}
+                onChange={(e) => setIsReadySearch(e.target.value)}
+              >
+                <option value="All">{t("All")}</option>
+                <option value="Yes">{t("Yes")}</option>
+                <option value="No">{t("No")}</option>
+              </select>
+            </div>
+            <div className="flex flex-col justify-end">
+              <div className="flex flex-col sm:flex-row gap-2">
+                <button
+                  type="button"
+                  className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  onClick={() => updateWalkers()}
+                >
+                  {t("Filter walkers")}
+                </button>
+                <button
+                  type="button"
+                  className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                  onClick={() => {
+                    setSearchInput("");
+                    setWalkerTypeSearch("All");
+                    setSearchDescription("");
+                    setUseWalkerSearch("All");
+                    updateWalkers();
+                  }}
+                >
+                  {t("Clean filter")}
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <table className="table table-sm">
-        <thead>
-          <tr>
-            <th className="text-center" scope="col">
-              {t("Type")}
-            </th>
-            <th className="text-center" scope="col">
-              {t("Name")}
-            </th>
-            <th className="d-none d-sm-table-cell text-center" scope="col">
-              {t("Use")}
-            </th>
-            <th className="d-none d-sm-table-cell text-center" scope="col">
-              {t("Description")}
-            </th>
-            <th className="text-center" scope="col">
-              {t("Ready")}
-            </th>
-            <th className="text-center" scope="col">
-              {t("View")}
-            </th>
-          </tr>
-        </thead>
-        <tbody>{renderWalkerList()}</tbody>
-      </table>
-      <Pagination
-        currentPage={page}
-        hasMore={hasMoreWalkers}
-        onPrev={() => updateWalkers(page - 1)}
-        onNext={() => updateWalkers(page + 1)}
-      />
-    </Fragment>
+      
+      <div className="bg-gray-800 border border-gray-700 rounded-lg shadow-md overflow-x-auto">
+        <table className="min-w-full divide-y divide-gray-700">
+          <thead className="bg-gray-900">
+            <tr>
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
+                {t("Type")}
+              </th>
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
+                {t("Name")}
+              </th>
+              <th className="hidden sm:table-cell px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
+                {t("Use")}
+              </th>
+              <th className="hidden sm:table-cell px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
+                {t("Description")}
+              </th>
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
+                {t("Ready")}
+              </th>
+              <th className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
+                {t("View")}
+              </th>
+            </tr>
+          </thead>
+          <tbody className="bg-gray-800 divide-y divide-gray-700">
+            {renderWalkerList()}
+          </tbody>
+        </table>
+      </div>
+      
+      <div className="mt-4">
+        <Pagination
+          currentPage={page}
+          hasMore={hasMoreWalkers}
+          onPrev={() => updateWalkers(page - 1)}
+          onNext={() => updateWalkers(page + 1)}
+        />
+      </div>
+    </div>
   );
 };
 
