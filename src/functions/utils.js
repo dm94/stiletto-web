@@ -1,4 +1,3 @@
-import { getStoredItem } from "./services";
 import { config } from "../config/config";
 
 export const getDomain = () =>
@@ -10,15 +9,6 @@ export const getItemUrl = (item) =>
 
 export const getItemCraftUrl = (itemName) =>
   `${getDomain()}/crafter?craft=${encodeURI(itemName.toLowerCase())}`;
-
-export const isDarkMode = () => {
-  const darkMode = getStoredItem("darkmode");
-  if (darkMode !== null && darkMode === "true") {
-    return true;
-  }
-
-  return document?.documentElement?.attributes?.["data-theme"]?.value === "dark";
-};
 
 export const getDiscordLoginUrl = () => {
   return `https://discord.com/api/oauth2/authorize?client_id=${config.REACT_APP_DISCORD_CLIENT_ID

@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { isDarkMode } from "../../functions/utils";
 
 const Item = ({ item, onAdd }) => {
   const { t } = useTranslation();
@@ -10,13 +9,7 @@ const Item = ({ item, onAdd }) => {
   }
 
   return (
-    <div
-      className={
-        isDarkMode()
-          ? "list-group-item list-group-item-dark"
-          : "list-group-item"
-      }
-    >
+    <div className={"list-group-item list-group-item-dark"}>
       <div className="row">
         <div className="col-auto">{t(item?.name, { ns: "items" })}</div>
         <div className="col">
