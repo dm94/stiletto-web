@@ -1,6 +1,9 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const CraftingTime = ({ total = 1, time }) => {
+  const { t } = useTranslation();
+  
   const convertSecondsToTime = (seconds) => {
     const totalSeconds = Number(seconds);
     const hours = Math.floor(totalSeconds / 3600);
@@ -25,13 +28,17 @@ const CraftingTime = ({ total = 1, time }) => {
 
   if (totalTime > 0) {
     return (
-      <div className="text-right mb-0 text-gray-400">
-        <i className="fa fa-clock mr-2" /> {convertSecondsToTime(totalTime)}
+      <div className="flex items-center justify-end space-x-2 text-gray-300">
+        <span>{t("Crafting time")}:</span>
+        <div className="flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded-lg">
+          <i className="fa fa-clock" />
+          <span className="font-medium">{convertSecondsToTime(totalTime)}</span>
+        </div>
       </div>
     );
   }
 
-  return "";
+  return null;
 };
 
 export default CraftingTime;

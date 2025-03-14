@@ -9,7 +9,7 @@ const ChangeLanguageModal = ({ switchLanguage, hideModal }) => {
     return supportedLanguages.map((language) => (
       <button
         type="button"
-        className="w-1/4 p-2 text-center"
+        className="p-2 text-center"
         key={language.key}
         onClick={() => switchLanguage?.(language.key)}
       >

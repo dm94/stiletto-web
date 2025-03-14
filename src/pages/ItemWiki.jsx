@@ -170,7 +170,7 @@ const ItemWiki = ({ match }) => {
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
             <div className="p-4 bg-gray-900 border-b border-gray-700">
-              <div className="flex items-center">
+              <div className="flex items-center text-neutral-300">
                 <Icon key={name} name={name} width={35} />
                 <span className="ml-2">{t(name, { ns: "items" })}</span>
               </div>
@@ -272,7 +272,7 @@ const ItemWiki = ({ match }) => {
           <div className="w-full lg:w-1/2 px-4">
             <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
               <div className="p-4 bg-gray-900 border-b border-gray-700 flex justify-between items-center">
-                <span>{t("Recipe")}</span>
+                <span className="text-neutral-300">{t("Recipe")}</span>
                 <a href={craftUrl} className="text-gray-400 hover:text-gray-300">
                   <i className="fas fa-tools" />
                 </a>

@@ -66,6 +66,10 @@
     @apply font-['Okami'] font-medium text-[#ff3d09];
   }
 
+  .web-title {
+    @apply font-['Okami'];
+  }
+
   .tab-content-tree h1 {
     @apply text-2xl !important;
   }

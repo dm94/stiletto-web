@@ -36,7 +36,7 @@ const Home = () => {
           to="/crafter"
           aria-label={t("Crafting Calculator")}
         >
-          <h2 className="lo-title">{t("Crafting Calculator")}</h2>
+          <h2 className="lo-title text-3xl">{t("Crafting Calculator")}</h2>
           <p className="text-white">
             {t(
               "Here you can see and automatically calculate the materials needed to build each item."
@@ -48,7 +48,7 @@ const Home = () => {
           to="/trades"
           aria-label={t("Trading System")}
         >
-          <h2 className="lo-title">{t("Trading System")}</h2>
+          <h2 className="lo-title text-3xl">{t("Trading System")}</h2>
           <p className="text-white">
             {t(
               "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with"
@@ -60,7 +60,7 @@ const Home = () => {
           to={getStoredItem("discordid") ? "/maps" : "/map"}
           aria-label={t("Resource Maps")}
         >
-          <h2 className="lo-title">{t("Resource Maps")}</h2>
+          <h2 className="lo-title text-3xl">{t("Resource Maps")}</h2>
           <p className="text-white">
             {t("Create and edit maps to add resources or strategic points.")}
           </p>

@@ -21,19 +21,17 @@ const SchematicItems = ({ item }) => {
     });
   };
 
-  if (!item?.learn) return null;
+  if (!item?.learn) {
+    return null;
+  }
 
   return (
     <div className="w-full p-4">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-        <div className="p-3 bg-gray-900 border-b border-gray-700">{t("Schematic items")}</div>
+        <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">{t("Schematic items")}</div>
         <div className="p-4">
           <ul className="space-y-2">
-            {item.learn.map((item) => (
-              <li key={item} className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                <div className="text-gray-300">{item}</div>
-              </li>
-            ))}
+            {showSchematicItems()}
           </ul>
         </div>
       </div>

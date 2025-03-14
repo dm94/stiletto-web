@@ -152,7 +152,7 @@ const TradeSystem = () => {
       <div className="w-full p-4">
         <form onSubmit={handleCreateTrade}>
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-            <div className="p-3 bg-gray-900 border-b border-gray-700">{t("Publish a trade")}</div>
+            <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">{t("Publish a trade")}</div>
             <div className="p-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
                 <div className="space-y-2">
@@ -299,7 +299,7 @@ const TradeSystem = () => {
       {renderLoggedPart()}
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-blue-500 rounded-lg overflow-hidden">
-          <div className="p-3 bg-gray-900 border-b border-gray-700">{t("Published Trades")}</div>
+          <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">{t("Published Trades")}</div>
           <div className="p-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
               <div className="lg:col-span-1">

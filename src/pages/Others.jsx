@@ -19,7 +19,7 @@ const Others = () => {
     }
 
     return (
-      <div className="bg-white rounded-lg shadow-lg border border-gray-300 mb-4">
+      <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600 mb-4">
         <div className="p-4">
           <a
             className="w-full block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
@@ -39,7 +39,7 @@ const Others = () => {
       <div className="max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="md:col-span-1">
-            <div className="bg-white rounded-lg shadow-lg border border-gray-300 mb-4">
+            <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600 mb-4">
               <div className="p-4">
                 <a
                   className="w-full block px-4 py-2 bg-blue-500 text-white text-center rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
@@ -53,7 +53,7 @@ const Others = () => {
             </div>
           </div>
           <div className="md:col-span-1">
-            <div className="bg-white rounded-lg shadow-lg border border-gray-300 mb-4">
+            <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600 mb-4">
               <div className="p-4">
                 <a
                   className="w-full block px-4 py-2 bg-blue-500 text-white text-center rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
@@ -68,7 +68,7 @@ const Others = () => {
           </div>
           <div className="md:col-span-1">
             <div className="space-y-4">
-              <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+              <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600">
                 <div className="p-4">
                   <a
                     className="w-full block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
@@ -80,7 +80,7 @@ const Others = () => {
                   </a>
                 </div>
               </div>
-              <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+              <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600">
                 <div className="p-4">
                   <a
                     className="w-full block px-4 py-2 bg-red-500 text-white text-center rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
@@ -92,10 +92,10 @@ const Others = () => {
                   </a>
                 </div>
               </div>
-              <div className="bg-white rounded-lg shadow-lg border border-gray-300">
+              <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600">
                 <div className="p-4 flex flex-col">
-                  <h3 className="text-xl font-semibold mb-2">{t("Discord Bot")}</h3>
-                  <p className="mb-4">
+                  <h3 className="text-xl font-semibold mb-2 text-gray-300">{t("Discord Bot")}</h3>
+                  <p className="mb-4 text-gray-300">
                     {t(
                       "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects."
                     )}

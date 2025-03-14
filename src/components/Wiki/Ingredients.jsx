@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 const Ingredients = ({ crafting, value }) => {
   const { t } = useTranslation();
 
-  if (!crafting) return null;
+  if (!crafting) {
+    return null;
+  }
 
   return (
     <div className="w-full p-4">

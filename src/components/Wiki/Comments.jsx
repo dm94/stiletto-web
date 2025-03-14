@@ -25,7 +25,7 @@ const Comments = ({ name }) => {
     return (
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-          <div className="p-3 bg-gray-900 border-b border-gray-700">{t("Comments")}</div>
+          <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">{t("Comments")}</div>
           <div className="p-4">
             <Giscus
               id="comments"

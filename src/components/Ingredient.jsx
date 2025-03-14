@@ -8,20 +8,19 @@ const Ingredient = ({ ingredient, value }) => {
   const [showList, setShowList] = useState(false);
   const { t } = useTranslation();
 
-  const hasIngredients = ingredient?.ingredients != null;
+  const hasIngredients = ingredient?.ingredients && ingredient?.ingredients.length > 0;
 
   const url = `${getDomain()}/item/${encodeURI(
     ingredient?.name.toLowerCase().replaceAll(" ", "_")
   )}`;
 
   const renderSubList = () => {
-    if (showList && ingredient?.ingredients != null) {
-      return ingredient?.ingredients.map((ingredients) => (
-        <ul
-          className="flex flex-wrap gap-2 p-3 bg-gray-700 rounded-lg mt-3"
-          key={`ingredient-sublist-${ingredient?.name}-${value}`}
+    if (showList && ingredient?.ingredients && ingredient?.ingredients.length > 0) {
+      return ingredient?.ingredients.map((ingredients, index) => (
+        <div
+          className="mt-3 p-3 bg-gray-700 rounded-lg border-l-2 border-green-500"
+          key={`ingredient-sublist-${ingredient?.name}-${value}-${index}`}
         >
-          <span className="sr-only">----------------------------</span>
           <Ingredients
             crafting={ingredients}
             value={
@@ -30,8 +29,7 @@ const Ingredient = ({ ingredient, value }) => {
                 : ingredient?.count * value
             }
           />
-          <span className="sr-only">----------------------------</span>
-        </ul>
+        </div>
       ));
     }
     return "";
@@ -50,18 +48,18 @@ const Ingredient = ({ ingredient, value }) => {
         onClick={() => hasIngredients && setShowList(!showList)}
         onKeyUp={(e) => hasIngredients && e.key === "Enter" && setShowList(!showList)}
       >
-        <div className="flex-shrink-0">
-          <Icon key={ingredient?.name} name={ingredient?.name} width="48" />
+        <div className="flex-shrink-0 bg-gray-700 p-1 rounded-lg">
+          <Icon key={ingredient?.name} name={ingredient?.name} width="36" />
         </div>
         <div className="flex-grow">
           <div className="flex items-center">
             {ingredient?.count != null && value != null && (
-              <span className="font-bold mr-2 text-yellow-400">
-                {Math.ceil(ingredient?.count * value)}x
+              <span className="font-bold mr-2 text-yellow-400 text-lg">
+                {Math.ceil(ingredient?.count * value)}×
               </span>
             )}
-            {ingredient?.ingredients != null ? (
-              <span className="font-medium">{t(ingredient?.name, { ns: "items" })}</span>
+            {hasIngredients ? (
+              <span className="font-medium text-neutral-300">{t(ingredient?.name, { ns: "items" })}</span>
             ) : (
               <a 
                 href={url} 
@@ -71,8 +69,8 @@ const Ingredient = ({ ingredient, value }) => {
               </a>
             )}
             {hasIngredients && (
-              <span className="ml-2 text-gray-400">
-                <i className={`fas fa-chevron-${showList ? 'up' : 'down'}`} />
+              <span className="ml-2 text-gray-400 bg-gray-700 rounded-full w-5 h-5 flex items-center justify-center">
+                <i className={`fas fa-chevron-${showList ? 'up' : 'down'} text-xs`} />
               </span>
             )}
           </div>
@@ -83,7 +81,7 @@ const Ingredient = ({ ingredient, value }) => {
           )}
         </div>
       </div>
-      <div className={ingredient?.ingredients != null ? "mt-2" : ""}>
+      <div className={hasIngredients ? "mt-2" : ""}>
         {renderSubList()}
       </div>
     </div>
