@@ -177,7 +177,7 @@ const MapLayer = ({
 
   return (
     <div id="map">
-      <div className="flex space-x-2 mb-4">
+      <div className="flex space-x-2 mb-4 justify-end">
         <button
           type="button"
           className={`p-2 rounded-lg ${

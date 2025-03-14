@@ -286,7 +286,7 @@ const ResourceMap = ({ map, onReturn }) => {
       <button
         type="button"
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
-        className="lg:hidden fixed top-4 right-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="lg:hidden absolute top-1 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
