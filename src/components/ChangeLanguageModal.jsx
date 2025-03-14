@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { isDarkMode } from "../functions/utils";
 import { supportedLanguages } from "../config/languages";
 
 const ChangeLanguageModal = ({ switchLanguage, hideModal }) => {
@@ -35,11 +34,7 @@ const ChangeLanguageModal = ({ switchLanguage, hideModal }) => {
           <div className="modal-footer">
             <button
               type="button"
-              className={
-                isDarkMode()
-                  ? "btn btn-outline-light"
-                  : "btn btn-outline-secondary"
-              }
+              className="btn btn-outline-light"
               onClick={() => hideModal?.()}
             >
               {t("Accept")}

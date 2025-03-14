@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router";
+import { Switch, Route } from "react-router-dom";
 import Crafter from "./pages/Crafter";
 import DiscordConnection from "./pages/DiscordConnection";
 import ClanList from "./pages/ClanList";
