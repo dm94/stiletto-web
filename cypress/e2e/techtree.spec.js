@@ -60,7 +60,6 @@ describe("Tech Tree", () => {
 
     cy.get("[data-cy='create-tech-path-btn']").click();
 
-    // Select multiple nodes
     cy.get("[data-cy='tech-node']").eq(0).click({ ctrlKey: true });
     cy.get("[data-cy='tech-node']").eq(1).click({ ctrlKey: true });
     cy.get("[data-cy='tech-node']").eq(2).click({ ctrlKey: true });
