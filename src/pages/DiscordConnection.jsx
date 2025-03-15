@@ -9,12 +9,14 @@ import { getStoredItem, storeItem } from "../functions/services";
 import { useNavigate } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "../functions/utils";
 import { authDiscord } from "../functions/requests/users";
+import { useLocation } from "react-router";
 
-const DiscordConnection = ({ location }) => {
+const DiscordConnection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState("");
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleAuth = async () => {
