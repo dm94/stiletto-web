@@ -150,7 +150,7 @@ const TradeSystem = () => {
 
     return (
       <div className="w-full p-4">
-        <form onSubmit={handleCreateTrade}>
+        <form onSubmit={handleCreateTrade} data-cy="create-trade-form">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
               {t("Publish a trade")}
@@ -163,6 +163,7 @@ const TradeSystem = () => {
                   </label>
                   <select
                     id="tradeType"
+                    data-cy="trade-type"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={tradeTypeInput}
                     onChange={(evt) => setTradeTypeInput(evt.target.value)}
@@ -177,6 +178,7 @@ const TradeSystem = () => {
                   </label>
                   <select
                     id="resourcetype"
+                    data-cy="resource-type"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={resourceTypeInput}
                     onChange={(evt) => setResourceTypeInput(evt.target.value)}
@@ -197,6 +199,8 @@ const TradeSystem = () => {
                     value={regionInput}
                     onChange={setRegionInput}
                     filter={false}
+                    id="regionInput"
+                    data-cy="region-input"
                   />
                 </div>
                 <div className="space-y-2">
@@ -204,12 +208,15 @@ const TradeSystem = () => {
                     {t("Quantity")}
                   </label>
                   <input
-                    type="number"
                     id="amountInput"
+                    data-cy="amount-input"
+                    type="number"
+                    min="0"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={amountInput}
-                    min="0"
-                    onChange={(evt) => setAmountInput(evt.target.value)}
+                    onChange={(evt) =>
+                      setAmountInput(parseInt(evt.target.value, 10))
+                    }
                   />
                 </div>
                 <div className="space-y-2">
@@ -236,11 +243,14 @@ const TradeSystem = () => {
                   </label>
                   <input
                     id="priceInput"
+                    data-cy="price-input"
                     type="number"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     min="0"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={priceInput}
-                    onChange={(evt) => setPriceInput(evt.target.value)}
+                    onChange={(evt) =>
+                      setPriceInput(parseInt(evt.target.value, 10))
+                    }
                   />
                 </div>
                 <div className="col-span-full">
@@ -329,7 +339,9 @@ const TradeSystem = () => {
                   id="tradeTypeFilter"
                   className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={tradeTypeFilterInput}
-                  onChange={(evt) => setTradeTypeFilterInput(evt.target.value)}
+                  onChange={(evt) =>
+                    setTradeTypeFilterInput(evt.target.value)
+                  }
                 >
                   <option value="Supply">{t("Supply")}</option>
                   <option value="Demand">{t("Demand")}</option>

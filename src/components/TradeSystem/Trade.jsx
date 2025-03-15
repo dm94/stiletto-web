@@ -19,6 +19,7 @@ const Trade = ({ trade, onDelete }) => {
               target="_blank"
               rel="noreferrer noopener"
               aria-label="Send DM"
+              data-cy="discord-link"
             >
               <i className="fab fa-discord" />
             </a>
@@ -33,6 +34,7 @@ const Trade = ({ trade, onDelete }) => {
           type="button"
           className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           onClick={() => onDelete?.(trade?.idtrade)}
+          data-cy="delete-trade-btn"
         >
           {t("Delete")}
         </button>
@@ -53,6 +55,7 @@ const Trade = ({ trade, onDelete }) => {
     return (
       <span
         className={`inline-block px-2 py-1 rounded-full text-white text-sm ${quality.class} mb-2`}
+        data-cy="trade-quality"
       >
         {t(quality.text)}
       </span>
@@ -64,32 +67,32 @@ const Trade = ({ trade, onDelete }) => {
   }
 
   return (
-    <div className="w-full">
-      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
-        <div className="p-3 bg-gray-900 border-b border-gray-700">
+    <div className="w-full" data-cy="trade-item">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg" data-cy="trade-card">
+        <div className="p-3 bg-gray-900 border-b border-gray-700" data-cy="trade-header">
           <div className="flex items-center justify-center space-x-2">
             {trade.type === "Supply" ? (
               <i className="far fa-arrow-alt-circle-up text-green-400" />
             ) : (
               <i className="far fa-arrow-alt-circle-down text-red-400" />
             )}
-            <span className="text-gray-300">
+            <span className="text-gray-300" data-cy="trade-type-region">
               {t(trade.type)} {"//"} {trade.region}
             </span>
           </div>
         </div>
-        <div className="p-4 text-center">
+        <div className="p-4 text-center" data-cy="trade-content">
           {getQualityBadge()}
-          <div className="text-lg font-medium text-gray-300 mb-2 flex justify-center">
+          <div className="text-lg font-medium text-gray-300 mb-2 flex justify-center" data-cy="trade-resource">
             {trade.amount !== "0" ? `${trade.amount}x ` : ""}{" "}
             <Icon key={trade.resource} name={trade.resource} />
             <h5>{t(trade.resource, { ns: "items" })}</h5>
           </div>
-          <p className="text-gray-400 mb-2">
+          <p className="text-gray-400 mb-2" data-cy="trade-price">
             {trade.price !== "0" ? `${trade.price} Flots/${t("Unit")}` : ""}
           </p>
           {trade.nickname && (
-            <p className="text-gray-400">{`${t("Nick in Game")}: ${trade.nickname}`}</p>
+            <p className="text-gray-400" data-cy="trade-nickname">{`${t("Nick in Game")}: ${trade.nickname}`}</p>
           )}
         </div>
         {renderCardFooter()}

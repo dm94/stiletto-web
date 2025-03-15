@@ -75,6 +75,7 @@ const Wiki = () => {
         <div
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
           key={`wiki-${item.name}`}
+          data-cy="wiki-item"
         >
           <div className="bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
             <div className="p-4">

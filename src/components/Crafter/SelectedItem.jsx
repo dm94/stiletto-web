@@ -20,11 +20,10 @@ const SelectedItem = ({ item, onChangeCount }) => {
 
     return item.crafting.map((ingredients, i) => (
       <div
-        className={`${
-          item.crafting.length > 1
+        className={`${item.crafting.length > 1
             ? "w-full border-l-4 border-green-500"
             : "w-full"
-        } p-4 bg-gray-900 rounded-lg relative`}
+          } p-4 bg-gray-900 rounded-lg relative`}
         key={`${item.name}-${item.count}-${i}`}
       >
         {item.crafting.length > 1 && (
@@ -99,7 +98,7 @@ const SelectedItem = ({ item, onChangeCount }) => {
   )}`;
 
   return (
-    <div className="w-full">
+    <div className="w-full" data-cy="selected-item">
       <div className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
         <div className="p-4 text-center relative bg-gray-800 border-b border-gray-700">
           <button

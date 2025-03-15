@@ -4,58 +4,71 @@ describe("Crafter", () => {
   beforeEach(() => {
     cy.interceptRequest();
     cy.visit("/");
+    cy.waitForPageLoad();
     cy.get("[data-cy='crafter-link']").click();
+    cy.url().should("include", "/crafter");
   });
-  it("Add an item and share it", () => {
-    cy.get("[data-cy='crafter-search']").type(item);
 
-    cy.get("div[class='list-group-item']")
-      .first()
-      .within(() => {
-        cy.get("button").click();
-      });
-    cy.get("div[class='col-12 card-group']")
-      .first()
-      .within(() => {
-        cy.get("a").contains(item);
-      });
+  it("Should search and add an item", () => {
+    cy.get("[data-cy='crafter-search']").should("be.visible").type(item);
+    cy.get("[data-cy='crafter-search']").should("have.value", item);
+
+    cy.get('[data-cy="list-group-item"]').first().find("button").click();
+
+    cy.get('[data-cy="selected-item"]').first().should("contain", item);
+  });
+
+  it("Should add an item and share it", () => {
+    cy.get("[data-cy='crafter-search']").should("be.visible").type(item);
+
+    cy.get('[data-cy="list-group-item"]').first().find("button").click();
+
+    cy.get('[data-cy="selected-item"]').first().should("contain", item);
 
     cy.get("[data-cy='share-crafter-btn']").click();
 
+    cy.wait("@addRecipe");
+
     cy.get("[data-cy='share-crafter-input']").should(
       "contain.value",
-      "63e00d26982e2b509d5cde92",
+      "63e00d26982e2b509d5cde92"
     );
   });
-  it("Add an item several times and check the counter", () => {
-    const count = Math.floor(Math.random() * 10) + 1;
 
-    cy.get("[data-cy='crafter-search']").type(item);
+  it("Should add an item several times and check the counter", () => {
+    const count = 3;
 
-    Cypress._.times(count, () => {
-      cy.get("div[class='list-group-item']")
-        .first()
-        .within(() => {
-          cy.get("button").click();
-        });
-    });
+    cy.get("[data-cy='crafter-search']").should("be.visible").type(item);
 
-    cy.get("div[class='col-12 card-group']")
+    for (let i = 0; i < count; i++) {
+      cy.get('[data-cy="list-group-item"]').first().find("button").click();
+    }
+
+    cy.get('[data-cy="selected-item"]')
       .first()
-      .within(() => {
-        cy.get("[type='number']").first().should("have.value", count);
-      });
+      .find("input[type='number']")
+      .should("have.value", count);
   });
-  it("Add an item and copy it", () => {
-    cy.get("[data-cy='crafter-search']").type(item);
 
-    cy.get("div[class='list-group-item']")
-      .first()
-      .within(() => {
-        cy.get("button").click();
-      });
+  it("Should add an item and copy it", () => {
+    cy.get("[data-cy='crafter-search']").should("be.visible").type(item);
 
-    cy.get("button[data-cy='crafter-copy-clipboard']").click();
+    cy.get('[data-cy="list-group-item"]').first().find("button").click();
+
+    cy.get("[data-cy='crafter-copy-clipboard']").click();
+
     cy.checkValueInClipboard(item);
+  });
+
+  it("Should remove an item when clicking the remove button", () => {
+    cy.get("[data-cy='crafter-search']").should("be.visible").type(item);
+
+    cy.get('[data-cy="list-group-item"]').first().find("button").click();
+
+    cy.get('[data-cy="selected-item"]').should("exist");
+
+    cy.get('[data-cy="selected-item"]').first().find("button[aria-label='Remove item']").click();
+
+    cy.get('[data-cy="selected-item"]').should("not.exist");
   });
 });
