@@ -9,8 +9,11 @@ import SelectedItem from "../components/Crafter/SelectedItem";
 import TotalMaterials from "../components/Crafter/TotalMaterials";
 import { getDomain } from "../functions/utils";
 import { getRecipe } from "../functions/requests/recipes";
+import { useLocation } from "react-router";
 
-const Crafter = ({ location }) => {
+
+const Crafter = () => {
+  const location = useLocation();
   const { t } = useTranslation();
   const [allItems, setAllItems] = useState([]);
   const [selectedItems, setSelectedItems] = useState([]);

@@ -6,15 +6,16 @@ import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../functions/services";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "../functions/utils";
 import { authDiscord } from "../functions/requests/users";
 
-const DiscordConnection = ({ location }) => {
+const DiscordConnection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState("");
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleAuth = async () => {
