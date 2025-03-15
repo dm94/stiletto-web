@@ -2,11 +2,7 @@ import React, { useRef } from "react";
 import Item from "./Item";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
-const Items = ({ items, onAdd }) => {
-  if (!items) {
-    return null;
-  }
-
+const Items = ({ items = [], onAdd }) => {
   const containerRef = useRef(null);
 
   const virtualizer = useVirtualizer({
@@ -16,6 +12,10 @@ const Items = ({ items, onAdd }) => {
     estimateSize: () => 60,
     overscan: 20,
   });
+
+  if (items?.length <= 0) {
+    return null;
+  }
 
   const itemsToShow = virtualizer.getVirtualItems();
 
