@@ -20,8 +20,9 @@ import {
   getDiscordServers,
   deleteWalker,
 } from "../functions/requests/walkers";
+import { useLocation } from "react-router";
 
-const WalkerList = (props) => {
+const WalkerList = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
   const [walkers, setWalkers] = useState([]);
@@ -39,6 +40,7 @@ const WalkerList = (props) => {
   const [hasPermissions, setHasPermissions] = useState(false);
   const [isReadySearch, setIsReadySearch] = useState("All");
   const [clanId, setClanId] = useState("");
+  const location = useLocation();
 
   const updateWalkers = useCallback(
     async (currentPage = page) => {
@@ -182,7 +184,7 @@ const WalkerList = (props) => {
         return;
       }
 
-      const parsed = queryString.parse(props?.location.search);
+      const parsed = queryString.parse(location.search);
       if (parsed.code) {
         await handleDiscordAuth(parsed.code);
       }
@@ -197,7 +199,7 @@ const WalkerList = (props) => {
     };
 
     initializeData();
-  }, [props?.location.search, updateWalkers]);
+  }, [location.search, updateWalkers]);
 
   const renderWalkerList = () => {
     if (!walkers) {
