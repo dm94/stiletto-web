@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Sand Bed",
+    "category": "Decorations",
+    "crafting": [
+      {
+        "ingredients": [
+          {
+            "name": "Wood",
+            "count": 10
+          },
+          {
+            "name": "Fiber",
+            "count": 20
+          }
+        ],
+        "station": "Woodworking Station",
+        "time": 30,
+        "output": 1
+      }
+    ]
+  },
+  {
+    "name": "Aloe",
+    "category": "Resources",
+    "crafting": null
+  },
+  {
+    "name": "Wood",
+    "category": "Resources",
+    "crafting": null
+  },
+  {
+    "name": "Fiber",
+    "category": "Resources",
+    "crafting": null
+  },
+  {
+    "name": "Stone",
+    "category": "Resources",
+    "crafting": null
+  },
+  {
+    "name": "Woodworking Station",
+    "category": "Stations",
+    "crafting": [
+      {
+        "ingredients": [
+          {
+            "name": "Wood",
+            "count": 50
+          },
+          {
+            "name": "Stone",
+            "count": 20
+          }
+        ],
+        "time": 60,
+        "output": 1
+      }
+    ]
+  },
+  {
+    "name": "Firefly Walker",
+    "category": "Walkers",
+    "crafting": [
+      {
+        "ingredients": [
+          {
+            "name": "Wood",
+            "count": 500
+          },
+          {
+            "name": "Fiber",
+            "count": 300
+          }
+        ],
+        "station": "Walker Assembly Station",
+        "time": 300,
+        "output": 1
+      }
+    ]
+  }
+]

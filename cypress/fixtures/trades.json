@@ -1,1 +1,122 @@
-[{"idtrade":"1","discordid":"0000000000000000","type":"Supply","resource":"Cattail","amount":"0","quality":"0","region":"EU-Official","price":"0","nickname":"Test","discordtag":"test#54563"}]
+[
+  {
+    "idtrade": "1",
+    "discordid": "0000000000000000",
+    "type": "Supply",
+    "resource": "Cattail",
+    "amount": "100",
+    "quality": "0",
+    "region": "EU-Official",
+    "price": "10",
+    "nickname": "Test",
+    "discordtag": "test#54563"
+  },
+  {
+    "idtrade": "2",
+    "discordid": "1111111111111111",
+    "type": "Supply",
+    "resource": "Wood",
+    "amount": "500",
+    "quality": "0",
+    "region": "EU-Official",
+    "price": "5",
+    "nickname": "Trader1",
+    "discordtag": "trader1#1234"
+  },
+  {
+    "idtrade": "3",
+    "discordid": "2222222222222222",
+    "type": "Demand",
+    "resource": "Aloe Vera",
+    "amount": "200",
+    "quality": "0",
+    "region": "NA-East",
+    "price": "15",
+    "nickname": "Trader2",
+    "discordtag": "trader2#5678"
+  },
+  {
+    "idtrade": "4",
+    "discordid": "3333333333333333",
+    "type": "Supply",
+    "resource": "Rupu Gel",
+    "amount": "50",
+    "quality": "0",
+    "region": "EU-Official",
+    "price": "25",
+    "nickname": "Trader3",
+    "discordtag": "trader3#9012"
+  },
+  {
+    "idtrade": "5",
+    "discordid": "4444444444444444",
+    "type": "Demand",
+    "resource": "Bone Splinter",
+    "amount": "300",
+    "quality": "0",
+    "region": "NA-West",
+    "price": "8",
+    "nickname": "Trader4",
+    "discordtag": "trader4#3456"
+  },
+  {
+    "idtrade": "6",
+    "discordid": "5555555555555555",
+    "type": "Supply",
+    "resource": "Fiber",
+    "amount": "1000",
+    "quality": "0",
+    "region": "EU-Official",
+    "price": "3",
+    "nickname": "Trader5",
+    "discordtag": "trader5#7890"
+  },
+  {
+    "idtrade": "7",
+    "discordid": "6666666666666666",
+    "type": "Demand",
+    "resource": "Nomad Cloth",
+    "amount": "100",
+    "quality": "1",
+    "region": "EU-Official",
+    "price": "50",
+    "nickname": "Trader6",
+    "discordtag": "trader6#1234"
+  },
+  {
+    "idtrade": "8",
+    "discordid": "7777777777777777",
+    "type": "Supply",
+    "resource": "Ceramic Shard",
+    "amount": "200",
+    "quality": "0",
+    "region": "Asia",
+    "price": "12",
+    "nickname": "Trader7",
+    "discordtag": "trader7#5678"
+  },
+  {
+    "idtrade": "9",
+    "discordid": "8888888888888888",
+    "type": "Demand",
+    "resource": "Stone",
+    "amount": "2000",
+    "quality": "0",
+    "region": "EU-Official",
+    "price": "2",
+    "nickname": "Trader8",
+    "discordtag": "trader8#9012"
+  },
+  {
+    "idtrade": "10",
+    "discordid": "9999999999999999",
+    "type": "Supply",
+    "resource": "Iron Ore",
+    "amount": "500",
+    "quality": "0",
+    "region": "EU-Official",
+    "price": "20",
+    "nickname": "Trader9",
+    "discordtag": "trader9#3456"
+  }
+]
