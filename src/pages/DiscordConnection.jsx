@@ -6,7 +6,7 @@ import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../functions/services";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "../functions/utils";
 import { authDiscord } from "../functions/requests/users";
 
@@ -14,7 +14,7 @@ const DiscordConnection = ({ location }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState("");
   const { t } = useTranslation();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleAuth = async () => {
@@ -40,7 +40,7 @@ const DiscordConnection = ({ location }) => {
           if (data.token) {
             storeItem("token", data.token);
           }
-          history.replace({ from: { pathname: "/" } });
+          navigate({ from: { pathname: "/" } });
         } else if (response.status === 401) {
           setError("Unauthorized");
         } else if (response.status === 503) {
@@ -53,7 +53,7 @@ const DiscordConnection = ({ location }) => {
     };
 
     handleAuth();
-  }, [location, history]);
+  }, [location, navigate]);
 
   const renderClanInfo = () => {
     const parsed = queryString.parse(location?.search);

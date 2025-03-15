@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Others from "./Others";
 import { getStoredItem } from "../functions/services";
 import { getDomain } from "../functions/utils";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 const Home = () => {
   const { t } = useTranslation();

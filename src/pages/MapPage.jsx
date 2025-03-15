@@ -4,10 +4,12 @@ import CreateMapNoLog from "../components/ClanMaps/CreateMapNoLog";
 import ResourceMapNoLog from "../components/ClanMaps/ResourceMapNoLog";
 import { getDomain } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
+import { useLocation } from "react-router";
 
-const MapPage = ({ location }) => {
+const MapPage = () => {
   const [mapId, setMapId] = useState(null);
   const [pass, setPass] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
     const parsed = queryString.parse(location.search);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Routes, Route } from "react-router";
 import Crafter from "./pages/Crafter";
 import DiscordConnection from "./pages/DiscordConnection";
 import ClanList from "./pages/ClanList";
@@ -20,26 +20,26 @@ import Wiki from "./pages/Wiki";
 import NotFoundPage from "./pages/NotFound";
 
 export default (
-  <Switch>
-    <Route exact path="/" component={Home} />
-    <Route path="/profile" component={DiscordConnection} />
-    <Route path="/crafter" component={Crafter} />
-    <Route path="/members" component={MemberList} />
-    <Route path="/clanlist" component={ClanList} />
-    <Route path="/walkerlist" component={WalkerList} />
-    <Route path="/maps" component={ClanMaps} />
-    <Route path="/trades" component={TradeSystem} />
-    <Route path="/diplomacy" component={Diplomacy} />
-    <Route path="/auctions" component={AuctionTimers} />
-    <Route path="/others" component={Others} />
-    <Route path="/map/:id" component={ResourceMapNoLog} />
-    <Route path="/map" component={MapPage} />
-    <Route path="/tech/:tree" component={TechTree} />
-    <Route path="/tech/" component={TechTree} />
-    <Route path="/privacy" component={Privacy} />
-    <Route path="/item/:name" component={ItemWiki} />
-    <Route path="/wiki/" component={Wiki} />
-    <Route path="/not-found" component={NotFoundPage} />
-    <Route path="*" component={NotFoundPage} />
-  </Switch>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/profile" element={<DiscordConnection />} />
+    <Route path="/crafter" element={<Crafter />} />
+    <Route path="/members" element={<MemberList />} />
+    <Route path="/clanlist" element={<ClanList />} />
+    <Route path="/walkerlist" element={<WalkerList />} />
+    <Route path="/maps" element={<ClanMaps />} />
+    <Route path="/trades" element={<TradeSystem />} />
+    <Route path="/diplomacy" element={<Diplomacy />} />
+    <Route path="/auctions" element={<AuctionTimers />} />
+    <Route path="/others" element={<Others />} />
+    <Route path="/map/:id" element={<ResourceMapNoLog />} />
+    <Route path="/map" element={<MapPage />} />
+    <Route path="/tech/:tree" element={<TechTree />} />
+    <Route path="/tech/" element={<TechTree />} />
+    <Route path="/privacy" element={<Privacy />} />
+    <Route path="/item/:name" element={<ItemWiki />} />
+    <Route path="/wiki/" element={<Wiki />} />
+    <Route path="/not-found" element={<NotFoundPage />} />
+    <Route path="*" element={<NotFoundPage />} />
+  </Routes>
 );
