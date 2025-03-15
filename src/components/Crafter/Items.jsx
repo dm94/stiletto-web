@@ -1,26 +1,48 @@
-import React from "react";
+import React, { useRef } from "react";
 import Item from "./Item";
-import VirtualList from "react-tiny-virtual-list";
+import { useVirtualizer } from "@tanstack/react-virtual";
 
-const Items = ({ items, onAdd }) => {
-  if (!items) {
-    return false;
+const Items = ({ items = [], onAdd }) => {
+  const containerRef = useRef(null);
+
+  const virtualizer = useVirtualizer({
+    count: items.length,
+    getScrollElement: () => containerRef.current,
+    axis: "y",
+    estimateSize: () => 60,
+    overscan: 20,
+  });
+
+  if (items?.length <= 0) {
+    return null;
   }
 
+  const itemsToShow = virtualizer.getVirtualItems();
+
   return (
-    <VirtualList
-      role="listitem"
-      itemCount={items.length}
-      itemSize={60}
-      height="100%"
-      width="100%"
-      overscanCount={20}
-      renderItem={({ index, style }) => (
-        <div key={index} style={style}>
-          <Item key={index} style={style} onAdd={onAdd} item={items[index]} />
+    <div
+      ref={containerRef}
+      style={{
+        height: "100%",
+        width: "100%",
+        overflow: "auto",
+        position: "relative",
+      }}
+    >
+      {itemsToShow.map((item) => (
+        <div
+          key={item.index}
+          style={{
+            position: "absolute",
+            transform: `translateY(${item.start}px)`,
+            width: "100%",
+            height: `${item.size}px`,
+          }}
+        >
+          <Item onAdd={onAdd} item={items[item.index]} />
         </div>
-      )}
-    />
+      ))}
+    </div>
   );
 };
 
