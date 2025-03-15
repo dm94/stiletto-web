@@ -80,11 +80,11 @@ const Trade = ({ trade, onDelete }) => {
         </div>
         <div className="p-4 text-center">
           {getQualityBadge()}
-          <h5 className="text-lg font-medium text-gray-300 mb-2">
+          <div className="text-lg font-medium text-gray-300 mb-2 flex justify-center">
             {trade.amount !== "0" ? `${trade.amount}x ` : ""}{" "}
             <Icon key={trade.resource} name={trade.resource} />
-            {t(trade.resource, { ns: "items" })}
-          </h5>
+            <h5>{t(trade.resource, { ns: "items" })}</h5>
+          </div>
           <p className="text-gray-400 mb-2">
             {trade.price !== "0" ? `${trade.price} Flots/${t("Unit")}` : ""}
           </p>

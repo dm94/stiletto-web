@@ -29,11 +29,15 @@ export const usePageTracking = () => {
 export const sendEvent = (data) => {
   initPlausible();
 
-  window.plausible =
-    window.plausible ||
-    (() => {
-      (window.plausible.q = window.plausible.q || []).push(arguments);
-    });
+  try {
+    window.plausible =
+      window.plausible ||
+      function () {
+        (window.plausible.q = window.plausible.q || []).push(arguments);
+      };
+  } catch (error) {
+    console.error(error);
+  }
 
-  window.plausible(...data);
+  window?.plausible(...data);
 };

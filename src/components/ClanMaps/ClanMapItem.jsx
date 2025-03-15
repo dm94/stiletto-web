@@ -58,7 +58,7 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
 
   return (
     <div
-      className="p-2 w-full lg:w-1/3 text-center"
+      className="p-2 w-full text-center"
       key={`clanmap${map?.mapid}`}
     >
       <div className="flex">

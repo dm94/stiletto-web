@@ -169,7 +169,7 @@ const ResourceMapNoLog = (props) => {
 
   return (
     <div className="relative h-screen">
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <MapLayer
           map={mapData}
           items={items}
@@ -199,7 +199,7 @@ const ResourceMapNoLog = (props) => {
         <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
       <div
-        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${
           isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
         }`}
       >
