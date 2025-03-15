@@ -13,21 +13,21 @@
     "url": "https://github.com/dm94/stiletto-web"
   },
   "dependencies": {
-    "@giscus/react": "2.2.6",
+    "@giscus/react": "3.1.0",
     "@tanstack/react-virtual": "^3.13.4",
     "beautiful-skill-tree": "1.7.1",
     "i18next": "24.2.2",
     "i18next-browser-languagedetector": "8.0.0",
     "i18next-http-backend": "3.0.1",
     "leaflet": "1.7.1",
-    "leaflet-rastercoords": "1.0.5",
+    "leaflet-rastercoords": "1.0.6",
     "query-string": "9.1.1",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "react-helmet": "6.1.0",
     "react-i18next": "12.1.4",
     "react-leaflet": "2.8.0",
-    "react-router-dom": "5.2.0",
+    "react-router": "^7.3.0",
     "react-scripts": "5.0.1"
   },
   "scripts": {

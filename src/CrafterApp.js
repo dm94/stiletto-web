@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from 'react-router';
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import CookieConsent from "./components/CookieConsent";
@@ -12,7 +12,7 @@ import NotificationList from "./components/Notifications/NotificationList";
 import Footer from "./components/Footer";
 
 const CrafterApp = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [showChangeLanguageModal, setShowChangeLanguageModal] = useState(false);
   const [redirectTo, setRedirectTo] = useState(null);
 
@@ -21,7 +21,7 @@ const CrafterApp = () => {
   const language = getStoredItem("i18nextLng");
 
   if (redirectTo != null) {
-    history.push(redirectTo);
+    navigate(redirectTo);
     setRedirectTo(null);
   }
 
@@ -31,7 +31,7 @@ const CrafterApp = () => {
         htmlAttributes={{
           lang: language ?? "en",
         }}
-      ></Helmet>
+      />
       <Menu
         language={language}
         openLanguajeModal={() => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { getItems } from "../functions/services";
-import { Redirect } from "react-router-dom";
+import { Navigate, useParams } from "react-router";
 import Ingredients from "../components/Ingredients";
 import Station from "../components/Station";
 import Icon from "../components/Icon";
@@ -30,8 +30,9 @@ const SchematicItems = React.lazy(
   () => import("../components/Wiki/SchematicItems"),
 );
 
-const ItemWiki = ({ match }) => {
+const ItemWiki = () => {
   const { t } = useTranslation();
+  const { name } = useParams();
   const [item, setItem] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [allItems, setAllItems] = useState([]);
@@ -40,8 +41,8 @@ const ItemWiki = ({ match }) => {
 
   useEffect(() => {
     const loadData = async () => {
-      let itemName = match?.params?.name;
-      if (itemName) {
+      let itemName = name;
+      if (name) {
         itemName = decodeURI(itemName).replaceAll("_", " ").toLowerCase();
       }
 
@@ -57,7 +58,7 @@ const ItemWiki = ({ match }) => {
     };
 
     loadData();
-  }, [match]);
+  }, [ name ]);
 
   const showIngredient = (ingre) =>
     ingre?.crafting?.map((ingredients, index) => (
@@ -158,10 +159,10 @@ const ItemWiki = ({ match }) => {
   }
 
   if (!item) {
-    return <Redirect to={"/not-found"} />;
+    return <Navigate to={"/not-found"} />;
   }
 
-  const { name } = item;
+  const itemName = item?.name;
   const parentUrl = item.parent && getItemUrl(item.parent);
   const craftUrl = getItemCraftUrl(name);
 
@@ -169,20 +170,20 @@ const ItemWiki = ({ match }) => {
     <div
       className="container mx-auto px-4"
       data-cy="wiki-item"
-      data-name={name}
+      data-name={itemName}
     >
       <HeaderMeta
-        title={`${name} - Stiletto for Last Oasis`}
-        description={`All information for ${name}`}
-        cannonical={getItemUrl(name)}
+        title={`${itemName} - Stiletto for Last Oasis`}
+        description={`All information for ${itemName}`}
+        cannonical={getItemUrl(itemName)}
       />
       <div className="flex flex-wrap -mx-4">
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
             <div className="p-4 bg-gray-900 border-b border-gray-700">
               <div className="flex items-center text-neutral-300">
-                <Icon key={name} name={name} width={35} />
-                <span className="ml-2">{t(name, { ns: "items" })}</span>
+                <Icon key={itemName} name={itemName} width={35} />
+                <span className="ml-2">{t(itemName, { ns: "items" })}</span>
               </div>
             </div>
             <div className="p-4">
@@ -365,19 +366,19 @@ const ItemWiki = ({ match }) => {
           />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <WikiDescription key="wikidescription" name={item.name} />
+          <WikiDescription key="wikidescription" name={itemName} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <CanBeUsedInfo
             key="CanBeUsedInfo"
-            name={item.name}
+            name={itemName}
             items={allItems}
           />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <DropsInfo key="dropInfo" drops={item.drops} />
         </Suspense>
-        <Comments key="comments" name={item.name} />
+        <Comments key="comments" name={itemName} />
       </div>
     </div>
   );

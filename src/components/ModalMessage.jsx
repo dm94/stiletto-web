@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { sendEvent } from "../page-tracking";
 
@@ -44,7 +44,7 @@ const ModalMessage = ({ message, onClickOk }) => {
   }
 
   if (redirect) {
-    return <Redirect to={message?.redirectPage} />;
+    return <Navigate to={message?.redirectPage} replace />;
   }
 
   sendEvent("modal", {

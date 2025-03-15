@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense, Fragment } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router";
 import {
   getItems,
   getUserProfile,

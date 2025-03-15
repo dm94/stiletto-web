@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";
