@@ -6,8 +6,11 @@ import { sendEvent } from "../page-tracking";
 import Ingredient from "../components/Ingredient";
 import { getDomain } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
+import { useLocation } from "react-router";
 
-const Wiki = ({ location }) => {
+
+const Wiki = () => {
+  const location = useLocation();
   const { t } = useTranslation();
   const [items, setItems] = useState([]);
   const [searchText, setSearchText] = useState("");

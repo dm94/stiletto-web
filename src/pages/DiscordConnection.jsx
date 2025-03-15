@@ -6,10 +6,9 @@ import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
 import { getStoredItem, storeItem } from "../functions/services";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "../functions/utils";
 import { authDiscord } from "../functions/requests/users";
-import { useLocation } from "react-router";
 
 const DiscordConnection = () => {
   const [isLoaded, setIsLoaded] = useState(false);
