@@ -37,7 +37,7 @@ const WikiDescription = ({ name }) => {
               rel="noopener noreferrer"
               href={`https://lastoasis.fandom.com/wiki/Special:Search?query=${name}&scope=internal&navigationSearch=true`}
             >
-              {t("Wiki")}
+              {t("menu.wiki")}
             </a>
           </div>
         </div>

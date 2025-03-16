@@ -47,7 +47,7 @@ const Timer = ({ value, onPlay }) => {
               htmlFor="hours"
               className="block text-sm font-medium text-gray-300 mb-1"
             >
-              {t("Hours")}
+              {t("common.hours")}
             </label>
             <input
               type="number"
@@ -64,7 +64,7 @@ const Timer = ({ value, onPlay }) => {
               htmlFor="minutes"
               className="block text-sm font-medium text-gray-300 mb-1"
             >
-              {t("Minutes")}
+              {t("common.minutes")}
             </label>
             <input
               type="number"
@@ -81,7 +81,7 @@ const Timer = ({ value, onPlay }) => {
               htmlFor="seconds"
               className="block text-sm font-medium text-gray-300 mb-1"
             >
-              {t("Seconds")}
+              {t("common.seconds")}
             </label>
             <input
               type="number"
@@ -98,13 +98,13 @@ const Timer = ({ value, onPlay }) => {
               htmlFor="description"
               className="block text-sm font-medium text-gray-300 mb-1"
             >
-              {t("Description")}
+              {t("common.description")}
             </label>
             <input
               type="text"
               id="description"
               className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder={t("Description")}
+              placeholder={t("common.description")}
             />
           </div>
           <div className="md:col-span-4 grid grid-cols-2 gap-2">
@@ -116,14 +116,14 @@ const Timer = ({ value, onPlay }) => {
                 setIsFinish(false);
               }}
             >
-              <i className="fas fa-play mr-2" /> {t("Start")}
+              <i className="fas fa-play mr-2" /> {t("common.start")}
             </button>
             <button
               type="button"
               className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 flex items-center justify-center"
               onClick={() => setIsOn(false)}
             >
-              <i className="fas fa-stop mr-2" /> {t("Stop")}
+              <i className="fas fa-stop mr-2" /> {t("common.stop")}
             </button>
           </div>
         </div>

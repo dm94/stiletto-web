@@ -55,7 +55,7 @@ const Crafter = () => {
           setError("Error connecting to database");
         }
       } catch {
-        setError("Error when connecting to the API");
+        setError("errors.apiConnection");
       }
     } else if (craft?.length) {
       const decodedName = decodeURI(craft).toLowerCase();
@@ -202,8 +202,8 @@ const Crafter = () => {
           <input
             className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="search"
-            placeholder="Search"
-            aria-label="Search"
+            placeholder={t("common.search")}
+            aria-label={t("common.search")}
             data-cy="crafter-search"
             onChange={handleInputChangeSearchItem}
             value={searchText}

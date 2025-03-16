@@ -60,8 +60,8 @@ const PrivateProfile = () => {
   }, []);
 
   const clearStorageData = () => {
-    localStorage.removeItem("profile");
-    sessionStorage.removeItem("profile");
+    localStorage.removeItem("menu.profile");
+    sessionStorage.removeItem("menu.profile");
     localStorage.removeItem("memberList");
     sessionStorage.removeItem("memberList");
   };
@@ -77,12 +77,12 @@ const PrivateProfile = () => {
         setRedirect(true);
       } else if (response.status === 401) {
         closeSession();
-        setError(t("Log in again"));
+        setError(t("auth.loginAgain1"));
       } else if (response.status === 503) {
         setError(t("Error connecting to database"));
       }
     } catch {
-      setError(t("Error when connecting to the API"));
+      setError(t("errors.apiConnection"));
     }
   };
 
@@ -96,12 +96,12 @@ const PrivateProfile = () => {
         setUserData({ ...userData, nickname: nameInGameInput });
       } else if (response.status === 401) {
         closeSession();
-        setError(t("Log in again"));
+        setError(t("auth.loginAgain1"));
       } else if (response.status === 503) {
         setError(t("Error connecting to database"));
       }
     } catch {
-      setError(t("Error when connecting to the API"));
+      setError(t("errors.apiConnection"));
     }
   };
 
@@ -115,12 +115,12 @@ const PrivateProfile = () => {
         setUserData({ ...userData, clanname: "" });
       } else if (response.status === 401) {
         closeSession();
-        setError(t("Log in again"));
+        setError(t("auth.loginAgain1"));
       } else if (response.status === 503) {
         setError(t("Error connecting to database"));
       }
     } catch {
-      setError(t("Error when connecting to the API"));
+      setError(t("errors.apiConnection"));
     }
   };
 
@@ -143,7 +143,7 @@ const PrivateProfile = () => {
   if (!getStoredItem("token") || redirect) {
     return (
       <ModalMessage
-        message={{ isError: true, text: "Login again", redirectPage: "/" }}
+        message={{ isError: true, text: "auth.loginAgain2", redirectPage: "/" }}
       />
     );
   }
@@ -177,27 +177,27 @@ const PrivateProfile = () => {
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
             <h2 className="text-xl font-bold text-white">
-              {t("Your details")}
+              {t("profile.yourDetails")}
             </h2>
           </div>
           <div className="p-0">
             <div className="divide-y divide-gray-700">
               <div className="flex justify-between items-center p-3">
-                <span className="text-gray-300">{t("Discord Tag")}</span>
+                <span className="text-gray-300">{t("profile.discordTag")}</span>
                 <span className="text-gray-400" data-cy="discord-tag">
                   {userData.discordtag}
                 </span>
               </div>
               <div className="flex justify-between items-center p-3">
-                <span className="text-gray-300">{t("Nick in Game")}</span>
+                <span className="text-gray-300">{t("profile.nickInGame")}</span>
                 <span className="text-gray-400">
-                  {userData.nickname || t("Not defined")}
+                  {userData.nickname || t("common.notDefined1")}
                 </span>
               </div>
               <div className="flex justify-between items-center p-3">
-                <span className="text-gray-300">{t("Clan")}</span>
+                <span className="text-gray-300">{t("common.clan")}</span>
                 <span className="text-gray-400">
-                  {userData.clanname || t("No Clan")}
+                  {userData.clanname || t("clan.noClan")}
                 </span>
               </div>
             </div>
@@ -211,14 +211,14 @@ const PrivateProfile = () => {
               }}
               className="w-full p-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 focus:outline-none"
             >
-              {t("Close session")}
+              {t("auth.closeSession")}
             </button>
             <button
               type="button"
               onClick={() => setShowDeleteModal(true)}
               className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none"
             >
-              {t("Delete user")}
+              {t("profile.deleteUser")}
             </button>
           </div>
         </div>
@@ -226,7 +226,7 @@ const PrivateProfile = () => {
         {/* Gestión del clan */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
-            <h2 className="text-xl font-bold text-white">{t("Manage Clan")}</h2>
+            <h2 className="text-xl font-bold text-white">{t("clan.manageClan")}</h2>
           </div>
           <div className="p-3 space-y-2">
             {userData.clanname && userData.clanname !== "Loading..." ? (
@@ -236,7 +236,7 @@ const PrivateProfile = () => {
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <i className="fas fa-users mr-2" />
-                  {t("Members")}
+                  {t("menu.members")}
                 </Link>
                 <Link
                   to="/walkerlist"
@@ -248,14 +248,14 @@ const PrivateProfile = () => {
                     width="30"
                     className="mr-2"
                   />
-                  {t("Walker List")}
+                  {t("menu.walkerList")}
                 </Link>
                 <Link
                   to="/diplomacy"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <i className="far fa-flag mr-2" />
-                  {t("Diplomacy")}
+                  {t("menu.diplomacy")}
                 </Link>
                 {userData.clanleaderid !== userData.user_discord_id && (
                   <button
@@ -264,7 +264,7 @@ const PrivateProfile = () => {
                     onClick={handleLeaveClan}
                     className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none"
                   >
-                    {t("Leave clan")}
+                    {t("clan.leaveClan")}
                   </button>
                 )}
               </>
@@ -275,7 +275,7 @@ const PrivateProfile = () => {
                   data-cy="join-clan-btn"
                   className="w-full inline-flex justify-center items-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
                 >
-                  {t("Join a clan")}
+                  {t("clan.joinClan")}
                 </Link>
                 <button
                   type="button"
@@ -283,7 +283,7 @@ const PrivateProfile = () => {
                   onClick={() => setShowClanConfig(true)}
                   className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
                 >
-                  {t("Create a clan")}
+                  {t("clan.createClan")}
                 </button>
               </>
             )}
@@ -297,7 +297,7 @@ const PrivateProfile = () => {
               to="/maps"
               className="w-full inline-flex justify-center items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
             >
-              {t("Resource Maps")}
+              {t("menu.resourceMaps")}
             </Link>
           </div>
         </div>
@@ -306,7 +306,7 @@ const PrivateProfile = () => {
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
             <h2 className="text-xl font-bold text-white">
-              {t("Change language")}
+              {t("settings.changeLanguage")}
             </h2>
           </div>
           <div className="p-3">
@@ -330,7 +330,7 @@ const PrivateProfile = () => {
                 onClick={handleLanguageChange}
                 className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
               >
-                {t("Change language")}
+                {t("settings.changeLanguage")}
               </button>
             </div>
           </div>
@@ -341,7 +341,7 @@ const PrivateProfile = () => {
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-3 bg-gray-900 border-b border-gray-700">
               <h2 className="text-xl font-bold text-white">
-                {t("Add name in the game")}
+                {t("profile.addNameInGame")}
               </h2>
             </div>
             <div className="p-3">
@@ -351,7 +351,7 @@ const PrivateProfile = () => {
                     htmlFor="user_game_name"
                     className="block text-sm font-medium text-gray-300 mb-1"
                   >
-                    {t("Your name in Last Oasis")}
+                    {t("profile.yourNameInGame")}
                   </label>
                   <input
                     type="text"
@@ -366,7 +366,7 @@ const PrivateProfile = () => {
                   type="submit"
                   className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
                 >
-                  {t("Add")}
+                  {t("common.add")}
                 </button>
               </form>
             </div>
@@ -392,17 +392,17 @@ const PrivateProfile = () => {
                       className="text-lg leading-6 font-medium text-gray-300"
                       id="deleteusermodal"
                     >
-                      {t("Are you sure?")}
+                      {t("common.areYouSure")}
                     </h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-400">
                         {t(
-                          "This option is not reversible, your user and all his data will be deleted.",
+                          "profile.deleteWarning",
                         )}
                       </p>
                       <p className="text-sm text-gray-400 mt-2">
                         {t(
-                          "The administrator will be notified to delete the user, the user will not be deleted directly.",
+                          "profile.deleteNotice",
                         )}
                       </p>
                     </div>
@@ -415,14 +415,14 @@ const PrivateProfile = () => {
                   className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={handleDeleteUser}
                 >
-                  {t("Delete user")}
+                  {t("profile.deleteUser")}
                 </button>
                 <button
                   type="button"
                   className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-700 shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={() => setShowDeleteModal(false)}
                 >
-                  {t("Cancel")}
+                  {t("common.cancel")}
                 </button>
               </div>
             </div>

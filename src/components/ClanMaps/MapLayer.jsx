@@ -44,9 +44,8 @@ const MapLayer = ({
     const remainingQuality = quality - estimatedQuality;
 
     const now = new Date();
-    const date = `${now.getFullYear()}-${
-      now.getMonth() + 1
-    }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
+    const date = `${now.getFullYear()}-${now.getMonth() + 1
+      }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
     const fullDate = new Date(now.getTime() + remainingQuality * 10 * 60000);
 
     return (
@@ -63,16 +62,16 @@ const MapLayer = ({
             )
           }
         >
-          {t("Harvested now")}
+          {t("resources.harvestedNow")}
         </button>
         <div className="mb-1 text-gray-300">
-          {t("Last Harvested")}: {resource.lastharvested}
+          {t("resources.lastHarvested")}: {resource.lastharvested}
         </div>
         <div className="mb-1 text-gray-300">
           {t("Spawns in")}:{" "}
           {remainingQuality !== 0
-            ? `${remainingQuality * 10} ${t("Minutes")}`
-            : t("Now")}
+            ? `${remainingQuality * 10} ${t("common.minutes")}`
+            : t("common.now")}
         </div>
         <div className="mb-1 text-gray-300">
           {t("Date")}: {fullDate.toLocaleString()}
@@ -117,33 +116,33 @@ const MapLayer = ({
                     deleteResource(resource.resourceid, resource.token)
                   }
                 >
-                  {t("Delete")}
+                  {t("common.delete")}
                 </button>
               )}
               {(resource.resourcetype === "Poaching Hut" ||
                 resource.resourcetype === "Enemy Poaching Hut") && (
-                <div className="border-t border-yellow-500 mt-2 pt-2">
-                  <input
-                    className="w-full"
-                    id="formPoachingRadius"
-                    value={poachingHutRadius}
-                    onChange={(e) => setPoachingHutRadius(e.target.value)}
-                    type="range"
-                    min="0"
-                    max="250"
-                  />
-                </div>
-              )}
+                  <div className="border-t border-yellow-500 mt-2 pt-2">
+                    <input
+                      className="w-full"
+                      id="formPoachingRadius"
+                      value={poachingHutRadius}
+                      onChange={(e) => setPoachingHutRadius(e.target.value)}
+                      type="range"
+                      min="0"
+                      max="250"
+                    />
+                  </div>
+                )}
             </Popup>
           </Marker>
           {(resource.resourcetype === "Poaching Hut" ||
             resource.resourcetype === "Enemy Poaching Hut") && (
-            <Circle
-              center={[resource.x, resource.y]}
-              pathOptions={{ fillColor: "blue" }}
-              radius={poachingHutRadius * 10000}
-            />
-          )}
+              <Circle
+                center={[resource.x, resource.y]}
+                pathOptions={{ fillColor: "blue" }}
+                radius={poachingHutRadius * 10000}
+              />
+            )}
         </React.Fragment>
       ));
     }
@@ -167,7 +166,7 @@ const MapLayer = ({
         [{`${Math.floor(coordinateXInput)},${Math.floor(coordinateYInput)}`}]{" "}
         {t("This marker is used for positioning when creating a resource")}
       </Popup>
-      <Tooltip>{t("Temporal Marker")}</Tooltip>
+      <Tooltip>{t("maps.temporalMarker")}</Tooltip>
     </Marker>
   ) : (
     false
@@ -180,25 +179,23 @@ const MapLayer = ({
       <div className="flex space-x-2 mb-4 justify-end">
         <button
           type="button"
-          className={`p-2 rounded-lg ${
-            gridOpacity === 1
-              ? "bg-gray-600 text-white"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-          }`}
+          className={`p-2 rounded-lg ${gridOpacity === 1
+            ? "bg-gray-600 text-white"
+            : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+            }`}
           onClick={() => setGridOpacity(1)}
         >
-          {t("Show Grid")}
+          {t("maps.showGrid")}
         </button>
         <button
           type="button"
-          className={`p-2 rounded-lg ${
-            gridOpacity === 0
-              ? "bg-gray-600 text-white"
-              : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-          }`}
+          className={`p-2 rounded-lg ${gridOpacity === 0
+            ? "bg-gray-600 text-white"
+            : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+            }`}
           onClick={() => setGridOpacity(0)}
         >
-          {t("Hide Grid")}
+          {t("maps.hideGrid")}
         </button>
       </div>
       <MapExtended
@@ -212,23 +209,21 @@ const MapLayer = ({
           bounds={
             isNewMap
               ? [
-                  [85.5, -180],
-                  [-84.9, 177.3],
-                ]
+                [85.5, -180],
+                [-84.9, 177.3],
+              ]
               : [
-                  [85.5, -180],
-                  [-78, 130],
-                ]
+                [85.5, -180],
+                [-78, 130],
+              ]
           }
           opacity={gridOpacity}
-          url={`${config.REACT_APP_RESOURCES_URL}${
-            isNewMap ? "/maps/Grid_new.png" : "/maps/Grid.png"
-          }`}
+          url={`${config.REACT_APP_RESOURCES_URL}${isNewMap ? "/maps/Grid_new.png" : "/maps/Grid.png"
+            }`}
         />
         <TileLayer
-          url={`${config.REACT_APP_RESOURCES_URL}/maps/${
-            resourcesInTheMap?.[0]?.typemap || "Crater_new"
-          }/{z}/{x}/{y}.png`}
+          url={`${config.REACT_APP_RESOURCES_URL}/maps/${resourcesInTheMap?.[0]?.typemap || "Crater_new"
+            }/{z}/{x}/{y}.png`}
           noWrap
         />
         {marker}

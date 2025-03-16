@@ -47,7 +47,7 @@ const AuctionTimers = () => {
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 text-center text-gray-300">
               {t(
-                "This data is not saved, if you reload the page it will be deleted",
+                "diplomacy.relationshipNotice",
               )}
             </div>
           </div>
@@ -59,25 +59,23 @@ const AuctionTimers = () => {
               <div className="inline-flex rounded-md shadow-sm">
                 <button
                   type="button"
-                  className={`px-4 py-2 ${
-                    playSound
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-700 text-gray-300"
-                  } rounded-l-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
+                  className={`px-4 py-2 ${playSound
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-700 text-gray-300"
+                    } rounded-l-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(true)}
                 >
-                  <i className="fas fa-volume-up mr-2" /> {t("Sound On")}
+                  <i className="fas fa-volume-up mr-2" /> {t("common.soundOn")}
                 </button>
                 <button
                   type="button"
-                  className={`px-4 py-2 ${
-                    !playSound
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-700 text-gray-300"
-                  } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
+                  className={`px-4 py-2 ${!playSound
+                    ? "bg-blue-600 text-white"
+                    : "bg-gray-700 text-gray-300"
+                    } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(false)}
                 >
-                  <i className="fas fa-volume-mute mr-2" /> {t("Sound Off")}
+                  <i className="fas fa-volume-mute mr-2" /> {t("common.soundOff")}
                 </button>
               </div>
             </div>
@@ -101,9 +99,8 @@ const AuctionTimers = () => {
               </button>
               <button
                 type="button"
-                className={`px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 text-lg font-medium ${
-                  timers <= 1 ? "opacity-50 cursor-not-allowed" : ""
-                }`}
+                className={`px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 text-lg font-medium ${timers <= 1 ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                 onClick={() => setTimers(Math.max(1, timers - 1))}
                 disabled={timers <= 1}
               >

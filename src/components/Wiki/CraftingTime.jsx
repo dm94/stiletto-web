@@ -14,7 +14,7 @@ const CraftingTime = ({ craftingTime }) => {
           <div className="p-4">
             <div className="flex items-center space-x-2">
               <div className="text-gray-300">{craftingTime}</div>
-              <div className="text-gray-400 text-sm">{t("seconds")}</div>
+              <div className="text-gray-400 text-sm">{t("common.seconds")}</div>
             </div>
           </div>
         </div>

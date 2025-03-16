@@ -12,7 +12,7 @@ const TotalMaterials = ({ selectedItems }) => {
   const { t } = useTranslation();
 
   const addRecipeRequest = async () => {
-    sendEvent("share", {
+    sendEvent("common.share", {
       props: {
         action: "addRecipe",
       },
@@ -27,11 +27,11 @@ const TotalMaterials = ({ selectedItems }) => {
       const response = await addRecipe(items);
       if (response.status === 201) {
         const data = await response.json();
-        sendNotification("Sharing code has been generated", "Information");
+        sendNotification("Sharing code has been generated", "common.information");
         setRecipeToken(data.token);
       }
     } catch {
-      sendNotification("Error when connecting to the API", "Error");
+      sendNotification("errors.apiConnection", "common.error");
     }
   };
 
@@ -40,11 +40,11 @@ const TotalMaterials = ({ selectedItems }) => {
       type="button"
       className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
       onClick={addRecipeRequest}
-      title={t("Generate a link to share it")}
+      title={t("crafting.generateShareLink")}
       data-cy="share-crafter-btn"
       disabled={selectedItems?.length <= 0}
     >
-      <i className="fas fa-share-alt" /> {t("Share")}
+      <i className="fas fa-share-alt" /> {t("common.share")}
     </button>
   );
 
@@ -65,7 +65,7 @@ const TotalMaterials = ({ selectedItems }) => {
             type="button"
             onClick={() => navigator.clipboard.writeText(url)}
           >
-            {t("Copy")}
+            {t("common.copy")}
           </button>
           {shareButton()}
         </div>
@@ -95,19 +95,19 @@ const TotalMaterials = ({ selectedItems }) => {
   };
 
   const copyMaterials = () => {
-    sendEvent("share", {
+    sendEvent("common.share", {
       props: {
         action: "copyMaterials",
       },
     });
 
-    let text = `${t("To make")}:\n\n`;
+    let text = `${t("crafting.toMake")}:\n\n`;
 
     for (const item of selectedItems ?? []) {
       text += `${item.count}x ${t(item.name, { ns: "items" })} - `;
     }
 
-    text += `\n\n${t("You need the following materials")}:\n\n`;
+    text += `\n\n${t("crafting.youNeedMaterials")}:\n\n`;
 
     const totalIngredients = [];
     for (const item of selectedItems ?? []) {
@@ -135,20 +135,20 @@ const TotalMaterials = ({ selectedItems }) => {
       text += `\t${ingredient.count}x ${t(ingredient.name)}\n`;
     }
 
-    text += `\n${t("List of all necessary materials by")} ${getDomain()}`;
+    text += `\n${t("crafting.listOfMaterialsBy")} ${getDomain()}`;
 
     navigator.clipboard.writeText(text);
-    sendNotification("Items copied to the clipboard", "Information");
+    sendNotification("common.itemsCopiedToClipboard", "common.information");
   };
 
   return (
     <div className="bg-gray-800 border border-yellow-500 rounded-lg overflow-hidden">
       <div className="p-4 border-b border-yellow-500 flex justify-between items-center">
-        <div className="font-normal text-gray-300">{t("Total materials")}</div>
+        <div className="font-normal text-gray-300">{t("crafting.totalMaterials")}</div>
         <button
           type="button"
           className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          title={t("Copy to clipboard")}
+          title={t("common.copyToClipboard")}
           data-cy="crafter-copy-clipboard"
           onClick={copyMaterials}
           disabled={selectedItems?.length <= 0}
@@ -161,7 +161,7 @@ const TotalMaterials = ({ selectedItems }) => {
         <div>
           <ListIngredients selectedItems={selectedItems} />
           <div className="text-right text-gray-400">
-            {t("List of all necessary materials by")} {getDomain()}
+            {t("crafting.listOfMaterialsBy")} {getDomain()}
           </div>
         </div>
       </div>

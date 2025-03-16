@@ -14,7 +14,7 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
         className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         onClick={() => onOpen(map)}
       >
-        <i className="fas fa-eye mr-2" /> {t("Show map")}
+        <i className="fas fa-eye mr-2" /> {t("maps.showMap")}
       </button>
       {deleteMapButton()}
       {shareMapButton()}
@@ -29,7 +29,7 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
           className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           onClick={() => onDelete(map.mapid)}
         >
-          <i className="fas fa-trash-alt mr-2" /> {t("Delete map")}
+          <i className="fas fa-trash-alt mr-2" /> {t("maps.deleteMap")}
         </button>
       );
     }
@@ -46,7 +46,7 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
             window.open(`${getDomain()}/map/${map.mapid}?pass=${map.pass}`)
           }
         >
-          <i className="fas fa-share-alt mr-2" /> {t("Share map")}
+          <i className="fas fa-share-alt mr-2" /> {t("maps.shareMap")}
         </button>
       );
     }

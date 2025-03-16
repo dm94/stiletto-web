@@ -55,13 +55,13 @@ const Diplomacy = () => {
           setError("Error connecting to database");
         }
       } catch {
-        setError("Error when connecting to the API");
+        setError("errors.apiConnection");
       }
 
       if (discordid === leaderid) {
         setHasPermissions(true);
       } else {
-        const permissions = await getHasPermissions("diplomacy");
+        const permissions = await getHasPermissions("menu.diplomacy");
         setHasPermissions(permissions);
       }
     };
@@ -87,7 +87,7 @@ const Diplomacy = () => {
         setError("Error connecting to database");
       }
     } catch {
-      setError("Try again later");
+      setError("common.tryAgainLater");
     }
   };
 
@@ -103,7 +103,7 @@ const Diplomacy = () => {
         setError("Error connecting to database");
       }
     } catch {
-      setError("Try again later");
+      setError("common.tryAgainLater");
     }
   };
 
@@ -205,7 +205,7 @@ const Diplomacy = () => {
                     htmlFor="typedInput"
                     className="block text-sm font-medium text-gray-300 mb-1"
                   >
-                    {t("Type")}
+                    {t("common.type")}
                   </label>
                   <select
                     id="typedInput"
@@ -213,9 +213,9 @@ const Diplomacy = () => {
                     value={typedInput}
                     onChange={(evt) => setTypedInput(evt.target.value)}
                   >
-                    <option value="0">{t("NAP or Settler")}</option>
-                    <option value="1">{t("Ally")}</option>
-                    <option value="2">{t("War")}</option>
+                    <option value="0">{t("diplomacy.napOrSettler")}</option>
+                    <option value="1">{t("diplomacy.ally")}</option>
+                    <option value="2">{t("diplomacy.war")}</option>
                   </select>
                 </div>
                 <div>
@@ -223,7 +223,7 @@ const Diplomacy = () => {
                     htmlFor="flag_color"
                     className="block text-sm font-medium text-gray-300 mb-1"
                   >
-                    {t("Flag Color")}
+                    {t("clan.flagColor")}
                   </label>
                   <input
                     type="color"
@@ -241,7 +241,7 @@ const Diplomacy = () => {
                   htmlFor="nameOtherClanInput"
                   className="block text-sm font-medium text-gray-300 mb-1"
                 >
-                  {t("Clan Name")}
+                  {t("clan.clanName")}
                 </label>
                 <input
                   type="text"
@@ -259,7 +259,7 @@ const Diplomacy = () => {
                   htmlFor="sigilClanFlagInput"
                   className="block text-sm font-medium text-gray-300 mb-1"
                 >
-                  {t("Symbol")}
+                  {t("diplomacy.symbol")}
                 </label>
                 <div className="w-full">
                   <div className="flex flex-wrap">{symbolsList()}</div>
@@ -271,7 +271,7 @@ const Diplomacy = () => {
                   type="submit"
                   value="Submit"
                 >
-                  {t("Create a relationship")}
+                  {t("diplomacy.createRelationship")}
                 </button>
               </div>
             </form>
@@ -298,7 +298,7 @@ const Diplomacy = () => {
       <ModalMessage
         message={{
           isError: true,
-          text: "You need to have a clan to access this section",
+          text: "clan.needClanAccess",
           redirectPage: "/profile",
         }}
       />
@@ -343,7 +343,7 @@ const Diplomacy = () => {
           <div className="w-full">
             <div className="bg-gray-800 border border-green-500 rounded-lg shadow-md">
               <div className="bg-green-600 text-white text-center p-2 rounded-t-lg">
-                {t("Allies")}
+                {t("diplomacy.allies")}
               </div>
               <div className="p-4">
                 <div className="space-y-2">{listOfAllies()}</div>
@@ -353,7 +353,7 @@ const Diplomacy = () => {
           <div className="w-full">
             <div className="bg-gray-800 border border-yellow-500 rounded-lg shadow-md">
               <div className="bg-yellow-500 text-gray-900 text-center p-2 rounded-t-lg">
-                {t("NAP or Settlers")}
+                {t("diplomacy.napOrSettlers")}
               </div>
               <div className="p-4">
                 <div className="space-y-2">{listOfNAP()}</div>
@@ -363,7 +363,7 @@ const Diplomacy = () => {
           <div className="w-full">
             <div className="bg-gray-800 border border-red-500 rounded-lg shadow-md">
               <div className="bg-red-600 text-white text-center p-2 rounded-t-lg">
-                {t("War")}
+                {t("diplomacy.war")}
               </div>
               <div className="p-4">
                 <div className="space-y-2">{listOfEnemies()}</div>

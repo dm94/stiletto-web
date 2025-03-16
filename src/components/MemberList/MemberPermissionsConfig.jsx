@@ -53,14 +53,14 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
         onClose?.();
       } else if (response.status === 401) {
         closeSession();
-        onError?.("You don't have access here, try to log in again");
+        onError?.("errors.noAccess");
         onClose?.();
       } else if (response.status === 503) {
         onError?.("Error connecting to database");
         onClose?.();
       }
     } catch {
-      onError?.("Error when connecting to the API");
+      onError?.("errors.apiConnection");
     }
   };
 
@@ -72,7 +72,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
         <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 flex justify-between items-center">
-          <h5 className="text-white font-medium">{t("Change Permissions")}</h5>
+          <h5 className="text-white font-medium">{t("discord.changePermissions")}</h5>
           <button
             type="button"
             className="text-gray-400 hover:text-white bg-gray-700 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200"
@@ -92,7 +92,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
           <div className="space-y-4">
             <div
               className="flex items-center"
-              title={t("Allow to change bot settings")}
+              title={t("discord.allowToChangeBotSettings")}
             >
               <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
@@ -108,13 +108,13 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                 />
               </div>
               <label className="text-sm" htmlFor="botInput">
-                {t("Discord Bot settings")}
+                {t("discord.discordBotSettings")}
               </label>
             </div>
 
             <div
               className="flex items-center"
-              title={t("Allow editing walkers")}
+              title={t("discord.allowEditingWalkers")}
             >
               <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
@@ -130,20 +130,20 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                 />
               </div>
               <label className="text-sm" htmlFor="walkersInput">
-                {t("Allow editing walkers")}
+                {t("discord.allowEditingWalkers")}
               </label>
             </div>
 
             <div
               className="flex items-center"
-              title={t("Allow editing diplomacy")}
+              title={t("discord.allowEditingDiplomacy")}
             >
               <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"
                   id="diplomacyInput"
                   checked={permissions.diplomacy}
-                  onChange={() => togglePermission("diplomacy")}
+                  onChange={() => togglePermission("menu.diplomacy")}
                   className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
                 <label
@@ -152,7 +152,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                 />
               </div>
               <label className="text-sm" htmlFor="diplomacyInput">
-                {t("Allow editing diplomacy")}
+                {t("discord.allowEditingDiplomacy")}
               </label>
             </div>
 
@@ -178,7 +178,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
               </label>
             </div>
 
-            <div className="flex items-center" title={t("Allow kick members")}>
+            <div className="flex items-center" title={t("discord.allowKickMembers")}>
               <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"
@@ -193,7 +193,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                 />
               </div>
               <label className="text-sm" htmlFor="kickmembersInput">
-                {t("Allow kick members")}
+                {t("discord.allowKickMembers")}
               </label>
             </div>
           </div>
@@ -204,14 +204,14 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
             className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
             onClick={onClose}
           >
-            {t("Close")}
+            {t("common.close")}
           </button>
           <button
             type="button"
             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={handleUpdateMemberPermissions}
           >
-            {t("Save")}
+            {t("common.save")}
           </button>
         </div>
       </div>

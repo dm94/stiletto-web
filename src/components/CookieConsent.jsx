@@ -8,7 +8,7 @@ const CookieConsent = () => {
     return (
       <div className="fixed bottom-0 left-0 right-0 w-full bg-gray-900 text-white p-4 flex items-center justify-between">
         <div className="mr-4">
-          {t("This website uses cookies to enhance the user experience.")}
+          {t("common.cookiesNotice")}
         </div>
         <button
           type="button"
@@ -18,7 +18,7 @@ const CookieConsent = () => {
             window.location.reload();
           }}
         >
-          {t("Accept")}
+          {t("common.accept")}
         </button>
       </div>
     );

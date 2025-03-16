@@ -30,7 +30,7 @@ const MemberListItem = ({
           className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
           onClick={() => onKick(member.discordid)}
         >
-          {t("Kick")}
+          {t("members.kick")}
         </button>
       </td>
     );
@@ -63,7 +63,7 @@ const MemberListItem = ({
             className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
             onClick={() => onClickEditPermissions(member.discordid)}
           >
-            {t("Edit")}
+            {t("common.edit")}
           </button>
         </div>
       </td>

@@ -90,7 +90,7 @@ const Wiki = () => {
       <div className="w-full" key="wiki-notfound">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
           <div className="p-6 text-center text-gray-300 text-lg">
-            {t("Nothing found")}
+            {t("wiki.nothingFound")}
           </div>
         </div>
       </div>
@@ -129,7 +129,7 @@ const Wiki = () => {
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
           <div className="p-6 text-center">
             <h1 className="text-2xl font-bold text-white mb-4">
-              {t("Last Oasis Wiki")}
+              {t("wiki.lastOasisWiki")}
             </h1>
             <div className="max-w-2xl mx-auto">
               <div
@@ -140,8 +140,8 @@ const Wiki = () => {
                 <input
                   type="search"
                   className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder={t("Search")}
-                  aria-label={t("Search")}
+                  placeholder={t("common.search")}
+                  aria-label={t("common.search")}
                   onChange={handleSearchTextChange}
                   onKeyDown={handleKeyPress}
                   value={searchText}
@@ -151,7 +151,7 @@ const Wiki = () => {
                   className="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
                   onClick={() => searchItems()}
                 >
-                  {t("Search")}
+                  {t("common.search")}
                 </button>
               </div>
             </div>
@@ -163,7 +163,7 @@ const Wiki = () => {
                   className="px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300"
                   htmlFor="category-filter"
                 >
-                  {t("Filter by category")}
+                  {t("wiki.filterByCategory")}
                 </label>
                 <select
                   id="category-filter"
@@ -172,7 +172,7 @@ const Wiki = () => {
                   onChange={handleCategoryChange}
                 >
                   <option key="all" value="All">
-                    {t("All")}
+                    {t("common.all")}
                   </option>
                   {showCategories()}
                 </select>

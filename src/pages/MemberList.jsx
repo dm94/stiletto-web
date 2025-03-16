@@ -79,13 +79,13 @@ const MemberList = () => {
           setRequestMembers(data);
         } else if (response.status === 405 || response.status === 401) {
           closeSession();
-          setError("You don't have access here, try to log in again");
+          setError("errors.noAccess");
         } else if (response.status === 503) {
           setError("Error connecting to database");
         }
         setIsLoadedRequestList(true);
       } catch {
-        setError("Error when connecting to the API");
+        setError("errors.apiConnection");
       }
 
       const botPermissions = await getHasPermissions("bot");
@@ -113,12 +113,12 @@ const MemberList = () => {
         setMembers(members.filter((m) => m.discordid !== memberdiscordid));
       } else if (response.status === 405 || response.status === 401) {
         closeSession();
-        setError("You don't have access here, try to log in again");
+        setError("errors.noAccess");
       } else if (response.status === 503) {
         setError("Error connecting to database");
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
   };
 
@@ -147,13 +147,13 @@ const MemberList = () => {
         updateMembers();
       } else if (response.status === 405 || response.status === 401) {
         closeSession();
-        setError("You don't have access here, try to log in again");
+        setError("errors.noAccess");
       } else if (response.status === 503) {
         setError("Error connecting to database");
       }
       setRequestData(false);
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
   };
 
@@ -182,13 +182,13 @@ const MemberList = () => {
         updateMembers();
       } else if (response.status === 405 || response.status === 401) {
         closeSession();
-        setError("You don't have access here, try to log in again");
+        setError("errors.noAccess");
       } else if (response.status === 503) {
         setError("Error connecting to database");
       }
       setRequestData(false);
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
   };
 
@@ -196,23 +196,23 @@ const MemberList = () => {
     try {
       const response = await deleteClan(clanid);
 
-      localStorage.removeItem("profile");
-      sessionStorage.removeItem("profile");
+      localStorage.removeItem("menu.profile");
+      sessionStorage.removeItem("menu.profile");
       sessionStorage.removeItem("memberList-lastCheck");
       sessionStorage.removeItem("memberList");
       localStorage.removeItem("memberList");
       localStorage.removeItem("memberList-lastCheck");
 
       if (response.status === 204) {
-        setRedirectMessage("Clan deleted correctly");
+        setRedirectMessage("clan.deleteSuccess");
       } else if (response.status === 405) {
         closeSession();
-        setError("You don't have access here, try to log in again");
+        setError("errors.noAccess");
       } else if (response.status === 503) {
         setError("Error connecting to database");
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
   };
 
@@ -220,8 +220,8 @@ const MemberList = () => {
     try {
       const response = await updateMember(clanid, selectNewOwner, "owner");
 
-      localStorage.removeItem("profile");
-      sessionStorage.removeItem("profile");
+      localStorage.removeItem("menu.profile");
+      sessionStorage.removeItem("menu.profile");
       localStorage.removeItem("memberList");
       sessionStorage.removeItem("memberList");
       sessionStorage.removeItem("memberList-lastCheck");
@@ -231,12 +231,12 @@ const MemberList = () => {
         setRedirectMessage("Clan updated correctly");
       } else if (response.status === 405 || response.status === 401) {
         closeSession();
-        setError("You don't have access here, try to log in again");
+        setError("errors.noAccess");
       } else if (response.status === 503) {
         setError("Error connecting to database");
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
   };
 
@@ -274,7 +274,7 @@ const MemberList = () => {
       return (
         <tr>
           <td colSpan="4" className="text-center py-4 text-gray-400">
-            {t("There are no pending requests")}
+            {t("members.noPendingRequests")}
           </td>
         </tr>
       );
@@ -282,7 +282,7 @@ const MemberList = () => {
     return (
       <tr>
         <td colSpan="4" className="text-center py-4 text-gray-400">
-          {t("Loading the list of requests to enter the clan")}
+          {t("members.loadingRequests")}
         </td>
       </tr>
     );
@@ -294,11 +294,11 @@ const MemberList = () => {
         <div className="w-full lg:w-1/3 px-2">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg mb-4">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
-              {t("Delete Clan")}
+              {t("clan.deleteClan")}
             </div>
             <div className="p-4 text-gray-300">
               {t(
-                "By deleting the clan you will delete all the data linked to it, be careful because this option is not reversible",
+                "clan.deleteWarning",
               )}
             </div>
             <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
@@ -307,7 +307,7 @@ const MemberList = () => {
                 className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
                 onClick={handleDeleteClan}
               >
-                {t("Delete")}
+                {t("common.delete")}
               </button>
             </div>
           </div>
@@ -323,19 +323,19 @@ const MemberList = () => {
         <div className="w-full lg:w-1/3 px-2">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg mb-4">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
-              {t("Transfer Clan")}
+              {t("clan.transferClan")}
             </div>
             <div className="p-4 text-gray-300">
               <p className="mb-4">
                 {t(
-                  "This option is not reversible, so be careful who you pass it on to in the leadership of the clan",
+                  "clan.transferWarning",
                 )}
               </p>
               <label
                 htmlFor="selectNewOwner"
                 className="block mb-2 text-sm font-medium"
               >
-                {t("New leader:")}
+                {t("clan.newLeader")}
               </label>
               <select
                 id="selectNewOwner"
@@ -356,7 +356,7 @@ const MemberList = () => {
                 className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
                 onClick={changeOwner}
               >
-                {t("Change leader")}
+                {t("clan.changeLeader")}
               </button>
             </div>
           </div>
@@ -399,7 +399,7 @@ const MemberList = () => {
       <ModalMessage
         message={{
           isError: true,
-          text: "You do not have permission to access this page",
+          text: "errors.noPermission",
           redirectPage: "/profile",
         }}
       />
@@ -446,7 +446,7 @@ const MemberList = () => {
                 className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onClick={() => setShowClanConfig(true)}
               >
-                {t("Clan Configuration")}
+                {t("clan.configuration")}
               </button>
             </div>
           </div>
@@ -468,7 +468,7 @@ const MemberList = () => {
                 }
                 onClick={() => setShowBotConfig(true)}
               >
-                {t("Discord Bot Configuration")}
+                {t("discord.discordBotConfiguration")}
               </button>
             </div>
           </div>
@@ -479,7 +479,7 @@ const MemberList = () => {
         <div className="w-full lg:w-1/2 px-2 mb-6">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
-              {t("Member List")}
+              {t("members.memberList")}
             </div>
             <div className="p-4">
               <div className="overflow-x-auto">
@@ -487,9 +487,9 @@ const MemberList = () => {
                   <thead>
                     <tr className="bg-gray-900 text-gray-300 text-left">
                       <th className="px-4 py-2 rounded-tl-lg">
-                        {t("Discord Tag")}
+                        {t("profile.discordTag")}
                       </th>
-                      <th className="px-4 py-2">{t("Nick in Game")}</th>
+                      <th className="px-4 py-2">{t("profile.nickInGame")}</th>
                       <th
                         className={
                           members && (isLeader || hasKickMembersPermisssions)
@@ -497,7 +497,7 @@ const MemberList = () => {
                             : "hidden"
                         }
                       >
-                        {t("Kick")}
+                        {t("members.kick")}
                       </th>
                       <th
                         className={
@@ -506,7 +506,7 @@ const MemberList = () => {
                             : "hidden"
                         }
                       >
-                        {t("Edit")}
+                        {t("common.edit")}
                       </th>
                     </tr>
                   </thead>
@@ -522,7 +522,7 @@ const MemberList = () => {
         <div className="w-full lg:w-1/2 px-2 mb-6">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
-              {t("List of requests")}
+              {t("members.requestList")}
             </div>
             <div className="p-4">
               <div className="overflow-x-auto">
@@ -530,9 +530,9 @@ const MemberList = () => {
                   <thead>
                     <tr className="bg-gray-900 text-gray-300 text-left">
                       <th className="px-4 py-2 rounded-tl-lg">
-                        {t("Discord Tag")}
+                        {t("profile.discordTag")}
                       </th>
-                      <th className="px-4 py-2">{t("Nick in Game")}</th>
+                      <th className="px-4 py-2">{t("profile.nickInGame")}</th>
                       <th
                         className={
                           members && (isLeader || hasRequestPermissions)
@@ -540,7 +540,7 @@ const MemberList = () => {
                             : "hidden"
                         }
                       >
-                        {t("Show request")}
+                        {t("trades.showRequest")}
                       </th>
                     </tr>
                   </thead>
@@ -567,7 +567,7 @@ const MemberList = () => {
       >
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
           <div className="bg-gray-900 px-4 py-3 border-b border-gray-700">
-            <h5 className="text-white font-medium">{t("Request")}</h5>
+            <h5 className="text-white font-medium">{t("common.request")}</h5>
           </div>
           <div className="p-4 text-gray-300">
             {requestData ? requestData.message : ""}
@@ -578,14 +578,14 @@ const MemberList = () => {
               className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500"
               onClick={acceptMember}
             >
-              {t("Accept")}
+              {t("common.accept")}
             </button>
             <button
               type="button"
               className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
               onClick={rejectMember}
             >
-              {t("Reject")}
+              {t("common.reject")}
             </button>
           </div>
         </div>
@@ -596,7 +596,7 @@ const MemberList = () => {
           key="discordbotconfig"
           clanid={clanid}
           onClose={() => setShowBotConfig(false)}
-          onError={(error) => sendNotification(error, "Error")}
+          onError={(error) => sendNotification(error, "common.error")}
         />
       )}
       {showClanConfig && (
@@ -604,7 +604,7 @@ const MemberList = () => {
           key="clanconfig"
           clanid={clanid}
           onClose={() => setShowClanConfig(false)}
-          onError={(error) => sendNotification(error, "Error")}
+          onError={(error) => sendNotification(error, "common.error")}
         />
       )}
       {memberForEdit && (
@@ -613,7 +613,7 @@ const MemberList = () => {
           clanid={clanid}
           memberid={memberForEdit}
           onClose={() => setMemberForEdit(false)}
-          onError={(error) => sendNotification(error, "Error")}
+          onError={(error) => sendNotification(error, "common.error")}
         />
       )}
     </div>

@@ -34,35 +34,31 @@ const Home = () => {
         <Link
           className="text-center"
           to="/crafter"
-          aria-label={t("Crafting Calculator")}
+          aria-label={t("crafting.calculator")}
         >
-          <h2 className="lo-title text-3xl">{t("Crafting Calculator")}</h2>
+          <h2 className="lo-title text-3xl">{t("crafting.calculator")}</h2>
           <p className="text-white">
-            {t(
-              "Here you can see and automatically calculate the materials needed to build each item.",
-            )}
+            {t("crafting.description")}
           </p>
         </Link>
         <Link
           className="text-center"
           to="/trades"
-          aria-label={t("Trading System")}
+          aria-label={t("trades.title")}
         >
-          <h2 className="lo-title text-3xl">{t("Trading System")}</h2>
+          <h2 className="lo-title text-3xl">{t("trades.title")}</h2>
           <p className="text-white">
-            {t(
-              "You can create offers or search for them easily from here, you don't need to be on 20 discord servers looking for who to exchange with",
-            )}
+            {t("trades.description")}
           </p>
         </Link>
         <Link
           className="text-center"
           to={getStoredItem("discordid") ? "/maps" : "/map"}
-          aria-label={t("Resource Maps")}
+          aria-label={t("menu.resourceMaps")}
         >
-          <h2 className="lo-title text-3xl">{t("Resource Maps")}</h2>
+          <h2 className="lo-title text-3xl">{t("menu.resourceMaps")}</h2>
           <p className="text-white">
-            {t("Create and edit maps to add resources or strategic points.")}
+            {t("resourceMaps.description")}
           </p>
         </Link>
       </div>

@@ -41,7 +41,7 @@ const WalkerListItem = ({
                       htmlFor="walkerID"
                       className="block text-sm font-medium text-gray-300"
                     >
-                      {t("Walker ID")}
+                      {t("walkers.walkerId")}
                     </label>
                     <input
                       id="walkerID"
@@ -62,7 +62,7 @@ const WalkerListItem = ({
                       htmlFor="lastUser"
                       className="block text-sm font-medium text-gray-300"
                     >
-                      {t("Last User")}
+                      {t("walkers.lastUser")}
                     </label>
                     <input
                       id="lastUser"
@@ -83,7 +83,7 @@ const WalkerListItem = ({
                       htmlFor="lastUse"
                       className="block text-sm font-medium text-gray-300"
                     >
-                      {t("Last Use")}
+                      {t("walkers.lastUse")}
                     </label>
                     <input
                       id="lastUse"
@@ -104,7 +104,7 @@ const WalkerListItem = ({
                       htmlFor="inputOwner"
                       className="block text-sm font-medium text-gray-300"
                     >
-                      {t("Owner")}
+                      {t(common.owner")}
                     </label>
                     <select
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -115,7 +115,7 @@ const WalkerListItem = ({
                       }
                       disabled={!canEdit}
                     >
-                      <option value="clan">{t("Clan")}</option>
+                      <option value="clan">{t("common.clan")}</option>
                       {memberList?.map((member) => (
                         <option key={member.discordid} value={member.nickname}>
                           {member.nickname || member.discordtag}
@@ -134,7 +134,7 @@ const WalkerListItem = ({
                       htmlFor="inputUse"
                       className="block text-sm font-medium text-gray-300"
                     >
-                      {t("Use")}
+                      {t("common.use")}
                     </label>
                     <select
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -165,7 +165,7 @@ const WalkerListItem = ({
                       htmlFor="inputType"
                       className="block text-sm font-medium text-gray-300"
                     >
-                      {t("Type")}
+                      {t("common.type")}
                     </label>
                     <select
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -195,7 +195,7 @@ const WalkerListItem = ({
                       htmlFor="description"
                       className="block text-sm font-medium text-gray-300"
                     >
-                      {t("Description")}
+                      {t("common.description")}
                     </label>
                     <textarea
                       id="description"
@@ -217,25 +217,23 @@ const WalkerListItem = ({
                 <div className="flex space-x-2">
                   <button
                     type="button"
-                    className={`p-2 rounded-l-lg focus:outline-none ${
-                      walkerState.isReady
-                        ? "bg-green-600 text-white"
-                        : "bg-gray-700 text-gray-300 hover:bg-green-600 hover:text-white"
-                    }`}
+                    className={`p-2 rounded-l-lg focus:outline-none ${walkerState.isReady
+                      ? "bg-green-600 text-white"
+                      : "bg-gray-700 text-gray-300 hover:bg-green-600 hover:text-white"
+                      }`}
                     onClick={() => handleWalkerUpdate("isReady", true)}
                   >
                     <i className="fas fa-check" />
                   </button>
                   <span className="p-2 bg-gray-700 text-gray-300">
-                    {t("Is ready?")}
+                    {t("common.isReady")}
                   </span>
                   <button
                     type="button"
-                    className={`p-2 rounded-r-lg focus:outline-none ${
-                      !walkerState.isReady
-                        ? "bg-red-600 text-white"
-                        : "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
-                    }`}
+                    className={`p-2 rounded-r-lg focus:outline-none ${!walkerState.isReady
+                      ? "bg-red-600 text-white"
+                      : "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
+                      }`}
                     onClick={() => handleWalkerUpdate("isReady", false)}
                   >
                     <i className="fas fa-times" />
@@ -250,7 +248,7 @@ const WalkerListItem = ({
                     setIsOpen(false);
                   }}
                 >
-                  <i className="fas fa-save mr-2" /> {t("Save")}
+                  <i className="fas fa-save mr-2" /> {t("common.save")}
                 </button>
 
                 {canEdit && (
@@ -259,7 +257,7 @@ const WalkerListItem = ({
                     className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-xs"
                     onClick={() => onRemove(walker.walkerID)}
                   >
-                    <i className="fas fa-trash-alt mr-2" /> {t("Delete")}
+                    <i className="fas fa-trash-alt mr-2" /> {t("common.delete")}
                   </button>
                 )}
               </div>
@@ -290,16 +288,15 @@ const WalkerListItem = ({
           {walker.name}
         </td>
         <td className="hidden sm:table-cell px-6 py-4 text-center whitespace-nowrap text-gray-300">
-          {walker.walker_use || t("Not Defined")}
+          {walker.walker_use || t("common.notDefined1")}
         </td>
         <td className="hidden sm:table-cell px-6 py-4 text-center text-gray-300">
           {walker.description}
         </td>
         <td className="px-6 py-4 text-center whitespace-nowrap">
           <i
-            className={`fas fa-${
-              walker.isReady ? "check text-green-500" : "times text-red-500"
-            }`}
+            className={`fas fa-${walker.isReady ? "check text-green-500" : "times text-red-500"
+              }`}
           />
         </td>
         <td className="px-6 py-4 text-center whitespace-nowrap">

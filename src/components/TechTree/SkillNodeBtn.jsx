@@ -32,7 +32,7 @@ const SkillNodeBtn = ({ clan, tree, item }) => {
     );
   }
   if (loaded) {
-    return <p>{t("No one has learnt it")}</p>;
+    return <p>{t("techTree.noOneHasLearnedIt")}</p>;
   }
   return (
     <button
@@ -40,7 +40,7 @@ const SkillNodeBtn = ({ clan, tree, item }) => {
       className="btn btn-primary btn-block"
       onClick={getLearned}
     >
-      {t("See who has learned it")}
+      {t("techTree.seeWhoHasLearnedIt")}
     </button>
   );
 };

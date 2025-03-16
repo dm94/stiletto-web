@@ -55,7 +55,7 @@ const ClanList = () => {
         setError("Error connecting to database");
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
 
     const token = getStoredItem("token");
@@ -82,7 +82,7 @@ const ClanList = () => {
         setRedirect(true);
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
     setShowRequestModal(false);
     setTextAreaModelValue("");
@@ -142,7 +142,7 @@ const ClanList = () => {
       <ModalMessage
         message={{
           isError: false,
-          text: "Application to enter the clan sent",
+          text: "clan.applicationSent",
           redirectPage: "/profile",
         }}
       />
@@ -167,7 +167,7 @@ const ClanList = () => {
             <div className="bg-gray-800 border border-blue-500 rounded-lg mb-4">
               <div className="p-4 border-b border-blue-500">
                 <h2 className="text-xl font-semibold text-gray-300">
-                  {t("Search Clans")}
+                  {t("clan.searchClans")}
                 </h2>
               </div>
               <div className="p-4">
@@ -177,7 +177,7 @@ const ClanList = () => {
                       htmlFor="regionInput"
                       className="block text-sm font-medium text-gray-300 mb-1"
                     >
-                      {t("Region")}
+                      {t("common.region")}
                     </label>
                     <ClusterList
                       onError={setError}
@@ -194,7 +194,7 @@ const ClanList = () => {
                       htmlFor="search-name"
                       className="block text-sm font-medium text-gray-300 mb-1"
                     >
-                      {t("Name")}
+                      {t("common.name")}
                     </label>
                     <input
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -215,7 +215,7 @@ const ClanList = () => {
                       className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       onClick={() => updateClans()}
                     >
-                      {t("Search")}
+                      {t("common.search")}
                     </button>
                     <button
                       type="button"
@@ -226,7 +226,7 @@ const ClanList = () => {
                         updateClans();
                       }}
                     >
-                      {t("Clean filter")}
+                      {t("common.cleanFilter")}
                     </button>
                   </div>
                 </div>
@@ -241,31 +241,31 @@ const ClanList = () => {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
                   >
-                    {t("Clan Name")}
+                    {t("clan.clanName")}
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
                   >
-                    {t("Region")}
+                    {t("common.region")}
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
                   >
-                    {t("Leader")}
+                    {t("clan.leader")}
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider"
                   >
-                    {t("Discord Invite Link")}
+                    {t("clan.discordInviteLink")}
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider"
                   >
-                    {t("Actions")}
+                    {t("common.actions")}
                   </th>
                 </tr>
               </thead>
@@ -294,7 +294,7 @@ const ClanList = () => {
                 className="text-xl font-semibold text-gray-300"
                 id="sendRequest"
               >
-                {t("Send request")}
+                {t("clan.sendRequest")}
               </h5>
             </div>
             <div className="p-4">
@@ -303,7 +303,7 @@ const ClanList = () => {
                   htmlFor="modalTextArea"
                   className="block text-sm font-medium text-gray-300 mb-1"
                 >
-                  {t("Request message")}
+                  {t("clan.requestMessage")}
                 </label>
                 <textarea
                   className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -320,14 +320,14 @@ const ClanList = () => {
                 className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
                 onClick={() => setShowRequestModal(false)}
               >
-                {t("Cancel")}
+                {t("common.cancel")}
               </button>
               <button
                 type="button"
                 className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                 onClick={handleSendRequest}
               >
-                {t("Send request")}
+                {t("clan.sendRequest")}
               </button>
             </div>
           </div>

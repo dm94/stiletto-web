@@ -36,7 +36,7 @@ const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
           <Icon key={item.name} name={item.name} width={35} />
         </div>
         <p className="text-center border-bottom border-warning">
-          {t("Who has learned it?")}
+          {t("crafting.whoHasLearnedIt")}
         </p>
         {clan ? (
           <SkillNodeBtn
@@ -46,10 +46,10 @@ const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
             tree={treeId}
           />
         ) : (
-          t("You need a clan for this function")
+          t("techTree.needClanForFunction")
         )}
         <p className="text-center border-bottom border-warning mt-1">
-          {t("Cost to learn")}
+          {t("crafting.costToLearn")}
         </p>
         {item.cost ? (
           <Ingredient
@@ -58,10 +58,10 @@ const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
             value={1}
           />
         ) : (
-          t("Not defined")
+          t("common.notDefined1")
         )}
         <p className="text-center border-bottom border-warning mt-2">
-          {t("Recipe")}
+          {t("crafting.recipe")}
         </p>
         <div className="row">{showIngredient(item)}</div>
       </div>

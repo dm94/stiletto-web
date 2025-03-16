@@ -58,7 +58,7 @@ const ItemWiki = () => {
     };
 
     loadData();
-  }, [ name ]);
+  }, [name]);
 
   const showIngredient = (ingre) =>
     ingre?.crafting?.map((ingredients, index) => (
@@ -81,7 +81,7 @@ const ItemWiki = () => {
       <div className="w-full md:w-1/2">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
           <div className="p-4 bg-gray-900 border-b border-gray-700">
-            {t("Description")}
+            {t("common.description")}
           </div>
           <div className="p-4">{item.description}</div>
         </div>
@@ -141,9 +141,8 @@ const ItemWiki = () => {
         focusColor = "focus:ring-gray-500";
     }
 
-    return `px-4 py-2 border rounded-lg text-gray-300 ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${
-      rarity === value ? "bg-opacity-20" : ""
-    }`;
+    return `px-4 py-2 border rounded-lg text-gray-300 ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${rarity === value ? "bg-opacity-20" : ""
+      }`;
   };
 
   const loadingItemPart = () => (
@@ -190,17 +189,16 @@ const ItemWiki = () => {
               <ul className="space-y-2">
                 {item?.cost && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Cost to learn")}</div>
+                    <div className="text-gray-300">{t("crafting.costToLearn")}</div>
                     <div className="text-gray-400">
-                      {`${item?.cost?.count ? item.cost.count : ""} ${
-                        item?.cost?.name ? t(item?.cost?.name) : ""
-                      }`}
+                      {`${item?.cost?.count ? item.cost.count : ""} ${item?.cost?.name ? t(item?.cost?.name) : ""
+                        }`}
                     </div>
                   </li>
                 )}
                 {item?.category && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Category")}</div>
+                    <div className="text-gray-300">{t("common.category")}</div>
                     <div className="text-gray-400">
                       {t(item.category, { ns: "items" })}
                     </div>
@@ -208,7 +206,7 @@ const ItemWiki = () => {
                 )}
                 {item?.parent && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Parent")}</div>
+                    <div className="text-gray-300">{t("common.parent")}</div>
                     <div className="text-gray-400">
                       <a href={parentUrl} className="hover:text-blue-400">
                         {t(item.parent, { ns: "items" })}
@@ -294,7 +292,7 @@ const ItemWiki = () => {
           <div className="w-full lg:w-1/2 px-4">
             <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
               <div className="p-4 bg-gray-900 border-b border-gray-700 flex justify-between items-center">
-                <span className="text-neutral-300">{t("Recipe")}</span>
+                <span className="text-neutral-300">{t("crafting.recipe")}</span>
                 <a
                   href={craftUrl}
                   className="text-gray-400 hover:text-gray-300"

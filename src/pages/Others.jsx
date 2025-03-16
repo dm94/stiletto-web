@@ -27,7 +27,7 @@ const Others = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {t("Dm94Dani´s Discord")}
+            {t("discord.dm94DaniDiscord")}
           </a>
         </div>
       </div>
@@ -47,7 +47,7 @@ const Others = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t("Steam Page")}
+                  {t("common.steamPage")}
                 </a>
               </div>
             </div>
@@ -61,7 +61,7 @@ const Others = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t("Official Discord")}
+                  {t("common.officialDiscord")}
                 </a>
               </div>
             </div>
@@ -76,7 +76,7 @@ const Others = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {t("Help keep the website running")}
+                    {t("common.helpKeepWebsiteRunning")}
                   </a>
                 </div>
               </div>
@@ -88,19 +88,17 @@ const Others = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {t("Help to translate the website")}
+                    {t("about.helpTranslate")}
                   </a>
                 </div>
               </div>
               <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600">
                 <div className="p-4 flex flex-col">
                   <h3 className="text-xl font-semibold mb-2 text-gray-300">
-                    {t("Discord Bot")}
+                    {t("discord.bot")}
                   </h3>
                   <p className="mb-4 text-gray-300">
-                    {t(
-                      "I have also created a discord bot useful to control the walkers and make a list of what is needed to create objects.",
-                    )}
+                    {t("discord.botDescription")}
                   </p>
                   <a
                     className="inline-block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
@@ -108,7 +106,7 @@ const Others = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    {t("Go to Discord bot")}
+                    {t("discord.goToDiscordBot")}
                   </a>
                 </div>
               </div>
@@ -120,7 +118,7 @@ const Others = () => {
       <div className="mt-8">
         <div className="text-center">
           <h3 className="text-xl font-semibold text-blue-500 mb-4">
-            {t("Sponsored servers")}
+            {t("common.sponsoredServers")}
           </h3>
           <div className="max-w-md mx-auto p-4">
             <a

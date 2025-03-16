@@ -15,7 +15,7 @@ const Item = ({ item, onAdd }) => {
         <button
           type="button"
           className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-          aria-label="Add item"
+          aria-label={t("common.addItem")}
           onClick={() => onAdd(item?.name)}
         >
           <i className="fas fa-plus" />

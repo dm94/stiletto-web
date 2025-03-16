@@ -29,7 +29,7 @@ const ModalMessage = ({ message, onClickOk }) => {
     </button>
   );
 
-  if (message?.text === "Error when connecting to the API") {
+  if (message?.text === "errors.apiConnection") {
     localStorage.removeItem("allItems");
     sessionStorage.removeItem("allItems");
     if (window?.caches) {
@@ -49,7 +49,7 @@ const ModalMessage = ({ message, onClickOk }) => {
 
   sendEvent("modal", {
     props: {
-      action: message?.isError ? "Error" : "Information",
+      action: message?.isError ? "common.error" : "common.information",
       label: message?.text,
     },
   });
@@ -59,7 +59,7 @@ const ModalMessage = ({ message, onClickOk }) => {
       <div className="bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4">
         <div className="p-4 border-b border-gray-700">
           <h5 className="text-xl font-semibold text-white" id="modal">
-            {message?.isError ? t("Error") : t("Information")}
+            {message?.isError ? t("common.error") : t("common.information")}
           </h5>
         </div>
         <div className="p-4 text-gray-300">{t(message?.text)}</div>
