@@ -72,7 +72,9 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
         <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 flex justify-between items-center">
-          <h5 className="text-white font-medium">{t("discord.changePermissions")}</h5>
+          <h5 className="text-white font-medium">
+            {t("discord.changePermissions")}
+          </h5>
           <button
             type="button"
             className="text-gray-400 hover:text-white bg-gray-700 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200"
@@ -178,7 +180,10 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
               </label>
             </div>
 
-            <div className="flex items-center" title={t("discord.allowKickMembers")}>
+            <div
+              className="flex items-center"
+              title={t("discord.allowKickMembers")}
+            >
               <div className="relative inline-block w-10 mr-2 align-middle select-none">
                 <input
                   type="checkbox"

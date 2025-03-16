@@ -37,9 +37,7 @@ const Home = () => {
           aria-label={t("crafting.calculator")}
         >
           <h2 className="lo-title text-3xl">{t("crafting.calculator")}</h2>
-          <p className="text-white">
-            {t("crafting.description")}
-          </p>
+          <p className="text-white">{t("crafting.description")}</p>
         </Link>
         <Link
           className="text-center"
@@ -47,9 +45,7 @@ const Home = () => {
           aria-label={t("trades.title")}
         >
           <h2 className="lo-title text-3xl">{t("trades.title")}</h2>
-          <p className="text-white">
-            {t("trades.description")}
-          </p>
+          <p className="text-white">{t("trades.description")}</p>
         </Link>
         <Link
           className="text-center"
@@ -57,9 +53,7 @@ const Home = () => {
           aria-label={t("menu.resourceMaps")}
         >
           <h2 className="lo-title text-3xl">{t("menu.resourceMaps")}</h2>
-          <p className="text-white">
-            {t("resourceMaps.description")}
-          </p>
+          <p className="text-white">{t("resourceMaps.description")}</p>
         </Link>
       </div>
       <Others />

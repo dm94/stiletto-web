@@ -27,7 +27,10 @@ const TotalMaterials = ({ selectedItems }) => {
       const response = await addRecipe(items);
       if (response.status === 201) {
         const data = await response.json();
-        sendNotification("Sharing code has been generated", "common.information");
+        sendNotification(
+          "notification.share",
+          "common.information",
+        );
         setRecipeToken(data.token);
       }
     } catch {
@@ -144,7 +147,9 @@ const TotalMaterials = ({ selectedItems }) => {
   return (
     <div className="bg-gray-800 border border-yellow-500 rounded-lg overflow-hidden">
       <div className="p-4 border-b border-yellow-500 flex justify-between items-center">
-        <div className="font-normal text-gray-300">{t("crafting.totalMaterials")}</div>
+        <div className="font-normal text-gray-300">
+          {t("crafting.totalMaterials")}
+        </div>
         <button
           type="button"
           className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"

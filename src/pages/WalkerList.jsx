@@ -237,9 +237,7 @@ const WalkerList = () => {
       <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
         <div className="p-4">
           <div className="text-blue-400 mb-3">
-            {t(
-              "walkers.discordLinkNotice",
-            )}
+            {t("walkers.discordLinkNotice")}
           </div>
           <div className="text-yellow-400">
             {t(
@@ -260,11 +258,7 @@ const WalkerList = () => {
         </h2>
       </div>
       <div className="p-4">
-        <div className="mb-3 text-gray-300">
-          {t(
-            "discord.botDescription",
-          )}
-        </div>
+        <div className="mb-3 text-gray-300">{t("discord.botDescription")}</div>
         <a
           className="w-full inline-flex justify-center items-center p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           href="https://top.gg/bot/715948052979908911"

@@ -141,8 +141,9 @@ const ItemWiki = () => {
         focusColor = "focus:ring-gray-500";
     }
 
-    return `px-4 py-2 border rounded-lg text-gray-300 ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${rarity === value ? "bg-opacity-20" : ""
-      }`;
+    return `px-4 py-2 border rounded-lg text-gray-300 ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${
+      rarity === value ? "bg-opacity-20" : ""
+    }`;
   };
 
   const loadingItemPart = () => (
@@ -189,10 +190,13 @@ const ItemWiki = () => {
               <ul className="space-y-2">
                 {item?.cost && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("crafting.costToLearn")}</div>
+                    <div className="text-gray-300">
+                      {t("crafting.costToLearn")}
+                    </div>
                     <div className="text-gray-400">
-                      {`${item?.cost?.count ? item.cost.count : ""} ${item?.cost?.name ? t(item?.cost?.name) : ""
-                        }`}
+                      {`${item?.cost?.count ? item.cost.count : ""} ${
+                        item?.cost?.name ? t(item?.cost?.name) : ""
+                      }`}
                     </div>
                   </li>
                 )}
@@ -367,11 +371,7 @@ const ItemWiki = () => {
           <WikiDescription key="wikidescription" name={itemName} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <CanBeUsedInfo
-            key="CanBeUsedInfo"
-            name={itemName}
-            items={allItems}
-          />
+          <CanBeUsedInfo key="CanBeUsedInfo" name={itemName} items={allItems} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <DropsInfo key="dropInfo" drops={item.drops} />

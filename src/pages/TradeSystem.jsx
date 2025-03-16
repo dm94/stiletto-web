@@ -139,9 +139,7 @@ const TradeSystem = () => {
         <div className="w-full lg:w-1/2 p-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-4 text-green-400">
-              {t(
-                "trades.publishTradeNotice",
-              )}
+              {t("trades.publishTradeNotice")}
             </div>
           </div>
         </div>
@@ -339,9 +337,7 @@ const TradeSystem = () => {
                   id="tradeTypeFilter"
                   className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={tradeTypeFilterInput}
-                  onChange={(evt) =>
-                    setTradeTypeFilterInput(evt.target.value)
-                  }
+                  onChange={(evt) => setTradeTypeFilterInput(evt.target.value)}
                 >
                   <option value="Supply">{t("common.supply")}</option>
                   <option value="Demand">{t("trades.demand")}</option>

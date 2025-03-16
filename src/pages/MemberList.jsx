@@ -296,11 +296,7 @@ const MemberList = () => {
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
               {t("clan.deleteClan")}
             </div>
-            <div className="p-4 text-gray-300">
-              {t(
-                "clan.deleteWarning",
-              )}
-            </div>
+            <div className="p-4 text-gray-300">{t("clan.deleteWarning")}</div>
             <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
               <button
                 type="button"
@@ -326,11 +322,7 @@ const MemberList = () => {
               {t("clan.transferClan")}
             </div>
             <div className="p-4 text-gray-300">
-              <p className="mb-4">
-                {t(
-                  "clan.transferWarning",
-                )}
-              </p>
+              <p className="mb-4">{t("clan.transferWarning")}</p>
               <label
                 htmlFor="selectNewOwner"
                 className="block mb-2 text-sm font-medium"

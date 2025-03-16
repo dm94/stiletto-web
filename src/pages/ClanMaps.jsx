@@ -209,7 +209,7 @@ const ClanMaps = () => {
                     </h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-400">
-                        {t(common.notReversible")}
+                        {t("common.notReversible")}
                       </p>
                     </div>
                   </div>

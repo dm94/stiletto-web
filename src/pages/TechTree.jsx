@@ -186,7 +186,8 @@ const TechTree = () => {
               to="/tech/Vitamins"
               activeClassName="text-white border-blue-500"
             >
-              <Icon key="Vitamins" name="Vitamins" width={30} /> {t("common.vitamins")}
+              <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
+              {t("common.vitamins")}
             </NavLink>
           </div>
           <div className="flex-1">
@@ -205,7 +206,8 @@ const TechTree = () => {
               to="/tech/Crafting"
               activeClassName="text-white border-blue-500"
             >
-              <Icon key="Crafting" name="Crafting" width={30} /> {t("menu.crafting")}
+              <Icon key="Crafting" name="Crafting" width={30} />{" "}
+              {t("menu.crafting")}
             </NavLink>
           </div>
           <div className="flex-1">
@@ -224,7 +226,8 @@ const TechTree = () => {
               to="/tech/Walkers"
               activeClassName="text-white border-blue-500"
             >
-              <Icon key="Walkers" name="Walkers" width={30} /> {t("common.walkers")}
+              <Icon key="Walkers" name="Walkers" width={30} />{" "}
+              {t("common.walkers")}
             </NavLink>
           </div>
         </div>

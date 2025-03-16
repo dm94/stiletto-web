@@ -206,7 +206,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               />
             </div>
             <label className="text-sm" htmlFor="walkerAlarm">
-              {t(""discord.warnIfSomeoneBringsOutWalker"")}
+              {t("discord.warnIfSomeoneBringsOutWalker")}
             </label>
           </div>
         </div>

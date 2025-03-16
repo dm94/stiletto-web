@@ -11,7 +11,6 @@ import { getDomain } from "../functions/utils";
 import { getRecipe } from "../functions/requests/recipes";
 import { useLocation } from "react-router";
 
-
 const Crafter = () => {
   const location = useLocation();
   const { t } = useTranslation();

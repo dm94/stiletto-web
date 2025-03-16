@@ -318,5 +318,6 @@
   "wiki.obtainableFrom": "Obtainable from",
   "wiki.craftingTime": "Crafting time",
   "wiki.comments": "Comments",
-  "wiki.writeComment": "Write a comment..."
+  "wiki.writeComment": "Write a comment...",
+  "notification.share": "Sharing code has been generated"
 }

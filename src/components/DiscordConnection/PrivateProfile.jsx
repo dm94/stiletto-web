@@ -226,7 +226,9 @@ const PrivateProfile = () => {
         {/* Gestión del clan */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
-            <h2 className="text-xl font-bold text-white">{t("clan.manageClan")}</h2>
+            <h2 className="text-xl font-bold text-white">
+              {t("clan.manageClan")}
+            </h2>
           </div>
           <div className="p-3 space-y-2">
             {userData.clanname && userData.clanname !== "Loading..." ? (
@@ -396,14 +398,10 @@ const PrivateProfile = () => {
                     </h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-400">
-                        {t(
-                          "profile.deleteWarning",
-                        )}
+                        {t("profile.deleteWarning")}
                       </p>
                       <p className="text-sm text-gray-400 mt-2">
-                        {t(
-                          "profile.deleteNotice",
-                        )}
+                        {t("profile.deleteNotice")}
                       </p>
                     </div>
                   </div>

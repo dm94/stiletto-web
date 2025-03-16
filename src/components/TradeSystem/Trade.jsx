@@ -68,8 +68,14 @@ const Trade = ({ trade, onDelete }) => {
 
   return (
     <div className="w-full" data-cy="trade-item">
-      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg" data-cy="trade-card">
-        <div className="p-3 bg-gray-900 border-b border-gray-700" data-cy="trade-header">
+      <div
+        className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg"
+        data-cy="trade-card"
+      >
+        <div
+          className="p-3 bg-gray-900 border-b border-gray-700"
+          data-cy="trade-header"
+        >
           <div className="flex items-center justify-center space-x-2">
             {trade.type === "Supply" ? (
               <i className="far fa-arrow-alt-circle-up text-green-400" />
@@ -83,16 +89,24 @@ const Trade = ({ trade, onDelete }) => {
         </div>
         <div className="p-4 text-center" data-cy="trade-content">
           {getQualityBadge()}
-          <div className="text-lg font-medium text-gray-300 mb-2 flex justify-center" data-cy="trade-resource">
+          <div
+            className="text-lg font-medium text-gray-300 mb-2 flex justify-center"
+            data-cy="trade-resource"
+          >
             {trade.amount !== "0" ? `${trade.amount}x ` : ""}{" "}
             <Icon key={trade.resource} name={trade.resource} />
             <h5>{t(trade.resource, { ns: "items" })}</h5>
           </div>
           <p className="text-gray-400 mb-2" data-cy="trade-price">
-            {trade.price !== "0" ? `${trade.price} Flots/${t("trades.unit")}` : ""}
+            {trade.price !== "0"
+              ? `${trade.price} Flots/${t("trades.unit")}`
+              : ""}
           </p>
           {trade.nickname && (
-            <p className="text-gray-400" data-cy="trade-nickname">{`${t("profile.nickInGame")}: ${trade.nickname}`}</p>
+            <p
+              className="text-gray-400"
+              data-cy="trade-nickname"
+            >{`${t("profile.nickInGame")}: ${trade.nickname}`}</p>
           )}
         </div>
         {renderCardFooter()}

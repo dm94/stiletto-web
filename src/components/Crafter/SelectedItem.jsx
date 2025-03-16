@@ -20,10 +20,11 @@ const SelectedItem = ({ item, onChangeCount }) => {
 
     return item.crafting.map((ingredients, i) => (
       <div
-        className={`${item.crafting.length > 1
+        className={`${
+          item.crafting.length > 1
             ? "w-full border-l-4 border-green-500"
             : "w-full"
-          } p-4 bg-gray-900 rounded-lg relative`}
+        } p-4 bg-gray-900 rounded-lg relative`}
         key={`${item.name}-${item.count}-${i}`}
       >
         {item.crafting.length > 1 && (

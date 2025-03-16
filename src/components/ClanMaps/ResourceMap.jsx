@@ -170,20 +170,22 @@ const ResourceMap = ({ map, onReturn }) => {
               <div className="flex space-x-2">
                 <button
                   type="button"
-                  className={`flex-1 p-2 rounded-lg ${allowEditing
-                    ? "bg-green-600 text-white"
-                    : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                    }`}
+                  className={`flex-1 p-2 rounded-lg ${
+                    allowEditing
+                      ? "bg-green-600 text-white"
+                      : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                  }`}
                   onClick={() => setAllowEditing(true)}
                 >
                   {t("maps.allowEditing")}
                 </button>
                 <button
                   type="button"
-                  className={`flex-1 p-2 rounded-lg ${!allowEditing
-                    ? "bg-red-600 text-white"
-                    : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                    }`}
+                  className={`flex-1 p-2 rounded-lg ${
+                    !allowEditing
+                      ? "bg-red-600 text-white"
+                      : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                  }`}
                   onClick={() => setAllowEditing(false)}
                 >
                   {t("maps.readOnly")}
@@ -289,8 +291,9 @@ const ResourceMap = ({ map, onReturn }) => {
         <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
       <div
-        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
-          }`}
+        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${
+          isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
+        }`}
       >
         <div className="h-full flex flex-col">
           <div className="p-4 border-b border-gray-700">
@@ -305,20 +308,22 @@ const ResourceMap = ({ map, onReturn }) => {
           <div className="flex border-b border-gray-700">
             <button
               type="button"
-              className={`flex-1 p-3 text-sm font-medium ${activeTab === "resources"
-                ? "text-blue-500 border-b-2 border-blue-500"
-                : "text-gray-400 hover:text-gray-300"
-                }`}
+              className={`flex-1 p-3 text-sm font-medium ${
+                activeTab === "resources"
+                  ? "text-blue-500 border-b-2 border-blue-500"
+                  : "text-gray-400 hover:text-gray-300"
+              }`}
               onClick={() => setActiveTab("resources")}
             >
               {t("Resources")}
             </button>
             <button
               type="button"
-              className={`flex-1 p-3 text-sm font-medium ${activeTab === "create"
-                ? "text-blue-500 border-b-2 border-blue-500"
-                : "text-gray-400 hover:text-gray-300"
-                }`}
+              className={`flex-1 p-3 text-sm font-medium ${
+                activeTab === "create"
+                  ? "text-blue-500 border-b-2 border-blue-500"
+                  : "text-gray-400 hover:text-gray-300"
+              }`}
               onClick={() => setActiveTab("create")}
             >
               {t("Create")}
@@ -326,10 +331,11 @@ const ResourceMap = ({ map, onReturn }) => {
             {userDiscordId === map?.discordid && (
               <button
                 type="button"
-                className={`flex-1 p-3 text-sm font-medium ${activeTab === "settings"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-400 hover:text-gray-300"
-                  }`}
+                className={`flex-1 p-3 text-sm font-medium ${
+                  activeTab === "settings"
+                    ? "text-blue-500 border-b-2 border-blue-500"
+                    : "text-gray-400 hover:text-gray-300"
+                }`}
                 onClick={() => setActiveTab("settings")}
               >
                 {t("Settings")}

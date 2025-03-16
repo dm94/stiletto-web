@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router';
+import { useNavigate } from "react-router";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import CookieConsent from "./components/CookieConsent";

@@ -14,5 +14,5 @@ root.render(
     <Router>
       <CrafterApp />
     </Router>
-  </I18nextProvider>
+  </I18nextProvider>,
 );

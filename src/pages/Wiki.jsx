@@ -8,7 +8,6 @@ import { getDomain } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
 import { useLocation } from "react-router";
 
-
 const Wiki = () => {
   const location = useLocation();
   const { t } = useTranslation();

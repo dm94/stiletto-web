@@ -217,10 +217,11 @@ const WalkerListItem = ({
                 <div className="flex space-x-2">
                   <button
                     type="button"
-                    className={`p-2 rounded-l-lg focus:outline-none ${walkerState.isReady
-                      ? "bg-green-600 text-white"
-                      : "bg-gray-700 text-gray-300 hover:bg-green-600 hover:text-white"
-                      }`}
+                    className={`p-2 rounded-l-lg focus:outline-none ${
+                      walkerState.isReady
+                        ? "bg-green-600 text-white"
+                        : "bg-gray-700 text-gray-300 hover:bg-green-600 hover:text-white"
+                    }`}
                     onClick={() => handleWalkerUpdate("isReady", true)}
                   >
                     <i className="fas fa-check" />
@@ -230,10 +231,11 @@ const WalkerListItem = ({
                   </span>
                   <button
                     type="button"
-                    className={`p-2 rounded-r-lg focus:outline-none ${!walkerState.isReady
-                      ? "bg-red-600 text-white"
-                      : "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
-                      }`}
+                    className={`p-2 rounded-r-lg focus:outline-none ${
+                      !walkerState.isReady
+                        ? "bg-red-600 text-white"
+                        : "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
+                    }`}
                     onClick={() => handleWalkerUpdate("isReady", false)}
                   >
                     <i className="fas fa-times" />
@@ -295,8 +297,9 @@ const WalkerListItem = ({
         </td>
         <td className="px-6 py-4 text-center whitespace-nowrap">
           <i
-            className={`fas fa-${walker.isReady ? "check text-green-500" : "times text-red-500"
-              }`}
+            className={`fas fa-${
+              walker.isReady ? "check text-green-500" : "times text-red-500"
+            }`}
           />
         </td>
         <td className="px-6 py-4 text-center whitespace-nowrap">
@@ -304,7 +307,9 @@ const WalkerListItem = ({
             className="text-blue-400 hover:text-blue-300 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             type="button"
-            aria-label={isOpen ? t("common.hideDetails") : t("common.showDetails")}
+            aria-label={
+              isOpen ? t("common.hideDetails") : t("common.showDetails")
+            }
           >
             <i className={`fas fa-eye${isOpen ? "-slash" : ""}`} />
           </button>

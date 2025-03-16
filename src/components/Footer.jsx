@@ -60,9 +60,7 @@ const Footer = () => {
             </a>
             <span>|</span>
             <span className="flex items-center">
-              {t(
-                "about.disclaimer",
-              )}{" "}
+              {t("about.disclaimer")}{" "}
               <a
                 href="https://www.donkey.team/"
                 target="_blank"
