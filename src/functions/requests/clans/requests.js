@@ -13,7 +13,7 @@ export const sendRequest = async (clanId, message) => {
       }),
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -26,6 +26,6 @@ export const getRequests = async (clanId) => {
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };

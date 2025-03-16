@@ -44,11 +44,11 @@ const ClanMaps = () => {
       } else if (response.status === 503) {
         setState((prev) => ({
           ...prev,
-          error: "Error connecting to database",
+          error: "error.databaseConnection",
         }));
       }
     } catch {
-      setState((prev) => ({ ...prev, error: "Error connecting to database" }));
+      setState((prev) => ({ ...prev, error: "error.databaseConnection" }));
     }
   }, []);
 
@@ -136,7 +136,7 @@ const ClanMaps = () => {
       } else if (response.status === 503) {
         setState((prev) => ({
           ...prev,
-          error: "Error connecting to database",
+          error: "error.databaseConnection",
         }));
       }
     } catch {

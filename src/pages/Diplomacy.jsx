@@ -52,7 +52,7 @@ const Diplomacy = () => {
         } else if (response.status === 405) {
           setError("Unauthorized");
         } else if (response.status === 503) {
-          setError("Error connecting to database");
+          setError("error.databaseConnection");
         }
       } catch {
         setError("errors.apiConnection");
@@ -84,7 +84,7 @@ const Diplomacy = () => {
       } else if (response.status === 405) {
         setError("Method Not Allowed");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("common.tryAgainLater");
@@ -100,7 +100,7 @@ const Diplomacy = () => {
       } else if (response.status === 401) {
         setError("Unauthorized");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("common.tryAgainLater");

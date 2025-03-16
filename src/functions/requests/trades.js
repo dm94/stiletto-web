@@ -19,7 +19,7 @@ export const getTrades = async ({
 
     return await fetch(`${config.REACT_APP_API_URL}/trades?${params}`);
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -32,7 +32,7 @@ export const deleteTrade = async (idTrade) => {
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -61,6 +61,6 @@ export const createTrade = async ({
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };

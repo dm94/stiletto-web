@@ -81,7 +81,7 @@ const MemberList = () => {
           closeSession();
           setError("errors.noAccess");
         } else if (response.status === 503) {
-          setError("Error connecting to database");
+          setError("error.databaseConnection");
         }
         setIsLoadedRequestList(true);
       } catch {
@@ -115,7 +115,7 @@ const MemberList = () => {
         closeSession();
         setError("errors.noAccess");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("errors.apiConnection");
@@ -149,7 +149,7 @@ const MemberList = () => {
         closeSession();
         setError("errors.noAccess");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
       setRequestData(false);
     } catch {
@@ -184,7 +184,7 @@ const MemberList = () => {
         closeSession();
         setError("errors.noAccess");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
       setRequestData(false);
     } catch {
@@ -209,7 +209,7 @@ const MemberList = () => {
         closeSession();
         setError("errors.noAccess");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("errors.apiConnection");
@@ -233,7 +233,7 @@ const MemberList = () => {
         closeSession();
         setError("errors.noAccess");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("errors.apiConnection");

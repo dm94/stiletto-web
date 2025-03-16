@@ -79,7 +79,7 @@ const PrivateProfile = () => {
         closeSession();
         setError(t("auth.loginAgain1"));
       } else if (response.status === 503) {
-        setError(t("Error connecting to database"));
+        setError(t("error.databaseConnection"));
       }
     } catch {
       setError(t("errors.apiConnection"));
@@ -98,7 +98,7 @@ const PrivateProfile = () => {
         closeSession();
         setError(t("auth.loginAgain1"));
       } else if (response.status === 503) {
-        setError(t("Error connecting to database"));
+        setError(t("error.databaseConnection"));
       }
     } catch {
       setError(t("errors.apiConnection"));
@@ -117,7 +117,7 @@ const PrivateProfile = () => {
         closeSession();
         setError(t("auth.loginAgain1"));
       } else if (response.status === 503) {
-        setError(t("Error connecting to database"));
+        setError(t("error.databaseConnection"));
       }
     } catch {
       setError(t("errors.apiConnection"));

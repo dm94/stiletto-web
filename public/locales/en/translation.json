@@ -319,5 +319,7 @@
   "wiki.craftingTime": "Crafting time",
   "wiki.comments": "Comments",
   "wiki.writeComment": "Write a comment...",
-  "notification.share": "Sharing code has been generated"
+  "notification.share": "Sharing code has been generated",
+  "error.databaseConnection": "Error connecting to database",
+  "error.discordClanNotLinked": "Your clan does not have a linked discord"
 }

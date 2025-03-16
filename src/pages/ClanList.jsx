@@ -52,7 +52,7 @@ const ClanList = () => {
       } else if (response.status === 401) {
         setError("You need to be logged in to view this section");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("errors.apiConnection");
@@ -77,7 +77,7 @@ const ClanList = () => {
       if (response.status === 405) {
         setError("You already have a pending application to join a clan");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       } else if (response.status === 202) {
         setRedirect(true);
       }

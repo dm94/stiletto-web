@@ -36,10 +36,10 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
           closeSession();
           onError("errors.noAccess");
         } else if (response.status === 503) {
-          onError("Error connecting to database");
+          onError("error.databaseConnection");
         }
       } catch {
-        onError("Your clan does not have a linked discord");
+        onError("error.databaseConnection");
       }
     };
 
@@ -57,7 +57,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
         onError("errors.noAccess");
         onClose();
       } else if (response.status === 503) {
-        onError("Error connecting to database");
+        onError("error.databaseConnection");
         onClose();
       }
     } catch {

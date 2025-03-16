@@ -48,7 +48,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
           closeSession();
           onError?.("errors.noAccess");
         } else if (response.status === 503) {
-          onError?.("Error connecting to database");
+          onError?.("error.databaseConnection");
         }
       } catch {
         onError?.("errors.apiConnection");
@@ -78,7 +78,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
         closeSession();
         onError?.("errors.noAccess");
       } else if (response.status === 503 || response.status === 205) {
-        onError?.("Error connecting to database");
+        onError?.("error.databaseConnection");
       }
     } catch {
       onClose?.();
@@ -106,7 +106,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
         closeSession();
         onError?.("errors.noAccess");
       } else if (response.status === 503 || response.status === 205) {
-        onError?.("Error connecting to database");
+        onError?.("error.databaseConnection");
       }
     } catch {
       onClose?.();

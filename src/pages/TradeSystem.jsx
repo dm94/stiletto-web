@@ -58,7 +58,7 @@ const TradeSystem = () => {
         setIsLoaded(true);
         setHasMore(hasMoreData);
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("errors.errorConnectingToAPI");
@@ -93,7 +93,7 @@ const TradeSystem = () => {
       } else if (response.status === 401) {
         setError("Unauthorized");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("errors.errorConnectingToAPI");
@@ -126,7 +126,7 @@ const TradeSystem = () => {
       } else if (response.status === 401) {
         setError("These connection data are wrong");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
       setError("common.tryAgainLater");

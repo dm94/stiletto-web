@@ -12,7 +12,7 @@ export const getRelationships = async (clanid) => {
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -38,7 +38,7 @@ export const createRelationship = async (
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -52,6 +52,6 @@ export const deleteRelationship = async (clanId, relationShipId) => {
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };

@@ -45,7 +45,7 @@ const DiscordConnection = () => {
         } else if (response.status === 401) {
           setError("Unauthorized");
         } else if (response.status === 503) {
-          setError("Error connecting to database");
+          setError("error.databaseConnection");
         }
       } catch {
         setError("Error connecting to server");

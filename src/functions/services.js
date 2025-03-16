@@ -104,7 +104,7 @@ export const getUserProfile = async () => {
       if (response.status === 503) {
         return {
           success: false,
-          message: "Error connecting to database",
+          message: "error.databaseConnection",
         };
       }
     }
@@ -188,13 +188,13 @@ export const getUserPermssions = async (clanid, discordid) => {
       if (response.status === 503) {
         return {
           success: false,
-          message: "Error connecting to database",
+          message: "error.databaseConnection",
         };
       }
     } else {
       return {
         success: false,
-        message: "Error when connecting to the API",
+        message: "error.databaseConnection",
       };
     }
   } else {
@@ -249,13 +249,13 @@ export const getClanInfo = async () => {
       if (response.status === 503) {
         return {
           success: false,
-          message: "Error connecting to database",
+          message: "error.databaseConnection",
         };
       }
     } else {
       return {
         success: false,
-        message: "Error when connecting to the API",
+        message: "error.databaseConnection",
       };
     }
   } else {
@@ -284,7 +284,7 @@ export const getCachedMembers = async () => {
   try {
     const response = await getMembers(clanid);
     if (!response) {
-      return { success: false, message: "Error when connecting to the API" };
+      return { success: false, message: "error.databaseConnection" };
     }
 
     if (response.status === 200 || response.status === 202) {
@@ -304,14 +304,14 @@ export const getCachedMembers = async () => {
     if (response.status === 503) {
       return {
         success: false,
-        message: "Error connecting to database",
+        message: "error.databaseConnection",
       };
     }
   } catch (error) {
     console.error("Error getCachedMembers:", error);
     return {
       success: false,
-      message: "Error when connecting to the API",
+      message: "error.databaseConnection",
     };
   }
 };
@@ -428,18 +428,18 @@ export const apiRequest = async (url, options) => {
       case 503:
         return {
           success: false,
-          message: "Error connecting to database",
+          message: "error.databaseConnection",
         };
       default:
         return {
           success: false,
-          message: "Error when connecting to the API",
+          message: "error.databaseConnection",
         };
     }
   }
   return {
     success: false,
-    message: "Error when connecting to the API",
+    message: "error.databaseConnection",
   };
 };
 

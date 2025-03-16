@@ -17,7 +17,7 @@ export const createMap = async (mapNameInput, mapDateInput, mapSelectInput) => {
       headers,
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -48,7 +48,7 @@ export const editMap = async (
       return "Map updated";
     }
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -79,13 +79,13 @@ export const getMap = async (mapid, mappass) => {
     if (response.status === 503) {
       return {
         success: false,
-        message: "Error connecting to database",
+        message: "error.databaseConnection",
       };
     }
   } catch {
     return {
       success: false,
-      message: "Error when connecting to the API",
+      message: "error.databaseConnection",
     };
   }
 };
@@ -98,7 +98,7 @@ export const getMaps = async () => {
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -111,7 +111,7 @@ export const deleteMap = async (mapid) => {
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -144,7 +144,7 @@ export const createResource = async ({
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -161,7 +161,7 @@ export const deleteResource = async (mapId, resourceId, token) => {
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -187,7 +187,7 @@ export const updateResourceTime = async (
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -207,6 +207,6 @@ export const getResources = async (mapId, mappass) => {
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };

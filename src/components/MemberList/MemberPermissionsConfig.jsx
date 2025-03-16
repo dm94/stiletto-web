@@ -56,7 +56,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
         onError?.("errors.noAccess");
         onClose?.();
       } else if (response.status === 503) {
-        onError?.("Error connecting to database");
+        onError?.("error.databaseConnection");
         onClose?.();
       }
     } catch {
