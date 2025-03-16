@@ -104,7 +104,7 @@ const WalkerListItem = ({
                       htmlFor="inputOwner"
                       className="block text-sm font-medium text-gray-300"
                     >
-                      {t(common.owner")}
+                      {t("common.owner")}
                     </label>
                     <select
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -304,7 +304,7 @@ const WalkerListItem = ({
             className="text-blue-400 hover:text-blue-300 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             type="button"
-            aria-label={isOpen ? t("Hide details") : t("Show details")}
+            aria-label={isOpen ? t("common.hideDetails") : t("common.showDetails")}
           >
             <i className={`fas fa-eye${isOpen ? "-slash" : ""}`} />
           </button>

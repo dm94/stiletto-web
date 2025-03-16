@@ -6,9 +6,8 @@ const DropsInfo = ({ drops = [] }) => {
 
   const showDrops = () => {
     return drops?.map((drop, index) => {
-      const titleInfo = `Drop ${drop?.chance ?? "unknown"}% -> ${
-        drop?.minQuantity ?? "unknown"
-      }/${drop?.maxQuantity ?? "unknown"}`;
+      const titleInfo = `Drop ${drop?.chance ?? "unknown"}% -> ${drop?.minQuantity ?? "unknown"
+        }/${drop?.maxQuantity ?? "unknown"}`;
       return (
         <li
           className="inline-block mr-2 mb-2"
@@ -28,7 +27,7 @@ const DropsInfo = ({ drops = [] }) => {
       <div className="w-full md:w-1/2 p-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
-            {t("Obtainable from")}
+            {t("wiki.obtainableFrom")}
           </div>
           <div className="p-4">
             <ul className="flex flex-wrap -m-2">{showDrops()}</ul>

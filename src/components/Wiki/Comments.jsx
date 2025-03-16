@@ -29,7 +29,7 @@ const Comments = ({ name }) => {
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
-            {t("Comments")}
+            {t("wiki.comments")}
           </div>
           <div className="p-4">
             <Giscus
@@ -57,7 +57,7 @@ const Comments = ({ name }) => {
     <div className="w-full p-4">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
         <div className="p-3 bg-gray-900 border-b border-gray-700">
-          {t("Comments")}
+          {t("wiki.comments")}
         </div>
         <div className="p-4">
           <div className="space-y-4">
@@ -84,7 +84,7 @@ const Comments = ({ name }) => {
             <textarea
               className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               rows="3"
-              placeholder={t("Write a comment...")}
+              placeholder={t("wiki.writeComment")}
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
             />
@@ -93,7 +93,7 @@ const Comments = ({ name }) => {
               className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               onClick={handleSubmit}
             >
-              {t("Submit")}
+              {t("common.submit")}
             </button>
           </div>
         </div>
