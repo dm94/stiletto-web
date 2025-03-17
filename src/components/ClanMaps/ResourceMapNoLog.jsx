@@ -15,8 +15,11 @@ import {
   updateResourceTime,
   getResources,
 } from "../../functions/requests/maps";
+import { useLocation, useParams } from "react-router";
 
 const ResourceMapNoLog = (props) => {
+  const location = useLocation();
+  const { id } = useParams();
   const { t } = useTranslation();
   const [resourcesInTheMap, setResourcesInTheMap] = useState(null);
   const [mapId, setMapId] = useState(null);
@@ -35,19 +38,19 @@ const ResourceMapNoLog = (props) => {
 
   const fetchData = useCallback(async () => {
     let parsed = null;
-    if (props?.location?.search) {
-      parsed = queryString.parse(props.location.search);
+    if (location?.search) {
+      parsed = queryString.parse(location.search);
     }
 
     if (
-      (props?.mapId || props?.match?.params?.id) &&
+      (props?.mapId || id) &&
       (props?.pass || parsed?.pass)
     ) {
       try {
         const markers = await getMarkers();
         setItems(markers);
 
-        const currentMapId = props?.mapId || props?.match?.params?.id;
+        const currentMapId = props?.mapId || id;
         const currentPass = props?.pass || parsed?.pass;
 
         setMapId(currentMapId);
@@ -207,8 +210,8 @@ const ResourceMapNoLog = (props) => {
             <button
               type="button"
               className={`flex-1 p-3 text-sm font-medium ${activeTab === "resources"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-400 hover:text-gray-300"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-400 hover:text-gray-300"
                 }`}
               onClick={() => setActiveTab("resources")}
             >
@@ -217,8 +220,8 @@ const ResourceMapNoLog = (props) => {
             <button
               type="button"
               className={`flex-1 p-3 text-sm font-medium ${activeTab === "create"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-400 hover:text-gray-300"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-400 hover:text-gray-300"
                 }`}
               onClick={() => setActiveTab("create")}
             >
