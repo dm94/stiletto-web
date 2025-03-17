@@ -46,9 +46,7 @@ const AuctionTimers = () => {
         <div className="w-full lg:w-2/3 px-2 mb-4 lg:mb-0">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 text-center text-gray-300">
-              {t(
-                "This data is not saved, if you reload the page it will be deleted",
-              )}
+              {t("diplomacy.relationshipNotice")}
             </div>
           </div>
         </div>
@@ -66,7 +64,7 @@ const AuctionTimers = () => {
                   } rounded-l-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(true)}
                 >
-                  <i className="fas fa-volume-up mr-2" /> {t("Sound On")}
+                  <i className="fas fa-volume-up mr-2" /> {t("common.soundOn")}
                 </button>
                 <button
                   type="button"
@@ -77,7 +75,8 @@ const AuctionTimers = () => {
                   } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(false)}
                 >
-                  <i className="fas fa-volume-mute mr-2" /> {t("Sound Off")}
+                  <i className="fas fa-volume-mute mr-2" />{" "}
+                  {t("common.soundOff")}
                 </button>
               </div>
             </div>

@@ -41,58 +41,68 @@ const Ingredient = ({ ingredient, value }) => {
   };
 
   return (
-    <div className="w-full">
-      <div
-        tabIndex={hasIngredients ? 0 : undefined}
-        className={`flex items-center space-x-3 ${
-          hasIngredients
-            ? "text-green-400 cursor-pointer hover:text-green-300 transition-colors duration-200"
-            : ""
-        }`}
-        role={hasIngredients ? "button" : undefined}
-        onClick={() => hasIngredients && setShowList(!showList)}
-        onKeyUp={(e) =>
-          hasIngredients && e.key === "Enter" && setShowList(!showList)
-        }
-      >
-        <div className="flex-shrink-0 bg-gray-700 p-1 rounded-lg">
-          <Icon key={ingredient?.name} name={ingredient?.name} width="36" />
-        </div>
-        <div className="flex-grow">
-          <div className="flex items-center">
-            {ingredient?.count != null && value != null && (
-              <span className="font-bold mr-2 text-yellow-400 text-lg">
-                {Math.ceil(ingredient?.count * value)}×
-              </span>
-            )}
-            {hasIngredients ? (
+    <div className="w-full" data-testid="ingredient">
+      {hasIngredients ? (
+        <button
+          type="button"
+          className="flex items-center space-x-3 w-full text-left bg-transparent border-0 p-0 text-green-400 cursor-pointer hover:text-green-300 transition-colors duration-200"
+          onClick={() => setShowList(!showList)}
+          aria-expanded={showList}
+        >
+          <div className="flex-shrink-0 bg-gray-700 p-1 rounded-lg">
+            <Icon key={ingredient?.name} name={ingredient?.name} width="36" />
+          </div>
+          <div className="flex-grow">
+            <div className="flex items-center">
+              {ingredient?.count != null && value != null && (
+                <span className="font-bold mr-2 text-yellow-400 text-lg">
+                  {Math.ceil(ingredient?.count * value)}×
+                </span>
+              )}
               <span className="font-medium text-neutral-300">
                 {t(ingredient?.name, { ns: "items" })}
               </span>
-            ) : (
+              <span className="ml-2 text-gray-400 bg-gray-700 rounded-full w-5 h-5 flex items-center justify-center">
+                <i
+                  className={`fas fa-chevron-${showList ? "up" : "down"} text-xs`}
+                />
+              </span>
+            </div>
+            {ingredient?.category && (
+              <div className="text-sm text-gray-400 mt-1">
+                {t(ingredient.category)}
+              </div>
+            )}
+          </div>
+        </button>
+      ) : (
+        <div className="flex items-center space-x-3">
+          <div className="flex-shrink-0 bg-gray-700 p-1 rounded-lg">
+            <Icon key={ingredient?.name} name={ingredient?.name} width="36" />
+          </div>
+          <div className="flex-grow">
+            <div className="flex items-center">
+              {ingredient?.count != null && value != null && (
+                <span className="font-bold mr-2 text-yellow-400 text-lg">
+                  {Math.ceil(ingredient?.count * value)}×
+                </span>
+              )}
               <a
                 href={url}
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium"
               >
                 {t(ingredient?.name, { ns: "items" })}
               </a>
-            )}
-            {hasIngredients && (
-              <span className="ml-2 text-gray-400 bg-gray-700 rounded-full w-5 h-5 flex items-center justify-center">
-                <i
-                  className={`fas fa-chevron-${showList ? "up" : "down"} text-xs`}
-                />
-              </span>
+            </div>
+            {ingredient?.category && (
+              <div className="text-sm text-gray-400 mt-1">
+                {t(ingredient.category)}
+              </div>
             )}
           </div>
-          {ingredient?.category && (
-            <div className="text-sm text-gray-400 mt-1">
-              {t(ingredient.category)}
-            </div>
-          )}
         </div>
-      </div>
-      <div className={hasIngredients ? "mt-2" : ""}>{renderSubList()}</div>
+      )}
+      {hasIngredients && <div className="mt-2">{renderSubList()}</div>}
     </div>
   );
 };

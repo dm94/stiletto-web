@@ -63,7 +63,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
               role="img"
               focusable="false"
             >
-              <title>{t("Menu")}</title>
+              <title>{t("common.menu")}</title>
               <path
                 stroke="currentColor"
                 strokeLinecap="round"
@@ -85,7 +85,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                   to="/crafter"
                   className="block py-2 text-white hover:text-gray-300"
                 >
-                  {t("Crafting")}
+                  {t("menu.crafting")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="maps-link">
@@ -93,7 +93,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                   to={getStoredItem("token") != null ? "/maps" : "/map"}
                   className="block py-2 text-white hover:text-gray-300"
                 >
-                  {t("Resource Maps")}
+                  {t("menu.resourceMaps")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="clanlist-link">
@@ -101,7 +101,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                   to="/clanlist"
                   className="block py-2 text-white hover:text-gray-300"
                 >
-                  {t("Clan List")}
+                  {t("menu.clanList")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="trades-link">
@@ -109,7 +109,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                   to="/trades"
                   className="block py-2 text-white hover:text-gray-300"
                 >
-                  {t("Trades")}
+                  {t("menu.trades")}
                 </Link>
               </li>
               <li className="nav-item" data-cy="wiki-link">
@@ -117,7 +117,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                   to="/wiki"
                   className="block py-2 text-white hover:text-gray-300"
                 >
-                  {t("Wiki")}
+                  {t("menu.wiki")}
                 </Link>
               </li>
             </ul>
@@ -128,8 +128,8 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                 <input
                   type="search"
                   className="w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500"
-                  placeholder={t("Search items")}
-                  aria-label={t("Search items")}
+                  placeholder={t("common.search")}
+                  aria-label={t("common.search")}
                   onChange={(e) => setSearchText(e.currentTarget.value)}
                   onKeyPress={handleKeyPress}
                   value={searchText}
@@ -148,7 +148,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                 type="button"
                 className="p-2 text-white hover:bg-gray-700 rounded-lg"
                 data-cy="change-languaje-btn"
-                aria-label="Change language"
+                aria-label={t("settings.changeLanguage")}
                 onClick={openLanguajeModal}
               >
                 <img
@@ -156,7 +156,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                   width="39"
                   height="25"
                   src={getLanguageFlag(language)}
-                  alt="Change language"
+                  alt={t("settings.changeLanguage")}
                 />
               </button>
 

@@ -58,14 +58,14 @@ const ItemWiki = () => {
     };
 
     loadData();
-  }, [ name ]);
+  }, [name]);
 
   const showIngredient = (ingre) =>
     ingre?.crafting?.map((ingredients, index) => (
       <div
         className={
           ingre.crafting.length > 1
-            ? "w-full lg:w-1/2 border border-gray-700"
+            ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
             : "w-full"
         }
         key={`ingredients-${index}-${ingre.name}`}
@@ -78,12 +78,12 @@ const ItemWiki = () => {
 
   const showDescription = () =>
     item?.description && (
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-1/2 px-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
-          <div className="p-4 bg-gray-900 border-b border-gray-700">
-            {t("Description")}
+          <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
+            {t("common.description")}
           </div>
-          <div className="p-4">{item.description}</div>
+          <div className="p-4 text-neutral-400">{item.description}</div>
         </div>
       </div>
     );
@@ -113,37 +113,42 @@ const ItemWiki = () => {
     let outlineColor = "";
     let hoverColor = "";
     let focusColor = "";
+    let textColor = "";
 
     switch (value) {
       case "Legendary":
         outlineColor = "border-yellow-500";
         hoverColor = "hover:bg-yellow-500";
+        textColor = "text-yellow-500";
         focusColor = "focus:ring-yellow-500";
         break;
       case "Epic":
         outlineColor = "border-red-500";
         hoverColor = "hover:bg-red-500";
+        textColor = "text-red-500";
         focusColor = "focus:ring-red-500";
         break;
       case "Rare":
         outlineColor = "border-blue-500";
         hoverColor = "hover:bg-blue-500";
+        textColor = "text-blue-500";
         focusColor = "focus:ring-blue-500";
         break;
       case "Uncommon":
         outlineColor = "border-green-500";
         hoverColor = "hover:bg-green-500";
+        textColor = "text-green-500";
         focusColor = "focus:ring-green-500";
         break;
       default:
         outlineColor = "border-gray-500";
         hoverColor = "hover:bg-gray-500";
+        textColor = "text-gray-500";
         focusColor = "focus:ring-gray-500";
     }
 
-    return `px-4 py-2 border rounded-lg text-gray-300 ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${
-      rarity === value ? "bg-opacity-20" : ""
-    }`;
+    return `px-4 py-2 border rounded-lg hover:text-gray-300 ${textColor} ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${rarity === value ? "bg-opacity-20" : ""
+      }`;
   };
 
   const loadingItemPart = () => (
@@ -190,17 +195,18 @@ const ItemWiki = () => {
               <ul className="space-y-2">
                 {item?.cost && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Cost to learn")}</div>
+                    <div className="text-gray-300">
+                      {t("crafting.costToLearn")}
+                    </div>
                     <div className="text-gray-400">
-                      {`${item?.cost?.count ? item.cost.count : ""} ${
-                        item?.cost?.name ? t(item?.cost?.name) : ""
-                      }`}
+                      {`${item?.cost?.count ? item.cost.count : ""} ${item?.cost?.name ? t(item?.cost?.name) : ""
+                        }`}
                     </div>
                   </li>
                 )}
                 {item?.category && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Category")}</div>
+                    <div className="text-gray-300">{t("common.category")}</div>
                     <div className="text-gray-400">
                       {t(item.category, { ns: "items" })}
                     </div>
@@ -208,7 +214,7 @@ const ItemWiki = () => {
                 )}
                 {item?.parent && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Parent")}</div>
+                    <div className="text-gray-300">{t("common.parent")}</div>
                     <div className="text-gray-400">
                       <a href={parentUrl} className="hover:text-blue-400">
                         {t(item.parent, { ns: "items" })}
@@ -269,20 +275,23 @@ const ItemWiki = () => {
               </ul>
             </div>
             <div className="p-4 bg-gray-900 border-t border-gray-700 text-center">
+              <div className="mb-2 text-gray-300">{t("common.selectRarity")}</div>
               <fieldset
                 className="inline-flex rounded-lg shadow-sm"
-                aria-label="Rarities"
+                aria-label={t("common.raritySelection")}
               >
+                <legend className="sr-only">{t("common.raritySelection")}</legend>
                 {["Common", "Uncommon", "Rare", "Epic", "Legendary"].map(
                   (rar) => (
                     <button
                       key={rar}
                       type="button"
-                      title={t(rar)}
-                      className={getRarityClass(rar)}
+                      aria-pressed={rarity === rar}
+                      className={`${getRarityClass(rar)} flex items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${rarity === rar ? 'ring-2 ring-opacity-50' : ''}`}
                       onClick={() => updateRarity(rar)}
                     >
-                      {rar[0]}
+                      <span className="w-4 mr-1">{rar === rarity ? "✓" : ""}</span>
+                      {t(rar)}
                     </button>
                   ),
                 )}
@@ -294,7 +303,7 @@ const ItemWiki = () => {
           <div className="w-full lg:w-1/2 px-4">
             <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
               <div className="p-4 bg-gray-900 border-b border-gray-700 flex justify-between items-center">
-                <span className="text-neutral-300">{t("Recipe")}</span>
+                <span className="text-neutral-300">{t("crafting.recipe")}</span>
                 <a
                   href={craftUrl}
                   className="text-gray-400 hover:text-gray-300"
@@ -369,11 +378,7 @@ const ItemWiki = () => {
           <WikiDescription key="wikidescription" name={itemName} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <CanBeUsedInfo
-            key="CanBeUsedInfo"
-            name={itemName}
-            items={allItems}
-          />
+          <CanBeUsedInfo key="CanBeUsedInfo" name={itemName} items={allItems} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <DropsInfo key="dropInfo" drops={item.drops} />

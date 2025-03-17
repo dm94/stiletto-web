@@ -56,7 +56,7 @@ const CreateMapNoLog = ({ onOpen }) => {
       <div className="w-full">
         <div className="bg-white rounded shadow p-4 mb-4 dark:bg-gray-800 dark:text-white">
           <div className="text-lg font-semibold mb-2 border-b pb-2">
-            {t("Open a map that has already been created")}
+            {t("maps.openExistingMap")}
           </div>
           <div className="p-4">
             <div className="grid gap-4 md:grid-cols-3">
@@ -65,7 +65,7 @@ const CreateMapNoLog = ({ onOpen }) => {
                   htmlFor="map_id"
                   className="block text-sm font-medium mb-2"
                 >
-                  {t("Map ID")}
+                  {t("maps.mapId")}
                 </label>
                 <input
                   type="number"
@@ -83,7 +83,7 @@ const CreateMapNoLog = ({ onOpen }) => {
                   htmlFor="map_pass"
                   className="block text-sm font-medium mb-2"
                 >
-                  {t("Map Pass")}
+                  {t("maps.mapPass")}
                 </label>
                 <input
                   type="text"
@@ -102,7 +102,7 @@ const CreateMapNoLog = ({ onOpen }) => {
               type="button"
               onClick={() => onOpen(mapIdInput, mapPassInput)}
             >
-              {t("Open map")}
+              {t("maps.openMap")}
             </button>
           </div>
         </div>
@@ -112,7 +112,7 @@ const CreateMapNoLog = ({ onOpen }) => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded shadow p-4 dark:bg-gray-800 dark:text-white w-1/2">
             <div className="text-lg font-semibold mb-4 border-b pb-2">
-              {t("Map created")}
+              {t("maps.mapCreated")}
             </div>
             <div className="mb-4">{shareMapLink()}</div>
             <button
@@ -120,7 +120,7 @@ const CreateMapNoLog = ({ onOpen }) => {
               className="px-4 py-2 bg-green-400 hover:bg-green-500 text-white font-semibold rounded-lg w-full"
               onClick={() => onOpen(mapIdInput, mapPassInput)}
             >
-              {t("Open map")}
+              {t("maps.openMap")}
             </button>
           </div>
         </div>

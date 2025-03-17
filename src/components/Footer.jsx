@@ -12,7 +12,7 @@ const Footer = () => {
             <span>By Dm94Dani</span>
             <span>|</span>
             <Link className="text-white hover:text-gray-300" to="/privacy">
-              {t("Privacy Policy")}
+              {t("common.privacyPolicy")}
             </Link>
             <span>|</span>
             <a
@@ -60,9 +60,7 @@ const Footer = () => {
             </a>
             <span>|</span>
             <span className="flex items-center">
-              {t(
-                "This website uses utilities related to the game 'Last Oasis' but is not affiliated with",
-              )}{" "}
+              {t("about.disclaimer")}{" "}
               <a
                 href="https://www.donkey.team/"
                 target="_blank"

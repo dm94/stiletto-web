@@ -27,7 +27,7 @@ export const getWalkers = async ({
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -58,7 +58,7 @@ export const editWalker = async ({
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -75,7 +75,7 @@ export const getDiscordServers = async (code, redirect) => {
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -88,6 +88,6 @@ export const deleteWalker = async (walkerID) => {
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };

@@ -19,7 +19,7 @@ const Pagination = ({ currentPage, hasMore, onPrev, onNext }) => {
             disabled={currentPage <= 1}
             aria-disabled={currentPage <= 1}
           >
-            {t("Previous Page")}
+            {t("common.previousPage")}
           </button>
         </li>
         <li>
@@ -43,7 +43,7 @@ const Pagination = ({ currentPage, hasMore, onPrev, onNext }) => {
             disabled={!hasMore}
             aria-disabled={!hasMore}
           >
-            {t("Next Page")}
+            {t("common.nextPage")}
           </button>
         </li>
       </ul>

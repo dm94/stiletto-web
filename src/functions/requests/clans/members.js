@@ -18,7 +18,7 @@ export const updateMemberPermissions = async (
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -34,7 +34,7 @@ export const updateMember = async (clanid, memberid, action) => {
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -47,7 +47,7 @@ export const getMembers = async (clanid) => {
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -63,6 +63,6 @@ export const getMemberPermissions = async (clanid, discordid) => {
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };

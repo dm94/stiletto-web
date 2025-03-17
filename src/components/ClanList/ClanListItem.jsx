@@ -15,7 +15,7 @@ const ClanListItem = ({ isLogged, clanuserid, clan, onSendRequest }) => {
             className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={() => onSendRequest(clan.clanid)}
           >
-            {t("Send request")}
+            {t("common.sendRequest")}
           </button>
         );
       }
@@ -25,7 +25,7 @@ const ClanListItem = ({ isLogged, clanuserid, clan, onSendRequest }) => {
             className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-center block"
             to="/members"
           >
-            {t("Members")}
+            {t("menu.members")}
           </Link>
         );
       }

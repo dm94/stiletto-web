@@ -64,12 +64,12 @@ const WalkerList = () => {
           setWalkers(data);
           setHasMoreWalkers(hasMore);
         } else if (response.status === 401) {
-          setError("The data entered is incorrect");
+          setError(t("errors.incorrectData"));
         } else if (response.status === 503) {
-          setError("Error connecting to database");
+          setError(t("errors.databaseConnection"));
         }
       } catch {
-        setError("Error when connecting to the API");
+        setError(t("errors.apiConnection"));
       }
       setIsLoaded(true);
     },
@@ -97,12 +97,12 @@ const WalkerList = () => {
       if (response.status === 202) {
         updateWalkers();
       } else if (response.status === 401) {
-        setError("Unauthorized");
+        setError(t("errors.unauthorized"));
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError(t("errors.databaseConnection"));
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError(t("errors.apiConnection"));
     }
   };
 
@@ -113,12 +113,12 @@ const WalkerList = () => {
       if (response.status === 204) {
         updateWalkers();
       } else if (response.status === 401) {
-        setError("Unauthorized");
+        setError(t("errors.unauthorized"));
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError(t("errors.databaseConnection"));
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError(t("errors.apiConnection"));
     }
   };
 
@@ -130,12 +130,12 @@ const WalkerList = () => {
           `${getDomain()}/walkerlist`,
         );
         if (response.status === 401) {
-          setError("Unauthorized");
+          setError(t("errors.unauthorized"));
         } else if (response.status === 503) {
-          setError("Error connecting to database");
+          setError(t("errors.databaseConnection"));
         }
       } catch {
-        setError("Error when connecting to the API");
+        setError(t("errors.apiConnection"));
       }
     };
 
@@ -180,7 +180,7 @@ const WalkerList = () => {
 
     const initializeData = async () => {
       if (!getStoredItem("token")) {
-        setError("You need to be logged in to view this section");
+        setError(t("errors.loginRequired"));
         return;
       }
 
@@ -237,9 +237,7 @@ const WalkerList = () => {
       <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
         <div className="p-4">
           <div className="text-blue-400 mb-3">
-            {t(
-              "For the walkers to appear it is necessary to link the discord server with the clan, only users with administration power can add the discord server.",
-            )}
+            {t("walkers.discordLinkNotice")}
           </div>
           <div className="text-yellow-400">
             {t(
@@ -256,22 +254,18 @@ const WalkerList = () => {
     <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
       <div className="p-3 bg-gray-900 border-b border-gray-700">
         <h2 className="text-lg font-semibold text-gray-300">
-          {t("Discord Bot")}
+          {t("discord.bot")}
         </h2>
       </div>
       <div className="p-4">
-        <div className="mb-3 text-gray-300">
-          {t(
-            "You need to add the bot to your discord to compile the list of walkers from the log, but it also has other functions like checking what you need to do the different items",
-          )}
-        </div>
+        <div className="mb-3 text-gray-300">{t("discord.botDescription")}</div>
         <a
           className="w-full inline-flex justify-center items-center p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           href="https://top.gg/bot/715948052979908911"
           target="_blank"
           rel="noopener noreferrer"
         >
-          {t("Discord Bot")}
+          {t("discord.bot")}
         </a>
       </div>
     </div>
@@ -318,7 +312,7 @@ const WalkerList = () => {
       <ModalMessage
         message={{
           isError: true,
-          text: "You need to have a clan to access this section",
+          text: t("errors.noClan"),
           redirectPage: "/profile",
         }}
       />
@@ -342,7 +336,7 @@ const WalkerList = () => {
       <div className="bg-gray-800 border border-blue-500 rounded-lg shadow-md mb-6">
         <div className="p-3 bg-gray-900 border-b border-gray-700">
           <h2 className="text-lg font-semibold text-gray-300">
-            {t("Search Walkers")}
+            {t("walkers.searchWalkers")}
           </h2>
         </div>
         <div className="p-4">
@@ -352,7 +346,7 @@ const WalkerList = () => {
                 htmlFor="walkerTypeSearch"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Type")}
+                {t("common.type")}
               </label>
               <select
                 id="walkerTypeSearch"
@@ -360,7 +354,7 @@ const WalkerList = () => {
                 value={walkerTypeSearch || "All"}
                 onChange={(e) => setWalkerTypeSearch(e.target.value)}
               >
-                <option value="All">{t("All")}</option>
+                <option value="All">{t("common.all")}</option>
                 {renderWalkerOptionList()}
               </select>
             </div>
@@ -369,7 +363,7 @@ const WalkerList = () => {
                 htmlFor="search-name"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Name")}
+                {t("common.name")}
               </label>
               <input
                 className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -386,7 +380,7 @@ const WalkerList = () => {
                 htmlFor="useWalkerSearch"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Use")}
+                {t("common.use")}
               </label>
               <select
                 id="useWalkerSearch"
@@ -394,10 +388,10 @@ const WalkerList = () => {
                 value={useWalkerSearch || "All"}
                 onChange={(e) => setUseWalkerSearch(e.target.value)}
               >
-                <option value="All">{t("All")}</option>
-                <option value="Personal">{t("Personal")}</option>
-                <option value="PVP">{t("PVP")}</option>
-                <option value="Farming">{t("Farming")}</option>
+                <option value="All">{t("common.all")}</option>
+                <option value="Personal">{t("common.personal")}</option>
+                <option value="PVP">{t("common.pvp")}</option>
+                <option value="Farming">{t("common.farming")}</option>
                 <option value="RAM">{t("RAM")}</option>
               </select>
             </div>
@@ -406,7 +400,7 @@ const WalkerList = () => {
                 htmlFor="search-description"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Description")}
+                {t("common.description")}
               </label>
               <input
                 className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -422,7 +416,7 @@ const WalkerList = () => {
                 htmlFor="isReadySearch"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Is ready?")}
+                {t("common.isReady")}
               </label>
               <select
                 id="isReadySearch"
@@ -430,9 +424,9 @@ const WalkerList = () => {
                 value={isReadySearch || "All"}
                 onChange={(e) => setIsReadySearch(e.target.value)}
               >
-                <option value="All">{t("All")}</option>
-                <option value="Yes">{t("Yes")}</option>
-                <option value="No">{t("No")}</option>
+                <option value="All">{t("common.all")}</option>
+                <option value="Yes">{t("common.yes")}</option>
+                <option value="No">{t("common.no")}</option>
               </select>
             </div>
             <div className="flex flex-col justify-end">
@@ -442,7 +436,7 @@ const WalkerList = () => {
                   className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => updateWalkers()}
                 >
-                  {t("Filter walkers")}
+                  {t("walkers.filterWalkers")}
                 </button>
                 <button
                   type="button"
@@ -455,7 +449,7 @@ const WalkerList = () => {
                     updateWalkers();
                   }}
                 >
-                  {t("Clean filter")}
+                  {t("common.cleanFilter")}
                 </button>
               </div>
             </div>
@@ -468,22 +462,22 @@ const WalkerList = () => {
           <thead className="bg-gray-900">
             <tr>
               <th className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
-                {t("Type")}
+                {t("common.type")}
               </th>
               <th className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
-                {t("Name")}
+                {t("common.name")}
               </th>
               <th className="hidden sm:table-cell px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
-                {t("Use")}
+                {t("common.use")}
               </th>
               <th className="hidden sm:table-cell px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
-                {t("Description")}
+                {t("common.description")}
               </th>
               <th className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
-                {t("Ready")}
+                {t("common.ready")}
               </th>
               <th className="px-6 py-3 text-center text-xs font-medium text-gray-300 uppercase tracking-wider">
-                {t("View")}
+                {t("common.view")}
               </th>
             </tr>
           </thead>

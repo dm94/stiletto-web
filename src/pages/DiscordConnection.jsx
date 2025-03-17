@@ -43,9 +43,9 @@ const DiscordConnection = () => {
           }
           navigate({ from: { pathname: "/" } });
         } else if (response.status === 401) {
-          setError("Unauthorized");
+          setError("error.unauthorized");
         } else if (response.status === 503) {
-          setError("Error connecting to database");
+          setError("error.databaseConnection");
         }
       } catch {
         setError("Error connecting to server");
@@ -99,7 +99,7 @@ const DiscordConnection = () => {
               className="w-full inline-flex justify-center items-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors"
             >
               <i className="fab fa-discord mr-2" />
-              {t("Login with discord")}
+              {t("auth.loginWithDiscord")}
             </a>
           </div>
         </div>

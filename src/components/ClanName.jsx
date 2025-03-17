@@ -1,7 +1,10 @@
 import React, { Fragment } from "react";
 import { config } from "../config/config";
+import { useTranslation } from "react-i18next";
 
 const ClanName = ({ clan }) => {
+  const { t } = useTranslation();
+
   if (clan?.symbol) {
     return (
       <Fragment>
@@ -10,7 +13,7 @@ const ClanName = ({ clan }) => {
           height="48"
           src={`${config.REACT_APP_RESOURCES_URL}/symbols/${clan.symbol}.png`}
           style={{ backgroundColor: clan.flagcolor }}
-          alt={clan.symbol}
+          alt={t("diplomacy.symbol")}
           id={`symbol-img-${clan.name}`}
           className="inline-block rounded"
         />

@@ -75,7 +75,7 @@ const ResourceMap = ({ map, onReturn }) => {
         setError(response.message);
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
   };
 
@@ -92,7 +92,7 @@ const ResourceMap = ({ map, onReturn }) => {
       );
       setTextSuccess(response);
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
   };
 
@@ -109,7 +109,7 @@ const ResourceMap = ({ map, onReturn }) => {
         setError(response.message);
       }
     } catch {
-      setError("Error when connecting to the API");
+      setError("errors.apiConnection");
     }
   };
 
@@ -135,7 +135,7 @@ const ResourceMap = ({ map, onReturn }) => {
                 htmlFor="mapname"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Map Name")}
+                {t("maps.mapName")}
               </label>
               <input
                 type="text"
@@ -152,7 +152,7 @@ const ResourceMap = ({ map, onReturn }) => {
                 htmlFor="mapdate"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Date of burning")}
+                {t("maps.dateOfBurning")}
               </label>
               <input
                 type="date"
@@ -165,30 +165,28 @@ const ResourceMap = ({ map, onReturn }) => {
             </div>
             <div className="mb-4">
               <p className="text-gray-300 mb-2">
-                {t("Enable editing with the link")}
+                {t("maps.enableEditingWithLink")}
               </p>
               <div className="flex space-x-2">
                 <button
                   type="button"
-                  className={`flex-1 p-2 rounded-lg ${
-                    allowEditing
+                  className={`flex-1 p-2 rounded-lg ${allowEditing
                       ? "bg-green-600 text-white"
                       : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                  }`}
+                    }`}
                   onClick={() => setAllowEditing(true)}
                 >
-                  {t("Allow Editing")}
+                  {t("maps.allowEditing")}
                 </button>
                 <button
                   type="button"
-                  className={`flex-1 p-2 rounded-lg ${
-                    !allowEditing
+                  className={`flex-1 p-2 rounded-lg ${!allowEditing
                       ? "bg-red-600 text-white"
                       : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                  }`}
+                    }`}
                   onClick={() => setAllowEditing(false)}
                 >
-                  {t("Read Only")}
+                  {t("maps.readOnly")}
                 </button>
               </div>
             </div>
@@ -197,7 +195,7 @@ const ResourceMap = ({ map, onReturn }) => {
                 htmlFor="password"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Password")}
+                {t("common.password")}
               </label>
               <input
                 type="text"
@@ -213,7 +211,7 @@ const ResourceMap = ({ map, onReturn }) => {
               type="submit"
               className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
             >
-              {t("Update Data")}
+              {t("common.updateData")}
             </button>
           </form>
         </div>
@@ -227,7 +225,7 @@ const ResourceMap = ({ map, onReturn }) => {
       <ModalMessage
         message={{
           isError: true,
-          text: "Login with discord",
+          text: "auth.loginWithDiscord",
           redirectPage: "/profile",
         }}
       />
@@ -274,7 +272,7 @@ const ResourceMap = ({ map, onReturn }) => {
               updateResourceTime(mapid, resourceid, token, date);
               fetchData();
             } catch {
-              setError("Error when connecting to the API");
+              setError("errors.apiConnection");
             }
           }}
           changeInput={(x, y) => {
@@ -291,9 +289,8 @@ const ResourceMap = ({ map, onReturn }) => {
         <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
       <div
-        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${
-          isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
-        }`}
+        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
+          }`}
       >
         <div className="h-full flex flex-col">
           <div className="p-4 border-b border-gray-700">
@@ -308,22 +305,20 @@ const ResourceMap = ({ map, onReturn }) => {
           <div className="flex border-b border-gray-700">
             <button
               type="button"
-              className={`flex-1 p-3 text-sm font-medium ${
-                activeTab === "resources"
+              className={`flex-1 p-3 text-sm font-medium ${activeTab === "resources"
                   ? "text-blue-500 border-b-2 border-blue-500"
                   : "text-gray-400 hover:text-gray-300"
-              }`}
+                }`}
               onClick={() => setActiveTab("resources")}
             >
               {t("Resources")}
             </button>
             <button
               type="button"
-              className={`flex-1 p-3 text-sm font-medium ${
-                activeTab === "create"
+              className={`flex-1 p-3 text-sm font-medium ${activeTab === "create"
                   ? "text-blue-500 border-b-2 border-blue-500"
                   : "text-gray-400 hover:text-gray-300"
-              }`}
+                }`}
               onClick={() => setActiveTab("create")}
             >
               {t("Create")}
@@ -331,18 +326,17 @@ const ResourceMap = ({ map, onReturn }) => {
             {userDiscordId === map?.discordid && (
               <button
                 type="button"
-                className={`flex-1 p-3 text-sm font-medium ${
-                  activeTab === "settings"
+                className={`flex-1 p-3 text-sm font-medium ${activeTab === "settings"
                     ? "text-blue-500 border-b-2 border-blue-500"
                     : "text-gray-400 hover:text-gray-300"
-                }`}
+                  }`}
                 onClick={() => setActiveTab("settings")}
               >
                 {t("Settings")}
               </button>
             )}
           </div>
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto p-2">
             {activeTab === "resources" && (
               <ResourcesInMapList
                 resources={resourcesFiltered || resourcesInTheMap}

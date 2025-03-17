@@ -115,14 +115,14 @@ const TechTree = () => {
               className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
               onClick={saveTree}
             >
-              {t("Save Tree Data")}
+              {t("techTree.saveTreeData")}
             </button>
             <button
               type="button"
               className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
               onClick={deleteTree}
             >
-              {t("Delete Tree Data")}
+              {t("techTree.deleteTreeData")}
             </button>
           </div>
         </div>
@@ -186,7 +186,8 @@ const TechTree = () => {
               to="/tech/Vitamins"
               activeClassName="text-white border-blue-500"
             >
-              <Icon key="Vitamins" name="Vitamins" width={30} /> {t("Vitamins")}
+              <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
+              {t("common.vitamins")}
             </NavLink>
           </div>
           <div className="flex-1">
@@ -196,7 +197,7 @@ const TechTree = () => {
               activeClassName="text-white border-blue-500"
             >
               <Icon key="Equipment" name="Equipment" width={30} />{" "}
-              {t("Equipment")}
+              {t("common.equipment")}
             </NavLink>
           </div>
           <div className="flex-1">
@@ -205,7 +206,8 @@ const TechTree = () => {
               to="/tech/Crafting"
               activeClassName="text-white border-blue-500"
             >
-              <Icon key="Crafting" name="Crafting" width={30} /> {t("Crafting")}
+              <Icon key="Crafting" name="Crafting" width={30} />{" "}
+              {t("menu.crafting")}
             </NavLink>
           </div>
           <div className="flex-1">
@@ -215,7 +217,7 @@ const TechTree = () => {
               activeClassName="text-white border-blue-500"
             >
               <Icon key="Construction" name="Construction" width={30} />{" "}
-              {t("Construction")}
+              {t("common.construction")}
             </NavLink>
           </div>
           <div className="flex-1">
@@ -224,7 +226,8 @@ const TechTree = () => {
               to="/tech/Walkers"
               activeClassName="text-white border-blue-500"
             >
-              <Icon key="Walkers" name="Walkers" width={30} /> {t("Walkers")}
+              <Icon key="Walkers" name="Walkers" width={30} />{" "}
+              {t("common.walkers")}
             </NavLink>
           </div>
         </div>

@@ -20,15 +20,16 @@ const SelectedItem = ({ item, onChangeCount }) => {
 
     return item.crafting.map((ingredients, i) => (
       <div
-        className={`${item.crafting.length > 1
+        className={`${
+          item.crafting.length > 1
             ? "w-full border-l-4 border-green-500"
             : "w-full"
-          } p-4 bg-gray-900 rounded-lg relative`}
+        } p-4 bg-gray-900 rounded-lg relative`}
         key={`${item.name}-${item.count}-${i}`}
       >
         {item.crafting.length > 1 && (
           <div className="absolute top-2 right-2 bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs font-medium">
-            {t("Recipe")} {i + 1}
+            {t("crafting.recipe")} {i + 1}
           </div>
         )}
         <Ingredients
@@ -57,7 +58,7 @@ const SelectedItem = ({ item, onChangeCount }) => {
     return (
       <div className="w-full text-gray-300 p-4 bg-gray-900 rounded-lg mt-4 border-l-4 border-red-500">
         <div className="font-semibold text-white mb-3 text-lg">
-          {t("Damage")}
+          {t("common.damage")}
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="bg-gray-800 p-3 rounded-lg text-center">
@@ -104,7 +105,7 @@ const SelectedItem = ({ item, onChangeCount }) => {
           <button
             type="button"
             className="absolute top-2 right-2 text-gray-400 hover:text-white bg-gray-700 hover:bg-gray-600 rounded-full w-8 h-8 flex items-center justify-center transition-colors duration-200"
-            aria-label="Remove item"
+            aria-label={t("common.removeItem")}
             onClick={() => onChangeCount(item.name, 0)}
           >
             <span

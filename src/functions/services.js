@@ -104,7 +104,7 @@ export const getUserProfile = async () => {
       if (response.status === 503) {
         return {
           success: false,
-          message: "Error connecting to database",
+          message: "error.databaseConnection",
         };
       }
     }
@@ -160,12 +160,12 @@ export const getOurPermssions = async () => {
     }
     return {
       success: false,
-      message: "You don't have access here, try to log in again",
+      message: "errors.noAccess",
     };
   }
   return {
     success: false,
-    message: "You need a clan to enter here",
+    message: "errors.noClan",
   };
 };
 
@@ -181,26 +181,26 @@ export const getUserPermssions = async (clanid, discordid) => {
         closeSession();
         return {
           success: false,
-          message: "You don't have access here, try to log in again",
+          message: "errors.noAccess",
         };
       }
 
       if (response.status === 503) {
         return {
           success: false,
-          message: "Error connecting to database",
+          message: "error.databaseConnection",
         };
       }
     } else {
       return {
         success: false,
-        message: "Error when connecting to the API",
+        message: "error.databaseConnection",
       };
     }
   } else {
     return {
       success: false,
-      message: "You need a clan to enter here",
+      message: "errors.noClan",
     };
   }
 };
@@ -242,26 +242,26 @@ export const getClanInfo = async () => {
         closeSession();
         return {
           success: false,
-          message: "You don't have access here, try to log in again",
+          message: "errors.noAccess",
         };
       }
 
       if (response.status === 503) {
         return {
           success: false,
-          message: "Error connecting to database",
+          message: "error.databaseConnection",
         };
       }
     } else {
       return {
         success: false,
-        message: "Error when connecting to the API",
+        message: "error.databaseConnection",
       };
     }
   } else {
     return {
       success: false,
-      message: "You need a clan to enter here",
+      message: "errors.noClan",
     };
   }
 };
@@ -278,13 +278,13 @@ export const getCachedMembers = async () => {
     : (await getUserProfile()).message.clanid;
 
   if (!clanid) {
-    return { success: false, message: "You need a clan to enter here" };
+    return { success: false, message: "errors.noClan" };
   }
 
   try {
     const response = await getMembers(clanid);
     if (!response) {
-      return { success: false, message: "Error when connecting to the API" };
+      return { success: false, message: "error.databaseConnection" };
     }
 
     if (response.status === 200 || response.status === 202) {
@@ -297,21 +297,21 @@ export const getCachedMembers = async () => {
       closeSession();
       return {
         success: false,
-        message: "You don't have access here, try to log in again",
+        message: "errors.noAccess",
       };
     }
 
     if (response.status === 503) {
       return {
         success: false,
-        message: "Error connecting to database",
+        message: "error.databaseConnection",
       };
     }
   } catch (error) {
     console.error("Error getCachedMembers:", error);
     return {
       success: false,
-      message: "Error when connecting to the API",
+      message: "error.databaseConnection",
     };
   }
 };
@@ -423,23 +423,23 @@ export const apiRequest = async (url, options) => {
       case 405:
         return {
           success: false,
-          message: "You do not have permissions",
+          message: "errors.apiPermissions",
         };
       case 503:
         return {
           success: false,
-          message: "Error connecting to database",
+          message: "error.databaseConnection",
         };
       default:
         return {
           success: false,
-          message: "Error when connecting to the API",
+          message: "error.databaseConnection",
         };
     }
   }
   return {
     success: false,
-    message: "Error when connecting to the API",
+    message: "error.databaseConnection",
   };
 };
 

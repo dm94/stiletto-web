@@ -34,12 +34,12 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
           }
         } else if (response.status === 401) {
           closeSession();
-          onError("You don't have access here, try to log in again");
+          onError("errors.noAccess");
         } else if (response.status === 503) {
-          onError("Error connecting to database");
+          onError("error.databaseConnection");
         }
       } catch {
-        onError("Your clan does not have a linked discord");
+        onError("error.databaseConnection");
       }
     };
 
@@ -54,14 +54,14 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
         onClose();
       } else if (response.status === 401) {
         closeSession();
-        onError("You don't have access here, try to log in again");
+        onError("errors.noAccess");
         onClose();
       } else if (response.status === 503) {
-        onError("Error connecting to database");
+        onError("error.databaseConnection");
         onClose();
       }
     } catch {
-      onError("Error when connecting to the API");
+      onError("errors.apiConnection");
     }
   };
 
@@ -78,7 +78,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
         <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 flex justify-between items-center">
           <h5 className="text-white font-medium">
-            {t("Discord Bot Configuration")}
+            {t("discord.discordBotConfiguration")}
           </h5>
           <button
             type="button"
@@ -101,7 +101,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               htmlFor="botlanguaje"
               className="block mb-2 text-sm font-medium"
             >
-              {t("Bot language")}
+              {t("discord.botLanguage")}
             </label>
             <select
               className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -109,18 +109,18 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               id="botlanguaje"
               onChange={handleBotLanguageChange}
             >
-              <option value="en">{t("English")}</option>
-              <option value="es">{t("Spanish")}</option>
-              <option value="ru">{t("Russian")}</option>
-              <option value="fr">{t("French")}</option>
-              <option value="de">{t("German")}</option>
+              <option value="en">{t("languages.english")}</option>
+              <option value="es">{t("languages.spanish")}</option>
+              <option value="ru">{t("languages.russian")}</option>
+              <option value="fr">{t("languages.french")}</option>
+              <option value="de">{t("languages.german")}</option>
             </select>
           </div>
 
           <div
             className="mb-3 flex items-center"
             title={t(
-              "If you want the bot to read the clan log, it is necessary for other functions.",
+              "discord.readDiscordClanLogNotice",
             )}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
@@ -137,14 +137,14 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               />
             </div>
             <label className="text-sm" htmlFor="readClanLog">
-              {t("Read discord clan log.")}
+              {t("discord.readDiscordClanLog")}
             </label>
           </div>
 
           <div
             className="mb-3 flex items-center"
             title={t(
-              "Read the clan log and if a member was kicked, kick from here too.",
+              "discord.readClanLogAndKick",
             )}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
@@ -161,7 +161,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               />
             </div>
             <label className="text-sm" htmlFor="automaticKick">
-              {t("Automatic kick members from the clan")}
+              {t("discord.automaticKickMembersFromClan")}
             </label>
           </div>
 
@@ -181,7 +181,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
             </div>
             <label className="text-sm" htmlFor="setNotReadyPVP">
               {t(
-                "Automatically if a PVP walker is used it is marked as not ready.",
+                "discord.pvpMarkNotReady",
               )}
             </label>
           </div>
@@ -189,7 +189,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
           <div
             className="mb-3 flex items-center"
             title={t(
-              "Read the clan log and if a member was kicked, kick from here too.",
+              "discord.readClanLogAndKick",
             )}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
@@ -206,7 +206,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               />
             </div>
             <label className="text-sm" htmlFor="walkerAlarm">
-              {t("Warns if someone brings out a walker they don't own.")}
+              {t("discord.warnIfSomeoneBringsOutWalker")}
             </label>
           </div>
         </div>
@@ -216,14 +216,14 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
             className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
             onClick={onClose}
           >
-            {t("Close")}
+            {t("common.close")}
           </button>
           <button
             type="button"
             className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={handleUpdateBotConfig}
           >
-            {t("Save")}
+            {t("common.save")}
           </button>
         </div>
       </div>

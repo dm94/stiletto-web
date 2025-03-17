@@ -46,12 +46,12 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
           }
         } else if (response.status === 401) {
           closeSession();
-          onError?.("You don't have access here, try to log in again");
+          onError?.("errors.noAccess");
         } else if (response.status === 503) {
-          onError?.("Error connecting to database");
+          onError?.("error.databaseConnection");
         }
       } catch {
-        onError?.("Error when connecting to the API");
+        onError?.("errors.apiConnection");
       }
     };
 
@@ -76,13 +76,13 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
       } else if (response.status === 401) {
         onClose?.();
         closeSession();
-        onError?.("You don't have access here, try to log in again");
+        onError?.("errors.noAccess");
       } else if (response.status === 503 || response.status === 205) {
-        onError?.("Error connecting to database");
+        onError?.("error.databaseConnection");
       }
     } catch {
       onClose?.();
-      onError?.("Error when connecting to the API");
+      onError?.("errors.apiConnection");
     }
   };
 
@@ -104,13 +104,13 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
       } else if (response.status === 401) {
         onClose?.();
         closeSession();
-        onError?.("You don't have access here, try to log in again");
+        onError?.("errors.noAccess");
       } else if (response.status === 503 || response.status === 205) {
-        onError?.("Error connecting to database");
+        onError?.("error.databaseConnection");
       }
     } catch {
       onClose?.();
-      onError?.("Error when connecting to the API");
+      onError?.("errors.apiConnection");
     }
   };
 
@@ -146,7 +146,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
       <div className="bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         <div className="p-4 border-b border-gray-700 flex justify-between items-center">
           <h5 className="text-xl font-semibold text-white">
-            {t("Clan Configuration")}
+            {t("clan.configuration")}
           </h5>
           <button
             type="button"
@@ -182,7 +182,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                 htmlFor="clan_name"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Clan Name")}
+                {t("clan.clanName")}
               </label>
               <input
                 type="text"
@@ -205,7 +205,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                 htmlFor="regionInput"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Region")}
+                {t("common.region")}
               </label>
               <ClusterList
                 onError={(error) => onError?.(error)}
@@ -234,10 +234,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                   className="text-sm text-gray-300"
                   htmlFor="recruitmentInput"
                 >
-                  {t("Looking for new members?")}{" "}
-                  {t(
-                    "By disabling this option the clan does not appear in the clan list.",
-                  )}
+                  {t("clan.lookingForNewMembers")}
                 </label>
               </div>
             </div>
@@ -246,7 +243,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                 htmlFor="discord_invite"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Discord Invite Link")} {t("(Optional)")}
+                {t("clan.discordInviteLink")} {t("common.optional")}
               </label>
               <div className="flex">
                 <span className="inline-flex items-center px-3 py-2 rounded-l-md border border-r-0 border-gray-600 bg-gray-700 text-gray-300 text-sm">
@@ -273,7 +270,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                 htmlFor="flag_color"
                 className="block text-sm font-medium text-gray-300 mb-1"
               >
-                {t("Flag Color")} {t("(Optional)")}
+                {t("clan.flagColor")} {t("common.optional")}
               </label>
               <input
                 type="color"
@@ -293,7 +290,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                 htmlFor="clan_symbol"
                 className="block text-sm font-medium text-gray-300 mb-2"
               >
-                {t("Clan Symbol")}
+                {t("diplomacy.symbol")}
               </label>
               <div className="grid grid-cols-4 gap-2" id="clan_symbol">
                 {renderSymbolsList()}
@@ -305,13 +302,13 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                 className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 onClick={onClose}
               >
-                {t("Cancel")}
+                {t("common.cancel")}
               </button>
               <button
                 type="submit"
                 className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
-                {clanid ? t("Update") : t("Create")}
+                {clanid ? t("clanConfig.update") : t("clan.createClan")}
               </button>
             </div>
           </form>

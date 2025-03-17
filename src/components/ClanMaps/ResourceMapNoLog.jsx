@@ -15,8 +15,11 @@ import {
   updateResourceTime,
   getResources,
 } from "../../functions/requests/maps";
+import { useLocation, useParams } from "react-router";
 
 const ResourceMapNoLog = (props) => {
+  const location = useLocation();
+  const { id } = useParams();
   const { t } = useTranslation();
   const [resourcesInTheMap, setResourcesInTheMap] = useState(null);
   const [mapId, setMapId] = useState(null);
@@ -35,19 +38,19 @@ const ResourceMapNoLog = (props) => {
 
   const fetchData = useCallback(async () => {
     let parsed = null;
-    if (props?.location?.search) {
-      parsed = queryString.parse(props.location.search);
+    if (location?.search) {
+      parsed = queryString.parse(location.search);
     }
 
     if (
-      (props?.mapId || props?.match?.params?.id) &&
+      (props?.mapId || id) &&
       (props?.pass || parsed?.pass)
     ) {
       try {
         const markers = await getMarkers();
         setItems(markers);
 
-        const currentMapId = props?.mapId || props?.match?.params?.id;
+        const currentMapId = props?.mapId || id;
         const currentPass = props?.pass || parsed?.pass;
 
         setMapId(currentMapId);
@@ -66,10 +69,10 @@ const ResourceMapNoLog = (props) => {
           setError(response.message);
         }
       } catch {
-        setError("Error when connecting to the API");
+        setError("errors.apiConnection");
       }
     } else {
-      setError("Unauthorized");
+      setError("error.unauthorized");
     }
     setIsLoaded(true);
   }, [props]);
@@ -88,7 +91,7 @@ const ResourceMapNoLog = (props) => {
           setError(response.message);
         }
       } catch {
-        setError("Error when connecting to the API");
+        setError("errors.apiConnection");
       }
     },
     [mapId, fetchData],
@@ -118,7 +121,7 @@ const ResourceMapNoLog = (props) => {
           setError(response.message);
         }
       } catch {
-        setError("Error when connecting to the API");
+        setError("errors.apiConnection");
       }
     },
     [mapId, coordinateXInput, coordinateYInput, pass, fetchData],
@@ -182,7 +185,7 @@ const ResourceMapNoLog = (props) => {
               updateResourceTime(mapid, resourceid, token, date);
               fetchData();
             } catch {
-              setError("Error when connecting to the API");
+              setError("errors.apiConnection");
             }
           }}
           changeInput={(x, y) => {
@@ -199,36 +202,33 @@ const ResourceMapNoLog = (props) => {
         <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
       <div
-        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${
-          isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
-        }`}
+        className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
+          }`}
       >
         <div className="h-full flex flex-col">
           <div className="flex border-b border-gray-700">
             <button
               type="button"
-              className={`flex-1 p-3 text-sm font-medium ${
-                activeTab === "resources"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-400 hover:text-gray-300"
-              }`}
+              className={`flex-1 p-3 text-sm font-medium ${activeTab === "resources"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-400 hover:text-gray-300"
+                }`}
               onClick={() => setActiveTab("resources")}
             >
               {t("Resources")}
             </button>
             <button
               type="button"
-              className={`flex-1 p-3 text-sm font-medium ${
-                activeTab === "create"
-                  ? "text-blue-500 border-b-2 border-blue-500"
-                  : "text-gray-400 hover:text-gray-300"
-              }`}
+              className={`flex-1 p-3 text-sm font-medium ${activeTab === "create"
+                ? "text-blue-500 border-b-2 border-blue-500"
+                : "text-gray-400 hover:text-gray-300"
+                }`}
               onClick={() => setActiveTab("create")}
             >
               {t("Create")}
             </button>
           </div>
-          <div className="flex-1 overflow-y-auto">
+          <div className="flex-1 overflow-y-auto p-2">
             {activeTab === "resources" && (
               <ResourcesInMapList
                 resources={resourcesFiltered || resourcesInTheMap}

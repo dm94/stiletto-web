@@ -58,10 +58,10 @@ const TradeSystem = () => {
         setIsLoaded(true);
         setHasMore(hasMoreData);
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
-      setError("Error connecting to the API");
+      setError("errors.errorConnectingToAPI");
     }
   };
 
@@ -91,12 +91,12 @@ const TradeSystem = () => {
       if (response.status === 204) {
         updateTrades();
       } else if (response.status === 401) {
-        setError("Unauthorized");
+        setError("error.unauthorized");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
-      setError("Error connecting to the API");
+      setError("errors.errorConnectingToAPI");
     }
   };
 
@@ -126,10 +126,10 @@ const TradeSystem = () => {
       } else if (response.status === 401) {
         setError("These connection data are wrong");
       } else if (response.status === 503) {
-        setError("Error connecting to database");
+        setError("error.databaseConnection");
       }
     } catch {
-      setError("Try again later");
+      setError("common.tryAgainLater");
     }
   };
 
@@ -139,9 +139,7 @@ const TradeSystem = () => {
         <div className="w-full lg:w-1/2 p-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-4 text-green-400">
-              {t(
-                "If you want to publish your own exchange offers you have to be connected",
-              )}
+              {t("trades.publishTradeNotice")}
             </div>
           </div>
         </div>
@@ -153,13 +151,13 @@ const TradeSystem = () => {
         <form onSubmit={handleCreateTrade} data-cy="create-trade-form">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
-              {t("Publish a trade")}
+              {t("trades.publishTrade")}
             </div>
             <div className="p-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
                 <div className="space-y-2">
                   <label htmlFor="tradeType" className="block text-gray-300">
-                    {t("Type")}
+                    {t("common.type")}
                   </label>
                   <select
                     id="tradeType"
@@ -168,13 +166,13 @@ const TradeSystem = () => {
                     value={tradeTypeInput}
                     onChange={(evt) => setTradeTypeInput(evt.target.value)}
                   >
-                    <option value="Supply">{t("Supply")}</option>
-                    <option value="Demand">{t("Demand")}</option>
+                    <option value="Supply">{t("common.supply")}</option>
+                    <option value="Demand">{t("trades.demand")}</option>
                   </select>
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="resourcetype" className="block text-gray-300">
-                    {t("Resource or mats for")}
+                    {t("trades.resourceOrMatsFor")}
                   </label>
                   <select
                     id="resourcetype"
@@ -192,7 +190,7 @@ const TradeSystem = () => {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="regionInput" className="block text-gray-300">
-                    {t("Region")}
+                    {t("common.region")}
                   </label>
                   <ClusterList
                     onError={setError}
@@ -205,7 +203,7 @@ const TradeSystem = () => {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="amountInput" className="block text-gray-300">
-                    {t("Quantity")}
+                    {t("trades.quantity")}
                   </label>
                   <input
                     id="amountInput"
@@ -215,13 +213,13 @@ const TradeSystem = () => {
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={amountInput}
                     onChange={(evt) =>
-                      setAmountInput(parseInt(evt.target.value, 10))
+                      setAmountInput(Number.parseInt(evt.target.value, 10))
                     }
                   />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="qualityInput" className="block text-gray-300">
-                    {t("Quality")}
+                    {t("common.quality")}
                   </label>
                   <select
                     id="qualityInput"
@@ -230,16 +228,16 @@ const TradeSystem = () => {
                     value={qualityInput}
                     onChange={(evt) => setQualityInput(evt.target.value)}
                   >
-                    <option value="0">{t("Common")}</option>
-                    <option value="1">{t("Uncommon")}</option>
-                    <option value="2">{t("Rare")}</option>
-                    <option value="3">{t("Epic")}</option>
-                    <option value="4">{t("Legendary")}</option>
+                    <option value="0">{t("crafting.common")}</option>
+                    <option value="1">{t("crafting.uncommon")}</option>
+                    <option value="2">{t("crafting.rare")}</option>
+                    <option value="3">{t("crafting.epic")}</option>
+                    <option value="4">{t("crafting.legendary")}</option>
                   </select>
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="priceInput" className="block text-gray-300">
-                    {t("Price per unit")}
+                    {t("trades.pricePerUnit")}
                   </label>
                   <input
                     id="priceInput"
@@ -249,7 +247,7 @@ const TradeSystem = () => {
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={priceInput}
                     onChange={(evt) =>
-                      setPriceInput(parseInt(evt.target.value, 10))
+                      setPriceInput(Number.parseInt(evt.target.value, 10))
                     }
                   />
                 </div>
@@ -259,7 +257,7 @@ const TradeSystem = () => {
                     type="submit"
                     value="Submit"
                   >
-                    {t("Publish")}
+                    {t("trades.publish")}
                   </button>
                 </div>
               </div>
@@ -322,7 +320,7 @@ const TradeSystem = () => {
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-blue-500 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
-            {t("Published Trades")}
+            {t("trades.publishedTrades")}
           </div>
           <div className="p-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
@@ -331,7 +329,7 @@ const TradeSystem = () => {
                   htmlFor="tradeTypeFilter"
                   className="block text-gray-300"
                 >
-                  {t("Type")}
+                  {t("common.type")}
                 </label>
               </div>
               <div className="lg:col-span-2">
@@ -339,12 +337,10 @@ const TradeSystem = () => {
                   id="tradeTypeFilter"
                   className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={tradeTypeFilterInput}
-                  onChange={(evt) =>
-                    setTradeTypeFilterInput(evt.target.value)
-                  }
+                  onChange={(evt) => setTradeTypeFilterInput(evt.target.value)}
                 >
-                  <option value="Supply">{t("Supply")}</option>
-                  <option value="Demand">{t("Demand")}</option>
+                  <option value="Supply">{t("common.supply")}</option>
+                  <option value="Demand">{t("trades.demand")}</option>
                 </select>
               </div>
               <div className="lg:col-span-1">
@@ -352,7 +348,7 @@ const TradeSystem = () => {
                   htmlFor="resourcetypefilter"
                   className="block text-gray-300"
                 >
-                  {t("Resource")}
+                  {t("trades.resource")}
                 </label>
               </div>
               <div className="lg:col-span-2">
@@ -376,7 +372,7 @@ const TradeSystem = () => {
                   htmlFor="regionFilterInput"
                   className="block text-gray-300"
                 >
-                  {t("Region")}
+                  {t("common.region")}
                 </label>
               </div>
               <div className="lg:col-span-2">
@@ -393,7 +389,7 @@ const TradeSystem = () => {
                   className="flex-1 p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   onClick={() => updateTrades()}
                 >
-                  {t("Filter trades")}
+                  {t("trades.filterTrades")}
                 </button>
                 <button
                   type="button"
@@ -405,7 +401,7 @@ const TradeSystem = () => {
                     setRegionFilterInput("");
                   }}
                 >
-                  {t("Clean filter")}
+                  {t("common.cleanFilter")}
                 </button>
               </div>
             </div>

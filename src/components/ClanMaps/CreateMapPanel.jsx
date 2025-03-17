@@ -28,7 +28,7 @@ const CreateMapPanel = ({ maps, onCreateMap }) => {
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
         <div className="p-4 bg-gray-900 border-b border-gray-700">
           <h2 className="text-xl font-semibold text-gray-300">
-            {t("New Map")}
+            {t("maps.newMap")}
           </h2>
         </div>
         <div className="p-4">
@@ -39,7 +39,7 @@ const CreateMapPanel = ({ maps, onCreateMap }) => {
                   htmlFor="map_name"
                   className="block text-sm font-medium text-gray-300 mb-1"
                 >
-                  {t("Map Name")}
+                  {t("maps.mapName")}
                 </label>
                 <input
                   type="text"
@@ -57,7 +57,7 @@ const CreateMapPanel = ({ maps, onCreateMap }) => {
                   htmlFor="map_date"
                   className="block text-sm font-medium text-gray-300 mb-1"
                 >
-                  {t("Days for burning")}
+                  {t("maps.daysForBurning")}
                 </label>
                 <input
                   type="number"
@@ -73,7 +73,9 @@ const CreateMapPanel = ({ maps, onCreateMap }) => {
               </div>
             </div>
             <div className="mt-4">
-              <p className="text-center text-gray-300 mb-2">{t("Map Type")}</p>
+              <p className="text-center text-gray-300 mb-2">
+                {t("maps.mapType")}
+              </p>
               <div
                 name="mapselect"
                 className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2"
@@ -90,7 +92,7 @@ const CreateMapPanel = ({ maps, onCreateMap }) => {
               type="submit"
               value="Submit"
             >
-              {t("Create new map")}
+              {t("maps.createNewMap")}
             </button>
           </form>
         </div>

@@ -50,7 +50,7 @@ const CreateResourceTab = ({
             htmlFor="resourcetype"
             className="block text-sm font-medium text-gray-300 mb-1"
           >
-            {t("Type")}
+            {t("common.type")}
           </label>
           <select
             id="resourcetype"
@@ -66,7 +66,7 @@ const CreateResourceTab = ({
             htmlFor="coordinateXInput"
             className="block text-sm font-medium text-gray-300 mb-1"
           >
-            {t("Coordinate")} X ({t("Not the same as in the game")})
+            {t("common.coordinate")} X ({t("maps.notSameAsGame")})
           </label>
           <input
             type="text"
@@ -82,7 +82,7 @@ const CreateResourceTab = ({
             htmlFor="coordinateYInput"
             className="block text-sm font-medium text-gray-300 mb-1"
           >
-            {t("Coordinate")} Y ({t("Not the same as in the game")})
+            {t("common.coordinate")} Y ({t("maps.notSameAsGame")})
           </label>
           <input
             type="text"
@@ -98,7 +98,7 @@ const CreateResourceTab = ({
             htmlFor="descriptionInput"
             className="block text-sm font-medium text-gray-300 mb-1"
           >
-            {t("Description")}
+            {t("common.description")}
           </label>
           <input
             type="text"
@@ -114,7 +114,7 @@ const CreateResourceTab = ({
             htmlFor="Last Harvested"
             className="block text-sm font-medium text-gray-300 mb-1"
           >
-            {t("Last Harvested")}
+            {t("resources.lastHarvested")}
           </label>
           <input
             type="datetime-local"
@@ -129,7 +129,7 @@ const CreateResourceTab = ({
           type="submit"
           value="Submit"
         >
-          {t("Create resource")}
+          {t("resources.createResource")}
         </button>
       </form>
     </div>

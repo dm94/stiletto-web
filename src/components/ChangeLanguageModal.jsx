@@ -28,7 +28,7 @@ const ChangeLanguageModal = ({ switchLanguage, hideModal }) => {
       <div className="bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full mx-4">
         <div className="p-4 border-b border-gray-700">
           <h2 className="text-xl font-semibold text-white">
-            {t("Change language")}
+            {t("settings.changeLanguage")}
           </h2>
         </div>
         <div className="p-4">
@@ -42,7 +42,7 @@ const ChangeLanguageModal = ({ switchLanguage, hideModal }) => {
             className="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             onClick={() => hideModal?.()}
           >
-            {t("Accept")}
+            {t("common.accept")}
           </button>
         </div>
       </div>

@@ -26,14 +26,14 @@ export const getLearned = async () => {
 
     if (response.status === 401) {
       closeSession();
-      throw new Error("You don't have access here, try to log in again");
+      throw new Error("errors.noAccess");
     }
 
     if (response.status === 503) {
-      throw new Error("Error connecting to database");
+      throw new Error("error.databaseConnection");
     }
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -50,9 +50,8 @@ export const addTech = async (tabSelect, learned) => {
       tree: tabSelect,
     });
 
-    const url = `${
-      config.REACT_APP_API_URL
-    }/users/${discordId}/tech?${params.toString()}`;
+    const url = `${config.REACT_APP_API_URL
+      }/users/${discordId}/tech?${params.toString()}`;
 
     const response = await fetch(url, {
       method: "PUT",
@@ -67,12 +66,12 @@ export const addTech = async (tabSelect, learned) => {
       window.location.reload();
     } else if (response.status === 401) {
       closeSession();
-      throw new Error("You don't have access here, try to log in again");
+      throw new Error("errors.noAccess");
     } else if (response.status === 503) {
-      throw new Error("Error connecting to database");
+      throw new Error("error.databaseConnection");
     }
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -89,7 +88,7 @@ export const deleteUser = async () => {
       headers: { Authorization: `Bearer ${token}` },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -109,7 +108,7 @@ export const addNick = async (newNick) => {
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -119,6 +118,6 @@ export const authDiscord = async (code) => {
       method: "POST",
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };

@@ -39,16 +39,16 @@ const ClanMaps = () => {
         closeSession();
         setState((prev) => ({
           ...prev,
-          error: "You don't have access here, try to log in again",
+          error: "errors.noAccess",
         }));
       } else if (response.status === 503) {
         setState((prev) => ({
           ...prev,
-          error: "Error connecting to database",
+          error: "error.databaseConnection",
         }));
       }
     } catch {
-      setState((prev) => ({ ...prev, error: "Error connecting to database" }));
+      setState((prev) => ({ ...prev, error: "error.databaseConnection" }));
     }
   }, []);
 
@@ -95,13 +95,13 @@ const ClanMaps = () => {
         closeSession();
         setState((prev) => ({
           ...prev,
-          error: "You don't have access here, try to log in again",
+          error: "errors.noAccess",
         }));
       }
     } catch {
       setState((prev) => ({
         ...prev,
-        error: "Error when connecting to the API",
+        error: "errors.apiConnection",
       }));
     }
   };
@@ -132,17 +132,17 @@ const ClanMaps = () => {
         fetchMaps();
       } else if (response.status === 401) {
         closeSession();
-        setState((prev) => ({ ...prev, error: "Login again" }));
+        setState((prev) => ({ ...prev, error: "auth.loginAgain2" }));
       } else if (response.status === 503) {
         setState((prev) => ({
           ...prev,
-          error: "Error connecting to database",
+          error: "error.databaseConnection",
         }));
       }
     } catch {
       setState((prev) => ({
         ...prev,
-        error: "Error when connecting to the API",
+        error: "errors.apiConnection",
       }));
     }
   };
@@ -178,7 +178,7 @@ const ClanMaps = () => {
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
             <div className="p-4 bg-gray-900 border-b border-gray-700">
               <h2 className="text-xl font-semibold text-gray-300">
-                {t("Map List")}
+                {t("maps.mapList")}
               </h2>
             </div>
             <div className="p-4">
@@ -205,11 +205,11 @@ const ClanMaps = () => {
                       className="text-lg leading-6 font-medium text-gray-300"
                       id="deletemapmodal"
                     >
-                      {t("Are you sure?")}
+                      {t("common.areYouSure")}
                     </h3>
                     <div className="mt-2">
                       <p className="text-sm text-gray-400">
-                        {t("This option is not reversible")}
+                        {t("common.notReversible")}
                       </p>
                     </div>
                   </div>
@@ -221,7 +221,7 @@ const ClanMaps = () => {
                   className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={() => handleDeleteMap(state.idMapDeleteModal)}
                 >
-                  {t("Delete")}
+                  {t("common.delete")}
                 </button>
                 <button
                   type="button"
@@ -234,7 +234,7 @@ const ClanMaps = () => {
                     }))
                   }
                 >
-                  {t("Cancel")}
+                  {t("common.cancel")}
                 </button>
               </div>
             </div>
@@ -271,7 +271,7 @@ const ClanMaps = () => {
       <ModalMessage
         message={{
           isError: true,
-          text: "Login again",
+          text: "auth.loginAgain2",
           redirectPage: "/profile",
         }}
       />

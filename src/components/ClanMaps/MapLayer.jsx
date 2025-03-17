@@ -63,16 +63,16 @@ const MapLayer = ({
             )
           }
         >
-          {t("Harvested now")}
+          {t("resources.harvestedNow")}
         </button>
         <div className="mb-1 text-gray-300">
-          {t("Last Harvested")}: {resource.lastharvested}
+          {t("resources.lastHarvested")}: {resource.lastharvested}
         </div>
         <div className="mb-1 text-gray-300">
           {t("Spawns in")}:{" "}
           {remainingQuality !== 0
-            ? `${remainingQuality * 10} ${t("Minutes")}`
-            : t("Now")}
+            ? `${remainingQuality * 10} ${t("common.minutes")}`
+            : t("common.now")}
         </div>
         <div className="mb-1 text-gray-300">
           {t("Date")}: {fullDate.toLocaleString()}
@@ -117,7 +117,7 @@ const MapLayer = ({
                     deleteResource(resource.resourceid, resource.token)
                   }
                 >
-                  {t("Delete")}
+                  {t("common.delete")}
                 </button>
               )}
               {(resource.resourcetype === "Poaching Hut" ||
@@ -167,7 +167,7 @@ const MapLayer = ({
         [{`${Math.floor(coordinateXInput)},${Math.floor(coordinateYInput)}`}]{" "}
         {t("This marker is used for positioning when creating a resource")}
       </Popup>
-      <Tooltip>{t("Temporal Marker")}</Tooltip>
+      <Tooltip>{t("maps.temporalMarker")}</Tooltip>
     </Marker>
   ) : (
     false
@@ -187,7 +187,7 @@ const MapLayer = ({
           }`}
           onClick={() => setGridOpacity(1)}
         >
-          {t("Show Grid")}
+          {t("maps.showGrid")}
         </button>
         <button
           type="button"
@@ -198,7 +198,7 @@ const MapLayer = ({
           }`}
           onClick={() => setGridOpacity(0)}
         >
-          {t("Hide Grid")}
+          {t("maps.hideGrid")}
         </button>
       </div>
       <MapExtended

@@ -14,9 +14,8 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
     tech: tech,
   });
 
-  const url = `${
-    config.REACT_APP_API_URL
-  }/clans/${clan}/tech?${params.toString()}`;
+  const url = `${config.REACT_APP_API_URL
+    }/clans/${clan}/tech?${params.toString()}`;
 
   try {
     const response = await fetch(url, {
@@ -27,7 +26,7 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
     });
 
     if (!response.ok) {
-      throw new Error("Error when connecting to the API");
+      throw new Error("error.databaseConnection");
     }
 
     const data = await response.json();
@@ -38,7 +37,7 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
       });
     }
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 
   return allUsers;
@@ -57,7 +56,7 @@ export const leaveClan = async () => {
       headers: { Authorization: `Bearer ${token}` },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -85,7 +84,7 @@ export const updateClan = async (
       },
     );
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -114,7 +113,7 @@ export const createClan = async ({
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -134,7 +133,7 @@ export const getClans = async ({
   try {
     return await fetch(`${config.REACT_APP_API_URL}/clans?${params}`);
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };
 
@@ -147,6 +146,6 @@ export const deleteClan = async (clanId) => {
       },
     });
   } catch {
-    throw new Error("Error when connecting to the API");
+    throw new Error("error.databaseConnection");
   }
 };

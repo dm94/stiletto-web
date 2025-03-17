@@ -33,10 +33,10 @@ const SchematicDropInfo = ({ name, items }) => {
 
     if (schematics.length > 0) {
       return (
-        <div className="w-full md:w-1/2 p-4">
+        <div className="w-full md:w-1/2 px-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
-              {t("Learned in")}
+              {t("wiki.learnedIn")}
             </div>
             <div className="p-4">
               <ul className="flex flex-wrap -m-2">
