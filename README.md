@@ -61,7 +61,3 @@ Command to generate it:
 
 Old API version:
 [Stiletto-PHP-API](https://github.com/dm94/Stiletto-PHP-API)
-
-## More Info in this youtube video
-
-[![Stiletto | All the information about what this project is and how it was made](https://img.youtube.com/vi/BkZmUooBJCc/0.jpg)](https://www.youtube.com/watch?v=BkZmUooBJCc)
