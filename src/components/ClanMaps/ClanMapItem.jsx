@@ -11,6 +11,7 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
     <div className="flex flex-col space-y-2 w-full h-full">
       <button
         type="button"
+        aria-label={t("maps.showMap")}
         className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         onClick={() => onOpen(map)}
       >
@@ -24,13 +25,16 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
   const deleteMapButton = () => {
     if (map?.discordid === getStoredItem("discordid")) {
       return (
-        <button
-          type="button"
-          className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-          onClick={() => onDelete(map.mapid)}
-        >
-          <i className="fas fa-trash-alt mr-2" /> {t("maps.deleteMap")}
-        </button>
+        <div className="flex flex-col space-y-2 w-full h-full">
+          <button
+            type="button"
+            aria-label={t("maps.deleteMap")}
+            className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+            onClick={() => onDelete(map.mapid)}
+          >
+            <i className="fas fa-trash-alt mr-2" /> {t("maps.deleteMap")}
+          </button>
+        </div>
       );
     }
     return false;
@@ -39,15 +43,18 @@ const ClanMapItem = ({ map, value, onOpen, onDelete }) => {
   const shareMapButton = () => {
     if (map?.discordid === getStoredItem("discordid")) {
       return (
-        <button
-          type="button"
-          className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-          onClick={() =>
-            window.open(`${getDomain()}/map/${map.mapid}?pass=${map.pass}`)
-          }
-        >
-          <i className="fas fa-share-alt mr-2" /> {t("maps.shareMap")}
-        </button>
+        <div className="flex flex-col space-y-2 w-full h-full">
+          <button
+            type="button"
+            aria-label={t("maps.shareMap")}
+            className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+            onClick={() =>
+              window.open(`${getDomain()}/map/${map.mapid}?pass=${map.pass}`)
+            }
+          >
+            <i className="fas fa-share-alt mr-2" /> {t("maps.shareMap")}
+          </button>
+        </div>
       );
     }
     return false;
