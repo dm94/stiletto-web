@@ -82,17 +82,16 @@ const TotalMaterials = ({ selectedItems }) => {
 
     return selectedItems?.map((item) => (
       <li
-        className="inline-flex items-center mr-2"
+        className="inline-flex items-center mr-2 text-neutral-300"
         key={`itemsList-${item.name}`}
       >
-        <Icon key={item.name} name={item.name} /> {item.count}x{" "}
+        <Icon key={item.name} name={item.name} /> {`${item.count}x `}
         <a
           href={url + encodeURI(item.name.replaceAll(" ", "_"))}
           className="text-blue-400 hover:text-blue-300"
         >
-          {t(item.name, { ns: "items" })}
-        </a>{" "}
-        -
+          {`${t(item.name, { ns: "items" })} - `}
+        </a>
       </li>
     ));
   };

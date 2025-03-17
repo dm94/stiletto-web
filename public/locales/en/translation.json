@@ -206,6 +206,8 @@
   "diplomacy.createRelationship": "Create a relationship",
   "diplomacy.relationshipNotice": "This data is not saved, if you reload the page it will be deleted",
   "common.soundOff": "Sound Off",
+  "common.selectRarity": "Select Rarity",
+  "common.raritySelection": "Rarity Selection",
   "common.soundOn": "Sound On",
   "maps.showMap": "Show map",
   "maps.deleteMap": "Delete map",

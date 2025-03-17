@@ -277,5 +277,7 @@
   "crafting.obtainableFrom": "Se obtiene de",
   "crafting.craftingTime": "Tiempo de fabricación",
   "crafting.comments": "Comentarios",
-  "crafting.writeAComment": "Escribe un comentario..."
+  "crafting.writeAComment": "Escribe un comentario...",
+  "common.selectRarity": "Seleccionar Rareza",
+  "common.raritySelection": "Selección de Rareza"
 }

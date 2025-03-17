@@ -70,19 +70,27 @@ const Wiki = () => {
 
   const showItems = () => {
     if (filteredItems.length > 0) {
-      return filteredItems.map((item) => (
-        <div
-          className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
-          key={`wiki-${item.name}`}
-          data-cy="wiki-item"
-        >
-          <div className="bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
-            <div className="p-4">
-              <Ingredient ingredient={item} value={1} />
-            </div>
-          </div>
-        </div>
-      ));
+      return filteredItems.map((item) => {
+        const url = `${getDomain()}/item/${encodeURI(
+          item?.name.toLowerCase().replaceAll(" ", "_"),
+        )}`;
+
+        return (
+          (
+            <a
+              href={url}
+              key={`wiki-${item.name}`}
+              className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
+              data-cy="wiki-item">
+              <div className="bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
+                <div className="p-4">
+                  <Ingredient ingredient={item} value={1} />
+                </div>
+              </div>
+            </a>
+          )
+        );
+      });
     }
 
     return (
