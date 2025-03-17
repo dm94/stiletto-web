@@ -449,7 +449,7 @@ const WalkerList = () => {
                     updateWalkers();
                   }}
                 >
-                  {t("trades.cleanFilter")}
+                  {t("common.cleanFilter")}
                 </button>
               </div>
             </div>

@@ -138,7 +138,7 @@ const TotalMaterials = ({ selectedItems }) => {
       text += `\t${ingredient.count}x ${t(ingredient.name)}\n`;
     }
 
-    text += `\n${t("crafting.listOfMaterialsBy")} ${getDomain()}`;
+    text += `\n${t("crafting.listOfMaterials")} ${getDomain()}`;
 
     navigator.clipboard.writeText(text);
     sendNotification("common.itemsCopiedToClipboard", "common.information");
@@ -166,7 +166,7 @@ const TotalMaterials = ({ selectedItems }) => {
         <div>
           <ListIngredients selectedItems={selectedItems} />
           <div className="text-right text-gray-400">
-            {t("crafting.listOfMaterialsBy")} {getDomain()}
+            {t("crafting.listOfMaterials")} {getDomain()}
           </div>
         </div>
       </div>

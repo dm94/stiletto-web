@@ -160,12 +160,12 @@ export const getOurPermssions = async () => {
     }
     return {
       success: false,
-      message: "You don't have access here, try to log in again",
+      message: "errors.noAccess",
     };
   }
   return {
     success: false,
-    message: "You need a clan to enter here",
+    message: "errors.noClan",
   };
 };
 
@@ -181,7 +181,7 @@ export const getUserPermssions = async (clanid, discordid) => {
         closeSession();
         return {
           success: false,
-          message: "You don't have access here, try to log in again",
+          message: "errors.noAccess",
         };
       }
 
@@ -200,7 +200,7 @@ export const getUserPermssions = async (clanid, discordid) => {
   } else {
     return {
       success: false,
-      message: "You need a clan to enter here",
+      message: "errors.noClan",
     };
   }
 };
@@ -242,7 +242,7 @@ export const getClanInfo = async () => {
         closeSession();
         return {
           success: false,
-          message: "You don't have access here, try to log in again",
+          message: "errors.noAccess",
         };
       }
 
@@ -261,7 +261,7 @@ export const getClanInfo = async () => {
   } else {
     return {
       success: false,
-      message: "You need a clan to enter here",
+      message: "errors.noClan",
     };
   }
 };
@@ -278,7 +278,7 @@ export const getCachedMembers = async () => {
     : (await getUserProfile()).message.clanid;
 
   if (!clanid) {
-    return { success: false, message: "You need a clan to enter here" };
+    return { success: false, message: "errors.noClan" };
   }
 
   try {
@@ -297,7 +297,7 @@ export const getCachedMembers = async () => {
       closeSession();
       return {
         success: false,
-        message: "You don't have access here, try to log in again",
+        message: "errors.noAccess",
       };
     }
 
@@ -423,7 +423,7 @@ export const apiRequest = async (url, options) => {
       case 405:
         return {
           success: false,
-          message: "You do not have permissions",
+          message: "errors.apiPermissions",
         };
       case 503:
         return {

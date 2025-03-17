@@ -234,8 +234,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                   className="text-sm text-gray-300"
                   htmlFor="recruitmentInput"
                 >
-                  {t("clan.lookingForNewMembers")}{" "}
-                  {t("clan.disablingOptionNotice")}
+                  {t("clan.lookingForNewMembers")}
                 </label>
               </div>
             </div>
@@ -291,7 +290,7 @@ const ClanConfig = ({ clanid, onClose, onError }) => {
                 htmlFor="clan_symbol"
                 className="block text-sm font-medium text-gray-300 mb-2"
               >
-                {t("clan.symbol")}
+                {t("diplomacy.symbol")}
               </label>
               <div className="grid grid-cols-4 gap-2" id="clan_symbol">
                 {renderSymbolsList()}

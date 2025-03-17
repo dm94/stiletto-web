@@ -26,7 +26,7 @@ export const getLearned = async () => {
 
     if (response.status === 401) {
       closeSession();
-      throw new Error("You don't have access here, try to log in again");
+      throw new Error("errors.noAccess");
     }
 
     if (response.status === 503) {
@@ -66,7 +66,7 @@ export const addTech = async (tabSelect, learned) => {
       window.location.reload();
     } else if (response.status === 401) {
       closeSession();
-      throw new Error("You don't have access here, try to log in again");
+      throw new Error("errors.noAccess");
     } else if (response.status === 503) {
       throw new Error("error.databaseConnection");
     }

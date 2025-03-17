@@ -190,7 +190,7 @@ const TradeSystem = () => {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="regionInput" className="block text-gray-300">
-                    {t("trades.region")}
+                    {t("common.region")}
                   </label>
                   <ClusterList
                     onError={setError}
@@ -372,7 +372,7 @@ const TradeSystem = () => {
                   htmlFor="regionFilterInput"
                   className="block text-gray-300"
                 >
-                  {t("trades.region")}
+                  {t("common.region")}
                 </label>
               </div>
               <div className="lg:col-span-2">
@@ -401,7 +401,7 @@ const TradeSystem = () => {
                     setRegionFilterInput("");
                   }}
                 >
-                  {t("trades.cleanFilter")}
+                  {t("common.cleanFilter")}
                 </button>
               </div>
             </div>

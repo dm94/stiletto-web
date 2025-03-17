@@ -23,11 +23,11 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
       if (request?.success) {
         const allPermissions = request.message;
         setPermissions({
-          bot: allPermissions.bot === "1",
-          diplomacy: allPermissions.diplomacy === "1",
-          kickmembers: allPermissions.kickmembers === "1",
-          request: allPermissions.request === "1",
-          walkers: allPermissions.walkers === "1",
+          bot: allPermissions?.bot === "1",
+          diplomacy: allPermissions?.diplomacy === "1",
+          kickmembers: allPermissions?.kickmembers === "1",
+          request: allPermissions?.request === "1",
+          walkers: allPermissions?.walkers === "1",
         });
       } else if (request) {
         onError?.(request.message);
