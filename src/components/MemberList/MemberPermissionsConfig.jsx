@@ -104,10 +104,6 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                   onChange={() => togglePermission("bot")}
                   className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
-                <label
-                  htmlFor="botInput"
-                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
-                />
               </div>
               <label className="text-sm" htmlFor="botInput">
                 {t("discord.discordBotSettings")}
@@ -126,10 +122,6 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                   onChange={() => togglePermission("walkers")}
                   className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
-                <label
-                  htmlFor="walkersInput"
-                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
-                />
               </div>
               <label className="text-sm" htmlFor="walkersInput">
                 {t("discord.allowEditingWalkers")}
@@ -145,12 +137,8 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                   type="checkbox"
                   id="diplomacyInput"
                   checked={permissions.diplomacy}
-                  onChange={() => togglePermission("menu.diplomacy")}
+                  onChange={() => togglePermission("diplomacy")}
                   className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
-                />
-                <label
-                  htmlFor="diplomacyInput"
-                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
                 />
               </div>
               <label className="text-sm" htmlFor="diplomacyInput">
@@ -170,10 +158,6 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                   onChange={() => togglePermission("request")}
                   className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
                 />
-                <label
-                  htmlFor="requestInput"
-                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
-                />
               </div>
               <label className="text-sm" htmlFor="requestInput">
                 {t("Allow management of request")}
@@ -191,10 +175,6 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
                   checked={permissions.kickmembers}
                   onChange={() => togglePermission("kickmembers")}
                   className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
-                />
-                <label
-                  htmlFor="kickmembersInput"
-                  className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
                 />
               </div>
               <label className="text-sm" htmlFor="kickmembersInput">

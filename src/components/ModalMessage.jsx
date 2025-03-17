@@ -49,7 +49,7 @@ const ModalMessage = ({ message, onClickOk }) => {
 
   sendEvent("modal", {
     props: {
-      action: message?.isError ? "common.error" : "common.information",
+      action: message?.isError ? "Error" : "Information",
       label: message?.text,
     },
   });

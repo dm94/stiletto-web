@@ -12,7 +12,7 @@ const TotalMaterials = ({ selectedItems }) => {
   const { t } = useTranslation();
 
   const addRecipeRequest = async () => {
-    sendEvent("common.share", {
+    sendEvent("share", {
       props: {
         action: "addRecipe",
       },
@@ -98,7 +98,7 @@ const TotalMaterials = ({ selectedItems }) => {
   };
 
   const copyMaterials = () => {
-    sendEvent("common.share", {
+    sendEvent("share", {
       props: {
         action: "copyMaterials",
       },

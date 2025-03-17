@@ -60,8 +60,8 @@ const PrivateProfile = () => {
   }, []);
 
   const clearStorageData = () => {
-    localStorage.removeItem("menu.profile");
-    sessionStorage.removeItem("menu.profile");
+    localStorage.removeItem("profile");
+    sessionStorage.removeItem("profile");
     localStorage.removeItem("memberList");
     sessionStorage.removeItem("memberList");
   };

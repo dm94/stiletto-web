@@ -196,8 +196,8 @@ const MemberList = () => {
     try {
       const response = await deleteClan(clanid);
 
-      localStorage.removeItem("menu.profile");
-      sessionStorage.removeItem("menu.profile");
+      localStorage.removeItem("profile");
+      sessionStorage.removeItem("profile");
       sessionStorage.removeItem("memberList-lastCheck");
       sessionStorage.removeItem("memberList");
       localStorage.removeItem("memberList");

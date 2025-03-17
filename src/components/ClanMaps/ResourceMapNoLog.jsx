@@ -69,7 +69,7 @@ const ResourceMapNoLog = (props) => {
         setError("errors.apiConnection");
       }
     } else {
-      setError("Unauthorized");
+      setError("error.unauthorized");
     }
     setIsLoaded(true);
   }, [props]);

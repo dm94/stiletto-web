@@ -43,7 +43,7 @@ const DiscordConnection = () => {
           }
           navigate({ from: { pathname: "/" } });
         } else if (response.status === 401) {
-          setError("Unauthorized");
+          setError("error.unauthorized");
         } else if (response.status === 503) {
           setError("error.databaseConnection");
         }

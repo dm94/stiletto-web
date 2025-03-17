@@ -91,7 +91,7 @@ const TradeSystem = () => {
       if (response.status === 204) {
         updateTrades();
       } else if (response.status === 401) {
-        setError("Unauthorized");
+        setError("error.unauthorized");
       } else if (response.status === 503) {
         setError("error.databaseConnection");
       }
@@ -213,7 +213,7 @@ const TradeSystem = () => {
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={amountInput}
                     onChange={(evt) =>
-                      setAmountInput(parseInt(evt.target.value, 10))
+                      setAmountInput(Number.parseInt(evt.target.value, 10))
                     }
                   />
                 </div>
@@ -247,7 +247,7 @@ const TradeSystem = () => {
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={priceInput}
                     onChange={(evt) =>
-                      setPriceInput(parseInt(evt.target.value, 10))
+                      setPriceInput(Number.parseInt(evt.target.value, 10))
                     }
                   />
                 </div>

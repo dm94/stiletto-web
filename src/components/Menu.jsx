@@ -148,7 +148,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                 type="button"
                 className="p-2 text-white hover:bg-gray-700 rounded-lg"
                 data-cy="change-languaje-btn"
-                aria-label="settings.changeLanguage"
+                aria-label={t("settings.changeLanguage")}
                 onClick={openLanguajeModal}
               >
                 <img
@@ -156,7 +156,7 @@ const Menu = ({ setRedirectTo, openLanguajeModal, language }) => {
                   width="39"
                   height="25"
                   src={getLanguageFlag(language)}
-                  alt="settings.changeLanguage"
+                  alt={t("settings.changeLanguage")}
                 />
               </button>
 

@@ -87,7 +87,7 @@ const Ingredient = ({ ingredient, value }) => {
           </div>
           {ingredient?.category && (
             <div className="text-sm text-gray-400 mt-1">
-              {t("common.category." + ingredient.category)}
+              {t(ingredient.category)}
             </div>
           )}
         </div>

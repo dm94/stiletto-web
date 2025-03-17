@@ -50,7 +50,7 @@ const Diplomacy = () => {
           setListOfRelations(data);
           setIsLoaded(true);
         } else if (response.status === 405) {
-          setError("Unauthorized");
+          setError("error.unauthorized");
         } else if (response.status === 503) {
           setError("error.databaseConnection");
         }
@@ -61,7 +61,7 @@ const Diplomacy = () => {
       if (discordid === leaderid) {
         setHasPermissions(true);
       } else {
-        const permissions = await getHasPermissions("menu.diplomacy");
+        const permissions = await getHasPermissions("diplomacy");
         setHasPermissions(permissions);
       }
     };
@@ -82,7 +82,7 @@ const Diplomacy = () => {
       if (response.status === 201) {
         window.location.reload();
       } else if (response.status === 405) {
-        setError("Method Not Allowed");
+        setError("error.methodNotAllowed");
       } else if (response.status === 503) {
         setError("error.databaseConnection");
       }
@@ -98,7 +98,7 @@ const Diplomacy = () => {
       if (response.status === 204) {
         window.location.reload();
       } else if (response.status === 401) {
-        setError("Unauthorized");
+        setError("error.unauthorized");
       } else if (response.status === 503) {
         setError("error.databaseConnection");
       }

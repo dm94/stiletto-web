@@ -72,7 +72,7 @@ export const getMap = async (mapid, mappass) => {
     if (response.status === 401) {
       return {
         success: false,
-        message: "Unauthorized",
+        message: "error.unauthorized",
       };
     }
 
