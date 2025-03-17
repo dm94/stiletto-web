@@ -80,10 +80,10 @@ const ItemWiki = () => {
     item?.description && (
       <div className="w-full md:w-1/2">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
-          <div className="p-4 bg-gray-900 border-b border-gray-700">
+          <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
             {t("common.description")}
           </div>
-          <div className="p-4">{item.description}</div>
+          <div className="p-4 text-neutral-400">{item.description}</div>
         </div>
       </div>
     );
@@ -276,7 +276,7 @@ const ItemWiki = () => {
             </div>
             <div className="p-4 bg-gray-900 border-t border-gray-700 text-center">
               <div className="mb-2 text-gray-300">{t("common.selectRarity")}</div>
-              <fieldset 
+              <fieldset
                 className="inline-flex rounded-lg shadow-sm"
                 aria-label={t("common.raritySelection")}
               >
