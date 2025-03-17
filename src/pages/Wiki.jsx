@@ -136,7 +136,7 @@ const Wiki = () => {
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
           <div className="p-6 text-center">
             <h1 className="text-2xl font-bold text-white mb-4">
-              {t("wiki.lastOasisWiki")}
+              {t("menu.wiki")}
             </h1>
             <div className="max-w-2xl mx-auto">
               <div
