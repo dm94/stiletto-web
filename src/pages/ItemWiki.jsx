@@ -78,7 +78,7 @@ const ItemWiki = () => {
 
   const showDescription = () =>
     item?.description && (
-      <div className="w-full md:w-1/2">
+      <div className="w-full md:w-1/2 px-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
           <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
             {t("common.description")}
