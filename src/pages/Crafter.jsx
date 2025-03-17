@@ -25,6 +25,12 @@ const Crafter = () => {
     updateRecipes();
   }, []);
 
+  useEffect(() => {
+    if (allItems.length > 0 && searchText.length > 0) {
+      updateSearch(searchText);
+    }
+  }, [allItems, searchText]);
+
   const updateRecipes = async () => {
     const itemsData = await getItems();
     if (itemsData) {
@@ -57,9 +63,8 @@ const Crafter = () => {
         setError("errors.apiConnection");
       }
     } else if (craft?.length) {
-      const decodedName = decodeURI(craft).toLowerCase();
+      const decodedName = decodeURI(craft).toLowerCase().replaceAll("_", " ").trim();
       setSearchText(decodedName);
-      updateSearch(decodedName);
     }
   };
 
@@ -67,7 +72,6 @@ const Crafter = () => {
     if (event) {
       const newSearchText = event.currentTarget.value;
       setSearchText(newSearchText);
-      updateSearch(newSearchText);
     }
   };
 
