@@ -45,7 +45,7 @@ const CanBeUsedInfo = ({ name, items = [] }) => {
 
   if (name && items && canBeUsed.length > 0) {
     return (
-      <div className="w-full md:w-1/2 p-4">
+      <div className="w-full md:w-1/2 px-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
           <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300 font-medium">
             {t("crafting.usedIn")}

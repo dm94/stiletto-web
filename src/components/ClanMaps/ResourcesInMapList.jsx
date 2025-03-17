@@ -70,7 +70,7 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
 
   return (
     <Fragment>
-      <div className="flex flex-wrap gap-2 mb-4">{renderFilterList()}</div>
+      <div className="flex flex-wrap gap-4 mb-4 justify-center">{renderFilterList()}</div>
       <ul className="space-y-2 max-h-[60vh] overflow-y-auto">{renderList()}</ul>
     </Fragment>
   );
