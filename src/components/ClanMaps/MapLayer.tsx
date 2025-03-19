@@ -151,7 +151,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
     return false;
   };
 
-  const handleClick = (e: { latlng: { lat: number; lng: number; }; }) => {
+  const handleClick = (e: { latlng: { lat: number; lng: number } }) => {
     setHasLocation(true);
     setCoordinateXInput(Math.round(e.latlng.lat * 100) / 100);
     setCoordinateYInput(Math.round(e.latlng.lng * 100) / 100);

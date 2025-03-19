@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import Notifications from "./Notifications";
 
 interface Notification {
@@ -22,13 +23,14 @@ const NotificationList: React.FC = () => {
     };
   }, [channel]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const interval = setInterval(() => {
       checkOldNotifications();
       setSeconds((s) => s + 1);
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [seconds]);
 
   const checkOldNotifications = (): void => {
     const minTime = Date.now() - 5000;

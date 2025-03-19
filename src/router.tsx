@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { Routes, Route } from "react-router";
 import Crafter from "./pages/Crafter";
 import DiscordConnection from "./pages/DiscordConnection";

@@ -4,7 +4,11 @@ import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import type { ResourcesInMapListProps, Resource } from "../../types/maps";
 
-const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({ resources, onFilter, onSelect }) => {
+const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({
+  resources,
+  onFilter,
+  onSelect,
+}) => {
   const { t } = useTranslation();
   const [resourceTypeFilter, setResourceTypeFilter] = useState<string>("All");
 
@@ -18,7 +22,8 @@ const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({ resources, onFi
       resourceTypeFilter === "All"
         ? resources?.filter((r: Resource) => r.x != null)
         : resources?.filter(
-            (r: Resource) => r.x != null && r.resourcetype === resourceTypeFilter,
+            (r: Resource) =>
+              r.x != null && r.resourcetype === resourceTypeFilter,
           );
 
     return filteredResources?.map((resource: Resource) => (
@@ -72,7 +77,9 @@ const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({ resources, onFi
 
   return (
     <Fragment>
-      <div className="flex flex-wrap gap-4 mb-4 justify-center">{renderFilterList()}</div>
+      <div className="flex flex-wrap gap-4 mb-4 justify-center">
+        {renderFilterList()}
+      </div>
       <ul className="space-y-2 max-h-[60vh] overflow-y-auto">{renderList()}</ul>
     </Fragment>
   );

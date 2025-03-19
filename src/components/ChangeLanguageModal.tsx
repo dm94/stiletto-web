@@ -1,14 +1,17 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 import { supportedLanguages } from "../config/languages";
-import { Language } from "../types";
+import type { Language } from "../types";
 
 interface ChangeLanguageModalProps {
   switchLanguage?: (languageKey: string) => void;
   hideModal?: () => void;
 }
 
-const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({ switchLanguage, hideModal }) => {
+const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({
+  switchLanguage,
+  hideModal,
+}) => {
   const { t } = useTranslation();
 
   const renderLanguageButtons = () => {

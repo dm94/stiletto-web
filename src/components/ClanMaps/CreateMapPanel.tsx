@@ -1,10 +1,13 @@
 import type React from "react";
-import { useState, type FormEvent } from "react"
+import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
 import type { CreateMapPanelProps } from "../../types/maps";
 
-const CreateMapPanel: React.FC<CreateMapPanelProps> = ({ maps, onCreateMap }) => {
+const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
+  maps,
+  onCreateMap,
+}) => {
   const { t } = useTranslation();
   const [mapNameInput, setMapNameInput] = useState<string>("");
   const [mapDateInput, setMapDateInput] = useState<number | string>(1);
@@ -78,9 +81,7 @@ const CreateMapPanel: React.FC<CreateMapPanelProps> = ({ maps, onCreateMap }) =>
               <p className="text-center text-gray-300 mb-2">
                 {t("maps.mapType")}
               </p>
-              <div
-                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2"
-              >
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
                 <MapSelectList
                   maps={maps}
                   mapSelectInput={mapSelectInput}

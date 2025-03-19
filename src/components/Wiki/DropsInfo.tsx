@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 
 interface Drop {
@@ -17,8 +17,9 @@ const DropsInfo: React.FC<DropsInfoProps> = ({ drops = [] }) => {
 
   const showDrops = () => {
     return drops?.map((drop, index) => {
-      const titleInfo = `Drop ${drop?.chance ?? "unknown"}% -> ${drop?.minQuantity ?? "unknown"
-        }/${drop?.maxQuantity ?? "unknown"}`;
+      const titleInfo = `Drop ${drop?.chance ?? "unknown"}% -> ${
+        drop?.minQuantity ?? "unknown"
+      }/${drop?.maxQuantity ?? "unknown"}`;
       return (
         <li
           className="inline-block mr-2 mb-2"

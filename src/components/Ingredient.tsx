@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
 import { getDomain } from "../functions/utils";
-import { Ingredient as IngredientType } from "../types";
+import type { Ingredient as IngredientType } from "../types";
 
 interface IngredientProps {
   ingredient: IngredientType;

@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import type React from "react";
+import { Fragment } from "react";
 import { config } from "../config/config";
 import { useTranslation } from "react-i18next";
 

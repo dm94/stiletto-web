@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Ingredient from "../Ingredient";
-import { Item } from "../../types";
+import type { Item } from "../../types";
 
 interface CanBeUsedInfoProps {
   name: string;
@@ -32,7 +33,7 @@ const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
   }, [name, items]);
 
   const loadMoreItems = () => {
-    setVisibleItems(prevVisibleItems => prevVisibleItems + ITEMS_PER_PAGE);
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + ITEMS_PER_PAGE);
   };
 
   const showCanBeUsed = () => {
@@ -41,10 +42,7 @@ const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
         className="relative p-2 rounded-lg bg-gray-700 shadow-md hover:shadow-lg border border-gray-600 hover:border-gray-500"
         key={`${item.name}-ingredient`}
       >
-        <Ingredient
-          ingredient={item}
-          value={1}
-        />
+        <Ingredient ingredient={item} value={1} />
       </li>
     ));
   };
@@ -57,7 +55,9 @@ const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
             {t("crafting.usedIn")}
           </div>
           <div className="p-4">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">{showCanBeUsed()}</ul>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {showCanBeUsed()}
+            </ul>
             {canBeUsed.length > visibleItems && (
               <div className="mt-4 text-center">
                 <button

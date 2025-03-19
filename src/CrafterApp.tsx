@@ -13,7 +13,8 @@ import Footer from "./components/Footer";
 
 const CrafterApp: React.FC = () => {
   const navigate = useNavigate();
-  const [showChangeLanguageModal, setShowChangeLanguageModal] = useState<boolean>(false);
+  const [showChangeLanguageModal, setShowChangeLanguageModal] =
+    useState<boolean>(false);
   const [redirectTo, setRedirectTo] = useState<string | null>(null);
 
   usePageTracking();

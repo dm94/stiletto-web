@@ -1,8 +1,8 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import { getItemUrl } from "../../functions/utils";
-import { Item } from "../../types";
+import type { Item } from "../../types";
 
 interface SchematicDropInfoProps {
   name: string;
@@ -14,7 +14,10 @@ interface Schematic extends Item {
   learn?: string[];
 }
 
-const SchematicDropInfo: React.FC<SchematicDropInfoProps> = ({ name, items }) => {
+const SchematicDropInfo: React.FC<SchematicDropInfoProps> = ({
+  name,
+  items,
+}) => {
   const { t } = useTranslation();
 
   const showSchematics = (schematics: Schematic[]) => {

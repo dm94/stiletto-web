@@ -63,7 +63,10 @@ const Crafter = () => {
         setError("errors.apiConnection");
       }
     } else if (craft?.length) {
-      const decodedName = decodeURI(craft).toLowerCase().replaceAll("_", " ").trim();
+      const decodedName = decodeURI(craft)
+        .toLowerCase()
+        .replaceAll("_", " ")
+        .trim();
       setSearchText(decodedName);
     }
   };

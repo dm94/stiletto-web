@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 /* Modification of this library https://github.com/umchee/react-double-scrollbar */
 

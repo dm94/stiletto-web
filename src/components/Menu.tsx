@@ -1,10 +1,11 @@
-import React, { useState, KeyboardEvent } from "react";
+import type React from "react";
+import { useState, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
 import { getStoredItem } from "../functions/services";
 import { supportedLanguages } from "../config/languages";
-import { Language } from "../types";
+import type { Language } from "../types";
 
 interface MenuProps {
   setRedirectTo?: (url: string) => void;
@@ -12,7 +13,11 @@ interface MenuProps {
   language?: string;
 }
 
-const Menu: React.FC<MenuProps> = ({ setRedirectTo, openLanguajeModal, language }) => {
+const Menu: React.FC<MenuProps> = ({
+  setRedirectTo,
+  openLanguajeModal,
+  language,
+}) => {
   const [searchText, setSearchText] = useState<string>("");
   const { t } = useTranslation();
 
@@ -21,7 +26,9 @@ const Menu: React.FC<MenuProps> = ({ setRedirectTo, openLanguajeModal, language 
       return "/img/en.jpg";
     }
 
-    const lngFound = supportedLanguages.find((l: Language) => lng.includes(l.key));
+    const lngFound = supportedLanguages.find((l: Language) =>
+      lng.includes(l.key),
+    );
     return lngFound ? `/img/${lngFound.key}.jpg` : "/img/en.jpg";
   };
 

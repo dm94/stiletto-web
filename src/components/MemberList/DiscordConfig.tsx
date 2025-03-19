@@ -119,9 +119,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
 
           <div
             className="mb-3 flex items-center"
-            title={t(
-              "discord.readDiscordClanLogNotice",
-            )}
+            title={t("discord.readDiscordClanLogNotice")}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
               <input
@@ -143,9 +141,7 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
 
           <div
             className="mb-3 flex items-center"
-            title={t(
-              "discord.readClanLogAndKick",
-            )}
+            title={t("discord.readClanLogAndKick")}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
               <input
@@ -180,17 +176,13 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               />
             </div>
             <label className="text-sm" htmlFor="setNotReadyPVP">
-              {t(
-                "discord.pvpMarkNotReady",
-              )}
+              {t("discord.pvpMarkNotReady")}
             </label>
           </div>
 
           <div
             className="mb-3 flex items-center"
-            title={t(
-              "discord.readClanLogAndKick",
-            )}
+            title={t("discord.readClanLogAndKick")}
           >
             <div className="relative inline-block w-10 mr-2 align-middle select-none">
               <input

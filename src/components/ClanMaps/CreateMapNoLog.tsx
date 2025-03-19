@@ -1,11 +1,15 @@
 import type React from "react";
-import { useState, useEffect, type FormEvent } from "react"
+import { useState, useEffect, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { getMapNames } from "../../functions/services";
 import CreateMapPanel from "./CreateMapPanel";
 import { getDomain } from "../../functions/utils";
 import { createMap as createMapRequest } from "../../functions/requests/maps";
-import type { CreateMapNoLogProps, MapInfo, MapCreationResponse } from "../../types/maps";
+import type {
+  CreateMapNoLogProps,
+  MapInfo,
+  MapCreationResponse,
+} from "../../types/maps";
 
 const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
   const { t } = useTranslation();
@@ -31,11 +35,11 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
     event.preventDefault();
 
     try {
-      const response = await createMapRequest(
+      const response = (await createMapRequest(
         mapNameInput,
         mapDateInput,
         mapSelectInput,
-      ) as unknown as MapCreationResponse;
+      )) as unknown as MapCreationResponse;
       setMapIdInput(response.IdMap);
       setMapPassInput(response.PassMap);
       setShowShareMap(true);

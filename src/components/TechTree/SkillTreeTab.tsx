@@ -1,4 +1,5 @@
-import React, { useCallback } from "react";
+import type React from "react";
+import { useCallback } from "react";
 import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
 import { useTranslation } from "react-i18next";
 import Ingredients from "../Ingredients";
@@ -32,7 +33,13 @@ interface SkillTreeTabProps {
   clan?: string;
 }
 
-const SkillTreeTab: React.FC<SkillTreeTabProps> = ({ theme, treeId, title, items, clan }) => {
+const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
+  theme,
+  treeId,
+  title,
+  items,
+  clan,
+}) => {
   const { t } = useTranslation();
 
   const getChildrens = useCallback(
@@ -99,7 +106,11 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({ theme, treeId, title, items
     );
   };
 
-  const handleSave = (storage: Storage, id: string, skills: any): Promise<void> => {
+  const handleSave = (
+    storage: Storage,
+    id: string,
+    skills: any,
+  ): Promise<void> => {
     return storage.setItem(`skills-${id}`, JSON.stringify(skills));
   };
 
@@ -107,7 +118,9 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({ theme, treeId, title, items
     if (item?.crafting) {
       return item.crafting.map((ingredients) => (
         <div
-          className={item.crafting!.length > 1 ? "col-xl-6 border" : "col-xl-12"}
+          className={
+            item.crafting?.length > 1 ? "col-xl-6 border" : "col-xl-12"
+          }
           key={`skill-ingredient-${item.name}`}
         >
           <Ingredients crafting={ingredients} value={1} />

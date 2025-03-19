@@ -147,8 +147,9 @@ const ItemWiki = () => {
         focusColor = "focus:ring-gray-500";
     }
 
-    return `px-4 py-2 border rounded-lg hover:text-gray-300 ${textColor} ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${rarity === value ? "bg-opacity-20" : ""
-      }`;
+    return `px-4 py-2 border rounded-lg hover:text-gray-300 ${textColor} ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${
+      rarity === value ? "bg-opacity-20" : ""
+    }`;
   };
 
   const loadingItemPart = () => (
@@ -199,8 +200,9 @@ const ItemWiki = () => {
                       {t("crafting.costToLearn")}
                     </div>
                     <div className="text-gray-400">
-                      {`${item?.cost?.count ? item.cost.count : ""} ${item?.cost?.name ? t(item?.cost?.name) : ""
-                        }`}
+                      {`${item?.cost?.count ? item.cost.count : ""} ${
+                        item?.cost?.name ? t(item?.cost?.name) : ""
+                      }`}
                     </div>
                   </li>
                 )}
@@ -275,22 +277,28 @@ const ItemWiki = () => {
               </ul>
             </div>
             <div className="p-4 bg-gray-900 border-t border-gray-700 text-center">
-              <div className="mb-2 text-gray-300">{t("common.selectRarity")}</div>
+              <div className="mb-2 text-gray-300">
+                {t("common.selectRarity")}
+              </div>
               <fieldset
                 className="inline-flex rounded-lg shadow-sm"
                 aria-label={t("common.raritySelection")}
               >
-                <legend className="sr-only">{t("common.raritySelection")}</legend>
+                <legend className="sr-only">
+                  {t("common.raritySelection")}
+                </legend>
                 {["Common", "Uncommon", "Rare", "Epic", "Legendary"].map(
                   (rar) => (
                     <button
                       key={rar}
                       type="button"
                       aria-pressed={rarity === rar}
-                      className={`${getRarityClass(rar)} flex items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${rarity === rar ? 'ring-2 ring-opacity-50' : ''}`}
+                      className={`${getRarityClass(rar)} flex items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${rarity === rar ? "ring-2 ring-opacity-50" : ""}`}
                       onClick={() => updateRarity(rar)}
                     >
-                      <span className="w-4 mr-1">{rar === rarity ? "✓" : ""}</span>
+                      <span className="w-4 mr-1">
+                        {rar === rarity ? "✓" : ""}
+                      </span>
                       {t(rar)}
                     </button>
                   ),

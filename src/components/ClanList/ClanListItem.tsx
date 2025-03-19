@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import ClanName from "../ClanName";
@@ -20,7 +20,12 @@ interface ClanListItemProps {
   onSendRequest?: (clanid: string) => void;
 }
 
-const ClanListItem: React.FC<ClanListItemProps> = ({ isLogged, clanuserid, clan, onSendRequest }) => {
+const ClanListItem: React.FC<ClanListItemProps> = ({
+  isLogged,
+  clanuserid,
+  clan,
+  onSendRequest,
+}) => {
   const { t } = useTranslation();
 
   const sendRequestButton = () => {

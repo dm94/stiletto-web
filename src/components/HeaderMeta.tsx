@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { Helmet } from "react-helmet";
 
 interface HeaderMetaProps {
@@ -8,7 +8,12 @@ interface HeaderMetaProps {
   children?: React.ReactNode;
 }
 
-const HeaderMeta: React.FC<HeaderMetaProps> = ({ title, description, cannonical, children }) => {
+const HeaderMeta: React.FC<HeaderMetaProps> = ({
+  title,
+  description,
+  cannonical,
+  children,
+}) => {
   return (
     <Helmet>
       <title>{title}</title>

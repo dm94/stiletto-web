@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 
 interface PaginationProps {
@@ -8,7 +8,12 @@ interface PaginationProps {
   onNext: () => void;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ currentPage, hasMore, onPrev, onNext }) => {
+const Pagination: React.FC<PaginationProps> = ({
+  currentPage,
+  hasMore,
+  onPrev,
+  onNext,
+}) => {
   const { t } = useTranslation();
 
   return (

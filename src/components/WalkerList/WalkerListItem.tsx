@@ -2,6 +2,7 @@ import type React from "react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
+import type { WalkerUI } from "../../types/walker";
 
 interface WalkerListItemProps {
   walker: {
@@ -23,7 +24,7 @@ interface WalkerListItemProps {
     discordtag: string;
   }>;
   walkerListTypes: string[];
-  onSave: (walker: any) => void;
+  onSave: (walker: WalkerUI) => void;
   onRemove: (walkerID: string) => void;
 }
 
@@ -42,7 +43,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
   const canEdit =
     isLeader || walker.ownerUser === nickname || walker.lastUser === nickname;
 
-  const handleWalkerUpdate = (field: string, value: any) => {
+  const handleWalkerUpdate = (field: string, value: string | boolean) => {
     setWalkerState((prev) => ({
       ...prev,
       [field]: value,

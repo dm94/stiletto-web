@@ -1,4 +1,5 @@
-import React, { useState, useEffect, Fragment } from "react";
+import type React from "react";
+import { useState, useEffect, Fragment } from "react";
 import queryString from "query-string";
 import CreateMapNoLog from "../components/ClanMaps/CreateMapNoLog";
 import ResourceMapNoLog from "../components/ClanMaps/ResourceMapNoLog";

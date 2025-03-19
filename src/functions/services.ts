@@ -25,7 +25,7 @@ export const getStoredItem = (name: string) => {
   return data;
 };
 
-export const storeItem = (name: string, data: any) => {
+export const storeItem = (name: string, data: string) => {
   if (name == null || data == null) {
     return;
   }
@@ -55,7 +55,7 @@ export const getCachedData = (name: string, time = timeCheck) => {
   return null;
 };
 
-export const addCachedData = (name: string, data: any) => {
+export const addCachedData = (name: string, data: unknown) => {
   if (name == null || data == null) {
     return;
   }
@@ -403,7 +403,7 @@ export const closeSession = () => {
   window.location.reload();
 };
 
-export const apiRequest = async (url: string, options: any) => {
+export const apiRequest = async (url: string, options: RequestInit) => {
   const response = await request(url, options);
 
   if (response != null) {
@@ -444,7 +444,7 @@ export const apiRequest = async (url: string, options: any) => {
   };
 };
 
-export const request = async (url: string, options: any) => {
+export const request = async (url: string, options: RequestInit) => {
   try {
     const response = await fetch(url, options);
     const data = await response.json();

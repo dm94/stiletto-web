@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { Navigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { sendEvent } from "../page-tracking";

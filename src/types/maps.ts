@@ -77,7 +77,7 @@ export interface ResourcesInMapListProps {
 
 // Props for CreateResourceTab component
 export interface CreateResourceTabProps {
-  items: any[] | null;
+  items: Resource[] | null;
   coordinateXInput: number;
   coordinateYInput: number;
   onCreateResource: (

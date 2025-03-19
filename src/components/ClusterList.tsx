@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { getClusters } from "../functions/services";
 
 interface Cluster {
@@ -13,7 +14,11 @@ interface ClusterListProps {
   filter?: boolean;
 }
 
-const ClusterList: React.FC<ClusterListProps> = ({ value = "", onChange, filter }) => {
+const ClusterList: React.FC<ClusterListProps> = ({
+  value = "",
+  onChange,
+  filter,
+}) => {
   const [clusters, setClusters] = useState<Cluster[]>([]);
 
   useEffect(() => {

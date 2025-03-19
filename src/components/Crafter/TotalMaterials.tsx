@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
@@ -6,8 +7,13 @@ import { sendEvent } from "../../page-tracking";
 import { sendNotification } from "../../functions/broadcast";
 import { getDomain } from "../../functions/utils";
 import { addRecipe } from "../../functions/requests/recipes";
+import type { Item } from "../../types/index";
 
-const TotalMaterials = ({ selectedItems }) => {
+interface TotalMaterialsProps {
+  selectedItems: Item[];
+}
+
+const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
   const [recipeToken, setRecipeToken] = useState("");
   const { t } = useTranslation();
 
@@ -27,10 +33,7 @@ const TotalMaterials = ({ selectedItems }) => {
       const response = await addRecipe(items);
       if (response.status === 201) {
         const data = await response.json();
-        sendNotification(
-          "notification.share",
-          "common.information",
-        );
+        sendNotification("notification.share", "common.information");
         setRecipeToken(data.token);
       }
     } catch {

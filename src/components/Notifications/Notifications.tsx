@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 
 interface NotificationData {
@@ -12,7 +12,10 @@ interface NotificationsProps {
   close?: (id: number) => void;
 }
 
-const Notifications: React.FC<NotificationsProps> = ({ notifications, close }) => {
+const Notifications: React.FC<NotificationsProps> = ({
+  notifications,
+  close,
+}) => {
   const { t } = useTranslation();
 
   const renderNotifications = () => {
@@ -29,14 +32,18 @@ const Notifications: React.FC<NotificationsProps> = ({ notifications, close }) =
         key={`notification-${data.date}`}
       >
         <div className="flex items-center justify-between px-4 py-2 bg-gray-100">
-          { data?.type && <strong className="font-medium">{t(data.type)}</strong> }
+          {data?.type && (
+            <strong className="font-medium">{t(data.type)}</strong>
+          )}
           <button
             type="button"
             className="text-gray-600 hover:text-gray-800 focus:outline-none"
             aria-label="Close"
             onClick={() => close?.(data.date)}
           >
-            <span aria-hidden="true" className="text-xl">&times;</span>
+            <span aria-hidden="true" className="text-xl">
+              &times;
+            </span>
           </button>
         </div>
         <div className="px-4 py-3">{t(data.message)}</div>
@@ -44,7 +51,11 @@ const Notifications: React.FC<NotificationsProps> = ({ notifications, close }) =
     ));
   };
 
-  return <div className="fixed top-4 right-4 z-50 max-w-sm">{renderNotifications()}</div>;
+  return (
+    <div className="fixed top-4 right-4 z-50 max-w-sm">
+      {renderNotifications()}
+    </div>
+  );
 };
 
 export default Notifications;

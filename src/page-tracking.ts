@@ -1,7 +1,24 @@
 import { useEffect } from "react";
 import { config } from "./config/config";
 
-export const initPlausible = () => {
+// Define types for Plausible analytics
+interface PlausibleWindow extends Window {
+  plausible?: {
+    (...args: any[]): void;
+    q?: any[];
+  };
+}
+
+declare global {
+  interface Window extends PlausibleWindow {}
+}
+
+// Type for event props
+interface EventProps {
+  [key: string]: string | number | boolean | Record<string, any>;
+}
+
+export const initPlausible = (): void => {
   const PLAUSIBLE_URL = config.REACT_APP_PLAUSIBLE_URL;
 
   if (!PLAUSIBLE_URL || PLAUSIBLE_URL.length <= 0) {
@@ -20,13 +37,21 @@ export const initPlausible = () => {
   document.head.appendChild(element);
 };
 
-export const usePageTracking = () => {
+export const usePageTracking = (): void => {
   useEffect(() => {
     initPlausible();
   }, []);
 };
 
-export const sendEvent = (data) => {
+/**
+ * Send an event to Plausible analytics
+ * @param eventName - The name of the event
+ * @param options - Optional event properties
+ */
+export const sendEvent = (
+  eventName: string,
+  options?: { props?: EventProps },
+): void => {
   initPlausible();
 
   try {
@@ -39,5 +64,5 @@ export const sendEvent = (data) => {
     console.error(error);
   }
 
-  window?.plausible(...data);
+  window?.plausible?.(eventName, options);
 };

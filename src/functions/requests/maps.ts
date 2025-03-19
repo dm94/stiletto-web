@@ -62,7 +62,7 @@ export const getMap = async (
   mappass: string,
 ): Promise<{
   success: boolean;
-  data?: any;
+  data?: MapData;
   message?: string;
 }> => {
   const url = new URL(`${config.REACT_APP_API_URL}/maps/${mapid}`);

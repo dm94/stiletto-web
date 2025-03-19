@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 import { getStoredItem } from "../../functions/services";
 import { getDomain } from "../../functions/utils";
@@ -20,7 +20,12 @@ interface ClanMapItemProps {
   onDelete: (mapId: string) => void;
 }
 
-const ClanMapItem: React.FC<ClanMapItemProps> = ({ map, value, onOpen, onDelete }) => {
+const ClanMapItem: React.FC<ClanMapItemProps> = ({
+  map,
+  value,
+  onOpen,
+  onDelete,
+}) => {
   const { t } = useTranslation();
 
   const showButton = () => (

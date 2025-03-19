@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 import { calcRarityValue } from "../../rarityCalc";
 
@@ -10,7 +10,13 @@ interface GenericInfoProps {
   textColor?: string;
 }
 
-const GenericInfo: React.FC<GenericInfoProps> = ({ dataInfo, name, rarity, category, textColor }) => {
+const GenericInfo: React.FC<GenericInfoProps> = ({
+  dataInfo,
+  name,
+  rarity,
+  category,
+  textColor,
+}) => {
   const { t } = useTranslation();
 
   const showValues = () => {

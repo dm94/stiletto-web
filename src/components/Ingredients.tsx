@@ -1,6 +1,6 @@
-import React from "react";
+import type React from "react";
 import Ingredient from "./Ingredient";
-import { Crafting } from "../types";
+import type { Crafting } from "../types";
 
 interface IngredientsProps {
   crafting: Crafting;

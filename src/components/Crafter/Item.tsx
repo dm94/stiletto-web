@@ -1,6 +1,6 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
-import { Item as ItemType } from "../../types";
+import type { Item as ItemType } from "../../types";
 
 interface ItemProps {
   item: ItemType | null;

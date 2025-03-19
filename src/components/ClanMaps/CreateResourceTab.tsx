@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, type FormEvent } from "react"
+import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import type { CreateResourceTabProps } from "../../types/maps";
 
@@ -21,7 +21,7 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
 
   const resourcesList = () => {
     if (items != null) {
-      return items.map((item: any) => (
+      return items.map((item: Resource) => (
         <option key={item.name} value={item.name}>
           {t(item.name, { ns: "items" })}
         </option>
