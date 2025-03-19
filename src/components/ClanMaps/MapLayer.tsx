@@ -13,6 +13,7 @@ import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import Icon from "../Icon";
 import { config } from "../../config/config";
+import type { MapLayerProps, Resource } from "../../types/maps";
 
 const myMarker = L.icon({
   iconUrl:
@@ -22,7 +23,7 @@ const myMarker = L.icon({
   popupAnchor: [-6, -20],
 });
 
-const MapLayer = ({
+const MapLayer: React.FC<MapLayerProps> = ({
   resourcesInTheMap,
   center,
   updateResource,
@@ -30,13 +31,13 @@ const MapLayer = ({
   changeInput,
 }) => {
   const { t } = useTranslation();
-  const [coordinateXInput, setCoordinateXInput] = useState(0);
-  const [coordinateYInput, setCoordinateYInput] = useState(0);
-  const [hasLocation, setHasLocation] = useState(false);
-  const [gridOpacity, setGridOpacity] = useState(0);
-  const [poachingHutRadius, setPoachingHutRadius] = useState(150);
+  const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
+  const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
+  const [hasLocation, setHasLocation] = useState<boolean>(false);
+  const [gridOpacity, setGridOpacity] = useState<number>(0);
+  const [poachingHutRadius, setPoachingHutRadius] = useState<number>(150);
 
-  const getResourceEstimatedQuality = (resource) => {
+  const getResourceEstimatedQuality = (resource: Resource) => {
     const quality = 4;
     const diff = Math.abs(new Date() - new Date(resource.lastharvested));
     const minutes = Math.floor(diff / 1000 / 60);
@@ -81,7 +82,7 @@ const MapLayer = ({
     );
   };
 
-  const getMarketDesign = (resource) => {
+  const getMarketDesign = (resource: string) => {
     const res = resource.replaceAll(" ", "_");
     return L.icon({
       iconUrl: `${config.REACT_APP_RESOURCES_URL}/markers/${res}.png`,
@@ -114,7 +115,7 @@ const MapLayer = ({
                   type="button"
                   className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                   onClick={() =>
-                    deleteResource(resource.resourceid, resource.token)
+                    deleteResource(resource.resourceid, resource?.token ?? "")
                   }
                 >
                   {t("common.delete")}
@@ -150,7 +151,7 @@ const MapLayer = ({
     return false;
   };
 
-  const handleClick = (e) => {
+  const handleClick = (e: { latlng: { lat: number; lng: number; }; }) => {
     setHasLocation(true);
     setCoordinateXInput(Math.round(e.latlng.lat * 100) / 100);
     setCoordinateYInput(Math.round(e.latlng.lng * 100) / 100);

@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState, type FormEvent } from "react"
 import { useTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
+import type { CreateMapPanelProps } from "../../types/maps";
 
-const CreateMapPanel = ({ maps, onCreateMap }) => {
+const CreateMapPanel: React.FC<CreateMapPanelProps> = ({ maps, onCreateMap }) => {
   const { t } = useTranslation();
-  const [mapNameInput, setMapNameInput] = useState("");
-  const [mapDateInput, setMapDateInput] = useState(1);
-  const [mapSelectInput, setMapSelectInput] = useState("Canyon");
+  const [mapNameInput, setMapNameInput] = useState<string>("");
+  const [mapDateInput, setMapDateInput] = useState<number | string>(1);
+  const [mapSelectInput, setMapSelectInput] = useState<string>("Canyon");
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = (evt: FormEvent) => {
     evt.preventDefault();
     const date = new Date();
-    date.setDate(date.getDate() + Number.parseInt(mapDateInput));
+    date.setDate(date.getDate() + Number.parseInt(mapDateInput.toString()));
     onCreateMap(
       evt,
       mapNameInput,
@@ -46,7 +48,7 @@ const CreateMapPanel = ({ maps, onCreateMap }) => {
                   className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="map_name"
                   name="map_name"
-                  maxLength="30"
+                  maxLength={30}
                   value={mapNameInput}
                   onChange={(evt) => setMapNameInput(evt.target.value)}
                   required
@@ -77,7 +79,6 @@ const CreateMapPanel = ({ maps, onCreateMap }) => {
                 {t("maps.mapType")}
               </p>
               <div
-                name="mapselect"
                 className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2"
               >
                 <MapSelectList

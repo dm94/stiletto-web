@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState, type FormEvent } from "react"
 import { useTranslation } from "react-i18next";
+import type { CreateResourceTabProps } from "../../types/maps";
 
-const CreateResourceTab = ({
+const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
   items,
   onCreateResource,
   coordinateXInput,
@@ -10,16 +12,16 @@ const CreateResourceTab = ({
   onChangeY,
 }) => {
   const { t } = useTranslation();
-  const [resourceTypeInput, setResourceTypeInput] = useState(
+  const [resourceTypeInput, setResourceTypeInput] = useState<string>(
     items?.[0]?.name ?? "Aloe Vera",
   );
-  const [qualityInput, setQualityInput] = useState(0);
-  const [descriptionInput, setDescriptionInput] = useState("");
-  const [lastHarvestedInput, setLastHarvestedInput] = useState("");
+  const [qualityInput, setQualityInput] = useState<number>(0);
+  const [descriptionInput, setDescriptionInput] = useState<string>("");
+  const [lastHarvestedInput, setLastHarvestedInput] = useState<string>("");
 
   const resourcesList = () => {
     if (items != null) {
-      return items.map((item) => (
+      return items.map((item: any) => (
         <option key={item.name} value={item.name}>
           {t(item.name, { ns: "items" })}
         </option>
@@ -28,7 +30,7 @@ const CreateResourceTab = ({
     return false;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     onCreateResource(
       resourceTypeInput,
@@ -106,7 +108,7 @@ const CreateResourceTab = ({
             name="descriptionInput"
             value={descriptionInput}
             onChange={(evt) => setDescriptionInput(evt.target.value)}
-            maxLength="100"
+            maxLength={100}
           />
         </div>
         <div>

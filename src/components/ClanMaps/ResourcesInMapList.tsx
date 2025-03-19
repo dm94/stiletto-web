@@ -1,12 +1,14 @@
-import React, { useState, Fragment } from "react";
+import type React from "react";
+import { useState, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
+import type { ResourcesInMapListProps, Resource } from "../../types/maps";
 
-const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
+const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({ resources, onFilter, onSelect }) => {
   const { t } = useTranslation();
-  const [resourceTypeFilter, setResourceTypeFilter] = useState("All");
+  const [resourceTypeFilter, setResourceTypeFilter] = useState<string>("All");
 
-  const filterTheResources = (type) => {
+  const filterTheResources = (type: string) => {
     setResourceTypeFilter(type);
     onFilter?.(type);
   };
@@ -14,12 +16,12 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
   const renderList = () => {
     const filteredResources =
       resourceTypeFilter === "All"
-        ? resources?.filter((r) => r.x != null)
+        ? resources?.filter((r: Resource) => r.x != null)
         : resources?.filter(
-            (r) => r.x != null && r.resourcetype === resourceTypeFilter,
+            (r: Resource) => r.x != null && r.resourcetype === resourceTypeFilter,
           );
 
-    return filteredResources?.map((resource) => (
+    return filteredResources?.map((resource: Resource) => (
       <li
         className="p-2 bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
         key={resource.resourceid}
@@ -37,6 +39,10 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
   };
 
   const renderFilterList = () => {
+    if (!resources) {
+      return false;
+    }
+
     const resourceTypes = ["All"];
     for (const resource of resources) {
       if (
@@ -63,10 +69,6 @@ const ResourcesInMapList = ({ resources, onFilter, onSelect }) => {
       </button>
     ));
   };
-
-  if (!resources) {
-    return false;
-  }
 
   return (
     <Fragment>

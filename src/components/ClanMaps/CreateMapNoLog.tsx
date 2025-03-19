@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect, type FormEvent } from "react"
 import { useTranslation } from "react-i18next";
 import { getMapNames } from "../../functions/services";
 import CreateMapPanel from "./CreateMapPanel";
 import { getDomain } from "../../functions/utils";
 import { createMap as createMapRequest } from "../../functions/requests/maps";
+import type { CreateMapNoLogProps, MapInfo, MapCreationResponse } from "../../types/maps";
 
-const CreateMapNoLog = ({ onOpen }) => {
+const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
   const { t } = useTranslation();
-  const [maps, setMaps] = useState(null);
-  const [mapIdInput, setMapIdInput] = useState(0);
-  const [mapPassInput, setMapPassInput] = useState("");
-  const [showShareMap, setShowShareMap] = useState(false);
+  const [maps, setMaps] = useState<MapInfo[] | null>(null);
+  const [mapIdInput, setMapIdInput] = useState<number | string>(0);
+  const [mapPassInput, setMapPassInput] = useState<string>("");
+  const [showShareMap, setShowShareMap] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchMaps = async () => {
@@ -21,10 +23,10 @@ const CreateMapNoLog = ({ onOpen }) => {
   }, []);
 
   const createMap = async (
-    event,
-    mapNameInput,
-    mapDateInput,
-    mapSelectInput,
+    event: FormEvent,
+    mapNameInput: string,
+    mapDateInput: string,
+    mapSelectInput: string,
   ) => {
     event.preventDefault();
 
@@ -33,7 +35,7 @@ const CreateMapNoLog = ({ onOpen }) => {
         mapNameInput,
         mapDateInput,
         mapSelectInput,
-      );
+      ) as unknown as MapCreationResponse;
       setMapIdInput(response.IdMap);
       setMapPassInput(response.PassMap);
       setShowShareMap(true);
@@ -72,7 +74,7 @@ const CreateMapNoLog = ({ onOpen }) => {
                   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="map_id"
                   name="map_id"
-                  maxLength="4"
+                  maxLength={4}
                   value={mapIdInput}
                   onChange={(evt) => setMapIdInput(evt.target.value)}
                   required
@@ -90,7 +92,7 @@ const CreateMapNoLog = ({ onOpen }) => {
                   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="map_pass"
                   name="map_pass"
-                  maxLength="30"
+                  maxLength={30}
                   value={mapPassInput}
                   onChange={(evt) => setMapPassInput(evt.target.value)}
                   required

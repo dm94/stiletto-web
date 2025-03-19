@@ -1,13 +1,15 @@
-import React from "react";
+import type React from "react";
+import type { MouseEvent } from "react";
+import type { MapSelectListProps, MapInfo } from "../../types/maps";
 
-const MapSelectList = ({ maps, mapSelectInput, onSelectMap }) => {
+const MapSelectList: React.FC<MapSelectListProps> = ({ maps, mapSelectInput, onSelectMap }) => {
   if (maps) {
-    return maps.map((map) => (
+    return maps.map((map: MapInfo) => (
       <button
         type="button"
         className="p-2 text-center focus:outline-none"
         key={`selectmap${map.idMap}`}
-        onClick={(evt) => onSelectMap(evt.target.id)}
+        onClick={(evt: MouseEvent<HTMLButtonElement>) => onSelectMap((evt.target as HTMLElement).id)}
       >
         <img
           src={map.image}

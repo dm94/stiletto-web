@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
+import type React from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import { getMarkers } from "../../functions/services";
@@ -11,30 +12,29 @@ import "../../css/map-sidebar.css";
 import {
   createResource,
   deleteResource,
-  getMap,
   updateResourceTime,
   getResources,
 } from "../../functions/requests/maps";
 import { useLocation, useParams } from "react-router";
+import type { ResourceMapNoLogProps, Resource, MapData } from "../../types/maps";
 
-const ResourceMapNoLog = (props) => {
+const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const location = useLocation();
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
-  const [resourcesInTheMap, setResourcesInTheMap] = useState(null);
-  const [mapId, setMapId] = useState(null);
-  const [pass, setPass] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [textMessage, setTextMessage] = useState(null);
-  const [center, setCenter] = useState(null);
-  const [items, setItems] = useState(null);
-  const [coordinateXInput, setCoordinateXInput] = useState(0);
-  const [coordinateYInput, setCoordinateYInput] = useState(0);
-  const [resourcesFiltered, setResourcesFiltered] = useState(null);
-  const [error, setError] = useState(null);
-  const [mapData, setMapData] = useState(null);
-  const [isOpenSidebar, setIsOpenSidebar] = useState(false);
-  const [activeTab, setActiveTab] = useState("resources");
+  const [resourcesInTheMap, setResourcesInTheMap] = useState<Resource[] | null>(null);
+  const [mapId, setMapId] = useState<string | null>(null);
+  const [pass, setPass] = useState<string | null>(null);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [textMessage, setTextMessage] = useState<string | null>(null);
+  const [center, setCenter] = useState<[number, number] | null>(null);
+  const [items, setItems] = useState<any[] | null>(null);
+  const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
+  const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
+  const [resourcesFiltered, setResourcesFiltered] = useState<Resource[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<string>("resources");
 
   const fetchData = useCallback(async () => {
     let parsed = null;
@@ -61,13 +61,6 @@ const ResourceMapNoLog = (props) => {
           const resources = await responseResources.json();
           setResourcesInTheMap(resources);
         }
-
-        const response = await getMap(currentMapId, currentPass);
-        if (response.success) {
-          setMapData(response.data);
-        } else {
-          setError(response.message);
-        }
       } catch {
         setError("errors.apiConnection");
       }
@@ -82,7 +75,7 @@ const ResourceMapNoLog = (props) => {
   }, [fetchData]);
 
   const handleDeleteResource = useCallback(
-    async (resourceId, resourceToken) => {
+    async (resourceId: any, resourceToken: any) => {
       try {
         const response = await deleteResource(mapId, resourceId, resourceToken);
         if (response.success) {
@@ -99,10 +92,10 @@ const ResourceMapNoLog = (props) => {
 
   const handleCreateResource = useCallback(
     async (
-      resourceTypeInput,
-      qualityInput,
-      descriptionInput,
-      lastHarvested,
+      resourceTypeInput: any,
+      qualityInput: any,
+      descriptionInput: any,
+      lastHarvested: any,
     ) => {
       try {
         const response = await createResource({
@@ -128,11 +121,11 @@ const ResourceMapNoLog = (props) => {
   );
 
   const handleFilterResources = useCallback(
-    (resourceType) => {
+    (resourceType: string) => {
       if (resourceType === "All") {
         setResourcesFiltered(null);
       } else {
-        const filtered = resourcesInTheMap?.filter(
+        const filtered = (resourcesInTheMap ?? [])?.filter(
           (resource) => resource.resourcetype === resourceType,
         );
         setResourcesFiltered(filtered);
@@ -140,6 +133,15 @@ const ResourceMapNoLog = (props) => {
     },
     [resourcesInTheMap],
   );
+
+  const handleUpdateResourceTime = async(mapid: string, resourceid: string, token: string, date: string) => {
+    try {
+      await updateResourceTime(mapid, resourceid, token, date);
+      await fetchData();
+    } catch {
+      setError("errors.apiConnection");
+    }
+  };
 
   if (!isLoaded) {
     return <LoadingScreen />;
@@ -151,7 +153,6 @@ const ResourceMapNoLog = (props) => {
         message={{
           isError: false,
           text: textMessage,
-          redirectPage: null,
         }}
         onClickOk={() => setTextMessage(null)}
       />
@@ -174,20 +175,10 @@ const ResourceMapNoLog = (props) => {
     <div className="relative h-screen">
       <div className="absolute inset-0 z-0">
         <MapLayer
-          map={mapData}
-          items={items}
           resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
           deleteResource={handleDeleteResource}
           center={center}
-          setCenter={setCenter}
-          updateResource={(mapid, resourceid, token, date) => {
-            try {
-              updateResourceTime(mapid, resourceid, token, date);
-              fetchData();
-            } catch {
-              setError("errors.apiConnection");
-            }
-          }}
+          updateResource={handleUpdateResourceTime}
           changeInput={(x, y) => {
             setCoordinateXInput(x);
             setCoordinateYInput(y);
@@ -233,7 +224,8 @@ const ResourceMapNoLog = (props) => {
               <ResourcesInMapList
                 resources={resourcesFiltered || resourcesInTheMap}
                 onDeleteResource={handleDeleteResource}
-                onFilterResources={handleFilterResources}
+                onSelect={(x, y) => setCenter([x, y])}
+                onFilter={handleFilterResources}
               />
             )}
             {activeTab === "create" && (
