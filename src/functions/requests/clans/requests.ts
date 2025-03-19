@@ -1,7 +1,10 @@
 import { getStoredItem } from "../../services";
 import { config } from "../../../config/config";
 
-export const sendRequest = async (clanId, message) => {
+export const sendRequest = async (
+  clanId: number,
+  message: string,
+): Promise<Response> => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/clans/${clanId}/requests`, {
       method: "POST",
@@ -17,7 +20,7 @@ export const sendRequest = async (clanId, message) => {
   }
 };
 
-export const getRequests = async (clanId) => {
+export const getRequests = async (clanId: number): Promise<Response> => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/clans/${clanId}/requests`, {
       method: "GET",

@@ -1,7 +1,9 @@
 import { getStoredItem } from "../../services";
 import { config } from "../../../config/config";
+import type { CreateRelationshipRequestQueryParams } from "../../../types/dto/relationship";
+import { objectToURLSearchParams } from "../../utils";
 
-export const getRelationships = async (clanid) => {
+export const getRelationships = async (clanid: number): Promise<Response> => {
   try {
     return await fetch(
       `${config.REACT_APP_API_URL}/clans/${clanid}/relationships`,
@@ -17,15 +19,10 @@ export const getRelationships = async (clanid) => {
 };
 
 export const createRelationship = async (
-  clanid,
-  { nameotherclan, clanflag, typed, symbol },
-) => {
-  const params = new URLSearchParams({
-    nameotherclan: nameotherclan,
-    clanflag: clanflag,
-    typed: typed,
-    symbol: symbol,
-  });
+  clanid: number,
+  request: CreateRelationshipRequestQueryParams,
+): Promise<Response> => {
+  const params = objectToURLSearchParams(request);
 
   try {
     return await fetch(
@@ -42,7 +39,10 @@ export const createRelationship = async (
   }
 };
 
-export const deleteRelationship = async (clanId, relationShipId) => {
+export const deleteRelationship = async (
+  clanId: number,
+  relationShipId: number,
+) => {
   try {
     return await fetch(
       `${config.REACT_APP_API_URL}/clans/${clanId}/relationships/${relationShipId}`,

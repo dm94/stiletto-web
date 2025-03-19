@@ -1,5 +1,7 @@
-export const getExternalWikiDescription = async (name) => {
-  const params = new URLSearchParams({
+import { objectToURLSearchParams } from "../utils";
+
+export const getExternalWikiDescription = async (name: string) => {
+  const params = objectToURLSearchParams({
     action: "query",
     prop: "extracts",
     titles: name,

@@ -6,7 +6,7 @@ const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
 const resourceCacheTimeCheck = 86400000;
 
-export const getStoredItem = (name) => {
+export const getStoredItem = (name: string) => {
   if (name == null) {
     return null;
   }
@@ -25,7 +25,7 @@ export const getStoredItem = (name) => {
   return data;
 };
 
-export const storeItem = (name, data) => {
+export const storeItem = (name: string, data: any) => {
   if (name == null || data == null) {
     return;
   }
@@ -37,7 +37,7 @@ export const storeItem = (name, data) => {
   }
 };
 
-export const getCachedData = (name, time = timeCheck) => {
+export const getCachedData = (name: string, time = timeCheck) => {
   if (name == null) {
     return null;
   }
@@ -48,14 +48,14 @@ export const getCachedData = (name, time = timeCheck) => {
   if (
     data != null &&
     lastDataCheck != null &&
-    lastDataCheck >= Date.now() - time
+    Number(lastDataCheck) >= Date.now() - time
   ) {
     return JSON.parse(data);
   }
   return null;
 };
 
-export const addCachedData = (name, data) => {
+export const addCachedData = (name: string, data: any) => {
   if (name == null || data == null) {
     return;
   }
@@ -120,7 +120,7 @@ export const getUserProfile = async () => {
   };
 };
 
-export const getHasPermissions = async (type) => {
+export const getHasPermissions = async (type: string) => {
   const response = await getOurPermssions();
 
   if (response.success && response.message) {
@@ -169,29 +169,29 @@ export const getOurPermssions = async () => {
   };
 };
 
-export const getUserPermssions = async (clanid, discordid) => {
-  if (clanid != null && discordid != null) {
-    const response = await getMemberPermissions(clanid, discordid);
-    if (response != null) {
-      if (response.status === 200) {
-        return { success: true, message: response.data };
-      }
+export const getUserPermssions = async (clanId: number, discordId: string) => {
+  if (!clanId || !discordId) {
+    return {
+      success: false,
+      message: "errors.noClan",
+    };
+  }
 
-      if (response.status === 405 || response.status === 401) {
-        closeSession();
-        return {
-          success: false,
-          message: "errors.noAccess",
-        };
-      }
+  const response = await getMemberPermissions(clanId, discordId);
+  if (response != null) {
+    if (response.status === 200) {
+      return { success: true, message: response?.data };
+    }
 
-      if (response.status === 503) {
-        return {
-          success: false,
-          message: "error.databaseConnection",
-        };
-      }
-    } else {
+    if (response.status === 405 || response.status === 401) {
+      closeSession();
+      return {
+        success: false,
+        message: "errors.noAccess",
+      };
+    }
+
+    if (response.status === 503) {
       return {
         success: false,
         message: "error.databaseConnection",
@@ -200,7 +200,7 @@ export const getUserPermssions = async (clanid, discordid) => {
   } else {
     return {
       success: false,
-      message: "errors.noClan",
+      message: "error.databaseConnection",
     };
   }
 };
@@ -208,9 +208,10 @@ export const getUserPermssions = async (clanid, discordid) => {
 export const getClanInfo = async () => {
   const cachedData = getCachedData("clanInfo", smallCacheTimeCheck);
 
-  if (cachedData != null) {
+  if (!cachedData) {
     return { success: true, message: cachedData };
   }
+
   const profile = getStoredItem("profile");
   let clanid = null;
   if (profile != null) {
@@ -221,38 +222,38 @@ export const getClanInfo = async () => {
     clanid = data.message.clanid;
   }
 
-  if (clanid != null) {
-    const options = {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+  if (!clanid) {
+    return {
+      success: false,
+      message: "errors.noClan",
     };
-    const response = await request(
-      `${config.REACT_APP_API_URL}/clans/${clanid}`,
-      options,
-    );
-    if (response != null) {
-      if (response.status === 200) {
-        addCachedData("clanInfo", response.data);
-        return { success: true, message: response.data };
-      }
+  }
 
-      if (response.status === 405 || response.status === 401) {
-        closeSession();
-        return {
-          success: false,
-          message: "errors.noAccess",
-        };
-      }
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
+    },
+  };
+  const response = await request(
+    `${config.REACT_APP_API_URL}/clans/${clanid}`,
+    options,
+  );
+  if (response != null) {
+    if (response.status === 200) {
+      addCachedData("clanInfo", response.data);
+      return { success: true, message: response.data };
+    }
 
-      if (response.status === 503) {
-        return {
-          success: false,
-          message: "error.databaseConnection",
-        };
-      }
-    } else {
+    if (response.status === 405 || response.status === 401) {
+      closeSession();
+      return {
+        success: false,
+        message: "errors.noAccess",
+      };
+    }
+
+    if (response.status === 503) {
       return {
         success: false,
         message: "error.databaseConnection",
@@ -261,7 +262,7 @@ export const getClanInfo = async () => {
   } else {
     return {
       success: false,
-      message: "errors.noClan",
+      message: "error.databaseConnection",
     };
   }
 };
@@ -402,7 +403,7 @@ export const closeSession = () => {
   window.location.reload();
 };
 
-export const apiRequest = async (url, options) => {
+export const apiRequest = async (url: string, options: any) => {
   const response = await request(url, options);
 
   if (response != null) {
@@ -443,7 +444,7 @@ export const apiRequest = async (url, options) => {
   };
 };
 
-export const request = async (url, options) => {
+export const request = async (url: string, options: any) => {
   try {
     const response = await fetch(url, options);
     const data = await response.json();

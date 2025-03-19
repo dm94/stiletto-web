@@ -1,8 +1,33 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 
-const WalkerListItem = ({
+interface WalkerListItemProps {
+  walker: {
+    walkerID: string;
+    ownerUser: string;
+    lastUser: string;
+    datelastuse: string;
+    walker_use: string;
+    type: string;
+    description: string;
+    isReady: boolean;
+    name: string;
+  };
+  isLeader: boolean;
+  nickname: string;
+  memberList: Array<{
+    discordid: string;
+    nickname: string;
+    discordtag: string;
+  }>;
+  walkerListTypes: string[];
+  onSave: (walker: any) => void;
+  onRemove: (walkerID: string) => void;
+}
+
+const WalkerListItem: React.FC<WalkerListItemProps> = ({
   walker,
   isLeader,
   nickname,
@@ -17,7 +42,7 @@ const WalkerListItem = ({
   const canEdit =
     isLeader || walker.ownerUser === nickname || walker.lastUser === nickname;
 
-  const handleWalkerUpdate = (field, value) => {
+  const handleWalkerUpdate = (field: string, value: any) => {
     setWalkerState((prev) => ({
       ...prev,
       [field]: value,
@@ -31,7 +56,7 @@ const WalkerListItem = ({
 
     return (
       <tr>
-        <td colSpan="6" className="px-6 py-4 bg-gray-900">
+        <td colSpan={6} className="px-6 py-4 bg-gray-900">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
             <div>
               <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
@@ -204,9 +229,9 @@ const WalkerListItem = ({
                       onChange={(e) =>
                         handleWalkerUpdate("description", e.target.value)
                       }
-                      maxLength="200"
+                      maxLength={200}
                       disabled={!canEdit}
-                      rows="3"
+                      rows={3}
                     />
                   </div>
                 </div>

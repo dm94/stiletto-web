@@ -1,5 +1,6 @@
 import { getStoredItem, closeSession } from "../services";
 import { config } from "../../config/config";
+import type { Tree } from "../../types/dto/tech";
 
 export const getLearned = async () => {
   const token = getStoredItem("token");
@@ -37,7 +38,7 @@ export const getLearned = async () => {
   }
 };
 
-export const addTech = async (tabSelect, learned) => {
+export const addTech = async (tabSelect: Tree, learned: any) => {
   const discordId = getStoredItem("discordid");
   const token = getStoredItem("token");
 
@@ -50,8 +51,9 @@ export const addTech = async (tabSelect, learned) => {
       tree: tabSelect,
     });
 
-    const url = `${config.REACT_APP_API_URL
-      }/users/${discordId}/tech?${params.toString()}`;
+    const url = `${
+      config.REACT_APP_API_URL
+    }/users/${discordId}/tech?${params.toString()}`;
 
     const response = await fetch(url, {
       method: "PUT",
@@ -92,7 +94,7 @@ export const deleteUser = async () => {
   }
 };
 
-export const addNick = async (newNick) => {
+export const addNick = async (newNick: string): Promise<Response> => {
   const token = getStoredItem("token");
 
   if (!token) {
@@ -112,7 +114,7 @@ export const addNick = async (newNick) => {
   }
 };
 
-export const authDiscord = async (code) => {
+export const authDiscord = async (code: string): Promise<Response> => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/users/auth?code=${code}`, {
       method: "POST",

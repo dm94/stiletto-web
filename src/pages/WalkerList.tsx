@@ -1,4 +1,5 @@
-import React, { useState, useEffect, Fragment, useCallback } from "react";
+import type React from "react";
+import { useState, useEffect, Fragment, useCallback } from "react";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import { useTranslation } from "react-i18next";
@@ -21,14 +22,21 @@ import {
   deleteWalker,
 } from "../functions/requests/walkers";
 import { useLocation } from "react-router";
+import type { WalkerUI } from "../types/walker";
 
-const WalkerList = () => {
+interface Member {
+  discordid: string;
+  nickname: string;
+  discordtag: string;
+}
+
+const WalkerList: React.FC = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [walkers, setWalkers] = useState([]);
+  const [walkers, setWalkers] = useState<WalkerUI[]>([]);
   const [error, setError] = useState("");
-  const [members, setMembers] = useState([]);
-  const [walkerTypes, setWalkerTypes] = useState([]);
+  const [members, setMembers] = useState<Member[]>([]);
+  const [walkerTypes, setWalkerTypes] = useState<string[]>([]);
   const [isLeader, setIsLeader] = useState(false);
   const [nickname, setNickname] = useState("");
   const [page, setPage] = useState(1);
@@ -83,10 +91,9 @@ const WalkerList = () => {
     ],
   );
 
-  const updateWalker = async (walker) => {
+  const updateWalker = async (walker: any) => {
     try {
-      const response = await editWalker({
-        walkerID: walker.walkerID,
+      const response = await editWalker(walker.walkerID, {
         owner: walker.ownerUser,
         use: walker.walker_use,
         type: walker.type,
@@ -106,7 +113,7 @@ const WalkerList = () => {
     }
   };
 
-  const handleDeleteWalker = async (walkerId) => {
+  const handleDeleteWalker = async (walkerId: string) => {
     try {
       const response = await deleteWalker(walkerId);
 
@@ -123,7 +130,7 @@ const WalkerList = () => {
   };
 
   useEffect(() => {
-    const handleDiscordAuth = async (code) => {
+    const handleDiscordAuth = async (code: string) => {
       try {
         const response = await getDiscordServers(
           code,
@@ -185,7 +192,7 @@ const WalkerList = () => {
       }
 
       const parsed = queryString.parse(location.search);
-      if (parsed.code) {
+      if (parsed?.code) {
         await handleDiscordAuth(parsed.code);
       }
 

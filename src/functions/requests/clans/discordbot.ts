@@ -1,7 +1,9 @@
 import { getStoredItem } from "../../services";
 import { config } from "../../../config/config";
+import type { UpdateBotConfigParams } from "../../../types/dto/discordConfig";
+import { objectToURLSearchParams } from "../../utils";
 
-export const getDiscordConfig = async (clanid) => {
+export const getDiscordConfig = async (clanid: number): Promise<Response> => {
   try {
     return await fetch(
       `${config.REACT_APP_API_URL}/clans/${clanid}/discordbot`,
@@ -18,16 +20,10 @@ export const getDiscordConfig = async (clanid) => {
 };
 
 export const updateBotConfig = async (
-  clanid,
-  { botLanguaje, readClanLog, automaticKick, setNotReadyPVP, walkeralarm },
+  clanid: number,
+  queryParams: UpdateBotConfigParams,
 ) => {
-  const params = new URLSearchParams({
-    languaje: botLanguaje,
-    clanlog: readClanLog,
-    kick: automaticKick,
-    readypvp: setNotReadyPVP,
-    walkeralarm: walkeralarm,
-  });
+  const params = objectToURLSearchParams(queryParams);
 
   try {
     return await fetch(

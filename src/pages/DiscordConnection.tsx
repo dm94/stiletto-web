@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import queryString from "query-string";
@@ -10,9 +11,12 @@ import { useNavigate, useLocation } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "../functions/utils";
 import { authDiscord } from "../functions/requests/users";
 
-const DiscordConnection = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState("");
+/**
+ * Discord connection component for handling OAuth authentication
+ */
+const DiscordConnection: React.FC = () => {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();

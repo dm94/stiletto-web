@@ -1,6 +1,7 @@
 import { config } from "../../config/config";
+import type { Recipe } from "../../types/dto/recipe";
 
-export const addRecipe = async (items) => {
+export const addRecipe = async (items: Recipe[]): Promise<Response> => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/recipes`, {
       method: "POST",
@@ -16,9 +17,9 @@ export const addRecipe = async (items) => {
   }
 };
 
-export const getRecipe = async (recipe) => {
+export const getRecipe = async (recipeToken: string): Promise<Response> => {
   try {
-    return await fetch(`${config.REACT_APP_API_URL}/recipes/${recipe}`);
+    return await fetch(`${config.REACT_APP_API_URL}/recipes/${recipeToken}`);
   } catch {
     throw new Error("error.databaseConnection");
   }

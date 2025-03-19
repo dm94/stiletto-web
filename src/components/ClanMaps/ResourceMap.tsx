@@ -74,11 +74,10 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     lastHarvested: string,
   ) => {
     try {
-      const response = await createResource({
-        mapid: map?.mapid,
+      const response = await createResource(Number(map?.mapid),{
         x: coordinateXInput,
         y: coordinateYInput,
-        mappass: pass,
+        mappass: pass ?? "",
         resourcetype: resourceTypeInput,
         quality: qualityInput,
         description: descriptionInput,
@@ -99,13 +98,13 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
 
     try {
       const response = await editMap(
-        map.mapid,
+        Number(map.mapid),
         mapName,
         dateOfBurning,
         allowEditing,
-        pass,
+        pass ?? "",
       );
-      setTextSuccess(response);
+      setTextSuccess(response ?? "");
     } catch {
       setError("errors.apiConnection");
     }

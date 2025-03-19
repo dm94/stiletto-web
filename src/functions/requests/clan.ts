@@ -1,11 +1,22 @@
 import { getStoredItem } from "../services";
 import { config } from "../../config/config";
+import type { TechUser, Tree } from "../../types/dto/tech";
+import type {
+  CreateClanRequestParams,
+  GetClansRequestParams,
+  UpdateClanRequestParams,
+} from "../../types/dto/clan";
+import { objectToURLSearchParams } from "../utils";
 
-export const getWhoHasLearntIt = async (clan, tree, tech) => {
+export const getWhoHasLearntIt = async (
+  clanId: string,
+  tree: Tree,
+  tech: string,
+): Promise<string[]> => {
   const token = getStoredItem("token");
-  let allUsers = [];
+  let allUsers: string[] = [];
 
-  if (token == null || !clan || !tree || !tech) {
+  if (token == null || !clanId || !tree || !tech) {
     return allUsers;
   }
 
@@ -14,8 +25,10 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
     tech: tech,
   });
 
-  const url = `${config.REACT_APP_API_URL
-    }/clans/${clan}/tech?${params.toString()}`;
+  // seeWhoHasLearntIt
+  const url = `${
+    config.REACT_APP_API_URL
+  }/clans/${clanId}/tech?${params.toString()}`;
 
   try {
     const response = await fetch(url, {
@@ -32,9 +45,7 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
     const data = await response.json();
 
     if (data) {
-      allUsers = data.map((user) => {
-        return user.discordtag;
-      });
+      allUsers = data.map((user: TechUser) => user?.discordtag);
     }
   } catch {
     throw new Error("error.databaseConnection");
@@ -43,7 +54,7 @@ export const getWhoHasLearntIt = async (clan, tree, tech) => {
   return allUsers;
 };
 
-export const leaveClan = async () => {
+export const leaveClan = async (): Promise<Response> => {
   const token = getStoredItem("token");
 
   if (!token) {
@@ -61,17 +72,10 @@ export const leaveClan = async () => {
 };
 
 export const updateClan = async (
-  clanid,
-  { clanname, clancolor, clandiscord, symbol, region, recruit },
-) => {
-  const params = new URLSearchParams({
-    clanname,
-    clancolor,
-    clandiscord,
-    symbol,
-    region,
-    recruit,
-  });
+  clanid: number,
+  requestParams: UpdateClanRequestParams,
+): Promise<Response> => {
+  const params = objectToURLSearchParams(requestParams);
 
   try {
     return await fetch(
@@ -88,22 +92,10 @@ export const updateClan = async (
   }
 };
 
-export const createClan = async ({
-  clanname,
-  clancolor,
-  clandiscord,
-  symbol,
-  region,
-  recruit,
-}) => {
-  const params = new URLSearchParams({
-    clanname,
-    clancolor,
-    clandiscord,
-    symbol,
-    region,
-    recruit,
-  });
+export const createClan = async (
+  requestParams: CreateClanRequestParams,
+): Promise<Response> => {
+  const params = objectToURLSearchParams(requestParams);
 
   try {
     return await fetch(`${config.REACT_APP_API_URL}/clans?${params}`, {
@@ -117,18 +109,10 @@ export const createClan = async ({
   }
 };
 
-export const getClans = async ({
-  pageSize = 20,
-  page = 1,
-  name = undefined,
-  region = undefined,
-}) => {
-  const params = new URLSearchParams({
-    pageSize,
-    page,
-    ...(name && name?.length > 0 && { name }),
-    ...(region && region !== "All" && { region }),
-  });
+export const getClans = async (
+  requestParams: GetClansRequestParams,
+): Promise<Response> => {
+  const params = objectToURLSearchParams(requestParams);
 
   try {
     return await fetch(`${config.REACT_APP_API_URL}/clans?${params}`);
@@ -137,7 +121,7 @@ export const getClans = async ({
   }
 };
 
-export const deleteClan = async (clanId) => {
+export const deleteClan = async (clanId: number): Promise<Response> => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/clans/${clanId}`, {
       method: "DELETE",

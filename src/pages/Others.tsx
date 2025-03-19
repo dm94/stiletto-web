@@ -1,7 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Others = () => {
+/**
+ * Others page component that displays various external links and resources
+ */
+const Others: React.FC = () => {
   const { t } = useTranslation();
 
   const showDiscord = () => {

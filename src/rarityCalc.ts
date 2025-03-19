@@ -1,4 +1,54 @@
-const rarityData = {
+interface RarityFactors {
+  WalkerHealthFactor?: number;
+  WalkerPartHealthFactor?: number;
+  WalkerTorqueGenerationFactor?: number;
+  StructureHealthFactor?: number;
+  ExoskeletonHealthFactor?: number;
+  ExoskeletonAmmoSlotIncrease?: number;
+  AutomatonHealthFactor?: number;
+  AutomatonRotationRateFactor?: number;
+  SiegeWeaponReloadTimeFactor?: number;
+  SiegeWeaponRotationSpeedFactor?: number;
+  CraftingTimeFactor?: number;
+  VitaminDurationFactor?: number;
+  GrapplingHookStaminaCostFactor?: number;
+  ProjectileInitialVelocityFactor?: number;
+  WingsuitStaminaCostFactor?: number;
+  HealingStatusEffectFactor?: number;
+  LiquidContainerStackSizeFactor?: number;
+  TorqueContainerStackSizeFactor?: number;
+  BagContainerSlotFactor?: number;
+  StorageContainerSlotFactor?: number;
+  HarvestCriticalChance?: number;
+  SiegeWeaponDamageFactor?: number;
+  CraftingExpFactor?: number;
+  ItemUsageExpFactor?: number;
+  FoliageExpFactor?: number;
+  ItemWeightFactor?: number;
+  WeaponDurabilityFactor?: number;
+  ArmorDurabilityFactor?: number;
+  ToolDurabilityFactor?: number;
+  ToolTierFactor?: number;
+  WeaponItemDamageFactor?: number;
+  WeaponItemSpeedBonus?: number;
+  ArmorItemSoakFactor?: number;
+  ArmorItemReduceBonus?: number;
+  WeaponStaminaCostFactor?: number;
+  MobHealthFactor?: number;
+  MobDamageFactor?: number;
+  MobStructureHealthFactor?: number;
+  MobProjectileDamageFactor?: number;
+  ItemDurabilityFactor?: number;
+}
+
+interface RarityData {
+  Uncommon: RarityFactors;
+  Rare: RarityFactors;
+  Epic: RarityFactors;
+  Legendary: RarityFactors;
+}
+
+const rarityData: RarityData = {
   Uncommon: {
     WalkerHealthFactor: 1.25,
     WalkerPartHealthFactor: 1.25,
@@ -160,8 +210,13 @@ const rarityData = {
   },
 };
 
-export const calcRarityValue = (rarity, type, category, value) => {
-  const factorName = getFactorName(type, category);
+export const calcRarityValue = (
+  rarity: string | undefined,
+  type: string,
+  category: string | undefined,
+  value: number,
+) => {
+  const factorName = getFactorName(type, category ?? "");
   let newValue = value;
 
   if (factorName != null) {
@@ -197,16 +252,20 @@ export const calcRarityValue = (rarity, type, category, value) => {
         break;
     }
     if (factorName === "ItemWeightFactor") {
-      newValue = (newValue / 100).toFixed(3);
+      newValue = Number((newValue / 100).toFixed(3));
     } else {
-      newValue = newValue.toFixed(0);
+      newValue = Number(newValue.toFixed(0));
     }
   }
 
   return newValue;
 };
 
-const sumCalcs = (factorName, rarity, value) => {
+const sumCalcs = (
+  factorName: keyof RarityFactors,
+  rarity: string | undefined,
+  value: number,
+): number => {
   let newValue = value;
 
   switch (rarity) {
@@ -233,12 +292,16 @@ const sumCalcs = (factorName, rarity, value) => {
     default:
       break;
   }
-  newValue = newValue.toFixed(0);
+
+  newValue = Number(newValue.toFixed(0));
 
   return newValue;
 };
 
-const getFactorName = (type, category) => {
+const getFactorName = (
+  type: string,
+  category: string,
+): keyof RarityFactors | null => {
   let factorName = null;
   switch (type) {
     case "weight":
@@ -276,5 +339,5 @@ const getFactorName = (type, category) => {
       break;
   }
 
-  return factorName;
+  return factorName as keyof RarityFactors;
 };

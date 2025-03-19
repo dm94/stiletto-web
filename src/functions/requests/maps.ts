@@ -1,11 +1,16 @@
 import { getStoredItem } from "../services";
 import { config } from "../../config/config";
+import type { AddMapRequestParams } from "../../types/dto/maps";
+import type { AddResourceRequestParams } from "../../types/dto/resources";
+import { objectToURLSearchParams } from "../utils";
 
-export const createMap = async (mapNameInput, mapDateInput, mapSelectInput) => {
+export const createMap = async (
+  requestParams: AddMapRequestParams,
+): Promise<Response> => {
   const url = new URL(`${config.REACT_APP_API_URL}/maps`);
-  url.searchParams.append("mapname", mapNameInput);
-  url.searchParams.append("mapdate", mapDateInput);
-  url.searchParams.append("maptype", `${mapSelectInput}_new`);
+  url.searchParams.append("mapname", requestParams.mapname);
+  url.searchParams.append("mapdate", requestParams.mapdate);
+  url.searchParams.append("maptype", `${requestParams.maptype}_new`);
 
   const headers = getStoredItem("token")
     ? { Authorization: `Bearer ${getStoredItem("token")}` }
@@ -22,16 +27,16 @@ export const createMap = async (mapNameInput, mapDateInput, mapSelectInput) => {
 };
 
 export const editMap = async (
-  mapid,
-  mapname,
-  mapdate,
-  allowediting,
-  mappass,
-) => {
+  mapid: number,
+  mapname: string,
+  mapdate: string,
+  allowediting: boolean,
+  mappass: string,
+): Promise<string | undefined> => {
   const url = new URL(`${config.REACT_APP_API_URL}/maps/${mapid}`);
   url.searchParams.append("mapname", mapname);
   url.searchParams.append("mapdate", mapdate);
-  url.searchParams.append("allowediting", allowediting);
+  url.searchParams.append("allowediting", allowediting.toString());
   url.searchParams.append("mappass", mappass);
 
   const headers = getStoredItem("token")
@@ -52,7 +57,14 @@ export const editMap = async (
   }
 };
 
-export const getMap = async (mapid, mappass) => {
+export const getMap = async (
+  mapid: number,
+  mappass: string,
+): Promise<{
+  success: boolean;
+  data?: any;
+  message?: string;
+}> => {
   const url = new URL(`${config.REACT_APP_API_URL}/maps/${mapid}`);
   url.searchParams.append("mappass", mappass);
 
@@ -82,6 +94,10 @@ export const getMap = async (mapid, mappass) => {
         message: "error.databaseConnection",
       };
     }
+
+    return {
+      success: false,
+    };
   } catch {
     return {
       success: false,
@@ -90,7 +106,7 @@ export const getMap = async (mapid, mappass) => {
   }
 };
 
-export const getMaps = async () => {
+export const getMaps = async (): Promise<Response> => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/maps`, {
       headers: {
@@ -102,7 +118,7 @@ export const getMaps = async () => {
   }
 };
 
-export const deleteMap = async (mapid) => {
+export const deleteMap = async (mapid: number): Promise<Response> => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/maps/${mapid}`, {
       method: "DELETE",
@@ -115,26 +131,11 @@ export const deleteMap = async (mapid) => {
   }
 };
 
-export const createResource = async ({
-  mapid,
-  x,
-  y,
-  mappass,
-  resourcetype,
-  quality,
-  description,
-  harvested,
-}) => {
-  const params = new URLSearchParams({
-    mapid,
-    resourcetype,
-    quality,
-    x,
-    y,
-    description,
-    mappass,
-    harvested,
-  });
+export const createResource = async (
+  mapid: number,
+  requestParams: AddResourceRequestParams,
+): Promise<Response> => {
+  const params = objectToURLSearchParams(requestParams);
 
   try {
     return await fetch(
@@ -148,7 +149,11 @@ export const createResource = async ({
   }
 };
 
-export const deleteResource = async (mapId, resourceId, token) => {
+export const deleteResource = async (
+  mapId: number,
+  resourceId: number,
+  token: string,
+): Promise<Response> => {
   try {
     const params = new URLSearchParams({
       token,
@@ -166,11 +171,11 @@ export const deleteResource = async (mapId, resourceId, token) => {
 };
 
 export const updateResourceTime = async (
-  mapId,
-  resoruceId,
-  token,
-  harvested,
-) => {
+  mapId: number,
+  resoruceId: number,
+  token: string,
+  harvested: string,
+): Promise<Response> => {
   try {
     const params = new URLSearchParams({
       token,
@@ -191,7 +196,10 @@ export const updateResourceTime = async (
   }
 };
 
-export const getResources = async (mapId, mappass) => {
+export const getResources = async (
+  mapId: number,
+  mappass: string,
+): Promise<Response> => {
   try {
     const params = new URLSearchParams({
       mappass,

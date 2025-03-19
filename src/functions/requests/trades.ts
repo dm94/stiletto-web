@@ -1,21 +1,16 @@
 import { getStoredItem } from "../services";
 import { config } from "../../config/config";
+import type {
+  CreateTradeRequestParams,
+  GetTradesQueryParams,
+} from "../../types/dto/trades";
+import { objectToURLSearchParams } from "../utils";
 
-export const getTrades = async ({
-  pageSize = 10,
-  page = 1,
-  type,
-  resource,
-  region,
-}) => {
+export const getTrades = async (
+  queryParams: GetTradesQueryParams,
+): Promise<Response> => {
   try {
-    const params = new URLSearchParams({
-      pageSize,
-      page,
-      ...(type && { type }),
-      ...(resource && { resource }),
-      ...(region && { region }),
-    });
+    const params = objectToURLSearchParams(queryParams);
 
     return await fetch(`${config.REACT_APP_API_URL}/trades?${params}`);
   } catch {
@@ -23,9 +18,9 @@ export const getTrades = async ({
   }
 };
 
-export const deleteTrade = async (idTrade) => {
+export const deleteTrade = async (tradeId: number): Promise<Response> => {
   try {
-    return await fetch(`${config.REACT_APP_API_URL}/trades/${idTrade}`, {
+    return await fetch(`${config.REACT_APP_API_URL}/trades/${tradeId}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
@@ -36,23 +31,11 @@ export const deleteTrade = async (idTrade) => {
   }
 };
 
-export const createTrade = async ({
-  resource,
-  type,
-  amount,
-  region,
-  quality,
-  price,
-}) => {
+export const createTrade = async (
+  requestParams: CreateTradeRequestParams,
+): Promise<Response> => {
   try {
-    const params = new URLSearchParams({
-      resource,
-      type,
-      amount,
-      region,
-      quality,
-      price,
-    });
+    const params = objectToURLSearchParams(requestParams);
 
     return await fetch(`${config.REACT_APP_API_URL}/trades?${params}`, {
       method: "POST",

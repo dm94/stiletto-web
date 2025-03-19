@@ -1,5 +1,10 @@
 import { getStoredItem } from "../services";
 import { config } from "../../config/config";
+import type {
+  GetWalkersRequestParams,
+  EditWalkerRequestParams,
+} from "../../types/dto/walkers";
+import { objectToURLSearchParams } from "../utils";
 
 export const getWalkers = async ({
   pageSize = 20,
@@ -9,16 +14,16 @@ export const getWalkers = async ({
   desc = undefined,
   use = undefined,
   ready,
-}) => {
+}: GetWalkersRequestParams): Promise<Response> => {
   try {
     const params = new URLSearchParams({
-      pageSize,
-      page,
+      pageSize: pageSize.toString(),
+      page: page.toString(),
       ...(name && { name }),
       ...(type && { type }),
       ...(desc && { desc }),
       ...(use && { use }),
-      ...(ready !== "All" && { ready: ready === "Yes" }),
+      ...(ready !== undefined && { ready: ready.toString() }),
     });
 
     return await fetch(`${config.REACT_APP_API_URL}/walkers?${params}`, {
@@ -31,25 +36,15 @@ export const getWalkers = async ({
   }
 };
 
-export const editWalker = async ({
-  walkerID,
-  owner,
-  use,
-  type,
-  description,
-  ready,
-}) => {
-  const params = new URLSearchParams({
-    owner,
-    use,
-    type,
-    description,
-    ready,
-  });
+export const editWalker = async (
+  walkerid: string,
+  requestParams: EditWalkerRequestParams,
+): Promise<Response> => {
+  const params = objectToURLSearchParams(requestParams);
 
   try {
     return await fetch(
-      `${config.REACT_APP_API_URL}/walkers/${walkerID}?${params}`,
+      `${config.REACT_APP_API_URL}/walkers/${walkerid}?${params}`,
       {
         method: "PUT",
         headers: {
@@ -62,7 +57,10 @@ export const editWalker = async ({
   }
 };
 
-export const getDiscordServers = async (code, redirect) => {
+export const getDiscordServers = async (
+  code: string,
+  redirect: string,
+): Promise<Response> => {
   try {
     const params = new URLSearchParams({
       code,
@@ -79,7 +77,7 @@ export const getDiscordServers = async (code, redirect) => {
   }
 };
 
-export const deleteWalker = async (walkerID) => {
+export const deleteWalker = async (walkerID: string): Promise<Response> => {
   try {
     return await fetch(`${config.REACT_APP_API_URL}/walkers/${walkerID}`, {
       method: "DELETE",
