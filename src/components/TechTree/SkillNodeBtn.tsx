@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getWhoHasLearntIt } from "../../functions/requests/clan";
 
-const SkillNodeBtn = ({ clan, tree, item }) => {
-  const { t } = useTranslation();
-  const [usersSavedData, setUsersSavedData] = useState([]);
-  const [loaded, setLoaded] = useState(false);
+interface SkillNodeBtnProps {
+  clan: string;
+  tree: string;
+  item: {
+    name: string;
+  };
+}
 
-  const getLearned = async () => {
+const SkillNodeBtn: React.FC<SkillNodeBtnProps> = ({ clan, tree, item }) => {
+  const { t } = useTranslation();
+  const [usersSavedData, setUsersSavedData] = useState<string[]>([]);
+  const [loaded, setLoaded] = useState<boolean>(false);
+
+  const getLearned = async (): Promise<void> => {
     try {
       const users = await getWhoHasLearntIt(clan, tree, item.name);
       setUsersSavedData(users);

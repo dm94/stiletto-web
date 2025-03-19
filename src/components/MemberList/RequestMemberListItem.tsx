@@ -1,22 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-interface RequestMemberListItemProps {
-  isLeader: boolean;
-  member: {
-    discordid: string;
-    discordtag: string;
-    nickname: string;
-    message: string;
-    [key: string]: any;
-  };
-  onShowRequest: (member: any) => void;
-}
-
-const RequestMemberListItem: React.FC<RequestMemberListItemProps> = ({ isLeader, member, onShowRequest }) => {
+const RequestMemberListItem = ({ isLeader, member, onShowRequest }) => {
   const { t } = useTranslation();
 
-  const renderButton = (): JSX.Element | string => {
+  const renderButton = () => {
     if (!isLeader) {
       return "";
     }

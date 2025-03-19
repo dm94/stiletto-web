@@ -6,12 +6,43 @@ import Ingredient from "../Ingredient";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
 
-const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
+interface SkillItem {
+  name: string;
+  parent: string;
+  cost?: {
+    name: string;
+    count: number;
+    category?: string;
+  };
+  crafting?: Array<{
+    ingredients: Array<{
+      name: string;
+      count: number;
+      category?: string;
+    }>;
+    output?: number;
+  }>;
+}
+
+interface SkillTreeTabProps {
+  theme: Record<string, unknown>;
+  treeId: string;
+  title: string;
+  items: SkillItem[];
+  clan?: string;
+}
+
+const SkillTreeTab: React.FC<SkillTreeTabProps> = ({ theme, treeId, title, items, clan }) => {
   const { t } = useTranslation();
 
   const getChildrens = useCallback(
-    (parent) => {
-      const childrens = [];
+    (parent: string) => {
+      const childrens: Array<{
+        id: string;
+        title: string;
+        tooltip: { content: React.ReactNode };
+        children: any[];
+      }> = [];
       const filteredItems = items.filter((it) => it.parent === parent);
 
       filteredItems.forEach((i) => {
@@ -29,11 +60,11 @@ const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
     [items, t],
   );
 
-  const getContentItem = (item) => {
+  const getContentItem = (item: SkillItem): React.ReactNode => {
     return (
       <div className="mx-auto">
         <div className="text-center mb-1">
-          <Icon key={item.name} name={item.name} width={35} />
+          <Icon key={item.name} name={item.name} width="35" />
         </div>
         <p className="text-center border-bottom border-warning">
           {t("crafting.whoHasLearnedIt")}
@@ -68,21 +99,22 @@ const SkillTreeTab = ({ theme, treeId, title, items, clan }) => {
     );
   };
 
-  const handleSave = (storage, id, skills) => {
+  const handleSave = (storage: Storage, id: string, skills: any): Promise<void> => {
     return storage.setItem(`skills-${id}`, JSON.stringify(skills));
   };
 
-  const showIngredient = (item) => {
+  const showIngredient = (item: SkillItem): React.ReactNode => {
     if (item?.crafting) {
       return item.crafting.map((ingredients) => (
         <div
-          className={item.crafting.length > 1 ? "col-xl-6 border" : "col-xl-12"}
+          className={item.crafting!.length > 1 ? "col-xl-6 border" : "col-xl-12"}
           key={`skill-ingredient-${item.name}`}
         >
           <Ingredients crafting={ingredients} value={1} />
         </div>
       ));
     }
+    return null;
   };
 
   return (

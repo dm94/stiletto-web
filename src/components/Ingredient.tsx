@@ -3,9 +3,15 @@ import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
 import { getDomain } from "../functions/utils";
+import { Ingredient as IngredientType } from "../types";
 
-const Ingredient = ({ ingredient, value }) => {
-  const [showList, setShowList] = useState(false);
+interface IngredientProps {
+  ingredient: IngredientType;
+  value: number;
+}
+
+const Ingredient: React.FC<IngredientProps> = ({ ingredient, value }) => {
+  const [showList, setShowList] = useState<boolean>(false);
   const { t } = useTranslation();
 
   const hasIngredients =
