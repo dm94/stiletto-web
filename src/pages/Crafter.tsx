@@ -11,7 +11,7 @@ import TotalMaterials from "../components/Crafter/TotalMaterials";
 import { getDomain } from "../functions/utils";
 import { getRecipe } from "../functions/requests/recipes";
 import { useLocation } from "react-router";
-import type { CraftItem, Item } from "../types/item";
+import type { CraftItem, Item, ItemRecipe } from "../types/item";
 
 const Crafter: React.FC = () => {
   const location = useLocation();
@@ -89,7 +89,7 @@ const Crafter: React.FC = () => {
     setFilteredItems(filtered);
   };
 
-  const showAllItems = () => {
+  const showAllItems = (): React.ReactNode => {
     if (filteredItems.length > 0 || searchText.length > 0) {
       return (
         <Items key="itemListFiltered" items={filteredItems} onAdd={handleAdd} />
@@ -134,13 +134,13 @@ const Crafter: React.FC = () => {
     );
   };
 
-  const getIngredients = (itemName: string, secondTree: boolean) => {
+  const getIngredients = (itemName: string, secondTree: boolean): any => {
     const selectedItem = allItems.find((it) => it.name === itemName);
     if (!selectedItem?.crafting) {
       return [];
     }
 
-    return selectedItem.crafting.map((recipe) => ({
+    return selectedItem.crafting.map((recipe): ItemRecipe => ({
       ...recipe,
       ingredients: recipe.ingredients?.map((ingredient) => ({
         ...ingredient,
@@ -149,7 +149,7 @@ const Crafter: React.FC = () => {
     }));
   };
 
-  const showSelectedItems = () => {
+  const showSelectedItems = (): React.ReactNode => {
     return selectedItems.map((item) => (
       <SelectedItem
         key={item.name}
