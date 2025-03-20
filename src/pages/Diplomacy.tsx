@@ -80,7 +80,7 @@ const Diplomacy = () => {
       const response = await createRelationship(clanId, {
         nameotherclan: nameOtherClanInput,
         clanflag: clanFlagInput,
-        typed: typedInput as TypeRelationship,
+        typed: typedInput,
         symbol: clanFlagSymbolInput,
       });
 
@@ -129,7 +129,7 @@ const Diplomacy = () => {
       <div key={`ally${d.id}`} className="w-full">
         <ClanSelect
           clan={d}
-          leader={isLeader || hasPermissions}
+          isLeader={isLeader || hasPermissions}
           onDelete={handleDeleteDiplomacy}
         />
       </div>
@@ -149,7 +149,7 @@ const Diplomacy = () => {
       <div key={`enemy${d.id}`} className="w-full">
         <ClanSelect
           clan={d}
-          leader={isLeader || hasPermissions}
+          isLeader={isLeader || hasPermissions}
           onDelete={handleDeleteDiplomacy}
         />
       </div>
@@ -167,7 +167,7 @@ const Diplomacy = () => {
       <div key={`npa${d.id}`} className="w-full">
         <ClanSelect
           clan={d}
-          leader={isLeader || hasPermissions}
+          isLeader={isLeader || hasPermissions}
           onDelete={handleDeleteDiplomacy}
         />
       </div>

@@ -53,7 +53,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
 
   const getResourceEstimatedQuality = (resource: Resource) => {
     const quality = 4;
-    const diff = Math.abs(new Date().getTime() - new Date(resource.lastharvested || "").getTime());
+    const diff = Math.abs(new Date().getTime() - new Date(resource.lastharvested ?? "").getTime());
     const minutes = Math.floor(diff / 1000 / 60);
     const estimatedQuality = (minutes - 45) / 10;
     const remainingQuality = quality - estimatedQuality;
@@ -231,7 +231,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
         />
         <TileLayer
           url={`${config.REACT_APP_RESOURCES_URL}/maps/${
-            resourcesInTheMap?.[0]?.typemap || "Crater_new"
+            resourcesInTheMap?.[0]?.typemap ?? "Crater_new"
           }/{z}/{x}/{y}.png`}
           noWrap
         />

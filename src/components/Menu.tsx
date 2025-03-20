@@ -38,8 +38,8 @@ const Menu: React.FC<MenuProps> = ({
   };
 
   const handleKeyPress = (e: KeyboardEvent<HTMLInputElement>): void => {
-    const keyPress = e.key || e.keyCode;
-    if (keyPress === 13 || keyPress === "Enter") {
+    const keyPress = e.key;
+    if (keyPress === "Enter") {
       searchItem();
     }
   };
@@ -74,7 +74,6 @@ const Menu: React.FC<MenuProps> = ({
               width="30"
               height="30"
               viewBox="0 0 30 30"
-              role="img"
               focusable="false"
             >
               <title>{t("common.menu")}</title>
@@ -145,7 +144,7 @@ const Menu: React.FC<MenuProps> = ({
                   placeholder={t("common.search")}
                   aria-label={t("common.search")}
                   onChange={(e) => setSearchText(e.currentTarget.value)}
-                  onKeyPress={handleKeyPress}
+                  onKeyDown={handleKeyPress}
                   value={searchText}
                 />
                 <button

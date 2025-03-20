@@ -31,7 +31,7 @@ const Wiki = () => {
           }
         }
 
-        allCategories.sort();
+        allCategories.sort((a, b) => a.localeCompare(b));
 
         setItems(fetchedItems);
         setCategories(allCategories);

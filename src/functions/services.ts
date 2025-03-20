@@ -440,7 +440,7 @@ export const apiRequest = async (url: string, options: RequestInit) => {
       default:
         return {
           success: false,
-          message: "error.databaseConnection",
+          message: "errors.apiConnection",
         };
     }
   }
