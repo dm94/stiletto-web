@@ -2,7 +2,17 @@ import type React from "react";
 import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
-import type { CreateMapPanelProps } from "../../types/maps";
+import type { MapInfo } from "../../types/maps";
+
+interface CreateMapPanelProps {
+  maps: MapInfo[] | null;
+  onCreateMap: (
+    event: React.FormEvent,
+    mapName: string,
+    mapDate: string,
+    mapType: string,
+  ) => void;
+}
 
 const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
   maps,

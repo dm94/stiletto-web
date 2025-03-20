@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
@@ -16,6 +17,7 @@ import {
   getUserProfile,
   getStoredItem,
 } from "../../functions/services";
+import { DEFAULT_LANGUAGE } from "../../config/config";
 
 const PrivateProfile = () => {
   const { t } = useTranslation();
@@ -42,13 +44,14 @@ const PrivateProfile = () => {
       const response = await getUserProfile();
       if (response.success) {
         setUserData({
-          ...userData,
+          token: getStoredItem("token"),
+          language: getStoredItem("i18nextLng"),
           discordtag: response.message.discordtag,
           clanname: response.message.clanname,
           clanid: response.message.clanid,
           nickname: response.message.nickname,
           clanleaderid: response.message.leaderid,
-          user_discord_id: response.message.discordid,
+          user_discord_id: response.message.discordid ?? getStoredItem("discordid"),
         });
         setIsLoaded(true);
       } else {
@@ -66,8 +69,7 @@ const PrivateProfile = () => {
     sessionStorage.removeItem("memberList");
   };
 
-  const handleDeleteUser = async (event) => {
-    event.preventDefault();
+  const handleDeleteUser = async () => {
     try {
       const response = await deleteUser();
       clearStorageData();
@@ -86,7 +88,7 @@ const PrivateProfile = () => {
     }
   };
 
-  const handleAddNickInGame = async (event) => {
+  const handleAddNickInGame = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
       const response = await addNick(nameInGameInput);
@@ -105,8 +107,7 @@ const PrivateProfile = () => {
     }
   };
 
-  const handleLeaveClan = async (event) => {
-    event.preventDefault();
+  const handleLeaveClan = async () => {
     try {
       const response = await leaveClan();
       clearStorageData();
@@ -125,7 +126,7 @@ const PrivateProfile = () => {
   };
 
   const handleLanguageChange = () => {
-    i18next.changeLanguage(userData.language);
+    i18next.changeLanguage(userData.language ?? DEFAULT_LANGUAGE);
   };
 
   if (error) {
@@ -248,7 +249,6 @@ const PrivateProfile = () => {
                     key="Base Wings"
                     name="Base Wings"
                     width="30"
-                    className="mr-2"
                   />
                   {t("menu.walkerList")}
                 </Link>
@@ -316,7 +316,7 @@ const PrivateProfile = () => {
               <select
                 id="changeLanguajeSelect"
                 className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
-                value={userData.language || "en"}
+                value={userData.language ?? DEFAULT_LANGUAGE}
                 onChange={(e) =>
                   setUserData({ ...userData, language: e.target.value })
                 }
@@ -431,7 +431,7 @@ const PrivateProfile = () => {
       {showClanConfig && (
         <ClanConfig
           onClose={() => setShowClanConfig(false)}
-          onSuccess={() => {
+          onError={() => {
             setShowClanConfig(false);
             window.location.reload();
           }}

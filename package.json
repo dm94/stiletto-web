@@ -41,11 +41,7 @@
     "lint": "biome lint --write ./src"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -75,11 +71,7 @@
   },
   "packageManager": "pnpm@10.4.0",
   "pnpm": {
-    "ignoredBuiltDependencies": [
-      "cypress"
-    ],
-    "onlyBuiltDependencies": [
-      "cypress"
-    ]
+    "ignoredBuiltDependencies": ["cypress"],
+    "onlyBuiltDependencies": ["cypress"]
   }
 }

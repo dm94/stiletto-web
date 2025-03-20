@@ -1,21 +1,13 @@
-// Common type definitions for the project
+import type { ItemRecipe } from "./item";
 
 // Item type definition
-export interface Item {
+export interface CustomItem {
   name: string;
   category?: string;
-  count?: number;
-  crafting?: Crafting[];
+  count: number;
+  crafting?: ItemRecipe[];
   ingredients?: Ingredient[];
   value?: number;
-}
-
-// Crafting type definition
-export interface Crafting {
-  ingredients: Ingredient[];
-  output?: number;
-  time?: number;
-  station?: string;
 }
 
 // Ingredient type definition
@@ -24,6 +16,7 @@ export interface Ingredient {
   count: number;
   category?: string;
   ingredients?: Ingredient[];
+  output?: number;
 }
 
 // Language type definition

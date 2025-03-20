@@ -23,6 +23,8 @@ import {
 } from "../functions/requests/walkers";
 import { useLocation } from "react-router";
 import type { WalkerUI } from "../types/walker";
+import type { WalkerUse } from "../types/dto/walkers";
+import type { Item } from "../types/item";
 
 interface Member {
   discordid: string;
@@ -50,6 +52,7 @@ const WalkerList: React.FC = () => {
   const [clanId, setClanId] = useState("");
   const location = useLocation();
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const updateWalkers = useCallback(
     async (currentPage = page) => {
       setIsLoaded(false);
@@ -57,12 +60,12 @@ const WalkerList: React.FC = () => {
 
       try {
         const response = await getWalkers({
-          pageSize: "20",
-          page: currentPage.toString(),
+          pageSize: 20,
+          page: currentPage,
           ...(searchInput && { name: searchInput }),
           ...(walkerTypeSearch !== "All" && { type: walkerTypeSearch }),
           ...(searchDescription && { desc: searchDescription }),
-          ...(useWalkerSearch !== "All" && { use: useWalkerSearch }),
+          ...(useWalkerSearch !== "All" && { use: useWalkerSearch as WalkerUse }),
           ...(isReadySearch !== "All" && { ready: isReadySearch === "Yes" }),
         });
 
@@ -129,6 +132,7 @@ const WalkerList: React.FC = () => {
     }
   };
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const handleDiscordAuth = async (code: string) => {
       try {
@@ -171,16 +175,16 @@ const WalkerList: React.FC = () => {
         getItems(),
       ]);
 
-      if (membersResponse.success) {
+      if (membersResponse?.success) {
         setMembers(membersResponse.message);
       } else {
-        setError(membersResponse.message);
+        setError(membersResponse?.message);
       }
 
       if (itemsResponse) {
         const walkerTypeList = itemsResponse
-          .filter((item) => item.category === "Walkers")
-          .map((item) => item.name.replace("Walker", "").trim());
+          .filter((item: Item) => item.category === "Walkers")
+          .map((item: Item) => item.name.replace("Walker", "").trim());
         setWalkerTypes(walkerTypeList);
       }
     };
@@ -193,7 +197,7 @@ const WalkerList: React.FC = () => {
 
       const parsed = queryString.parse(location.search);
       if (parsed?.code) {
-        await handleDiscordAuth(parsed.code);
+        await handleDiscordAuth(String(parsed?.code));
       }
 
       const profileSuccess = await setupUserProfile();

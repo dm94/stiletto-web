@@ -6,10 +6,13 @@ import CreateMapPanel from "./CreateMapPanel";
 import { getDomain } from "../../functions/utils";
 import { createMap as createMapRequest } from "../../functions/requests/maps";
 import type {
-  CreateMapNoLogProps,
   MapInfo,
   MapCreationResponse,
 } from "../../types/maps";
+
+interface CreateMapNoLogProps {
+  onOpen: (id: string | number, pass: string) => void;
+}
 
 const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
   const { t } = useTranslation();
@@ -36,9 +39,11 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
 
     try {
       const response = (await createMapRequest(
-        mapNameInput,
-        mapDateInput,
-        mapSelectInput,
+        {
+          mapdate: mapDateInput,
+          mapname: mapNameInput,
+          maptype: mapSelectInput,
+        }
       )) as unknown as MapCreationResponse;
       setMapIdInput(response.IdMap);
       setMapPassInput(response.PassMap);

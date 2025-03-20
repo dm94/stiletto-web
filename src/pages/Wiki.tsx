@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import { getItems } from "../functions/services";
@@ -7,21 +8,22 @@ import Ingredient from "../components/Ingredient";
 import { getDomain } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
 import { useLocation } from "react-router";
+import type { Item } from "../types/item";
 
 const Wiki = () => {
   const location = useLocation();
   const { t } = useTranslation();
-  const [items, setItems] = useState([]);
-  const [searchText, setSearchText] = useState("");
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [categories, setCategories] = useState([]);
-  const [categoryFilter, setCategoryFilter] = useState("All");
+  const [items, setItems] = useState<Item[]>([]);
+  const [searchText, setSearchText] = useState<string>("");
+  const [filteredItems, setFilteredItems] = useState<Item[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const [categoryFilter, setCategoryFilter] = useState<string>("All");
 
   useEffect(() => {
     const updateRecipes = async () => {
       const fetchedItems = await getItems();
       if (fetchedItems != null) {
-        const allCategories = [];
+        const allCategories: string[] = [];
 
         for (const item of fetchedItems) {
           if (item.category && !allCategories.includes(item.category)) {
@@ -42,8 +44,8 @@ const Wiki = () => {
       const parsed = queryString.parse(location.search);
 
       if (parsed?.s) {
-        setSearchText(parsed.s);
-        searchItems(parsed.s, "All");
+        setSearchText(String(parsed.s));
+        searchItems(String(parsed.s), "All");
       }
     }
   }, [location]);
@@ -111,14 +113,14 @@ const Wiki = () => {
     ));
   };
 
-  const handleSearchTextChange = (e) => setSearchText(e.currentTarget.value);
+  const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchText(e.currentTarget.value);
 
-  const handleCategoryChange = (e) => {
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setCategoryFilter(e.target.value);
     searchItems(searchText, e.target.value);
   };
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       searchItems();
     }

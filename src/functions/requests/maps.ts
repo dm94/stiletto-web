@@ -3,6 +3,7 @@ import { config } from "../../config/config";
 import type { AddMapRequestParams } from "../../types/dto/maps";
 import type { AddResourceRequestParams } from "../../types/dto/resources";
 import { objectToURLSearchParams } from "../utils";
+import type { MapData } from "../../types/maps";
 
 export const createMap = async (
   requestParams: AddMapRequestParams,
@@ -19,7 +20,7 @@ export const createMap = async (
   try {
     return await fetch(url, {
       method: "POST",
-      headers,
+      headers: headers as Record<string, string>,
     });
   } catch {
     throw new Error("error.databaseConnection");
@@ -46,7 +47,7 @@ export const editMap = async (
   try {
     const response = await fetch(url, {
       method: "PUT",
-      headers,
+      headers: headers as Record<string, string>,
     });
 
     if (response.ok) {

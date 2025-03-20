@@ -2,17 +2,17 @@ import type React from "react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Ingredient from "../Ingredient";
-import type { Item } from "../../types";
+import type { CustomItem } from "../../types";
 
 interface CanBeUsedInfoProps {
   name: string;
-  items: Item[];
+  items: CustomItem[];
 }
 
 const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
   const ITEMS_PER_PAGE = 10;
   const { t } = useTranslation();
-  const [canBeUsed, setCanBeUsed] = useState<Item[]>([]);
+  const [canBeUsed, setCanBeUsed] = useState<CustomItem[]>([]);
   const [visibleItems, setVisibleItems] = useState<number>(ITEMS_PER_PAGE);
 
   useEffect(() => {
@@ -61,6 +61,7 @@ const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
             {canBeUsed.length > visibleItems && (
               <div className="mt-4 text-center">
                 <button
+                  type="button"
                   onClick={loadMoreItems}
                   className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors"
                 >

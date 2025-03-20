@@ -37,6 +37,7 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
 
   return (
     <Fragment>
+      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
       <svg
         className="inline-block mr-2"
         width="32"

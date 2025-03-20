@@ -1,9 +1,10 @@
 import type React from "react";
 import Ingredient from "./Ingredient";
-import type { Crafting } from "../types";
+import type { Ingredient as IngredientType } from "../types";
+import type { ItemRecipe } from "../types/item";
 
 interface IngredientsProps {
-  crafting: Crafting;
+  crafting: IngredientType | ItemRecipe;
   value: number;
 }
 

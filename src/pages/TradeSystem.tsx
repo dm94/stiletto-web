@@ -1,3 +1,4 @@
+import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
@@ -13,14 +14,16 @@ import {
   deleteTrade,
   createTrade,
 } from "../functions/requests/trades";
+import type { TradeInfo, TradeType } from "../types/dto/trades";
+import type { Item } from "../types/item";
 
 const TradeSystem = () => {
   const { t } = useTranslation();
   const [userDiscordId] = useState(getStoredItem("discordid"));
   const [isLoaded, setIsLoaded] = useState(false);
-  const [trades, setTrades] = useState([]);
+  const [trades, setTrades] = useState<TradeInfo[]>([]);
   const [error, setError] = useState("");
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Item[]>([]);
   const [resourceTypeInput, setResourceTypeInput] = useState("Aloe Vera");
   const [tradeTypeInput, setTradeTypeInput] = useState("Supply");
   const [amountInput, setAmountInput] = useState(0);
@@ -44,15 +47,15 @@ const TradeSystem = () => {
 
     try {
       const response = await getTrades({
-        pageSize: "10",
-        page: currentPage.toString(),
-        ...(tradeTypeFilterInput && { type: tradeTypeFilterInput }),
+        pageSize: 10,
+        page: currentPage,
+        ...(tradeTypeFilterInput && { type: tradeTypeFilterInput as TradeType }),
         ...(resourceTypeFilterInput && { resource: resourceTypeFilterInput }),
         ...(regionFilterInput && { region: regionFilterInput }),
       });
 
       if (response.status === 200) {
-        const data = await response.json();
+        const data = await response.json() as TradeInfo[];
         const hasMoreData = data != null && data.length >= 10;
         setTrades(data);
         setIsLoaded(true);
@@ -69,7 +72,7 @@ const TradeSystem = () => {
     const fetchedItems = await getItems();
     if (fetchedItems) {
       const filteredItems = fetchedItems.filter(
-        (it) =>
+        (it: any) =>
           it.category === "Resources" ||
           it.category === "Ammo" ||
           it.category === "Armors" ||
@@ -84,7 +87,7 @@ const TradeSystem = () => {
     }
   };
 
-  const handleDeleteTrade = async (idTrade) => {
+  const handleDeleteTrade = async (idTrade: number) => {
     try {
       const response = await deleteTrade(idTrade);
 
@@ -100,17 +103,17 @@ const TradeSystem = () => {
     }
   };
 
-  const handleCreateTrade = async (event) => {
+  const handleCreateTrade = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
       const response = await createTrade({
         resource: resourceTypeInput,
-        type: tradeTypeInput,
-        amount: amountInput.toString(),
+        type: tradeTypeInput as TradeType,
+        amount: amountInput,
         region: regionInput,
-        quality: qualityInput.toString(),
-        price: priceInput.toString(),
+        quality: qualityInput,
+        price: priceInput,
       });
 
       setResourceTypeInput("Aloe Vera");
@@ -122,9 +125,9 @@ const TradeSystem = () => {
       if (response.status === 201) {
         updateTrades();
       } else if (response.status === 400) {
-        setError("Some data are missing");
+        setError("errors.missingData");
       } else if (response.status === 401) {
-        setError("These connection data are wrong");
+        setError("error.unauthorized");
       } else if (response.status === 503) {
         setError("error.databaseConnection");
       }
@@ -193,7 +196,6 @@ const TradeSystem = () => {
                     {t("common.region")}
                   </label>
                   <ClusterList
-                    onError={setError}
                     value={regionInput}
                     onChange={setRegionInput}
                     filter={false}
@@ -223,10 +225,9 @@ const TradeSystem = () => {
                   </label>
                   <select
                     id="qualityInput"
-                    type="range"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={qualityInput}
-                    onChange={(evt) => setQualityInput(evt.target.value)}
+                    onChange={(evt) => setQualityInput(Number(evt.target.value))}
                   >
                     <option value="0">{t("crafting.common")}</option>
                     <option value="1">{t("crafting.uncommon")}</option>
@@ -377,10 +378,10 @@ const TradeSystem = () => {
               </div>
               <div className="lg:col-span-2">
                 <ClusterList
-                  onError={setError}
                   value={regionFilterInput}
                   onChange={setRegionFilterInput}
                   filter={true}
+                  id="regionFilterInput"
                 />
               </div>
               <div className="lg:col-span-3 flex space-x-2">

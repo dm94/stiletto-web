@@ -3,33 +3,16 @@ import { useCallback } from "react";
 import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
 import { useTranslation } from "react-i18next";
 import Ingredients from "../Ingredients";
-import Ingredient from "../Ingredient";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
+import type { Item } from "../../types/item";
 
-interface SkillItem {
-  name: string;
-  parent: string;
-  cost?: {
-    name: string;
-    count: number;
-    category?: string;
-  };
-  crafting?: Array<{
-    ingredients: Array<{
-      name: string;
-      count: number;
-      category?: string;
-    }>;
-    output?: number;
-  }>;
-}
 
 interface SkillTreeTabProps {
   theme: Record<string, unknown>;
   treeId: string;
   title: string;
-  items: SkillItem[];
+  items: Item[];
   clan?: string;
 }
 
@@ -52,7 +35,7 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
       }> = [];
       const filteredItems = items.filter((it) => it.parent === parent);
 
-      filteredItems.forEach((i) => {
+      for (const i of filteredItems) {
         const item = {
           id: i.name,
           title: t(i.name),
@@ -60,14 +43,14 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
           children: getChildrens(i.name),
         };
         childrens.push(item);
-      });
+      }
 
       return childrens;
     },
     [items, t],
   );
 
-  const getContentItem = (item: SkillItem): React.ReactNode => {
+  const getContentItem = (item: Item): React.ReactNode => {
     return (
       <div className="mx-auto">
         <div className="text-center mb-1">
@@ -89,15 +72,6 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
         <p className="text-center border-bottom border-warning mt-1">
           {t("crafting.costToLearn")}
         </p>
-        {item.cost ? (
-          <Ingredient
-            key={`cost-${item.cost.name}`}
-            ingredient={item.cost}
-            value={1}
-          />
-        ) : (
-          t("common.notDefined1")
-        )}
         <p className="text-center border-bottom border-warning mt-2">
           {t("crafting.recipe")}
         </p>
@@ -110,16 +84,16 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
     storage: Storage,
     id: string,
     skills: any,
-  ): Promise<void> => {
-    return storage.setItem(`skills-${id}`, JSON.stringify(skills));
+  ): void => {
+    storage.setItem(`skills-${id}`, JSON.stringify(skills));
   };
 
-  const showIngredient = (item: SkillItem): React.ReactNode => {
+  const showIngredient = (item: Item): React.ReactNode => {
     if (item?.crafting) {
       return item.crafting.map((ingredients) => (
         <div
           className={
-            item.crafting?.length > 1 ? "col-xl-6 border" : "col-xl-12"
+            item.crafting && item.crafting?.length > 1 ? "col-xl-6 border" : "col-xl-12"
           }
           key={`skill-ingredient-${item.name}`}
         >
@@ -138,7 +112,11 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
             treeId={treeId}
             title={title}
             data={getChildrens(treeId)}
-            handleSave={handleSave}
+            handleSave={(storage: any, treeId: string, skills: any) => {
+              if ('setItem' in storage) {
+                handleSave(storage as Storage, treeId, skills);
+              }
+            }}
           />
         )}
       </SkillTreeGroup>

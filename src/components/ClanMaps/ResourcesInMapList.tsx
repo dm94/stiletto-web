@@ -2,7 +2,13 @@ import type React from "react";
 import { useState, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
-import type { ResourcesInMapListProps, Resource } from "../../types/maps";
+import type { Resource } from "../../types/dto/resources";
+
+interface ResourcesInMapListProps {
+  resources: Resource[] | null;
+  onFilter?: (resourceType: string) => void;
+  onSelect?: (x: number, y: number) => void;
+}
 
 const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({
   resources,

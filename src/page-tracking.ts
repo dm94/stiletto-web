@@ -1,16 +1,13 @@
 import { useEffect } from "react";
 import { config } from "./config/config";
 
-// Define types for Plausible analytics
-interface PlausibleWindow extends Window {
-  plausible?: {
-    (...args: any[]): void;
-    q?: any[];
-  };
-}
-
 declare global {
-  interface Window extends PlausibleWindow {}
+  interface Window {
+    plausible?: (
+      event: string,
+      options?: { props?: Record<string, any> },
+    ) => void;
+  }
 }
 
 // Type for event props
@@ -48,21 +45,10 @@ export const usePageTracking = (): void => {
  * @param eventName - The name of the event
  * @param options - Optional event properties
  */
-export const sendEvent = (
-  eventName: string,
-  options?: { props?: EventProps },
-): void => {
+export const sendEvent = (eventName: string, props?: EventProps): void => {
   initPlausible();
 
-  try {
-    window.plausible =
-      window.plausible ||
-      function () {
-        (window.plausible.q = window.plausible.q || []).push(arguments);
-      };
-  } catch (error) {
-    console.error(error);
+  if (typeof window !== "undefined" && window.plausible) {
+    window.plausible(eventName, { props });
   }
-
-  window?.plausible?.(eventName, options);
 };

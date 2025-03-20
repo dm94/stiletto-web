@@ -1,36 +1,39 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import {
   getDiscordConfig,
   updateBotConfig,
 } from "../../functions/requests/clans/discordbot";
 import { closeSession } from "../../functions/services";
+import { Languages, type UpdateBotConfigParams, type DiscordConfig as DiscordConfigType } from "../../types/dto/discordConfig";
 
-const DiscordConfig = ({ clanid, onClose, onError }) => {
+interface DiscordConfigProps {
+  clanid: number;
+  onClose: () => void;
+  onError: (error: string) => void;
+}
+
+const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError }) => {
   const { t } = useTranslation();
-  const [botConfig, setBotConfig] = useState({
+  const [botConfig, setBotConfig] = useState<DiscordConfigType>({
+    discordid: "",
     readClanLog: true,
-    botLanguaje: "en",
+    botLanguaje: Languages.EN,
     automaticKick: false,
     setNotReadyPVP: false,
-    walkeralarm: false,
+    walkerAlarm: false,
   });
 
   useEffect(() => {
-    const fetchBotConfig = async () => {
+    const fetchBotConfig = async (): Promise<void> => {
       try {
         const response = await getDiscordConfig(clanid);
 
         if (response.status === 200) {
-          const data = await response.json();
+          const data = await response.json() as DiscordConfigType;
           if (data) {
-            setBotConfig({
-              botLanguaje: data.botlanguaje || "en",
-              readClanLog: data.readclanlog === "1",
-              automaticKick: data.automatickick === "1",
-              setNotReadyPVP: data.setnotreadypvp === "1",
-              walkeralarm: data.walkeralarm === "1",
-            });
+            setBotConfig(data);
           }
         } else if (response.status === 401) {
           closeSession();
@@ -46,9 +49,17 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
     fetchBotConfig();
   }, [clanid, onError]);
 
-  const handleUpdateBotConfig = async () => {
+  const handleUpdateBotConfig = async (): Promise<void> => {
     try {
-      const response = await updateBotConfig(clanid, botConfig);
+      const params: UpdateBotConfigParams = {
+        languaje: botConfig.botLanguaje,
+        clanlog: botConfig.readClanLog,
+        kick: botConfig.automaticKick,
+        readypvp: botConfig.setNotReadyPVP,
+        walkeralarm: botConfig.walkerAlarm,
+      };
+      
+      const response = await updateBotConfig(clanid, params);
 
       if (response.status === 200) {
         onClose();
@@ -65,11 +76,11 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
     }
   };
 
-  const handleBotLanguageChange = (evt) => {
-    setBotConfig({ ...botConfig, botLanguaje: evt.target.value });
+  const handleBotLanguageChange = (evt: React.ChangeEvent<HTMLSelectElement>): void => {
+    setBotConfig({ ...botConfig, botLanguaje: evt.target.value as unknown as Languages });
   };
 
-  const toggleConfigOption = (key) => {
+  const toggleConfigOption = (key: keyof DiscordConfigType): void => {
     setBotConfig({ ...botConfig, [key]: !botConfig[key] });
   };
 
@@ -129,10 +140,6 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
                 onChange={() => toggleConfigOption("readClanLog")}
                 className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
               />
-              <label
-                htmlFor="readClanLog"
-                className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
-              />
             </div>
             <label className="text-sm" htmlFor="readClanLog">
               {t("discord.readDiscordClanLog")}
@@ -151,10 +158,6 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
                 onChange={() => toggleConfigOption("automaticKick")}
                 className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
               />
-              <label
-                htmlFor="automaticKick"
-                className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
-              />
             </div>
             <label className="text-sm" htmlFor="automaticKick">
               {t("discord.automaticKickMembersFromClan")}
@@ -170,10 +173,6 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
                 onChange={() => toggleConfigOption("setNotReadyPVP")}
                 className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
               />
-              <label
-                htmlFor="setNotReadyPVP"
-                className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
-              />
             </div>
             <label className="text-sm" htmlFor="setNotReadyPVP">
               {t("discord.pvpMarkNotReady")}
@@ -188,11 +187,13 @@ const DiscordConfig = ({ clanid, onClose, onError }) => {
               <input
                 type="checkbox"
                 id="walkerAlarm"
-                checked={botConfig.walkeralarm}
-                onChange={() => toggleConfigOption("walkeralarm")}
+                checked={botConfig.walkerAlarm}
+                onChange={() => toggleConfigOption("walkerAlarm")}
                 className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
               />
               <label
+                id="walkerAlarmLabel"
+                aria-label="Toggle walker alarm notification"
                 htmlFor="walkerAlarm"
                 className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
               />

@@ -1,13 +1,9 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-
-interface Tool {
-  toolType: string;
-  tier: string | number;
-}
+import type { ToolInfo as Info } from "../../types/item";
 
 interface ToolInfoProps {
-  toolInfo?: Tool[];
+  toolInfo?: Info[];
 }
 
 const ToolInfo: React.FC<ToolInfoProps> = ({ toolInfo }) => {
@@ -16,10 +12,10 @@ const ToolInfo: React.FC<ToolInfoProps> = ({ toolInfo }) => {
   const showToolInfo = () => {
     return toolInfo?.map((tool) => (
       <li
-        key={tool.toolType + tool.tier}
+        key={`${tool.toolType}-${tool.tier}`}
         className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0"
       >
-        <div className="text-gray-300">{t(tool.toolType)}</div>
+        {tool?.toolType && <div className="text-gray-300">{t(tool.toolType)}</div>}
         <div className="text-gray-400">{tool.tier}</div>
       </li>
     ));

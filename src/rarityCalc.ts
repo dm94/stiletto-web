@@ -270,22 +270,22 @@ const sumCalcs = (
 
   switch (rarity) {
     case "Uncommon":
-      if (rarityData.Uncommon[factorName]) {
+      if (rarityData.Uncommon?.[factorName]) {
         newValue = newValue + rarityData.Uncommon[factorName];
       }
       break;
     case "Rare":
-      if (rarityData.Rare[factorName]) {
+      if (rarityData.Rare?.[factorName]) {
         newValue = newValue + rarityData.Rare[factorName];
       }
       break;
     case "Epic":
-      if (rarityData.Epic[factorName]) {
+      if (rarityData.Epic?.[factorName]) {
         newValue = newValue + rarityData.Epic[factorName];
       }
       break;
     case "Legendary":
-      if (rarityData.Legendary[factorName]) {
+      if (rarityData.Legendary?.[factorName]) {
         newValue = newValue + rarityData.Legendary[factorName];
       }
       break;

@@ -15,6 +15,7 @@ import Comments from "../components/Wiki/Comments";
 import { calcRarityValue } from "../rarityCalc";
 import { getItemUrl, getItemCraftUrl } from "../functions/utils";
 import HeaderMeta from "../components/HeaderMeta";
+import { type Item, Rarity } from "../types/item";
 
 const WikiDescription = React.lazy(
   () => import("../components/Wiki/WikiDescription"),
@@ -33,20 +34,20 @@ const SchematicItems = React.lazy(
 const ItemWiki = () => {
   const { t } = useTranslation();
   const { name } = useParams();
-  const [item, setItem] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [allItems, setAllItems] = useState([]);
-  const [rarity, setRarity] = useState("Common");
-  const [textColor, setTextColor] = useState("text-gray-400");
+  const [item, setItem] = useState<Item>();
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [allItems, setAllItems] = useState<Item[]>([]);
+  const [rarity, setRarity] = useState<string>("Common");
+  const [textColor, setTextColor] = useState<string>("text-gray-400");
 
   useEffect(() => {
     const loadData = async () => {
       let itemName = name;
       if (name) {
-        itemName = decodeURI(itemName).replaceAll("_", " ").toLowerCase();
+        itemName = decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase();
       }
 
-      const items = await getItems();
+      const items: Item[] = await getItems();
       if (items) {
         const foundItem = items.find(
           (it) => it.name.toLowerCase() === itemName,
@@ -60,21 +61,28 @@ const ItemWiki = () => {
     loadData();
   }, [name]);
 
-  const showIngredient = (ingre) =>
-    ingre?.crafting?.map((ingredients, index) => (
-      <div
-        className={
-          ingre.crafting.length > 1
-            ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
-            : "w-full"
-        }
-        key={`ingredients-${index}-${ingre.name}`}
-      >
-        <Ingredients crafting={ingredients} value={1} />
-        {ingredients.station && <Station name={ingredients.station} />}
-        {ingredients.time && <CraftingTime time={ingredients.time} />}
-      </div>
-    ));
+  const showIngredient = (ingre: Item) => {
+    if (!ingre?.crafting) {
+      return;
+    }
+
+    return (
+      ingre?.crafting?.map((recipe, index) => (
+        <div
+          className={
+            ingre?.crafting && ingre?.crafting?.length > 1
+              ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
+              : "w-full"
+          }
+          key={`ingredients-${index}-${ingre.name}`}
+        >
+          <Ingredients crafting={recipe} value={1} />
+          {recipe.station && <Station name={recipe.station} />}
+          {recipe.time && <CraftingTime time={recipe.time} />}
+        </div>
+      ))
+    )
+  }
 
   const showDescription = () =>
     item?.description && (
@@ -88,53 +96,56 @@ const ItemWiki = () => {
       </div>
     );
 
-  const updateRarity = (value) => {
+  const updateRarity = (value: Rarity) => {
     setRarity(value);
 
     switch (value) {
-      case "Common":
+      case Rarity.Common:
         setTextColor("text-gray-400");
         break;
-      case "Uncommon":
+      case Rarity.Uncommon:
         setTextColor("text-green-400");
         break;
-      case "Rare":
+      case Rarity.Rare:
         setTextColor("text-blue-400");
         break;
-      case "Epic":
+      case Rarity.Epic:
         setTextColor("text-red-400");
         break;
-      default:
+      case Rarity.Legendary:
         setTextColor("text-yellow-400");
+        break;
+      default:
+        setTextColor("text-gray-400");
     }
   };
 
-  const getRarityClass = (value) => {
+  const getRarityClass = (value: Rarity) => {
     let outlineColor = "";
     let hoverColor = "";
     let focusColor = "";
     let textColor = "";
 
     switch (value) {
-      case "Legendary":
+      case Rarity.Legendary:
         outlineColor = "border-yellow-500";
         hoverColor = "hover:bg-yellow-500";
         textColor = "text-yellow-500";
         focusColor = "focus:ring-yellow-500";
         break;
-      case "Epic":
+      case Rarity.Epic:
         outlineColor = "border-red-500";
         hoverColor = "hover:bg-red-500";
         textColor = "text-red-500";
         focusColor = "focus:ring-red-500";
         break;
-      case "Rare":
+      case Rarity.Rare:
         outlineColor = "border-blue-500";
         hoverColor = "hover:bg-blue-500";
         textColor = "text-blue-500";
         focusColor = "focus:ring-blue-500";
         break;
-      case "Uncommon":
+      case Rarity.Uncommon:
         outlineColor = "border-green-500";
         hoverColor = "hover:bg-green-500";
         textColor = "text-green-500";
@@ -170,7 +181,7 @@ const ItemWiki = () => {
 
   const itemName = item?.name;
   const parentUrl = item.parent && getItemUrl(item.parent);
-  const craftUrl = getItemCraftUrl(name);
+  const craftUrl = getItemCraftUrl(name ?? itemName);
 
   return (
     <div
@@ -188,7 +199,7 @@ const ItemWiki = () => {
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
             <div className="p-4 bg-gray-900 border-b border-gray-700">
               <div className="flex items-center text-neutral-300">
-                <Icon key={itemName} name={itemName} width={35} />
+                <Icon key={itemName} name={itemName} width={"35"} />
                 <span className="ml-2">{t(itemName, { ns: "items" })}</span>
               </div>
             </div>
@@ -287,8 +298,8 @@ const ItemWiki = () => {
                 <legend className="sr-only">
                   {t("common.raritySelection")}
                 </legend>
-                {["Common", "Uncommon", "Rare", "Epic", "Legendary"].map(
-                  (rar) => (
+                {[Rarity.Common, Rarity.Uncommon, Rarity.Rare, Rarity.Epic, Rarity.Legendary].map(
+                  (rar: Rarity) => (
                     <button
                       key={rar}
                       type="button"

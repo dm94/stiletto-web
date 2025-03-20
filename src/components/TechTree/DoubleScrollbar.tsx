@@ -1,19 +1,23 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, type ReactNode, type CSSProperties } from "react";
 
 /* Modification of this library https://github.com/umchee/react-double-scrollbar */
 
-const DoubleScrollbar = ({ children }) => {
-  const [width, setWidth] = useState("auto");
-  const outerDivRef = useRef(null);
-  const childrenWrapperRef = useRef(null);
+interface DoubleScrollbarProps {
+  children: ReactNode;
+}
 
-  const calculateWidth = () => {
-    const childWrapperWidth = childrenWrapperRef.current?.scrollWidth;
-    const newWidth = childWrapperWidth ? `${childWrapperWidth}px` : "auto";
-    setWidth(newWidth);
-  };
+const DoubleScrollbar = ({ children }: DoubleScrollbarProps) => {
+  const [width, setWidth] = useState("auto");
+  const outerDivRef = useRef<HTMLDivElement | null>(null);
+  const childrenWrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const calculateWidth = () => {
+      const childWrapperWidth = childrenWrapperRef.current?.scrollWidth;
+      const newWidth = childWrapperWidth ? `${childWrapperWidth}px` : "auto";
+      setWidth(newWidth);
+    };
+
     const outerDiv = outerDivRef.current;
     const childWrapper = childrenWrapperRef.current;
 
@@ -42,9 +46,9 @@ const DoubleScrollbar = ({ children }) => {
     };
   }, []);
 
-  const outerDivStyle = { overflowX: "auto", overflowY: "hidden" };
-  const innerDivStyle = { paddingTop: "1px", width };
-  const childDivStyle = { overflow: "auto", overflowY: "hidden" };
+  const outerDivStyle: CSSProperties = { overflowX: "auto", overflowY: "hidden" };
+  const innerDivStyle: CSSProperties = { paddingTop: "1px", width };
+  const childDivStyle: CSSProperties = { overflow: "auto", overflowY: "hidden" };
 
   return (
     <div>

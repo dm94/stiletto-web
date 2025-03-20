@@ -17,28 +17,32 @@ import {
 } from "../../functions/requests/maps";
 import { useLocation, useParams } from "react-router";
 import type {
-  ResourceMapNoLogProps,
   Resource,
-  MapData,
-} from "../../types/maps";
+} from "../../types/dto/resources";
+import type { Marker } from "../../types/dto/marker";
+
+interface ResourceMapNoLogProps {
+  mapId?: number;
+  pass?: string;
+}
 
 const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const location = useLocation();
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
-  const [resourcesInTheMap, setResourcesInTheMap] = useState<Resource[] | null>(
-    null,
+  const [resourcesInTheMap, setResourcesInTheMap] = useState<Resource[]>(
+    []
   );
-  const [mapId, setMapId] = useState<string | null>(null);
-  const [pass, setPass] = useState<string | null>(null);
+  const [mapId, setMapId] = useState<number>();
+  const [pass, setPass] = useState<string>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [textMessage, setTextMessage] = useState<string | null>(null);
-  const [center, setCenter] = useState<[number, number] | null>(null);
-  const [items, setItems] = useState<Resource[] | null>(null);
+  const [textMessage, setTextMessage] = useState<string>("");
+  const [center, setCenter] = useState<[number, number]>();
+  const [items, setItems] = useState<Marker[]>([]);
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
-  const [resourcesFiltered, setResourcesFiltered] = useState<Resource[] | null>(
-    null,
+  const [resourcesFiltered, setResourcesFiltered] = useState<Resource[]>(
+    []
   );
   const [error, setError] = useState<string | null>(null);
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
@@ -52,11 +56,11 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
 
     if ((props?.mapId || id) && (props?.pass || parsed?.pass)) {
       try {
-        const markers = await getMarkers();
+        const markers = await getMarkers() as Marker[];
         setItems(markers);
 
-        const currentMapId = props?.mapId || id;
-        const currentPass = props?.pass || parsed?.pass;
+        const currentMapId = Number(props?.mapId ?? id);
+        const currentPass = String(props?.pass ?? parsed?.pass);
 
         setMapId(currentMapId);
         setPass(currentPass);
@@ -73,20 +77,22 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       setError("error.unauthorized");
     }
     setIsLoaded(true);
-  }, [props]);
+  }, [props, id, location?.search]);
 
   useEffect(() => {
     fetchData();
   }, [fetchData]);
 
   const handleDeleteResource = useCallback(
-    async (resourceId: string, resourceToken: string) => {
+    async (resourceId: number, resourceToken: string) => {
+      if (!mapId) {
+        return;
+      }
+
       try {
         const response = await deleteResource(mapId, resourceId, resourceToken);
-        if (response.success) {
+        if (response) {
           fetchData();
-        } else {
-          setError(response.message);
         }
       } catch {
         setError("errors.apiConnection");
@@ -102,8 +108,12 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       descriptionInput: string,
       lastHarvested: string,
     ) => {
+      if (!mapId) {
+        return;
+      }
+
       try {
-        const response = await createResource(Number(mapId), {
+        const response = await createResource(mapId, {
           x: coordinateXInput,
           y: coordinateYInput,
           mappass: pass ?? "",
@@ -112,10 +122,9 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
           description: descriptionInput,
           harvested: lastHarvested,
         });
-        if (response.success) {
+
+        if (response) {
           fetchData();
-        } else {
-          setError(response.message);
         }
       } catch {
         setError("errors.apiConnection");
@@ -127,7 +136,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const handleFilterResources = useCallback(
     (resourceType: string) => {
       if (resourceType === "All") {
-        setResourcesFiltered(null);
+        setResourcesFiltered(resourcesInTheMap ?? []);
       } else {
         const filtered = (resourcesInTheMap ?? [])?.filter(
           (resource) => resource.resourcetype === resourceType,
@@ -139,8 +148,8 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   );
 
   const handleUpdateResourceTime = async (
-    mapid: string,
-    resourceid: string,
+    mapid: number,
+    resourceid: number,
     token: string,
     date: string,
   ) => {
@@ -163,7 +172,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
           isError: false,
           text: textMessage,
         }}
-        onClickOk={() => setTextMessage(null)}
+        onClickOk={() => setTextMessage("")}
       />
     );
   }
@@ -235,7 +244,6 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
             {activeTab === "resources" && (
               <ResourcesInMapList
                 resources={resourcesFiltered || resourcesInTheMap}
-                onDeleteResource={handleDeleteResource}
                 onSelect={(x, y) => setCenter([x, y])}
                 onFilter={handleFilterResources}
               />

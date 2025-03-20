@@ -1,17 +1,5 @@
 // Type definitions for clan-related data
 
-// Clan data structure
-export interface Clan {
-  clanid: string;
-  name: string;
-  symbol?: string;
-  flagcolor: string;
-  region: string;
-  discordTag: string;
-  invitelink: string;
-  recruit?: boolean;
-}
-
 // Clan member data
 export interface ClanMember {
   discordid: string;
@@ -56,3 +44,16 @@ export interface ClanBotConfig {
   botguildid?: string;
   botenabled?: boolean;
 }
+
+export type Clan = {
+  clanid: number;
+  name: string;
+  discordid?: string;
+  leaderid: string;
+  invitelink?: string;
+  recruitment: boolean;
+  flagcolor?: string;
+  symbol?: string;
+  region: string;
+  discordTag: string;
+};

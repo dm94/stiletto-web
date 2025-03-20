@@ -19,3 +19,16 @@ export type CreateTradeRequestParams = {
   region: string;
   price: number;
 };
+
+export type TradeInfo = {
+  idtrade: number;
+  discordid: string;
+  type: TradeType;
+  resource: string;
+  amount?: number;
+  quality?: number;
+  region?: string;
+  nickname?: string;
+  discordtag: string;
+  price: number;
+};

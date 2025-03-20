@@ -1,7 +1,21 @@
 import type React from "react";
 import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
-import type { CreateResourceTabProps } from "../../types/maps";
+import type { Marker } from "../../types/dto/marker";
+
+interface CreateResourceTabProps {
+  items: Marker[];
+  coordinateXInput: number;
+  coordinateYInput: number;
+  onCreateResource: (
+    resourceType: string,
+    quality: number,
+    description: string,
+    lastHarvested: string,
+  ) => void;
+  onChangeX: (x: number) => void;
+  onChangeY: (y: number) => void;
+}
 
 const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
   items,
@@ -21,7 +35,7 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
 
   const resourcesList = () => {
     if (items != null) {
-      return items.map((item: Resource) => (
+      return items.map((item: Marker) => (
         <option key={item.name} value={item.name}>
           {t(item.name, { ns: "items" })}
         </option>
@@ -71,11 +85,11 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
             {t("common.coordinate")} X ({t("maps.notSameAsGame")})
           </label>
           <input
-            type="text"
+            type="number"
             className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             name="coordinateXInput"
             value={coordinateXInput}
-            onChange={(evt) => onChangeX(evt.target.value)}
+            onChange={(evt) => onChangeX(Number(evt.target.value))}
             required
           />
         </div>
@@ -87,11 +101,11 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
             {t("common.coordinate")} Y ({t("maps.notSameAsGame")})
           </label>
           <input
-            type="text"
+            type="number"
             className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
             name="coordinateYInput"
             value={coordinateYInput}
-            onChange={(evt) => onChangeY(evt.target.value)}
+            onChange={(evt) => onChangeY(Number(evt.target.value))}
             required
           />
         </div>

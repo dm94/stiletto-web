@@ -4,10 +4,10 @@ import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
 import { getDomain } from "../functions/utils";
-import type { Ingredient as IngredientType } from "../types";
+import type { CustomItem } from "../types";
 
 interface IngredientProps {
-  ingredient: IngredientType;
+  ingredient: CustomItem;
   value: number;
 }
 

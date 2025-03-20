@@ -11,3 +11,5 @@ export const config = {
   REACT_APP_DISCORD_CLIENT_ID,
   REACT_APP_PLAUSIBLE_URL,
 };
+
+export const DEFAULT_LANGUAGE = "en";

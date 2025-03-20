@@ -1,12 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-
-interface Drop {
-  location: string;
-  chance?: number;
-  minQuantity?: number;
-  maxQuantity?: number;
-}
+import type { Drop } from "../../types/item";
 
 interface DropsInfoProps {
   drops?: Drop[];

@@ -6,6 +6,7 @@ import {
   Tooltip,
   ImageOverlay,
   Circle,
+  // @ts-expect-error Temporarily ignore type checking for react-leaflet until types are installed
 } from "react-leaflet";
 import { useTranslation } from "react-i18next";
 import L from "leaflet";
@@ -13,7 +14,20 @@ import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import Icon from "../Icon";
 import { config } from "../../config/config";
-import type { MapLayerProps, Resource } from "../../types/maps";
+import type { Resource } from "../../types/dto/resources";
+
+interface MapLayerProps {
+  resourcesInTheMap?: Resource[];
+  deleteResource?: (resourceId: number, resourceToken: string) => void;
+  center?: [number, number];
+  updateResource?: (
+    mapId: number,
+    resourceId: number,
+    token: string,
+    date: string,
+  ) => void;
+  changeInput?: (x: number, y: number) => void;
+}
 
 const myMarker = L.icon({
   iconUrl:
@@ -39,7 +53,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
 
   const getResourceEstimatedQuality = (resource: Resource) => {
     const quality = 4;
-    const diff = Math.abs(new Date() - new Date(resource.lastharvested));
+    const diff = Math.abs(new Date().getTime() - new Date(resource.lastharvested || "").getTime());
     const minutes = Math.floor(diff / 1000 / 60);
     const estimatedQuality = (minutes - 45) / 10;
     const remainingQuality = quality - estimatedQuality;
@@ -56,10 +70,10 @@ const MapLayer: React.FC<MapLayerProps> = ({
           type="button"
           className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
           onClick={() =>
-            updateResource(
+            updateResource?.(
               resource.mapid,
               resource.resourceid,
-              resource.token,
+              resource.token ?? "",
               date,
             )
           }
@@ -115,7 +129,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
                   type="button"
                   className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
                   onClick={() =>
-                    deleteResource(resource.resourceid, resource?.token ?? "")
+                    deleteResource?.(resource.resourceid, resource?.token ?? "")
                   }
                 >
                   {t("common.delete")}
@@ -128,7 +142,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
                     className="w-full"
                     id="formPoachingRadius"
                     value={poachingHutRadius}
-                    onChange={(e) => setPoachingHutRadius(e.target.value)}
+                    onChange={(e) => setPoachingHutRadius(Number(e.target.value))}
                     type="range"
                     min="0"
                     max="250"
@@ -155,13 +169,13 @@ const MapLayer: React.FC<MapLayerProps> = ({
     setHasLocation(true);
     setCoordinateXInput(Math.round(e.latlng.lat * 100) / 100);
     setCoordinateYInput(Math.round(e.latlng.lng * 100) / 100);
-    changeInput(
+    changeInput?.(
       Math.round(e.latlng.lat * 100) / 100,
       Math.round(e.latlng.lng * 100) / 100,
     );
   };
 
-  const position = [coordinateXInput, coordinateYInput];
+  const position: [number, number] = [coordinateXInput, coordinateYInput];
   const marker = hasLocation ? (
     <Marker position={position} icon={myMarker}>
       <Popup>
@@ -173,8 +187,6 @@ const MapLayer: React.FC<MapLayerProps> = ({
   ) : (
     false
   );
-
-  const isNewMap = resourcesInTheMap?.[0]?.typemap?.includes("_new");
 
   return (
     <div id="map">
@@ -210,21 +222,12 @@ const MapLayer: React.FC<MapLayerProps> = ({
         attributionControl={false}
       >
         <ImageOverlay
-          bounds={
-            isNewMap
-              ? [
-                  [85.5, -180],
-                  [-84.9, 177.3],
-                ]
-              : [
-                  [85.5, -180],
-                  [-78, 130],
-                ]
-          }
+          bounds={[
+            [85.5, -180],
+            [-84.9, 177.3],
+          ]}
           opacity={gridOpacity}
-          url={`${config.REACT_APP_RESOURCES_URL}${
-            isNewMap ? "/maps/Grid_new.png" : "/maps/Grid.png"
-          }`}
+          url={`${config.REACT_APP_RESOURCES_URL}/maps/Grid_new.png`}
         />
         <TileLayer
           url={`${config.REACT_APP_RESOURCES_URL}/maps/${

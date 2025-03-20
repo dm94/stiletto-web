@@ -1,6 +1,12 @@
 import type React from "react";
 import type { MouseEvent } from "react";
-import type { MapSelectListProps, MapInfo } from "../../types/maps";
+import type { MapInfo } from "../../types/maps";
+
+interface MapSelectListProps {
+  maps: MapInfo[] | null;
+  mapSelectInput: string;
+  onSelectMap: (mapName: string) => void;
+}
 
 const MapSelectList: React.FC<MapSelectListProps> = ({
   maps,
