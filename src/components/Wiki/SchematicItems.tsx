@@ -2,19 +2,17 @@ import type React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import { getItemUrl } from "../../functions/utils";
-import type { Item } from "../../types";
+import type { Item } from "../../types/item";
 
 interface SchematicItemsProps {
-  item: Item & {
-    learn?: string[];
-  };
+  item: Item;
 }
 
 const SchematicItems: React.FC<SchematicItemsProps> = ({ item }) => {
   const { t } = useTranslation();
 
   const showSchematicItems = () => {
-    return item?.learn?.map((itemCraft) => {
+    return item?.learn?.map((itemCraft: string) => {
       const url = getItemUrl(itemCraft);
 
       return (

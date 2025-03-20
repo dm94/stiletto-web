@@ -85,4 +85,5 @@ export type Item = {
   drops?: Drop[];
   cost?: Cost;
   wikiVisibility?: boolean;
+  learn?: string[];
 };
