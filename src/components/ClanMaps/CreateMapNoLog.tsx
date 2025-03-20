@@ -1,14 +1,14 @@
 import type React from "react";
-import { useState, useEffect, type FormEvent } from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { getMapNames } from "../../functions/services";
 import CreateMapPanel from "./CreateMapPanel";
 import { getDomain } from "../../functions/utils";
 import { createMap as createMapRequest } from "../../functions/requests/maps";
 import type {
-  MapInfo,
   MapCreationResponse,
 } from "../../types/maps";
+import type { MapJsonInfo } from "../../types/dto/maps";
 
 interface CreateMapNoLogProps {
   onOpen: (id: string | number, pass: string) => void;
@@ -16,7 +16,7 @@ interface CreateMapNoLogProps {
 
 const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
   const { t } = useTranslation();
-  const [maps, setMaps] = useState<MapInfo[] | null>(null);
+  const [maps, setMaps] = useState<MapJsonInfo[]>([]);
   const [mapIdInput, setMapIdInput] = useState<number | string>(0);
   const [mapPassInput, setMapPassInput] = useState<string>("");
   const [showShareMap, setShowShareMap] = useState<boolean>(false);
@@ -24,19 +24,21 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
   useEffect(() => {
     const fetchMaps = async () => {
       const maps = await getMapNames();
+
+      if (!maps) {
+        return;
+      }
+
       setMaps(maps);
     };
     fetchMaps();
   }, []);
 
   const createMap = async (
-    event: FormEvent,
     mapNameInput: string,
     mapDateInput: string,
     mapSelectInput: string,
   ) => {
-    event.preventDefault();
-
     try {
       const response = (await createMapRequest(
         {
@@ -44,9 +46,15 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
           mapname: mapNameInput,
           maptype: mapSelectInput,
         }
-      )) as unknown as MapCreationResponse;
-      setMapIdInput(response.IdMap);
-      setMapPassInput(response.PassMap);
+      ));
+
+      if (!response) {
+        return;
+      }
+
+      const decoded = await response.json() as MapCreationResponse;
+      setMapIdInput(decoded.IdMap);
+      setMapPassInput(decoded.PassMap);
       setShowShareMap(true);
     } catch (error) {
       console.log(error);

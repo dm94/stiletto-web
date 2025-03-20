@@ -51,7 +51,7 @@ const DoubleScrollbar = ({ children }: DoubleScrollbarProps) => {
   const childDivStyle: CSSProperties = { overflow: "auto", overflowY: "hidden" };
 
   return (
-    <div>
+    <div className="w-full">
       <div ref={outerDivRef} style={outerDivStyle}>
         <div style={innerDivStyle}>&nbsp;</div>
       </div>

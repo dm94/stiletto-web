@@ -14,6 +14,8 @@ import DoubleScrollbar from "../components/TechTree/DoubleScrollbar";
 import { getDomain } from "../functions/utils";
 import { getLearned, addTech } from "../functions/requests/users";
 import HeaderMeta from "../components/HeaderMeta";
+import type { Item } from "../types/item";
+import { Tree } from "../types/dto/tech";
 
 const SkillTreeTab = React.lazy(
   () => import("../components/TechTree/SkillTreeTab"),
@@ -22,11 +24,11 @@ const SkillTreeTab = React.lazy(
 const TechTree = () => {
   const { t } = useTranslation();
   const { tree } = useParams();
-  const [items, setItems] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState(null);
-  const [tabSelect, setTabSelect] = useState(tree || "Vitamins");
-  const [clan, setClan] = useState(null);
+  const [items, setItems] = useState<Item[]>([]);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [error, setError] = useState<string>();
+  const [tabSelect, setTabSelect] = useState<Tree>(tree ? tree as Tree :  Tree.VITAMINS);
+  const [clan, setClan] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,13 +45,13 @@ const TechTree = () => {
             updateLearnedTree("Construction", response.data.Construction);
             updateLearnedTree("Walkers", response.data.Walkers);
           }
-        } catch (err) {
-          setError(err);
+        } catch {
+          setError("errors.apiConnection");
         }
       }
 
       if (tree) {
-        setTabSelect(tree);
+        setTabSelect(tree as Tree);
       }
 
       let fetchedItems = await getItems();
@@ -63,8 +65,8 @@ const TechTree = () => {
     fetchData();
   }, [tree]);
 
-  const updateLearnedTree = (treeName, data) => {
-    const all = {};
+  const updateLearnedTree = (treeName: string, data: any) => {
+    const all: Record<string, { optional: boolean; nodeState: string }> = {};
     if (data) {
       for (const tech of data) {
         all[tech] = { optional: false, nodeState: "selected" };
@@ -74,9 +76,15 @@ const TechTree = () => {
   };
 
   const saveTree = async () => {
-    const learned = [];
+    const learned: string[] = [];
     try {
-      const data = JSON.parse(getStoredItem(`skills-${tabSelect}`));
+      const techSaved = getStoredItem(`skills-${tabSelect}`);
+
+      if (!techSaved) {
+        return;
+      }
+
+      const data = JSON.parse(techSaved);
 
       for (const item in data) {
         if (data[item].nodeState === "selected") {
@@ -89,8 +97,8 @@ const TechTree = () => {
 
     try {
       await addTech(tabSelect, learned);
-    } catch (err) {
-      setError(err);
+    } catch {
+      setError("errors.apiConnection");
     }
   };
 
@@ -99,8 +107,8 @@ const TechTree = () => {
       localStorage.removeItem(`skills-${tabSelect}`);
       sessionStorage.removeItem(`skills-${tabSelect}`);
       await addTech(tabSelect, []);
-    } catch (err) {
-      setError(err);
+    } catch {
+      setError("errors.apiConnection");
     }
     window.location.reload();
   };
@@ -182,9 +190,10 @@ const TechTree = () => {
         >
           <div className="flex-1">
             <NavLink
-              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Vitamins"
-              activeClassName="text-white border-blue-500"
+              className={({ isActive }) =>
+                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              }
             >
               <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
               {t("common.vitamins")}
@@ -192,19 +201,20 @@ const TechTree = () => {
           </div>
           <div className="flex-1">
             <NavLink
-              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Equipment"
-              activeClassName="text-white border-blue-500"
+              className={({ isActive }) =>
+                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              }
             >
               <Icon key="Equipment" name="Equipment" width={30} />{" "}
               {t("common.equipment")}
             </NavLink>
           </div>
           <div className="flex-1">
-            <NavLink
-              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
-              to="/tech/Crafting"
-              activeClassName="text-white border-blue-500"
+            <NavLink              to="/tech/Crafting"
+              className={({ isActive }) =>
+                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              }
             >
               <Icon key="Crafting" name="Crafting" width={30} />{" "}
               {t("menu.crafting")}
@@ -212,9 +222,10 @@ const TechTree = () => {
           </div>
           <div className="flex-1">
             <NavLink
-              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Construction"
-              activeClassName="text-white border-blue-500"
+              className={({ isActive }) =>
+                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              }
             >
               <Icon key="Construction" name="Construction" width={30} />{" "}
               {t("common.construction")}
@@ -222,9 +233,10 @@ const TechTree = () => {
           </div>
           <div className="flex-1">
             <NavLink
-              className="flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               to="/tech/Walkers"
-              activeClassName="text-white border-blue-500"
+              className={({ isActive }) =>
+                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              }
             >
               <Icon key="Walkers" name="Walkers" width={30} />{" "}
               {t("common.walkers")}
@@ -233,7 +245,7 @@ const TechTree = () => {
         </div>
       </nav>
       {saveDeleteButtons()}
-      <DoubleScrollbar className="w-full">
+      <DoubleScrollbar>
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
           <Suspense fallback={<LoadingScreen />}>
             <SkillTreeTab

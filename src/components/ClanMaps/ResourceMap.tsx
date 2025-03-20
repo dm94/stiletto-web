@@ -14,54 +14,51 @@ import {
   updateResourceTime,
   getResources,
 } from "../../functions/requests/maps";
-import type { Resource } from "../../types/maps";
+import type { Resource } from "../../types/dto/resources";
+import type { MapInfo } from "../../types/dto/maps";
+import type { Marker } from "../../types/dto/marker";
 
 // Define interface for component props
 interface ResourceMapProps {
-  map: {
-    mapid: string;
-    name: string;
-    pass: string;
-    dateofburning: string;
-    allowedit: boolean;
-    discordid?: string;
-  };
+  map: MapInfo;
   onReturn: () => void;
 }
 
 const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const { t } = useTranslation();
   const [userDiscordId] = useState<string | null>(getStoredItem("discordid"));
-  const [token] = useState<string | null>(getStoredItem("token"));
+  const [token] = useState<string>(getStoredItem("token") ?? "");
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
-  const [items, setItems] = useState<any[] | null>(null);
-  const [resourcesInTheMap, setResourcesInTheMap] = useState<Resource[] | null>(
-    null,
+  const [items, setItems] = useState<Marker[] >([]);
+  const [resourcesInTheMap, setResourcesInTheMap] = useState<Resource[]>(
+    [],
   );
-  const [pass, setPass] = useState<string | null>(map?.pass);
-  const [textSuccess, setTextSuccess] = useState<string | null>(null);
-  const [center, setCenter] = useState<[number, number] | null>(null);
+  const [pass, setPass] = useState<string>(map?.pass ?? "");
+  const [textSuccess, setTextSuccess] = useState<string>();
+  const [center, setCenter] = useState<[number, number]>();
   const [mapName, setMapName] = useState<string>(map?.name);
   const [dateOfBurning, setDateOfBurning] = useState<string>(
-    map?.dateofburning,
+    map?.dateofburning ?? "",
   );
   const [allowEditing, setAllowEditing] = useState<boolean>(map?.allowedit);
-  const [resourcesFiltered, setResourcesFiltered] = useState<Resource[] | null>(
-    null,
+  const [resourcesFiltered, setResourcesFiltered] = useState<Resource[]>(
+    []
   );
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(
     window.innerWidth >= 1440,
   );
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string>();
   const [activeTab, setActiveTab] = useState<string>("resources");
 
   const fetchData = useCallback(async () => {
     try {
       const markers = await getMarkers();
-      setItems(markers);
+      if (markers) {
+        setItems(markers);
+      }
 
-      const responseResources = await getResources(map.mapid, map.pass);
+      const responseResources = await getResources(map.mapid, map.pass ?? "");
       if (responseResources.ok) {
         const resources = await responseResources.json();
         setResourcesInTheMap(resources);
@@ -82,7 +79,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     lastHarvested: string,
   ) => {
     try {
-      const response = await createResource(Number(map?.mapid), {
+      await createResource(Number(map?.mapid), {
         x: coordinateXInput,
         y: coordinateYInput,
         mappass: pass ?? "",
@@ -91,11 +88,8 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
         description: descriptionInput,
         harvested: lastHarvested,
       });
-      if (response.success) {
-        fetchData();
-      } else {
-        setError(response.message);
-      }
+
+      fetchData();
     } catch {
       setError("errors.apiConnection");
     }
@@ -119,20 +113,30 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   };
 
   const handleDeleteResource = async (
-    resourceId: string,
+    resourceId: number,
     resourceToken: string,
   ) => {
     try {
-      const response = await deleteResource(
+      await deleteResource(
         map?.mapid,
         resourceId,
         resourceToken,
       );
-      if (response.success) {
-        fetchData();
-      } else {
-        setError(response.message);
-      }
+      fetchData()
+    } catch {
+      setError("errors.apiConnection");
+    }
+  };
+
+  const handleUpdateResource = async (
+    mapid: number,
+    resourceid: number,
+    token: string,
+    date: string,
+  ) => {
+    try {
+      await updateResourceTime(mapid, resourceid, token, date);
+      fetchData();
     } catch {
       setError("errors.apiConnection");
     }
@@ -140,7 +144,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
 
   const handleFilterResources = (resourceType: string) => {
     if (resourceType === "All") {
-      setResourcesFiltered(null);
+      setResourcesFiltered(resourcesInTheMap);
     } else {
       setResourcesFiltered(
         resourcesInTheMap.filter(
@@ -277,9 +281,8 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
         message={{
           isError: false,
           text: textSuccess,
-          redirectPage: null,
         }}
-        onClickOk={() => setTextSuccess(null)}
+        onClickOk={() => setTextSuccess(undefined)}
       />
     );
   }
@@ -291,19 +294,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
           resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
           deleteResource={handleDeleteResource}
           center={center}
-          updateResource={(
-            mapid: string,
-            resourceid: string,
-            token: string,
-            date: string,
-          ) => {
-            try {
-              updateResourceTime(mapid, resourceid, token, date);
-              fetchData();
-            } catch {
-              setError("errors.apiConnection");
-            }
-          }}
+          updateResource={handleUpdateResource}
           changeInput={(x: number, y: number) => {
             setCoordinateXInput(x);
             setCoordinateYInput(y);
@@ -373,7 +364,6 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
             {activeTab === "resources" && (
               <ResourcesInMapList
                 resources={resourcesFiltered || resourcesInTheMap}
-                onDeleteResource={handleDeleteResource}
                 onFilter={handleFilterResources}
                 onSelect={(x: number, y: number) => setCenter([x, y])}
               />

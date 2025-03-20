@@ -1,9 +1,9 @@
 import type React from "react";
 import type { MouseEvent } from "react";
-import type { MapInfo } from "../../types/maps";
+import type { MapJsonInfo } from "../../types/dto/maps";
 
 interface MapSelectListProps {
-  maps: MapInfo[] | null;
+  maps: MapJsonInfo[];
   mapSelectInput: string;
   onSelectMap: (mapName: string) => void;
 }
@@ -14,7 +14,7 @@ const MapSelectList: React.FC<MapSelectListProps> = ({
   onSelectMap,
 }) => {
   if (maps) {
-    return maps.map((map: MapInfo) => (
+    return maps.map((map: MapJsonInfo) => (
       <button
         type="button"
         className="p-2 text-center focus:outline-none"

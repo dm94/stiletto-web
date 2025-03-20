@@ -2,16 +2,15 @@ import type React from "react";
 import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
-import type { MapInfo } from "../../types/maps";
+import type { MapJsonInfo } from "../../types/dto/maps";
 
 interface CreateMapPanelProps {
-  maps: MapInfo[] | null;
+  maps: MapJsonInfo[];
   onCreateMap: (
-    event: React.FormEvent,
     mapName: string,
     mapDate: string,
     mapType: string,
-  ) => void;
+  ) => Promise<void>;
 }
 
 const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
@@ -28,7 +27,6 @@ const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
     const date = new Date();
     date.setDate(date.getDate() + Number.parseInt(mapDateInput.toString()));
     onCreateMap(
-      evt,
       mapNameInput,
       date.toISOString().split("T")[0],
       mapSelectInput,

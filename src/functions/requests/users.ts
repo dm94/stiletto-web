@@ -38,10 +38,7 @@ export const getLearned = async () => {
   }
 };
 
-export const addTech = async (
-  tabSelect: Tree,
-  learned: Record<string, boolean>,
-) => {
+export const addTech = async (tabSelect: Tree, learned: string[]) => {
   const discordId = getStoredItem("discordid");
   const token = getStoredItem("token");
 

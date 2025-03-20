@@ -10,16 +10,17 @@ import TotalMaterials from "../components/Crafter/TotalMaterials";
 import { getDomain } from "../functions/utils";
 import { getRecipe } from "../functions/requests/recipes";
 import { useLocation } from "react-router";
+import type { CraftItem, Item } from "../types/item";
 
 const Crafter = () => {
   const location = useLocation();
   const { t } = useTranslation();
-  const [allItems, setAllItems] = useState([]);
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [searchText, setSearchText] = useState("");
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [error, setError] = useState("");
-  const [isItemsNavVisible, setIsItemsNavVisible] = useState(false);
+  const [allItems, setAllItems] = useState<Item[]>([]);
+  const [selectedItems, setSelectedItems] = useState<CraftItem[]>([]);
+  const [searchText, setSearchText] = useState<string>("");
+  const [filteredItems, setFilteredItems] = useState<Item[]>([]);
+  const [error, setError] = useState<string>("");
+  const [isItemsNavVisible, setIsItemsNavVisible] = useState<boolean>(false);
 
   useEffect(() => {
     updateRecipes();
@@ -41,13 +42,13 @@ const Crafter = () => {
     }
   };
 
-  const getRecipes = async (items) => {
+  const getRecipes = async (items: Item[]) => {
     const parsed = queryString.parse(location?.search);
     const { recipe, craft } = parsed;
 
-    if (recipe?.length) {
+    if (recipe) {
       try {
-        const response = await getRecipe(recipe);
+        const response = await getRecipe(String(recipe));
 
         if (response.status === 200) {
           const data = await response.json();
@@ -62,8 +63,8 @@ const Crafter = () => {
       } catch {
         setError("errors.apiConnection");
       }
-    } else if (craft?.length) {
-      const decodedName = decodeURI(craft)
+    } else if (craft) {
+      const decodedName = decodeURI(String(craft))
         .toLowerCase()
         .replaceAll("_", " ")
         .trim();
@@ -78,7 +79,7 @@ const Crafter = () => {
     }
   };
 
-  const updateSearch = (searchText) => {
+  const updateSearch = (searchText: string) => {
     const filtered = allItems.filter((item) => {
       return searchText.split(" ").every((searchTerm) => {
         return t(item.name).toLowerCase().includes(searchTerm.toLowerCase());
@@ -96,7 +97,7 @@ const Crafter = () => {
     return <Items key="itemList" items={allItems} onAdd={handleAdd} />;
   };
 
-  const handleAdd = (itemName, count = 1, itemsList = allItems) => {
+  const handleAdd = (itemName: string, count = 1, itemsList = allItems) => {
     const existingItem = selectedItems.find((it) => it.name === itemName);
 
     if (existingItem) {
@@ -119,7 +120,7 @@ const Crafter = () => {
     }
   };
 
-  const changeCount = (itemName, count) => {
+  const changeCount = (itemName: string, count: number) => {
     if (count <= 0) {
       removeSelectedItem(itemName);
       return;
@@ -132,7 +133,7 @@ const Crafter = () => {
     );
   };
 
-  const getIngredients = (itemName, secondTree = false) => {
+  const getIngredients = (itemName: string, secondTree = false) => {
     const selectedItem = allItems.find((it) => it.name === itemName);
     if (!selectedItem?.crafting) {
       return [];

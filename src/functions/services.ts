@@ -1,6 +1,9 @@
 import { getDomain } from "./utils";
 import { config } from "../config/config";
 import { getMembers, getMemberPermissions } from "./requests/clans/members";
+import type { MapJsonInfo } from "../types/dto/maps";
+import type { Marker } from "../types/dto/marker";
+import type { Item } from "../types/item";
 
 const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
@@ -61,7 +64,7 @@ export const addCachedData = (name: string, data: unknown) => {
   }
 
   storeItem(name, JSON.stringify(data));
-  storeItem(`${name}-lastCheck`, Date.now());
+  storeItem(`${name}-lastCheck`, String(Date.now()));
 };
 
 export const getUserProfile = async () => {
@@ -180,7 +183,8 @@ export const getUserPermssions = async (clanId: number, discordId: string) => {
   const response = await getMemberPermissions(clanId, discordId);
   if (response != null) {
     if (response.status === 200) {
-      return { success: true, message: response?.data };
+      const data = await response.json();
+      return { success: true, message: data };
     }
 
     if (response.status === 405 || response.status === 401) {
@@ -312,12 +316,12 @@ export const getCachedMembers = async () => {
     console.error("Error getCachedMembers:", error);
     return {
       success: false,
-      message: "error.databaseConnection",
+      message: "errors.apiConnection",
     };
   }
 };
 
-export const getItems = async () => {
+export const getItems = async (): Promise<Item[] | undefined> => {
   const cachedData = getCachedData("allItems", resourceCacheTimeCheck);
 
   if (cachedData != null) {
@@ -330,12 +334,11 @@ export const getItems = async () => {
   const response = await request(`${getDomain()}/json/items_min.json`, options);
   if (response?.data != null) {
     addCachedData("allItems", response.data);
-    return response.data;
+    return response.data as Item[];
   }
-  return null;
 };
 
-export const getMarkers = async () => {
+export const getMarkers = async (): Promise<Marker[] | undefined> => {
   const cachedData = getCachedData("markers", resourceCacheTimeCheck);
 
   if (cachedData != null) {
@@ -351,9 +354,8 @@ export const getMarkers = async () => {
   );
   if (response?.data != null) {
     addCachedData("markers", response.data);
-    return response.data;
+    return response.data as Marker[];
   }
-  return null;
 };
 
 export const getClusters = async () => {
@@ -376,11 +378,11 @@ export const getClusters = async () => {
   return null;
 };
 
-export const getMapNames = async () => {
+export const getMapNames = async (): Promise<MapJsonInfo[] | undefined> => {
   const cachedData = getCachedData("maps", resourceCacheTimeCheck);
 
   if (cachedData != null) {
-    return cachedData;
+    return cachedData as MapJsonInfo[];
   }
   const options = {
     method: "GET",
@@ -392,9 +394,9 @@ export const getMapNames = async () => {
   );
   if (response?.data != null) {
     addCachedData("maps", response.data);
-    return response.data;
+
+    return response.data as MapJsonInfo[];
   }
-  return null;
 };
 
 export const closeSession = () => {

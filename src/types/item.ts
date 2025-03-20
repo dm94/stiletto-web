@@ -87,3 +87,5 @@ export type Item = {
   wikiVisibility?: boolean;
   learn?: string[];
 };
+
+export type CraftItem = Item & { count: number };

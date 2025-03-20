@@ -3,21 +3,13 @@ import { useTranslation } from "react-i18next";
 import { getStoredItem } from "../../functions/services";
 import { getDomain } from "../../functions/utils";
 import { config } from "../../config/config";
-
-interface MapItem {
-  mapid: string;
-  name: string;
-  discordid?: string;
-  discordTag?: string;
-  dateofburning: string;
-  pass?: string;
-}
+import type { MapInfo } from "../../types/dto/maps";
 
 interface ClanMapItemProps {
-  map: MapItem;
+  map: MapInfo;
   value: string;
-  onOpen: (map: MapItem) => void;
-  onDelete: (mapId: string) => void;
+  onOpen: (map: MapInfo) => void;
+  onDelete: (mapId: number) => void;
 }
 
 const ClanMapItem: React.FC<ClanMapItemProps> = ({
@@ -82,7 +74,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   };
 
   const date = new Date();
-  const dateBurning = new Date(map?.dateofburning);
+  const dateBurning = new Date(map?.dateofburning ?? "");
 
   return (
     <div className="p-2 w-full text-center" key={`clanmap${map?.mapid}`}>

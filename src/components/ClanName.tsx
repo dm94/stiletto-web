@@ -46,8 +46,6 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
         preserveAspectRatio="xMidYMid slice"
         focusable="false"
         aria-label={`Clan color ${clan.flagcolor}`}
-        title={`Color ${clan.flagcolor}`}
-        alt={`Color ${clan.flagcolor}`}
       >
         <rect width="90%" height="90%" fill={clan.flagcolor} />
       </svg>

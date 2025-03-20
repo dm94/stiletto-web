@@ -10,7 +10,10 @@ import DiscordConfig from "../components/MemberList/DiscordConfig";
 import MemberPermissionsConfig from "../components/MemberList/MemberPermissionsConfig";
 import { sendNotification } from "../functions/broadcast";
 import { getDomain } from "../functions/utils";
-import { getRequests } from "../functions/requests/clans/requests";
+import {
+  getRequests,
+  updateRequest,
+} from "../functions/requests/clans/requests";
 import { updateMember } from "../functions/requests/clans/members";
 import { deleteClan } from "../functions/requests/clan";
 import {
@@ -20,37 +23,55 @@ import {
   getHasPermissions,
   getStoredItem,
 } from "../functions/services";
+import { MemberAction } from "../types/dto/members";
+import { RequestAction } from "../types/dto/requests";
 
 const MemberList = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [members, setMembers] = useState([]);
-  const [requestMembers, setRequestMembers] = useState(false);
-  const [error, setError] = useState(false);
+  interface Member {
+    discordid: string;
+    discordtag: string;
+    nickInGame?: string;
+    permissions?: string[];
+  }
+
+  interface RequestMember extends Member {
+    message: string;
+  }
+
+  const [members, setMembers] = useState<Member[]>([]);
+  const [requestMembers, setRequestMembers] = useState<RequestMember[]>([]);
+  const [error, setError] = useState<string | false>(false);
   const [isLoadedRequestList, setIsLoadedRequestList] = useState(false);
-  const [redirectMessage, setRedirectMessage] = useState(false);
-  const [selectNewOwner, setSelectNewOwner] = useState(
-    getStoredItem("discordid"),
+  const [redirectMessage, setRedirectMessage] = useState<string | false>(false);
+  const [selectNewOwner, setSelectNewOwner] = useState<string>(
+    getStoredItem("discordid") ?? ""
   );
   const [showRequestModal, setShowRequestModal] = useState(false);
-  const [requestData, setRequestData] = useState(false);
+  const [requestData, setRequestData] = useState<RequestMember | false>(false);
   const [isLeader, setIsLeader] = useState(false);
   const [showBotConfig, setShowBotConfig] = useState(false);
-  const [clanid, setClanid] = useState(false);
+  const [clanid, setClanid] = useState<number>(0);
+
   const [showClanConfig, setShowClanConfig] = useState(false);
   const [hasBotPermissions, setHasBotPermissions] = useState(false);
   const [hasRequestPermissions, setHasRequestPermissions] = useState(false);
   const [hasKickMembersPermisssions, setHasKickMembersPermisssions] =
     useState(false);
-  const [memberForEdit, setMemberForEdit] = useState(false);
+  const [memberForEdit, setMemberForEdit] = useState<string | false>(false);
 
   const updateMembers = useCallback(async () => {
     const response = await getCachedMembers();
-    if (response.success) {
-      setMembers(response.message);
+    if (!response) {
+      return;
+    }
+
+    if (response?.success) {
+      setMembers(response?.message);
       setIsLoaded(true);
     } else {
-      setError(response.message);
+      setError(response?.message);
       setIsLoaded(true);
     }
   }, []);
@@ -61,7 +82,7 @@ const MemberList = () => {
       if (userProfile.success) {
         setClanid(userProfile.message.clanid);
         setIsLeader(
-          userProfile.message.discordid === userProfile.message.leaderid,
+          userProfile.message.discordid === userProfile.message.leaderid
         );
       } else {
         setError(userProfile.message);
@@ -100,9 +121,13 @@ const MemberList = () => {
     initializeComponent();
   }, [updateMembers]);
 
-  const kickMember = async (memberdiscordid) => {
+  const kickMember = async (memberdiscordid: string) => {
     try {
-      const response = await updateMember(clanid, memberdiscordid, "kick");
+      const response = await updateMember(
+        clanid,
+        memberdiscordid,
+        MemberAction.KICK
+      );
 
       localStorage.removeItem("memberList");
       sessionStorage.removeItem("memberList");
@@ -129,10 +154,10 @@ const MemberList = () => {
     }
 
     try {
-      const response = await updateMember(
+      const response = await updateRequest(
         clanid,
         requestData.discordid,
-        "accept",
+        RequestAction.ACCEPT
       );
 
       localStorage.removeItem("memberList");
@@ -142,7 +167,7 @@ const MemberList = () => {
 
       if (response.status === 202) {
         setRequestMembers(
-          requestMembers.filter((m) => m.discordid !== requestData.discordid),
+          requestMembers.filter((m) => m.discordid !== requestData.discordid)
         );
         updateMembers();
       } else if (response.status === 405 || response.status === 401) {
@@ -164,10 +189,10 @@ const MemberList = () => {
     }
 
     try {
-      const response = await updateMember(
+      const response = await updateRequest(
         clanid,
         requestData.discordid,
-        "reject",
+        RequestAction.REJECT
       );
 
       localStorage.removeItem("memberList");
@@ -177,7 +202,7 @@ const MemberList = () => {
 
       if (response.status === 202) {
         setRequestMembers(
-          requestMembers.filter((m) => m.discordid !== requestData.discordid),
+          requestMembers.filter((m) => m.discordid !== requestData.discordid)
         );
         updateMembers();
       } else if (response.status === 405 || response.status === 401) {
@@ -218,7 +243,11 @@ const MemberList = () => {
 
   const changeOwner = async () => {
     try {
-      const response = await updateMember(clanid, selectNewOwner, "owner");
+      const response = await updateMember(
+        clanid,
+        selectNewOwner,
+        MemberAction.OWNER
+      );
 
       localStorage.removeItem("menu.profile");
       sessionStorage.removeItem("menu.profile");
@@ -247,7 +276,9 @@ const MemberList = () => {
           key={member.discordid}
           member={member}
           onKick={kickMember}
-          onClickEditPermissions={(discordid) => setMemberForEdit(discordid)}
+          onClickEditPermissions={(discordid: string) =>
+            setMemberForEdit(discordid)
+          }
           isLeader={isLeader}
           hasPermissions={hasKickMembersPermisssions}
         />
@@ -264,7 +295,7 @@ const MemberList = () => {
             key={member.discordid}
             member={member}
             isLeader={isLeader || hasRequestPermissions}
-            onShowRequest={(r) => {
+            onShowRequest={(r: RequestMember) => {
               setRequestData(r);
               setShowRequestModal(true);
             }}
@@ -273,7 +304,7 @@ const MemberList = () => {
       }
       return (
         <tr>
-          <td colSpan="4" className="text-center py-4 text-gray-400">
+          <td colSpan={4} className="text-center py-4 text-gray-400">
             {t("members.noPendingRequests")}
           </td>
         </tr>
@@ -281,7 +312,7 @@ const MemberList = () => {
     }
     return (
       <tr>
-        <td colSpan="4" className="text-center py-4 text-gray-400">
+        <td colSpan={4} className="text-center py-4 text-gray-400">
           {t("members.loadingRequests")}
         </td>
       </tr>
@@ -596,7 +627,7 @@ const MemberList = () => {
           key="clanconfig"
           clanid={clanid}
           onClose={() => setShowClanConfig(false)}
-          onError={(error) => sendNotification(error, "common.error")}
+          onError={(error: string) => sendNotification(error, "common.error")}
         />
       )}
       {memberForEdit && (

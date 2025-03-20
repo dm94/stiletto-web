@@ -4,10 +4,10 @@ import { config } from "../config/config";
 
 interface IconProps {
   name: string;
-  width?: string;
+  width?: number;
 }
 
-const Icon: React.FC<IconProps> = ({ name: initialName, width = "16" }) => {
+const Icon: React.FC<IconProps> = ({ name: initialName, width = 16 }) => {
   const [loaded, setLoaded] = useState<boolean>(true);
 
   const getProcessedName = (name: string): string => {
