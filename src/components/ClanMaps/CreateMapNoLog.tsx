@@ -11,13 +11,13 @@ import type {
 import type { MapJsonInfo } from "../../types/dto/maps";
 
 interface CreateMapNoLogProps {
-  onOpen: (id: string | number, pass: string) => void;
+  onOpen: (id: number, pass: string) => void;
 }
 
 const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
   const { t } = useTranslation();
   const [maps, setMaps] = useState<MapJsonInfo[]>([]);
-  const [mapIdInput, setMapIdInput] = useState<number | string>(0);
+  const [mapIdInput, setMapIdInput] = useState<number>(0);
   const [mapPassInput, setMapPassInput] = useState<string>("");
   const [showShareMap, setShowShareMap] = useState<boolean>(false);
 
@@ -93,7 +93,7 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
                   name="map_id"
                   maxLength={4}
                   value={mapIdInput}
-                  onChange={(evt) => setMapIdInput(evt.target.value)}
+                  onChange={(evt) => setMapIdInput(Number(evt.target.value))}
                   required
                 />
               </div>

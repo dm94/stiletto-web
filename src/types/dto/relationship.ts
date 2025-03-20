@@ -13,3 +13,12 @@ export type CreateRelationshipRequestQueryParams = {
   nameotherclan: string;
   symbol?: string;
 };
+
+export type RelationshipInfo = {
+  leaderid: string;
+  id: number;
+  typed: TypeRelationship;
+  flagcolor: string;
+  name: string;
+  symbol: string;
+};

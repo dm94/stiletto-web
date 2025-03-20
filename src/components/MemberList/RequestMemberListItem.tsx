@@ -1,10 +1,17 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
+import type { RequestMember } from "../../types/dto/members";
 
-const RequestMemberListItem = ({ isLeader, member, onShowRequest }) => {
+interface RequestMemberListItemProps {
+  isLeader: boolean;
+  member: RequestMember;
+  onShowRequest: (member: RequestMember) => void;
+}
+
+const RequestMemberListItem: React.FC<RequestMemberListItemProps> = ({ isLeader, member, onShowRequest }) => {
   const { t } = useTranslation();
 
-  const renderButton = () => {
+  const renderButton = (): React.ReactNode => {
     if (!isLeader) {
       return "";
     }

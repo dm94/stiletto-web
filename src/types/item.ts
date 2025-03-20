@@ -7,6 +7,7 @@ export enum Rarity {
 }
 
 export type ItemIngredient = {
+  ingredients?: ItemIngredient[];
   name: string;
   count: number;
   category?: string;

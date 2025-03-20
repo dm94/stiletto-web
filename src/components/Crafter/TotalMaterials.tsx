@@ -7,17 +7,18 @@ import { sendEvent } from "../../page-tracking";
 import { sendNotification } from "../../functions/broadcast";
 import { getDomain } from "../../functions/utils";
 import { addRecipe } from "../../functions/requests/recipes";
-import type { Item } from "../../types/index";
+import type { CraftItem, ItemIngredient } from "../../types/item";
+import type { Recipe } from "../../types/dto/recipe";
 
 interface TotalMaterialsProps {
-  selectedItems: Item[];
+  selectedItems: CraftItem[];
 }
 
 const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
   const [recipeToken, setRecipeToken] = useState("");
   const { t } = useTranslation();
 
-  const addRecipeRequest = async () => {
+  const addRecipeRequest = async (): Promise<void> => {
     sendEvent("share", {
       props: {
         action: "addRecipe",
@@ -25,14 +26,14 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
     });
 
     try {
-      const items = selectedItems?.map((item) => ({
+      const items: Recipe[] = selectedItems?.map((item) => ({
         name: item.name,
         count: item.count,
       }));
 
       const response = await addRecipe(items);
       if (response.status === 201) {
-        const data = await response.json();
+        const data: { token: string } = await response.json();
         sendNotification("notification.share", "common.information");
         setRecipeToken(data.token);
       }
@@ -41,7 +42,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
     }
   };
 
-  const shareButton = () => (
+  const shareButton = (): React.ReactElement => (
     <button
       type="button"
       className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -54,7 +55,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
     </button>
   );
 
-  const footerPart = () => {
+  const footerPart = (): React.ReactElement => {
     if (recipeToken.length > 0) {
       const url = `${getDomain()}/crafter?recipe=${recipeToken}`;
       return (
@@ -80,7 +81,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
     return shareButton();
   };
 
-  const itemsList = () => {
+  const itemsList = (): React.ReactElement[] => {
     const url = `${getDomain()}/item/`;
 
     return selectedItems?.map((item) => (
@@ -99,7 +100,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
     ));
   };
 
-  const copyMaterials = () => {
+  const copyMaterials = (): void => {
     sendEvent("share", {
       props: {
         action: "copyMaterials",
@@ -114,7 +115,11 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
 
     text += `\n\n${t("crafting.youNeedMaterials")}:\n\n`;
 
-    const totalIngredients = [];
+    const totalIngredients: Array<{
+      name: string;
+      count: number;
+      ingredients?: ItemIngredient[];
+    }> = [];
     for (const item of selectedItems ?? []) {
       if (item?.crafting?.[0]?.ingredients != null) {
         const output = item.crafting[0].output ?? 1;

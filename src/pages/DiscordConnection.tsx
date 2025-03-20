@@ -35,7 +35,7 @@ const DiscordConnection: React.FC = () => {
       }
 
       try {
-        const response = await authDiscord(parsed.code);
+        const response = await authDiscord(String(parsed.code));
 
         if (response.status === 202) {
           const data = await response.json();
@@ -45,7 +45,7 @@ const DiscordConnection: React.FC = () => {
           if (data.token) {
             storeItem("token", data.token);
           }
-          navigate({ from: { pathname: "/" } });
+          navigate("/");
         } else if (response.status === 401) {
           setError("error.unauthorized");
         } else if (response.status === 503) {
@@ -65,8 +65,8 @@ const DiscordConnection: React.FC = () => {
     const urlLink = getDiscordLoginUrl();
 
     if (parsed.discordid && parsed.token) {
-      storeItem("discordid", parsed.discordid);
-      storeItem("token", parsed.token);
+      storeItem("discordid", String(parsed.discordid));
+      storeItem("token", String(parsed.token));
     }
 
     if (getStoredItem("token")) {

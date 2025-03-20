@@ -1,13 +1,12 @@
 import type React from "react";
 import { useState } from "react";
 import ClanName from "../ClanName";
+import type { ClanInfo } from "../../types/dto/clan";
+import type { RelationshipInfo } from "../../types/dto/relationship";
 
 interface ClanSelectProps {
   leader: boolean;
-  clan: {
-    id: number;
-    [key: string]: any;
-  };
+  clan: RelationshipInfo;
   onDelete: (id: number) => void;
 }
 

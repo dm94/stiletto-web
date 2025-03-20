@@ -6,11 +6,12 @@ import Ingredients from "../Ingredients";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
 import type { Item } from "../../types/item";
+import type { Tree } from "../../types/dto/tech";
 
 
 interface SkillTreeTabProps {
   theme: Record<string, unknown>;
-  treeId: string;
+  treeId: Tree;
   title: string;
   items: Item[];
   clan?: string;
@@ -54,7 +55,7 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
     return (
       <div className="mx-auto">
         <div className="text-center mb-1">
-          <Icon key={item.name} name={item.name} width="35" />
+          <Icon key={item.name} name={item.name} width={35} />
         </div>
         <p className="text-center border-bottom border-warning">
           {t("crafting.whoHasLearnedIt")}

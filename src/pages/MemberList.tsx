@@ -23,22 +23,12 @@ import {
   getHasPermissions,
   getStoredItem,
 } from "../functions/services";
-import { MemberAction } from "../types/dto/members";
+import { type Member, MemberAction, type RequestMember } from "../types/dto/members";
 import { RequestAction } from "../types/dto/requests";
 
 const MemberList = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
-  interface Member {
-    discordid: string;
-    discordtag: string;
-    nickInGame?: string;
-    permissions?: string[];
-  }
-
-  interface RequestMember extends Member {
-    message: string;
-  }
 
   const [members, setMembers] = useState<Member[]>([]);
   const [requestMembers, setRequestMembers] = useState<RequestMember[]>([]);

@@ -1,13 +1,24 @@
-import React from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import { getStoredItem } from "../../functions/services";
+import type { TradeInfo } from "../../types/dto/trades";
 
-const Trade = ({ trade, onDelete }) => {
+interface TradeProps {
+  trade: TradeInfo;
+  onDelete?: (idTrade: number) => void;
+}
+
+interface QualityOption {
+  class: string;
+  text: string;
+}
+
+const Trade: React.FC<TradeProps> = ({ trade, onDelete }) => {
   const { t } = useTranslation();
   const userDiscordId = getStoredItem("discordid");
 
-  const renderCardFooter = () => {
+  const renderCardFooter = (): React.ReactElement => {
     if (!userDiscordId || userDiscordId !== trade?.discordid) {
       return (
         <div className="p-4 bg-gray-900 border-t border-gray-700">
@@ -42,8 +53,8 @@ const Trade = ({ trade, onDelete }) => {
     );
   };
 
-  const getQualityBadge = () => {
-    const qualities = {
+  const getQualityBadge = (): React.ReactElement => {
+    const qualities: Record<number, QualityOption> = {
       0: { class: "bg-gray-500", text: "crafting.common" },
       1: { class: "bg-green-500", text: "crafting.uncommon" },
       2: { class: "bg-blue-500", text: "crafting.rare" },
@@ -51,7 +62,7 @@ const Trade = ({ trade, onDelete }) => {
       4: { class: "bg-yellow-500", text: "crafting.legendary" },
     };
 
-    const quality = qualities[trade?.quality] || qualities["0"];
+    const quality = qualities[trade?.quality ?? 0];
     return (
       <span
         className={`inline-block px-2 py-1 rounded-full text-white text-sm ${quality.class} mb-2`}
@@ -93,12 +104,12 @@ const Trade = ({ trade, onDelete }) => {
             className="text-lg font-medium text-gray-300 mb-2 flex justify-center"
             data-cy="trade-resource"
           >
-            {trade.amount !== "0" ? `${trade.amount}x ` : ""}{" "}
+            {trade?.amount !== 0 ? `${trade.amount}x ` : ""}{" "}
             <Icon key={trade.resource} name={trade.resource} />
             <h5>{t(trade.resource, { ns: "items" })}</h5>
           </div>
           <p className="text-gray-400 mb-2" data-cy="trade-price">
-            {trade.price !== "0"
+            {trade?.price !== 0
               ? `${trade.price} Flots/${t("trades.unit")}`
               : ""}
           </p>

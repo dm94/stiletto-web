@@ -22,3 +22,16 @@ export type GetClansRequestParams = {
   name?: string;
   region?: string;
 };
+
+export type ClanInfo = {
+  clanid: number;
+  name: string;
+  discordid?: string;
+  leaderid: string;
+  invitelink?: string;
+  recruitment: boolean;
+  flagcolor?: string;
+  symbol?: string;
+  region: string;
+  discordTag: string;
+};

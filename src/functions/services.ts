@@ -4,6 +4,7 @@ import { getMembers, getMemberPermissions } from "./requests/clans/members";
 import type { MapJsonInfo } from "../types/dto/maps";
 import type { Marker } from "../types/dto/marker";
 import type { Item } from "../types/item";
+import type { PermissionsResponse, Permissions } from "../types/dto/members";
 
 const timeCheck = 300000;
 const smallCacheTimeCheck = 60000;
@@ -154,11 +155,11 @@ export const getOurPermssions = async () => {
 
   if (clanid != null && discordid != null) {
     const response = await getUserPermssions(clanid, discordid);
-    if (response?.success) {
-      addCachedData("permissions", response.message);
+    if (response?.success && response.data) {
+      addCachedData("permissions", response.data);
       return {
         success: true,
-        message: response.message,
+        message: response.data,
       };
     }
     return {
@@ -172,41 +173,44 @@ export const getOurPermssions = async () => {
   };
 };
 
-export const getUserPermssions = async (clanId: number, discordId: string) => {
+export const getUserPermssions = async (
+  clanId: number,
+  discordId: string,
+): Promise<PermissionsResponse> => {
   if (!clanId || !discordId) {
     return {
       success: false,
-      message: "errors.noClan",
+      error: "errors.noClan",
     };
   }
 
   const response = await getMemberPermissions(clanId, discordId);
   if (response != null) {
     if (response.status === 200) {
-      const data = await response.json();
-      return { success: true, message: data };
+      const data = (await response.json()) as Permissions;
+      return { success: true, data };
     }
 
     if (response.status === 405 || response.status === 401) {
       closeSession();
       return {
         success: false,
-        message: "errors.noAccess",
+        error: "errors.noAccess",
       };
     }
 
     if (response.status === 503) {
       return {
         success: false,
-        message: "error.databaseConnection",
+        error: "error.databaseConnection",
       };
     }
-  } else {
-    return {
-      success: false,
-      message: "error.databaseConnection",
-    };
   }
+
+  return {
+    success: false,
+    error: "error.databaseConnection",
+  };
 };
 
 export const getClanInfo = async () => {

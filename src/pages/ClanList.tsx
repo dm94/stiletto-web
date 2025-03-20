@@ -10,17 +10,18 @@ import ClusterList from "../components/ClusterList";
 import { getDomain } from "../functions/utils";
 import { getClans } from "../functions/requests/clan";
 import { sendRequest } from "../functions/requests/clans/requests";
+import type { ClanInfo } from "../types/dto/clan";
 
 const ClanList = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [clans, setClans] = useState([]);
+  const [clans, setClans] = useState<ClanInfo[]>([]);
   const [redirect, setRedirect] = useState(false);
   const [error, setError] = useState("");
   const [showRequestModal, setShowRequestModal] = useState(false);
   const [clanRequestId, setClanRequestId] = useState(0);
   const [textAreaModelValue, setTextAreaModelValue] = useState("");
-  const [clanuserid, setClanuserid] = useState("");
+  const [clanuserid, setClanuserid] = useState<number>();
   const [isLogged, setIsLogged] = useState(false);
   const [page, setPage] = useState(1);
   const [hasMoreClans, setHasMoreClans] = useState(false);
@@ -44,7 +45,7 @@ const ClanList = () => {
       });
 
       if (response.ok) {
-        const data = await response.json();
+        const data = await response.json() as ClanInfo[];
         const hasMore = data != null && data.length >= 10;
         setClans(data);
         setIsLoaded(true);
@@ -63,7 +64,7 @@ const ClanList = () => {
       setIsLogged(true);
       const response = await getUserProfile();
       if (response.success) {
-        setClanuserid(response.message.clanid);
+        setClanuserid(Number(response.message.clanid));
       } else {
         setError(response.message);
       }
@@ -89,13 +90,9 @@ const ClanList = () => {
   };
 
   const renderList = () => {
-    if (!clans) {
-      return "";
-    }
-
     return clans.map((clan) => (
       <ClanListItem
-        key={clan.clanid}
+        key={clan.clanid ?? "clan-list-item"}
         clan={clan}
         onSendRequest={(id) => {
           setClanRequestId(id);
@@ -180,7 +177,7 @@ const ClanList = () => {
                       {t("common.region")}
                     </label>
                     <ClusterList
-                      onError={setError}
+                      id="regionInput"
                       value={regionSearch}
                       onChange={(value) => {
                         setPage(1);
@@ -308,7 +305,7 @@ const ClanList = () => {
                 <textarea
                   className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="modalTextArea"
-                  rows="3"
+                  rows={3}
                   value={textAreaModelValue}
                   onChange={(evt) => setTextAreaModelValue(evt.target.value)}
                 />

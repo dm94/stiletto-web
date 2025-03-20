@@ -8,14 +8,14 @@ import HeaderMeta from "../components/HeaderMeta";
 import { useLocation } from "react-router";
 
 const MapPage: React.FC = () => {
-  const [mapId, setMapId] = useState<string | null>(null);
-  const [pass, setPass] = useState<string | null>(null);
+  const [mapId, setMapId] = useState<number>();
+  const [pass, setPass] = useState<string>();
   const location = useLocation();
 
   useEffect(() => {
     const parsed = queryString.parse(location.search);
-    setMapId(parsed.mapid as string | null);
-    setPass(parsed.pass as string | null);
+    setMapId(Number(parsed.mapid));
+    setPass(parsed.pass as string);
   }, [location.search]);
 
   return (
@@ -34,9 +34,9 @@ const MapPage: React.FC = () => {
         <ResourceMapNoLog mapId={mapId} pass={pass} />
       ) : (
         <CreateMapNoLog
-          onOpen={(id: string, p: string) => {
+          onOpen={(id: number, pass: string) => {
             setMapId(id);
-            setPass(p);
+            setPass(pass);
           }}
         />
       )}

@@ -47,7 +47,7 @@ const ItemWiki = () => {
         itemName = decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase();
       }
 
-      const items: Item[] = await getItems();
+      const items = await getItems();
       if (items) {
         const foundItem = items.find(
           (it) => it.name.toLowerCase() === itemName,
@@ -199,7 +199,7 @@ const ItemWiki = () => {
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
             <div className="p-4 bg-gray-900 border-b border-gray-700">
               <div className="flex items-center text-neutral-300">
-                <Icon key={itemName} name={itemName} width={"35"} />
+                <Icon key={itemName} name={itemName} width={35} />
                 <span className="ml-2">{t(itemName, { ns: "items" })}</span>
               </div>
             </div>

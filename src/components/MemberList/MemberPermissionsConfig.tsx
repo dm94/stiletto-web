@@ -1,11 +1,20 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { updateMemberPermissions } from "../../functions/requests/clans/members";
 import { closeSession, getUserPermssions } from "../../functions/services";
+import type { MemberPermissions } from "../../types/dto/members";
 
-const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
+interface MemberPermissionsConfigProps {
+  clanid: number;
+  memberid: string;
+  onClose?: () => void;
+  onError?: (error: string) => void;
+}
+
+const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clanid, memberid, onClose, onError }) => {
   const { t } = useTranslation();
-  const [permissions, setPermissions] = useState({
+  const [permissions, setPermissions] = useState<MemberPermissions>({
     bot: false,
     diplomacy: false,
     kickmembers: false,
@@ -14,32 +23,32 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
   });
 
   useEffect(() => {
-    const fetchPermissions = async () => {
+    const fetchPermissions = async (): Promise<void> => {
       if (!clanid || !memberid) {
-        return false;
+        return;
       }
 
       const request = await getUserPermssions(clanid, memberid);
-      if (request?.success) {
-        const allPermissions = request.message;
+      if (request?.success && request.data) {
+        const allPermissions = request.data;
         setPermissions({
-          bot: allPermissions?.bot === "1",
-          diplomacy: allPermissions?.diplomacy === "1",
-          kickmembers: allPermissions?.kickmembers === "1",
-          request: allPermissions?.request === "1",
-          walkers: allPermissions?.walkers === "1",
+          bot: allPermissions?.bot,
+          diplomacy: allPermissions?.diplomacy,
+          kickmembers: allPermissions?.kickmembers,
+          request: allPermissions?.request,
+          walkers: allPermissions?.walkers,
         });
-      } else if (request) {
-        onError?.(request.message);
+      } else {
+        onError?.("errors.apiConnection");
       }
     };
 
     fetchPermissions();
   }, [clanid, memberid, onError]);
 
-  const handleUpdateMemberPermissions = async () => {
+  const handleUpdateMemberPermissions = async (): Promise<void> => {
     if (!clanid || !memberid) {
-      return false;
+      return;
     }
 
     try {
@@ -64,7 +73,7 @@ const MemberPermissionsConfig = ({ clanid, memberid, onClose, onError }) => {
     }
   };
 
-  const togglePermission = (key) => {
+  const togglePermission = (key: keyof MemberPermissions): void => {
     setPermissions((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 

@@ -1,12 +1,21 @@
-import React from "react";
+import type React from "react";
 import Ingredient from "../Ingredient";
+import type { Item } from "../../types/item";
 
-const ListIngredients = ({ selectedItems }) => {
+interface ListIngredientsProps {
+  selectedItems: Item[];
+}
+
+const ListIngredients: React.FC<ListIngredientsProps> = ({ selectedItems }) => {
   if (!selectedItems) {
-    return [];
+    return null;
   }
 
-  const totalIngredients = [];
+  const totalIngredients: Array<{
+    name: string;
+    count: number;
+    ingredients?: any[];
+  }> = [];
 
   for (const item of selectedItems) {
     if (item?.crafting?.[0]?.ingredients) {

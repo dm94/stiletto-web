@@ -17,7 +17,7 @@ const Station: React.FC<StationProps> = ({ name }) => {
     <div className="flex items-center justify-end space-x-2 text-gray-300">
       <span>{t("crafting.madeOn")}</span>
       <div className="flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded-lg">
-        <Icon key={name} name={name} width="24" />
+        <Icon key={name} name={name} width={24} />
         <span className="font-medium">{t(name)}</span>
       </div>
     </div>

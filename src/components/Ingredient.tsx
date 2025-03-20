@@ -57,7 +57,7 @@ const Ingredient: React.FC<IngredientProps> = ({ ingredient, value }) => {
           aria-expanded={showList}
         >
           <div className="flex-shrink-0 bg-gray-700 p-1 rounded-lg">
-            <Icon key={ingredient?.name} name={ingredient?.name} width="36" />
+            <Icon key={ingredient?.name} name={ingredient?.name} width={36} />
           </div>
           <div className="flex-grow">
             <div className="flex items-center">
@@ -85,7 +85,7 @@ const Ingredient: React.FC<IngredientProps> = ({ ingredient, value }) => {
       ) : (
         <div className="flex items-center space-x-3">
           <div className="flex-shrink-0 bg-gray-700 p-1 rounded-lg">
-            <Icon key={ingredient?.name} name={ingredient?.name} width="36" />
+            <Icon key={ingredient?.name} name={ingredient?.name} width={36} />
           </div>
           <div className="flex-grow">
             <div className="flex items-center">

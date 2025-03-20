@@ -2,15 +2,11 @@ import type React from "react";
 import { Fragment } from "react";
 import { config } from "../config/config";
 import { useTranslation } from "react-i18next";
-
-interface Clan {
-  name: string;
-  symbol?: string;
-  flagcolor: string;
-}
+import type { RelationshipInfo } from "../types/dto/relationship";
+import type { ClanInfo } from "../types/dto/clan";
 
 interface ClanNameProps {
-  clan: Clan;
+  clan: RelationshipInfo | ClanInfo;
 }
 
 const ClanName: React.FC<ClanNameProps> = ({ clan }) => {

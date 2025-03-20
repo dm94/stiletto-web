@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import type React from "react";
 import { useTranslation } from "react-i18next";
 import Ingredients from "../Ingredients";
 import Icon from "../Icon";
 import CraftingTime from "../CraftingTime";
 import Station from "../Station";
 import { getDomain } from "../../functions/utils";
+import type { CraftItem } from "../../types/item";
 
-const SelectedItem = ({ item, onChangeCount }) => {
-  const [disableEdit, setDisableEdit] = useState(true);
+interface SelectedItemProps {
+  item: CraftItem;
+  onChangeCount: (itemName: string, count: number) => void;
+}
+
+const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
   const { t } = useTranslation();
 
   const showIngredient = () => {
@@ -18,16 +23,18 @@ const SelectedItem = ({ item, onChangeCount }) => {
       return null;
     }
 
+    const moreThanOne = item.crafting.length > 1;
+
     return item.crafting.map((ingredients, i) => (
       <div
         className={`${
-          item.crafting.length > 1
+          moreThanOne
             ? "w-full border-l-4 border-green-500"
             : "w-full"
         } p-4 bg-gray-900 rounded-lg relative`}
         key={`${item.name}-${item.count}-${i}`}
       >
-        {item.crafting.length > 1 && (
+        {moreThanOne && (
           <div className="absolute top-2 right-2 bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs font-medium">
             {t("crafting.recipe")} {i + 1}
           </div>
@@ -51,7 +58,7 @@ const SelectedItem = ({ item, onChangeCount }) => {
   };
 
   const showDamage = () => {
-    if (!item?.damage) {
+    if (!item?.projectileDamage?.damage) {
       return null;
     }
 
@@ -64,25 +71,25 @@ const SelectedItem = ({ item, onChangeCount }) => {
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">100%</div>
             <div className="text-red-400 font-bold text-lg">
-              {Math.round(item.damage * item.count)}
+              {Math.round(item.projectileDamage.damage * item.count)}
             </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">50%</div>
             <div className="text-red-400 font-bold text-lg">
-              {Math.round(item.damage * item.count * 0.5)}
+              {Math.round(item.projectileDamage.damage * item.count * 0.5)}
             </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">30%</div>
             <div className="text-red-400 font-bold text-lg">
-              {Math.round(item.damage * item.count * 0.3)}
+              {Math.round(item.projectileDamage.damage * item.count * 0.3)}
             </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">10%</div>
             <div className="text-red-400 font-bold text-lg">
-              {Math.round(item.damage * item.count * 0.1)}
+              {Math.round(item.projectileDamage.damage * item.count * 0.1)}
             </div>
           </div>
         </div>
@@ -90,8 +97,8 @@ const SelectedItem = ({ item, onChangeCount }) => {
     );
   };
 
-  const handleChange = (count) => {
-    onChangeCount(item.name, Number.parseInt(item.count) + count);
+  const handleChange = (count: number) => {
+    onChangeCount(item.name, Number.parseInt(item.count.toString()) + count);
   };
 
   const url = `${getDomain()}/item/${encodeURI(
@@ -122,16 +129,13 @@ const SelectedItem = ({ item, onChangeCount }) => {
                 type="number"
                 className="w-24 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold text-lg"
                 value={item.count}
-                onChange={(e) => onChangeCount(item.name, e.target.value)}
-                onMouseEnter={() => setDisableEdit(false)}
-                onMouseLeave={() => setDisableEdit(true)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeCount(item.name, Number.parseInt(e.target.value))}
                 min="1"
                 max="9999"
-                readOnly={disableEdit}
               />
             </div>
             <div className="flex items-center space-x-3">
-              <Icon key={item.name} name={item.name} width="48" />
+              <Icon key={item.name} name={item.name} width={48} />
               <a
                 href={url}
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-200 text-xl font-medium"

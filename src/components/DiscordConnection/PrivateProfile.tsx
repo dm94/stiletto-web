@@ -248,7 +248,7 @@ const PrivateProfile = () => {
                   <Icon
                     key="Base Wings"
                     name="Base Wings"
-                    width="30"
+                    width={30}
                   />
                   {t("menu.walkerList")}
                 </Link>

@@ -2,22 +2,13 @@ import type React from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import ClanName from "../ClanName";
-
-interface Clan {
-  clanid: string;
-  name: string;
-  symbol?: string;
-  flagcolor: string;
-  region: string;
-  discordTag: string;
-  invitelink: string;
-}
+import type { ClanInfo } from "../../types/dto/clan";
 
 interface ClanListItemProps {
   isLogged?: boolean;
-  clanuserid?: string | null;
-  clan: Clan;
-  onSendRequest?: (clanid: string) => void;
+  clanuserid?: number;
+  clan: ClanInfo;
+  onSendRequest?: (clanid: number) => void;
 }
 
 const ClanListItem: React.FC<ClanListItemProps> = ({
@@ -35,7 +26,7 @@ const ClanListItem: React.FC<ClanListItemProps> = ({
           <button
             type="button"
             className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            onClick={() => onSendRequest?.(clan.clanid)}
+            onClick={() => onSendRequest?.(Number(clan.clanid))}
           >
             {t("common.sendRequest")}
           </button>

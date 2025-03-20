@@ -10,6 +10,7 @@ export interface MapData {
 
 // Map creation response
 export interface MapCreationResponse {
-  IdMap: string | number;
+  Success: string;
+  IdMap: number;
   PassMap: string;
 }

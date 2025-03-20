@@ -2,10 +2,11 @@ import type React from "react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getWhoHasLearntIt } from "../../functions/requests/clan";
+import type { Tree } from "../../types/dto/tech";
 
 interface SkillNodeBtnProps {
   clan: string;
-  tree: string;
+  tree: Tree;
   item: {
     name: string;
   };

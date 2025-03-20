@@ -308,7 +308,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
             <Icon
               key={`${walker.type} Walker`}
               name={`${walker.type} Walker`}
-              width="30"
+              width={30}
             />
           )}
         </td>

@@ -1,14 +1,20 @@
+import type React from "react";
 import { useRef } from "react";
 import Item from "./Item";
 import { useVirtualizer } from "@tanstack/react-virtual";
+import type { Item as ItemType } from "../../types/item";
 
-const Items = ({ items = [], onAdd }) => {
-  const containerRef = useRef(null);
+interface ItemsProps {
+  items: ItemType[];
+  onAdd: (itemName: string, count?: number) => void;
+}
+
+const Items: React.FC<ItemsProps> = ({ items = [], onAdd }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const virtualizer = useVirtualizer({
     count: items.length,
     getScrollElement: () => containerRef.current,
-    axis: "y",
     estimateSize: () => 60,
     overscan: 20,
   });

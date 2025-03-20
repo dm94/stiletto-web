@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import type React from "react";
+import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import queryString from "query-string";
@@ -12,7 +13,7 @@ import { getRecipe } from "../functions/requests/recipes";
 import { useLocation } from "react-router";
 import type { CraftItem, Item } from "../types/item";
 
-const Crafter = () => {
+const Crafter: React.FC = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const [allItems, setAllItems] = useState<Item[]>([]);
@@ -32,7 +33,7 @@ const Crafter = () => {
     }
   }, [allItems, searchText]);
 
-  const updateRecipes = async () => {
+  const updateRecipes = async (): Promise<void> => {
     const itemsData = await getItems();
     if (itemsData) {
       const craftableItems = itemsData.filter((it) => it.crafting);
@@ -42,7 +43,7 @@ const Crafter = () => {
     }
   };
 
-  const getRecipes = async (items: Item[]) => {
+  const getRecipes = async (items: Item[]): Promise<void> => {
     const parsed = queryString.parse(location?.search);
     const { recipe, craft } = parsed;
 
@@ -72,14 +73,14 @@ const Crafter = () => {
     }
   };
 
-  const handleInputChangeSearchItem = (event) => {
+  const handleInputChangeSearchItem = (event: React.ChangeEvent<HTMLInputElement>): void => {
     if (event) {
       const newSearchText = event.currentTarget.value;
       setSearchText(newSearchText);
     }
   };
 
-  const updateSearch = (searchText: string) => {
+  const updateSearch = (searchText: string): void => {
     const filtered = allItems.filter((item) => {
       return searchText.split(" ").every((searchTerm) => {
         return t(item.name).toLowerCase().includes(searchTerm.toLowerCase());
@@ -97,11 +98,11 @@ const Crafter = () => {
     return <Items key="itemList" items={allItems} onAdd={handleAdd} />;
   };
 
-  const handleAdd = (itemName: string, count = 1, itemsList = allItems) => {
+  const handleAdd = (itemName: string, count = 1, itemsList = allItems): void => {
     const existingItem = selectedItems.find((it) => it.name === itemName);
 
     if (existingItem) {
-      changeCount(itemName, Number.parseInt(existingItem.count) + count);
+      changeCount(itemName, Number.parseInt(existingItem.count.toString()) + count);
       return;
     }
 
@@ -112,15 +113,15 @@ const Crafter = () => {
         {
           ...selectedItem,
           name: selectedItem.name,
-          category: selectedItem.category || "",
-          crafting: getIngredients(selectedItem.name),
+          category: selectedItem.category ?? "",
+          crafting: getIngredients(selectedItem.name, false),
           count,
         },
       ]);
     }
   };
 
-  const changeCount = (itemName: string, count: number) => {
+  const changeCount = (itemName: string, count: number): void => {
     if (count <= 0) {
       removeSelectedItem(itemName);
       return;
@@ -133,7 +134,7 @@ const Crafter = () => {
     );
   };
 
-  const getIngredients = (itemName: string, secondTree = false) => {
+  const getIngredients = (itemName: string, secondTree: boolean) => {
     const selectedItem = allItems.find((it) => it.name === itemName);
     if (!selectedItem?.crafting) {
       return [];
@@ -153,19 +154,18 @@ const Crafter = () => {
       <SelectedItem
         key={item.name}
         item={item}
-        value={item.count}
         onChangeCount={changeCount}
       />
     ));
   };
 
-  const removeSelectedItem = (itemName) => {
+  const removeSelectedItem = (itemName: string): void => {
     setSelectedItems((prevItems) =>
       prevItems.filter((it) => it.name !== itemName),
     );
   };
 
-  const toggleItemsNav = () => {
+  const toggleItemsNav = (): void => {
     setIsItemsNavVisible(!isItemsNavVisible);
   };
 

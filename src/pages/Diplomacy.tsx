@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import ModalMessage from "../components/ModalMessage";
@@ -12,19 +12,20 @@ import {
   createRelationship,
   deleteRelationship,
 } from "../functions/requests/clans/relationships";
+import { type RelationshipInfo, TypeRelationship } from "../types/dto/relationship";
 
 const Diplomacy = () => {
   const { t } = useTranslation();
-  const [clanId, setClanId] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [error, setError] = useState("");
-  const [listOfRelations, setListOfRelations] = useState([]);
-  const [typedInput, setTypedInput] = useState(0);
-  const [clanFlagInput, setClanFlagInput] = useState("");
-  const [clanFlagSymbolInput, setClanFlagSymbolInput] = useState("C1");
-  const [nameOtherClanInput, setNameOtherClanInput] = useState("");
-  const [isLeader, setIsLeader] = useState(false);
-  const [hasPermissions, setHasPermissions] = useState(false);
+  const [clanId, setClanId] = useState<number | false>(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
+  const [listOfRelations, setListOfRelations] = useState<RelationshipInfo[]>([]);
+  const [typedInput, setTypedInput] = useState<TypeRelationship>(TypeRelationship.NAP);
+  const [clanFlagInput, setClanFlagInput] = useState<string>("");
+  const [clanFlagSymbolInput, setClanFlagSymbolInput] = useState<string>("C1");
+  const [nameOtherClanInput, setNameOtherClanInput] = useState<string>("");
+  const [isLeader, setIsLeader] = useState<boolean>(false);
+  const [hasPermissions, setHasPermissions] = useState<boolean>(false);
 
   useEffect(() => {
     const initializeComponent = async () => {
@@ -46,7 +47,7 @@ const Diplomacy = () => {
         const response = await getRelationships(clanid);
 
         if (response.ok) {
-          const data = await response.json();
+          const data = await response.json() as RelationshipInfo[];
           setListOfRelations(data);
           setIsLoaded(true);
         } else if (response.status === 405) {
@@ -69,13 +70,17 @@ const Diplomacy = () => {
     initializeComponent();
   }, []);
 
-  const handleCreateRelationship = async (event) => {
+  const handleCreateRelationship = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (clanId === false) {
+      return;
+    }
+    
     try {
       const response = await createRelationship(clanId, {
         nameotherclan: nameOtherClanInput,
         clanflag: clanFlagInput,
-        typed: typedInput,
+        typed: typedInput as TypeRelationship,
         symbol: clanFlagSymbolInput,
       });
 
@@ -91,7 +96,11 @@ const Diplomacy = () => {
     }
   };
 
-  const handleDeleteDiplomacy = async (relationShipId) => {
+  const handleDeleteDiplomacy = async (relationShipId: number) => {
+    if (clanId === false) {
+      return;
+    }
+
     try {
       const response = await deleteRelationship(clanId, relationShipId);
 
@@ -211,7 +220,7 @@ const Diplomacy = () => {
                     id="typedInput"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={typedInput}
-                    onChange={(evt) => setTypedInput(evt.target.value)}
+                    onChange={(evt) => setTypedInput(Number(evt.target.value) as TypeRelationship)}
                   >
                     <option value="0">{t("diplomacy.napOrSettler")}</option>
                     <option value="1">{t("diplomacy.ally")}</option>
@@ -248,7 +257,7 @@ const Diplomacy = () => {
                   className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   id="nameOtherClanInput"
                   name="nameOtherClanInput"
-                  maxLength="20"
+                  maxLength={20}
                   value={nameOtherClanInput}
                   onChange={(evt) => setNameOtherClanInput(evt.target.value)}
                   required
