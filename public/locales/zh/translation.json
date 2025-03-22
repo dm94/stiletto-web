@@ -329,5 +329,6 @@
   "error.methodNotAllowed": "方法不允许",
   "error.unauthorized": "未授权",
   "clan.lookingForNewMembers": "寻找新会员？禁用此选项后，部族不会出现在部族列表中。",
-  "common.showMore": "显示更多"
+  "common.showMore": "显示更多",
+  "trades.noTradesFound": "No trades found"
 }
