@@ -11,9 +11,9 @@ export type CreateClanRequestParams = {
   clanname: string;
   clancolor?: string;
   clandiscord?: string;
-  recruit?: boolean;
   region?: string;
   symbol?: string;
+  recruit?: boolean;
 };
 
 export type GetClansRequestParams = {

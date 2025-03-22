@@ -1,125 +1,119 @@
-import { getStoredItem, closeSession } from "../services";
+import { getStoredItem } from "../services";
 import { config } from "../../config/config";
-import type { Tree } from "../../types/dto/tech";
+import type { TechTreeInfo, Tree } from "../../types/dto/tech";
+import type { LoginInfo, UserInfo } from "../../types/dto/users";
+import { objectToURLSearchParams } from "../utils";
+import type { GenericResponse } from "../../types/dto/generic";
 
-export const getLearned = async () => {
-  const token = getStoredItem("token");
-  const discordId = getStoredItem("discordid");
+export const getUser = async (): Promise<UserInfo> => {
+  const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
+    },
+  });
 
-  if (!token || !discordId) {
-    return null;
+  if (response) {
+    return await response.json();
   }
 
-  try {
-    const response = await fetch(
-      `${config.REACT_APP_API_URL}/users/${discordId}/tech`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-    );
-
-    if (response.status === 200) {
-      return await response.json();
-    }
-
-    if (response.status === 401) {
-      closeSession();
-      throw new Error("errors.noAccess");
-    }
-
-    if (response.status === 503) {
-      throw new Error("error.databaseConnection");
-    }
-  } catch {
-    throw new Error("error.databaseConnection");
-  }
+  throw new Error("errors.apiConnection");
 };
 
-export const addTech = async (tabSelect: Tree, learned: string[]) => {
-  const discordId = getStoredItem("discordid");
-  const token = getStoredItem("token");
+export const addNick = async (newNick: string): Promise<GenericResponse> => {
+  const params = objectToURLSearchParams({
+    dataupdate: newNick,
+  });
 
-  if (!token || !discordId || !tabSelect || !learned) {
-    return;
+  const response = await fetch(`${config.REACT_APP_API_URL}/users?${params}`, {
+    method: "PUT",
+    headers: { Authorization: `Bearer ${getStoredItem("token")}` },
+  });
+
+  if (response) {
+    return await response.json();
   }
 
-  try {
-    const params = new URLSearchParams({
-      tree: tabSelect,
-    });
+  throw new Error("errors.apiConnection");
+};
 
-    const url = `${
-      config.REACT_APP_API_URL
-    }/users/${discordId}/tech?${params.toString()}`;
+export const deleteUser = async (): Promise<GenericResponse> => {
+  const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
+    method: "DELETE",
+    headers: { Authorization: `Bearer ${getStoredItem("token")}` },
+  });
 
-    const response = await fetch(url, {
+  if (response) {
+    return await response.json();
+  }
+
+  throw new Error("errors.apiConnection");
+};
+
+export const getLearned = async (
+  discordId: string,
+  tree: Tree,
+): Promise<TechTreeInfo> => {
+  const params = objectToURLSearchParams({
+    tree: tree,
+  });
+
+  const response = await fetch(
+    `${config.REACT_APP_API_URL}/users/${discordId}/tech?${params}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    },
+  );
+
+  if (response) {
+    return await response.json();
+  }
+
+  throw new Error("errors.apiConnection");
+};
+
+export const addTech = async (
+  discordId: string,
+  tabSelect: Tree,
+  learned: string[],
+): Promise<TechTreeInfo> => {
+  const params = new URLSearchParams({
+    tree: tabSelect,
+  });
+
+  const response = await fetch(
+    `${config.REACT_APP_API_URL}/users/${discordId}/tech?${params.toString()}`,
+    {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${getStoredItem("token")}`,
       },
       body: JSON.stringify(learned),
-    });
+    },
+  );
 
-    if (response.status === 200) {
-      window.location.reload();
-    } else if (response.status === 401) {
-      closeSession();
-      throw new Error("errors.noAccess");
-    } else if (response.status === 503) {
-      throw new Error("error.databaseConnection");
-    }
-  } catch {
-    throw new Error("error.databaseConnection");
+  if (response) {
+    return await response.json();
   }
+
+  throw new Error("errors.apiConnection");
 };
 
-export const deleteUser = async () => {
-  const token = getStoredItem("token");
-
-  if (!token) {
-    throw new Error("Not logged in");
-  }
-
-  try {
-    return await fetch(`${config.REACT_APP_API_URL}/users/`, {
-      method: "DELETE",
-      headers: { Authorization: `Bearer ${token}` },
-    });
-  } catch {
-    throw new Error("error.databaseConnection");
-  }
-};
-
-export const addNick = async (newNick: string): Promise<Response> => {
-  const token = getStoredItem("token");
-
-  if (!token) {
-    throw new Error("Not logged in");
-  }
-
-  try {
-    return await fetch(
-      `${config.REACT_APP_API_URL}/users/?dataupdate=${newNick}`,
-      {
-        method: "PUT",
-        headers: { Authorization: `Bearer ${token}` },
-      },
-    );
-  } catch {
-    throw new Error("error.databaseConnection");
-  }
-};
-
-export const authDiscord = async (code: string): Promise<Response> => {
-  try {
-    return await fetch(`${config.REACT_APP_API_URL}/users/auth?code=${code}`, {
+export const authDiscord = async (code: string): Promise<LoginInfo> => {
+  const response = await fetch(
+    `${config.REACT_APP_API_URL}/users/auth?code=${code}`,
+    {
       method: "POST",
-    });
-  } catch {
-    throw new Error("error.databaseConnection");
+    },
+  );
+
+  if (response) {
+    return await response.json();
   }
+
+  throw new Error("errors.apiConnection");
 };

@@ -6,6 +6,20 @@ export enum Tree {
   WALKERS = "Walkers",
 }
 
-export type TechUser = {
+export type SeeWhoHasLearntItRequestParams = {
+  tree: Tree;
+  tech: string;
+};
+
+export type TechUserInfo = {
   discordtag: string;
+};
+
+export type TechTreeInfo = {
+  discordtag: string;
+  Vitamins: string[];
+  Equipment: string[];
+  Crafting: string[];
+  Construction: string[];
+  Walkers: string[];
 };

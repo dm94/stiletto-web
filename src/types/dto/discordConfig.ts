@@ -16,9 +16,9 @@ export type DiscordConfig = {
 };
 
 export type UpdateBotConfigParams = {
-  languaje: Languages;
-  clanlog: boolean;
-  kick: boolean;
-  readypvp: boolean;
-  walkeralarm: boolean;
+  languaje?: Languages;
+  clanlog?: boolean;
+  kick?: boolean;
+  readypvp?: boolean;
+  walkeralarm?: boolean;
 };

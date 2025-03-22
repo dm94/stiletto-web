@@ -19,9 +19,14 @@ export type MemberPermissions = {
   walkers: boolean;
 };
 
-export type Permissions = MemberPermissions & {
+export type Permissions = {
   clanid: number;
   discordid: string;
+  request: boolean;
+  kickmembers: boolean;
+  walkers: boolean;
+  bot: boolean;
+  diplomacy: boolean;
 };
 
 export interface PermissionsResponse {
@@ -41,3 +46,18 @@ export interface Member {
 export interface RequestMember extends Member {
   message: string;
 }
+
+export type MemberRequest = {
+  discordid: string;
+  nickname?: string;
+  discordtag: string;
+  leaderid: string;
+  message?: string;
+};
+
+export type MemberInfo = {
+  discordid: string;
+  nickname?: string;
+  discordtag: string;
+  leaderid: string;
+};

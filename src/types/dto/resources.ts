@@ -1,4 +1,4 @@
-export type AddResourceRequestParams = {
+export type AddResourceMapRequestParams = {
   mappass: string;
   resourcetype: string;
   quality?: number;
@@ -8,7 +8,7 @@ export type AddResourceRequestParams = {
   harvested?: string;
 };
 
-export type Resource = {
+export type ResourceInfo = {
   resourceid: number;
   mapid: number;
   resourcetype: string;
@@ -19,4 +19,10 @@ export type Resource = {
   typemap: string;
   description?: string;
   lastharvested?: string;
+};
+
+export type EditResourceRequestParams = {
+  token: string;
+  description?: string;
+  harvested?: string;
 };

@@ -3,47 +3,62 @@ import { config } from "../../config/config";
 import type {
   CreateTradeRequestParams,
   GetTradesQueryParams,
+  TradeInfo,
 } from "../../types/dto/trades";
 import { objectToURLSearchParams } from "../utils";
+import type { GenericResponse } from "../../types/dto/generic";
 
 export const getTrades = async (
   queryParams: GetTradesQueryParams,
-): Promise<Response> => {
-  try {
-    const params = objectToURLSearchParams(queryParams);
+): Promise<TradeInfo[]> => {
+  const params = objectToURLSearchParams(queryParams);
 
-    return await fetch(`${config.REACT_APP_API_URL}/trades?${params}`);
-  } catch {
-    throw new Error("error.databaseConnection");
-  }
-};
+  const response = await fetch(`${config.REACT_APP_API_URL}/trades?${params}`, {
+    method: "GET",
+  });
 
-export const deleteTrade = async (tradeId: number): Promise<Response> => {
-  try {
-    return await fetch(`${config.REACT_APP_API_URL}/trades/${tradeId}`, {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    });
-  } catch {
-    throw new Error("error.databaseConnection");
+  if (response) {
+    return await response.json();
   }
+
+  throw new Error("errors.apiConnection");
 };
 
 export const createTrade = async (
   requestParams: CreateTradeRequestParams,
-): Promise<Response> => {
-  try {
-    const params = objectToURLSearchParams(requestParams);
+): Promise<GenericResponse> => {
+  const params = objectToURLSearchParams(requestParams);
 
-    return await fetch(`${config.REACT_APP_API_URL}/trades?${params}`, {
-      method: "POST",
+  const response = await fetch(`${config.REACT_APP_API_URL}/trades?${params}`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
+    },
+  });
+
+  if (response) {
+    return await response.json();
+  }
+
+  throw new Error("errors.apiConnection");
+};
+
+export const deleteTrade = async (
+  tradeId: number,
+): Promise<GenericResponse> => {
+  const response = await fetch(
+    `${config.REACT_APP_API_URL}/trades/${tradeId}`,
+    {
+      method: "DELETE",
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
-    });
-  } catch {
-    throw new Error("error.databaseConnection");
+    },
+  );
+
+  if (response) {
+    return await response.json();
   }
+
+  throw new Error("errors.apiConnection");
 };

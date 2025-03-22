@@ -362,26 +362,6 @@ export const getMarkers = async (): Promise<Marker[] | undefined> => {
   }
 };
 
-export const getClusters = async () => {
-  const cachedData = getCachedData("clusters", resourceCacheTimeCheck);
-  if (cachedData != null) {
-    return cachedData;
-  }
-  const options = {
-    method: "GET",
-  };
-
-  const response = await request(
-    `${config.REACT_APP_API_URL}/clusters`,
-    options,
-  );
-  if (response?.data != null) {
-    addCachedData("clusters", response.data);
-    return response.data;
-  }
-  return null;
-};
-
 export const getMapNames = async (): Promise<MapJsonInfo[] | undefined> => {
   const cachedData = getCachedData("maps", resourceCacheTimeCheck);
 

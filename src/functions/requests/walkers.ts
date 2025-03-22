@@ -5,87 +5,68 @@ import type {
   EditWalkerRequestParams,
 } from "../../types/dto/walkers";
 import { objectToURLSearchParams } from "../utils";
+import type { GenericResponse } from "../../types/dto/generic";
 
-export const getWalkers = async ({
-  pageSize = 20,
-  page = 1,
-  name = undefined,
-  type = undefined,
-  desc = undefined,
-  use = undefined,
-  ready,
-}: GetWalkersRequestParams): Promise<Response> => {
-  try {
-    const params = new URLSearchParams({
-      pageSize: pageSize.toString(),
-      page: page.toString(),
-      ...(name && { name }),
-      ...(type && { type }),
-      ...(desc && { desc }),
-      ...(use && { use }),
-      ...(ready !== undefined && { ready: ready.toString() }),
-    });
-
-    return await fetch(`${config.REACT_APP_API_URL}/walkers?${params}`, {
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
-    });
-  } catch {
-    throw new Error("error.databaseConnection");
-  }
-};
-
-export const editWalker = async (
-  walkerid: string,
-  requestParams: EditWalkerRequestParams,
+export const getWalkers = async (
+  requestParams: GetWalkersRequestParams,
 ): Promise<Response> => {
   const params = objectToURLSearchParams(requestParams);
 
-  try {
-    return await fetch(
-      `${config.REACT_APP_API_URL}/walkers/${walkerid}?${params}`,
-      {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${getStoredItem("token")}`,
-        },
-      },
-    );
-  } catch {
-    throw new Error("error.databaseConnection");
-  }
-};
-
-export const getDiscordServers = async (
-  code: string,
-  redirect: string,
-): Promise<Response> => {
-  try {
-    const params = new URLSearchParams({
-      code,
-      redirect,
-    });
-
-    return await fetch(`${config.REACT_APP_API_URL}/walkers/auth?${params}`, {
+  const response = await fetch(
+    `${config.REACT_APP_API_URL}/walkers?${params}`,
+    {
+      method: "GET",
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
-    });
-  } catch {
-    throw new Error("error.databaseConnection");
+    },
+  );
+  if (response) {
+    return await response.json();
   }
+
+  throw new Error("errors.apiConnection");
 };
 
-export const deleteWalker = async (walkerID: string): Promise<Response> => {
-  try {
-    return await fetch(`${config.REACT_APP_API_URL}/walkers/${walkerID}`, {
+export const editWalker = async (
+  walkerId: string,
+  requestParams: EditWalkerRequestParams,
+): Promise<GenericResponse> => {
+  const params = objectToURLSearchParams(requestParams);
+
+  const response = await fetch(
+    `${config.REACT_APP_API_URL}/walkers/${walkerId}?${params}`,
+    {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+      },
+    },
+  );
+
+  if (response) {
+    return await response.json();
+  }
+
+  throw new Error("errors.apiConnection");
+};
+
+export const deleteWalker = async (
+  walkerId: string,
+): Promise<GenericResponse> => {
+  const response = await fetch(
+    `${config.REACT_APP_API_URL}/walkers/${walkerId}`,
+    {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
       },
-    });
-  } catch {
-    throw new Error("error.databaseConnection");
+    },
+  );
+
+  if (response) {
+    return await response.json();
   }
+
+  throw new Error("errors.apiConnection");
 };

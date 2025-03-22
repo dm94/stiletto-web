@@ -21,3 +21,10 @@ export type MapJsonInfo = {
   type: string;
   image: string;
 };
+
+export type EditMapRequestParams = {
+  mapname: string;
+  mapdate?: string;
+  allowediting?: boolean;
+  mappass: string;
+};
