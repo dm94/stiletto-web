@@ -21,7 +21,7 @@ export const objectToURLSearchParams = (obj: object): URLSearchParams => {
     .filter((key) => obj[key as keyof typeof obj] !== undefined)
     .map(
       (key) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(obj[key as keyof typeof obj])}}`,
+        `${encodeURIComponent(key)}=${encodeURIComponent(obj[key as keyof typeof obj])}`,
     );
 
   return new URLSearchParams(keyValuePairs.join("&"));
