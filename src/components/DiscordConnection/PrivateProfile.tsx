@@ -9,29 +9,20 @@ import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";
 import ClanConfig from "../ClanConfig";
 import { getDomain } from "../../functions/utils";
-import { deleteUser, addNick } from "../../functions/requests/users";
-import { leaveClan } from "../../functions/requests/clan";
+import { deleteUser, addNick, getUser } from "../../functions/requests/users";
+import { leaveClan } from "../../functions/requests/clans";
 import { supportedLanguages } from "../../config/languages";
 import {
   closeSession,
-  getUserProfile,
   getStoredItem,
 } from "../../functions/services";
 import { DEFAULT_LANGUAGE } from "../../config/config";
+import type { UserInfo } from "../../types/dto/users";
 
 const PrivateProfile = () => {
-  const { t } = useTranslation();
-  const [userData, setUserData] = useState({
-    user_discord_id: getStoredItem("discordid"),
-    token: getStoredItem("token"),
-    discordtag: "Loading...",
-    nickname: "Loading...",
-    clanname: "Loading...",
-    clanid: "",
-    clanleaderid: "",
-    language: getStoredItem("i18nextLng"),
-  });
-
+  const { t, i18n } = useTranslation();
+  const [userData, setUserData] = useState<UserInfo>();
+  const [language, setLanguage] = useState(i18n.language ?? DEFAULT_LANGUAGE);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
   const [redirect, setRedirect] = useState(false);
@@ -41,24 +32,16 @@ const PrivateProfile = () => {
 
   useEffect(() => {
     const fetchUserProfile = async () => {
-      const response = await getUserProfile();
-      if (response.success) {
-        setUserData({
-          token: getStoredItem("token"),
-          language: getStoredItem("i18nextLng"),
-          discordtag: response.message.discordtag,
-          clanname: response.message.clanname,
-          clanid: response.message.clanid,
-          nickname: response.message.nickname,
-          clanleaderid: response.message.leaderid,
-          user_discord_id: response.message.discordid ?? getStoredItem("discordid"),
-        });
-        setIsLoaded(true);
-      } else {
-        setError(response.message);
+      try {
+        const response = await getUser();
+        setUserData(response);
+      } catch {
+        setError("errors.apiConnection");
+      } finally {
         setIsLoaded(true);
       }
     };
+    
     fetchUserProfile();
   }, []);
 
@@ -71,18 +54,9 @@ const PrivateProfile = () => {
 
   const handleDeleteUser = async () => {
     try {
-      const response = await deleteUser();
+      await deleteUser();
       clearStorageData();
-
-      if (response.status === 204) {
-        closeSession();
-        setRedirect(true);
-      } else if (response.status === 401) {
-        closeSession();
-        setError(t("auth.loginAgain1"));
-      } else if (response.status === 503) {
-        setError(t("error.databaseConnection"));
-      }
+      closeSession();
     } catch {
       setError(t("errors.apiConnection"));
     }
@@ -91,17 +65,11 @@ const PrivateProfile = () => {
   const handleAddNickInGame = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const response = await addNick(nameInGameInput);
+      await addNick(nameInGameInput);
       clearStorageData();
 
-      if (response.status === 202) {
-        setUserData({ ...userData, nickname: nameInGameInput });
-      } else if (response.status === 401) {
-        closeSession();
-        setError(t("auth.loginAgain1"));
-      } else if (response.status === 503) {
-        setError(t("error.databaseConnection"));
-      }
+      const user = await getUser();
+      setUserData(user);
     } catch {
       setError(t("errors.apiConnection"));
     }
@@ -109,24 +77,19 @@ const PrivateProfile = () => {
 
   const handleLeaveClan = async () => {
     try {
-      const response = await leaveClan();
+      await leaveClan();
       clearStorageData();
 
-      if (response.status === 204) {
-        setUserData({ ...userData, clanname: "" });
-      } else if (response.status === 401) {
-        closeSession();
-        setError(t("auth.loginAgain1"));
-      } else if (response.status === 503) {
-        setError(t("error.databaseConnection"));
-      }
+      const response = await getUser();
+
+      setUserData(response);
     } catch {
       setError(t("errors.apiConnection"));
     }
   };
 
   const handleLanguageChange = () => {
-    i18next.changeLanguage(userData.language ?? DEFAULT_LANGUAGE);
+    i18next.changeLanguage(language);
   };
 
   if (error) {
@@ -174,7 +137,6 @@ const PrivateProfile = () => {
       </Helmet>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Datos del usuario */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
             <h2 className="text-xl font-bold text-white">
@@ -186,19 +148,19 @@ const PrivateProfile = () => {
               <div className="flex justify-between items-center p-3">
                 <span className="text-gray-300">{t("profile.discordTag")}</span>
                 <span className="text-gray-400" data-cy="discord-tag">
-                  {userData.discordtag}
+                  {userData?.discordtag}
                 </span>
               </div>
               <div className="flex justify-between items-center p-3">
                 <span className="text-gray-300">{t("profile.nickInGame")}</span>
                 <span className="text-gray-400">
-                  {userData.nickname || t("common.notDefined1")}
+                  {userData?.nickname ?? t("common.notDefined1")}
                 </span>
               </div>
               <div className="flex justify-between items-center p-3">
                 <span className="text-gray-300">{t("common.clan")}</span>
                 <span className="text-gray-400">
-                  {userData.clanname || t("clan.noClan")}
+                  {userData?.clanname ?? t("clan.noClan")}
                 </span>
               </div>
             </div>
@@ -223,8 +185,6 @@ const PrivateProfile = () => {
             </button>
           </div>
         </div>
-
-        {/* Gestión del clan */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
             <h2 className="text-xl font-bold text-white">
@@ -232,7 +192,7 @@ const PrivateProfile = () => {
             </h2>
           </div>
           <div className="p-3 space-y-2">
-            {userData.clanname && userData.clanname !== "Loading..." ? (
+            {isLoaded && userData?.clanname ? (
               <>
                 <Link
                   to="/members"
@@ -259,7 +219,7 @@ const PrivateProfile = () => {
                   <i className="far fa-flag mr-2" />
                   {t("menu.diplomacy")}
                 </Link>
-                {userData.clanleaderid !== userData.user_discord_id && (
+                {isLoaded && userData?.discordid !== userData?.leaderid && (
                   <button
                     type="button"
                     data-cy="leave-clan-btn"
@@ -291,8 +251,6 @@ const PrivateProfile = () => {
             )}
           </div>
         </div>
-
-        {/* Enlace a mapas */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3">
             <Link
@@ -303,8 +261,6 @@ const PrivateProfile = () => {
             </Link>
           </div>
         </div>
-
-        {/* Selector de idioma */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3 bg-gray-900 border-b border-gray-700">
             <h2 className="text-xl font-bold text-white">
@@ -316,9 +272,9 @@ const PrivateProfile = () => {
               <select
                 id="changeLanguajeSelect"
                 className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
-                value={userData.language ?? DEFAULT_LANGUAGE}
+                value={language}
                 onChange={(e) =>
-                  setUserData({ ...userData, language: e.target.value })
+                  setLanguage(e.target.value)
                 }
               >
                 {supportedLanguages.map((language) => (
@@ -337,9 +293,7 @@ const PrivateProfile = () => {
             </div>
           </div>
         </div>
-
-        {/* Añadir nombre en el juego (solo si no tiene) */}
-        {(!userData.nickname || userData.nickname === "Loading...") && (
+        {(!userData?.nickname && isLoaded) && (
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-3 bg-gray-900 border-b border-gray-700">
               <h2 className="text-xl font-bold text-white">
@@ -375,8 +329,6 @@ const PrivateProfile = () => {
           </div>
         )}
       </div>
-
-      {/* Modal de confirmación de borrado */}
       {showDeleteModal && (
         <div className="fixed inset-0 z-50 overflow-y-auto">
           <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
