@@ -107,23 +107,37 @@ const WalkerList: React.FC = () => {
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const setupUserProfile = async () => {
-      const data = await getUser();
-      if (!data) {
-        setIsLoaded(true);
-        return false;
+      let userIsLeader = false;
+      let clan: number | undefined;
+      let discordId: string | undefined;
+
+      try {
+        const data = await getUser();
+        if (!data) {
+          setIsLoaded(true);
+          return false;
+        }
+
+        const { discordid, leaderid, clanid, nickname } = data;
+        userIsLeader = discordid === leaderid;
+        clan = clanId;
+        discordId = discordid;
+
+        setIsLeader(userIsLeader);
+        setClanId(clanid);
+        setNickname(nickname);
+        setHasPermissions(userIsLeader);
+      } catch {
+        setError("errors.apiConnection");
       }
 
-      const { discordid, leaderid, clanid, nickname } = data;
-      const userIsLeader = discordid === leaderid;
-
-      setIsLeader(userIsLeader);
-      setClanId(clanid);
-      setNickname(nickname);
-      setHasPermissions(userIsLeader);
-
-      if (!userIsLeader && clanid) {
-        const response = await getMemberPermissions(clanid, discordid);
-        setHasPermissions(response.walkers ?? false);
+      try {
+        if (!userIsLeader && clan && discordId) {
+          const response = await getMemberPermissions(clan, discordId);
+          setHasPermissions(response.walkers ?? false);
+        }
+      } catch{
+        // Silent error
       }
 
       return true;
