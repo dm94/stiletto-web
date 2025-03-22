@@ -37,20 +37,20 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
     mapSelectInput: string,
   ) => {
     try {
-      const response = (await addMap(
+      const response = await addMap(
         {
           mapdate: mapDateInput,
           mapname: mapNameInput,
           maptype: mapSelectInput,
         }
-      ));
+      );
 
       if (!response) {
         return;
       }
 
-      setMapIdInput(response.IdMap);
-      setMapPassInput(response.PassMap);
+      setMapIdInput(response?.IdMap);
+      setMapPassInput(response?.PassMap);
       setShowShareMap(true);
     } catch (error) {
       console.log(error);

@@ -14,10 +14,8 @@ export const getStoredItem = (name: string) => {
 
   if (data == null) {
     data = sessionStorage.getItem(name);
-    if (data != null) {
-      if (localStorage.getItem("acceptscookies")) {
-        storeItem(name, data);
-      }
+    if (data != null && localStorage.getItem("acceptscookies")) {
+      storeItem(name, data);
     }
   }
 
