@@ -329,5 +329,6 @@
   "error.methodNotAllowed": "Methode nicht erlaubt",
   "error.unauthorized": "Nicht autorisiert",
   "clan.lookingForNewMembers": "Auf der Suche nach neuen Mitgliedern? Durch Deaktivieren dieser Option erscheint der Clan nicht in der Clan-Liste.",
-  "common.showMore": "Mehr anzeigen"
+  "common.showMore": "Mehr anzeigen",
+  "trades.noTradesFound": "No trades found"
 }
