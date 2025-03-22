@@ -66,6 +66,11 @@ const MemberList = () => {
   useEffect(() => {
     const initializeComponent = async () => {
       const userProfile = await getUser();
+
+      if (!userProfile.clanid) {
+        setError("errors.noClan");
+      }
+
       if (userProfile) {
         setClanid(userProfile.clanid);
         setIsLeader(
@@ -184,7 +189,7 @@ const MemberList = () => {
   };
 
   const changeOwner = async () => {
-    if (!clanid) {
+    if (!clanid || !selectNewOwner) {
       return;
     }
 
