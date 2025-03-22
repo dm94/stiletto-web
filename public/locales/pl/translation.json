@@ -329,5 +329,6 @@
   "error.methodNotAllowed": "Metoda niedozwolona",
   "error.unauthorized": "Nieautoryzowany",
   "clan.lookingForNewMembers": "Szukasz nowych użytkowników? Wyłączenie tej opcji nie pojawia się na liście klanów.",
-  "common.showMore": "Pokaż więcej"
+  "common.showMore": "Pokaż więcej",
+  "trades.noTradesFound": "No trades found"
 }
