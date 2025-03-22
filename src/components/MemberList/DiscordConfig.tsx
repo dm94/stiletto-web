@@ -5,7 +5,6 @@ import {
   getDiscordConfig,
   updateBotConfig,
 } from "../../functions/requests/clans/discordbot";
-import { closeSession } from "../../functions/services";
 import { Languages, type UpdateBotConfigParams, type DiscordConfig as DiscordConfigType } from "../../types/dto/discordConfig";
 
 interface DiscordConfigProps {
@@ -29,17 +28,8 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError 
     const fetchBotConfig = async (): Promise<void> => {
       try {
         const response = await getDiscordConfig(clanid);
-
-        if (response.status === 200) {
-          const data = await response.json() as DiscordConfigType;
-          if (data) {
-            setBotConfig(data);
-          }
-        } else if (response.status === 401) {
-          closeSession();
-          onError("errors.noAccess");
-        } else if (response.status === 503) {
-          onError("error.databaseConnection");
+        if (response) {
+          setBotConfig(response);
         }
       } catch {
         onError("error.databaseConnection");
@@ -59,18 +49,8 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError 
         walkeralarm: botConfig.walkerAlarm,
       };
       
-      const response = await updateBotConfig(clanid, params);
-
-      if (response.status === 200) {
-        onClose();
-      } else if (response.status === 401) {
-        closeSession();
-        onError("errors.noAccess");
-        onClose();
-      } else if (response.status === 503) {
-        onError("error.databaseConnection");
-        onClose();
-      }
+      await updateBotConfig(clanid, params);
+      onClose();
     } catch {
       onError("errors.apiConnection");
     }

@@ -1,8 +1,7 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { updateMemberPermissions } from "../../functions/requests/clans/members";
-import { closeSession, getUserPermssions } from "../../functions/services";
+import { getMemberPermissions, updateMemberPermissions } from "../../functions/requests/clans/members";
 import type { MemberPermissions } from "../../types/dto/members";
 
 interface MemberPermissionsConfigProps {
@@ -28,17 +27,10 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clani
         return;
       }
 
-      const request = await getUserPermssions(clanid, memberid);
-      if (request?.success && request.data) {
-        const allPermissions = request.data;
-        setPermissions({
-          bot: allPermissions?.bot,
-          diplomacy: allPermissions?.diplomacy,
-          kickmembers: allPermissions?.kickmembers,
-          request: allPermissions?.request,
-          walkers: allPermissions?.walkers,
-        });
-      } else {
+      try {
+        const request = await getMemberPermissions(clanid, memberid);
+        setPermissions(request);
+      } catch {
         onError?.("errors.apiConnection");
       }
     };
@@ -52,22 +44,13 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clani
     }
 
     try {
-      const response = await updateMemberPermissions(
+      await updateMemberPermissions(
         clanid,
         memberid,
         permissions,
       );
 
-      if (response.status === 200) {
-        onClose?.();
-      } else if (response.status === 401) {
-        closeSession();
-        onError?.("errors.noAccess");
-        onClose?.();
-      } else if (response.status === 503) {
-        onError?.("error.databaseConnection");
-        onClose?.();
-      }
+      onClose?.();
     } catch {
       onError?.("errors.apiConnection");
     }

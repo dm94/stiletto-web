@@ -1,14 +1,15 @@
-import React, { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getUserProfile, getStoredItem } from "../functions/services";
+import { getStoredItem } from "../functions/services";
+import { getUser } from "../functions/requests/users";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanListItem from "../components/ClanList/ClanListItem";
 import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";
 import ClusterList from "../components/ClusterList";
 import { getDomain } from "../functions/utils";
-import { getClans } from "../functions/requests/clan";
+import { getClans } from "../functions/requests/clans";
 import { sendRequest } from "../functions/requests/clans/requests";
 import type { ClanInfo } from "../types/dto/clan";
 
@@ -37,24 +38,17 @@ const ClanList = () => {
     setPage(currentPage);
 
     try {
-      const response = await getClans({
+      const data = await getClans({
         pageSize: 20,
         page: currentPage,
         ...(searchInput.length > 0 && { name: searchInput }),
         ...(regionSearch !== "All" && { region: regionSearch }),
       });
 
-      if (response.ok) {
-        const data = await response.json() as ClanInfo[];
-        const hasMore = data != null && data.length >= 10;
-        setClans(data);
-        setIsLoaded(true);
-        setHasMoreClans(hasMore);
-      } else if (response.status === 401) {
-        setError("You need to be logged in to view this section");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
+      const hasMore = data != null && data.length >= 10;
+      setClans(data);
+      setIsLoaded(true);
+      setHasMoreClans(hasMore);
     } catch {
       setError("errors.apiConnection");
     }
@@ -62,26 +56,24 @@ const ClanList = () => {
     const token = getStoredItem("token");
     if (token) {
       setIsLogged(true);
-      const response = await getUserProfile();
-      if (response.success) {
-        setClanuserid(Number(response.message.clanid));
-      } else {
-        setError(response.message);
+      try {
+        const userData = await getUser();
+        setClanuserid(Number(userData.clanid));
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError("errors.apiConnection");
+        }
       }
     }
   };
 
   const handleSendRequest = async () => {
     try {
-      const response = await sendRequest(clanRequestId, textAreaModelValue);
+      await sendRequest(clanRequestId, textAreaModelValue);
 
-      if (response.status === 405) {
-        setError("You already have a pending application to join a clan");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      } else if (response.status === 202) {
-        setRedirect(true);
-      }
+      setRedirect(true);
     } catch {
       setError("errors.apiConnection");
     }

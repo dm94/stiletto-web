@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { NavLink, useParams } from "react-router";
 import {
   getItems,
-  getUserProfile,
   getStoredItem,
   storeItem,
 } from "../functions/services";
@@ -12,7 +11,7 @@ import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
 import DoubleScrollbar from "../components/TechTree/DoubleScrollbar";
 import { getDomain } from "../functions/utils";
-import { getLearned, addTech } from "../functions/requests/users";
+import { getLearned, addTech, getUser } from "../functions/requests/users";
 import HeaderMeta from "../components/HeaderMeta";
 import type { Item } from "../types/item";
 import { Tree } from "../types/dto/tech";
@@ -28,22 +27,29 @@ const TechTree = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>();
   const [tabSelect, setTabSelect] = useState<Tree>(tree ? tree as Tree :  Tree.VITAMINS);
-  const [clan, setClan] = useState();
+  const [clan, setClan] = useState<number>();
+  const [discordId, setdiscordId] = useState<string>();
 
   useEffect(() => {
     const fetchData = async () => {
       if (getStoredItem("token") != null) {
         try {
-          const data = await getUserProfile();
-          setClan(data.message.clanid);
+          const data = await getUser();
+          if (data?.clanid) {
+            setClan(data.clanid);
+          }
 
-          const response = await getLearned();
-          if (response.data) {
-            updateLearnedTree("Vitamins", response.data.Vitamins);
-            updateLearnedTree("Equipment", response.data.Equipment);
-            updateLearnedTree("Crafting", response.data.Crafting);
-            updateLearnedTree("Construction", response.data.Construction);
-            updateLearnedTree("Walkers", response.data.Walkers);
+          if (data?.discordid) {
+            setdiscordId(data.discordid);
+          }
+
+          const response = await getLearned(data.discordid, tabSelect);
+          if (response) {
+            updateLearnedTree("Vitamins", response.Vitamins);
+            updateLearnedTree("Equipment", response.Equipment);
+            updateLearnedTree("Crafting", response.Crafting);
+            updateLearnedTree("Construction", response.Construction);
+            updateLearnedTree("Walkers", response.Walkers);
           }
         } catch {
           setError("errors.apiConnection");
@@ -63,7 +69,7 @@ const TechTree = () => {
     };
 
     fetchData();
-  }, [tree]);
+  }, [tree, tabSelect]);
 
   const updateLearnedTree = (treeName: string, data: any) => {
     const all: Record<string, { optional: boolean; nodeState: string }> = {};
@@ -95,8 +101,12 @@ const TechTree = () => {
       console.error(err);
     }
 
+    if (!discordId) {
+      return;
+    }
+
     try {
-      await addTech(tabSelect, learned);
+      await addTech(discordId, tabSelect, learned);
     } catch {
       setError("errors.apiConnection");
     }
@@ -106,7 +116,10 @@ const TechTree = () => {
     try {
       localStorage.removeItem(`skills-${tabSelect}`);
       sessionStorage.removeItem(`skills-${tabSelect}`);
-      await addTech(tabSelect, []);
+
+      if (discordId) {
+        await addTech(discordId, tabSelect, []);
+      }
     } catch {
       setError("errors.apiConnection");
     }

@@ -2,30 +2,17 @@ import type React from "react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
-import type { WalkerUI } from "../../types/walker";
+import type { MemberInfo } from "../../types/dto/members";
+import type { WalkerInfo } from "../../types/dto/walkers";
 
 interface WalkerListItemProps {
-  walker: {
-    walkerID: string;
-    ownerUser: string;
-    lastUser: string;
-    datelastuse: string;
-    walker_use: string;
-    type: string;
-    description: string;
-    isReady: boolean;
-    name: string;
-  };
+  walker: WalkerInfo;
   isLeader: boolean;
   nickname: string;
-  memberList: Array<{
-    discordid: string;
-    nickname: string;
-    discordtag: string;
-  }>;
+  memberList: MemberInfo[];
   walkerListTypes: string[];
-  onSave: (walker: WalkerUI) => void;
-  onRemove: (walkerID: string) => void;
+  onSave: (walker: WalkerInfo) => void;
+  onRemove: (walkerID: number) => void;
 }
 
 const WalkerListItem: React.FC<WalkerListItemProps> = ({
@@ -41,7 +28,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [walkerState, setWalkerState] = useState(walker);
   const canEdit =
-    isLeader || walker.ownerUser === nickname || walker.lastUser === nickname;
+    isLeader || walker.ownerUser === nickname || walker.lastuser === nickname;
 
   const handleWalkerUpdate = (field: string, value: string | boolean) => {
     setWalkerState((prev) => ({
@@ -73,7 +60,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                       id="walkerID"
                       type="text"
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={walker.walkerID}
+                      value={walker.walkerid}
                       readOnly
                     />
                   </div>
@@ -94,7 +81,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                       id="lastUser"
                       type="text"
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={walker.lastUser}
+                      value={walker.lastuser}
                       readOnly
                     />
                   </div>
@@ -135,7 +122,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     <select
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       id="inputOwner"
-                      value={walkerState.ownerUser || ""}
+                      value={walkerState.ownerUser ?? ""}
                       onChange={(e) =>
                         handleWalkerUpdate("ownerUser", e.target.value)
                       }
@@ -144,7 +131,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                       <option value="clan">{t("common.clan")}</option>
                       {memberList?.map((member) => (
                         <option key={member.discordid} value={member.nickname}>
-                          {member.nickname || member.discordtag}
+                          {member.nickname ?? member.discordtag}
                         </option>
                       ))}
                     </select>
@@ -165,7 +152,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     <select
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       id="inputUse"
-                      value={walkerState.walker_use || "None"}
+                      value={walkerState.use ?? "None"}
                       onChange={(e) =>
                         handleWalkerUpdate("walker_use", e.target.value)
                       }
@@ -196,7 +183,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     <select
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       id="inputType"
-                      value={walkerState.type || ""}
+                      value={walkerState.type ?? ""}
                       onChange={(e) =>
                         handleWalkerUpdate("type", e.target.value)
                       }
@@ -226,7 +213,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     <textarea
                       id="description"
                       className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={walkerState.description || ""}
+                      value={walkerState.description ?? ""}
                       onChange={(e) =>
                         handleWalkerUpdate("description", e.target.value)
                       }
@@ -283,7 +270,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                   <button
                     type="button"
                     className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-xs"
-                    onClick={() => onRemove(walker.walkerID)}
+                    onClick={() => onRemove(walker.walkerid)}
                   >
                     <i className="fas fa-trash-alt mr-2" /> {t("common.delete")}
                   </button>
@@ -296,7 +283,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
     );
   };
 
-  if (!walker.walkerID) {
+  if (!walker.walkerid) {
     return "";
   }
 
@@ -316,7 +303,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
           {walker.name}
         </td>
         <td className="hidden sm:table-cell px-6 py-4 text-center whitespace-nowrap text-gray-300">
-          {walker.walker_use || t("common.notDefined1")}
+          {walker.use ?? t("common.notDefined1")}
         </td>
         <td className="hidden sm:table-cell px-6 py-4 text-center text-gray-300">
           {walker.description}

@@ -28,3 +28,9 @@ export type EditMapRequestParams = {
   allowediting?: boolean;
   mappass: string;
 };
+
+export type AddMapResponse = {
+  Success: string;
+  IdMap: number;
+  PassMap: string;
+};

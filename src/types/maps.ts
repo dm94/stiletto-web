@@ -7,10 +7,3 @@ export interface MapData {
   discordid?: string;
   discordTag?: string;
 }
-
-// Map creation response
-export interface MapCreationResponse {
-  Success: string;
-  IdMap: number;
-  PassMap: string;
-}

@@ -32,13 +32,12 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
       }));
 
       const response = await addRecipe(items);
-      if (response.status === 201) {
-        const data: { token: string } = await response.json();
-        sendNotification("notification.share", "common.information");
-        setRecipeToken(data.token);
+      if (response) {
+        sendNotification("notification.share", "Information");
+        setRecipeToken(response.token);
       }
     } catch {
-      sendNotification("errors.apiConnection", "common.error");
+      sendNotification("errors.apiConnection", "Error");
     }
   };
 

@@ -4,13 +4,9 @@ import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import queryString from "query-string";
 import {
   getItems,
-  getUserProfile,
-  getHasPermissions,
   getStoredItem,
-  getCachedMembers,
 } from "../functions/services";
 import Pagination from "../components/Pagination";
 import WalkerListItem from "../components/WalkerList/WalkerListItem";
@@ -18,41 +14,35 @@ import { getDomain } from "../functions/utils";
 import {
   getWalkers,
   editWalker,
-  getDiscordServers,
   deleteWalker,
 } from "../functions/requests/walkers";
 import { useLocation } from "react-router";
-import type { WalkerUI } from "../types/walker";
-import type { WalkerUse } from "../types/dto/walkers";
+import type { WalkerEnum, WalkerInfo, WalkerUse } from "../types/dto/walkers";
 import type { Item } from "../types/item";
-
-interface Member {
-  discordid: string;
-  nickname: string;
-  discordtag: string;
-}
+import { getUser } from "../functions/requests/users";
+import { getMemberPermissions, getMembers } from "../functions/requests/clans/members";
+import type { MemberInfo } from "../types/dto/members";
 
 const WalkerList: React.FC = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
-  const [walkers, setWalkers] = useState<WalkerUI[]>([]);
+  const [walkers, setWalkers] = useState<WalkerInfo[]>([]);
   const [error, setError] = useState("");
-  const [members, setMembers] = useState<Member[]>([]);
+  const [members, setMembers] = useState<MemberInfo[]>([]);
   const [walkerTypes, setWalkerTypes] = useState<string[]>([]);
-  const [isLeader, setIsLeader] = useState(false);
-  const [nickname, setNickname] = useState("");
-  const [page, setPage] = useState(1);
-  const [hasMoreWalkers, setHasMoreWalkers] = useState(false);
-  const [searchInput, setSearchInput] = useState("");
+  const [isLeader, setIsLeader] = useState<boolean>(false);
+  const [nickname, setNickname] = useState<string>();
+  const [page, setPage] = useState<number>(1);
+  const [hasMoreWalkers, setHasMoreWalkers] = useState<boolean>(false);
+  const [searchInput, setSearchInput] = useState<string>("");
   const [walkerTypeSearch, setWalkerTypeSearch] = useState("All");
-  const [searchDescription, setSearchDescription] = useState("");
+  const [searchDescription, setSearchDescription] = useState<string>("");
   const [useWalkerSearch, setUseWalkerSearch] = useState("All");
-  const [hasPermissions, setHasPermissions] = useState(false);
-  const [isReadySearch, setIsReadySearch] = useState("All");
-  const [clanId, setClanId] = useState("");
+  const [hasPermissions, setHasPermissions] = useState<boolean>(false);
+  const [isReadySearch, setIsReadySearch] = useState<string>("All");
+  const [clanId, setClanId] = useState<number>();
   const location = useLocation();
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const updateWalkers = useCallback(
     async (currentPage = page) => {
       setIsLoaded(false);
@@ -63,22 +53,15 @@ const WalkerList: React.FC = () => {
           pageSize: 20,
           page: currentPage,
           ...(searchInput && { name: searchInput }),
-          ...(walkerTypeSearch !== "All" && { type: walkerTypeSearch }),
+          ...(walkerTypeSearch !== "All" && { type: walkerTypeSearch as WalkerEnum }),
           ...(searchDescription && { desc: searchDescription }),
           ...(useWalkerSearch !== "All" && { use: useWalkerSearch as WalkerUse }),
           ...(isReadySearch !== "All" && { ready: isReadySearch === "Yes" }),
         });
 
-        if (response.ok) {
-          const data = await response.json();
-          const hasMore = data && data.length >= 20;
-          setWalkers(data);
-          setHasMoreWalkers(hasMore);
-        } else if (response.status === 401) {
-          setError(t("errors.incorrectData"));
-        } else if (response.status === 503) {
-          setError(t("errors.databaseConnection"));
-        }
+        const hasMore = response && response.length >= 20;
+        setWalkers(response);
+        setHasMoreWalkers(hasMore);
       } catch {
         setError(t("errors.apiConnection"));
       }
@@ -91,12 +74,13 @@ const WalkerList: React.FC = () => {
       searchDescription,
       useWalkerSearch,
       isReadySearch,
+      t
     ],
   );
 
   const updateWalker = async (walker: any) => {
     try {
-      const response = await editWalker(walker.walkerID, {
+      await editWalker(walker.walkerID, {
         owner: walker.ownerUser,
         use: walker.walker_use,
         type: walker.type,
@@ -104,29 +88,17 @@ const WalkerList: React.FC = () => {
         ready: walker.isReady,
       });
 
-      if (response.status === 202) {
-        updateWalkers();
-      } else if (response.status === 401) {
-        setError(t("errors.unauthorized"));
-      } else if (response.status === 503) {
-        setError(t("errors.databaseConnection"));
-      }
+      await updateWalkers();
     } catch {
       setError(t("errors.apiConnection"));
     }
   };
 
-  const handleDeleteWalker = async (walkerId: string) => {
+  const handleDeleteWalker = async (walkerId: number) => {
     try {
-      const response = await deleteWalker(walkerId);
+      await deleteWalker(String(walkerId));
 
-      if (response.status === 204) {
-        updateWalkers();
-      } else if (response.status === 401) {
-        setError(t("errors.unauthorized"));
-      } else if (response.status === 503) {
-        setError(t("errors.databaseConnection"));
-      }
+      await updateWalkers();
     } catch {
       setError(t("errors.apiConnection"));
     }
@@ -134,58 +106,47 @@ const WalkerList: React.FC = () => {
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
-    const handleDiscordAuth = async (code: string) => {
-      try {
-        const response = await getDiscordServers(
-          code,
-          `${getDomain()}/walkerlist`,
-        );
-        if (response.status === 401) {
-          setError(t("errors.unauthorized"));
-        } else if (response.status === 503) {
-          setError(t("errors.databaseConnection"));
-        }
-      } catch {
-        setError(t("errors.apiConnection"));
-      }
-    };
-
     const setupUserProfile = async () => {
-      const response = await getUserProfile();
-      if (!response.success) {
-        setError(response.message);
+      const data = await getUser();
+      if (!data) {
         setIsLoaded(true);
         return false;
       }
 
-      const { discordid, leaderid, clanid, nickname } = response.message;
+      const { discordid, leaderid, clanid, nickname } = data;
       const userIsLeader = discordid === leaderid;
 
       setIsLeader(userIsLeader);
       setClanId(clanid);
       setNickname(nickname);
-      setHasPermissions(userIsLeader || (await getHasPermissions("walkers")));
+      setHasPermissions(userIsLeader);
+
+      if (!userIsLeader && clanid) {
+        const response = await getMemberPermissions(clanid, discordid);
+        setHasPermissions(response.walkers ?? false);
+      }
 
       return true;
     };
 
     const loadMembersAndItems = async () => {
-      const [membersResponse, itemsResponse] = await Promise.all([
-        getCachedMembers(),
-        getItems(),
-      ]);
-
-      if (membersResponse?.success) {
-        setMembers(membersResponse.message);
-      } else {
-        setError(membersResponse?.message);
+      if (!clanId) {
+        return;
       }
 
-      if (itemsResponse) {
-        const walkerTypeList = itemsResponse
-          .filter((item: Item) => item.category === "Walkers")
-          .map((item: Item) => item.name.replace("Walker", "").trim());
-        setWalkerTypes(walkerTypeList);
+      try {
+        const membersResponse = await getMembers(clanId);
+        setMembers(membersResponse);
+
+        const itemsResponse = await getItems();
+        if (itemsResponse) {
+          const walkerTypeList = itemsResponse
+            .filter((item: Item) => item.category === "Walkers")
+            .map((item: Item) => item.name.replace("Walker", "").trim());
+          setWalkerTypes(walkerTypeList);
+        }
+      } catch {
+        setError(t("errors.apiConnection"));
       }
     };
 
@@ -193,11 +154,6 @@ const WalkerList: React.FC = () => {
       if (!getStoredItem("token")) {
         setError(t("errors.loginRequired"));
         return;
-      }
-
-      const parsed = queryString.parse(location.search);
-      if (parsed?.code) {
-        await handleDiscordAuth(String(parsed?.code));
       }
 
       const profileSuccess = await setupUserProfile();
@@ -219,12 +175,12 @@ const WalkerList: React.FC = () => {
 
     return walkers.map((walker) => (
       <WalkerListItem
-        key={`witem${walker.walkerID}`}
+        key={`witem${walker.walkerid}`}
         walker={walker}
         walkerListTypes={walkerTypes}
         memberList={members}
-        isLeader={isLeader || hasPermissions}
-        nickname={nickname}
+        isLeader={isLeader ?? hasPermissions}
+        nickname={nickname ?? ""}
         onRemove={handleDeleteWalker}
         onSave={updateWalker}
       />

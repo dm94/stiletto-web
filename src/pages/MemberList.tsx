@@ -14,35 +14,32 @@ import {
   getRequests,
   updateRequest,
 } from "../functions/requests/clans/requests";
-import { updateMember } from "../functions/requests/clans/members";
-import { deleteClan } from "../functions/requests/clan";
+import { getMemberPermissions, getMembers, updateMember } from "../functions/requests/clans/members";
+import { deleteClan } from "../functions/requests/clans";
 import {
-  closeSession,
-  getCachedMembers,
-  getUserProfile,
-  getHasPermissions,
   getStoredItem,
 } from "../functions/services";
-import { type Member, MemberAction, type RequestMember } from "../types/dto/members";
+import { MemberAction, type MemberInfo, type MemberRequest } from "../types/dto/members";
 import { RequestAction } from "../types/dto/requests";
+import { getUser } from "../functions/requests/users";
 
 const MemberList = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const [members, setMembers] = useState<Member[]>([]);
-  const [requestMembers, setRequestMembers] = useState<RequestMember[]>([]);
-  const [error, setError] = useState<string | false>(false);
+  const [members, setMembers] = useState<MemberInfo[]>([]);
+  const [requestMembers, setRequestMembers] = useState<MemberRequest[]>([]);
+  const [error, setError] = useState<string>();
   const [isLoadedRequestList, setIsLoadedRequestList] = useState(false);
-  const [redirectMessage, setRedirectMessage] = useState<string | false>(false);
+  const [redirectMessage, setRedirectMessage] = useState<string>();
   const [selectNewOwner, setSelectNewOwner] = useState<string>(
     getStoredItem("discordid") ?? ""
   );
   const [showRequestModal, setShowRequestModal] = useState(false);
-  const [requestData, setRequestData] = useState<RequestMember | false>(false);
+  const [requestData, setRequestData] = useState<MemberRequest>();
   const [isLeader, setIsLeader] = useState(false);
   const [showBotConfig, setShowBotConfig] = useState(false);
-  const [clanid, setClanid] = useState<number>(0);
+  const [clanid, setClanid] = useState<number>();
 
   const [showClanConfig, setShowClanConfig] = useState(false);
   const [hasBotPermissions, setHasBotPermissions] = useState(false);
@@ -52,68 +49,68 @@ const MemberList = () => {
   const [memberForEdit, setMemberForEdit] = useState<string | false>(false);
 
   const updateMembers = useCallback(async () => {
-    const response = await getCachedMembers();
-    if (!response) {
+    if (!clanid) {
       return;
     }
 
-    if (response?.success) {
-      setMembers(response?.message);
+    try {
+      const response = await getMembers(clanid);
+
+      setMembers(response);
       setIsLoaded(true);
-    } else {
-      setError(response?.message);
-      setIsLoaded(true);
+    } catch {
+      setError("errors.apiConnection");
     }
-  }, []);
+  }, [clanid]);
 
   useEffect(() => {
     const initializeComponent = async () => {
-      const userProfile = await getUserProfile();
-      if (userProfile.success) {
-        setClanid(userProfile.message.clanid);
+      const userProfile = await getUser();
+      if (userProfile) {
+        setClanid(userProfile.clanid);
         setIsLeader(
-          userProfile.message.discordid === userProfile.message.leaderid
+          userProfile.discordid === userProfile.leaderid
         );
       } else {
-        setError(userProfile.message);
+        setError("errors.apiConnection");
         setIsLoaded(true);
         return;
       }
 
       await updateMembers();
 
-      try {
-        const response = await getRequests(userProfile.message.clanid);
+      if (!userProfile?.clanid) {
+        return;
+      }
 
-        if (response.status === 202) {
-          const data = await response.json();
-          setRequestMembers(data);
-        } else if (response.status === 405 || response.status === 401) {
-          closeSession();
-          setError("errors.noAccess");
-        } else if (response.status === 503) {
-          setError("error.databaseConnection");
+      try {
+        const response = await getRequests(userProfile.clanid);
+
+        if (response) {
+          setRequestMembers(response);
         }
         setIsLoadedRequestList(true);
       } catch {
         setError("errors.apiConnection");
       }
 
-      const botPermissions = await getHasPermissions("bot");
-      const requestPermissions = await getHasPermissions("request");
-      const kickPermissions = await getHasPermissions("kickmembers");
+      const permissions = await getMemberPermissions(userProfile.clanid, userProfile.discordid);
 
-      setHasBotPermissions(botPermissions);
-      setHasRequestPermissions(requestPermissions);
-      setHasKickMembersPermisssions(kickPermissions);
+      setHasBotPermissions(permissions.bot ?? false);
+      setHasRequestPermissions(permissions.request ?? false);
+      setHasKickMembersPermisssions(permissions.kickmembers ?? false);
     };
 
     initializeComponent();
   }, [updateMembers]);
 
   const kickMember = async (memberdiscordid: string) => {
+    if (!clanid) {
+      return;
+    }
+
     try {
-      const response = await updateMember(
+      await updateMember(
         clanid,
         memberdiscordid,
         MemberAction.KICK
@@ -124,30 +121,23 @@ const MemberList = () => {
       localStorage.removeItem("memberList-lastCheck");
       sessionStorage.removeItem("memberList-lastCheck");
 
-      if (response.status === 202) {
-        setMembers(members.filter((m) => m.discordid !== memberdiscordid));
-      } else if (response.status === 405 || response.status === 401) {
-        closeSession();
-        setError("errors.noAccess");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
+      setMembers(members.filter((m) => m.discordid !== memberdiscordid));
     } catch {
       setError("errors.apiConnection");
     }
   };
 
-  const acceptMember = async () => {
+  const changeRequestStatus = async (action: RequestAction) => {
     setShowRequestModal(false);
-    if (!requestData) {
+    if (!requestData || !clanid) {
       return;
     }
 
     try {
-      const response = await updateRequest(
+      await updateRequest(
         clanid,
         requestData.discordid,
-        RequestAction.ACCEPT
+        action,
       );
 
       localStorage.removeItem("memberList");
@@ -155,61 +145,26 @@ const MemberList = () => {
       sessionStorage.removeItem("memberList-lastCheck");
       localStorage.removeItem("memberList-lastCheck");
 
-      if (response.status === 202) {
-        setRequestMembers(
-          requestMembers.filter((m) => m.discordid !== requestData.discordid)
-        );
-        updateMembers();
-      } else if (response.status === 405 || response.status === 401) {
-        closeSession();
-        setError("errors.noAccess");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
-      setRequestData(false);
-    } catch {
-      setError("errors.apiConnection");
-    }
-  };
-
-  const rejectMember = async () => {
-    setShowRequestModal(false);
-    if (!requestData) {
-      return;
-    }
-
-    try {
-      const response = await updateRequest(
-        clanid,
-        requestData.discordid,
-        RequestAction.REJECT
+      setRequestMembers(
+        requestMembers.filter((m) => m.discordid !== requestData.discordid)
       );
-
-      localStorage.removeItem("memberList");
-      sessionStorage.removeItem("memberList");
-      sessionStorage.removeItem("memberList-lastCheck");
-      localStorage.removeItem("memberList-lastCheck");
-
-      if (response.status === 202) {
-        setRequestMembers(
-          requestMembers.filter((m) => m.discordid !== requestData.discordid)
-        );
-        updateMembers();
-      } else if (response.status === 405 || response.status === 401) {
-        closeSession();
-        setError("errors.noAccess");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
-      setRequestData(false);
+      updateMembers();
+      setRequestData(undefined);
     } catch {
       setError("errors.apiConnection");
     }
-  };
+  }
+
+  const acceptMember = async () => changeRequestStatus(RequestAction.ACCEPT);
+  const rejectMember = async () => changeRequestStatus(RequestAction.REJECT);
 
   const handleDeleteClan = async () => {
+    if (!clanid) {
+      return;
+    }
+
     try {
-      const response = await deleteClan(clanid);
+      await deleteClan(clanid);
 
       localStorage.removeItem("profile");
       sessionStorage.removeItem("profile");
@@ -218,22 +173,19 @@ const MemberList = () => {
       localStorage.removeItem("memberList");
       localStorage.removeItem("memberList-lastCheck");
 
-      if (response.status === 204) {
-        setRedirectMessage("clan.deleteSuccess");
-      } else if (response.status === 405) {
-        closeSession();
-        setError("errors.noAccess");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
+      setRedirectMessage("clan.deleteSuccess");
     } catch {
       setError("errors.apiConnection");
     }
   };
 
   const changeOwner = async () => {
+    if (!clanid) {
+      return;
+    }
+
     try {
-      const response = await updateMember(
+      await updateMember(
         clanid,
         selectNewOwner,
         MemberAction.OWNER
@@ -246,14 +198,7 @@ const MemberList = () => {
       sessionStorage.removeItem("memberList-lastCheck");
       localStorage.removeItem("memberList-lastCheck");
 
-      if (response.status === 202) {
-        setRedirectMessage("Clan updated correctly");
-      } else if (response.status === 405 || response.status === 401) {
-        closeSession();
-        setError("errors.noAccess");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
+      setRedirectMessage("Clan updated correctly");
     } catch {
       setError("errors.apiConnection");
     }
@@ -285,7 +230,7 @@ const MemberList = () => {
             key={member.discordid}
             member={member}
             isLeader={isLeader || hasRequestPermissions}
-            onShowRequest={(r: RequestMember) => {
+            onShowRequest={(r: MemberRequest) => {
               setRequestData(r);
               setShowRequestModal(true);
             }}

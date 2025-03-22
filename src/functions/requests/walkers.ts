@@ -3,13 +3,14 @@ import { config } from "../../config/config";
 import type {
   GetWalkersRequestParams,
   EditWalkerRequestParams,
+  WalkerInfo,
 } from "../../types/dto/walkers";
 import { objectToURLSearchParams } from "../utils";
 import type { GenericResponse } from "../../types/dto/generic";
 
 export const getWalkers = async (
   requestParams: GetWalkersRequestParams,
-): Promise<Response> => {
+): Promise<WalkerInfo[]> => {
   const params = objectToURLSearchParams(requestParams);
 
   const response = await fetch(

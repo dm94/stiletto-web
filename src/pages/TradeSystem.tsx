@@ -14,7 +14,7 @@ import {
   deleteTrade,
   createTrade,
 } from "../functions/requests/trades";
-import type { TradeInfo, TradeType } from "../types/dto/trades";
+import { type TradeInfo, TradeType } from "../types/dto/trades";
 import type { Item } from "../types/item";
 
 const TradeSystem = () => {
@@ -54,14 +54,11 @@ const TradeSystem = () => {
         ...(regionFilterInput && { region: regionFilterInput }),
       });
 
-      if (response.status === 200) {
-        const data = await response.json() as TradeInfo[];
-        const hasMoreData = data != null && data.length >= 10;
-        setTrades(data);
+      if (response) {
+        const hasMoreData = response != null && response.length >= 10;
+        setTrades(response);
         setIsLoaded(true);
         setHasMore(hasMoreData);
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
       }
     } catch {
       setError("errors.errorConnectingToAPI");
@@ -89,15 +86,8 @@ const TradeSystem = () => {
 
   const handleDeleteTrade = async (idTrade: number) => {
     try {
-      const response = await deleteTrade(idTrade);
-
-      if (response.status === 204) {
-        updateTrades();
-      } else if (response.status === 401) {
-        setError("error.unauthorized");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
+      await deleteTrade(idTrade);
+      await updateTrades();
     } catch {
       setError("errors.errorConnectingToAPI");
     }
@@ -107,7 +97,7 @@ const TradeSystem = () => {
     event.preventDefault();
 
     try {
-      const response = await createTrade({
+      await createTrade({
         resource: resourceTypeInput,
         type: tradeTypeInput as TradeType,
         amount: amountInput,
@@ -117,20 +107,12 @@ const TradeSystem = () => {
       });
 
       setResourceTypeInput("Aloe Vera");
-      setTradeTypeInput("Supply");
+      setTradeTypeInput(TradeType.Supply);
       setAmountInput(0);
       setRegionInput("EU");
       setQualityInput(0);
 
-      if (response.status === 201) {
-        updateTrades();
-      } else if (response.status === 400) {
-        setError("errors.missingData");
-      } else if (response.status === 401) {
-        setError("error.unauthorized");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
+      await updateTrades();
     } catch {
       setError("common.tryAgainLater");
     }

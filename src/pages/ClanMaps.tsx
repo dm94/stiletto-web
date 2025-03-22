@@ -6,11 +6,9 @@ import ClanMapItem from "../components/ClanMaps/ClanMapItem";
 import ResourceMap from "../components/ClanMaps/ResourceMap";
 import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
 import { getDomain } from "../functions/utils";
-import { getMaps, createMap, deleteMap } from "../functions/requests/maps";
+import { getMaps, addMap, deleteMap } from "../functions/requests/maps";
 import {
-  closeSession,
   getMapNames,
-  getStoredItem,
 } from "../functions/services";
 import type { MapInfo, MapJsonInfo } from "../types/dto/maps";
 
@@ -20,45 +18,22 @@ const DeleteMapModal = React.lazy(
 
 const ClanMaps = () => {
   const { t } = useTranslation();
-  const [state, setState] = useState<{
-    user_discord_id: string;
-    maps?: MapJsonInfo[];
-    clanMaps?: MapInfo[];
-    error: string;
-    showDeleteModal: boolean;
-    idMapDeleteModal?: number;
-    mapThatIsOpen?: MapInfo;
-  }>({
-    user_discord_id: getStoredItem("discordid") ?? "",
-    clanMaps: [] as MapInfo[],
-    error: "",
-    showDeleteModal: false,
-  });
+  const [clanMaps, setClanMaps] = useState<MapInfo[]>([]);
+  const [maps, setMaps] = useState<MapJsonInfo[]>([]);
+  const [error, setError] = useState<string>();
+  const [mapToShow, setMapToShow] = useState<MapInfo>();
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [idMapToDelete, setIdMapToDelete] = useState<number>();
 
   const fetchMaps = useCallback(async () => {
-    const maps = await getMapNames();
-    setState((prev) => ({ ...prev, maps }));
-
     try {
-      const response = await getMaps();
+      const maps = await getMapNames();
+      setMaps(maps);
 
-      if (response.status === 200) {
-        const data = await response.json() as MapInfo[];
-        setState((prev) => ({ ...prev, clanMaps: data }));
-      } else if (response.status === 401) {
-        closeSession();
-        setState((prev) => ({
-          ...prev,
-          error: "errors.noAccess",
-        }));
-      } else if (response.status === 503) {
-        setState((prev) => ({
-          ...prev,
-          error: "error.databaseConnection",
-        }));
-      }
+      const response = await getMaps();
+      setClanMaps(response);
     } catch {
-      setState((prev) => ({ ...prev, error: "error.databaseConnection" }));
+      setError("errors.apiConnection");
     }
   }, []);
 
@@ -67,24 +42,19 @@ const ClanMaps = () => {
   }, [fetchMaps]);
 
   const renderClanMapList = () => {
-    if (!state.clanMaps || !state.maps) {
+    if (!clanMaps|| !maps) {
       return "";
     }
 
-    return state.clanMaps.map((map) => (
+    return clanMaps.map((map) => (
       <ClanMapItem
         key={`clanmap${map.mapid}`}
         map={map}
         value={map.typemap}
-        onOpen={(mapData) => {
-          setState((prev) => ({ ...prev, mapThatIsOpen: mapData }));
-        }}
+        onOpen={(mapData) => setMapToShow(mapData)}
         onDelete={(mapid) => {
-          setState((prev) => ({
-            ...prev,
-            showDeleteModal: true,
-            idMapDeleteModal: mapid,
-          }));
+          setIdMapToDelete(mapid);
+          setShowDeleteModal(true);
         }}
       />
     ));
@@ -92,26 +62,11 @@ const ClanMaps = () => {
 
   const handleDeleteMap = async (mapid: number) => {
     try {
-      const response = await deleteMap(mapid);
-
-      if (response.status === 204) {
-        setState((prev) => ({
-          ...prev,
-          showDeleteModal: false,
-        }));
-        fetchMaps();
-      } else if (response.status === 401) {
-        closeSession();
-        setState((prev) => ({
-          ...prev,
-          error: "errors.noAccess",
-        }));
-      }
+      await deleteMap(mapid);
+      setIdMapToDelete(undefined);
+      setShowDeleteModal(false);
     } catch {
-      setState((prev) => ({
-        ...prev,
-        error: "errors.apiConnection",
-      }));
+      setError("errors.apiConnection");
     }
   };
 
@@ -121,35 +76,15 @@ const ClanMaps = () => {
     mapSelectInput: string,
   ) => {
     try {
-      const response = await createMap({
+      await addMap({
         mapname: mapNameInput,
         mapdate: mapDateInput,
         maptype: mapSelectInput,
       });
 
-      setState((prev) => ({
-        ...prev,
-        mapNameInput: "",
-        mapDateInput: "",
-        mapSelectInput: "",
-      }));
-
-      if (response.status === 201) {
-        fetchMaps();
-      } else if (response.status === 401) {
-        closeSession();
-        setState((prev) => ({ ...prev, error: "auth.loginAgain2" }));
-      } else if (response.status === 503) {
-        setState((prev) => ({
-          ...prev,
-          error: "error.databaseConnection",
-        }));
-      }
+      fetchMaps();
     } catch {
-      setState((prev) => ({
-        ...prev,
-        error: "errors.apiConnection",
-      }));
+      setError("errors.apiConnection");
     }
   };
 
@@ -191,40 +126,31 @@ const ClanMaps = () => {
             </div>
           </div>
         </div>
-        {state.maps && <CreateMapPanel maps={state.maps} onCreateMap={handleCreateMap} />}
-        {state.showDeleteModal && state.idMapDeleteModal && <DeleteMapModal idMap={state.idMapDeleteModal} onDeleteMap={handleDeleteMap} onCancel={() => setState({ ...state, showDeleteModal: false })} />}
+        {maps && <CreateMapPanel maps={maps} onCreateMap={handleCreateMap} />}
+        {showDeleteModal && idMapToDelete && <DeleteMapModal idMap={idMapToDelete} onDeleteMap={handleDeleteMap} onCancel={() => {
+          setIdMapToDelete(undefined);
+          setShowDeleteModal(false);
+        }} />}
       </div>
     );
   };
 
-  if (state.mapThatIsOpen) {
+  if (mapToShow) {
     return (
       <ResourceMap
-        key={`mapOpen${state.mapThatIsOpen.mapid}`}
-        onReturn={() => setState((prev) => ({ ...prev, mapThatIsOpen: undefined }))}
-        map={state.mapThatIsOpen}
+        key={`mapOpen${mapToShow.mapid}`}
+        onReturn={() => setMapToShow(undefined)}
+        map={mapToShow}
       />
     );
   }
 
-  if (state.error) {
+  if (error) {
     return (
       <ModalMessage
         message={{
           isError: true,
-          text: state.error,
-          redirectPage: "/profile",
-        }}
-      />
-    );
-  }
-
-  if (!state.user_discord_id) {
-    return (
-      <ModalMessage
-        message={{
-          isError: true,
-          text: "auth.loginAgain2",
+          text: error,
           redirectPage: "/profile",
         }}
       />

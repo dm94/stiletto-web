@@ -51,15 +51,10 @@ const Crafter: React.FC = () => {
       try {
         const response = await getRecipe(String(recipe));
 
-        if (response.status === 200) {
-          const data = await response.json();
-          if (data.items) {
-            for (const item of data.items) {
-              handleAdd(item.name, Number.parseInt(item.count), items);
-            }
+        if (response.items) {
+          for (const item of response.items) {
+            handleAdd(item.name, item.count, items);
           }
-        } else if (response.status === 503) {
-          setError("error.databaseConnection");
         }
       } catch {
         setError("errors.apiConnection");

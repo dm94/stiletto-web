@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ClusterList from "./ClusterList";
 import { config } from "../config/config";
-import { updateClan, createClan } from "../functions/requests/clan";
+import { updateClan, createClan } from "../functions/requests/clans";
 import { closeSession, getStoredItem } from "../functions/services";
 import type { CreateClanRequestParams, UpdateClanRequestParams } from "../types/dto/clan";
 import type { Clan } from "../types/clan";
@@ -123,17 +123,8 @@ const ClanConfig: React.FC<ClanConfigProps> = ({ clanid, onClose, onError }) => 
         recruit: formState.recruitInput,
       };
 
-      const response = await updateClan(Number(clanid), requestParams);
-
-      if (response.status === 200) {
-        onClose?.();
-      } else if (response.status === 401) {
-        onClose?.();
-        closeSession();
-        onError?.("errors.noAccess");
-      } else if (response.status === 503 || response.status === 205) {
-        onError?.("error.databaseConnection");
-      }
+      await updateClan(Number(clanid), requestParams);
+      onClose?.();
     } catch {
       onClose?.();
       onError?.("errors.apiConnection");

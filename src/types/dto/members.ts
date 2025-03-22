@@ -35,18 +35,6 @@ export interface PermissionsResponse {
   error?: string;
 }
 
-export interface Member {
-  discordid: string;
-  discordtag: string;
-  nickname?: string;
-  permissions?: string[];
-  leaderid: string;
-}
-
-export interface RequestMember extends Member {
-  message: string;
-}
-
 export type MemberRequest = {
   discordid: string;
   nickname?: string;

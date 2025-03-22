@@ -1,8 +1,8 @@
 import type React from "react";
-import { useState, useEffect } from "react";
-import { Navigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { sendEvent } from "../page-tracking";
+import { useEffect } from "react";
 
 export interface MessageProps {
   isError?: boolean;
@@ -29,8 +29,8 @@ const ActionButton: React.FC<{
 );
 
 const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
-  const [redirect, setRedirect] = useState<boolean>(false);
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     sendEvent("modal", {
@@ -41,12 +41,9 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
     });
   }, [message?.isError, message?.text]);
 
-  const handleRedirect = (): void => setRedirect(true);
-  
-  // Handle redirect if needed
-  if (redirect) {
-    return <Navigate to={message?.redirectPage ?? ""} replace />;
-  }
+  const navigateTo = (): void => {
+    navigate(message?.redirectPage?? "");
+  };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -59,7 +56,7 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
         <div className="p-4 text-gray-300">{t(message?.text)}</div>
         <div className="p-4 border-t border-gray-700">
           {message?.redirectPage ? (
-            <ActionButton onClick={handleRedirect} />
+            <ActionButton onClick={() => navigateTo()} />
           ) : (
             <ActionButton onClick={() => onClickOk?.()} />
           )}

@@ -4,10 +4,7 @@ import { useTranslation } from "react-i18next";
 import { getMapNames } from "../../functions/services";
 import CreateMapPanel from "./CreateMapPanel";
 import { getDomain } from "../../functions/utils";
-import { createMap as createMapRequest } from "../../functions/requests/maps";
-import type {
-  MapCreationResponse,
-} from "../../types/maps";
+import { addMap } from "../../functions/requests/maps";
 import type { MapJsonInfo } from "../../types/dto/maps";
 
 interface CreateMapNoLogProps {
@@ -40,7 +37,7 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
     mapSelectInput: string,
   ) => {
     try {
-      const response = (await createMapRequest(
+      const response = (await addMap(
         {
           mapdate: mapDateInput,
           mapname: mapNameInput,
@@ -52,9 +49,8 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
         return;
       }
 
-      const decoded = await response.json() as MapCreationResponse;
-      setMapIdInput(decoded.IdMap);
-      setMapPassInput(decoded.PassMap);
+      setMapIdInput(response.IdMap);
+      setMapPassInput(response.PassMap);
       setShowShareMap(true);
     } catch (error) {
       console.log(error);

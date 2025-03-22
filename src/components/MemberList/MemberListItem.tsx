@@ -1,10 +1,10 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import { getStoredItem } from "../../functions/services";
-import type { Member } from "../../types/dto/members";
+import type { MemberInfo } from "../../types/dto/members";
 
 interface MemberListItemProps {
-  member: Member;
+  member: MemberInfo;
   isLeader: boolean;
   hasPermissions: boolean;
   onKick: (discordId: string) => void;

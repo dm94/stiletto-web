@@ -1,11 +1,11 @@
 import type React from "react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { getWhoHasLearntIt } from "../../functions/requests/clan";
 import type { Tree } from "../../types/dto/tech";
+import { seeWhoHasLearntIt } from "../../functions/requests/clans/tech";
 
 interface SkillNodeBtnProps {
-  clan: string;
+  clan: number;
   tree: Tree;
   item: {
     name: string;
@@ -19,8 +19,18 @@ const SkillNodeBtn: React.FC<SkillNodeBtnProps> = ({ clan, tree, item }) => {
 
   const getLearned = async (): Promise<void> => {
     try {
-      const users = await getWhoHasLearntIt(clan, tree, item.name);
-      setUsersSavedData(users);
+      const users = await seeWhoHasLearntIt(String(clan), {
+        tree,
+        tech: item.name
+      });
+
+      if (users?.length <= 0) {
+        setLoaded(true);
+        return;
+      }
+
+      const mapped = users.map((user) => user.discordtag);
+      setUsersSavedData(mapped);
       setLoaded(true);
     } catch (_err) {
       setLoaded(true);

@@ -9,17 +9,10 @@ import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
 import "../../css/map-sidebar.css";
-import {
-  createResource,
-  deleteResource,
-  updateResourceTime,
-  getResources,
-} from "../../functions/requests/maps";
 import { useLocation, useParams } from "react-router";
-import type {
-  Resource,
-} from "../../types/dto/resources";
 import type { Marker } from "../../types/dto/marker";
+import type { ResourceInfo } from "../../types/dto/resources";
+import { addResourceMap, deleteResource, editResource, getResources } from "../../functions/requests/maps/resources";
 
 interface ResourceMapNoLogProps {
   mapId?: number;
@@ -30,7 +23,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const location = useLocation();
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
-  const [resourcesInTheMap, setResourcesInTheMap] = useState<Resource[]>(
+  const [resourcesInTheMap, setResourcesInTheMap] = useState<ResourceInfo[]>(
     []
   );
   const [mapId, setMapId] = useState<number>();
@@ -41,7 +34,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const [items, setItems] = useState<Marker[]>([]);
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
-  const [resourcesFiltered, setResourcesFiltered] = useState<Resource[]>(
+  const [resourcesFiltered, setResourcesFiltered] = useState<ResourceInfo[]>(
     []
   );
   const [error, setError] = useState<string | null>(null);
@@ -66,10 +59,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
         setPass(currentPass);
 
         const responseResources = await getResources(currentMapId, currentPass);
-        if (responseResources.ok) {
-          const resources = await responseResources.json();
-          setResourcesInTheMap(resources);
-        }
+        setResourcesInTheMap(responseResources);
       } catch {
         setError("errors.apiConnection");
       }
@@ -90,10 +80,8 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       }
 
       try {
-        const response = await deleteResource(mapId, resourceId, resourceToken);
-        if (response) {
-          fetchData();
-        }
+        await deleteResource(mapId, resourceId, resourceToken);
+        await fetchData();
       } catch {
         setError("errors.apiConnection");
       }
@@ -113,7 +101,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       }
 
       try {
-        const response = await createResource(mapId, {
+        const response = await addResourceMap(mapId, {
           x: coordinateXInput,
           y: coordinateYInput,
           mappass: pass ?? "",
@@ -124,7 +112,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
         });
 
         if (response) {
-          fetchData();
+          await fetchData();
         }
       } catch {
         setError("errors.apiConnection");
@@ -154,7 +142,10 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
     date: string,
   ) => {
     try {
-      await updateResourceTime(mapid, resourceid, token, date);
+      await editResource(mapid, resourceid, { 
+        token: token,
+        harvested: date,
+      });
       await fetchData();
     } catch {
       setError("errors.apiConnection");

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanSelect from "../components/Diplomacy/ClanSelect";
-import { getUserProfile, getHasPermissions } from "../functions/services";
+import { getUser } from "../functions/requests/users";
 import { getDomain } from "../functions/utils";
 import { config } from "../config/config";
 import {
@@ -13,10 +13,11 @@ import {
   deleteRelationship,
 } from "../functions/requests/clans/relationships";
 import { type RelationshipInfo, TypeRelationship } from "../types/dto/relationship";
+import { getMemberPermissions } from "../functions/requests/clans/members";
 
 const Diplomacy = () => {
   const { t } = useTranslation();
-  const [clanId, setClanId] = useState<number | false>(false);
+  const [clanId, setClanId] = useState<number>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const [listOfRelations, setListOfRelations] = useState<RelationshipInfo[]>([]);
@@ -29,13 +30,9 @@ const Diplomacy = () => {
 
   useEffect(() => {
     const initializeComponent = async () => {
-      const userProfile = await getUserProfile();
-      if (!userProfile.success) {
-        setError(userProfile.message);
-        return;
-      }
+      const userProfile = await getUser();
 
-      const { clanid, discordid, leaderid } = userProfile.message;
+      const { clanid, discordid, leaderid } = userProfile;
       setClanId(clanid);
       setIsLeader(discordid === leaderid);
 
@@ -45,16 +42,8 @@ const Diplomacy = () => {
 
       try {
         const response = await getRelationships(clanid);
-
-        if (response.ok) {
-          const data = await response.json() as RelationshipInfo[];
-          setListOfRelations(data);
-          setIsLoaded(true);
-        } else if (response.status === 405) {
-          setError("error.unauthorized");
-        } else if (response.status === 503) {
-          setError("error.databaseConnection");
-        }
+        setListOfRelations(response);
+        setIsLoaded(true);
       } catch {
         setError("errors.apiConnection");
       }
@@ -62,8 +51,8 @@ const Diplomacy = () => {
       if (discordid === leaderid) {
         setHasPermissions(true);
       } else {
-        const permissions = await getHasPermissions("diplomacy");
-        setHasPermissions(permissions);
+        const permissions = await getMemberPermissions(clanid, discordid);
+        setHasPermissions(permissions.diplomacy ?? false);
       }
     };
 
@@ -72,45 +61,32 @@ const Diplomacy = () => {
 
   const handleCreateRelationship = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (clanId === false) {
+    if (!clanId) {
       return;
     }
     
     try {
-      const response = await createRelationship(clanId, {
+      await createRelationship(clanId, {
         nameotherclan: nameOtherClanInput,
         clanflag: clanFlagInput,
         typed: typedInput,
         symbol: clanFlagSymbolInput,
       });
 
-      if (response.status === 201) {
-        window.location.reload();
-      } else if (response.status === 405) {
-        setError("error.methodNotAllowed");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
+      window.location.reload();
     } catch {
       setError("common.tryAgainLater");
     }
   };
 
   const handleDeleteDiplomacy = async (relationShipId: number) => {
-    if (clanId === false) {
+    if (!clanId) {
       return;
     }
 
     try {
-      const response = await deleteRelationship(clanId, relationShipId);
-
-      if (response.status === 204) {
-        window.location.reload();
-      } else if (response.status === 401) {
-        setError("error.unauthorized");
-      } else if (response.status === 503) {
-        setError("error.databaseConnection");
-      }
+      await deleteRelationship(clanId, relationShipId);
+      window.location.reload();
     } catch {
       setError("common.tryAgainLater");
     }

@@ -1,11 +1,11 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import type { RequestMember } from "../../types/dto/members";
+import type { MemberRequest } from "../../types/dto/members";
 
 interface RequestMemberListItemProps {
   isLeader: boolean;
-  member: RequestMember;
-  onShowRequest: (member: RequestMember) => void;
+  member: MemberRequest;
+  onShowRequest: (member: MemberRequest) => void;
 }
 
 const RequestMemberListItem: React.FC<RequestMemberListItemProps> = ({ isLeader, member, onShowRequest }) => {

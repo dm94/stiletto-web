@@ -2,10 +2,10 @@ import type React from "react";
 import { useState, Fragment } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
-import type { Resource } from "../../types/dto/resources";
+import type { ResourceInfo } from "../../types/dto/resources";
 
 interface ResourcesInMapListProps {
-  resources: Resource[] | null;
+  resources: ResourceInfo[];
   onFilter?: (resourceType: string) => void;
   onSelect?: (x: number, y: number) => void;
 }
@@ -26,13 +26,13 @@ const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({
   const renderList = () => {
     const filteredResources =
       resourceTypeFilter === "All"
-        ? resources?.filter((r: Resource) => r.x != null)
+        ? resources?.filter((r: ResourceInfo) => r.x != null)
         : resources?.filter(
-            (r: Resource) =>
+            (r: ResourceInfo) =>
               r.x != null && r.resourcetype === resourceTypeFilter,
           );
 
-    return filteredResources?.map((resource: Resource) => (
+    return filteredResources?.map((resource: ResourceInfo) => (
       <li
         className="p-2 bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
         key={resource.resourceid}

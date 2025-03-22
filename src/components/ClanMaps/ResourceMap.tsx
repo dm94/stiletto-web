@@ -7,16 +7,13 @@ import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
 import "../../css/map-sidebar.css";
-import {
-  createResource,
-  deleteResource,
-  editMap,
-  updateResourceTime,
-  getResources,
-} from "../../functions/requests/maps";
-import type { Resource } from "../../types/dto/resources";
 import type { MapInfo } from "../../types/dto/maps";
 import type { Marker } from "../../types/dto/marker";
+import { addResourceMap, deleteResource, editResource, getResources } from "../../functions/requests/maps/resources";
+import type { ResourceInfo } from "../../types/dto/resources";
+import { editMap } from "../../functions/requests/maps";
+import { sendNotification } from "../../functions/broadcast";
+import { useNavigate } from "react-router";
 
 // Define interface for component props
 interface ResourceMapProps {
@@ -31,7 +28,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
   const [items, setItems] = useState<Marker[] >([]);
-  const [resourcesInTheMap, setResourcesInTheMap] = useState<Resource[]>(
+  const [resourcesInTheMap, setResourcesInTheMap] = useState<ResourceInfo[]>(
     [],
   );
   const [pass, setPass] = useState<string>(map?.pass ?? "");
@@ -42,7 +39,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     map?.dateofburning ?? "",
   );
   const [allowEditing, setAllowEditing] = useState<boolean>(map?.allowedit);
-  const [resourcesFiltered, setResourcesFiltered] = useState<Resource[]>(
+  const [resourcesFiltered, setResourcesFiltered] = useState<ResourceInfo[]>(
     []
   );
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(
@@ -50,6 +47,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   );
   const [error, setError] = useState<string>();
   const [activeTab, setActiveTab] = useState<string>("resources");
+  const navigate = useNavigate();
 
   const fetchData = useCallback(async () => {
     try {
@@ -59,14 +57,12 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
       }
 
       const responseResources = await getResources(map.mapid, map.pass ?? "");
-      if (responseResources.ok) {
-        const resources = await responseResources.json();
-        setResourcesInTheMap(resources);
-      }
+      setResourcesInTheMap(responseResources);
     } catch {
-      setError("Failed to fetch data");
+      sendNotification("Failed to fetch data", "Error");
+      navigate("/");
     }
-  }, [map.mapid, map.pass]);
+  }, [map.mapid, map.pass, navigate]);
 
   useEffect(() => {
     fetchData();
@@ -79,7 +75,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     lastHarvested: string,
   ) => {
     try {
-      await createResource(Number(map?.mapid), {
+      await addResourceMap(Number(map?.mapid), {
         x: coordinateXInput,
         y: coordinateYInput,
         mappass: pass ?? "",
@@ -100,13 +96,15 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
 
     try {
       const response = await editMap(
-        Number(map.mapid),
-        mapName,
-        dateOfBurning,
-        allowEditing,
-        pass ?? "",
+        map?.mapid,
+        {
+          mapname:mapName,
+          mapdate: dateOfBurning,
+          allowediting: allowEditing,
+          mappass:pass ?? "",
+        }
       );
-      setTextSuccess(response ?? "");
+      setTextSuccess(response?.message ?? "");
     } catch {
       setError("errors.apiConnection");
     }
@@ -135,7 +133,10 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     date: string,
   ) => {
     try {
-      await updateResourceTime(mapid, resourceid, token, date);
+      await editResource(mapid, resourceid, { 
+        token: token,
+        harvested: date,
+      });
       fetchData();
     } catch {
       setError("errors.apiConnection");

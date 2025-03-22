@@ -2,6 +2,7 @@ import { config } from "../../../config/config";
 import type { GenericResponse } from "../../../types/dto/generic";
 import type {
   AddMapRequestParams,
+  AddMapResponse,
   EditMapRequestParams,
   MapInfo,
 } from "../../../types/dto/maps";
@@ -25,7 +26,7 @@ export const getMaps = async (): Promise<MapInfo[]> => {
 
 export const addMap = async (
   requestParams: AddMapRequestParams,
-): Promise<MapInfo[]> => {
+): Promise<AddMapResponse> => {
   const params = objectToURLSearchParams(requestParams);
 
   const headers = getStoredItem("token")

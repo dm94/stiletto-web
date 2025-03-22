@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect } from "react";
-import { getClusters } from "../functions/services";
+import { getClusters } from "../functions/requests/clusters";
 
 interface Cluster {
   region: string;
@@ -25,8 +25,12 @@ const ClusterList: React.FC<ClusterListProps> = ({
 
   useEffect(() => {
     const fetchClusters = async () => {
-      const data = await getClusters();
-      setClusters(data || []);
+      try {
+        const data = await getClusters();
+        setClusters(data);
+      } catch {
+        setClusters([]);
+      }
     };
     fetchClusters();
   }, []);

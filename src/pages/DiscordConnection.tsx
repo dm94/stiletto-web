@@ -11,9 +11,6 @@ import { useNavigate, useLocation } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "../functions/utils";
 import { authDiscord } from "../functions/requests/users";
 
-/**
- * Discord connection component for handling OAuth authentication
- */
 const DiscordConnection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
@@ -37,19 +34,14 @@ const DiscordConnection: React.FC = () => {
       try {
         const response = await authDiscord(String(parsed.code));
 
-        if (response.status === 202) {
-          const data = await response.json();
-          if (data.discordid) {
-            storeItem("discordid", data.discordid);
+        if (response) {
+          if (response.discordid) {
+            storeItem("discordid", response.discordid);
           }
-          if (data.token) {
-            storeItem("token", data.token);
+          if (response.token) {
+            storeItem("token", response.token);
           }
           navigate("/");
-        } else if (response.status === 401) {
-          setError("error.unauthorized");
-        } else if (response.status === 503) {
-          setError("error.databaseConnection");
         }
       } catch {
         setError("Error connecting to server");

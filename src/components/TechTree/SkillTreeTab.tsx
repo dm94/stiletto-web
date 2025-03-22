@@ -8,13 +8,12 @@ import SkillNodeBtn from "./SkillNodeBtn";
 import type { Item } from "../../types/item";
 import type { Tree } from "../../types/dto/tech";
 
-
 interface SkillTreeTabProps {
   theme: Record<string, unknown>;
   treeId: Tree;
   title: string;
   items: Item[];
-  clan?: string;
+  clan?: number;
 }
 
 const SkillTreeTab: React.FC<SkillTreeTabProps> = ({

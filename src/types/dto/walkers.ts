@@ -49,3 +49,17 @@ export type EditWalkerRequestParams = {
   type: WalkerEnum;
   description: string;
 };
+
+export type WalkerInfo = {
+  leaderid?: string;
+  discordid: string;
+  walkerid: number;
+  name: string;
+  ownerUser?: string;
+  lastuser?: string;
+  datelastuse?: string;
+  type?: WalkerEnum;
+  use?: WalkerUse;
+  isReady: boolean;
+  description?: string;
+};

@@ -14,10 +14,10 @@ import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import Icon from "../Icon";
 import { config } from "../../config/config";
-import type { Resource } from "../../types/dto/resources";
+import type { ResourceInfo } from "../../types/dto/resources";
 
 interface MapLayerProps {
-  resourcesInTheMap?: Resource[];
+  resourcesInTheMap?: ResourceInfo[];
   deleteResource?: (resourceId: number, resourceToken: string) => void;
   center?: [number, number];
   updateResource?: (
@@ -51,7 +51,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
   const [gridOpacity, setGridOpacity] = useState<number>(0);
   const [poachingHutRadius, setPoachingHutRadius] = useState<number>(150);
 
-  const getResourceEstimatedQuality = (resource: Resource) => {
+  const getResourceEstimatedQuality = (resource: ResourceInfo) => {
     const quality = 4;
     const diff = Math.abs(new Date().getTime() - new Date(resource.lastharvested ?? "").getTime());
     const minutes = Math.floor(diff / 1000 / 60);
