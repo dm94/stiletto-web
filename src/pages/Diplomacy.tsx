@@ -44,15 +44,15 @@ const Diplomacy = () => {
         const response = await getRelationships(clanid);
         setListOfRelations(response);
         setIsLoaded(true);
+
+        if (discordid === leaderid) {
+          setHasPermissions(true);
+        } else {
+          const permissions = await getMemberPermissions(clanid, discordid);
+          setHasPermissions(permissions.diplomacy ?? false);
+        }
       } catch {
         setError("errors.apiConnection");
-      }
-
-      if (discordid === leaderid) {
-        setHasPermissions(true);
-      } else {
-        const permissions = await getMemberPermissions(clanid, discordid);
-        setHasPermissions(permissions.diplomacy ?? false);
       }
     };
 

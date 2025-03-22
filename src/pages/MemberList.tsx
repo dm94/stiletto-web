@@ -94,11 +94,15 @@ const MemberList = () => {
         setError("errors.apiConnection");
       }
 
-      const permissions = await getMemberPermissions(userProfile.clanid, userProfile.discordid);
+      try {
+        const permissions = await getMemberPermissions(userProfile.clanid, userProfile.discordid);
 
-      setHasBotPermissions(permissions.bot ?? false);
-      setHasRequestPermissions(permissions.request ?? false);
-      setHasKickMembersPermisssions(permissions.kickmembers ?? false);
+        setHasBotPermissions(permissions.bot ?? false);
+        setHasRequestPermissions(permissions.request ?? false);
+        setHasKickMembersPermisssions(permissions.kickmembers ?? false); 
+      } catch {
+        // Silent error
+      }
     };
 
     initializeComponent();
