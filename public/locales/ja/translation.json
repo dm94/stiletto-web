@@ -329,5 +329,6 @@
   "error.methodNotAllowed": "メソッドが許可されていません",
   "error.unauthorized": "権限がありません",
   "clan.lookingForNewMembers": "新しいメンバーを探していますか？このオプションを無効にするとクランリストに表示されません。",
-  "common.showMore": "詳細を表示"
+  "common.showMore": "詳細を表示",
+  "trades.noTradesFound": "No trades found"
 }
