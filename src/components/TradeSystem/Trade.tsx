@@ -1,11 +1,11 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
-import { getStoredItem } from "../../functions/services";
 import type { TradeInfo } from "../../types/dto/trades";
 
 interface TradeProps {
   trade: TradeInfo;
+  userDiscordId?: string;
   onDelete?: (idTrade: number) => void;
 }
 
@@ -14,9 +14,8 @@ interface QualityOption {
   text: string;
 }
 
-const Trade: React.FC<TradeProps> = ({ trade, onDelete }) => {
+const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
   const { t } = useTranslation();
-  const userDiscordId = getStoredItem("discordid");
 
   const renderCardFooter = (): React.ReactElement => {
     if (!userDiscordId || userDiscordId !== trade?.discordid) {

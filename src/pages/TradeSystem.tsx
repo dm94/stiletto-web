@@ -1,8 +1,8 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getItems, getStoredItem } from "../functions/services";
+import { getItems } from "../functions/services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Pagination from "../components/Pagination";
@@ -16,11 +16,14 @@ import {
 } from "../functions/requests/trades";
 import { type TradeInfo, TradeType } from "../types/dto/trades";
 import type { Item } from "../types/item";
+import { getUser } from "../functions/requests/users";
+
 
 const TradeSystem = () => {
   const { t } = useTranslation();
-  const [userDiscordId] = useState(getStoredItem("discordid"));
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isLogged, setIsLogged] = useState<boolean>(false);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [userDiscordId, setUserDiscordId] = useState<string>();
   const [trades, setTrades] = useState<TradeInfo[]>([]);
   const [error, setError] = useState("");
   const [items, setItems] = useState<Item[]>([]);
@@ -36,64 +39,79 @@ const TradeSystem = () => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
 
-  useEffect(() => {
-    updateRecipes();
-    updateTrades();
-  }, []);
 
-  const updateTrades = async (currentPage = page) => {
-    setIsLoaded(false);
-    setPage(currentPage);
 
+  const loadProfile = useCallback(async () => {
     try {
-      const response = await getTrades({
-        pageSize: 10,
-        page: currentPage,
-        ...(tradeTypeFilterInput && { type: tradeTypeFilterInput as TradeType }),
-        ...(resourceTypeFilterInput && { resource: resourceTypeFilterInput }),
-        ...(regionFilterInput && { region: regionFilterInput }),
-      });
-
-      if (response) {
-        const hasMoreData = response != null && response.length >= 10;
-        setTrades(response);
-        setIsLoaded(true);
-        setHasMore(hasMoreData);
+      const userProfile = await getUser();
+      if (userProfile?.discordid) {
+        setUserDiscordId(userProfile.discordid);
+        setIsLogged(true);
       }
     } catch {
-      setError("errors.errorConnectingToAPI");
+      // Silent error
     }
-  };
+  }, []);
 
-  const updateRecipes = async () => {
-    const fetchedItems = await getItems();
-    if (fetchedItems) {
-      const filteredItems = fetchedItems.filter(
-        (it: any) =>
-          it.category === "Resources" ||
-          it.category === "Ammo" ||
-          it.category === "Armors" ||
-          it.category === "Grappling Hooks" ||
-          it.category === "Schematics" ||
-          it.category === "Tools" ||
-          it.category === "Liquids" ||
-          it.name === "Sterile Bandage" ||
-          it.name === "Primitive Bandage",
-      );
-      setItems(filteredItems);
+  const updateRecipes = useCallback(async () => {
+    try {
+      const itemsData = await getItems();
+      if (itemsData) {
+        setItems(itemsData);
+      }
+    } catch {
+      setError("errors.apiConnection");
     }
-  };
+  }, []);
 
-  const handleDeleteTrade = async (idTrade: number) => {
+  const updateTrades = useCallback(async (currentPage = 1) => {
+    try {
+      setIsLoaded(false);
+      setPage(currentPage);
+
+      const tradesData = await getTrades({
+        pageSize: 20,
+        page: currentPage,
+        ...(resourceTypeFilterInput.length > 0 && { resource: resourceTypeFilterInput }),
+        ...(tradeTypeFilterInput.length > 0 && { type: tradeTypeFilterInput as TradeType }),
+        ...(regionFilterInput.length > 0 && { region: regionFilterInput }),
+      });
+
+      const hasMore = tradesData != null && tradesData.length >= 20;
+      setTrades(tradesData);
+      setHasMore(hasMore);
+      setIsLoaded(true);
+    } catch {
+      setError("errors.apiConnection");
+    }
+  }, [resourceTypeFilterInput, tradeTypeFilterInput, regionFilterInput]);
+
+  useEffect(() => {
+    loadProfile();
+    updateRecipes();
+    updateTrades();
+  }, [loadProfile, updateRecipes, updateTrades]);
+
+
+
+  const handleDeleteTrade = useCallback(async (idTrade: number) => {
     try {
       await deleteTrade(idTrade);
       await updateTrades();
     } catch {
       setError("errors.errorConnectingToAPI");
     }
-  };
+  }, [updateTrades]);
 
-  const handleCreateTrade = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleClearButton = useCallback(async () => {
+    setResourceTypeFilterInput("");
+    setTradeTypeFilterInput("");
+    setRegionFilterInput("");
+    // Fix duplicate updateTrades call
+    await updateTrades();
+  }, [updateTrades]);
+
+  const handleCreateTrade = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
@@ -111,15 +129,16 @@ const TradeSystem = () => {
       setAmountInput(0);
       setRegionInput("EU");
       setQualityInput(0);
+      setPriceInput(0);
 
       await updateTrades();
     } catch {
       setError("common.tryAgainLater");
     }
-  };
+  }, [resourceTypeInput, tradeTypeInput, amountInput, regionInput, qualityInput, priceInput, updateTrades]);
 
   const renderLoggedPart = () => {
-    if (!userDiscordId) {
+    if (!isLogged) {
       return (
         <div className="w-full lg:w-1/2 p-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
@@ -251,21 +270,24 @@ const TradeSystem = () => {
     );
   };
 
-  const renderTradeList = () => {
+  const renderTradeList = useMemo(() => {
     if (!isLoaded) {
       return <LoadingScreen />;
     }
-    if (trades) {
+
+    if (trades && trades.length > 0) {
       return trades.map((trade) => (
         <Trade
           key={`trade${trade.idtrade}`}
           trade={trade}
+          userDiscordId={userDiscordId}
           onDelete={handleDeleteTrade}
         />
       ));
     }
-    return "";
-  };
+
+    return <div className="col-span-full text-center text-gray-400 py-8">{t("trades.noTradesFound")}</div>;
+  }, [isLoaded, trades, userDiscordId, handleDeleteTrade, t]);
 
   if (error) {
     return (
@@ -369,20 +391,8 @@ const TradeSystem = () => {
               <div className="lg:col-span-3 flex space-x-2">
                 <button
                   type="button"
-                  className="flex-1 p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  onClick={() => updateTrades()}
-                >
-                  {t("trades.filterTrades")}
-                </button>
-                <button
-                  type="button"
                   className="flex-1 p-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
-                  onClick={() => {
-                    updateTrades();
-                    setResourceTypeFilterInput("");
-                    setTradeTypeFilterInput("");
-                    setRegionFilterInput("");
-                  }}
+                  onClick={() => handleClearButton()}
                 >
                   {t("common.cleanFilter")}
                 </button>
@@ -393,7 +403,7 @@ const TradeSystem = () => {
       </div>
       <div className="w-full p-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {renderTradeList()}
+          {renderTradeList}
         </div>
         <Pagination
           currentPage={page}

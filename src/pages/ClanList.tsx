@@ -58,7 +58,7 @@ const ClanList = () => {
       setIsLogged(true);
       try {
         const userData = await getUser();
-        setClanuserid(Number(userData.clanid));
+        setClanuserid(userData?.clanid);
       } catch (error) {
         if (error instanceof Error) {
           setError(error.message);
@@ -283,7 +283,7 @@ const ClanList = () => {
                 className="text-xl font-semibold text-gray-300"
                 id="sendRequest"
               >
-                {t("clan.sendRequest")}
+                {t("common.request")}
               </h5>
             </div>
             <div className="p-4">
@@ -292,7 +292,7 @@ const ClanList = () => {
                   htmlFor="modalTextArea"
                   className="block text-sm font-medium text-gray-300 mb-1"
                 >
-                  {t("clan.requestMessage")}
+                  {t("common.requestMessage")}
                 </label>
                 <textarea
                   className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -316,7 +316,7 @@ const ClanList = () => {
                 className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                 onClick={handleSendRequest}
               >
-                {t("clan.sendRequest")}
+                {t("common.request")}
               </button>
             </div>
           </div>
