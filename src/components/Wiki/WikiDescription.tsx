@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { getExternalWikiDescription } from "../../functions/requests/other";
 
@@ -8,18 +8,26 @@ interface WikiDescriptionProps {
 }
 
 const WikiDescription: React.FC<WikiDescriptionProps> = ({ name }) => {
-  const [description, setDescription] = useState<string | undefined>(undefined);
+  const [description, setDescription] = useState<string>();
   const { t } = useTranslation();
 
   useEffect(() => {
     const updateDescription = async () => {
-      const detail = await getExternalWikiDescription(name);
-      if (detail) {
-        setDescription(detail);
+      try {
+        const detail = await getExternalWikiDescription(name);
+        if (detail) {
+          setDescription(detail);
+        }
+      } catch {
+        console.error("Error fetching wiki description:");
       }
     };
 
     updateDescription();
+  }, [name]);
+
+  const wikiUrl = useMemo(() => {
+    return `https://lastoasis.fandom.com/wiki/Special:Search?query=${encodeURIComponent(name)}&scope=internal&navigationSearch=true`;
   }, [name]);
 
   if (description) {
@@ -40,7 +48,7 @@ const WikiDescription: React.FC<WikiDescriptionProps> = ({ name }) => {
               className="block w-full px-4 py-2 text-center text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               target="_blank"
               rel="noopener noreferrer"
-              href={`https://lastoasis.fandom.com/wiki/Special:Search?query=${name}&scope=internal&navigationSearch=true`}
+              href={wikiUrl}
             >
               {t("menu.wiki")}
             </a>
@@ -53,4 +61,4 @@ const WikiDescription: React.FC<WikiDescriptionProps> = ({ name }) => {
   return false;
 };
 
-export default WikiDescription;
+export default memo(WikiDescription);
