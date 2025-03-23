@@ -1,4 +1,5 @@
 import type React from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 interface PaginationProps {
@@ -63,4 +64,4 @@ const Pagination: React.FC<PaginationProps> = ({
   );
 };
 
-export default Pagination;
+export default memo(Pagination);

@@ -1,4 +1,4 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, Fragment, useMemo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { getStoredItem } from "../functions/services";
@@ -29,45 +29,48 @@ const ClanList = () => {
   const [searchInput, setSearchInput] = useState("");
   const [regionSearch, setRegionSearch] = useState("All");
 
-  useEffect(() => {
-    updateClans();
-  }, []);
+  const updateClans = useCallback(
+    async (currentPage = page) => {
+      setIsLoaded(false);
+      setPage(currentPage);
 
-  const updateClans = async (currentPage = page) => {
-    setIsLoaded(false);
-    setPage(currentPage);
-
-    try {
-      const data = await getClans({
-        pageSize: 20,
-        page: currentPage,
-        ...(searchInput.length > 0 && { name: searchInput }),
-        ...(regionSearch !== "All" && { region: regionSearch }),
-      });
-
-      const hasMore = data != null && data.length >= 10;
-      setClans(data);
-      setIsLoaded(true);
-      setHasMoreClans(hasMore);
-    } catch {
-      setError("errors.apiConnection");
-    }
-
-    const token = getStoredItem("token");
-    if (token) {
-      setIsLogged(true);
       try {
-        const userData = await getUser();
-        setClanuserid(userData?.clanid);
-      } catch (error) {
-        if (error instanceof Error) {
-          setError(error.message);
-        } else {
-          setError("errors.apiConnection");
+        const data = await getClans({
+          pageSize: 20,
+          page: currentPage,
+          ...(searchInput.length > 0 && { name: searchInput }),
+          ...(regionSearch !== "All" && { region: regionSearch }),
+        });
+
+        const hasMore = data != null && data.length >= 10;
+        setClans(data);
+        setIsLoaded(true);
+        setHasMoreClans(hasMore);
+      } catch {
+        setError("errors.apiConnection");
+      }
+
+      const token = getStoredItem("token");
+      if (token) {
+        setIsLogged(true);
+        try {
+          const userData = await getUser();
+          setClanuserid(userData?.clanid);
+        } catch (error) {
+          if (error instanceof Error) {
+            setError(error.message);
+          } else {
+            setError("errors.apiConnection");
+          }
         }
       }
-    }
-  };
+    },
+    [page, searchInput, regionSearch],
+  );
+
+  useEffect(() => {
+    updateClans();
+  }, [updateClans]);
 
   const handleSendRequest = async () => {
     try {
@@ -81,7 +84,7 @@ const ClanList = () => {
     setTextAreaModelValue("");
   };
 
-  const renderList = () => {
+  const renderList = useMemo(() => {
     return clans.map((clan) => (
       <ClanListItem
         key={clan.clanid ?? "clan-list-item"}
@@ -94,24 +97,27 @@ const ClanList = () => {
         isLogged={isLogged}
       />
     ));
-  };
+  }, [clans, clanuserid, isLogged]);
 
-  const helmetInfo = () => (
-    <Helmet>
-      <title>Clan List - Stiletto for Last Oasis</title>
-      <meta name="description" content="List of clans" />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:title"
-        content="Clan List - Stiletto for Last Oasis"
-      />
-      <meta name="twitter:description" content="List of clans" />
-      <meta
-        name="twitter:image"
-        content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
-      />
-      <link rel="canonical" href={`${getDomain()}/clanlist`} />
-    </Helmet>
+  const helmetInfo = useMemo(
+    () => (
+      <Helmet>
+        <title>Clan List - Stiletto for Last Oasis</title>
+        <meta name="description" content="List of clans" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Clan List - Stiletto for Last Oasis"
+        />
+        <meta name="twitter:description" content="List of clans" />
+        <meta
+          name="twitter:image"
+          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
+        />
+        <link rel="canonical" href={`${getDomain()}/clanlist`} />
+      </Helmet>
+    ),
+    [],
   );
 
   if (error) {
@@ -141,7 +147,7 @@ const ClanList = () => {
   if (!isLoaded) {
     return (
       <Fragment>
-        {helmetInfo()}
+        {helmetInfo}
         <LoadingScreen />
       </Fragment>
     );
@@ -151,7 +157,7 @@ const ClanList = () => {
     <Fragment>
       <div className="p-4">
         <div className="overflow-x-auto">
-          {helmetInfo()}
+          {helmetInfo}
           <div className="w-full">
             <div className="bg-gray-800 border border-blue-500 rounded-lg mb-4">
               <div className="p-4 border-b border-blue-500">
@@ -259,7 +265,7 @@ const ClanList = () => {
                 </tr>
               </thead>
               <tbody className="bg-gray-800 divide-y divide-gray-700">
-                {renderList()}
+                {renderList}
               </tbody>
             </table>
           </div>
