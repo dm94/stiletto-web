@@ -97,6 +97,7 @@
   "clan.newLeader": "Nuovo Leader:",
   "clan.changeLeader": "Cambia Leader",
   "common.delete": "Elimina",
+  "common.deleting": "Eliminazione in corso...",
   "clan.deleteClan": "Elimina Clan",
   "clan.deleteWarning": "Elimina tutti i dati collegati permanentemente",
   "common.menu": "Menu",

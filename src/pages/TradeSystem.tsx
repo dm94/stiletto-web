@@ -39,8 +39,6 @@ const TradeSystem = () => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
 
-
-
   const loadProfile = useCallback(async () => {
     try {
       const userProfile = await getUser();
@@ -92,8 +90,6 @@ const TradeSystem = () => {
     updateTrades();
   }, [loadProfile, updateRecipes, updateTrades]);
 
-
-
   const handleDeleteTrade = useCallback(async (idTrade: number) => {
     try {
       await deleteTrade(idTrade);
@@ -107,9 +103,7 @@ const TradeSystem = () => {
     setResourceTypeFilterInput("");
     setTradeTypeFilterInput("");
     setRegionFilterInput("");
-    // Fix duplicate updateTrades call
-    await updateTrades();
-  }, [updateTrades]);
+  }, []);
 
   const handleCreateTrade = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -124,7 +118,7 @@ const TradeSystem = () => {
         price: priceInput,
       });
 
-      setResourceTypeInput("Aloe Vera");
+      setResourceTypeInput(items[0].name);
       setTradeTypeInput(TradeType.Supply);
       setAmountInput(0);
       setRegionInput("EU");
@@ -135,7 +129,7 @@ const TradeSystem = () => {
     } catch {
       setError("common.tryAgainLater");
     }
-  }, [resourceTypeInput, tradeTypeInput, amountInput, regionInput, qualityInput, priceInput, updateTrades]);
+  }, [resourceTypeInput, tradeTypeInput, amountInput, regionInput, qualityInput, priceInput, updateTrades, items]);
 
   const renderLoggedPart = () => {
     if (!isLogged) {

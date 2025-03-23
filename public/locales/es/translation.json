@@ -97,6 +97,7 @@
   "clan.newLeader": "Nuevo líder:",
   "clan.changeLeader": "Cambiar líder",
   "common.delete": "Borrar",
+  "common.deleting": "Borrando...",
   "clan.deleteClan": "Borrar Clan",
   "clan.deleteWarning": "Borrando el clan se borrarán todos los datos vinculados a él, ten cuidado porque esta opción no es reversible",
   "common.menu": "Menú",

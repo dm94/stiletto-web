@@ -1,17 +1,21 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
+import { memo, useMemo } from "react";
 import HeaderMeta from "../components/HeaderMeta";
 import { getDomain } from "../functions/utils";
 
 const Privacy = () => {
   const { t } = useTranslation();
 
+  const canonicalUrl = useMemo(() => {
+    return `${getDomain()}/privacy`;
+  }, []);
+
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
         title="Privacy Policy - Stiletto for Last Oasis"
         description="Privacy Policy"
-        cannonical={`${getDomain()}/privacy`}
+        cannonical={canonicalUrl}
       />
       <div className="w-full">
         <h2 className="text-3xl font-bold text-gray-300 text-center mb-4">
@@ -63,4 +67,4 @@ const Privacy = () => {
   );
 };
 
-export default Privacy;
+export default memo(Privacy);

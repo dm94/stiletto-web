@@ -1,5 +1,5 @@
 import type React from "react";
-import { Fragment } from "react";
+import { Fragment, memo } from "react";
 import { config } from "../config/config";
 import { useTranslation } from "react-i18next";
 import type { RelationshipInfo } from "../types/dto/relationship";
@@ -50,4 +50,4 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
   );
 };
 
-export default ClanName;
+export default memo(ClanName);

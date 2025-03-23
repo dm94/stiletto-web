@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import queryString from "query-string";
@@ -27,11 +27,20 @@ const Crafter: React.FC = () => {
     updateRecipes();
   }, []);
 
+  const updateSearch = useCallback((searchText: string): void => {
+    const filtered = allItems.filter((item) => {
+      return searchText.split(" ").every((searchTerm) => {
+        return t(item.name).toLowerCase().includes(searchTerm.toLowerCase());
+      });
+    });
+    setFilteredItems(filtered);
+  }, [allItems, t]);
+
   useEffect(() => {
     if (allItems.length > 0 && searchText.length > 0) {
       updateSearch(searchText);
     }
-  }, [allItems, searchText]);
+  }, [allItems, searchText, updateSearch]);
 
   const updateRecipes = async (): Promise<void> => {
     const itemsData = await getItems();
@@ -68,55 +77,20 @@ const Crafter: React.FC = () => {
     }
   };
 
-  const handleInputChangeSearchItem = (event: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleInputChangeSearchItem = useCallback((event: React.ChangeEvent<HTMLInputElement>): void => {
     if (event) {
       const newSearchText = event.currentTarget.value;
       setSearchText(newSearchText);
     }
-  };
+  }, []);
 
-  const updateSearch = (searchText: string): void => {
-    const filtered = allItems.filter((item) => {
-      return searchText.split(" ").every((searchTerm) => {
-        return t(item.name).toLowerCase().includes(searchTerm.toLowerCase());
-      });
-    });
-    setFilteredItems(filtered);
-  };
+  const removeSelectedItem = useCallback((itemName: string): void => {
+    setSelectedItems((prevItems) =>
+      prevItems.filter((it) => it.name !== itemName),
+    );
+  }, []);
 
-  const showAllItems = (): React.ReactNode => {
-    if (filteredItems.length > 0 || searchText.length > 0) {
-      return (
-        <Items key="itemListFiltered" items={filteredItems} onAdd={handleAdd} />
-      );
-    }
-    return <Items key="itemList" items={allItems} onAdd={handleAdd} />;
-  };
-
-  const handleAdd = (itemName: string, count = 1, itemsList = allItems): void => {
-    const existingItem = selectedItems.find((it) => it.name === itemName);
-
-    if (existingItem) {
-      changeCount(itemName, Number.parseInt(existingItem.count.toString()) + count);
-      return;
-    }
-
-    const selectedItem = itemsList.find((it) => it.name === itemName);
-    if (selectedItem) {
-      setSelectedItems([
-        ...selectedItems,
-        {
-          ...selectedItem,
-          name: selectedItem.name,
-          category: selectedItem.category ?? "",
-          crafting: getIngredients(selectedItem.name, false),
-          count,
-        },
-      ]);
-    }
-  };
-
-  const changeCount = (itemName: string, count: number): void => {
+  const changeCount = useCallback((itemName: string, count: number): void => {
     if (count <= 0) {
       removeSelectedItem(itemName);
       return;
@@ -127,9 +101,9 @@ const Crafter: React.FC = () => {
         item.name === itemName ? { ...item, count } : item,
       ),
     );
-  };
+  }, [removeSelectedItem]);
 
-  const getIngredients = (itemName: string, secondTree: boolean): any => {
+  const getIngredients = useCallback((itemName: string, secondTree: boolean): any => {
     const selectedItem = allItems.find((it) => it.name === itemName);
     if (!selectedItem?.crafting) {
       return [];
@@ -142,9 +116,41 @@ const Crafter: React.FC = () => {
         ingredients: secondTree ? [] : getIngredients(ingredient.name, true),
       })),
     }));
-  };
+  }, [allItems]);
 
-  const showSelectedItems = (): React.ReactNode => {
+  const handleAdd = useCallback((itemName: string, count = 1, itemsList = allItems): void => {
+    const existingItem = selectedItems.find((it) => it.name === itemName);
+
+    if (existingItem) {
+      changeCount(itemName, Number.parseInt(existingItem.count.toString()) + count);
+      return;
+    }
+
+    const selectedItem = itemsList.find((it) => it.name === itemName);
+    if (selectedItem) {
+      setSelectedItems((prevItems) => [
+        ...prevItems,
+        {
+          ...selectedItem,
+          name: selectedItem.name,
+          category: selectedItem.category ?? "",
+          crafting: getIngredients(selectedItem.name, false),
+          count,
+        },
+      ]);
+    }
+  }, [allItems, selectedItems, changeCount, getIngredients]);
+
+  const showAllItems = useMemo((): React.ReactNode => {
+    if (filteredItems.length > 0 || searchText.length > 0) {
+      return (
+        <Items key="itemListFiltered" items={filteredItems} onAdd={handleAdd} />
+      );
+    }
+    return <Items key="itemList" items={allItems} onAdd={handleAdd} />;
+  }, [filteredItems, searchText, allItems, handleAdd]);
+
+  const showSelectedItems = useMemo((): React.ReactNode => {
     return selectedItems.map((item) => (
       <SelectedItem
         key={item.name}
@@ -152,17 +158,11 @@ const Crafter: React.FC = () => {
         onChangeCount={changeCount}
       />
     ));
-  };
+  }, [selectedItems, changeCount]);
 
-  const removeSelectedItem = (itemName: string): void => {
-    setSelectedItems((prevItems) =>
-      prevItems.filter((it) => it.name !== itemName),
-    );
-  };
-
-  const toggleItemsNav = (): void => {
-    setIsItemsNavVisible(!isItemsNavVisible);
-  };
+  const toggleItemsNav = useCallback((): void => {
+    setIsItemsNavVisible((prev) => !prev);
+  }, []);
 
   if (error) {
     return (
@@ -226,12 +226,12 @@ const Crafter: React.FC = () => {
           id="items-nav"
           aria-label="Items Navs"
         >
-          <div className="overflow-auto h-[95vh]">{showAllItems()}</div>
+          <div className="overflow-auto h-[95vh]">{showAllItems}</div>
         </nav>
       </div>
       <main className="w-full lg:w-3/4 p-3">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {showSelectedItems()}
+          {showSelectedItems}
         </div>
         <div className="mt-4">
           <TotalMaterials

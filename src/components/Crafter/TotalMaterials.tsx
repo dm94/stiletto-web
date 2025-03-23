@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState } from "react";
+import { memo, useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
@@ -14,11 +14,11 @@ interface TotalMaterialsProps {
   selectedItems: CraftItem[];
 }
 
-const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
+const TotalMaterials: React.FC<TotalMaterialsProps> = memo(({ selectedItems }) => {
   const [recipeToken, setRecipeToken] = useState("");
   const { t } = useTranslation();
 
-  const addRecipeRequest = async (): Promise<void> => {
+  const addRecipeRequest = useCallback(async (): Promise<void> => {
     sendEvent("share", {
       props: {
         action: "addRecipe",
@@ -39,9 +39,9 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
     } catch {
       sendNotification("errors.apiConnection", "Error");
     }
-  };
+  }, [selectedItems]);
 
-  const shareButton = (): React.ReactElement => (
+  const shareButton = useCallback((): React.ReactElement => (
     <button
       type="button"
       className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -52,9 +52,9 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
     >
       <i className="fas fa-share-alt" /> {t("common.share")}
     </button>
-  );
+  ), [addRecipeRequest, selectedItems, t]);
 
-  const footerPart = (): React.ReactElement => {
+  const footerPart = useCallback((): React.ReactElement => {
     if (recipeToken.length > 0) {
       const url = `${getDomain()}/crafter?recipe=${recipeToken}`;
       return (
@@ -78,9 +78,9 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
       );
     }
     return shareButton();
-  };
+  }, [recipeToken, shareButton, t]);
 
-  const itemsList = (): React.ReactElement[] => {
+  const itemsList = useMemo((): React.ReactElement[] => {
     const url = `${getDomain()}/item/`;
 
     return selectedItems?.map((item) => (
@@ -97,28 +97,15 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
         </a>
       </li>
     ));
-  };
+  }, [selectedItems, t]);
 
-  const copyMaterials = (): void => {
-    sendEvent("share", {
-      props: {
-        action: "copyMaterials",
-      },
-    });
-
-    let text = `${t("crafting.toMake")}:\n\n`;
-
-    for (const item of selectedItems ?? []) {
-      text += `${item.count}x ${t(item.name, { ns: "items" })} - `;
-    }
-
-    text += `\n\n${t("crafting.youNeedMaterials")}:\n\n`;
-
+  const calculateTotalIngredients = useMemo(() => {
     const totalIngredients: Array<{
       name: string;
       count: number;
       ingredients?: ItemIngredient[];
     }> = [];
+    
     for (const item of selectedItems ?? []) {
       if (item?.crafting?.[0]?.ingredients != null) {
         const output = item.crafting[0].output ?? 1;
@@ -139,8 +126,26 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
         }
       }
     }
+    
+    return totalIngredients;
+  }, [selectedItems]);
 
-    for (const ingredient of totalIngredients) {
+  const copyMaterials = useCallback((): void => {
+    sendEvent("share", {
+      props: {
+        action: "copyMaterials",
+      },
+    });
+
+    let text = `${t("crafting.toMake")}:\n\n`;
+
+    for (const item of selectedItems ?? []) {
+      text += `${item.count}x ${t(item.name, { ns: "items" })} - `;
+    }
+
+    text += `\n\n${t("crafting.youNeedMaterials")}:\n\n`;
+
+    for (const ingredient of calculateTotalIngredients) {
       text += `\t${ingredient.count}x ${t(ingredient.name)}\n`;
     }
 
@@ -148,7 +153,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
 
     navigator.clipboard.writeText(text);
     sendNotification("common.itemsCopiedToClipboard", "common.information");
-  };
+  }, [selectedItems, t, calculateTotalIngredients]);
 
   return (
     <div className="bg-gray-800 border border-yellow-500 rounded-lg overflow-hidden">
@@ -168,7 +173,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
         </button>
       </div>
       <div className="p-4" id="list-all-items">
-        <ul className="flex flex-wrap gap-2 mb-4">{itemsList()}</ul>
+        <ul className="flex flex-wrap gap-2 mb-4">{itemsList}</ul>
         <div>
           <ListIngredients selectedItems={selectedItems} />
           <div className="text-right text-gray-400">
@@ -181,6 +186,6 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = ({ selectedItems }) => {
       </div>
     </div>
   );
-};
+});
 
 export default TotalMaterials;

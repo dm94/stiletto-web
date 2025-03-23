@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState } from "react";
+import { useState, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
@@ -11,7 +11,7 @@ interface IngredientProps {
   value: number;
 }
 
-const Ingredient: React.FC<IngredientProps> = ({ ingredient, value }) => {
+const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
   const [showList, setShowList] = useState<boolean>(false);
   const { t } = useTranslation();
 
@@ -112,6 +112,6 @@ const Ingredient: React.FC<IngredientProps> = ({ ingredient, value }) => {
       {hasIngredients && <div className="mt-2">{renderSubList()}</div>}
     </div>
   );
-};
+});
 
 export default Ingredient;

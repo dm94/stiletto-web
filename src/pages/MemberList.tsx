@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import ModalMessage from "../components/ModalMessage";
@@ -14,12 +14,18 @@ import {
   getRequests,
   updateRequest,
 } from "../functions/requests/clans/requests";
-import { getMemberPermissions, getMembers, updateMember } from "../functions/requests/clans/members";
-import { deleteClan } from "../functions/requests/clans";
 import {
-  getStoredItem,
-} from "../functions/services";
-import { MemberAction, type MemberInfo, type MemberRequest } from "../types/dto/members";
+  getMemberPermissions,
+  getMembers,
+  updateMember,
+} from "../functions/requests/clans/members";
+import { deleteClan } from "../functions/requests/clans";
+import { getStoredItem } from "../functions/services";
+import {
+  MemberAction,
+  type MemberInfo,
+  type MemberRequest,
+} from "../types/dto/members";
 import { RequestAction } from "../types/dto/requests";
 import { getUser } from "../functions/requests/users";
 
@@ -33,7 +39,7 @@ const MemberList = () => {
   const [isLoadedRequestList, setIsLoadedRequestList] = useState(false);
   const [redirectMessage, setRedirectMessage] = useState<string>();
   const [selectNewOwner, setSelectNewOwner] = useState<string>(
-    getStoredItem("discordid") ?? ""
+    getStoredItem("discordid") ?? "",
   );
   const [showRequestModal, setShowRequestModal] = useState(false);
   const [requestData, setRequestData] = useState<MemberRequest>();
@@ -65,48 +71,53 @@ const MemberList = () => {
 
   useEffect(() => {
     const initializeComponent = async () => {
-      const userProfile = await getUser();
-
-      if (!userProfile.clanid) {
-        setError("errors.noClan");
-      }
-
-      if (userProfile) {
-        setClanid(userProfile.clanid);
-        setIsLeader(
-          userProfile.discordid === userProfile.leaderid
-        );
-      } else {
-        setError("errors.apiConnection");
-        setIsLoaded(true);
-        return;
-      }
-
-      await updateMembers();
-
-      if (!userProfile?.clanid) {
-        return;
-      }
-
       try {
-        const response = await getRequests(userProfile.clanid);
+        const userProfile = await getUser();
 
-        if (response) {
-          setRequestMembers(response);
+        if (!userProfile.clanid) {
+          setError("errors.noClan");
         }
-        setIsLoadedRequestList(true);
+
+        if (userProfile) {
+          setClanid(userProfile.clanid);
+          setIsLeader(userProfile.discordid === userProfile.leaderid);
+        } else {
+          setError("errors.apiConnection");
+          setIsLoaded(true);
+          return;
+        }
+
+        await updateMembers();
+
+        if (!userProfile?.clanid) {
+          return;
+        }
+
+        try {
+          const response = await getRequests(userProfile.clanid);
+
+          if (response) {
+            setRequestMembers(response);
+          }
+          setIsLoadedRequestList(true);
+        } catch {
+          setError("errors.apiConnection");
+        }
+
+        try {
+          const permissions = await getMemberPermissions(
+            userProfile.clanid,
+            userProfile.discordid,
+          );
+
+          setHasBotPermissions(permissions.bot ?? false);
+          setHasRequestPermissions(permissions.request ?? false);
+          setHasKickMembersPermisssions(permissions.kickmembers ?? false);
+        } catch {
+          // Silent error
+        }
       } catch {
         setError("errors.apiConnection");
-      }
-
-      try {
-        const permissions = await getMemberPermissions(userProfile.clanid, userProfile.discordid);
-
-        setHasBotPermissions(permissions.bot ?? false);
-        setHasRequestPermissions(permissions.request ?? false);
-        setHasKickMembersPermisssions(permissions.kickmembers ?? false); 
-      } catch {
-        // Silent error
       }
     };
 
@@ -119,11 +130,7 @@ const MemberList = () => {
     }
 
     try {
-      await updateMember(
-        clanid,
-        memberdiscordid,
-        MemberAction.KICK
-      );
+      await updateMember(clanid, memberdiscordid, MemberAction.KICK);
 
       localStorage.removeItem("memberList");
       sessionStorage.removeItem("memberList");
@@ -143,11 +150,7 @@ const MemberList = () => {
     }
 
     try {
-      await updateRequest(
-        clanid,
-        requestData.discordid,
-        action,
-      );
+      await updateRequest(clanid, requestData.discordid, action);
 
       localStorage.removeItem("memberList");
       sessionStorage.removeItem("memberList");
@@ -155,14 +158,14 @@ const MemberList = () => {
       localStorage.removeItem("memberList-lastCheck");
 
       setRequestMembers(
-        requestMembers.filter((m) => m.discordid !== requestData.discordid)
+        requestMembers.filter((m) => m.discordid !== requestData.discordid),
       );
       updateMembers();
       setRequestData(undefined);
     } catch {
       setError("errors.apiConnection");
     }
-  }
+  };
 
   const acceptMember = async () => changeRequestStatus(RequestAction.ACCEPT);
   const rejectMember = async () => changeRequestStatus(RequestAction.REJECT);
@@ -194,11 +197,7 @@ const MemberList = () => {
     }
 
     try {
-      await updateMember(
-        clanid,
-        selectNewOwner,
-        MemberAction.OWNER
-      );
+      await updateMember(clanid, selectNewOwner, MemberAction.OWNER);
 
       localStorage.removeItem("menu.profile");
       sessionStorage.removeItem("menu.profile");

@@ -97,6 +97,7 @@
   "clan.newLeader": "Новый лидер:",
   "clan.changeLeader": "Изменить лидера",
   "common.delete": "Удалить",
+  "common.deleting": "Удаление...",
   "clan.deleteClan": "Удалить клан",
   "clan.deleteWarning": "Удаляя клан, вы удалите все данные, связанные с ним, будьте осторожны, потому что эта опция не является обратимой.",
   "common.menu": "Меню",

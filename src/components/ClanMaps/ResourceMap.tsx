@@ -9,13 +9,17 @@ import CreateResourceTab from "./CreateResourceTab";
 import "../../css/map-sidebar.css";
 import type { MapInfo } from "../../types/dto/maps";
 import type { Marker } from "../../types/dto/marker";
-import { addResourceMap, deleteResource, editResource, getResources } from "../../functions/requests/maps/resources";
+import {
+  addResourceMap,
+  deleteResource,
+  editResource,
+  getResources,
+} from "../../functions/requests/maps/resources";
 import type { ResourceInfo } from "../../types/dto/resources";
 import { editMap } from "../../functions/requests/maps";
 import { sendNotification } from "../../functions/broadcast";
 import { useNavigate } from "react-router";
 
-// Define interface for component props
 interface ResourceMapProps {
   map: MapInfo;
   onReturn: () => void;
@@ -27,7 +31,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const [token] = useState<string>(getStoredItem("token") ?? "");
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
-  const [items, setItems] = useState<Marker[] >([]);
+  const [items, setItems] = useState<Marker[]>([]);
   const [resourcesInTheMap, setResourcesInTheMap] = useState<ResourceInfo[]>(
     [],
   );
@@ -40,16 +44,18 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   );
   const [allowEditing, setAllowEditing] = useState<boolean>(map?.allowedit);
   const [resourcesFiltered, setResourcesFiltered] = useState<ResourceInfo[]>(
-    []
+    [],
   );
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(
     window.innerWidth >= 1440,
   );
   const [error, setError] = useState<string>();
   const [activeTab, setActiveTab] = useState<string>("resources");
-  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const navigate = useNavigate();
   const fetchData = useCallback(async () => {
+    setIsLoading(true);
     try {
       const markers = await getMarkers();
       if (markers) {
@@ -58,9 +64,12 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
 
       const responseResources = await getResources(map.mapid, map.pass ?? "");
       setResourcesInTheMap(responseResources);
+      setResourcesFiltered(responseResources);
     } catch {
       sendNotification("Failed to fetch data", "Error");
       navigate("/");
+    } finally {
+      setIsLoading(false);
     }
   }, [map.mapid, map.pass, navigate]);
 
@@ -95,15 +104,12 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     event.preventDefault();
 
     try {
-      const response = await editMap(
-        map?.mapid,
-        {
-          mapname:mapName,
-          mapdate: dateOfBurning,
-          allowediting: allowEditing,
-          mappass:pass ?? "",
-        }
-      );
+      const response = await editMap(map?.mapid, {
+        mapname: mapName,
+        mapdate: dateOfBurning,
+        allowediting: allowEditing,
+        mappass: pass ?? "",
+      });
       setTextSuccess(response?.message ?? "");
     } catch {
       setError("errors.apiConnection");
@@ -115,12 +121,8 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     resourceToken: string,
   ) => {
     try {
-      await deleteResource(
-        map?.mapid,
-        resourceId,
-        resourceToken,
-      );
-      fetchData()
+      await deleteResource(map?.mapid, resourceId, resourceToken);
+      fetchData();
     } catch {
       setError("errors.apiConnection");
     }
@@ -133,7 +135,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     date: string,
   ) => {
     try {
-      await editResource(mapid, resourceid, { 
+      await editResource(mapid, resourceid, {
         token: token,
         harvested: date,
       });
@@ -288,11 +290,21 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     );
   }
 
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen bg-gray-900">
+        <div className="text-white text-xl">Loading resources...</div>
+      </div>
+    );
+  }
+
   return (
     <div className="relative h-screen">
       <div className="absolute inset-0 z-0">
         <MapLayer
-          resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
+          resourcesInTheMap={
+            resourcesFiltered.length > 0 ? resourcesFiltered : resourcesInTheMap
+          }
           deleteResource={handleDeleteResource}
           center={center}
           updateResource={handleUpdateResource}
@@ -364,7 +376,11 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
           <div className="flex-1 overflow-y-auto p-2">
             {activeTab === "resources" && (
               <ResourcesInMapList
-                resources={resourcesFiltered || resourcesInTheMap}
+                resources={
+                  resourcesFiltered.length > 0
+                    ? resourcesFiltered
+                    : resourcesInTheMap
+                }
                 onFilter={handleFilterResources}
                 onSelect={(x: number, y: number) => setCenter([x, y])}
               />

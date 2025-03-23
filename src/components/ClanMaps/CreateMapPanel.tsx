@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, type FormEvent } from "react";
+import { useState, useCallback, type FormEvent, memo } from "react";
 import { useTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
 import type { MapJsonInfo } from "../../types/dto/maps";
@@ -22,19 +22,22 @@ const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
   const [mapDateInput, setMapDateInput] = useState<number | string>(1);
   const [mapSelectInput, setMapSelectInput] = useState<string>("Canyon");
 
-  const handleSubmit = (evt: FormEvent) => {
-    evt.preventDefault();
-    const date = new Date();
-    date.setDate(date.getDate() + Number.parseInt(mapDateInput.toString()));
-    onCreateMap(
-      mapNameInput,
-      date.toISOString().split("T")[0],
-      mapSelectInput,
-    );
-    setMapNameInput("");
-    setMapDateInput(1);
-    setMapSelectInput("Canyon");
-  };
+  const handleSubmit = useCallback(
+    (evt: FormEvent) => {
+      evt.preventDefault();
+      const date = new Date();
+      date.setDate(date.getDate() + Number.parseInt(mapDateInput.toString()));
+      onCreateMap(
+        mapNameInput,
+        date.toISOString().split("T")[0],
+        mapSelectInput,
+      );
+      setMapNameInput("");
+      setMapDateInput(1);
+      setMapSelectInput("Canyon");
+    },
+    [mapNameInput, mapDateInput, mapSelectInput, onCreateMap],
+  );
 
   return (
     <div className="w-full">
@@ -111,4 +114,4 @@ const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
   );
 };
 
-export default CreateMapPanel;
+export default memo(CreateMapPanel);

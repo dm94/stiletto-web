@@ -1,4 +1,10 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, {
+  useState,
+  useEffect,
+  Suspense,
+  useMemo,
+  useCallback,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { getItems } from "../functions/services";
 import { Navigate, useParams } from "react-router";
@@ -44,7 +50,9 @@ const ItemWiki = () => {
     const loadData = async () => {
       let itemName = name;
       if (name) {
-        itemName = decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase();
+        itemName = decodeURI(String(itemName))
+          .replaceAll("_", " ")
+          .toLowerCase();
       }
 
       const items = await getItems();
@@ -61,42 +69,43 @@ const ItemWiki = () => {
     loadData();
   }, [name]);
 
-  const showIngredient = (ingre: Item) => {
+  const showIngredient = useCallback((ingre: Item) => {
     if (!ingre?.crafting) {
       return;
     }
 
-    return (
-      ingre?.crafting?.map((recipe, index) => (
-        <div
-          className={
-            ingre?.crafting && ingre?.crafting?.length > 1
-              ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
-              : "w-full"
-          }
-          key={`ingredients-${index}-${ingre.name}`}
-        >
-          <Ingredients crafting={recipe} value={1} />
-          {recipe.station && <Station name={recipe.station} />}
-          {recipe.time && <CraftingTime time={recipe.time} />}
-        </div>
-      ))
-    )
-  }
-
-  const showDescription = () =>
-    item?.description && (
-      <div className="w-full md:w-1/2 px-4">
-        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
-          <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
-            {t("common.description")}
-          </div>
-          <div className="p-4 text-neutral-400">{item.description}</div>
-        </div>
+    return ingre?.crafting?.map((recipe, index) => (
+      <div
+        className={
+          ingre?.crafting && ingre?.crafting?.length > 1
+            ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
+            : "w-full"
+        }
+        key={`ingredients-${index}-${ingre.name}`}
+      >
+        <Ingredients crafting={recipe} value={1} />
+        {recipe.station && <Station name={recipe.station} />}
+        {recipe.time && <CraftingTime time={recipe.time} />}
       </div>
-    );
+    ));
+  }, []);
 
-  const updateRarity = (value: Rarity) => {
+  const showDescription = useMemo(
+    () =>
+      item?.description && (
+        <div className="w-full md:w-1/2 px-4">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
+            <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
+              {t("common.description")}
+            </div>
+            <div className="p-4 text-neutral-400">{item.description}</div>
+          </div>
+        </div>
+      ),
+    [item?.description, t],
+  );
+
+  const updateRarity = useCallback((value: Rarity) => {
     setRarity(value);
 
     switch (value) {
@@ -118,50 +127,53 @@ const ItemWiki = () => {
       default:
         setTextColor("text-gray-400");
     }
-  };
+  }, []);
 
-  const getRarityClass = (value: Rarity) => {
-    let outlineColor = "";
-    let hoverColor = "";
-    let focusColor = "";
-    let textColor = "";
+  const getRarityClass = useCallback(
+    (value: Rarity) => {
+      let outlineColor = "";
+      let hoverColor = "";
+      let focusColor = "";
+      let textColor = "";
 
-    switch (value) {
-      case Rarity.Legendary:
-        outlineColor = "border-yellow-500";
-        hoverColor = "hover:bg-yellow-500";
-        textColor = "text-yellow-500";
-        focusColor = "focus:ring-yellow-500";
-        break;
-      case Rarity.Epic:
-        outlineColor = "border-red-500";
-        hoverColor = "hover:bg-red-500";
-        textColor = "text-red-500";
-        focusColor = "focus:ring-red-500";
-        break;
-      case Rarity.Rare:
-        outlineColor = "border-blue-500";
-        hoverColor = "hover:bg-blue-500";
-        textColor = "text-blue-500";
-        focusColor = "focus:ring-blue-500";
-        break;
-      case Rarity.Uncommon:
-        outlineColor = "border-green-500";
-        hoverColor = "hover:bg-green-500";
-        textColor = "text-green-500";
-        focusColor = "focus:ring-green-500";
-        break;
-      default:
-        outlineColor = "border-gray-500";
-        hoverColor = "hover:bg-gray-500";
-        textColor = "text-gray-500";
-        focusColor = "focus:ring-gray-500";
-    }
+      switch (value) {
+        case Rarity.Legendary:
+          outlineColor = "border-yellow-500";
+          hoverColor = "hover:bg-yellow-500";
+          textColor = "text-yellow-500";
+          focusColor = "focus:ring-yellow-500";
+          break;
+        case Rarity.Epic:
+          outlineColor = "border-red-500";
+          hoverColor = "hover:bg-red-500";
+          textColor = "text-red-500";
+          focusColor = "focus:ring-red-500";
+          break;
+        case Rarity.Rare:
+          outlineColor = "border-blue-500";
+          hoverColor = "hover:bg-blue-500";
+          textColor = "text-blue-500";
+          focusColor = "focus:ring-blue-500";
+          break;
+        case Rarity.Uncommon:
+          outlineColor = "border-green-500";
+          hoverColor = "hover:bg-green-500";
+          textColor = "text-green-500";
+          focusColor = "focus:ring-green-500";
+          break;
+        default:
+          outlineColor = "border-gray-500";
+          hoverColor = "hover:bg-gray-500";
+          textColor = "text-gray-500";
+          focusColor = "focus:ring-gray-500";
+      }
 
-    return `px-4 py-2 border rounded-lg hover:text-gray-300 ${textColor} ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${
-      rarity === value ? "bg-opacity-20" : ""
-    }`;
-  };
+      return `px-4 py-2 border rounded-lg hover:text-gray-300 ${textColor} ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${
+        rarity === value ? "bg-opacity-20" : ""
+      }`;
+    },
+    [rarity],
+  );
 
   const loadingItemPart = () => (
     <div className="w-full md:w-1/2">
@@ -298,22 +310,26 @@ const ItemWiki = () => {
                 <legend className="sr-only">
                   {t("common.raritySelection")}
                 </legend>
-                {[Rarity.Common, Rarity.Uncommon, Rarity.Rare, Rarity.Epic, Rarity.Legendary].map(
-                  (rar: Rarity) => (
-                    <button
-                      key={rar}
-                      type="button"
-                      aria-pressed={rarity === rar}
-                      className={`${getRarityClass(rar)} flex items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${rarity === rar ? "ring-2 ring-opacity-50" : ""}`}
-                      onClick={() => updateRarity(rar)}
-                    >
-                      <span className="w-4 mr-1">
-                        {rar === rarity ? "✓" : ""}
-                      </span>
-                      {t(rar)}
-                    </button>
-                  ),
-                )}
+                {[
+                  Rarity.Common,
+                  Rarity.Uncommon,
+                  Rarity.Rare,
+                  Rarity.Epic,
+                  Rarity.Legendary,
+                ].map((rar: Rarity) => (
+                  <button
+                    key={rar}
+                    type="button"
+                    aria-pressed={rarity === rar}
+                    className={`${getRarityClass(rar)} flex items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${rarity === rar ? "ring-2 ring-opacity-50" : ""}`}
+                    onClick={() => updateRarity(rar)}
+                  >
+                    <span className="w-4 mr-1">
+                      {rar === rarity ? "✓" : ""}
+                    </span>
+                    {t(rar)}
+                  </button>
+                ))}
               </fieldset>
             </div>
           </div>
@@ -341,7 +357,7 @@ const ItemWiki = () => {
         <Suspense fallback={loadingItemPart()}>
           <SchematicItems key="schematicItems" item={item} />
         </Suspense>
-        {showDescription()}
+        {showDescription}
         {item?.structureInfo && (
           <GenericInfo
             key="structureInfo"

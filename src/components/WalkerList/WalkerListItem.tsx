@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import type { MemberInfo } from "../../types/dto/members";
@@ -30,14 +30,17 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
   const canEdit =
     isLeader || walker.ownerUser === nickname || walker.lastuser === nickname;
 
-  const handleWalkerUpdate = (field: string, value: string | boolean) => {
-    setWalkerState((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
-  };
+  const handleWalkerUpdate = useCallback(
+    (field: string, value: string | boolean) => {
+      setWalkerState((prev) => ({
+        ...prev,
+        [field]: value,
+      }));
+    },
+    [],
+  );
 
-  const renderWalkerInfo = () => {
+  const renderWalkerInfo = useCallback(() => {
     if (!isOpen) {
       return false;
     }
@@ -281,7 +284,18 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
         </td>
       </tr>
     );
-  };
+  }, [
+    isOpen,
+    walker,
+    walkerState,
+    canEdit,
+    memberList,
+    walkerListTypes,
+    t,
+    handleWalkerUpdate,
+    onSave,
+    onRemove,
+  ]);
 
   if (!walker.walkerid) {
     return "";
@@ -333,4 +347,4 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
   );
 };
 
-export default WalkerListItem;
+export default memo(WalkerListItem);

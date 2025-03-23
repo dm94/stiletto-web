@@ -97,6 +97,7 @@
   "clan.newLeader": "Nou líder:",
   "clan.changeLeader": "Canviar líder",
   "common.delete": "Suprimeix",
+  "common.deleting": "Eliminant...",
   "clan.deleteClan": "Esborrar Clan",
   "clan.deleteWarning": "Esborrant el clan s'esborraran totes les dades vinculades a ell, vés amb compte perquè aquesta opció no és reversible",
   "common.menu": "Menú",

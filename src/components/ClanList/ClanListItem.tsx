@@ -1,4 +1,5 @@
 import type React from "react";
+import { memo } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import ClanName from "../ClanName";
@@ -27,6 +28,7 @@ const ClanListItem: React.FC<ClanListItemProps> = ({
             type="button"
             className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             onClick={() => onSendRequest?.(Number(clan.clanid))}
+            aria-label={t("common.sendRequest")}
           >
             {t("common.sendRequest")}
           </button>
@@ -37,6 +39,7 @@ const ClanListItem: React.FC<ClanListItemProps> = ({
           <Link
             className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-center block"
             to="/members"
+            aria-label={t("menu.members")}
           >
             {t("menu.members")}
           </Link>
@@ -74,4 +77,4 @@ const ClanListItem: React.FC<ClanListItemProps> = ({
   );
 };
 
-export default ClanListItem;
+export default memo(ClanListItem);

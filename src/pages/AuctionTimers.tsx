@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useState, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import Timer from "../components/AuctionTimers/Timer";
 import { getDomain } from "../functions/utils";
 
-const AuctionTimers = () => {
+const AuctionTimers = memo(() => {
   const { t } = useTranslation();
   const [timers, setTimers] = useState(1);
   const [playSound, setPlaySound] = useState(false);
 
-  const playAlarm = () => {
+  const playAlarm = useCallback(() => {
     const audio = new Audio("./cobra.mp3");
     audio.play();
-  };
+  }, []);
 
-  const renderTimers = () => {
+  const renderTimers = useCallback(() => {
     const timerElements = [];
     for (let i = 0; i < timers; i++) {
       timerElements.push(
@@ -22,7 +22,7 @@ const AuctionTimers = () => {
       );
     }
     return <div className="w-full">{timerElements}</div>;
-  };
+  }, [timers, playAlarm, playSound]);
 
   return (
     <div className="container mx-auto px-4 py-6">
@@ -115,6 +115,6 @@ const AuctionTimers = () => {
       </div>
     </div>
   );
-};
+});
 
 export default AuctionTimers;
