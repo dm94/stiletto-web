@@ -18,7 +18,9 @@ import { getMapNames } from "../functions/services";
 import type { MapInfo, MapJsonInfo } from "../types/dto/maps";
 import LoadingScreen from "../components/LoadingScreen";
 
-const DeleteMapModal = React.lazy(() => import("./DeleteMapModal"));
+const DeleteMapModal = React.lazy(
+  () => import("../components/ClanMaps/DeleteMapModal"),
+);
 
 const ClanMaps = () => {
   const { t } = useTranslation();
