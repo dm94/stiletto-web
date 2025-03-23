@@ -1,4 +1,5 @@
 import type React from "react";
+import { memo } from "react";
 import ClanName from "../ClanName";
 import type { RelationshipInfo } from "../../types/dto/relationship";
 
@@ -8,12 +9,13 @@ interface ClanSelectProps {
   onDelete: (id: number) => void;
 }
 
-const ClanSelect: React.FC<ClanSelectProps> = ({ isLeader, clan, onDelete }) => {
-
+const ClanSelect: React.FC<ClanSelectProps> = ({
+  isLeader,
+  clan,
+  onDelete,
+}) => {
   return (
-    <div
-      className="flex items-center"
-    >
+    <div className="flex items-center">
       <div className="flex-grow">
         <ClanName clan={clan} />
       </div>
@@ -22,6 +24,7 @@ const ClanSelect: React.FC<ClanSelectProps> = ({ isLeader, clan, onDelete }) => 
           type="button"
           className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           onClick={() => onDelete(clan?.id)}
+          aria-label="Delete relationship"
         >
           <i className="fas fa-trash" />
         </button>
@@ -30,4 +33,4 @@ const ClanSelect: React.FC<ClanSelectProps> = ({ isLeader, clan, onDelete }) => 
   );
 };
 
-export default ClanSelect;
+export default memo(ClanSelect);

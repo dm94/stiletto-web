@@ -1,4 +1,10 @@
-import { useState, useEffect, type FormEvent } from "react";
+import {
+  useState,
+  useEffect,
+  useCallback,
+  useMemo,
+  type FormEvent,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import ModalMessage from "../components/ModalMessage";
@@ -12,38 +18,56 @@ import {
   createRelationship,
   deleteRelationship,
 } from "../functions/requests/clans/relationships";
-import { type RelationshipInfo, TypeRelationship } from "../types/dto/relationship";
+import {
+  type RelationshipInfo,
+  TypeRelationship,
+} from "../types/dto/relationship";
 import { getMemberPermissions } from "../functions/requests/clans/members";
 
 const Diplomacy = () => {
   const { t } = useTranslation();
   const [clanId, setClanId] = useState<number>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
-  const [listOfRelations, setListOfRelations] = useState<RelationshipInfo[]>([]);
-  const [typedInput, setTypedInput] = useState<TypeRelationship>(TypeRelationship.NAP);
+  const [listOfRelations, setListOfRelations] = useState<RelationshipInfo[]>(
+    [],
+  );
+  const [typedInput, setTypedInput] = useState<TypeRelationship>(
+    TypeRelationship.NAP,
+  );
   const [clanFlagInput, setClanFlagInput] = useState<string>("");
   const [clanFlagSymbolInput, setClanFlagSymbolInput] = useState<string>("C1");
   const [nameOtherClanInput, setNameOtherClanInput] = useState<string>("");
   const [isLeader, setIsLeader] = useState<boolean>(false);
   const [hasPermissions, setHasPermissions] = useState<boolean>(false);
 
+  const fetchRelationships = useCallback(async (clanid: number) => {
+    try {
+      const response = await getRelationships(clanid);
+      setListOfRelations(response);
+      return response;
+    } catch {
+      setError("errors.apiConnection");
+      return [];
+    }
+  }, []);
+
   useEffect(() => {
     const initializeComponent = async () => {
-      const userProfile = await getUser();
-
-      const { clanid, discordid, leaderid } = userProfile;
-      setClanId(clanid);
-      setIsLeader(discordid === leaderid);
-
-      if (!clanid) {
-        return;
-      }
-
       try {
-        const response = await getRelationships(clanid);
-        setListOfRelations(response);
-        setIsLoaded(true);
+        const userProfile = await getUser();
+        const { clanid, discordid, leaderid } = userProfile;
+
+        setClanId(clanid);
+        setIsLeader(discordid === leaderid);
+
+        if (!clanid) {
+          setIsLoaded(true);
+          return;
+        }
+
+        await fetchRelationships(clanid);
 
         if (discordid === leaderid) {
           setHasPermissions(true);
@@ -53,104 +77,141 @@ const Diplomacy = () => {
         }
       } catch {
         setError("errors.apiConnection");
+      } finally {
+        setIsLoaded(true);
       }
     };
 
     initializeComponent();
-  }, []);
+  }, [fetchRelationships]);
 
-  const handleCreateRelationship = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!clanId) {
-      return;
-    }
-    
-    try {
-      await createRelationship(clanId, {
-        nameotherclan: nameOtherClanInput,
-        clanflag: clanFlagInput,
-        typed: typedInput,
-        symbol: clanFlagSymbolInput,
-      });
+  const handleCreateRelationship = useCallback(
+    async (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      if (!clanId || isSubmitting) {
+        return;
+      }
 
-      window.location.reload();
-    } catch {
-      setError("common.tryAgainLater");
-    }
-  };
+      setIsSubmitting(true);
+      setError("");
 
-  const handleDeleteDiplomacy = async (relationShipId: number) => {
-    if (!clanId) {
-      return;
-    }
+      try {
+        await createRelationship(clanId, {
+          nameotherclan: nameOtherClanInput,
+          clanflag: clanFlagInput,
+          typed: typedInput,
+          symbol: clanFlagSymbolInput,
+        });
 
-    try {
-      await deleteRelationship(clanId, relationShipId);
-      window.location.reload();
-    } catch {
-      setError("common.tryAgainLater");
-    }
-  };
+        const updatedRelationships = await fetchRelationships(clanId);
+        setListOfRelations(updatedRelationships);
 
-  const listOfAllies = () => {
-    if (!listOfRelations.length) {
-      return "";
-    }
+        setNameOtherClanInput("");
+        setClanFlagInput("");
+        setTypedInput(TypeRelationship.NAP);
+        setClanFlagSymbolInput("C1");
+      } catch {
+        setError("common.tryAgainLater");
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [
+      clanId,
+      clanFlagInput,
+      clanFlagSymbolInput,
+      fetchRelationships,
+      isSubmitting,
+      nameOtherClanInput,
+      typedInput,
+    ],
+  );
 
-    const allies = listOfRelations.filter(
-      (r) => r.typed === 1 || r.typed === 31,
+  const handleDeleteDiplomacy = useCallback(
+    async (relationShipId: number) => {
+      if (!clanId || isSubmitting) {
+        return;
+      }
+
+      setIsSubmitting(true);
+      setError("");
+
+      try {
+        await deleteRelationship(clanId, relationShipId);
+
+        setListOfRelations((prev) =>
+          prev.filter((rel) => rel.id !== relationShipId),
+        );
+      } catch {
+        setError("common.tryAgainLater");
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [clanId, isSubmitting],
+  );
+
+  // Memoized relationship lists to prevent unnecessary recalculations
+  const allies = useMemo(() => {
+    return listOfRelations.filter(
+      (r) =>
+        r.typed === TypeRelationship.ALLY ||
+        r.typed === TypeRelationship.FALSE_ALLY,
     );
+  }, [listOfRelations]);
 
-    return allies.map((d) => (
-      <div key={`ally${d.id}`} className="w-full">
-        <ClanSelect
-          clan={d}
-          isLeader={isLeader || hasPermissions}
-          onDelete={handleDeleteDiplomacy}
-        />
-      </div>
-    ));
-  };
-
-  const listOfEnemies = () => {
-    if (!listOfRelations.length) {
-      return "";
-    }
-
-    const enemies = listOfRelations.filter(
-      (r) => r.typed === 2 || r.typed === 32,
+  const enemies = useMemo(() => {
+    return listOfRelations.filter(
+      (r) =>
+        r.typed === TypeRelationship.WAR ||
+        r.typed === TypeRelationship.FALSE_WAR,
     );
+  }, [listOfRelations]);
 
-    return enemies.map((d) => (
-      <div key={`enemy${d.id}`} className="w-full">
-        <ClanSelect
-          clan={d}
-          isLeader={isLeader || hasPermissions}
-          onDelete={handleDeleteDiplomacy}
-        />
-      </div>
-    ));
-  };
+  const naps = useMemo(() => {
+    return listOfRelations.filter(
+      (r) =>
+        r.typed === TypeRelationship.NAP ||
+        r.typed === TypeRelationship.FALSE_NAP,
+    );
+  }, [listOfRelations]);
 
-  const listOfNAP = () => {
-    if (!listOfRelations.length) {
-      return "";
-    }
+  // Render relationship lists
+  const renderRelationshipList = useCallback(
+    (relationships: RelationshipInfo[], keyPrefix: string) => {
+      if (!relationships.length) {
+        return (
+          <div className="text-gray-400 text-center">{t("common.noData")}</div>
+        );
+      }
 
-    const nap = listOfRelations.filter((r) => r.typed === 0 || r.typed === 30);
+      return relationships.map((relationship) => (
+        <div key={`${keyPrefix}${relationship.id}`} className="w-full">
+          <ClanSelect
+            clan={relationship}
+            isLeader={isLeader || hasPermissions}
+            onDelete={handleDeleteDiplomacy}
+          />
+        </div>
+      ));
+    },
+    [handleDeleteDiplomacy, hasPermissions, isLeader, t],
+  );
 
-    return nap.map((d) => (
-      <div key={`npa${d.id}`} className="w-full">
-        <ClanSelect
-          clan={d}
-          isLeader={isLeader || hasPermissions}
-          onDelete={handleDeleteDiplomacy}
-        />
-      </div>
-    ));
-  };
+  const listOfAllies = useCallback(() => {
+    return renderRelationshipList(allies, "ally");
+  }, [allies, renderRelationshipList]);
 
-  const symbolsList = () => {
+  const listOfEnemies = useCallback(() => {
+    return renderRelationshipList(enemies, "enemy");
+  }, [enemies, renderRelationshipList]);
+
+  const listOfNAP = useCallback(() => {
+    return renderRelationshipList(naps, "nap");
+  }, [naps, renderRelationshipList]);
+
+  // Memoize symbols list to prevent unnecessary re-renders
+  const symbolsList = useMemo(() => {
     const symbols = Array.from({ length: 30 }, (_, i) => `C${i + 1}`);
     return symbols.map((symbol) => (
       <button
@@ -158,6 +219,7 @@ const Diplomacy = () => {
         className="w-1/12"
         key={`symbol-${symbol}`}
         onClick={() => setClanFlagSymbolInput(symbol)}
+        aria-label={`Select symbol ${symbol}`}
       >
         <img
           src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
@@ -168,11 +230,12 @@ const Diplomacy = () => {
           }
           alt={symbol}
           id={`symbol-img-${symbol}`}
+          loading="lazy"
         />
         <p className="text-center text-sm text-gray-300">{symbol}</p>
       </button>
     ));
-  };
+  }, [clanFlagSymbolInput]);
 
   const createNewRelationship = () => {
     if (!isLeader && !hasPermissions) {
@@ -196,7 +259,11 @@ const Diplomacy = () => {
                     id="typedInput"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={typedInput}
-                    onChange={(evt) => setTypedInput(Number(evt.target.value) as TypeRelationship)}
+                    onChange={(evt) =>
+                      setTypedInput(
+                        Number(evt.target.value) as TypeRelationship,
+                      )
+                    }
                   >
                     <option value="0">{t("diplomacy.napOrSettler")}</option>
                     <option value="1">{t("diplomacy.ally")}</option>
@@ -247,7 +314,7 @@ const Diplomacy = () => {
                   {t("diplomacy.symbol")}
                 </label>
                 <div className="w-full">
-                  <div className="flex flex-wrap">{symbolsList()}</div>
+                  <div className="flex flex-wrap">{symbolsList}</div>
                 </div>
               </div>
               <div className="flex justify-center">
