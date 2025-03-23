@@ -2,7 +2,7 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ClusterList from "./ClusterList";
-import { config } from "../config/config";
+import SymbolSelector from "./SymbolSelector";
 import {
   updateClan,
   createClan,
@@ -127,38 +127,6 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
       onClose?.();
       onError?.("errors.apiConnection");
     }
-  };
-
-  const renderSymbolsList = (): React.ReactNode => {
-    const symbols = Array.from({ length: 30 }, (_, i) => `C${i + 1}`);
-
-    return symbols.map((symbol) => {
-      const isSelected = symbol === formState.clanFlagSymbolInput;
-      return (
-        <button
-          type="button"
-          className={`col-3 p-1 rounded relative ${isSelected ? "bg-blue-600 ring-2 ring-blue-400 ring-opacity-100" : "hover:bg-gray-700"}`}
-          key={`symbol-${symbol}`}
-          onClick={() =>
-            setFormState({ ...formState, clanFlagSymbolInput: symbol })
-          }
-          aria-pressed={isSelected}
-          title={`${isSelected ? "Selected: " : ""}Clan symbol ${symbol}`}
-        >
-          <img
-            src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
-            className="img-fluid"
-            alt={`Clan symbol ${symbol}`}
-            id={`symbol-img-${symbol}`}
-          />
-          {isSelected && (
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="absolute inset-0 border-2 border-white border-opacity-60 rounded" />
-            </div>
-          )}
-        </button>
-      );
-    });
   };
 
   return (
@@ -313,9 +281,12 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
               >
                 {t("diplomacy.symbol")}
               </label>
-              <div className="grid grid-cols-4 gap-2" id="clan_symbol">
-                {renderSymbolsList()}
-              </div>
+              <SymbolSelector
+                selectedSymbol={formState.clanFlagSymbolInput}
+                onChange={(symbol) =>
+                  setFormState({ ...formState, clanFlagSymbolInput: symbol })
+                }
+              />
             </div>
             <div className="flex justify-end space-x-3 mt-6">
               <button
