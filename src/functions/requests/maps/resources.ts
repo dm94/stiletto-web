@@ -55,7 +55,7 @@ export const editResource = async (
   const params = objectToURLSearchParams(requestParams);
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}/?${params}`,
+    `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}?${params}`,
     {
       method: "PUT",
     },
