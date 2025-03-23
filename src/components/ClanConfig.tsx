@@ -51,7 +51,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
       }
 
       try {
-        const data = await getClanInfo(Number(clanid));
+        const data = await getClanInfo(clanid);
         if (data) {
           setFormState({
             addClanNameInput: data.name,
