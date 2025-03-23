@@ -97,6 +97,7 @@
   "clan.newLeader": "Nowy lider:",
   "clan.changeLeader": "Zmień lidera",
   "common.delete": "Usuń",
+  "common.deleting": "Usuwanie...",
   "clan.deleteClan": "Usuń Klan",
   "clan.deleteWarning": "Usuwając klan, usuniesz wszystkie dane z nim połączone, bądź ostrożny, ponieważ ta opcja nie jest odwracalna",
   "common.menu": "Menu",

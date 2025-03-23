@@ -97,6 +97,7 @@
   "clan.newLeader": "新领导：",
   "clan.changeLeader": "更改领导者",
   "common.delete": "删除",
+  "common.deleting": "删除中...",
   "clan.deleteClan": "删除班级",
   "clan.deleteWarning": "通过删除部族，您将会删除所有关联的数据，请小心，因为此选项不可逆。",
   "common.menu": "菜单",

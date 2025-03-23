@@ -97,6 +97,7 @@
   "clan.newLeader": "Neuer Leader:",
   "clan.changeLeader": "Leader ändern",
   "common.delete": "Löschen",
+  "common.deleting": "Wird gelöscht...",
   "clan.deleteClan": "Gilde löschen",
   "clan.deleteWarning": "Alle verknüpften Daten werden dauerhaft gelöscht",
   "common.menu": "Menü",

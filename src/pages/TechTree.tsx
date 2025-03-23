@@ -1,11 +1,14 @@
-import React, { useState, useEffect, Suspense, Fragment } from "react";
+import React, {
+  useState,
+  useEffect,
+  Suspense,
+  Fragment,
+  useCallback,
+  useMemo,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useParams } from "react-router";
-import {
-  getItems,
-  getStoredItem,
-  storeItem,
-} from "../functions/services";
+import { getItems, getStoredItem, storeItem } from "../functions/services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
@@ -26,52 +29,14 @@ const TechTree = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>();
-  const [tabSelect, setTabSelect] = useState<Tree>(tree ? tree as Tree :  Tree.VITAMINS);
+  const [tabSelect, setTabSelect] = useState<Tree>(
+    tree ? (tree as Tree) : Tree.VITAMINS,
+  );
   const [clan, setClan] = useState<number>();
-  const [discordId, setdiscordId] = useState<string>();
+  const [discordId, setDiscordId] = useState<string>();
+  const [isSaving, setIsSaving] = useState<boolean>(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (getStoredItem("token") != null) {
-        try {
-          const data = await getUser();
-          if (data?.clanid) {
-            setClan(data.clanid);
-          }
-
-          if (data?.discordid) {
-            setdiscordId(data.discordid);
-          }
-
-          const response = await getLearned(data.discordid, tabSelect);
-          if (response) {
-            updateLearnedTree("Vitamins", response.Vitamins);
-            updateLearnedTree("Equipment", response.Equipment);
-            updateLearnedTree("Crafting", response.Crafting);
-            updateLearnedTree("Construction", response.Construction);
-            updateLearnedTree("Walkers", response.Walkers);
-          }
-        } catch {
-          setError("errors.apiConnection");
-        }
-      }
-
-      if (tree) {
-        setTabSelect(tree as Tree);
-      }
-
-      let fetchedItems = await getItems();
-      if (fetchedItems) {
-        fetchedItems = fetchedItems.filter((it) => it.parent != null);
-        setItems(fetchedItems);
-        setIsLoaded(true);
-      }
-    };
-
-    fetchData();
-  }, [tree, tabSelect]);
-
-  const updateLearnedTree = (treeName: string, data: any) => {
+  const updateLearnedTree = useCallback((treeName: string, data: string[]) => {
     const all: Record<string, { optional: boolean; nodeState: string }> = {};
     if (data) {
       for (const tech of data) {
@@ -79,14 +44,78 @@ const TechTree = () => {
       }
       storeItem(`skills-${treeName}`, JSON.stringify(all));
     }
-  };
+  }, []);
 
-  const saveTree = async () => {
+  useEffect(() => {
+    let isMounted = true;
+
+    const fetchData = async () => {
+      try {
+        if (tree && tree !== tabSelect) {
+          setTabSelect(tree as Tree);
+        }
+
+        const fetchedItems = await getItems();
+        if (!isMounted) {
+          return;
+        }
+
+        if (fetchedItems) {
+          const filteredItems = fetchedItems.filter((it) => it.parent != null);
+          setItems(filteredItems);
+        }
+
+        const token = getStoredItem("token");
+        if (token) {
+          const userData = await getUser();
+
+          if (userData?.clanid) {
+            setClan(userData.clanid);
+          }
+
+          if (userData?.discordid) {
+            setDiscordId(userData.discordid);
+
+            const response = await getLearned(userData.discordid, tabSelect);
+
+            if (response) {
+              updateLearnedTree("Vitamins", response.Vitamins);
+              updateLearnedTree("Equipment", response.Equipment);
+              updateLearnedTree("Crafting", response.Crafting);
+              updateLearnedTree("Construction", response.Construction);
+              updateLearnedTree("Walkers", response.Walkers);
+            }
+          }
+        }
+
+        if (isMounted) {
+          setIsLoaded(true);
+        }
+      } catch {
+        setError("errors.apiConnection");
+      }
+    };
+
+    fetchData();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [tree, tabSelect, updateLearnedTree]);
+
+  const saveTree = useCallback(async () => {
+    if (isSaving || !discordId) {
+      return;
+    }
+
+    setIsSaving(true);
     const learned: string[] = [];
+
     try {
       const techSaved = getStoredItem(`skills-${tabSelect}`);
 
       if (!techSaved) {
+        setIsSaving(false);
         return;
       }
 
@@ -97,71 +126,137 @@ const TechTree = () => {
           learned.push(item);
         }
       }
-    } catch (err) {
-      console.error(err);
-    }
 
-    if (!discordId) {
-      return;
-    }
-
-    try {
       await addTech(discordId, tabSelect, learned);
     } catch {
       setError("errors.apiConnection");
+    } finally {
+      setIsSaving(false);
     }
-  };
+  }, [discordId, tabSelect, isSaving]);
 
-  const deleteTree = async () => {
+  const deleteTree = useCallback(async () => {
+    if (isSaving || !discordId) {
+      return;
+    }
+
+    setIsSaving(true);
+
     try {
       localStorage.removeItem(`skills-${tabSelect}`);
       sessionStorage.removeItem(`skills-${tabSelect}`);
 
-      if (discordId) {
-        await addTech(discordId, tabSelect, []);
-      }
-    } catch {
+      await addTech(discordId, tabSelect, []);
+
+      setItems([]);
+      setIsLoaded(false);
+
+      const currentTree = tabSelect;
+      setTabSelect(Tree.VITAMINS);
+      setTimeout(() => setTabSelect(currentTree), 10);
+    } catch (err) {
+      console.error("Error deleting tech tree:", err);
       setError("errors.apiConnection");
+    } finally {
+      setIsSaving(false);
     }
-    window.location.reload();
-  };
+  }, [discordId, tabSelect, isSaving]);
 
-  const saveDeleteButtons = () => {
-    if (getStoredItem("token") != null) {
-      return (
-        <div className="w-full">
-          <div className="flex justify-center gap-4 p-4">
-            <button
-              type="button"
-              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-              onClick={saveTree}
-            >
-              {t("techTree.saveTreeData")}
-            </button>
-            <button
-              type="button"
-              className="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-              onClick={deleteTree}
-            >
-              {t("techTree.deleteTreeData")}
-            </button>
-          </div>
+  const saveDeleteButtons = useMemo(() => {
+    if (getStoredItem("token") == null) {
+      return null;
+    }
+
+    return (
+      <div className="w-full">
+        <div className="flex justify-center gap-4 p-4">
+          <button
+            type="button"
+            className={`px-6 py-2 ${isSaving ? "bg-green-500" : "bg-green-600"} text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 flex items-center justify-center min-w-[120px]`}
+            onClick={saveTree}
+            disabled={isSaving}
+          >
+            {isSaving ? (
+              <>
+                <svg
+                  className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                {t("common.saving")}
+              </>
+            ) : (
+              t("techTree.saveTreeData")
+            )}
+          </button>
+          <button
+            type="button"
+            className={`px-6 py-2 ${isSaving ? "bg-red-500" : "bg-red-600"} text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200 flex items-center justify-center min-w-[120px]`}
+            onClick={deleteTree}
+            disabled={isSaving}
+          >
+            {isSaving ? (
+              <>
+                {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
+                <svg
+                  className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  />
+                </svg>
+                {t("common.deleting")}
+              </>
+            ) : (
+              t("techTree.deleteTreeData")
+            )}
+          </button>
         </div>
-      );
-    }
-    return "";
-  };
+      </div>
+    );
+  }, [t, saveTree, deleteTree, isSaving]);
 
-  const theme = {
-    h1FontSize: "50",
-    border: "1px solid rgb(127,127,127)",
-    treeBackgroundColor: "rgba(60, 60, 60, 0.9)",
-    nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
-    nodeAlternativeActiveBackgroundColor: "#834AC4",
-    nodeActiveBackgroundColor: "#834AC4",
-    nodeBorderColor: "#834AC4",
-    nodeHoverBorderColor: "#834AC4",
-  };
+  const theme = useMemo(
+    () => ({
+      h1FontSize: "50",
+      border: "1px solid rgb(127,127,127)",
+      treeBackgroundColor: "rgba(60, 60, 60, 0.9)",
+      nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
+      nodeAlternativeActiveBackgroundColor: "#834AC4",
+      nodeActiveBackgroundColor: "#834AC4",
+      nodeBorderColor: "#834AC4",
+      nodeHoverBorderColor: "#834AC4",
+    }),
+    [],
+  );
 
   if (error) {
     return (
@@ -205,28 +300,35 @@ const TechTree = () => {
             <NavLink
               to="/tech/Vitamins"
               className={({ isActive }) =>
-                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+                isActive
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
-              {t("common.vitamins")}
+              {t("crafting.vitamins")}
             </NavLink>
           </div>
           <div className="flex-1">
             <NavLink
               to="/tech/Equipment"
               className={({ isActive }) =>
-                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+                isActive
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Equipment" name="Equipment" width={30} />{" "}
-              {t("common.equipment")}
+              {t("crafting.equipment")}
             </NavLink>
           </div>
           <div className="flex-1">
-            <NavLink              to="/tech/Crafting"
+            <NavLink
+              to="/tech/Crafting"
               className={({ isActive }) =>
-                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+                isActive
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Crafting" name="Crafting" width={30} />{" "}
@@ -237,39 +339,41 @@ const TechTree = () => {
             <NavLink
               to="/tech/Construction"
               className={({ isActive }) =>
-                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+                isActive
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Construction" name="Construction" width={30} />{" "}
-              {t("common.construction")}
+              {t("crafting.construction")}
             </NavLink>
           </div>
           <div className="flex-1">
             <NavLink
               to="/tech/Walkers"
               className={({ isActive }) =>
-                isActive ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500" : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+                isActive
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Walkers" name="Walkers" width={30} />{" "}
-              {t("common.walkers")}
+              {t("crafting.walkers")}
             </NavLink>
           </div>
         </div>
       </nav>
-      {saveDeleteButtons()}
+      {saveDeleteButtons}
       <DoubleScrollbar>
-        <div className="bg-gray-800 border border-gray-700 rounded-lg p-4">
-          <Suspense fallback={<LoadingScreen />}>
-            <SkillTreeTab
-              treeId={tabSelect}
-              title={t(tabSelect)}
-              theme={theme}
-              items={items}
-              clan={clan}
-            />
-          </Suspense>
-        </div>
+        <Suspense fallback={<LoadingScreen />}>
+          <SkillTreeTab
+            treeId={tabSelect}
+            title={t(tabSelect)}
+            theme={theme}
+            items={items}
+            clan={clan}
+          />
+        </Suspense>
       </DoubleScrollbar>
     </div>
   );

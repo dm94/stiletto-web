@@ -1,4 +1,11 @@
-import { useState, useEffect, useRef, type ReactNode, type CSSProperties } from "react";
+import {
+  useState,
+  useEffect,
+  useRef,
+  useCallback,
+  type ReactNode,
+  type CSSProperties,
+} from "react";
 
 /* Modification of this library https://github.com/umchee/react-double-scrollbar */
 
@@ -11,13 +18,31 @@ const DoubleScrollbar = ({ children }: DoubleScrollbarProps) => {
   const outerDivRef = useRef<HTMLDivElement | null>(null);
   const childrenWrapperRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const calculateWidth = () => {
-      const childWrapperWidth = childrenWrapperRef.current?.scrollWidth;
-      const newWidth = childWrapperWidth ? `${childWrapperWidth}px` : "auto";
-      setWidth(newWidth);
-    };
+  const calculateWidth = useCallback(() => {
+    if (!childrenWrapperRef.current) {
+      return;
+    }
 
+    const childWrapperWidth = childrenWrapperRef.current.scrollWidth;
+    const newWidth = childWrapperWidth ? `${childWrapperWidth}px` : "auto";
+    setWidth(newWidth);
+  }, []);
+
+  const syncScroll = useCallback(() => {
+    if (!outerDivRef.current || !childrenWrapperRef.current) {
+      return;
+    }
+    childrenWrapperRef.current.scrollLeft = outerDivRef.current.scrollLeft;
+  }, []);
+
+  const syncReverseScroll = useCallback(() => {
+    if (!outerDivRef.current || !childrenWrapperRef.current) {
+      return;
+    }
+    outerDivRef.current.scrollLeft = childrenWrapperRef.current.scrollLeft;
+  }, []);
+
+  useEffect(() => {
     const outerDiv = outerDivRef.current;
     const childWrapper = childrenWrapperRef.current;
 
@@ -25,30 +50,43 @@ const DoubleScrollbar = ({ children }: DoubleScrollbarProps) => {
       return;
     }
 
-    const syncScroll = () => {
-      childWrapper.scrollLeft = outerDiv.scrollLeft;
-    };
-
-    const syncReverseScroll = () => {
-      outerDiv.scrollLeft = childWrapper.scrollLeft;
-    };
-
     calculateWidth();
 
-    window.addEventListener("resize", calculateWidth);
+    let resizeTimer: number | null = null;
+    const handleResize = () => {
+      if (resizeTimer) {
+        window.clearTimeout(resizeTimer);
+      }
+      resizeTimer = window.setTimeout(calculateWidth, 100);
+    };
+
+    window.addEventListener("resize", handleResize);
     outerDiv.addEventListener("scroll", syncScroll);
     childWrapper.addEventListener("scroll", syncReverseScroll);
 
     return () => {
-      window.removeEventListener("resize", calculateWidth);
-      outerDiv.removeEventListener("scroll", syncScroll);
-      childWrapper.removeEventListener("scroll", syncReverseScroll);
+      window.removeEventListener("resize", handleResize);
+      if (outerDiv) {
+        outerDiv.removeEventListener("scroll", syncScroll);
+      }
+      if (childWrapper) {
+        childWrapper.removeEventListener("scroll", syncReverseScroll);
+      }
+      if (resizeTimer) {
+        window.clearTimeout(resizeTimer);
+      }
     };
-  }, []);
+  }, [calculateWidth, syncScroll, syncReverseScroll]);
 
-  const outerDivStyle: CSSProperties = { overflowX: "auto", overflowY: "hidden" };
+  const outerDivStyle: CSSProperties = {
+    overflowX: "auto",
+    overflowY: "hidden",
+  };
   const innerDivStyle: CSSProperties = { paddingTop: "1px", width };
-  const childDivStyle: CSSProperties = { overflow: "auto", overflowY: "hidden" };
+  const childDivStyle: CSSProperties = {
+    overflow: "auto",
+    overflowY: "hidden",
+  };
 
   return (
     <div className="w-full">

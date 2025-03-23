@@ -97,6 +97,7 @@
   "clan.newLeader": "新しいリーダー:",
   "clan.changeLeader": "リーダーを変更",
   "common.delete": "削除",
+  "common.deleting": "削除中...",
   "clan.deleteClan": "クランを削除",
   "clan.deleteWarning": "クランを削除すると、リンクされているすべてのデータが削除されます。このオプションは元に戻せませんのでご注意ください。",
   "common.menu": "メニュー",
