@@ -1,5 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
+import { memo, useCallback, useMemo } from "react";
 import { getStoredItem } from "../../functions/services";
 import { getDomain } from "../../functions/utils";
 import { config } from "../../config/config";
@@ -19,87 +20,100 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   onDelete,
 }) => {
   const { t } = useTranslation();
+  const userDiscordId = useMemo(() => getStoredItem("discordid"), []);
 
-  const showButton = () => (
-    <div className="flex flex-col space-y-2 w-full h-full">
-      <button
-        type="button"
-        aria-label={t("maps.showMap")}
-        className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-        onClick={() => onOpen(map)}
-      >
-        <i className="fas fa-eye mr-2" /> {t("maps.showMap")}
-      </button>
-      {deleteMapButton()}
-      {shareMapButton()}
-    </div>
+  const handleOpenMap = useCallback(() => {
+    onOpen(map);
+  }, [map, onOpen]);
+
+  const handleDeleteMap = useCallback(() => {
+    onDelete(map.mapid);
+  }, [map.mapid, onDelete]);
+
+  const handleShareMap = useCallback(() => {
+    window.open(`${getDomain()}/map/${map.mapid}?pass=${map.pass}`);
+  }, [map.mapid, map.pass]);
+
+  const isOwner = useMemo(
+    () => map?.discordid === userDiscordId,
+    [map?.discordid, userDiscordId],
   );
 
-  const deleteMapButton = () => {
-    if (map?.discordid === getStoredItem("discordid")) {
-      return (
-        <div className="flex flex-col space-y-2 w-full h-full">
-          <button
-            type="button"
-            aria-label={t("maps.deleteMap")}
-            className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
-            onClick={() => onDelete(map.mapid)}
-          >
-            <i className="fas fa-trash-alt mr-2" /> {t("maps.deleteMap")}
-          </button>
-        </div>
-      );
-    }
-    return false;
-  };
+  const mapImageSrc = useMemo(() => {
+    return `${config.REACT_APP_RESOURCES_URL}/maps/${value?.replace("_new", "")}.jpg`;
+  }, [value]);
 
-  const shareMapButton = () => {
-    if (map?.discordid === getStoredItem("discordid")) {
-      return (
-        <div className="flex flex-col space-y-2 w-full h-full">
-          <button
-            type="button"
-            aria-label={t("maps.shareMap")}
-            className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-            onClick={() =>
-              window.open(`${getDomain()}/map/${map.mapid}?pass=${map.pass}`)
-            }
-          >
-            <i className="fas fa-share-alt mr-2" /> {t("maps.shareMap")}
-          </button>
-        </div>
-      );
+  const renderDeleteButton = useMemo(() => {
+    if (!isOwner) {
+      return null;
     }
-    return false;
-  };
+
+    return (
+      <div className="flex flex-col space-y-2 w-full h-full">
+        <button
+          type="button"
+          aria-label={t("maps.deleteMap")}
+          className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+          onClick={handleDeleteMap}
+        >
+          <i className="fas fa-trash-alt mr-2" /> {t("maps.deleteMap")}
+        </button>
+      </div>
+    );
+  }, [isOwner, t, handleDeleteMap]);
+
+  const renderShareButton = useMemo(() => {
+    if (!isOwner) {
+      return null;
+    }
+
+    return (
+      <div className="flex flex-col space-y-2 w-full h-full">
+        <button
+          type="button"
+          aria-label={t("maps.shareMap")}
+          className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          onClick={handleShareMap}
+        >
+          <i className="fas fa-share-alt mr-2" /> {t("maps.shareMap")}
+        </button>
+      </div>
+    );
+  }, [isOwner, t, handleShareMap]);
 
   const date = new Date();
   const dateBurning = new Date(map?.dateofburning ?? "");
+  const isExpired = useMemo(() => dateBurning <= date, [dateBurning, date]);
 
   return (
     <div className="p-2 w-full text-center" key={`clanmap${map?.mapid}`}>
       <div className="flex">
-        <button
-          type="button"
-          className="w-1/2 pr-0"
-          onClick={() => onOpen(map)}
-        >
+        <button type="button" className="w-1/2 pr-0" onClick={handleOpenMap}>
           <img
-            src={`${config.REACT_APP_RESOURCES_URL}/maps/${value?.replace(
-              "_new",
-              "",
-            )}.jpg`}
+            src={mapImageSrc}
             className="w-full h-auto"
             alt={map?.name}
+            loading="lazy"
           />
         </button>
-        <div className="w-1/2 pl-0">{showButton()}</div>
+        <div className="w-1/2 pl-0">
+          <div className="flex flex-col space-y-2 w-full h-full">
+            <button
+              type="button"
+              aria-label={t("maps.showMap")}
+              className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              onClick={handleOpenMap}
+            >
+              <i className="fas fa-eye mr-2" /> {t("maps.showMap")}
+            </button>
+            {renderDeleteButton}
+            {renderShareButton}
+          </div>
+        </div>
       </div>
       <h5 className="m-0">
         {map?.name}{" "}
-        <small
-          className={dateBurning <= date ? "text-red-500" : "text-green-500"}
-        >
+        <small className={isExpired ? "text-red-500" : "text-green-500"}>
           {dateBurning.toISOString().split("T")[0]}
         </small>
       </h5>
@@ -108,4 +122,4 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   );
 };
 
-export default ClanMapItem;
+export default memo(ClanMapItem);

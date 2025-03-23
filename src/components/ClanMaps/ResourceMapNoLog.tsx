@@ -12,7 +12,12 @@ import "../../css/map-sidebar.css";
 import { useLocation, useParams } from "react-router";
 import type { Marker } from "../../types/dto/marker";
 import type { ResourceInfo } from "../../types/dto/resources";
-import { addResourceMap, deleteResource, editResource, getResources } from "../../functions/requests/maps/resources";
+import {
+  addResourceMap,
+  deleteResource,
+  editResource,
+  getResources,
+} from "../../functions/requests/maps/resources";
 
 interface ResourceMapNoLogProps {
   mapId?: number;
@@ -24,7 +29,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
   const [resourcesInTheMap, setResourcesInTheMap] = useState<ResourceInfo[]>(
-    []
+    [],
   );
   const [mapId, setMapId] = useState<number>();
   const [pass, setPass] = useState<string>();
@@ -35,7 +40,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
   const [resourcesFiltered, setResourcesFiltered] = useState<ResourceInfo[]>(
-    []
+    [],
   );
   const [error, setError] = useState<string | null>(null);
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
@@ -49,7 +54,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
 
     if ((props?.mapId || id) && (props?.pass || parsed?.pass)) {
       try {
-        const markers = await getMarkers() as Marker[];
+        const markers = (await getMarkers()) as Marker[];
         setItems(markers);
 
         const currentMapId = Number(props?.mapId ?? id);
@@ -60,6 +65,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
 
         const responseResources = await getResources(currentMapId, currentPass);
         setResourcesInTheMap(responseResources);
+        setResourcesFiltered(responseResources);
       } catch {
         setError("errors.apiConnection");
       }
@@ -142,7 +148,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
     date: string,
   ) => {
     try {
-      await editResource(mapid, resourceid, { 
+      await editResource(mapid, resourceid, {
         token: token,
         harvested: date,
       });
