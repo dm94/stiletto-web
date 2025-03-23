@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import { getItems } from "../functions/services";
@@ -16,63 +16,109 @@ const Wiki = () => {
   const [items, setItems] = useState<Item[]>([]);
   const [searchText, setSearchText] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
+  const [displayedItems, setDisplayedItems] = useState<Item[]>([]);
   const [categories, setCategories] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string>("All");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [hasMore, setHasMore] = useState<boolean>(true);
+  const ITEMS_PER_PAGE = 12;
 
   useEffect(() => {
     const updateRecipes = async () => {
-      const fetchedItems = await getItems();
-      if (fetchedItems != null) {
-        const allCategories: string[] = [];
+      setIsLoading(true);
+      try {
+        const fetchedItems = await getItems();
+        if (fetchedItems != null) {
+          const allCategories: string[] = [];
 
-        for (const item of fetchedItems) {
-          if (item.category && !allCategories.includes(item.category)) {
-            allCategories.push(item.category);
+          for (const item of fetchedItems) {
+            if (item.category && !allCategories.includes(item.category)) {
+              allCategories.push(item.category);
+            }
           }
+
+          allCategories.sort((a, b) => a.localeCompare(b));
+
+          setItems(fetchedItems);
+          setCategories(allCategories);
         }
-
-        allCategories.sort((a, b) => a.localeCompare(b));
-
-        setItems(fetchedItems);
-        setCategories(allCategories);
+      } catch (error) {
+        console.error("Error fetching items:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
     updateRecipes();
+  }, []);
 
-    if (location?.search) {
+  const searchItems = useCallback(
+    (search = searchText, category = categoryFilter) => {
+      sendEvent("search", { props: { term: search } });
+
+      let filtered = items;
+
+      if (category && category !== "All") {
+        filtered = filtered.filter((item) => item.category === category);
+      }
+
+      if (search.trim()) {
+        const searchTerms = search.toLowerCase().split(" ").filter(Boolean);
+
+        filtered = filtered.filter((it) => {
+          const itemName = t(it.name).toLowerCase();
+          return searchTerms.every((term) => itemName.includes(term));
+        });
+      }
+
+      setFilteredItems(filtered);
+
+      setCurrentPage(1);
+      setDisplayedItems(filtered.slice(0, ITEMS_PER_PAGE));
+      setHasMore(filtered.length > ITEMS_PER_PAGE);
+    },
+    [items, searchText, categoryFilter, t],
+  );
+
+  useEffect(() => {
+    if (location?.search && items.length > 0) {
       const parsed = queryString.parse(location.search);
 
       if (parsed?.s) {
         setSearchText(String(parsed.s));
         searchItems(String(parsed.s), "All");
       }
+    } else if (items.length > 0) {
+      setFilteredItems(items);
+      setDisplayedItems(items.slice(0, ITEMS_PER_PAGE));
+      setHasMore(items.length > ITEMS_PER_PAGE);
     }
-  }, [location]);
+  }, [location, items, searchItems]);
 
-  const searchItems = (search = searchText, category = categoryFilter) => {
-    sendEvent("search", { props: { term: search } });
+  const handleLoadMore = useCallback(() => {
+    const nextPage = currentPage + 1;
+    setCurrentPage(nextPage);
+    const nextItems = filteredItems.slice(0, nextPage * ITEMS_PER_PAGE);
+    setDisplayedItems(nextItems);
+    setHasMore(nextItems.length < filteredItems.length);
+  }, [filteredItems, currentPage]);
 
-    let filtered = items;
-
-    if (category && category !== "All") {
-      filtered = filtered.filter((item) => item.category === category);
+  const showItems = useMemo(() => {
+    if (isLoading) {
+      return (
+        <div className="w-full" key="wiki-loading">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
+            <div className="p-6 text-center text-gray-300 text-lg">
+              {t("common.loading")}
+            </div>
+          </div>
+        </div>
+      );
     }
 
-    filtered = filtered.filter((it) => {
-      const itemF = t(it.name).toLowerCase();
-
-      return search
-        .split(" ")
-        .every((term) => itemF.includes(term.toLowerCase()));
-    });
-
-    setFilteredItems(filtered);
-  };
-
-  const showItems = () => {
-    if (filteredItems.length > 0) {
-      return filteredItems.map((item) => {
+    if (displayedItems.length > 0) {
+      return displayedItems.map((item) => {
         const url = `${getDomain()}/item/${encodeURI(
           item?.name.toLowerCase().replaceAll(" ", "_"),
         )}`;
@@ -103,28 +149,44 @@ const Wiki = () => {
         </div>
       </div>
     );
-  };
+  }, [displayedItems, isLoading, t]);
 
-  const showCategories = () => {
+  const showCategories = useMemo(() => {
     return categories.map((category) => (
       <option key={`option-${category}`} value={category}>
         {t(category)}
       </option>
     ));
-  };
+  }, [categories, t]);
 
-  const handleSearchTextChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearchText(e.currentTarget.value);
+  const handleSearchTextChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setSearchText(e.currentTarget.value);
+    },
+    [],
+  );
 
-  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setCategoryFilter(e.target.value);
-    searchItems(searchText, e.target.value);
-  };
+  const handleCategoryChange = useCallback(
+    (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const newCategory = e.target.value;
+      setCategoryFilter(newCategory);
+      searchItems(searchText, newCategory);
+    },
+    [searchText, searchItems],
+  );
 
-  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      searchItems();
-    }
-  };
+  const handleKeyPress = useCallback(
+    (e: React.KeyboardEvent<HTMLInputElement>) => {
+      if (e.key === "Enter") {
+        searchItems(searchText, categoryFilter);
+      }
+    },
+    [searchItems, searchText, categoryFilter],
+  );
+
+  const handleSearchClick = useCallback(() => {
+    searchItems(searchText, categoryFilter);
+  }, [searchItems, searchText, categoryFilter]);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -157,7 +219,7 @@ const Wiki = () => {
                 <button
                   type="button"
                   className="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
-                  onClick={() => searchItems()}
+                  onClick={handleSearchClick}
                 >
                   {t("common.search")}
                 </button>
@@ -182,7 +244,7 @@ const Wiki = () => {
                   <option key="all" value="All">
                     {t("common.all")}
                   </option>
-                  {showCategories()}
+                  {showCategories}
                 </select>
               </div>
             </div>
@@ -190,7 +252,27 @@ const Wiki = () => {
         </div>
       </div>
       <div className="w-full">
-        <div className="flex flex-wrap -m-3">{showItems()}</div>
+        <div className="flex flex-wrap -m-3">{showItems}</div>
+        {hasMore && !isLoading && displayedItems.length > 0 && (
+          <div className="mt-8 text-center">
+            <button
+              type="button"
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+              onClick={handleLoadMore}
+              data-cy="load-more-btn"
+            >
+              {t("common.loadMore")}
+            </button>
+          </div>
+        )}
+        {!isLoading && displayedItems.length > 0 && (
+          <div className="mt-4 text-center text-gray-400">
+            {t("wiki.showingItems", {
+              displayed: displayedItems.length,
+              total: filteredItems.length,
+            })}
+          </div>
+        )}
       </div>
     </div>
   );

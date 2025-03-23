@@ -1,5 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
+import { memo } from "react";
 import type { Item as ItemType } from "../../types/item";
 
 interface ItemProps {
@@ -7,7 +8,7 @@ interface ItemProps {
   onAdd: (name: string) => void;
 }
 
-const Item: React.FC<ItemProps> = ({ item, onAdd }) => {
+const Item: React.FC<ItemProps> = memo(({ item, onAdd }) => {
   const { t } = useTranslation();
 
   if (!item) {
@@ -32,6 +33,6 @@ const Item: React.FC<ItemProps> = ({ item, onAdd }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Item;

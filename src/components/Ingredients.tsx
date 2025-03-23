@@ -1,4 +1,5 @@
 import type React from "react";
+import { memo } from "react";
 import Ingredient from "./Ingredient";
 import type { Ingredient as IngredientType } from "../types";
 import type { ItemRecipe } from "../types/item";
@@ -8,7 +9,7 @@ interface IngredientsProps {
   value: number;
 }
 
-const Ingredients: React.FC<IngredientsProps> = ({ crafting, value }) => {
+const Ingredients: React.FC<IngredientsProps> = memo(({ crafting, value }) => {
   if (!crafting?.ingredients) {
     return null;
   }
@@ -25,6 +26,6 @@ const Ingredients: React.FC<IngredientsProps> = ({ crafting, value }) => {
       ))}
     </div>
   );
-};
+});
 
 export default Ingredients;

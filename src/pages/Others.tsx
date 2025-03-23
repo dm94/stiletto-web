@@ -1,13 +1,11 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
+import { memo, useMemo } from "react";
 
-/**
- * Others page component that displays various external links and resources
- */
 const Others: React.FC = () => {
   const { t } = useTranslation();
 
-  const showDiscord = () => {
+  const showDiscord = useMemo(() => {
     if (localStorage.getItem("acceptscookies")) {
       return (
         <iframe
@@ -15,7 +13,6 @@ const Others: React.FC = () => {
           src="https://discord.com/widget?id=317737508064591874&theme=dark"
           className="w-full"
           height="500"
-          frameBorder="0"
           sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
         />
       );
@@ -35,7 +32,7 @@ const Others: React.FC = () => {
         </div>
       </div>
     );
-  };
+  }, [t]);
 
   return (
     <div className="container mx-auto px-4">
@@ -115,7 +112,7 @@ const Others: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="md:col-span-1">{showDiscord()}</div>
+          <div className="md:col-span-1">{showDiscord}</div>
         </div>
       </div>
       <div className="mt-8">
@@ -144,4 +141,4 @@ const Others: React.FC = () => {
   );
 };
 
-export default Others;
+export default memo(Others);

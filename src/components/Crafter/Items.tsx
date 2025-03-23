@@ -1,5 +1,5 @@
 import type React from "react";
-import { useRef } from "react";
+import { useRef, memo } from "react";
 import Item from "./Item";
 import { useVirtualizer } from "@tanstack/react-virtual";
 import type { Item as ItemType } from "../../types/item";
@@ -9,7 +9,7 @@ interface ItemsProps {
   onAdd: (itemName: string, count?: number) => void;
 }
 
-const Items: React.FC<ItemsProps> = ({ items = [], onAdd }) => {
+const Items: React.FC<ItemsProps> = memo(({ items = [], onAdd }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const virtualizer = useVirtualizer({
@@ -50,6 +50,6 @@ const Items: React.FC<ItemsProps> = ({ items = [], onAdd }) => {
       ))}
     </div>
   );
-};
+});
 
 export default Items;

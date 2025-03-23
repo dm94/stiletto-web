@@ -1,6 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import { memo, useMemo } from "react";
 import Others from "./Others";
 import { getStoredItem } from "../functions/services";
 import { getDomain } from "../functions/utils";
@@ -8,6 +9,14 @@ import { Link } from "react-router";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
+
+  const resourceMapsUrl = useMemo(() => {
+    return getStoredItem("discordid") ? "/maps" : "/map";
+  }, []);
+
+  const canonicalUrl = useMemo(() => {
+    return getDomain();
+  }, []);
 
   return (
     <div className="container mx-auto px-4">
@@ -28,7 +37,7 @@ const Home: React.FC = () => {
           name="twitter:image"
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
         />
-        <link rel="canonical" href={getDomain()} />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-8">
         <Link
@@ -49,7 +58,7 @@ const Home: React.FC = () => {
         </Link>
         <Link
           className="text-center"
-          to={getStoredItem("discordid") ? "/maps" : "/map"}
+          to={resourceMapsUrl}
           aria-label={t("menu.resourceMaps")}
         >
           <h2 className="lo-title text-3xl">{t("menu.resourceMaps")}</h2>
@@ -61,4 +70,4 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+export default memo(Home);

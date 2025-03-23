@@ -330,5 +330,8 @@
   "error.unauthorized": "Unauthorized",
   "clan.lookingForNewMembers": "Looking for new members? By disabling this option the clan does not appear in the clan list.",
   "common.showMore": "Show more",
-  "trades.noTradesFound": "No trades found"
+  "trades.noTradesFound": "No trades found",
+  "common.damage": "Damage",
+  "common.loadMore": "Load More",
+  "wiki.showingItems": "Showing {{displayed}} of {{total}} items"
 }
