@@ -40,7 +40,11 @@ const SymbolSelector: React.FC<SymbolSelectorProps> = ({
     });
   };
 
-  return <div className="grid grid-cols-4 gap-2">{renderSymbolsList()}</div>;
+  return (
+    <div className="grid grid-cols-4 gap-2 justify-items-center">
+      {renderSymbolsList()}
+    </div>
+  );
 };
 
 export default SymbolSelector;

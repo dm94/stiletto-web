@@ -1,7 +1,10 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { getMemberPermissions, updateMemberPermissions } from "../../functions/requests/clans/members";
+import {
+  getMemberPermissions,
+  updateMemberPermissions,
+} from "../../functions/requests/clans/members";
 import type { MemberPermissions } from "../../types/dto/members";
 
 interface MemberPermissionsConfigProps {
@@ -11,7 +14,12 @@ interface MemberPermissionsConfigProps {
   onError?: (error: string) => void;
 }
 
-const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clanid, memberid, onClose, onError }) => {
+const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
+  clanid,
+  memberid,
+  onClose,
+  onError,
+}) => {
   const { t } = useTranslation();
   const [permissions, setPermissions] = useState<MemberPermissions>({
     bot: false,
@@ -44,11 +52,7 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clani
     }
 
     try {
-      await updateMemberPermissions(
-        clanid,
-        memberid,
-        permissions,
-      );
+      await updateMemberPermissions(clanid, memberid, permissions);
 
       onClose?.();
     } catch {
@@ -85,10 +89,10 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clani
         <div className="p-4 text-gray-300">
           <div className="space-y-4">
             <div
-              className="flex items-center"
+              className="flex items-center justify-start"
               title={t("discord.allowToChangeBotSettings")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="botInput"
@@ -103,10 +107,10 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clani
             </div>
 
             <div
-              className="flex items-center"
+              className="flex items-center justify-start"
               title={t("discord.allowEditingWalkers")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="walkersInput"
@@ -121,10 +125,10 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clani
             </div>
 
             <div
-              className="flex items-center"
+              className="flex items-center justify-start"
               title={t("discord.allowEditingDiplomacy")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="diplomacyInput"
@@ -139,10 +143,10 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clani
             </div>
 
             <div
-              className="flex items-center"
+              className="flex items-center justify-start"
               title={t("Allow management of request")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="requestInput"
@@ -157,10 +161,10 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({ clani
             </div>
 
             <div
-              className="flex items-center"
+              className="flex items-center justify-start"
               title={t("discord.allowKickMembers")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="kickmembersInput"

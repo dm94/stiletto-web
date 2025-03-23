@@ -5,7 +5,11 @@ import {
   getDiscordConfig,
   updateBotConfig,
 } from "../../functions/requests/clans/discordbot";
-import { Languages, type UpdateBotConfigParams, type DiscordConfig as DiscordConfigType } from "../../types/dto/discordConfig";
+import {
+  Languages,
+  type UpdateBotConfigParams,
+  type DiscordConfig as DiscordConfigType,
+} from "../../types/dto/discordConfig";
 
 interface DiscordConfigProps {
   clanid: number;
@@ -13,7 +17,11 @@ interface DiscordConfigProps {
   onError: (error: string) => void;
 }
 
-const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError }) => {
+const DiscordConfig: React.FC<DiscordConfigProps> = ({
+  clanid,
+  onClose,
+  onError,
+}) => {
   const { t } = useTranslation();
   const [botConfig, setBotConfig] = useState<DiscordConfigType>({
     discordid: "",
@@ -48,7 +56,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError 
         readypvp: botConfig.setNotReadyPVP,
         walkeralarm: botConfig.walkerAlarm,
       };
-      
+
       await updateBotConfig(clanid, params);
       onClose();
     } catch {
@@ -56,8 +64,13 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError 
     }
   };
 
-  const handleBotLanguageChange = (evt: React.ChangeEvent<HTMLSelectElement>): void => {
-    setBotConfig({ ...botConfig, botLanguaje: evt.target.value as unknown as Languages });
+  const handleBotLanguageChange = (
+    evt: React.ChangeEvent<HTMLSelectElement>,
+  ): void => {
+    setBotConfig({
+      ...botConfig,
+      botLanguaje: evt.target.value as unknown as Languages,
+    });
   };
 
   const toggleConfigOption = (key: keyof DiscordConfigType): void => {
@@ -112,7 +125,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError 
             className="mb-3 flex items-center"
             title={t("discord.readDiscordClanLogNotice")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="readClanLog"
@@ -130,7 +143,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError 
             className="mb-3 flex items-center"
             title={t("discord.readClanLogAndKick")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="automaticKick"
@@ -145,7 +158,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError 
           </div>
 
           <div className="mb-3 flex items-center">
-            <div className="relative inline-block w-10 mr-2 align-middle select-none">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="setNotReadyPVP"
@@ -163,19 +176,13 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({ clanid, onClose, onError 
             className="mb-3 flex items-center"
             title={t("discord.readClanLogAndKick")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="walkerAlarm"
                 checked={botConfig.walkerAlarm}
                 onChange={() => toggleConfigOption("walkerAlarm")}
                 className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
-              />
-              <label
-                id="walkerAlarmLabel"
-                aria-label="Toggle walker alarm notification"
-                htmlFor="walkerAlarm"
-                className="block h-6 overflow-hidden bg-gray-600 rounded-full cursor-pointer"
               />
             </div>
             <label className="text-sm" htmlFor="walkerAlarm">
