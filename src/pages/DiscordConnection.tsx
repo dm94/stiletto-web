@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import queryString from "query-string";
@@ -21,12 +21,8 @@ const DiscordConnection: React.FC = () => {
   useEffect(() => {
     const handleAuth = async () => {
       const parsed = queryString.parse(location?.search);
-      if (!parsed.code) {
-        setIsLoaded(true);
-        return;
-      }
 
-      if (getStoredItem("token")) {
+      if (!parsed.code || getStoredItem("token")) {
         setIsLoaded(true);
         return;
       }
@@ -44,23 +40,26 @@ const DiscordConnection: React.FC = () => {
           navigate("/");
         }
       } catch {
-        setError("Error connecting to server");
+        setError(t("errors.apiConnection"));
+      } finally {
+        setIsLoaded(true);
       }
-      setIsLoaded(true);
     };
 
     handleAuth();
-  }, [location, navigate]);
+  }, [location, navigate, t]);
 
-  const renderClanInfo = () => {
+  const discordLoginUrl = useMemo(() => getDiscordLoginUrl(), []);
+
+  useEffect(() => {
     const parsed = queryString.parse(location?.search);
-    const urlLink = getDiscordLoginUrl();
-
     if (parsed.discordid && parsed.token) {
       storeItem("discordid", String(parsed.discordid));
       storeItem("token", String(parsed.token));
     }
+  }, [location]);
 
+  const renderClanInfo = useCallback(() => {
     if (getStoredItem("token")) {
       return <PrivateProfile key="profile" />;
     }
@@ -91,7 +90,7 @@ const DiscordConnection: React.FC = () => {
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-6">
             <a
-              href={urlLink}
+              href={discordLoginUrl}
               className="w-full inline-flex justify-center items-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors"
             >
               <i className="fab fa-discord mr-2" />
@@ -101,7 +100,7 @@ const DiscordConnection: React.FC = () => {
         </div>
       </div>
     );
-  };
+  }, [t, discordLoginUrl]);
 
   if (error) {
     return (

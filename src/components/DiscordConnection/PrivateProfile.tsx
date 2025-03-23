@@ -12,10 +12,7 @@ import { getDomain } from "../../functions/utils";
 import { deleteUser, addNick, getUser } from "../../functions/requests/users";
 import { leaveClan } from "../../functions/requests/clans";
 import { supportedLanguages } from "../../config/languages";
-import {
-  closeSession,
-  getStoredItem,
-} from "../../functions/services";
+import { closeSession, getStoredItem } from "../../functions/services";
 import { DEFAULT_LANGUAGE } from "../../config/config";
 import type { UserInfo } from "../../types/dto/users";
 
@@ -41,7 +38,7 @@ const PrivateProfile = () => {
         setIsLoaded(true);
       }
     };
-    
+
     fetchUserProfile();
   }, []);
 
@@ -62,7 +59,9 @@ const PrivateProfile = () => {
     }
   };
 
-  const handleAddNickInGame = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleAddNickInGame = async (
+    event: React.FormEvent<HTMLFormElement>,
+  ) => {
     event.preventDefault();
     try {
       await addNick(nameInGameInput);
@@ -205,11 +204,7 @@ const PrivateProfile = () => {
                   to="/walkerlist"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
-                  <Icon
-                    key="Base Wings"
-                    name="Base Wings"
-                    width={30}
-                  />
+                  <Icon key="Base Wings" name="Base Wings" width={30} />
                   {t("menu.walkerList")}
                 </Link>
                 <Link
@@ -273,9 +268,7 @@ const PrivateProfile = () => {
                 id="changeLanguajeSelect"
                 className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
                 value={language}
-                onChange={(e) =>
-                  setLanguage(e.target.value)
-                }
+                onChange={(e) => setLanguage(e.target.value)}
               >
                 {supportedLanguages.map((language) => (
                   <option key={language.key} value={language.key}>
@@ -293,7 +286,7 @@ const PrivateProfile = () => {
             </div>
           </div>
         </div>
-        {(!userData?.nickname && isLoaded) && (
+        {!userData?.nickname && isLoaded && (
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-3 bg-gray-900 border-b border-gray-700">
               <h2 className="text-xl font-bold text-white">
