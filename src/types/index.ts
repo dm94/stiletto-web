@@ -1,6 +1,5 @@
 import type { ItemRecipe } from "./item";
 
-// Item type definition
 export interface CustomItem {
   name: string;
   category?: string;
@@ -10,7 +9,6 @@ export interface CustomItem {
   value?: number;
 }
 
-// Ingredient type definition
 export interface Ingredient {
   name: string;
   count: number;
@@ -19,7 +17,6 @@ export interface Ingredient {
   output?: number;
 }
 
-// Language type definition
 export interface Language {
   key: string;
   name: string;

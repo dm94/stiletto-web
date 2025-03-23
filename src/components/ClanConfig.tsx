@@ -2,14 +2,20 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ClusterList from "./ClusterList";
-import { config } from "../config/config";
-import { updateClan, createClan } from "../functions/requests/clans";
-import { closeSession, getStoredItem } from "../functions/services";
-import type { CreateClanRequestParams, UpdateClanRequestParams } from "../types/dto/clan";
-import type { Clan } from "../types/clan";
+import SymbolSelector from "./SymbolSelector";
+import {
+  updateClan,
+  createClan,
+  getClanInfo,
+} from "../functions/requests/clans";
+import { closeSession } from "../functions/services";
+import type {
+  CreateClanRequestParams,
+  UpdateClanRequestParams,
+} from "../types/dto/clan";
 
 interface ClanConfigProps {
-  clanid?: string | number;
+  clanid?: number;
   onClose?: () => void;
   onError?: (error: string) => void;
 }
@@ -23,7 +29,11 @@ interface ClanFormState {
   recruitInput: boolean;
 }
 
-const ClanConfig: React.FC<ClanConfigProps> = ({ clanid, onClose, onError }) => {
+const ClanConfig: React.FC<ClanConfigProps> = ({
+  clanid,
+  onClose,
+  onError,
+}) => {
   const { t } = useTranslation();
   const [formState, setFormState] = useState<ClanFormState>({
     addClanNameInput: "",
@@ -41,32 +51,16 @@ const ClanConfig: React.FC<ClanConfigProps> = ({ clanid, onClose, onError }) => 
       }
 
       try {
-        const response = await fetch(
-          `${config.REACT_APP_API_URL}/clans/${clanid}`,
-          {
-            headers: {
-              Authorization: `Bearer ${getStoredItem("token")}`
-            },
-          }
-        );
-
-        if (response.status === 200) {
-          const data = await response.json() as Clan;
-          if (data) {
-            setFormState({
-              addClanNameInput: data.name,
-              addClanColorInput: data.flagcolor ?? "#000000",
-              addClanDiscordInput: data.invitelink ?? "",
-              clanFlagSymbolInput: data.symbol ?? "",
-              regionInput: data.region,
-              recruitInput: data.recruitment,
-            });
-          }
-        } else if (response.status === 401) {
-          closeSession();
-          onError?.("errors.noAccess");
-        } else if (response.status === 503) {
-          onError?.("error.databaseConnection");
+        const data = await getClanInfo(clanid);
+        if (data) {
+          setFormState({
+            addClanNameInput: data.name,
+            addClanColorInput: data.flagcolor ?? "#000000",
+            addClanDiscordInput: data.invitelink ?? "",
+            clanFlagSymbolInput: data.symbol ?? "",
+            regionInput: data.region,
+            recruitInput: data.recruitment,
+          });
         }
       } catch {
         onError?.("errors.apiConnection");
@@ -76,7 +70,9 @@ const ClanConfig: React.FC<ClanConfigProps> = ({ clanid, onClose, onError }) => 
     fetchClanData();
   }, [clanid, onError]);
 
-  const handleCreateClan = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleCreateClan = async (
+    e: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     e.preventDefault();
 
     try {
@@ -106,7 +102,9 @@ const ClanConfig: React.FC<ClanConfigProps> = ({ clanid, onClose, onError }) => 
     }
   };
 
-  const handleUpdateClan = async (e: React.FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleUpdateClan = async (
+    e: React.FormEvent<HTMLFormElement>,
+  ): Promise<void> => {
     e.preventDefault();
 
     try {
@@ -131,33 +129,6 @@ const ClanConfig: React.FC<ClanConfigProps> = ({ clanid, onClose, onError }) => 
     }
   };
 
-  const renderSymbolsList = (): React.ReactNode => {
-    const symbols = Array.from({ length: 30 }, (_, i) => `C${i + 1}`);
-
-    return symbols.map((symbol) => (
-      <button
-        type="button"
-        className="col-3"
-        key={`symbol-${symbol}`}
-        onClick={() =>
-          setFormState({ ...formState, clanFlagSymbolInput: symbol })
-        }
-      >
-        <img
-          src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
-          className={
-            symbol === formState.clanFlagSymbolInput
-              ? "img-fluid img-thumbnail"
-              : "img-fluid"
-          }
-          alt={`Clan symbol ${symbol}`}
-          title={`Clan symbol ${symbol}`}
-          id={`symbol-img-${symbol}`}
-        />
-      </button>
-    ));
-  };
-
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
@@ -173,7 +144,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({ clanid, onClose, onError }) => 
             title="Close"
           >
             <span className="sr-only">Close</span>
-            <svg 
+            <svg
               aria-hidden="true"
               className="h-6 w-6"
               fill="none"
@@ -310,9 +281,12 @@ const ClanConfig: React.FC<ClanConfigProps> = ({ clanid, onClose, onError }) => 
               >
                 {t("diplomacy.symbol")}
               </label>
-              <div className="grid grid-cols-4 gap-2" id="clan_symbol">
-                {renderSymbolsList()}
-              </div>
+              <SymbolSelector
+                selectedSymbol={formState.clanFlagSymbolInput}
+                onChange={(symbol) =>
+                  setFormState({ ...formState, clanFlagSymbolInput: symbol })
+                }
+              />
             </div>
             <div className="flex justify-end space-x-3 mt-6">
               <button
