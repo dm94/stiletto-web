@@ -137,7 +137,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
       return (
         <button
           type="button"
-          className={`col-3 p-1 rounded ${isSelected ? "bg-blue-600 ring-2 ring-blue-400 ring-opacity-100" : "hover:bg-gray-700"}`}
+          className={`col-3 p-1 rounded relative ${isSelected ? "bg-blue-600 ring-2 ring-blue-400 ring-opacity-100" : "hover:bg-gray-700"}`}
           key={`symbol-${symbol}`}
           onClick={() =>
             setFormState({ ...formState, clanFlagSymbolInput: symbol })
