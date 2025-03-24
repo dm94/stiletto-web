@@ -9,7 +9,7 @@ const CookieConsent: React.FC = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 w-full bg-gray-900 text-white p-4 flex items-center justify-between">
+    <div className="fixed bottom-0 left-0 right-0 w-full bg-gray-800 text-white p-4 flex items-center justify-between">
       <div className="mr-4">{t("common.cookiesNotice")}</div>
       <button
         type="button"

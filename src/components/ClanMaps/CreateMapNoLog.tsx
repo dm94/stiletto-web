@@ -37,13 +37,11 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
     mapSelectInput: string,
   ) => {
     try {
-      const response = await addMap(
-        {
-          mapdate: mapDateInput,
-          mapname: mapNameInput,
-          maptype: mapSelectInput,
-        }
-      );
+      const response = await addMap({
+        mapdate: mapDateInput,
+        mapname: mapNameInput,
+        maptype: mapSelectInput,
+      });
 
       if (!response) {
         return;
@@ -69,7 +67,7 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
   return (
     <div className="flex gap-4 flex-col p-4">
       <div className="w-full">
-        <div className="bg-white rounded shadow p-4 mb-4 dark:bg-gray-800 dark:text-white">
+        <div className="rounded shadow p-4 mb-4 bg-gray-800 text-white">
           <div className="text-lg font-semibold mb-2 border-b pb-2">
             {t("maps.openExistingMap")}
           </div>
