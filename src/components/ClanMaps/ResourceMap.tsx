@@ -6,7 +6,7 @@ import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
-import "../../css/map-sidebar.css";
+import "../../styles/map-sidebar.css";
 import type { MapInfo } from "../../types/dto/maps";
 import type { Marker } from "../../types/dto/marker";
 import {
