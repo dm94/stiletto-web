@@ -13,7 +13,6 @@ import Station from "../components/Station";
 import Icon from "../components/Icon";
 import CraftingTime from "../components/CraftingTime";
 import LoadingScreen from "../components/LoadingScreen";
-import LoadingPart from "../components/LoadingPart";
 import ModuleInfo from "../components/Wiki/ModuleInfo";
 import ToolInfo from "../components/Wiki/ToolInfo";
 import GenericInfo from "../components/Wiki/GenericInfo";
@@ -178,7 +177,7 @@ const ItemWiki = () => {
   const loadingItemPart = () => (
     <div className="w-full md:w-1/2">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
-        <LoadingPart />
+        <LoadingScreen />
       </div>
     </div>
   );
