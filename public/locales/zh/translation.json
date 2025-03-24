@@ -97,7 +97,7 @@
   "clan.newLeader": "新领导：",
   "clan.changeLeader": "更改领导者",
   "common.delete": "删除",
-  "common.deleting": "删除中...",
+  "common.deleting": "Deleting...",
   "clan.deleteClan": "删除班级",
   "clan.deleteWarning": "通过删除部族，您将会删除所有关联的数据，请小心，因为此选项不可逆。",
   "common.menu": "菜单",
@@ -331,5 +331,8 @@
   "error.unauthorized": "未授权",
   "clan.lookingForNewMembers": "寻找新会员？禁用此选项后，部族不会出现在部族列表中。",
   "common.showMore": "显示更多",
-  "trades.noTradesFound": "No trades found"
+  "trades.noTradesFound": "No trades found",
+  "common.damage": "Damage",
+  "common.loadMore": "Load More",
+  "wiki.showingItems": "Showing {{displayed}} of {{total}} items"
 }

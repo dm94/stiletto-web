@@ -97,7 +97,7 @@
   "clan.newLeader": "新しいリーダー:",
   "clan.changeLeader": "リーダーを変更",
   "common.delete": "削除",
-  "common.deleting": "削除中...",
+  "common.deleting": "Deleting...",
   "clan.deleteClan": "クランを削除",
   "clan.deleteWarning": "クランを削除すると、リンクされているすべてのデータが削除されます。このオプションは元に戻せませんのでご注意ください。",
   "common.menu": "メニュー",
@@ -331,5 +331,8 @@
   "error.unauthorized": "権限がありません",
   "clan.lookingForNewMembers": "新しいメンバーを探していますか？このオプションを無効にするとクランリストに表示されません。",
   "common.showMore": "詳細を表示",
-  "trades.noTradesFound": "No trades found"
+  "trades.noTradesFound": "No trades found",
+  "common.damage": "Damage",
+  "common.loadMore": "Load More",
+  "wiki.showingItems": "Showing {{displayed}} of {{total}} items"
 }
