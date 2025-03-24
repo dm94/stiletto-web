@@ -97,7 +97,7 @@
   "clan.newLeader": "Nowy lider:",
   "clan.changeLeader": "Zmień lidera",
   "common.delete": "Usuń",
-  "common.deleting": "Usuwanie...",
+  "common.deleting": "Deleting...",
   "clan.deleteClan": "Usuń Klan",
   "clan.deleteWarning": "Usuwając klan, usuniesz wszystkie dane z nim połączone, bądź ostrożny, ponieważ ta opcja nie jest odwracalna",
   "common.menu": "Menu",
@@ -331,5 +331,8 @@
   "error.unauthorized": "Nieautoryzowany",
   "clan.lookingForNewMembers": "Szukasz nowych użytkowników? Wyłączenie tej opcji nie pojawia się na liście klanów.",
   "common.showMore": "Pokaż więcej",
-  "trades.noTradesFound": "No trades found"
+  "trades.noTradesFound": "No trades found",
+  "common.damage": "Damage",
+  "common.loadMore": "Load More",
+  "wiki.showingItems": "Showing {{displayed}} of {{total}} items"
 }
