@@ -97,7 +97,7 @@
   "clan.newLeader": "Neuer Leader:",
   "clan.changeLeader": "Leader ändern",
   "common.delete": "Löschen",
-  "common.deleting": "Wird gelöscht...",
+  "common.deleting": "Deleting...",
   "clan.deleteClan": "Gilde löschen",
   "clan.deleteWarning": "Alle verknüpften Daten werden dauerhaft gelöscht",
   "common.menu": "Menü",
@@ -331,5 +331,8 @@
   "error.unauthorized": "Nicht autorisiert",
   "clan.lookingForNewMembers": "Auf der Suche nach neuen Mitgliedern? Durch Deaktivieren dieser Option erscheint der Clan nicht in der Clan-Liste.",
   "common.showMore": "Mehr anzeigen",
-  "trades.noTradesFound": "No trades found"
+  "trades.noTradesFound": "No trades found",
+  "common.damage": "Damage",
+  "common.loadMore": "Load More",
+  "wiki.showingItems": "Showing {{displayed}} of {{total}} items"
 }
