@@ -6,9 +6,9 @@
   width: 150px;
   height: 150px;
   margin: -75px 0 0 -75px;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  border-top-color: #3d3323;
+  border-radius: 0;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: rgba(46, 42, 38, 0.7);
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
@@ -16,26 +16,25 @@
 .loader:before {
   content: "";
   position: absolute;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  border-top-color: #aa946c;
-  -webkit-animation: spin 3s linear infinite;
-  animation: spin 3s linear infinite;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: rgba(194, 165, 124, 0.7);
+  -webkit-animation: spin 3s linear infinite reverse;
+  animation: spin 3s linear infinite reverse;
 }
+
 .loader:after {
   content: "";
   position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  border-top-color: #e32112;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background-color: rgba(217, 95, 50, 0.9);
   -webkit-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
 }

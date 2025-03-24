@@ -1,0 +1,179 @@
+/* Desert Theme Color Utilities */
+
+/* Text Colors */
+.text-theme-primary { @apply text-tribal; }
+.text-theme-secondary { @apply text-sand; }
+.text-theme-light { @apply text-sandLight; }
+.text-theme-dark { @apply text-sandDark; }
+.text-theme-accent { @apply text-nature; }
+
+/* Background Colors */
+.bg-theme-primary { @apply bg-tribal; }
+.bg-theme-secondary { @apply bg-sand; }
+.bg-theme-light { @apply bg-sandLight; }
+.bg-theme-dark { @apply bg-sandDark; }
+.bg-theme-accent { @apply bg-nature; }
+
+/* Border Colors */
+.border-theme-primary { @apply border-tribal; }
+.border-theme-secondary { @apply border-sand; }
+.border-theme-light { @apply border-sandLight; }
+.border-theme-dark { @apply border-sandDark; }
+.border-theme-accent { @apply border-nature; }
+
+/* Ring Focus Colors */
+.ring-theme-primary { @apply ring-tribal; }
+.ring-theme-secondary { @apply ring-sand; }
+.ring-theme-light { @apply ring-sandLight; }
+.ring-theme-dark { @apply ring-sandDark; }
+.ring-theme-accent { @apply ring-nature; }
+
+/* Hover States */
+.hover-text-theme-primary { @apply hover:text-tribal; }
+.hover-text-theme-secondary { @apply hover:text-sand; }
+.hover-text-theme-light { @apply hover:text-sandLight; }
+.hover-text-theme-dark { @apply hover:text-sandDark; }
+.hover-text-theme-accent { @apply hover:text-nature; }
+
+.hover-bg-theme-primary { @apply hover:bg-tribal; }
+.hover-bg-theme-secondary { @apply hover:bg-sand; }
+.hover-bg-theme-light { @apply hover:bg-sandLight; }
+.hover-bg-theme-dark { @apply hover:bg-sandDark; }
+.hover-bg-theme-accent { @apply hover:bg-nature; }
+
+.hover-border-theme-primary { @apply hover:border-tribal; }
+.hover-border-theme-secondary { @apply hover:border-sand; }
+.hover-border-theme-light { @apply hover:border-sandLight; }
+.hover-border-theme-dark { @apply hover:border-sandDark; }
+.hover-border-theme-accent { @apply hover:border-nature; }
+
+/* Replace blue colors with desert theme */
+.text-blue-300 { @apply text-sandLight; }
+.text-blue-400 { @apply text-sand; }
+.text-blue-500 { @apply text-tribal; }
+.text-blue-600 { @apply text-tribal; }
+.text-blue-700 { @apply text-sandDark; }
+
+.bg-blue-300 { @apply bg-sandLight; }
+.bg-blue-400 { @apply bg-sand; }
+.bg-blue-500 { @apply bg-tribal; }
+.bg-blue-600 { @apply bg-tribal; }
+.bg-blue-700 { @apply bg-sandDark; }
+
+.border-blue-300 { @apply border-sandLight; }
+.border-blue-400 { @apply border-sand; }
+.border-blue-500 { @apply border-tribal; }
+.border-blue-600 { @apply border-tribal; }
+.border-blue-700 { @apply border-sandDark; }
+
+.ring-blue-300 { @apply ring-sandLight; }
+.ring-blue-400 { @apply ring-sand; }
+.ring-blue-500 { @apply ring-tribal; }
+.ring-blue-600 { @apply ring-tribal; }
+.ring-blue-700 { @apply ring-sandDark; }
+
+.hover\:text-blue-300:hover { @apply hover:text-sandLight; }
+.hover\:text-blue-400:hover { @apply hover:text-sand; }
+.hover\:text-blue-500:hover { @apply hover:text-tribal; }
+.hover\:text-blue-600:hover { @apply hover:text-tribal; }
+.hover\:text-blue-700:hover { @apply hover:text-sandDark; }
+
+.hover\:bg-blue-300:hover { @apply hover:bg-sandLight; }
+.hover\:bg-blue-400:hover { @apply hover:bg-sand; }
+.hover\:bg-blue-500:hover { @apply hover:bg-tribal; }
+.hover\:bg-blue-600:hover { @apply hover:bg-tribal; }
+.hover\:bg-blue-700:hover { @apply hover:bg-sandDark; }
+
+.hover\:border-blue-300:hover { @apply hover:border-sandLight; }
+.hover\:border-blue-400:hover { @apply hover:border-sand; }
+.hover\:border-blue-500:hover { @apply hover:border-tribal; }
+.hover\:border-blue-600:hover { @apply hover:border-tribal; }
+.hover\:border-blue-700:hover { @apply hover:border-sandDark; }
+
+.focus\:ring-blue-500:focus { @apply focus:ring-tribal; }
+.focus\:ring-blue-600:focus { @apply focus:ring-tribal; }
+.focus\:ring-blue-700:focus { @apply focus:ring-sandDark; }
+.focus\:ring-offset-blue-500:focus { @apply focus:ring-offset-tribal; }
+.focus\:ring-offset-blue-600:focus { @apply focus:ring-offset-tribal; }
+.focus\:ring-offset-blue-700:focus { @apply focus:ring-offset-sandDark; }
+
+/* Replace gray colors with desert theme */
+/* Text Colors */
+.text-gray-300 { @apply text-sandLight; }
+.text-gray-400 { @apply text-sand; }
+.text-gray-500 { @apply text-sand; }
+.text-gray-600 { @apply text-sandDark; }
+.text-gray-700 { @apply text-sandDark; }
+.text-gray-800 { @apply text-charcoal; }
+.text-gray-900 { @apply text-charcoal; }
+
+/* Background Colors */
+.bg-gray-300 { @apply bg-sandLight; }
+.bg-gray-400 { @apply bg-sand; }
+.bg-gray-500 { @apply bg-sand; }
+.bg-gray-600 { @apply bg-sandDark; }
+.bg-gray-700 { @apply bg-sandDark; }
+.bg-gray-800 { @apply bg-charcoal; }
+.bg-gray-850 { @apply bg-charcoal; }
+.bg-gray-900 { @apply bg-dark; }
+
+/* Border Colors */
+.border-gray-300 { @apply border-sandLight; }
+.border-gray-400 { @apply border-sand; }
+.border-gray-500 { @apply border-sand; }
+.border-gray-600 { @apply border-sandDark; }
+.border-gray-700 { @apply border-sandDark; }
+.border-gray-800 { @apply border-charcoal; }
+.border-gray-900 { @apply border-dark; }
+
+/* Ring Colors */
+.ring-gray-300 { @apply ring-sandLight; }
+.ring-gray-400 { @apply ring-sand; }
+.ring-gray-500 { @apply ring-sand; }
+.ring-gray-600 { @apply ring-sandDark; }
+.ring-gray-700 { @apply ring-sandDark; }
+.ring-gray-800 { @apply ring-charcoal; }
+.ring-gray-900 { @apply ring-dark; }
+
+/* Hover Text Colors */
+.hover\:text-gray-300:hover { @apply hover:text-sandLight; }
+.hover\:text-gray-400:hover { @apply hover:text-sand; }
+.hover\:text-gray-500:hover { @apply hover:text-sand; }
+.hover\:text-gray-600:hover { @apply hover:text-sandDark; }
+.hover\:text-gray-700:hover { @apply hover:text-sandDark; }
+.hover\:text-gray-800:hover { @apply hover:text-charcoal; }
+.hover\:text-gray-900:hover { @apply hover:text-charcoal; }
+
+/* Hover Background Colors */
+.hover\:bg-gray-300:hover { @apply hover:bg-sandLight; }
+.hover\:bg-gray-400:hover { @apply hover:bg-sand; }
+.hover\:bg-gray-500:hover { @apply hover:bg-sand; }
+.hover\:bg-gray-600:hover { @apply hover:bg-sandDark; }
+.hover\:bg-gray-700:hover { @apply hover:bg-sandDark; }
+.hover\:bg-gray-800:hover { @apply hover:bg-charcoal; }
+.hover\:bg-charcoal:hover { @apply hover:bg-dark; }
+
+/* Hover Border Colors */
+.hover\:border-gray-300:hover { @apply hover:border-sandLight; }
+.hover\:border-gray-400:hover { @apply hover:border-sand; }
+.hover\:border-gray-500:hover { @apply hover:border-sand; }
+.hover\:border-gray-600:hover { @apply hover:border-sandDark; }
+.hover\:border-gray-700:hover { @apply hover:border-sandDark; }
+.hover\:border-gray-800:hover { @apply hover:border-charcoal; }
+.hover\:border-gray-900:hover { @apply hover:border-dark; }
+
+/* Focus Ring Colors */
+.focus\:ring-gray-300:focus { @apply focus:ring-sandLight; }
+.focus\:ring-gray-400:focus { @apply focus:ring-sand; }
+.focus\:ring-gray-500:focus { @apply focus:ring-sand; }
+.focus\:ring-gray-600:focus { @apply focus:ring-sandDark; }
+.focus\:ring-gray-700:focus { @apply focus:ring-sandDark; }
+.focus\:ring-gray-800:focus { @apply focus:ring-charcoal; }
+.focus\:ring-gray-900:focus { @apply focus:ring-dark; }
+
+/* Placeholder Colors */
+.placeholder-gray-300::placeholder { @apply text-sandLight; }
+.placeholder-gray-400::placeholder { @apply text-sand; }
+.placeholder-gray-500::placeholder { @apply text-sand; }
+.placeholder-gray-600::placeholder { @apply text-sandDark; }
+.placeholder-gray-700::placeholder { @apply text-sandDark; }
