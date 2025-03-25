@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { getMarkers, getStoredItem } from "../../functions/services";
 import ModalMessage from "../ModalMessage";
@@ -293,7 +293,13 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen bg-gray-900">
-        <div className="text-white text-xl">Loading resources...</div>
+        <div
+          className="text-white text-xl flex items-center"
+          aria-live="polite"
+        >
+          <i className="fas fa-circle-notch fa-spin mr-2" />
+          {t("maps.loadingResources")}
+        </div>
       </div>
     );
   }
@@ -317,11 +323,17 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
       <button
         type="button"
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
-        className="lg:hidden absolute top-1 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        aria-label={
+          isOpenSidebar ? t("common.closeSidebar") : t("common.openSidebar")
+        }
+        aria-expanded={isOpenSidebar}
+        aria-controls="resource-map-sidebar"
       >
         <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
       <div
+        id="resource-map-sidebar"
         className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${
           isOpenSidebar ? "translate-x-0" : "translate-x-full lg:translate-x-0"
         }`}
@@ -336,7 +348,11 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
               {t("Return to map list")}
             </button>
           </div>
-          <div className="flex border-b border-gray-700">
+          <div
+            className="flex border-b border-gray-700"
+            role="tablist"
+            aria-label={t("maps.resourceMapTabs")}
+          >
             <button
               type="button"
               className={`flex-1 p-3 text-sm font-medium ${
@@ -345,6 +361,10 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
                   : "text-gray-400 hover:text-gray-300"
               }`}
               onClick={() => setActiveTab("resources")}
+              role="tab"
+              id="tab-resources"
+              aria-controls="panel-resources"
+              aria-selected={activeTab === "resources"}
             >
               {t("Resources")}
             </button>
@@ -356,6 +376,10 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
                   : "text-gray-400 hover:text-gray-300"
               }`}
               onClick={() => setActiveTab("create")}
+              role="tab"
+              id="tab-create"
+              aria-controls="panel-create"
+              aria-selected={activeTab === "create"}
             >
               {t("Create")}
             </button>
@@ -368,34 +392,55 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
                     : "text-gray-400 hover:text-gray-300"
                 }`}
                 onClick={() => setActiveTab("settings")}
+                role="tab"
+                id="tab-settings"
+                aria-controls="panel-settings"
+                aria-selected={activeTab === "settings"}
               >
                 {t("Settings")}
               </button>
             )}
           </div>
           <div className="flex-1 overflow-y-auto p-2">
-            {activeTab === "resources" && (
-              <ResourcesInMapList
-                resources={
-                  resourcesFiltered.length > 0
-                    ? resourcesFiltered
-                    : resourcesInTheMap
-                }
-                onFilter={handleFilterResources}
-                onSelect={(x: number, y: number) => setCenter([x, y])}
-              />
-            )}
-            {activeTab === "create" && (
-              <CreateResourceTab
-                items={items}
-                coordinateXInput={coordinateXInput}
-                coordinateYInput={coordinateYInput}
-                onCreateResource={handleCreateResource}
-                onChangeX={setCoordinateXInput}
-                onChangeY={setCoordinateYInput}
-              />
-            )}
-            {activeTab === "settings" && renderEditMapTab()}
+            <div
+              id="panel-resources"
+              role="tabpanel"
+              aria-labelledby="tab-resources"
+              className={activeTab === "resources" ? "" : "hidden"}
+            >
+              {activeTab === "resources" && (
+                <ResourcesInMapList
+                  resources={resourcesInTheMap}
+                  onFilter={handleFilterResources}
+                  onSelect={(x: number, y: number) => setCenter([x, y])}
+                />
+              )}
+            </div>
+            <div
+              id="panel-create"
+              role="tabpanel"
+              aria-labelledby="tab-create"
+              className={activeTab === "create" ? "" : "hidden"}
+            >
+              {activeTab === "create" && (
+                <CreateResourceTab
+                  items={items}
+                  coordinateXInput={coordinateXInput}
+                  coordinateYInput={coordinateYInput}
+                  onCreateResource={handleCreateResource}
+                  onChangeX={setCoordinateXInput}
+                  onChangeY={setCoordinateYInput}
+                />
+              )}
+            </div>
+            <div
+              id="panel-settings"
+              role="tabpanel"
+              aria-labelledby="tab-settings"
+              className={activeTab === "settings" ? "" : "hidden"}
+            >
+              {activeTab === "settings" && renderEditMapTab()}
+            </div>
           </div>
         </div>
       </div>
@@ -403,4 +448,4 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   );
 };
 
-export default ResourceMap;
+export default memo(ResourceMap);

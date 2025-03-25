@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "5.12.0",
+  "version": "5.13.0",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -69,7 +69,7 @@
   "engines": {
     "node": ">=22.x"
   },
-  "packageManager": "pnpm@10.4.0",
+  "packageManager": "pnpm@10.6.5",
   "pnpm": {
     "ignoredBuiltDependencies": ["cypress"],
     "onlyBuiltDependencies": ["cypress"]

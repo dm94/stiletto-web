@@ -50,6 +50,37 @@
 }
 
 @layer components {
+  /* Custom Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--charcoal);
+    border-radius: 0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--sand-dark);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--tribal);
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: var(--charcoal);
+  }
+
+  /* Firefox scrollbar styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--sand-dark) var(--charcoal);
+  }
+
   /* Card and Modal Styling */
   .card, .modal-content {
     @apply bg-charcoal border-2 border-tribal rounded-none;

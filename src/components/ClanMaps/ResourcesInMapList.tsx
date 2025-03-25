@@ -54,10 +54,11 @@ const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({
       >
         <button
           type="button"
-          className="w-full p-2 text-gray-300 hover:text-white focus:outline-none"
+          className="w-full p-2 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           onClick={() => handleResourceSelect(resource)}
+          aria-label={`${t(resource.resourcetype)} at coordinates ${Math.floor(resource.x)},${Math.floor(resource.y)}`}
         >
-          <Icon name={resource.resourcetype} />
+          <Icon name={resource.resourcetype} aria-hidden="true" />
           {t(resource.resourcetype)}
         </button>
       </li>
@@ -89,8 +90,10 @@ const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({
             : "bg-gray-700 text-gray-300 hover:bg-gray-600"
         }`}
         onClick={() => filterTheResources(type)}
+        aria-pressed={type === resourceTypeFilter}
+        aria-label={`${t("common.filter")}: ${t(type)}`}
       >
-        <Icon name={type} />
+        <Icon name={type} aria-hidden="true" />
         {t(type)}
       </button>
     ));
