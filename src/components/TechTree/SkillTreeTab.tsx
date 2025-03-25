@@ -1,6 +1,10 @@
 import type React from "react";
 import { useCallback } from "react";
-import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
+import {
+  SkillTreeGroup,
+  SkillTree,
+  SkillProvider,
+} from "../../utils/beautiful-skill-tree";
 import { useTranslation } from "react-i18next";
 import Ingredients from "../Ingredients";
 import Icon from "../Icon";
@@ -80,11 +84,7 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
     );
   };
 
-  const handleSave = (
-    storage: Storage,
-    id: string,
-    skills: any,
-  ): void => {
+  const handleSave = (storage: Storage, id: string, skills: any): void => {
     storage.setItem(`skills-${id}`, JSON.stringify(skills));
   };
 
@@ -93,7 +93,9 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
       return item.crafting.map((ingredients) => (
         <div
           className={
-            item.crafting && item.crafting?.length > 1 ? "col-xl-6 border" : "col-xl-12"
+            item.crafting && item.crafting?.length > 1
+              ? "col-xl-6 border"
+              : "col-xl-12"
           }
           key={`skill-ingredient-${item.name}`}
         >
@@ -113,7 +115,7 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
             title={title}
             data={getChildrens(treeId)}
             handleSave={(storage: any, treeId: string, skills: any) => {
-              if ('setItem' in storage) {
+              if ("setItem" in storage) {
                 handleSave(storage as Storage, treeId, skills);
               }
             }}
