@@ -1,13 +1,13 @@
 import { getStoredItem } from "../../services";
-import { config } from "../../../config/config";
+import { config } from "@config/config";
 import type {
   MemberAction,
   MemberInfo,
   UpdateMemberPermissionsQueryParams,
   Permissions,
-} from "../../../types/dto/members";
+} from "@ctypes/dto/members";
 import { objectToURLSearchParams } from "../../utils";
-import type { GenericResponse } from "../../../types/dto/generic";
+import type { GenericResponse } from "@ctypes/dto/generic";
 
 export const getMembers = async (clanId: number): Promise<MemberInfo[]> => {
   const response = await fetch(

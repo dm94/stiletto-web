@@ -4,12 +4,12 @@ import { useTranslation } from "react-i18next";
 import {
   getDiscordConfig,
   updateBotConfig,
-} from "../../functions/requests/clans/discordbot";
+} from "@functions/requests/clans/discordbot";
 import {
   Languages,
   type UpdateBotConfigParams,
   type DiscordConfig as DiscordConfigType,
-} from "../../types/dto/discordConfig";
+} from "@ctypes/dto/discordConfig";
 
 interface DiscordConfigProps {
   clanid: number;

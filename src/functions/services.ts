@@ -1,6 +1,6 @@
-import type { MapJsonInfo } from "../types/dto/maps";
-import type { Marker } from "../types/dto/marker";
-import type { Item } from "../types/item";
+import type { MapJsonInfo } from "@ctypes/dto/maps";
+import type { Marker } from "@ctypes/dto/marker";
+import type { Item } from "@ctypes/item";
 
 const timeCheck = 300000;
 const resourceCacheTimeCheck = 86400000;

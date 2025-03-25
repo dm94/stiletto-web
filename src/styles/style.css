@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Okami";
-  src: url("../fonts/okami.otf") format("opentype");
+  src: url("../assets/fonts/okami.otf") format("opentype");
   font-display: swap;
   font-style: normal;
   font-weight: normal;

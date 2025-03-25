@@ -1,7 +1,7 @@
 import type React from "react";
 import { memo } from "react";
 import ClanName from "../ClanName";
-import type { RelationshipInfo } from "../../types/dto/relationship";
+import type { RelationshipInfo } from "@ctypes/dto/relationship";
 
 interface ClanSelectProps {
   isLeader: boolean;

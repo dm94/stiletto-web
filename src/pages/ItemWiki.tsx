@@ -6,34 +6,34 @@ import React, {
   useCallback,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { getItems } from "../functions/services";
+import { getItems } from "@functions/services";
 import { Navigate, useParams } from "react-router";
-import Ingredients from "../components/Ingredients";
-import Station from "../components/Station";
-import Icon from "../components/Icon";
-import CraftingTime from "../components/CraftingTime";
-import LoadingScreen from "../components/LoadingScreen";
-import ModuleInfo from "../components/Wiki/ModuleInfo";
-import ToolInfo from "../components/Wiki/ToolInfo";
-import GenericInfo from "../components/Wiki/GenericInfo";
-import Comments from "../components/Wiki/Comments";
+import Ingredients from "@components/Ingredients";
+import Station from "@components/Station";
+import Icon from "@components/Icon";
+import CraftingTime from "@components/CraftingTime";
+import LoadingScreen from "@components/LoadingScreen";
+import ModuleInfo from "@components/Wiki/ModuleInfo";
+import ToolInfo from "@components/Wiki/ToolInfo";
+import GenericInfo from "@components/Wiki/GenericInfo";
+import Comments from "@components/Wiki/Comments";
 import { calcRarityValue } from "../rarityCalc";
-import { getItemUrl, getItemCraftUrl } from "../functions/utils";
-import HeaderMeta from "../components/HeaderMeta";
-import { type Item, Rarity } from "../types/item";
+import { getItemUrl, getItemCraftUrl } from "@functions/utils";
+import HeaderMeta from "@components/HeaderMeta";
+import { type Item, Rarity } from "@ctypes/item";
 
 const WikiDescription = React.lazy(
-  () => import("../components/Wiki/WikiDescription"),
+  () => import("@components/Wiki/WikiDescription"),
 );
 const SchematicDropInfo = React.lazy(
-  () => import("../components/Wiki/SchematicDropInfo"),
+  () => import("@components/Wiki/SchematicDropInfo"),
 );
-const DropsInfo = React.lazy(() => import("../components/Wiki/DropsInfo"));
+const DropsInfo = React.lazy(() => import("@components/Wiki/DropsInfo"));
 const CanBeUsedInfo = React.lazy(
-  () => import("../components/Wiki/CanBeUsedInfo"),
+  () => import("@components/Wiki/CanBeUsedInfo"),
 );
 const SchematicItems = React.lazy(
-  () => import("../components/Wiki/SchematicItems"),
+  () => import("@components/Wiki/SchematicItems"),
 );
 
 const ItemWiki = () => {

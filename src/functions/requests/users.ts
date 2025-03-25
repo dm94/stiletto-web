@@ -1,9 +1,9 @@
 import { getStoredItem } from "../services";
-import { config } from "../../config/config";
-import type { TechTreeInfo, Tree } from "../../types/dto/tech";
-import type { LoginInfo, UserInfo } from "../../types/dto/users";
+import { config } from "@config/config";
+import type { TechTreeInfo, Tree } from "@ctypes/dto/tech";
+import type { LoginInfo, UserInfo } from "@ctypes/dto/users";
 import { objectToURLSearchParams } from "../utils";
-import type { GenericResponse } from "../../types/dto/generic";
+import type { GenericResponse } from "@ctypes/dto/generic";
 
 export const getUser = async (): Promise<UserInfo> => {
   const response = await fetch(`${config.REACT_APP_API_URL}/users`, {

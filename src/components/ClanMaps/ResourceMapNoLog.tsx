@@ -2,22 +2,22 @@ import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getMarkers } from "../../functions/services";
+import { getMarkers } from "@functions/services";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
-import "../../styles/map-sidebar.css";
+import "@styles/map-sidebar.css";
 import { useLocation, useParams } from "react-router";
-import type { Marker } from "../../types/dto/marker";
-import type { ResourceInfo } from "../../types/dto/resources";
+import type { Marker } from "@ctypes/dto/marker";
+import type { ResourceInfo } from "@ctypes/dto/resources";
 import {
   addResourceMap,
   deleteResource,
   editResource,
   getResources,
-} from "../../functions/requests/maps/resources";
+} from "@functions/requests/maps/resources";
 
 interface ResourceMapNoLogProps {
   mapId?: number;

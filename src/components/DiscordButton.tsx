@@ -1,9 +1,9 @@
 import type React from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
-import { getStoredItem } from "../functions/services";
-import { getDomain } from "../functions/utils";
-import { config } from "../config/config";
+import { getStoredItem } from "@functions/services";
+import { getDomain } from "@functions/utils";
+import { config } from "@config/config";
 
 const DiscordButton: React.FC = () => {
   const { t } = useTranslation();

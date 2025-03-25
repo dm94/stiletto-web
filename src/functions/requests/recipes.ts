@@ -1,5 +1,5 @@
-import { config } from "../../config/config";
-import type { Recipe, RecipeListInfo } from "../../types/dto/recipe";
+import { config } from "@config/config";
+import type { Recipe, RecipeListInfo } from "@ctypes/dto/recipe";
 
 export const addRecipe = async (items: Recipe[]): Promise<RecipeListInfo> => {
   const response = await fetch(`${config.REACT_APP_API_URL}/recipes`, {

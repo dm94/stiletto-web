@@ -4,8 +4,8 @@ import Ingredients from "../Ingredients";
 import Icon from "../Icon";
 import CraftingTime from "../CraftingTime";
 import Station from "../Station";
-import { getDomain } from "../../functions/utils";
-import type { CraftItem } from "../../types/item";
+import { getDomain } from "@functions/utils";
+import type { CraftItem } from "@ctypes/item";
 
 interface SelectedItemProps {
   item: CraftItem;
@@ -28,9 +28,7 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
     return item.crafting.map((ingredients, i) => (
       <div
         className={`${
-          moreThanOne
-            ? "w-full border-l-4 border-green-500"
-            : "w-full"
+          moreThanOne ? "w-full border-l-4 border-green-500" : "w-full"
         } p-4 bg-gray-900 rounded-lg relative`}
         key={`${item.name}-${item.count}-${i}`}
       >
@@ -129,7 +127,9 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
                 type="number"
                 className="w-24 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold text-lg"
                 value={item.count}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeCount(item.name, Number.parseInt(e.target.value))}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  onChangeCount(item.name, Number.parseInt(e.target.value))
+                }
                 min="1"
                 max="9999"
               />

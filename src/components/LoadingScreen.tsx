@@ -1,5 +1,5 @@
 import type React from "react";
-import "../styles/loading-screen.css";
+import "@styles/loading-screen.css";
 
 const LoadingScreen: React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import { getStoredItem } from "../../functions/services";
-import type { MemberInfo } from "../../types/dto/members";
+import { getStoredItem } from "@functions/services";
+import type { MemberInfo } from "@ctypes/dto/members";
 
 interface MemberListItemProps {
   member: MemberInfo;

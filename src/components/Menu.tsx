@@ -3,9 +3,9 @@ import { useState, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
-import { getStoredItem } from "../functions/services";
-import { supportedLanguages } from "../config/languages";
-import type { Language } from "../types";
+import { getStoredItem } from "@functions/services";
+import { supportedLanguages } from "@config/languages";
+import type { Language } from "@ctypes/index";
 
 interface MenuProps {
   setRedirectTo?: (url: string) => void;

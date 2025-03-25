@@ -1,11 +1,11 @@
 import { getStoredItem } from "../../services";
-import { config } from "../../../config/config";
+import { config } from "@config/config";
 import type {
   DiscordConfig,
   UpdateBotConfigParams,
-} from "../../../types/dto/discordConfig";
+} from "@ctypes/dto/discordConfig";
 import { objectToURLSearchParams } from "../../utils";
-import type { GenericResponse } from "../../../types/dto/generic";
+import type { GenericResponse } from "@ctypes/dto/generic";
 
 export const getDiscordConfig = async (
   clanid: number,

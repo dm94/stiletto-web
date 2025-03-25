@@ -1,10 +1,10 @@
-import { config } from "../../../config/config";
-import type { GenericResponse } from "../../../types/dto/generic";
+import { config } from "@config/config";
+import type { GenericResponse } from "@ctypes/dto/generic";
 import type {
   AddResourceMapRequestParams,
   EditResourceRequestParams,
   ResourceInfo,
-} from "../../../types/dto/resources";
+} from "@ctypes/dto/resources";
 import { objectToURLSearchParams } from "../../utils";
 
 export const getResources = async (

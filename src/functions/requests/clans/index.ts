@@ -1,13 +1,13 @@
 import { getStoredItem } from "../../services";
-import { config } from "../../../config/config";
+import { config } from "@config/config";
 import { objectToURLSearchParams } from "../../utils";
-import type { GenericResponse } from "../../../types/dto/generic";
+import type { GenericResponse } from "@ctypes/dto/generic";
 import type {
   ClanInfo,
   CreateClanRequestParams,
   GetClansRequestParams,
   UpdateClanRequestParams,
-} from "../../../types/dto/clan";
+} from "@ctypes/dto/clan";
 
 export const getClanInfo = async (clanid: number): Promise<ClanInfo> => {
   const response = await fetch(`${config.REACT_APP_API_URL}/clans/${clanid}`, {
