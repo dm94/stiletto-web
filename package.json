@@ -28,7 +28,8 @@
     "react-helmet": "6.1.0",
     "react-i18next": "15.4.1",
     "react-leaflet": "2.8.0",
-    "react-router": "^7.3.0"
+    "react-router": "^7.3.0",
+    "styled-components": "^6.1.16"
   },
   "scripts": {
     "dev": "vite",
@@ -41,7 +42,11 @@
     "lint": "biome lint --write ./src"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -73,7 +78,11 @@
   },
   "packageManager": "pnpm@10.6.5",
   "pnpm": {
-    "ignoredBuiltDependencies": ["cypress"],
-    "onlyBuiltDependencies": ["cypress"]
+    "ignoredBuiltDependencies": [
+      "cypress"
+    ],
+    "onlyBuiltDependencies": [
+      "cypress"
+    ]
   }
 }
