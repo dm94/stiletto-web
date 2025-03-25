@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "5.12.0",
+  "version": "5.13.0",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -41,11 +41,7 @@
     "lint": "biome lint --write ./src"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -75,11 +71,7 @@
   },
   "packageManager": "pnpm@10.6.5",
   "pnpm": {
-    "ignoredBuiltDependencies": [
-      "cypress"
-    ],
-    "onlyBuiltDependencies": [
-      "cypress"
-    ]
+    "ignoredBuiltDependencies": ["cypress"],
+    "onlyBuiltDependencies": ["cypress"]
   }
 }
