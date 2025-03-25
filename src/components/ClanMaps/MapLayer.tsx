@@ -156,6 +156,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
                     resource?.token ?? "",
                   )
                 }
+                aria-label={`${t("common.delete")} ${t(resource.resourcetype)} ${t("common.at")} ${Math.floor(resource.x)},${Math.floor(resource.y)}`}
               >
                 {t("common.delete")}
               </button>

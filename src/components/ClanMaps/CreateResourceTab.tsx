@@ -144,6 +144,7 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
           className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           type="submit"
           value="Submit"
+          aria-label={t("resources.createResource")}
         >
           {t("resources.createResource")}
         </button>

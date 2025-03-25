@@ -203,7 +203,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       <button
         type="button"
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
-        className="lg:hidden absolute top-1 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
@@ -240,7 +240,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
           <div className="flex-1 overflow-y-auto p-2">
             {activeTab === "resources" && (
               <ResourcesInMapList
-                resources={resourcesFiltered || resourcesInTheMap}
+                resources={resourcesInTheMap}
                 onSelect={(x, y) => setCenter([x, y])}
                 onFilter={handleFilterResources}
               />
