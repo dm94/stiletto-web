@@ -33,7 +33,7 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "cypress": "cypress open",
     "cypress:test": "cypress run",
