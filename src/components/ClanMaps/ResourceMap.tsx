@@ -84,10 +84,9 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     lastHarvested: string,
   ) => {
     try {
-      await addResourceMap(Number(map?.mapid), {
+      await addResourceMap(Number(map?.mapid), pass ?? "", {
         x: coordinateXInput,
         y: coordinateYInput,
-        mappass: pass ?? "",
         resourcetype: resourceTypeInput,
         quality: qualityInput,
         description: descriptionInput,

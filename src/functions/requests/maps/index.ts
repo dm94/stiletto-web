@@ -3,7 +3,7 @@ import type { GenericResponse } from "../../../types/dto/generic";
 import type {
   AddMapRequestParams,
   AddMapResponse,
-  EditMapRequestParams,
+  EditMapRequestBody,
   MapInfo,
 } from "../../../types/dto/maps";
 import { getStoredItem } from "../../services";
@@ -69,23 +69,19 @@ export const getMap = async (
 
 export const editMap = async (
   mapId: number,
-  requestParams: EditMapRequestParams,
+  requestBody: EditMapRequestBody,
 ): Promise<GenericResponse> => {
-  const url = new URL(`${config.REACT_APP_API_URL}/maps/${mapId}`);
-  for (const key in requestParams) {
-    url.searchParams.append(
-      key,
-      String(requestParams[key as keyof EditMapRequestParams]),
-    );
-  }
-
   const headers = getStoredItem("token")
-    ? { Authorization: `Bearer ${getStoredItem("token")}` }
-    : {};
+    ? {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+        "Content-Type": "application/json",
+      }
+    : { "Content-Type": "application/json" };
 
-  const response = await fetch(url, {
+  const response = await fetch(`${config.REACT_APP_API_URL}/maps/${mapId}`, {
     method: "PUT",
     headers: headers as Record<string, string>,
+    body: JSON.stringify(requestBody),
   });
 
   if (response) {

@@ -1,10 +1,11 @@
 import { config } from "../../../config/config";
 import type { GenericResponse } from "../../../types/dto/generic";
 import type {
-  AddResourceMapRequestParams,
-  EditResourceRequestParams,
+  AddResourceMapRequestBody,
+  EditResourceRequestBody,
   ResourceInfo,
 } from "../../../types/dto/resources";
+import { getStoredItem } from "../../services";
 import { objectToURLSearchParams } from "../../utils";
 
 export const getResources = async (
@@ -30,17 +31,25 @@ export const getResources = async (
 
 export const addResourceMap = async (
   mapId: number,
-  requestParams: AddResourceMapRequestParams,
+  mappass: string,
+  requestBody: AddResourceMapRequestBody,
 ): Promise<GenericResponse> => {
-  const params = objectToURLSearchParams(requestParams);
+  const headers = getStoredItem("token")
+    ? {
+        Authorization: `Bearer ${getStoredItem("token")}`,
+        "Content-Type": "application/json",
+      }
+    : { "Content-Type": "application/json" };
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/maps/${mapId}/resources?${params}`,
+    `${config.REACT_APP_API_URL}/maps/${mapId}/resources?mappass=${mappass}`,
     {
       method: "POST",
+      headers: headers as Record<string, string>,
+      body: JSON.stringify(requestBody),
     },
   );
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 
@@ -50,17 +59,19 @@ export const addResourceMap = async (
 export const editResource = async (
   mapId: number,
   resourceId: number,
-  requestParams: EditResourceRequestParams,
+  requestBody: EditResourceRequestBody,
 ): Promise<GenericResponse> => {
-  const params = objectToURLSearchParams(requestParams);
-
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}?${params}`,
+    `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}`,
     {
       method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
     },
   );
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 
@@ -71,7 +82,7 @@ export const deleteResource = async (
   mapId: number,
   resourceId: number,
   token: string,
-): Promise<Response> => {
+): Promise<boolean> => {
   const params = new URLSearchParams({
     token,
   });
@@ -83,8 +94,8 @@ export const deleteResource = async (
     },
   );
 
-  if (response) {
-    return await response.json();
+  if (response.ok) {
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
