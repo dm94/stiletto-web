@@ -12,7 +12,7 @@ export const getUser = async (): Promise<UserInfo> => {
     },
   });
 
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 

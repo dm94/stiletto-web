@@ -33,7 +33,8 @@ const PrivateProfile = () => {
         const response = await getUser();
         setUserData(response);
       } catch {
-        setError("errors.apiConnection");
+        setError("auth.loginAgain1");
+        closeSession();
       } finally {
         setIsLoaded(true);
       }
