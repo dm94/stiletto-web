@@ -20,31 +20,33 @@ export const getUser = async (): Promise<UserInfo> => {
   throw new Error("errors.apiConnection");
 };
 
-export const addNick = async (newNick: string): Promise<GenericResponse> => {
-  const params = objectToURLSearchParams({
-    dataupdate: newNick,
-  });
-
-  const response = await fetch(`${config.REACT_APP_API_URL}/users?${params}`, {
+export const addNick = async (newNick: string): Promise<boolean> => {
+  const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
     method: "PUT",
-    headers: { Authorization: `Bearer ${getStoredItem("token")}` },
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      dataupdate: newNick,
+    }),
   });
 
-  if (response) {
-    return await response.json();
+  if (response.ok) {
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
 };
 
-export const deleteUser = async (): Promise<GenericResponse> => {
+export const deleteUser = async (): Promise<boolean> => {
   const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${getStoredItem("token")}` },
   });
 
-  if (response) {
-    return await response.json();
+  if (response.ok) {
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
