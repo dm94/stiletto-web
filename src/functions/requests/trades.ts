@@ -27,25 +27,23 @@ export const getTrades = async (
 export const createTrade = async (
   requestParams: CreateTradeRequestParams,
 ): Promise<GenericResponse> => {
-  const params = objectToURLSearchParams(requestParams);
-
-  const response = await fetch(`${config.REACT_APP_API_URL}/trades?${params}`, {
+  const response = await fetch(`${config.REACT_APP_API_URL}/trades`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
+      "Content-Type": "application/json",
     },
+    body: JSON.stringify(requestParams),
   });
 
-  if (response) {
+  if (response?.ok) {
     return await response.json();
   }
 
   throw new Error("errors.apiConnection");
 };
 
-export const deleteTrade = async (
-  tradeId: number,
-): Promise<GenericResponse> => {
+export const deleteTrade = async (tradeId: number): Promise<boolean> => {
   const response = await fetch(
     `${config.REACT_APP_API_URL}/trades/${tradeId}`,
     {
@@ -56,8 +54,8 @@ export const deleteTrade = async (
     },
   );
 
-  if (response) {
-    return await response.json();
+  if (response.ok) {
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
