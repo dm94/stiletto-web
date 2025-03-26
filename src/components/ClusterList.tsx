@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect } from "react";
-import { getClusters } from "../functions/requests/clusters";
+import { getClusters } from "@functions/requests/clusters";
 
 interface Cluster {
   region: string;

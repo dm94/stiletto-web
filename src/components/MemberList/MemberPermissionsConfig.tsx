@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 import {
   getMemberPermissions,
   updateMemberPermissions,
-} from "../../functions/requests/clans/members";
-import type { MemberPermissions } from "../../types/dto/members";
+} from "@functions/requests/clans/members";
+import type { MemberPermissions } from "@ctypes/dto/members";
 
 interface MemberPermissionsConfigProps {
   clanid: number;

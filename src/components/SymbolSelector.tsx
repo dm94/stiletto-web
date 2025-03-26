@@ -1,5 +1,5 @@
 import type React from "react";
-import { config } from "../config/config";
+import { config } from "@config/config";
 
 interface SymbolSelectorProps {
   selectedSymbol: string;

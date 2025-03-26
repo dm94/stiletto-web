@@ -2,7 +2,7 @@ import type React from "react";
 import { useRef, memo } from "react";
 import Item from "./Item";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import type { Item as ItemType } from "../../types/item";
+import type { Item as ItemType } from "@ctypes/item";
 
 interface ItemsProps {
   items: ItemType[];

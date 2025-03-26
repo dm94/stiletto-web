@@ -1,12 +1,12 @@
 import { getStoredItem } from "../services";
-import { config } from "../../config/config";
+import { config } from "@config/config";
 import type {
   CreateTradeRequestParams,
   GetTradesQueryParams,
   TradeInfo,
-} from "../../types/dto/trades";
+} from "@ctypes/dto/trades";
 import { objectToURLSearchParams } from "../utils";
-import type { GenericResponse } from "../../types/dto/generic";
+import type { GenericResponse } from "@ctypes/dto/generic";
 
 export const getTrades = async (
   queryParams: GetTradesQueryParams,

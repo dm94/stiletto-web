@@ -1,7 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import { supportedLanguages } from "../config/languages";
-import type { Language } from "../types";
+import { supportedLanguages } from "@config/languages";
+import type { Language } from "@ctypes/index";
 
 interface ChangeLanguageModalProps {
   switchLanguage?: (languageKey: string) => void;

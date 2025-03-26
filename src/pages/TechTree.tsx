@@ -8,19 +8,19 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useParams } from "react-router";
-import { getItems, getStoredItem, storeItem } from "../functions/services";
-import LoadingScreen from "../components/LoadingScreen";
-import ModalMessage from "../components/ModalMessage";
-import Icon from "../components/Icon";
-import DoubleScrollbar from "../components/TechTree/DoubleScrollbar";
-import { getDomain } from "../functions/utils";
-import { getLearned, addTech, getUser } from "../functions/requests/users";
-import HeaderMeta from "../components/HeaderMeta";
-import type { Item } from "../types/item";
-import { Tree } from "../types/dto/tech";
+import { getItems, getStoredItem, storeItem } from "@functions/services";
+import LoadingScreen from "@components/LoadingScreen";
+import ModalMessage from "@components/ModalMessage";
+import Icon from "@components/Icon";
+import DoubleScrollbar from "@components/TechTree/DoubleScrollbar";
+import { getDomain } from "@functions/utils";
+import { getLearned, addTech, getUser } from "@functions/requests/users";
+import HeaderMeta from "@components/HeaderMeta";
+import type { Item } from "@ctypes/item";
+import { Tree } from "@ctypes/dto/tech";
 
 const SkillTreeTab = React.lazy(
-  () => import("../components/TechTree/SkillTreeTab"),
+  () => import("@components/TechTree/SkillTreeTab"),
 );
 
 const TechTree = () => {

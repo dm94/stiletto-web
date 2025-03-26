@@ -3,7 +3,7 @@ import { memo } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import ClanName from "../ClanName";
-import type { ClanInfo } from "../../types/dto/clan";
+import type { ClanInfo } from "@ctypes/dto/clan";
 
 interface ClanListItemProps {
   isLogged?: boolean;

@@ -1,7 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
-import type { Item as ItemType } from "../../types/item";
+import type { Item as ItemType } from "@ctypes/item";
 
 interface ItemProps {
   item: ItemType | null;

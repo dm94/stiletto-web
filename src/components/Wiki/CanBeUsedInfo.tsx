@@ -2,7 +2,7 @@ import type React from "react";
 import { useEffect, useState, useMemo, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Ingredient from "../Ingredient";
-import type { CustomItem } from "../../types";
+import type { CustomItem } from "@ctypes";
 
 interface CanBeUsedInfoProps {
   name: string;

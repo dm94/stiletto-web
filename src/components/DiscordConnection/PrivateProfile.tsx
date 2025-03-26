@@ -8,13 +8,13 @@ import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";
 import ClanConfig from "../ClanConfig";
-import { getDomain } from "../../functions/utils";
-import { deleteUser, addNick, getUser } from "../../functions/requests/users";
-import { leaveClan } from "../../functions/requests/clans";
-import { supportedLanguages } from "../../config/languages";
-import { closeSession, getStoredItem } from "../../functions/services";
-import { DEFAULT_LANGUAGE } from "../../config/config";
-import type { UserInfo } from "../../types/dto/users";
+import { getDomain } from "@functions/utils";
+import { deleteUser, addNick, getUser } from "@functions/requests/users";
+import { leaveClan } from "@functions/requests/clans";
+import { supportedLanguages } from "@config/languages";
+import { closeSession, getStoredItem } from "@functions/services";
+import { DEFAULT_LANGUAGE } from "@config/config";
+import type { UserInfo } from "@ctypes/dto/users";
 
 const PrivateProfile = () => {
   const { t, i18n } = useTranslation();

@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState, useEffect, useMemo, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { getExternalWikiDescription } from "../../functions/requests/other";
+import { getExternalWikiDescription } from "@functions/requests/other";
 
 interface WikiDescriptionProps {
   name: string;

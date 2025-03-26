@@ -1,9 +1,9 @@
 import type {
   SeeWhoHasLearntItRequestParams,
   TechUserInfo,
-} from "../../../types/dto/tech";
+} from "@ctypes/dto/tech";
 import { objectToURLSearchParams } from "../../utils";
-import { config } from "../../../config/config";
+import { config } from "@config/config";
 import { getStoredItem } from "../../services";
 
 export const seeWhoHasLearntIt = async (

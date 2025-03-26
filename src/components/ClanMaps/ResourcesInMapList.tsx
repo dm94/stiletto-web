@@ -2,7 +2,7 @@ import type React from "react";
 import { useState, Fragment, useCallback, useMemo, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
-import type { ResourceInfo } from "../../types/dto/resources";
+import type { ResourceInfo } from "@ctypes/dto/resources";
 
 interface ResourcesInMapListProps {
   resources: ResourceInfo[];

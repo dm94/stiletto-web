@@ -1,12 +1,12 @@
 import { getStoredItem } from "../services";
-import { config } from "../../config/config";
+import { config } from "@config/config";
 import type {
   GetWalkersRequestParams,
   EditWalkerRequestBody,
   WalkerInfo,
-} from "../../types/dto/walkers";
+} from "@ctypes/dto/walkers";
 import { objectToURLSearchParams } from "../utils";
-import type { GenericResponse } from "../../types/dto/generic";
+import type { GenericResponse } from "@ctypes/dto/generic";
 
 export const getWalkers = async (
   requestParams: GetWalkersRequestParams,

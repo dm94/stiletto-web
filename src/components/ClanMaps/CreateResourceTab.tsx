@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
-import type { Marker } from "../../types/dto/marker";
+import type { Marker } from "@ctypes/dto/marker";
 
 interface CreateResourceTabProps {
   items: Marker[];

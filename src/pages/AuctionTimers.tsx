@@ -1,8 +1,8 @@
 import { useState, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import Timer from "../components/AuctionTimers/Timer";
-import { getDomain } from "../functions/utils";
+import Timer from "@components/AuctionTimers/Timer";
+import { getDomain } from "@functions/utils";
 
 const AuctionTimers = memo(() => {
   const { t } = useTranslation();

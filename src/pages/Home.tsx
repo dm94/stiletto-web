@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { memo, useMemo } from "react";
 import Others from "./Others";
-import { getStoredItem } from "../functions/services";
-import { getDomain } from "../functions/utils";
+import { getStoredItem } from "@functions/services";
+import { getDomain } from "@functions/utils";
 import { Link } from "react-router";
 
 const Home: React.FC = () => {

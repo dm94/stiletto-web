@@ -1,7 +1,7 @@
 import type React from "react";
 import { memo, useCallback, useMemo } from "react";
 import type { MouseEvent } from "react";
-import type { MapJsonInfo } from "../../types/dto/maps";
+import type { MapJsonInfo } from "@ctypes/dto/maps";
 
 interface MapSelectListProps {
   maps: MapJsonInfo[];
