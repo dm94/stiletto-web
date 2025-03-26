@@ -36,16 +36,14 @@ export const createTrade = async (
     body: JSON.stringify(requestParams),
   });
 
-  if (response) {
+  if (response?.ok) {
     return await response.json();
   }
 
   throw new Error("errors.apiConnection");
 };
 
-export const deleteTrade = async (
-  tradeId: number,
-): Promise<GenericResponse> => {
+export const deleteTrade = async (tradeId: number): Promise<boolean> => {
   const response = await fetch(
     `${config.REACT_APP_API_URL}/trades/${tradeId}`,
     {
@@ -56,8 +54,8 @@ export const deleteTrade = async (
     },
   );
 
-  if (response) {
-    return await response.json();
+  if (response.ok) {
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
