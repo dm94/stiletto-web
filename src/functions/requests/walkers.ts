@@ -2,7 +2,7 @@ import { getStoredItem } from "../services";
 import { config } from "../../config/config";
 import type {
   GetWalkersRequestParams,
-  EditWalkerRequestParams,
+  EditWalkerRequestBody,
   WalkerInfo,
 } from "../../types/dto/walkers";
 import { objectToURLSearchParams } from "../utils";
@@ -31,30 +31,28 @@ export const getWalkers = async (
 
 export const editWalker = async (
   walkerId: string,
-  requestParams: EditWalkerRequestParams,
+  requestParams: EditWalkerRequestBody,
 ): Promise<GenericResponse> => {
-  const params = objectToURLSearchParams(requestParams);
-
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/walkers/${walkerId}?${params}`,
+    `${config.REACT_APP_API_URL}/walkers/${walkerId}`,
     {
       method: "PUT",
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
+        "Content-Type": "application/json",
       },
+      body: JSON.stringify(requestParams),
     },
   );
 
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 
   throw new Error("errors.apiConnection");
 };
 
-export const deleteWalker = async (
-  walkerId: string,
-): Promise<GenericResponse> => {
+export const deleteWalker = async (walkerId: string): Promise<boolean> => {
   const response = await fetch(
     `${config.REACT_APP_API_URL}/walkers/${walkerId}`,
     {
@@ -66,7 +64,7 @@ export const deleteWalker = async (
   );
 
   if (response) {
-    return await response.json();
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
