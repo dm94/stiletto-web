@@ -106,12 +106,15 @@ export const addTech = async (
 };
 
 export const authDiscord = async (code: string): Promise<LoginInfo> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/users/auth?code=${code}`,
-    {
-      method: "POST",
+  const response = await fetch(`${config.REACT_APP_API_URL}/users/auth`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
-  );
+    body: JSON.stringify({
+      code: code,
+    }),
+  });
 
   if (response) {
     return await response.json();
