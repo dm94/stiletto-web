@@ -69,7 +69,7 @@ export const getLearned = async (
     },
   );
 
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 
