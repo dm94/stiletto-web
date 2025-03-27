@@ -76,14 +76,17 @@ const TechTree = () => {
           if (userData?.discordid) {
             setDiscordId(userData.discordid);
 
-            const response = await getLearned(userData.discordid, tabSelect);
-
-            if (response) {
-              updateLearnedTree("Vitamins", response.Vitamins);
-              updateLearnedTree("Equipment", response.Equipment);
-              updateLearnedTree("Crafting", response.Crafting);
-              updateLearnedTree("Construction", response.Construction);
-              updateLearnedTree("Walkers", response.Walkers);
+            try {
+              const response = await getLearned(userData.discordid, tabSelect);
+              if (response) {
+                updateLearnedTree("Vitamins", response.Vitamins);
+                updateLearnedTree("Equipment", response.Equipment);
+                updateLearnedTree("Crafting", response.Crafting);
+                updateLearnedTree("Construction", response.Construction);
+                updateLearnedTree("Walkers", response.Walkers);
+              }
+            } catch {
+              // Silent error
             }
           }
         }
