@@ -8,8 +8,7 @@ import "./styles/desert-theme.css";
 import { BrowserRouter } from "react-router";
 import "./i18n";
 
-const root = createRoot(document.getElementById("root") as HTMLElement);
-root.render(
+createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
     <CrafterApp />
   </BrowserRouter>,
