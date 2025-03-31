@@ -3,7 +3,7 @@ const {
   REACT_APP_RESOURCES_URL,
   REACT_APP_DISCORD_CLIENT_ID,
   REACT_APP_PLAUSIBLE_URL,
-} = process.env;
+} = import.meta.env;
 
 export const config = {
   REACT_APP_API_URL,
