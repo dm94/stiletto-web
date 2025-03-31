@@ -86,7 +86,6 @@ const Wiki = () => {
       const parsed = queryString.parse(location.search);
 
       if (parsed?.s) {
-        setSearchText(String(parsed.s));
         searchItems(String(parsed.s), "All");
       }
     } else if (items.length > 0) {
