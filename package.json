@@ -16,7 +16,7 @@
     "@giscus/react": "3.1.0",
     "@tanstack/react-virtual": "^3.13.5",
     "beautiful-skill-tree": "1.7.1",
-    "i18next": "24.2.2",
+    "i18next": "24.2.3",
     "i18next-browser-languagedetector": "8.0.4",
     "i18next-http-backend": "3.0.2",
     "leaflet": "1.7.1",
@@ -61,7 +61,7 @@
     "@types/react-leaflet": "^3.0.0",
     "@types/react-router": "^5.1.20",
     "autoprefixer": "10.4.21",
-    "cypress": "14.2.0",
+    "cypress": "14.2.1",
     "postcss": "8.5.3",
     "tailwindcss": "3.4.17",
     "typescript": "5.8.2"
