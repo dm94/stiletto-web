@@ -1,6 +1,4 @@
-import type React from "react";
-import { useCallback, useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useState, useCallback, useEffect } from "react";
 import ReactFlow, {
   type Node,
   type Edge,
@@ -13,11 +11,20 @@ import ReactFlow, {
   ConnectionLineType,
 } from "reactflow";
 import "reactflow/dist/style.css";
-import Icon from "../Icon";
-import SkillNodeBtn from "./SkillNodeBtn";
+import { useTranslation } from "react-i18next";
 import type { Item } from "../../types/item";
 import type { Tree } from "../../types/dto/tech";
 import { getItemUrl } from "../../functions/utils";
+import Icon from "../Icon";
+import SkillNodeBtn from "./SkillNodeBtn";
+
+interface ReactFlowTreeProps {
+  theme: Record<string, unknown>;
+  treeId: Tree;
+  title: string;
+  items: Item[];
+  clan?: number;
+}
 
 // Custom node component for tech tree items
 const TechNode = ({ data }: { data: any }) => {
@@ -77,21 +84,13 @@ const nodeTypes = {
   techNode: TechNode,
 };
 
-interface SkillTreeTabProps {
-  theme: Record<string, unknown>;
-  treeId: Tree;
-  title: string;
-  items: Item[];
-  clan?: number;
-}
-
-const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
+const ReactFlowTree = ({
   theme,
   treeId,
   title,
   items,
   clan,
-}) => {
+}: ReactFlowTreeProps) => {
   const { t } = useTranslation();
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
@@ -111,6 +110,18 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
     }
     return {};
   }, [treeId]);
+
+  // Save skills to localStorage
+  const saveSkills = useCallback(
+    (skills: Record<string, { optional: boolean; nodeState: string }>) => {
+      try {
+        localStorage.setItem(`skills-${treeId}`, JSON.stringify(skills));
+      } catch (error) {
+        console.error("Error saving skills:", error);
+      }
+    },
+    [treeId],
+  );
 
   // Build the tree structure
   const buildTree = useCallback(() => {
@@ -164,9 +175,7 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
       const startX = xOffset - totalWidth / 2;
 
       children.forEach((item, index) => {
-        if (processedItems.has(item.name)) {
-          return;
-        }
+        if (processedItems.has(item.name)) return;
         processedItems.add(item.name);
 
         const x = startX + index * spacing;
@@ -183,7 +192,6 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
             id: item.name,
             icon: true,
             selected: isSelected,
-            content: getContentItem(item),
           },
           style: {
             background: isSelected
@@ -219,45 +227,6 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
     setEdges(newEdges);
   }, [items, treeId, t, theme, loadSavedSkills, setNodes, setEdges]);
 
-  const getContentItem = (item: Item): React.ReactNode => {
-    return (
-      <div className="mx-auto">
-        <div className="text-center mb-1">
-          <a
-            href={getItemUrl(item.name)}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={t("menu.wiki")}
-          >
-            <Icon key={item.name} name={item.name} width={35} />
-            {t("menu.wiki")}
-          </a>
-        </div>
-        <p className="text-center border-bottom border-warning">
-          {t("crafting.whoHasLearnedIt")}
-        </p>
-        {clan ? (
-          <SkillNodeBtn
-            key={`btn-${item.name}`}
-            item={item}
-            clan={clan}
-            tree={treeId}
-          />
-        ) : (
-          t("techTree.needClanForFunction")
-        )}
-      </div>
-    );
-  };
-
-  const handleSave = useCallback(
-    (storage: Storage, id: string, skills: any): void => {
-      storage.setItem(`skills-${id}`, JSON.stringify(skills));
-    },
-    [],
-  );
-
-  // Initialize the tree
   useEffect(() => {
     buildTree();
   }, [buildTree]);
@@ -296,10 +265,10 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
         },
       };
 
-      handleSave(localStorage, treeId, updatedSkills);
+      saveSkills(updatedSkills);
       buildTree(); // Rebuild the tree with updated selection states
     },
-    [loadSavedSkills, handleSave, buildTree, treeId],
+    [loadSavedSkills, saveSkills, buildTree],
   );
 
   // Close tooltip when clicking outside
@@ -361,4 +330,4 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
   );
 };
 
-export default SkillTreeTab;
+export default ReactFlowTree;
