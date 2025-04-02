@@ -1,12 +1,12 @@
 import type React from "react";
 import { useCallback } from "react";
-import { SkillTreeGroup, SkillTree, SkillProvider } from "beautiful-skill-tree";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
 import type { Item } from "../../types/item";
 import type { Tree } from "../../types/dto/tech";
 import { getItemUrl } from "../../functions/utils";
+import { SkillTreeGroup, SkillTree, SkillProvider } from "./CustomSkillTree";
 
 interface SkillTreeTabProps {
   theme: Record<string, unknown>;
@@ -98,6 +98,7 @@ const SkillTreeTab: React.FC<SkillTreeTabProps> = ({
                 handleSave(storage as Storage, treeId, skills);
               }
             }}
+            clan={clan}
           />
         )}
       </SkillTreeGroup>
