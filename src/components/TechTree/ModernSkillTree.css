@@ -30,19 +30,19 @@
   z-index: 5;
   /* Diamond shape */
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-  background-color: #834AC4;
-  border: 2px solid #6b3fa0;
+  background-color: #262625;
 }
 
 .skill-node:hover {
   transform: scale(1.1);
   filter: brightness(1.2);
   z-index: 10;
+  border-color: #d1b3ff;
 }
 
 .skill-node.selected {
-  background-color: #9b6ad8;
-  border: 2px solid #d1b3ff;
+  background-color: #834AC4;
+  border: 2px solid #834AC4;
   filter: drop-shadow(0 0 8px rgba(131, 74, 196, 0.8));
   z-index: 10;
 }
@@ -70,20 +70,15 @@
   background-color: #2a2a2a;
   border: 2px solid #834AC4;
   border-radius: 8px;
+  top: 0;
+  right: 0;
   padding: 12px;
   width: 250px;
   max-width: 90vw;
   z-index: 100;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   pointer-events: auto;
-  opacity: 0;
-  visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-
-.skill-tooltip.visible {
-  opacity: 1;
-  visibility: visible;
 }
 
 /* Pulse animation for selected nodes */

@@ -50,13 +50,9 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   const [tooltipInfo, setTooltipInfo] = useState<{
     visible: boolean;
     nodeId: string;
-    x: number;
-    y: number;
   }>({
     visible: false,
     nodeId: "",
-    x: 0,
-    y: 0,
   });
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -199,18 +195,11 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   );
 
   // Show tooltip
-  const showTooltip = useCallback((nodeId: string, x: number, y: number) => {
+  const showTooltip = useCallback((nodeId: string) => {
     setTooltipInfo({
       visible: true,
       nodeId,
-      x,
-      y,
     });
-  }, []);
-
-  // Hide tooltip
-  const hideTooltip = useCallback(() => {
-    setTooltipInfo((prev) => ({ ...prev, visible: false }));
   }, []);
 
   // Generate tooltip content
@@ -228,10 +217,10 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               href={getItemUrl(node.id)}
               target="_blank"
               rel="noopener noreferrer"
-              title={t("menu.wiki")}
+              title={node.id}
             >
               <Icon key={node.id} name={node.id} width={35} />
-              {t("menu.wiki")}
+              {node.id}
             </a>
           </div>
           <p className="text-center border-b border-warning">
@@ -345,7 +334,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
                 refY="3.5"
                 orient="auto"
               >
-                <polygon points="0 0, 10 3.5, 0 7" fill="#834AC4" />
+                <polygon points="0 0, 10 3.5, 0 7" fill="#262625" />
               </marker>
               <marker
                 id="arrowhead-selected"
@@ -380,7 +369,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               const path = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
 
               // Determine if this is a selected path
-              const strokeColor = edge.selected ? "#9b6ad8" : "#834AC4";
+              const strokeColor = edge.selected ? "#9b6ad8" : "#262625";
               const strokeWidth = edge.selected ? 3 : 2;
               const markerId = edge.selected
                 ? "arrowhead-selected"
@@ -411,23 +400,15 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
                 zIndex: node.selected ? 10 : 5,
               }}
               onClick={() => toggleNode(node.id)}
-              onMouseEnter={(e) => showTooltip(node.id, e.clientX, e.clientY)}
-              onMouseLeave={hideTooltip}
+              onMouseEnter={() => showTooltip(node.id)}
             >
               <div className="node-title">{node.title}</div>
             </button>
           ))}
         </div>
 
-        {/* Tooltip */}
         {tooltipInfo.visible && (
-          <div
-            className="skill-tooltip visible"
-            style={{
-              left: `${tooltipInfo.x + 20}px`,
-              top: `${tooltipInfo.y}px`,
-            }}
-          >
+          <div className="skill-tooltip">
             {getTooltipContent(tooltipInfo.nodeId)}
           </div>
         )}
