@@ -94,9 +94,12 @@ export const getItems = async (): Promise<Item[]> => {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/json/items_min.json", {
-      method: "GET",
-    });
+    const response = await fetch(
+      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json",
+      {
+        method: "GET",
+      },
+    );
 
     const data = await response.json();
 
