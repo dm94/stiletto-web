@@ -325,29 +325,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
             height="100%"
             className="absolute top-0 left-0 pointer-events-none"
           >
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="7"
-                refX="0"
-                refY="3.5"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3.5, 0 7" fill="#262625" />
-              </marker>
-              <marker
-                id="arrowhead-selected"
-                markerWidth="10"
-                markerHeight="7"
-                refX="0"
-                refY="3.5"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3.5, 0 7" fill="#9b6ad8" />
-              </marker>
-            </defs>
-
+            <title>Lines</title>
             {edges.map((edge) => {
               const fromNode = nodes.find((n) => n.id === edge.from);
               const toNode = nodes.find((n) => n.id === edge.to);
@@ -358,9 +336,9 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
 
               // Calculate positions for the path
               const x1 = fromNode.x + 60; // Right side of the node
-              const y1 = fromNode.y + 30; // Middle of the node
+              const y1 = fromNode.y + 50; // Middle of the node
               const x2 = toNode.x; // Left side of the node
-              const y2 = toNode.y + 30; // Middle of the node
+              const y2 = toNode.y + 50; // Middle of the node
 
               // Calculate control points for the curve
               const midX = (x1 + x2) / 2;
@@ -371,9 +349,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               // Determine if this is a selected path
               const strokeColor = edge.selected ? "#9b6ad8" : "#262625";
               const strokeWidth = edge.selected ? 3 : 2;
-              const markerId = edge.selected
-                ? "arrowhead-selected"
-                : "arrowhead";
 
               return (
                 <path
@@ -383,7 +358,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
                   strokeWidth={strokeWidth}
                   fill="none"
                   className="transition-all duration-300"
-                  markerEnd={`url(#${markerId})`}
                 />
               );
             })}
