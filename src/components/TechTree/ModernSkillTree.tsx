@@ -78,26 +78,19 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   // Build tree structure from items
   const buildTreeData = useCallback(() => {
     const buildChildren = (parent: string, level = 0): NodeData[] => {
-      const children: NodeData[] = [];
       const filteredItems = items.filter((item) => item.parent === parent);
 
-      filteredItems.forEach((item) => {
-        const isSelected = skills[item.name]?.nodeState === "selected";
-
-        const node: NodeData = {
-          id: item.name,
-          title: t(item.name),
-          item,
-          children: buildChildren(item.name, level + 1),
-          level,
-          x: 0, // Will be calculated later
-          y: 0, // Will be calculated later
-          selected: isSelected,
-          parentId: parent !== treeId ? parent : undefined,
-        };
-
-        children.push(node);
-      });
+      const children: NodeData[] = filteredItems.map((item) => ({
+        id: item.name,
+        title: t(item.name),
+        item,
+        children: buildChildren(item.name, level + 1),
+        level,
+        x: 0,
+        y: 0,
+        selected: skills[item.name]?.nodeState === "selected",
+        parentId: parent !== treeId ? parent : undefined,
+      }));
 
       return children;
     };
@@ -123,7 +116,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       const totalHeight = (levelNodes.length - 1) * verticalSpacing;
       let currentY = startY - totalHeight / 2;
 
-      levelNodes.forEach((node) => {
+      for (const node of levelNodes) {
         // Set horizontal position based on level
         const x = 100 + level * horizontalSpacing;
         const y = currentY;
@@ -149,7 +142,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         }
 
         currentY += verticalSpacing;
-      });
+      }
 
       // Process next level
       processLevel(nodes, level + 1, startY);
@@ -183,6 +176,8 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   // Toggle node selection
   const toggleNode = useCallback(
     (nodeId: string) => {
+      console.log("Toggling node:", nodeId);
+
       setSkills((prevSkills) => {
         const newSkills = { ...prevSkills };
 
@@ -419,7 +414,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               onMouseEnter={(e) => showTooltip(node.id, e.clientX, e.clientY)}
               onMouseLeave={hideTooltip}
             >
-              <Icon name={node.id} width={24} />
               <div className="node-title">{node.title}</div>
             </button>
           ))}
