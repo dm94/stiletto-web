@@ -354,12 +354,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
             height="100%"
             className="absolute top-0 left-0 pointer-events-none"
           >
-            <defs>
-              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="4" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
             <title>Lines</title>
             {edges.map((edge) => {
               const fromNode = nodes.find((n) => n.id === edge.from);
@@ -383,10 +377,10 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
 
               // Determine if this is a selected path
               const strokeColor = edge.selected ? "#2ecc2e" : "#262625";
-              const strokeWidth = edge.selected ? 3 : 2;
-              const strokeOpacity = edge.selected ? 0.9 : 0.6;
+              const strokeWidth = edge.selected ? 4 : 2;
+              const strokeOpacity = edge.selected ? 1 : 0.5;
               const glowFilter = edge.selected ? "url(#glow)" : "";
-              const glowWidth = edge.selected ? 8 : 0;
+              const glowWidth = edge.selected ? 10 : 0;
 
               return (
                 <path
