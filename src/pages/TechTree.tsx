@@ -247,20 +247,6 @@ const TechTree = () => {
     );
   }, [t, saveTree, deleteTree, isSaving]);
 
-  const theme = useMemo(
-    () => ({
-      h1FontSize: "50",
-      border: "1px solid rgb(127,127,127)",
-      treeBackgroundColor: "rgba(60, 60, 60, 0.9)",
-      nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
-      nodeAlternativeActiveBackgroundColor: "#834AC4",
-      nodeActiveBackgroundColor: "#834AC4",
-      nodeBorderColor: "#834AC4",
-      nodeHoverBorderColor: "#834AC4",
-    }),
-    [],
-  );
-
   if (error) {
     return (
       <ModalMessage
@@ -372,7 +358,6 @@ const TechTree = () => {
           <SkillTreeTab
             treeId={tabSelect}
             title={t(tabSelect)}
-            theme={theme}
             items={items}
             clan={clan}
           />

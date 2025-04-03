@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
+import type React from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import type { Item } from "../../types/item";
 import type { Tree } from "../../types/dto/tech";
@@ -15,20 +16,13 @@ interface NodeData {
   y: number;
   selected: boolean;
   item: Item;
+  parentX?: number;
+  parentY?: number;
 }
 
 interface EdgeData {
   from: string;
   to: string;
-}
-
-interface CustomSkillTreeProps {
-  treeId: Tree;
-  title: string;
-  data: NodeData[];
-  onSave?: (
-    skills: Record<string, { optional: boolean; nodeState: string }>,
-  ) => void;
 }
 
 interface SkillTreeProps {
@@ -89,21 +83,46 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
     }
   }, [treeId]);
 
-  // Process data to create nodes and edges
+  // Process data to create nodes and edges with horizontal layout
   useEffect(() => {
     const processedNodes: NodeData[] = [];
     const processedEdges: EdgeData[] = [];
 
+    // Calculate positions for a horizontal tree layout (left to right)
     const processNode = (
       node: any,
       level = 0,
       parentId: string | null = null,
+      parentX: number | null = null,
+      parentY: number | null = null,
       index = 0,
       totalSiblings = 1,
+      direction = 1, // 1 for up, -1 for down
     ) => {
       const nodeId = node.id;
-      const x = index * (100 / (totalSiblings || 1)); // Horizontal position
-      const y = level * 120; // Vertical position with spacing
+
+      // Base horizontal and vertical spacing between nodes
+      const horizontalSpacing = 180; // Increased for better horizontal spacing
+      const verticalSpacing = 100;
+
+      // Calculate position based on level and index
+      // For horizontal layout, x increases with level and y varies with index
+      let x: number;
+      let y: number;
+
+      if (parentX !== null && parentY !== null) {
+        // Position relative to parent for non-root nodes
+        // Move right for each level
+        x = parentX + horizontalSpacing;
+
+        // Calculate vertical position relative to parent
+        const offset = index - (totalSiblings - 1) / 2;
+        y = parentY + offset * verticalSpacing * 0.8;
+      } else {
+        // Root nodes positioning - vertical stack on the left side
+        x = 50; // Start from left side
+        y = 100 + index * verticalSpacing * 1.2; // Stack vertically
+      }
 
       const isSelected = skills[nodeId]?.nodeState === "selected";
 
@@ -112,6 +131,8 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
         level,
         x,
         y,
+        parentX: parentX !== null ? parentX : undefined,
+        parentY: parentY !== null ? parentY : undefined,
         selected: isSelected,
         item: node.item,
       };
@@ -125,21 +146,26 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
         });
       }
 
+      // Process children with consistent horizontal flow
       if (node.children && node.children.length > 0) {
         node.children.forEach((child: any, childIndex: number) => {
           processNode(
             child,
             level + 1,
             nodeId,
+            x,
+            y,
             childIndex,
             node.children.length,
+            direction,
           );
         });
       }
     };
 
+    // Process each root node
     data.forEach((rootNode, index) => {
-      processNode(rootNode, 0, null, index, data.length);
+      processNode(rootNode, 0, null, null, null, index, data.length);
     });
 
     setNodes(processedNodes);
@@ -172,59 +198,116 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
   );
 
   return (
-    <div className="custom-skill-tree p-4 bg-charcoal rounded-lg">
-      <h2 className="text-2xl font-bold mb-6 text-sand">{title}</h2>
+    <div className="custom-skill-tree p-6 bg-charcoal rounded-lg border-2 border-tribal">
+      <h2 className="text-2xl font-bold mb-6 text-sand font-['Okami'] border-b-2 border-tribal pb-2">
+        {title}
+      </h2>
 
       <div
-        className="skill-tree-container relative"
-        style={{ minHeight: `${Math.max(...nodes.map((n) => n.y)) + 150}px` }}
+        className="skill-tree-container relative overflow-x-auto"
+        style={{
+          minHeight: `${Math.max(...nodes.map((n) => n.y)) + 150}px`,
+          minWidth: `${Math.max(...nodes.map((n) => n.x)) + 200}px`,
+        }}
       >
-        {/* Render edges */}
+        {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
         <svg className="absolute top-0 left-0 w-full h-full pointer-events-none">
+          <defs>
+            <marker
+              id="arrowhead"
+              markerWidth="10"
+              markerHeight="7"
+              refX="0"
+              refY="3.5"
+              orient="auto"
+            >
+              <polygon points="0 0, 10 3.5, 0 7" fill="#834AC4" />
+            </marker>
+            <marker
+              id="arrowhead-selected"
+              markerWidth="10"
+              markerHeight="7"
+              refX="0"
+              refY="3.5"
+              orient="auto"
+            >
+              <polygon points="0 0, 10 3.5, 0 7" fill="#9b6ad8" />
+            </marker>
+          </defs>
           {edges.map((edge) => {
             const fromNode = nodes.find((n) => n.id === edge.from);
             const toNode = nodes.find((n) => n.id === edge.to);
 
-            if (!fromNode || !toNode) return null;
+            if (!fromNode || !toNode) {
+              return null;
+            }
 
-            // Calculate positions for the line
-            const x1 = `${fromNode.x + 5}%`;
-            const y1 = fromNode.y + 30; // Bottom of the node
-            const x2 = `${toNode.x + 5}%`;
-            const y2 = toNode.y; // Top of the node
+            // Calculate positions for the path
+            const x1 = fromNode.x + 60; // Right side of the node
+            const y1 = fromNode.y + 30; // Middle of the node
+            const x2 = toNode.x; // Left side of the node
+            const y2 = toNode.y + 30; // Middle of the node
+
+            // Calculate control points for the curve
+            const midX = (x1 + x2) / 2;
+
+            // Create a curved path
+            const path = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
+
+            // Determine if this is a selected path
+            const isSelected = toNode.selected;
+            const strokeColor = isSelected ? "#9b6ad8" : "#834AC4";
+            const strokeWidth = isSelected ? 3 : 2;
+            const markerId = isSelected ? "arrowhead-selected" : "arrowhead";
 
             return (
-              <line
+              <path
                 key={`${edge.from}-${edge.to}`}
-                x1={x1}
-                y1={y1}
-                x2={x2}
-                y2={y2}
-                stroke={toNode.selected ? "#834AC4" : "#4A3B31"}
-                strokeWidth="2"
+                d={path}
+                stroke={strokeColor}
+                strokeWidth={strokeWidth}
+                fill="none"
+                strokeDasharray={isSelected ? "none" : "none"}
+                className="transition-all duration-300"
+                markerEnd={`url(#${markerId})`}
               />
             );
           })}
         </svg>
 
-        {/* Render nodes */}
+        {/* Render nodes with diamond shape styling */}
         {nodes.map((node) => (
-          <div
+          <button
+            type="button"
             key={node.id}
-            className={`absolute skill-node p-2 rounded-lg cursor-pointer transition-all duration-300 border-2 ${node.selected ? "bg-tribal border-tribal" : "bg-sandDark border-sandDark hover:border-tribal"}`}
+            className={`absolute skill-node cursor-pointer transition-all duration-300 shadow-lg transform hover:scale-105 ${node.selected ? "selected" : ""}`}
             style={{
-              left: `${node.x}%`,
+              left: `${node.x}px`,
               top: `${node.y}px`,
-              width: "10%",
-              minWidth: "100px",
+              width: "60px",
+              height: "60px",
+              zIndex: node.selected ? 10 : 5,
+              clipPath:
+                "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" /* Diamond shape */,
+              backgroundColor: node.selected ? "#9b6ad8" : "#834AC4",
+              border: node.selected ? "2px solid #d1b3ff" : "2px solid #6b3fa0",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
             onClick={() => toggleNode(node.id)}
             data-tooltip-id={`tooltip-${node.id}`}
           >
-            <div className="text-center text-sm font-medium text-sandLight">
-              {node.title}
+            <div className="flex flex-col items-center justify-center">
+              <Icon name={node.id} width={24} /> {node.id}
+              <div className="absolute top-full mt-2 text-center text-xs font-medium text-sandLight whitespace-nowrap">
+                {node.title}
+              </div>
+              {node.selected && (
+                <div className="absolute w-full h-full selected-node" />
+              )}
             </div>
-          </div>
+          </button>
         ))}
 
         {/* Tooltips */}
@@ -232,10 +315,10 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
           <div
             key={`tooltip-${node.id}`}
             id={`tooltip-${node.id}`}
-            className="tooltip hidden absolute z-50 bg-charcoal border-2 border-tribal p-3 rounded-lg shadow-lg max-w-xs"
+            className="tooltip hidden absolute z-50 bg-charcoal border-2 border-purple-600 p-3 rounded-lg shadow-lg max-w-xs"
             style={{ width: "250px" }}
             data-node-id={node.id}
-          ></div>
+          />
         ))}
       </div>
     </div>
@@ -331,7 +414,7 @@ const CustomSkillTree: React.FC<{
 
       if (node) {
         const tooltipId = node.getAttribute("data-tooltip-id");
-        const tooltip = document.getElementById(tooltipId || "");
+        const tooltip = document.getElementById(tooltipId ?? "");
 
         if (tooltip) {
           // Position tooltip near the node

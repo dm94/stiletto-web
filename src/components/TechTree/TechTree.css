@@ -1,0 +1,79 @@
+/* Custom styles for the Tech Tree component */
+
+.skill-tree-container {
+  background-color: #1a1a1a;
+  background-image: linear-gradient(rgba(30, 30, 30, 0.3) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(30, 30, 30, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  min-height: 600px;
+}
+
+/* Purple glow effect for selected nodes */
+.skill-node.selected {
+  filter: drop-shadow(0 0 8px rgba(131, 74, 196, 0.8));
+  z-index: 10;
+}
+
+/* Pulse animation for selected nodes */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(131, 74, 196, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(131, 74, 196, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(131, 74, 196, 0);
+  }
+}
+
+.skill-node .selected-node {
+  animation: pulse 2s infinite;
+}
+
+/* Diamond-shaped nodes */
+.skill-node {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Node title positioning */
+.skill-node .text-xs {
+  width: 100px;
+  left: -20px;
+  position: relative;
+}
+
+/* Horizontal tree layout specific styles */
+.custom-skill-tree {
+  overflow-x: auto;
+  padding-bottom: 30px;
+}
+
+/* Custom tooltip styling */
+.tooltip {
+  transition: opacity 0.3s ease;
+}
+
+/* Custom scrollbar for the tree container */
+.skill-tree-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.skill-tree-container::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.skill-tree-container::-webkit-scrollbar-thumb {
+  background: #834AC4;
+  border-radius: 4px;
+}
+
+.skill-tree-container::-webkit-scrollbar-thumb:hover {
+  background: #9b6ad8;
+}
