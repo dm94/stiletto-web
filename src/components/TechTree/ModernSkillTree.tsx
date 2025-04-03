@@ -169,6 +169,26 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     setEdges(calculatedEdges);
   }, [buildTreeData, calculateNodePositions]);
 
+  // Check if a node can be learned based on its parent's status
+  const canLearnNode = useCallback(
+    (nodeId: string): boolean => {
+      // Find the node in our nodes array
+      const node = nodes.find((n) => n.id === nodeId);
+      if (!node) {
+        return false;
+      }
+
+      // If node has no parent, it can always be learned
+      if (!node.parentId) {
+        return true;
+      }
+
+      // Check if parent node is selected
+      return skills[node.parentId]?.nodeState === "selected";
+    },
+    [nodes, skills],
+  );
+
   // Toggle node selection
   const toggleNode = useCallback(
     (nodeId: string) => {
@@ -181,6 +201,15 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         if (newSkills[nodeId]?.nodeState === "selected") {
           newSkills[nodeId] = { optional: false, nodeState: "unlocked" };
         } else {
+          // Check if this node can be learned (parent is selected)
+          const node = nodes.find((n) => n.id === nodeId);
+          if (node?.parentId) {
+            // If parent is not selected, don't allow selection
+            if (prevSkills[node.parentId]?.nodeState !== "selected") {
+              return prevSkills;
+            }
+          }
+
           // Otherwise select it
           newSkills[nodeId] = { optional: false, nodeState: "selected" };
         }
@@ -191,7 +220,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         return newSkills;
       });
     },
-    [treeId],
+    [treeId, nodes],
   );
 
   // Show tooltip
@@ -363,22 +392,37 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
             })}
           </svg>
 
-          {nodes.map((node) => (
-            <button
-              type="button"
-              key={node.id}
-              className={`skill-node ${node.selected ? "selected" : ""}`}
-              style={{
-                left: `${node.x}px`,
-                top: `${node.y}px`,
-                zIndex: node.selected ? 10 : 5,
-              }}
-              onClick={() => toggleNode(node.id)}
-              onMouseEnter={() => showTooltip(node.id)}
-            >
-              <div className="node-title">{node.title}</div>
-            </button>
-          ))}
+          {nodes.map((node) => {
+            // Determine if node can be learned
+            const canLearn = canLearnNode(node.id);
+            const nodeClass = node.selected
+              ? "selected"
+              : !canLearn && node.parentId
+                ? "locked"
+                : "";
+
+            return (
+              <button
+                type="button"
+                key={node.id}
+                className={`skill-node ${nodeClass}`}
+                style={{
+                  left: `${node.x}px`,
+                  top: `${node.y}px`,
+                  zIndex: node.selected ? 10 : 5,
+                }}
+                onClick={() => toggleNode(node.id)}
+                onMouseEnter={() => showTooltip(node.id)}
+                title={
+                  !canLearn && node.parentId
+                    ? t("techTree.needParentSkill")
+                    : ""
+                }
+              >
+                <div className="node-title">{node.title}</div>
+              </button>
+            );
+          })}
         </div>
 
         {tooltipInfo.visible && (
