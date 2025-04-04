@@ -7,7 +7,7 @@ import { getItemUrl } from "../../functions/utils";
 import { getStoredItem, storeItem } from "../../functions/services";
 import type { Item } from "../../types/item";
 import type { Tree } from "../../types/dto/tech";
-import "./ModernSkillTree.css";
+import "../../styles/ModernSkillTree.css";
 
 interface NodeData {
   id: string;
@@ -380,7 +380,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               const strokeWidth = edge.selected ? 4 : 2;
               const strokeOpacity = edge.selected ? 1 : 0.5;
               const glowFilter = edge.selected ? "url(#glow)" : "";
-              const glowWidth = edge.selected ? 10 : 0;
 
               return (
                 <path
