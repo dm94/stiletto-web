@@ -18,7 +18,6 @@ import { type TradeInfo, TradeType } from "../types/dto/trades";
 import type { Item } from "../types/item";
 import { getUser } from "../functions/requests/users";
 
-
 const TradeSystem = () => {
   const { t } = useTranslation();
   const [isLogged, setIsLogged] = useState<boolean>(false);
@@ -62,27 +61,34 @@ const TradeSystem = () => {
     }
   }, []);
 
-  const updateTrades = useCallback(async (currentPage = 1) => {
-    try {
-      setIsLoaded(false);
-      setPage(currentPage);
+  const updateTrades = useCallback(
+    async (currentPage = 1) => {
+      try {
+        setIsLoaded(false);
+        setPage(currentPage);
 
-      const tradesData = await getTrades({
-        pageSize: 20,
-        page: currentPage,
-        ...(resourceTypeFilterInput.length > 0 && { resource: resourceTypeFilterInput }),
-        ...(tradeTypeFilterInput.length > 0 && { type: tradeTypeFilterInput as TradeType }),
-        ...(regionFilterInput.length > 0 && { region: regionFilterInput }),
-      });
+        const tradesData = await getTrades({
+          pageSize: 20,
+          page: currentPage,
+          ...(resourceTypeFilterInput.length > 0 && {
+            resource: resourceTypeFilterInput,
+          }),
+          ...(tradeTypeFilterInput.length > 0 && {
+            type: tradeTypeFilterInput as TradeType,
+          }),
+          ...(regionFilterInput.length > 0 && { region: regionFilterInput }),
+        });
 
-      const hasMore = tradesData != null && tradesData.length >= 20;
-      setTrades(tradesData);
-      setHasMore(hasMore);
-      setIsLoaded(true);
-    } catch {
-      setError("errors.apiConnection");
-    }
-  }, [resourceTypeFilterInput, tradeTypeFilterInput, regionFilterInput]);
+        const hasMore = tradesData != null && tradesData.length >= 20;
+        setTrades(tradesData);
+        setHasMore(hasMore);
+        setIsLoaded(true);
+      } catch {
+        setError("errors.apiConnection");
+      }
+    },
+    [resourceTypeFilterInput, tradeTypeFilterInput, regionFilterInput],
+  );
 
   useEffect(() => {
     loadProfile();
@@ -90,14 +96,17 @@ const TradeSystem = () => {
     updateTrades();
   }, [loadProfile, updateRecipes, updateTrades]);
 
-  const handleDeleteTrade = useCallback(async (idTrade: number) => {
-    try {
-      await deleteTrade(idTrade);
-      await updateTrades();
-    } catch {
-      setError("errors.errorConnectingToAPI");
-    }
-  }, [updateTrades]);
+  const handleDeleteTrade = useCallback(
+    async (idTrade: number) => {
+      try {
+        await deleteTrade(idTrade);
+        await updateTrades();
+      } catch {
+        setError("errors.errorConnectingToAPI");
+      }
+    },
+    [updateTrades],
+  );
 
   const handleClearButton = useCallback(async () => {
     setResourceTypeFilterInput("");
@@ -105,31 +114,43 @@ const TradeSystem = () => {
     setRegionFilterInput("");
   }, []);
 
-  const handleCreateTrade = useCallback(async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleCreateTrade = useCallback(
+    async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
 
-    try {
-      await createTrade({
-        resource: resourceTypeInput,
-        type: tradeTypeInput as TradeType,
-        amount: amountInput,
-        region: regionInput,
-        quality: qualityInput,
-        price: priceInput,
-      });
+      try {
+        await createTrade({
+          resource: resourceTypeInput,
+          type: tradeTypeInput as TradeType,
+          amount: amountInput,
+          region: regionInput,
+          quality: qualityInput,
+          price: priceInput,
+        });
 
-      setResourceTypeInput(items[0].name);
-      setTradeTypeInput(TradeType.Supply);
-      setAmountInput(0);
-      setRegionInput("EU");
-      setQualityInput(0);
-      setPriceInput(0);
+        setResourceTypeInput(items[0].name);
+        setTradeTypeInput(TradeType.Supply);
+        setAmountInput(0);
+        setRegionInput("EU");
+        setQualityInput(0);
+        setPriceInput(0);
 
-      await updateTrades();
-    } catch {
-      setError("common.tryAgainLater");
-    }
-  }, [resourceTypeInput, tradeTypeInput, amountInput, regionInput, qualityInput, priceInput, updateTrades, items]);
+        await updateTrades();
+      } catch {
+        setError("common.tryAgainLater");
+      }
+    },
+    [
+      resourceTypeInput,
+      tradeTypeInput,
+      amountInput,
+      regionInput,
+      qualityInput,
+      priceInput,
+      updateTrades,
+      items,
+    ],
+  );
 
   const renderLoggedPart = () => {
     if (!isLogged) {
@@ -222,7 +243,9 @@ const TradeSystem = () => {
                     id="qualityInput"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={qualityInput}
-                    onChange={(evt) => setQualityInput(Number(evt.target.value))}
+                    onChange={(evt) =>
+                      setQualityInput(Number(evt.target.value))
+                    }
                   >
                     <option value="0">{t("crafting.common")}</option>
                     <option value="1">{t("crafting.uncommon")}</option>
@@ -280,7 +303,11 @@ const TradeSystem = () => {
       ));
     }
 
-    return <div className="col-span-full text-center text-gray-400 py-8">{t("trades.noTradesFound")}</div>;
+    return (
+      <div className="col-span-full text-center text-gray-400 py-8">
+        {t("trades.noTradesFound")}
+      </div>
+    );
   }, [isLoaded, trades, userDiscordId, handleDeleteTrade, t]);
 
   if (error) {

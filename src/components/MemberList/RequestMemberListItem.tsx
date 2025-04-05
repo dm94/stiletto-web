@@ -8,7 +8,11 @@ interface RequestMemberListItemProps {
   onShowRequest: (member: MemberRequest) => void;
 }
 
-const RequestMemberListItem: React.FC<RequestMemberListItemProps> = ({ isLeader, member, onShowRequest }) => {
+const RequestMemberListItem: React.FC<RequestMemberListItemProps> = ({
+  isLeader,
+  member,
+  onShowRequest,
+}) => {
   const { t } = useTranslation();
 
   const renderButton = (): React.ReactNode => {

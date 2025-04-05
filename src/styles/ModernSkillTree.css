@@ -2,8 +2,11 @@
 
 .modern-skill-tree {
   background-color: #0a0a0a;
-  background-image: 
-    radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 0.3), rgba(10, 10, 10, 0.9)),
+  background-image: radial-gradient(
+      circle at 50% 50%,
+      rgba(30, 30, 30, 0.3),
+      rgba(10, 10, 10, 0.9)
+    ),
     url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.15"/></svg>');
   padding: 20px;
   min-height: 600px;
@@ -35,7 +38,11 @@
   background-color: #262625;
   border: 2px solid #444;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  background-image: linear-gradient(135deg, rgba(60, 60, 60, 0.2) 0%, rgba(30, 30, 30, 0.1) 100%);
+  background-image: linear-gradient(
+    135deg,
+    rgba(60, 60, 60, 0.2) 0%,
+    rgba(30, 30, 30, 0.1) 100%
+  );
 }
 
 .skill-node:hover {
@@ -51,8 +58,13 @@
   border: 2px solid #2ecc2e;
   filter: drop-shadow(0 0 12px rgba(46, 204, 46, 0.8));
   z-index: 10;
-  box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px rgba(46, 204, 46, 0.3);
-  background-image: linear-gradient(135deg, rgba(46, 204, 46, 0.3) 0%, rgba(26, 158, 26, 0.2) 100%);
+  box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px
+    rgba(46, 204, 46, 0.3);
+  background-image: linear-gradient(
+    135deg,
+    rgba(46, 204, 46, 0.3) 0%,
+    rgba(26, 158, 26, 0.2) 100%
+  );
   animation: pulse 2s infinite;
 }
 
@@ -63,7 +75,11 @@
   opacity: 0.7;
   cursor: not-allowed;
   box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
-  background-image: linear-gradient(135deg, rgba(60, 60, 60, 0.1) 0%, rgba(40, 40, 40, 0.1) 100%);
+  background-image: linear-gradient(
+    135deg,
+    rgba(60, 60, 60, 0.1) 0%,
+    rgba(40, 40, 40, 0.1) 100%
+  );
 }
 
 .skill-node.locked:hover {
@@ -113,18 +129,21 @@
 /* Pulse animation for selected nodes */
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px rgba(46, 204, 46, 0.3);
+    box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px
+      rgba(46, 204, 46, 0.3);
   }
   50% {
-    box-shadow: 0 0 25px rgba(46, 204, 46, 0.7), inset 0 0 15px rgba(46, 204, 46, 0.5);
+    box-shadow: 0 0 25px rgba(46, 204, 46, 0.7), inset 0 0 15px
+      rgba(46, 204, 46, 0.5);
   }
   100% {
-    box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px rgba(46, 204, 46, 0.3);
+    box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px
+      rgba(46, 204, 46, 0.3);
   }
 }
 
 .skill-node.selected::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -141,7 +160,7 @@
     width: 50px;
     height: 50px;
   }
-  
+
   .node-title {
     font-size: 0.7rem;
   }

@@ -5,7 +5,7 @@
   transition-duration: 0.5s;
   width: 500px;
   background-color: rgba(46, 42, 38, 0.9);
-  border-right: 3px solid #D95F32;
+  border-right: 3px solid #d95f32;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
 }
@@ -24,8 +24,8 @@
 #toggle-sidebar-button {
   position: absolute;
   left: 500px;
-  background-color: #D95F32;
-  color: #E0C9A6;
+  background-color: #d95f32;
+  color: #e0c9a6;
   border: none;
   padding: 8px 12px;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 80% 100%, 0 100%);
@@ -33,7 +33,7 @@
 }
 
 #toggle-sidebar-button:hover {
-  background-color: #C2A57C;
+  background-color: #c2a57c;
 }
 
 #map-sidebar.open #toggle-sidebar-button {
