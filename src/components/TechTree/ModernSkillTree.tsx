@@ -203,12 +203,10 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         } else {
           // Check if this node can be learned (parent is selected)
           const node = nodes.find((n) => n.id === nodeId);
-          if (node?.parentId) {
-            // If parent is not selected, don't allow selection
-            if (prevSkills[node.parentId]?.nodeState !== "selected") {
-              return prevSkills;
-            }
+          if (node?.parentId && prevSkills[node.parentId]?.nodeState !== "selected") {
+                return prevSkills;
           }
+
 
           // Otherwise select it
           newSkills[nodeId] = { optional: false, nodeState: "selected" };
