@@ -1,41 +1,56 @@
-// @ts-ignore
-import RasterCoords from "leaflet-rastercoords";
-// @ts-ignore
-import { Map as ReactLeafletMap, type MapProps } from "react-leaflet";
-// @ts-ignore
-import type { Map as LeafletMap } from "leaflet";
-import React from "react";
+import React, { useEffect, useRef, forwardRef } from "react";
+import L from "leaflet";
+import { MapContainer, useMap } from "react-leaflet";
+import type { MapContainerProps } from "react-leaflet";
 
-// Define interface for RasterCoords since it doesn't have TypeScript definitions
-interface RasterCoordsType {
-  unproject: (point: [number, number]) => [number, number];
-  project: (point: [number, number]) => [number, number];
-}
+// Import our custom RasterCoords implementation
+// This replaces the outdated leaflet-rastercoords library
+import { createRasterCoords, type RasterCoordsType } from "./RasterCoordsUtil";
 
-// Create a React component that wraps the ReactLeafletMap
-class MapExtendedClass extends ReactLeafletMap<MapProps> {
-  createLeafletElement(props: MapProps): LeafletMap {
-    const leafletMapElement = super.createLeafletElement(props);
+// This component initializes the RasterCoords functionality after the map is loaded
+const RasterCoordsInitializer: React.FC = () => {
+  const map = useMap();
+
+  useEffect(() => {
     const img: [number, number] = [4065, 4065];
 
-    // Cast to any since we don't have proper type definitions for leaflet-rastercoords
-    const rc = new (RasterCoords as any)(
-      leafletMapElement,
-      img,
-    ) as RasterCoordsType;
+    // Initialize RasterCoords with the map instance using our custom implementation
+    const rc = createRasterCoords(map, img);
 
-    leafletMapElement.setView(rc.unproject([img[0], img[1]]), 2);
+    // Set the initial view
+    const center = rc.unproject([img[0], img[1]]);
+    map.setView(center, 2);
 
-    return leafletMapElement;
-  }
-}
+    // Store the rasterCoords instance on the map for potential external access
+    (map as any).rasterCoords = rc;
+  }, [map]);
+
+  return null;
+};
 
 // Create a forwardRef component to properly handle React component requirements
-const MapExtended = React.forwardRef<MapExtendedClass, MapProps>(
-  (props, ref) => {
-    // @ts-expect-error
-    return <MapExtendedClass {...props} ref={ref} />;
-  },
-);
+const MapExtended = forwardRef<L.Map, MapContainerProps>((props, ref) => {
+  const mapRef = useRef<L.Map | null>(null);
+
+  // Combine the external ref with our internal ref
+  const setMapRef = (map: L.Map) => {
+    mapRef.current = map;
+
+    if (ref) {
+      if (typeof ref === "function") {
+        ref(map);
+      } else {
+        (ref as React.MutableRefObject<L.Map>).current = map;
+      }
+    }
+  };
+
+  return (
+    <MapContainer {...props} ref={setMapRef}>
+      {props.children}
+      <RasterCoordsInitializer />
+    </MapContainer>
+  );
+});
 
 export default MapExtended;

@@ -6,7 +6,7 @@ import {
   Tooltip,
   ImageOverlay,
   Circle,
-  // @ts-expect-error Temporarily ignore type checking for react-leaflet until types are installed
+  useMapEvents,
 } from "react-leaflet";
 import { useTranslation } from "react-i18next";
 import L from "leaflet";
@@ -197,18 +197,21 @@ const MapLayer: React.FC<MapLayerProps> = ({
     t,
   ]);
 
-  const handleClick = useCallback(
-    (e: { latlng: { lat: number; lng: number } }) => {
-      const roundedLat = Math.round(e.latlng.lat * 100) / 100;
-      const roundedLng = Math.round(e.latlng.lng * 100) / 100;
+  // Map click handler component using the useMapEvents hook
+  const MapClickHandler = useCallback(() => {
+    useMapEvents({
+      click: (e) => {
+        const roundedLat = Math.round(e.latlng.lat * 100) / 100;
+        const roundedLng = Math.round(e.latlng.lng * 100) / 100;
 
-      setHasLocation(true);
-      setCoordinateXInput(roundedLat);
-      setCoordinateYInput(roundedLng);
-      changeInput?.(roundedLat, roundedLng);
-    },
-    [changeInput],
-  );
+        setHasLocation(true);
+        setCoordinateXInput(roundedLat);
+        setCoordinateYInput(roundedLng);
+        changeInput?.(roundedLat, roundedLng);
+      },
+    });
+    return null;
+  }, [changeInput]);
 
   const handleShowGrid = useCallback(() => setGridOpacity(1), []);
   const handleHideGrid = useCallback(() => setGridOpacity(0), []);
@@ -263,10 +266,10 @@ const MapLayer: React.FC<MapLayerProps> = ({
       <MapExtended
         maxZoom={6}
         style={{ width: "100%", height: "calc(100vh - 200px)" }}
-        onClick={handleClick}
         center={center}
         attributionControl={false}
       >
+        <MapClickHandler />
         <ImageOverlay
           bounds={[
             [85.5, -180],
