@@ -1,0 +1,181 @@
+/* Modern Skill Tree Component Styles */
+
+.modern-skill-tree {
+  background-color: #0a0a0a;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(30, 30, 30, 0.3), rgba(10, 10, 10, 0.9)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.15"/></svg>');
+  padding: 20px;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.9);
+  border-radius: 8px;
+}
+
+.skill-tree-wrapper {
+  position: relative;
+  min-height: 600px;
+  width: 100%;
+}
+
+/* Node styling */
+.skill-node {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+  /* Diamond shape */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  background-color: #262625;
+  border: 2px solid #444;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(135deg, rgba(60, 60, 60, 0.2) 0%, rgba(30, 30, 30, 0.1) 100%);
+}
+
+.skill-node:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  z-index: 10;
+  border-color: #d1b3ff;
+  box-shadow: 0 0 15px rgba(209, 179, 255, 0.5);
+}
+
+.skill-node.selected {
+  background-color: #1a9e1a;
+  border: 2px solid #2ecc2e;
+  filter: drop-shadow(0 0 12px rgba(46, 204, 46, 0.8));
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px rgba(46, 204, 46, 0.3);
+  background-image: linear-gradient(135deg, rgba(46, 204, 46, 0.3) 0%, rgba(26, 158, 26, 0.2) 100%);
+  animation: pulse 2s infinite;
+}
+
+/* Locked node styling */
+.skill-node.locked {
+  background-color: #3a3a3a;
+  border: 2px solid #555;
+  opacity: 0.7;
+  cursor: not-allowed;
+  box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
+  background-image: linear-gradient(135deg, rgba(60, 60, 60, 0.1) 0%, rgba(40, 40, 40, 0.1) 100%);
+}
+
+.skill-node.locked:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  border-color: #ff6b6b;
+}
+
+/* Node title */
+.node-title {
+  font-size: 0.75rem;
+  color: #e0e0e0;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+  padding: 0 8px;
+}
+
+/* SVG connections */
+.connections-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  filter: drop-shadow(0 0 2px rgba(100, 100, 100, 0.3));
+}
+
+/* Tooltip styling */
+.skill-tooltip {
+  position: absolute;
+  background-color: #1a1a1a;
+  border: 2px solid #2ecc2e;
+  border-radius: 8px;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  width: 250px;
+  max-width: 90vw;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 15px rgba(46, 204, 46, 0.3);
+  pointer-events: auto;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Pulse animation for selected nodes */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px rgba(46, 204, 46, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(46, 204, 46, 0.7), inset 0 0 15px rgba(46, 204, 46, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(46, 204, 46, 0.5), inset 0 0 10px rgba(46, 204, 46, 0.3);
+  }
+}
+
+.skill-node.selected::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: pulse 2s infinite;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skill-node {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .node-title {
+    font-size: 0.7rem;
+  }
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 50;
+}
+
+.zoom-btn {
+  width: 36px;
+  height: 36px;
+  background-color: #1a1a1a;
+  border: 2px solid #444;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.zoom-btn:hover {
+  background-color: #2a2a2a;
+  border-color: #2ecc2e;
+  box-shadow: 0 0 15px rgba(46, 204, 46, 0.3);
+}

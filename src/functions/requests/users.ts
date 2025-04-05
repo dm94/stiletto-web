@@ -97,7 +97,7 @@ export const addTech = async (
     },
   );
 
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 
