@@ -329,7 +329,9 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       </h2>
 
       <div
+        tabIndex={-1}
         ref={containerRef}
+        role="tree"
         className="skill-tree-wrapper"
         style={{
           minHeight: `${containerDimensions.height}px`,
@@ -399,11 +401,14 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
           {nodes.map((node) => {
             // Determine if node can be learned
             const canLearn = canLearnNode(node.id);
-            const nodeClass = node.selected
-              ? "selected"
-              : !canLearn && node.parentId
-                ? "locked"
-                : "";
+
+            // Extract the nested ternary into a separate statement
+            let nodeClass = "";
+            if (node.selected) {
+              nodeClass = "selected";
+            } else if (!canLearn && node.parentId) {
+              nodeClass = "locked";
+            }
 
             return (
               <button

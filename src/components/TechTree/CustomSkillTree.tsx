@@ -88,17 +88,29 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
     const processedNodes: NodeData[] = [];
     const processedEdges: EdgeData[] = [];
 
+    // Define interface for processNode parameters
+    interface ProcessNodeParams {
+      node: any;
+      level?: number;
+      parentId?: string | null;
+      parentX?: number | null;
+      parentY?: number | null;
+      index?: number;
+      totalSiblings?: number;
+      direction?: number; // 1 for up, -1 for down
+    }
+
     // Calculate positions for a horizontal tree layout (left to right)
-    const processNode = (
-      node: any,
+    const processNode = ({
+      node,
       level = 0,
-      parentId: string | null = null,
-      parentX: number | null = null,
-      parentY: number | null = null,
+      parentId = null,
+      parentX = null,
+      parentY = null,
       index = 0,
       totalSiblings = 1,
       direction = 1, // 1 for up, -1 for down
-    ) => {
+    }: ProcessNodeParams) => {
       const nodeId = node.id;
 
       // Base horizontal and vertical spacing between nodes
@@ -131,8 +143,8 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
         level,
         x,
         y,
-        parentX: parentX !== null ? parentX : undefined,
-        parentY: parentY !== null ? parentY : undefined,
+        parentX: parentX,
+        parentY: parentY,
         selected: isSelected,
         item: node.item,
       };
@@ -149,23 +161,31 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
       // Process children with consistent horizontal flow
       if (node.children && node.children.length > 0) {
         node.children.forEach((child: any, childIndex: number) => {
-          processNode(
-            child,
-            level + 1,
-            nodeId,
-            x,
-            y,
-            childIndex,
-            node.children.length,
+          processNode({
+            node: child,
+            level: level + 1,
+            parentId: nodeId,
+            parentX: x,
+            parentY: y,
+            index: childIndex,
+            totalSiblings: node.children.length,
             direction,
-          );
+          });
         });
       }
     };
 
     // Process each root node
     data.forEach((rootNode, index) => {
-      processNode(rootNode, 0, null, null, null, index, data.length);
+      processNode({
+        node: rootNode,
+        level: 0,
+        parentId: null,
+        parentX: null,
+        parentY: null,
+        index,
+        totalSiblings: data.length,
+      });
     });
 
     setNodes(processedNodes);
@@ -178,7 +198,6 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
       setSkills((prevSkills) => {
         const newSkills = { ...prevSkills };
 
-        // If node is already selected, deselect it
         if (newSkills[nodeId]?.nodeState === "selected") {
           newSkills[nodeId] = { optional: false, nodeState: "unlocked" };
         } else {
@@ -254,7 +273,6 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
             // Create a curved path
             const path = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
 
-            // Determine if this is a selected path
             const isSelected = toNode.selected;
             const strokeColor = isSelected ? "#9b6ad8" : "#834AC4";
             const strokeWidth = isSelected ? 3 : 2;
@@ -267,7 +285,7 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
                 stroke={strokeColor}
                 strokeWidth={strokeWidth}
                 fill="none"
-                strokeDasharray={isSelected ? "none" : "none"}
+                strokeDasharray="none"
                 className="transition-all duration-300"
                 markerEnd={`url(#${markerId})`}
               />
