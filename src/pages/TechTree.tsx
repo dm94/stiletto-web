@@ -36,10 +36,10 @@ const TechTree = () => {
   const [isSaving, setIsSaving] = useState<boolean>(false);
 
   const updateLearnedTree = useCallback((treeName: string, data: string[]) => {
-    const all: Record<string, { optional: boolean; nodeState: string }> = {};
+    const all: Record<string, { nodeState: string }> = {};
     if (data) {
       for (const tech of data) {
-        all[tech] = { optional: false, nodeState: "selected" };
+        all[tech] = { nodeState: "selected" };
       }
       storeItem(`skills-${treeName}`, JSON.stringify(all));
     }

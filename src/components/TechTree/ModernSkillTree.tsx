@@ -7,6 +7,7 @@ import { getItemUrl } from "../../functions/utils";
 import { getStoredItem, storeItem } from "../../functions/services";
 import type { Item } from "../../types/item";
 import type { Tree } from "../../types/dto/tech";
+import type { SkillStateMap } from "../../types/Skill";
 import "../../styles/ModernSkillTree.css";
 
 interface NodeData {
@@ -44,9 +45,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [nodes, setNodes] = useState<NodeData[]>([]);
   const [edges, setEdges] = useState<EdgeData[]>([]);
-  const [skills, setSkills] = useState<
-    Record<string, { optional: boolean; nodeState: string }>
-  >({});
+  const [skills, setSkills] = useState<SkillStateMap>({});
   const [tooltipInfo, setTooltipInfo] = useState<{
     visible: boolean;
     nodeId: string;
@@ -199,17 +198,19 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
 
         // If node is already selected, deselect it
         if (newSkills[nodeId]?.nodeState === "selected") {
-          newSkills[nodeId] = { optional: false, nodeState: "unlocked" };
+          newSkills[nodeId] = { nodeState: "unlocked" };
         } else {
           // Check if this node can be learned (parent is selected)
           const node = nodes.find((n) => n.id === nodeId);
-          if (node?.parentId && prevSkills[node.parentId]?.nodeState !== "selected") {
-                return prevSkills;
+          if (
+            node?.parentId &&
+            prevSkills[node.parentId]?.nodeState !== "selected"
+          ) {
+            return prevSkills;
           }
 
-
           // Otherwise select it
-          newSkills[nodeId] = { optional: false, nodeState: "selected" };
+          newSkills[nodeId] = { nodeState: "selected" };
         }
 
         // Save to storage

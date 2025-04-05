@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import type { Item } from "../../types/item";
 import type { Tree } from "../../types/dto/tech";
+import type { SkillStateMap } from "../../types/Skill";
 import { getItemUrl } from "../../functions/utils";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
@@ -65,9 +66,7 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
   data,
   handleSave,
 }) => {
-  const [skills, setSkills] = useState<
-    Record<string, { optional: boolean; nodeState: string }>
-  >({});
+  const [skills, setSkills] = useState<SkillStateMap>({});
   const [nodes, setNodes] = useState<NodeData[]>([]);
   const [edges, setEdges] = useState<EdgeData[]>([]);
 
@@ -199,10 +198,10 @@ export const SkillTree: React.FC<SkillTreeProps> = ({
         const newSkills = { ...prevSkills };
 
         if (newSkills[nodeId]?.nodeState === "selected") {
-          newSkills[nodeId] = { optional: false, nodeState: "unlocked" };
+          newSkills[nodeId] = { nodeState: "unlocked" };
         } else {
           // Otherwise select it
-          newSkills[nodeId] = { optional: false, nodeState: "selected" };
+          newSkills[nodeId] = { nodeState: "selected" };
         }
 
         // Save to storage
