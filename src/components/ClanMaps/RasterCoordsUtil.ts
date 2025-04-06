@@ -40,29 +40,28 @@ export class RasterCoords implements RasterCoordsType {
 
   /**
    * Convert pixel coordinates to Leaflet coordinates
+   * This custom implementation ensures proper coordinate transformation
    */
   unproject(point: [number, number]): L.LatLng {
     const x = point[0];
     const y = point[1];
 
-    // Create a proper CRS transformation for the image coordinates
-    // This ensures the coordinates are properly mapped to the Leaflet coordinate system
-    const pixelPoint = new L.Point(x, y);
-    const maxZoom = this.map.getMaxZoom();
-    const scale = this.map.getZoomScale(maxZoom, maxZoom);
-    const nwPoint = this.pixelOrigin.multiplyBy(scale);
+    // Calculate the zoom factor based on the maximum zoom level
+    const zoom = this.map.getMaxZoom();
+    const scale = this.tileSize * 2 ** zoom;
 
-    // Apply transformation to convert from pixel coordinates to Leaflet coordinates
-    const latLng = this.map.unproject(
-      nwPoint.add(pixelPoint.multiplyBy(scale)),
-      maxZoom,
-    );
+    // Apply custom transformation to convert pixel coordinates to lat/lng
+    // The y-coordinate is inverted because Leaflet's coordinate system has y increasing from bottom to top
+    // while image coordinates have y increasing from top to bottom
+    const lat = (this.imgSize[1] - y) / scale;
+    const lng = x / scale;
 
-    return latLng;
+    return new L.LatLng(lat, lng);
   }
 
   /**
    * Convert Leaflet coordinates to pixel coordinates
+   * This custom implementation ensures proper coordinate transformation
    */
   project(latLng: L.LatLng | [number, number]): [number, number] {
     let latlng: L.LatLng;
@@ -73,8 +72,17 @@ export class RasterCoords implements RasterCoordsType {
       latlng = latLng;
     }
 
-    const point = this.map.project(latlng, this.map.getMaxZoom());
-    return [point.x, point.y];
+    // Calculate the zoom factor based on the maximum zoom level
+    const zoom = this.map.getMaxZoom();
+    const scale = this.tileSize * 2 ** zoom;
+
+    // Apply custom transformation to convert lat/lng to pixel coordinates
+    // The y-coordinate is inverted because Leaflet's coordinate system has y increasing from bottom to top
+    // while image coordinates have y increasing from top to bottom
+    const x = latlng.lng * scale;
+    const y = this.imgSize[1] - latlng.lat * scale;
+
+    return [x, y];
   }
 
   /**
