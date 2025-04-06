@@ -46,8 +46,8 @@ export class RasterCoords implements RasterCoordsType {
     const x = point[0];
     const y = point[1];
 
-    // Calculate the zoom factor based on the maximum zoom level
-    const zoom = this.map.getMaxZoom();
+    // Calculate the zoom factor based on the current zoom level
+    const zoom = this.map.getZoom() ?? this.map.getMaxZoom();
     const scale = this.tileSize * 2 ** zoom;
 
     // Apply custom transformation to convert pixel coordinates to lat/lng
@@ -72,8 +72,8 @@ export class RasterCoords implements RasterCoordsType {
       latlng = latLng;
     }
 
-    // Calculate the zoom factor based on the maximum zoom level
-    const zoom = this.map.getMaxZoom();
+    // Calculate the zoom factor based on the current zoom level
+    const zoom = this.map.getZoom() || this.map.getMaxZoom();
     const scale = this.tileSize * 2 ** zoom;
 
     // Apply custom transformation to convert lat/lng to pixel coordinates
