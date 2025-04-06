@@ -44,7 +44,20 @@ export class RasterCoords implements RasterCoordsType {
   unproject(point: [number, number]): L.LatLng {
     const x = point[0];
     const y = point[1];
-    const latLng = this.map.unproject([x, y], this.map.getMaxZoom());
+
+    // Create a proper CRS transformation for the image coordinates
+    // This ensures the coordinates are properly mapped to the Leaflet coordinate system
+    const pixelPoint = new L.Point(x, y);
+    const maxZoom = this.map.getMaxZoom();
+    const scale = this.map.getZoomScale(maxZoom, maxZoom);
+    const nwPoint = this.pixelOrigin.multiplyBy(scale);
+
+    // Apply transformation to convert from pixel coordinates to Leaflet coordinates
+    const latLng = this.map.unproject(
+      nwPoint.add(pixelPoint.multiplyBy(scale)),
+      maxZoom,
+    );
+
     return latLng;
   }
 
