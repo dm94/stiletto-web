@@ -41,7 +41,7 @@ const MapSelectList: React.FC<MapSelectListProps> = ({
               : "hover:opacity-75"
           }`}
           alt={map.name}
-          id={map.name}
+          id={`${map.name}_new`}
           loading="lazy"
         />
         <h6 className="mt-1 text-sm text-gray-300">{map.name}</h6>

@@ -11,13 +11,13 @@
 }
 
 :root {
-  --dark: #2E2A26;
-  --sand: #C2A57C;
-  --sand-light: #E0C9A6;
-  --sand-dark: #4A3B31;
-  --tribal: #D95F32;
-  --nature: #5A7742;
-  --charcoal: #1B1B1B;
+  --dark: #2e2a26;
+  --sand: #c2a57c;
+  --sand-light: #e0c9a6;
+  --sand-dark: #4a3b31;
+  --tribal: #d95f32;
+  --nature: #5a7742;
+  --charcoal: #1b1b1b;
 }
 
 @layer base {
@@ -36,7 +36,12 @@
     @apply text-tribal hover:text-sand transition-colors duration-300;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply text-sand;
   }
 
@@ -44,7 +49,9 @@
     @apply bg-sandDark hover:bg-tribal text-sandLight transition-colors duration-300;
   }
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     @apply bg-charcoal border-sandDark text-sandLight focus:border-tribal focus:ring-1 focus:ring-tribal;
   }
 }
@@ -82,7 +89,8 @@
   }
 
   /* Card and Modal Styling */
-  .card, .modal-content {
+  .card,
+  .modal-content {
     @apply bg-charcoal border-2 border-tribal rounded-none;
     clip-path: polygon(0 0, 100% 0, 98% 98%, 0 100%);
   }

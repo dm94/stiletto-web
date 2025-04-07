@@ -12,7 +12,6 @@ import { getItems, getStoredItem, storeItem } from "../functions/services";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
-import DoubleScrollbar from "../components/TechTree/DoubleScrollbar";
 import { getDomain } from "../functions/utils";
 import { getLearned, addTech, getUser } from "../functions/requests/users";
 import HeaderMeta from "../components/HeaderMeta";
@@ -37,10 +36,10 @@ const TechTree = () => {
   const [isSaving, setIsSaving] = useState<boolean>(false);
 
   const updateLearnedTree = useCallback((treeName: string, data: string[]) => {
-    const all: Record<string, { optional: boolean; nodeState: string }> = {};
+    const all: Record<string, { nodeState: string }> = {};
     if (data) {
       for (const tech of data) {
-        all[tech] = { optional: false, nodeState: "selected" };
+        all[tech] = { nodeState: "selected" };
       }
       storeItem(`skills-${treeName}`, JSON.stringify(all));
     }
@@ -187,6 +186,7 @@ const TechTree = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                 >
+                  <title>Saving...</title>
                   <circle
                     className="opacity-25"
                     cx="12"
@@ -246,20 +246,6 @@ const TechTree = () => {
       </div>
     );
   }, [t, saveTree, deleteTree, isSaving]);
-
-  const theme = useMemo(
-    () => ({
-      h1FontSize: "50",
-      border: "1px solid rgb(127,127,127)",
-      treeBackgroundColor: "rgba(60, 60, 60, 0.9)",
-      nodeBackgroundColor: "rgba(10, 10, 10, 0.3)",
-      nodeAlternativeActiveBackgroundColor: "#834AC4",
-      nodeActiveBackgroundColor: "#834AC4",
-      nodeBorderColor: "#834AC4",
-      nodeHoverBorderColor: "#834AC4",
-    }),
-    [],
-  );
 
   if (error) {
     return (
@@ -367,17 +353,14 @@ const TechTree = () => {
         </div>
       </nav>
       {saveDeleteButtons}
-      <DoubleScrollbar>
-        <Suspense fallback={<LoadingScreen />}>
-          <SkillTreeTab
-            treeId={tabSelect}
-            title={t(tabSelect)}
-            theme={theme}
-            items={items}
-            clan={clan}
-          />
-        </Suspense>
-      </DoubleScrollbar>
+      <Suspense fallback={<LoadingScreen />}>
+        <SkillTreeTab
+          treeId={tabSelect}
+          title={t(tabSelect)}
+          items={items}
+          clan={clan}
+        />
+      </Suspense>
     </div>
   );
 };

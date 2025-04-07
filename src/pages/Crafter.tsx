@@ -27,14 +27,17 @@ const Crafter: React.FC = () => {
     updateRecipes();
   }, []);
 
-  const updateSearch = useCallback((searchText: string): void => {
-    const filtered = allItems.filter((item) => {
-      return searchText.split(" ").every((searchTerm) => {
-        return t(item.name).toLowerCase().includes(searchTerm.toLowerCase());
+  const updateSearch = useCallback(
+    (searchText: string): void => {
+      const filtered = allItems.filter((item) => {
+        return searchText.split(" ").every((searchTerm) => {
+          return t(item.name).toLowerCase().includes(searchTerm.toLowerCase());
+        });
       });
-    });
-    setFilteredItems(filtered);
-  }, [allItems, t]);
+      setFilteredItems(filtered);
+    },
+    [allItems, t],
+  );
 
   useEffect(() => {
     if (allItems.length > 0 && searchText.length > 0) {
@@ -77,12 +80,15 @@ const Crafter: React.FC = () => {
     }
   };
 
-  const handleInputChangeSearchItem = useCallback((event: React.ChangeEvent<HTMLInputElement>): void => {
-    if (event) {
-      const newSearchText = event.currentTarget.value;
-      setSearchText(newSearchText);
-    }
-  }, []);
+  const handleInputChangeSearchItem = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>): void => {
+      if (event) {
+        const newSearchText = event.currentTarget.value;
+        setSearchText(newSearchText);
+      }
+    },
+    [],
+  );
 
   const removeSelectedItem = useCallback((itemName: string): void => {
     setSelectedItems((prevItems) =>
@@ -90,56 +96,72 @@ const Crafter: React.FC = () => {
     );
   }, []);
 
-  const changeCount = useCallback((itemName: string, count: number): void => {
-    if (count <= 0) {
-      removeSelectedItem(itemName);
-      return;
-    }
+  const changeCount = useCallback(
+    (itemName: string, count: number): void => {
+      if (count <= 0) {
+        removeSelectedItem(itemName);
+        return;
+      }
 
-    setSelectedItems((prevItems) =>
-      prevItems.map((item) =>
-        item.name === itemName ? { ...item, count } : item,
-      ),
-    );
-  }, [removeSelectedItem]);
+      setSelectedItems((prevItems) =>
+        prevItems.map((item) =>
+          item.name === itemName ? { ...item, count } : item,
+        ),
+      );
+    },
+    [removeSelectedItem],
+  );
 
-  const getIngredients = useCallback((itemName: string, secondTree: boolean): any => {
-    const selectedItem = allItems.find((it) => it.name === itemName);
-    if (!selectedItem?.crafting) {
-      return [];
-    }
+  const getIngredients = useCallback(
+    (itemName: string, secondTree: boolean): any => {
+      const selectedItem = allItems.find((it) => it.name === itemName);
+      if (!selectedItem?.crafting) {
+        return [];
+      }
 
-    return selectedItem.crafting.map((recipe): ItemRecipe => ({
-      ...recipe,
-      ingredients: recipe.ingredients?.map((ingredient) => ({
-        ...ingredient,
-        ingredients: secondTree ? [] : getIngredients(ingredient.name, true),
-      })),
-    }));
-  }, [allItems]);
+      return selectedItem.crafting.map(
+        (recipe): ItemRecipe => ({
+          ...recipe,
+          ingredients: recipe.ingredients?.map((ingredient) => ({
+            ...ingredient,
+            ingredients: secondTree
+              ? []
+              : getIngredients(ingredient.name, true),
+          })),
+        }),
+      );
+    },
+    [allItems],
+  );
 
-  const handleAdd = useCallback((itemName: string, count = 1, itemsList = allItems): void => {
-    const existingItem = selectedItems.find((it) => it.name === itemName);
+  const handleAdd = useCallback(
+    (itemName: string, count = 1, itemsList = allItems): void => {
+      const existingItem = selectedItems.find((it) => it.name === itemName);
 
-    if (existingItem) {
-      changeCount(itemName, Number.parseInt(existingItem.count.toString()) + count);
-      return;
-    }
+      if (existingItem) {
+        changeCount(
+          itemName,
+          Number.parseInt(existingItem.count.toString()) + count,
+        );
+        return;
+      }
 
-    const selectedItem = itemsList.find((it) => it.name === itemName);
-    if (selectedItem) {
-      setSelectedItems((prevItems) => [
-        ...prevItems,
-        {
-          ...selectedItem,
-          name: selectedItem.name,
-          category: selectedItem.category ?? "",
-          crafting: getIngredients(selectedItem.name, false),
-          count,
-        },
-      ]);
-    }
-  }, [allItems, selectedItems, changeCount, getIngredients]);
+      const selectedItem = itemsList.find((it) => it.name === itemName);
+      if (selectedItem) {
+        setSelectedItems((prevItems) => [
+          ...prevItems,
+          {
+            ...selectedItem,
+            name: selectedItem.name,
+            category: selectedItem.category ?? "",
+            crafting: getIngredients(selectedItem.name, false),
+            count,
+          },
+        ]);
+      }
+    },
+    [allItems, selectedItems, changeCount, getIngredients],
+  );
 
   const showAllItems = useMemo((): React.ReactNode => {
     if (filteredItems.length > 0 || searchText.length > 0) {
@@ -152,11 +174,7 @@ const Crafter: React.FC = () => {
 
   const showSelectedItems = useMemo((): React.ReactNode => {
     return selectedItems.map((item) => (
-      <SelectedItem
-        key={item.name}
-        item={item}
-        onChangeCount={changeCount}
-      />
+      <SelectedItem key={item.name} item={item} onChangeCount={changeCount} />
     ));
   }, [selectedItems, changeCount]);
 

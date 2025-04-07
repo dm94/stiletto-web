@@ -3,7 +3,7 @@ import { useState, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
-import { getDomain } from "../functions/utils";
+import { getItemUrl } from "../functions/utils";
 import type { CustomItem } from "../types";
 
 interface IngredientProps {
@@ -18,9 +18,7 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
   const hasIngredients =
     ingredient?.ingredients && ingredient?.ingredients.length > 0;
 
-  const url = `${getDomain()}/item/${encodeURI(
-    ingredient?.name.toLowerCase().replaceAll(" ", "_"),
-  )}`;
+  const url = getItemUrl(ingredient?.name);
 
   const renderSubList = () => {
     if (
