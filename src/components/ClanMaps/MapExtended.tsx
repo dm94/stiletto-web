@@ -18,7 +18,6 @@ const RasterCoordsInitializer: React.FC<RasterCoordsInitializerProps> = ({
 }) => {
   const map = useMap();
 
-  // This effect runs only once on initialization
   useEffect(() => {
     const img: [number, number] = [4065, 4065];
 
@@ -32,34 +31,15 @@ const RasterCoordsInitializer: React.FC<RasterCoordsInitializerProps> = ({
     const defaultCenter = rc.unproject([centerX, centerY]);
 
     // Use the provided center or default to the center of the image
-    // Only set the initial view if the map doesn't already have a view set
-    if (!map.getCenter() || map.getZoom() === undefined) {
-      map.setView(
-        center ? new L.LatLng(center[0], center[1]) : defaultCenter,
-        2,
-      );
-    }
+    map.setView(center ? new L.LatLng(center[0], center[1]) : defaultCenter, 2);
 
     // Store the rasterCoords instance on the map for potential external access
     (map as any).rasterCoords = rc;
+  }, [map, center]);
 
-    // Add event listeners to track user interactions with the map
-    const onMoveEnd = () => {
-      // This prevents the map from resetting to the initial position
-      // We don't need to do anything here, just having this handler prevents the reset
-    };
-
-    map.on("moveend", onMoveEnd);
-
-    // Clean up event listeners when component unmounts
-    return () => {
-      map.off("moveend", onMoveEnd);
-    };
-  }, [map]); // Remove center from dependencies to prevent reinitialization
-
-  // Update the map view ONLY when the center prop changes and is explicitly provided
+  // Update the map view when the center prop changes
   useEffect(() => {
-    if (center && map && center[0] !== 0 && center[1] !== 0) {
+    if (center && map) {
       map.setView(new L.LatLng(center[0], center[1]), map.getZoom());
     }
   }, [center, map]);
