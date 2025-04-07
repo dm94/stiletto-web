@@ -18,7 +18,20 @@ const RasterCoordsInitializer: React.FC<RasterCoordsInitializerProps> = ({
 }) => {
   const map = useMap();
 
+  // Track if the map has been initialized
+  const initializedRef = useRef(false);
+  // Track the last explicitly set center
+  const lastCenterRef = useRef<[number, number] | undefined>(center);
+  // Track if the center was set by user interaction (panning/zooming)
+  const userInteractionRef = useRef(false);
+
+  // This effect handles the initial setup of the map
   useEffect(() => {
+    // Only run initialization once
+    if (initializedRef.current) {
+      return;
+    }
+
     const img: [number, number] = [4065, 4065];
 
     // Initialize RasterCoords with the map instance using our custom implementation
@@ -35,14 +48,52 @@ const RasterCoordsInitializer: React.FC<RasterCoordsInitializerProps> = ({
 
     // Store the rasterCoords instance on the map for potential external access
     (map as any).rasterCoords = rc;
-  }, [map, center]);
 
-  // Update the map view when the center prop changes
+    // Add event listeners to track user interactions with the map
+    map.on("moveend", () => {
+      // Only mark as user interaction if it wasn't programmatically set
+      if (!userInteractionRef.current) {
+        userInteractionRef.current = true;
+      }
+    });
+
+    // Mark as initialized to prevent re-initialization
+    initializedRef.current = true;
+    lastCenterRef.current = center;
+  }, [map]); // Only depend on map to run once on initialization
+
+  // This effect only handles explicit center prop changes from parent components
   useEffect(() => {
-    if (center && map) {
-      map.setView(new L.LatLng(center[0], center[1]), map.getZoom());
+    // Skip during initial render as the initialization effect handles it
+    if (!initializedRef.current) {
+      return;
+    }
+
+    // Only update the view if center is explicitly provided, different from last center,
+    // and not overridden by user interaction
+    if (center && map?.getCenter()) {
+      // Check if the center prop has actually changed from the last explicit center
+      const centerChanged =
+        !lastCenterRef.current ||
+        center[0] !== lastCenterRef.current[0] ||
+        center[1] !== lastCenterRef.current[1];
+
+      // Only set the view if the center has changed and user hasn't interacted with the map
+      // or if we're explicitly forcing the center update
+      if (centerChanged && !userInteractionRef.current) {
+        map.setView(new L.LatLng(center[0], center[1]), map.getZoom());
+        // Update the last center reference
+        lastCenterRef.current = center;
+      }
     }
   }, [center, map]);
+
+  // Reset user interaction flag when center prop changes
+  useEffect(() => {
+    if (center) {
+      userInteractionRef.current = false;
+    }
+  }, [center]);
 
   return null;
 };
