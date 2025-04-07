@@ -333,7 +333,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         role="tree"
         className="skill-tree-wrapper"
         style={{
-          minHeight: `${containerDimensions.height}px`,
           cursor: isDragging ? "grabbing" : "grab",
         }}
         onMouseDown={handleMouseDown}
