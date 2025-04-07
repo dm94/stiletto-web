@@ -88,9 +88,15 @@ const RasterCoordsInitializer: React.FC<RasterCoordsInitializerProps> = ({
     }
   }, [center, map]);
 
-  // Reset user interaction flag when center prop changes
+  // Only reset user interaction flag when center prop changes intentionally
   useEffect(() => {
-    if (center) {
+    if (
+      center &&
+      lastCenterRef.current &&
+      (center[0] !== lastCenterRef.current[0] ||
+        center[1] !== lastCenterRef.current[1])
+    ) {
+      // Only reset the user interaction flag if the center has actually changed
       userInteractionRef.current = false;
     }
   }, [center]);
