@@ -26,9 +26,6 @@ importers:
       leaflet:
         specifier: 1.9.4
         version: 1.9.4
-      leaflet-rastercoords:
-        specifier: 1.0.6
-        version: 1.0.6
       query-string:
         specifier: 9.1.1
         version: 9.1.1
@@ -1412,9 +1409,6 @@ packages:
   lazy-ass@1.6.0:
     resolution: {integrity: sha512-cc8oEVoctTvsFZ/Oje/kGnHbpWHYBe8IAJe4C0QNc3t8uM/0Y8+erSz/7Y1ALuXTEZTMvxXwO6YbX1ey3ujiZw==}
     engines: {node: '> 0.8'}
-
-  leaflet-rastercoords@1.0.6:
-    resolution: {integrity: sha512-uoGlGis7tKXdoeueCNwbfaclL38b/jztSwgWejHO+2EimxMbcQIr2PCG0E/kyJ9Z6WFkdoM2ypaypoHeitpKqg==}
 
   leaflet@1.9.4:
     resolution: {integrity: sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==}
@@ -3433,10 +3427,6 @@ snapshots:
       verror: 1.10.0
 
   lazy-ass@1.6.0: {}
-
-  leaflet-rastercoords@1.0.6:
-    dependencies:
-      leaflet: 1.9.4
 
   leaflet@1.9.4: {}
 
