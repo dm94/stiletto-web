@@ -22,7 +22,7 @@ export type MapJsonInfo = {
   image: string;
 };
 
-export type EditMapRequestParams = {
+export type EditMapRequestBody = {
   mapname: string;
   mapdate?: string;
   allowediting?: boolean;

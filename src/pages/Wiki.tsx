@@ -53,6 +53,7 @@ const Wiki = () => {
     updateRecipes();
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const searchItems = useCallback(
     (search = searchText, category = categoryFilter) => {
       sendEvent("search", { props: { term: search } });
@@ -78,7 +79,7 @@ const Wiki = () => {
       setDisplayedItems(filtered.slice(0, ITEMS_PER_PAGE));
       setHasMore(filtered.length > ITEMS_PER_PAGE);
     },
-    [items, searchText, categoryFilter, t],
+    [items, searchText, t],
   );
 
   useEffect(() => {
@@ -86,7 +87,6 @@ const Wiki = () => {
       const parsed = queryString.parse(location.search);
 
       if (parsed?.s) {
-        setSearchText(String(parsed.s));
         searchItems(String(parsed.s), "All");
       }
     } else if (items.length > 0) {

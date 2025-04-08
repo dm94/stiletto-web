@@ -33,7 +33,8 @@ const PrivateProfile = () => {
         const response = await getUser();
         setUserData(response);
       } catch {
-        setError("errors.apiConnection");
+        setError("auth.loginAgain1");
+        closeSession();
       } finally {
         setIsLoaded(true);
       }
@@ -286,7 +287,7 @@ const PrivateProfile = () => {
             </div>
           </div>
         </div>
-        {!userData?.nickname && isLoaded && (
+        {isLoaded && (
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-3 bg-gray-900 border-b border-gray-700">
               <h2 className="text-xl font-bold text-white">

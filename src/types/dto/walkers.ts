@@ -42,7 +42,7 @@ export type GetWalkersRequestParams = {
   description?: string;
 };
 
-export type EditWalkerRequestParams = {
+export type EditWalkerRequestBody = {
   owner: string;
   ready: boolean;
   use: WalkerUse;

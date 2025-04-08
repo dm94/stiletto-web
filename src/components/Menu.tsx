@@ -133,6 +133,14 @@ const Menu: React.FC<MenuProps> = ({
                   {t("menu.wiki")}
                 </Link>
               </li>
+              <li className="nav-item" data-cy="tech-link">
+                <Link
+                  to="/tech"
+                  className="block py-2 text-white hover:text-gray-300"
+                >
+                  {t("menu.techTree")}
+                </Link>
+              </li>
             </ul>
 
             {/* Search bar */}

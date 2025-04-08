@@ -42,7 +42,7 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
   }, [message?.isError, message?.text]);
 
   const navigateTo = (): void => {
-    navigate(message?.redirectPage?? "");
+    navigate(message?.redirectPage ?? "");
   };
 
   return (

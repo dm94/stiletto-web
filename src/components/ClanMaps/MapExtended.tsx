@@ -19,7 +19,10 @@ class MapExtendedClass extends ReactLeafletMap<MapProps> {
     const img: [number, number] = [4065, 4065];
 
     // Cast to any since we don't have proper type definitions for leaflet-rastercoords
-    const rc = new (RasterCoords as any)(leafletMapElement, img) as RasterCoordsType;
+    const rc = new (RasterCoords as any)(
+      leafletMapElement,
+      img,
+    ) as RasterCoordsType;
 
     leafletMapElement.setView(rc.unproject([img[0], img[1]]), 2);
 
@@ -28,9 +31,11 @@ class MapExtendedClass extends ReactLeafletMap<MapProps> {
 }
 
 // Create a forwardRef component to properly handle React component requirements
-const MapExtended = React.forwardRef<MapExtendedClass, MapProps>((props, ref) => {
-  // @ts-expect-error
-  return <MapExtendedClass {...props} ref={ref} />;
-});
+const MapExtended = React.forwardRef<MapExtendedClass, MapProps>(
+  (props, ref) => {
+    // @ts-expect-error
+    return <MapExtendedClass {...props} ref={ref} />;
+  },
+);
 
 export default MapExtended;

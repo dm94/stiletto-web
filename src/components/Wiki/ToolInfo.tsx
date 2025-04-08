@@ -15,7 +15,9 @@ const ToolInfo: React.FC<ToolInfoProps> = ({ toolInfo }) => {
         key={`${tool.toolType}-${tool.tier}`}
         className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0"
       >
-        {tool?.toolType && <div className="text-gray-300">{t(tool.toolType)}</div>}
+        {tool?.toolType && (
+          <div className="text-gray-300">{t(tool.toolType)}</div>
+        )}
         <div className="text-gray-400">{tool.tier}</div>
       </li>
     ));

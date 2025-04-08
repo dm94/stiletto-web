@@ -3,7 +3,6 @@ import { config } from "../../config/config";
 import type { TechTreeInfo, Tree } from "../../types/dto/tech";
 import type { LoginInfo, UserInfo } from "../../types/dto/users";
 import { objectToURLSearchParams } from "../utils";
-import type { GenericResponse } from "../../types/dto/generic";
 
 export const getUser = async (): Promise<UserInfo> => {
   const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
@@ -13,38 +12,40 @@ export const getUser = async (): Promise<UserInfo> => {
     },
   });
 
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 
   throw new Error("errors.apiConnection");
 };
 
-export const addNick = async (newNick: string): Promise<GenericResponse> => {
-  const params = objectToURLSearchParams({
-    dataupdate: newNick,
-  });
-
-  const response = await fetch(`${config.REACT_APP_API_URL}/users?${params}`, {
+export const addNick = async (newNick: string): Promise<boolean> => {
+  const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
     method: "PUT",
-    headers: { Authorization: `Bearer ${getStoredItem("token")}` },
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      dataupdate: newNick,
+    }),
   });
 
-  if (response) {
-    return await response.json();
+  if (response.ok) {
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
 };
 
-export const deleteUser = async (): Promise<GenericResponse> => {
+export const deleteUser = async (): Promise<boolean> => {
   const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${getStoredItem("token")}` },
   });
 
-  if (response) {
-    return await response.json();
+  if (response.ok) {
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
@@ -68,7 +69,7 @@ export const getLearned = async (
     },
   );
 
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 
@@ -96,7 +97,7 @@ export const addTech = async (
     },
   );
 
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 
@@ -104,12 +105,15 @@ export const addTech = async (
 };
 
 export const authDiscord = async (code: string): Promise<LoginInfo> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/users/auth?code=${code}`,
-    {
-      method: "POST",
+  const response = await fetch(`${config.REACT_APP_API_URL}/users/auth`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
-  );
+    body: JSON.stringify({
+      code: code,
+    }),
+  });
 
   if (response) {
     return await response.json();

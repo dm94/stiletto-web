@@ -107,10 +107,9 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       }
 
       try {
-        const response = await addResourceMap(mapId, {
+        const response = await addResourceMap(mapId, pass ?? "", {
           x: coordinateXInput,
           y: coordinateYInput,
-          mappass: pass ?? "",
           resourcetype: resourceTypeInput,
           quality: qualityInput,
           description: descriptionInput,
