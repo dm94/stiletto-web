@@ -10,7 +10,7 @@ import { getStoredItem } from "../../services";
 import { objectToURLSearchParams } from "../../utils";
 
 export const getMaps = async (): Promise<MapInfo[]> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/maps`, {
+  const response = await fetch(`${config.API_URL}/maps`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
@@ -33,7 +33,7 @@ export const addMap = async (
     ? { Authorization: `Bearer ${getStoredItem("token")}` }
     : {};
 
-  const response = await fetch(`${config.REACT_APP_API_URL}/maps?${params}`, {
+  const response = await fetch(`${config.API_URL}/maps?${params}`, {
     method: "POST",
     headers: headers as Record<string, string>,
   });
@@ -53,12 +53,9 @@ export const getMap = async (
     mappass: mappass,
   });
 
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/maps/${mapid}?${params}`,
-    {
-      method: "GET",
-    },
-  );
+  const response = await fetch(`${config.API_URL}/maps/${mapid}?${params}`, {
+    method: "GET",
+  });
 
   if (response) {
     return await response.json();
@@ -78,7 +75,7 @@ export const editMap = async (
       }
     : { "Content-Type": "application/json" };
 
-  const response = await fetch(`${config.REACT_APP_API_URL}/maps/${mapId}`, {
+  const response = await fetch(`${config.API_URL}/maps/${mapId}`, {
     method: "PUT",
     headers: headers as Record<string, string>,
     body: JSON.stringify(requestBody),
@@ -92,7 +89,7 @@ export const editMap = async (
 };
 
 export const deleteMap = async (mapId: number): Promise<GenericResponse> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/maps/${mapId}`, {
+  const response = await fetch(`${config.API_URL}/maps/${mapId}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,

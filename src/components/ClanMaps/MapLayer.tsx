@@ -102,9 +102,9 @@ const MapLayer: React.FC<MapLayerProps> = ({
   );
 
   const getMarketDesign = useCallback((resource: string) => {
-    const res = resource.replaceAll(" ", "_");
+    const res = resource.replace(" ", "_");
     return L.icon({
-      iconUrl: `${config.REACT_APP_RESOURCES_URL}/markers/${res}.png`,
+      iconUrl: `${config.RESOURCES_URL}/markers/${res}.png`,
       iconSize: [25, 41],
       iconAnchor: [13, 44],
       popupAnchor: [-6, -20],
@@ -273,10 +273,10 @@ const MapLayer: React.FC<MapLayerProps> = ({
             [-84.9, 177.3],
           ]}
           opacity={gridOpacity}
-          url={`${config.REACT_APP_RESOURCES_URL}/maps/Grid_new.png`}
+          url={`${config.RESOURCES_URL}/maps/Grid_new.png`}
         />
         <TileLayer
-          url={`${config.REACT_APP_RESOURCES_URL}/maps/${
+          url={`${config.RESOURCES_URL}/maps/${
             resourcesInTheMap?.[0]?.typemap ?? "Crater_new"
           }/{z}/{x}/{y}.png`}
           noWrap

@@ -5,7 +5,7 @@ import type { LoginInfo, UserInfo } from "../../types/dto/users";
 import { objectToURLSearchParams } from "../utils";
 
 export const getUser = async (): Promise<UserInfo> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
+  const response = await fetch(`${config.API_URL}/users`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
@@ -20,7 +20,7 @@ export const getUser = async (): Promise<UserInfo> => {
 };
 
 export const addNick = async (newNick: string): Promise<boolean> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
+  const response = await fetch(`${config.API_URL}/users`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
@@ -39,7 +39,7 @@ export const addNick = async (newNick: string): Promise<boolean> => {
 };
 
 export const deleteUser = async (): Promise<boolean> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/users`, {
+  const response = await fetch(`${config.API_URL}/users`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${getStoredItem("token")}` },
   });
@@ -60,7 +60,7 @@ export const getLearned = async (
   });
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/users/${discordId}/tech?${params}`,
+    `${config.API_URL}/users/${discordId}/tech?${params}`,
     {
       method: "GET",
       headers: {
@@ -86,7 +86,7 @@ export const addTech = async (
   });
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/users/${discordId}/tech?${params.toString()}`,
+    `${config.API_URL}/users/${discordId}/tech?${params.toString()}`,
     {
       method: "PUT",
       headers: {
@@ -105,7 +105,7 @@ export const addTech = async (
 };
 
 export const authDiscord = async (code: string): Promise<LoginInfo> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/users/auth`, {
+  const response = await fetch(`${config.API_URL}/users/auth`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

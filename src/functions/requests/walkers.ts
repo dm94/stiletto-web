@@ -13,15 +13,12 @@ export const getWalkers = async (
 ): Promise<WalkerInfo[]> => {
   const params = objectToURLSearchParams(requestParams);
 
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/walkers?${params}`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+  const response = await fetch(`${config.API_URL}/walkers?${params}`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
-  );
+  });
   if (response) {
     return await response.json();
   }
@@ -33,17 +30,14 @@ export const editWalker = async (
   walkerId: string,
   requestParams: EditWalkerRequestBody,
 ): Promise<GenericResponse> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/walkers/${walkerId}`,
-    {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(requestParams),
+  const response = await fetch(`${config.API_URL}/walkers/${walkerId}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
+      "Content-Type": "application/json",
     },
-  );
+    body: JSON.stringify(requestParams),
+  });
 
   if (response.ok) {
     return await response.json();
@@ -53,15 +47,12 @@ export const editWalker = async (
 };
 
 export const deleteWalker = async (walkerId: string): Promise<boolean> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/walkers/${walkerId}`,
-    {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+  const response = await fetch(`${config.API_URL}/walkers/${walkerId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
-  );
+  });
 
   if (response) {
     return response.ok;

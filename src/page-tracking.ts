@@ -16,7 +16,7 @@ interface EventProps {
 }
 
 export const initPlausible = (): void => {
-  const PLAUSIBLE_URL = config.REACT_APP_PLAUSIBLE_URL;
+  const PLAUSIBLE_URL = config.PLAUSIBLE_URL;
 
   if (!PLAUSIBLE_URL || PLAUSIBLE_URL.length <= 0) {
     return;

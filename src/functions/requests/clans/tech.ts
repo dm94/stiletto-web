@@ -13,7 +13,7 @@ export const seeWhoHasLearntIt = async (
   const params = objectToURLSearchParams(requestParams);
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}/tech?${params}`,
+    `${config.API_URL}/clans/${clanid}/tech?${params}`,
     {
       method: "GET",
       headers: {

@@ -42,11 +42,11 @@ The website uses several json files to read the game data so that it is always u
 
 #### Environmental variables
 
-- REACT_APP_PUBLIC_URL=https://stiletto.deeme.dev
-- REACT_APP_RESOURCES_URL= URL API ADDRESS FOR ICONS AND MAPS
-- REACT_APP_API_URL= URL API
-- REACT_APP_DISCORD_CLIENT_ID= DISCORD CLIENT ID
-- REACT_APP_PLAUSIBLE_URL=PLAUSIBLE URL
+- VITE_PUBLIC_URL=https://stiletto.deeme.dev
+- VITE_RESOURCES_URL= URL API ADDRESS FOR ICONS AND MAPS
+- VITE_API_URL= URL API
+- VITE_DISCORD_CLIENT_ID= DISCORD CLIENT ID
+- VITE_PLAUSIBLE_URL=PLAUSIBLE URL
 
 #### Generate maps
 

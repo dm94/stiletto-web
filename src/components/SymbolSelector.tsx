@@ -25,7 +25,7 @@ const SymbolSelector: React.FC<SymbolSelectorProps> = ({
           title={`${isSelected ? "Selected: " : ""}Clan symbol ${symbol}`}
         >
           <img
-            src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
+            src={`${config.RESOURCES_URL}/symbols/${symbol}.png`}
             className="img-fluid"
             alt={`Clan symbol ${symbol}`}
             id={`symbol-img-${symbol}`}

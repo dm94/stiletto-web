@@ -10,15 +10,12 @@ import { objectToURLSearchParams } from "../../utils";
 import type { GenericResponse } from "../../../types/dto/generic";
 
 export const getMembers = async (clanId: number): Promise<MemberInfo[]> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanId}/members`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+  const response = await fetch(`${config.API_URL}/clans/${clanId}/members`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
-  );
+  });
 
   if (response) {
     return await response.json();
@@ -33,7 +30,7 @@ export const updateMember = async (
   action: MemberAction,
 ): Promise<GenericResponse> => {
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}/members/${memberid}?action=${action}`,
+    `${config.API_URL}/clans/${clanid}/members/${memberid}?action=${action}`,
     {
       method: "PUT",
       headers: {
@@ -54,7 +51,7 @@ export const getMemberPermissions = async (
   discordid: string,
 ): Promise<Permissions> => {
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}/members/${discordid}/permissions`,
+    `${config.API_URL}/clans/${clanid}/members/${discordid}/permissions`,
     {
       method: "GET",
       headers: {
@@ -78,7 +75,7 @@ export const updateMemberPermissions = async (
   const params = objectToURLSearchParams(permissions);
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}/members/${memberid}/permissions?${params}`,
+    `${config.API_URL}/clans/${clanid}/members/${memberid}/permissions?${params}`,
     {
       method: "PUT",
       headers: {

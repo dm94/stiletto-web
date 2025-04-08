@@ -10,7 +10,7 @@ import type {
 } from "../../../types/dto/clan";
 
 export const getClanInfo = async (clanid: number): Promise<ClanInfo> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/clans/${clanid}`, {
+  const response = await fetch(`${config.API_URL}/clans/${clanid}`, {
     method: "GET",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
@@ -30,15 +30,12 @@ export const updateClan = async (
 ): Promise<GenericResponse> => {
   const params = objectToURLSearchParams(requestParams);
 
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}?${params}`,
-    {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+  const response = await fetch(`${config.API_URL}/clans/${clanid}?${params}`, {
+    method: "PUT",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
-  );
+  });
 
   if (response) {
     return await response.json();
@@ -48,7 +45,7 @@ export const updateClan = async (
 };
 
 export const deleteClan = async (clanId: number): Promise<GenericResponse> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/clans/${clanId}`, {
+  const response = await fetch(`${config.API_URL}/clans/${clanId}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
@@ -67,7 +64,7 @@ export const getClans = async (
 ): Promise<ClanInfo[]> => {
   const params = objectToURLSearchParams(requestParams);
 
-  const response = await fetch(`${config.REACT_APP_API_URL}/clans?${params}`);
+  const response = await fetch(`${config.API_URL}/clans?${params}`);
   if (response) {
     return await response.json();
   }
@@ -80,7 +77,7 @@ export const createClan = async (
 ): Promise<Response> => {
   const params = objectToURLSearchParams(requestParams);
 
-  const response = await fetch(`${config.REACT_APP_API_URL}/clans?${params}`, {
+  const response = await fetch(`${config.API_URL}/clans?${params}`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
@@ -95,7 +92,7 @@ export const createClan = async (
 };
 
 export const leaveClan = async (): Promise<GenericResponse> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/clans`, {
+  const response = await fetch(`${config.API_URL}/clans`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${getStoredItem("token")}` },
   });

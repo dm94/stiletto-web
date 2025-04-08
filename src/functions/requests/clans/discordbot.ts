@@ -10,15 +10,12 @@ import type { GenericResponse } from "../../../types/dto/generic";
 export const getDiscordConfig = async (
   clanid: number,
 ): Promise<DiscordConfig> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}/discordbot`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+  const response = await fetch(`${config.API_URL}/clans/${clanid}/discordbot`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
-  );
+  });
 
   if (response) {
     return await response.json();
@@ -34,7 +31,7 @@ export const updateBotConfig = async (
   const params = objectToURLSearchParams(queryParams);
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}/discordbot?${params}`,
+    `${config.API_URL}/clans/${clanid}/discordbot?${params}`,
     {
       method: "PUT",
       headers: { Authorization: `Bearer ${getStoredItem("token")}` },

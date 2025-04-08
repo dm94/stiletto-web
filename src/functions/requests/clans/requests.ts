@@ -6,15 +6,12 @@ import type { GenericResponse } from "../../../types/dto/generic";
 import { objectToURLSearchParams } from "../../utils";
 
 export const getRequests = async (clanId: number): Promise<MemberRequest[]> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanId}/requests`,
-    {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+  const response = await fetch(`${config.API_URL}/clans/${clanId}/requests`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
-  );
+  });
 
   if (response) {
     return await response.json();
@@ -32,7 +29,7 @@ export const sendRequest = async (
   });
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanId}/requests?${params}`,
+    `${config.API_URL}/clans/${clanId}/requests?${params}`,
     {
       method: "POST",
       headers: {
@@ -54,7 +51,7 @@ export const updateRequest = async (
   action: RequestAction,
 ): Promise<GenericResponse> => {
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanId}/requests/${requestid}?action=${action}`,
+    `${config.API_URL}/clans/${clanId}/requests/${requestid}?action=${action}`,
     {
       method: "PUT",
       headers: {
