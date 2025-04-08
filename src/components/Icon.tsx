@@ -39,7 +39,7 @@ const Icon: React.FC<IconProps> = ({ name: initialName, width = 16 }) => {
       }
     }
 
-    return processedName.replaceAll("Body", "").trim();
+    return processedName.replace("Body", "").trim();
   };
 
   if (!loaded) {
@@ -48,7 +48,7 @@ const Icon: React.FC<IconProps> = ({ name: initialName, width = 16 }) => {
 
   return (
     <img
-      src={`${config.REACT_APP_RESOURCES_URL}/items/${getProcessedName(
+      src={`${config.RESOURCES_URL}/items/${getProcessedName(
         initialName,
       )} icon.png`}
       loading="lazy"

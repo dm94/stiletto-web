@@ -21,7 +21,7 @@ const DiscordButton: React.FC = () => {
   }
 
   const discordAuthUrl = `https://discord.com/api/oauth2/authorize?client_id=${
-    config.REACT_APP_DISCORD_CLIENT_ID
+    config.DISCORD_CLIENT_ID
   }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
 
   return (

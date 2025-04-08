@@ -18,7 +18,7 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
         <img
           width="48"
           height="48"
-          src={`${config.REACT_APP_RESOURCES_URL}/symbols/${clan.symbol}.png`}
+          src={`${config.RESOURCES_URL}/symbols/${clan.symbol}.png`}
           style={{ backgroundColor: clan.flagcolor }}
           alt={t("diplomacy.symbol")}
           id={`symbol-img-${clan.name}`}

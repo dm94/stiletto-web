@@ -2,7 +2,7 @@ import { config } from "../../config/config";
 import type { Recipe, RecipeListInfo } from "../../types/dto/recipe";
 
 export const addRecipe = async (items: Recipe[]): Promise<RecipeListInfo> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/recipes`, {
+  const response = await fetch(`${config.API_URL}/recipes`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,12 +22,9 @@ export const addRecipe = async (items: Recipe[]): Promise<RecipeListInfo> => {
 export const getRecipe = async (
   recipeToken: string,
 ): Promise<RecipeListInfo> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/recipes/${recipeToken}`,
-    {
-      method: "GET",
-    },
-  );
+  const response = await fetch(`${config.API_URL}/recipes/${recipeToken}`, {
+    method: "GET",
+  });
 
   if (response) {
     return await response.json();

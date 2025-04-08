@@ -13,7 +13,7 @@ export const getTrades = async (
 ): Promise<TradeInfo[]> => {
   const params = objectToURLSearchParams(queryParams);
 
-  const response = await fetch(`${config.REACT_APP_API_URL}/trades?${params}`, {
+  const response = await fetch(`${config.API_URL}/trades?${params}`, {
     method: "GET",
   });
 
@@ -27,7 +27,7 @@ export const getTrades = async (
 export const createTrade = async (
   requestParams: CreateTradeRequestParams,
 ): Promise<GenericResponse> => {
-  const response = await fetch(`${config.REACT_APP_API_URL}/trades`, {
+  const response = await fetch(`${config.API_URL}/trades`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${getStoredItem("token")}`,
@@ -44,15 +44,12 @@ export const createTrade = async (
 };
 
 export const deleteTrade = async (tradeId: number): Promise<boolean> => {
-  const response = await fetch(
-    `${config.REACT_APP_API_URL}/trades/${tradeId}`,
-    {
-      method: "DELETE",
-      headers: {
-        Authorization: `Bearer ${getStoredItem("token")}`,
-      },
+  const response = await fetch(`${config.API_URL}/trades/${tradeId}`, {
+    method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
     },
-  );
+  });
 
   if (response.ok) {
     return response.ok;

@@ -17,7 +17,7 @@ export const getResources = async (
   });
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/maps/${mapId}/resources?${params}`,
+    `${config.API_URL}/maps/${mapId}/resources?${params}`,
     {
       method: "GET",
     },
@@ -42,7 +42,7 @@ export const addResourceMap = async (
     : { "Content-Type": "application/json" };
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/maps/${mapId}/resources?mappass=${mappass}`,
+    `${config.API_URL}/maps/${mapId}/resources?mappass=${mappass}`,
     {
       method: "POST",
       headers: headers as Record<string, string>,
@@ -62,7 +62,7 @@ export const editResource = async (
   requestBody: EditResourceRequestBody,
 ): Promise<GenericResponse> => {
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}`,
+    `${config.API_URL}/maps/${mapId}/resources/${resourceId}`,
     {
       method: "PUT",
       headers: {
@@ -88,7 +88,7 @@ export const deleteResource = async (
   });
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/maps/${mapId}/resources/${resourceId}?${params}`,
+    `${config.API_URL}/maps/${mapId}/resources/${resourceId}?${params}`,
     {
       method: "DELETE",
     },

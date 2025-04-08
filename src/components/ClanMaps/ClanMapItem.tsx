@@ -40,7 +40,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   );
 
   const mapImageSrc = useMemo(() => {
-    return `${config.REACT_APP_RESOURCES_URL}/maps/${value?.replace("_new", "")}.jpg`;
+    return `${config.RESOURCES_URL}/maps/${value?.replace("_new", "")}.jpg`;
   }, [value]);
 
   const renderDeleteButton = useMemo(() => {

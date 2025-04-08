@@ -222,7 +222,7 @@ const Diplomacy = () => {
         aria-label={`Select symbol ${symbol}`}
       >
         <img
-          src={`${config.REACT_APP_RESOURCES_URL}/symbols/${symbol}.png`}
+          src={`${config.RESOURCES_URL}/symbols/${symbol}.png`}
           className={
             symbol === clanFlagSymbolInput
               ? "w-full h-auto rounded-lg border border-gray-300"

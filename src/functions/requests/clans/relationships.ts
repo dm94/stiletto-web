@@ -11,7 +11,7 @@ export const getRelationships = async (
   clanid: number,
 ): Promise<RelationshipInfo[]> => {
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}/relationships`,
+    `${config.API_URL}/clans/${clanid}/relationships`,
     {
       headers: {
         Authorization: `Bearer ${getStoredItem("token")}`,
@@ -33,7 +33,7 @@ export const createRelationship = async (
   const params = objectToURLSearchParams(request);
 
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanid}/relationships?${params}`,
+    `${config.API_URL}/clans/${clanid}/relationships?${params}`,
     {
       method: "POST",
       headers: {
@@ -54,7 +54,7 @@ export const deleteRelationship = async (
   relationShipId: number,
 ): Promise<GenericResponse> => {
   const response = await fetch(
-    `${config.REACT_APP_API_URL}/clans/${clanId}/relationships/${relationShipId}`,
+    `${config.API_URL}/clans/${clanId}/relationships/${relationShipId}`,
     {
       method: "DELETE",
       headers: { Authorization: `Bearer ${getStoredItem("token")}` },
