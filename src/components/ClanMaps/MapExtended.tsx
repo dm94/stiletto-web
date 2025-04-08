@@ -38,6 +38,9 @@ const RasterCoordsInitializer: React.FC<RasterCoordsInitializerProps> = ({
         2,
       );
       initializedRef.current = true;
+    } else if (center) {
+      // If center changes after initialization, update the view
+      map.setView(new L.LatLng(center[0], center[1]), map.getZoom());
     }
 
     // Store the rasterCoords instance on the map for potential external access
