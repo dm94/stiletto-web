@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@giscus/react':
         specifier: 3.1.0
-        version: 3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 3.1.0(react-dom@19.0.0(react@19.1.0))(react@19.1.0)
       '@tanstack/react-virtual':
         specifier: ^3.13.6
-        version: 3.13.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 3.13.6(react-dom@19.0.0(react@19.1.0))(react@19.1.0)
       i18next:
         specifier: 24.2.3
         version: 24.2.3(typescript@5.8.2)
@@ -33,26 +33,26 @@ importers:
         specifier: 9.1.1
         version: 9.1.1
       react:
-        specifier: 19.0.0
-        version: 19.0.0
+        specifier: 19.1.0
+        version: 19.1.0
       react-dom:
         specifier: 19.0.0
-        version: 19.0.0(react@19.0.0)
+        version: 19.0.0(react@19.1.0)
       react-helmet:
         specifier: 6.1.0
-        version: 6.1.0(react@19.0.0)
+        version: 6.1.0(react@19.1.0)
       react-i18next:
         specifier: 15.4.1
-        version: 15.4.1(i18next@24.2.3(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 15.4.1(i18next@24.2.3(typescript@5.8.2))(react-dom@19.0.0(react@19.1.0))(react@19.1.0)
       react-leaflet:
         specifier: 2.8.0
-        version: 2.8.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 2.8.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.1.0))(react@19.1.0)
       react-router:
         specifier: ^7.5.0
-        version: 7.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 7.5.0(react-dom@19.0.0(react@19.1.0))(react@19.1.0)
       react-scripts:
         specifier: 5.0.1
-        version: 5.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@19.0.0)(type-fest@0.21.3)(typescript@5.8.2)
+        version: 5.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@19.1.0)(type-fest@0.21.3)(typescript@5.8.2)
     devDependencies:
       '@babel/preset-react':
         specifier: 7.26.3
@@ -73,17 +73,17 @@ importers:
         specifier: ^6.3.0
         version: 6.3.0
       '@types/react':
-        specifier: ^19.0.11
-        version: 19.0.11
+        specifier: ^19.1.0
+        version: 19.1.0
       '@types/react-dom':
         specifier: ^19.0.4
-        version: 19.0.4(@types/react@19.0.11)
+        version: 19.0.4(@types/react@19.1.0)
       '@types/react-helmet':
         specifier: ^6.1.11
         version: 6.1.11
       '@types/react-leaflet':
         specifier: ^3.0.0
-        version: 3.0.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+        version: 3.0.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.1.0))(react@19.1.0)
       '@types/react-router':
         specifier: ^5.1.20
         version: 5.1.20
@@ -1520,8 +1520,8 @@ packages:
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
-  '@types/react@19.0.11':
-    resolution: {integrity: sha512-vrdxRZfo9ALXth6yPfV16PYTLZwsUWhVjjC+DkfE5t1suNSbBrWC9YqSuuxJZ8Ps6z1o2ycRpIqzZJIgklq4Tw==}
+  '@types/react@19.1.0':
+    resolution: {integrity: sha512-UaicktuQI+9UKyA4njtDOGBD/67t8YEBt2xdfqu8+gP9hqPUPsiXlNPcpS2gVdjmis5GKPG3fCxbQLVgxsQZ8w==}
 
   '@types/resolve@1.17.1':
     resolution: {integrity: sha512-yy7HuzQhj0dhGpD8RLXSZWEkLsV9ibvxvi6EiJ3bkqLAO1RGo0WbkWQiwpRlSFymTJRz0d3k5LM3kkx8ArDbLw==}
@@ -5129,8 +5129,8 @@ packages:
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0
 
-  react@19.0.0:
-    resolution: {integrity: sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==}
+  react@19.1.0:
+    resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -7349,11 +7349,11 @@ snapshots:
 
   '@eslint/js@8.57.1': {}
 
-  '@giscus/react@3.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@giscus/react@3.1.0(react-dom@19.0.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       giscus: 1.6.0
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
+      react: 19.1.0
+      react-dom: 19.0.0(react@19.1.0)
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:
@@ -7811,11 +7811,11 @@ snapshots:
       postcss: 8.5.3
       tailwindcss: 4.1.3
 
-  '@tanstack/react-virtual@3.13.6(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@tanstack/react-virtual@3.13.6(react-dom@19.0.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@tanstack/virtual-core': 3.13.6
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
+      react: 19.1.0
+      react-dom: 19.0.0(react@19.1.0)
 
   '@tanstack/virtual-core@3.13.6': {}
 
@@ -7962,17 +7962,17 @@ snapshots:
 
   '@types/range-parser@1.2.7': {}
 
-  '@types/react-dom@19.0.4(@types/react@19.0.11)':
+  '@types/react-dom@19.0.4(@types/react@19.1.0)':
     dependencies:
-      '@types/react': 19.0.11
+      '@types/react': 19.1.0
 
   '@types/react-helmet@6.1.11':
     dependencies:
-      '@types/react': 19.0.11
+      '@types/react': 19.1.0
 
-  '@types/react-leaflet@3.0.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)':
+  '@types/react-leaflet@3.0.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      react-leaflet: 2.8.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      react-leaflet: 2.8.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.1.0))(react@19.1.0)
     transitivePeerDependencies:
       - leaflet
       - react
@@ -7981,9 +7981,9 @@ snapshots:
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.0.11
+      '@types/react': 19.1.0
 
-  '@types/react@19.0.11':
+  '@types/react@19.1.0':
     dependencies:
       csstype: 3.1.3
 
@@ -12116,31 +12116,31 @@ snapshots:
       - supports-color
       - vue-template-compiler
 
-  react-dom@19.0.0(react@19.0.0):
+  react-dom@19.0.0(react@19.1.0):
     dependencies:
-      react: 19.0.0
+      react: 19.1.0
       scheduler: 0.25.0
 
   react-error-overlay@6.1.0: {}
 
   react-fast-compare@3.2.2: {}
 
-  react-helmet@6.1.0(react@19.0.0):
+  react-helmet@6.1.0(react@19.1.0):
     dependencies:
       object-assign: 4.1.1
       prop-types: 15.8.1
-      react: 19.0.0
+      react: 19.1.0
       react-fast-compare: 3.2.2
-      react-side-effect: 2.1.2(react@19.0.0)
+      react-side-effect: 2.1.2(react@19.1.0)
 
-  react-i18next@15.4.1(i18next@24.2.3(typescript@5.8.2))(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-i18next@15.4.1(i18next@24.2.3(typescript@5.8.2))(react-dom@19.0.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@babel/runtime': 7.26.10
       html-parse-stringify: 3.0.1
       i18next: 24.2.3(typescript@5.8.2)
-      react: 19.0.0
+      react: 19.1.0
     optionalDependencies:
-      react-dom: 19.0.0(react@19.0.0)
+      react-dom: 19.0.0(react@19.1.0)
 
   react-is@16.13.1: {}
 
@@ -12148,29 +12148,29 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-leaflet@2.8.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-leaflet@2.8.0(leaflet@1.9.4)(react-dom@19.0.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@babel/runtime': 7.26.10
       fast-deep-equal: 3.1.3
       hoist-non-react-statics: 3.3.2
       leaflet: 1.9.4
-      react: 19.0.0
-      react-dom: 19.0.0(react@19.0.0)
+      react: 19.1.0
+      react-dom: 19.0.0(react@19.1.0)
       warning: 4.0.3
 
   react-refresh@0.11.0: {}
 
-  react-router@7.5.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+  react-router@7.5.0(react-dom@19.0.0(react@19.1.0))(react@19.1.0):
     dependencies:
       '@types/cookie': 0.6.0
       cookie: 1.0.2
-      react: 19.0.0
+      react: 19.1.0
       set-cookie-parser: 2.7.1
       turbo-stream: 2.4.0
     optionalDependencies:
-      react-dom: 19.0.0(react@19.0.0)
+      react-dom: 19.0.0(react@19.1.0)
 
-  react-scripts@5.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@19.0.0)(type-fest@0.21.3)(typescript@5.8.2):
+  react-scripts@5.0.1(@babel/plugin-syntax-flow@7.26.0(@babel/core@7.26.10))(@babel/plugin-transform-react-jsx@7.25.9(@babel/core@7.26.10))(@types/babel__core@7.20.5)(eslint@8.57.1)(react@19.1.0)(type-fest@0.21.3)(typescript@5.8.2):
     dependencies:
       '@babel/core': 7.26.10
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.15(react-refresh@0.11.0)(type-fest@0.21.3)(webpack-dev-server@4.15.2(webpack@5.98.0))(webpack@5.98.0)
@@ -12204,7 +12204,7 @@ snapshots:
       postcss-normalize: 10.0.1(browserslist@4.24.4)(postcss@8.5.3)
       postcss-preset-env: 7.8.3(postcss@8.5.3)
       prompts: 2.4.2
-      react: 19.0.0
+      react: 19.1.0
       react-app-polyfill: 3.0.0
       react-dev-utils: 12.0.1(eslint@8.57.1)(typescript@5.8.2)(webpack@5.98.0)
       react-refresh: 0.11.0
@@ -12257,11 +12257,11 @@ snapshots:
       - webpack-hot-middleware
       - webpack-plugin-serve
 
-  react-side-effect@2.1.2(react@19.0.0):
+  react-side-effect@2.1.2(react@19.1.0):
     dependencies:
-      react: 19.0.0
+      react: 19.1.0
 
-  react@19.0.0: {}
+  react@19.1.0: {}
 
   read-cache@1.0.0:
     dependencies:
