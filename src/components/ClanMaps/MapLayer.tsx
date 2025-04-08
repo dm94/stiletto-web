@@ -213,20 +213,6 @@ const MapLayer: React.FC<MapLayerProps> = ({
     return null;
   };
 
-  // Keep the old handler for reference but it's no longer used directly
-  const handleClick = useCallback(
-    (e: { latlng: { lat: number; lng: number } }) => {
-      const roundedLat = Math.round(e.latlng.lat * 100) / 100;
-      const roundedLng = Math.round(e.latlng.lng * 100) / 100;
-
-      setHasLocation(true);
-      setCoordinateXInput(roundedLat);
-      setCoordinateYInput(roundedLng);
-      changeInput?.(roundedLat, roundedLng);
-    },
-    [changeInput],
-  );
-
   const handleShowGrid = useCallback(() => setGridOpacity(1), []);
   const handleHideGrid = useCallback(() => setGridOpacity(0), []);
 

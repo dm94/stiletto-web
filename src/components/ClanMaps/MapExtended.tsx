@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, forwardRef } from "react";
+import type React from "react";
+import { useEffect, useRef, forwardRef } from "react";
 import L from "leaflet";
 import { MapContainer, useMap } from "react-leaflet";
 import type { MapContainerProps } from "react-leaflet";
 
 // Import our custom RasterCoords implementation
-// This replaces the outdated leaflet-rastercoords library
 import { createRasterCoords } from "./RasterCoordsUtil";
 
 // This component initializes the RasterCoords functionality after the map is loaded
