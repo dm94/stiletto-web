@@ -1,41 +1,77 @@
-// @ts-ignore
-import RasterCoords from "leaflet-rastercoords";
-// @ts-ignore
-import { Map as ReactLeafletMap, type MapProps } from "react-leaflet";
-// @ts-ignore
-import type { Map as LeafletMap } from "leaflet";
-import React from "react";
+import React, { useEffect, useRef, forwardRef } from "react";
+import L from "leaflet";
+import { MapContainer, useMap } from "react-leaflet";
+import type { MapContainerProps } from "react-leaflet";
 
-// Define interface for RasterCoords since it doesn't have TypeScript definitions
-interface RasterCoordsType {
-  unproject: (point: [number, number]) => [number, number];
-  project: (point: [number, number]) => [number, number];
+// Import our custom RasterCoords implementation
+// This replaces the outdated leaflet-rastercoords library
+import { createRasterCoords } from "./RasterCoordsUtil";
+
+// This component initializes the RasterCoords functionality after the map is loaded
+interface RasterCoordsInitializerProps {
+  center?: [number, number];
 }
 
-// Create a React component that wraps the ReactLeafletMap
-class MapExtendedClass extends ReactLeafletMap<MapProps> {
-  createLeafletElement(props: MapProps): LeafletMap {
-    const leafletMapElement = super.createLeafletElement(props);
+const RasterCoordsInitializer: React.FC<RasterCoordsInitializerProps> = ({
+  center,
+}) => {
+  const map = useMap();
+  const initializedRef = useRef(false);
+
+  useEffect(() => {
     const img: [number, number] = [4065, 4065];
 
-    // Cast to any since we don't have proper type definitions for leaflet-rastercoords
-    const rc = new (RasterCoords as any)(
-      leafletMapElement,
-      img,
-    ) as RasterCoordsType;
+    // Initialize RasterCoords with the map instance using our custom implementation
+    const rc = createRasterCoords(map, img);
 
-    leafletMapElement.setView(rc.unproject([img[0], img[1]]), 2);
+    // Set the initial view to the center of the image if no center is provided
+    // Calculate the center coordinates of the image
+    const centerX = img[0] / 2;
+    const centerY = img[1] / 2;
+    const defaultCenter = rc.unproject([centerX, centerY]);
 
-    return leafletMapElement;
-  }
-}
+    // Use the provided center or default to the center of the image
+    // Only set the view if this is the initial render
+    if (!initializedRef.current) {
+      map.setView(
+        center ? new L.LatLng(center[0], center[1]) : defaultCenter,
+        2,
+      );
+      initializedRef.current = true;
+    }
+
+    // Store the rasterCoords instance on the map for potential external access
+    (map as any).rasterCoords = rc;
+  }, [map, center]); // Include center in dependencies to handle updates
+
+  return null;
+};
 
 // Create a forwardRef component to properly handle React component requirements
-const MapExtended = React.forwardRef<MapExtendedClass, MapProps>(
-  (props, ref) => {
-    // @ts-expect-error
-    return <MapExtendedClass {...props} ref={ref} />;
-  },
-);
+const MapExtended = forwardRef<L.Map, MapContainerProps>((props, ref) => {
+  const mapRef = useRef<L.Map | null>(null);
+
+  // Combine the external ref with our internal ref
+  const setMapRef = (map: L.Map) => {
+    mapRef.current = map;
+
+    if (ref) {
+      if (typeof ref === "function") {
+        ref(map);
+      } else {
+        (ref as React.RefObject<L.Map>).current = map;
+      }
+    }
+  };
+
+  return (
+    <MapContainer {...props} ref={setMapRef}>
+      {props.children}
+      <RasterCoordsInitializer
+        center={props.center as [number, number] | undefined}
+      />
+    </MapContainer>
+  );
+});
 
 export default MapExtended;
