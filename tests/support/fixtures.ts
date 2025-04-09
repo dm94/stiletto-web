@@ -1,22 +1,21 @@
 import type { Page } from "@playwright/test";
-import path from "node:path";
-import fs from "node:fs";
+
+const API_URL = process.env.VITE_API_URL;
 
 const interceptAll = async (page: Page): Promise<void> => {
   await interceptItems(page);
   await interceptTrades(page);
   await interceptClans(page);
-  await interceptImages(page);
   await interceptRecipes(page);
   await interceptMap(page);
   await interceptUser(page);
 };
 
 const interceptItems = async (page: Page): Promise<void> => {
-  await page.route("**/items", async (route) => {
+  await page.route(`${API_URL}/items`, async (route) => {
     await route.fulfill({
       status: 200,
-      body: JSON.stringify([
+      json: [
         {
           name: "Sand Bed",
           category: "Decorations",
@@ -99,16 +98,16 @@ const interceptItems = async (page: Page): Promise<void> => {
             },
           ],
         },
-      ]),
+      ],
     });
   });
 };
 
 const interceptTrades = async (page: Page): Promise<void> => {
-  await page.route("**/trades*", async (route) => {
+  await page.route(`${API_URL}/trades*`, async (route) => {
     await route.fulfill({
       status: 200,
-      body: JSON.stringify([
+      json: [
         {
           idtrade: "1",
           discordid: "0000000000000000",
@@ -229,14 +228,14 @@ const interceptTrades = async (page: Page): Promise<void> => {
           nickname: "Trader9",
           discordtag: "trader9#3456",
         },
-      ]),
+      ],
     });
   });
 
-  await page.route("**/clusters*", async (route) => {
+  await page.route(`${API_URL}/clusters*`, async (route) => {
     await route.fulfill({
       status: 200,
-      body: JSON.stringify([
+      json: [
         { region: "EU", name: "Official", clan_limit: "999", crossplay: "1" },
         { region: "EU", name: "Xbox", clan_limit: "999", crossplay: "1" },
         {
@@ -282,16 +281,16 @@ const interceptTrades = async (page: Page): Promise<void> => {
           clan_limit: "999",
           crossplay: "1",
         },
-      ]),
+      ],
     });
   });
 };
 
 const interceptClans = async (page: Page): Promise<void> => {
-  await page.route("**/clans*", async (route) => {
+  await page.route(`${API_URL}/clans*`, async (route) => {
     await route.fulfill({
       status: 202,
-      body: JSON.stringify([
+      json: [
         {
           clanid: "1",
           name: "Stiletto Clan",
@@ -304,55 +303,21 @@ const interceptClans = async (page: Page): Promise<void> => {
           region: "EU-Official",
           discordTag: "TEST#12345",
         },
-      ]),
+      ],
     });
-  });
-};
-
-const interceptImages = async (page: Page): Promise<void> => {
-  await page.route("**/items/*", async (route) => {
-    const imageBuffer = fs.readFileSync(path.join("../fixtures/aloe.png"));
-    await route.fulfill({
-      status: 200,
-      contentType: "image/png",
-      body: imageBuffer,
-    });
-  });
-
-  await page.route("**/symbols/*", async (route) => {
-    const imageBuffer = fs.readFileSync(path.join("../fixtures/aloe.png"));
-    await route.fulfill({
-      status: 200,
-      contentType: "image/png",
-      body: imageBuffer,
-    });
-  });
-
-  await page.route("**/maps/*", async (route) => {
-    // Only intercept image requests, not API requests
-    if (route.request().resourceType() === "image") {
-      const imageBuffer = fs.readFileSync(path.join("../fixtures/map.jpg"));
-      await route.fulfill({
-        status: 200,
-        contentType: "image/jpeg",
-        body: imageBuffer,
-      });
-    } else {
-      await route.continue();
-    }
   });
 };
 
 const interceptRecipes = async (page: Page): Promise<void> => {
-  await page.route("**/recipes*", async (route) => {
-    const fixtureDate = JSON.stringify({
+  await page.route(`${API_URL}/recipes*`, async (route) => {
+    const fixtureDate = {
       token: "63e00d26982e2b509d5cde92",
-      items: '[{"name":"Sand Bed","count":1}]',
-    });
+      items: JSON.parse('[{"name":"Sand Bed","count":1}]'),
+    };
     if (route.request().method() === "POST") {
-      await route.fulfill({ status: 201, body: fixtureDate });
+      await route.fulfill({ status: 201, json: fixtureDate });
     } else if (route.request().method() === "GET") {
-      await route.fulfill({ status: 200, body: fixtureDate });
+      await route.fulfill({ status: 200, json: fixtureDate });
     } else {
       await route.continue();
     }
@@ -360,11 +325,11 @@ const interceptRecipes = async (page: Page): Promise<void> => {
 };
 
 const interceptMap = async (page: Page): Promise<void> => {
-  await page.route("**/maps/*/resources*", async (route) => {
+  await page.route(`${API_URL}/maps/*/resources*`, async (route) => {
     if (route.request().method() === "GET") {
       await route.fulfill({
         status: 200,
-        body: JSON.stringify([
+        json: [
           {
             resourceid: null,
             mapid: null,
@@ -377,12 +342,12 @@ const interceptMap = async (page: Page): Promise<void> => {
             lastharvested: null,
             typemap: "MiniOasis_new",
           },
-        ]),
+        ],
       });
     } else if (route.request().method() === "POST") {
       await route.fulfill({
         status: 202,
-        body: JSON.stringify({ Success: "Added resource" }),
+        json: { Success: "Added resource" },
       });
     } else if (route.request().method() === "DELETE") {
       await route.fulfill({ status: 204 });
@@ -391,20 +356,20 @@ const interceptMap = async (page: Page): Promise<void> => {
     }
   });
 
-  await page.route("**/maps", async (route) => {
+  await page.route(`${API_URL}/maps`, async (route) => {
     if (route.request().method() === "POST") {
       await route.fulfill({
         status: 201,
-        body: JSON.stringify({
+        json: {
           Success: "Map created",
           IdMap: "1",
           PassMap: "fsdfdsfdsfdsfdewr",
-        }),
+        },
       });
     } else if (route.request().method() === "GET") {
       await route.fulfill({
         status: 200,
-        body: JSON.stringify({
+        json: {
           mapid: "1",
           typemap: "MiniOasis_new",
           discordID: "0000000000000000",
@@ -412,7 +377,7 @@ const interceptMap = async (page: Page): Promise<void> => {
           dateofburning: "2050-01-01",
           pass: "1234567890",
           allowedit: "1",
-        }),
+        },
       });
     } else {
       await route.continue();
@@ -421,10 +386,10 @@ const interceptMap = async (page: Page): Promise<void> => {
 };
 
 const interceptUser = async (page: Page): Promise<void> => {
-  await page.route("**/users*", async (route) => {
+  await page.route(`${API_URL}/users*`, async (route) => {
     await route.fulfill({
       status: 200,
-      body: JSON.stringify({
+      json: {
         nickname: "Stiletto",
         discordtag: "TEST#12345",
         discordid: "000000000000",
@@ -432,7 +397,7 @@ const interceptUser = async (page: Page): Promise<void> => {
         clanname: null,
         leaderid: null,
         serverdiscord: null,
-      }),
+      },
     });
   });
 };
