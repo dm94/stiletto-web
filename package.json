@@ -36,11 +36,18 @@
     "preview": "vite preview",
     "cypress": "cypress open",
     "cypress:test": "cypress run",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report",
     "format": "biome format --write ./src",
     "lint": "biome lint --write ./src"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -50,6 +57,7 @@
   "devDependencies": {
     "@babel/preset-react": "7.26.3",
     "@biomejs/biome": "1.9.4",
+    "@playwright/test": "^1.51.1",
     "@tailwindcss/postcss": "4.1.3",
     "@types/leaflet": "^1.9.17",
     "@types/node": "^22.14.0",
@@ -71,7 +79,11 @@
   },
   "packageManager": "pnpm@10.6.5",
   "pnpm": {
-    "ignoredBuiltDependencies": ["cypress"],
-    "onlyBuiltDependencies": ["cypress"]
+    "ignoredBuiltDependencies": [
+      "cypress"
+    ],
+    "onlyBuiltDependencies": [
+      "cypress"
+    ]
   }
 }

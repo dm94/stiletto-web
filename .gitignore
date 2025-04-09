@@ -31,3 +31,5 @@ cypress.json
 cypress/videos
 cypress/screenshots
 dist/
+playwright-report/
+test-results/
