@@ -32,6 +32,7 @@ const PrivateProfile = () => {
       try {
         const response = await getUser();
         setUserData(response);
+        setNameInGameInput(response?.nickname ?? "");
       } catch {
         setError("auth.loginAgain1");
         closeSession();
@@ -327,7 +328,7 @@ const PrivateProfile = () => {
                   type="submit"
                   className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
                 >
-                  {t("common.add")}
+                  {t("common.update")}
                 </button>
               </form>
             </div>
