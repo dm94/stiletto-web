@@ -44,7 +44,7 @@ export const updateClan = async (
   throw new Error("errors.apiConnection");
 };
 
-export const deleteClan = async (clanId: number): Promise<GenericResponse> => {
+export const deleteClan = async (clanId: number): Promise<boolean> => {
   const response = await fetch(`${config.API_URL}/clans/${clanId}`, {
     method: "DELETE",
     headers: {
@@ -52,8 +52,8 @@ export const deleteClan = async (clanId: number): Promise<GenericResponse> => {
     },
   });
 
-  if (response) {
-    return await response.json();
+  if (response.ok) {
+    return response.ok;
   }
 
   throw new Error("errors.apiConnection");
@@ -84,7 +84,7 @@ export const createClan = async (
     },
   });
 
-  if (response) {
+  if (response.ok) {
     return await response.json();
   }
 

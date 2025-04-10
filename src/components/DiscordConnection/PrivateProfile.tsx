@@ -25,7 +25,7 @@ const PrivateProfile = () => {
   const [redirect, setRedirect] = useState(false);
   const [nameInGameInput, setNameInGameInput] = useState("");
   const [error, setError] = useState("");
-  const [showClanConfig, setShowClanConfig] = useState(false);
+  const [showCreateClanConfig, setShowCreateClanConfig] = useState(false);
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -90,6 +90,17 @@ const PrivateProfile = () => {
 
   const handleLanguageChange = () => {
     i18next.changeLanguage(language);
+  };
+
+  const handleCreateClan = async () => {
+    try {
+      setShowCreateClanConfig(false);
+      const response = await getUser();
+
+      setUserData(response);
+    } catch {
+      setError(t("errors.apiConnection"));
+    }
   };
 
   if (error) {
@@ -238,7 +249,7 @@ const PrivateProfile = () => {
                 <button
                   type="button"
                   data-cy="create-clan-btn"
-                  onClick={() => setShowClanConfig(true)}
+                  onClick={() => setShowCreateClanConfig(true)}
                   className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
                 >
                   {t("clan.createClan")}
@@ -374,11 +385,11 @@ const PrivateProfile = () => {
         </div>
       )}
 
-      {showClanConfig && (
+      {showCreateClanConfig && (
         <ClanConfig
-          onClose={() => setShowClanConfig(false)}
+          onClose={() => handleCreateClan()}
           onError={() => {
-            setShowClanConfig(false);
+            setShowCreateClanConfig(false);
             window.location.reload();
           }}
         />

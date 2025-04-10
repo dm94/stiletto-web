@@ -85,20 +85,11 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
         recruit: formState.recruitInput,
       };
 
-      const response = await createClan(requestParams);
-
-      if (response.status === 201) {
-        onClose?.();
-      } else if (response.status === 401) {
-        onClose?.();
-        closeSession();
-        onError?.("errors.noAccess");
-      } else if (response.status === 503 || response.status === 205) {
-        onError?.("error.databaseConnection");
-      }
+      await createClan(requestParams);
     } catch {
-      onClose?.();
       onError?.("errors.apiConnection");
+    } finally {
+      onClose?.();
     }
   };
 
