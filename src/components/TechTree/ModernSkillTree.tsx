@@ -58,7 +58,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  // Load saved skills from storage
   useEffect(() => {
     try {
       const savedSkills = getStoredItem(`skills-${treeId}`);
@@ -68,6 +67,8 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     } catch (error) {
       console.error("Error loading saved skills:", error);
     }
+
+    resetZoom();
   }, [treeId]);
 
   // Build tree structure from items
@@ -96,7 +97,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   // Calculate node positions for horizontal layout
   const calculateNodePositions = useCallback((treeData: NodeData[]) => {
     const horizontalSpacing = 180;
-    const verticalSpacing = 100;
+    const verticalSpacing = 110;
     const processedNodes: NodeData[] = [];
     const processedEdges: EdgeData[] = [];
 
