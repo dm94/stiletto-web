@@ -18,7 +18,8 @@ type LocaleLayoutProps = {
 export async function generateMetadata({
   params,
 }: { params: { locale: string } }): Promise<Metadata> {
-  const locale = params.locale;
+  // Ensure params is properly awaited before accessing locale
+  const locale = await Promise.resolve(params.locale);
 
   return {
     title: "Stiletto for Last Oasis",

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { ReactNode } from 'react';
-import LanguageSwitcher from '../../../components/LanguageSwitcher';
-import type { Dictionary } from '../../../lib/i18n';
+import type { ReactNode } from "react";
+import LanguageSwitcher from "../../../components/LanguageSwitcher";
+import type { Dictionary } from "../../../lib/i18n";
 
 interface ClientLayoutProps {
   children: ReactNode;
@@ -10,7 +10,11 @@ interface ClientLayoutProps {
   locale: string;
 }
 
-export default function ClientLayout({ children, dictionary, locale }: ClientLayoutProps) {
+export default function ClientLayout({
+  children,
+  dictionary,
+  locale,
+}: ClientLayoutProps) {
   return (
     <div className="flex flex-col min-h-screen">
       <header className="bg-gray-800 text-white p-4">
@@ -25,11 +29,9 @@ export default function ClientLayout({ children, dictionary, locale }: ClientLay
           </nav>
         </div>
       </header>
-      
-      <main className="flex-grow container mx-auto p-4">
-        {children}
-      </main>
-      
+
+      <main className="flex-grow container mx-auto p-4">{children}</main>
+
       <footer className="bg-gray-800 text-white p-4">
         <div className="container mx-auto">
           <LanguageSwitcher dictionary={dictionary} currentLocale={locale} />
