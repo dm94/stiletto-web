@@ -1,23 +1,8 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { locales, defaultLocale } from "./src/lib/i18n";
 
-// List of all supported locales
-const locales = [
-  "en",
-  "fr",
-  "es",
-  "zh",
-  "de",
-  "it",
-  "ja",
-  "pl",
-  "pt",
-  "ru",
-  "uk",
-  "ca",
-  "tr",
-];
-const defaultLocale = "en";
+// Middleware for handling internationalization with App Router
 
 // Get the preferred locale from request headers
 function getLocale(request: NextRequest) {

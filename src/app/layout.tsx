@@ -1,6 +1,10 @@
 import type { ReactNode } from "react";
 
 import type { Metadata } from "next";
+import "../styles/normalize.css";
+import "../styles/style.css";
+import "../styles/tribal-ui.css";
+import "../styles/desert-theme.css";
 
 export const metadata: Metadata = {
   title: "Stiletto for Last Oasis",

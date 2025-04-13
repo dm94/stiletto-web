@@ -89,7 +89,9 @@ The current application is:
   /app
     /api
     /(routes)
-      /[locale]
+        /(pages)
+    /(locales)
+      /(routes)
         /(pages)
   /components
     /ui          # Reusable UI components
@@ -106,7 +108,7 @@ The current application is:
     /json        # Static JSON data
   ```
 
-### 2. Core Components Migration (Week 2)
+### 2. Core Components Migration
 
 - [ ] Migrate shared components (Menu, Footer, etc.)
   - Convert to TypeScript if not already
@@ -119,28 +121,12 @@ The current application is:
 - [ ] Set up authentication context/providers
   - Implement NextAuth.js for Discord authentication
   - Create session provider and hooks
-  - Migrate existing authentication logic from DiscordConnection component
 - [ ] Implement i18n routing with middleware
   - Create middleware.ts for language detection and routing
   - Set up locale negotiation based on user preferences
   - Migrate from i18next to Next.js i18n or next-i18next
 
-### 3. API Routes Implementation (Week 2-3)
-
-- [ ] Create API routes for backend communication
-  - Implement `/api/auth/[...nextauth].ts` for authentication
-  - Create API routes for existing endpoints
-  - Implement rate limiting and error handling
-- [ ] Implement data fetching utilities using Next.js patterns
-  - Create service functions using React Server Components
-  - Implement caching strategies with Next.js cache()
-  - Set up revalidation for ISR pages
-  - Migrate existing fetch calls from services.ts
-- [ ] Set up environment variables
-  - Configure .env.local with Next.js variables
-  - Set up runtime configuration
-
-### 4. Page Migration (Week 3-5)
+### 4. Page Migration
 
 - [ ] Migrate static pages first (Home, Privacy, etc.)
   - Implement as Server Components with static generation
@@ -239,36 +225,6 @@ Routing implementation details:
 - Set up catch-all routes for fallback pages
 - Create not-found.tsx for 404 handling
 
-### Data Fetching
-
-Replace direct fetch calls with Next.js data fetching methods:
-
-```typescript
-// Current: src/functions/services.ts
-export const getItems = async (): Promise<Item[]> => {
-  // Fetch logic
-};
-
-// Next.js: app/[locale]/wiki/page.tsx
-export async function generateStaticParams() {
-  // For ISR/SSG routes
-}
-
-async function getItems() {
-  // Server component data fetching
-}
-```
-
-Data fetching implementation details:
-- Move fetch logic from services.ts to server components
-- Implement caching with React cache() for shared data
-- Use SWR or React Query for client-side data fetching
-- Implement revalidation strategies based on data type:
-  - Static data (items, markers): Long cache with ISR
-  - Dynamic data (trades, clans): Short cache with frequent revalidation
-  - User data: Client-side fetching with authentication
-- Create API routes for backend communication
-
 ### State Management
 
 Separate client and server state:
@@ -286,20 +242,6 @@ State management implementation details:
   - Complex state: Consider Zustand or Jotai for lightweight state management
 - Separate data fetching from UI state management
 - Implement proper loading and error states
-
-### Internationalization
-
-Migrate from i18next to Next.js i18n routing:
-
-```typescript
-// middleware.ts
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-
-export function middleware(request: NextRequest) {
-  // i18n routing logic
-}
-```
 
 ## Challenges and Considerations
 
