@@ -121,10 +121,11 @@ The current application is:
 - [ ] Set up authentication context/providers
   - Implement NextAuth.js for Discord authentication
   - Create session provider and hooks
-- [ ] Implement i18n routing with middleware
-  - Create middleware.ts for language detection and routing
+- [x] Implement i18n routing with middleware
+  - Created middleware.ts for language detection and routing
   - Set up locale negotiation based on user preferences
-  - Migrate from i18next to Next.js i18n or next-i18next
+  - Configured matcher pattern to exclude static files and API routes
+  - Implemented redirect logic for paths without locale prefix
 
 ### 4. Page Migration
 

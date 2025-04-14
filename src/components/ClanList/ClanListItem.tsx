@@ -1,6 +1,6 @@
 import type React from "react";
 import { memo } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import ClanName from "../ClanName";
 import type { ClanInfo } from "../../types/dto/clan";
@@ -38,7 +38,7 @@ const ClanListItem: React.FC<ClanListItemProps> = ({
         return (
           <Link
             className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-center block"
-            to="/members"
+            href="/members"
             aria-label={t("menu.members")}
           >
             {t("menu.members")}

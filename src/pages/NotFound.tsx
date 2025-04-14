@@ -1,6 +1,6 @@
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import Link from "next/link";
 import { Helmet } from "react-helmet";
 import { getDomain } from "../functions/utils";
 
@@ -32,7 +32,7 @@ const NotFoundPage = () => {
         </h2>
         <p className="text-gray-400 mb-4">{t("errors.pageNotFound")}</p>
         <Link
-          to="/"
+          href="/"
           className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {t("common.goBackToHome")}

@@ -1,7 +1,6 @@
 "use client";
 
-import type React from "react";
-import { useState, type KeyboardEvent } from "react";
+import React, { useState, type KeyboardEvent } from "react";
 import Link from "next/link";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
@@ -15,7 +14,7 @@ interface MenuProps {
   language?: string;
 }
 
-const Menu: React.FC<MenuProps> = ({
+const NextMenu: React.FC<MenuProps> = ({
   setRedirectTo,
   openLanguajeModal,
   language,
@@ -193,4 +192,4 @@ const Menu: React.FC<MenuProps> = ({
   );
 };
 
-export default Menu;
+export default NextMenu;

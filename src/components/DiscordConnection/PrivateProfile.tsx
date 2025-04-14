@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router";
+import Link from "next/link";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import Icon from "../Icon";

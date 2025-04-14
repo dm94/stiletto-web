@@ -5,7 +5,7 @@ import { memo, useMemo } from "react";
 import Others from "./Others";
 import { getStoredItem } from "../functions/services";
 import { getDomain } from "../functions/utils";
-import { Link } from "react-router";
+import Link from "next/link";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-8">
         <Link
           className="text-center"
-          to="/crafter"
+          href="/crafter"
           aria-label={t("crafting.calculator")}
         >
           <h2 className="lo-title text-3xl">{t("crafting.calculator")}</h2>
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
         </Link>
         <Link
           className="text-center"
-          to="/trades"
+          href="/trades"
           aria-label={t("trades.title")}
         >
           <h2 className="lo-title text-3xl">{t("trades.title")}</h2>
@@ -58,7 +58,7 @@ const Home: React.FC = () => {
         </Link>
         <Link
           className="text-center"
-          to={resourceMapsUrl}
+          href={resourceMapsUrl}
           aria-label={t("menu.resourceMaps")}
         >
           <h2 className="lo-title text-3xl">{t("menu.resourceMaps")}</h2>

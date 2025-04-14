@@ -1,5 +1,7 @@
+"use client";
+
 import type React from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
 const Footer: React.FC = () => {
@@ -12,7 +14,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-wrap items-center space-x-2">
             <span>By Dm94Dani</span>
             <span>|</span>
-            <Link className="text-white hover:text-gray-300" to="/privacy">
+            <Link className="text-white hover:text-gray-300" href="/privacy">
               {t("common.privacyPolicy")}
             </Link>
             <span>|</span>

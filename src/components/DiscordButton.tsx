@@ -1,5 +1,5 @@
 import type React from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { getStoredItem } from "../functions/services";
 import { getDomain } from "../functions/utils";
@@ -12,7 +12,7 @@ const DiscordButton: React.FC = () => {
     return (
       <Link
         className="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-        to="/profile"
+        href="/profile"
         data-cy="profile-link"
       >
         <i className="far fa-user mr-2" /> {t("menu.profile")}

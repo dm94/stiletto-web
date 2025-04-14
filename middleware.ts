@@ -1,81 +1,59 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
-import { locales, defaultLocale } from "./src/lib/i18n";
+import { type NextRequest, NextResponse } from "next/server";
 
-// Middleware for handling internationalization with App Router
+const PUBLIC_FILE = /\.(.*)$/;
 
-// Get the preferred locale from request headers
-function getLocale(request: NextRequest) {
-  // Check if there is a cookie with a preferred locale
-  const cookieLocale = request.cookies.get("NEXT_LOCALE")?.value;
-  if (cookieLocale && locales.includes(cookieLocale)) {
-    return cookieLocale;
-  }
+// Match all paths except those starting with:
+// - /_next (Next.js internals)
+// - /api (API routes)
+// - /static (static files)
+// - files with extensions (public files)
+export const config = {
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico|.*\\.).*)"],
+};
 
-  // Check Accept-Language header
-  const acceptLanguage = request.headers.get("accept-language");
-  if (acceptLanguage) {
-    const parsedLocales = acceptLanguage.split(",").map((l) => {
-      const [locale, priority] = l.split(";q=");
-      return {
-        locale: locale.trim().split("-")[0],
-        priority: priority ? Number(priority) : 1,
-      };
-    });
-
-    // Sort by priority (highest first)
-    parsedLocales.sort((a, b) => b.priority - a.priority);
-
-    // Find the first locale that is supported
-    const matchedLocale = parsedLocales.find((l) =>
-      locales.includes(l.locale),
-    )?.locale;
-    if (matchedLocale) {
-      return matchedLocale;
-    }
-  }
-
-  return defaultLocale;
-}
-
-export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
-
-  // Skip for assets, api routes, etc.
+export async function middleware(req: NextRequest) {
+  // Skip middleware for public files, Next.js internals, and API routes
   if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.startsWith("/img") ||
-    pathname.startsWith("/json") ||
-    pathname.includes(".") // Skip files with extensions
+    req.nextUrl.pathname.startsWith("/_next") ||
+    req.nextUrl.pathname.includes("/api/") ||
+    PUBLIC_FILE.test(req.nextUrl.pathname)
   ) {
-    return NextResponse.next();
+    return;
   }
 
-  // Check if the pathname already includes a locale
-  const pathnameHasLocale = locales.some(
+  // Get the preferred locale from cookies or default to 'en'
+  const locale = req.cookies.get("NEXT_LOCALE")?.value || "en";
+
+  // Check if URL doesn't already have a locale prefix
+  const pathname = req.nextUrl.pathname;
+
+  // Get all supported locales from next.config.mjs
+  const supportedLocales = [
+    "en",
+    "es",
+    "ru",
+    "fr",
+    "de",
+    "it",
+    "ja",
+    "pl",
+    "zh",
+    "ca",
+    "pt",
+  ];
+
+  // Check if pathname already has a locale prefix
+  const pathnameHasLocale = supportedLocales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`,
   );
 
-  if (pathnameHasLocale) {
-    return NextResponse.next();
+  // If pathname doesn't have locale prefix, redirect to add the locale
+  if (!pathnameHasLocale) {
+    return NextResponse.redirect(
+      new URL(
+        `/${locale}${pathname === "/" ? "" : pathname}${req.nextUrl.search}`,
+        req.url,
+      ),
+    );
   }
-
-  // Redirect to the locale-prefixed path
-  const locale = getLocale(request);
-  const newUrl = new URL(
-    `/${locale}${pathname === "/" ? "" : pathname}`,
-    request.url,
-  );
-
-  // Preserve query parameters
-  request.nextUrl.searchParams.forEach((value, key) => {
-    newUrl.searchParams.set(key, value);
-  });
-
-  return NextResponse.redirect(newUrl);
 }
-
-export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
-};

@@ -5,6 +5,7 @@ import "../styles/normalize.css";
 import "../styles/style.css";
 import "../styles/tribal-ui.css";
 import "../styles/desert-theme.css";
+import CrafterLayout from "./CrafterLayout";
 
 export const metadata: Metadata = {
   title: "Stiletto for Last Oasis",
@@ -88,7 +89,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <div className="flex flex-col h-full" id="root">
-          {children}
+          <CrafterLayout>{children}</CrafterLayout>
         </div>
       </body>
     </html>
