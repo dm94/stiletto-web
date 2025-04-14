@@ -3,15 +3,15 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";
 import queryString from "query-string";
-import { getItems } from "../functions/services";
-import ModalMessage from "../components/ModalMessage";
-import Items from "../components/Crafter/Items";
-import SelectedItem from "../components/Crafter/SelectedItem";
-import TotalMaterials from "../components/Crafter/TotalMaterials";
-import { getDomain } from "../functions/utils";
-import { getRecipe } from "../functions/requests/recipes";
+import { getItems } from "@functions/services";
+import ModalMessage from "@components/ModalMessage";
+import Items from "@components/Crafter/Items";
+import SelectedItem from "@components/Crafter/SelectedItem";
+import TotalMaterials from "@components/Crafter/TotalMaterials";
+import { getDomain } from "@functions/utils";
+import { getRecipe } from "@functions/requests/recipes";
 import { useLocation } from "react-router";
-import type { CraftItem, Item, ItemRecipe } from "../types/item";
+import type { CraftItem, Item, ItemRecipe } from "@ctypes/item";
 
 const Crafter: React.FC = () => {
   const location = useLocation();
@@ -74,7 +74,7 @@ const Crafter: React.FC = () => {
     } else if (craft) {
       const decodedName = decodeURI(String(craft))
         .toLowerCase()
-        .replaceAll("_", " ")
+        .replace("_", " ")
         .trim();
       setSearchText(decodedName);
     }

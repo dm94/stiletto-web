@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import React, { useMemo } from "react";
-import { getStoredItem } from "../functions/services";
-import Others from "../pages/Others";
+import { getStoredItem } from "@functions/services";
+import Others from "./[locale]/others/page";
 
 export default function Home() {
   const { t } = useTranslation();

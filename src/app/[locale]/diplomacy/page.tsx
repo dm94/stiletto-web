@@ -7,22 +7,22 @@ import {
 } from "react";
 import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";
-import ModalMessage from "../components/ModalMessage";
-import LoadingScreen from "../components/LoadingScreen";
-import ClanSelect from "../components/Diplomacy/ClanSelect";
-import { getUser } from "../functions/requests/users";
-import { getDomain } from "../functions/utils";
-import { config } from "../config/config";
+import ModalMessage from "@components/ModalMessage";
+import LoadingScreen from "@components/LoadingScreen";
+import ClanSelect from "@components/Diplomacy/ClanSelect";
+import { getUser } from "@functions/requests/users";
+import { getDomain } from "@functions/utils";
+import { config } from "@config/config";
 import {
   getRelationships,
   createRelationship,
   deleteRelationship,
-} from "../functions/requests/clans/relationships";
+} from "@functions/requests/clans/relationships";
 import {
   type RelationshipInfo,
   TypeRelationship,
-} from "../types/dto/relationship";
-import { getMemberPermissions } from "../functions/requests/clans/members";
+} from "@ctypes/dto/relationship";
+import { getMemberPermissions } from "@functions/requests/clans/members";
 
 const Diplomacy = () => {
   const { t } = useTranslation();

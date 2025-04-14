@@ -1,26 +1,26 @@
 import type React from "react";
 import { useState, useEffect, Fragment, useCallback, useMemo } from "react";
-import ModalMessage from "../components/ModalMessage";
-import LoadingScreen from "../components/LoadingScreen";
+import ModalMessage from "@components/ModalMessage";
+import LoadingScreen from "@components/LoadingScreen";
 import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";
-import { getItems, getStoredItem } from "../functions/services";
-import Pagination from "../components/Pagination";
-import WalkerListItem from "../components/WalkerList/WalkerListItem";
-import { getDomain } from "../functions/utils";
+import { getItems, getStoredItem } from "@functions/services";
+import Pagination from "@components/Pagination";
+import WalkerListItem from "@components/WalkerList/WalkerListItem";
+import { getDomain } from "@functions/utils";
 import {
   getWalkers,
   editWalker,
   deleteWalker,
-} from "../functions/requests/walkers";
-import { WalkerEnum, type WalkerInfo, WalkerUse } from "../types/dto/walkers";
-import type { Item } from "../types/item";
-import { getUser } from "../functions/requests/users";
+} from "@functions/requests/walkers";
+import { WalkerEnum, type WalkerInfo, WalkerUse } from "@ctypes/dto/walkers";
+import type { Item } from "@ctypes/item";
+import { getUser } from "@functions/requests/users";
 import {
   getMemberPermissions,
   getMembers,
-} from "../functions/requests/clans/members";
-import type { MemberInfo } from "../types/dto/members";
+} from "@functions/requests/clans/members";
+import type { MemberInfo } from "@ctypes/dto/members";
 
 const WalkerList: React.FC = () => {
   const { t } = useTranslation();

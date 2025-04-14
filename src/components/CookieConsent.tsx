@@ -1,10 +1,11 @@
 import type React from "react";
 import { useTranslation } from "next-i18next";
+import { getStoredItem } from "../functions/services";
 
 const CookieConsent: React.FC = () => {
   const { t } = useTranslation();
 
-  if (localStorage.getItem("acceptscookies")) {
+  if (getStoredItem("acceptscookies")) {
     return false;
   }
 

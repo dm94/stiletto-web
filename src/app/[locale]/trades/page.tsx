@@ -2,21 +2,21 @@ import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";
-import { getItems } from "../functions/services";
-import LoadingScreen from "../components/LoadingScreen";
-import ModalMessage from "../components/ModalMessage";
-import Pagination from "../components/Pagination";
-import Trade from "../components/TradeSystem/Trade";
-import ClusterList from "../components/ClusterList";
-import { getDomain } from "../functions/utils";
+import { getItems } from "@functions/services";
+import LoadingScreen from "@components/LoadingScreen";
+import ModalMessage from "@components/ModalMessage";
+import Pagination from "@components/Pagination";
+import Trade from "@components/TradeSystem/Trade";
+import ClusterList from "@components/ClusterList";
+import { getDomain } from "@functions/utils";
 import {
   getTrades,
   deleteTrade,
   createTrade,
-} from "../functions/requests/trades";
-import { type TradeInfo, TradeType } from "../types/dto/trades";
-import type { Item } from "../types/item";
-import { getUser } from "../functions/requests/users";
+} from "@functions/requests/trades";
+import { type TradeInfo, TradeType } from "@ctypes/dto/trades";
+import type { Item } from "@ctypes/item";
+import { getUser } from "@functions/requests/users";
 
 const TradeSystem = () => {
   const { t } = useTranslation();

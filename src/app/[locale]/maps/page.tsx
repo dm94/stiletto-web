@@ -8,18 +8,18 @@ import React, {
 } from "react";
 import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";
-import ModalMessage from "../components/ModalMessage";
-import ClanMapItem from "../components/ClanMaps/ClanMapItem";
-import ResourceMap from "../components/ClanMaps/ResourceMap";
-import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
-import { getDomain } from "../functions/utils";
-import { getMaps, addMap, deleteMap } from "../functions/requests/maps";
-import { getMapNames } from "../functions/services";
-import type { MapInfo, MapJsonInfo } from "../types/dto/maps";
-import LoadingScreen from "../components/LoadingScreen";
+import ModalMessage from "@components/ModalMessage";
+import ClanMapItem from "@components/ClanMaps/ClanMapItem";
+import ResourceMap from "@components/ClanMaps/ResourceMap";
+import CreateMapPanel from "@components/ClanMaps/CreateMapPanel";
+import { getDomain } from "@functions/utils";
+import { getMaps, addMap, deleteMap } from "@functions/requests/maps";
+import { getMapNames } from "@functions/services";
+import type { MapInfo, MapJsonInfo } from "@ctypes/dto/maps";
+import LoadingScreen from "@components/LoadingScreen";
 
 const DeleteMapModal = React.lazy(
-  () => import("../components/ClanMaps/DeleteMapModal"),
+  () => import("@components/ClanMaps/DeleteMapModal"),
 );
 
 const ClanMaps = () => {

@@ -1,12 +1,13 @@
 import type React from "react";
 import { useTranslation } from "next-i18next";
 import { memo, useMemo } from "react";
+import { getStoredItem } from "@functions/services";
 
 const Others: React.FC = () => {
   const { t } = useTranslation();
 
   const showDiscord = useMemo(() => {
-    if (localStorage.getItem("acceptscookies")) {
+    if (getStoredItem("acceptscookies")) {
       return (
         <iframe
           title="discord"
@@ -129,7 +130,7 @@ const Others: React.FC = () => {
               <img
                 className="w-full h-auto rounded-lg"
                 src="/img/banner-lastoasis.jpg"
-                alt="Last Oasis Banner"
+                alt={t("common.steamPage")}
                 height="100"
                 width="600"
               />

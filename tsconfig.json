@@ -27,7 +27,14 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "baseUrl": "./src",
+    "paths": {
+        "@components/*": ["components/*"],
+        "@functions/*": ["functions/*"],
+        "@ctypes/*": ["types/*"],
+        "@config/*": ["config/*"]
+    }
   },
   "include": [
     "./dist/types/**/*.ts",

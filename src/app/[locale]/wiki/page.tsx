@@ -2,13 +2,13 @@ import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "next-i18next";
 import queryString from "query-string";
-import { getItems } from "../functions/services";
-import { sendEvent } from "../page-tracking";
-import Ingredient from "../components/Ingredient";
-import { getDomain } from "../functions/utils";
-import HeaderMeta from "../components/HeaderMeta";
+import { getItems } from "@functions/services";
+import { sendEvent } from "../../../page-tracking";
+import Ingredient from "@components/Ingredient";
+import { getDomain } from "@functions/utils";
+import HeaderMeta from "@components/HeaderMeta";
 import { useLocation } from "react-router";
-import type { Item } from "../types/item";
+import type { Item } from "@ctypes/item";
 
 const Wiki = () => {
   const location = useLocation();

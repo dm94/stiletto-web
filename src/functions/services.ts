@@ -37,7 +37,7 @@ export const storeItem = (name: string, data: string) => {
     return;
   }
 
-  if (localStorage.getItem("acceptscookies")) {
+  if (getStoredItem("acceptscookies")) {
     localStorage.setItem(name, data);
   } else {
     sessionStorage.setItem(name, data);

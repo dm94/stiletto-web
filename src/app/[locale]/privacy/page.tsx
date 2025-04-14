@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import { memo, useMemo } from "react";
-import HeaderMeta from "../components/HeaderMeta";
-import { getDomain } from "../functions/utils";
+import HeaderMeta from "@components/HeaderMeta";
+import { getDomain } from "@functions/utils";
 
 const Privacy = () => {
   const { t } = useTranslation();
