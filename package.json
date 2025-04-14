@@ -21,6 +21,7 @@
     "i18next-http-backend": "3.0.2",
     "leaflet": "1.9.4",
     "next": "^15.3.0",
+    "next-i18next": "^15.4.2",
     "query-string": "9.1.1",
     "react": "19.1.0",
     "react-dom": "19.1.0",
@@ -39,7 +40,11 @@
     "lint": "biome lint --write ./src"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -70,7 +75,12 @@
   },
   "packageManager": "pnpm@10.6.5",
   "pnpm": {
-    "ignoredBuiltDependencies": ["cypress", "sharp"],
-    "onlyBuiltDependencies": ["cypress"]
+    "ignoredBuiltDependencies": [
+      "cypress",
+      "sharp"
+    ],
+    "onlyBuiltDependencies": [
+      "cypress"
+    ]
   }
 }

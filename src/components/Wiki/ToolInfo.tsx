@@ -1,5 +1,5 @@
 import type React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import type { ToolInfo as Info } from "../../types/item";
 
 interface ToolInfoProps {

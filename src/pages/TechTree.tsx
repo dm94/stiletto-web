@@ -6,7 +6,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { NavLink, useParams } from "react-router";
 import { getItems, getStoredItem, storeItem } from "../functions/services";
 import LoadingScreen from "../components/LoadingScreen";

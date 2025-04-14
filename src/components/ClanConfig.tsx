@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import ClusterList from "./ClusterList";
 import SymbolSelector from "./SymbolSelector";
 import {

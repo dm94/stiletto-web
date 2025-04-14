@@ -5,7 +5,7 @@ import {
   useMemo,
   type FormEvent,
 } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";
 import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";

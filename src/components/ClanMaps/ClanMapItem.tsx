@@ -1,5 +1,5 @@
 import type React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { memo, useCallback, useMemo } from "react";
 import { getStoredItem } from "../../functions/services";
 import { getDomain } from "../../functions/utils";

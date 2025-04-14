@@ -1,5 +1,5 @@
 import type React from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { getStoredItem } from "../../functions/services";
 import type { MemberInfo } from "../../types/dto/members";
 

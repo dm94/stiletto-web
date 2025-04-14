@@ -1,5 +1,5 @@
 import { useState, useEffect, Fragment, useMemo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";
 import { getStoredItem } from "../functions/services";
 import { getUser } from "../functions/requests/users";

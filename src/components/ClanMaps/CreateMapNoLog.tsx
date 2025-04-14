@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { getMapNames } from "../../functions/services";
 import CreateMapPanel from "./CreateMapPanel";
 import { getDomain } from "../../functions/utils";

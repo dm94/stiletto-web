@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import React, { useMemo } from "react";
 import { getStoredItem } from "../functions/services";
 import Others from "../pages/Others";

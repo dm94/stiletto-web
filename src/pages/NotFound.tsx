@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 import { Helmet } from "react-helmet";
 import { getDomain } from "../functions/utils";

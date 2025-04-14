@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, Fragment, useCallback, useMemo, memo } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import Icon from "../Icon";
 import type { ResourceInfo } from "../../types/dto/resources";
 

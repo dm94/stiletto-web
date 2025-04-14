@@ -1,11 +1,19 @@
 import { config } from "../config/config";
 
-export const getDomain = () =>
-  window.location.protocol.concat("//").concat(window.location.hostname) +
-  (window.location.port ? `:${window.location.port}` : "");
+export const getDomain = () => {
+  // Check if code is running in browser environment
+  if (typeof window === "undefined") {
+    return "";
+  }
+
+  return (
+    window.location.protocol.concat("//").concat(window.location.hostname) +
+    (window.location.port ? `:${window.location.port}` : "")
+  );
+};
 
 export const getItemUrl = (itemName: string) =>
-  `${getDomain()}/item/${encodeURI(itemName.toLowerCase().replaceAll(" ", "_"))}`;
+  `${getDomain()}/item/${encodeURI(itemName.toLowerCase().replace(" ", "_"))}`;
 
 export const getItemCraftUrl = (itemName: string) =>
   `${getDomain()}/crafter?craft=${encodeURI(itemName.toLowerCase())}`;

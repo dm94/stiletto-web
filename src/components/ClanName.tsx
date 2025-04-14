@@ -1,7 +1,7 @@
 import type React from "react";
 import { Fragment, memo } from "react";
 import { config } from "../config/config";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import type { RelationshipInfo } from "../types/dto/relationship";
 import type { ClanInfo } from "../types/dto/clan";
 

@@ -10,6 +10,11 @@ export const getStoredItem = (name: string) => {
     return null;
   }
 
+  // Check if code is running in browser environment
+  if (typeof window === "undefined") {
+    return null;
+  }
+
   let data = localStorage.getItem(name);
 
   if (data == null) {
@@ -24,6 +29,11 @@ export const getStoredItem = (name: string) => {
 
 export const storeItem = (name: string, data: string) => {
   if (name == null || data == null) {
+    return;
+  }
+
+  // Check if code is running in browser environment
+  if (typeof window === "undefined") {
     return;
   }
 
@@ -137,6 +147,11 @@ export const getMapNames = async (): Promise<MapJsonInfo[]> => {
 };
 
 export const closeSession = () => {
+  // Check if code is running in browser environment
+  if (typeof window === "undefined") {
+    return;
+  }
+
   localStorage.clear();
   sessionStorage.clear();
   window.location.reload();

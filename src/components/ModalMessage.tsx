@@ -1,6 +1,6 @@
 import type React from "react";
 import { useNavigate } from "react-router";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { sendEvent } from "../page-tracking";
 import { useEffect } from "react";
 

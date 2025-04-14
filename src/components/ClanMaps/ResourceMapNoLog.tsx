@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import queryString from "query-string";
 import { getMarkers } from "../../functions/services";
 import LoadingScreen from "../LoadingScreen";

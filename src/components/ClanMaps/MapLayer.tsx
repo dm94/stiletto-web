@@ -8,7 +8,7 @@ import {
   Circle,
   useMapEvents,
 } from "react-leaflet";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import L from "leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";

@@ -1,7 +1,7 @@
 import type React from "react";
 import Giscus from "@giscus/react";
 import { getStoredItem } from "../../functions/services";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 interface CommentsProps {
   name: string;

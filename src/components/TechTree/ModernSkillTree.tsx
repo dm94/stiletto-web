@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo, useRef } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
 import { getItemUrl } from "../../functions/utils";

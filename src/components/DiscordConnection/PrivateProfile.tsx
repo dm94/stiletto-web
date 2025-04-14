@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
 import Link from "next/link";

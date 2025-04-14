@@ -3,7 +3,7 @@
 import React, { useState, type KeyboardEvent } from "react";
 import Link from "next/link";
 import DiscordButton from "./DiscordButton";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { getStoredItem } from "../functions/services";
 import { supportedLanguages } from "../config/languages";
 import type { Language } from "../types";

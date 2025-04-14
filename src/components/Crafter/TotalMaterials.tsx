@@ -1,6 +1,6 @@
 import type React from "react";
 import { memo, useCallback, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
 import { sendEvent } from "../../page-tracking";
