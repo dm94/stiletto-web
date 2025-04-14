@@ -1,44 +1,49 @@
+"use client";
+
 import React, {
-  useState,
-  useEffect,
   Suspense,
-  useMemo,
   useCallback,
+  useEffect,
+  useMemo,
+  useState,
 } from "react";
+import { useParams } from "next/navigation";
+import HeaderMeta from "@components/HeaderMeta";
 import { useTranslation } from "next-i18next";
-import { getItems } from "../functions/services";
-import { Navigate, useParams } from "react-router";
-import Ingredients from "../components/Ingredients";
-import Station from "../components/Station";
-import Icon from "../components/Icon";
-import CraftingTime from "../components/CraftingTime";
-import LoadingScreen from "../components/LoadingScreen";
-import ModuleInfo from "../components/Wiki/ModuleInfo";
-import ToolInfo from "../components/Wiki/ToolInfo";
-import GenericInfo from "../components/Wiki/GenericInfo";
-import Comments from "../components/Wiki/Comments";
-import { calcRarityValue } from "../rarityCalc";
-import { getItemUrl, getItemCraftUrl } from "../functions/utils";
-import HeaderMeta from "../components/HeaderMeta";
-import { type Item, Rarity } from "../types/item";
+import { getItems } from "@functions/services";
+import Ingredients from "@components/Ingredients";
+import Station from "@components/Station";
+import Icon from "@components/Icon";
+import CraftingTime from "@components/CraftingTime";
+import LoadingScreen from "@components/LoadingScreen";
+import ModuleInfo from "@components/Wiki/ModuleInfo";
+import ToolInfo from "@components/Wiki/ToolInfo";
+import GenericInfo from "@components/Wiki/GenericInfo";
+import Comments from "@components/Wiki/Comments";
+import { calcRarityValue } from "@functions/rarityCalc";
+import { getItemUrl, getItemCraftUrl } from "@functions/utils";
+import { type Item, Rarity } from "@ctypes/item";
+import { Navigate } from "react-router";
 
 const WikiDescription = React.lazy(
-  () => import("../components/Wiki/WikiDescription"),
+  () => import("@components/Wiki/WikiDescription"),
 );
 const SchematicDropInfo = React.lazy(
-  () => import("../components/Wiki/SchematicDropInfo"),
+  () => import("@components/Wiki/SchematicDropInfo"),
 );
-const DropsInfo = React.lazy(() => import("../components/Wiki/DropsInfo"));
+const DropsInfo = React.lazy(() => import("@components/Wiki/DropsInfo"));
 const CanBeUsedInfo = React.lazy(
-  () => import("../components/Wiki/CanBeUsedInfo"),
+  () => import("@components/Wiki/CanBeUsedInfo"),
 );
 const SchematicItems = React.lazy(
-  () => import("../components/Wiki/SchematicItems"),
+  () => import("@components/Wiki/SchematicItems"),
 );
 
-const ItemWiki = () => {
+export default function ItemWikiPage() {
+  const params = useParams();
+  const name = params?.name as string;
+
   const { t } = useTranslation();
-  const { name } = useParams();
   const [item, setItem] = useState<Item>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [allItems, setAllItems] = useState<Item[]>([]);
@@ -49,9 +54,7 @@ const ItemWiki = () => {
     const loadData = async () => {
       let itemName = name;
       if (name) {
-        itemName = decodeURI(String(itemName))
-          .replaceAll("_", " ")
-          .toLowerCase();
+        itemName = decodeURI(String(itemName)).replace("_", " ").toLowerCase();
       }
 
       const items = await getItems();
@@ -421,6 +424,4 @@ const ItemWiki = () => {
       </div>
     </div>
   );
-};
-
-export default ItemWiki;
+}

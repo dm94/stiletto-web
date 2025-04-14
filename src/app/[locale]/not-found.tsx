@@ -1,30 +1,17 @@
-import { memo, useMemo } from "react";
-import { useTranslation } from "next-i18next";
+"use client";
+
+import React from "react";
 import Link from "next/link";
-import { Helmet } from "react-helmet";
-import { getDomain } from "../functions/utils";
+import { useTranslation } from "next-i18next";
 
-const NotFoundPage = () => {
+export default function NotFound() {
   const { t } = useTranslation();
-
-  const helmetInfo = useMemo(
-    () => (
-      <Helmet>
-        <title>{"Page not found - Stiletto for Last Oasis"}</title>
-        <meta name="description" content={"Page not found"} />
-        <meta name="robots" content="noindex" />
-        <link rel="canonical" href={`${getDomain()}/not-found`} />
-      </Helmet>
-    ),
-    [],
-  );
 
   return (
     <div
       className="flex items-center justify-center"
       style={{ height: "80vh" }}
     >
-      {helmetInfo}
       <div className="text-center">
         <h1 className="text-8xl font-bold text-gray-300">404</h1>
         <h2 className="text-2xl font-semibold text-gray-300 mb-4">
@@ -40,6 +27,4 @@ const NotFoundPage = () => {
       </div>
     </div>
   );
-};
-
-export default memo(NotFoundPage);
+}

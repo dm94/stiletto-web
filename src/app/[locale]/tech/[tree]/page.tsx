@@ -1,3 +1,6 @@
+"use client";
+
+import { useParams } from "next/navigation";
 import React, {
   useState,
   useEffect,
@@ -7,24 +10,26 @@ import React, {
   useMemo,
 } from "react";
 import { useTranslation } from "next-i18next";
-import { NavLink, useParams } from "react-router";
-import { getItems, getStoredItem, storeItem } from "../functions/services";
-import LoadingScreen from "../components/LoadingScreen";
-import ModalMessage from "../components/ModalMessage";
-import Icon from "../components/Icon";
-import { getDomain } from "../functions/utils";
-import { getLearned, addTech, getUser } from "../functions/requests/users";
-import HeaderMeta from "../components/HeaderMeta";
-import type { Item } from "../types/item";
-import { Tree } from "../types/dto/tech";
+import { getItems, getStoredItem, storeItem } from "@functions/services";
+import LoadingScreen from "@components/LoadingScreen";
+import ModalMessage from "@components/ModalMessage";
+import Icon from "@components/Icon";
+import { getDomain } from "@functions/utils";
+import { getLearned, addTech, getUser } from "@functions/requests/users";
+import HeaderMeta from "@components/HeaderMeta";
+import type { Item } from "@ctypes/item";
+import { Tree } from "@ctypes/dto/tech";
+import Link from "next/link";
 
 const SkillTreeTab = React.lazy(
-  () => import("../components/TechTree/SkillTreeTab"),
+  () => import("@components/TechTree/SkillTreeTab"),
 );
 
-const TechTree = () => {
+export default function TechTreePage() {
+  const params = useParams();
+  const tree = params?.tree as string;
+
   const { t } = useTranslation();
-  const { tree } = useParams();
   const [items, setItems] = useState<Item[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>();
@@ -286,8 +291,8 @@ const TechTree = () => {
           role="tablist"
         >
           <div className="flex-1">
-            <NavLink
-              to="/tech/Vitamins"
+            <Link
+              href="/tech/Vitamins"
               className={({ isActive }) =>
                 isActive
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
@@ -296,11 +301,11 @@ const TechTree = () => {
             >
               <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
               {t("crafting.vitamins")}
-            </NavLink>
+            </Link>
           </div>
           <div className="flex-1">
-            <NavLink
-              to="/tech/Equipment"
+            <Link
+              href="/tech/Equipment"
               className={({ isActive }) =>
                 isActive
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
@@ -309,11 +314,11 @@ const TechTree = () => {
             >
               <Icon key="Equipment" name="Equipment" width={30} />{" "}
               {t("crafting.equipment")}
-            </NavLink>
+            </Link>
           </div>
           <div className="flex-1">
-            <NavLink
-              to="/tech/Crafting"
+            <Link
+              href="/tech/Crafting"
               className={({ isActive }) =>
                 isActive
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
@@ -322,11 +327,11 @@ const TechTree = () => {
             >
               <Icon key="Crafting" name="Crafting" width={30} />{" "}
               {t("menu.crafting")}
-            </NavLink>
+            </Link>
           </div>
           <div className="flex-1">
-            <NavLink
-              to="/tech/Construction"
+            <Link
+              href="/tech/Construction"
               className={({ isActive }) =>
                 isActive
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
@@ -335,11 +340,11 @@ const TechTree = () => {
             >
               <Icon key="Construction" name="Construction" width={30} />{" "}
               {t("crafting.construction")}
-            </NavLink>
+            </Link>
           </div>
           <div className="flex-1">
-            <NavLink
-              to="/tech/Walkers"
+            <Link
+              href="/tech/Walkers"
               className={({ isActive }) =>
                 isActive
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
@@ -348,7 +353,7 @@ const TechTree = () => {
             >
               <Icon key="Walkers" name="Walkers" width={30} />{" "}
               {t("crafting.walkers")}
-            </NavLink>
+            </Link>
           </div>
         </div>
       </nav>
@@ -363,6 +368,4 @@ const TechTree = () => {
       </Suspense>
     </div>
   );
-};
-
-export default TechTree;
+}
