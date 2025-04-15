@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";

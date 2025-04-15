@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import { useState, useEffect, Fragment } from "react";
 import queryString from "query-string";

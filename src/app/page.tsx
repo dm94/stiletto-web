@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import React, { useMemo } from "react";
 import { getStoredItem } from "@functions/services";
-import Others from "./[locale]/others/page";
+import Others from "./others/page";
 
 export default function Home() {
   const { t } = useTranslation();

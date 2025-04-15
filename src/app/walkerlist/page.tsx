@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import { useState, useEffect, Fragment, useCallback, useMemo } from "react";
 import ModalMessage from "@components/ModalMessage";
