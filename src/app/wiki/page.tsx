@@ -3,17 +3,16 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "next-i18next";
-import queryString from "query-string";
 import { getItems } from "@functions/services";
 import { sendEvent } from "../../page-tracking";
 import Ingredient from "@components/Ingredient";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
-import { useLocation } from "react-router";
+import { useSearchParams } from "next/navigation";
 import type { Item } from "@ctypes/item";
 
 const Wiki = () => {
-  const location = useLocation();
+  const searchParams = useSearchParams();
   const { t } = useTranslation();
   const [items, setItems] = useState<Item[]>([]);
   const [searchText, setSearchText] = useState<string>("");
@@ -85,18 +84,18 @@ const Wiki = () => {
   );
 
   useEffect(() => {
-    if (location?.search && items.length > 0) {
-      const parsed = queryString.parse(location.search);
+    if (items.length > 0) {
+      const searchParam = searchParams.get("s");
 
-      if (parsed?.s) {
-        searchItems(String(parsed.s), "All");
+      if (searchParam) {
+        searchItems(searchParam, "All");
+      } else {
+        setFilteredItems(items);
+        setDisplayedItems(items.slice(0, ITEMS_PER_PAGE));
+        setHasMore(items.length > ITEMS_PER_PAGE);
       }
-    } else if (items.length > 0) {
-      setFilteredItems(items);
-      setDisplayedItems(items.slice(0, ITEMS_PER_PAGE));
-      setHasMore(items.length > ITEMS_PER_PAGE);
     }
-  }, [location, items, searchItems]);
+  }, [searchParams, items, searchItems]);
 
   const handleLoadMore = useCallback(() => {
     const nextPage = currentPage + 1;

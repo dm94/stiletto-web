@@ -2,23 +2,27 @@
 
 import type React from "react";
 import { useState, useEffect, Fragment } from "react";
-import queryString from "query-string";
 import CreateMapNoLog from "@components/ClanMaps/CreateMapNoLog";
 import ResourceMapNoLog from "@components/ClanMaps/ResourceMapNoLog";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
-import { useLocation } from "react-router";
+import { useSearchParams } from "next/navigation";
 
 const MapPage: React.FC = () => {
   const [mapId, setMapId] = useState<number>();
   const [pass, setPass] = useState<string>();
-  const location = useLocation();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const parsed = queryString.parse(location.search);
-    setMapId(Number(parsed.mapid));
-    setPass(parsed.pass as string);
-  }, [location.search]);
+    const mapIdParam = searchParams.get("mapid");
+    const passParam = searchParams.get("pass");
+    if (mapIdParam) {
+      setMapId(Number(mapIdParam));
+    }
+    if (passParam) {
+      setPass(passParam);
+    }
+  }, [searchParams]);
 
   return (
     <Fragment>

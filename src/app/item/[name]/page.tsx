@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useState,
 } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import HeaderMeta from "@components/HeaderMeta";
 import { useTranslation } from "next-i18next";
 import { getItems } from "@functions/services";
@@ -23,7 +23,7 @@ import Comments from "@components/Wiki/Comments";
 import { calcRarityValue } from "@functions/rarityCalc";
 import { getItemUrl, getItemCraftUrl } from "@functions/utils";
 import { type Item, Rarity } from "@ctypes/item";
-import { Navigate } from "react-router";
+import Link from "next/link";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -42,6 +42,7 @@ const SchematicItems = React.lazy(
 export default function ItemWikiPage() {
   const params = useParams();
   const name = params?.name as string;
+  const router = useRouter();
 
   const { t } = useTranslation();
   const [item, setItem] = useState<Item>();
@@ -190,7 +191,8 @@ export default function ItemWikiPage() {
   }
 
   if (!item) {
-    return <Navigate to={"/not-found"} />;
+    router.push("/not-found");
+    return <LoadingScreen />;
   }
 
   const itemName = item?.name;
@@ -239,13 +241,13 @@ export default function ItemWikiPage() {
                     </div>
                   </li>
                 )}
-                {item?.parent && (
+                {parentUrl && item.parent && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("common.parent")}</div>
                     <div className="text-gray-400">
-                      <a href={parentUrl} className="hover:text-blue-400">
+                      <Link href={parentUrl} className="hover:text-blue-400">
                         {t(item.parent, { ns: "items" })}
-                      </a>
+                      </Link>
                     </div>
                   </li>
                 )}
@@ -341,12 +343,12 @@ export default function ItemWikiPage() {
             <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
               <div className="p-4 bg-gray-900 border-b border-gray-700 flex justify-between items-center">
                 <span className="text-neutral-300">{t("crafting.recipe")}</span>
-                <a
+                <Link
                   href={craftUrl}
                   className="text-gray-400 hover:text-gray-300"
                 >
                   <i className="fas fa-tools" />
-                </a>
+                </Link>
               </div>
               <div className="p-4">
                 <div className="flex flex-wrap -mx-2">

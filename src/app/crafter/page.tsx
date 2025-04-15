@@ -3,8 +3,8 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
-import queryString from "query-string";
+import Head from "next/head";
+import { useSearchParams } from "next/navigation";
 import { getItems } from "@functions/services";
 import ModalMessage from "@components/ModalMessage";
 import Items from "@components/Crafter/Items";
@@ -12,11 +12,10 @@ import SelectedItem from "@components/Crafter/SelectedItem";
 import TotalMaterials from "@components/Crafter/TotalMaterials";
 import { getDomain } from "@functions/utils";
 import { getRecipe } from "@functions/requests/recipes";
-import { useLocation } from "react-router";
 import type { CraftItem, Item, ItemRecipe } from "@ctypes/item";
 
 const Crafter: React.FC = () => {
-  const location = useLocation();
+  const searchParams = useSearchParams();
   const { t } = useTranslation();
   const [allItems, setAllItems] = useState<Item[]>([]);
   const [selectedItems, setSelectedItems] = useState<CraftItem[]>([]);
@@ -58,12 +57,12 @@ const Crafter: React.FC = () => {
   };
 
   const getRecipes = async (items: Item[]): Promise<void> => {
-    const parsed = queryString.parse(location?.search);
-    const { recipe, craft } = parsed;
+    const recipe = searchParams.get("recipe");
+    const craft = searchParams.get("craft");
 
     if (recipe) {
       try {
-        const response = await getRecipe(String(recipe));
+        const response = await getRecipe(recipe);
 
         if (response.items) {
           for (const item of response.items) {
@@ -74,7 +73,7 @@ const Crafter: React.FC = () => {
         setError("errors.apiConnection");
       }
     } else if (craft) {
-      const decodedName = decodeURI(String(craft))
+      const decodedName = decodeURI(craft)
         .toLowerCase()
         .replace("_", " ")
         .trim();
@@ -198,7 +197,7 @@ const Crafter: React.FC = () => {
 
   return (
     <div className="flex flex-col lg:flex-row">
-      <Helmet>
+      <Head>
         <title>Last Oasis Crafting Calculator - Stiletto for Last Oasis</title>
         <meta
           name="description"
@@ -218,7 +217,7 @@ const Crafter: React.FC = () => {
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
         />
         <link rel="canonical" href={`${getDomain()}/crafter`} />
-      </Helmet>
+      </Head>
       <div className="w-full lg:w-1/4 mb-4 lg:mb-0">
         <form className="flex items-center">
           <input

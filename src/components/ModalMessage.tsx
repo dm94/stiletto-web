@@ -1,5 +1,5 @@
 import type React from "react";
-import { useNavigate } from "react-router";
+import { useRouter } from "next/navigation";
 import { useTranslation } from "next-i18next";
 import { sendEvent } from "../page-tracking";
 import { useEffect } from "react";
@@ -30,7 +30,7 @@ const ActionButton: React.FC<{
 
 const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     sendEvent("modal", {
@@ -42,7 +42,7 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
   }, [message?.isError, message?.text]);
 
   const navigateTo = (): void => {
-    navigate(message?.redirectPage ?? "");
+    router.push(message?.redirectPage ?? "");
   };
 
   return (

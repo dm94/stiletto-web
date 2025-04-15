@@ -18,7 +18,7 @@ import {
 import type { ResourceInfo } from "../../types/dto/resources";
 import { editMap } from "../../functions/requests/maps";
 import { sendNotification } from "../../functions/broadcast";
-import { useNavigate } from "react-router";
+import { useRouter } from "next/navigation";
 
 interface ResourceMapProps {
   map: MapInfo;
@@ -53,7 +53,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const [activeTab, setActiveTab] = useState<string>("resources");
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const navigate = useNavigate();
+  const router = useRouter();
   const fetchData = useCallback(async () => {
     setIsLoading(true);
     try {
@@ -67,11 +67,11 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
       setResourcesFiltered(responseResources);
     } catch {
       sendNotification("Failed to fetch data", "Error");
-      navigate("/");
+      router.push("/");
     } finally {
       setIsLoading(false);
     }
-  }, [map.mapid, map.pass, navigate]);
+  }, [map.mapid, map.pass, router]);
 
   useEffect(() => {
     fetchData();

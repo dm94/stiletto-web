@@ -4,12 +4,11 @@ import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "next-i18next";
 import { Helmet } from "react-helmet";
-import queryString from "query-string";
 import LoadingScreen from "@components/LoadingScreen";
 import PrivateProfile from "@components/DiscordConnection/PrivateProfile";
 import ModalMessage from "@components/ModalMessage";
 import { getStoredItem, storeItem } from "@functions/services";
-import { useNavigate, useLocation } from "react-router";
+import { useRouter, useSearchParams } from "next/navigation";
 import { getDomain, getDiscordLoginUrl } from "@functions/utils";
 import { authDiscord } from "@functions/requests/users";
 
@@ -17,20 +16,20 @@ const DiscordConnection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const handleAuth = async () => {
-      const parsed = queryString.parse(location?.search);
+      const code = searchParams.get("code");
 
-      if (!parsed.code || getStoredItem("token")) {
+      if (!code || getStoredItem("token")) {
         setIsLoaded(true);
         return;
       }
 
       try {
-        const response = await authDiscord(String(parsed.code));
+        const response = await authDiscord(code);
 
         if (response) {
           if (response.discordid) {
@@ -39,7 +38,7 @@ const DiscordConnection: React.FC = () => {
           if (response.token) {
             storeItem("token", response.token);
           }
-          navigate("/");
+          router.push("/");
         }
       } catch {
         setError(t("errors.apiConnection"));
@@ -49,17 +48,18 @@ const DiscordConnection: React.FC = () => {
     };
 
     handleAuth();
-  }, [location, navigate, t]);
+  }, [searchParams, router, t]);
 
   const discordLoginUrl = useMemo(() => getDiscordLoginUrl(), []);
 
   useEffect(() => {
-    const parsed = queryString.parse(location?.search);
-    if (parsed.discordid && parsed.token) {
-      storeItem("discordid", String(parsed.discordid));
-      storeItem("token", String(parsed.token));
+    const discordid = searchParams.get("discordid");
+    const token = searchParams.get("token");
+    if (discordid && token) {
+      storeItem("discordid", discordid);
+      storeItem("token", token);
     }
-  }, [location]);
+  }, [searchParams]);
 
   const renderClanInfo = useCallback(() => {
     if (getStoredItem("token")) {
