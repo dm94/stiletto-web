@@ -5,7 +5,7 @@ import { useState, useEffect, Fragment, useCallback, useMemo } from "react";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import { getItems, getStoredItem } from "@functions/services";
 import Pagination from "@components/Pagination";
 import WalkerListItem from "@components/WalkerList/WalkerListItem";
@@ -272,7 +272,7 @@ const WalkerList: React.FC = () => {
   );
 
   const renderHelmetInfo = () => (
-    <Helmet>
+    <Head>
       <title>Clan Walker List - Stiletto for Last Oasis</title>
       <meta
         name="description"
@@ -292,7 +292,7 @@ const WalkerList: React.FC = () => {
         content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
       />
       <link rel="canonical" href={`${getDomain()}/walkerlist`} />
-    </Helmet>
+    </Head>
   );
 
   if (error) {

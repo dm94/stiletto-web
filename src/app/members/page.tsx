@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import ClanConfig from "@components/ClanConfig";
@@ -373,7 +373,7 @@ const MemberList = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <Helmet>
+      <Head>
         <title>Clan Member List - Stiletto for Last Oasis</title>
         <meta
           name="description"
@@ -393,7 +393,7 @@ const MemberList = () => {
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
         />
         <link rel="canonical" href={`${getDomain()}/members`} />
-      </Helmet>
+      </Head>
 
       <div className={isLeader || hasBotPermissions ? "w-full mb-6" : "hidden"}>
         <div className="flex flex-wrap justify-between">

@@ -3,7 +3,7 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import LoadingScreen from "@components/LoadingScreen";
 import PrivateProfile from "@components/DiscordConnection/PrivateProfile";
 import ModalMessage from "@components/ModalMessage";
@@ -68,7 +68,7 @@ const DiscordConnection: React.FC = () => {
 
     return (
       <div className="w-full max-w-2xl mx-auto">
-        <Helmet>
+        <Head>
           <title>Discord Login - Stiletto for Last Oasis</title>
           <meta
             name="description"
@@ -88,7 +88,7 @@ const DiscordConnection: React.FC = () => {
             content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
           />
           <link rel="canonical" href={`${getDomain()}/profile`} />
-        </Helmet>
+        </Head>
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-6">
             <a

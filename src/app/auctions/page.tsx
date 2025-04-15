@@ -2,8 +2,8 @@
 
 import { useState, useCallback, memo } from "react";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
 import Timer from "@components/AuctionTimers/Timer";
+import HeaderMeta from "@components/HeaderMeta";
 import { getDomain } from "@functions/utils";
 
 const AuctionTimers = memo(() => {
@@ -28,21 +28,17 @@ const AuctionTimers = memo(() => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <Helmet>
-        <title>Auction Timers - Stiletto for Last Oasis</title>
-        <meta name="description" content="Timers for what you need" />
+      <HeaderMeta
+        title="Auction Timers - Stiletto for Last Oasis"
+        description="Timers for what you need"
+        cannonical={`${getDomain()}/auctions`}
+      >
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Auction Timers - Stiletto for Last Oasis"
-        />
-        <meta name="twitter:description" content="Timers for what you need" />
         <meta
           name="twitter:image"
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
         />
-        <link rel="canonical" href={`${getDomain()}/auctions`} />
-      </Helmet>
+      </HeaderMeta>
 
       <div className="flex flex-wrap -mx-2 mb-6">
         <div className="w-full lg:w-2/3 px-2 mb-4 lg:mb-0">

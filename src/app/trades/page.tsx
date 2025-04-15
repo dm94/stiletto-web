@@ -3,7 +3,7 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import { getItems } from "@functions/services";
 import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
@@ -326,7 +326,7 @@ const TradeSystem = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <Helmet>
+      <Head>
         <title>Trades - Stiletto for Last Oasis</title>
         <meta
           name="description"
@@ -343,7 +343,7 @@ const TradeSystem = () => {
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
         />
         <link rel="canonical" href={`${getDomain()}/trades`} />
-      </Helmet>
+      </Head>
       {renderLoggedPart()}
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-blue-500 rounded-lg overflow-hidden">

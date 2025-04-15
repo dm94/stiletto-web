@@ -1,5 +1,5 @@
 import type React from "react";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 interface HeaderMetaProps {
   title: string;
@@ -15,7 +15,7 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
   children,
 }) => {
   return (
-    <Helmet>
+    <Head>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="twitter:card" content="summary_large_image" />
@@ -23,7 +23,7 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
       <meta name="twitter:description" content={description} />
       <link rel="canonical" href={cannonical} />
       {children}
-    </Helmet>
+    </Head>
   );
 };
 

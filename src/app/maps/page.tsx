@@ -9,7 +9,7 @@ import React, {
   memo,
 } from "react";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import ModalMessage from "@components/ModalMessage";
 import ClanMapItem from "@components/ClanMaps/ClanMapItem";
 import ResourceMap from "@components/ClanMaps/ResourceMap";
@@ -132,7 +132,7 @@ const ClanMaps = () => {
 
   const renderHelmet = useMemo(
     () => (
-      <Helmet>
+      <Head>
         <title>Interactive Map List - Stiletto for Last Oasis</title>
         <meta
           name="description"
@@ -152,7 +152,7 @@ const ClanMaps = () => {
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
         />
         <link rel="canonical" href={`${getDomain()}/maps`} />
-      </Helmet>
+      </Head>
     ),
     [],
   );

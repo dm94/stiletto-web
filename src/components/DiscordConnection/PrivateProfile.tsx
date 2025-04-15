@@ -2,7 +2,7 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import i18next from "i18next";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import Link from "next/link";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
@@ -126,7 +126,7 @@ const PrivateProfile = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <Helmet>
+      <Head>
         <title>Profile - Stiletto for Last Oasis</title>
         <meta
           name="description"
@@ -146,7 +146,7 @@ const PrivateProfile = () => {
           content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
         />
         <link rel="canonical" href={`${getDomain()}/profile`} />
-      </Helmet>
+      </Head>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
@@ -207,21 +207,21 @@ const PrivateProfile = () => {
             {isLoaded && userData?.clanname ? (
               <>
                 <Link
-                  to="/members"
+                  href="/members"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <i className="fas fa-users mr-2" />
                   {t("menu.members")}
                 </Link>
                 <Link
-                  to="/walkerlist"
+                  href="/walkerlist"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <Icon key="Base Wings" name="Base Wings" width={30} />
                   {t("menu.walkerList")}
                 </Link>
                 <Link
-                  to="/diplomacy"
+                  href="/diplomacy"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <i className="far fa-flag mr-2" />
@@ -241,7 +241,7 @@ const PrivateProfile = () => {
             ) : (
               <>
                 <Link
-                  to="/clanlist"
+                  href="/clanlist"
                   data-cy="join-clan-btn"
                   className="w-full inline-flex justify-center items-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
                 >
@@ -262,7 +262,7 @@ const PrivateProfile = () => {
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3">
             <Link
-              to="/maps"
+              href="/maps"
               className="w-full inline-flex justify-center items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
             >
               {t("menu.resourceMaps")}
