@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import { useState, useEffect, useMemo, memo } from "react";
 import { useTranslation } from "next-i18next";

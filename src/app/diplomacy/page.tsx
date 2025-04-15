@@ -8,7 +8,6 @@ import {
   type FormEvent,
 } from "react";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import ClanSelect from "@components/Diplomacy/ClanSelect";
@@ -365,27 +364,6 @@ const Diplomacy = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <Helmet>
-        <title>Clan Diplomacy - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="View your clan's list of allies, enemies and NAP"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Clan Diplomacy - Stiletto for Last Oasis"
-        />
-        <meta
-          name="twitter:description"
-          content="View your clan's list of allies, enemies and NAP"
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/diplomacy`} />
-      </Helmet>
       <div className="flex flex-col space-y-4">
         {/* Formulario de creación en una fila completa */}
         {isLeader || hasPermissions ? (

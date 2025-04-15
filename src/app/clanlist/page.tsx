@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Fragment, useMemo, useCallback } from "react";
 import { useTranslation } from "next-i18next";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import { getStoredItem } from "@functions/services";
 import { getUser } from "@functions/requests/users";
 import LoadingScreen from "@components/LoadingScreen";
@@ -101,27 +101,6 @@ const ClanList = () => {
     ));
   }, [clans, clanuserid, isLogged]);
 
-  const helmetInfo = useMemo(
-    () => (
-      <Helmet>
-        <title>Clan List - Stiletto for Last Oasis</title>
-        <meta name="description" content="List of clans" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Clan List - Stiletto for Last Oasis"
-        />
-        <meta name="twitter:description" content="List of clans" />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/clanlist`} />
-      </Helmet>
-    ),
-    [],
-  );
-
   if (error) {
     return (
       <ModalMessage
@@ -149,7 +128,21 @@ const ClanList = () => {
   if (!isLoaded) {
     return (
       <Fragment>
-        {helmetInfo}
+        <Head>
+          <title>Clan List - Stiletto for Last Oasis</title>
+          <meta name="description" content="List of clans" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta
+            name="twitter:title"
+            content="Clan List - Stiletto for Last Oasis"
+          />
+          <meta name="twitter:description" content="List of clans" />
+          <meta
+            name="twitter:image"
+            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
+          />
+          <link rel="canonical" href={`${getDomain()}/clanlist`} />
+        </Head>
         <LoadingScreen />
       </Fragment>
     );

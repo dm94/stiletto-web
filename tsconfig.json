@@ -10,7 +10,7 @@
     "module": "ESNext",
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -30,18 +30,29 @@
     ],
     "baseUrl": "./src",
     "paths": {
-        "@/*": ["./*"],
-        "@components/*": ["components/*"],
-        "@functions/*": ["functions/*"],
-        "@ctypes/*": ["types/*"],
-        "@config/*": ["config/*"]
+      "@/*": [
+        "./*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@functions/*": [
+        "functions/*"
+      ],
+      "@ctypes/*": [
+        "types/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ]
     }
   },
   "include": [
+    "./build/types/**/*.ts",
     "./dist/types/**/*.ts",
     "./next-env.d.ts",
     "./src",
-    "./build/types/**/*.ts"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "./node_modules"
