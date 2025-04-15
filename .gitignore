@@ -31,3 +31,4 @@ cypress.json
 cypress/videos
 cypress/screenshots
 dist/
+.next/
