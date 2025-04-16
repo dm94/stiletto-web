@@ -1,6 +1,5 @@
 "use client";
 
-import { useParams } from "next/navigation";
 import React, {
   useState,
   useEffect,
@@ -9,7 +8,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { getItems, getStoredItem, storeItem } from "@functions/services";
 import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
@@ -19,17 +18,16 @@ import { getLearned, addTech, getUser } from "@functions/requests/users";
 import HeaderMeta from "@components/HeaderMeta";
 import type { Item } from "@ctypes/item";
 import { Tree } from "@ctypes/dto/tech";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 
 const SkillTreeTab = React.lazy(
   () => import("@components/TechTree/SkillTreeTab"),
 );
 
-export default function TechTreePage() {
-  const params = useParams();
-  const tree = params?.tree as string;
-
+const TechTree = () => {
   const { t } = useTranslation();
+  const { tree } = useParams();
   const [items, setItems] = useState<Item[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>();
@@ -368,4 +366,6 @@ export default function TechTreePage() {
       </Suspense>
     </div>
   );
-}
+};
+
+export default TechTree;
