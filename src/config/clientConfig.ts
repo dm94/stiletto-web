@@ -1,4 +1,5 @@
-// Access Next.js environment variables
+"use client";
+
 const {
   NEXT_PUBLIC_API_URL,
   NEXT_PUBLIC_RESOURCES_URL,

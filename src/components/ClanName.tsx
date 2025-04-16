@@ -1,6 +1,6 @@
 import type React from "react";
 import { Fragment, memo } from "react";
-import { config } from "../config/config";
+import { config } from "../config/clientConfig";
 import { useTranslation } from "next-i18next";
 import type { RelationshipInfo } from "../types/dto/relationship";
 import type { ClanInfo } from "../types/dto/clan";

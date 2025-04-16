@@ -12,8 +12,7 @@ import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import ClanSelect from "@components/Diplomacy/ClanSelect";
 import { getUser } from "@functions/requests/users";
-import { getDomain } from "@functions/utils";
-import { config } from "@config/config";
+import { config } from "@config/clientConfig";
 import {
   getRelationships,
   createRelationship,

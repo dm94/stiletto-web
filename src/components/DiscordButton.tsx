@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import { getStoredItem } from "../functions/services";
 import { getDomain } from "../functions/utils";
-import { config } from "../config/config";
+import { config } from "../config/clientConfig";
 
 const DiscordButton: React.FC = () => {
   const { t } = useTranslation();

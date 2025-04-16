@@ -1,4 +1,4 @@
-import { config } from "../../config/config";
+import { config } from "../../config/clientConfig";
 import type { Recipe, RecipeListInfo } from "../../types/dto/recipe";
 
 export const addRecipe = async (items: Recipe[]): Promise<RecipeListInfo> => {

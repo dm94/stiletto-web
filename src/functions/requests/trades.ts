@@ -1,5 +1,5 @@
 import { getStoredItem } from "../services";
-import { config } from "../../config/config";
+import { config } from "../../config/clientConfig";
 import type {
   CreateTradeRequestParams,
   GetTradesQueryParams,

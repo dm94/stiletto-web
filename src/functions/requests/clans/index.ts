@@ -1,5 +1,5 @@
 import { getStoredItem } from "../../services";
-import { config } from "../../../config/config";
+import { config } from "../../../config/clientConfig";
 import { objectToURLSearchParams } from "../../utils";
 import type { GenericResponse } from "../../../types/dto/generic";
 import type {

@@ -3,7 +3,7 @@ import type {
   TechUserInfo,
 } from "../../../types/dto/tech";
 import { objectToURLSearchParams } from "../../utils";
-import { config } from "../../../config/config";
+import { config } from "../../../config/clientConfig";
 import { getStoredItem } from "../../services";
 
 export const seeWhoHasLearntIt = async (

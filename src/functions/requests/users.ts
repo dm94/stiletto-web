@@ -1,5 +1,5 @@
 import { getStoredItem } from "../services";
-import { config } from "../../config/config";
+import { config } from "../../config/clientConfig";
 import type { TechTreeInfo, Tree } from "../../types/dto/tech";
 import type { LoginInfo, UserInfo } from "../../types/dto/users";
 import { objectToURLSearchParams } from "../utils";

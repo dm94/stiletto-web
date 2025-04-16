@@ -1,4 +1,4 @@
-import { config } from "../../config/config";
+import { config } from "../../config/clientConfig";
 import type { ClusterInfo } from "../../types/dto/clusters";
 
 export const getClusters = async (): Promise<ClusterInfo[]> => {

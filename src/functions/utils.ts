@@ -1,4 +1,4 @@
-import { config } from "../config/config";
+import { config } from "../config/clientConfig";
 
 export const getDomain = () => {
   // Check if code is running in browser environment

@@ -1,5 +1,5 @@
 import { getStoredItem } from "../../services";
-import { config } from "../../../config/config";
+import { config } from "../../../config/clientConfig";
 import type { RequestAction } from "../../../types/dto/requests";
 import type { MemberRequest } from "../../../types/dto/members";
 import type { GenericResponse } from "../../../types/dto/generic";

@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next";
 import { memo, useCallback, useMemo } from "react";
 import { getStoredItem } from "../../functions/services";
 import { getDomain } from "../../functions/utils";
-import { config } from "../../config/config";
+import { config } from "../../config/clientConfig";
 import type { MapInfo } from "../../types/dto/maps";
 
 interface ClanMapItemProps {

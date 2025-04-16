@@ -13,7 +13,7 @@ import L from "leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import Icon from "../Icon";
-import { config } from "../../config/config";
+import { config } from "../../config/clientConfig";
 import type { ResourceInfo } from "../../types/dto/resources";
 
 interface MapLayerProps {
