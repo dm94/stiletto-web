@@ -1,13 +1,13 @@
+"use client";
+
 import React, {
-  Suspense,
-  useCallback,
-  useEffect,
-  useMemo,
   useState,
+  useEffect,
+  Suspense,
+  useMemo,
+  useCallback,
 } from "react";
-import { useParams, useRouter } from "next/navigation";
-import HeaderMeta from "@components/HeaderMeta";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "react-i18next";
 import { getItems } from "@functions/services";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
@@ -19,9 +19,14 @@ import ToolInfo from "@components/Wiki/ToolInfo";
 import GenericInfo from "@components/Wiki/GenericInfo";
 import Comments from "@components/Wiki/Comments";
 import { calcRarityValue } from "@functions/rarityCalc";
-import { getItemUrl, getItemCraftUrl } from "@functions/utils";
+import {
+  getItemUrl,
+  getItemCraftUrl,
+  getItemDecodedName,
+} from "@functions/utils";
+import HeaderMeta from "@components/HeaderMeta";
 import { type Item, Rarity } from "@ctypes/item";
-import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -37,29 +42,85 @@ const SchematicItems = React.lazy(
   () => import("@components/Wiki/SchematicItems"),
 );
 
-export async function generateStaticParams() {
-  const items = await getItems();
-  return (items || []).map((item: Item) => ({
-    name: encodeURIComponent(item.name.replace(/ /g, "_")),
-  }));
-}
-
-async function getItemData(name: string) {
-  const items = await getItems();
-  if (!items) return { item: null, allItems: [] };
-  const itemName = decodeURI(String(name)).replace("_", " ").toLowerCase();
-  const foundItem = items.find((it) => it.name.toLowerCase() === itemName);
-  return { item: foundItem, allItems: items };
-}
-
-const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
+const ItemWiki = () => {
   const { t } = useTranslation();
-  const { item, allItems } = await getItemData(params.name);
-  const [rarity, setRarity] = React.useState<Rarity>(Rarity.Common);
-  const [textColor, setTextColor] = React.useState<string>("text-gray-400");
+  const router = useRouter();
 
-  React.useEffect(() => {
-    switch (rarity) {
+  const params = useParams();
+  const name = params?.name as string;
+  const [item, setItem] = useState<Item>();
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const [allItems, setAllItems] = useState<Item[]>([]);
+  const [rarity, setRarity] = useState<string>("Common");
+  const [textColor, setTextColor] = useState<string>("text-gray-400");
+
+  useEffect(() => {
+    const loadData = async () => {
+      let itemName = name;
+      if (name) {
+        itemName = getItemDecodedName(name);
+      }
+
+      const items = await getItems();
+      if (items) {
+        const foundItem = items.find(
+          (it) => it.name.toLowerCase() === itemName,
+        );
+
+        if (!foundItem) {
+          router.push("/404");
+          return;
+        }
+
+        setItem(foundItem);
+        setAllItems(items);
+        setIsLoaded(true);
+      }
+    };
+
+    loadData();
+  }, [name, router]);
+
+  const showIngredient = useCallback((ingre: Item) => {
+    if (!ingre?.crafting) {
+      return;
+    }
+
+    return ingre?.crafting?.map((recipe, index) => (
+      <div
+        className={
+          ingre?.crafting && ingre?.crafting?.length > 1
+            ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
+            : "w-full"
+        }
+        key={`ingredients-${index}-${ingre.name}`}
+      >
+        <Ingredients crafting={recipe} value={1} />
+        {recipe.station && <Station name={recipe.station} />}
+        {recipe.time && <CraftingTime time={recipe.time} />}
+      </div>
+    ));
+  }, []);
+
+  const showDescription = useMemo(
+    () =>
+      item?.description && (
+        <div className="w-full md:w-1/2 px-4">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
+            <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
+              {t("common.description")}
+            </div>
+            <div className="p-4 text-neutral-400">{item.description}</div>
+          </div>
+        </div>
+      ),
+    [item?.description, t],
+  );
+
+  const updateRarity = useCallback((value: Rarity) => {
+    setRarity(value);
+
+    switch (value) {
       case Rarity.Common:
         setTextColor("text-gray-400");
         break;
@@ -78,9 +139,9 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
       default:
         setTextColor("text-gray-400");
     }
-  }, [rarity]);
+  }, []);
 
-  const getRarityClass = React.useCallback(
+  const getRarityClass = useCallback(
     (value: Rarity) => {
       let outlineColor = "";
       let hoverColor = "";
@@ -126,44 +187,6 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
     [rarity],
   );
 
-  const showIngredient = React.useCallback((ingre: Item) => {
-    if (!ingre?.crafting) return null;
-    return ingre.crafting.map((recipe, index) => (
-      <div
-        className={
-          ingre.crafting.length > 1
-            ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
-            : "w-full"
-        }
-        key={`ingredients-${index}-${ingre.name}`}
-      >
-        <Ingredients crafting={recipe} value={1} />
-        {recipe.station && <Station name={recipe.station} />}
-        {recipe.time && <CraftingTime time={recipe.time} />}
-      </div>
-    ));
-  }, []);
-
-  if (!item) {
-    // Not found fallback
-    return <LoadingScreen />;
-  }
-
-  const itemName = item.name;
-  const parentUrl = item.parent && getItemUrl(item.parent);
-  const craftUrl = getItemCraftUrl(params.name ?? itemName);
-
-  const showDescription = item.description && (
-    <div className="w-full md:w-1/2 px-4">
-      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
-        <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
-          {t("common.description")}
-        </div>
-        <div className="p-4 text-neutral-400">{item.description}</div>
-      </div>
-    </div>
-  );
-
   const loadingItemPart = () => (
     <div className="w-full md:w-1/2">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
@@ -171,6 +194,14 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
       </div>
     </div>
   );
+
+  if (!isLoaded) {
+    return <LoadingScreen />;
+  }
+
+  const itemName = item?.name ?? name;
+  const parentUrl = item?.parent && getItemUrl(item.parent);
+  const craftUrl = getItemCraftUrl(name ?? itemName);
 
   return (
     <div
@@ -194,15 +225,19 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
             </div>
             <div className="p-4">
               <ul className="space-y-2">
-                {item.cost && (
+                {item?.cost && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">
                       {t("crafting.costToLearn")}
                     </div>
-                    <div className="text-gray-400">{`${item.cost.count ? item.cost.count : ""} ${item.cost.name ? t(item.cost.name) : ""}`}</div>
+                    <div className="text-gray-400">
+                      {`${item?.cost?.count ? item.cost.count : ""} ${
+                        item?.cost?.name ? t(item?.cost?.name) : ""
+                      }`}
+                    </div>
                   </li>
                 )}
-                {item.category && (
+                {item?.category && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("common.category")}</div>
                     <div className="text-gray-400">
@@ -210,17 +245,17 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
                     </div>
                   </li>
                 )}
-                {parentUrl && item.parent && (
+                {item?.parent && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("common.parent")}</div>
                     <div className="text-gray-400">
-                      <Link href={parentUrl} className="hover:text-blue-400">
+                      <a href={parentUrl} className="hover:text-blue-400">
                         {t(item.parent, { ns: "items" })}
-                      </Link>
+                      </a>
                     </div>
                   </li>
                 )}
-                {item.trade_price && (
+                {item?.trade_price && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Trade Price")}</div>
                     <div className="text-gray-400">
@@ -228,13 +263,13 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
                     </div>
                   </li>
                 )}
-                {item.stackSize && (
+                {item?.stackSize && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Character Stack")}</div>
                     <div className="text-gray-400">{item.stackSize}</div>
                   </li>
                 )}
-                {item.weight && (
+                {item?.weight && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Weight")}</div>
                     <div className={textColor}>
@@ -247,7 +282,7 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
                     </div>
                   </li>
                 )}
-                {item.experiencieReward && (
+                {item?.experiencieReward && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">
                       {t("Experience by crafting")}
@@ -257,7 +292,7 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
                     </div>
                   </li>
                 )}
-                {item.durability && (
+                {item?.durability && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Durability")}</div>
                     <div className={textColor}>
@@ -295,7 +330,7 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
                     type="button"
                     aria-pressed={rarity === rar}
                     className={`${getRarityClass(rar)} flex items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${rarity === rar ? "ring-2 ring-opacity-50" : ""}`}
-                    onClick={() => setRarity(rar)}
+                    onClick={() => updateRarity(rar)}
                   >
                     <span className="w-4 mr-1">
                       {rar === rarity ? "✓" : ""}
@@ -307,17 +342,17 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
             </div>
           </div>
         </div>
-        {item.crafting && (
+        {item?.crafting && (
           <div className="w-full lg:w-1/2 px-4">
             <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
               <div className="p-4 bg-gray-900 border-b border-gray-700 flex justify-between items-center">
                 <span className="text-neutral-300">{t("crafting.recipe")}</span>
-                <Link
+                <a
                   href={craftUrl}
                   className="text-gray-400 hover:text-gray-300"
                 >
                   <i className="fas fa-tools" />
-                </Link>
+                </a>
               </div>
               <div className="p-4">
                 <div className="flex flex-wrap -mx-2">
@@ -328,10 +363,10 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
           </div>
         )}
         <Suspense fallback={loadingItemPart()}>
-          <SchematicItems key="schematicItems" item={item} />
+          {item && <SchematicItems key="schematicItems" item={item} />}
         </Suspense>
         {showDescription}
-        {item.structureInfo && (
+        {item?.structureInfo && (
           <GenericInfo
             key="structureInfo"
             name="Structure Info"
@@ -341,7 +376,7 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
             category={item.category}
           />
         )}
-        {item.projectileDamage && (
+        {item?.projectileDamage && (
           <GenericInfo
             key="proyectileInfo"
             name="Projectile Info"
@@ -351,7 +386,7 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
             category={item.category}
           />
         )}
-        {item.weaponInfo && (
+        {item?.weaponInfo && (
           <GenericInfo
             key="weaponinfo"
             name="Weapon Info"
@@ -361,7 +396,7 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
             category={item.category}
           />
         )}
-        {item.armorInfo && (
+        {item?.armorInfo && (
           <GenericInfo
             key="armorinfo"
             name="Armor Info"
@@ -371,14 +406,14 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
             category={item.category}
           />
         )}
-        {item.toolInfo && <ToolInfo key="toolinfo" toolInfo={item.toolInfo} />}
-        {item.moduleInfo && (
+        {item?.toolInfo && <ToolInfo key="toolinfo" toolInfo={item.toolInfo} />}
+        {item?.moduleInfo && (
           <ModuleInfo key="moduleinfo" moduleInfo={item.moduleInfo} />
         )}
         <Suspense fallback={loadingItemPart()}>
           <SchematicDropInfo
             key="schematicInfo"
-            name={item.name}
+            name={itemName}
             items={allItems}
           />
         </Suspense>
@@ -389,7 +424,7 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
           <CanBeUsedInfo key="CanBeUsedInfo" name={itemName} items={allItems} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <DropsInfo key="dropInfo" drops={item.drops} />
+          <DropsInfo key="dropInfo" drops={item?.drops} />
         </Suspense>
         <Comments key="comments" name={itemName} />
       </div>
@@ -397,4 +432,4 @@ const ItemWikiPage = async ({ params }: { params: { name: string } }) => {
   );
 };
 
-export default ItemWikiPage;
+export default ItemWiki;

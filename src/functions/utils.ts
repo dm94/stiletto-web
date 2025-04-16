@@ -12,8 +12,14 @@ export const getDomain = () => {
   );
 };
 
+export const getItemCodedName = (itemName: string) =>
+  itemName.toLowerCase().replace(" ", "_");
+
+export const getItemDecodedName = (itemName: string) =>
+  decodeURI(String(itemName)).replace("_", " ").toLowerCase();
+
 export const getItemUrl = (itemName: string) =>
-  `${getDomain()}/item/${encodeURI(itemName.toLowerCase().replace(" ", "_"))}`;
+  `${getDomain()}/item/${encodeURI(getItemCodedName(itemName))}`;
 
 export const getItemCraftUrl = (itemName: string) =>
   `${getDomain()}/crafter?craft=${encodeURI(itemName.toLowerCase())}`;
