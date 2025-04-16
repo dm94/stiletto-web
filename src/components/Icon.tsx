@@ -1,7 +1,7 @@
 "use client";
 import type React from "react";
 import { useState } from "react";
-import { config } from "../config/config";
+import { config } from "@config/config";
 
 interface IconProps {
   name: string;

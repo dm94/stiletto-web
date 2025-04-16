@@ -8,8 +8,8 @@ import { sendEvent } from "../../page-tracking";
 import Ingredient from "@components/Ingredient";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
-import { useSearchParams } from "next/navigation";
 import type { Item } from "@ctypes/item";
+import { useSearchParams } from "next/navigation";
 
 const Wiki = () => {
   const searchParams = useSearchParams();
@@ -86,7 +86,6 @@ const Wiki = () => {
   useEffect(() => {
     if (items.length > 0) {
       const searchParam = searchParams.get("s");
-
       if (searchParam) {
         searchItems(searchParam, "All");
       } else {
@@ -95,7 +94,7 @@ const Wiki = () => {
         setHasMore(items.length > ITEMS_PER_PAGE);
       }
     }
-  }, [searchParams, items, searchItems]);
+  }, [searchParams, items]);
 
   const handleLoadMore = useCallback(() => {
     const nextPage = currentPage + 1;
