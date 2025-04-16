@@ -221,6 +221,7 @@
   "common.start": "Start",
   "common.stop": "Stop",
   "crafting.madeOn": "It's made on:",
+  "crafting.time": "Crafting time",
   "crafting.costToLearn": "Cost to learn",
   "crafting.recipe": "Recipe",
   "crafting.whoHasLearnedIt": "Who has learned it?",

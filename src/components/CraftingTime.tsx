@@ -34,7 +34,7 @@ const CraftingTime: React.FC<CraftingTimeProps> = ({ total = 1, time }) => {
   if (totalTime > 0) {
     return (
       <div className="flex items-center justify-end space-x-2 text-gray-300">
-        <span>{t("Crafting time")}:</span>
+        <span>{t("crafting.time")}</span>
         <div className="flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded-lg">
           <i className="fa fa-clock" />
           <span className="font-medium">{convertSecondsToTime(totalTime)}</span>

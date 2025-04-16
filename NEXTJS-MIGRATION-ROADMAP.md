@@ -23,27 +23,27 @@ The current application is:
 
 ## Rendering Strategy by Route
 
-| Route | Rendering Strategy | Rationale |
-|-------|-------------------|------------|
-| `/` (Home) | **SSG** | Static content that rarely changes; can be revalidated periodically |
-| `/profile` | **CSR** | User-specific content that requires client-side authentication |
-| `/crafter` | **ISR** | Calculator with static item data that occasionally updates; interactive UI |
-| `/members` | **CSR** | Dynamic user data that requires authentication |
-| `/clanlist` | **SSR** | Dynamic data that benefits from SEO; changes frequently |
-| `/walkerlist` | **ISR** | Semi-static data that updates occasionally |
-| `/maps` | **CSR** | Interactive map with client-side state management |
-| `/trades` | **SSR** | Dynamic trade data that benefits from SEO |
-| `/diplomacy` | **CSR** | Interactive UI with authenticated user data |
-| `/auctions` | **SSR** | Time-sensitive data that needs to be current |
-| `/others` | **SSG** | Static utility pages |
-| `/map/:id` | **CSR** | Interactive map with client-side state management |
-| `/map` | **CSR** | Map creation interface with client-side state |
-| `/tech/:tree` | **ISR** | Tech tree data that changes infrequently |
-| `/tech/` | **ISR** | Tech tree overview that changes infrequently |
-| `/privacy` | **SSG** | Static content |
-| `/item/:name` | **ISR** | Item details that change infrequently; benefits from SEO |
-| `/wiki/` | **ISR** | Wiki content that changes occasionally; benefits from SEO |
-| `/not-found` | **SSG** | Static error page |
+| Route | Rendering Strategy | Implementation Status | Rationale |
+|-------|-------------------|----------------------|------------|
+| `/` (Home) | **SSG** | ✅ Completed | Static content that rarely changes; can be revalidated periodically |
+| `/profile` | **CSR** | 🔄 In Progress | User-specific content that requires client-side authentication |
+| `/crafter` | **CSR** | ✅ Completed | Calculator with interactive UI requiring client-side state management |
+| `/members` | **CSR** | 🔄 In Progress | Dynamic user data that requires authentication |
+| `/clanlist` | **SSR** | 🔄 In Progress | Dynamic data that benefits from SEO; changes frequently |
+| `/walkerlist` | **ISR** | 🔄 In Progress | Semi-static data that updates occasionally |
+| `/maps` | **CSR** | ✅ Completed | Interactive map with client-side state management |
+| `/trades` | **SSR** | 🔄 In Progress | Dynamic trade data that benefits from SEO |
+| `/diplomacy` | **CSR** | 🔄 In Progress | Interactive UI with authenticated user data |
+| `/auctions` | **SSR** | 🔄 In Progress | Time-sensitive data that needs to be current |
+| `/others` | **SSG** | 🔄 In Progress | Static utility pages |
+| `/map/:id` | **CSR** | ✅ Completed | Interactive map with client-side state management |
+| `/map` | **CSR** | ✅ Completed | Map creation interface with client-side state |
+| `/tech/:tree` | **ISR** | 🔄 In Progress | Tech tree data that changes infrequently |
+| `/tech/` | **ISR** | 🔄 In Progress | Tech tree overview that changes infrequently |
+| `/privacy` | **SSG** | ✅ Completed | Static content |
+| `/item/:name` | **ISR** | 🔄 In Progress | Item details that change infrequently; benefits from SEO |
+| `/wiki/` | **ISR** | 🔄 In Progress | Wiki content that changes occasionally; benefits from SEO |
+| `/not-found` | **SSG** | ✅ Completed | Static error page |
 
 **Legend:**
 - **SSR**: Server-Side Rendering - Generates HTML on each request
@@ -72,7 +72,7 @@ The current application is:
 - [x] Create biome.json configuration file (migrate settings from current project)
   - Copy existing rules and configurations
   - Adjust for Next.js specific patterns
-- [ ] Configure environment variables
+- [x] Configure environment variables
   - Create .env.local file with Next.js prefixed variables (NEXT_PUBLIC_*)
   - Migrate from Vite environment variables
   ```
@@ -81,27 +81,32 @@ The current application is:
   NEXT_PUBLIC_DISCORD_CLIENT_ID=...
   NEXT_PUBLIC_PLAUSIBLE_URL=...
   ```
-- [ ] Configure i18next with Next.js
-  - Install next-i18next or use Next.js built-in internationalization
+- [x] Configure i18next with Next.js
+  - Install next-i18next for internationalization
   - Set up middleware for language detection and routing
-- [ ] Set up project structure
+- [x] Set up project structure
   ```
   /app
     /api
-    /(routes)
-        /(pages)
-    /(locales)
-      /(routes)
-        /(pages)
+    /crafter
+    /map
+    /tech
+    /item
+    /wiki
+    /not-found.tsx
+    /layout.tsx
+    /page.tsx
   /components
+    /Crafter     # Crafter-specific components
+    /ClanMaps    # Map-related components
+    /TechTree    # Tech tree components
+    /Wiki        # Wiki components
     /ui          # Reusable UI components
     /layouts     # Layout components
-    /features    # Feature-specific components
-  /lib
+  /functions
     /services    # API and data fetching services
     /utils       # Utility functions
-    /hooks       # Custom React hooks
-    /context     # Context providers
+    /requests    # API request functions
   /public
     /locales     # i18n translation files
     /img         # Images and assets
@@ -110,14 +115,14 @@ The current application is:
 
 ### 2. Core Components Migration
 
-- [ ] Migrate shared components (Menu, Footer, etc.)
-  - Convert to TypeScript if not already
-  - Adapt for Next.js Link component instead of react-router
-  - Ensure components work with Server Components where appropriate
-- [ ] Create layout components for Next.js app router
-  - Create root layout.tsx with metadata configuration
-  - Implement nested layouts for different sections
-  - Set up error.tsx and loading.tsx components
+- [x] Migrate shared components (Menu, Footer, etc.)
+  - Converted to TypeScript
+  - Adapted for Next.js Link component instead of react-router
+  - Implemented components compatible with Server Components where appropriate
+- [x] Create layout components for Next.js app router
+  - Created root layout.tsx with metadata configuration
+  - Implemented nested layouts (e.g., CrafterLayout.tsx)
+  - Set up not-found.tsx for 404 handling
 - [ ] Set up authentication context/providers
   - Implement NextAuth.js for Discord authentication
   - Create session provider and hooks
@@ -129,10 +134,10 @@ The current application is:
 
 ### 4. Page Migration
 
-- [ ] Migrate static pages first (Home, Privacy, etc.)
-  - Implement as Server Components with static generation
-  - Set up metadata for SEO optimization
-  - Migrate Helmet metadata to Next.js metadata API
+- [x] Migrate static pages first (Home, Privacy, etc.)
+  - Implemented as Server Components with static generation
+  - Set up metadata for SEO optimization using HeaderMeta component
+  - Migrated Helmet metadata to Next.js metadata API
 - [ ] Implement SSR pages (ClanList, Trades, etc.)
   - Use Server Components with dynamic data fetching
   - Implement loading states and error boundaries
@@ -141,10 +146,10 @@ The current application is:
   - Configure revalidation intervals based on data update frequency
   - Implement on-demand revalidation for content updates
   - Set up dynamic routes with generateStaticParams
-- [ ] Migrate interactive CSR pages (Maps, Crafter, etc.)
-  - Use Client Components with "use client" directive
-  - Implement hybrid approach with Server Components where possible
-  - Ensure client-side libraries (Leaflet) work properly with Next.js
+- [x] Migrate interactive CSR pages (Maps, Crafter, etc.)
+  - Implemented Client Components with "use client" directive
+  - Created hybrid approach with Server Components where possible
+  - Ensured client-side libraries work properly with Next.js
 
 ### 5. Advanced Features (Week 5-6)
 
