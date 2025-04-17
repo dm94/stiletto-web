@@ -58,6 +58,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
+  // Load saved skills and reset zoom when treeId changes
   useEffect(() => {
     try {
       const savedSkills = getStoredItem(`skills-${treeId}`);
@@ -72,30 +73,26 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   }, [treeId]);
 
   // Build tree structure from items
-  const buildTreeData = useCallback(() => {
-    const buildChildren = (parent: string, level = 0): NodeData[] => {
-      const filteredItems = items.filter((item) => item.parent === parent);
+  const buildChildren = (parent: string, level = 0): NodeData[] => {
+    const filteredItems = items.filter((item) => item.parent === parent);
 
-      const children: NodeData[] = filteredItems.map((item) => ({
-        id: item.name,
-        title: t(item.name),
-        item,
-        children: buildChildren(item.name, level + 1),
-        level,
-        x: 0,
-        y: 0,
-        selected: skills[item.name]?.nodeState === "selected",
-        parentId: parent !== treeId ? parent : undefined,
-      }));
+    const children: NodeData[] = filteredItems.map((item) => ({
+      id: item.name,
+      title: t(item.name),
+      item,
+      children: buildChildren(item.name, level + 1),
+      level,
+      x: 0,
+      y: 0,
+      selected: skills[item.name]?.nodeState === "selected",
+      parentId: parent !== treeId ? parent : undefined,
+    }));
 
-      return children;
-    };
+    return children;
+  };
 
-    return buildChildren(treeId);
-  }, [items, skills, t, treeId]);
-
-  // Calculate node positions for horizontal layout
-  const calculateNodePositions = useCallback((treeData: NodeData[]) => {
+  // Memoize the function to calculate node positions
+  const calculateNodePositions = (treeData: NodeData[]) => {
     const horizontalSpacing = 180;
     const verticalSpacing = 110;
     const processedNodes: NodeData[] = [];
@@ -156,18 +153,14 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     // Start processing from level 0
     processLevel(flatNodes, 0, 300);
 
-    return { nodes: processedNodes, edges: processedEdges };
-  }, []);
+    setNodes(processedNodes);
+    setEdges(processedEdges);
+  };
 
-  // Update nodes and edges when items or skills change
   useEffect(() => {
-    const treeData = buildTreeData();
-    const { nodes: calculatedNodes, edges: calculatedEdges } =
-      calculateNodePositions(treeData);
-
-    setNodes(calculatedNodes);
-    setEdges(calculatedEdges);
-  }, [buildTreeData, calculateNodePositions]);
+    const treeData = buildChildren(treeId);
+    calculateNodePositions(treeData);
+  }, [treeId]);
 
   // Check if a node can be learned based on its parent's status
   const canLearnNode = useCallback(
