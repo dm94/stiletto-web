@@ -7,7 +7,7 @@ import React, {
   useMemo,
   useCallback,
 } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import { getItems } from "@functions/services";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
