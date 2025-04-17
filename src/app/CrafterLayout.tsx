@@ -41,9 +41,6 @@ const CrafterLayout: React.FC<CrafterLayoutProps> = ({ children }) => {
   const switchLanguage = (lng: string): void => {
     storeItem("i18nextLng", lng);
     setLanguage(lng);
-    // In Next.js, we would typically use i18n routing instead of i18next directly
-    // This is a placeholder for the i18next functionality
-    // i18next.changeLanguage(lng);
   };
 
   return (
