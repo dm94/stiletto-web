@@ -1,24 +1,11 @@
 import type React from "react";
 import { useTranslation } from "next-i18next";
-import { memo, useMemo } from "react";
-import { getStoredItem } from "@functions/services";
+import { memo } from "react";
 
 const Others: React.FC = () => {
   const { t } = useTranslation();
 
-  const showDiscord = useMemo(() => {
-    if (getStoredItem("acceptscookies")) {
-      return (
-        <iframe
-          title="discord"
-          src="https://discord.com/widget?id=317737508064591874&theme=dark"
-          className="w-full"
-          height="500"
-          sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-        />
-      );
-    }
-
+  const showDiscord = () => {
     return (
       <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600 mb-4">
         <div className="p-4">
@@ -33,7 +20,7 @@ const Others: React.FC = () => {
         </div>
       </div>
     );
-  }, [t]);
+  };
 
   return (
     <div className="container mx-auto px-4">
@@ -113,7 +100,7 @@ const Others: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="md:col-span-1">{showDiscord}</div>
+          <div className="md:col-span-1">{showDiscord()}</div>
         </div>
       </div>
       <div className="mt-8">
