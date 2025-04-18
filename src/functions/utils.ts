@@ -3,7 +3,8 @@ import { config } from "../config/clientConfig";
 export const getDomain = () => {
   // Check if code is running in browser environment
   if (typeof window === "undefined") {
-    return "";
+    // Return empty string or a default URL for server-side rendering
+    return process.env.NEXT_PUBLIC_DOMAIN || "";
   }
 
   return (

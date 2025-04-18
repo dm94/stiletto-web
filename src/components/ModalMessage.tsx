@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import { useRouter } from "next/navigation";
 import { useTranslation } from "next-i18next";

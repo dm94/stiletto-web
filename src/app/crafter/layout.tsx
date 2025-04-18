@@ -1,8 +1,24 @@
 import type React from "react";
 import { type ReactNode, Suspense } from "react";
-import Head from "next/head";
+import type { Metadata } from "next";
 import { getDomain } from "@functions/utils";
 import LoadingScreen from "@components/LoadingScreen";
+
+export const metadata: Metadata = {
+  title: "Last Oasis Crafting Calculator - Stiletto for Last Oasis",
+  description: "See the materials needed to build each thing",
+  twitter: {
+    card: "summary_large_image",
+    title: "Crafter - Stiletto for Last Oasis",
+    description: "See the materials needed to build each thing",
+    images: [
+      "https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg",
+    ],
+  },
+  alternates: {
+    canonical: `${getDomain()}/crafter`,
+  },
+};
 
 export default function CrafterLayout({
   children,
@@ -10,29 +26,8 @@ export default function CrafterLayout({
   children: ReactNode;
 }>) {
   return (
-    <>
-      <Head>
-        <title>Last Oasis Crafting Calculator - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="See the materials needed to build each thing"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Crafter - Stiletto for Last Oasis"
-        />
-        <meta
-          name="twitter:description"
-          content="See the materials needed to build each thing"
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/crafter`} />
-      </Head>
+    <div className="flex flex-col lg:flex-row">
       <Suspense fallback={<LoadingScreen />}>{children}</Suspense>
-    </>
+    </div>
   );
 }
