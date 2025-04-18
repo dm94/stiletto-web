@@ -7,8 +7,8 @@ export const getDomain = () => {
   }
 
   return (
-    window.location.protocol.concat("//").concat(window.location.hostname) +
-    (window.location.port ? `:${window.location.port}` : "")
+    window?.location?.protocol.concat("//").concat(window?.location?.hostname) +
+    (window?.location?.port ? `:${window.location.port}` : "")
   );
 };
 
