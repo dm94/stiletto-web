@@ -9,7 +9,6 @@ import {
   createClan,
   getClanInfo,
 } from "../functions/requests/clans";
-import { closeSession } from "../functions/services";
 import type {
   CreateClanRequestParams,
   UpdateClanRequestParams,
