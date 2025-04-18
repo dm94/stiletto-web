@@ -152,7 +152,6 @@ const ClanList = () => {
     <Fragment>
       <div className="p-4">
         <div className="overflow-x-auto">
-          {helmetInfo}
           <div className="w-full">
             <div className="bg-gray-800 border border-blue-500 rounded-lg mb-4">
               <div className="p-4 border-b border-blue-500">
