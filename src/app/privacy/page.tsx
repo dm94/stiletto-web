@@ -1,3 +1,5 @@
+"use client";
+
 import { useTranslation } from "next-i18next";
 import { memo, useMemo } from "react";
 import HeaderMeta from "@components/HeaderMeta";
