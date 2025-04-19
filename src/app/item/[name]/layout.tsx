@@ -6,8 +6,11 @@ import { getItemDecodedName, getItemUrl } from "@functions/utils";
 
 export async function generateMetadata({
   params,
-}: { params: { name: string } }): Promise<Metadata> {
-  const { name } = await params;
+}: {
+  params: Promise<{ name: string }>;
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const { name } = resolvedParams;
 
   const itemName = getItemDecodedName(name);
 
@@ -22,8 +25,8 @@ export async function generateMetadata({
 
 export default function Layout({
   children,
-}: Readonly<{
+}: {
   children: ReactNode;
-}>) {
+}) {
   return <Suspense fallback={<LoadingScreen />}>{children}</Suspense>;
 }
