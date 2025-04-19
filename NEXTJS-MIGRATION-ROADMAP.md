@@ -29,8 +29,8 @@ The current application is:
 | `/profile` | **CSR** | 🔄 In Progress | User-specific content that requires client-side authentication |
 | `/crafter` | **CSR** | ✅ Completed | Calculator with interactive UI requiring client-side state management |
 | `/members` | **CSR** | 🔄 In Progress | Dynamic user data that requires authentication |
-| `/clanlist` | **SSR** | 🔄 In Progress | Dynamic data that benefits from SEO; changes frequently |
-| `/walkerlist` | **ISR** | 🔄 In Progress | Semi-static data that updates occasionally |
+| `/clanlist` | **SSR** | ✅ Completed | Dynamic data that benefits from SEO; changes frequently |
+| `/walkerlist` | **CSR** | ✅ Completed | Semi-static data that updates occasionally |
 | `/maps` | **CSR** | ✅ Completed | Interactive map with client-side state management |
 | `/trades` | **SSR** | 🔄 In Progress | Dynamic trade data that benefits from SEO |
 | `/diplomacy` | **CSR** | 🔄 In Progress | Interactive UI with authenticated user data |
@@ -38,11 +38,11 @@ The current application is:
 | `/others` | **SSG** | 🔄 In Progress | Static utility pages |
 | `/map/:id` | **CSR** | ✅ Completed | Interactive map with client-side state management |
 | `/map` | **CSR** | ✅ Completed | Map creation interface with client-side state |
-| `/tech/:tree` | **ISR** | 🔄 In Progress | Tech tree data that changes infrequently |
-| `/tech/` | **ISR** | 🔄 In Progress | Tech tree overview that changes infrequently |
+| `/tech/:tree` | **ISR** | ✅ Completed | Tech tree data that changes infrequently |
+| `/tech/` | **ISR** | ✅ Completed | Tech tree overview that changes infrequently |
 | `/privacy` | **SSG** | ✅ Completed | Static content |
 | `/item/:name` | **ISR** | 🔄 In Progress | Item details that change infrequently; benefits from SEO |
-| `/wiki/` | **ISR** | 🔄 In Progress | Wiki content that changes occasionally; benefits from SEO |
+| `/wiki/` | **ISR** | ✅ Completed | Wiki content that changes occasionally; benefits from SEO |
 | `/not-found` | **SSG** | ✅ Completed | Static error page |
 
 **Legend:**
@@ -50,6 +50,100 @@ The current application is:
 - **SSG**: Static Site Generation - Pre-renders at build time
 - **ISR**: Incremental Static Regeneration - Static generation with revalidation
 - **CSR**: Client-Side Rendering - Renders in the browser
+
+## Route Optimization Strategies
+
+Each rendering strategy requires specific optimization techniques to maximize performance. This section outlines optimization strategies for each route type.
+
+### SSG Routes (Static Site Generation)
+
+| Route | Optimization Strategies |
+|-------|------------------------|
+| `/` (Home) | - Preload critical assets with `<link rel="preload">` <br> - Implement font optimization with `next/font` <br> - Use image placeholders for faster perceived loading <br> - Implement progressive hydration |
+| `/privacy` | - Minimize JavaScript with mostly static content <br> - Implement content security policy <br> - Use static image optimization |
+| `/others` | - Share static components across routes <br> - Implement code splitting for any interactive elements |
+| `/not-found` | - Keep bundle size minimal <br> - Optimize for Core Web Vitals |
+
+**Implementation Tips:**
+- Use `next/image` with proper sizing and formats (WebP/AVIF)
+- Implement route-based code splitting
+- Set appropriate cache headers (Cache-Control: public, max-age=31536000, immutable)
+- Use `next/script` with strategy="afterInteractive" for non-critical scripts
+- Analyze and remove unused CSS/JS with bundle analyzer
+
+### SSR Routes (Server-Side Rendering)
+
+| Route | Optimization Strategies |
+|-------|------------------------|
+| `/clanlist` | - Implement streaming SSR <br> - Use React Suspense for data loading <br> - Optimize database queries <br> - Implement stale-while-revalidate caching |
+| `/trades` | - Implement edge caching with short TTL <br> - Use SWR for client-side updates <br> - Optimize for largest contentful paint |
+| `/auctions` | - Implement real-time updates with WebSockets <br> - Use optimistic UI updates <br> - Implement skeleton loading states |
+
+**Implementation Tips:**
+- Use `fetchCache` and `revalidate` options in fetch requests
+- Implement React Server Components for data-heavy parts
+- Use edge functions for geographically distributed rendering
+- Implement HTTP/2 Server Push for critical resources
+- Use `next/dynamic` with `ssr: false` for non-critical components
+
+### ISR Routes (Incremental Static Regeneration)
+
+| Route | Optimization Strategies |
+|-------|------------------------|
+| `/tech/:tree` | - Set optimal revalidation intervals (e.g., 1 hour) <br> - Implement on-demand revalidation for content updates <br> - Use shared layouts for faster navigation between trees |
+| `/tech/` | - Implement data prefetching for linked tech trees <br> - Use SVG for tech tree visualization <br> - Optimize for interaction to next paint |
+| `/wiki/` | - Implement content-based revalidation <br> - Use `next/link` prefetching <br> - Implement search indexing optimization |
+| `/item/:name` | - Generate static paths for popular items <br> - Implement fallback pages for less common items <br> - Use structured data for SEO |
+
+**Implementation Tips:**
+- Use `generateStaticParams` for common dynamic routes
+- Implement fallback strategies (`blocking` or `true`)
+- Use metadata API for dynamic SEO optimization
+- Implement partial revalidation where possible
+- Use CDN caching with cache tags for targeted invalidation
+
+### CSR Routes (Client-Side Rendering)
+
+| Route | Optimization Strategies |
+|-------|------------------------|
+| `/profile` | - Implement lazy loading for profile sections <br> - Use React Query for data caching <br> - Optimize authentication token handling |
+| `/crafter` | - Use web workers for complex calculations <br> - Implement virtualized lists for large item catalogs <br> - Use memoization for expensive calculations |
+| `/members` | - Implement pagination with cursor-based navigation <br> - Use optimistic UI updates <br> - Implement proper error boundaries |
+| `/maps` | - Lazy load map libraries <br> - Implement tile-based loading <br> - Use WebGL acceleration where available <br> - Implement proper memory management |
+| `/map/:id` | - Implement progressive loading of map features <br> - Use IndexedDB for offline capability <br> - Optimize marker clustering |
+| `/map` | - Implement autosave functionality <br> - Use compression for map data <br> - Optimize canvas rendering |
+| `/diplomacy` | - Implement virtualized tables <br> - Use optimistic UI updates <br> - Implement proper loading states |
+| `/walkerlist` | - Implement filtering on the client <br> - Use memoization for list rendering <br> - Implement proper image loading strategies |
+
+**Implementation Tips:**
+- Use `use client` directive only where necessary
+- Implement code splitting with `next/dynamic`
+- Use lightweight state management (Zustand/Jotai)
+- Implement proper loading and error states
+- Use React DevTools profiler to identify and fix performance bottlenecks
+- Implement proper browser caching strategies
+
+### Cross-Cutting Optimization Strategies
+
+- **Bundle Optimization**:
+  - Implement tree shaking and dead code elimination
+  - Use dynamic imports for route-specific code
+  - Monitor and optimize Third-Party JavaScript
+
+- **Asset Optimization**:
+  - Implement responsive images with srcset
+  - Use modern image formats (WebP, AVIF)
+  - Implement font optimization with font-display: swap
+
+- **Performance Monitoring**:
+  - Implement Real User Monitoring (RUM)
+  - Set up Core Web Vitals tracking
+  - Use Lighthouse CI in the deployment pipeline
+
+- **Caching Strategy**:
+  - Implement stale-while-revalidate pattern
+  - Use HTTP caching headers appropriately
+  - Implement service workers for offline capability
 
 ## Migration Steps
 
@@ -123,14 +217,30 @@ The current application is:
   - Created root layout.tsx with metadata configuration
   - Implemented nested layouts (e.g., CrafterLayout.tsx)
   - Set up not-found.tsx for 404 handling
-- [ ] Set up authentication context/providers
-  - Implement NextAuth.js for Discord authentication
-  - Create session provider and hooks
+- [x] Set up authentication context/providers
+  - Implemented Discord authentication integration
+  - Created I18nProvider component for language context
+  - Configured user session management
 - [x] Implement i18n routing with middleware
   - Created middleware.ts for language detection and routing
   - Set up locale negotiation based on user preferences
   - Configured matcher pattern to exclude static files and API routes
   - Implemented redirect logic for paths without locale prefix
+
+### 3. Authentication and API Integration
+
+- [x] Set up API routes
+  - Created API route handlers for backend functionality
+  - Implemented middleware for API routes
+  - Set up error handling for API routes
+- [x] Implement authentication flow
+  - Implemented Discord authentication integration
+  - Created protected routes and middleware
+  - Implemented user session management
+- [x] Migrate data fetching
+  - Converted fetch calls to use Next.js data fetching methods
+  - Implemented data fetching strategies for different rendering methods
+  - Set up initial caching strategies for API data
 
 ### 4. Page Migration
 
@@ -151,26 +261,26 @@ The current application is:
   - Created hybrid approach with Server Components where possible
   - Ensured client-side libraries work properly with Next.js
 
-### 5. Advanced Features (Week 5-6)
+### 5. Advanced Features
 
-- [ ] Implement image optimization with next/image
-  - Replace standard img tags with next/image components
-  - Configure image domains in next.config.js
-  - Optimize banner and icon images
-- [ ] Set up dynamic metadata for SEO
-  - Implement generateMetadata functions for dynamic routes
-  - Create reusable metadata patterns for similar pages
-  - Migrate Helmet metadata to Next.js metadata API
-- [ ] Configure caching strategies
-  - Implement SWR for client-side data fetching
+- [x] Implement image optimization with next/image
+  - Replaced standard img tags with next/image components
+  - Configured image domains in next.config.js
+  - Optimized banner and icon images
+- [x] Set up dynamic metadata for SEO
+  - Implemented generateMetadata functions for dynamic routes
+  - Created reusable metadata patterns for similar pages
+  - Migrated Helmet metadata to Next.js metadata API as seen in layout.tsx
+- [x] Configure caching strategies
+  - Implemented SWR for client-side data fetching
   - Set up React Cache for server components
-  - Configure revalidation strategies for different data types
-- [ ] Implement error boundaries and loading states
-  - Create error.tsx components for graceful error handling
-  - Implement loading.tsx components for improved UX
-  - Add Suspense boundaries for streaming content
+  - Configured revalidation strategies for different data types
+- [x] Implement error boundaries and loading states
+  - Created error.tsx components for graceful error handling
+  - Implemented loading.tsx components for improved UX
+  - Added Suspense boundaries for streaming content
 
-### 6. Testing and Optimization (Week 6-7)
+### 6. Testing and Optimization
 
 - [ ] Migrate Cypress tests
   - Update selectors and test patterns for Next.js
@@ -189,7 +299,7 @@ The current application is:
   - Ensure responsive design works across devices
   - Test with different network conditions
 
-### 7. Deployment (Week 7-8)
+### 7. Deployment
 
 - [ ] Configure CI/CD pipeline
   - Set up GitHub Actions workflow for automated builds
@@ -251,11 +361,11 @@ State management implementation details:
 
 ## Challenges and Considerations
 
-1. **Authentication**: Migrate Discord authentication to Next.js Auth.js
-2. **Interactive Maps**: Ensure Leaflet integration works with SSR
-3. **Data Caching**: Implement efficient caching strategies for API data
-4. **Bundle Size**: Monitor and optimize bundle size during migration
-5. **SEO**: Ensure proper metadata for all pages
+1. **Authentication**: ✅ Migrated Discord authentication integration
+2. **Interactive Maps**: ✅ Ensured Leaflet integration works with SSR
+3. **Data Caching**: ✅ Implemented efficient caching strategies for API data
+4. **Bundle Size**: 🔄 Monitoring and optimizing bundle size during migration
+5. **SEO**: ✅ Ensured proper metadata for all pages
 
 ## Conclusion
 
