@@ -24,7 +24,6 @@ import {
   getItemCraftUrl,
   getItemDecodedName,
 } from "@functions/utils";
-import HeaderMeta from "@components/HeaderMeta";
 import { type Item, Rarity } from "@ctypes/item";
 import { useParams, useRouter } from "next/navigation";
 
@@ -209,11 +208,7 @@ const ItemWiki = () => {
       data-cy="wiki-item"
       data-name={itemName}
     >
-      <HeaderMeta
-        title={`${itemName} - Stiletto for Last Oasis`}
-        description={`All information for ${itemName}`}
-        cannonical={getItemUrl(itemName)}
-      />
+      {/* Metadata is now handled by generateMetadata */}
       <div className="flex flex-wrap -mx-4">
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
