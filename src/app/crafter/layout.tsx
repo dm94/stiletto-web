@@ -25,9 +25,5 @@ export default function CrafterLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  return (
-    <div className="flex flex-col lg:flex-row">
-      <Suspense fallback={<LoadingScreen />}>{children}</Suspense>
-    </div>
-  );
+  return <Suspense fallback={<LoadingScreen />}>{children}</Suspense>;
 }
