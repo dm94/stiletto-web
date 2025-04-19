@@ -6,8 +6,6 @@ import { useTranslation } from "next-i18next";
 import { getItems } from "@functions/services";
 import { sendEvent } from "../../page-tracking";
 import Ingredient from "@components/Ingredient";
-import { getDomain } from "@functions/utils";
-import HeaderMeta from "@components/HeaderMeta";
 import type { Item } from "@ctypes/item";
 import { useSearchParams } from "next/navigation";
 
@@ -183,11 +181,6 @@ const Wiki = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <HeaderMeta
-        title="Wiki - Stiletto for Last Oasis"
-        description="Last oasis Wiki"
-        cannonical={`${getDomain()}/wiki`}
-      />
       <div className="w-full mb-8">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
           <div className="p-6 text-center">
