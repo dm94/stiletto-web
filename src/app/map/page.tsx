@@ -1,11 +1,9 @@
 "use client";
 
 import type React from "react";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 import CreateMapNoLog from "@components/ClanMaps/CreateMapNoLog";
 import ResourceMapNoLog from "@components/ClanMaps/ResourceMapNoLog";
-import { getDomain } from "@functions/utils";
-import HeaderMeta from "@components/HeaderMeta";
 import { useSearchParams } from "next/navigation";
 
 const MapPage: React.FC = () => {
@@ -25,17 +23,7 @@ const MapPage: React.FC = () => {
   }, [searchParams]);
 
   return (
-    <Fragment>
-      <HeaderMeta
-        title="Interactive Resource Map - Stiletto for Last Oasis"
-        description="Interactive Map of resources shared through a link"
-        cannonical={`${getDomain()}/map`}
-      >
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
-        />
-      </HeaderMeta>
+    <>
       {mapId && pass ? (
         <ResourceMapNoLog mapId={mapId} pass={pass} />
       ) : (
@@ -46,7 +34,7 @@ const MapPage: React.FC = () => {
           }}
         />
       )}
-    </Fragment>
+    </>
   );
 };
 
