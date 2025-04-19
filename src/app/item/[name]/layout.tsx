@@ -7,7 +7,9 @@ import { getItemDecodedName, getItemUrl } from "@functions/utils";
 export async function generateMetadata({
   params,
 }: { params: { name: string } }): Promise<Metadata> {
-  const itemName = getItemDecodedName(params.name);
+  const { name } = await params;
+
+  const itemName = getItemDecodedName(name);
 
   return {
     title: `${itemName} - Stiletto for Last Oasis`,
