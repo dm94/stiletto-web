@@ -4,7 +4,6 @@ import React, {
   useState,
   useEffect,
   Suspense,
-  Fragment,
   useCallback,
   useMemo,
 } from "react";
@@ -13,9 +12,7 @@ import { getItems, getStoredItem, storeItem } from "@functions/services";
 import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
 import Icon from "@components/Icon";
-import { getDomain } from "@functions/utils";
 import { getLearned, addTech, getUser } from "@functions/requests/users";
-import HeaderMeta from "@components/HeaderMeta";
 import type { Item } from "@ctypes/item";
 import { Tree } from "@ctypes/dto/tech";
 import { useParams, usePathname } from "next/navigation";
@@ -264,25 +261,11 @@ const TechTree = () => {
   }
 
   if (!isLoaded) {
-    return (
-      <Fragment>
-        <HeaderMeta
-          title="Tech Tree - Stiletto for Last Oasis"
-          description="View and control your clan's technology tree"
-          cannonical={`${getDomain()}/tech`}
-        />
-        <LoadingScreen />
-      </Fragment>
-    );
+    return <LoadingScreen />;
   }
 
   return (
     <div className="container mx-auto px-4">
-      <HeaderMeta
-        title="Tech Tree - Stiletto for Last Oasis"
-        description="View and control your clan's technology tree"
-        cannonical={`${getDomain()}/tech`}
-      />
       <nav className="w-full">
         <div
           className="flex border-b border-gray-700"
@@ -292,9 +275,10 @@ const TechTree = () => {
           <div className="flex-1">
             <Link
               href="/tech/Vitamins"
-              className={pathname?.includes("/tech/Vitamins") 
-                ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                pathname?.includes("/tech/Vitamins")
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
@@ -304,9 +288,10 @@ const TechTree = () => {
           <div className="flex-1">
             <Link
               href="/tech/Equipment"
-              className={pathname?.includes("/tech/Equipment") 
-                ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                pathname?.includes("/tech/Equipment")
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Equipment" name="Equipment" width={30} />{" "}
@@ -316,9 +301,10 @@ const TechTree = () => {
           <div className="flex-1">
             <Link
               href="/tech/Crafting"
-              className={pathname?.includes("/tech/Crafting") 
-                ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                pathname?.includes("/tech/Crafting")
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Crafting" name="Crafting" width={30} />{" "}
@@ -328,9 +314,10 @@ const TechTree = () => {
           <div className="flex-1">
             <Link
               href="/tech/Construction"
-              className={pathname?.includes("/tech/Construction") 
-                ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                pathname?.includes("/tech/Construction")
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Construction" name="Construction" width={30} />{" "}
@@ -340,9 +327,10 @@ const TechTree = () => {
           <div className="flex-1">
             <Link
               href="/tech/Walkers"
-              className={pathname?.includes("/tech/Walkers") 
-                ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                pathname?.includes("/tech/Walkers")
+                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
+                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
             >
               <Icon key="Walkers" name="Walkers" width={30} />{" "}

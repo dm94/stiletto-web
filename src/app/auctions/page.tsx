@@ -3,8 +3,6 @@
 import { useState, useCallback, memo } from "react";
 import { useTranslation } from "next-i18next";
 import Timer from "@components/AuctionTimers/Timer";
-import HeaderMeta from "@components/HeaderMeta";
-import { getDomain } from "@functions/utils";
 
 const AuctionTimers = memo(() => {
   const { t } = useTranslation();
@@ -28,18 +26,6 @@ const AuctionTimers = memo(() => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <HeaderMeta
-        title="Auction Timers - Stiletto for Last Oasis"
-        description="Timers for what you need"
-        cannonical={`${getDomain()}/auctions`}
-      >
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
-        />
-      </HeaderMeta>
-
       <div className="flex flex-wrap -mx-2 mb-6">
         <div className="w-full lg:w-2/3 px-2 mb-4 lg:mb-0">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
