@@ -50,7 +50,7 @@ const Icon: React.FC<IconProps> = ({ name: initialName, width = 16 }) => {
   return (
     <img
       src={`${config.RESOURCES_URL}/items/${getProcessedName(
-        initialName,
+        initialName
       )} icon.png`}
       loading="lazy"
       onError={() => setLoaded(false)}

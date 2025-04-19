@@ -27,7 +27,7 @@
     "react-leaflet": "4.2.1"
   },
   "scripts": {
-    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "cypress": "cypress open",
@@ -36,7 +36,11 @@
     "lint": "biome lint --write ./src"
   },
   "browserslist": {
-    "production": [">0.2%", "not dead", "not op_mini all"],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -64,7 +68,12 @@
   },
   "packageManager": "pnpm@10.6.5",
   "pnpm": {
-    "ignoredBuiltDependencies": ["cypress", "sharp"],
-    "onlyBuiltDependencies": ["cypress"]
+    "ignoredBuiltDependencies": [
+      "cypress",
+      "sharp"
+    ],
+    "onlyBuiltDependencies": [
+      "cypress"
+    ]
   }
 }
