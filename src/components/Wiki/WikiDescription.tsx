@@ -21,7 +21,7 @@ const WikiDescription: React.FC<WikiDescriptionProps> = ({ name }) => {
           setDescription(detail);
         }
       } catch {
-        console.error("Error fetching wiki description:");
+        console.warn("Error fetching wiki description:");
       }
     };
 

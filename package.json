@@ -23,7 +23,6 @@
     "next": "^15.3.0",
     "next-i18next": "^15.4.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0",
     "react-i18next": "15.4.1",
     "react-leaflet": "4.2.1"
   },
@@ -37,11 +36,7 @@
     "lint": "biome lint --write ./src"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -55,7 +50,6 @@
     "@types/leaflet": "^1.9.17",
     "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.0.4",
     "@types/react-leaflet": "^3.0.0",
     "autoprefixer": "10.4.21",
     "cross-env": "^7.0.3",
@@ -70,12 +64,7 @@
   },
   "packageManager": "pnpm@10.6.5",
   "pnpm": {
-    "ignoredBuiltDependencies": [
-      "cypress",
-      "sharp"
-    ],
-    "onlyBuiltDependencies": [
-      "cypress"
-    ]
+    "ignoredBuiltDependencies": ["cypress", "sharp"],
+    "onlyBuiltDependencies": ["cypress"]
   }
 }
