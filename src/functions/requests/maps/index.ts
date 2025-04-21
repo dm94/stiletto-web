@@ -114,7 +114,6 @@ export const getMapInfo = async (mapid: number): Promise<MapInfo> => {
   if (!response.ok) {
     throw new Error("errors.apiConnection");
   }
-  return await response.json();
 
-  throw new Error("errors.apiConnection");
+  return await response.json();
 };
