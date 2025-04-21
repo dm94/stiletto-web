@@ -25,7 +25,6 @@ const MapDetail: React.FC = () => {
     setIsLoading(true);
     try {
       const mapData = await getMapInfo(Number(id));
-      console.log("mapData", mapData);
       setMap(mapData);
     } catch {
       setError("errors.apiConnection");

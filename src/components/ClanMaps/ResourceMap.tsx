@@ -310,6 +310,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
           resourcesInTheMap={
             resourcesFiltered.length > 0 ? resourcesFiltered : resourcesInTheMap
           }
+          mapType={map?.typemap}
           deleteResource={handleDeleteResource}
           center={center}
           updateResource={handleUpdateResource}
