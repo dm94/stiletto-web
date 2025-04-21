@@ -18,6 +18,8 @@ import {
   editResource,
   getResources,
 } from "../../functions/requests/maps/resources";
+import type { MapInfo } from "../../types/dto/maps";
+import { getMap } from "../../functions/requests/maps";
 
 interface ResourceMapNoLogProps {
   mapId?: number;
@@ -33,6 +35,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   );
   const [mapId, setMapId] = useState<number>();
   const [pass, setPass] = useState<string>();
+  const [mapInfo, setMapInfo] = useState<MapInfo>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [textMessage, setTextMessage] = useState<string>("");
   const [center, setCenter] = useState<[number, number]>();
@@ -62,6 +65,9 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
 
         setMapId(currentMapId);
         setPass(currentPass);
+
+        const mapData = await getMap(currentMapId, currentPass);
+        setMapInfo(mapData);
 
         const responseResources = await getResources(currentMapId, currentPass);
         setResourcesInTheMap(responseResources);
@@ -190,6 +196,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       <div className="absolute inset-0 z-0">
         <MapLayer
           resourcesInTheMap={resourcesFiltered || resourcesInTheMap}
+          mapType={mapInfo?.typemap}
           deleteResource={handleDeleteResource}
           center={center}
           updateResource={handleUpdateResourceTime}

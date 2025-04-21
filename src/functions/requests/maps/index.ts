@@ -102,3 +102,18 @@ export const deleteMap = async (mapId: number): Promise<GenericResponse> => {
 
   throw new Error("errors.apiConnection");
 };
+
+export const getMapInfo = async (mapid: number): Promise<MapInfo> => {
+  const response = await fetch(`${config.API_URL}/maps/${mapid}/mapinfo`, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("errors.apiConnection");
+  }
+
+  return await response.json();
+};
