@@ -3,7 +3,7 @@ import { useState, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
-import { getStoredItem } from "../functions/services";
+import { useUser } from "../store";
 import { supportedLanguages } from "../config/languages";
 import type { Language } from "../types";
 
@@ -20,6 +20,7 @@ const Menu: React.FC<MenuProps> = ({
 }) => {
   const [searchText, setSearchText] = useState<string>("");
   const { t } = useTranslation();
+  const { isConnected } = useUser();
 
   const getLanguageFlag = (lng?: string): string => {
     if (!lng) {
@@ -103,7 +104,7 @@ const Menu: React.FC<MenuProps> = ({
               </li>
               <li className="nav-item" data-cy="maps-link">
                 <Link
-                  to={getStoredItem("token") != null ? "/maps" : "/map"}
+                  to={isConnected ? "/maps" : "/map"}
                   className="block py-2 text-white hover:text-gray-300"
                 >
                   {t("menu.resourceMaps")}

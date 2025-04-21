@@ -4,7 +4,8 @@ import ModalMessage from "../components/ModalMessage";
 import LoadingScreen from "../components/LoadingScreen";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getItems, getStoredItem } from "../functions/services";
+import { getItems } from "../functions/services";
+import { useUser } from "../store";
 import Pagination from "../components/Pagination";
 import WalkerListItem from "../components/WalkerList/WalkerListItem";
 import { getDomain } from "../functions/utils";
@@ -24,6 +25,7 @@ import type { MemberInfo } from "../types/dto/members";
 
 const WalkerList: React.FC = () => {
   const { t } = useTranslation();
+  const { isConnected } = useUser();
   const [isLoaded, setIsLoaded] = useState(false);
   const [walkers, setWalkers] = useState<WalkerInfo[]>([]);
   const [error, setError] = useState("");
@@ -173,7 +175,7 @@ const WalkerList: React.FC = () => {
 
   useEffect(() => {
     const initializeData = async () => {
-      if (!getStoredItem("token")) {
+      if (!isConnected) {
         setError(t("errors.loginRequired"));
         return;
       }
@@ -188,7 +190,7 @@ const WalkerList: React.FC = () => {
     };
 
     initializeData();
-  }, [updateWalkers, setupUserProfile, loadMembersAndItems, t]);
+  }, [updateWalkers, setupUserProfile, loadMembersAndItems, t, isConnected]);
 
   const renderWalkerList = useMemo(() => {
     if (!walkers) {

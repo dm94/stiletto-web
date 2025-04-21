@@ -2,6 +2,7 @@ import type React from "react";
 import { useState, useEffect, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { getMarkers, getStoredItem } from "../../functions/services";
+import { useUser } from "../../store";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
@@ -27,8 +28,8 @@ interface ResourceMapProps {
 
 const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const { t } = useTranslation();
+  const { isConnected } = useUser();
   const [userDiscordId] = useState<string | null>(getStoredItem("discordid"));
-  const [token] = useState<string>(getStoredItem("token") ?? "");
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
   const [items, setItems] = useState<Marker[]>([]);
@@ -253,7 +254,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     return false;
   };
 
-  if (!userDiscordId || !token) {
+  if (!userDiscordId || !isConnected) {
     return (
       <ModalMessage
         message={{

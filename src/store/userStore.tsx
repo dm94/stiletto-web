@@ -90,7 +90,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
    */
   const refreshUserProfile = async (): Promise<void> => {
     try {
-      if (!getStoredItem("token")) {
+      if (!isConnected) {
         setUserProfile(undefined);
         return;
       }

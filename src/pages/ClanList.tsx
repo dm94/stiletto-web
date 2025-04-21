@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment, useMemo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getStoredItem } from "../functions/services";
+import { useUser } from "../store";
 import { getUser } from "../functions/requests/users";
 import LoadingScreen from "../components/LoadingScreen";
 import ClanListItem from "../components/ClanList/ClanListItem";
@@ -15,6 +15,7 @@ import type { ClanInfo } from "../types/dto/clan";
 
 const ClanList = () => {
   const { t } = useTranslation();
+  const { isConnected } = useUser();
   const [isLoaded, setIsLoaded] = useState(false);
   const [clans, setClans] = useState<ClanInfo[]>([]);
   const [redirect, setRedirect] = useState(false);
@@ -50,8 +51,7 @@ const ClanList = () => {
         setError("errors.apiConnection");
       }
 
-      const token = getStoredItem("token");
-      if (token) {
+      if (isConnected) {
         setIsLogged(true);
         try {
           const userData = await getUser();
@@ -65,7 +65,7 @@ const ClanList = () => {
         }
       }
     },
-    [page, searchInput, regionSearch],
+    [page, searchInput, regionSearch, isConnected],
   );
 
   useEffect(() => {

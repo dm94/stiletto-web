@@ -9,6 +9,7 @@ import React, {
 import { useTranslation } from "react-i18next";
 import { NavLink, useParams } from "react-router";
 import { getItems, getStoredItem, storeItem } from "../functions/services";
+import { useUser } from "../store";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import Icon from "../components/Icon";
@@ -24,6 +25,7 @@ const SkillTreeTab = React.lazy(
 
 const TechTree = () => {
   const { t } = useTranslation();
+  const { isConnected } = useUser();
   const { tree } = useParams();
   const [items, setItems] = useState<Item[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -64,8 +66,7 @@ const TechTree = () => {
           setItems(filteredItems);
         }
 
-        const token = getStoredItem("token");
-        if (token) {
+        if (isConnected) {
           const userData = await getUser();
 
           if (userData?.clanid) {
@@ -103,7 +104,7 @@ const TechTree = () => {
     return () => {
       isMounted = false;
     };
-  }, [tree, tabSelect, updateLearnedTree]);
+  }, [tree, tabSelect, updateLearnedTree, isConnected]);
 
   const saveTree = useCallback(async () => {
     if (isSaving || !discordId) {
@@ -165,7 +166,7 @@ const TechTree = () => {
   }, [discordId, tabSelect, isSaving]);
 
   const saveDeleteButtons = useMemo(() => {
-    if (getStoredItem("token") == null) {
+    if (!isConnected) {
       return null;
     }
 
@@ -245,7 +246,7 @@ const TechTree = () => {
         </div>
       </div>
     );
-  }, [t, saveTree, deleteTree, isSaving]);
+  }, [t, saveTree, deleteTree, isSaving, isConnected]);
 
   if (error) {
     return (
