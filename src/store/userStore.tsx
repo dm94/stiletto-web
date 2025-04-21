@@ -114,6 +114,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const login = (discordId: string, token: string): void => {
     storeItem("discordid", discordId);
     storeItem("token", token);
+    setDiscordId(discordId);
     setIsConnected(true);
     refreshUserProfile();
   };
