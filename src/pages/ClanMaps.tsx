@@ -96,7 +96,7 @@ const ClanMaps = () => {
 
   const handleOpenMap = useCallback(
     (mapData: MapInfo) => {
-      navigate(`/maps/${mapData.mapid}?pass=${mapData.pass ?? ""}`);
+      navigate(`/maps/${mapData.mapid}`);
     },
     [navigate],
   );

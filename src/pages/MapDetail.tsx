@@ -1,18 +1,17 @@
 import type React from "react";
 import { useState, useEffect, useCallback } from "react";
-import { useParams, useNavigate, useLocation } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { Helmet } from "react-helmet";
 import LoadingScreen from "../components/LoadingScreen";
 import ModalMessage from "../components/ModalMessage";
 import ResourceMap from "../components/ClanMaps/ResourceMap";
-import { getMap } from "../functions/requests/maps";
+import { getMapInfo } from "../functions/requests/maps";
 import { getDomain } from "../functions/utils";
 import type { MapInfo } from "../types/dto/maps";
 
 const MapDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const location = useLocation();
   const [map, setMap] = useState<MapInfo>();
   const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState(true);
@@ -25,17 +24,15 @@ const MapDetail: React.FC = () => {
 
     setIsLoading(true);
     try {
-      const searchParams = new URLSearchParams(location.search);
-      const pass = searchParams.get("pass") ?? "";
-
-      const mapData = await getMap(Number(id), pass);
+      const mapData = await getMapInfo(Number(id));
+      console.log("mapData", mapData);
       setMap(mapData);
     } catch {
       setError("errors.apiConnection");
     } finally {
       setIsLoading(false);
     }
-  }, [id, navigate, location.search]);
+  }, [id, navigate]);
 
   useEffect(() => {
     fetchMap();
