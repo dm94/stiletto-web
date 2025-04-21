@@ -10,6 +10,7 @@ import AppRoutes from "./router";
 import { usePageTracking } from "./page-tracking";
 import NotificationList from "./components/Notifications/NotificationList";
 import Footer from "./components/Footer";
+import { UserProvider } from "./store";
 
 const CrafterApp: React.FC = () => {
   const navigate = useNavigate();
@@ -27,34 +28,36 @@ const CrafterApp: React.FC = () => {
   }
 
   return (
-    <React.Fragment>
-      <Helmet
-        htmlAttributes={{
-          lang: language ?? "en",
-        }}
-      />
-      <Menu
-        language={language ?? "en"}
-        openLanguajeModal={() => {
-          setShowChangeLanguageModal(true);
-        }}
-        setRedirectTo={(value: string) => setRedirectTo(value)}
-      />
-      <main className="flex-shrink-0">
-        <div className="container-fluid pt-4">
-          {AppRoutes}
-          {showChangeLanguageModal && (
-            <ChangeLanguageModal
-              switchLanguage={(lng: string) => switchLanguage(lng)}
-              hideModal={() => setShowChangeLanguageModal(false)}
-            />
-          )}
-        </div>
-      </main>
-      <Footer />
-      <CookieConsent />
-      <NotificationList />
-    </React.Fragment>
+    <UserProvider>
+      <React.Fragment>
+        <Helmet
+          htmlAttributes={{
+            lang: language ?? "en",
+          }}
+        />
+        <Menu
+          language={language ?? "en"}
+          openLanguajeModal={() => {
+            setShowChangeLanguageModal(true);
+          }}
+          setRedirectTo={(value: string) => setRedirectTo(value)}
+        />
+        <main className="flex-shrink-0">
+          <div className="container-fluid pt-4">
+            {AppRoutes}
+            {showChangeLanguageModal && (
+              <ChangeLanguageModal
+                switchLanguage={(lng: string) => switchLanguage(lng)}
+                hideModal={() => setShowChangeLanguageModal(false)}
+              />
+            )}
+          </div>
+        </main>
+        <Footer />
+        <CookieConsent />
+        <NotificationList />
+      </React.Fragment>
+    </UserProvider>
   );
 };
 

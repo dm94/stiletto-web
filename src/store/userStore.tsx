@@ -1,0 +1,161 @@
+import type React from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useMemo,
+  type ReactNode,
+} from "react";
+import { getUser } from "../functions/requests/users";
+import { getStoredItem, storeItem } from "../functions/services";
+import type { UserInfo } from "../types/dto/users";
+
+interface UserContextType {
+  isConnected: boolean;
+  userProfile: UserInfo | undefined;
+  isLoading: boolean;
+  discordId: string | undefined;
+  error: string | undefined;
+  login: (discordId: string, token: string) => void;
+  logout: () => void;
+  refreshUserProfile: () => Promise<void>;
+}
+
+// Default context value
+const defaultUserContext: UserContextType = {
+  isConnected: false,
+  userProfile: undefined,
+  discordId: undefined,
+  isLoading: false,
+  error: undefined,
+  login: (_discordId: string, _token: string) => {
+    // Default implementation - will be overridden by provider
+    console.warn("login called outside of UserProvider");
+  },
+  logout: () => {
+    // Default implementation - will be overridden by provider
+    console.warn("logout called outside of UserProvider");
+  },
+  refreshUserProfile: async () => {
+    // Default implementation - will be overridden by provider
+    console.warn("refreshUserProfile called outside of UserProvider");
+    return Promise.resolve();
+  },
+};
+
+// Create the context
+const UserContext = createContext<UserContextType>(defaultUserContext);
+
+interface UserProviderProps {
+  children: ReactNode;
+}
+
+/**
+ * User context provider that manages connection state and profile
+ */
+export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
+  const [isConnected, setIsConnected] = useState<boolean>(false);
+  const [userProfile, setUserProfile] = useState<UserInfo>();
+  const [discordId, setDiscordId] = useState<string>();
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>();
+
+  // Check if the user is connected when loading the component
+  useEffect(() => {
+    const checkUserConnection = async () => {
+      setIsLoading(true);
+      const token = getStoredItem("token");
+      const discordId = getStoredItem("discordid");
+
+      if (token && discordId) {
+        setIsConnected(true);
+        setDiscordId(discordId);
+        try {
+          await refreshUserProfile();
+        } catch (err) {
+          setError("Error loading user profile");
+          console.error("Error loading profile:", err);
+        }
+      }
+
+      setIsLoading(false);
+    };
+
+    checkUserConnection();
+  }, []);
+
+  /**
+   * Updates the user profile information from the API
+   */
+  const refreshUserProfile = async (): Promise<void> => {
+    try {
+      if (!getStoredItem("token")) {
+        setUserProfile(undefined);
+        return;
+      }
+
+      setIsLoading(true);
+      const userData = await getUser();
+      setUserProfile(userData);
+      setError(undefined);
+      setDiscordId(userData.discordid);
+    } catch (err) {
+      setError("Error getting user data");
+      console.error("Error getting user data:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  /**
+   * User login
+   */
+  const login = (discordId: string, token: string): void => {
+    storeItem("discordid", discordId);
+    storeItem("token", token);
+    setIsConnected(true);
+    refreshUserProfile();
+  };
+
+  /**
+   * User logout
+   */
+  const logout = (): void => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("discordid");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("discordid");
+    setIsConnected(false);
+    setUserProfile(undefined);
+  };
+
+  // Memoize the context value to prevent unnecessary re-renders
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  const value = useMemo(
+    () => ({
+      isConnected,
+      userProfile,
+      isLoading,
+      discordId,
+      error,
+      login,
+      logout,
+      refreshUserProfile,
+    }),
+    [isConnected, userProfile, isLoading, error],
+  );
+
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+};
+
+/**
+ * Custom hook to access the user context
+ */
+export const useUser = (): UserContextType => {
+  const context = useContext(UserContext);
+  if (context === undefined) {
+    throw new Error("useUser must be used within a UserProvider");
+  }
+  return context;
+};

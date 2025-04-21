@@ -6,10 +6,11 @@ import queryString from "query-string";
 import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
-import { getStoredItem, storeItem } from "../functions/services";
+import { getStoredItem } from "../functions/services";
 import { useNavigate, useLocation } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "../functions/utils";
 import { authDiscord } from "../functions/requests/users";
+import { useUser } from "../store";
 
 const DiscordConnection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -17,12 +18,13 @@ const DiscordConnection: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
+  const { login, isConnected } = useUser();
 
   useEffect(() => {
     const handleAuth = async () => {
       const parsed = queryString.parse(location?.search);
 
-      if (!parsed.code || getStoredItem("token")) {
+      if (!parsed.code || isConnected) {
         setIsLoaded(true);
         return;
       }
@@ -30,13 +32,8 @@ const DiscordConnection: React.FC = () => {
       try {
         const response = await authDiscord(String(parsed.code));
 
-        if (response) {
-          if (response.discordid) {
-            storeItem("discordid", response.discordid);
-          }
-          if (response.token) {
-            storeItem("token", response.token);
-          }
+        if (response && response.discordid && response.token) {
+          login(response.discordid, response.token);
           navigate("/");
         }
       } catch {
@@ -47,20 +44,19 @@ const DiscordConnection: React.FC = () => {
     };
 
     handleAuth();
-  }, [location, navigate, t]);
+  }, [location, navigate, t, login, isConnected]);
 
   const discordLoginUrl = useMemo(() => getDiscordLoginUrl(), []);
 
   useEffect(() => {
     const parsed = queryString.parse(location?.search);
     if (parsed.discordid && parsed.token) {
-      storeItem("discordid", String(parsed.discordid));
-      storeItem("token", String(parsed.token));
+      login(String(parsed.discordid), String(parsed.token));
     }
-  }, [location]);
+  }, [location, login]);
 
   const renderClanInfo = useCallback(() => {
-    if (getStoredItem("token")) {
+    if (isConnected) {
       return <PrivateProfile key="profile" />;
     }
 
