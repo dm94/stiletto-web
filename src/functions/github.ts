@@ -3,22 +3,21 @@ import { addCachedData, getCachedData } from "./services";
 import type { Item } from "@ctypes/item";
 import type { MapJsonInfo } from "@ctypes/dto/maps";
 
-const resourceCacheTimeCheck = 86400000;
+const RESOURCE_CACHE_TIME_CHECK = 86400000;
+const REPO_JSON_URL =
+  "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json";
 
 export const getMarkers = async (): Promise<Marker[] | undefined> => {
-  const cachedData = getCachedData("markers", resourceCacheTimeCheck);
+  const cachedData = getCachedData("markers", RESOURCE_CACHE_TIME_CHECK);
 
   if (cachedData != null) {
     return cachedData;
   }
 
   try {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/markers.min.json",
-      {
-        method: "GET",
-      },
-    );
+    const response = await fetch(`${REPO_JSON_URL}/markers.min.json`, {
+      method: "GET",
+    });
 
     const data = await response.json();
 
@@ -31,19 +30,16 @@ export const getMarkers = async (): Promise<Marker[] | undefined> => {
 };
 
 export const getItems = async (): Promise<Item[]> => {
-  const cachedData = getCachedData("allItems", resourceCacheTimeCheck);
+  const cachedData = getCachedData("allItems", RESOURCE_CACHE_TIME_CHECK);
 
   if (cachedData != null) {
     return cachedData;
   }
 
   try {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/items_min.json",
-      {
-        method: "GET",
-      },
-    );
+    const response = await fetch(`${REPO_JSON_URL}/items_min.json`, {
+      method: "GET",
+    });
 
     const data = await response.json();
 
@@ -56,19 +52,16 @@ export const getItems = async (): Promise<Item[]> => {
 };
 
 export const getMapNames = async (): Promise<MapJsonInfo[]> => {
-  const cachedData = getCachedData("maps", resourceCacheTimeCheck);
+  const cachedData = getCachedData("maps", RESOURCE_CACHE_TIME_CHECK);
 
   if (cachedData != null) {
     return cachedData as MapJsonInfo[];
   }
 
   try {
-    const response = await fetch(
-      "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json/maps.min.json",
-      {
-        method: "GET",
-      },
-    );
+    const response = await fetch(`${REPO_JSON_URL}/maps.min.json`, {
+      method: "GET",
+    });
 
     const data = await response.json();
 
