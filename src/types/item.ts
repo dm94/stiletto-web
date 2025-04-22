@@ -65,6 +65,12 @@ export type ModuleInfo = {
   maxIncrease?: number;
 };
 
+export type TechItem = {
+  name: string;
+  parent: string;
+  unlocks: string[];
+};
+
 export type Item = {
   name: string;
   count: number;

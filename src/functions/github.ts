@@ -1,6 +1,6 @@
 import type { Marker } from "@ctypes/dto/marker";
 import { addCachedData, getCachedData } from "./services";
-import type { Item } from "@ctypes/item";
+import type { Item, TechItem } from "@ctypes/item";
 import type { MapJsonInfo } from "@ctypes/dto/maps";
 
 const RESOURCE_CACHE_TIME_CHECK = 86400000;
@@ -66,6 +66,20 @@ export const getMapNames = async (): Promise<MapJsonInfo[]> => {
     const data = await response.json();
 
     addCachedData("maps", data);
+
+    return data;
+  } catch {
+    throw new Error("errors.apiConnection");
+  }
+};
+
+export const getTechItems = async (): Promise<TechItem[]> => {
+  try {
+    const response = await fetch(`${REPO_JSON_URL}/tech_min.json`, {
+      method: "GET",
+    });
+
+    const data = await response.json();
 
     return data;
   } catch {
