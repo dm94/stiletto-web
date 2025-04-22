@@ -5,10 +5,10 @@ export const getDomain = () =>
   (window.location.port ? `:${window.location.port}` : "");
 
 export const getItemCodedName = (itemName: string) =>
-  itemName.toLowerCase().replace(" ", "_");
+  itemName.toLowerCase().replaceAll(" ", "_");
 
 export const getItemDecodedName = (itemName: string) =>
-  decodeURI(String(itemName)).replace("_", " ").toLowerCase().trim();
+  decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase().trim();
 
 export const getItemUrl = (itemName: string) =>
   `${getDomain()}/item/${encodeURI(getItemCodedName(itemName))}`;

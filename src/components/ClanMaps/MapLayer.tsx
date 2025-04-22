@@ -104,7 +104,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
   );
 
   const getMarketDesign = useCallback((resource: string) => {
-    const res = resource.replace(" ", "_");
+    const res = resource.replaceAll(" ", "_");
     return L.icon({
       iconUrl: `${config.RESOURCES_URL}/markers/${res}.png`,
       iconSize: [25, 41],
