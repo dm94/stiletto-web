@@ -1,7 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback, useMemo } from "react";
-import { getStoredItem } from "../../functions/services";
+import { useUser } from "../../store";
 import { getDomain } from "../../functions/utils";
 import { config } from "../../config/config";
 import type { MapInfo } from "../../types/dto/maps";
@@ -20,7 +20,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   onDelete,
 }) => {
   const { t } = useTranslation();
-  const userDiscordId = useMemo(() => getStoredItem("discordid"), []);
+  const { discordId } = useUser();
 
   const handleOpenMap = useCallback(() => {
     onOpen(map);
@@ -35,8 +35,8 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   }, [map.mapid, map.pass]);
 
   const isOwner = useMemo(
-    () => map?.discordid === userDiscordId,
-    [map?.discordid, userDiscordId],
+    () => map?.discordid === discordId,
+    [map?.discordid, discordId],
   );
 
   const mapImageSrc = useMemo(() => {
