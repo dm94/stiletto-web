@@ -67,7 +67,7 @@ const SkillNodeBtn: React.FC<SkillNodeBtnProps> = ({ clan, tree, item }) => {
         <p className="text-red-500">{t("errors.apiConnection")}</p>
         <button
           type="button"
-          className="btn btn-outline-danger btn-sm mt-1"
+          className="btn btn-outline-danger btn-sm mt-1 p-1"
           onClick={getLearned}
         >
           {t("common.retry")}
@@ -83,7 +83,7 @@ const SkillNodeBtn: React.FC<SkillNodeBtnProps> = ({ clan, tree, item }) => {
   return (
     <button
       type="button"
-      className={`btn ${isLoading ? "btn-secondary" : "btn-primary"} btn-block`}
+      className={`btn ${isLoading ? "btn-secondary" : "btn-primary"} btn-block p-1`}
       onClick={getLearned}
       disabled={isLoading}
     >

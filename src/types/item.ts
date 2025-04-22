@@ -68,7 +68,7 @@ export type ModuleInfo = {
 export type TechItem = {
   name: string;
   parent: string;
-  unlocks: string[];
+  unlocks?: string[];
 };
 
 export type Item = {
