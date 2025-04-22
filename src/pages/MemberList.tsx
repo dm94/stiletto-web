@@ -20,7 +20,7 @@ import {
   updateMember,
 } from "../functions/requests/clans/members";
 import { deleteClan } from "../functions/requests/clans";
-import { getStoredItem } from "../functions/services";
+import { useUser } from "../store";
 import {
   MemberAction,
   type MemberInfo,
@@ -38,9 +38,8 @@ const MemberList = () => {
   const [error, setError] = useState<string>();
   const [isLoadedRequestList, setIsLoadedRequestList] = useState(false);
   const [redirectMessage, setRedirectMessage] = useState<string>();
-  const [selectNewOwner, setSelectNewOwner] = useState<string>(
-    getStoredItem("discordid") ?? "",
-  );
+  const { discordId } = useUser();
+  const [selectNewOwner, setSelectNewOwner] = useState<string>(discordId ?? "");
   const [showRequestModal, setShowRequestModal] = useState(false);
   const [requestData, setRequestData] = useState<MemberRequest>();
   const [isLeader, setIsLeader] = useState(false);

@@ -12,12 +12,14 @@ import { getDomain } from "../../functions/utils";
 import { deleteUser, addNick, getUser } from "../../functions/requests/users";
 import { leaveClan } from "../../functions/requests/clans";
 import { supportedLanguages } from "../../config/languages";
-import { closeSession, getStoredItem } from "../../functions/services";
+import { closeSession } from "../../functions/services";
 import { DEFAULT_LANGUAGE } from "../../config/config";
 import type { UserInfo } from "../../types/dto/users";
+import { useUser } from "../../store";
 
 const PrivateProfile = () => {
   const { t, i18n } = useTranslation();
+  const { isConnected } = useUser();
   const [userData, setUserData] = useState<UserInfo>();
   const [language, setLanguage] = useState(i18n.language ?? DEFAULT_LANGUAGE);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -116,7 +118,7 @@ const PrivateProfile = () => {
     return <LoadingScreen />;
   }
 
-  if (!getStoredItem("token") || redirect) {
+  if (!isConnected || redirect) {
     return (
       <ModalMessage
         message={{ isError: true, text: "auth.loginAgain2", redirectPage: "/" }}

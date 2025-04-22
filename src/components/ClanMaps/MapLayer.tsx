@@ -20,6 +20,7 @@ interface MapLayerProps {
   resourcesInTheMap: ResourceInfo[];
   deleteResource?: (resourceId: number, resourceToken: string) => void;
   center?: [number, number];
+  mapType?: string;
   updateResource?: (
     mapId: number,
     resourceId: number,
@@ -40,6 +41,7 @@ const myMarker = L.icon({
 const MapLayer: React.FC<MapLayerProps> = ({
   resourcesInTheMap,
   center,
+  mapType,
   updateResource,
   deleteResource,
   changeInput,
@@ -280,7 +282,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
         />
         <TileLayer
           url={`${config.RESOURCES_URL}/maps/${
-            resourcesInTheMap?.[0]?.typemap ?? "Crater_new"
+            mapType ?? resourcesInTheMap?.[0]?.typemap ?? "Crater_new"
           }/{z}/{x}/{y}.png`}
           noWrap
         />

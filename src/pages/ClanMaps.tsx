@@ -7,10 +7,10 @@ import React, {
   memo,
 } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 import { Helmet } from "react-helmet";
 import ModalMessage from "../components/ModalMessage";
 import ClanMapItem from "../components/ClanMaps/ClanMapItem";
-import ResourceMap from "../components/ClanMaps/ResourceMap";
 import CreateMapPanel from "../components/ClanMaps/CreateMapPanel";
 import { getDomain } from "../functions/utils";
 import { getMaps, addMap, deleteMap } from "../functions/requests/maps";
@@ -24,10 +24,10 @@ const DeleteMapModal = React.lazy(
 
 const ClanMaps = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [clanMaps, setClanMaps] = useState<MapInfo[]>([]);
   const [maps, setMaps] = useState<MapJsonInfo[]>([]);
   const [error, setError] = useState<string>();
-  const [mapToShow, setMapToShow] = useState<MapInfo>();
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [idMapToDelete, setIdMapToDelete] = useState<number>();
   const [isLoading, setIsLoading] = useState(true);
@@ -94,13 +94,12 @@ const ClanMaps = () => {
     [fetchMaps],
   );
 
-  const handleOpenMap = useCallback((mapData: MapInfo) => {
-    setMapToShow(mapData);
-  }, []);
-
-  const handleCloseMap = useCallback(() => {
-    setMapToShow(undefined);
-  }, []);
+  const handleOpenMap = useCallback(
+    (mapData: MapInfo) => {
+      navigate(`/maps/${mapData.mapid}`);
+    },
+    [navigate],
+  );
 
   const handleCancelDelete = useCallback(() => {
     setIdMapToDelete(undefined);
@@ -205,16 +204,6 @@ const ClanMaps = () => {
     handleCancelDelete,
     t,
   ]);
-
-  if (mapToShow) {
-    return (
-      <ResourceMap
-        key={`mapOpen${mapToShow.mapid}`}
-        onReturn={handleCloseMap}
-        map={mapToShow}
-      />
-    );
-  }
 
   if (error) {
     return (
