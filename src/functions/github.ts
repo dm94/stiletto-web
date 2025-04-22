@@ -80,9 +80,8 @@ export const getTechItems = async (): Promise<TechItem[]> => {
       method: "GET",
     });
 
-    const data = await response.json();
+    return await response.json();
 
-    return data;
   } catch {
     throw new Error("errors.apiConnection");
   }
