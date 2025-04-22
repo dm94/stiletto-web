@@ -1,7 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import { getStoredItem } from "../../functions/services";
 import type { MemberInfo } from "../../types/dto/members";
+import { useUser } from "../../store";
 
 interface MemberListItemProps {
   member: MemberInfo;
@@ -19,6 +19,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
   onClickEditPermissions,
 }) => {
   const { t } = useTranslation();
+  const { discordId } = useUser();
 
   const renderKickButton = (): React.ReactNode => {
     if (!isLeader && !hasPermissions) {
@@ -26,7 +27,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
     }
 
     if (
-      member.discordid === getStoredItem("discordid") ||
+      member.discordid === discordId ||
       member.discordid === member.leaderid
     ) {
       return null;
@@ -51,7 +52,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
     }
 
     if (
-      member.discordid === getStoredItem("discordid") ||
+      member.discordid === discordId ||
       member.discordid === member.leaderid
     ) {
       return null;

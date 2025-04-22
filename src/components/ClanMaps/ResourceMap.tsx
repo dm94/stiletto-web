@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState, useEffect, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { getMarkers, getStoredItem } from "../../functions/services";
+import { getMarkers } from "../../functions/services";
 import { useUser } from "../../store";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
@@ -28,8 +28,7 @@ interface ResourceMapProps {
 
 const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const { t } = useTranslation();
-  const { isConnected } = useUser();
-  const [userDiscordId] = useState<string | null>(getStoredItem("discordid"));
+  const { isConnected, discordId } = useUser();
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
   const [items, setItems] = useState<Marker[]>([]);
@@ -158,7 +157,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   };
 
   const renderEditMapTab = () => {
-    if (userDiscordId === map.discordid) {
+    if (discordId === map.discordid) {
       return (
         <div className="p-4">
           <form onSubmit={handleChangeDataMap}>
@@ -254,7 +253,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     return false;
   };
 
-  if (!userDiscordId || !isConnected) {
+  if (!discordId || !isConnected) {
     return (
       <ModalMessage
         message={{
@@ -384,7 +383,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
             >
               {t("Create")}
             </button>
-            {userDiscordId === map?.discordid && (
+            {discordId === map?.discordid && (
               <button
                 type="button"
                 className={`flex-1 p-3 text-sm font-medium ${

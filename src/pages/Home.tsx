@@ -3,16 +3,17 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { memo, useMemo } from "react";
 import Others from "./Others";
-import { getStoredItem } from "../functions/services";
+import { useUser } from "../store";
 import { getDomain } from "../functions/utils";
 import { Link } from "react-router";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
+  const { isConnected } = useUser();
 
   const resourceMapsUrl = useMemo(() => {
-    return getStoredItem("discordid") ? "/maps" : "/map";
-  }, []);
+    return isConnected ? "/maps" : "/map";
+  }, [isConnected]);
 
   const canonicalUrl = useMemo(() => {
     return getDomain();
