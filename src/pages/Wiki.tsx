@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import { getItems } from "@functions/services";
-import { sendEvent } from "../page-tracking";
+import { sendEvent } from "@functions/page-tracking";
 import Ingredient from "@components/Ingredient";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";

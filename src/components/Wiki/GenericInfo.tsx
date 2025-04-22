@@ -1,6 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import { calcRarityValue } from "../../rarityCalc";
+import { calcRarityValue } from "@functions/rarityCalc";
 
 interface GenericInfoProps {
   dataInfo: Record<string, any>;

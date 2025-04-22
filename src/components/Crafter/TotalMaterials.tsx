@@ -3,7 +3,7 @@ import { memo, useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
-import { sendEvent } from "../../page-tracking";
+import { sendEvent } from "@functions/page-tracking";
 import { sendNotification } from "@functions/broadcast";
 import { getDomain, getItemUrl } from "@functions/utils";
 import { addRecipe } from "@functions/requests/recipes";

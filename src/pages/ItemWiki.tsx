@@ -17,7 +17,7 @@ import ModuleInfo from "@components/Wiki/ModuleInfo";
 import ToolInfo from "@components/Wiki/ToolInfo";
 import GenericInfo from "@components/Wiki/GenericInfo";
 import Comments from "@components/Wiki/Comments";
-import { calcRarityValue } from "../rarityCalc";
+import { calcRarityValue } from "@functions/rarityCalc";
 import {
   getItemUrl,
   getItemCraftUrl,

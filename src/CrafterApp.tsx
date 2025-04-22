@@ -7,7 +7,7 @@ import Menu from "@components/Menu";
 import ChangeLanguageModal from "@components/ChangeLanguageModal";
 import { getStoredItem, storeItem } from "@functions/services";
 import AppRoutes from "./router";
-import { usePageTracking } from "./page-tracking";
+import { usePageTracking } from "@functions/page-tracking";
 import NotificationList from "@components/Notifications/NotificationList";
 import Footer from "@components/Footer";
 import { UserProvider } from "@store/userStore";
