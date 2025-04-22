@@ -1,5 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
+import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import { getItems } from "@functions/github";
@@ -109,8 +110,8 @@ const Wiki = () => {
       return (
         <div className="w-full" key="wiki-loading">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
-            <div className="p-6 text-center text-gray-300 text-lg">
-              {t("common.loading")}
+            <div className="p-6 text-center text-gray-300 text-lg relative">
+              <div className="loader-small" />
             </div>
           </div>
         </div>
