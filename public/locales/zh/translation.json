@@ -239,6 +239,7 @@
   "techTree.seeWhoHasLearnedIt": "查看谁学到了它",
   "techTree.noOneHasLearnedIt": "没有人学到它",
   "techTree.needClanForFunction": "你需要一个部族来完成这个函数",
+  "techTree.toggleLearned": "Toggle learned",
   "common.privacyPolicy": "隐私政策",
   "walkers.searchWalkers": "搜索步行者",
   "common.yes": "否",

@@ -239,6 +239,7 @@
   "techTree.seeWhoHasLearnedIt": "誰がそれを学んだかを見る",
   "techTree.noOneHasLearnedIt": "誰も学んでいません",
   "techTree.needClanForFunction": "この機能にはクランが必要です",
+  "techTree.toggleLearned": "Toggle learned",
   "common.privacyPolicy": "プライバシーポリシー",
   "walkers.searchWalkers": "歩行者を検索",
   "common.yes": "はい",
