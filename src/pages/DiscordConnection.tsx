@@ -6,7 +6,6 @@ import queryString from "query-string";
 import LoadingScreen from "../components/LoadingScreen";
 import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
 import ModalMessage from "../components/ModalMessage";
-import { getStoredItem } from "../functions/services";
 import { useNavigate, useLocation } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "../functions/utils";
 import { authDiscord } from "../functions/requests/users";
@@ -32,7 +31,7 @@ const DiscordConnection: React.FC = () => {
       try {
         const response = await authDiscord(String(parsed.code));
 
-        if (response && response.discordid && response.token) {
+        if (response?.discordid && response?.token) {
           login(response.discordid, response.token);
           navigate("/");
         }
@@ -96,7 +95,7 @@ const DiscordConnection: React.FC = () => {
         </div>
       </div>
     );
-  }, [t, discordLoginUrl]);
+  }, [t, discordLoginUrl, isConnected]);
 
   if (error) {
     return (
