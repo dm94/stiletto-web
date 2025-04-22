@@ -2,7 +2,7 @@ import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getItems } from "@functions/services";
+import { getItems } from "@functions/github";
 import { sendEvent } from "@functions/page-tracking";
 import Ingredient from "@components/Ingredient";
 import { getDomain } from "@functions/utils";

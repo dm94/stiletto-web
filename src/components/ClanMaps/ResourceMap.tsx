@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState, useEffect, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { getMarkers } from "@functions/services";
+import { getMarkers } from "@functions/github";
 import { useUser } from "@store/userStore";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";

@@ -2,7 +2,7 @@ import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getItems } from "@functions/services";
+import { getItems } from "@functions/github";
 import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
 import Pagination from "@components/Pagination";

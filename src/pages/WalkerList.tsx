@@ -4,7 +4,7 @@ import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { getItems } from "@functions/services";
+import { getItems } from "@functions/github";
 import { useUser } from "@store/userStore";
 import Pagination from "@components/Pagination";
 import WalkerListItem from "@components/WalkerList/WalkerListItem";

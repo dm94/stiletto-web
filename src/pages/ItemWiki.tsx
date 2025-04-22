@@ -6,7 +6,7 @@ import React, {
   useCallback,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { getItems } from "@functions/services";
+import { getItems } from "@functions/github";
 import { Navigate, useParams } from "react-router";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
