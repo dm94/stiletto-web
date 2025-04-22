@@ -1,10 +1,10 @@
 import type React from "react";
 import { useState, useEffect, Fragment } from "react";
 import queryString from "query-string";
-import CreateMapNoLog from "../components/ClanMaps/CreateMapNoLog";
-import ResourceMapNoLog from "../components/ClanMaps/ResourceMapNoLog";
-import { getDomain } from "../functions/utils";
-import HeaderMeta from "../components/HeaderMeta";
+import CreateMapNoLog from "@components/ClanMaps/CreateMapNoLog";
+import ResourceMapNoLog from "@components/ClanMaps/ResourceMapNoLog";
+import { getDomain } from "@functions/utils";
+import HeaderMeta from "@components/HeaderMeta";
 import { useLocation } from "react-router";
 
 const MapPage: React.FC = () => {

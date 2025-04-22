@@ -3,16 +3,11 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import ClusterList from "./ClusterList";
 import SymbolSelector from "./SymbolSelector";
-import {
-  updateClan,
-  createClan,
-  getClanInfo,
-} from "../functions/requests/clans";
-import { closeSession } from "../functions/services";
+import { updateClan, createClan, getClanInfo } from "@functions/requests/clans";
 import type {
   CreateClanRequestParams,
   UpdateClanRequestParams,
-} from "../types/dto/clan";
+} from "@ctypes/dto/clan";
 
 interface ClanConfigProps {
   clanid?: number;

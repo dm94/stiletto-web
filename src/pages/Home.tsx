@@ -2,9 +2,9 @@ import type React from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { memo, useMemo } from "react";
-import Others from "./Others";
-import { useUser } from "../store";
-import { getDomain } from "../functions/utils";
+import Others from "@pages/Others";
+import { useUser } from "@store/userStore";
+import { getDomain } from "@functions/utils";
 import { Link } from "react-router";
 
 const Home: React.FC = () => {

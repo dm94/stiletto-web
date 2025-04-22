@@ -1,24 +1,24 @@
 import type React from "react";
 import { Routes, Route } from "react-router";
-import Crafter from "./pages/Crafter";
-import DiscordConnection from "./pages/DiscordConnection";
-import ClanList from "./pages/ClanList";
-import MemberList from "./pages/MemberList";
-import WalkerList from "./pages/WalkerList";
-import ClanMaps from "./pages/ClanMaps";
-import MapDetail from "./pages/MapDetail";
-import Home from "./pages/Home";
-import TradeSystem from "./pages/TradeSystem";
-import Diplomacy from "./pages/Diplomacy";
-import AuctionTimers from "./pages/AuctionTimers";
-import Others from "./pages/Others";
-import MapPage from "./pages/MapPage";
-import TechTree from "./pages/TechTree";
-import Privacy from "./pages/Privacy";
-import ResourceMapNoLog from "./components/ClanMaps/ResourceMapNoLog";
-import ItemWiki from "./pages/ItemWiki";
-import Wiki from "./pages/Wiki";
-import NotFoundPage from "./pages/NotFound";
+import Crafter from "@pages/Crafter";
+import DiscordConnection from "@pages/DiscordConnection";
+import ClanList from "@pages/ClanList";
+import MemberList from "@pages/MemberList";
+import WalkerList from "@pages/WalkerList";
+import ClanMaps from "@pages/ClanMaps";
+import MapDetail from "@pages/MapDetail";
+import Home from "@pages/Home";
+import TradeSystem from "@pages/TradeSystem";
+import Diplomacy from "@pages/Diplomacy";
+import AuctionTimers from "@pages/AuctionTimers";
+import Others from "@pages/Others";
+import MapPage from "@pages/MapPage";
+import TechTree from "@pages/TechTree";
+import Privacy from "@pages/Privacy";
+import ResourceMapNoLog from "@components/ClanMaps/ResourceMapNoLog";
+import ItemWiki from "@pages/ItemWiki";
+import Wiki from "@pages/Wiki";
+import NotFoundPage from "@pages/NotFound";
 
 const AppRoutes: React.ReactElement = (
   <Routes>

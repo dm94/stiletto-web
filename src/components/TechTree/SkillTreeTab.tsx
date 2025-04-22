@@ -1,6 +1,6 @@
 import type React from "react";
-import type { Item } from "../../types/item";
-import type { Tree } from "../../types/dto/tech";
+import type { Item } from "@ctypes/item";
+import type { Tree } from "@ctypes/dto/tech";
 import ModernSkillTree from "./ModernSkillTree";
 
 interface SkillTreeTabProps {

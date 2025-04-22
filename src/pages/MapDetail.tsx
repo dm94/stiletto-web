@@ -2,12 +2,12 @@ import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { useParams, useNavigate } from "react-router";
 import { Helmet } from "react-helmet";
-import LoadingScreen from "../components/LoadingScreen";
-import ModalMessage from "../components/ModalMessage";
-import ResourceMap from "../components/ClanMaps/ResourceMap";
-import { getMapInfo } from "../functions/requests/maps";
-import { getDomain } from "../functions/utils";
-import type { MapInfo } from "../types/dto/maps";
+import LoadingScreen from "@components/LoadingScreen";
+import ModalMessage from "@components/ModalMessage";
+import ResourceMap from "@components/ClanMaps/ResourceMap";
+import { getMapInfo } from "@functions/requests/maps";
+import { getDomain } from "@functions/utils";
+import type { MapInfo } from "@ctypes/dto/maps";
 
 const MapDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();

@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
 import { sendEvent } from "../../page-tracking";
-import { sendNotification } from "../../functions/broadcast";
-import { getDomain } from "../../functions/utils";
-import { addRecipe } from "../../functions/requests/recipes";
-import type { CraftItem, ItemIngredient } from "../../types/item";
-import type { Recipe } from "../../types/dto/recipe";
+import { sendNotification } from "@functions/broadcast";
+import { getDomain, getItemUrl } from "@functions/utils";
+import { addRecipe } from "@functions/requests/recipes";
+import type { CraftItem, ItemIngredient } from "@ctypes/item";
+import type { Recipe } from "@ctypes/dto/recipe";
 
 interface TotalMaterialsProps {
   selectedItems: CraftItem[];
@@ -85,8 +85,6 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
     }, [recipeToken, shareButton, t]);
 
     const itemsList = useMemo((): React.ReactElement[] => {
-      const url = `${getDomain()}/item/`;
-
       return selectedItems?.map((item) => (
         <li
           className="inline-flex items-center mr-2 text-neutral-300"
@@ -94,7 +92,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
         >
           <Icon key={item.name} name={item.name} /> {`${item.count}x `}
           <a
-            href={url + encodeURI(item.name.replaceAll(" ", "_"))}
+            href={getItemUrl(item.name)}
             className="text-blue-400 hover:text-blue-300"
           >
             {`${t(item.name, { ns: "items" })} - `}

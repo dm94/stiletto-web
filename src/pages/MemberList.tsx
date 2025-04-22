@@ -1,33 +1,30 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import ModalMessage from "../components/ModalMessage";
-import LoadingScreen from "../components/LoadingScreen";
-import ClanConfig from "../components/ClanConfig";
-import MemberListItem from "../components/MemberList/MemberListItem";
-import RequestMemberListItem from "../components/MemberList/RequestMemberListItem";
-import DiscordConfig from "../components/MemberList/DiscordConfig";
-import MemberPermissionsConfig from "../components/MemberList/MemberPermissionsConfig";
-import { sendNotification } from "../functions/broadcast";
-import { getDomain } from "../functions/utils";
-import {
-  getRequests,
-  updateRequest,
-} from "../functions/requests/clans/requests";
+import ModalMessage from "@components/ModalMessage";
+import LoadingScreen from "@components/LoadingScreen";
+import ClanConfig from "@components/ClanConfig";
+import MemberListItem from "@components/MemberList/MemberListItem";
+import RequestMemberListItem from "@components/MemberList/RequestMemberListItem";
+import DiscordConfig from "@components/MemberList/DiscordConfig";
+import MemberPermissionsConfig from "@components/MemberList/MemberPermissionsConfig";
+import { sendNotification } from "@functions/broadcast";
+import { getDomain } from "@functions/utils";
+import { getRequests, updateRequest } from "@functions/requests/clans/requests";
 import {
   getMemberPermissions,
   getMembers,
   updateMember,
-} from "../functions/requests/clans/members";
-import { deleteClan } from "../functions/requests/clans";
-import { useUser } from "../store";
+} from "@functions/requests/clans/members";
+import { deleteClan } from "@functions/requests/clans";
+import { useUser } from "@store/userStore";
 import {
   MemberAction,
   type MemberInfo,
   type MemberRequest,
-} from "../types/dto/members";
-import { RequestAction } from "../types/dto/requests";
-import { getUser } from "../functions/requests/users";
+} from "@ctypes/dto/members";
+import { RequestAction } from "@ctypes/dto/requests";
+import { getUser } from "@functions/requests/users";
 
 const MemberList = () => {
   const { t } = useTranslation();

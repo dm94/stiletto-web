@@ -1,10 +1,10 @@
-import { config } from "../../../config/config";
-import type { GenericResponse } from "../../../types/dto/generic";
+import { config } from "@config/config";
+import type { GenericResponse } from "@ctypes/dto/generic";
 import type {
   AddResourceMapRequestBody,
   EditResourceRequestBody,
   ResourceInfo,
-} from "../../../types/dto/resources";
+} from "@ctypes/dto/resources";
 import { getStoredItem } from "../../services";
 import { objectToURLSearchParams } from "../../utils";
 

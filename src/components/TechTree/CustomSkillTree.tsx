@@ -1,10 +1,10 @@
 import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import type { Item } from "../../types/item";
-import type { Tree } from "../../types/dto/tech";
-import type { SkillStateMap } from "../../types/Skill";
-import { getItemUrl } from "../../functions/utils";
+import type { Item } from "@ctypes/item";
+import type { Tree } from "@ctypes/dto/tech";
+import type { SkillStateMap } from "@ctypes/Skill";
+import { getItemUrl } from "@functions/utils";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
 
