@@ -13,8 +13,8 @@ import L from "leaflet";
 import MapExtended from "./MapExtended";
 import "leaflet/dist/leaflet.css";
 import Icon from "../Icon";
-import { config } from "../../config/config";
-import type { ResourceInfo } from "../../types/dto/resources";
+import { config } from "@config/config";
+import type { ResourceInfo } from "@ctypes/dto/resources";
 
 interface MapLayerProps {
   resourcesInTheMap: ResourceInfo[];
@@ -104,7 +104,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
   );
 
   const getMarketDesign = useCallback((resource: string) => {
-    const res = resource.replace(" ", "_");
+    const res = resource.replaceAll(" ", "_");
     return L.icon({
       iconUrl: `${config.RESOURCES_URL}/markers/${res}.png`,
       iconSize: [25, 41],

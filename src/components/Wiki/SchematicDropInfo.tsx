@@ -2,8 +2,8 @@ import type React from "react";
 import { useTranslation } from "react-i18next";
 import { memo, useMemo } from "react";
 import Icon from "../Icon";
-import { getItemUrl } from "../../functions/utils";
-import type { Item } from "../../types/item";
+import { getItemUrl } from "@functions/utils";
+import type { Item } from "@ctypes/item";
 
 interface SchematicDropInfoProps {
   name: string;

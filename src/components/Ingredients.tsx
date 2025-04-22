@@ -1,8 +1,8 @@
 import type React from "react";
 import { memo } from "react";
 import Ingredient from "./Ingredient";
-import type { Ingredient as IngredientType } from "../types";
-import type { ItemRecipe } from "../types/item";
+import type { Ingredient as IngredientType } from "@ctypes";
+import type { ItemRecipe } from "@ctypes/item";
 
 interface IngredientsProps {
   crafting: IngredientType | ItemRecipe;

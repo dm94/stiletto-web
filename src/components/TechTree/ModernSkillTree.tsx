@@ -3,11 +3,11 @@ import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
-import { getItemUrl } from "../../functions/utils";
-import { getStoredItem, storeItem } from "../../functions/services";
-import type { Item } from "../../types/item";
-import type { Tree } from "../../types/dto/tech";
-import type { SkillStateMap } from "../../types/Skill";
+import { getItemUrl } from "@functions/utils";
+import { getStoredItem, storeItem } from "@functions/services";
+import type { Item } from "@ctypes/item";
+import type { Tree } from "@ctypes/dto/tech";
+import type { SkillStateMap } from "@ctypes/Skill";
 import "../../styles/ModernSkillTree.css";
 
 interface NodeData {

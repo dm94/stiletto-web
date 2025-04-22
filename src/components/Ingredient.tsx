@@ -3,8 +3,8 @@ import { useState, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
-import { getItemUrl } from "../functions/utils";
-import type { CustomItem } from "../types";
+import { getItemUrl } from "@functions/utils";
+import type { CustomItem } from "@ctypes";
 
 interface IngredientProps {
   ingredient: CustomItem;

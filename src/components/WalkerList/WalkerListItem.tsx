@@ -2,8 +2,8 @@ import type React from "react";
 import { useState, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
-import type { MemberInfo } from "../../types/dto/members";
-import type { WalkerInfo } from "../../types/dto/walkers";
+import type { MemberInfo } from "@ctypes/dto/members";
+import type { WalkerInfo } from "@ctypes/dto/walkers";
 
 interface WalkerListItemProps {
   walker: WalkerInfo;

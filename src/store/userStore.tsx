@@ -7,9 +7,9 @@ import {
   useMemo,
   type ReactNode,
 } from "react";
-import { getUser } from "../functions/requests/users";
-import { getStoredItem, storeItem } from "../functions/services";
-import type { UserInfo } from "../types/dto/users";
+import { getUser } from "@functions/requests/users";
+import { getStoredItem, storeItem } from "@functions/services";
+import type { UserInfo } from "@ctypes/dto/users";
 
 interface UserContextType {
   isConnected: boolean;

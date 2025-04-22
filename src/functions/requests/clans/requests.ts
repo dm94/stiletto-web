@@ -1,8 +1,8 @@
 import { getStoredItem } from "../../services";
-import { config } from "../../../config/config";
-import type { RequestAction } from "../../../types/dto/requests";
-import type { MemberRequest } from "../../../types/dto/members";
-import type { GenericResponse } from "../../../types/dto/generic";
+import { config } from "@config/config";
+import type { RequestAction } from "@ctypes/dto/requests";
+import type { MemberRequest } from "@ctypes/dto/members";
+import type { GenericResponse } from "@ctypes/dto/generic";
 import { objectToURLSearchParams } from "../../utils";
 
 export const getRequests = async (clanId: number): Promise<MemberRequest[]> => {

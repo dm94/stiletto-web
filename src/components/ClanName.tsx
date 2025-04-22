@@ -1,9 +1,9 @@
 import type React from "react";
 import { Fragment, memo } from "react";
-import { config } from "../config/config";
+import { config } from "@config/config";
 import { useTranslation } from "react-i18next";
-import type { RelationshipInfo } from "../types/dto/relationship";
-import type { ClanInfo } from "../types/dto/clan";
+import type { RelationshipInfo } from "@ctypes/dto/relationship";
+import type { ClanInfo } from "@ctypes/dto/clan";
 
 interface ClanNameProps {
   clan: RelationshipInfo | ClanInfo;

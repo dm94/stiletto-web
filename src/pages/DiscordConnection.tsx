@@ -3,13 +3,13 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import queryString from "query-string";
-import LoadingScreen from "../components/LoadingScreen";
-import PrivateProfile from "../components/DiscordConnection/PrivateProfile";
-import ModalMessage from "../components/ModalMessage";
+import LoadingScreen from "@components/LoadingScreen";
+import PrivateProfile from "@components/DiscordConnection/PrivateProfile";
+import ModalMessage from "@components/ModalMessage";
 import { useNavigate, useLocation } from "react-router";
-import { getDomain, getDiscordLoginUrl } from "../functions/utils";
-import { authDiscord } from "../functions/requests/users";
-import { useUser } from "../store";
+import { getDomain, getDiscordLoginUrl } from "@functions/utils";
+import { authDiscord } from "@functions/requests/users";
+import { useUser } from "@store/userStore";
 
 const DiscordConnection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
