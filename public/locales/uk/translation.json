@@ -239,6 +239,7 @@
   "techTree.seeWhoHasLearnedIt": "See who has learned it",
   "techTree.noOneHasLearnedIt": "Ніхто не вивчив це",
   "techTree.needClanForFunction": "Вам потрібен клан для цієї функції",
+  "techTree.toggleLearned": "Toggle learned",
   "common.privacyPolicy": "Privacy Policy",
   "walkers.searchWalkers": "Пошук ходунів",
   "common.yes": "Так",
