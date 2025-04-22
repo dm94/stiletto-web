@@ -239,6 +239,7 @@
   "techTree.seeWhoHasLearnedIt": "Ver quien lo tiene aprendido",
   "techTree.noOneHasLearnedIt": "Nadie lo ha aprendido",
   "techTree.needClanForFunction": "Necesitas tener un clan para esta función",
+  "techTree.toggleLearned": "Toggle learned",
   "common.privacyPolicy": "Política de privacidad",
   "walkers.searchWalkers": "Buscar walkers",
   "common.yes": "Yes",
