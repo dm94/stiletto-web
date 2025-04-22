@@ -8,7 +8,7 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, useParams } from "react-router";
-import { getItems, getStoredItem, storeItem } from "@functions/services";
+import { getStoredItem, storeItem } from "@functions/services";
 import { useUser } from "@store/userStore";
 import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
@@ -16,8 +16,9 @@ import Icon from "@components/Icon";
 import { getDomain } from "@functions/utils";
 import { getLearned, addTech, getUser } from "@functions/requests/users";
 import HeaderMeta from "@components/HeaderMeta";
-import type { Item } from "@ctypes/item";
+import type { TechItem } from "@ctypes/item";
 import { Tree } from "@ctypes/dto/tech";
+import { getTechItems } from "@functions/github";
 
 const SkillTreeTab = React.lazy(
   () => import("@components/TechTree/SkillTreeTab"),
@@ -27,7 +28,7 @@ const TechTree = () => {
   const { t } = useTranslation();
   const { isConnected } = useUser();
   const { tree } = useParams();
-  const [items, setItems] = useState<Item[]>([]);
+  const [items, setItems] = useState<TechItem[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>();
   const [tabSelect, setTabSelect] = useState<Tree>(
@@ -56,7 +57,7 @@ const TechTree = () => {
           setTabSelect(tree as Tree);
         }
 
-        const fetchedItems = await getItems();
+        const fetchedItems = await getTechItems();
         if (!isMounted) {
           return;
         }

@@ -5,7 +5,7 @@ import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
 import { getItemUrl } from "@functions/utils";
 import { getStoredItem, storeItem } from "@functions/services";
-import type { Item } from "@ctypes/item";
+import type { TechItem } from "@ctypes/item";
 import type { Tree } from "@ctypes/dto/tech";
 import type { SkillStateMap } from "@ctypes/Skill";
 import "../../styles/ModernSkillTree.css";
@@ -13,7 +13,7 @@ import "../../styles/ModernSkillTree.css";
 interface NodeData {
   id: string;
   title: string;
-  item: Item;
+  item: TechItem;
   children: NodeData[];
   level: number;
   x: number;
@@ -31,7 +31,7 @@ interface EdgeData {
 interface ModernSkillTreeProps {
   treeId: Tree;
   title: string;
-  items: Item[];
+  items: TechItem[];
   clan?: number;
 }
 
@@ -377,10 +377,10 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               const path = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
 
               // Determine if this is a selected path
-              const strokeColor = edge.selected ? "#2ecc2e" : "#262625";
+              const strokeColor = edge.selected ? "#2ecc2e" : "#d95f32";
               const strokeWidth = edge.selected ? 4 : 2;
               const strokeOpacity = edge.selected ? 1 : 0.5;
-              const glowFilter = edge.selected ? "url(#glow)" : "";
+              const glowFilter = edge.selected ? "url(#glow)" : undefined;
 
               return (
                 <path

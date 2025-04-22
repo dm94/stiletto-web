@@ -14,7 +14,7 @@ import ClanMapItem from "@components/ClanMaps/ClanMapItem";
 import CreateMapPanel from "@components/ClanMaps/CreateMapPanel";
 import { getDomain } from "@functions/utils";
 import { getMaps, addMap, deleteMap } from "@functions/requests/maps";
-import { getMapNames } from "@functions/services";
+import { getMapNames } from "@functions/github";
 import type { MapInfo, MapJsonInfo } from "@ctypes/dto/maps";
 import LoadingScreen from "@components/LoadingScreen";
 

@@ -2,7 +2,7 @@ import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getMarkers } from "@functions/services";
+import { getMarkers } from "@functions/github";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
