@@ -3,21 +3,35 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getItems } from "@functions/github";
+import { getItems, getCreatures } from "@functions/github";
 import { sendEvent } from "@functions/page-tracking";
 import Ingredient from "@components/Ingredient";
-import { getDomain } from "@functions/utils";
+import { getCreatureUrl, getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
-import { useLocation } from "react-router";
+import { useLocation, Link } from "react-router";
 import type { Item } from "@ctypes/item";
+import type { Creature } from "@ctypes/creature";
+import Icon from "@components/Icon";
 
 const Wiki = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const [contentType, setContentType] = useState<"items" | "creatures">(
+    "items",
+  );
+
+  // Items state
   const [items, setItems] = useState<Item[]>([]);
-  const [searchText, setSearchText] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
   const [displayedItems, setDisplayedItems] = useState<Item[]>([]);
+
+  // Creatures state
+  const [creatures, setCreatures] = useState<Creature[]>([]);
+  const [filteredCreatures, setFilteredCreatures] = useState<Creature[]>([]);
+  const [displayedCreatures, setDisplayedCreatures] = useState<Creature[]>([]);
+
+  // Common state
+  const [searchText, setSearchText] = useState<string>("");
   const [categories, setCategories] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string>("All");
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -26,86 +40,146 @@ const Wiki = () => {
   const ITEMS_PER_PAGE = 12;
 
   useEffect(() => {
-    const updateRecipes = async () => {
+    const loadData = async () => {
       setIsLoading(true);
       try {
-        const fetchedItems = await getItems();
-        if (fetchedItems != null) {
-          const allCategories: string[] = [];
+        if (contentType === "items") {
+          const fetchedItems = await getItems();
+          if (fetchedItems != null) {
+            const allCategories: string[] = [];
 
-          for (const item of fetchedItems) {
-            if (item.category && !allCategories.includes(item.category)) {
-              allCategories.push(item.category);
+            for (const item of fetchedItems) {
+              if (item.category && !allCategories.includes(item.category)) {
+                allCategories.push(item.category);
+              }
             }
+
+            allCategories.sort((a, b) => a.localeCompare(b));
+
+            setItems(fetchedItems);
+            setCategories(allCategories);
+            setFilteredItems(fetchedItems);
+            setDisplayedItems(fetchedItems.slice(0, ITEMS_PER_PAGE));
+            setHasMore(fetchedItems.length > ITEMS_PER_PAGE);
           }
+        } else {
+          const fetchedCreatures = await getCreatures();
+          if (fetchedCreatures != null) {
+            const allCategories: string[] = [];
 
-          allCategories.sort((a, b) => a.localeCompare(b));
+            for (const creature of fetchedCreatures) {
+              if (
+                creature?.category &&
+                !allCategories.includes(creature.category)
+              ) {
+                allCategories.push(creature.category);
+              }
+            }
 
-          setItems(fetchedItems);
-          setCategories(allCategories);
+            allCategories.sort((a, b) => a.localeCompare(b));
+
+            setCreatures(fetchedCreatures);
+            setCategories(allCategories);
+            setFilteredCreatures(fetchedCreatures);
+            setDisplayedCreatures(fetchedCreatures.slice(0, ITEMS_PER_PAGE));
+            setHasMore(fetchedCreatures.length > ITEMS_PER_PAGE);
+          }
         }
       } catch (error) {
-        console.error("Error fetching items:", error);
+        console.error(`Error fetching ${contentType}:`, error);
       } finally {
         setIsLoading(false);
       }
     };
 
-    updateRecipes();
-  }, []);
+    loadData();
+  }, [contentType]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  const searchItems = useCallback(
+  const searchContent = useCallback(
     (search = searchText, category = categoryFilter) => {
       sendEvent("search", { props: { term: search } });
 
-      let filtered = items;
+      if (contentType === "items") {
+        let filtered = items;
 
-      if (category && category !== "All") {
-        filtered = filtered.filter((item) => item.category === category);
+        if (category && category !== "All") {
+          filtered = filtered.filter((item) => item.category === category);
+        }
+
+        if (search.trim()) {
+          const searchTerms = search.toLowerCase().split(" ").filter(Boolean);
+
+          filtered = filtered.filter((it) => {
+            const itemName = t(it.name).toLowerCase();
+            return searchTerms.every((term) => itemName.includes(term));
+          });
+        }
+
+        setFilteredItems(filtered);
+        setCurrentPage(1);
+        setDisplayedItems(filtered.slice(0, ITEMS_PER_PAGE));
+        setHasMore(filtered.length > ITEMS_PER_PAGE);
+      } else {
+        let filtered = creatures;
+
+        if (category && category !== "All") {
+          filtered = filtered.filter(
+            (creature) => creature.category === category,
+          );
+        }
+
+        if (search.trim()) {
+          const searchTerms = search.toLowerCase().split(" ").filter(Boolean);
+
+          filtered = filtered.filter((cr) => {
+            const creatureName = t(cr.name, { ns: "creatures" }).toLowerCase();
+            return searchTerms.every((term) => creatureName.includes(term));
+          });
+        }
+
+        setFilteredCreatures(filtered);
+        setCurrentPage(1);
+        setDisplayedCreatures(filtered.slice(0, ITEMS_PER_PAGE));
+        setHasMore(filtered.length > ITEMS_PER_PAGE);
       }
-
-      if (search.trim()) {
-        const searchTerms = search.toLowerCase().split(" ").filter(Boolean);
-
-        filtered = filtered.filter((it) => {
-          const itemName = t(it.name).toLowerCase();
-          return searchTerms.every((term) => itemName.includes(term));
-        });
-      }
-
-      setFilteredItems(filtered);
-
-      setCurrentPage(1);
-      setDisplayedItems(filtered.slice(0, ITEMS_PER_PAGE));
-      setHasMore(filtered.length > ITEMS_PER_PAGE);
     },
-    [items, searchText, t],
+    [items, creatures, searchText, t, contentType],
   );
 
   useEffect(() => {
-    if (location?.search && items.length > 0) {
+    if (location?.search) {
       const parsed = queryString.parse(location.search);
 
       if (parsed?.s) {
-        searchItems(String(parsed.s), "All");
+        if (contentType === "items" && items.length > 0) {
+          searchContent(String(parsed.s), "All");
+        } else if (contentType === "creatures" && creatures.length > 0) {
+          searchContent(String(parsed.s), "All");
+        }
       }
-    } else if (items.length > 0) {
-      setFilteredItems(items);
-      setDisplayedItems(items.slice(0, ITEMS_PER_PAGE));
-      setHasMore(items.length > ITEMS_PER_PAGE);
     }
-  }, [location, items, searchItems]);
+  }, [location, items, creatures, contentType, searchContent]);
 
   const handleLoadMore = useCallback(() => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
-    const nextItems = filteredItems.slice(0, nextPage * ITEMS_PER_PAGE);
-    setDisplayedItems(nextItems);
-    setHasMore(nextItems.length < filteredItems.length);
-  }, [filteredItems, currentPage]);
 
-  const showItems = useMemo(() => {
+    if (contentType === "items") {
+      const nextItems = filteredItems.slice(0, nextPage * ITEMS_PER_PAGE);
+      setDisplayedItems(nextItems);
+      setHasMore(nextItems.length < filteredItems.length);
+    } else {
+      const nextCreatures = filteredCreatures.slice(
+        0,
+        nextPage * ITEMS_PER_PAGE,
+      );
+      setDisplayedCreatures(nextCreatures);
+      setHasMore(nextCreatures.length < filteredCreatures.length);
+    }
+  }, [filteredItems, filteredCreatures, currentPage, contentType]);
+
+  const showContent = useMemo(() => {
     if (isLoading) {
       return (
         <div className="w-full" key="wiki-loading">
@@ -118,7 +192,7 @@ const Wiki = () => {
       );
     }
 
-    if (displayedItems.length > 0) {
+    if (contentType === "items" && displayedItems.length > 0) {
       return displayedItems.map((item) => (
         <div
           key={`wiki-${item.name}`}
@@ -134,6 +208,27 @@ const Wiki = () => {
       ));
     }
 
+    if (contentType === "creatures" && displayedCreatures.length > 0) {
+      return displayedCreatures.map((creature) => (
+        <div
+          key={`creature-${creature.name}`}
+          className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
+          data-cy="wiki-creature"
+        >
+          <Link to={getCreatureUrl(creature.name)}>
+            <div className="bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
+              <div className="p-4 flex items-center">
+                <Icon key={creature.name} name={creature.name} width={35} />
+                <span className="ml-2 text-gray-300">
+                  {t(creature.name, { ns: "creatures" })}
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+      ));
+    }
+
     return (
       <div className="w-full" key="wiki-notfound">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
@@ -143,7 +238,7 @@ const Wiki = () => {
         </div>
       </div>
     );
-  }, [displayedItems, isLoading, t]);
+  }, [displayedItems, displayedCreatures, isLoading, t, contentType]);
 
   const showCategories = useMemo(() => {
     return categories.map((category) => (
@@ -164,23 +259,30 @@ const Wiki = () => {
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       const newCategory = e.target.value;
       setCategoryFilter(newCategory);
-      searchItems(searchText, newCategory);
+      searchContent(searchText, newCategory);
     },
-    [searchText, searchItems],
+    [searchText, searchContent],
   );
 
   const handleKeyPress = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "Enter") {
-        searchItems(searchText, categoryFilter);
+        searchContent(searchText, categoryFilter);
       }
     },
-    [searchItems, searchText, categoryFilter],
+    [searchContent, searchText, categoryFilter],
   );
 
   const handleSearchClick = useCallback(() => {
-    searchItems(searchText, categoryFilter);
-  }, [searchItems, searchText, categoryFilter]);
+    searchContent(searchText, categoryFilter);
+  }, [searchContent, searchText, categoryFilter]);
+
+  const handleContentTypeChange = useCallback((type: "items" | "creatures") => {
+    setContentType(type);
+    setSearchText("");
+    setCategoryFilter("All");
+    setCurrentPage(1);
+  }, []);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -195,6 +297,27 @@ const Wiki = () => {
             <h1 className="text-2xl font-bold text-white mb-4">
               {t("menu.wiki")}
             </h1>
+
+            {/* Content Type Selector */}
+            <div className="max-w-md mx-auto mb-6">
+              <div className="flex justify-center space-x-4">
+                <button
+                  type="button"
+                  className={`px-6 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${contentType === "items" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+                  onClick={() => handleContentTypeChange("items")}
+                >
+                  {t("menu.items")}
+                </button>
+                <button
+                  type="button"
+                  className={`px-6 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${contentType === "creatures" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+                  onClick={() => handleContentTypeChange("creatures")}
+                >
+                  {t("menu.creatures")}
+                </button>
+              </div>
+            </div>
+
             <div className="max-w-2xl mx-auto">
               <div
                 className="flex"
@@ -220,53 +343,69 @@ const Wiki = () => {
               </div>
             </div>
           </div>
-          <div className="p-6 border-t border-gray-700 bg-gray-850">
-            <div className="max-w-md mx-auto">
-              <div className="flex">
-                <label
-                  className="px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300"
-                  htmlFor="category-filter"
-                >
-                  {t("wiki.filterByCategory")}
-                </label>
-                <select
-                  id="category-filter"
-                  className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-r-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={categoryFilter}
-                  onChange={handleCategoryChange}
-                >
-                  <option key="all" value="All">
-                    {t("common.all")}
-                  </option>
-                  {showCategories}
-                </select>
+          {categories.length > 0 && (
+            <div className="p-6 border-t border-gray-700 bg-gray-850">
+              <div className="max-w-md mx-auto">
+                <div className="flex">
+                  <label
+                    className="px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300"
+                    htmlFor="category-filter"
+                  >
+                    {t("wiki.filterByCategory")}
+                  </label>
+                  <select
+                    id="category-filter"
+                    className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-r-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    value={categoryFilter}
+                    onChange={handleCategoryChange}
+                  >
+                    <option key="all" value="All">
+                      {t("common.all")}
+                    </option>
+                    {showCategories}
+                  </select>
+                </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       <div className="w-full">
-        <div className="flex flex-wrap -m-3">{showItems}</div>
-        {hasMore && !isLoading && displayedItems.length > 0 && (
-          <div className="mt-8 text-center">
-            <button
-              type="button"
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
-              onClick={handleLoadMore}
-              data-cy="load-more-btn"
-            >
-              {t("common.loadMore")}
-            </button>
-          </div>
-        )}
-        {!isLoading && displayedItems.length > 0 && (
-          <div className="mt-4 text-center text-gray-400">
-            {t("wiki.showingItems", {
-              displayed: displayedItems.length,
-              total: filteredItems.length,
-            })}
-          </div>
-        )}
+        <div className="flex flex-wrap -m-3">{showContent}</div>
+        {hasMore &&
+          !isLoading &&
+          ((contentType === "items" && displayedItems.length > 0) ||
+            (contentType === "creatures" && displayedCreatures.length > 0)) && (
+            <div className="mt-8 text-center">
+              <button
+                type="button"
+                className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+                onClick={handleLoadMore}
+                data-cy="load-more-btn"
+              >
+                {t("common.loadMore")}
+              </button>
+            </div>
+          )}
+        {!isLoading &&
+          (contentType === "items" && displayedItems.length > 0 ? (
+            <div className="mt-4 text-center text-gray-400">
+              {t("wiki.showingItems", {
+                displayed: displayedItems.length,
+                total: filteredItems.length,
+              })}
+            </div>
+          ) : (
+            contentType === "creatures" &&
+            displayedCreatures.length > 0 && (
+              <div className="mt-4 text-center text-gray-400">
+                {t("wiki.showingItems", {
+                  displayed: displayedCreatures.length,
+                  total: filteredCreatures.length,
+                })}
+              </div>
+            )
+          ))}
       </div>
     </div>
   );

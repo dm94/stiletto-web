@@ -1,5 +1,6 @@
 export type Creature = {
   name: string;
+  category?: string;
 };
 
 export type CreatureDrop = {
