@@ -414,11 +414,9 @@ const ItemWiki = () => {
           <ModuleInfo key="moduleinfo" moduleInfo={itemInfo.moduleInfo} />
         )}
         <Suspense fallback={loadingItemPart()}>
-          <SchematicDropInfo
-            key="schematicInfo"
-            name={item.name}
-            items={allItems}
-          />
+          {itemInfo?.learn && (
+            <SchematicDropInfo key="schematicInfo" item={itemInfo} />
+          )}
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <WikiDescription key="wikidescription" name={itemName} />

@@ -316,6 +316,7 @@
   "wiki.station": "Station",
   "wiki.schematicItems": "Schematic items",
   "wiki.learnedIn": "Learned in",
+  "wiki.usedFor": "Used for",
   "wiki.moduleInfo": "Module info",
   "wiki.limitPerWalker": "Limit per walker",
   "wiki.improvementPerModule": "Improvement per module",
