@@ -1,0 +1,18 @@
+export type Creature = {
+  name: string;
+};
+
+export type CreatureDrop = {
+  name: string;
+  chance?: number;
+  minQuantity?: number;
+  maxQuantity?: number;
+};
+
+export type CreatureCompleteInfo = {
+  name: string;
+  category?: string;
+  health?: number;
+  experiencie?: number;
+  drops?: CreatureDrop[];
+};

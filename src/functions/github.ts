@@ -3,6 +3,7 @@ import { addCachedData, getCachedData } from "./services";
 import type { Item, ItemCompleteInfo, TechItem } from "@ctypes/item";
 import type { MapJsonInfo } from "@ctypes/dto/maps";
 import { toSnakeCase } from "./utils";
+import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 
 const RESOURCE_CACHE_TIME_CHECK = import.meta.env.PROD ? 86400000 : 1;
 const REPO_JSON_URL = import.meta.env.PROD
@@ -48,3 +49,13 @@ export const getTechItems = (): Promise<TechItem[]> =>
 
 export const getItemInfo = (itemName: string): Promise<ItemCompleteInfo> =>
   fetchResource<ItemCompleteInfo>(`/items/${toSnakeCase(itemName)}.json`);
+
+export const getCreatures = (): Promise<Creature[]> =>
+  fetchResource<Creature[]>("/creatures_min.json");
+
+export const getCreatureInfo = (
+  creatureName: string,
+): Promise<CreatureCompleteInfo> =>
+  fetchResource<CreatureCompleteInfo>(
+    `/creatures/${toSnakeCase(creatureName)}.json`,
+  );
