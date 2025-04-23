@@ -67,7 +67,10 @@ const ItemWiki = () => {
 
         try {
           const itemInfo = await getItemInfo(foundItem?.name ?? itemName ?? "");
-          setItemInfo(itemInfo);
+          setItemInfo({
+            ...itemInfo,
+            ...foundItem,
+          });
         } catch {
           setItemInfo(undefined);
         }
@@ -429,7 +432,9 @@ const ItemWiki = () => {
             <DropsInfo key="dropInfo" drops={itemInfo?.droppedBy} />
           )}
         </Suspense>
-        <Comments key="comments" name={itemName} />
+        <Suspense fallback={loadingItemPart()}>
+          <Comments key="comments" name={itemName} />
+        </Suspense>
       </div>
     </div>
   );
