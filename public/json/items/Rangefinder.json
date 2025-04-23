@@ -1,7 +1,7 @@
 {
-  "name": "RangeFinder",
-  "parent": "Maintenance Box"
-}  "weight": 20,
+  "name": "Rangefinder",
+  "category": "Interactables",
+  "weight": 20,
   "description": "Measures distance to far-away targets.",
   "experiencieReward": 266,
   "crafting": [

@@ -5,31 +5,31 @@
       "ingredients": [
         {
           "count": 20,
-          "name": "T3_BrittleBoneTorso"
+          "name": "Brittle Bone Armor"
         },
         {
           "count": 20,
-          "name": "T2_ForesterTorso"
+          "name": "Forester's Armor"
         },
         {
           "count": 20,
-          "name": "T3_BrittleBoneGloves"
+          "name": "Brittle Bone Handwraps"
         },
         {
           "count": 20,
-          "name": "T2_ForesterGloves"
+          "name": "Forester's Sleeves"
         },
         {
           "count": 20,
-          "name": "T3_BrittleBoneBoots"
+          "name": "Brittle Bone Boots"
         },
         {
           "count": 20,
-          "name": "T2_ForesterBoots"
+          "name": "Forester's Sandals"
         },
         {
           "count": 20,
-          "name": "T1_FiberHeadwrap"
+          "name": "Fiber Headwrap"
         }
       ],
       "station": "PackageCrafting",
@@ -39,31 +39,31 @@
       "ingredients": [
         {
           "count": 10,
-          "name": "T2_BaskwoodTorso"
+          "name": "Baskwood Armor"
         },
         {
           "count": 10,
-          "name": "T2_BaskwoodGloves"
+          "name": "Baskwood Bracers"
         },
         {
           "count": 10,
-          "name": "T2_BaskwoodBoots"
+          "name": "Baskwood Boots"
         },
         {
           "count": 10,
-          "name": "T2_TripleStitchBoots"
+          "name": "Triple Stitch Boots"
         },
         {
           "count": 10,
-          "name": "T2_TripleStitchGloves"
+          "name": "Triple Stitch Bracers"
         },
         {
           "count": 10,
-          "name": "T2_TripleStitchTorso"
+          "name": "Triple Stitch Armor"
         },
         {
           "count": 10,
-          "name": "T1_FiberHeadwrap"
+          "name": "Fiber Headwrap"
         }
       ],
       "station": "PackageCrafting",

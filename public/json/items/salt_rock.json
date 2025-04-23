@@ -10,7 +10,7 @@
       "ingredients": [
         {
           "count": 1,
-          "name": "BrineWater"
+          "name": "Brine"
         }
       ],
       "output": 3,
@@ -21,7 +21,7 @@
       "ingredients": [
         {
           "count": 1,
-          "name": "SaltRock_GroundSource"
+          "name": "Terrain: Salt Flats"
         }
       ],
       "output": 10,
