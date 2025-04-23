@@ -1,5 +1,6 @@
 {
   "name": "Carapace Boots",
+  "parent": "CarapaceTorso",
   "category": "Armors",
   "trade_price": 190.5,
   "stackSize": 100,

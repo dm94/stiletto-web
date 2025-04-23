@@ -1,0 +1,30 @@
+{
+  "name": "Chitin Pick Axe",
+  "durability": 504,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 4,
+          "name": "Chitin Plate"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ],
+  "toolInfo": [
+    {
+      "toolType": "Mining",
+      "tier": 17
+    }
+  ]
+}

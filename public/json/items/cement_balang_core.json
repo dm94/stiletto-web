@@ -1,0 +1,27 @@
+{
+  "name": "Cement Balang Core",
+  "category": "Concrete",
+  "weight": 10,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Stone"
+        },
+        {
+          "count": 50,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 150000
+  }
+}

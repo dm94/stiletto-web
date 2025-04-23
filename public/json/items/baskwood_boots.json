@@ -1,5 +1,6 @@
 {
   "name": "Baskwood Boots",
+  "parent": "BaskwoodTorso",
   "category": "Armors",
   "trade_price": 19.8,
   "stackSize": 100,

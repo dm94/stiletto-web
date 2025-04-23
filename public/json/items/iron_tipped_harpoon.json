@@ -1,0 +1,36 @@
+{
+  "name": "Iron Tipped Harpoon",
+  "parent": "IronBolt",
+  "trade_price": 30.6,
+  "weight": 0.8,
+  "experiencieReward": 75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Iron-Tipped Bolt"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        },
+        {
+          "count": 10,
+          "name": "Rope"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 25
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 4
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 {
   "name": "Triple Stitch Boots",
+  "parent": "TripleStitchTorso",
   "category": "Armors",
   "trade_price": 61.1,
   "stackSize": 100,

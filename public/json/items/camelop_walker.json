@@ -1,9 +1,7 @@
 {
   "name": "Camelop Walker",
-  "parent": "Hercul Walker"
-}
+  "parent": "Hercul Walker",
   "category": "Walkers",
-  "weight": 29.44,
   "crafting": [
     {
       "ingredients": [

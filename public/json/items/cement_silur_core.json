@@ -1,0 +1,27 @@
+{
+  "name": "Cement Silur Core",
+  "category": "Concrete",
+  "weight": 10,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 200,
+          "name": "Wood"
+        },
+        {
+          "count": 50,
+          "name": "Stone"
+        },
+        {
+          "count": 100,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 400000
+  }
+}

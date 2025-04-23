@@ -1,0 +1,36 @@
+{
+  "name": "Iron Tipped Bolt",
+  "parent": "Ceramic Bolt",
+  "trade_price": 25,
+  "experiencieReward": 50,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 8,
+          "name": "Lightwood"
+        }
+      ],
+      "output": 10,
+      "station": "Artificer Woodworking Station",
+      "time": 3
+    }
+  ],
+  "projectileDamage": {
+    "damage": 80
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 4
+    }
+  ]
+}

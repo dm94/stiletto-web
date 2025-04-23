@@ -1,5 +1,6 @@
 {
   "name": "Nibirian Boots",
+  "parent": "NibirianTorso",
   "category": "Armors",
   "trade_price": 75.8,
   "stackSize": 100,
