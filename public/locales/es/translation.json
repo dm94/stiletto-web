@@ -338,5 +338,9 @@
   "trades.noTradesFound": "No trades found",
   "common.damage": "Damage",
   "common.loadMore": "Load More",
-  "wiki.showingItems": "Showing {{displayed}} of {{total}} items"
+  "wiki.showingItems": "Showing {{displayed}} of {{total}} items",
+  "wiki.creatureInfo": "Información de la criatura",
+  "creature.experience": "Experiencia",
+  "creature.tier": "Nivel",
+  "creature.health": "Salud"
 }

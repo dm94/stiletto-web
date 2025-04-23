@@ -9,6 +9,7 @@ import { getItemDecodedName, getCreatureUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 import DropsInfo from "@components/Wiki/DropsInfo";
+import CreatureInfo from "@components/Wiki/CreatureInfo";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -93,42 +94,11 @@ const CreatureWiki = () => {
                 </span>
               </div>
             </div>
-            <div className="p-4">
-              <ul className="space-y-2">
-                {creatureInfo?.category && (
-                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("common.category")}</div>
-                    <div className="text-gray-400">
-                      {t(creatureInfo.category, { ns: "creatures" })}
-                    </div>
-                  </li>
-                )}
-                {creatureInfo?.health && (
-                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("creature.health")}</div>
-                    <div className="text-gray-400">{creatureInfo.health}</div>
-                  </li>
-                )}
-                {creatureInfo?.experiencie && (
-                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">
-                      {t("creature.experience")}
-                    </div>
-                    <div className="text-gray-400">
-                      {creatureInfo.experiencie}
-                    </div>
-                  </li>
-                )}
-                {creatureInfo?.tier && (
-                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("creature.tier")}</div>
-                    <div className="text-gray-400">{creatureInfo.tier}</div>
-                  </li>
-                )}
-              </ul>
-            </div>
           </div>
         </div>
+        <Suspense fallback={loadingCreaturePart()}>
+          <CreatureInfo key="creatureInfo" creatureInfo={creatureInfo} />
+        </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
           <WikiDescription key="wikidescription" name={creatureName} />
         </Suspense>
