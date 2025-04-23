@@ -18,15 +18,13 @@ const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
   useEffect(() => {
     if (items && name) {
       const lowerCaseName = name?.toLowerCase();
-      const filteredItems = items.filter((item) => {
-        if (item?.crafting?.[0]?.ingredients) {
-          const allIngredients = item.crafting[0].ingredients;
-          return allIngredients.some(
+      const filteredItems = items.filter((item) =>
+        item?.crafting?.some((recipe) =>
+          recipe?.ingredients.some(
             (ingredient) => ingredient.name.toLowerCase() === lowerCaseName,
-          );
-        }
-        return false;
-      });
+          ),
+        ),
+      );
       setCanBeUsed(filteredItems);
       setVisibleItems(ITEMS_PER_PAGE);
     }
