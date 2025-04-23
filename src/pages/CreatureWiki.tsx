@@ -105,13 +105,15 @@ const CreatureWiki = () => {
                 )}
                 {creatureInfo?.health && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Health")}</div>
+                    <div className="text-gray-300">{t("creature.health")}</div>
                     <div className="text-gray-400">{creatureInfo.health}</div>
                   </li>
                 )}
                 {creatureInfo?.experiencie && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Experience")}</div>
+                    <div className="text-gray-300">
+                      {t("creature.experience")}
+                    </div>
                     <div className="text-gray-400">
                       {creatureInfo.experiencie}
                     </div>
@@ -119,7 +121,7 @@ const CreatureWiki = () => {
                 )}
                 {creatureInfo?.tier && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Experience")}</div>
+                    <div className="text-gray-300">{t("creature.tier")}</div>
                     <div className="text-gray-400">{creatureInfo.tier}</div>
                   </li>
                 )}
