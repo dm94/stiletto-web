@@ -1,0 +1,8 @@
+{
+  "name": "Magma Seeds",
+  "category": "Resources",
+  "trade_price": 0.1,
+  "stackSize": 100,
+  "weight": 0.01,
+  "experiencieReward": 6
+}

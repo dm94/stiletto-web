@@ -1,0 +1,109 @@
+{
+  "name": "Firebomb",
+  "category": "Weapons",
+  "trade_price": 16.9,
+  "stackSize": 5,
+  "weight": 0.3,
+  "experiencieReward": 20,
+  "wikiVisibility": false,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 4,
+          "name": "Lava"
+        },
+        {
+          "count": 3,
+          "name": "Cotton"
+        },
+        {
+          "count": 1,
+          "name": "Gelatinous Goo"
+        },
+        {
+          "count": 1,
+          "name": "Tallow"
+        }
+      ],
+      "station": "Curing",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "damage": 20,
+    "penetration": 50
+  },
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Rupu Rok",
+  "category": "Ammo",
+  "trade_price": 5.2,
+  "stackSize": 10,
+  "weight": 5,
+  "wikiVisibility": false,
+  "projectileDamage": {
+    "damage": 100,
+    "penetration": 15,
+    "effectivenessVsSoak": 20,
+    "effectivenessVsReduce": 20
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scattershot",
+      "tier": 1
+    }
+  ]
+}

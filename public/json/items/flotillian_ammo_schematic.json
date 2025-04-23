@@ -1,0 +1,25 @@
+{
+  "name": "Flotillian Ammo Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Iron-Tipped Bolt",
+    "Nibiran-tipped Bolt",
+    "Iron-Tipped Harpoon",
+    "Nibirian Harpoon",
+    "Hardened Hellfire Bolt",
+    "Hullbreaker Scattershot",
+    "Iron Rok",
+    "Iron Dart",
+    "Nibirian Dart"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    }
+  ]
+}

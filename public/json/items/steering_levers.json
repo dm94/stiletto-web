@@ -1,0 +1,20 @@
+{
+  "name": "Steering Levers",
+  "parent": "Dinghy Walker",
+  "category": "Walker Tools",
+  "experiencieReward": 208,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        }
+      ]
+    }
+  ]
+}

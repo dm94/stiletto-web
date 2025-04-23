@@ -1,0 +1,38 @@
+{
+  "name": "Firefly Walker",
+  "parent": "Spider Walker",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 85,
+          "name": "Wood"
+        },
+        {
+          "count": 46,
+          "name": "Fiber"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
+        },
+        {
+          "count": 22,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 18,
+          "name": "Rupu Vine"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 9750
+  },
+  "walkerinfo": {
+    "category": "Small"
+  }
+}

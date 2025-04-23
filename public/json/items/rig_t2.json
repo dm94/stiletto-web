@@ -1,0 +1,14 @@
+{
+  "name": "Rig T2",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Dinghy Walker Rig T2"
+        }
+      ]
+    }
+  ]
+}

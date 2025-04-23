@@ -35,8 +35,8 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
             crafting={ingredients}
             value={
               ingredients.output != null
-                ? (ingredient?.count * value) / ingredients.output
-                : ingredient?.count * value
+                ? (ingredient?.count ?? 1 * value) / ingredients.output
+                : (ingredient?.count ?? 1 * value)
             }
           />
         </div>

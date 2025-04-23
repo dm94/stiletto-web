@@ -1,0 +1,198 @@
+{
+  "name": "Wooden Dart",
+  "parent": "Repeater",
+  "category": "Ammo",
+  "trade_price": 1.5,
+  "stackSize": 500,
+  "weight": 0.1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber"
+        },
+        {
+          "count": 6,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber"
+        },
+        {
+          "count": 6,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Advanced Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber"
+        },
+        {
+          "count": 6,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Artificer Woodworking Station",
+      "time": 4
+    }
+  ],
+  "projectileDamage": {
+    "damage": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "RepeaterBolt",
+      "tier": 1
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Cowardly Rupu",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Green Rupu",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Prophet",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Rupu Berserker",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Rupu Forerunner",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Rupu Forerunner (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Harasser (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Hero",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Rupu Priestess",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Rupu Scavenger (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Sentinel (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Skirmisher (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Thug (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Warrior",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Tar Dweller",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Yellow Rupu",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    },
+    {
+      "name": "Zharvakko",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25
+    }
+  ]
+}

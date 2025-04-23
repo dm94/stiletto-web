@@ -1,0 +1,32 @@
+{
+  "name": "Ballista - Tier 2",
+  "category": "Weapons",
+  "weight": 5.8,
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 135,
+          "name": "Wood"
+        },
+        {
+          "count": 165,
+          "name": "Fiber"
+        },
+        {
+          "count": 35,
+          "name": "Stone"
+        },
+        {
+          "count": 32,
+          "name": "Palm Leaves"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 2500
+  }
+}

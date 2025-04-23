@@ -1,0 +1,25 @@
+{
+  "name": "Gun Pod Plating",
+  "parent": "Gun Pod Shell",
+  "category": "Weapons",
+  "weight": 38,
+  "experiencieReward": 34,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 164,
+          "name": "Wood"
+        },
+        {
+          "count": 12,
+          "name": "Obsidian"
+        },
+        {
+          "count": 37,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ]
+}

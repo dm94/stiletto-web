@@ -1,0 +1,28 @@
+{
+  "name": "Schematic Bag",
+  "parent": "Light Backpack",
+  "category": "Equipment",
+  "trade_price": 5.6,
+  "stackSize": 100,
+  "weight": 0.2,
+  "experiencieReward": 26,
+  "durability": 70,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Hide"
+        },
+        {
+          "count": 10,
+          "name": "Fiber"
+        },
+        {
+          "count": 20,
+          "name": "Cattail"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Obsidian Machine",
+  "parent": "Clay Pot",
+  "category": "Crafting",
+  "experiencieReward": 36,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 36,
+          "name": "Obsidian"
+        },
+        {
+          "count": 12,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 2,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 4000
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Sand Foundation",
+  "category": "Basic Protection",
+  "weight": 8,
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Fiber"
+        },
+        {
+          "count": 10,
+          "name": "Sand"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 500
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Random Knowledge Tablet",
+  "category": "Knowledge",
+  "trade_price": 500,
+  "stackSize": 100,
+  "wikiVisibility": false
+}

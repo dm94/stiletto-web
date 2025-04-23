@@ -1,0 +1,25 @@
+{
+  "name": "Heavy Backpack",
+  "parent": "Medium Backpack",
+  "category": "Equipment",
+  "trade_price": 131.5,
+  "stackSize": 100,
+  "weight": 7.5,
+  "durability": 500,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 14,
+          "name": "Nomad Cloth"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 2
+    }
+  ]
+}

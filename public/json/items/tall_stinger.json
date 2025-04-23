@@ -1,0 +1,33 @@
+{
+  "name": "Tall Stinger",
+  "parent": "Advanced Walker Weapons",
+  "category": "Weapons",
+  "experiencieReward": 78,
+  "onlyDevs": true,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 28,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 3000
+  }
+}

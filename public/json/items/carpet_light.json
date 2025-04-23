@@ -1,0 +1,23 @@
+{
+  "name": "Carpet Light",
+  "category": "Furniture",
+  "weight": 0.2,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 30
+  }
+}

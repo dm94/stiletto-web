@@ -1,0 +1,35 @@
+{
+  "name": "Stiletto Walker Wings Skirmish (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 8,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 6,
+          "name": "Hide"
+        },
+        {
+          "count": 6,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 6500
+  }
+}

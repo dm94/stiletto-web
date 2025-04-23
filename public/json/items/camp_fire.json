@@ -1,0 +1,28 @@
+{
+  "name": "Camp Fire",
+  "parent": "Crafting",
+  "category": "Crafting",
+  "experiencieReward": 18,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Wood"
+        },
+        {
+          "count": 11,
+          "name": "Fiber"
+        },
+        {
+          "count": 18,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 500
+  }
+}

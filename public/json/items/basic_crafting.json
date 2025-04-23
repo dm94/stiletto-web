@@ -1,0 +1,5 @@
+{
+  "name": "Basic Crafting",
+  "parent": "Crafting",
+  "onlyDevs": true
+}

@@ -1,0 +1,51 @@
+{
+  "name": "Aloe Goo Bomb",
+  "parent": "Slingshot",
+  "category": "Ammo",
+  "trade_price": 40.5,
+  "stackSize": 10,
+  "weight": 3.2,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Aloe Gel"
+        },
+        {
+          "count": 6,
+          "name": "Cotton"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        }
+      ],
+      "station": "Camp Fire",
+      "time": 75
+    },
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Aloe Gel"
+        },
+        {
+          "count": 6,
+          "name": "Cotton"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 50
+    }
+  ],
+  "projectileDamage": {
+    "damage": -5,
+    "effectivenessVsSoak": 40,
+    "effectivenessVsReduce": 90
+  }
+}

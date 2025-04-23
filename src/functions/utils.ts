@@ -22,6 +22,13 @@ export const getDiscordLoginUrl = () => {
   }&redirect_uri=${getDomain()}/profile&scope=identify%20guilds&response_type=code`;
 };
 
+export const toSnakeCase = (str: string) =>
+  str
+    .toLowerCase()
+    .replace(/\s+/g, "_")
+    .replace(/[^a-z0-9_]/g, "")
+    .replace(/_+/g, "_");
+
 export const objectToURLSearchParams = (obj: object): URLSearchParams => {
   const keyValuePairs = Object.keys(obj)
     .filter((key) => obj[key as keyof typeof obj] !== undefined)

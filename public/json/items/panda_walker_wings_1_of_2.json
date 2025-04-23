@@ -1,0 +1,23 @@
+{
+  "name": "Panda Walker Wings (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 130,
+          "name": "Wood"
+        },
+        {
+          "count": 63,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 5000
+  }
+}

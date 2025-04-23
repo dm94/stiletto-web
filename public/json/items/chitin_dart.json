@@ -1,0 +1,7 @@
+{
+  "name": "Chitin Dart",
+  "wikiVisibility": false,
+  "projectileDamage": {
+    "damage": 17
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Beeswax",
+  "category": "Resources",
+  "trade_price": 1.2,
+  "stackSize": 100,
+  "weight": 0.01,
+  "experiencieReward": 18
+}

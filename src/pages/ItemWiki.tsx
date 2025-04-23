@@ -6,7 +6,7 @@ import React, {
   useCallback,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { getItems } from "@functions/github";
+import { getItems, getItemInfo } from "@functions/github";
 import { Navigate, useParams } from "react-router";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
@@ -24,7 +24,7 @@ import {
   getItemDecodedName,
 } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
-import { type Item, Rarity } from "@ctypes/item";
+import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -44,6 +44,7 @@ const ItemWiki = () => {
   const { t } = useTranslation();
   const { name } = useParams();
   const [item, setItem] = useState<Item>();
+  const [itemInfo, setItemInfo] = useState<ItemCompleteInfo>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [allItems, setAllItems] = useState<Item[]>([]);
   const [rarity, setRarity] = useState<string>("Common");
@@ -63,6 +64,16 @@ const ItemWiki = () => {
         );
         setItem(foundItem);
         setAllItems(items);
+
+        try {
+          const itemInfo = await getItemInfo(foundItem?.name ?? itemName ?? "");
+          setItemInfo({
+            ...itemInfo,
+            ...foundItem,
+          });
+        } catch {
+          setItemInfo(undefined);
+        }
         setIsLoaded(true);
       }
     };
@@ -93,17 +104,17 @@ const ItemWiki = () => {
 
   const showDescription = useMemo(
     () =>
-      item?.description && (
+      itemInfo?.description && (
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
             <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
               {t("common.description")}
             </div>
-            <div className="p-4 text-neutral-400">{item.description}</div>
+            <div className="p-4 text-neutral-400">{itemInfo.description}</div>
           </div>
         </div>
       ),
-    [item?.description, t],
+    [itemInfo?.description, t],
   );
 
   const updateRarity = useCallback((value: Rarity) => {
@@ -192,8 +203,8 @@ const ItemWiki = () => {
     return <Navigate to={"/not-found"} />;
   }
 
-  const itemName = item?.name;
-  const parentUrl = item.parent && getItemUrl(item.parent);
+  const itemName = item?.name ?? itemInfo?.name;
+  const parentUrl = itemInfo?.parent && getItemUrl(itemInfo.parent);
   const craftUrl = getItemCraftUrl(name ?? itemName);
 
   return (
@@ -218,82 +229,82 @@ const ItemWiki = () => {
             </div>
             <div className="p-4">
               <ul className="space-y-2">
-                {item?.cost && (
+                {itemInfo?.cost && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">
                       {t("crafting.costToLearn")}
                     </div>
                     <div className="text-gray-400">
-                      {`${item?.cost?.count ? item.cost.count : ""} ${
-                        item?.cost?.name ? t(item?.cost?.name) : ""
+                      {`${itemInfo?.cost?.count ?? ""} ${
+                        itemInfo?.cost?.name ? t(itemInfo?.cost?.name) : ""
                       }`}
                     </div>
                   </li>
                 )}
-                {item?.category && (
+                {itemInfo?.category && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("common.category")}</div>
                     <div className="text-gray-400">
-                      {t(item.category, { ns: "items" })}
+                      {t(itemInfo.category, { ns: "items" })}
                     </div>
                   </li>
                 )}
-                {item?.parent && (
+                {itemInfo?.parent && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("common.parent")}</div>
                     <div className="text-gray-400">
                       <a href={parentUrl} className="hover:text-blue-400">
-                        {t(item.parent, { ns: "items" })}
+                        {t(itemInfo.parent, { ns: "items" })}
                       </a>
                     </div>
                   </li>
                 )}
-                {item?.trade_price && (
+                {itemInfo?.trade_price && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Trade Price")}</div>
                     <div className="text-gray-400">
-                      {item.trade_price} flots
+                      {itemInfo.trade_price} flots
                     </div>
                   </li>
                 )}
-                {item?.stackSize && (
+                {itemInfo?.stackSize && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Character Stack")}</div>
-                    <div className="text-gray-400">{item.stackSize}</div>
+                    <div className="text-gray-400">{itemInfo.stackSize}</div>
                   </li>
                 )}
-                {item?.weight && (
+                {itemInfo?.weight && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Weight")}</div>
                     <div className={textColor}>
                       {calcRarityValue(
                         rarity,
                         "weight",
-                        item.category,
-                        item.weight,
+                        itemInfo.category,
+                        itemInfo.weight,
                       )}
                     </div>
                   </li>
                 )}
-                {item?.experiencieReward && (
+                {itemInfo?.experiencieReward && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">
                       {t("Experience by crafting")}
                     </div>
                     <div className="text-gray-400">
-                      {item.experiencieReward}
+                      {itemInfo.experiencieReward}
                     </div>
                   </li>
                 )}
-                {item?.durability && (
+                {itemInfo?.durability && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("Durability")}</div>
                     <div className={textColor}>
                       {calcRarityValue(
                         rarity,
                         "durability",
-                        item.category,
-                        item.durability,
+                        itemInfo.category,
+                        itemInfo.durability,
                       )}
                     </div>
                   </li>
@@ -359,56 +370,56 @@ const ItemWiki = () => {
           <SchematicItems key="schematicItems" item={item} />
         </Suspense>
         {showDescription}
-        {item?.structureInfo && (
+        {itemInfo?.structureInfo && (
           <GenericInfo
             key="structureInfo"
             name="Structure Info"
-            dataInfo={item.structureInfo}
+            dataInfo={itemInfo.structureInfo}
             rarity={rarity}
             textColor={textColor}
-            category={item.category}
+            category={itemInfo.category}
           />
         )}
-        {item?.projectileDamage && (
+        {itemInfo?.projectileDamage && (
           <GenericInfo
             key="proyectileInfo"
             name="Projectile Info"
-            dataInfo={item.projectileDamage}
+            dataInfo={itemInfo.projectileDamage}
             rarity={rarity}
             textColor={textColor}
-            category={item.category}
+            category={itemInfo.category}
           />
         )}
-        {item?.weaponInfo && (
+        {itemInfo?.weaponInfo && (
           <GenericInfo
             key="weaponinfo"
             name="Weapon Info"
-            dataInfo={item.weaponInfo}
+            dataInfo={itemInfo.weaponInfo}
             rarity={rarity}
             textColor={textColor}
-            category={item.category}
+            category={itemInfo.category}
           />
         )}
-        {item?.armorInfo && (
+        {itemInfo?.armorInfo && (
           <GenericInfo
             key="armorinfo"
             name="Armor Info"
-            dataInfo={item.armorInfo}
+            dataInfo={itemInfo.armorInfo}
             rarity={rarity}
             textColor={textColor}
-            category={item.category}
+            category={itemInfo.category}
           />
         )}
-        {item?.toolInfo && <ToolInfo key="toolinfo" toolInfo={item.toolInfo} />}
-        {item?.moduleInfo && (
-          <ModuleInfo key="moduleinfo" moduleInfo={item.moduleInfo} />
+        {itemInfo?.toolInfo && (
+          <ToolInfo key="toolinfo" toolInfo={itemInfo.toolInfo} />
+        )}
+        {itemInfo?.moduleInfo && (
+          <ModuleInfo key="moduleinfo" moduleInfo={itemInfo.moduleInfo} />
         )}
         <Suspense fallback={loadingItemPart()}>
-          <SchematicDropInfo
-            key="schematicInfo"
-            name={item.name}
-            items={allItems}
-          />
+          {itemInfo?.learn && (
+            <SchematicDropInfo key="schematicInfo" item={itemInfo} />
+          )}
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <WikiDescription key="wikidescription" name={itemName} />
@@ -417,9 +428,13 @@ const ItemWiki = () => {
           <CanBeUsedInfo key="CanBeUsedInfo" name={itemName} items={allItems} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <DropsInfo key="dropInfo" drops={item.drops} />
+          {itemInfo?.droppedBy && (
+            <DropsInfo key="dropInfo" drops={itemInfo?.droppedBy} />
+          )}
         </Suspense>
-        <Comments key="comments" name={itemName} />
+        <Suspense fallback={loadingItemPart()}>
+          <Comments key="comments" name={itemName} />
+        </Suspense>
       </div>
     </div>
   );

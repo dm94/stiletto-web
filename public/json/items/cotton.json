@@ -1,0 +1,8 @@
+{
+  "name": "Cotton",
+  "category": "Resources",
+  "trade_price": 2.1,
+  "stackSize": 100,
+  "weight": 0.01,
+  "description": "Grows in open meadows."
+}

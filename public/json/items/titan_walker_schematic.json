@@ -1,0 +1,17 @@
+{
+  "name": "Titan Walker Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Titan Walker"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

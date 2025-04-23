@@ -1,0 +1,69 @@
+{
+  "name": "Swampwood Galoshes",
+  "parent": "Rupu Fur Sandals",
+  "category": "Armors",
+  "trade_price": 34,
+  "stackSize": 100,
+  "weight": 0.4,
+  "experiencieReward": 11,
+  "durability": 1000,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Hide"
+        },
+        {
+          "count": 8,
+          "name": "Tree Sap"
+        },
+        {
+          "count": 3,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Fiberworking Station",
+      "time": 5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Hide"
+        },
+        {
+          "count": 8,
+          "name": "Tree Sap"
+        },
+        {
+          "count": 3,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 3
+    },
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Hide"
+        },
+        {
+          "count": 8,
+          "name": "Tree Sap"
+        },
+        {
+          "count": 3,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 2
+    }
+  ],
+  "armorInfo": {
+    "reduction": 2
+  }
+}

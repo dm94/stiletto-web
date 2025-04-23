@@ -1,0 +1,14 @@
+{
+  "name": "Pine Tree",
+  "category": "Crafting",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Magma Seeds"
+        }
+      ]
+    }
+  ]
+}

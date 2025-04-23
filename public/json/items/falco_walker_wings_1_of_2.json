@@ -1,0 +1,31 @@
+{
+  "name": "Falco Walker Wings (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 58,
+          "name": "Wood"
+        },
+        {
+          "count": 47,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 26,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 31,
+          "name": "Hide"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 8850
+  }
+}

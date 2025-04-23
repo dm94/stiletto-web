@@ -1,0 +1,5 @@
+{
+  "name": "Improved Equipment",
+  "parent": "Basic Equipment",
+  "onlyDevs": true
+}

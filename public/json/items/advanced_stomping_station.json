@@ -1,0 +1,37 @@
+{
+  "name": "Advanced Stomping Station",
+  "parent": "Stomping Station",
+  "category": "Crafting",
+  "weight": 4.83,
+  "experiencieReward": 125,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 85,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 90,
+          "name": "Stone"
+        },
+        {
+          "count": 32,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 15,
+          "name": "Clay"
+        },
+        {
+          "count": 24,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3000
+  }
+}

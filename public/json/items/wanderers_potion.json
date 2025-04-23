@@ -1,0 +1,7 @@
+{
+  "name": "Wanderer's Potion",
+  "category": "Interactables",
+  "stackSize": 100,
+  "weight": 0.01,
+  "experiencieReward": 2
+}

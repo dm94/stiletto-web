@@ -1,0 +1,63 @@
+{
+  "name": "Worm Tincture",
+  "parent": "Bonebreaker",
+  "category": "Vitamins",
+  "trade_price": 1200,
+  "stackSize": 100,
+  "weight": 0.5,
+  "experiencieReward": 100,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Worm Sand"
+        },
+        {
+          "count": 100,
+          "name": "Corn"
+        },
+        {
+          "count": 50,
+          "name": "Magma Seeds"
+        },
+        {
+          "count": 1,
+          "name": "Worm Fang"
+        },
+        {
+          "count": 1,
+          "name": "Worm Oil"
+        }
+      ],
+      "station": "Camp Fire",
+      "time": 100
+    },
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Worm Sand"
+        },
+        {
+          "count": 100,
+          "name": "Corn"
+        },
+        {
+          "count": 50,
+          "name": "Magma Seeds"
+        },
+        {
+          "count": 1,
+          "name": "Worm Fang"
+        },
+        {
+          "count": 1,
+          "name": "Worm Oil"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 100
+    }
+  ]
+}

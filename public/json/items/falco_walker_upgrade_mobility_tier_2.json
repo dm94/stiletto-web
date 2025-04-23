@@ -1,0 +1,23 @@
+{
+  "name": "Falco Walker Upgrade - Mobility - Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Gelatinous Goo"
+        },
+        {
+          "count": 32,
+          "name": "Clay"
+        },
+        {
+          "count": 5,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

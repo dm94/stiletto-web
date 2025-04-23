@@ -1,0 +1,9 @@
+{
+  "name": "Obsidian",
+  "category": "Resources",
+  "trade_price": 0.8,
+  "stackSize": 100,
+  "weight": 2.5,
+  "description": "Molten rock flowed across the world's surface, and the metropolises were buried.",
+  "experiencieReward": 16
+}

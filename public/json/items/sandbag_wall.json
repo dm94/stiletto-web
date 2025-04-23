@@ -1,0 +1,28 @@
+{
+  "name": "Sandbag Wall",
+  "category": "Basic Protection",
+  "weight": 10,
+  "experiencieReward": 30,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Fiber"
+        },
+        {
+          "count": 12,
+          "name": "Sand"
+        },
+        {
+          "count": 2,
+          "name": "Palm Leaves"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 500
+  }
+}

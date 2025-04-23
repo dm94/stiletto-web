@@ -1,0 +1,9 @@
+{
+  "name": "Insects",
+  "category": "Resources",
+  "trade_price": 0.8,
+  "stackSize": 100,
+  "weight": 0.01,
+  "description": "Its extremely hard carapace evolved to shield it from extreme weather.",
+  "experiencieReward": 18
+}

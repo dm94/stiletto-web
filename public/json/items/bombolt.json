@@ -1,0 +1,33 @@
+{
+  "name": "Bombolt",
+  "parent": "Cobra Walker",
+  "category": "Ammo",
+  "trade_price": 11.7,
+  "stackSize": 20,
+  "weight": 0.3,
+  "experiencieReward": 15,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Lava Fuel"
+        },
+        {
+          "count": 1,
+          "name": "Obsidian"
+        }
+      ],
+      "output": 2,
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 500
+  }
+}

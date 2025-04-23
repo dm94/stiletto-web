@@ -1,0 +1,30 @@
+{
+  "name": "Forager Module",
+  "category": "Resources",
+  "weight": 0.24,
+  "experiencieReward": 65,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Shackle"
+        },
+        {
+          "count": 1,
+          "name": "Pinion"
+        },
+        {
+          "count": 1,
+          "name": "Cam"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 1
+  }
+}

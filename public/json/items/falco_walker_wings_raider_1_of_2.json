@@ -1,0 +1,31 @@
+{
+  "name": "Falco Walker Wings Raider (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 45,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 36,
+          "name": "Tallow"
+        },
+        {
+          "count": 38,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 4,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 10000
+  }
+}

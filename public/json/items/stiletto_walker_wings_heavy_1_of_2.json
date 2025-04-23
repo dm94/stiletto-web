@@ -1,0 +1,35 @@
+{
+  "name": "Stiletto Walker Wings Heavy (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 11,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 2,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 7400
+  }
+}

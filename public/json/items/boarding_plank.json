@@ -1,0 +1,27 @@
+{
+  "name": "Boarding Plank",
+  "category": "Interactables",
+  "weight": 11.38,
+  "experiencieReward": 174,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 290,
+          "name": "Wood"
+        },
+        {
+          "count": 3,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 500
+  }
+}

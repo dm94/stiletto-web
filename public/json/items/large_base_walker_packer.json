@@ -1,0 +1,32 @@
+{
+  "name": "Large Base Walker Packer",
+  "parent": "Small Base Walker Packer",
+  "category": "Containers",
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 150,
+          "name": "Wood"
+        },
+        {
+          "count": 6,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 60,
+          "name": "Rope"
+        },
+        {
+          "count": 35,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 21000
+  }
+}

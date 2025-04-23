@@ -1,0 +1,17 @@
+{
+  "name": "Decal",
+  "category": "Decals",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Charcoal"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 100
+  }
+}

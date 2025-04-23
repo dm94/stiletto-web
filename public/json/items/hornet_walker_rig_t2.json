@@ -1,0 +1,14 @@
+{
+  "name": "Hornet Walker Rig T2",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Hornet Walker Rig T2"
+        }
+      ]
+    }
+  ]
+}

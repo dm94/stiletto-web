@@ -1,0 +1,5 @@
+{
+  "name": "CeramicOrb",
+  "parent": "Lobber",
+  "onlyDevs": true
+}

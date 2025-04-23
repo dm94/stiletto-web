@@ -1,0 +1,58 @@
+{
+  "name": "Sulfur Bomb",
+  "parent": "Slingshot",
+  "category": "Ammo",
+  "trade_price": 52.2,
+  "stackSize": 10,
+  "weight": 4,
+  "experiencieReward": 200,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Salt Rock"
+        },
+        {
+          "count": 18,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 25,
+          "name": "Sulfur"
+        },
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Camp Fire",
+      "time": 120
+    },
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Salt Rock"
+        },
+        {
+          "count": 18,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 25,
+          "name": "Sulfur"
+        },
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 90
+    }
+  ],
+  "projectileDamage": {
+    "damage": 20
+  }
+}

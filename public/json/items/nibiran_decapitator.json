@@ -1,0 +1,43 @@
+{
+  "name": "Nibiran Decapitator",
+  "category": "Weapons",
+  "trade_price": 2756.6,
+  "stackSize": 100,
+  "weight": 3.6,
+  "experiencieReward": 1602,
+  "durability": 800,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 8,
+          "name": "Lightwood"
+        },
+        {
+          "count": 3,
+          "name": "Nomad Cloth"
+        }
+      ],
+      "station": "Smithing",
+      "time": 100
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 120,
+    "impact": 40,
+    "stability": 65,
+    "weaponLength": 97,
+    "damage": 70,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 1
+    }
+  ]
+}

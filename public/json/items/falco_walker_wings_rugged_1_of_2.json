@@ -1,0 +1,27 @@
+{
+  "name": "Falco Walker Wings Rugged (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 65,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 35,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 21,
+          "name": "Leather"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 13500
+  }
+}

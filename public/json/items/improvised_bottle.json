@@ -1,0 +1,28 @@
+{
+  "name": "Improvised Bottle",
+  "parent": "Makeshift Bottle",
+  "category": "Equipment",
+  "trade_price": 6.2,
+  "stackSize": 100,
+  "weight": 0.5,
+  "experiencieReward": 25,
+  "durability": 70,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Huge Cactus Fruit"
+        },
+        {
+          "count": 20,
+          "name": "Fiber"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        }
+      ]
+    }
+  ]
+}

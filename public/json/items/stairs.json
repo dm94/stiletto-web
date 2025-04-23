@@ -1,0 +1,23 @@
+{
+  "name": "Stairs",
+  "category": "Furniture",
+  "experiencieReward": 40,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 28,
+          "name": "Wood"
+        },
+        {
+          "count": 45,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 40000
+  }
+}

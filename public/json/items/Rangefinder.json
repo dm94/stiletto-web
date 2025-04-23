@@ -1,0 +1,29 @@
+{
+  "name": "Rangefinder",
+  "category": "Interactables",
+  "weight": 20,
+  "description": "Measures distance to far-away targets.",
+  "experiencieReward": 266,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 4,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 1,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 800
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Farmable Area",
+  "category": "Crafting",
+  "weight": 1000,
+  "experiencieReward": 100,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 500,
+          "name": "Fiber"
+        },
+        {
+          "count": 50,
+          "name": "Clay"
+        }
+      ]
+    }
+  ]
+}

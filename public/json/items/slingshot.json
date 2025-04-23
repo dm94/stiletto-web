@@ -1,0 +1,33 @@
+{
+  "name": "Slingshot",
+  "parent": "Improved Walker Weapons",
+  "category": "Weapons",
+  "description": "Launch small rocks and bombs moderate distances. Don't hit your own deck!",
+  "experiencieReward": 242,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 125,
+          "name": "Wood"
+        },
+        {
+          "count": 55,
+          "name": "Stone"
+        },
+        {
+          "count": 25,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3000
+  }
+}

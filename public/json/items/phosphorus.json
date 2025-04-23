@@ -1,0 +1,43 @@
+{
+  "name": "Phosphorus",
+  "category": "Resources",
+  "trade_price": 0.4,
+  "stackSize": 100,
+  "weight": 0.28,
+  "experiencieReward": 8,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Bone Splinter"
+        }
+      ],
+      "output": 5,
+      "station": "Stomping Station",
+      "time": 12
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Bone Splinter"
+        }
+      ],
+      "output": 5,
+      "station": "Advanced Stomping Station",
+      "time": 10
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Bone Splinter"
+        }
+      ],
+      "output": 5,
+      "station": "Flotillian Stomping Station",
+      "time": 8
+    }
+  ]
+}

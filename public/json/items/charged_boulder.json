@@ -1,0 +1,77 @@
+{
+  "name": "Charged Boulder",
+  "parent": "Slingshot",
+  "category": "Ammo",
+  "trade_price": 150,
+  "stackSize": 5,
+  "weight": 10,
+  "experiencieReward": 300,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Meteor Core"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Woodworking Station",
+      "time": 15
+    },
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Meteor Core"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Advanced Woodworking Station",
+      "time": 10
+    },
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Meteor Core"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 250,
+    "penetration": 10,
+    "effectivenessVsSoak": 70,
+    "effectivenessVsReduce": 70
+  },
+  "toolInfo": [
+    {
+      "toolType": "CatapultRock",
+      "tier": 3
+    }
+  ]
+}

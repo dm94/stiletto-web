@@ -1,0 +1,12 @@
+{
+  "name": "Nomad Walker Upgrade - Cargo - Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": []
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 9
+  }
+}

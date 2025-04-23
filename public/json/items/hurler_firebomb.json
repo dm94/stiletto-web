@@ -1,0 +1,17 @@
+{
+  "name": "Hurler Firebomb",
+  "category": "Ammo",
+  "trade_price": 49.8,
+  "stackSize": 5,
+  "weight": 8,
+  "wikiVisibility": false,
+  "projectileDamage": {
+    "damage": 150
+  },
+  "toolInfo": [
+    {
+      "toolType": "SlingshotRock",
+      "tier": 1
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Hangar Wall with Door",
+  "category": "Walker Hangar",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Wood"
+        },
+        {
+          "count": 18,
+          "name": "Rope"
+        },
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 40000
+  }
+}

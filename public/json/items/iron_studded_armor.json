@@ -1,0 +1,42 @@
+{
+  "name": "Iron Studded Armor",
+  "category": "Armors",
+  "trade_price": 94,
+  "stackSize": 100,
+  "weight": 14.8,
+  "experiencieReward": 250,
+  "durability": 330,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 15,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 30,
+          "name": "Nomad Cloth"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 30
+    }
+  ],
+  "armorInfo": {
+    "absorbing": 22,
+    "speedReduction": 15
+  },
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 33.333332,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

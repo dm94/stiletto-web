@@ -1,0 +1,8 @@
+{
+  "name": "Aloe Vera",
+  "category": "Resources",
+  "trade_price": 0.3,
+  "stackSize": 100,
+  "weight": 0.4,
+  "experiencieReward": 6
+}

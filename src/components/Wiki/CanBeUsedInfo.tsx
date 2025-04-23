@@ -2,31 +2,29 @@ import type React from "react";
 import { useEffect, useState, useMemo, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Ingredient from "../Ingredient";
-import type { CustomItem } from "@ctypes";
+import type { Item } from "@ctypes/item";
 
 interface CanBeUsedInfoProps {
   name: string;
-  items: CustomItem[];
+  items: Item[];
 }
 
 const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
   const ITEMS_PER_PAGE = 10;
   const { t } = useTranslation();
-  const [canBeUsed, setCanBeUsed] = useState<CustomItem[]>([]);
+  const [canBeUsed, setCanBeUsed] = useState<Item[]>([]);
   const [visibleItems, setVisibleItems] = useState<number>(ITEMS_PER_PAGE);
 
   useEffect(() => {
     if (items && name) {
       const lowerCaseName = name?.toLowerCase();
-      const filteredItems = items.filter((item) => {
-        if (item?.crafting?.[0]?.ingredients) {
-          const allIngredients = item.crafting[0].ingredients;
-          return allIngredients.some(
+      const filteredItems = items.filter((item) =>
+        item?.crafting?.some((recipe) =>
+          recipe?.ingredients.some(
             (ingredient) => ingredient.name.toLowerCase() === lowerCaseName,
-          );
-        }
-        return false;
-      });
+          ),
+        ),
+      );
       setCanBeUsed(filteredItems);
       setVisibleItems(ITEMS_PER_PAGE);
     }
@@ -42,7 +40,12 @@ const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
         className="relative p-2 rounded-lg bg-gray-700 shadow-md hover:shadow-lg border border-gray-600 hover:border-gray-500"
         key={`${item.name}-ingredient`}
       >
-        <Ingredient ingredient={item} value={1} />
+        <Ingredient
+          ingredient={{
+            ...item,
+          }}
+          value={1}
+        />
       </li>
     ));
   }, [canBeUsed, visibleItems]);

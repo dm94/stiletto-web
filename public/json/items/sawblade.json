@@ -1,0 +1,36 @@
+{
+  "name": "Sawblade",
+  "parent": "Tool Pod",
+  "category": "Walker Tools",
+  "experiencieReward": 366,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 26,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        },
+        {
+          "count": 2,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 4,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 40,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ]
+}

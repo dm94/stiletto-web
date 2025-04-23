@@ -1,0 +1,8 @@
+{
+  "name": "Ceramic Orb",
+  "parent": "Lobber",
+  "onlyDevs": true,
+  "projectileDamage": {
+    "damage": 200
+  }
+}

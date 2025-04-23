@@ -1,0 +1,107 @@
+{
+  "name": "Ceramic Dart",
+  "parent": "Bone Dart",
+  "trade_price": 1.5,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 6,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 5,
+          "name": "Ceramic Shard"
+        }
+      ],
+      "output": 10,
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 15.5
+  },
+  "toolInfo": [
+    {
+      "toolType": "RepeaterBolt",
+      "tier": 3
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "tier": "T3"
+    }
+  ]
+}

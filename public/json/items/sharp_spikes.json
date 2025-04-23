@@ -1,0 +1,27 @@
+{
+  "name": "Sharp Spikes",
+  "parent": "Bomb Chest Trap",
+  "category": "Defenses",
+  "experiencieReward": 49,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 50,
+          "name": "Wood"
+        },
+        {
+          "count": 6,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 200
+  }
+}

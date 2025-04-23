@@ -1,0 +1,111 @@
+{
+  "name": "Tar",
+  "parent": "Furnace",
+  "category": "Liquids",
+  "trade_price": 3.2,
+  "stackSize": 100,
+  "weight": 0.15,
+  "description": "Extracted from deep below volcanic soil.",
+  "experiencieReward": 100,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Tree Sap"
+        }
+      ],
+      "station": "Furnace",
+      "time": 360
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Tree Sap"
+        }
+      ],
+      "station": "Advanced Furnace",
+      "time": 180
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Firebrand",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    }
+  ]
+}

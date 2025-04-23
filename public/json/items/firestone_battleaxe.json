@@ -1,0 +1,44 @@
+{
+  "name": "Firestone Battleaxe",
+  "parent": "Rawbone Battle Axe",
+  "category": "Weapons",
+  "trade_price": 81,
+  "stackSize": 100,
+  "weight": 5.2,
+  "experiencieReward": 220,
+  "durability": 750,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Leather"
+        },
+        {
+          "count": 6,
+          "name": "Obsidian"
+        },
+        {
+          "count": 3,
+          "name": "Chitin Plate"
+        }
+      ],
+      "station": "Lathe",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 80,
+    "impact": 80,
+    "stability": 60,
+    "weaponLength": 83,
+    "damage": 55,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "TreeCutting",
+      "tier": 15
+    }
+  ]
+}

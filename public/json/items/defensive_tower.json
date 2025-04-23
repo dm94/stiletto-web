@@ -1,0 +1,36 @@
+{
+  "name": "Defensive Tower",
+  "parent": "WoodenWalls",
+  "category": "Defenses",
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 480,
+          "name": "Wood"
+        },
+        {
+          "count": 345,
+          "name": "Fiber"
+        },
+        {
+          "count": 117,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 22,
+          "name": "Rope"
+        },
+        {
+          "count": 15,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 7500
+  }
+}

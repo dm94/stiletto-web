@@ -1,0 +1,17 @@
+{
+  "name": "Flotillian Constructions Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "ChestGigantic"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

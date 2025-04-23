@@ -1,0 +1,23 @@
+{
+  "name": "Masked Totem 2",
+  "category": "Furniture",
+  "weight": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Wood"
+        },
+        {
+          "count": 30,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 150
+  }
+}

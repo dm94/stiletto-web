@@ -1,0 +1,5 @@
+{
+  "name": "Advanced Weapons",
+  "parent": "Advanced Equipment",
+  "onlyDevs": true
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Salt Rock",
+  "category": "Resources",
+  "trade_price": 0.1,
+  "stackSize": 100,
+  "weight": 0.23,
+  "experiencieReward": 3,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Brine"
+        }
+      ],
+      "output": 3,
+      "station": "Clay Pot",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Salt Flats"
+        }
+      ],
+      "output": 10,
+      "station": "Artisan Soil Auger",
+      "time": 20
+    }
+  ]
+}

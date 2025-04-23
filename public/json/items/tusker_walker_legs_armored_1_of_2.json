@@ -1,0 +1,31 @@
+{
+  "name": "Tusker Walker Legs Armored (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1005,
+          "name": "Wood"
+        },
+        {
+          "count": 480,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 150,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 30,
+          "name": "Tar"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 6240
+  }
+}

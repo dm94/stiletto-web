@@ -1,0 +1,102 @@
+{
+  "name": "Ceramic Scattershot Ammo",
+  "parent": "BoneScattershot",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 8,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 8,
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 350
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scattershot",
+      "tier": 3
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    }
+  ]
+}

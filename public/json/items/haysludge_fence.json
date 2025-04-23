@@ -1,0 +1,23 @@
+{
+  "name": "Haysludge Fence",
+  "category": "Furniture",
+  "weight": 5,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 150
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Flotillian Armors Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Feather Boots",
+    "Iron Studded Boots",
+    "Nibirian Boots",
+    "Iron Studded Gauntlets",
+    "Nibirian Gauntlets",
+    "Winged Helmet",
+    "Iron Studded Armor",
+    "Nibirian Armor",
+    "Cloak"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

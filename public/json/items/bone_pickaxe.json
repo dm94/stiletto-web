@@ -1,0 +1,37 @@
+{
+  "name": "Bone Pickaxe",
+  "parent": "Simple Pickaxe",
+  "trade_price": 24,
+  "weight": 4,
+  "experiencieReward": 70,
+  "durability": 410,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Bone Splinter"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "damage": 25
+  },
+  "toolInfo": [
+    {
+      "toolType": "Mining",
+      "tier": 10
+    }
+  ]
+}

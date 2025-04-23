@@ -1,0 +1,23 @@
+{
+  "name": "Bone Effigy",
+  "category": "Furniture",
+  "weight": 0.4,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood"
+        },
+        {
+          "count": 1,
+          "name": "Rupu Pelt"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 50
+  }
+}

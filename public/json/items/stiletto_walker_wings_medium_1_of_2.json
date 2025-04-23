@@ -1,0 +1,35 @@
+{
+  "name": "Stiletto Walker Wings Medium (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 2,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 7,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 12,
+          "name": "Rope"
+        },
+        {
+          "count": 24,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 6600
+  }
+}

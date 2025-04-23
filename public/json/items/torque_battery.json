@@ -1,0 +1,48 @@
+{
+  "name": "Torque Battery",
+  "parent": "Nomad Grappling Hook",
+  "category": "Equipment",
+  "trade_price": 8.4,
+  "stackSize": 100,
+  "weight": 0.1,
+  "experiencieReward": 26,
+  "durability": 120,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 4,
+          "name": "Rope"
+        },
+        {
+          "count": 6,
+          "name": "Bone Splinter"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 2
+    },
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 4,
+          "name": "Rope"
+        },
+        {
+          "count": 6,
+          "name": "Bone Splinter"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 2
+    }
+  ]
+}

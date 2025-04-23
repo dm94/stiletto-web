@@ -1,0 +1,51 @@
+{
+  "name": "Ceramic Rok",
+  "parent": "Rokker",
+  "category": "Ammo",
+  "trade_price": 5.2,
+  "stackSize": 10,
+  "weight": 5,
+  "experiencieReward": 1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Advanced Woodworking Station",
+      "time": 3
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 2
+    }
+  ],
+  "projectileDamage": {
+    "damage": 400,
+    "penetration": 10,
+    "effectivenessVsSoak": 70,
+    "effectivenessVsReduce": 70
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scattershot",
+      "tier": 1
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Tusker Walker Upgrade - Durability - Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 70,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 65,
+          "name": "Tar"
+        },
+        {
+          "count": 65,
+          "name": "Obsidian"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

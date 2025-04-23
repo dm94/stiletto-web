@@ -1,0 +1,32 @@
+{
+  "name": "Ballista - Tier 3",
+  "category": "Weapons",
+  "weight": 22.5,
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 55,
+          "name": "Stone"
+        },
+        {
+          "count": 35,
+          "name": "Rope"
+        },
+        {
+          "count": 80,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3500
+  }
+}

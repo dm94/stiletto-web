@@ -1,0 +1,35 @@
+{
+  "name": "Insect Bomb",
+  "parent": "Sulfur Bomb",
+  "category": "Ammo",
+  "trade_price": 24.2,
+  "stackSize": 10,
+  "weight": 2.6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Insects"
+        },
+        {
+          "count": 3,
+          "name": "Cotton"
+        },
+        {
+          "count": 6,
+          "name": "Beeswax"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 75
+    }
+  ],
+  "projectileDamage": {
+    "damage": 20
+  }
+}

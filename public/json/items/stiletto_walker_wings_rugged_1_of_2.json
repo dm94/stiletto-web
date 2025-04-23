@@ -1,0 +1,35 @@
+{
+  "name": "Stiletto Walker Wings Rugged (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 19,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Rope"
+        },
+        {
+          "count": 26,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 21,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 2,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 7800
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "Flint",
+  "category": "Resources",
+  "trade_price": 0.1,
+  "stackSize": 100,
+  "weight": 0.4,
+  "description": "A sharp mineral, handy for the production of primitive blades and extra pointy sticks",
+  "experiencieReward": 3
+}

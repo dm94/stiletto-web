@@ -1,0 +1,31 @@
+{
+  "name": "Falco Walker Wings Heavy (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 48,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 4,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 18,
+          "name": "Leather"
+        },
+        {
+          "count": 27,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 11300
+  }
+}

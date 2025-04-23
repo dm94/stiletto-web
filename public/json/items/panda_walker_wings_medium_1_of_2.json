@@ -1,0 +1,27 @@
+{
+  "name": "Panda Walker Wings Medium (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 121,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 14,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 83,
+          "name": "Hide"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 4100
+  }
+}

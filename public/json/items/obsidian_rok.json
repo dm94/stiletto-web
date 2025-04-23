@@ -1,0 +1,99 @@
+{
+  "name": "Obsidian Rok",
+  "parent": "Ceramic Rok",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 8,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 15,
+          "name": "Obsidian"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 2
+    }
+  ],
+  "projectileDamage": {
+    "damage": 500
+  },
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    }
+  ]
+}

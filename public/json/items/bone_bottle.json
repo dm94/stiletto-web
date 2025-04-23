@@ -1,0 +1,48 @@
+{
+  "name": "Bone Bottle",
+  "parent": "Improvised Bottle",
+  "category": "Equipment",
+  "trade_price": 11.9,
+  "stackSize": 100,
+  "weight": 1.7,
+  "experiencieReward": 50,
+  "durability": 100,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 5,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 32,
+          "name": "Fiber"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 1
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 5,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 32,
+          "name": "Fiber"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 1
+    }
+  ]
+}

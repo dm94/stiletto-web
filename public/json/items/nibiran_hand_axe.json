@@ -1,0 +1,42 @@
+{
+  "name": "Nibiran Hand Axe",
+  "category": "Weapons",
+  "trade_price": 1681.3,
+  "stackSize": 100,
+  "weight": 3,
+  "experiencieReward": 1583,
+  "durability": 700,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 12,
+          "name": "Lightwood"
+        },
+        {
+          "count": 3,
+          "name": "Rubber Block"
+        }
+      ],
+      "station": "Smithing",
+      "time": 100
+    }
+  ],
+  "weaponInfo": {
+    "impact": 50,
+    "stability": 40,
+    "weaponLength": 60,
+    "damage": 70,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "TreeCutting",
+      "tier": 25
+    }
+  ]
+}

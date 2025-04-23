@@ -1,0 +1,9 @@
+{
+  "name": "Apple",
+  "category": "Resources",
+  "trade_price": 0.2,
+  "stackSize": 100,
+  "weight": 0.266,
+  "description": "Crisp and delicious. No worms guaranteed.",
+  "experiencieReward": 8
+}

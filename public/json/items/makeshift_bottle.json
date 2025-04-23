@@ -1,0 +1,27 @@
+{
+  "name": "Makeshift Bottle",
+  "parent": "Equipment",
+  "category": "Equipment",
+  "trade_price": 1.5,
+  "stackSize": 100,
+  "weight": 0.1,
+  "experiencieReward": 12,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Wood"
+        },
+        {
+          "count": 3,
+          "name": "Rupu Pelt"
+        }
+      ]
+    }
+  ]
+}

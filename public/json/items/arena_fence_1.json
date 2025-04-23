@@ -1,0 +1,23 @@
+{
+  "name": "Arena Fence 1",
+  "category": "Furniture",
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood"
+        },
+        {
+          "count": 8,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1000
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "Stomping Station",
+  "parent": "Camp Fire",
+  "category": "Crafting",
+  "experiencieReward": 125,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 165,
+          "name": "Wood"
+        },
+        {
+          "count": 80,
+          "name": "Stone"
+        },
+        {
+          "count": 28,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 25,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 28,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3000
+  }
+}

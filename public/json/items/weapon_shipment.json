@@ -1,0 +1,81 @@
+{
+  "name": "Weapon Shipment",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Rawbone Quarterstaff"
+        },
+        {
+          "count": 10,
+          "name": "Rawbone Battle Axe"
+        },
+        {
+          "count": 30,
+          "name": "Rawbone Maul"
+        },
+        {
+          "count": 10,
+          "name": "Rawbone Sawsword"
+        },
+        {
+          "count": 30,
+          "name": "Rawbone Club"
+        },
+        {
+          "count": 40,
+          "name": "Rawbone Maul"
+        },
+        {
+          "count": 10,
+          "name": "Bonespike Sword"
+        },
+        {
+          "count": 50,
+          "name": "Rawbone Hand Axe"
+        }
+      ],
+      "station": "PackageCrafting",
+      "time": 60
+    },
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Paddleblade Quarterstaff"
+        },
+        {
+          "count": 8,
+          "name": "Ceramic Hatchet"
+        },
+        {
+          "count": 15,
+          "name": "Short Ceramic Hoofmace"
+        },
+        {
+          "count": 20,
+          "name": "Short Malletblade"
+        },
+        {
+          "count": 18,
+          "name": "Long Ceramic Hoofmace"
+        },
+        {
+          "count": 10,
+          "name": "Singblade"
+        },
+        {
+          "count": 15,
+          "name": "Heavy Rawbone Hand Axe"
+        },
+        {
+          "count": 20,
+          "name": "Long Bonespike Swordstaff"
+        }
+      ],
+      "station": "PackageCrafting",
+      "time": 60
+    }
+  ]
+}

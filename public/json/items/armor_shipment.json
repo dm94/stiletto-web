@@ -1,0 +1,73 @@
+{
+  "name": "Armor Shipment",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Brittle Bone Armor"
+        },
+        {
+          "count": 20,
+          "name": "Forester's Armor"
+        },
+        {
+          "count": 20,
+          "name": "Brittle Bone Handwraps"
+        },
+        {
+          "count": 20,
+          "name": "Forester's Sleeves"
+        },
+        {
+          "count": 20,
+          "name": "Brittle Bone Boots"
+        },
+        {
+          "count": 20,
+          "name": "Forester's Sandals"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Headwrap"
+        }
+      ],
+      "station": "PackageCrafting",
+      "time": 60
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Baskwood Armor"
+        },
+        {
+          "count": 10,
+          "name": "Baskwood Bracers"
+        },
+        {
+          "count": 10,
+          "name": "Baskwood Boots"
+        },
+        {
+          "count": 10,
+          "name": "Triple Stitch Boots"
+        },
+        {
+          "count": 10,
+          "name": "Triple Stitch Bracers"
+        },
+        {
+          "count": 10,
+          "name": "Triple Stitch Armor"
+        },
+        {
+          "count": 10,
+          "name": "Fiber Headwrap"
+        }
+      ],
+      "station": "PackageCrafting",
+      "time": 60
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "name": "Small Boulder",
+  "parent": "Slingshot",
+  "category": "Ammo",
+  "trade_price": 3.1,
+  "stackSize": 10,
+  "weight": 0.3,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Stone"
+        },
+        {
+          "count": 10,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Woodworking Station",
+      "time": 10
+    },
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Stone"
+        },
+        {
+          "count": 10,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Advanced Woodworking Station",
+      "time": 8
+    },
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Stone"
+        },
+        {
+          "count": 10,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 150,
+    "penetration": 10,
+    "effectivenessVsSoak": 70,
+    "effectivenessVsReduce": 70
+  },
+  "toolInfo": [
+    {
+      "toolType": "SlingshotRock",
+      "tier": 1
+    }
+  ]
+}

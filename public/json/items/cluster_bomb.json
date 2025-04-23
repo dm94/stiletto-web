@@ -1,0 +1,40 @@
+{
+  "name": "Cluster Bomb",
+  "parent": "Slingshot",
+  "category": "Ammo",
+  "trade_price": 84.7,
+  "stackSize": 10,
+  "weight": 30,
+  "wikiVisibility": false,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Obsidian"
+        },
+        {
+          "count": 10,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 25,
+          "name": "Phosphorus"
+        },
+        {
+          "count": 1,
+          "name": "Lava Fuel"
+        },
+        {
+          "count": 10,
+          "name": "Tar"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 75
+    }
+  ],
+  "projectileDamage": {
+    "damage": 20
+  }
+}

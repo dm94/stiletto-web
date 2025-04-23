@@ -1,0 +1,83 @@
+{
+  "name": "Clay",
+  "parent": "Soil Excavator",
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Firebrand",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
+    }
+  ]
+}

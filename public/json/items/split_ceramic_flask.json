@@ -1,0 +1,30 @@
+{
+  "name": "Split Ceramic Flask",
+  "parent": "Ceramic Bottle",
+  "category": "Equipment",
+  "trade_price": 51.6,
+  "stackSize": 100,
+  "weight": 3.4,
+  "experiencieReward": 70,
+  "durability": 160,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 7,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 2,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 4,
+          "name": "Earth Wax"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 2
+    }
+  ]
+}

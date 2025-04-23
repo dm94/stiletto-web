@@ -1,0 +1,143 @@
+{
+  "name": "Scattershot Ammo",
+  "parent": "Scattershot Gun",
+  "category": "Ammo",
+  "trade_price": 5.2,
+  "stackSize": 24,
+  "weight": 0.3,
+  "wikiVisibility": false,
+  "projectileDamage": {
+    "damage": 50,
+    "penetration": 10,
+    "effectivenessVsSoak": 50,
+    "effectivenessVsReduce": 50
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scattershot",
+      "tier": 1
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Cowardly Rupu",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Green Rupu",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Prophet",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Rupu Berserker",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Rupu Forerunner",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Rupu Forerunner (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Harasser (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Hero",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Rupu Priestess",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Rupu Scavenger (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Sentinel (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Skirmisher (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Thug (Easy)",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Warrior",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Tar Dweller",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Yellow Rupu",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    },
+    {
+      "name": "Zharvakko",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18
+    }
+  ]
+}

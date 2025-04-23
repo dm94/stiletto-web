@@ -1,0 +1,33 @@
+{
+  "name": "Obsidian Canister",
+  "parent": "Obsidian Pot",
+  "category": "Containers",
+  "weight": 90,
+  "experiencieReward": 300,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Obsidian"
+        },
+        {
+          "count": 50,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 65,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 20,
+          "name": "Chitin Plate"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 4400
+  }
+}

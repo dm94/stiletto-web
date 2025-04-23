@@ -1,0 +1,32 @@
+{
+  "name": "Large Water Bag",
+  "parent": "Medium Water Bag",
+  "category": "Containers",
+  "experiencieReward": 98,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 6,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 5,
+          "name": "Clay"
+        },
+        {
+          "count": 80,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 2000
+  }
+}
