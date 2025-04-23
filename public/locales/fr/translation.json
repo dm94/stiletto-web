@@ -55,6 +55,7 @@
   "common.add": "Ajouter",
   "common.share": "Partager",
   "common.copy": "Copier",
+  "common.loading": "Loading...",
   "clan.joinClan": "Rejoindre un clan",
   "clan.clanName": "Nom du clan",
   "clan.flagColor": "Couleur du drapeau",
