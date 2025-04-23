@@ -55,6 +55,7 @@
   "common.add": "追加",
   "common.share": "共有",
   "common.copy": "コピー",
+  "common.loading": "Loading...",
   "clan.joinClan": "クランに参加",
   "clan.clanName": "クラン名",
   "clan.flagColor": "旗の色",
