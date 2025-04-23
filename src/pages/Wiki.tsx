@@ -152,14 +152,10 @@ const Wiki = () => {
       const parsed = queryString.parse(location.search);
 
       if (parsed?.s) {
-        if (contentType === "items" && items.length > 0) {
-          searchContent(String(parsed.s), "All");
-        } else if (contentType === "creatures" && creatures.length > 0) {
-          searchContent(String(parsed.s), "All");
-        }
+        searchContent(String(parsed.s), "All");
       }
     }
-  }, [location, items, creatures, contentType, searchContent]);
+  }, [location, searchContent]);
 
   const handleLoadMore = useCallback(() => {
     const nextPage = currentPage + 1;

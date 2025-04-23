@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, useMemo } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import { getCreatures, getCreatureInfo } from "@functions/github";
 import { Navigate, useParams } from "react-router";
@@ -52,21 +52,6 @@ const CreatureWiki = () => {
 
     loadData();
   }, [name]);
-
-  const showDescription = useMemo(
-    () =>
-      creatureInfo?.name && (
-        <div className="w-full md:w-1/2 px-4">
-          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
-            <div className="p-4 bg-gray-900 border-b border-gray-700 text-neutral-300">
-              {t("common.description")}
-            </div>
-            <div className="p-4 text-neutral-400">{creatureInfo.name}</div>
-          </div>
-        </div>
-      ),
-    [creatureInfo?.name, t],
-  );
 
   const loadingCreaturePart = () => (
     <div className="w-full md:w-1/2">
@@ -132,11 +117,16 @@ const CreatureWiki = () => {
                     </div>
                   </li>
                 )}
+                {creatureInfo?.tier && (
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("Experience")}</div>
+                    <div className="text-gray-400">{creatureInfo.tier}</div>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
         </div>
-        {showDescription}
         <Suspense fallback={loadingCreaturePart()}>
           <WikiDescription key="wikidescription" name={creatureName} />
         </Suspense>

@@ -14,6 +14,7 @@ export type CreatureCompleteInfo = {
   name: string;
   category?: string;
   health?: number;
+  tier?: string;
   experiencie?: number;
   drops?: CreatureDrop[];
 };
