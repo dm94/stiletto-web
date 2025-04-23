@@ -232,7 +232,7 @@ const ItemWiki = () => {
                       {t("crafting.costToLearn")}
                     </div>
                     <div className="text-gray-400">
-                      {`${itemInfo?.cost?.count ? itemInfo.cost.count : ""} ${
+                      {`${itemInfo?.cost?.count ?? ""} ${
                         itemInfo?.cost?.name ? t(itemInfo?.cost?.name) : ""
                       }`}
                     </div>
