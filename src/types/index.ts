@@ -3,7 +3,7 @@ import type { ItemRecipe } from "./item";
 export interface CustomItem {
   name: string;
   category?: string;
-  count: number;
+  count?: number;
   crafting?: ItemRecipe[];
   ingredients?: Ingredient[];
   value?: number;

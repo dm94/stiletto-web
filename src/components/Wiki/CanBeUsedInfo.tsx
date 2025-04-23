@@ -43,7 +43,6 @@ const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
         <Ingredient
           ingredient={{
             ...item,
-            count: 1,
           }}
           value={1}
         />
