@@ -55,6 +55,7 @@
   "common.add": "添加",
   "common.share": "分享",
   "common.copy": "复制",
+  "common.loading": "Loading...",
   "clan.joinClan": "加入一个部族。",
   "clan.clanName": "部族名称",
   "clan.flagColor": "标记颜色",

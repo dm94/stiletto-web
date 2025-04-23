@@ -55,6 +55,7 @@
   "common.add": "Добавить",
   "common.share": "Поделиться",
   "common.copy": "Скопировать",
+  "common.loading": "Loading...",
   "clan.joinClan": "Присоединиться к клану",
   "clan.clanName": "Имя клана",
   "clan.flagColor": "Цвет флага",
