@@ -1,0 +1,8 @@
+{
+  "name": "Worm Silk",
+  "category": "Resources",
+  "trade_price": 16.5,
+  "stackSize": 100,
+  "weight": 0.01,
+  "experiencieReward": 22
+}

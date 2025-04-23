@@ -1,0 +1,5 @@
+{
+  "name": "Advanced Equipment",
+  "parent": "Equipment_T2",
+  "onlyDevs": true
+}

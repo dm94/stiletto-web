@@ -1,0 +1,37 @@
+{
+  "name": "Iron Pickaxe",
+  "parent": "CeramicPickaxe",
+  "trade_price": 38.7,
+  "weight": 6,
+  "experiencieReward": 160,
+  "durability": 950,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 28,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Nomad Cloth"
+        }
+      ],
+      "station": "Smithing",
+      "time": 15
+    }
+  ],
+  "weaponInfo": {
+    "damage": 35
+  },
+  "toolInfo": [
+    {
+      "toolType": "Mining",
+      "tier": 20
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "Fire Dart",
+  "parent": "Repeater",
+  "category": "Ammo",
+  "trade_price": 15.6,
+  "stackSize": 20,
+  "weight": 0.2,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 2,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 30,
+          "name": "Phosphorus"
+        }
+      ],
+      "output": 10,
+      "station": "Advanced Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 2,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 30,
+          "name": "Phosphorus"
+        }
+      ],
+      "output": 10,
+      "station": "Artificer Woodworking Station",
+      "time": 4
+    }
+  ],
+  "projectileDamage": {
+    "damage": 50
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 1
+    }
+  ]
+}

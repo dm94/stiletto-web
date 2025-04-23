@@ -1,0 +1,27 @@
+{
+  "name": "Domus Walker Wings Medium (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 310,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 36,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 34,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 4100
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Ironblade Quarterstaff",
+  "category": "Weapons",
+  "trade_price": 1504.8,
+  "stackSize": 100,
+  "weight": 5.3,
+  "experiencieReward": 1521,
+  "durability": 740,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 3,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 6,
+          "name": "Triple Stitch Fabric"
+        }
+      ],
+      "station": "Smithing",
+      "time": 100
+    }
+  ],
+  "weaponInfo": {
+    "weaponLength": 106,
+    "damage": 55,
+    "penetration": 20
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Hardened Hellfire Bolt",
+  "parent": "HellfireBolt",
+  "experiencieReward": 115,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "HellfireBolt"
+        },
+        {
+          "count": 1,
+          "name": "WormOil"
+        },
+        {
+          "count": 3,
+          "name": "Tar"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 5000
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 3
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Hercul Walker Wings Small (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 46,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 18,
+          "name": "Rope"
+        },
+        {
+          "count": 4,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1800
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Wooden Rod",
+  "category": "Ammo",
+  "trade_price": 1.3,
+  "stackSize": 20,
+  "weight": 0.7,
+  "experiencieReward": 12,
+  "wikiVisibility": false,
+  "projectileDamage": {
+    "damage": 80,
+    "penetration": 5,
+    "effectivenessVsSoak": 50,
+    "effectivenessVsReduce": 50
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 1
+    }
+  ]
+}

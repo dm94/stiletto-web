@@ -1,0 +1,17 @@
+{
+  "name": "Flotillian Potions Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Worm Tincture"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

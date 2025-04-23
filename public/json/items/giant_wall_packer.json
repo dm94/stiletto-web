@@ -1,0 +1,28 @@
+{
+  "name": "Giant Wall Packer",
+  "category": "Defenses",
+  "weight": 150,
+  "experiencieReward": 40,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 85,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 10,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 55,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 25000
+  }
+}

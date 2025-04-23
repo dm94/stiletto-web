@@ -1,0 +1,32 @@
+{
+  "name": "Battle Fan",
+  "parent": "Flotillian Walker Weapons",
+  "category": "Weapons",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 35,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 60,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 5,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 5000
+  }
+}

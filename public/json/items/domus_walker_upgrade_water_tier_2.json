@@ -1,0 +1,29 @@
+{
+  "name": "Domus Walker Upgrade - Water - Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 12,
+          "name": "EucalyptusLeaf"
+        },
+        {
+          "count": 8,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 45,
+          "name": "Iron Nails"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 360
+  }
+}

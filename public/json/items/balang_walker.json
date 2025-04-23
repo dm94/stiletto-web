@@ -1,0 +1,46 @@
+{
+  "name": "Balang Walker",
+  "parent": "Dinghy Walker",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 28,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 27,
+          "name": "Rope"
+        },
+        {
+          "count": 95,
+          "name": "Wood"
+        },
+        {
+          "count": 100,
+          "name": "Fiber"
+        },
+        {
+          "count": 2,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 150000
+  },
+  "walkerinfo": {
+    "category": "Small"
+  }
+}

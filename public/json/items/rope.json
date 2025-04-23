@@ -1,0 +1,237 @@
+{
+  "name": "Rope",
+  "parent": "Advanced Fiberworking Station",
+  "category": "Resources",
+  "trade_price": 0.5,
+  "stackSize": 100,
+  "weight": 0.25,
+  "description": "A strong cord used for crafting and construction",
+  "experiencieReward": 4,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Cattail"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 18
+    },
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Cattail"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 18
+    },
+    {
+      "ingredients": [
+        {
+          "count": 800,
+          "name": "Cattail"
+        }
+      ],
+      "output": 100,
+      "station": "Advanced Fiberworking Station",
+      "time": 1700
+    },
+    {
+      "ingredients": [
+        {
+          "count": 800,
+          "name": "Cattail"
+        }
+      ],
+      "output": 100,
+      "station": "Artisan Fiberworking Station",
+      "time": 1700
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Bounty Hunter",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Grave Digger (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Marshland Stalker",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5
+    },
+    {
+      "name": "Matriarch",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Dunestalker (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Firebrand",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Forager (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Harasser (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hazraki (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hermit (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Priestess (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Raider",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Shaman (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Skirmisher (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Zealot (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    }
+  ]
+}

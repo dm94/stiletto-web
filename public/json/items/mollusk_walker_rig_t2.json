@@ -1,0 +1,14 @@
+{
+  "name": "Mollusk Walker Rig T2",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Mollusk Walker Rig T2"
+        }
+      ]
+    }
+  ]
+}

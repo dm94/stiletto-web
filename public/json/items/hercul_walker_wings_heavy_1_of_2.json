@@ -1,0 +1,27 @@
+{
+  "name": "Hercul Walker Wings Heavy (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 78,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 40,
+          "name": "Rope"
+        },
+        {
+          "count": 14,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 4300
+  }
+}

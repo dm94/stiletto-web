@@ -1,0 +1,5 @@
+{
+  "name": "Armors_T1",
+  "parent": "Equipment",
+  "onlyDevs": true
+}

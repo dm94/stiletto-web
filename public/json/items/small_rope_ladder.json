@@ -1,0 +1,27 @@
+{
+  "name": "Small Rope Ladder",
+  "category": "Interactables",
+  "weight": 20,
+  "experiencieReward": 140,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 34,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 40,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 350
+  }
+}

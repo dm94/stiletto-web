@@ -1,0 +1,26 @@
+{
+  "name": "Tallow",
+  "parent": "Purification Station",
+  "category": "Liquids",
+  "trade_price": 3.7,
+  "stackSize": 100,
+  "weight": 0.5,
+  "experiencieReward": 3,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Animal Fat"
+        },
+        {
+          "count": 10,
+          "name": "Phosphorus"
+        }
+      ],
+      "output": 5,
+      "station": "Purification Station",
+      "time": 60
+    }
+  ]
+}

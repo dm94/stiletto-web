@@ -1,0 +1,27 @@
+{
+  "name": "Hercul Walker Wings Medium (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 92,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 8,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 50,
+          "name": "Hide"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 2400
+  }
+}

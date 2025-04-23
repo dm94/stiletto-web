@@ -1,0 +1,11 @@
+{
+  "name": "Force Field",
+  "category": "Armors",
+  "trade_price": 500,
+  "durability": 50,
+  "wikiVisibility": false,
+  "armorInfo": {
+    "absorbing": 100,
+    "reduction": 1000
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Firefly Walker Rig T3",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Firefly Walker Rig T3"
+        }
+      ]
+    }
+  ]
+}

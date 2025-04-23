@@ -1,0 +1,144 @@
+{
+  "name": "Throwstone",
+  "parent": "Equipment",
+  "category": "Weapons",
+  "trade_price": 16.9,
+  "stackSize": 10,
+  "weight": 0.3,
+  "description": "Either a fantastically aerodynamic stone, its form perfected for best throwing experience... Or just a sharp chip of rock that you can throw at someone in a pinch.",
+  "experiencieReward": 1,
+  "projectileDamage": {
+    "damage": 20,
+    "penetration": 25,
+    "effectivenessVsSoak": 50,
+    "effectivenessVsReduce": 50
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scattershot",
+      "tier": 1
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Cowardly Rupu",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Green Rupu",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Prophet",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Rupu Berserker",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Rupu Forerunner",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Rupu Forerunner (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Harasser (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Hero",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Rupu Priestess",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Rupu Scavenger (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Sentinel (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Skirmisher (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Thug (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Warrior",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Tar Dweller",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Yellow Rupu",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    },
+    {
+      "name": "Zharvakko",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3
+    }
+  ]
+}

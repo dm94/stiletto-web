@@ -1,0 +1,52 @@
+{
+  "name": "Camelop Walker",
+  "parent": "Hercul Walker"
+}
+  "category": "Walkers",
+  "weight": 29.44,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 650,
+          "name": "Wood"
+        },
+        {
+          "count": 90,
+          "name": "Fiber"
+        },
+        {
+          "count": 120,
+          "name": "Stone"
+        },
+        {
+          "count": 125,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 70,
+          "name": "Rope"
+        },
+        {
+          "count": 50,
+          "name": "Obsidian"
+        },
+        {
+          "count": 20,
+          "name": "Clay"
+        },
+        {
+          "count": 1,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "BlueprintGeneratedClassCamelopLegsDamageOverride_C'",
+    "hp": 13000
+  },
+  "walkerinfo": {
+    "category": "Large"
+  }
+}

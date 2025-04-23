@@ -42,10 +42,11 @@ export type Cost = {
 };
 
 export type Drop = {
-  location: string;
+  name: string;
   chance?: number;
   minQuantity?: number;
   maxQuantity?: number;
+  tier?: string;
 };
 
 export type WeaponInfo = {
@@ -71,9 +72,8 @@ export type TechItem = {
   unlocks?: string[];
 };
 
-export type Item = {
+export type ItemCompleteInfo = {
   name: string;
-  count: number;
   category?: string;
   crafting?: ItemRecipe[];
   description?: string;
@@ -89,10 +89,16 @@ export type Item = {
   moduleInfo?: ModuleInfo;
   armorInfo?: ArmorInfo;
   weaponInfo?: WeaponInfo;
-  drops?: Drop[];
+  droppedBy?: Drop[];
   cost?: Cost;
   wikiVisibility?: boolean;
   learn?: string[];
+};
+
+export type Item = {
+  name: string;
+  category?: string;
+  crafting?: ItemRecipe[];
 };
 
 export type CraftItem = Item & { count: number };

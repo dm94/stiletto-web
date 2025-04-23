@@ -1,0 +1,36 @@
+{
+  "name": "Advanced Woodworking Station",
+  "parent": "Woodworking Station",
+  "category": "Crafting",
+  "experiencieReward": 149,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 112,
+          "name": "Cattail"
+        },
+        {
+          "count": 25,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        },
+        {
+          "count": 120,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3000
+  }
+}

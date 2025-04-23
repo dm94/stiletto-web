@@ -1,0 +1,35 @@
+{
+  "name": "Toboggan Walker Wings Skirmish (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 24,
+          "name": "Leather"
+        },
+        {
+          "count": 10,
+          "name": "Rope"
+        },
+        {
+          "count": 24,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 8200
+  }
+}

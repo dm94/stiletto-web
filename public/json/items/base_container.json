@@ -1,0 +1,43 @@
+{
+  "name": "Base Container",
+  "category": "Containers",
+  "weight": 146.1,
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 375,
+          "name": "Wood"
+        },
+        {
+          "count": 80,
+          "name": "Stone"
+        },
+        {
+          "count": 185,
+          "name": "Fiber"
+        },
+        {
+          "count": 15,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 20,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 5,
+          "name": "Beeswax"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 1500
+  }
+}

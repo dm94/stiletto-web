@@ -1,0 +1,27 @@
+{
+  "name": "Dinghy Gate",
+  "weight": 30,
+  "experiencieReward": 22,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 10000
+  }
+}

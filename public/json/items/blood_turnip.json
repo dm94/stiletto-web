@@ -1,0 +1,8 @@
+{
+  "name": "Blood Turnip",
+  "category": "Resources",
+  "trade_price": 0.9,
+  "stackSize": 100,
+  "weight": 0.5,
+  "experiencieReward": 16
+}

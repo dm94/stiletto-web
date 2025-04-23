@@ -1,0 +1,101 @@
+{
+  "name": "Throwable Aloe Bomb",
+  "parent": "Aloe Goo Bomb",
+  "category": "Weapons",
+  "trade_price": 16.9,
+  "stackSize": 5,
+  "weight": 0.3,
+  "experiencieReward": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Aloe Gel"
+        },
+        {
+          "count": 6,
+          "name": "Cotton"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        }
+      ],
+      "station": "Curing",
+      "time": 2
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    }
+  ]
+}

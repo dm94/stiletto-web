@@ -1,0 +1,27 @@
+{
+  "name": "Balang Walker Wings Small (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 42,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 15,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1000
+  }
+}

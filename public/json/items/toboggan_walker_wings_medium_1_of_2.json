@@ -1,0 +1,35 @@
+{
+  "name": "Toboggan Walker Wings Medium (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 42,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 25,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 27,
+          "name": "Rope"
+        },
+        {
+          "count": 2,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 47,
+          "name": "Cotton"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 8400
+  }
+}

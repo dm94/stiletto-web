@@ -1,0 +1,36 @@
+{
+  "name": "Soil Excavator",
+  "parent": "Camp Fire",
+  "category": "Crafting",
+  "experiencieReward": 18,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Wood"
+        },
+        {
+          "count": 6,
+          "name": "Rope"
+        },
+        {
+          "count": 3,
+          "name": "Nurr Fang"
+        },
+        {
+          "count": 1,
+          "name": "Terrain: Excavatable"
+        },
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3000
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Wooden Club",
+  "category": "Weapons",
+  "stackSize": 100,
+  "weight": 8.4,
+  "experiencieReward": 22,
+  "durability": 250,
+  "wikiVisibility": false,
+  "weaponInfo": {
+    "weaponLength": 77,
+    "penetration": 10
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Traveller’s Staff",
+  "parent": "Blunt Quarterstaff",
+  "category": "Weapons",
+  "trade_price": 2.6,
+  "stackSize": 100,
+  "weight": 4.1,
+  "experiencieReward": 10,
+  "durability": 320,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 4,
+          "name": "Hide"
+        },
+        {
+          "count": 6,
+          "name": "Rupu Pelt"
+        }
+      ]
+    }
+  ],
+  "weaponInfo": {
+    "weaponLength": 116,
+    "damage": 28,
+    "penetration": 20
+  }
+}

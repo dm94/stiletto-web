@@ -1,0 +1,23 @@
+{
+  "name": "Roofing 2",
+  "category": "Furniture",
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 8,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1800
+  }
+}

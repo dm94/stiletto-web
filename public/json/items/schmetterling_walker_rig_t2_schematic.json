@@ -1,0 +1,17 @@
+{
+  "name": "Schmetterling Walker Rig T2 Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Schmetterling Walker Rig T2"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

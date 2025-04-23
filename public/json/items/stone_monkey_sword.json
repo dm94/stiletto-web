@@ -1,0 +1,13 @@
+{
+  "name": "Stone Monkey Sword",
+  "category": "Weapons",
+  "stackSize": 100,
+  "weight": 1,
+  "durability": 280,
+  "wikiVisibility": false,
+  "weaponInfo": {
+    "weaponLength": 72,
+    "damage": 40,
+    "penetration": 22
+  }
+}

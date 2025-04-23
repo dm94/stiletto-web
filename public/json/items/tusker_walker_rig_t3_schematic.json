@@ -1,0 +1,80 @@
+{
+  "name": "Tusker Walker Rig T3 Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Tusker Walker Rig T3"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
+  ]
+}

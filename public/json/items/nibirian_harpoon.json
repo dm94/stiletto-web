@@ -1,0 +1,20 @@
+{
+  "name": "Nibirian Harpoon",
+  "parent": "Nibiran-tipped Bolt",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Nibiran-tipped Bolt"
+        },
+        {
+          "count": 10,
+          "name": "Rope"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ]
+}

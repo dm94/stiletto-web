@@ -1,0 +1,335 @@
+{
+  "name": "Base Walker Parts Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Buffalo Walker Legs (1 of 2)",
+    "Mollusk Walker Legs (1 of 2)",
+    "Schmetterling Walker Legs (1 of 2)",
+    "Tusker Walker Legs (1 of 2)",
+    "Proxy Walker Legs (1 of 2)",
+    "Dinghy Walker Legs (1 of 2)",
+    "Falco Walker Legs (1 of 2)",
+    "Firefly Walker Legs (1 of 2)",
+    "Domus Walker Legs (1 of 2)",
+    "Panda Walker Legs (1 of 2)",
+    "Camelop Walker Legs (1 of 2)",
+    "Titan Walker Legs (1 of 2)",
+    "Spider Walker Legs (1 of 2)",
+    "Stiletto Walker Legs (1 of 2)",
+    "Cobra Walker Legs (1 of 2)",
+    "Toboggan Walker Legs (1 of 2)",
+    "Hornet Walker Legs (1 of 2)",
+    "Silur Walker Legs (1 of 2)",
+    "Hercul Walker Legs (1 of 2)",
+    "Balang Walker Legs (1 of 2)",
+    "Raptor Sky Walker Legs (1 of 2)",
+    "Buffalo Walker Wings (1 of 2)",
+    "Mollusk Walker Wings (1 of 2)",
+    "Schmetterling Walker Wings (1 of 2)",
+    "Tusker Walker Wings (1 of 2)",
+    "Dinghy Walker Wings (1 of 2)",
+    "Falco Walker Wings (1 of 2)",
+    "Firefly Walker Wings (1 of 2)",
+    "Domus Walker Wings (1 of 2)",
+    "Panda Walker Wings (1 of 2)",
+    "Titan Walker Wings (1 of 2)",
+    "Stiletto Walker Wings (1 of 2)",
+    "Toboggan Walker Wings (1 of 2)",
+    "Hornet Walker Wings (1 of 2)",
+    "Hercul Walker Wings (1 of 2)",
+    "Balang Walker Wings (1 of 2)",
+    "Raptor Sky Walker Wings (1 of 2)"
+  ],
+  "droppedBy": [
+    {
+      "name": "Bounty Hunter",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Cowardly Rupu",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Grave Digger (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Green Rupu",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Marshland Stalker",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Matriarch",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Prophet",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Berserker",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Dunestalker (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Firebrand",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Forager (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Forerunner",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Forerunner (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Harasser (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Harasser (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hazraki (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hermit (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hero",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Priestess",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Priestess (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Raider",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Scavenger (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Sentinel (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Shaman (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Skirmisher (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Skirmisher (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Thug (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Warrior",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Zealot (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Tar Dweller",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Yellow Rupu",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Zharvakko",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    }
+  ]
+}

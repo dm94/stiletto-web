@@ -1,0 +1,156 @@
+{
+  "name": "Cloaked Rupu Fur Armor",
+  "category": "Armors",
+  "trade_price": 6.6,
+  "stackSize": 100,
+  "weight": 3,
+  "durability": 170,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 9,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 4,
+          "name": "Hide"
+        }
+      ]
+    }
+  ],
+  "armorInfo": {
+    "absorbing": 6,
+    "speedReduction": 2
+  },
+  "droppedBy": [
+    {
+      "name": "Cowardly Rupu",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Green Rupu",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Prophet",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Berserker",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Forerunner",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Forerunner (Easy)",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Harasser (Easy)",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Hero",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Priestess",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Scavenger (Easy)",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Sentinel (Easy)",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Skirmisher (Easy)",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Thug (Easy)",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Warrior",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Tar Dweller",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Yellow Rupu",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Zharvakko",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    }
+  ]
+}

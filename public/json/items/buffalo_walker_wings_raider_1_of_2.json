@@ -1,0 +1,27 @@
+{
+  "name": "Buffalo Walker Wings Raider (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 32,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 14,
+          "name": "Tallow"
+        },
+        {
+          "count": 25,
+          "name": "Chitin Plate"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 10200
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Nomad Walker Upgrade - Cargo - Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 14
+  }
+}

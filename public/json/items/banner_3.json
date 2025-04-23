@@ -1,0 +1,23 @@
+{
+  "name": "Banner 3",
+  "category": "Furniture",
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1000
+  }
+}

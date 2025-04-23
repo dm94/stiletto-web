@@ -1,0 +1,19 @@
+{
+  "name": "Flotillian Walker Weapons Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Battle Fan",
+    "GunPodShell_T2",
+    "Sawblade_T2"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "name": "Basic Ammo",
+  "parent": "Basic Crafting",
+  "onlyDevs": true
+}

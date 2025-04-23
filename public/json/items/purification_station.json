@@ -1,0 +1,28 @@
+{
+  "name": "Purification Station",
+  "parent": "Clay Pot",
+  "category": "Crafting",
+  "experiencieReward": 125,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 75,
+          "name": "Wood"
+        },
+        {
+          "count": 2,
+          "name": "Gelatinous Goo"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3000
+  }
+}

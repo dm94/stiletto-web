@@ -1,0 +1,17 @@
+{
+  "name": "Domus Walker Rig T3 Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Domus Walker Rig T3"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

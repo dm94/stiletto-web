@@ -1,0 +1,73 @@
+{
+  "name": "Armor Shipment",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "T3_BrittleBoneTorso"
+        },
+        {
+          "count": 20,
+          "name": "T2_ForesterTorso"
+        },
+        {
+          "count": 20,
+          "name": "T3_BrittleBoneGloves"
+        },
+        {
+          "count": 20,
+          "name": "T2_ForesterGloves"
+        },
+        {
+          "count": 20,
+          "name": "T3_BrittleBoneBoots"
+        },
+        {
+          "count": 20,
+          "name": "T2_ForesterBoots"
+        },
+        {
+          "count": 20,
+          "name": "T1_FiberHeadwrap"
+        }
+      ],
+      "station": "PackageCrafting",
+      "time": 60
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "T2_BaskwoodTorso"
+        },
+        {
+          "count": 10,
+          "name": "T2_BaskwoodGloves"
+        },
+        {
+          "count": 10,
+          "name": "T2_BaskwoodBoots"
+        },
+        {
+          "count": 10,
+          "name": "T2_TripleStitchBoots"
+        },
+        {
+          "count": 10,
+          "name": "T2_TripleStitchGloves"
+        },
+        {
+          "count": 10,
+          "name": "T2_TripleStitchTorso"
+        },
+        {
+          "count": 10,
+          "name": "T1_FiberHeadwrap"
+        }
+      ],
+      "station": "PackageCrafting",
+      "time": 60
+    }
+  ]
+}

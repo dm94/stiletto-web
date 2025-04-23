@@ -1,0 +1,29 @@
+{
+  "name": "Lifeforce Module",
+  "category": "Resources",
+  "weight": 0.24,
+  "experiencieReward": 65,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Cam"
+        },
+        {
+          "count": 1,
+          "name": "Cg"
+        },
+        {
+          "count": 1,
+          "name": "Bearing"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "name": "Advanced Constructions Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Trip Wire Trap",
+    "Large Chest",
+    "ObsidianContainerLarge",
+    "Obsidian Pot",
+    "Large Water Bag",
+    "Crane",
+    "Exoskeleton",
+    "ChestBaseMaintenance_T3",
+    "WallGiant",
+    "Giant Wall Gate",
+    "Giant Wall Packer",
+    "MountableNurr",
+    "Bed",
+    "Barrier Base",
+    "Barrier Gate",
+    "Barrier Plank",
+    "Water Condenser"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium)",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
+  ]
+}

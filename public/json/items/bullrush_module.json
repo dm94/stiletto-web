@@ -1,0 +1,31 @@
+{
+  "name": "Bullrush Module",
+  "category": "Resources",
+  "weight": 0.24,
+  "experiencieReward": 65,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Spline"
+        },
+        {
+          "count": 1,
+          "name": "Level"
+        },
+        {
+          "count": 1,
+          "name": "Gasket"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 4,
+    "maxIncrease": 80
+  }
+}

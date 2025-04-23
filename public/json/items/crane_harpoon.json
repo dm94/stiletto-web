@@ -1,0 +1,10 @@
+{
+  "name": "Crane Harpoon",
+  "category": "Ammo",
+  "trade_price": 1,
+  "stackSize": 20,
+  "weight": 0.68,
+  "experiencieReward": 15,
+  "wikiVisibility": false,
+  "projectileDamage": {}
+}

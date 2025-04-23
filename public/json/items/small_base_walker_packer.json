@@ -1,0 +1,32 @@
+{
+  "name": "Small Base Walker Packer",
+  "parent": "Sand Structures",
+  "category": "Containers",
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 370,
+          "name": "Wood"
+        },
+        {
+          "count": 27,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 25,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 8000
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Panda Walker Wings Heavy (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 91,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 32,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 16,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 25,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 6400
+  }
+}

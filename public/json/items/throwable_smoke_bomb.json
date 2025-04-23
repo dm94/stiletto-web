@@ -1,0 +1,33 @@
+{
+  "name": "Throwable Smoke Bomb",
+  "parent": "Chalk Bomb",
+  "category": "Weapons",
+  "trade_price": 16.9,
+  "stackSize": 5,
+  "weight": 0.3,
+  "experiencieReward": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Tar"
+        },
+        {
+          "count": 3,
+          "name": "Cotton"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        }
+      ],
+      "station": "Curing",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "damage": 20,
+    "penetration": 50
+  }
+}

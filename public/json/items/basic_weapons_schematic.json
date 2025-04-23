@@ -1,0 +1,138 @@
+{
+  "name": "Basic Weapons Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Beat Stick",
+    "Blunt Quarterstaff",
+    "Light Javelin",
+    "Stone Axe",
+    "Jaggertooth Club",
+    "Traveller's Quarterstaff",
+    "Jaggertooth Maul",
+    "Rawbone Sawsword",
+    "Jaggertooth Swordclub"
+  ],
+  "droppedBy": [
+    {
+      "name": "Cowardly Rupu",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Green Rupu",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Prophet",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Berserker",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Forerunner",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Forerunner (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Harasser (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Hero",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Oracle",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Overseer",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Priestess",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Scavenger (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Sentinel (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Skirmisher (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Thug (Easy)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Warrior",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Tar Dweller",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Yellow Rupu",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Zharvakko",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    }
+  ]
+}

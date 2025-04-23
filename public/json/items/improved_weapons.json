@@ -1,0 +1,5 @@
+{
+  "name": "Improved Weapons",
+  "parent": "Equipment_T2",
+  "onlyDevs": true
+}

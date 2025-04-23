@@ -1,0 +1,28 @@
+{
+  "name": "Lamp Single Hanging",
+  "category": "Furniture",
+  "weight": 1,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 3,
+          "name": "Stone"
+        },
+        {
+          "count": 12,
+          "name": "Animal Fat"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 150
+  }
+}

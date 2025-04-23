@@ -1,0 +1,33 @@
+{
+  "name": "Automaton",
+  "parent": "Improved Walker Weapons",
+  "category": "Walker Tools",
+  "description": "A remote-controlled mechanical tool that can handle mounted weapons.",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Rope"
+        },
+        {
+          "count": 20,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 100
+  }
+}

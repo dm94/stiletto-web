@@ -1,0 +1,28 @@
+{
+  "name": "Barrier Plank",
+  "parent": "Barrier Base",
+  "category": "Defenses",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 250,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 100,
+          "name": "Stone"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 12000
+  }
+}

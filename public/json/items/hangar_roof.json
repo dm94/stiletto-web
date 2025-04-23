@@ -1,0 +1,22 @@
+{
+  "name": "Hangar Roof",
+  "category": "Walker Hangar",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Wood"
+        },
+        {
+          "count": 12,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 40000
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Meteor Core",
+  "category": "Resources",
+  "trade_price": 600,
+  "stackSize": 100,
+  "weight": 0.3,
+  "experiencieReward": 50
+}

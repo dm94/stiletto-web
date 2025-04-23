@@ -1,0 +1,17 @@
+{
+  "name": "Titan Walker Rig T3 Schematic",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Titan Walker Rig T3"
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

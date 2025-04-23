@@ -1,0 +1,31 @@
+{
+  "name": "Tusker Walker Legs Heavy (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 120,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 150,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 44,
+          "name": "Tar"
+        },
+        {
+          "count": 30,
+          "name": "Worm Scale"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 7488
+  }
+}

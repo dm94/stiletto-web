@@ -1,0 +1,5 @@
+{
+  "name": "Basic Potions",
+  "parent": "Vitamins",
+  "onlyDevs": true
+}

@@ -1,0 +1,35 @@
+{
+  "name": "Mollusk Walker Wings Skirmish (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 7,
+          "name": "Rope"
+        },
+        {
+          "count": 1,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 5,
+          "name": "Hide"
+        },
+        {
+          "count": 1,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 7400
+  }
+}

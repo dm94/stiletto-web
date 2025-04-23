@@ -1,0 +1,37 @@
+{
+  "name": "Flotillian Stomping Station",
+  "parent": "StompingStation_T2",
+  "category": "Crafting",
+  "weight": 4.83,
+  "experiencieReward": 125,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 120,
+          "name": "Lightwood"
+        },
+        {
+          "count": 100,
+          "name": "Stone"
+        },
+        {
+          "count": 35,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 5,
+          "name": "Iron Ore"
+        },
+        {
+          "count": 30,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3000
+  }
+}

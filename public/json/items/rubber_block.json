@@ -1,0 +1,35 @@
+{
+  "name": "Rubber Block",
+  "parent": "Curing Station",
+  "category": "Resources",
+  "trade_price": 1.1,
+  "stackSize": 100,
+  "weight": 0.34,
+  "experiencieReward": 3,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Tree Sap"
+        },
+        {
+          "count": 20,
+          "name": "Sulfur"
+        }
+      ],
+      "output": 5,
+      "station": "Curing",
+      "time": 15
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Rupu Firebrand",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    }
+  ]
+}

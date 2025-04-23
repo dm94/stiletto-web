@@ -1,0 +1,22 @@
+{
+  "name": "Light Wood Scaffolding",
+  "category": "Light Wood Structures",
+  "experiencieReward": 56,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 45,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 75
+  }
+}

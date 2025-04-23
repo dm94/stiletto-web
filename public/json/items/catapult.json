@@ -1,0 +1,41 @@
+{
+  "name": "Catapult",
+  "parent": "Advanced Walker Weapons",
+  "category": "Weapons",
+  "description": "Launches boulders and bombs extremely far distances. Effective against fortified structures.",
+  "experiencieReward": 188,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 140,
+          "name": "Wood"
+        },
+        {
+          "count": 60,
+          "name": "Stone"
+        },
+        {
+          "count": 35,
+          "name": "Rope"
+        },
+        {
+          "count": 35,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 20,
+          "name": "Ceramic Shard"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 7000
+  }
+}

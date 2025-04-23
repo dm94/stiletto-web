@@ -1,0 +1,27 @@
+{
+  "name": "Domus Walker Wings Large (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 112,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 22,
+          "name": "Iron Ingot"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3750
+  }
+}

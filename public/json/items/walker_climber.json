@@ -1,0 +1,28 @@
+{
+  "name": "Walker Climber",
+  "parent": "Construction",
+  "category": "Walker Tools",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 35,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1000
+  }
+}

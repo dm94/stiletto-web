@@ -1,0 +1,31 @@
+{
+  "name": "Tusker Walker Wings Heavy (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 186,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 14,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 18,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 20,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 5000
+  }
+}

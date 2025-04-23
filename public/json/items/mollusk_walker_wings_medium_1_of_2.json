@@ -1,0 +1,35 @@
+{
+  "name": "Mollusk Walker Wings Medium (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Rope"
+        },
+        {
+          "count": 10,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 2,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 25,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 7400
+  }
+}

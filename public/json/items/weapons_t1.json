@@ -1,0 +1,5 @@
+{
+  "name": "Weapons_T1",
+  "parent": "Basic Equipment",
+  "onlyDevs": true
+}

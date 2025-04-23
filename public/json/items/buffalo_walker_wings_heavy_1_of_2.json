@@ -1,0 +1,30 @@
+{
+  "name": "Buffalo Walker Wings Heavy (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 18,
+          "name": "Rope"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 45,
+          "name": "Leather"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 11500
+  }
+}

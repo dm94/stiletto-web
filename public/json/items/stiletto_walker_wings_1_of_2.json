@@ -1,0 +1,39 @@
+{
+  "name": "Stiletto Walker Wings (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood"
+        },
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 3,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 6,
+          "name": "Hide"
+        },
+        {
+          "count": 7,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 6000
+  }
+}

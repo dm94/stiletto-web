@@ -1,0 +1,31 @@
+{
+  "name": "Silur Walker Legs Armored (1 of 2)",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1470,
+          "name": "Wood"
+        },
+        {
+          "count": 183,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 102,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 33,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 25000
+  }
+}

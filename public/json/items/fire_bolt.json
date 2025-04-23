@@ -1,0 +1,64 @@
+{
+  "name": "Fire Bolt",
+  "parent": "Ballista",
+  "category": "Ammo",
+  "trade_price": 15.6,
+  "stackSize": 20,
+  "weight": 1,
+  "experiencieReward": 75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 8,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 60,
+          "name": "Phosphorus"
+        }
+      ],
+      "station": "Advanced Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 8,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 60,
+          "name": "Phosphorus"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 3
+    }
+  ],
+  "projectileDamage": {
+    "damage": 2500
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 1
+    }
+  ]
+}

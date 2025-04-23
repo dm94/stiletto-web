@@ -1,0 +1,29 @@
+{
+  "name": "Ceramic Repair Hammer",
+  "parent": "Bone Repair Hammer",
+  "durability": 1000,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 14,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 6,
+          "name": "Rope"
+        },
+        {
+          "count": 24,
+          "name": "Cotton"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ]
+}

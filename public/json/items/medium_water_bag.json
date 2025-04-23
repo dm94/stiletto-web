@@ -1,0 +1,32 @@
+{
+  "name": "Medium Water Bag",
+  "parent": "Small Water Bag",
+  "category": "Containers",
+  "experiencieReward": 65,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 90,
+          "name": "Fiber"
+        },
+        {
+          "count": 2,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 15,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1500
+  }
+}

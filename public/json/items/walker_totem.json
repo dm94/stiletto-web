@@ -1,0 +1,23 @@
+{
+  "name": "Walker Totem",
+  "category": "Furniture",
+  "weight": 10,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 60,
+          "name": "Wood"
+        },
+        {
+          "count": 35,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 150
+  }
+}

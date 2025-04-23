@@ -1,0 +1,27 @@
+{
+  "name": "Trip Wire Trap",
+  "parent": "Advanced Constructions",
+  "category": "Defenses",
+  "experiencieReward": 97,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Lava"
+        },
+        {
+          "count": 4,
+          "name": "Rope"
+        },
+        {
+          "count": 6,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 10
+  }
+}

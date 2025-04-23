@@ -1,0 +1,23 @@
+{
+  "name": "Meat Rack",
+  "category": "Furniture",
+  "weight": 5,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Pelt"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 50
+  }
+}

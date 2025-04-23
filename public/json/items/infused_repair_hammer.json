@@ -1,0 +1,24 @@
+{
+  "name": "Infused Repair Hammer",
+  "durability": 2000,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 55,
+          "name": "Stone"
+        },
+        {
+          "count": 3,
+          "name": "Nibiran Ingot"
+        }
+      ],
+      "station": "Smithing",
+      "time": 60
+    }
+  ]
+}
