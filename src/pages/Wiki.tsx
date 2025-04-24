@@ -170,8 +170,17 @@ const Wiki = () => {
         setContentType(parsed.type);
       }
 
+      // Read the category parameter from URL
+      if (parsed?.category && typeof parsed.category === "string") {
+        setCategoryFilter(parsed.category);
+      }
+
       if (parsed?.s) {
-        searchContent(String(parsed.s), "All");
+        // Use the category from URL if available, or "All" if not
+        const categoryToUse = parsed?.category
+          ? String(parsed.category)
+          : "All";
+        searchContent(String(parsed.s), categoryToUse);
       }
     }
   }, [location, searchContent]);
@@ -211,8 +220,12 @@ const Wiki = () => {
       if (searchText.trim()) {
         searchParams.set("s", searchText);
       }
-      // Preservar el parámetro 'type' en la URL
+      // Preserve the 'type' parameter in the URL
       searchParams.set("type", contentType);
+      // Add the 'category' parameter to the URL if it's not "All"
+      if (newCategory !== "All") {
+        searchParams.set("category", newCategory);
+      }
       navigate(`/wiki?${searchParams.toString()}`);
     },
     [searchText, searchContent, navigate, contentType],
@@ -227,8 +240,12 @@ const Wiki = () => {
         if (searchText.trim()) {
           searchParams.set("s", searchText);
         }
-        // Preservar el parámetro 'type' en la URL
+        // Preserve the 'type' parameter in the URL
         searchParams.set("type", contentType);
+        // Add the 'category' parameter to the URL if it's not "All"
+        if (categoryFilter !== "All") {
+          searchParams.set("category", categoryFilter);
+        }
         navigate(`/wiki?${searchParams.toString()}`);
       }
     },
@@ -242,8 +259,12 @@ const Wiki = () => {
     if (searchText.trim()) {
       searchParams.set("s", searchText);
     }
-    // Preservar el parámetro 'type' en la URL
+    // Preserve the 'type' parameter in the URL
     searchParams.set("type", contentType);
+    // Add the 'category' parameter to the URL if it's not "All"
+    if (categoryFilter !== "All") {
+      searchParams.set("category", categoryFilter);
+    }
     navigate(`/wiki?${searchParams.toString()}`);
   }, [searchContent, searchText, categoryFilter, navigate, contentType]);
 
@@ -254,9 +275,10 @@ const Wiki = () => {
       setCategoryFilter("All");
       setCurrentPage(1);
 
-      // Añadir el parámetro 'type' a la URL
+      // Add the 'type' parameter to the URL
       const searchParams = new URLSearchParams();
       searchParams.set("type", type);
+      // We don't include the 'category' parameter since it resets to "All"
       navigate(`/wiki?${searchParams.toString()}`);
     },
     [navigate],
