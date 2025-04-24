@@ -163,6 +163,13 @@ const Wiki = () => {
     if (location?.search) {
       const parsed = queryString.parse(location.search);
 
+      if (
+        parsed?.type &&
+        (parsed.type === "items" || parsed.type === "creatures")
+      ) {
+        setContentType(parsed.type);
+      }
+
       if (parsed?.s) {
         searchContent(String(parsed.s), "All");
       }
@@ -204,9 +211,11 @@ const Wiki = () => {
       if (searchText.trim()) {
         searchParams.set("s", searchText);
       }
+      // Preservar el parámetro 'type' en la URL
+      searchParams.set("type", contentType);
       navigate(`/wiki?${searchParams.toString()}`);
     },
-    [searchText, searchContent, navigate],
+    [searchText, searchContent, navigate, contentType],
   );
 
   const handleKeyPress = useCallback(
@@ -218,10 +227,12 @@ const Wiki = () => {
         if (searchText.trim()) {
           searchParams.set("s", searchText);
         }
+        // Preservar el parámetro 'type' en la URL
+        searchParams.set("type", contentType);
         navigate(`/wiki?${searchParams.toString()}`);
       }
     },
-    [searchContent, searchText, categoryFilter, navigate],
+    [searchContent, searchText, categoryFilter, navigate, contentType],
   );
 
   const handleSearchClick = useCallback(() => {
@@ -231,8 +242,10 @@ const Wiki = () => {
     if (searchText.trim()) {
       searchParams.set("s", searchText);
     }
+    // Preservar el parámetro 'type' en la URL
+    searchParams.set("type", contentType);
     navigate(`/wiki?${searchParams.toString()}`);
-  }, [searchContent, searchText, categoryFilter, navigate]);
+  }, [searchContent, searchText, categoryFilter, navigate, contentType]);
 
   const handleContentTypeChange = useCallback(
     (type: "items" | "creatures") => {
@@ -241,7 +254,10 @@ const Wiki = () => {
       setCategoryFilter("All");
       setCurrentPage(1);
 
-      navigate("/wiki");
+      // Añadir el parámetro 'type' a la URL
+      const searchParams = new URLSearchParams();
+      searchParams.set("type", type);
+      navigate(`/wiki?${searchParams.toString()}`);
     },
     [navigate],
   );
