@@ -7,7 +7,7 @@ import { getItems, getCreatures } from "@functions/github";
 import { sendEvent } from "@functions/page-tracking";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
-import { useLocation } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import type { Item } from "@ctypes/item";
 import type { Creature } from "@ctypes/creature";
 
@@ -19,6 +19,7 @@ import Pagination from "@components/Wiki/Pagination";
 
 const Wiki = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [contentType, setContentType] = useState<"items" | "creatures">(
     "items",
@@ -191,29 +192,52 @@ const Wiki = () => {
       const newCategory = e.target.value;
       setCategoryFilter(newCategory);
       searchContent(searchText, newCategory);
+
+      const searchParams = new URLSearchParams();
+      if (searchText.trim()) {
+        searchParams.set("s", searchText);
+      }
+      navigate(`/wiki?${searchParams.toString()}`);
     },
-    [searchText, searchContent],
+    [searchText, searchContent, navigate],
   );
 
   const handleKeyPress = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "Enter") {
         searchContent(searchText, categoryFilter);
+
+        const searchParams = new URLSearchParams();
+        if (searchText.trim()) {
+          searchParams.set("s", searchText);
+        }
+        navigate(`/wiki?${searchParams.toString()}`);
       }
     },
-    [searchContent, searchText, categoryFilter],
+    [searchContent, searchText, categoryFilter, navigate],
   );
 
   const handleSearchClick = useCallback(() => {
     searchContent(searchText, categoryFilter);
-  }, [searchContent, searchText, categoryFilter]);
 
-  const handleContentTypeChange = useCallback((type: "items" | "creatures") => {
-    setContentType(type);
-    setSearchText("");
-    setCategoryFilter("All");
-    setCurrentPage(1);
-  }, []);
+    const searchParams = new URLSearchParams();
+    if (searchText.trim()) {
+      searchParams.set("s", searchText);
+    }
+    navigate(`/wiki?${searchParams.toString()}`);
+  }, [searchContent, searchText, categoryFilter, navigate]);
+
+  const handleContentTypeChange = useCallback(
+    (type: "items" | "creatures") => {
+      setContentType(type);
+      setSearchText("");
+      setCategoryFilter("All");
+      setCurrentPage(1);
+
+      navigate("/wiki");
+    },
+    [navigate],
+  );
 
   return (
     <div className="container mx-auto px-4 py-8">
