@@ -204,6 +204,7 @@ const ItemWiki = () => {
   }
 
   const itemName = item?.name ?? itemInfo?.name;
+  const category = itemInfo?.category ?? item?.category;
   const parentUrl = itemInfo?.parent && getItemUrl(itemInfo.parent);
   const craftUrl = getItemCraftUrl(name ?? itemName);
 
@@ -241,11 +242,11 @@ const ItemWiki = () => {
                     </div>
                   </li>
                 )}
-                {itemInfo?.category && (
+                {category && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">{t("common.category")}</div>
                     <div className="text-gray-400">
-                      {t(itemInfo.category, { ns: "items" })}
+                      {t(category, { ns: "items" })}
                     </div>
                   </li>
                 )}
