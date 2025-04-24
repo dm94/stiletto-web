@@ -44,6 +44,44 @@ const Wiki = () => {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const ITEMS_PER_PAGE = 12;
 
+  // Extract categories from data items
+  const extractCategories = <T extends { category?: string }>(
+    data: T[],
+  ): string[] => {
+    const allCategories: string[] = [];
+
+    for (const item of data) {
+      if (item.category && !allCategories.includes(item.category)) {
+        allCategories.push(item.category);
+      }
+    }
+
+    return allCategories.sort((a, b) => a.localeCompare(b));
+  };
+
+  // Update state with fetched items data
+  const processItemsData = (fetchedItems: Item[]) => {
+    const allCategories = extractCategories(fetchedItems);
+
+    setItems(fetchedItems);
+    setCategories(allCategories);
+    setFilteredItems(fetchedItems);
+    setDisplayedItems(fetchedItems.slice(0, ITEMS_PER_PAGE));
+    setHasMore(fetchedItems.length > ITEMS_PER_PAGE);
+  };
+
+  // Update state with fetched creatures data
+  const processCreaturesData = (fetchedCreatures: Creature[]) => {
+    const allCategories = extractCategories(fetchedCreatures);
+
+    setCreatures(fetchedCreatures);
+    setCategories(allCategories);
+    setFilteredCreatures(fetchedCreatures);
+    setDisplayedCreatures(fetchedCreatures.slice(0, ITEMS_PER_PAGE));
+    setHasMore(fetchedCreatures.length > ITEMS_PER_PAGE);
+  };
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const loadData = async () => {
       setIsLoading(true);
@@ -51,43 +89,12 @@ const Wiki = () => {
         if (contentType === "items") {
           const fetchedItems = await getItems();
           if (fetchedItems != null) {
-            const allCategories: string[] = [];
-
-            for (const item of fetchedItems) {
-              if (item.category && !allCategories.includes(item.category)) {
-                allCategories.push(item.category);
-              }
-            }
-
-            allCategories.sort((a, b) => a.localeCompare(b));
-
-            setItems(fetchedItems);
-            setCategories(allCategories);
-            setFilteredItems(fetchedItems);
-            setDisplayedItems(fetchedItems.slice(0, ITEMS_PER_PAGE));
-            setHasMore(fetchedItems.length > ITEMS_PER_PAGE);
+            processItemsData(fetchedItems);
           }
         } else {
           const fetchedCreatures = await getCreatures();
           if (fetchedCreatures != null) {
-            const allCategories: string[] = [];
-
-            for (const creature of fetchedCreatures) {
-              if (
-                creature?.category &&
-                !allCategories.includes(creature.category)
-              ) {
-                allCategories.push(creature.category);
-              }
-            }
-
-            allCategories.sort((a, b) => a.localeCompare(b));
-
-            setCreatures(fetchedCreatures);
-            setCategories(allCategories);
-            setFilteredCreatures(fetchedCreatures);
-            setDisplayedCreatures(fetchedCreatures.slice(0, ITEMS_PER_PAGE));
-            setHasMore(fetchedCreatures.length > ITEMS_PER_PAGE);
+            processCreaturesData(fetchedCreatures);
           }
         }
       } catch (error) {
