@@ -36,9 +36,9 @@ const WikiContent = ({
     }
 
     if (contentType === "items" && displayedItems.length > 0) {
-      return displayedItems.map((item) => (
+      return displayedItems.map((item, index) => (
         <div
-          key={`wiki-${item.name}`}
+          key={`wiki-${item.name}-${index}`}
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
           data-cy="wiki-item"
         >
@@ -52,9 +52,9 @@ const WikiContent = ({
     }
 
     if (contentType === "creatures" && displayedCreatures.length > 0) {
-      return displayedCreatures.map((creature) => (
+      return displayedCreatures.map((creature, index) => (
         <div
-          key={`creature-${creature.name}`}
+          key={`creature-${creature.name}-${index}`}
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
           data-cy="wiki-creature"
         >
