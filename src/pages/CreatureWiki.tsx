@@ -8,7 +8,7 @@ import Comments from "@components/Wiki/Comments";
 import { getItemDecodedName, getCreatureUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
-import DropsInfo from "@components/Wiki/DropsInfo";
+import CreatureDropsInfo from "@components/Wiki/CreatureDropsInfo";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -136,7 +136,7 @@ const CreatureWiki = () => {
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
           {creatureInfo?.drops && (
-            <DropsInfo key="dropInfo" drops={creatureInfo?.drops} />
+            <CreatureDropsInfo key="dropInfo" drops={creatureInfo?.drops} />
           )}
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
