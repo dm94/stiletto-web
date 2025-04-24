@@ -1,5 +1,6 @@
 {
   "name": "Clan Flag",
+  "type": "ClanFlag_C",
   "category": "Furniture",
   "weight": 1,
   "experiencieReward": 6,

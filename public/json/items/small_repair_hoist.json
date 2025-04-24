@@ -1,6 +1,7 @@
 {
   "name": "Small Repair Hoist",
   "parent": "Medium Wood Walls",
+  "type": "SmallRepairHoist_C",
   "category": "Walker Tools",
   "crafting": [
     {

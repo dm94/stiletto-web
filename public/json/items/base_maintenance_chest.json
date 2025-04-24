@@ -1,8 +1,8 @@
 {
   "name": "Base Maintenance Chest",
   "parent": "Maintenance Box",
+  "type": "ChestBaseMaintenance_T2_C",
   "category": "Containers",
-  "weight": 5,
   "experiencieReward": 32,
   "crafting": [
     {

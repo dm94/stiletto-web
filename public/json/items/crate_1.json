@@ -1,5 +1,6 @@
 {
   "name": "Crate 1",
+  "type": "Throne_Crates_01_C",
   "category": "Furniture",
   "weight": 20,
   "crafting": [

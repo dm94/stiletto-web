@@ -1,6 +1,7 @@
 {
   "name": "Barrier Base",
   "parent": "Advanced Constructions",
+  "type": "WalkerBarrierBase_C",
   "category": "Defenses",
   "experiencieReward": 34,
   "crafting": [

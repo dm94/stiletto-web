@@ -1,6 +1,7 @@
 {
   "name": "Insect Bomb",
   "parent": "Sulfur Bomb",
+  "type": "InsectBomb_C",
   "category": "Ammo",
   "trade_price": 24.2,
   "stackSize": 10,

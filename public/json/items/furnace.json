@@ -1,6 +1,7 @@
 {
   "name": "Furnace",
   "parent": "Clay",
+  "type": "Furnace_C",
   "category": "Crafting",
   "description": "Advanced crafting station smelts raw ore into refined metal.",
   "experiencieReward": 36,

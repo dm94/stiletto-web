@@ -1,46 +1,7 @@
 {
   "name": "Baskwood Boots",
-  "category": "Armors",
-  "trade_price": 19.8,
-  "stackSize": 100,
-  "weight": 4.3,
-  "experiencieReward": 75,
-  "durability": 200,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 10,
-          "name": "Tree Sap"
-        },
-        {
-          "count": 2,
-          "name": "Leather"
-        }
-      ],
-      "station": "Advanced Fiberworking Station",
-      "time": 3
-    },
-    {
-      "ingredients": [
-        {
-          "count": 10,
-          "name": "Tree Sap"
-        },
-        {
-          "count": 2,
-          "name": "Leather"
-        }
-      ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
-    }
-  ],
-  "armorInfo": {
-    "absorbing": 10,
-    "reduction": 1,
-    "speedReduction": 4
-  },
+  "parent": "BaskwoodTorso",
+  "type": "BaskwoodBoots_C",
   "droppedBy": [
     {
       "name": "Bounty Hunter",
@@ -147,7 +108,7 @@
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T2)",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,

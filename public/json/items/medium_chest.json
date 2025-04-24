@@ -1,6 +1,7 @@
 {
   "name": "Medium Chest",
   "parent": "Small Chest",
+  "type": "ChestMedium_C",
   "category": "Containers",
   "experiencieReward": 32,
   "crafting": [

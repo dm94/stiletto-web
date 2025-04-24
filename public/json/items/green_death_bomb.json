@@ -1,6 +1,7 @@
 {
   "name": "Green Death Bomb",
   "parent": "Sulfur Bomb",
+  "type": "GasBomb_C",
   "category": "Ammo",
   "trade_price": 36,
   "stackSize": 10,

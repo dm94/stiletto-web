@@ -1,5 +1,6 @@
 {
   "name": "Base Container",
+  "type": "BaseContainer_C",
   "category": "Containers",
   "weight": 146.1,
   "experiencieReward": 32,

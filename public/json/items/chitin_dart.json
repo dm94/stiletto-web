@@ -1,5 +1,6 @@
 {
   "name": "Chitin Dart",
+  "type": "ChitinDart_C",
   "wikiVisibility": false,
   "projectileDamage": {
     "damage": 17

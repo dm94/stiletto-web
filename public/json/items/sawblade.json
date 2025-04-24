@@ -1,36 +1,13 @@
 {
   "name": "Sawblade",
   "parent": "Tool Pod",
+  "type": "Sawblade_C",
   "category": "Walker Tools",
-  "experiencieReward": 366,
-  "crafting": [
+  "weight": 60,
+  "toolInfo": [
     {
-      "ingredients": [
-        {
-          "count": 12,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 26,
-          "name": "Bone Splinter"
-        },
-        {
-          "count": 20,
-          "name": "Rope"
-        },
-        {
-          "count": 2,
-          "name": "Wooden Gear"
-        },
-        {
-          "count": 4,
-          "name": "Wooden Slab"
-        },
-        {
-          "count": 40,
-          "name": "Redwood Wood"
-        }
-      ]
+      "toolType": "Sawblade",
+      "tier": 10
     }
   ]
 }

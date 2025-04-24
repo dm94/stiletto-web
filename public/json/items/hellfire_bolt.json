@@ -1,6 +1,7 @@
 {
   "name": "Hellfire Bolt",
   "parent": "FireBolt",
+  "type": "HellfireBolt_C",
   "trade_price": 175.3,
   "crafting": [
     {

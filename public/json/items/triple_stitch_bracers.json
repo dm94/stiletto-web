@@ -1,5 +1,6 @@
 {
   "name": "Triple Stitch Bracers",
+  "type": "T2_TripleStitchGloves_C",
   "category": "Armors",
   "trade_price": 16.8,
   "stackSize": 100,
@@ -145,7 +146,7 @@
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T2)",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,

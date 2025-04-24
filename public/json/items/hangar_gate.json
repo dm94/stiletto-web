@@ -1,5 +1,6 @@
 {
   "name": "Hangar Gate",
+  "type": "HangarGate_C",
   "category": "Walker Hangar",
   "crafting": [
     {

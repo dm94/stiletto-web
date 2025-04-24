@@ -1,5 +1,6 @@
 {
   "name": "Advanced Windmill",
+  "type": "Windmill_Tier2_C",
   "category": "Crafting",
   "weight": 10,
   "experiencieReward": 34,

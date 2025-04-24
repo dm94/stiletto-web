@@ -1,5 +1,6 @@
 {
   "name": "Chitin Harpoon",
+  "type": "ChitinHarpoon_C",
   "trade_price": 7.6,
   "weight": 0.4,
   "experiencieReward": 10,

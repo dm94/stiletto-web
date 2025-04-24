@@ -1,6 +1,7 @@
 {
   "name": "Woodworking Station",
   "parent": "Crafting",
+  "type": "WoodworkingStation_C",
   "category": "Crafting",
   "experiencieReward": 92,
   "crafting": [

@@ -1,6 +1,7 @@
 {
   "name": "Advanced Fiberworking Station",
   "parent": "Fiberworking Station",
+  "type": "FiberworkingStation_T2_C",
   "category": "Crafting",
   "experiencieReward": 235,
   "crafting": [

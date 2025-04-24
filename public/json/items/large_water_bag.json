@@ -1,6 +1,7 @@
 {
   "name": "Large Water Bag",
   "parent": "Medium Water Bag",
+  "type": "WaterBagLarge_C",
   "category": "Containers",
   "experiencieReward": 98,
   "crafting": [

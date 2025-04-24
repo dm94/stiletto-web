@@ -1,12 +1,36 @@
 {
   "name": "Throwable Insect Bomb",
   "parent": "Insect Bomb",
+  "type": "ThrowableInsectBomb_C",
   "category": "Weapons",
   "trade_price": 16.9,
   "stackSize": 5,
   "weight": 0.3,
   "experiencieReward": 20,
-  "wikiVisibility": false,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Insects"
+        },
+        {
+          "count": 3,
+          "name": "Cotton"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        },
+        {
+          "count": 6,
+          "name": "Beeswax"
+        }
+      ],
+      "station": "Curing",
+      "time": 2
+    }
+  ],
   "weaponInfo": {
     "damage": 20,
     "penetration": 50

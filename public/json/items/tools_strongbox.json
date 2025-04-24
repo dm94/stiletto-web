@@ -1,5 +1,6 @@
 {
   "name": "Tools Strongbox",
+  "type": "LootBoxTools_C",
   "category": "Interactables",
   "stackSize": 100,
   "weight": 1

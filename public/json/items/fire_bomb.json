@@ -1,6 +1,7 @@
 {
   "name": "Fire Bomb",
   "parent": "Slingshot",
+  "type": "FireBomb_C",
   "category": "Ammo",
   "trade_price": 38,
   "stackSize": 10,

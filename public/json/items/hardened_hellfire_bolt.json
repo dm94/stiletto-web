@@ -1,6 +1,7 @@
 {
   "name": "Hardened Hellfire Bolt",
   "parent": "HellfireBolt",
+  "type": "HardenedHellfireBolt_C",
   "experiencieReward": 115,
   "crafting": [
     {

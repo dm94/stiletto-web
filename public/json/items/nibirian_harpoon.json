@@ -1,6 +1,7 @@
 {
   "name": "Nibirian Harpoon",
   "parent": "Nibiran-tipped Bolt",
+  "type": "NibirianHarpoon_C",
   "crafting": [
     {
       "ingredients": [

@@ -1,6 +1,7 @@
 {
   "name": "Dinghy Walker",
   "parent": "Firefly Walker",
+  "type": "Dinghy_C",
   "category": "Walkers",
   "crafting": [
     {

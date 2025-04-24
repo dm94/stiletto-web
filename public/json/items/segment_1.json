@@ -1,5 +1,6 @@
 {
   "name": "Segment 1",
+  "type": "Arena_Segment_1_C",
   "category": "Furniture",
   "weight": 20,
   "crafting": [

@@ -1,8 +1,8 @@
 {
   "name": "Giant Wall",
   "parent": "Advanced Constructions",
+  "type": "WallGiant_C",
   "category": "Defenses",
-  "weight": 20,
   "experiencieReward": 40,
   "crafting": [
     {

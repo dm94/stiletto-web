@@ -1,4 +1,5 @@
 {
   "name": "Flotillian Walker Weapons",
-  "parent": "Flotillian Constructions"
+  "parent": "Flotillian Constructions",
+  "type": "WalkerWeapons_T4_C"
 }

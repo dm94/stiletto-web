@@ -1,5 +1,6 @@
 {
   "name": "Boarding Plank",
+  "type": "BoardingPlank_C",
   "category": "Interactables",
   "weight": 11.38,
   "experiencieReward": 174,

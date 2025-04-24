@@ -1,6 +1,7 @@
 {
   "name": "Maintenance Box",
   "parent": "Basic Constructions",
+  "type": "ChestBaseMaintenance_T1_C",
   "category": "Containers",
   "crafting": [
     {

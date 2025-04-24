@@ -1,5 +1,6 @@
 {
   "name": "Slit Wall",
+  "type": "WallWoodHeavyWindow_C",
   "category": "Wood: heavy",
   "weight": 3,
   "experiencieReward": 46,

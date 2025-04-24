@@ -1,8 +1,8 @@
 {
   "name": "Artificer Woodworking Station",
   "parent": "Advanced Woodworking Station",
+  "type": "WoodworkingStation_T3_C",
   "category": "Crafting",
-  "weight": 14,
   "experiencieReward": 300,
   "crafting": [
     {

@@ -1,6 +1,7 @@
 {
   "name": "Domus Walker",
   "parent": "Mollusk Walker",
+  "type": "Domus_C",
   "category": "Walkers",
   "crafting": [
     {

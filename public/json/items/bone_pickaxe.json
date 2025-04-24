@@ -1,6 +1,7 @@
 {
   "name": "Bone Pickaxe",
   "parent": "Simple Pickaxe",
+  "type": "BonePickaxe_C",
   "trade_price": 24,
   "weight": 4,
   "experiencieReward": 70,

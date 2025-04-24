@@ -1,5 +1,6 @@
 {
   "name": "Worm Scale",
+  "type": "WormScale_C",
   "category": "Resources",
   "trade_price": 250,
   "stackSize": 100,

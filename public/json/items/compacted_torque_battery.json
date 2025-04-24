@@ -1,6 +1,7 @@
 {
   "name": "Compacted Torque Battery",
   "parent": "Torque Battery",
+  "type": "HeavyTorqueContainer_C",
   "category": "Equipment",
   "trade_price": 8.4,
   "stackSize": 100,

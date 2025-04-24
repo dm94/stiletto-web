@@ -1,5 +1,6 @@
 {
   "name": "Lifeforce Module",
+  "type": "RespawnEffectBoost_C",
   "category": "Resources",
   "weight": 0.24,
   "experiencieReward": 65,

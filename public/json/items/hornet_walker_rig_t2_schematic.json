@@ -1,5 +1,6 @@
 {
   "name": "Hornet Walker Rig T2 Schematic",
+  "type": "HornetRig_T2Schematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
@@ -7,56 +8,14 @@
   ],
   "droppedBy": [
     {
-      "name": "Rupu Ashdweller",
+      "name": "Rupu Oracle (T3)",
       "chance": 16.666666,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
-      "name": "Rupu Drudge",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider (Hard)",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Scuttler",
+      "name": "Rupu Overseer (T3)",
       "chance": 16.666666,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -70,7 +29,7 @@
       "tier": "T3"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T3)",
       "chance": 16.666666,
       "minQuantity": 1,
       "maxQuantity": 1,

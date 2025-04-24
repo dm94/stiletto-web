@@ -1,5 +1,6 @@
 {
   "name": "Iron Studded Armor",
+  "type": "T4_IronTorso_C",
   "category": "Armors",
   "trade_price": 94,
   "stackSize": 100,

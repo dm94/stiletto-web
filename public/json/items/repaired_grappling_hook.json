@@ -1,5 +1,6 @@
 {
   "name": "Repaired Grappling Hook",
+  "type": "GrapplingHook_C",
   "category": "Tools",
   "stackSize": 100
 }

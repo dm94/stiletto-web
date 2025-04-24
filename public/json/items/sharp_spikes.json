@@ -1,6 +1,7 @@
 {
   "name": "Sharp Spikes",
   "parent": "Bomb Chest Trap",
+  "type": "TrapSpikesSharp_C",
   "category": "Defenses",
   "experiencieReward": 49,
   "crafting": [

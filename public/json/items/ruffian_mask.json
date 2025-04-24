@@ -1,5 +1,6 @@
 {
   "name": "Ruffian mask",
+  "type": "BanditMask_C",
   "category": "Armors",
   "trade_price": 13.2,
   "stackSize": 100,

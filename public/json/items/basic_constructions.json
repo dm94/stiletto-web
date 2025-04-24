@@ -1,4 +1,5 @@
 {
   "name": "Basic Constructions",
-  "parent": "Construction"
+  "parent": "Construction",
+  "type": "Constructions_T1_C"
 }

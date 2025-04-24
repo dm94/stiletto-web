@@ -1,6 +1,7 @@
 {
   "name": "Raptor Sky Walker",
   "parent": "Dinghy Walker",
+  "type": "Raptor_C",
   "category": "Walkers",
   "crafting": [
     {

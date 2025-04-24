@@ -1,5 +1,6 @@
 {
   "name": "Basic Tools",
   "parent": "Equipment",
+  "type": "Tools_T1_C",
   "onlyDevs": true
 }

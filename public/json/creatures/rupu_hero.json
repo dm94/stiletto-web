@@ -1,0 +1,8 @@
+{
+  "name": "Rupu Hero",
+  "type": "PyramidGuardRupu_C",
+  "health": 60,
+  "experiencie": 983,
+  "lootTemplate": "EasyRupu_T1",
+  "category": "Rupu"
+}

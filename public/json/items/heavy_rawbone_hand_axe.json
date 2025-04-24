@@ -1,6 +1,7 @@
 {
   "name": "Heavy Rawbone Hand Axe",
   "parent": "OneHandedBoneAxe",
+  "type": "LargeBoneAxe_C",
   "category": "Weapons",
   "trade_price": 10.7,
   "stackSize": 100,
@@ -147,7 +148,7 @@
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T2)",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,

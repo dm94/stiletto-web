@@ -1,5 +1,6 @@
 {
   "name": "Human Sling",
+  "type": "HumanSling_C",
   "category": "Interactables",
   "weight": 12,
   "experiencieReward": 174,

@@ -1,6 +1,7 @@
 {
   "name": "Wooden Slab",
   "parent": "Woodworking Station",
+  "type": "WoodenSlab_C",
   "category": "Resources",
   "trade_price": 0.1,
   "stackSize": 100,

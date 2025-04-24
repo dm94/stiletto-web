@@ -1,6 +1,7 @@
 {
   "name": "Fiberworking Station",
   "parent": "Crafting",
+  "type": "FiberworkingStation_C",
   "category": "Crafting",
   "experiencieReward": 36,
   "crafting": [

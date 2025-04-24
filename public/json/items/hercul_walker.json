@@ -1,6 +1,7 @@
 {
   "name": "Hercul Walker",
   "parent": "Buffalo Walker",
+  "type": "Hercul_C",
   "category": "Walkers",
   "crafting": [
     {

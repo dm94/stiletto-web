@@ -1,6 +1,7 @@
 {
   "name": "Charged Rok",
   "parent": "Rokker",
+  "type": "ChargedRok_C",
   "category": "Ammo",
   "trade_price": 5.2,
   "stackSize": 10,

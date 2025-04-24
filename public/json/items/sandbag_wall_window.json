@@ -1,5 +1,6 @@
 {
   "name": "Sandbag Wall Window",
+  "type": "WallSandWindow_C",
   "category": "Basic Protection",
   "weight": 8,
   "experiencieReward": 32,

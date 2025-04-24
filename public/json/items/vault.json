@@ -1,6 +1,7 @@
 {
   "name": "Vault",
   "parent": "Construction",
+  "type": "Vault_C",
   "category": "Containers",
   "experiencieReward": 32,
   "crafting": [

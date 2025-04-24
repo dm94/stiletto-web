@@ -1,37 +1,7 @@
 {
   "name": "Wyndanblade Quarterstaff",
   "parent": "Paddleblade Quarterstaff",
-  "category": "Weapons",
-  "trade_price": 152,
-  "stackSize": 100,
-  "weight": 4.8,
-  "experiencieReward": 1227,
-  "durability": 740,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 10,
-          "name": "Lightwood"
-        },
-        {
-          "count": 6,
-          "name": "Nomad Cloth"
-        },
-        {
-          "count": 3,
-          "name": "Iron Ingot"
-        }
-      ],
-      "station": "Smithing",
-      "time": 15
-    }
-  ],
-  "weaponInfo": {
-    "weaponLength": 107,
-    "damage": 48,
-    "penetration": 20
-  },
+  "type": "IronQuarterstaff_C",
   "droppedBy": [
     {
       "name": "Rupu Firebrand",

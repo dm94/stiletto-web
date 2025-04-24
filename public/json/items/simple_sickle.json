@@ -1,6 +1,7 @@
 {
   "name": "Simple Sickle",
   "parent": "Beat Stick",
+  "type": "SimpleSickle_C",
   "category": "Tools",
   "trade_price": 6.2,
   "stackSize": 100,

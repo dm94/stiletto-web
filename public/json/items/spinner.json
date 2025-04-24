@@ -1,6 +1,7 @@
 {
   "name": "Spinner",
   "parent": "Basic Walker Weapons",
+  "type": "Spinner_C",
   "category": "Weapons",
   "experiencieReward": 78,
   "crafting": [

@@ -1,183 +1,17 @@
 {
   "name": "Forebear Coin",
+  "type": "ForebearCoin_C",
   "category": "Resources",
   "trade_price": 1,
   "stackSize": 999999,
   "experiencieReward": 3,
   "droppedBy": [
     {
-      "name": "Bounty Hunter",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Cowardly Rupu",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Grave Digger (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Green Rupu",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Marshland Stalker",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
       "name": "Matriarch",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
-    },
-    {
-      "name": "Prophet",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Ashdweller",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Berserker",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Drudge",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Dunestalker (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Firebrand",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Forager (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Forerunner",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Forerunner (Easy)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Harasser (Easy)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Harasser (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hermit (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hero",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider (Hard)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
     },
     {
       "name": "Rupu Priestess (Medium)",
@@ -187,112 +21,11 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Rabble",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Scavenger (Easy)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Sentinel (Easy)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Shaman (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Skirmisher (Easy)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Skirmisher (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Thug (Easy)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Warrior",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
       "name": "Rupu Zealot (Medium)",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
-    },
-    {
-      "name": "Tar Dweller",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "White Death (Medium)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Yellow Rupu",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Zharvakko",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
     }
   ]
 }

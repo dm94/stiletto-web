@@ -1,6 +1,7 @@
 {
   "name": "Obsidian Flask",
   "parent": "Ceramic Bottle",
+  "type": "LavaBottleSmall_C",
   "category": "Equipment",
   "trade_price": 23,
   "stackSize": 100,

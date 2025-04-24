@@ -1,5 +1,6 @@
 {
   "name": "Nibirian Armor",
+  "type": "T4_NibirianTorso_C",
   "category": "Armors",
   "trade_price": 94,
   "stackSize": 100,

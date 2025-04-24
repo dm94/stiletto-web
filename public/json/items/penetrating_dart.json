@@ -1,6 +1,7 @@
 {
   "name": "Penetrating Dart",
   "parent": "AntiPersonnelTurret",
+  "type": "PenetratingDart_C",
   "category": "Ammo",
   "trade_price": 1.5,
   "stackSize": 500,

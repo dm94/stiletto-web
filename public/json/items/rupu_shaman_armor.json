@@ -1,5 +1,6 @@
 {
   "name": "Rupu Shaman Armor",
+  "type": "RupuShamanArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

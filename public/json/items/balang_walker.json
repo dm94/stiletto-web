@@ -1,6 +1,7 @@
 {
   "name": "Balang Walker",
   "parent": "Dinghy Walker",
+  "type": "Balang_C",
   "category": "Walkers",
   "crafting": [
     {

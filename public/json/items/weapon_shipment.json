@@ -1,5 +1,6 @@
 {
   "name": "Weapon Shipment",
+  "type": "WeaponShipment_C",
   "crafting": [
     {
       "ingredients": [

@@ -1,5 +1,6 @@
 {
   "name": "Chitin Shard Bolt",
+  "type": "ChitinBolt_C",
   "trade_price": 5,
   "wikiVisibility": false,
   "projectileDamage": {

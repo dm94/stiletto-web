@@ -1,5 +1,6 @@
 {
   "name": "Iron Studded Gauntlets",
+  "type": "T4_IronGloves_C",
   "category": "Armors",
   "trade_price": 41.1,
   "stackSize": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Rupu Desolator Armor",
+  "type": "RupuDesolatorArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

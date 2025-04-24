@@ -1,6 +1,7 @@
 {
   "name": "Catapult Boulder",
   "parent": "Catapult",
+  "type": "CatapultBoulder_C",
   "category": "Ammo",
   "trade_price": 8,
   "stackSize": 10,
@@ -31,78 +32,6 @@
     {
       "toolType": "CatapultRock",
       "tier": 2
-    }
-  ],
-  "droppedBy": [
-    {
-      "name": "Rupu Ashdweller",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider (Hard)",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "White Death (Medium)",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "tier": "T3"
     }
   ]
 }

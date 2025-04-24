@@ -1,6 +1,7 @@
 {
   "name": "Stiletto Walker",
   "parent": "Steering Levers",
+  "type": "Stiletto_C",
   "category": "Walkers",
   "crafting": [
     {

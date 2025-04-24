@@ -1,5 +1,6 @@
 {
   "name": "Wall with Windows",
+  "type": "WallClayWindow2_C",
   "category": "Clay",
   "weight": 7,
   "experiencieReward": 32,

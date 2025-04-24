@@ -1,5 +1,6 @@
 {
   "name": "Cooked Corn",
+  "type": "CookedCorn_C",
   "category": "Vitamins",
   "stackSize": 100,
   "weight": 1,

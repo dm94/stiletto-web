@@ -1,4 +1,5 @@
 {
   "name": "Heavy Walls",
-  "parent": "Medium Wood Walls"
+  "parent": "Medium Wood Walls",
+  "type": "HeavyWalls_C"
 }

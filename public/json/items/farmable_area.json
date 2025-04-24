@@ -1,5 +1,6 @@
 {
   "name": "Farmable Area",
+  "type": "FarmableArea_C",
   "category": "Crafting",
   "weight": 1000,
   "experiencieReward": 100,

@@ -1,12 +1,13 @@
 {
   "name": "Rig T2",
+  "type": "BuffaloRig_T2_C",
   "category": "Rigs",
   "crafting": [
     {
       "ingredients": [
         {
           "count": 1,
-          "name": "Dinghy Walker Rig T2"
+          "name": "Buffalo Walker Rig T2"
         }
       ]
     }

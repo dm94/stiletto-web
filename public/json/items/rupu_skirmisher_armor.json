@@ -1,5 +1,6 @@
 {
   "name": "Rupu Skirmisher Armor",
+  "type": "RupuSkirmisherArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

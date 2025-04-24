@@ -1,5 +1,6 @@
 {
   "name": "Rupu Plainstrider Armor",
+  "type": "RupuPlainstriderArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

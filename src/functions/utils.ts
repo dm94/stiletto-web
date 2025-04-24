@@ -13,6 +13,9 @@ export const getItemDecodedName = (itemName: string) =>
 export const getItemUrl = (itemName: string) =>
   `${getDomain()}/item/${encodeURI(getItemCodedName(itemName))}`;
 
+export const getCreatureUrl = (creatureName: string) =>
+  `${getDomain()}/creature/${encodeURI(getItemCodedName(creatureName))}`;
+
 export const getItemCraftUrl = (itemName: string) =>
   `${getDomain()}/crafter?craft=${encodeURI(itemName.toLowerCase())}`;
 

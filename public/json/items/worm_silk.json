@@ -1,5 +1,6 @@
 {
   "name": "Worm Silk",
+  "type": "WormSilk_C",
   "category": "Resources",
   "trade_price": 16.5,
   "stackSize": 100,

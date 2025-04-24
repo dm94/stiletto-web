@@ -1,5 +1,6 @@
 {
   "name": "Small Rope Ladder",
+  "type": "LadderSmall_C",
   "category": "Interactables",
   "weight": 20,
   "experiencieReward": 140,

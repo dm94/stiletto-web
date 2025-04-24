@@ -1,45 +1,7 @@
 {
   "name": "Wyndan Battle Axe",
   "parent": "Firestone Battle Axe",
-  "category": "Weapons",
-  "trade_price": 320.4,
-  "stackSize": 100,
-  "weight": 5.8,
-  "experiencieReward": 1622,
-  "durability": 780,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 10,
-          "name": "Lightwood"
-        },
-        {
-          "count": 6,
-          "name": "Leather"
-        },
-        {
-          "count": 3,
-          "name": "Iron Ingot"
-        }
-      ],
-      "station": "Smithing",
-      "time": 15
-    }
-  ],
-  "weaponInfo": {
-    "weaponSpeed": 115,
-    "stability": 65,
-    "weaponLength": 62,
-    "damage": 60,
-    "penetration": 10
-  },
-  "toolInfo": [
-    {
-      "toolType": "TreeCutting",
-      "tier": 0
-    }
-  ],
+  "type": "TwoHandedIronAxe_C",
   "droppedBy": [
     {
       "name": "Rupu Firebrand",

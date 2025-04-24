@@ -1,5 +1,6 @@
 {
   "name": "Advanced Weapons",
   "parent": "Advanced Equipment",
+  "type": "Weapons_T3_C",
   "onlyDevs": true
 }

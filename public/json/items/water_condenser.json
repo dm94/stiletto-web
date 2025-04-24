@@ -1,6 +1,7 @@
 {
   "name": "Water Condenser",
   "parent": "Stone Humidifier",
+  "type": "WaterCondenser_C",
   "category": "Crafting",
   "experiencieReward": 78,
   "crafting": [

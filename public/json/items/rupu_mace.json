@@ -1,13 +1,14 @@
 {
   "name": "Rupu Mace",
+  "type": "RupuBoneMace_C",
   "category": "Weapons",
   "stackSize": 100,
   "weight": 4.58,
-  "durability": 350,
+  "durability": 410,
   "wikiVisibility": false,
   "weaponInfo": {
-    "weaponLength": 97,
-    "damage": 30,
+    "weaponLength": 84,
+    "damage": 52,
     "penetration": 10
   }
 }

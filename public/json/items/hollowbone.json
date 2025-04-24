@@ -1,5 +1,6 @@
 {
   "name": "Hollowbone",
+  "type": "Hollowbone_C",
   "category": "Resources",
   "trade_price": 30,
   "stackSize": 100,

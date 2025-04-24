@@ -1,5 +1,6 @@
 {
   "name": "Carpet Light",
+  "type": "Carpet1_C",
   "category": "Furniture",
   "weight": 0.2,
   "experiencieReward": 6,

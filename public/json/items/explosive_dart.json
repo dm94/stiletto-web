@@ -1,6 +1,7 @@
 {
   "name": "Explosive Dart",
   "parent": "Fire Dart",
+  "type": "ExplosiveDart_C",
   "category": "Ammo",
   "trade_price": 49.8,
   "stackSize": 200,

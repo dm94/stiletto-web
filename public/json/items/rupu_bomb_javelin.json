@@ -1,5 +1,6 @@
 {
   "name": "Rupu Bomb Javelin",
+  "type": "RupuExplosiveHarpoon_C",
   "category": "Ammo",
   "trade_price": 17.8,
   "stackSize": 20,

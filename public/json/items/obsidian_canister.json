@@ -1,8 +1,8 @@
 {
   "name": "Obsidian Canister",
   "parent": "Obsidian Pot",
+  "type": "ObsidianContainerLarge_C",
   "category": "Containers",
-  "weight": 90,
   "experiencieReward": 300,
   "crafting": [
     {

@@ -1,5 +1,6 @@
 {
   "name": "Advanced Equipment",
   "parent": "Equipment_T2",
+  "type": "Equipment_T3_C",
   "onlyDevs": true
 }

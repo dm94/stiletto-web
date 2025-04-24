@@ -1,5 +1,6 @@
 {
   "name": "Worm Vivarium",
+  "type": "WormVivarium_C",
   "category": "Crafting",
   "weight": 25,
   "experiencieReward": 92,

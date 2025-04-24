@@ -1,8 +1,8 @@
 {
   "name": "Gunpod Stinger",
   "parent": "Gun Pod",
+  "type": "GunpodStinger_C",
   "category": "Weapons",
-  "weight": 11.41,
   "experiencieReward": 78,
   "crafting": [
     {

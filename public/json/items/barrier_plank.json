@@ -1,6 +1,7 @@
 {
   "name": "Barrier Plank",
   "parent": "Barrier Base",
+  "type": "WalkerBarrierTopPlace_C",
   "category": "Defenses",
   "experiencieReward": 78,
   "crafting": [

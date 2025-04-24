@@ -1,6 +1,7 @@
 {
   "name": "Large Chest",
   "parent": "Medium Chest",
+  "type": "ChestLarge_C",
   "category": "Containers",
   "experiencieReward": 32,
   "crafting": [

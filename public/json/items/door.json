@@ -1,5 +1,6 @@
 {
   "name": "Door",
+  "type": "WallClayDoor_C",
   "category": "Clay",
   "weight": 8.5,
   "experiencieReward": 22,

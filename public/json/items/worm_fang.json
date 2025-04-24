@@ -1,5 +1,6 @@
 {
   "name": "Worm Fang",
+  "type": "WormFang_C",
   "category": "Resources",
   "trade_price": 3500,
   "stackSize": 100,

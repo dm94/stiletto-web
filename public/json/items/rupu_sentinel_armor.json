@@ -1,5 +1,6 @@
 {
   "name": "Rupu Sentinel Armor",
+  "type": "RupuSentinelArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

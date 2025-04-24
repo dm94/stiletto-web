@@ -1,6 +1,7 @@
 {
   "name": "Simple Pickaxe",
   "parent": "Beat Stick",
+  "type": "SimplePickaxe_C",
   "category": "Tools",
   "trade_price": 8.4,
   "stackSize": 100,

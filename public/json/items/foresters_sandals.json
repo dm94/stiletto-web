@@ -1,5 +1,6 @@
 {
   "name": "Forester's Sandals",
+  "type": "T2_ForesterBoots_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1.3,
@@ -146,7 +147,7 @@
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T2)",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,

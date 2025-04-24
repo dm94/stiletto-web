@@ -1,5 +1,6 @@
 {
   "name": "Hangar Wall",
+  "type": "HangarWall_C",
   "category": "Walker Hangar",
   "crafting": [
     {

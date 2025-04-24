@@ -1,5 +1,6 @@
 {
   "name": "Water Pitcher",
+  "type": "WaterPitcher_C",
   "category": "Ammo",
   "trade_price": 1,
   "wikiVisibility": false,

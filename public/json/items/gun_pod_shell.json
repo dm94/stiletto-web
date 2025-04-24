@@ -1,6 +1,7 @@
 {
   "name": "Gun Pod Shell",
   "parent": "Gun Pod",
+  "type": "GunPodShell_C",
   "category": "Weapons",
   "experiencieReward": 34,
   "crafting": [

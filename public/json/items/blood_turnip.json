@@ -1,5 +1,6 @@
 {
   "name": "Blood Turnip",
+  "type": "BloodTurnip_C",
   "category": "Resources",
   "trade_price": 0.9,
   "stackSize": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Iron Studded Boots",
+  "type": "T4_IronBoots_C",
   "category": "Armors",
   "trade_price": 75.8,
   "stackSize": 100,

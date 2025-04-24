@@ -18,6 +18,8 @@
   "menu.crafter": "Crafter",
   "menu.techTree": "Tech Tree",
   "menu.wiki": "Wiki",
+  "menu.creatures": "Creatures / Sites",
+  "menu.items": "Items",
   "meta.description": "Stiletto the best website for Last Oasis",
   "techTree.description": "View and control your clan's technology tree.",
   "crafting.title": "Last Oasis Crafting Calculator",
@@ -323,6 +325,7 @@
   "wiki.maximumImprovement": "Maximum improvement",
   "wiki.ingredients": "Ingredients",
   "wiki.obtainableFrom": "Obtainable from",
+  "wiki.drops": "Drops",
   "wiki.craftingTime": "Crafting time",
   "wiki.comments": "Comments",
   "wiki.writeComment": "Write a comment...",
@@ -338,5 +341,9 @@
   "trades.noTradesFound": "No trades found",
   "common.damage": "Damage",
   "common.loadMore": "Load More",
-  "wiki.showingItems": "Showing {{displayed}} of {{total}} items"
+  "wiki.showingItems": "Showing {{displayed}} of {{total}} items",
+  "creature.experience": "Experience",
+  "creature.tier": "Tier",
+  "creature.health": "Health",
+  "creature.info": "Info"
 }

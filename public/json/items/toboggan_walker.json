@@ -1,6 +1,7 @@
 {
   "name": "Toboggan Walker",
   "parent": "Steering Levers",
+  "type": "Toboggan_C",
   "category": "Walkers",
   "crafting": [
     {

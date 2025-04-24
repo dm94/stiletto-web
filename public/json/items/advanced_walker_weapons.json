@@ -1,4 +1,5 @@
 {
   "name": "Advanced Walker Weapons",
-  "parent": "Advanced Constructions"
+  "parent": "Advanced Constructions",
+  "type": "WalkerWeapons_T3_C"
 }

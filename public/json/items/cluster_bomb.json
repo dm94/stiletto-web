@@ -1,11 +1,11 @@
 {
   "name": "Cluster Bomb",
   "parent": "Slingshot",
+  "type": "ClusterBomb_C",
   "category": "Ammo",
   "trade_price": 84.7,
   "stackSize": 10,
   "weight": 30,
-  "wikiVisibility": false,
   "crafting": [
     {
       "ingredients": [
@@ -35,6 +35,9 @@
     }
   ],
   "projectileDamage": {
-    "damage": 20
+    "damage": 20,
+    "penetration": 55,
+    "effectivenessVsSoak": 95,
+    "effectivenessVsReduce": 85
   }
 }

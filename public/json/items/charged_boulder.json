@@ -1,6 +1,7 @@
 {
   "name": "Charged Boulder",
   "parent": "Slingshot",
+  "type": "ChargedBoulder_C",
   "category": "Ammo",
   "trade_price": 150,
   "stackSize": 5,

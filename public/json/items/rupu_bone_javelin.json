@@ -1,5 +1,6 @@
 {
   "name": "Rupu Bone Javelin",
+  "type": "RupuBoneJavelin_C",
   "category": "Ammo",
   "trade_price": 5,
   "stackSize": 20,

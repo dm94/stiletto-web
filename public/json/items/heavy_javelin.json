@@ -1,13 +1,35 @@
 {
   "name": "Heavy Javelin",
   "parent": "Light Javelin",
+  "type": "HeavyJavelin_C",
   "category": "Weapons",
   "trade_price": 1.6,
-  "stackSize": 5,
+  "stackSize": 20,
   "weight": 2,
-  "wikiVisibility": false,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 5,
+          "name": "Rope"
+        }
+      ],
+      "output": 3,
+      "station": "Crafting Bench",
+      "time": 5
+    }
+  ],
   "weaponInfo": {
-    "damage": 40,
-    "penetration": 25
+    "weaponSpeed": 150,
+    "damage": 75,
+    "penetration": 15
   }
 }

@@ -1,6 +1,7 @@
 {
   "name": "Hullbreaker Scattershot",
   "parent": "CeramicScattershot",
+  "type": "HullbreakerScattershot_C",
   "trade_price": 61.8,
   "crafting": [
     {
@@ -34,15 +35,6 @@
     {
       "toolType": "Scattershot",
       "tier": 4
-    }
-  ],
-  "droppedBy": [
-    {
-      "name": "Rupu Firebrand",
-      "chance": 28.571428,
-      "minQuantity": 2,
-      "maxQuantity": 12,
-      "tier": "T4"
     }
   ]
 }

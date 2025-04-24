@@ -1,5 +1,6 @@
 {
   "name": "Wood Log",
+  "type": "Log_C",
   "category": "Resources",
   "trade_price": 2,
   "stackSize": 999,

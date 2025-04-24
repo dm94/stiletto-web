@@ -1,5 +1,6 @@
 {
   "name": "Rupu Stone Mace",
+  "type": "RupuStoneMace_C",
   "category": "Weapons",
   "stackSize": 100,
   "weight": 4.58,

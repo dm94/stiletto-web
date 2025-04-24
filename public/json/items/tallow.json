@@ -1,6 +1,7 @@
 {
   "name": "Tallow",
   "parent": "Purification Station",
+  "type": "Fuel_C",
   "category": "Liquids",
   "trade_price": 3.7,
   "stackSize": 100,

@@ -1,6 +1,7 @@
 {
   "name": "Purification Station",
   "parent": "Clay Pot",
+  "type": "PurificationStation_C",
   "category": "Crafting",
   "experiencieReward": 125,
   "crafting": [

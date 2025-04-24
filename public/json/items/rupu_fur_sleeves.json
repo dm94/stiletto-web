@@ -1,5 +1,6 @@
 {
   "name": "Rupu Fur Sleeves",
+  "type": "T1_RupuFurGloves_C",
   "category": "Armors",
   "trade_price": 4.6,
   "stackSize": 100,
@@ -69,19 +70,19 @@
       "tier": "T1"
     },
     {
-      "name": "Rupu Hero",
+      "name": "Rupu Hero (Rupu)",
       "chance": 5.940594,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Oracle",
+      "name": "Rupu Oracle (Rupu)",
       "chance": 5.940594,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Overseer",
+      "name": "Rupu Overseer (Rupu)",
       "chance": 5.940594,
       "minQuantity": 1,
       "maxQuantity": 1

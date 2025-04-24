@@ -1,5 +1,6 @@
 {
   "name": "Fortress Module",
+  "type": "StructuresArmorBoost_C",
   "category": "Resources",
   "weight": 0.24,
   "experiencieReward": 65,

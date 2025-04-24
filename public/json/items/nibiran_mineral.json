@@ -1,5 +1,6 @@
 {
   "name": "Nibiran Mineral",
+  "type": "GlowingOre_C",
   "category": "Resources",
   "trade_price": 16.5,
   "stackSize": 100,

@@ -1,6 +1,7 @@
 {
   "name": "Heavy Backpack",
   "parent": "Medium Backpack",
+  "type": "LargeBackpack_C",
   "category": "Equipment",
   "trade_price": 131.5,
   "stackSize": 100,

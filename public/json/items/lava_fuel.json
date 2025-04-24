@@ -1,6 +1,7 @@
 {
   "name": "Lava Fuel",
   "parent": "Obsidian Machine",
+  "type": "LavaFuel_C",
   "category": "Liquids",
   "stackSize": 100,
   "weight": 0.5,

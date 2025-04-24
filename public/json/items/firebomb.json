@@ -1,35 +1,12 @@
 {
   "name": "Firebomb",
+  "type": "RupuLavaBombItem_C",
   "category": "Weapons",
   "trade_price": 16.9,
   "stackSize": 5,
   "weight": 0.3,
   "experiencieReward": 20,
   "wikiVisibility": false,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 4,
-          "name": "Lava"
-        },
-        {
-          "count": 3,
-          "name": "Cotton"
-        },
-        {
-          "count": 1,
-          "name": "Gelatinous Goo"
-        },
-        {
-          "count": 1,
-          "name": "Tallow"
-        }
-      ],
-      "station": "Curing",
-      "time": 2
-    }
-  ],
   "weaponInfo": {
     "damage": 20,
     "penetration": 50
@@ -43,7 +20,7 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Drudge",
+      "name": "Rupu Drudge (T3)",
       "chance": 6.25,
       "minQuantity": 3,
       "maxQuantity": 3,
@@ -57,14 +34,14 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Oracle",
+      "name": "Rupu Oracle (T3)",
       "chance": 6.25,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T3"
     },
     {
-      "name": "Rupu Overseer",
+      "name": "Rupu Overseer (T3)",
       "chance": 6.25,
       "minQuantity": 3,
       "maxQuantity": 3,
@@ -99,7 +76,7 @@
       "tier": "T3"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T3)",
       "chance": 6.25,
       "minQuantity": 3,
       "maxQuantity": 3,

@@ -1,5 +1,6 @@
 {
   "name": "Lava",
+  "type": "Lava_C",
   "category": "Lava",
   "trade_price": 3.5,
   "stackSize": 100,

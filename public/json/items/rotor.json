@@ -1,4 +1,5 @@
 {
   "name": "Rotor",
+  "type": "Rotor_C",
   "stackSize": 10
 }

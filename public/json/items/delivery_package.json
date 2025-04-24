@@ -1,4 +1,5 @@
 {
   "name": "Delivery Package",
+  "type": "DeliverPackageQuestItem_C",
   "category": "Resources"
 }

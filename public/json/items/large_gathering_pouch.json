@@ -1,6 +1,7 @@
 {
   "name": "Large Gathering Pouch",
   "parent": "Foraging Pouch",
+  "type": "LargePouch_C",
   "category": "Equipment",
   "trade_price": 10,
   "stackSize": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Corner",
+  "type": "WallClayCorner_C",
   "category": "Clay",
   "weight": 5,
   "experiencieReward": 30,

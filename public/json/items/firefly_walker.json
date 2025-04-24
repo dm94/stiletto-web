@@ -1,6 +1,7 @@
 {
   "name": "Firefly Walker",
   "parent": "Spider Walker",
+  "type": "Firefly_C",
   "category": "Walkers",
   "crafting": [
     {

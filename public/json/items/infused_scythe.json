@@ -1,5 +1,6 @@
 {
   "name": "Infused Scythe",
+  "type": "InfusedScythe_C",
   "durability": 1800,
   "crafting": [
     {

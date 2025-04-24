@@ -1,8 +1,8 @@
 {
   "name": "Gun Pod Plating",
   "parent": "Gun Pod Shell",
+  "type": "GunPodShell_T2_C",
   "category": "Weapons",
-  "weight": 38,
   "experiencieReward": 34,
   "crafting": [
     {

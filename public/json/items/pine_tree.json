@@ -1,5 +1,6 @@
 {
   "name": "Pine Tree",
+  "type": "TreePine_C",
   "category": "Crafting",
   "crafting": [
     {

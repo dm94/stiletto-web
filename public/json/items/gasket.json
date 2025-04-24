@@ -1,4 +1,5 @@
 {
   "name": "Gasket",
+  "type": "Gasket_C",
   "stackSize": 10
 }

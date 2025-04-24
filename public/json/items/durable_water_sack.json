@@ -1,6 +1,7 @@
 {
   "name": "Durable Water Sack",
   "parent": "Improvised Bottle",
+  "type": "Barrel_C",
   "category": "Equipment",
   "trade_price": 7.9,
   "stackSize": 100,

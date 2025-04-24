@@ -1,5 +1,6 @@
 {
   "name": "Force Field",
+  "type": "ForceField_C",
   "category": "Armors",
   "trade_price": 500,
   "durability": 50,

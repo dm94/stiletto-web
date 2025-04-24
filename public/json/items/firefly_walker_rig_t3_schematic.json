@@ -1,5 +1,6 @@
 {
   "name": "Firefly Walker Rig T3 Schematic",
+  "type": "FireflyRig_T3Schematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
@@ -7,75 +8,7 @@
   ],
   "droppedBy": [
     {
-      "name": "Cowardly Rupu",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Green Rupu",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Prophet",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Berserker",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Forerunner",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Forerunner (Easy)",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
       "name": "Rupu Harasser (Easy)",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Hero",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Oracle",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Overseer",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Priestess",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Scavenger (Easy)",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -94,37 +27,6 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
-    },
-    {
-      "name": "Rupu Thug (Easy)",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Warrior",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Tar Dweller",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Yellow Rupu",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Zharvakko",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1
     }
   ]
 }

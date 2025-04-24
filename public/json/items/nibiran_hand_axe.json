@@ -1,5 +1,6 @@
 {
   "name": "Nibiran Hand Axe",
+  "type": "OneHandedRareMetalAxe2_C",
   "category": "Weapons",
   "trade_price": 1681.3,
   "stackSize": 100,

@@ -1,6 +1,7 @@
 {
   "name": "Flint Orb",
   "parent": "Lobber",
+  "type": "FlintOrb_C",
   "category": "Ammo",
   "trade_price": 5.2,
   "stackSize": 100,

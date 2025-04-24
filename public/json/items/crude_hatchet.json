@@ -1,6 +1,7 @@
 {
   "name": "Crude Hatchet",
   "parent": "Beat Stick",
+  "type": "CrudeHatchet_C",
   "category": "Weapons",
   "trade_price": 1.2,
   "stackSize": 100,
@@ -80,19 +81,19 @@
       "tier": "T1"
     },
     {
-      "name": "Rupu Hero",
+      "name": "Rupu Hero (Rupu)",
       "chance": 11.290322,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Oracle",
+      "name": "Rupu Oracle (Rupu)",
       "chance": 11.290322,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Overseer",
+      "name": "Rupu Overseer (Rupu)",
       "chance": 11.290322,
       "minQuantity": 1,
       "maxQuantity": 1

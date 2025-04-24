@@ -1,0 +1,5 @@
+{
+  "name": "Range Finder",
+  "parent": "Maintenance Box",
+  "type": "RangeFinder_C"
+}

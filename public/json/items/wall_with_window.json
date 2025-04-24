@@ -1,32 +1,29 @@
 {
   "name": "Wall with Window",
-  "category": "Stone",
+  "type": "WallClayWindow_C",
+  "category": "Clay",
   "weight": 7,
   "experiencieReward": 32,
   "crafting": [
     {
       "ingredients": [
         {
+          "count": 20,
+          "name": "Cattail"
+        },
+        {
           "count": 3,
           "name": "Wooden Slab"
         },
         {
-          "count": 10,
-          "name": "Stone"
-        },
-        {
-          "count": 1,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 3,
-          "name": "Tree Sap"
+          "count": 20,
+          "name": "Clay"
         }
       ]
     }
   ],
   "structureInfo": {
     "type": "Solid",
-    "hp": 10000
+    "hp": 20000
   }
 }

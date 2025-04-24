@@ -1,6 +1,7 @@
 {
   "name": "Windmill",
   "parent": "Camp Fire",
+  "type": "Windmill_C",
   "category": "Crafting",
   "experiencieReward": 34,
   "crafting": [

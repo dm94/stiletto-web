@@ -1,6 +1,7 @@
 {
   "name": "Feather Boots",
   "parent": "RainBoots",
+  "type": "FeatherBoots_C",
   "category": "Armors",
   "trade_price": 34,
   "stackSize": 100,

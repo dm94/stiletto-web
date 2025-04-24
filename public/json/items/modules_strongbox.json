@@ -1,5 +1,6 @@
 {
   "name": "Modules Strongbox",
+  "type": "LootBoxModules_C",
   "category": "Interactables",
   "stackSize": 100,
   "weight": 1

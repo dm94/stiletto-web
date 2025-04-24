@@ -1,5 +1,6 @@
 {
   "name": "Water Bed",
+  "type": "BedWater_C",
   "category": "Interactables",
   "weight": 77,
   "experiencieReward": 83,

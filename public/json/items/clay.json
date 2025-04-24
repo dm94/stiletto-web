@@ -1,6 +1,44 @@
 {
   "name": "Clay",
   "parent": "Soil Excavator",
+  "type": "ClayLump_C",
+  "category": "Resources",
+  "trade_price": 0.1,
+  "stackSize": 100,
+  "weight": 0.35,
+  "experiencieReward": 1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Clay Spots"
+        },
+        {
+          "count": 10,
+          "name": "Ash"
+        }
+      ],
+      "output": 5,
+      "station": "Soil Excavator",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Clay Spots"
+        },
+        {
+          "count": 10,
+          "name": "Ash"
+        }
+      ],
+      "output": 10,
+      "station": "Artisan Soil Auger",
+      "time": 20
+    }
+  ],
   "droppedBy": [
     {
       "name": "Rupu Ashdweller",
@@ -10,7 +48,7 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Drudge",
+      "name": "Rupu Drudge (T3)",
       "chance": 5.882353,
       "minQuantity": 4,
       "maxQuantity": 4,
@@ -31,14 +69,14 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Oracle",
+      "name": "Rupu Oracle (T3)",
       "chance": 5.882353,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T3"
     },
     {
-      "name": "Rupu Overseer",
+      "name": "Rupu Overseer (T3)",
       "chance": 5.882353,
       "minQuantity": 4,
       "maxQuantity": 4,
@@ -73,7 +111,7 @@
       "tier": "T3"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T3)",
       "chance": 5.882353,
       "minQuantity": 4,
       "maxQuantity": 4,

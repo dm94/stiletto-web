@@ -1,5 +1,6 @@
 {
   "name": "Flotillian Crafting",
   "parent": "Advanced Crafting",
+  "type": "Crafting_T4_C",
   "onlyDevs": true
 }

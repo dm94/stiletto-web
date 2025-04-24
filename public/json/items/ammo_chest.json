@@ -1,6 +1,7 @@
 {
   "name": "Ammo Chest",
   "parent": "Small Chest",
+  "type": "ChestAmmo_C",
   "category": "Containers",
   "experiencieReward": 32,
   "crafting": [

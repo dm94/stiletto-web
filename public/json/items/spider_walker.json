@@ -1,6 +1,7 @@
 {
   "name": "Spider Walker",
   "parent": "Walkers",
+  "type": "Spider_C",
   "category": "Walkers",
   "crafting": [
     {

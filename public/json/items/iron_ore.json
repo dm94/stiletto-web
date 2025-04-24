@@ -1,5 +1,6 @@
 {
   "name": "Iron Ore",
+  "type": "IronOre_C",
   "category": "Resources",
   "trade_price": 8,
   "stackSize": 100,

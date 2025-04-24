@@ -1,5 +1,6 @@
 {
   "name": "Domus Walker Rig T2 Schematic",
+  "type": "DomusRig_T2Schematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [

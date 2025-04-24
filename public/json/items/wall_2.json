@@ -1,28 +1,33 @@
 {
   "name": "Wall 2",
-  "category": "Wood: heavy",
-  "weight": 3,
-  "experiencieReward": 40,
+  "type": "WallConcrete2_C",
+  "category": "Concrete",
+  "weight": 15,
+  "experiencieReward": 30,
   "crafting": [
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Redwood Wood"
+          "count": 25,
+          "name": "Lightwood"
         },
         {
-          "count": 5,
+          "count": 6,
           "name": "Iron Ingot"
         },
         {
-          "count": 1,
-          "name": "Bone Glue"
+          "count": 4,
+          "name": "Iron Nails"
+        },
+        {
+          "count": 6,
+          "name": "Tar"
         }
       ]
     }
   ],
   "structureInfo": {
-    "type": "Reinforced",
+    "type": "Solid",
     "hp": 40000
   }
 }

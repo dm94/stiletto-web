@@ -1,6 +1,7 @@
 {
   "name": "Bomb Javelin",
   "parent": "Heavy Javelin",
+  "type": "BombJavelin_C",
   "category": "Weapons",
   "trade_price": 1.6,
   "stackSize": 5,

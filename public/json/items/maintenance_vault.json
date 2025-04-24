@@ -1,8 +1,8 @@
 {
   "name": "Maintenance Vault",
   "parent": "ChestBaseMaintenance_T2",
+  "type": "ChestBaseMaintenance_T3_C",
   "category": "Containers",
-  "weight": 5,
   "experiencieReward": 32,
   "crafting": [
     {

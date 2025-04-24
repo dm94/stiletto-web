@@ -1,5 +1,6 @@
 {
   "name": "Stiletto Walker Rig T2 Schematic",
+  "type": "StilettoRig_T2Schematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
@@ -8,13 +9,6 @@
   "droppedBy": [
     {
       "name": "Bounty Hunter",
-      "chance": 26.31579,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Grave Digger (Medium)",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -62,13 +56,6 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Hermit (Medium)",
-      "chance": 26.31579,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
       "name": "Rupu Plainstrider (Medium)",
       "chance": 26.31579,
       "minQuantity": 1,
@@ -97,13 +84,6 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Skirmisher (Medium)",
-      "chance": 26.31579,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
       "name": "Rupu Zealot (Medium)",
       "chance": 26.31579,
       "minQuantity": 1,
@@ -111,7 +91,7 @@
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T2)",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,

@@ -1,5 +1,6 @@
 {
   "name": "Clan Flag Hanging",
+  "type": "ClanFlagHanging_C",
   "category": "Furniture",
   "weight": 1,
   "experiencieReward": 8,

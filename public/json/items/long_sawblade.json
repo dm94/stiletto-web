@@ -1,31 +1,9 @@
 {
   "name": "Long Sawblade",
   "parent": "Sawblade",
+  "type": "Sawblade_T2_C",
   "category": "Walker Tools",
   "weight": 70,
-  "experiencieReward": 366,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 280,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 2000,
-          "name": "Wood"
-        },
-        {
-          "count": 400,
-          "name": "Bone Splinter"
-        },
-        {
-          "count": 5,
-          "name": "Iron Ore"
-        }
-      ]
-    }
-  ],
   "toolInfo": [
     {
       "toolType": "Sawblade",

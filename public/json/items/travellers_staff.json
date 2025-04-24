@@ -1,6 +1,7 @@
 {
   "name": "Traveller’s Staff",
   "parent": "Blunt Quarterstaff",
+  "type": "TravellersStaff_C",
   "category": "Weapons",
   "trade_price": 2.6,
   "stackSize": 100,

@@ -1,6 +1,7 @@
 {
   "name": "Race Dust",
   "parent": "Vision Powder",
+  "type": "RaceDust_C",
   "category": "Vitamins",
   "trade_price": 99.8,
   "stackSize": 100,

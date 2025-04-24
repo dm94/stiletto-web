@@ -1,6 +1,7 @@
 {
   "name": "Makeshift Grappling Hook",
   "parent": "Equipment",
+  "type": "MakeshiftGrapplingHook_C",
   "category": "Grappling Hooks",
   "trade_price": 10,
   "experiencieReward": 1,

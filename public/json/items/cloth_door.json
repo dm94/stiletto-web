@@ -1,5 +1,6 @@
 {
   "name": "Cloth Door",
+  "type": "WallSandDoor_C",
   "category": "Basic Protection",
   "weight": 13,
   "experiencieReward": 22,

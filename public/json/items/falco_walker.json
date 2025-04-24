@@ -1,6 +1,7 @@
 {
   "name": "Falco Walker",
   "parent": "Stiletto Walker",
+  "type": "Falco_C",
   "category": "Walkers",
   "crafting": [
     {

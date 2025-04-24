@@ -1,23 +1,24 @@
 {
   "name": "Stairs",
+  "type": "Throne_Stairs_01_C",
   "category": "Furniture",
-  "experiencieReward": 40,
+  "weight": 20,
   "crafting": [
     {
       "ingredients": [
         {
-          "count": 28,
+          "count": 20,
           "name": "Wood"
         },
         {
-          "count": 45,
-          "name": "Fiber"
+          "count": 10,
+          "name": "Fiber Weave"
         }
       ]
     }
   ],
   "structureInfo": {
-    "type": "Reinforced",
-    "hp": 40000
+    "type": "Soft",
+    "hp": 100
   }
 }

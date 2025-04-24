@@ -1,5 +1,6 @@
 {
   "name": "Hardening Module",
+  "type": "HullHardeningBoost_C",
   "category": "Resources",
   "weight": 0.24,
   "crafting": [

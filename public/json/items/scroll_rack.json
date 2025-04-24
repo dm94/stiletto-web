@@ -1,6 +1,7 @@
 {
   "name": "Scroll Rack",
   "parent": "Small Chest",
+  "type": "ScrollRack_C",
   "category": "Containers",
   "experiencieReward": 50,
   "crafting": [

@@ -1,6 +1,7 @@
 {
   "name": "Cauterizing Station",
   "parent": "Camp Fire",
+  "type": "CauterizingStation_C",
   "category": "Interactables",
   "experiencieReward": 340,
   "crafting": [

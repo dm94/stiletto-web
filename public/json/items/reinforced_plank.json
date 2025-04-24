@@ -1,55 +1,5 @@
 {
   "name": "Reinforced Plank",
   "parent": "Artisan Woodworking Station",
-  "category": "Resources",
-  "trade_price": 15.5,
-  "stackSize": 100,
-  "weight": 0.45,
-  "experiencieReward": 25,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 50,
-          "name": "Wood"
-        },
-        {
-          "count": 1,
-          "name": "Iron Ingot"
-        }
-      ],
-      "output": 5,
-      "station": "Ancient Fabricator",
-      "time": 250
-    },
-    {
-      "ingredients": [
-        {
-          "count": 15,
-          "name": "Wood"
-        },
-        {
-          "count": 1,
-          "name": "Iron Ingot"
-        }
-      ],
-      "station": "Artificer Woodworking Station",
-      "time": 60
-    },
-    {
-      "ingredients": [
-        {
-          "count": 1,
-          "name": "Wood Log"
-        },
-        {
-          "count": 2,
-          "name": "Iron Ingot"
-        }
-      ],
-      "output": 10,
-      "station": "Lumbermill",
-      "time": 450
-    }
-  ]
+  "type": "ReinforcedPlank_C"
 }

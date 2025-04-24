@@ -1,4 +1,5 @@
 {
   "name": "Furnitures",
-  "parent": "Sand Structures"
+  "parent": "Sand Structures",
+  "type": "Furnitures_C"
 }

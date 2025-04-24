@@ -18,6 +18,7 @@
   "menu.crafter": "Calculadora de crafteo",
   "menu.techTree": "Árbol tecnológico",
   "menu.wiki": "Wiki",
+  "menu.creatures": "Criaturas",
   "meta.description": "Stiletto la mejor web para el Last Oasis",
   "techTree.description": "Mira y controla el árbol tecnológico de tu clan.",
   "crafting.title": "Last Oasis Calculadora de crafteo",
@@ -337,5 +338,9 @@
   "trades.noTradesFound": "No trades found",
   "common.damage": "Damage",
   "common.loadMore": "Load More",
-  "wiki.showingItems": "Showing {{displayed}} of {{total}} items"
+  "wiki.showingItems": "Showing {{displayed}} of {{total}} items",
+  "wiki.creatureInfo": "Información de la criatura",
+  "creature.experience": "Experiencia",
+  "creature.tier": "Nivel",
+  "creature.health": "Salud"
 }

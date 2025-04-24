@@ -17,6 +17,7 @@ import TechTree from "@pages/TechTree";
 import Privacy from "@pages/Privacy";
 import ResourceMapNoLog from "@components/ClanMaps/ResourceMapNoLog";
 import ItemWiki from "@pages/ItemWiki";
+import CreatureWiki from "@pages/CreatureWiki";
 import Wiki from "@pages/Wiki";
 import NotFoundPage from "@pages/NotFound";
 
@@ -40,6 +41,9 @@ const AppRoutes: React.ReactElement = (
     <Route path="/tech/" element={<TechTree />} />
     <Route path="/privacy" element={<Privacy />} />
     <Route path="/item/:name" element={<ItemWiki />} />
+    <Route path="/item" element={<Wiki />} />
+    <Route path="/creature/:name" element={<CreatureWiki />} />
+    <Route path="/creature" element={<Wiki />} />
     <Route path="/wiki/" element={<Wiki />} />
     <Route path="/not-found" element={<NotFoundPage />} />
     <Route path="*" element={<NotFoundPage />} />

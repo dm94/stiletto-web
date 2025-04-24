@@ -1,6 +1,7 @@
 {
   "name": "Titan Walker",
   "parent": "Buffalo Walker",
+  "type": "Titan_C",
   "category": "Walkers",
   "crafting": [
     {

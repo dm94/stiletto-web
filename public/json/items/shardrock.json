@@ -1,5 +1,6 @@
 {
   "name": "Shardrock",
+  "type": "Shardrock_C",
   "category": "Resources",
   "trade_price": 30,
   "stackSize": 100,

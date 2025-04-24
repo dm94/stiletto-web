@@ -1,5 +1,6 @@
 {
   "name": "Dinghy Gate",
+  "type": "LightWoodGate_C",
   "weight": 30,
   "experiencieReward": 22,
   "crafting": [

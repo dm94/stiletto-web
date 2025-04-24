@@ -1,28 +1,14 @@
 {
   "name": "Quarry",
   "parent": "Soil Excavator",
+  "type": "Quarry_C",
   "category": "Crafting",
+  "weight": 1000,
   "description": "A huge crafting station uses torque to automatically mine stone, iron and other minerals within a certain radius.",
-  "crafting": [
+  "toolInfo": [
     {
-      "ingredients": [
-        {
-          "count": 300,
-          "name": "Lightwood"
-        },
-        {
-          "count": 3,
-          "name": "Iron Gear"
-        },
-        {
-          "count": 15,
-          "name": "Shardrock"
-        }
-      ]
+      "toolType": "Quarrying",
+      "tier": 1
     }
-  ],
-  "structureInfo": {
-    "type": "Soft",
-    "hp": 20000
-  }
+  ]
 }

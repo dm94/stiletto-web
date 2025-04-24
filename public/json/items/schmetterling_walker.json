@@ -1,6 +1,7 @@
 {
   "name": "Schmetterling Walker",
   "parent": "Falco Walker",
+  "type": "Schmetterling_C",
   "category": "Walkers",
   "crafting": [
     {

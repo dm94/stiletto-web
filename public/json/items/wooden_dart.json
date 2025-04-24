@@ -1,6 +1,7 @@
 {
   "name": "Wooden Dart",
   "parent": "Repeater",
+  "type": "WoodenDart_C",
   "category": "Ammo",
   "trade_price": 1.5,
   "stackSize": 500,
@@ -71,128 +72,6 @@
     {
       "toolType": "RepeaterBolt",
       "tier": 1
-    }
-  ],
-  "droppedBy": [
-    {
-      "name": "Cowardly Rupu",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Green Rupu",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Prophet",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Rupu Berserker",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Rupu Forerunner",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Rupu Forerunner (Easy)",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Harasser (Easy)",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Hero",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Rupu Oracle",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Rupu Overseer",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Rupu Priestess",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Rupu Scavenger (Easy)",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Sentinel (Easy)",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Skirmisher (Easy)",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Thug (Easy)",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Warrior",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Tar Dweller",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Yellow Rupu",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
-    },
-    {
-      "name": "Zharvakko",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25
     }
   ]
 }

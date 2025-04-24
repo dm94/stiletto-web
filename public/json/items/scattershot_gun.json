@@ -1,6 +1,7 @@
 {
   "name": "Scattershot Gun",
   "parent": "Basic Walker Weapons",
+  "type": "ScattershotGun_C",
   "category": "Weapons",
   "experiencieReward": 366,
   "crafting": [

@@ -1,6 +1,7 @@
 {
   "name": "Walker Climber",
   "parent": "Construction",
+  "type": "WalkerClimber_C",
   "category": "Walker Tools",
   "experiencieReward": 78,
   "crafting": [

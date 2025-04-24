@@ -1,6 +1,7 @@
 {
   "name": "Gas Mask",
   "parent": "Fiber Headwrap",
+  "type": "GasMask_C",
   "category": "Armors",
   "trade_price": 13.2,
   "stackSize": 100,

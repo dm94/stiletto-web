@@ -1,5 +1,6 @@
 {
   "name": "Terrain: Salt Flats",
+  "type": "SaltRock_GroundSource_C",
   "category": "Resources",
   "weight": 1,
   "wikiVisibility": false

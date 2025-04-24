@@ -1,6 +1,7 @@
 {
   "name": "Bent Wooden Planks",
   "parent": "Lumbermill",
+  "type": "BentPlanks_C",
   "category": "Resources",
   "trade_price": 0.1,
   "stackSize": 100,

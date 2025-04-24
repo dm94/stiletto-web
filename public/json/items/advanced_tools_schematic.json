@@ -1,5 +1,6 @@
 {
   "name": "Advanced Tools Schematic",
+  "type": "Tools_T3Schematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
@@ -18,77 +19,5 @@
     "Ceramic Hatchet",
     "Split Ceramic Flask",
     "Firestone Battle Axe"
-  ],
-  "droppedBy": [
-    {
-      "name": "Rupu Ashdweller",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider (Hard)",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "White Death (Medium)",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    }
   ]
 }

@@ -1,6 +1,7 @@
 {
   "name": "Swampwood Galoshes",
   "parent": "Rupu Fur Sandals",
+  "type": "RainBoots_C",
   "category": "Armors",
   "trade_price": 34,
   "stackSize": 100,

@@ -1,6 +1,7 @@
 {
   "name": "Curing Station",
   "parent": "Fiberworking Station",
+  "type": "CuringStation_C",
   "category": "Crafting",
   "experiencieReward": 40,
   "crafting": [

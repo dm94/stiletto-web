@@ -1,5 +1,6 @@
 {
   "name": "Aloe Vera",
+  "type": "Aloe_C",
   "category": "Resources",
   "trade_price": 0.3,
   "stackSize": 100,

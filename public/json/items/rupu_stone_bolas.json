@@ -1,5 +1,6 @@
 {
   "name": "Rupu Stone Bolas",
+  "type": "RupuStoneBolas_T2_C",
   "category": "Ammo",
   "trade_price": 5,
   "stackSize": 20,

@@ -1,6 +1,7 @@
 {
   "name": "Iron Dart",
   "parent": "CeramicDart",
+  "type": "IronDart_C",
   "crafting": [
     {
       "ingredients": [
@@ -33,15 +34,6 @@
     {
       "toolType": "RepeaterBolt",
       "tier": 4
-    }
-  ],
-  "droppedBy": [
-    {
-      "name": "Rupu Firebrand",
-      "chance": 28.571428,
-      "minQuantity": 5,
-      "maxQuantity": 15,
-      "tier": "T4"
     }
   ]
 }
