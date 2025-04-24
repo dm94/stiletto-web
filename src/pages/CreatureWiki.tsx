@@ -9,7 +9,6 @@ import { getItemDecodedName, getCreatureUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 import DropsInfo from "@components/Wiki/DropsInfo";
-import CreatureInfo from "@components/Wiki/CreatureInfo";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -72,6 +71,43 @@ const CreatureWiki = () => {
 
   const creatureName = creature?.name ?? creatureInfo?.name;
 
+  const showCreatureInfo = () => {
+    if (!creatureInfo) {
+      return null;
+    }
+
+    return (
+      <ul className="space-y-2">
+        {creatureInfo.category && (
+          <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+            <div className="text-gray-300">{t("common.category")}</div>
+            <div className="text-gray-400">
+              {t(creatureInfo.category, { ns: "creatures" })}
+            </div>
+          </li>
+        )}
+        {creatureInfo.health && (
+          <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+            <div className="text-gray-300">{t("creature.health")}</div>
+            <div className="text-gray-400">{creatureInfo.health}</div>
+          </li>
+        )}
+        {creatureInfo.experiencie && (
+          <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+            <div className="text-gray-300">{t("creature.experience")}</div>
+            <div className="text-gray-400">{creatureInfo.experiencie}</div>
+          </li>
+        )}
+        {creatureInfo.tier && (
+          <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+            <div className="text-gray-300">{t("creature.tier")}</div>
+            <div className="text-gray-400">{creatureInfo.tier}</div>
+          </li>
+        )}
+      </ul>
+    );
+  };
+
   return (
     <div
       className="container mx-auto px-4"
@@ -86,19 +122,15 @@ const CreatureWiki = () => {
       <div className="flex flex-wrap -mx-4">
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
-            <div className="p-4 bg-gray-900 border-b border-gray-700">
-              <div className="flex items-center text-neutral-300">
-                <Icon key={creatureName} name={creatureName} width={35} />
-                <span className="ml-2">
-                  {t(creatureName, { ns: "creatures" })}
-                </span>
-              </div>
+            <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
+              <Icon key={creatureName} name={creatureName} width={35} />
+              <span className="ml-2">
+                {t(creatureName, { ns: "creatures" })}
+              </span>
             </div>
+            <div className="p-4">{showCreatureInfo()}</div>
           </div>
         </div>
-        <Suspense fallback={loadingCreaturePart()}>
-          <CreatureInfo key="creatureInfo" creatureInfo={creatureInfo} />
-        </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
           <WikiDescription key="wikidescription" name={creatureName} />
         </Suspense>
