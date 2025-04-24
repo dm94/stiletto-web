@@ -210,20 +210,20 @@ const Wiki = () => {
     [],
   );
 
-  // Función auxiliar para construir los parámetros de URL
+  // Helper function to build URL parameters
   const buildSearchParams = useCallback(
     (search: string, category: string, type: "items" | "creatures") => {
       const searchParams = new URLSearchParams();
 
-      // Añadir parámetro de búsqueda si existe
+      // Add search parameter if it exists
       if (search.trim()) {
         searchParams.set("s", search);
       }
 
-      // Añadir siempre el tipo de contenido
+      // Always add content type
       searchParams.set("type", type);
 
-      // Añadir categoría solo si no es "All"
+      // Add category only if it's not "All"
       if (category !== "All") {
         searchParams.set("category", category);
       }
