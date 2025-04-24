@@ -1,5 +1,6 @@
 {
   "name": "Fireproof Module",
+  "type": "FireproofBoost_C",
   "category": "Resources",
   "weight": 0.24,
   "crafting": [

@@ -1,5 +1,6 @@
 {
   "name": "Scaffolding",
+  "type": "Scaffolding_C",
   "category": "Wood: light",
   "weight": 3,
   "description": "A stackable, elevated platform that allows for easier access to high places. Useful in walker construction.",

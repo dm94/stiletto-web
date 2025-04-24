@@ -1,5 +1,6 @@
 {
   "name": "Battlements",
+  "type": "WallConcreteBattlement_C",
   "category": "Concrete",
   "weight": 12,
   "experiencieReward": 30,

@@ -1,6 +1,7 @@
 {
   "name": "Ammo Scroll Rack",
   "parent": "Ammo Chest",
+  "type": "AmmoScrollRack_C",
   "category": "Containers",
   "experiencieReward": 50,
   "onlyDevs": true,

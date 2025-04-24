@@ -1,5 +1,6 @@
 {
   "name": "Firestone Bladestaff",
+  "type": "LavaQuarterstaffSword_C",
   "category": "Weapons",
   "trade_price": 100.7,
   "stackSize": 100,

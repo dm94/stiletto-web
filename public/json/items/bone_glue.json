@@ -1,6 +1,7 @@
 {
   "name": "Bone Glue",
   "parent": "Purified Water",
+  "type": "BoneGlue_C",
   "category": "Resources",
   "trade_price": 1.9,
   "stackSize": 100,

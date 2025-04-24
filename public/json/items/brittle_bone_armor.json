@@ -1,5 +1,6 @@
 {
   "name": "Brittle Bone Armor",
+  "type": "T3_BrittleBoneTorso_C",
   "category": "Armors",
   "trade_price": 13.7,
   "stackSize": 100,

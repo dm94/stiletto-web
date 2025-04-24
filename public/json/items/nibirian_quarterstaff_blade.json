@@ -1,4 +1,5 @@
 {
   "name": "Nibirian Quarterstaff Blade",
-  "parent": "Wyndanblade Quarterstaff"
+  "parent": "Wyndanblade Quarterstaff",
+  "type": "NibirianQuarterstaffBlade_C"
 }

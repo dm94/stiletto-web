@@ -1,5 +1,6 @@
 {
   "name": "Holy Fire",
+  "type": "HolyFire_C",
   "category": "Weapons",
   "trade_price": 16.9,
   "stackSize": 5,

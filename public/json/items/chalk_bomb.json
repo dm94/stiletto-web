@@ -1,6 +1,7 @@
 {
   "name": "Chalk Bomb",
   "parent": "Slingshot",
+  "type": "ChalkCloudBomb_C",
   "category": "Ammo",
   "trade_price": 3.6,
   "stackSize": 10,

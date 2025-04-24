@@ -1,5 +1,6 @@
 {
   "name": "Chair throne",
+  "type": "Chair1_C",
   "category": "Furniture",
   "weight": 3.5,
   "experiencieReward": 6,

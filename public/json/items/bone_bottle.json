@@ -1,6 +1,7 @@
 {
   "name": "Bone Bottle",
   "parent": "Improvised Bottle",
+  "type": "BoneBottle_C",
   "category": "Equipment",
   "trade_price": 11.9,
   "stackSize": 100,

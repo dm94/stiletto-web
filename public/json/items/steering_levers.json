@@ -1,6 +1,7 @@
 {
   "name": "Steering Levers",
   "parent": "Dinghy Walker",
+  "type": "SteeringLevers_C",
   "category": "Walker Tools",
   "experiencieReward": 208,
   "crafting": [

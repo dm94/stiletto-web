@@ -1,6 +1,7 @@
 {
   "name": "Stone Axe",
   "parent": "Crude Hatchet",
+  "type": "StoneAxe_C",
   "category": "Weapons",
   "trade_price": 1.2,
   "stackSize": 100,

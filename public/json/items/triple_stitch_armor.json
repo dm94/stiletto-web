@@ -1,5 +1,6 @@
 {
   "name": "Triple Stitch Armor",
+  "type": "T2_TripleStitchTorso_C",
   "category": "Armors",
   "trade_price": 32,
   "stackSize": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Hurler Firebomb",
+  "type": "RupuTurretBoulder_T3_C",
   "category": "Ammo",
   "trade_price": 49.8,
   "stackSize": 5,

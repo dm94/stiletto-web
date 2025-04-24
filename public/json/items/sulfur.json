@@ -1,5 +1,6 @@
 {
   "name": "Sulfur",
+  "type": "Sulfur_C",
   "category": "Resources",
   "trade_price": 1.4,
   "stackSize": 100,

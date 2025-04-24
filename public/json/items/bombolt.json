@@ -1,6 +1,7 @@
 {
   "name": "Bombolt",
   "parent": "Cobra Walker",
+  "type": "Bombolt_C",
   "category": "Ammo",
   "trade_price": 11.7,
   "stackSize": 20,

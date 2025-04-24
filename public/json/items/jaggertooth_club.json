@@ -1,6 +1,7 @@
 {
   "name": "Jaggertooth Club",
   "parent": "Beat Stick",
+  "type": "OneHandedStoneClub_C",
   "category": "Weapons",
   "trade_price": 2.5,
   "stackSize": 100,

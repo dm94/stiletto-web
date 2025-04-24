@@ -1,6 +1,7 @@
 {
   "name": "Anti Personnel Turret",
   "parent": "Improved Walker Weapons",
+  "type": "AntiPersonnelTurret_C",
   "category": "Weapons",
   "experiencieReward": 100,
   "crafting": [

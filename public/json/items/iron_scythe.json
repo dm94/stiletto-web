@@ -1,6 +1,7 @@
 {
   "name": "Iron Scythe",
   "parent": "CeramicScythe",
+  "type": "IronScythe_C",
   "durability": 1200,
   "crafting": [
     {

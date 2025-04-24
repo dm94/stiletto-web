@@ -1,5 +1,6 @@
 {
   "name": "Rupu Hazraki Armor",
+  "type": "RupuHazrakiArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

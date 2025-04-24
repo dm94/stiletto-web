@@ -1,4 +1,5 @@
 {
   "name": "Fiber Gloves",
-  "parent": "FiberTorso"
+  "parent": "FiberTorso",
+  "type": "FiberGloves_C"
 }

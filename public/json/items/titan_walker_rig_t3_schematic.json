@@ -1,5 +1,6 @@
 {
   "name": "Titan Walker Rig T3 Schematic",
+  "type": "TitanRig_T3Schematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [

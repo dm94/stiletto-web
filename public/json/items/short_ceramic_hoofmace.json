@@ -1,6 +1,7 @@
 {
   "name": "Short Ceramic Hoofmace",
   "parent": "Rawbone Club",
+  "type": "OneHandedZirconiumMace_C",
   "category": "Weapons",
   "trade_price": 75.8,
   "stackSize": 100,

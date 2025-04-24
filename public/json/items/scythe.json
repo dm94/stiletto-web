@@ -1,6 +1,7 @@
 {
   "name": "Scythe",
   "parent": "Bone Sickle",
+  "type": "CeramicScythe_C",
   "trade_price": 17.4,
   "weight": 6.3,
   "description": "Returns a superior yield when used to harvest small plants.",

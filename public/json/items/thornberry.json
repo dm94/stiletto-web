@@ -1,5 +1,6 @@
 {
   "name": "Thornberry",
+  "type": "ThornBerry_C",
   "category": "Resources",
   "trade_price": 2.6,
   "stackSize": 100,

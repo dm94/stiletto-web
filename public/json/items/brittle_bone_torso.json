@@ -1,4 +1,5 @@
 {
   "name": "Brittle Bone Torso",
-  "parent": "ForesterTorso"
+  "parent": "ForesterTorso",
+  "type": "BrittleBoneTorso_C"
 }

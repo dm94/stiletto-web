@@ -1,5 +1,6 @@
 {
   "name": "Bone Splinter",
+  "type": "BoneSplinter_C",
   "category": "Resources",
   "trade_price": 0.4,
   "stackSize": 100,

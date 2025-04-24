@@ -1,6 +1,7 @@
 {
   "name": "Beat Stick",
   "parent": "Equipment",
+  "type": "WoodenClub_C",
   "category": "Weapons",
   "trade_price": 1.7,
   "stackSize": 100,

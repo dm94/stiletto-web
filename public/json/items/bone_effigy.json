@@ -1,5 +1,6 @@
 {
   "name": "Bone Effigy",
+  "type": "RupuBoneEffigy_01_C",
   "category": "Furniture",
   "weight": 0.4,
   "crafting": [

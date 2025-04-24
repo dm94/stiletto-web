@@ -1,5 +1,6 @@
 {
   "name": "Sandbag Wall",
+  "type": "WallSand_C",
   "category": "Basic Protection",
   "weight": 10,
   "experiencieReward": 30,

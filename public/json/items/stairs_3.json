@@ -1,5 +1,6 @@
 {
   "name": "Stairs 3",
+  "type": "Arena_Stairs_3_C",
   "category": "Furniture",
   "weight": 20,
   "crafting": [

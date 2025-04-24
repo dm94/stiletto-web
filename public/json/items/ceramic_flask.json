@@ -1,6 +1,7 @@
 {
   "name": "Ceramic Flask",
   "parent": "Bone Bottle",
+  "type": "CeramicBottle_C",
   "category": "Equipment",
   "trade_price": 71.6,
   "stackSize": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Apple Kambaro",
+  "type": "AppleKambaro_C",
   "category": "Vitamins",
   "stackSize": 100,
   "weight": 1,

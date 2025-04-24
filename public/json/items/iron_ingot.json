@@ -1,20 +1,5 @@
 {
   "name": "Iron Ingot",
   "parent": "Advanced Furnace",
-  "category": "Resources",
-  "trade_price": 12,
-  "stackSize": 100,
-  "weight": 0.65,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 1,
-          "name": "Iron Ore"
-        }
-      ],
-      "station": "Advanced Furnace",
-      "time": 2100
-    }
-  ]
+  "type": "IronIngot_C"
 }

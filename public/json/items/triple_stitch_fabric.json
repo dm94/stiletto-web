@@ -1,6 +1,7 @@
 {
   "name": "Triple Stitch Fabric",
   "parent": "Curing Station",
+  "type": "TripleStitch_C",
   "category": "Resources",
   "trade_price": 28,
   "stackSize": 100,

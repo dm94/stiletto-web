@@ -1,5 +1,6 @@
 {
   "name": "Foundation",
+  "type": "WallClayFoundation_C",
   "category": "Clay",
   "weight": 5,
   "experiencieReward": 22,

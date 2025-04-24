@@ -1,6 +1,7 @@
 {
   "name": "Long Ceramic Hoofmace",
   "parent": "Rawbone Maul",
+  "type": "TwoHandedZirconiumMace_C",
   "category": "Weapons",
   "trade_price": 118.9,
   "stackSize": 100,

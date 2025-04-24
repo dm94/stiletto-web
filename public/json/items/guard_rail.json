@@ -1,5 +1,6 @@
 {
   "name": "Guard Rail",
+  "type": "GuardRail_C",
   "category": "Wood: light",
   "weight": 1,
   "experiencieReward": 28,

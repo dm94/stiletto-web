@@ -1,6 +1,7 @@
 {
   "name": "Battleship Walker",
   "parent": "Flotillian Walkers",
+  "type": "Battleship_C",
   "category": "Walkers",
   "onlyDevs": true,
   "crafting": [

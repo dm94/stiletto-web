@@ -1,5 +1,6 @@
 {
   "name": "Premade Throne",
+  "type": "Throne_Prefab_01_C",
   "category": "Furniture",
   "weight": 100,
   "crafting": [

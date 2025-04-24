@@ -1,6 +1,7 @@
 {
   "name": "Rupu Rock",
   "parent": "RupuSling",
+  "type": "RupuRock_C",
   "category": "Ammo",
   "trade_price": 1.4,
   "stackSize": 24,

@@ -1,5 +1,6 @@
 {
   "name": "Big Roped Ladder",
+  "type": "LadderBig_C",
   "category": "Interactables",
   "weight": 73,
   "experiencieReward": 276,

@@ -1,5 +1,6 @@
 {
   "name": "Brine",
+  "type": "BrineWater_C",
   "category": "Liquids",
   "trade_price": 0.1,
   "stackSize": 100,

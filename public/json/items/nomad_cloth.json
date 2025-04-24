@@ -1,6 +1,7 @@
 {
   "name": "Nomad Cloth",
   "parent": "Advanced Fiberworking Station",
+  "type": "BasicCloth_C",
   "category": "Resources",
   "trade_price": 28,
   "stackSize": 100,

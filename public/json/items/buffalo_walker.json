@@ -1,6 +1,7 @@
 {
   "name": "Buffalo Walker",
   "parent": "Stiletto Walker",
+  "type": "Buffalo_C",
   "category": "Walkers",
   "crafting": [
     {

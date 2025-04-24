@@ -1,4 +1,5 @@
 {
   "name": "Chitin Pickaxe",
-  "parent": "CeramicPickaxe"
+  "parent": "CeramicPickaxe",
+  "type": "ChitinPickaxe_C"
 }

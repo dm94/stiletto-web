@@ -1,10 +1,6 @@
 {
   "name": "Stone",
-  "category": "Resources",
-  "trade_price": 0.1,
-  "stackSize": 100,
-  "weight": 0.4,
-  "experiencieReward": 3,
+  "type": "StructuralStoneNew_C",
   "droppedBy": [
     {
       "name": "Bounty Hunter",

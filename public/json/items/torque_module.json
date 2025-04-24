@@ -1,5 +1,6 @@
 {
   "name": "Torque Module",
+  "type": "TorqueGeneratorBoost_C",
   "category": "Resources",
   "weight": 0.24,
   "experiencieReward": 65,

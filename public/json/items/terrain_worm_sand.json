@@ -1,5 +1,6 @@
 {
   "name": "Terrain: Worm Sand",
+  "type": "WormSand_GroundSource_C",
   "category": "Resources",
   "weight": 1,
   "wikiVisibility": false

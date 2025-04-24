@@ -1,5 +1,6 @@
 {
   "name": "Rupu Dunestalker Armor",
+  "type": "RupuDunestalkerArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

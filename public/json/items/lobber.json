@@ -1,6 +1,7 @@
 {
   "name": "Lobber",
   "parent": "Improved Walker Weapons",
+  "type": "Lobber_C",
   "category": "Weapons",
   "description": "A small weapon for remote control while driving walkers. Launches bursts of solid projectiles.",
   "experiencieReward": 78,

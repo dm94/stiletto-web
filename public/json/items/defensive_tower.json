@@ -1,6 +1,7 @@
 {
   "name": "Defensive Tower",
   "parent": "WoodenWalls",
+  "type": "DefensiveTower_C",
   "category": "Defenses",
   "experiencieReward": 32,
   "crafting": [

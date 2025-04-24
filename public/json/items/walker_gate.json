@@ -1,5 +1,6 @@
 {
   "name": "Walker Gate",
+  "type": "WalkerGate_C",
   "category": "Wood: light",
   "weight": 18.5,
   "experiencieReward": 98,

@@ -1,6 +1,7 @@
 {
   "name": "Rupu Sling",
   "parent": "Defensive Tower",
+  "type": "RupuSling_C",
   "category": "Weapons",
   "experiencieReward": 44,
   "crafting": [

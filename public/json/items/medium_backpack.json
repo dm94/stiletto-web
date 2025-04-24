@@ -1,6 +1,7 @@
 {
   "name": "Medium Backpack",
   "parent": "Light Backpack",
+  "type": "MediumBackpack_C",
   "category": "Equipment",
   "trade_price": 10.3,
   "stackSize": 100,

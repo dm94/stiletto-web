@@ -1,26 +1,7 @@
 {
   "name": "Fiber Headwrap",
   "parent": "FiberTorso",
-  "category": "Armors",
-  "trade_price": 2.4,
-  "stackSize": 100,
-  "weight": 0.2,
-  "experiencieReward": 2,
-  "durability": 120,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 2,
-          "name": "Fiber Weave"
-        }
-      ]
-    }
-  ],
-  "armorInfo": {
-    "absorbing": 1,
-    "reduction": 1
-  },
+  "type": "FiberHeadwrap_C",
   "droppedBy": [
     {
       "name": "Cowardly Rupu",

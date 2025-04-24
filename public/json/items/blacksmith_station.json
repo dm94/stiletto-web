@@ -1,8 +1,8 @@
 {
   "name": "Blacksmith Station",
   "parent": "Crafting Bench",
+  "type": "SmithingStation_C",
   "category": "Crafting",
-  "weight": 25,
   "experiencieReward": 125,
   "crafting": [
     {

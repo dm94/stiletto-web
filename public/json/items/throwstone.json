@@ -1,24 +1,26 @@
 {
   "name": "Throwstone",
   "parent": "Equipment",
+  "type": "Throwstone_C",
   "category": "Weapons",
-  "trade_price": 16.9,
-  "stackSize": 10,
+  "trade_price": 1.6,
+  "stackSize": 50,
   "weight": 0.3,
   "description": "Either a fantastically aerodynamic stone, its form perfected for best throwing experience... Or just a sharp chip of rock that you can throw at someone in a pinch.",
-  "experiencieReward": 1,
-  "projectileDamage": {
-    "damage": 20,
-    "penetration": 25,
-    "effectivenessVsSoak": 50,
-    "effectivenessVsReduce": 50
-  },
-  "toolInfo": [
+  "crafting": [
     {
-      "toolType": "Scattershot",
-      "tier": 1
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Stone"
+        }
+      ]
     }
   ],
+  "weaponInfo": {
+    "damage": 20,
+    "penetration": 25
+  },
   "droppedBy": [
     {
       "name": "Cowardly Rupu",

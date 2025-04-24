@@ -1,6 +1,7 @@
 {
   "name": "Firestone Bozdogan",
   "parent": "Short Ceramic Hoofmace",
+  "type": "TwoHandedLavaMace_C",
   "category": "Weapons",
   "trade_price": 104,
   "stackSize": 100,

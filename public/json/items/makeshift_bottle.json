@@ -1,6 +1,7 @@
 {
   "name": "Makeshift Bottle",
   "parent": "Equipment",
+  "type": "MakeshiftBottle_C",
   "category": "Equipment",
   "trade_price": 1.5,
   "stackSize": 100,

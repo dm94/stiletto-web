@@ -1,6 +1,7 @@
 {
   "name": "Worm Oil",
   "parent": "StompingStation_T3",
+  "type": "WormOil_C",
   "category": "Liquids",
   "trade_price": 300,
   "stackSize": 100,

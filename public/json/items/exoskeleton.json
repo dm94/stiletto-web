@@ -1,5 +1,34 @@
 {
   "name": "Exoskeleton",
   "parent": "Advanced Constructions",
-  "description": "Using darts to shoot, this feat of engineering was created on the Flotilla and can be packed into Walker Packing Compartments. Protects nomads wearing them and allows to carry and operate heavy weapons and tools."
+  "type": "Exoskeleton_C",
+  "category": "Exoskeleton",
+  "description": "Using darts to shoot, this feat of engineering was created on the Flotilla and can be packed into Walker Packing Compartments. Protects nomads wearing them and allows to carry and operate heavy weapons and tools.",
+  "experiencieReward": 80,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 45,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 15,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 5,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 30,
+          "name": "Hide"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3500
+  }
 }

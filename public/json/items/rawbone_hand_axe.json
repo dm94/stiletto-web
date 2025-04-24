@@ -1,5 +1,6 @@
 {
   "name": "Rawbone Hand Axe",
+  "type": "BrittleBoneAxe_C",
   "category": "Weapons",
   "trade_price": 4.8,
   "stackSize": 100,

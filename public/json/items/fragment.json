@@ -1,9 +1,9 @@
 {
   "name": "Fragment",
+  "type": "Fragment_C",
   "category": "Knowledge",
   "trade_price": 50,
   "stackSize": 100,
-  "weight": 0.2,
   "description": "Faint images are etched on the translucent surface.",
   "experiencieReward": 10,
   "wikiVisibility": false

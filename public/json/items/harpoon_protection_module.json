@@ -1,5 +1,6 @@
 {
   "name": "Harpoon Protection Module",
+  "type": "TetherProtectionBoost_C",
   "category": "Resources",
   "crafting": [
     {

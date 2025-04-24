@@ -1,6 +1,7 @@
 {
   "name": "Catapult",
   "parent": "Advanced Walker Weapons",
+  "type": "Catapult_C",
   "category": "Weapons",
   "description": "Launches boulders and bombs extremely far distances. Effective against fortified structures.",
   "experiencieReward": 188,

@@ -1,6 +1,7 @@
 {
   "name": "Long Bonespike Swordstaff",
   "parent": "Bonespike Sword",
+  "type": "TwoHandedBoneSword_C",
   "category": "Weapons",
   "trade_price": 14.4,
   "stackSize": 100,

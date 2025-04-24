@@ -1,6 +1,7 @@
 {
   "name": "Bone Sickle",
   "parent": "Simple Sickle",
+  "type": "BoneSickle_C",
   "durability": 550,
   "crafting": [
     {

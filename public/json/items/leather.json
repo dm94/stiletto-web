@@ -1,6 +1,7 @@
 {
   "name": "Leather",
   "parent": "Curing Station",
+  "type": "Leather_C",
   "category": "Resources",
   "trade_price": 1.1,
   "stackSize": 100,

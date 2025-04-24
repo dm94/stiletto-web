@@ -1,6 +1,7 @@
 {
   "name": "Bone Dart",
   "parent": "Repeater",
+  "type": "BoneDart_C",
   "trade_price": 5,
   "crafting": [
     {
@@ -68,119 +69,6 @@
     {
       "toolType": "RepeaterBolt",
       "tier": 2
-    }
-  ],
-  "droppedBy": [
-    {
-      "name": "Bounty Hunter",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Grave Digger (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Marshland Stalker",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30
-    },
-    {
-      "name": "Matriarch",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Dunestalker (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Forager (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Harasser (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hermit (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Plainstrider (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Shaman (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Skirmisher (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (Medium)",
-      "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
-      "tier": "T2"
     }
   ]
 }

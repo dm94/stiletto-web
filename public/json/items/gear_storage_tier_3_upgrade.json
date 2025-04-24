@@ -1,5 +1,6 @@
 {
   "name": "Gear Storage Tier 3 Upgrade",
+  "type": "SparePartClayHatch_C",
   "category": "Spare Parts",
   "experiencieReward": 30,
   "durability": 100,

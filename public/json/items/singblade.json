@@ -1,6 +1,7 @@
 {
   "name": "Singblade",
   "parent": "Long Bonespike Swordstaff",
+  "type": "TwoHandedZirconiumSword_C",
   "category": "Weapons",
   "trade_price": 165.8,
   "stackSize": 100,

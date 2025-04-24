@@ -1,5 +1,6 @@
 {
   "name": "Rupu Forerunner Armor",
+  "type": "RupuForerunnerArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

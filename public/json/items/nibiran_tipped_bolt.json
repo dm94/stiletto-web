@@ -1,6 +1,7 @@
 {
   "name": "Nibiran tipped Bolt",
   "parent": "IronBolt",
+  "type": "NibirianBolt_C",
   "trade_price": 35,
   "experiencieReward": 100,
   "crafting": [

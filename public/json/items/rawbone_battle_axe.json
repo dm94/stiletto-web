@@ -1,6 +1,7 @@
 {
   "name": "Rawbone Battle Axe",
   "parent": "Stone Axe",
+  "type": "TwoHandedBoneAxe_C",
   "category": "Weapons",
   "trade_price": 18.4,
   "stackSize": 100,

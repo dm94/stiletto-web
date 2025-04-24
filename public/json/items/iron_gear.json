@@ -1,6 +1,7 @@
 {
   "name": "Iron Gear",
   "parent": "Reinforced Gear",
+  "type": "IronGear_C",
   "category": "Resources",
   "trade_price": 700,
   "stackSize": 100,

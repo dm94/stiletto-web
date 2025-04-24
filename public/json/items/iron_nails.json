@@ -1,6 +1,7 @@
 {
   "name": "Iron Nails",
   "parent": "Lathe",
+  "type": "IronNails_C",
   "category": "Resources",
   "trade_price": 0.4,
   "stackSize": 100,

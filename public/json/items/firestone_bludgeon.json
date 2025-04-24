@@ -1,6 +1,7 @@
 {
   "name": "Firestone Bludgeon",
   "parent": "Short Ceramic Hoofmace",
+  "type": "OneHandedLavaMace_C",
   "category": "Weapons",
   "trade_price": 81,
   "stackSize": 100,

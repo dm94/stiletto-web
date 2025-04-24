@@ -1,5 +1,6 @@
 {
   "name": "Wall With Windows 2",
+  "type": "WallConcreteWindow4_C",
   "category": "Concrete",
   "weight": 8,
   "experiencieReward": 32,

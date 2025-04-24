@@ -1,5 +1,6 @@
 {
   "name": "Rupu Firebrand Armor",
+  "type": "RupuFirebrandArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

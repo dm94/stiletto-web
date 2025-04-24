@@ -1,5 +1,6 @@
 {
   "name": "Meteor Core",
+  "type": "MeteorCore_C",
   "category": "Resources",
   "trade_price": 600,
   "stackSize": 100,

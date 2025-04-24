@@ -1,36 +1,7 @@
 {
   "name": "Brittle Bone Boots",
   "parent": "BrittleBoneTorso",
-  "category": "Armors",
-  "stackSize": 100,
-  "weight": 1.3,
-  "experiencieReward": 40,
-  "durability": 240,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 25,
-          "name": "Cattail"
-        },
-        {
-          "count": 12,
-          "name": "Bone Splinter"
-        },
-        {
-          "count": 2,
-          "name": "Ceramic Shard"
-        }
-      ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
-    }
-  ],
-  "armorInfo": {
-    "absorbing": 5,
-    "reduction": 3,
-    "speedReduction": 3
-  },
+  "type": "BrittleBoneBoots_C",
   "droppedBy": [
     {
       "name": "Rupu Ashdweller",

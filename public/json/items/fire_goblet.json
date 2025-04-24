@@ -1,5 +1,6 @@
 {
   "name": "Fire Goblet",
+  "type": "FireGoblet_C",
   "category": "Furniture",
   "weight": 2.5,
   "experiencieReward": 6,

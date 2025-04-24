@@ -1,6 +1,7 @@
 {
   "name": "Clay Pot",
   "parent": "Clay",
+  "type": "ClayPot_C",
   "category": "Crafting",
   "experiencieReward": 40,
   "crafting": [

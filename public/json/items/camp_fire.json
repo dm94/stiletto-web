@@ -1,6 +1,7 @@
 {
   "name": "Camp Fire",
   "parent": "Crafting",
+  "type": "CampFire_C",
   "category": "Crafting",
   "experiencieReward": 18,
   "crafting": [

@@ -1,6 +1,7 @@
 {
   "name": "Worm Sand",
   "parent": "Soil Excavator",
+  "type": "WormSand_C",
   "category": "Resources",
   "trade_price": 5,
   "stackSize": 100,

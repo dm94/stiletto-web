@@ -1,5 +1,6 @@
 {
   "name": "Meat Rack",
+  "type": "MeatRack_01_C",
   "category": "Furniture",
   "weight": 5,
   "crafting": [

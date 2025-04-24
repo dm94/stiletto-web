@@ -1,4 +1,5 @@
 {
   "name": "Rupu Fur Gloves",
-  "parent": "RupuFurTorso"
+  "parent": "RupuFurTorso",
+  "type": "RupuFurGloves_C"
 }

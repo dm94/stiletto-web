@@ -1,6 +1,7 @@
 {
   "name": "Flotillan Grappling Hook",
   "parent": "Nomad Grappling Hook",
+  "type": "FlotillanGrapplingHook_C",
   "category": "Grappling Hooks",
   "trade_price": 16,
   "experiencieReward": 76,

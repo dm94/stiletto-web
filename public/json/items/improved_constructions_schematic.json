@@ -1,5 +1,6 @@
 {
   "name": "Improved Constructions Schematic",
+  "type": "Constructions_T2Schematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
@@ -21,118 +22,5 @@
     "Small Repair Hoist",
     "Trap Door",
     "TrapSpikesSpring"
-  ],
-  "droppedBy": [
-    {
-      "name": "Bounty Hunter",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Grave Digger (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Marshland Stalker",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Matriarch",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Dunestalker (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Forager (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Harasser (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hermit (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Plainstrider (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Shaman (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Skirmisher (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (Medium)",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    }
   ]
 }

@@ -1,6 +1,7 @@
 {
   "name": "Ceramic Tipped Harpoon",
   "parent": "Ceramic Bolt",
+  "type": "CeramicHarpoon_C",
   "trade_price": 14.1,
   "weight": 0.3,
   "experiencieReward": 12,

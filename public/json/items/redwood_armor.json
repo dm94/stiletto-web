@@ -1,5 +1,6 @@
 {
   "name": "Redwood Armor",
+  "type": "T3_RedwoodWoodTorso_C",
   "category": "Armors",
   "trade_price": 719.9,
   "stackSize": 100,

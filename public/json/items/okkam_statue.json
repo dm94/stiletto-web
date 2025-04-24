@@ -1,5 +1,6 @@
 {
   "name": "Okkam Statue",
+  "type": "OkkamStatue_C",
   "category": "OkkamStatue",
   "experiencieReward": 6,
   "crafting": [

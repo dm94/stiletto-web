@@ -1,5 +1,6 @@
 {
   "name": "Giant Wall Packer",
+  "type": "WallGiantPacker_C",
   "category": "Defenses",
   "weight": 150,
   "experiencieReward": 40,

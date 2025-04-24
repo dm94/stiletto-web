@@ -1,5 +1,6 @@
 {
   "name": "Gear Storage Tier 2 Upgrade",
+  "type": "SparePartBoneHatch_C",
   "category": "Spare Parts",
   "experiencieReward": 20,
   "durability": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Rupu Drudge Armor",
+  "type": "RupuDrudgeArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

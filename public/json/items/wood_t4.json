@@ -1,4 +1,5 @@
 {
   "name": "Wood T4",
-  "parent": "Lumbermill"
+  "parent": "Lumbermill",
+  "type": "Wood_T4_C"
 }

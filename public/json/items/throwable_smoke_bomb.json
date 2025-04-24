@@ -1,6 +1,7 @@
 {
   "name": "Throwable Smoke Bomb",
   "parent": "Chalk Bomb",
+  "type": "ThrowableSmokeBomb_C",
   "category": "Weapons",
   "trade_price": 16.9,
   "stackSize": 5,

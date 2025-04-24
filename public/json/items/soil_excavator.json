@@ -1,6 +1,7 @@
 {
   "name": "Soil Excavator",
   "parent": "Camp Fire",
+  "type": "SoilExcavator_C",
   "category": "Crafting",
   "experiencieReward": 18,
   "crafting": [

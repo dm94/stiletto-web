@@ -1,32 +1,7 @@
 {
   "name": "Glass",
   "parent": "Furnace",
-  "category": "Resources",
-  "trade_price": 1.4,
-  "stackSize": 100,
-  "weight": 0.05,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 3,
-          "name": "Sand"
-        }
-      ],
-      "station": "Furnace",
-      "time": 1200
-    },
-    {
-      "ingredients": [
-        {
-          "count": 2,
-          "name": "Sand"
-        }
-      ],
-      "station": "Advanced Furnace",
-      "time": 900
-    }
-  ],
+  "type": "Glass_C",
   "droppedBy": [
     {
       "name": "Bounty Hunter",

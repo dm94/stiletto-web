@@ -1,5 +1,6 @@
 {
   "name": "Rupu Fur Armor",
+  "type": "T1_RupuFurTorso_C",
   "category": "Armors",
   "trade_price": 2.6,
   "stackSize": 100,

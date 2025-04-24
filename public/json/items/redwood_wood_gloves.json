@@ -1,4 +1,5 @@
 {
   "name": "Redwood Wood Gloves",
-  "parent": "RedwoodWoodTorso"
+  "parent": "RedwoodWoodTorso",
+  "type": "RedwoodWoodGloves_C"
 }

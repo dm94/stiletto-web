@@ -1,5 +1,6 @@
 {
   "name": "Improved Weapons",
   "parent": "Equipment_T2",
+  "type": "Weapons_T2_C",
   "onlyDevs": true
 }

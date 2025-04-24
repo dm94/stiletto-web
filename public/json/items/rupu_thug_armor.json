@@ -1,5 +1,6 @@
 {
   "name": "Rupu Thug Armor",
+  "type": "RupuThugArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

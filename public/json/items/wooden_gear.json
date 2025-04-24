@@ -1,6 +1,7 @@
 {
   "name": "Wooden Gear",
   "parent": "Advanced Woodworking Station",
+  "type": "WoodenGear_C",
   "category": "Resources",
   "trade_price": 700,
   "stackSize": 100,

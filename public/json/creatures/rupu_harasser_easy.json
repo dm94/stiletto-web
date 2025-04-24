@@ -6,41 +6,6 @@
   "experiencie": 150,
   "drops": [
     {
-      "name": "Relic of Dawn",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "ac_relic_1"
-    },
-    {
-      "name": "Relic of Dusk",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "ac_relic_2"
-    },
-    {
-      "name": "Flint Bolt",
-      "chance": 33.333332,
-      "minQuantity": 3,
-      "maxQuantity": 15,
-      "source": "ammo_t1"
-    },
-    {
-      "name": "Scattershot Ammo",
-      "chance": 33.333332,
-      "minQuantity": 2,
-      "maxQuantity": 18,
-      "source": "ammo_t1"
-    },
-    {
-      "name": "Wooden Dart",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
-      "source": "ammo_t1"
-    },
-    {
       "name": "Fiber",
       "chance": 26.31579,
       "minQuantity": 12,
@@ -74,6 +39,27 @@
       "minQuantity": 2,
       "maxQuantity": 2,
       "source": "baseresources_t1"
+    },
+    {
+      "name": "Rupu Pelt",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rupufur_t1"
+    },
+    {
+      "name": "Wood Shaft",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "processedresources_t1"
+    },
+    {
+      "name": "Fiber Weave",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "processedresources_t1"
     },
     {
       "name": "Fiber Shirt and Trousers",
@@ -195,27 +181,6 @@
       "source": "weapons_t1"
     },
     {
-      "name": "Flots",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "flots_t1"
-    },
-    {
-      "name": "Wood Shaft",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "source": "processedresources_t1"
-    },
-    {
-      "name": "Fiber Weave",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "source": "processedresources_t1"
-    },
-    {
       "name": "Firefly Walker Rig T2 Schematic",
       "chance": 41.666668,
       "minQuantity": 1,
@@ -242,230 +207,6 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t1"
-    },
-    {
-      "name": "Animal Fat",
-      "chance": 11.111111,
-      "minQuantity": 2,
-      "maxQuantity": 2,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Ash",
-      "chance": 11.111111,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Charcoal",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Huge Cactus Fruit",
-      "chance": 11.111111,
-      "minQuantity": 2,
-      "maxQuantity": 2,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Fruit Pulp",
-      "chance": 11.111111,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Rupu Pelt",
-      "chance": 11.111111,
-      "minQuantity": 2,
-      "maxQuantity": 2,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Hide",
-      "chance": 11.111111,
-      "minQuantity": 2,
-      "maxQuantity": 2,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Sand",
-      "chance": 11.111111,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Purified Water",
-      "chance": 11.111111,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "extraresources_t1"
-    },
-    {
-      "name": "Basic Ammo Schematic",
-      "chance": 6.25,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Basic Armors Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Basic Constructions Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Dinghy Walker Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Firefly Walker Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Basic Crafting Stations Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Basic Tools Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Basic Potions Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Basic Walker Weapons Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Wooden Walls Schematic",
-      "chance": 6.25,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Basic Weapons Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Base Walker Parts Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Improved Walker Parts Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Advanced Walker Parts Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Sand Structures Schematic",
-      "chance": 6.25,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Spider Walker Schematic",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t1"
-    },
-    {
-      "name": "Spring",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "components_t1"
-    },
-    {
-      "name": "Shackle",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "components_t1"
-    },
-    {
-      "name": "Strut",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "components_t1"
-    },
-    {
-      "name": "Cog",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "components_t1"
-    },
-    {
-      "name": "Lever",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "components_t1"
-    },
-    {
-      "name": "Spline",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "components_t1"
-    },
-    {
-      "name": "Forebear Coin",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "ac_forebearcoins"
     }
   ]
 }

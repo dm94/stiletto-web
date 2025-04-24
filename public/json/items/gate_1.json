@@ -1,5 +1,6 @@
 {
   "name": "Gate 1",
+  "type": "Arena_Gate_1_C",
   "category": "Furniture",
   "weight": 20,
   "crafting": [

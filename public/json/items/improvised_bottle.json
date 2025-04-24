@@ -1,6 +1,7 @@
 {
   "name": "Improvised Bottle",
   "parent": "Makeshift Bottle",
+  "type": "ImprovisedBottle_C",
   "category": "Equipment",
   "trade_price": 6.2,
   "stackSize": 100,

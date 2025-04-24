@@ -1,6 +1,7 @@
 {
   "name": "Short Malletblade",
   "parent": "Bonespike Sword",
+  "type": "OneHandedZirconiumSword_C",
   "category": "Weapons",
   "trade_price": 88.8,
   "stackSize": 100,

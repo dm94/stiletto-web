@@ -1,6 +1,7 @@
 {
   "name": "Small Boulder",
   "parent": "Slingshot",
+  "type": "SmallBoulder_C",
   "category": "Ammo",
   "trade_price": 3.1,
   "stackSize": 10,

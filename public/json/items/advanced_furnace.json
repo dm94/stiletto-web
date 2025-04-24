@@ -1,6 +1,7 @@
 {
   "name": "Advanced Furnace",
   "parent": "Furnace",
+  "type": "Furnace_T2_C",
   "category": "Crafting",
   "experiencieReward": 36,
   "crafting": [

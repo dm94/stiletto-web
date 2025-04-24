@@ -1,5 +1,6 @@
 {
   "name": "Toxic Remains",
+  "type": "ToxicRemains_C",
   "category": "Resources",
   "trade_price": 0.5,
   "stackSize": 100,

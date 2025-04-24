@@ -1,4 +1,8 @@
 {
   "name": "Torque",
+  "type": "Torque_C",
+  "category": "Torque",
+  "trade_price": 0.1,
+  "stackSize": 10000,
   "description": "Enables walker sprinting, powers advanced machines, and enables faster grappling."
 }

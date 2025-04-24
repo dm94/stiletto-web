@@ -1,6 +1,44 @@
 {
   "name": "Clay",
   "parent": "Soil Excavator",
+  "type": "ClayLump_C",
+  "category": "Resources",
+  "trade_price": 0.1,
+  "stackSize": 100,
+  "weight": 0.35,
+  "experiencieReward": 1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Clay Spots"
+        },
+        {
+          "count": 10,
+          "name": "Ash"
+        }
+      ],
+      "output": 5,
+      "station": "Soil Excavator",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Clay Spots"
+        },
+        {
+          "count": 10,
+          "name": "Ash"
+        }
+      ],
+      "output": 10,
+      "station": "Artisan Soil Auger",
+      "time": 20
+    }
+  ],
   "droppedBy": [
     {
       "name": "Rupu Ashdweller",

@@ -1,6 +1,7 @@
 {
   "name": "Firestone Longblade",
   "parent": "Singblade",
+  "type": "TwoHandedLavaSword_C",
   "category": "Weapons",
   "trade_price": 105.2,
   "stackSize": 100,

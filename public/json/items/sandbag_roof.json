@@ -1,5 +1,6 @@
 {
   "name": "Sandbag Roof",
+  "type": "WallSandRoof_C",
   "category": "Basic Protection",
   "weight": 2,
   "experiencieReward": 22,

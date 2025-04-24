@@ -1,14 +1,28 @@
 {
   "name": "Light Javelin",
   "parent": "Beat Stick",
+  "type": "Javelin_C",
   "category": "Weapons",
   "trade_price": 1.6,
-  "stackSize": 5,
+  "stackSize": 20,
   "weight": 2,
-  "wikiVisibility": false,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Stone"
+        }
+      ],
+      "output": 3
+    }
+  ],
   "weaponInfo": {
-    "damage": 15,
-    "penetration": 15
+    "damage": 50
   },
   "droppedBy": [
     {

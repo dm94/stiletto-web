@@ -1,5 +1,6 @@
 {
   "name": "Water Storage Tier 4 Upgrade",
+  "type": "SparePartIronWater_C",
   "category": "Spare Parts",
   "experiencieReward": 40,
   "durability": 100,

@@ -1,6 +1,7 @@
 {
   "name": "Reinforced Gear",
   "parent": "Wooden Gear",
+  "type": "ReinforcedGear_C",
   "category": "Resources",
   "trade_price": 700,
   "stackSize": 100,

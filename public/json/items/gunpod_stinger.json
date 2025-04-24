@@ -1,6 +1,7 @@
 {
   "name": "Gunpod Stinger",
   "parent": "Gun Pod",
+  "type": "GunpodStinger_C",
   "category": "Weapons",
   "experiencieReward": 78,
   "crafting": [

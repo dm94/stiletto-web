@@ -1,5 +1,6 @@
 {
   "name": "Wall",
+  "type": "WallClay_C",
   "category": "Clay",
   "weight": 7,
   "experiencieReward": 30,

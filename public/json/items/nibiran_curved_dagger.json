@@ -1,5 +1,6 @@
 {
   "name": "Nibiran Curved Dagger",
+  "type": "OneHandedTitaniumSword2_C",
   "category": "Weapons",
   "trade_price": 1900.2,
   "stackSize": 100,

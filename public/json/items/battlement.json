@@ -1,5 +1,6 @@
 {
   "name": "Battlement",
+  "type": "WallClayBattlement_C",
   "category": "Clay",
   "weight": 7,
   "experiencieReward": 30,

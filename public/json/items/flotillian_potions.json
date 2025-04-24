@@ -1,5 +1,6 @@
 {
   "name": "Flotillian Potions",
   "parent": "Advanced Potions",
+  "type": "Vitamins_T4_C",
   "onlyDevs": true
 }

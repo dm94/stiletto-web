@@ -1,5 +1,6 @@
 {
   "name": "Cage 1",
+  "type": "Throne_Cage_01_C",
   "category": "Furniture",
   "weight": 20,
   "crafting": [

@@ -1,37 +1,7 @@
 {
   "name": "Brittle Bone Handwraps",
   "parent": "BrittleBoneTorso",
-  "category": "Armors",
-  "trade_price": 8.9,
-  "stackSize": 100,
-  "weight": 1,
-  "experiencieReward": 70,
-  "durability": 240,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 12,
-          "name": "Bone Splinter"
-        },
-        {
-          "count": 7,
-          "name": "Rope"
-        },
-        {
-          "count": 2,
-          "name": "Ceramic Shard"
-        }
-      ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
-    }
-  ],
-  "armorInfo": {
-    "absorbing": 12,
-    "reduction": 3,
-    "speedReduction": 3
-  },
+  "type": "BrittleBoneGloves_C",
   "droppedBy": [
     {
       "name": "Rupu Ashdweller",

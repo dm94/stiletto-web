@@ -1,4 +1,5 @@
 {
   "name": "Advanced Walker Parts",
-  "parent": "WalkerPartsImproved_T2"
+  "parent": "WalkerPartsImproved_T2",
+  "type": "WalkerPartsAdvanced_T2_C"
 }

@@ -1,5 +1,6 @@
 {
   "name": "Lightwood",
+  "type": "Lightwood_C",
   "category": "Resources",
   "trade_price": 3.5,
   "stackSize": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Relic of the Stars",
+  "type": "AltarOfTheStars_C",
   "category": "Resources",
   "trade_price": 2500,
   "stackSize": 100,

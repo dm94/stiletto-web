@@ -1,6 +1,7 @@
 {
   "name": "Split Bone Bottle",
   "parent": "Bone Bottle",
+  "type": "SplitBoneBottle_C",
   "category": "Equipment",
   "trade_price": 13.3,
   "stackSize": 100,

@@ -1,39 +1,7 @@
 {
   "name": "Wyndan Hammer",
   "parent": "Short Ceramic Hoofmace",
-  "category": "Weapons",
-  "trade_price": 316.4,
-  "stackSize": 100,
-  "weight": 4.5,
-  "experiencieReward": 1197,
-  "durability": 760,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 10,
-          "name": "Lightwood"
-        },
-        {
-          "count": 4,
-          "name": "Leather"
-        },
-        {
-          "count": 3,
-          "name": "Iron Ingot"
-        }
-      ],
-      "station": "Smithing",
-      "time": 15
-    }
-  ],
-  "weaponInfo": {
-    "weaponSpeed": 90,
-    "impact": 70,
-    "weaponLength": 61,
-    "damage": 60,
-    "penetration": 10
-  },
+  "type": "OneHandedIronMace_C",
   "droppedBy": [
     {
       "name": "Rupu Firebrand",

@@ -1,5 +1,6 @@
 {
   "name": "Arena Fence 2",
+  "type": "Arena_Fence_2_C",
   "category": "Furniture",
   "weight": 20,
   "crafting": [

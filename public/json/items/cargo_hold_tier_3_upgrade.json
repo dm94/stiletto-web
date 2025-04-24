@@ -1,5 +1,6 @@
 {
   "name": "Cargo Hold Tier 3 Upgrade",
+  "type": "SparePartClayCargo_C",
   "category": "Spare Parts",
   "experiencieReward": 30,
   "durability": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Fiber Shirt and Trousers",
+  "type": "T1_FiberTorso_C",
   "category": "Armors",
   "trade_price": 1.6,
   "stackSize": 100,

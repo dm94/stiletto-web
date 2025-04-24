@@ -1,6 +1,7 @@
 {
   "name": "Primitive Bandage",
   "parent": "Equipment",
+  "type": "FiberBandage_C",
   "category": "Interactables",
   "trade_price": 1.2,
   "stackSize": 100,

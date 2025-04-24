@@ -1,5 +1,6 @@
 {
   "name": "Super Cluster Bomb",
+  "type": "SuperClusterBomb_C",
   "category": "Ammo",
   "trade_price": 84.7,
   "stackSize": 10,

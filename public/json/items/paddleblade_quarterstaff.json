@@ -1,6 +1,7 @@
 {
   "name": "Paddleblade Quarterstaff",
   "parent": "Rawbone Quarterstaff",
+  "type": "ZirconiumQuarterstaff_C",
   "category": "Weapons",
   "trade_price": 124.2,
   "stackSize": 100,

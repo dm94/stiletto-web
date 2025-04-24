@@ -1,8 +1,8 @@
 {
   "name": "Medium Stinger",
   "parent": "Improved Walker Weapons",
+  "type": "Stinger_T2_C",
   "category": "Weapons",
-  "weight": 2,
   "experiencieReward": 78,
   "onlyDevs": true,
   "crafting": [

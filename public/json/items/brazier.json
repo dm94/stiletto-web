@@ -1,5 +1,6 @@
 {
   "name": "Brazier",
+  "type": "Throne_Brazier_01_C",
   "category": "Furniture",
   "weight": 20,
   "crafting": [

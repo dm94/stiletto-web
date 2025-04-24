@@ -1,5 +1,6 @@
 {
   "name": "Sandbag Gate",
+  "type": "WallSandGate_C",
   "category": "Basic Protection",
   "weight": 13,
   "experiencieReward": 22,

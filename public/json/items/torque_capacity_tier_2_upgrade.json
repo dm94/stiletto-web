@@ -1,5 +1,6 @@
 {
   "name": "Torque Capacity Tier 2 Upgrade",
+  "type": "SparePartBoneTorque_C",
   "category": "Spare Parts",
   "experiencieReward": 20,
   "durability": 100,

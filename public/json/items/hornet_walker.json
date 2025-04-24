@@ -1,6 +1,7 @@
 {
   "name": "Hornet Walker",
   "parent": "Stiletto Walker",
+  "type": "Hornet_C",
   "category": "Walkers",
   "crafting": [
     {

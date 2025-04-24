@@ -1,6 +1,7 @@
 {
   "name": "Ceramic Shard",
   "parent": "Furnace",
+  "type": "CeramicShard_C",
   "category": "Resources",
   "trade_price": 7.2,
   "stackSize": 100,

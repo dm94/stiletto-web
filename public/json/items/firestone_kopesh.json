@@ -1,6 +1,7 @@
 {
   "name": "Firestone Kopesh",
   "parent": "Short Malletblade",
+  "type": "OneHandedLavaSword_C",
   "category": "Weapons",
   "trade_price": 103,
   "stackSize": 100,

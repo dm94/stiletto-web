@@ -1,5 +1,6 @@
 {
   "name": "Dance Mask",
+  "type": "DanceMask_C",
   "category": "Armors",
   "trade_price": 2.4,
   "stackSize": 100,

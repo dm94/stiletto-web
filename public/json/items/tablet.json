@@ -1,5 +1,6 @@
 {
   "name": "Tablet",
+  "type": "KnowledgeTablet_C",
   "category": "Knowledge",
   "trade_price": 500,
   "stackSize": 100,

@@ -1,6 +1,7 @@
 {
   "name": "Throwable Aloe Bomb",
   "parent": "Aloe Goo Bomb",
+  "type": "ThrowableAloeBomb_C",
   "category": "Weapons",
   "trade_price": 16.9,
   "stackSize": 5,

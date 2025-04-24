@@ -1,5 +1,6 @@
 {
   "name": "Hangar Roof",
+  "type": "HangarRoof_C",
   "category": "Walker Hangar",
   "crafting": [
     {

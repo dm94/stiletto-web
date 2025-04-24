@@ -1,5 +1,6 @@
 {
   "name": "Rangefinder",
+  "type": "Rangefinder_C",
   "category": "Interactables",
   "weight": 20,
   "description": "Measures distance to far-away targets.",

@@ -1,5 +1,6 @@
 {
   "name": "Tree Sap",
+  "type": "TreeSap_C",
   "category": "Resources",
   "trade_price": 3.2,
   "stackSize": 100,

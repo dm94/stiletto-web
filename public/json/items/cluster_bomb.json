@@ -1,6 +1,7 @@
 {
   "name": "Cluster Bomb",
   "parent": "Slingshot",
+  "type": "ClusterBomb_C",
   "category": "Ammo",
   "trade_price": 84.7,
   "stackSize": 10,

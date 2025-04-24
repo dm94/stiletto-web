@@ -1,6 +1,7 @@
 {
   "name": "Proxy License",
   "parent": "Woodworking Station",
+  "type": "ProxyLicense_C",
   "category": "Interactables",
   "trade_price": 1,
   "stackSize": 5,

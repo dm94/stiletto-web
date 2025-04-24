@@ -1,5 +1,6 @@
 {
   "name": "Carapace Gauntlets",
+  "type": "T3_CarapaceGloves_C",
   "category": "Armors",
   "trade_price": 159.2,
   "stackSize": 100,

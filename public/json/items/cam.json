@@ -1,4 +1,5 @@
 {
   "name": "Cam",
+  "type": "Cam_C",
   "stackSize": 10
 }

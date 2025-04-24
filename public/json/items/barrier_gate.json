@@ -1,6 +1,7 @@
 {
   "name": "Barrier Gate",
   "parent": "Barrier Base",
+  "type": "WalkerBarrierGate_C",
   "category": "Defenses",
   "experiencieReward": 34,
   "crafting": [

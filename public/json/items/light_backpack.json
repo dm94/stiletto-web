@@ -1,6 +1,7 @@
 {
   "name": "Light Backpack",
   "parent": "Foraging Pouch",
+  "type": "SmallBackpack_C",
   "category": "Equipment",
   "trade_price": 5.6,
   "stackSize": 100,

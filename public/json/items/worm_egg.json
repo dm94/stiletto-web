@@ -1,5 +1,6 @@
 {
   "name": "Worm Egg",
+  "type": "WormEgg_C",
   "category": "Resources",
   "trade_price": 1000,
   "stackSize": 100,

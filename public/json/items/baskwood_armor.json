@@ -1,5 +1,6 @@
 {
   "name": "Baskwood Armor",
+  "type": "T2_BaskwoodTorso_C",
   "category": "Armors",
   "trade_price": 21.2,
   "stackSize": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Wall 1",
+  "type": "Arena_Wall_1_C",
   "category": "Furniture",
   "weight": 20,
   "crafting": [

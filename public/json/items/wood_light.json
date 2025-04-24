@@ -1,3 +1,4 @@
 {
-  "name": "Wood: light"
+  "name": "Wood: light",
+  "type": "StructuralWoodLight_C"
 }

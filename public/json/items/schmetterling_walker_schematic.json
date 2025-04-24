@@ -1,17 +1,9 @@
 {
   "name": "Schmetterling Walker Schematic",
+  "type": "SchmetterlingSchematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
     "Schmetterling Walker"
-  ],
-  "droppedBy": [
-    {
-      "name": "Rupu Firebrand",
-      "chance": 5.882353,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    }
   ]
 }

@@ -1,6 +1,7 @@
 {
   "name": "Silur Walker",
   "parent": "Balang Walker",
+  "type": "Silur_C",
   "category": "Walkers",
   "crafting": [
     {

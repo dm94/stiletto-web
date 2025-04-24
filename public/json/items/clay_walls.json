@@ -1,4 +1,5 @@
 {
   "name": "Clay Walls",
-  "parent": "StoneWalls"
+  "parent": "StoneWalls",
+  "type": "ClayWalls_C"
 }

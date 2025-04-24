@@ -1,6 +1,7 @@
 {
   "name": "Heavy Rawbone Hand Axe",
   "parent": "OneHandedBoneAxe",
+  "type": "LargeBoneAxe_C",
   "category": "Weapons",
   "trade_price": 10.7,
   "stackSize": 100,

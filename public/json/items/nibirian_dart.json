@@ -1,6 +1,7 @@
 {
   "name": "Nibirian Dart",
   "parent": "IronDart",
+  "type": "NibirianDart_C",
   "stackSize": 999,
   "crafting": [
     {

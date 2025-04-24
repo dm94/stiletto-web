@@ -1,8 +1,8 @@
 {
   "name": "Advanced Stomping Station",
   "parent": "Stomping Station",
+  "type": "StompingStation_T2_C",
   "category": "Crafting",
-  "weight": 4.83,
   "experiencieReward": 125,
   "crafting": [
     {

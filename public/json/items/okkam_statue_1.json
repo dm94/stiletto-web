@@ -1,5 +1,6 @@
 {
   "name": "Okkam Statue 1",
+  "type": "OkkamStatue_1_C",
   "category": "OkkamStatue",
   "weight": 3,
   "experiencieReward": 6,

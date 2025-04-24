@@ -1,5 +1,6 @@
 {
   "name": "Durability Tier 4 Upgrade",
+  "type": "SparePartIronArmor_C",
   "category": "Spare Parts",
   "experiencieReward": 40,
   "durability": 100,

@@ -1,6 +1,7 @@
 {
   "name": "Foraging Pouch",
   "parent": "Equipment",
+  "type": "ForagingPouch_C",
   "category": "Equipment",
   "trade_price": 5.6,
   "stackSize": 100,

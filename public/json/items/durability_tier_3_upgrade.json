@@ -1,5 +1,6 @@
 {
   "name": "Durability Tier 3 Upgrade",
+  "type": "SparePartClayArmor_C",
   "category": "Spare Parts",
   "experiencieReward": 30,
   "durability": 100,

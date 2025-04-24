@@ -1,6 +1,7 @@
 {
   "name": "Tube Spade",
   "parent": "Beat Stick",
+  "type": "TubeSpade_C",
   "category": "Tools",
   "durability": 100,
   "crafting": [

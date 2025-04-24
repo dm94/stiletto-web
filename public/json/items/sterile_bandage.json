@@ -1,6 +1,7 @@
 {
   "name": "Sterile Bandage",
   "parent": "Primitive Bandage",
+  "type": "ClothBandage_C",
   "category": "Interactables",
   "trade_price": 1.4,
   "stackSize": 100,

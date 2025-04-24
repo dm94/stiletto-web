@@ -1,5 +1,6 @@
 {
   "name": "Ballista Tier 4",
+  "type": "Ballista_T4_C",
   "category": "Weapons",
   "weight": 50,
   "experiencieReward": 78,

@@ -1,5 +1,6 @@
 {
   "name": "Feather",
+  "type": "Feather_C",
   "category": "Resources",
   "trade_price": 1.6,
   "stackSize": 100,

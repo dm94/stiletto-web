@@ -1,4 +1,5 @@
 {
   "name": "Nibirian Scythe",
-  "parent": "IronScythe"
+  "parent": "IronScythe",
+  "type": "NibirianScythe_C"
 }

@@ -1,4 +1,5 @@
 {
   "name": "Carapace Torso",
-  "parent": "BaskwoodTorso"
+  "parent": "BaskwoodTorso",
+  "type": "CarapaceTorso_C"
 }

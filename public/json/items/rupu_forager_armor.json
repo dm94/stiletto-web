@@ -1,5 +1,6 @@
 {
   "name": "Rupu Forager Armor",
+  "type": "RupuForagerArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

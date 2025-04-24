@@ -1,5 +1,6 @@
 {
   "name": "Improved Equipment",
   "parent": "Basic Equipment",
+  "type": "Equipment_T2_C",
   "onlyDevs": true
 }

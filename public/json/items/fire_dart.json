@@ -1,6 +1,7 @@
 {
   "name": "Fire Dart",
   "parent": "Repeater",
+  "type": "FireDart_C",
   "category": "Ammo",
   "trade_price": 15.6,
   "stackSize": 20,

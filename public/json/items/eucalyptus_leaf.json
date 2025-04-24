@@ -1,5 +1,6 @@
 {
   "name": "Eucalyptus Leaf",
+  "type": "EucalyptusLeaf_C",
   "category": "Resources",
   "trade_price": 0.1,
   "stackSize": 100,

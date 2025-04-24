@@ -1,6 +1,7 @@
 {
   "name": "Flint Harpoon",
   "parent": "Ballista",
+  "type": "FlintHarpoon_C",
   "category": "Ammo",
   "trade_price": 4.4,
   "stackSize": 20,

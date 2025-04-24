@@ -1,6 +1,7 @@
 {
   "name": "Bone Repair Hammer",
   "parent": "Simple Repair Hammer",
+  "type": "BoneRepairHammer_C",
   "durability": 500,
   "crafting": [
     {

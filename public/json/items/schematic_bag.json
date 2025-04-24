@@ -1,6 +1,7 @@
 {
   "name": "Schematic Bag",
   "parent": "Light Backpack",
+  "type": "SchematicBag_C",
   "category": "Equipment",
   "trade_price": 5.6,
   "stackSize": 100,

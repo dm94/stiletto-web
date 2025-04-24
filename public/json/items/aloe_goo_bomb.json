@@ -1,6 +1,7 @@
 {
   "name": "Aloe Goo Bomb",
   "parent": "Slingshot",
+  "type": "HealingBomb_C",
   "category": "Ammo",
   "trade_price": 40.5,
   "stackSize": 10,

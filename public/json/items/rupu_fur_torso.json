@@ -1,4 +1,5 @@
 {
   "name": "Rupu Fur Torso",
-  "parent": "FiberTorso"
+  "parent": "FiberTorso",
+  "type": "RupuFurTorso_C"
 }

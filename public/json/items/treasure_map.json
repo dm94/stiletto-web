@@ -1,5 +1,6 @@
 {
   "name": "Treasure Map",
+  "type": "BlueprintGeneratedClass",
   "category": "Interactables",
   "trade_price": 500,
   "weight": 0.1

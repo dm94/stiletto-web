@@ -1,6 +1,7 @@
 {
   "name": "Torque Backpack",
   "parent": "Torque Battery",
+  "type": "GrapplingBelt_C",
   "category": "Equipment",
   "trade_price": 48.5,
   "stackSize": 100,

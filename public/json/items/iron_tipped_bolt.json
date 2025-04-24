@@ -1,6 +1,7 @@
 {
   "name": "Iron Tipped Bolt",
   "parent": "Ceramic Bolt",
+  "type": "IronBolt_C",
   "trade_price": 25,
   "experiencieReward": 50,
   "crafting": [

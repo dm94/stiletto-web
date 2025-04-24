@@ -1,37 +1,7 @@
 {
   "name": "Firestone Hammerstaff",
   "parent": "Paddleblade Quarterstaff",
-  "category": "Weapons",
-  "trade_price": 100.7,
-  "stackSize": 100,
-  "weight": 5.5,
-  "experiencieReward": 220,
-  "durability": 735,
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 6,
-          "name": "Obsidian"
-        },
-        {
-          "count": 3,
-          "name": "Rope"
-        },
-        {
-          "count": 6,
-          "name": "Wood Shaft"
-        }
-      ],
-      "station": "Lathe",
-      "time": 2
-    }
-  ],
-  "weaponInfo": {
-    "weaponLength": 99,
-    "damage": 42,
-    "penetration": 20
-  },
+  "type": "LavaQuarterstaff_C",
   "droppedBy": [
     {
       "name": "Rupu Ashdweller",

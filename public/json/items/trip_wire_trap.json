@@ -1,6 +1,7 @@
 {
   "name": "Trip Wire Trap",
   "parent": "Advanced Constructions",
+  "type": "TrapTripWire_C",
   "category": "Defenses",
   "experiencieReward": 97,
   "crafting": [

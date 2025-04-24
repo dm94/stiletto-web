@@ -1,5 +1,6 @@
 {
   "name": "Flotillian Weapons",
   "parent": "Flotillian Equipment",
+  "type": "Weapons_T4_C",
   "onlyDevs": true
 }

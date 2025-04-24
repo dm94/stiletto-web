@@ -1,4 +1,5 @@
 {
   "name": "One Handed Bone Axe",
-  "parent": "Stone Axe"
+  "parent": "Stone Axe",
+  "type": "OneHandedBoneAxe_C"
 }

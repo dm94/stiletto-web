@@ -1,6 +1,7 @@
 {
   "name": "Nomad Grappling Hook",
   "parent": "MakeshiftGrapplingHook",
+  "type": "FixedGrapplingHook_C",
   "category": "Grappling Hooks",
   "trade_price": 10,
   "experiencieReward": 38,

@@ -1,5 +1,6 @@
 {
   "name": "Basic Armors",
   "parent": "Equipment",
+  "type": "Armors_T1_C",
   "onlyDevs": true
 }

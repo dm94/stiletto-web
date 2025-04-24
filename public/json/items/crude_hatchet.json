@@ -1,6 +1,7 @@
 {
   "name": "Crude Hatchet",
   "parent": "Beat Stick",
+  "type": "CrudeHatchet_C",
   "category": "Weapons",
   "trade_price": 1.2,
   "stackSize": 100,

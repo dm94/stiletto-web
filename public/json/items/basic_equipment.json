@@ -1,5 +1,6 @@
 {
   "name": "Basic Equipment",
   "parent": "Equipment",
+  "type": "Equipment_T1_C",
   "onlyDevs": true
 }

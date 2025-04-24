@@ -1,6 +1,7 @@
 {
   "name": "Simple Repair Hammer",
   "parent": "Beat Stick",
+  "type": "SimpleRepairHammer_C",
   "category": "Tools",
   "trade_price": 9.5,
   "stackSize": 100,

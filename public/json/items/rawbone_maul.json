@@ -1,6 +1,40 @@
 {
   "name": "Rawbone Maul",
-  "parent": "Rawbone Maul",
+  "parent": "Jaggertooth Maul",
+  "type": "TwoHandedBoneMace_C",
+  "category": "Weapons",
+  "trade_price": 24.5,
+  "stackSize": 100,
+  "weight": 4.5,
+  "experiencieReward": 100,
+  "durability": 440,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Nurr Fang"
+        },
+        {
+          "count": 6,
+          "name": "Rope"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 120,
+    "stability": 65,
+    "weaponLength": 80,
+    "damage": 40,
+    "penetration": 10
+  },
   "droppedBy": [
     {
       "name": "Bounty Hunter",

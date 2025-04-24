@@ -1,6 +1,7 @@
 {
   "name": "Steering Levers Cage",
   "parent": "Steering Levers",
+  "type": "SteeringLeversCage_C",
   "category": "Walker Tools",
   "experiencieReward": 208,
   "crafting": [

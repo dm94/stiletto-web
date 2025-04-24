@@ -1,6 +1,7 @@
 {
   "name": "Large Base Walker Packer",
   "parent": "Small Base Walker Packer",
+  "type": "BaseWalkerPackerLarge_C",
   "category": "Containers",
   "experiencieReward": 32,
   "crafting": [

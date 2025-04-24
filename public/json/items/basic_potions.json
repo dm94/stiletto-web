@@ -1,5 +1,6 @@
 {
   "name": "Basic Potions",
   "parent": "Vitamins",
+  "type": "Vitamins_T1_C",
   "onlyDevs": true
 }

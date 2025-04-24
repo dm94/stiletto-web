@@ -1,5 +1,6 @@
 {
   "name": "Kite",
+  "type": "Kite_C",
   "category": "Walker Tools",
   "weight": 1,
   "description": "Fly a large kite above your walker and climb it for a better vantage point, or to launch wingsuits from. Walker must be moving for the kite to stay elevated.",

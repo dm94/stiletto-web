@@ -1,5 +1,6 @@
 {
   "name": "Rupu Dart",
+  "type": "RupuDart_T1_C",
   "category": "Ammo",
   "trade_price": 1.5,
   "stackSize": 28,

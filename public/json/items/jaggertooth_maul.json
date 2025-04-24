@@ -1,6 +1,7 @@
 {
   "name": "Jaggertooth Maul",
   "parent": "Jaggertooth Club",
+  "type": "TwoHandedStoneMace_C",
   "category": "Weapons",
   "trade_price": 5.4,
   "stackSize": 100,

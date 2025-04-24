@@ -1,6 +1,7 @@
 {
   "name": "Sulfur Bomb",
   "parent": "Slingshot",
+  "type": "SulfurBomb_C",
   "category": "Ammo",
   "trade_price": 52.2,
   "stackSize": 10,

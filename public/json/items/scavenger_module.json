@@ -1,5 +1,6 @@
 {
   "name": "Scavenger Module",
+  "type": "LegItemLootingBoost_C",
   "category": "Resources",
   "weight": 0.24,
   "experiencieReward": 65,

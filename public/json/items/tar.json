@@ -1,6 +1,7 @@
 {
   "name": "Tar",
   "parent": "Furnace",
+  "type": "Tar_C",
   "category": "Liquids",
   "trade_price": 3.2,
   "stackSize": 100,

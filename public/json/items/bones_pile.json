@@ -1,5 +1,6 @@
 {
   "name": "Bones Pile",
+  "type": "RupuBonesPile_01_C",
   "category": "Furniture",
   "weight": 5,
   "crafting": [

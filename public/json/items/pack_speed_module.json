@@ -1,5 +1,6 @@
 {
   "name": "Pack Speed Module",
+  "type": "PackingTimeBoost_C",
   "category": "Resources",
   "weight": 0.24,
   "crafting": [

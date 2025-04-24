@@ -1,5 +1,6 @@
 {
   "name": "Torque Capacity Tier 4 Upgrade",
+  "type": "SparePartIronTorque_C",
   "category": "Spare Parts",
   "experiencieReward": 40,
   "durability": 100,

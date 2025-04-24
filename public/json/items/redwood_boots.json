@@ -1,9 +1,10 @@
 {
   "name": "Redwood Boots",
+  "type": "T3_RedwoodWoodBoots_C",
   "category": "Armors",
-  "trade_price": 388.2,
+  "trade_price": 535.8,
   "stackSize": 100,
-  "weight": 1.8,
+  "weight": 2,
   "experiencieReward": 150,
   "durability": 420,
   "crafting": [
@@ -14,11 +15,11 @@
           "name": "Nomad Cloth"
         },
         {
-          "count": 22,
+          "count": 15,
           "name": "Redwood Wood"
         },
         {
-          "count": 8,
+          "count": 12,
           "name": "Clay"
         }
       ],
@@ -27,7 +28,7 @@
     }
   ],
   "armorInfo": {
-    "reduction": 5,
+    "reduction": 6,
     "speedReduction": 1
   },
   "droppedBy": [

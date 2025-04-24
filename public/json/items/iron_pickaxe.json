@@ -1,6 +1,7 @@
 {
   "name": "Iron Pickaxe",
   "parent": "CeramicPickaxe",
+  "type": "IronPickaxe_C",
   "trade_price": 38.7,
   "weight": 6,
   "experiencieReward": 160,

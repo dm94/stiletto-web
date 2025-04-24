@@ -1,5 +1,6 @@
 {
   "name": "Walker Hangar",
   "parent": "Medium Wood Walls",
+  "type": "Hangar_C",
   "onlyDevs": true
 }

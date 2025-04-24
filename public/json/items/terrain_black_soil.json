@@ -1,5 +1,6 @@
 {
   "name": "Terrain: Black Soil",
+  "type": "EarthWax_GroundSource_C",
   "category": "Resources",
   "trade_price": 1,
   "weight": 1,

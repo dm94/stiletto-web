@@ -1,4 +1,5 @@
 {
   "name": "Baskwood Gloves",
-  "parent": "BaskwoodTorso"
+  "parent": "BaskwoodTorso",
+  "type": "BaskwoodGloves_C"
 }

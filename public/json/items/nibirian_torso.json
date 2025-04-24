@@ -1,4 +1,5 @@
 {
   "name": "Nibirian Torso",
-  "parent": "IronTorso"
+  "parent": "IronTorso",
+  "type": "NibirianTorso_C"
 }

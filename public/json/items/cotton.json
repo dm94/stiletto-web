@@ -1,5 +1,6 @@
 {
   "name": "Cotton",
+  "type": "Cotton_C",
   "category": "Resources",
   "trade_price": 2.1,
   "stackSize": 100,

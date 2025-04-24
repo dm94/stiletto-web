@@ -1,4 +1,5 @@
 {
   "name": "Fiber Boots",
-  "parent": "FiberTorso"
+  "parent": "FiberTorso",
+  "type": "FiberBoots_C"
 }

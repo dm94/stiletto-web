@@ -1,4 +1,5 @@
 {
   "name": "Nibirian Repair Hammer",
-  "parent": "IronRepairHammer"
+  "parent": "IronRepairHammer",
+  "type": "NibirianRepairHammer_C"
 }

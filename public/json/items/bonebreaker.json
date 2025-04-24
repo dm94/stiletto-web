@@ -1,55 +1,6 @@
 {
   "name": "Bonebreaker",
   "parent": "Desert Mule",
-  "category": "Vitamins",
-  "trade_price": 151.4,
-  "stackSize": 100,
-  "weight": 0.6,
-  "description": "A small injection that may cause balance loss and serious injury from falling off walkers. Short term effect grants Nomad double damage after a successful block. Long term effect grants less stamina drain on heavy attacks until death.",
-  "crafting": [
-    {
-      "ingredients": [
-        {
-          "count": 2,
-          "name": "Spearmint"
-        },
-        {
-          "count": 6,
-          "name": "Lava Poppy"
-        },
-        {
-          "count": 3,
-          "name": "Tar"
-        },
-        {
-          "count": 1,
-          "name": "Glass"
-        }
-      ],
-      "station": "Camp Fire",
-      "time": 135
-    },
-    {
-      "ingredients": [
-        {
-          "count": 2,
-          "name": "Spearmint"
-        },
-        {
-          "count": 6,
-          "name": "Lava Poppy"
-        },
-        {
-          "count": 3,
-          "name": "Tar"
-        },
-        {
-          "count": 1,
-          "name": "Glass"
-        }
-      ],
-      "station": "Clay Pot",
-      "time": 135
-    }
-  ]
+  "type": "BoneBreaker_C",
+  "description": "A small injection that may cause balance loss and serious injury from falling off walkers. Short term effect grants Nomad double damage after a successful block. Long term effect grants less stamina drain on heavy attacks until death."
 }

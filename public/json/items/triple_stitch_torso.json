@@ -1,4 +1,5 @@
 {
   "name": "Triple Stitch Torso",
-  "parent": "RupuFurTorso"
+  "parent": "RupuFurTorso",
+  "type": "TripleStitchTorso_C"
 }

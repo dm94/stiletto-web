@@ -1,4 +1,5 @@
 {
   "name": "Nibirian Pickaxe",
-  "parent": "IronPickaxe"
+  "parent": "IronPickaxe",
+  "type": "NibirianPickaxe_C"
 }

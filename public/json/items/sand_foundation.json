@@ -1,5 +1,6 @@
 {
   "name": "Sand Foundation",
+  "type": "WallSandFoundation_C",
   "category": "Basic Protection",
   "weight": 8,
   "experiencieReward": 32,

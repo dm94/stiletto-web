@@ -1,5 +1,6 @@
 {
   "name": "Corn",
+  "type": "Corn_C",
   "category": "Resources",
   "trade_price": 0.2,
   "stackSize": 50,

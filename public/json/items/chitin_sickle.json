@@ -1,6 +1,7 @@
 {
   "name": "Chitin Sickle",
   "parent": "CeramicScythe",
+  "type": "ChitinSickle_C",
   "trade_price": 6.2,
   "weight": 2.2,
   "experiencieReward": 25,

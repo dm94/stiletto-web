@@ -1,6 +1,7 @@
 {
   "name": "Sand Bed",
   "parent": "Construction",
+  "type": "BedSand_C",
   "category": "Interactables",
   "experiencieReward": 21,
   "crafting": [

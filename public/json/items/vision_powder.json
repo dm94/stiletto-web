@@ -1,6 +1,7 @@
 {
   "name": "Vision Powder",
   "parent": "Vitamins",
+  "type": "VisionPowder_C",
   "category": "Vitamins",
   "trade_price": 34.8,
   "stackSize": 100,

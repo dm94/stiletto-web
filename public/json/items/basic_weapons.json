@@ -1,5 +1,6 @@
 {
   "name": "Basic Weapons",
   "parent": "Basic Equipment",
+  "type": "Weapons_T1_C",
   "onlyDevs": true
 }

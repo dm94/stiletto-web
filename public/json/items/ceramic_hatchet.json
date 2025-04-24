@@ -1,6 +1,7 @@
 {
   "name": "Ceramic Hatchet",
   "parent": "OneHandedBoneAxe",
+  "type": "OneHandedZirconiumAxe_C",
   "category": "Weapons",
   "trade_price": 56.2,
   "stackSize": 100,

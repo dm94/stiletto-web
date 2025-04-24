@@ -1,6 +1,7 @@
 {
   "name": "Rawbone Club",
   "parent": "Nurrfang Toothclub",
+  "type": "BoneMace_C",
   "category": "Weapons",
   "trade_price": 14,
   "stackSize": 100,

@@ -1,8 +1,8 @@
 {
   "name": "Flotillian Stomping Station",
   "parent": "StompingStation_T2",
+  "type": "StompingStation_T3_C",
   "category": "Crafting",
-  "weight": 4.83,
   "experiencieReward": 125,
   "crafting": [
     {

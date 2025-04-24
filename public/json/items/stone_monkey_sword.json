@@ -1,13 +1,14 @@
 {
   "name": "Stone Monkey Sword",
+  "type": "HazrakiAxe01_C",
   "category": "Weapons",
   "stackSize": 100,
   "weight": 1,
   "durability": 280,
   "wikiVisibility": false,
   "weaponInfo": {
-    "weaponLength": 72,
-    "damage": 40,
-    "penetration": 22
+    "weaponLength": 60,
+    "damage": 35,
+    "penetration": 20
   }
 }

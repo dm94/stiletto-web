@@ -1,4 +1,5 @@
 {
   "name": "Bearing",
+  "type": "Bearing_C",
   "stackSize": 10
 }

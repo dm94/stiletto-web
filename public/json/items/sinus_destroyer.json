@@ -1,6 +1,7 @@
 {
   "name": "Sinus Destroyer",
   "parent": "Desert Mule",
+  "type": "SinusDestroyer_C",
   "category": "Vitamins",
   "trade_price": 87.6,
   "stackSize": 100,

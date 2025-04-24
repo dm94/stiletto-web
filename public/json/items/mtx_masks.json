@@ -1,4 +1,5 @@
 {
   "name": "Mtx Masks",
-  "parent": "Fiber Headwrap"
+  "parent": "Fiber Headwrap",
+  "type": "MtxMasks_C"
 }

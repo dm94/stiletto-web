@@ -1,13 +1,15 @@
 {
   "name": "Wooden Club",
+  "type": "BrokenWoodenClubRupu_C",
   "category": "Weapons",
   "stackSize": 100,
   "weight": 8.4,
   "experiencieReward": 22,
-  "durability": 250,
+  "durability": 200,
   "wikiVisibility": false,
   "weaponInfo": {
-    "weaponLength": 77,
+    "weaponLength": 70,
+    "damage": 28,
     "penetration": 10
   }
 }

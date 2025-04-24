@@ -1,6 +1,7 @@
 {
   "name": "Tool Pod",
   "parent": "Advanced Walker Weapons",
+  "type": "ToolPod_C",
   "category": "Walker Tools",
   "experiencieReward": 34,
   "crafting": [

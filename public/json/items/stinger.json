@@ -1,6 +1,7 @@
 {
   "name": "Stinger",
   "parent": "Basic Walker Weapons",
+  "type": "Stinger_C",
   "category": "Weapons",
   "experiencieReward": 78,
   "crafting": [

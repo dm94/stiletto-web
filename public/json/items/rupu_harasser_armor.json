@@ -1,5 +1,6 @@
 {
   "name": "Rupu Harasser Armor",
+  "type": "RupuHarasserArmor_C",
   "category": "Armors",
   "stackSize": 100,
   "weight": 1,

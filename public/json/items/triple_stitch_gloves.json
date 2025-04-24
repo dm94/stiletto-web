@@ -1,4 +1,5 @@
 {
   "name": "Triple Stitch Gloves",
-  "parent": "TripleStitchTorso"
+  "parent": "TripleStitchTorso",
+  "type": "TripleStitchGloves_C"
 }

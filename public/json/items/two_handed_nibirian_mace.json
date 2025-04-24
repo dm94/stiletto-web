@@ -1,4 +1,5 @@
 {
   "name": "Two Handed Nibirian Mace",
-  "parent": "TwoHandedIronMace"
+  "parent": "TwoHandedIronMace",
+  "type": "TwoHandedNibirianMace_C"
 }

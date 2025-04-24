@@ -1,5 +1,6 @@
 {
   "name": "Chitin Pick Axe",
+  "type": "ChitinPickAxe_C",
   "durability": 504,
   "crafting": [
     {

@@ -1,5 +1,6 @@
 {
   "name": "Obsidian",
+  "type": "Obsidian_C",
   "category": "Resources",
   "trade_price": 0.8,
   "stackSize": 100,

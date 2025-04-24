@@ -1,5 +1,6 @@
 {
   "name": "Crane Harpoon",
+  "type": "CraneHarpoon_C",
   "category": "Ammo",
   "trade_price": 1,
   "stackSize": 20,

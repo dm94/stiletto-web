@@ -1,6 +1,7 @@
 {
   "name": "Rawbone Sawsword",
   "parent": "Jaggertooth Swordclub",
+  "type": "TwoHandedBoneSwordShort_C",
   "category": "Weapons",
   "trade_price": 15,
   "stackSize": 100,

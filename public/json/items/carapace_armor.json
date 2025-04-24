@@ -1,5 +1,6 @@
 {
   "name": "Carapace Armor",
+  "type": "T3_CarapaceTorso_C",
   "category": "Armors",
   "trade_price": 164.8,
   "stackSize": 100,

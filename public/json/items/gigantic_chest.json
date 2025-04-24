@@ -1,8 +1,8 @@
 {
   "name": "Gigantic Chest",
   "parent": "Large Chest",
+  "type": "ChestGigantic_C",
   "category": "Containers",
-  "weight": 12,
   "experiencieReward": 32,
   "crafting": [
     {

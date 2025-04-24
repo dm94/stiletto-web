@@ -1,5 +1,6 @@
 {
   "name": "Dirty Water",
+  "type": "DirtyWater_C",
   "category": "Liquids",
   "trade_price": 0.1,
   "stackSize": 100,

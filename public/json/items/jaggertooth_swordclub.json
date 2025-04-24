@@ -1,6 +1,7 @@
 {
   "name": "Jaggertooth Swordclub",
   "parent": "Beat Stick",
+  "type": "TwoHandedStoneSword_C",
   "category": "Weapons",
   "trade_price": 3.7,
   "stackSize": 100,

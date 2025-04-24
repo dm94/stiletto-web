@@ -1,6 +1,7 @@
 {
   "name": "Rope",
   "parent": "Advanced Fiberworking Station",
+  "type": "Rope_C",
   "category": "Resources",
   "trade_price": 0.5,
   "stackSize": 100,

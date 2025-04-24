@@ -1,4 +1,5 @@
 {
   "name": "Forester Gloves",
-  "parent": "ForesterTorso"
+  "parent": "ForesterTorso",
+  "type": "ForesterGloves_C"
 }

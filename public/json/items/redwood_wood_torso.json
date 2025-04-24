@@ -1,4 +1,5 @@
 {
   "name": "Redwood Wood Torso",
-  "parent": "TripleStitchTorso"
+  "parent": "TripleStitchTorso",
+  "type": "RedwoodWoodTorso_C"
 }

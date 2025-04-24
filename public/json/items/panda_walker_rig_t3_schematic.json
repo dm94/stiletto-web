@@ -1,5 +1,6 @@
 {
   "name": "Panda Walker Rig T3 Schematic",
+  "type": "PandaRig_T3Schematic_C",
   "category": "Schematics",
   "stackSize": 100,
   "learn": [

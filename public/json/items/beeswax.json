@@ -1,5 +1,6 @@
 {
   "name": "Beeswax",
+  "type": "Beeswax_C",
   "category": "Resources",
   "trade_price": 1.2,
   "stackSize": 100,

@@ -1,5 +1,6 @@
 {
   "name": "Infused Pickaxe",
+  "type": "InfusedPickaxe_C",
   "durability": 1200,
   "crafting": [
     {

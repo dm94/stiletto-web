@@ -1,4 +1,5 @@
 {
   "name": "Light Wood Abstract Wall",
-  "category": "Wood: light"
+  "type": "AbstractWall_C",
+  "category": "Light Wood Structures"
 }

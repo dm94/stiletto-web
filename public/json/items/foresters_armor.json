@@ -1,5 +1,6 @@
 {
   "name": "Forester's Armor",
+  "type": "T2_ForesterTorso_C",
   "category": "Armors",
   "trade_price": 66.5,
   "stackSize": 100,

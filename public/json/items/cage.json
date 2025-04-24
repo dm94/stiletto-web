@@ -1,5 +1,6 @@
 {
   "name": "Cage",
+  "type": "RupuCage_01_C",
   "category": "Furniture",
   "weight": 10,
   "crafting": [

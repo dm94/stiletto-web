@@ -1,6 +1,7 @@
 {
   "name": "Dyeing Station",
   "parent": "Crafting",
+  "type": "DyeingStation_C",
   "category": "Crafting",
   "crafting": [
     {

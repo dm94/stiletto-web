@@ -1,6 +1,7 @@
 {
   "name": "Earth Wax",
   "parent": "Soil Excavator",
+  "type": "EarthWax_C",
   "category": "Resources",
   "trade_price": 1.4,
   "stackSize": 100,

@@ -6,62 +6,6 @@
   "experiencie": 1200,
   "drops": [
     {
-      "name": "Relic of Dawn",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "ac_relic_1"
-    },
-    {
-      "name": "Relic of Dusk",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "ac_relic_2"
-    },
-    {
-      "name": "Forebear Coin",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "ac_forebearcoins"
-    },
-    {
-      "name": "Ceramic Bolt",
-      "chance": 16,
-      "minQuantity": 5,
-      "maxQuantity": 15,
-      "source": "ammo_t3"
-    },
-    {
-      "name": "Ceramic Scattershot Ammo",
-      "chance": 16,
-      "minQuantity": 5,
-      "maxQuantity": 15,
-      "source": "ammo_t3"
-    },
-    {
-      "name": "Ceramic Dart",
-      "chance": 40,
-      "minQuantity": 5,
-      "maxQuantity": 30,
-      "source": "ammo_t3"
-    },
-    {
-      "name": "Obsidian Rok",
-      "chance": 12,
-      "minQuantity": 1,
-      "maxQuantity": 3,
-      "source": "ammo_t3"
-    },
-    {
-      "name": "Catapult Boulder",
-      "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
-      "source": "ammo_t3"
-    },
-    {
       "name": "Fiber",
       "chance": 10.718528,
       "minQuantity": 16,
@@ -130,6 +74,83 @@
       "minQuantity": 3,
       "maxQuantity": 3,
       "source": "baseresources_t3"
+    },
+    {
+      "name": "Bone Glue",
+      "chance": 11.764706,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Wooden Gear",
+      "chance": 11.764706,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Triple Stitch Fabric",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Nomad Cloth",
+      "chance": 11.764706,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Leather",
+      "chance": 11.764706,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Aloe Gel",
+      "chance": 11.764706,
+      "minQuantity": 7,
+      "maxQuantity": 7,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Clay",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Ceramic Shard",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Glass",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Tar",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Reinforced Gear",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t3"
     },
     {
       "name": "Brittle Bone Boots",
@@ -300,83 +321,6 @@
       "source": "weapons_t3"
     },
     {
-      "name": "Bone Glue",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Wooden Gear",
-      "chance": 11.764706,
-      "minQuantity": 2,
-      "maxQuantity": 2,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Triple Stitch Fabric",
-      "chance": 11.764706,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Nomad Cloth",
-      "chance": 11.764706,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Leather",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Aloe Gel",
-      "chance": 11.764706,
-      "minQuantity": 7,
-      "maxQuantity": 7,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Clay",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Ceramic Shard",
-      "chance": 5.882353,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Glass",
-      "chance": 5.882353,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Tar",
-      "chance": 5.882353,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "processedresources_t3"
-    },
-    {
-      "name": "Reinforced Gear",
-      "chance": 5.882353,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "processedresources_t3"
-    },
-    {
       "name": "Hornet Walker Rig T2 Schematic",
       "chance": 16.666666,
       "minQuantity": 1,
@@ -445,251 +389,6 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
-    },
-    {
-      "name": "Animal Fat",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Ash",
-      "chance": 8.333333,
-      "minQuantity": 14,
-      "maxQuantity": 14,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Charcoal",
-      "chance": 8.333333,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Huge Cactus Fruit",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Fruit Pulp",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Rupu Pelt",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Hide",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Sand",
-      "chance": 8.333333,
-      "minQuantity": 14,
-      "maxQuantity": 14,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Purified Water",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Mushroom Flesh",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Rupu Gel",
-      "chance": 8.333333,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Redwood Wood",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "extraresources_t3"
-    },
-    {
-      "name": "Advanced Ammo Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Advanced Armors Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Advanced Constructions Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Advanced Crafting Stations Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Advanced Tools Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Advanced Potions Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Advanced Walker Weapons Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Advanced Weapons Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Hornet Walker Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Falco Walker Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Buffalo Walker Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Silur Walker Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Camelop Walker Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Hercul Walker Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Cobra Walker Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Tusker Walker Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Base Walker Parts Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Improved Walker Parts Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Advanced Walker Parts Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Clay Walls Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Heavy Walls Schematic",
-      "chance": 4.7619047,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "schematics_t3"
-    },
-    {
-      "name": "Chitin Plate",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "chitin_t3"
-    },
-    {
-      "name": "Gelatinous Goo",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "gelatinousgoo_t3"
     }
   ]
 }

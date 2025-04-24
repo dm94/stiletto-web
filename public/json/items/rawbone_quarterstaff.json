@@ -1,6 +1,7 @@
 {
   "name": "Rawbone Quarterstaff",
   "parent": "Blunt Quarterstaff",
+  "type": "BoneQuarterstaff_C",
   "category": "Weapons",
   "trade_price": 8,
   "stackSize": 100,

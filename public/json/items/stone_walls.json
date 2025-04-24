@@ -1,4 +1,5 @@
 {
   "name": "Stone Walls",
-  "parent": "Sand Structures"
+  "parent": "Sand Structures",
+  "type": "StoneWalls_C"
 }

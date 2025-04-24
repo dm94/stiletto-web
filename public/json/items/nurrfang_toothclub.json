@@ -1,6 +1,7 @@
 {
   "name": "Nurrfang Toothclub",
   "parent": "Jaggertooth Club",
+  "type": "BoneClub_C",
   "category": "Weapons",
   "trade_price": 7.1,
   "stackSize": 100,

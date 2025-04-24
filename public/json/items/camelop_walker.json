@@ -1,6 +1,7 @@
 {
   "name": "Camelop Walker",
   "parent": "Hercul Walker",
+  "type": "Camelop_C",
   "category": "Walkers",
   "crafting": [
     {

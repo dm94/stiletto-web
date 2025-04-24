@@ -1,5 +1,6 @@
 {
   "name": "Floor / Roof",
+  "type": "WallClayRoof_C",
   "category": "Clay",
   "weight": 4,
   "experiencieReward": 22,

@@ -1,4 +1,5 @@
 {
   "name": "Nibirian Gloves",
-  "parent": "NibirianTorso"
+  "parent": "NibirianTorso",
+  "type": "NibirianGloves_C"
 }

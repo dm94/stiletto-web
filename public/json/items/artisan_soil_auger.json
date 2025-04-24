@@ -1,5 +1,6 @@
 {
   "name": "Artisan Soil Auger",
+  "type": "ArtisanSoilAuger_C",
   "category": "Walker Tools",
   "weight": 300,
   "experiencieReward": 125,

@@ -1,6 +1,7 @@
 {
   "name": "Ceramic Orb",
   "parent": "Lobber",
+  "type": "CeramicOrb_C",
   "onlyDevs": true,
   "projectileDamage": {
     "damage": 200

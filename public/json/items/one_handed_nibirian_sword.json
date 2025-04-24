@@ -1,4 +1,5 @@
 {
   "name": "One Handed Nibirian Sword",
-  "parent": "Wyndan Sabre"
+  "parent": "Wyndan Sabre",
+  "type": "OneHandedNibirianSword_C"
 }

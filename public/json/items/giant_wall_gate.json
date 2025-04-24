@@ -1,5 +1,6 @@
 {
   "name": "Giant Wall Gate",
+  "type": "WallGiantGate_C",
   "category": "Defenses",
   "weight": 20,
   "experiencieReward": 40,

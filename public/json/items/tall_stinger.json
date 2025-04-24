@@ -1,6 +1,7 @@
 {
   "name": "Tall Stinger",
   "parent": "Advanced Walker Weapons",
+  "type": "Stinger_T3_C",
   "category": "Weapons",
   "experiencieReward": 78,
   "onlyDevs": true,

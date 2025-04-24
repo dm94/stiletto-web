@@ -1,5 +1,6 @@
 {
   "name": "Pedestal Chest",
+  "type": "ChestPedestal_C",
   "category": "Containers",
   "weight": 23,
   "experiencieReward": 50,
