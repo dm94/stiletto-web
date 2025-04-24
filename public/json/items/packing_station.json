@@ -1,0 +1,29 @@
+{
+  "name": "Packing Station",
+  "parent": "Camp Fire",
+  "type": "PackingStation_C",
+  "category": "Crafting",
+  "experiencieReward": 92,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Rope"
+        },
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 60,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 900
+  }
+}

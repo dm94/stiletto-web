@@ -1,0 +1,33 @@
+{
+  "name": "Walker Packing Compartment",
+  "parent": "ChestBaseMaintenance_T2",
+  "type": "SmallWalkerPacker_C",
+  "category": "Walker Tools",
+  "experiencieReward": 34,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 400,
+          "name": "Wood"
+        },
+        {
+          "count": 35,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        },
+        {
+          "count": 10,
+          "name": "Rupu Vine"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 5000
+  }
+}

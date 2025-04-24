@@ -1,5 +1,6 @@
 {
-  "name": "Chitin Pick Axe",
+  "name": "Chitin PickAxe",
+  "parent": "CeramicPickaxe",
   "type": "ChitinPickAxe_C",
   "durability": 504,
   "crafting": [
