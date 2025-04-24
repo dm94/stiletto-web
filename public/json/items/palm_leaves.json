@@ -66,7 +66,7 @@
       "maxQuantity": 2
     },
     {
-      "name": "Rupu Drudge",
+      "name": "Rupu Drudge (T3)",
       "chance": 7.4821854,
       "minQuantity": 4,
       "maxQuantity": 4,
@@ -135,7 +135,7 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Hero",
+      "name": "Rupu Hero (Rupu)",
       "chance": 10.526316,
       "minQuantity": 2,
       "maxQuantity": 2
@@ -148,14 +148,26 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Oracle",
+      "name": "Rupu Oracle (Rupu)",
+      "chance": 10.526316,
+      "minQuantity": 2,
+      "maxQuantity": 2
+    },
+    {
+      "name": "Rupu Oracle (T3)",
       "chance": 7.4821854,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T3"
     },
     {
-      "name": "Rupu Overseer",
+      "name": "Rupu Overseer (Rupu)",
+      "chance": 10.526316,
+      "minQuantity": 2,
+      "maxQuantity": 2
+    },
+    {
+      "name": "Rupu Overseer (T3)",
       "chance": 7.4821854,
       "minQuantity": 4,
       "maxQuantity": 4,
@@ -278,11 +290,18 @@
       "maxQuantity": 2
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T2)",
       "chance": 12.5,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T2"
+    },
+    {
+      "name": "White Death (Medium) (T3)",
+      "chance": 7.4821854,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T3"
     },
     {
       "name": "Yellow Rupu",

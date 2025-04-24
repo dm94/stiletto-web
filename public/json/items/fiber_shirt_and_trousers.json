@@ -70,19 +70,19 @@
       "tier": "T1"
     },
     {
-      "name": "Rupu Hero",
+      "name": "Rupu Hero (Rupu)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Oracle",
+      "name": "Rupu Oracle (Rupu)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Overseer",
+      "name": "Rupu Overseer (Rupu)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1

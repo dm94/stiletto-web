@@ -198,7 +198,7 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Drudge",
+      "name": "Rupu Drudge (T3)",
       "chance": 10.718528,
       "minQuantity": 3,
       "maxQuantity": 3,
@@ -254,14 +254,14 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Oracle",
+      "name": "Rupu Oracle (T3)",
       "chance": 10.718528,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T3"
     },
     {
-      "name": "Rupu Overseer",
+      "name": "Rupu Overseer (T3)",
       "chance": 10.718528,
       "minQuantity": 3,
       "maxQuantity": 3,
@@ -338,11 +338,18 @@
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium)",
+      "name": "White Death (Medium) (T2)",
       "chance": 11.111111,
       "minQuantity": 6,
       "maxQuantity": 6,
       "tier": "T2"
+    },
+    {
+      "name": "White Death (Medium) (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
     }
   ]
 }
