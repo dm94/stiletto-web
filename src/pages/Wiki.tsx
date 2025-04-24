@@ -210,25 +210,43 @@ const Wiki = () => {
     [],
   );
 
+  // Función auxiliar para construir los parámetros de URL
+  const buildSearchParams = useCallback(
+    (search: string, category: string, type: "items" | "creatures") => {
+      const searchParams = new URLSearchParams();
+
+      // Añadir parámetro de búsqueda si existe
+      if (search.trim()) {
+        searchParams.set("s", search);
+      }
+
+      // Añadir siempre el tipo de contenido
+      searchParams.set("type", type);
+
+      // Añadir categoría solo si no es "All"
+      if (category !== "All") {
+        searchParams.set("category", category);
+      }
+
+      return searchParams;
+    },
+    [],
+  );
+
   const handleCategoryChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       const newCategory = e.target.value;
       setCategoryFilter(newCategory);
       searchContent(searchText, newCategory);
 
-      const searchParams = new URLSearchParams();
-      if (searchText.trim()) {
-        searchParams.set("s", searchText);
-      }
-      // Preserve the 'type' parameter in the URL
-      searchParams.set("type", contentType);
-      // Add the 'category' parameter to the URL if it's not "All"
-      if (newCategory !== "All") {
-        searchParams.set("category", newCategory);
-      }
+      const searchParams = buildSearchParams(
+        searchText,
+        newCategory,
+        contentType,
+      );
       navigate(`/wiki?${searchParams.toString()}`);
     },
-    [searchText, searchContent, navigate, contentType],
+    [searchText, searchContent, navigate, contentType, buildSearchParams],
   );
 
   const handleKeyPress = useCallback(
@@ -236,37 +254,41 @@ const Wiki = () => {
       if (e.key === "Enter") {
         searchContent(searchText, categoryFilter);
 
-        const searchParams = new URLSearchParams();
-        if (searchText.trim()) {
-          searchParams.set("s", searchText);
-        }
-        // Preserve the 'type' parameter in the URL
-        searchParams.set("type", contentType);
-        // Add the 'category' parameter to the URL if it's not "All"
-        if (categoryFilter !== "All") {
-          searchParams.set("category", categoryFilter);
-        }
+        const searchParams = buildSearchParams(
+          searchText,
+          categoryFilter,
+          contentType,
+        );
         navigate(`/wiki?${searchParams.toString()}`);
       }
     },
-    [searchContent, searchText, categoryFilter, navigate, contentType],
+    [
+      searchContent,
+      searchText,
+      categoryFilter,
+      navigate,
+      contentType,
+      buildSearchParams,
+    ],
   );
 
   const handleSearchClick = useCallback(() => {
     searchContent(searchText, categoryFilter);
 
-    const searchParams = new URLSearchParams();
-    if (searchText.trim()) {
-      searchParams.set("s", searchText);
-    }
-    // Preserve the 'type' parameter in the URL
-    searchParams.set("type", contentType);
-    // Add the 'category' parameter to the URL if it's not "All"
-    if (categoryFilter !== "All") {
-      searchParams.set("category", categoryFilter);
-    }
+    const searchParams = buildSearchParams(
+      searchText,
+      categoryFilter,
+      contentType,
+    );
     navigate(`/wiki?${searchParams.toString()}`);
-  }, [searchContent, searchText, categoryFilter, navigate, contentType]);
+  }, [
+    searchContent,
+    searchText,
+    categoryFilter,
+    navigate,
+    contentType,
+    buildSearchParams,
+  ]);
 
   const handleContentTypeChange = useCallback(
     (type: "items" | "creatures") => {
@@ -275,13 +297,10 @@ const Wiki = () => {
       setCategoryFilter("All");
       setCurrentPage(1);
 
-      // Add the 'type' parameter to the URL
-      const searchParams = new URLSearchParams();
-      searchParams.set("type", type);
-      // We don't include the 'category' parameter since it resets to "All"
+      const searchParams = buildSearchParams("", "All", type);
       navigate(`/wiki?${searchParams.toString()}`);
     },
-    [navigate],
+    [navigate, buildSearchParams],
   );
 
   return (

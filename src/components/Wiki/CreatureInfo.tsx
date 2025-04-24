@@ -51,7 +51,7 @@ const CreatureInfo: React.FC<CreatureInfoProps> = ({ creatureInfo }) => {
       <div className="w-full md:w-1/2 px-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
           <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
-            {t("wiki.creatureInfo")}
+            {t("creature.info")}
           </div>
           <div className="p-4">{showCreatureInfo()}</div>
         </div>

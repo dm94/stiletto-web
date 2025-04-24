@@ -343,5 +343,6 @@
   "wiki.showingItems": "Showing {{displayed}} of {{total}} items",
   "creature.experience": "Experience",
   "creature.tier": "Tier",
-  "creature.health": "Health"
+  "creature.health": "Health",
+  "creature.info": "Info"
 }
