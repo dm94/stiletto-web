@@ -36,7 +36,7 @@ const MapSelectList: React.FC<MapSelectListProps> = ({
         <img
           src={map.image}
           className={`w-full h-auto rounded-lg ${
-            map.name === mapSelectInput
+            `${map.name}_new` === mapSelectInput
               ? "ring-2 ring-blue-500"
               : "hover:opacity-75"
           }`}
