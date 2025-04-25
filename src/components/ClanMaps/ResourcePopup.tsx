@@ -51,6 +51,9 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
       now.getMonth() + 1
     }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
 
+    const lastHarvestedDate = new Date(resource.lastharvested ?? "");
+    const lastHarvestedDateFormatted = `${lastHarvestedDate.toLocaleDateString()} ${lastHarvestedDate.toLocaleTimeString()}`;
+
     return (
       <div className="resource-quality-info bg-gray-800/30 p-3 rounded-md shadow-inner">
         <button
@@ -69,7 +72,7 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
         </button>
         <div className="mb-2 text-gray-300 flex justify-between items-center">
           <span>{t("resources.lastHarvested")}:</span>{" "}
-          <span className="font-medium">{resource.lastharvested}</span>
+          <span className="font-medium">{lastHarvestedDateFormatted}</span>
         </div>
         <div className="mb-2 text-gray-300 flex justify-between items-center">
           <span>{t("Spawns in")}:</span>
