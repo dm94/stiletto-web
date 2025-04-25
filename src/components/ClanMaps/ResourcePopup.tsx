@@ -50,7 +50,6 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
     const date = `${now.getFullYear()}-${
       now.getMonth() + 1
     }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
-    const fullDate = new Date(now.getTime() + remainingQuality * 10 * 60000);
 
     return (
       <div className="resource-quality-info bg-gray-800/30 p-3 rounded-md shadow-inner">
@@ -79,10 +78,6 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
               ? `${Math.max(0, remainingQuality * 10)} ${t("common.minutes")}`
               : t("common.now")}
           </span>
-        </div>
-        <div className="mb-2 text-gray-300 flex justify-between items-center">
-          <span>{t("Date")}:</span>{" "}
-          <span className="font-medium">{fullDate.toLocaleString()}</span>
         </div>
       </div>
     );
@@ -133,7 +128,7 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
           <div className="poaching-radius-control border-t border-yellow-500/70 mt-3 pt-3 bg-gray-800/30 p-3 rounded-md shadow-inner">
             <div className="flex justify-between mb-2">
               <span className="text-sm font-medium text-gray-300">
-                {t("Range")}:
+                {t("map.range")}:
               </span>
               <span className="text-sm font-bold text-yellow-400">
                 {poachingHutRadius * 100}m

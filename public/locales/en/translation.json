@@ -347,5 +347,7 @@
   "creature.experience": "Experience",
   "creature.tier": "Tier",
   "creature.health": "Health",
-  "creature.info": "Info"
+  "creature.info": "Info",
+  "common.noData": "No data",
+  "map.range": "Range"
 }
