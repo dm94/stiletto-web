@@ -1,0 +1,302 @@
+{
+  "name": "Medium Rupu (T4)",
+  "category": "Rupu",
+  "tier": "T4",
+  "drops": [
+    {
+      "name": "Fiber",
+      "chance": 9.090909,
+      "minQuantity": 16,
+      "maxQuantity": 16,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Stone",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Wood",
+      "chance": 9.090909,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Rupu Vine",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Palm Leaves",
+      "chance": 9.090909,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Fiber Weave",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Wood Shaft",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Bone Splinter",
+      "chance": 9.090909,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Rope",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Earth Wax",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Bone Glue",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Wooden Gear",
+      "chance": 8.333333,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Triple Stitch Fabric",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Nomad Cloth",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Leather",
+      "chance": 8.333333,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Aloe Gel",
+      "chance": 8.333333,
+      "minQuantity": 7,
+      "maxQuantity": 7,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Clay",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Rubber Block",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Ceramic Shard",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Glass",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Tar",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Reinforced Gear",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Iron Studded Boots",
+      "chance": 33.333332,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Iron Studded Gauntlets",
+      "chance": 33.333332,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Iron Studded Armor",
+      "chance": 33.333332,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Wyndan Hand Axe",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Hammer",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Sabre",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndanblade Quarterstaff",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Battle Axe",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Warhammer",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Flame Sword",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Panda Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Panda Walker Rig T3 Schematic",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Schmetterling Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Schmetterling Walker Rig T3 Schematic",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Titan Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Titan Walker Rig T3 Schematic",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Domus Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Domus Walker Rig T3 Schematic",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Raptor Sky Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Raptor Sky Walker Rig T3 Schematic",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    }
+  ],
+  "originalName": "MediumRupu (T4)"
+}

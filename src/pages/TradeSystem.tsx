@@ -8,6 +8,7 @@ import ModalMessage from "@components/ModalMessage";
 import Pagination from "@components/Pagination";
 import Trade from "@components/TradeSystem/Trade";
 import ClusterList from "@components/ClusterList";
+import SearchableSelect from "@components/SearchableSelect";
 import { getDomain } from "@functions/utils";
 import {
   getTrades,
@@ -168,7 +169,7 @@ const TradeSystem = () => {
     return (
       <div className="w-full p-4">
         <form onSubmit={handleCreateTrade} data-cy="create-trade-form">
-          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+          <div className="bg-gray-800 border border-gray-700 rounded-lg">
             <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
               {t("trades.publishTrade")}
             </div>
@@ -193,19 +194,19 @@ const TradeSystem = () => {
                   <label htmlFor="resourcetype" className="block text-gray-300">
                     {t("trades.resourceOrMatsFor")}
                   </label>
-                  <select
+                  <SearchableSelect
                     id="resourcetype"
                     data-cy="resource-type"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={resourceTypeInput}
-                    onChange={(evt) => setResourceTypeInput(evt.target.value)}
-                  >
-                    {items?.map((item) => (
-                      <option key={item.name} value={item.name}>
-                        {t(item.name, { ns: "items" })}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={setResourceTypeInput}
+                    options={
+                      items?.map((item) => ({
+                        value: item.name,
+                        label: t(item.name, { ns: "items" }),
+                      })) ?? []
+                    }
+                    placeholder={t("trades.selectResource")}
+                  />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="regionInput" className="block text-gray-300">
@@ -344,7 +345,7 @@ const TradeSystem = () => {
       </Helmet>
       {renderLoggedPart()}
       <div className="w-full p-4">
-        <div className="bg-gray-800 border border-blue-500 rounded-lg overflow-hidden">
+        <div className="bg-gray-800 border border-blue-500 rounded-lg">
           <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
             {t("trades.publishedTrades")}
           </div>
@@ -378,20 +379,19 @@ const TradeSystem = () => {
                 </label>
               </div>
               <div className="lg:col-span-2">
-                <select
+                <SearchableSelect
                   id="resourcetypefilter"
-                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   value={resourceTypeFilterInput}
-                  onChange={(evt) =>
-                    setResourceTypeFilterInput(evt.target.value)
+                  onChange={setResourceTypeFilterInput}
+                  options={
+                    items?.map((item) => ({
+                      value: item.name,
+                      label: t(item.name, { ns: "items" }),
+                    })) ?? []
                   }
-                >
-                  {items?.map((item) => (
-                    <option key={item.name} value={item.name}>
-                      {t(item.name, { ns: "items" })}
-                    </option>
-                  ))}
-                </select>
+                  placeholder={t("trades.selectResource")}
+                  data-cy="resource-type-filter"
+                />
               </div>
               <div className="lg:col-span-1">
                 <label

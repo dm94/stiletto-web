@@ -1,0 +1,14 @@
+{
+  "name": "AC_Relic_1",
+  "category": "Structure",
+  "tier": null,
+  "drops": [
+    {
+      "name": "Relic of Dawn",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "ac_relic_1"
+    }
+  ]
+}

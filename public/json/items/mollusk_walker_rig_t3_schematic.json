@@ -8,7 +8,70 @@
   ],
   "droppedBy": [
     {
+      "name": "Basket Loot_T2_AC",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "BigHotspotLoot (T2)",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
       "name": "Bounty Hunter",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupuCamp (T2)",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2_AC",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2)",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupuCamp (T2)",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hotspot Loot Windmill_T2_AC",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hotspot Loot_T2_AC",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T2)",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -22,6 +85,13 @@
     },
     {
       "name": "Matriarch",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T2)",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -85,6 +155,13 @@
     },
     {
       "name": "Rupu Zealot (Medium)",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "TreasureChest (T2)",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,

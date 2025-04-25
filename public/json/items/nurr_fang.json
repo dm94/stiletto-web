@@ -5,5 +5,21 @@
   "trade_price": 0.4,
   "stackSize": 100,
   "weight": 0.28,
-  "experiencieReward": 8
+  "experiencieReward": 8,
+  "droppedBy": [
+    {
+      "name": "LargeNurr (T2)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Nurr (T2)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    }
+  ]
 }

@@ -33,5 +33,21 @@
       "toolType": "CatapultRock",
       "tier": 2
     }
+  ],
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T3)",
+      "chance": 16,
+      "minQuantity": 1,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "BigHotspotLoot (T3)",
+      "chance": 16,
+      "minQuantity": 1,
+      "maxQuantity": 5,
+      "tier": "T3"
+    }
   ]
 }

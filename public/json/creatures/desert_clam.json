@@ -1,0 +1,29 @@
+{
+  "name": "Desert Clam",
+  "category": "Structure",
+  "tier": null,
+  "drops": [
+    {
+      "name": "Pearl",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "source": "clampearls_t4"
+    },
+    {
+      "name": "Purified Water",
+      "chance": 60,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "clampearls_t4"
+    },
+    {
+      "name": "Animal Fat",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 50,
+      "source": "clampearls_t4"
+    }
+  ],
+  "originalName": "DesertClam"
+}

@@ -8,7 +8,70 @@
   ],
   "droppedBy": [
     {
+      "name": "BigHotspotLoot (T4)",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "EasyRupuCamp (T4)",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4)",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupuCamp (T4)",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLoot (T4)",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4)",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupuCamp (T4)",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
       "name": "Rupu Firebrand",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "TreasureChest (T4)",
       "chance": 3.3333335,
       "minQuantity": 1,
       "maxQuantity": 1,

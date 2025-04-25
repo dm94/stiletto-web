@@ -6,5 +6,28 @@
   "stackSize": 100,
   "weight": 0.01,
   "description": "In the dry southern valleys, the fossils of old sea creatures litter the ground, turning the hills white.",
-  "experiencieReward": 6
+  "experiencieReward": 6,
+  "droppedBy": [
+    {
+      "name": "Desert Clam",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": null
+    },
+    {
+      "name": "GoGo (T4)",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T4"
+    }
+  ]
 }

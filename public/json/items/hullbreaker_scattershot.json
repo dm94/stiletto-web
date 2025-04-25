@@ -36,5 +36,21 @@
       "toolType": "Scattershot",
       "tier": 4
     }
+  ],
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T4)",
+      "chance": 28.571428,
+      "minQuantity": 2,
+      "maxQuantity": 12,
+      "tier": "T4"
+    },
+    {
+      "name": "BigHotspotLoot (T4)",
+      "chance": 28.571428,
+      "minQuantity": 2,
+      "maxQuantity": 12,
+      "tier": "T4"
+    }
   ]
 }

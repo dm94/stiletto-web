@@ -5,5 +5,56 @@
   "trade_price": 0.1,
   "stackSize": 100,
   "weight": 0.18,
-  "experiencieReward": 1
+  "experiencieReward": 1,
+  "droppedBy": [
+    {
+      "name": "EasyRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 7.6923075,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLoot (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "TreasureChest (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
 }

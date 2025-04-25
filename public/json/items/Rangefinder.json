@@ -1,5 +1,6 @@
 {
   "name": "Rangefinder",
+  "parent": "Maintenance Box",
   "type": "Rangefinder_C",
   "category": "Interactables",
   "weight": 20,

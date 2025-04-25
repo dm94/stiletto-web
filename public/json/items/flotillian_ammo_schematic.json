@@ -13,5 +13,42 @@
     "Iron Rok",
     "Iron Dart",
     "Nibirian Dart"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    }
   ]
 }

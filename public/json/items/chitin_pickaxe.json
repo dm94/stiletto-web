@@ -1,5 +1,32 @@
 {
-  "name": "Chitin Pickaxe",
+  "name": "Chitin PickAxe",
   "parent": "CeramicPickaxe",
-  "type": "ChitinPickaxe_C"
+  "type": "ChitinPickAxe_C",
+  "durability": 504,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 4,
+          "name": "Chitin Plate"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ],
+  "toolInfo": [
+    {
+      "toolType": "Mining",
+      "tier": 17
+    }
+  ]
 }
