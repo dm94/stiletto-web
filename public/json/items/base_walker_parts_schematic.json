@@ -41,5 +41,140 @@
     "Hercul Walker Wings (1 of 2)",
     "Balang Walker Wings (1 of 2)",
     "Raptor Sky Walker Wings (1 of 2)"
+  ],
+  "droppedBy": [
+    {
+      "name": "Easy Rupu_T1_Q",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Easy Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Easy Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Easy Rupu_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Go Go_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Hard Rupu_T1_Q",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Hard Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Large Nurr_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu_T1_Q",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Medium Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Nurr_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Okkam_T3",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Papak_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "Large Nurr_T2",
+  "category": "Structure",
+  "tier": "T2",
+  "drops": [
+    {
+      "name": "Nurr Fang",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "nurrfang_t2"
+    }
+  ],
+  "originalName": "LargeNurr_T2"
+}

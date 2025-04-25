@@ -12,5 +12,28 @@
     "Fiber Shirt and Trousers",
     "Rupu Fur Armor",
     "Cloaked Rupu Fur Armor"
+  ],
+  "droppedBy": [
+    {
+      "name": "Easy Rupu_T1_Q",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Hard Rupu_T1_Q",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Medium Rupu_T1_Q",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    }
   ]
 }

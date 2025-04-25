@@ -37,5 +37,14 @@
       "station": "Flotillian Stomping Station",
       "time": 5
     }
+  ],
+  "droppedBy": [
+    {
+      "name": "Okkam_T3",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
   ]
 }

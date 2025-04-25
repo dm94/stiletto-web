@@ -41,6 +41,34 @@
   ],
   "droppedBy": [
     {
+      "name": "Basket Loot_T2_AC",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Big Hotspot Loot_T2",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Big Hotspot Loot_T3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Big Hotspot Loot_T4",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
       "name": "Bounty Hunter",
       "chance": 11.111111,
       "minQuantity": 5,
@@ -48,11 +76,179 @@
       "tier": "T2"
     },
     {
+      "name": "Easy Rupu Camp_T2",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Easy Rupu Camp_T3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Easy Rupu Camp_T4",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Easy Rupu_T2",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Easy Rupu_T2_Q",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Easy Rupu_T3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Easy Rupu_T3_Q",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Easy Rupu_T4",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Easy Rupu_T4_Q",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
       "name": "Grave Digger (Medium)",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu Camp_T2",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu Camp_T3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu Camp_T4",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Hard Rupu_T2",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2_AC",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2_Q",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu_T3_Q",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu_T4",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Hard Rupu_T4_Q",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Hotspot Loot Windmill_T2_AC",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Hotspot Loot_T2",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Hotspot Loot_T2_AC",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Hotspot Loot_T3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Hotspot Loot_T4",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
     },
     {
       "name": "Marshland Stalker",
@@ -66,6 +262,69 @@
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu Camp_T2",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu Camp_T3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu Camp_T4",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Medium Rupu_T2",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu_T2_Q",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu_T3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu_T3_Q",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu_T4",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Medium Rupu_T4_Q",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
     },
     {
       "name": "Rupu Ashdweller",

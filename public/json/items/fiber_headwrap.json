@@ -4,16 +4,93 @@
   "type": "FiberHeadwrap_C",
   "droppedBy": [
     {
+      "name": "Big Hotspot Loot_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
       "name": "Cowardly Rupu",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
+      "name": "Easy Rupu Camp_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Easy Rupu_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Easy Rupu_T1_Q",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
       "name": "Green Rupu",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1
+    },
+    {
+      "name": "Hard Rupu Camp_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Hard Rupu_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Hard Rupu_T1_Q",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Hotspot Loot_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Medium Rupu Camp_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Medium Rupu_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Medium Rupu_T1_Q",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
     },
     {
       "name": "Prophet",
@@ -110,6 +187,13 @@
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1
+    },
+    {
+      "name": "Treasure Chest_T1",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
     },
     {
       "name": "Yellow Rupu",

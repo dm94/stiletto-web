@@ -1,0 +1,113 @@
+{
+  "name": "Ammo Box_T4",
+  "category": "Container",
+  "tier": "T4",
+  "drops": [
+    {
+      "name": "Iron-Tipped Bolt",
+      "chance": 28.571428,
+      "minQuantity": 1,
+      "maxQuantity": 6,
+      "source": "ammo_t4"
+    },
+    {
+      "name": "Hullbreaker Scattershot",
+      "chance": 28.571428,
+      "minQuantity": 2,
+      "maxQuantity": 12,
+      "source": "ammo_t4"
+    },
+    {
+      "name": "Iron Dart",
+      "chance": 28.571428,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "source": "ammo_t4"
+    },
+    {
+      "name": "Iron Rok",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "source": "ammo_t4"
+    },
+    {
+      "name": "Fiber",
+      "chance": 9.090909,
+      "minQuantity": 16,
+      "maxQuantity": 16,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Stone",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Wood",
+      "chance": 9.090909,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Rupu Vine",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Palm Leaves",
+      "chance": 9.090909,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Fiber Weave",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Wood Shaft",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Bone Splinter",
+      "chance": 9.090909,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Rope",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Earth Wax",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Bone Glue",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "baseresources_t4"
+    }
+  ],
+  "originalName": "AmmoBox_T4"
+}

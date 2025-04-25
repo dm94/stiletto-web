@@ -1,0 +1,14 @@
+{
+  "name": "Papak_T3",
+  "category": "Structure",
+  "tier": "T3",
+  "drops": [
+    {
+      "name": "Gelatinous Goo",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "gelatinousgoo_t3"
+    }
+  ]
+}

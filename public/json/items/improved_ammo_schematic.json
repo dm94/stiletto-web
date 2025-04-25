@@ -16,5 +16,42 @@
     "Charged Boulder",
     "Small Boulder",
     "Penetrating Dart"
+  ],
+  "droppedBy": [
+    {
+      "name": "Easy Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Large Nurr_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "Nurr_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    }
   ]
 }

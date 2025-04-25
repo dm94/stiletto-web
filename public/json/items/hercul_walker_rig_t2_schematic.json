@@ -8,6 +8,62 @@
   ],
   "droppedBy": [
     {
+      "name": "Big Hotspot Loot_T3",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Easy Rupu Camp_T3",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu Camp_T3",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu_T3",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hotspot Loot_T3",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu Camp_T3",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu_T3",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam_T3",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
       "name": "Rupu Oracle (T3)",
       "chance": 16.666666,
       "minQuantity": 1,
@@ -23,6 +79,13 @@
     },
     {
       "name": "Rupu Seeker",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Treasure Chest_T3",
       "chance": 16.666666,
       "minQuantity": 1,
       "maxQuantity": 1,

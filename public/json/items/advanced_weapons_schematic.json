@@ -18,5 +18,49 @@
     "Throwable Aloe Bomb",
     "Firebomb",
     "Bomb Javelin"
+  ],
+  "droppedBy": [
+    {
+      "name": "Easy Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam_T3",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Papak_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
   ]
 }

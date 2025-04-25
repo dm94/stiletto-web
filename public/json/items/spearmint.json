@@ -6,5 +6,14 @@
   "stackSize": 100,
   "weight": 0.25,
   "description": "This lush green plant has been used by nomads for many applications over the centuries. Many prize it's refreshing aroma against the dankness of the wasteland.",
-  "experiencieReward": 12
+  "experiencieReward": 12,
+  "droppedBy": [
+    {
+      "name": "Koa_T4",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
 }

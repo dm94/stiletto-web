@@ -1,0 +1,267 @@
+{
+  "name": "Medium Rupu Camp_T1",
+  "category": "Rupu",
+  "tier": "T1",
+  "drops": [
+    {
+      "name": "Fiber",
+      "chance": 26.31579,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "source": "baseresources_t1"
+    },
+    {
+      "name": "Stone",
+      "chance": 26.31579,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "source": "baseresources_t1"
+    },
+    {
+      "name": "Wood",
+      "chance": 26.31579,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "baseresources_t1"
+    },
+    {
+      "name": "Rupu Vine",
+      "chance": 10.526316,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "baseresources_t1"
+    },
+    {
+      "name": "Palm Leaves",
+      "chance": 10.526316,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "baseresources_t1"
+    },
+    {
+      "name": "Animal Fat",
+      "chance": 11.111111,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Ash",
+      "chance": 11.111111,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Charcoal",
+      "chance": 11.111111,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Huge Cactus Fruit",
+      "chance": 11.111111,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Fruit Pulp",
+      "chance": 11.111111,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Rupu Pelt",
+      "chance": 11.111111,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Hide",
+      "chance": 11.111111,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Sand",
+      "chance": 11.111111,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Purified Water",
+      "chance": 11.111111,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t1"
+    },
+    {
+      "name": "Wood Shaft",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "processedresources_t1"
+    },
+    {
+      "name": "Fiber Weave",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "processedresources_t1"
+    },
+    {
+      "name": "Fiber Shirt and Trousers",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t1"
+    },
+    {
+      "name": "Rupu Fur Armor",
+      "chance": 5.940594,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t1"
+    },
+    {
+      "name": "Cloaked Rupu Fur Armor",
+      "chance": 2.970297,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t1"
+    },
+    {
+      "name": "Fiber Sandals",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t1"
+    },
+    {
+      "name": "Rupu Fur Sandals",
+      "chance": 5.940594,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t1"
+    },
+    {
+      "name": "Fiber Arm Wraps",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t1"
+    },
+    {
+      "name": "Rupu Fur Sleeves",
+      "chance": 5.940594,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t1"
+    },
+    {
+      "name": "Fiber Headwrap",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t1"
+    },
+    {
+      "name": "Beat Stick",
+      "chance": 16.129032,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Stone Axe",
+      "chance": 12.903226,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Jaggertooth Club",
+      "chance": 9.67742,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Crude Hatchet",
+      "chance": 11.290322,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Blunt Quarterstaff",
+      "chance": 16.129032,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Traveller's Quarterstaff",
+      "chance": 9.67742,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Light Javelin",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Throwing Net",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Throwstone",
+      "chance": 8.064516,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "weapons_t1"
+    },
+    {
+      "name": "Firefly Walker Rig T2 Schematic",
+      "chance": 41.666668,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t1"
+    },
+    {
+      "name": "Dinghy Walker Rig T2 Schematic",
+      "chance": 41.666668,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t1"
+    },
+    {
+      "name": "Firefly Walker Rig T3 Schematic",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t1"
+    },
+    {
+      "name": "Dinghy Walker Rig T3 Schematic",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t1"
+    }
+  ],
+  "originalName": "MediumRupuCamp_T1"
+}

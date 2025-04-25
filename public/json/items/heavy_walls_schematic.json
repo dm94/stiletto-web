@@ -14,5 +14,49 @@
     "Heavy Wood Battlements",
     "Heavy Wood Wall 2",
     "Heavy Wood Wall 1"
+  ],
+  "droppedBy": [
+    {
+      "name": "Easy Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam_T3",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Papak_T3_Q",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    }
   ]
 }

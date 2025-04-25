@@ -5,5 +5,91 @@
   "trade_price": 2.6,
   "stackSize": 100,
   "weight": 0.73,
-  "experiencieReward": 12
+  "experiencieReward": 12,
+  "droppedBy": [
+    {
+      "name": "Easy Rupu Camp_T3",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Easy Rupu Camp_T4",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "tier": "T4"
+    },
+    {
+      "name": "Go Go_T4",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "tier": "T4"
+    },
+    {
+      "name": "Go Go_T4_Q",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "tier": "T4"
+    },
+    {
+      "name": "Hard Rupu Camp_T3",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu Camp_T4",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "tier": "T4"
+    },
+    {
+      "name": "Hotspot Loot_T3",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hotspot Loot_T4",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "tier": "T4"
+    },
+    {
+      "name": "Medium Rupu Camp_T3",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu Camp_T4",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "tier": "T4"
+    },
+    {
+      "name": "Treasure Chest_T3",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Treasure Chest_T4",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "tier": "T4"
+    }
+  ]
 }

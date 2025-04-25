@@ -13,5 +13,42 @@
     "Iron Studded Armor",
     "Nibirian Armor",
     "Cloak"
+  ],
+  "droppedBy": [
+    {
+      "name": "Easy Rupu_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Go Go_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Hard Rupu_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Medium Rupu_T4_Q",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
   ]
 }

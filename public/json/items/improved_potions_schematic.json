@@ -7,5 +7,42 @@
     "Desert Mule",
     "Jojo Mojo",
     "Race Dust"
+  ],
+  "droppedBy": [
+    {
+      "name": "Easy Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Large Nurr_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Nurr_T2_Q",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    }
   ]
 }

@@ -4,7 +4,42 @@
   "type": "BaskwoodBoots_C",
   "droppedBy": [
     {
+      "name": "Basket Loot_T2_AC",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Big Hotspot Loot_T2",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
       "name": "Bounty Hunter",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Easy Rupu Camp_T2",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Easy Rupu_T2",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Easy Rupu_T2_Q",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -18,6 +53,55 @@
       "tier": "T2"
     },
     {
+      "name": "Hard Rupu Camp_T2",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2_AC",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2_Q",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hotspot Loot Windmill_T2_AC",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hotspot Loot_T2",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hotspot Loot_T2_AC",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
       "name": "Marshland Stalker",
       "chance": 11.111111,
       "minQuantity": 1,
@@ -25,6 +109,27 @@
     },
     {
       "name": "Matriarch",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu Camp_T2",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu_T2",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Medium Rupu_T2_Q",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -102,6 +207,13 @@
     },
     {
       "name": "Rupu Zealot (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Treasure Chest_T2",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,

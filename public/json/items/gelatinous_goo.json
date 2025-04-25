@@ -5,5 +5,14 @@
   "trade_price": 1.9,
   "stackSize": 100,
   "weight": 0.17,
-  "experiencieReward": 12
+  "experiencieReward": 12,
+  "droppedBy": [
+    {
+      "name": "Papak_T3",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
+  ]
 }

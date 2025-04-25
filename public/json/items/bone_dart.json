@@ -70,5 +70,21 @@
       "toolType": "RepeaterBolt",
       "tier": 2
     }
+  ],
+  "droppedBy": [
+    {
+      "name": "Ammo Box_T2",
+      "chance": 33.333332,
+      "minQuantity": 10,
+      "maxQuantity": 30,
+      "tier": "T2"
+    },
+    {
+      "name": "Big Hotspot Loot_T2",
+      "chance": 33.333332,
+      "minQuantity": 10,
+      "maxQuantity": 30,
+      "tier": "T2"
+    }
   ]
 }

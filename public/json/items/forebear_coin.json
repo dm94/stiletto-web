@@ -7,6 +7,20 @@
   "experiencieReward": 3,
   "droppedBy": [
     {
+      "name": "Basket Loot_T2_AC",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Hard Rupu_T2_AC",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
       "name": "Matriarch",
       "chance": 100,
       "minQuantity": 1,
