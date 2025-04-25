@@ -342,6 +342,7 @@
   "trades.selectResource": "Select the item",
   "common.damage": "Damage",
   "common.loadMore": "Load More",
+  "common.noResults": "No results",
   "wiki.showingItems": "Showing {{displayed}} of {{total}} items",
   "creature.experience": "Experience",
   "creature.tier": "Tier",

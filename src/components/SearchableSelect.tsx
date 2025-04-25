@@ -105,26 +105,24 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
             />
           </div>
           {filteredOptions.length > 0 ? (
-            <ul role="listbox" aria-labelledby={id}>
+            <select
+              className="w-full bg-gray-700 border border-gray-600 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 max-h-60 p-2"
+              size={Math.min(filteredOptions.length, 8)}
+              value={value}
+              onChange={(e) => handleOptionClick(e.target.value)}
+              aria-labelledby={id}
+              id={`${id}-select`}
+            >
               {filteredOptions.map((option) => (
-                <li
+                <option
                   key={option.value}
-                  className={`p-2 hover:bg-gray-600 hover:text-white hover:border-l-4 hover:border-blue-400 transition-all duration-150 cursor-pointer ${option.value === value ? "bg-blue-600" : ""}`}
-                  onClick={() => handleOptionClick(option.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      handleOptionClick(option.value);
-                    }
-                  }}
-                  role="option"
-                  aria-selected={option.value === value}
-                  tabIndex={0}
+                  value={option.value}
+                  className={`p-2 hover:bg-gray-600 hover:text-white ${option.value === value ? "bg-blue-600" : ""}`}
                 >
                   {option.label}
-                </li>
+                </option>
               ))}
-            </ul>
+            </select>
           ) : (
             <div className="p-2 text-gray-400 text-center">
               {t("common.noResults")}
