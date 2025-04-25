@@ -83,7 +83,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
         tabIndex={0}
         data-cy={dataCy}
       >
-        <span>{selectedLabel || placeholder}</span>
+        <span>{selectedLabel ?? placeholder}</span>
         <i className={`fas fa-chevron-${isOpen ? "up" : "down"}`} />
       </div>
 
