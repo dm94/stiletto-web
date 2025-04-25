@@ -7,21 +7,21 @@
   "description": "Used by nomads to trade with each other at trading stations located in most oases.",
   "droppedBy": [
     {
-      "name": "Big Hotspot Loot_T1",
+      "name": "BigHotspotLoot (T1)",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Hotspot Loot_T1",
+      "name": "HotspotLoot (T1)",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Treasure Chest_T1",
+      "name": "TreasureChest (T1)",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,

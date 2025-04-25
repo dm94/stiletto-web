@@ -1,5 +1,5 @@
 {
-  "name": "Medium Rupu Camp_T2",
+  "name": "Medium Rupu Camp (T2)",
   "category": "Rupu",
   "tier": "T2",
   "drops": [
@@ -333,5 +333,5 @@
       "source": "weapons_t2"
     }
   ],
-  "originalName": "MediumRupuCamp_T2"
+  "originalName": "MediumRupuCamp (T2)"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "Medium Rupu Camp_T4",
+  "name": "Medium Rupu Camp (T4)",
   "category": "Rupu",
   "tier": "T4",
   "drops": [
@@ -389,5 +389,5 @@
       "source": "rigs_t4"
     }
   ],
-  "originalName": "MediumRupuCamp_T4"
+  "originalName": "MediumRupuCamp (T4)"
 }

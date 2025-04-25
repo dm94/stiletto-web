@@ -1,5 +1,5 @@
 {
-  "name": "Easy Rupu_T3",
+  "name": "Easy Rupu (T3)",
   "category": "Rupu",
   "tier": "T3",
   "drops": [
@@ -319,5 +319,5 @@
       "source": "weapons_t3"
     }
   ],
-  "originalName": "EasyRupu_T3"
+  "originalName": "EasyRupu (T3)"
 }

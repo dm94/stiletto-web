@@ -1,5 +1,5 @@
 {
-  "name": "Hard Rupu_T2_Q",
+  "name": "Easy Rupu (T2) Quality",
   "category": "Rupu",
   "tier": "T2",
   "drops": [
@@ -382,5 +382,5 @@
       "source": "schematics_t2"
     }
   ],
-  "originalName": "HardRupu_T2_Q"
+  "originalName": "EasyRupu (T2) Quality"
 }

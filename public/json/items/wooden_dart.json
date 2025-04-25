@@ -76,14 +76,14 @@
   ],
   "droppedBy": [
     {
-      "name": "Ammo Box_T1",
+      "name": "AmmoBox (T1)",
       "chance": 33.333332,
       "minQuantity": 5,
       "maxQuantity": 25,
       "tier": "T1"
     },
     {
-      "name": "Big Hotspot Loot_T1",
+      "name": "BigHotspotLoot (T1)",
       "chance": 33.333332,
       "minQuantity": 5,
       "maxQuantity": 25,

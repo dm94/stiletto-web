@@ -74,21 +74,21 @@
   ],
   "droppedBy": [
     {
-      "name": "Ammo Box_T2",
+      "name": "AmmoBox (T2)",
       "chance": 12.5,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "Ammo Box_T3",
+      "name": "AmmoBox (T3)",
       "chance": 10.718528,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T3"
     },
     {
-      "name": "Ammo Box_T4",
+      "name": "AmmoBox (T4)",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
@@ -102,7 +102,7 @@
       "tier": "T2"
     },
     {
-      "name": "Big Hotspot Loot_T1",
+      "name": "BigHotspotLoot (T1)",
       "chance": 50,
       "minQuantity": 10,
       "maxQuantity": 10,
@@ -122,84 +122,84 @@
       "maxQuantity": 10
     },
     {
-      "name": "Easy Rupu Camp_T1",
+      "name": "EasyRupu (T1)",
       "chance": 50,
       "minQuantity": 10,
       "maxQuantity": 10,
       "tier": "T1"
     },
     {
-      "name": "Easy Rupu Camp_T2",
+      "name": "EasyRupu (T1) Quality",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "EasyRupu (T2)",
       "chance": 12.5,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "Easy Rupu Camp_T3",
+      "name": "EasyRupu (T2) Quality",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupu (T3)",
       "chance": 10.718528,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T3"
     },
     {
-      "name": "Easy Rupu Camp_T4",
+      "name": "EasyRupu (T3) Quality",
+      "chance": 10.718528,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T4)",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "Easy Rupu_T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "tier": "T1"
-    },
-    {
-      "name": "Easy Rupu_T1_Q",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "tier": "T1"
-    },
-    {
-      "name": "Easy Rupu_T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T2"
-    },
-    {
-      "name": "Easy Rupu_T2_Q",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T2"
-    },
-    {
-      "name": "Easy Rupu_T3",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Easy Rupu_T3_Q",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Easy Rupu_T4",
+      "name": "EasyRupu (T4) Quality",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "Easy Rupu_T4_Q",
+      "name": "EasyRupuCamp (T1)",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "EasyRupuCamp (T2)",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupuCamp (T3)",
+      "chance": 10.718528,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupuCamp (T4)",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
@@ -219,55 +219,6 @@
       "maxQuantity": 10
     },
     {
-      "name": "Hard Rupu Camp_T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "tier": "T1"
-    },
-    {
-      "name": "Hard Rupu Camp_T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T2"
-    },
-    {
-      "name": "Hard Rupu Camp_T3",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Hard Rupu Camp_T4",
-      "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T4"
-    },
-    {
-      "name": "Hard Rupu_T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "tier": "T1"
-    },
-    {
-      "name": "Hard Rupu_T1_Q",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "tier": "T1"
-    },
-    {
-      "name": "Hard Rupu_T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T2"
-    },
-    {
       "name": "Hard Rupu_T2_AC",
       "chance": 12.5,
       "minQuantity": 4,
@@ -275,35 +226,84 @@
       "tier": "T2"
     },
     {
-      "name": "Hard Rupu_T2_Q",
+      "name": "HardRupu (T1)",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupu (T1) Quality",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupu (T2)",
       "chance": 12.5,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "Hard Rupu_T3",
+      "name": "HardRupu (T2) Quality",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T3)",
       "chance": 10.718528,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T3"
     },
     {
-      "name": "Hard Rupu_T3_Q",
+      "name": "HardRupu (T3) Quality",
       "chance": 10.718528,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T3"
     },
     {
-      "name": "Hard Rupu_T4",
+      "name": "HardRupu (T4)",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "Hard Rupu_T4_Q",
+      "name": "HardRupu (T4) Quality",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupuCamp (T1)",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupuCamp (T2)",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupuCamp (T3)",
+      "chance": 10.718528,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupuCamp (T4)",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
@@ -317,20 +317,6 @@
       "tier": "T2"
     },
     {
-      "name": "Hotspot Loot_T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "tier": "T1"
-    },
-    {
-      "name": "Hotspot Loot_T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T2"
-    },
-    {
       "name": "Hotspot Loot_T2_AC",
       "chance": 12.5,
       "minQuantity": 4,
@@ -338,14 +324,28 @@
       "tier": "T2"
     },
     {
-      "name": "Hotspot Loot_T3",
+      "name": "HotspotLoot (T1)",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "HotspotLoot (T2)",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T3)",
       "chance": 10.718528,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T3"
     },
     {
-      "name": "Hotspot Loot_T4",
+      "name": "HotspotLoot (T4)",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
@@ -365,84 +365,84 @@
       "tier": "T2"
     },
     {
-      "name": "Medium Rupu Camp_T1",
+      "name": "MediumRupu (T1)",
       "chance": 50,
       "minQuantity": 10,
       "maxQuantity": 10,
       "tier": "T1"
     },
     {
-      "name": "Medium Rupu Camp_T2",
+      "name": "MediumRupu (T1) Quality",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupu (T2)",
       "chance": 12.5,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "Medium Rupu Camp_T3",
+      "name": "MediumRupu (T2) Quality",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T3)",
       "chance": 10.718528,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T3"
     },
     {
-      "name": "Medium Rupu Camp_T4",
+      "name": "MediumRupu (T3) Quality",
+      "chance": 10.718528,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T4)",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "Medium Rupu_T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "tier": "T1"
-    },
-    {
-      "name": "Medium Rupu_T1_Q",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
-      "tier": "T1"
-    },
-    {
-      "name": "Medium Rupu_T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T2"
-    },
-    {
-      "name": "Medium Rupu_T2_Q",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T2"
-    },
-    {
-      "name": "Medium Rupu_T3",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Medium Rupu_T3_Q",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Medium Rupu_T4",
+      "name": "MediumRupu (T4) Quality",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "Medium Rupu_T4_Q",
+      "name": "MediumRupuCamp (T1)",
+      "chance": 50,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupuCamp (T2)",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupuCamp (T3)",
+      "chance": 10.718528,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupuCamp (T4)",
       "chance": 9.090909,
       "minQuantity": 5,
       "maxQuantity": 5,

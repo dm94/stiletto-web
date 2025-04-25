@@ -66,21 +66,21 @@
   ],
   "droppedBy": [
     {
-      "name": "Ammo Box_T1",
+      "name": "AmmoBox (T1)",
       "chance": 33.333332,
       "minQuantity": 3,
       "maxQuantity": 15,
       "tier": "T1"
     },
     {
-      "name": "Big Hotspot Loot_T1",
+      "name": "BigHotspotLoot (T1)",
       "chance": 33.333332,
       "minQuantity": 3,
       "maxQuantity": 15,
       "tier": "T1"
     },
     {
-      "name": "Hard Rupu Camp_T1",
+      "name": "HardRupuCamp (T1)",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,

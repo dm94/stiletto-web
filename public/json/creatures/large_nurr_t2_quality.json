@@ -1,5 +1,5 @@
 {
-  "name": "Large Nurr_T2_Q",
+  "name": "Large Nurr (T2) Quality",
   "category": "Structure",
   "tier": "T2",
   "drops": [
@@ -130,5 +130,5 @@
       "source": "schematics_t2"
     }
   ],
-  "originalName": "LargeNurr_T2_Q"
+  "originalName": "LargeNurr (T2) Quality"
 }

@@ -1,6 +1,7 @@
 {
-  "name": "Asteroid_T3",
+  "name": "Asteroid (T3)",
   "category": "Resource",
   "tier": "T3",
-  "drops": []
+  "drops": [],
+  "originalName": "Asteroid_T3"
 }

@@ -1,5 +1,5 @@
 {
-  "name": "Koa_T4_Q",
+  "name": "Koa (T4) Quality",
   "category": "Structure",
   "tier": "T4",
   "drops": [
@@ -122,5 +122,6 @@
       "maxQuantity": 5,
       "source": "schematics_t4"
     }
-  ]
+  ],
+  "originalName": "Koa_T4_Q"
 }

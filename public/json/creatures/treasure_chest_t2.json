@@ -1,5 +1,5 @@
 {
-  "name": "Treasure Chest_T2",
+  "name": "Treasure Chest (T2)",
   "category": "Container",
   "tier": "T2",
   "drops": [
@@ -263,5 +263,5 @@
       "source": "extraresources_t2"
     }
   ],
-  "originalName": "TreasureChest_T2"
+  "originalName": "TreasureChest (T2)"
 }

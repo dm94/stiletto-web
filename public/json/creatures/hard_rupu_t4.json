@@ -1,5 +1,5 @@
 {
-  "name": "Hard Rupu_T4",
+  "name": "Hard Rupu (T4)",
   "category": "Rupu",
   "tier": "T4",
   "drops": [
@@ -298,5 +298,5 @@
       "source": "rigs_t4"
     }
   ],
-  "originalName": "HardRupu_T4"
+  "originalName": "HardRupu (T4)"
 }

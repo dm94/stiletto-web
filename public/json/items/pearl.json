@@ -16,14 +16,14 @@
       "tier": null
     },
     {
-      "name": "Go Go_T4",
+      "name": "GoGo (T4)",
       "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 3,
       "tier": "T4"
     },
     {
-      "name": "Go Go_T4_Q",
+      "name": "GoGo (T4) Quality",
       "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 3,

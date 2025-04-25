@@ -1,5 +1,5 @@
 {
-  "name": "Nurr_T2_Q",
+  "name": "Nurr (T2) Quality",
   "category": "Structure",
   "tier": "T2",
   "drops": [
@@ -129,5 +129,6 @@
       "maxQuantity": 1,
       "source": "schematics_t2"
     }
-  ]
+  ],
+  "originalName": "Nurr_T2_Q"
 }

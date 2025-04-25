@@ -1,5 +1,5 @@
 {
-  "name": "Okkam_T3_Q",
+  "name": "Okkam (T3) Quality",
   "category": "Structure",
   "tier": "T3",
   "drops": [
@@ -150,5 +150,6 @@
       "maxQuantity": 5,
       "source": "schematics_t3"
     }
-  ]
+  ],
+  "originalName": "Okkam_T3_Q"
 }

@@ -25,7 +25,7 @@
   },
   "droppedBy": [
     {
-      "name": "Big Hotspot Loot_T1",
+      "name": "BigHotspotLoot (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -38,21 +38,21 @@
       "maxQuantity": 1
     },
     {
-      "name": "Easy Rupu Camp_T1",
+      "name": "EasyRupu (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Easy Rupu_T1",
+      "name": "EasyRupu (T1) Quality",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Easy Rupu_T1_Q",
+      "name": "EasyRupuCamp (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -65,49 +65,49 @@
       "maxQuantity": 1
     },
     {
-      "name": "Hard Rupu Camp_T1",
+      "name": "HardRupu (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Hard Rupu_T1",
+      "name": "HardRupu (T1) Quality",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Hard Rupu_T1_Q",
+      "name": "HardRupuCamp (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Hotspot Loot_T1",
+      "name": "HotspotLoot (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Medium Rupu Camp_T1",
+      "name": "MediumRupu (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Medium Rupu_T1",
+      "name": "MediumRupu (T1) Quality",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Medium Rupu_T1_Q",
+      "name": "MediumRupuCamp (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -210,7 +210,7 @@
       "maxQuantity": 1
     },
     {
-      "name": "Treasure Chest_T1",
+      "name": "TreasureChest (T1)",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,

@@ -4,7 +4,7 @@
   "stackSize": 10,
   "droppedBy": [
     {
-      "name": "Hotspot Loot_T1",
+      "name": "HotspotLoot (T1)",
       "chance": 16.666666,
       "minQuantity": 1,
       "maxQuantity": 1,
