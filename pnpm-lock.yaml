@@ -64,11 +64,11 @@ importers:
         specifier: ^22.14.1
         version: 22.14.1
       '@types/react':
-        specifier: ^19.1.0
-        version: 19.1.0
+        specifier: ^19.1.2
+        version: 19.1.2
       '@types/react-dom':
         specifier: ^19.1.2
-        version: 19.1.2(@types/react@19.1.0)
+        version: 19.1.2(@types/react@19.1.2)
       '@types/react-helmet':
         specifier: ^6.1.11
         version: 6.1.11
@@ -759,8 +759,8 @@ packages:
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
-  '@types/react@19.1.0':
-    resolution: {integrity: sha512-UaicktuQI+9UKyA4njtDOGBD/67t8YEBt2xdfqu8+gP9hqPUPsiXlNPcpS2gVdjmis5GKPG3fCxbQLVgxsQZ8w==}
+  '@types/react@19.1.2':
+    resolution: {integrity: sha512-oxLPMytKchWGbnQM9O7D67uPa9paTNxO7jVoNMXgkkErULBPhPARCfkKL9ytcIJJRGjbsVwW4ugJzyFFvm/Tiw==}
 
   '@types/sinonjs__fake-timers@8.1.1':
     resolution: {integrity: sha512-0kSuKjAS0TrGLJ0M/+8MaFkGsQhZpB6pxOmvS3K8FYI72K//YmdfoW9X2qPsAKh1mkwxGD5zib9s1FIFed6E8g==}
@@ -2689,13 +2689,13 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/react-dom@19.1.2(@types/react@19.1.0)':
+  '@types/react-dom@19.1.2(@types/react@19.1.2)':
     dependencies:
-      '@types/react': 19.1.0
+      '@types/react': 19.1.2
 
   '@types/react-helmet@6.1.11':
     dependencies:
-      '@types/react': 19.1.0
+      '@types/react': 19.1.2
 
   '@types/react-leaflet@3.0.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
@@ -2708,9 +2708,9 @@ snapshots:
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.1.0
+      '@types/react': 19.1.2
 
-  '@types/react@19.1.0':
+  '@types/react@19.1.2':
     dependencies:
       csstype: 3.1.3
 
