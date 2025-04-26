@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, type KeyboardEvent } from "react";
+import { useState, useRef, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
@@ -21,11 +21,15 @@ const Menu: React.FC<MenuProps> = ({
   const [searchText, setSearchText] = useState<string>("");
   const { t } = useTranslation();
   const { isConnected } = useUser();
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const closeMenu = (): void => {
-    const menu = document.getElementById("navbar-main-menu");
-    if (menu && !menu.classList.contains("hidden") && window.innerWidth < 768) {
-      menu.classList.add("hidden");
+    if (
+      menuRef.current &&
+      !menuRef.current.classList.contains("hidden") &&
+      window.innerWidth < 768
+    ) {
+      menuRef.current.classList.add("hidden");
     }
   };
 
@@ -76,8 +80,7 @@ const Menu: React.FC<MenuProps> = ({
             className="md:hidden p-2 text-white hover:bg-gray-700 rounded-lg"
             type="button"
             onClick={() => {
-              const menu = document.getElementById("navbar-main-menu");
-              menu?.classList.toggle("hidden");
+              menuRef.current?.classList.toggle("hidden");
             }}
             aria-label="Toggle Menu"
           >
@@ -101,7 +104,7 @@ const Menu: React.FC<MenuProps> = ({
 
           {/* Navigation menu */}
           <div
-            id="navbar-main-menu"
+            ref={menuRef}
             className="hidden md:flex md:items-center w-full md:justify-around"
           >
             <ul className="flex flex-col md:flex-row md:space-x-4 mt-4 md:mt-0">
