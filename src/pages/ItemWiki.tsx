@@ -91,7 +91,7 @@ const ItemWiki = () => {
         className={
           ingre?.crafting && ingre?.crafting?.length > 1
             ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
-            : "w-full"
+            : "w-full flex flex-col gap-2"
         }
         key={`ingredients-${index}-${ingre.name}`}
       >
@@ -359,11 +359,7 @@ const ItemWiki = () => {
                   <i className="fas fa-tools" />
                 </a>
               </div>
-              <div className="p-4">
-                <div className="flex flex-wrap -mx-2">
-                  {showIngredient(item)}
-                </div>
-              </div>
+              <div className="p-4 flex flex-wrap">{showIngredient(item)}</div>
             </div>
           </div>
         )}

@@ -42,7 +42,7 @@ const AuctionTimers = memo(() => {
         <link rel="canonical" href={`${getDomain()}/auctions`} />
       </Helmet>
 
-      <div className="flex flex-wrap -mx-2 mb-6">
+      <div className="flex flex-wrap mb-6">
         <div className="w-full lg:w-2/3 px-2 mb-4 lg:mb-0">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 text-center text-gray-300">

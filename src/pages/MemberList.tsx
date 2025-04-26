@@ -437,7 +437,7 @@ const MemberList = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap -mx-2">
+      <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2 px-2 mb-6">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
