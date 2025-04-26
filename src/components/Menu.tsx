@@ -22,6 +22,13 @@ const Menu: React.FC<MenuProps> = ({
   const { t } = useTranslation();
   const { isConnected } = useUser();
 
+  const closeMenu = (): void => {
+    const menu = document.getElementById("navbar-main-menu");
+    if (menu && !menu.classList.contains("hidden") && window.innerWidth < 768) {
+      menu.classList.add("hidden");
+    }
+  };
+
   const getLanguageFlag = (lng?: string): string => {
     if (!lng) {
       return "/img/en.jpg";
@@ -49,7 +56,11 @@ const Menu: React.FC<MenuProps> = ({
     <header className="bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap md:flex-nowrap items-center justify-between py-2">
-          <Link to="/" className="flex items-center space-x-2 text-white">
+          <Link
+            to="/"
+            className="flex items-center space-x-2 text-white"
+            onClick={closeMenu}
+          >
             <span className="text-2xl font-medium web-title">Stiletto</span>
             <img
               width="35"
@@ -98,6 +109,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/crafter"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.crafting")}
                 </Link>
@@ -106,6 +118,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to={isConnected ? "/maps" : "/map"}
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.resourceMaps")}
                 </Link>
@@ -114,6 +127,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/clanlist"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.clanList")}
                 </Link>
@@ -122,6 +136,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/trades"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.trades")}
                 </Link>
@@ -130,6 +145,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/wiki"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.wiki")}
                 </Link>
@@ -138,6 +154,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/tech"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.techTree")}
                 </Link>
