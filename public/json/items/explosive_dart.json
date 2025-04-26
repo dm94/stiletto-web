@@ -1,0 +1,33 @@
+{
+  "name": "Explosive Dart",
+  "parent": "Fire Dart",
+  "type": "ExplosiveDart_C",
+  "category": "Ammo",
+  "trade_price": 49.8,
+  "stackSize": 200,
+  "weight": 0.6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 6,
+          "name": "Lava"
+        },
+        {
+          "count": 3,
+          "name": "Phosphorus"
+        }
+      ],
+      "output": 8,
+      "station": "Artificer Woodworking Station",
+      "time": 4
+    }
+  ],
+  "projectileDamage": {
+    "damage": 3
+  }
+}

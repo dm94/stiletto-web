@@ -1,0 +1,64 @@
+{
+  "name": "Phemke",
+  "category": "Structure",
+  "tier": "T1",
+  "drops": [
+    {
+      "name": "Fiber",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "fiber_t1"
+    },
+    {
+      "name": "Wood",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "wood_t1"
+    },
+    {
+      "name": "Stone",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "stone_t1"
+    },
+    {
+      "name": "Animal Fat",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "animalfat_t1"
+    },
+    {
+      "name": "Firefly Walker Rig T2 Schematic",
+      "chance": 41.666668,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t1"
+    },
+    {
+      "name": "Dinghy Walker Rig T2 Schematic",
+      "chance": 41.666668,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t1"
+    },
+    {
+      "name": "Firefly Walker Rig T3 Schematic",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t1"
+    },
+    {
+      "name": "Dinghy Walker Rig T3 Schematic",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t1"
+    }
+  ],
+  "originalName": "Phemke_T1"
+}

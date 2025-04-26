@@ -1,0 +1,30 @@
+{
+  "name": "Harpoon Protection Module",
+  "type": "TetherProtectionBoost_C",
+  "category": "Resources",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Rotor"
+        },
+        {
+          "count": 1,
+          "name": "Bearing"
+        },
+        {
+          "count": 1,
+          "name": "Spline"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 4.5,
+    "maxIncrease": 90
+  }
+}

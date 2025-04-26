@@ -1,0 +1,32 @@
+{
+  "name": "Basic Potions Schematic",
+  "type": "Vitamins_T1Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Vision Powder"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Lamp Double Hanging",
+  "type": "Lamp1_C",
+  "category": "Furniture",
+  "weight": 1,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 3,
+          "name": "Stone"
+        },
+        {
+          "count": 5,
+          "name": "Animal Fat"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 150
+  }
+}

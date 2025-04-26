@@ -1,0 +1,44 @@
+{
+  "name": "Nibiran Curved Dagger",
+  "type": "OneHandedTitaniumSword2_C",
+  "category": "Weapons",
+  "trade_price": 1900.2,
+  "stackSize": 100,
+  "weight": 1.7,
+  "experiencieReward": 1489,
+  "durability": 770,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 6,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 3,
+          "name": "Leather"
+        }
+      ],
+      "station": "Smithing",
+      "time": 100
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 135,
+    "impact": 15,
+    "stability": 5,
+    "weaponLength": 55,
+    "damage": 70,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 1
+    }
+  ]
+}

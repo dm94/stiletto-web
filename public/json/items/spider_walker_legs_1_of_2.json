@@ -1,0 +1,24 @@
+{
+  "name": "Spider Walker Legs (1 of 2)",
+  "type": "SpiderLegs_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood"
+        },
+        {
+          "count": 12,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 900
+  }
+}

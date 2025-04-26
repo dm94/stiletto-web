@@ -1,0 +1,7 @@
+{
+  "name": "Weapon Strongbox",
+  "type": "LootboxWeaponsCanyonPvP_C",
+  "category": "Interactables",
+  "stackSize": 100,
+  "weight": 1
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Flots",
+  "type": "Currency_C",
+  "category": "Resources",
+  "trade_price": 0.5,
+  "stackSize": 999999,
+  "description": "Used by nomads to trade with each other at trading stations located in most oases.",
+  "droppedBy": [
+    {
+      "name": "BigHotspotLoot (T1)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HotspotLoot (T1)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "TreasureChest (T1)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    }
+  ]
+}

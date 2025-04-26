@@ -1,0 +1,379 @@
+{
+  "name": "Fruit Pulp",
+  "parent": "Stomping Station",
+  "type": "FruitPulp_C",
+  "category": "Resources",
+  "stackSize": 100,
+  "weight": 0.34,
+  "experiencieReward": 3,
+  "onlyDevs": true,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Apple"
+        }
+      ],
+      "output": 7,
+      "station": "Stomping Station",
+      "time": 24
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Apple"
+        }
+      ],
+      "output": 9,
+      "station": "Advanced Stomping Station",
+      "time": 22
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Apple"
+        }
+      ],
+      "output": 11,
+      "station": "Flotillian Stomping Station",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Corn"
+        }
+      ],
+      "station": "Stomping Station",
+      "time": 24
+    },
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Corn"
+        }
+      ],
+      "station": "Advanced Stomping Station",
+      "time": 22
+    },
+    {
+      "ingredients": [
+        {
+          "count": 4,
+          "name": "Corn"
+        }
+      ],
+      "station": "Flotillian Stomping Station",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Blood Turnip"
+        }
+      ],
+      "station": "Stomping Station",
+      "time": 24
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Blood Turnip"
+        }
+      ],
+      "output": 2,
+      "station": "Advanced Stomping Station",
+      "time": 22
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Blood Turnip"
+        }
+      ],
+      "output": 3,
+      "station": "Flotillian Stomping Station",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Huge Cactus Fruit"
+        }
+      ],
+      "output": 6,
+      "station": "Stomping Station",
+      "time": 32
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Huge Cactus Fruit"
+        }
+      ],
+      "output": 7,
+      "station": "Advanced Stomping Station",
+      "time": 29
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Huge Cactus Fruit"
+        }
+      ],
+      "output": 8,
+      "station": "Flotillian Stomping Station",
+      "time": 26
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Thornberry"
+        }
+      ],
+      "station": "Stomping Station",
+      "time": 24
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Thornberry"
+        }
+      ],
+      "output": 2,
+      "station": "Advanced Stomping Station",
+      "time": 22
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Thornberry"
+        }
+      ],
+      "output": 3,
+      "station": "Flotillian Stomping Station",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Cactus Flesh"
+        }
+      ],
+      "station": "Stomping Station",
+      "time": 18
+    },
+    {
+      "ingredients": [
+        {
+          "count": 4,
+          "name": "Cactus Flesh"
+        }
+      ],
+      "station": "Advanced Stomping Station",
+      "time": 16
+    },
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Cactus Flesh"
+        }
+      ],
+      "station": "Flotillian Stomping Station",
+      "time": 15
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "BasketLoot (T2) (AC)",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupuCamp (T1)",
+      "chance": 11.111111,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T1"
+    },
+    {
+      "name": "EasyRupuCamp (T2)",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupuCamp (T3)",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 7.6923075,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupuCamp (T1)",
+      "chance": 11.111111,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupuCamp (T2)",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupuCamp (T3)",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLoot (T1)",
+      "chance": 11.111111,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T1"
+    },
+    {
+      "name": "HotspotLoot (T2)",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T2) (AC)",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T3)",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "HotspotLoot (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLootWindmill (T2) (AC)",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupuCamp (T1)",
+      "chance": 11.111111,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupuCamp (T2)",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupuCamp (T3)",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "TreasureChest (T1)",
+      "chance": 11.111111,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "tier": "T1"
+    },
+    {
+      "name": "TreasureChest (T2)",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T2"
+    },
+    {
+      "name": "TreasureChest (T3)",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T3"
+    },
+    {
+      "name": "TreasureChest (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T4"
+    }
+  ]
+}

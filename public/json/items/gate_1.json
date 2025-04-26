@@ -1,0 +1,28 @@
+{
+  "name": "Gate 1",
+  "type": "Arena_Gate_1_C",
+  "category": "Furniture",
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 50,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 60,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 9000
+  }
+}

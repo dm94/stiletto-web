@@ -1,0 +1,34 @@
+{
+  "name": "Thumper",
+  "parent": "Basic Walker Weapons",
+  "type": "Thumper_C",
+  "category": "Weapons",
+  "description": "At some point in their sunny life, every Nomad finds out that in some situations blasting a bunch of projectiles at the problem solves it faster than one could say \"cactus\". Uses Throwstones as ammo..",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Wood"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 2,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 3,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 600
+  }
+}

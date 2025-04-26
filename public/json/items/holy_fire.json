@@ -1,0 +1,13 @@
+{
+  "name": "Holy Fire",
+  "type": "HolyFire_C",
+  "category": "Weapons",
+  "trade_price": 16.9,
+  "stackSize": 5,
+  "weight": 0.3,
+  "experiencieReward": 20,
+  "weaponInfo": {
+    "damage": 20,
+    "penetration": 50
+  }
+}

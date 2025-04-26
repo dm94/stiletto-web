@@ -1,17 +1,17 @@
 import { useState, useEffect, Fragment, useMemo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { useUser } from "../store";
-import { getUser } from "../functions/requests/users";
-import LoadingScreen from "../components/LoadingScreen";
-import ClanListItem from "../components/ClanList/ClanListItem";
-import ModalMessage from "../components/ModalMessage";
-import Pagination from "../components/Pagination";
-import ClusterList from "../components/ClusterList";
-import { getDomain } from "../functions/utils";
-import { getClans } from "../functions/requests/clans";
-import { sendRequest } from "../functions/requests/clans/requests";
-import type { ClanInfo } from "../types/dto/clan";
+import { useUser } from "@store/userStore";
+import { getUser } from "@functions/requests/users";
+import LoadingScreen from "@components/LoadingScreen";
+import ClanListItem from "@components/ClanList/ClanListItem";
+import ModalMessage from "@components/ModalMessage";
+import Pagination from "@components/Pagination";
+import ClusterList from "@components/ClusterList";
+import { getDomain } from "@functions/utils";
+import { getClans } from "@functions/requests/clans";
+import { sendRequest } from "@functions/requests/clans/requests";
+import type { ClanInfo } from "@ctypes/dto/clan";
 
 const ClanList = () => {
   const { t } = useTranslation();

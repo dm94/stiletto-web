@@ -1,0 +1,44 @@
+{
+  "name": "Simple Pickaxe",
+  "parent": "Beat Stick",
+  "type": "SimplePickaxe_C",
+  "category": "Tools",
+  "trade_price": 8.4,
+  "stackSize": 100,
+  "weight": 3,
+  "experiencieReward": 55,
+  "durability": 315,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Stone"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Vine"
+        }
+      ]
+    }
+  ],
+  "weaponInfo": {
+    "weaponLength": 54,
+    "damage": 20,
+    "penetration": 20
+  },
+  "toolInfo": [
+    {
+      "toolType": "Mining",
+      "tier": 5
+    }
+  ]
+}

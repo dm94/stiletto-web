@@ -1,0 +1,49 @@
+{
+  "name": "Iron Rok",
+  "parent": "Obsidian Rok",
+  "type": "IronRok_C",
+  "experiencieReward": 5,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Stone"
+        },
+        {
+          "count": 8,
+          "name": "Tar"
+        },
+        {
+          "count": 1,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 12,
+          "name": "Lightwood"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 4
+    }
+  ],
+  "projectileDamage": {
+    "damage": 700
+  },
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T4)",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "BigHotspotLoot (T4)",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T4"
+    }
+  ]
+}

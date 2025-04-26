@@ -1,0 +1,9 @@
+{
+  "name": "Worm Scale",
+  "type": "WormScale_C",
+  "category": "Resources",
+  "trade_price": 250,
+  "stackSize": 100,
+  "weight": 2.5,
+  "experiencieReward": 50
+}

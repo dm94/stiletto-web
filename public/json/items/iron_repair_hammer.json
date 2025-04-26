@@ -1,0 +1,26 @@
+{
+  "name": "Iron Repair Hammer",
+  "parent": "CeramicRepairHammer",
+  "type": "IronRepairHammer_C",
+  "durability": 3000,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 28,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 5,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 12,
+          "name": "Leather"
+        }
+      ],
+      "station": "Smithing",
+      "time": 25
+    }
+  ]
+}

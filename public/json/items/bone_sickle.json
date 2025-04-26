@@ -1,0 +1,36 @@
+{
+  "name": "Bone Sickle",
+  "parent": "Simple Sickle",
+  "type": "BoneSickle_C",
+  "durability": 550,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 22,
+          "name": "Fiber"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 10,
+          "name": "Bone Splinter"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ],
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 10
+    }
+  ]
+}

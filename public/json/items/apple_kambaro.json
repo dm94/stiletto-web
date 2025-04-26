@@ -1,0 +1,19 @@
+{
+  "name": "Apple Kambaro",
+  "type": "AppleKambaro_C",
+  "category": "Vitamins",
+  "stackSize": 100,
+  "weight": 1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Apple"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 60
+    }
+  ]
+}

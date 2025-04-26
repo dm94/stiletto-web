@@ -1,0 +1,59 @@
+{
+  "name": "Flotillian Tools Schematic",
+  "type": "Tools_T4Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Fast Grappling Hook",
+    "Iron Pickaxe",
+    "Iron Repair Hammer",
+    "Iron Scythe",
+    "Heavy Backpack",
+    "Infused Pickaxe",
+    "Infused Repair Hammer",
+    "Infused Scythe",
+    "Wyndan Hand Axe",
+    "Nibiran Hand Axe",
+    "Split Durable Water Sack",
+    "Water Circulator",
+    "Wyndan Battle Axe",
+    "Nibiran Battle Axe"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

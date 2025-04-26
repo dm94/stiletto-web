@@ -1,0 +1,51 @@
+{
+  "name": "Schmetterling Walker",
+  "parent": "Falco Walker",
+  "type": "Schmetterling_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5177,
+          "name": "Lightwood"
+        },
+        {
+          "count": 225,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 88,
+          "name": "Rope"
+        },
+        {
+          "count": 1425,
+          "name": "Fiber"
+        },
+        {
+          "count": 7,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 450,
+          "name": "Stone"
+        },
+        {
+          "count": 1,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 30,
+          "name": "Iron Nails"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 62000
+  },
+  "walkerinfo": {
+    "category": "Capital"
+  }
+}

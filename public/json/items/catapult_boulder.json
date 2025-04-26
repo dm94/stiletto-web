@@ -1,0 +1,53 @@
+{
+  "name": "Catapult Boulder",
+  "parent": "Catapult",
+  "type": "CatapultBoulder_C",
+  "category": "Ammo",
+  "trade_price": 8,
+  "stackSize": 10,
+  "weight": 2,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 50,
+          "name": "Stone"
+        },
+        {
+          "count": 5,
+          "name": "Ceramic Shard"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 8
+    }
+  ],
+  "projectileDamage": {
+    "damage": 200,
+    "penetration": 10,
+    "effectivenessVsSoak": 70,
+    "effectivenessVsReduce": 70
+  },
+  "toolInfo": [
+    {
+      "toolType": "CatapultRock",
+      "tier": 2
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T3)",
+      "chance": 16,
+      "minQuantity": 1,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "BigHotspotLoot (T3)",
+      "chance": 16,
+      "minQuantity": 1,
+      "maxQuantity": 5,
+      "tier": "T3"
+    }
+  ]
+}

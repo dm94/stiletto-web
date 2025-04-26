@@ -1,0 +1,24 @@
+{
+  "name": "Guard Rail",
+  "type": "GuardRail_C",
+  "category": "Wood: light",
+  "weight": 1,
+  "experiencieReward": 28,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 45,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 400
+  }
+}

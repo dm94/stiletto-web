@@ -1,0 +1,61 @@
+{
+  "name": "Ancient Repair Hammer",
+  "type": "AncientRepairHammer_C",
+  "category": "Tools",
+  "trade_price": 9.5,
+  "stackSize": 100,
+  "weight": 3.12,
+  "experiencieReward": 50,
+  "durability": 50,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 50,
+          "name": "Hide"
+        }
+      ],
+      "station": "Empty",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "weaponLength": 42,
+    "damage": 20,
+    "penetration": 5
+  },
+  "droppedBy": [
+    {
+      "name": "HardRupu (T2) (AC)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Matriarch",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Priestess (Medium)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Zealot (Medium)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    }
+  ]
+}

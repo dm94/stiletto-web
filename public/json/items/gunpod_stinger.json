@@ -1,0 +1,29 @@
+{
+  "name": "Gunpod Stinger",
+  "parent": "Gun Pod",
+  "type": "GunpodStinger_C",
+  "category": "Weapons",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Rope"
+        },
+        {
+          "count": 20,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ]
+}

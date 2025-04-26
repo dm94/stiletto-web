@@ -1,0 +1,37 @@
+{
+  "name": "Curing Station",
+  "parent": "Fiberworking Station",
+  "type": "CuringStation_C",
+  "category": "Crafting",
+  "experiencieReward": 40,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 13,
+          "name": "Hide"
+        },
+        {
+          "count": 15,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 26,
+          "name": "Rope"
+        },
+        {
+          "count": 45,
+          "name": "Salt Rock"
+        },
+        {
+          "count": 12,
+          "name": "Tree Sap"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1500
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Maintenance Box",
+  "parent": "Basic Constructions",
+  "type": "ChestBaseMaintenance_T1_C",
+  "category": "Containers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Fiber"
+        },
+        {
+          "count": 8,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 5000
+  }
+}

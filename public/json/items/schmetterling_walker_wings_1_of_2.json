@@ -1,0 +1,28 @@
+{
+  "name": "Schmetterling Walker Wings (1 of 2)",
+  "type": "SchmetterlingWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 300,
+          "name": "Wood"
+        },
+        {
+          "count": 26,
+          "name": "Rope"
+        },
+        {
+          "count": 13,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 5000
+  }
+}

@@ -1,7 +1,7 @@
 import type React from "react";
 import { memo, useMemo } from "react";
 import Ingredient from "../Ingredient";
-import type { Item } from "../../types/item";
+import type { Item } from "@ctypes/item";
 
 interface ListIngredientsProps {
   selectedItems: Item[];

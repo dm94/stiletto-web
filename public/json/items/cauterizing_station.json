@@ -1,0 +1,29 @@
+{
+  "name": "Cauterizing Station",
+  "parent": "Camp Fire",
+  "type": "CauterizingStation_C",
+  "category": "Interactables",
+  "experiencieReward": 340,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 45,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Stone"
+        },
+        {
+          "count": 20,
+          "name": "Aloe Vera"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 500
+  }
+}

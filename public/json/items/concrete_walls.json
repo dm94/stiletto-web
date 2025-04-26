@@ -1,0 +1,5 @@
+{
+  "name": "Concrete Walls",
+  "parent": "ClayWalls",
+  "type": "ConcreteWalls_C"
+}

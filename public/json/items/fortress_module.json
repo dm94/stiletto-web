@@ -1,0 +1,32 @@
+{
+  "name": "Fortress Module",
+  "type": "StructuresArmorBoost_C",
+  "category": "Resources",
+  "weight": 0.24,
+  "experiencieReward": 65,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Spring"
+        },
+        {
+          "count": 1,
+          "name": "Cam"
+        },
+        {
+          "count": 1,
+          "name": "Shackle"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 2.5,
+    "maxIncrease": 50
+  }
+}

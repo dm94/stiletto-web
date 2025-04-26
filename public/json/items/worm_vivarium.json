@@ -1,0 +1,24 @@
+{
+  "name": "Worm Vivarium",
+  "type": "WormVivarium_C",
+  "category": "Crafting",
+  "weight": 25,
+  "experiencieReward": 92,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 80,
+          "name": "Wood"
+        },
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 100
+  }
+}

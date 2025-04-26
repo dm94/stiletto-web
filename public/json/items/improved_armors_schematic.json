@@ -1,0 +1,56 @@
+{
+  "name": "Improved Armors Schematic",
+  "type": "Armors_T2Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Swampwood Galoshes",
+    "Baskwood Boots",
+    "Forester's Sandals",
+    "Triple Stitch Boots",
+    "Baskwood Bracers",
+    "Forester's Sleeves",
+    "Triple Stitch Bracers",
+    "Gas Mask",
+    "Baskwood Armor",
+    "Forester's Armor",
+    "Triple Stitch Armor"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "LargeNurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Nurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    }
+  ]
+}

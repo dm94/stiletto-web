@@ -1,0 +1,62 @@
+{
+  "name": "Heavy Walls Schematic",
+  "type": "HeavyWallsSchematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Heavy Wood Double Slit Wall",
+    "Heavy Wood Slit Wall",
+    "Stairs",
+    "Heavy Wood Floor / Roof",
+    "Heavy Wood Foundation",
+    "Heavy Wood Door",
+    "Heavy Wood Corner",
+    "Heavy Wood Battlements",
+    "Heavy Wood Wall 2",
+    "Heavy Wood Wall 1"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam (T3)",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Papak (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    }
+  ]
+}

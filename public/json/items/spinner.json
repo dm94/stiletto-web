@@ -1,0 +1,29 @@
+{
+  "name": "Spinner",
+  "parent": "Basic Walker Weapons",
+  "type": "Spinner_C",
+  "category": "Weapons",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood"
+        },
+        {
+          "count": 12,
+          "name": "Stone"
+        },
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 750
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Scythe",
+  "parent": "Bone Sickle",
+  "type": "CeramicScythe_C",
+  "trade_price": 17.4,
+  "weight": 6.3,
+  "description": "Returns a superior yield when used to harvest small plants.",
+  "experiencieReward": 80,
+  "durability": 850,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 10,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 2,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 8,
+          "name": "Stone"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "weaponLength": 102,
+    "damage": 30
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 15
+    }
+  ]
+}

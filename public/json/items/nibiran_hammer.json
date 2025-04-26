@@ -1,0 +1,38 @@
+{
+  "name": "Nibiran Hammer",
+  "type": "OneHandedTitaniumMace2_C",
+  "category": "Weapons",
+  "trade_price": 1486.5,
+  "stackSize": 100,
+  "weight": 3.2,
+  "experiencieReward": 1500,
+  "durability": 760,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 3,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 12,
+          "name": "Lightwood"
+        }
+      ],
+      "station": "Smithing",
+      "time": 100
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 90,
+    "impact": 66,
+    "stability": 35,
+    "weaponLength": 62,
+    "damage": 70,
+    "penetration": 10
+  }
+}

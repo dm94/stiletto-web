@@ -1,0 +1,29 @@
+{
+  "name": "Fire Goblet",
+  "type": "FireGoblet_C",
+  "category": "Furniture",
+  "weight": 2.5,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 50,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
+        },
+        {
+          "count": 45,
+          "name": "Animal Fat"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 300
+  }
+}

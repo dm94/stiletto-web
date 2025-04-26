@@ -1,6 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import type { Drop } from "../../types/item";
+import type { Drop } from "@ctypes/item";
 
 interface DropsInfoProps {
   drops?: Drop[];
@@ -17,11 +17,11 @@ const DropsInfo: React.FC<DropsInfoProps> = ({ drops = [] }) => {
       return (
         <li
           className="inline-block mr-2 mb-2"
-          key={`${drop.location}-${index}`}
+          key={`${drop.name}-${index}`}
           title={titleInfo}
         >
           <div className="p-2 bg-gray-800 border border-gray-700 rounded-lg text-neutral-300">
-            {t(drop.location)}
+            {t(drop.name)} {drop?.tier && `(${drop.tier})`}
           </div>
         </li>
       );

@@ -1,0 +1,36 @@
+{
+  "name": "Toboggan Walker Legs Armored (1 of 2)",
+  "type": "TobogganLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 92,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 48,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 20,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 32,
+          "name": "Animal Fat"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 3300
+  }
+}

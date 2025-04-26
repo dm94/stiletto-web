@@ -1,0 +1,27 @@
+{
+  "name": "Raptor Sky Walker Wings (1 of 2)",
+  "type": "RaptorWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Lightwood"
+        },
+        {
+          "count": 40,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 25,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 1500
+  }
+}

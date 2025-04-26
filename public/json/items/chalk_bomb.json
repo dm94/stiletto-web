@@ -1,0 +1,48 @@
+{
+  "name": "Chalk Bomb",
+  "parent": "Slingshot",
+  "type": "ChalkCloudBomb_C",
+  "category": "Ammo",
+  "trade_price": 3.6,
+  "stackSize": 10,
+  "weight": 2.4,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Tar"
+        },
+        {
+          "count": 3,
+          "name": "Cotton"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        }
+      ],
+      "station": "Camp Fire",
+      "time": 90
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Tar"
+        },
+        {
+          "count": 3,
+          "name": "Cotton"
+        },
+        {
+          "count": 2,
+          "name": "Rope"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 60
+    }
+  ],
+  "projectileDamage": {}
+}

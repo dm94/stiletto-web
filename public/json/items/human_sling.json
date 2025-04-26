@@ -1,0 +1,28 @@
+{
+  "name": "Human Sling",
+  "type": "HumanSling_C",
+  "category": "Interactables",
+  "weight": 12,
+  "experiencieReward": 174,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 91,
+          "name": "Wood"
+        },
+        {
+          "count": 15,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 100
+  }
+}

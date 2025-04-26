@@ -1,0 +1,27 @@
+{
+  "name": "Hangar Wall",
+  "type": "HangarWall_C",
+  "category": "Walker Hangar",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Wood"
+        },
+        {
+          "count": 6,
+          "name": "Rope"
+        },
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 40000
+  }
+}

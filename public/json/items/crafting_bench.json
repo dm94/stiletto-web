@@ -1,0 +1,33 @@
+{
+  "name": "Crafting Bench",
+  "parent": "Woodworking Station",
+  "type": "CraftingBench_C",
+  "category": "Crafting",
+  "experiencieReward": 85,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Wood"
+        },
+        {
+          "count": 7,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 14,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1000
+  }
+}

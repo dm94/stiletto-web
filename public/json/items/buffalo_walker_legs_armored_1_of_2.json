@@ -1,0 +1,32 @@
+{
+  "name": "Buffalo Walker Legs Armored (1 of 2)",
+  "type": "BuffaloLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 169,
+          "name": "Wood"
+        },
+        {
+          "count": 134,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 24,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 28,
+          "name": "Ceramic Shard"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 5760
+  }
+}

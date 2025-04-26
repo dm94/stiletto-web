@@ -1,0 +1,73 @@
+{
+  "name": "Bone Harpoon",
+  "parent": "Bone Bolt",
+  "type": "BoneHarpoon_C",
+  "trade_price": 7.6,
+  "weight": 0.4,
+  "experiencieReward": 10,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Bone Bolt"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        },
+        {
+          "count": 4,
+          "name": "Rope"
+        }
+      ],
+      "station": "Woodworking Station",
+      "time": 5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Bone Bolt"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        },
+        {
+          "count": 4,
+          "name": "Rope"
+        }
+      ],
+      "station": "Advanced Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Bone Bolt"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        },
+        {
+          "count": 4,
+          "name": "Rope"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 3
+    }
+  ],
+  "projectileDamage": {
+    "damage": 15
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 2
+    }
+  ]
+}

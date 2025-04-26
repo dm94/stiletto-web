@@ -1,0 +1,7 @@
+{
+  "name": "Fragment Strongbox",
+  "type": "LootBoxTablets_C",
+  "category": "Interactables",
+  "stackSize": 100,
+  "weight": 1
+}

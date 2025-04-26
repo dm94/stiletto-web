@@ -1,0 +1,24 @@
+{
+  "name": "Clan Flag Hanging",
+  "type": "ClanFlagHanging_C",
+  "category": "Furniture",
+  "weight": 1,
+  "experiencieReward": 8,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Wood"
+        },
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 100
+  }
+}

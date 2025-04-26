@@ -1,0 +1,29 @@
+{
+  "name": "Barrier Base",
+  "parent": "Advanced Constructions",
+  "type": "WalkerBarrierBase_C",
+  "category": "Defenses",
+  "experiencieReward": 34,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 250,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 100,
+          "name": "Stone"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 10000
+  }
+}

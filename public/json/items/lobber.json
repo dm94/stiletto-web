@@ -1,0 +1,34 @@
+{
+  "name": "Lobber",
+  "parent": "Improved Walker Weapons",
+  "type": "Lobber_C",
+  "category": "Weapons",
+  "description": "A small weapon for remote control while driving walkers. Launches bursts of solid projectiles.",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 7,
+          "name": "Wood"
+        },
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 13,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 8,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 850
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "Feather",
+  "type": "Feather_C",
+  "category": "Resources",
+  "trade_price": 1.6,
+  "stackSize": 100,
+  "weight": 0.01,
+  "description": "Migrating birds serve as one of the oldest compasses for lost nomads, like dark arrowheads sailing toward the next oasis.",
+  "experiencieReward": 12
+}

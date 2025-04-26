@@ -1,0 +1,43 @@
+{
+  "name": "Jaggertooth Swordclub",
+  "parent": "Beat Stick",
+  "type": "TwoHandedStoneSword_C",
+  "category": "Weapons",
+  "trade_price": 3.7,
+  "stackSize": 100,
+  "weight": 8.5,
+  "experiencieReward": 10,
+  "durability": 350,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 9,
+          "name": "Stone"
+        },
+        {
+          "count": 2,
+          "name": "Charcoal"
+        }
+      ]
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 110,
+    "impact": 40,
+    "stability": 55,
+    "weaponLength": 122,
+    "damage": 30,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 1
+    }
+  ]
+}

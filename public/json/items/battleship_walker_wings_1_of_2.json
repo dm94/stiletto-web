@@ -1,0 +1,23 @@
+{
+  "name": "Battleship Walker Wings (1 of 2)",
+  "type": "BattleshipWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 90,
+          "name": "Wood"
+        },
+        {
+          "count": 4,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 1350
+  }
+}

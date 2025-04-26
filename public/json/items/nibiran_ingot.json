@@ -1,0 +1,25 @@
+{
+  "name": "Nibiran Ingot",
+  "type": "NibiranIngot_C",
+  "category": "Resources",
+  "trade_price": 102.5,
+  "stackSize": 100,
+  "weight": 0.75,
+  "experiencieReward": 50,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 8,
+          "name": "Nibiran Mineral"
+        }
+      ],
+      "station": "Advanced Furnace",
+      "time": 340
+    }
+  ]
+}

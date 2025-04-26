@@ -1,0 +1,30 @@
+{
+  "name": "Table",
+  "type": "Table_C",
+  "category": "Furniture",
+  "weight": 3,
+  "description": "Decorative furniture that also allows to place objects on it.",
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 45,
+          "name": "Wood"
+        },
+        {
+          "count": 6,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 250
+  }
+}

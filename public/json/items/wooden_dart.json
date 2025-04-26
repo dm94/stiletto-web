@@ -1,0 +1,93 @@
+{
+  "name": "Wooden Dart",
+  "parent": "Repeater",
+  "type": "WoodenDart_C",
+  "category": "Ammo",
+  "trade_price": 1.5,
+  "stackSize": 500,
+  "weight": 0.1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber"
+        },
+        {
+          "count": 6,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber"
+        },
+        {
+          "count": 6,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Advanced Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber"
+        },
+        {
+          "count": 6,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Artificer Woodworking Station",
+      "time": 4
+    }
+  ],
+  "projectileDamage": {
+    "damage": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "RepeaterBolt",
+      "tier": 1
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T1)",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25,
+      "tier": "T1"
+    },
+    {
+      "name": "BigHotspotLoot (T1)",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 25,
+      "tier": "T1"
+    }
+  ]
+}

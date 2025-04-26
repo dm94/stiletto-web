@@ -1,0 +1,44 @@
+{
+  "name": "Obsidian Rok",
+  "parent": "Ceramic Rok",
+  "type": "ObsidianRok_C",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 8,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 15,
+          "name": "Obsidian"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 2
+    }
+  ],
+  "projectileDamage": {
+    "damage": 500
+  },
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T3)",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "BigHotspotLoot (T3)",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "tier": "T3"
+    }
+  ]
+}

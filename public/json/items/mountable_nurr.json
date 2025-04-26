@@ -1,0 +1,20 @@
+{
+  "name": "Mountable Nurr",
+  "parent": "Advanced Constructions",
+  "type": "MountableNurr_C",
+  "category": "Interactables",
+  "experiencieReward": 300,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 50,
+          "name": "Nurr Fang"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 100
+  }
+}

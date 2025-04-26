@@ -1,0 +1,33 @@
+{
+  "name": "Base Maintenance Chest",
+  "parent": "Maintenance Box",
+  "type": "ChestBaseMaintenance_T2_C",
+  "category": "Containers",
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 130,
+          "name": "Wood"
+        },
+        {
+          "count": 150,
+          "name": "Fiber"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
+        },
+        {
+          "count": 12,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 5000
+  }
+}

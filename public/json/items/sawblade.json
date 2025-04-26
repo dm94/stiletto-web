@@ -1,0 +1,13 @@
+{
+  "name": "Sawblade",
+  "parent": "Tool Pod",
+  "type": "Sawblade_C",
+  "category": "Walker Tools",
+  "weight": 60,
+  "toolInfo": [
+    {
+      "toolType": "Sawblade",
+      "tier": 10
+    }
+  ]
+}

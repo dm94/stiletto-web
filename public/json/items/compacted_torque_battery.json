@@ -1,0 +1,31 @@
+{
+  "name": "Compacted Torque Battery",
+  "parent": "Torque Battery",
+  "type": "HeavyTorqueContainer_C",
+  "category": "Equipment",
+  "trade_price": 8.4,
+  "stackSize": 100,
+  "weight": 150,
+  "experiencieReward": 26,
+  "durability": 210,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Rope"
+        },
+        {
+          "count": 24,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 16,
+          "name": "Obsidian"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 3
+    }
+  ]
+}

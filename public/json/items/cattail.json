@@ -1,0 +1,10 @@
+{
+  "name": "Cattail",
+  "type": "Cattail_C",
+  "category": "Resources",
+  "trade_price": 0.2,
+  "stackSize": 100,
+  "weight": 0.01,
+  "description": "An abundant marsh plant favoured by nomads for its medicinal properties.",
+  "experiencieReward": 1
+}

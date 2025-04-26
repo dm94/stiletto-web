@@ -1,0 +1,614 @@
+{
+  "name": "Earth Wax",
+  "parent": "Soil Excavator",
+  "type": "EarthWax_C",
+  "category": "Resources",
+  "trade_price": 1.4,
+  "stackSize": 100,
+  "weight": 0.44,
+  "experiencieReward": 8,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Black Soil"
+        },
+        {
+          "count": 2,
+          "name": "Purified Water"
+        }
+      ],
+      "output": 5,
+      "station": "Soil Excavator",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Black Soil"
+        },
+        {
+          "count": 2,
+          "name": "Purified Water"
+        }
+      ],
+      "output": 10,
+      "station": "Artisan Soil Auger",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Palm Leaves"
+        }
+      ],
+      "station": "Stomping Station",
+      "time": 25
+    },
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Palm Leaves"
+        }
+      ],
+      "station": "Advanced Stomping Station",
+      "time": 22.5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 13,
+          "name": "Palm Leaves"
+        }
+      ],
+      "station": "Flotillian Stomping Station",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Rupu Vine"
+        }
+      ],
+      "station": "Stomping Station",
+      "time": 25
+    },
+    {
+      "ingredients": [
+        {
+          "count": 9,
+          "name": "Rupu Vine"
+        }
+      ],
+      "station": "Advanced Stomping Station",
+      "time": 22.5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Rupu Vine"
+        }
+      ],
+      "station": "Flotillian Stomping Station",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Beeswax"
+        }
+      ],
+      "output": 3,
+      "station": "Stomping Station",
+      "time": 25
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Beeswax"
+        }
+      ],
+      "output": 5,
+      "station": "Advanced Stomping Station",
+      "time": 22.5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Beeswax"
+        }
+      ],
+      "output": 10,
+      "station": "Flotillian Stomping Station",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Mushroom Flesh"
+        }
+      ],
+      "station": "Stomping Station",
+      "time": 25
+    },
+    {
+      "ingredients": [
+        {
+          "count": 9,
+          "name": "Mushroom Flesh"
+        }
+      ],
+      "station": "Advanced Stomping Station",
+      "time": 22.5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Mushroom Flesh"
+        }
+      ],
+      "station": "Flotillian Stomping Station",
+      "time": 20
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "AmmoBox (T4)",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "BasketLoot (T2) (AC)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "BigHotspotLoot (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Bounty Hunter",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupu (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupu (T2) Quality",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupu (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T3) Quality",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T4)",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "EasyRupuCamp (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupuCamp (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupuCamp (T4)",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "Grave Digger (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2) (AC)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2) Quality",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T3) Quality",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T4)",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupuCamp (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupuCamp (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupuCamp (T4)",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLoot (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T2) (AC)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "HotspotLoot (T4)",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLootWindmill (T2) (AC)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Marshland Stalker",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6
+    },
+    {
+      "name": "Matriarch",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T2) Quality",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T3) Quality",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T4)",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupuCamp (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupuCamp (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupuCamp (T4)",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Dunestalker (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Firebrand",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Forager (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Harasser (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hazraki (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hermit (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Priestess (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Raider",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Shaman (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Skirmisher (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Zealot (Medium)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "White Death (Medium) (T2)",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": "T2"
+    },
+    {
+      "name": "White Death (Medium) (T3)",
+      "chance": 10.718528,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    }
+  ]
+}

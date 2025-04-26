@@ -1,0 +1,260 @@
+{
+  "name": "Big Hotspot Loot (T4)",
+  "category": "Resource",
+  "tier": "T4",
+  "drops": [
+    {
+      "name": "Iron-Tipped Bolt",
+      "chance": 28.571428,
+      "minQuantity": 1,
+      "maxQuantity": 6,
+      "source": "ammo_t4"
+    },
+    {
+      "name": "Hullbreaker Scattershot",
+      "chance": 28.571428,
+      "minQuantity": 2,
+      "maxQuantity": 12,
+      "source": "ammo_t4"
+    },
+    {
+      "name": "Iron Dart",
+      "chance": 28.571428,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "source": "ammo_t4"
+    },
+    {
+      "name": "Iron Rok",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "source": "ammo_t4"
+    },
+    {
+      "name": "Iron Studded Boots",
+      "chance": 33.333332,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Iron Studded Gauntlets",
+      "chance": 33.333332,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Iron Studded Armor",
+      "chance": 33.333332,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Wyndan Hand Axe",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Hammer",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Sabre",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndanblade Quarterstaff",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Battle Axe",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Warhammer",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Wyndan Flame Sword",
+      "chance": 14.285714,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Bone Glue",
+      "chance": 8.333333,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Wooden Gear",
+      "chance": 8.333333,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Triple Stitch Fabric",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Nomad Cloth",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Leather",
+      "chance": 8.333333,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Aloe Gel",
+      "chance": 8.333333,
+      "minQuantity": 7,
+      "maxQuantity": 7,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Clay",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Rubber Block",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Ceramic Shard",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Glass",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Tar",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Reinforced Gear",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Panda Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Panda Walker Rig T3 Schematic",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Schmetterling Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Schmetterling Walker Rig T3 Schematic",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Titan Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Titan Walker Rig T3 Schematic",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Domus Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Domus Walker Rig T3 Schematic",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Raptor Sky Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    },
+    {
+      "name": "Raptor Sky Walker Rig T3 Schematic",
+      "chance": 3.3333335,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t4"
+    }
+  ],
+  "originalName": "BigHotspotLoot (T4)"
+}

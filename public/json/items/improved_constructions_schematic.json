@@ -1,0 +1,63 @@
+{
+  "name": "Improved Constructions Schematic",
+  "type": "Constructions_T2Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "ChestBaseMaintenance_T2",
+    "Walker Packing Compartment",
+    "Bomb Chest Trap",
+    "Sharp Spikes",
+    "Ammo Scroll Rack",
+    "Medium Chest",
+    "Medium Water Bag",
+    "Rangefinder",
+    "Steering Levers",
+    "Steering Levers Cage",
+    "RupuSling",
+    "Defensive Tower",
+    "Large Base Walker Packer",
+    "Hammock",
+    "Poaching Hut",
+    "Small Repair Hoist",
+    "Trap Door",
+    "TrapSpikesSpring"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "LargeNurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Nurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    }
+  ]
+}

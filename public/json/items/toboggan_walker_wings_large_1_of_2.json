@@ -1,0 +1,40 @@
+{
+  "name": "Toboggan Walker Wings Large (1 of 2)",
+  "type": "TobogganWings_T4_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 4,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 34,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 33,
+          "name": "Leather"
+        },
+        {
+          "count": 45,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 17,
+          "name": "Rope"
+        },
+        {
+          "count": 49,
+          "name": "Chitin Plate"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 9500
+  }
+}

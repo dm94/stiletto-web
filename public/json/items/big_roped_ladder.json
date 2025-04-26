@@ -1,0 +1,28 @@
+{
+  "name": "Big Roped Ladder",
+  "type": "LadderBig_C",
+  "category": "Interactables",
+  "weight": 73,
+  "experiencieReward": 276,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 80,
+          "name": "Wood"
+        },
+        {
+          "count": 22,
+          "name": "Stone"
+        },
+        {
+          "count": 3,
+          "name": "Rupu Vine"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 600
+  }
+}

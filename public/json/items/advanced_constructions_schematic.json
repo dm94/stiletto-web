@@ -1,0 +1,69 @@
+{
+  "name": "Advanced Constructions Schematic",
+  "type": "Constructions_T3Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Trip Wire Trap",
+    "Large Chest",
+    "ObsidianContainerLarge",
+    "Obsidian Pot",
+    "Large Water Bag",
+    "Crane",
+    "Exoskeleton",
+    "ChestBaseMaintenance_T3",
+    "WallGiant",
+    "Giant Wall Gate",
+    "Giant Wall Packer",
+    "MountableNurr",
+    "Bed",
+    "Barrier Base",
+    "Barrier Gate",
+    "Barrier Plank",
+    "Water Condenser"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam (T3)",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Papak (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
+  ]
+}

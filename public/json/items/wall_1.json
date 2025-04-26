@@ -1,0 +1,24 @@
+{
+  "name": "Wall 1",
+  "type": "Arena_Wall_1_C",
+  "category": "Furniture",
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 50,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 500
+  }
+}

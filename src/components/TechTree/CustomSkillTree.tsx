@@ -1,10 +1,10 @@
 import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import type { Item } from "../../types/item";
-import type { Tree } from "../../types/dto/tech";
-import type { SkillStateMap } from "../../types/Skill";
-import { getItemUrl } from "../../functions/utils";
+import type { TechItem } from "@ctypes/item";
+import type { Tree } from "@ctypes/dto/tech";
+import type { SkillStateMap } from "@ctypes/Skill";
+import { getItemUrl } from "@functions/utils";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
 
@@ -16,7 +16,7 @@ interface NodeData {
   x: number;
   y: number;
   selected: boolean;
-  item: Item;
+  item: TechItem;
   parentX?: number;
   parentY?: number;
 }
@@ -347,7 +347,7 @@ const CustomSkillTree: React.FC<{
   theme: Record<string, unknown>;
   treeId: Tree;
   title: string;
-  items: Item[];
+  items: TechItem[];
   clan?: number;
 }> = ({ theme, treeId, title, items, clan }) => {
   const { t } = useTranslation();
@@ -360,7 +360,7 @@ const CustomSkillTree: React.FC<{
         title: string;
         tooltip: { content: React.ReactNode };
         children: any[];
-        item: Item;
+        item: TechItem;
       }> = [];
       const filteredItems = items.filter((it) => it.parent === parent);
 
@@ -377,12 +377,12 @@ const CustomSkillTree: React.FC<{
 
       return childrens;
     },
-    [items, t, clan, treeId],
+    [items, t],
   );
 
   // Function to generate tooltip content
   const getContentItem = useCallback(
-    (item: Item): React.ReactNode => {
+    (item: TechItem): React.ReactNode => {
       return (
         <div className="mx-auto">
           <div className="text-center mb-1">
@@ -422,41 +422,6 @@ const CustomSkillTree: React.FC<{
     },
     [],
   );
-
-  // Initialize tooltips
-  useEffect(() => {
-    const showTooltip = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      const node = target.closest("[data-tooltip-id]");
-
-      if (node) {
-        const tooltipId = node.getAttribute("data-tooltip-id");
-        const tooltip = document.getElementById(tooltipId ?? "");
-
-        if (tooltip) {
-          // Position tooltip near the node
-          const rect = node.getBoundingClientRect();
-          tooltip.style.left = `${rect.right + 10}px`;
-          tooltip.style.top = `${rect.top}px`;
-          tooltip.classList.remove("hidden");
-        }
-      }
-    };
-
-    const hideTooltips = () => {
-      document.querySelectorAll(".tooltip").forEach((tooltip) => {
-        tooltip.classList.add("hidden");
-      });
-    };
-
-    document.addEventListener("mouseover", showTooltip);
-    document.addEventListener("mouseout", hideTooltips);
-
-    return () => {
-      document.removeEventListener("mouseover", showTooltip);
-      document.removeEventListener("mouseout", hideTooltips);
-    };
-  }, []);
 
   return (
     <SkillProvider>

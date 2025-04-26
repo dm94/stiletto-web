@@ -1,0 +1,195 @@
+{
+  "name": "Firestone Bozdogan",
+  "parent": "Short Ceramic Hoofmace",
+  "type": "TwoHandedLavaMace_C",
+  "category": "Weapons",
+  "trade_price": 104,
+  "stackSize": 100,
+  "weight": 6.2,
+  "experiencieReward": 220,
+  "durability": 780,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Obsidian"
+        },
+        {
+          "count": 3,
+          "name": "Triple Stitch Fabric"
+        },
+        {
+          "count": 8,
+          "name": "Rope"
+        }
+      ],
+      "station": "Lathe",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 95,
+    "impact": 80,
+    "stability": 65,
+    "weaponLength": 83,
+    "damage": 55,
+    "penetration": 10
+  },
+  "droppedBy": [
+    {
+      "name": "BigHotspotLoot (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T3) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupuCamp (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T3) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupuCamp (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "HotspotLoot (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T3) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupuCamp (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "TreasureChest (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium) (T3)",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
+  ]
+}

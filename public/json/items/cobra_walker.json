@@ -1,0 +1,51 @@
+{
+  "name": "Cobra Walker",
+  "parent": "Camelop Walker",
+  "type": "Cobra_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 900,
+          "name": "Wood"
+        },
+        {
+          "count": 390,
+          "name": "Fiber"
+        },
+        {
+          "count": 350,
+          "name": "Stone"
+        },
+        {
+          "count": 40,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 30,
+          "name": "Rope"
+        },
+        {
+          "count": 10,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 12,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 1,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 14950
+  },
+  "walkerinfo": {
+    "category": "Medium"
+  }
+}

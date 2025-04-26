@@ -1,0 +1,39 @@
+{
+  "name": "Dinghy Walker",
+  "parent": "Firefly Walker",
+  "type": "Dinghy_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 126,
+          "name": "Wood"
+        },
+        {
+          "count": 88,
+          "name": "Fiber"
+        },
+        {
+          "count": 43,
+          "name": "Stone"
+        },
+        {
+          "count": 8,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 6000
+  },
+  "walkerinfo": {
+    "category": "Small"
+  }
+}

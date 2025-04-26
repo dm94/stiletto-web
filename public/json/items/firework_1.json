@@ -1,0 +1,22 @@
+{
+  "name": "Firework 1",
+  "type": "Firework_00_C",
+  "category": "Interactables",
+  "trade_price": 3,
+  "stackSize": 100,
+  "weight": 0.15,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Charcoal"
+        },
+        {
+          "count": 5,
+          "name": "Cattail"
+        }
+      ]
+    }
+  ]
+}

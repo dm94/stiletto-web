@@ -1,7 +1,7 @@
 import type React from "react";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { sendEvent } from "../page-tracking";
+import { sendEvent } from "@functions/page-tracking";
 import { useEffect } from "react";
 
 export interface MessageProps {

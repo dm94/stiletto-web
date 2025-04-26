@@ -1,0 +1,47 @@
+{
+  "name": "Titan Walker",
+  "parent": "Buffalo Walker",
+  "type": "Titan_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3030,
+          "name": "Lightwood"
+        },
+        {
+          "count": 625,
+          "name": "Fiber"
+        },
+        {
+          "count": 600,
+          "name": "Stone"
+        },
+        {
+          "count": 159,
+          "name": "Rope"
+        },
+        {
+          "count": 385,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 30,
+          "name": "Iron Nails"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 80000
+  },
+  "walkerinfo": {
+    "category": "Capital"
+  }
+}

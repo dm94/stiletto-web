@@ -1,0 +1,32 @@
+{
+  "name": "Domus Walker Legs Heavy (1 of 2)",
+  "type": "DomusLegs_T3_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 80,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 34,
+          "name": "Tar"
+        },
+        {
+          "count": 32,
+          "name": "Worm Scale"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 11520
+  }
+}

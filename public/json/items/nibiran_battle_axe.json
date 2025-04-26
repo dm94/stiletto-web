@@ -1,0 +1,44 @@
+{
+  "name": "Nibiran Battle Axe",
+  "type": "TwoHandedRareMetalAxe2_C",
+  "category": "Weapons",
+  "trade_price": 2116.6,
+  "stackSize": 100,
+  "weight": 4.8,
+  "experiencieReward": 1544,
+  "durability": 1200,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 6,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 7,
+          "name": "Rope"
+        }
+      ],
+      "station": "Smithing",
+      "time": 100
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 120,
+    "impact": 70,
+    "stability": 60,
+    "weaponLength": 65,
+    "damage": 70,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "TreeCutting",
+      "tier": 25
+    }
+  ]
+}

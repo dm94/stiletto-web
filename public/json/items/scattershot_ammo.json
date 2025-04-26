@@ -1,0 +1,85 @@
+{
+  "name": "Scattershot Ammo",
+  "parent": "Scattershot Gun",
+  "type": "Scattershot_C",
+  "category": "Ammo",
+  "trade_price": 5.2,
+  "stackSize": 24,
+  "weight": 0.3,
+  "experiencieReward": 1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Stone"
+        },
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 8,
+      "station": "Woodworking Station",
+      "time": 5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Stone"
+        },
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 8,
+      "station": "Advanced Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Stone"
+        },
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 8,
+      "station": "Artificer Woodworking Station",
+      "time": 3
+    }
+  ],
+  "projectileDamage": {
+    "damage": 150,
+    "penetration": 30,
+    "effectivenessVsSoak": 50,
+    "effectivenessVsReduce": 50
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scattershot",
+      "tier": 1
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T1)",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18,
+      "tier": "T1"
+    },
+    {
+      "name": "BigHotspotLoot (T1)",
+      "chance": 33.333332,
+      "minQuantity": 2,
+      "maxQuantity": 18,
+      "tier": "T1"
+    }
+  ]
+}

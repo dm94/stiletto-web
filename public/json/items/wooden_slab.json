@@ -1,0 +1,98 @@
+{
+  "name": "Wooden Slab",
+  "parent": "Woodworking Station",
+  "type": "WoodenSlab_C",
+  "category": "Resources",
+  "trade_price": 0.1,
+  "stackSize": 100,
+  "weight": 0.1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood"
+        },
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Woodworking Station",
+      "time": 10
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood"
+        },
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Advanced Woodworking Station",
+      "time": 8
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood"
+        },
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 6
+    },
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 10,
+      "station": "Woodworking Station",
+      "time": 60
+    },
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 10,
+      "station": "Advanced Woodworking Station",
+      "time": 60
+    },
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 10,
+      "station": "Artificer Woodworking Station",
+      "time": 60
+    }
+  ]
+}

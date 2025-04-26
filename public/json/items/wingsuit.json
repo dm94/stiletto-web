@@ -1,0 +1,41 @@
+{
+  "name": "Wingsuit",
+  "parent": "Nomad Grappling Hook",
+  "type": "WingSuit_C",
+  "category": "Equipment",
+  "trade_price": 29,
+  "stackSize": 100,
+  "weight": 4,
+  "experiencieReward": 162,
+  "durability": 120,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 3
+    },
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 3
+    }
+  ]
+}

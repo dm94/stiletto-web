@@ -1,0 +1,32 @@
+{
+  "name": "Starch Cement",
+  "parent": "Curing Station",
+  "type": "StarchCement_C",
+  "category": "Resources",
+  "trade_price": 1.1,
+  "stackSize": 100,
+  "weight": 0.34,
+  "experiencieReward": 3,
+  "onlyDevs": true,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Corn"
+        },
+        {
+          "count": 10,
+          "name": "Tree Sap"
+        },
+        {
+          "count": 5,
+          "name": "Salt Rock"
+        }
+      ],
+      "output": 5,
+      "station": "Curing",
+      "time": 20
+    }
+  ]
+}

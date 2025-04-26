@@ -1,0 +1,9 @@
+{
+  "name": "Base Packing - Tier 4 Upgrade",
+  "type": "SparePartIronPartPacking_C",
+  "category": "Spare Parts",
+  "weight": 0.24,
+  "experiencieReward": 65,
+  "durability": 100,
+  "wikiVisibility": false
+}

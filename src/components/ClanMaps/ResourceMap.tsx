@@ -1,24 +1,24 @@
 import type React from "react";
 import { useState, useEffect, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { getMarkers } from "../../functions/services";
-import { useUser } from "../../store";
+import { getMarkers } from "@functions/github";
+import { useUser } from "@store/userStore";
 import ModalMessage from "../ModalMessage";
 import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
 import "../../styles/map-sidebar.css";
-import type { MapInfo } from "../../types/dto/maps";
-import type { Marker } from "../../types/dto/marker";
+import type { MapInfo } from "@ctypes/dto/maps";
+import type { Marker } from "@ctypes/dto/marker";
 import {
   addResourceMap,
   deleteResource,
   editResource,
   getResources,
-} from "../../functions/requests/maps/resources";
-import type { ResourceInfo } from "../../types/dto/resources";
-import { editMap } from "../../functions/requests/maps";
-import { sendNotification } from "../../functions/broadcast";
+} from "@functions/requests/maps/resources";
+import type { ResourceInfo } from "@ctypes/dto/resources";
+import { editMap } from "@functions/requests/maps";
+import { sendNotification } from "@functions/broadcast";
 import { useNavigate } from "react-router";
 
 interface ResourceMapProps {

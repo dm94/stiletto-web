@@ -1,0 +1,24 @@
+{
+  "name": "Premade Throne",
+  "type": "Throne_Prefab_01_C",
+  "category": "Furniture",
+  "weight": 100,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 150,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 100
+  }
+}

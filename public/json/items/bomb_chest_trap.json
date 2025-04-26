@@ -1,0 +1,25 @@
+{
+  "name": "Bomb Chest Trap",
+  "parent": "Ammo Chest",
+  "type": "TrapBombChest_C",
+  "category": "Defenses",
+  "experiencieReward": 78,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 200
+  }
+}

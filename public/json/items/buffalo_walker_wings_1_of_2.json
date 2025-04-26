@@ -1,0 +1,32 @@
+{
+  "name": "Buffalo Walker Wings (1 of 2)",
+  "type": "BuffaloWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 22,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 27,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 8600
+  }
+}

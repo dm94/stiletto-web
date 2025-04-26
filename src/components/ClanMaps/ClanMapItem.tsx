@@ -1,10 +1,10 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import { memo, useCallback, useMemo } from "react";
-import { useUser } from "../../store";
-import { getDomain } from "../../functions/utils";
-import { config } from "../../config/config";
-import type { MapInfo } from "../../types/dto/maps";
+import { useUser } from "@store/userStore";
+import { getDomain } from "@functions/utils";
+import { config } from "@config/config";
+import type { MapInfo } from "@ctypes/dto/maps";
 
 interface ClanMapItemProps {
   map: MapInfo;

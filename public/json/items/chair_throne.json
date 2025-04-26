@@ -1,0 +1,25 @@
+{
+  "name": "Chair throne",
+  "type": "Chair1_C",
+  "category": "Furniture",
+  "weight": 3.5,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Rupu Vine"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 250
+  }
+}

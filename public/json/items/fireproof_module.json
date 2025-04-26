@@ -1,0 +1,31 @@
+{
+  "name": "Fireproof Module",
+  "type": "FireproofBoost_C",
+  "category": "Resources",
+  "weight": 0.24,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Lever"
+        },
+        {
+          "count": 1,
+          "name": "Cam"
+        },
+        {
+          "count": 1,
+          "name": "Bearing"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 4.5,
+    "maxIncrease": 90
+  }
+}

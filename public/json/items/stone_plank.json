@@ -1,0 +1,32 @@
+{
+  "name": "Stone Plank",
+  "type": "StonePlank_C",
+  "category": "Resources",
+  "trade_price": 0.4,
+  "stackSize": 100,
+  "weight": 1,
+  "experiencieReward": 25,
+  "droppedBy": [
+    {
+      "name": "BasketLoot (T2) (AC)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T2) (AC)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLootWindmill (T2) (AC)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    }
+  ]
+}

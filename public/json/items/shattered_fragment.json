@@ -1,0 +1,8 @@
+{
+  "name": "Shattered Fragment",
+  "type": "BrokenFragment_C",
+  "category": "Resources",
+  "trade_price": 3,
+  "stackSize": 100,
+  "experiencieReward": 10
+}

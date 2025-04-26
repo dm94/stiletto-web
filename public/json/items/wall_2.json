@@ -1,0 +1,33 @@
+{
+  "name": "Wall 2",
+  "type": "WallConcrete2_C",
+  "category": "Concrete",
+  "weight": 15,
+  "experiencieReward": 30,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Lightwood"
+        },
+        {
+          "count": 6,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 4,
+          "name": "Iron Nails"
+        },
+        {
+          "count": 6,
+          "name": "Tar"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 40000
+  }
+}

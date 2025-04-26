@@ -1,0 +1,78 @@
+{
+  "name": "Penetrating Dart",
+  "parent": "AntiPersonnelTurret",
+  "type": "PenetratingDart_C",
+  "category": "Ammo",
+  "trade_price": 1.5,
+  "stackSize": 500,
+  "weight": 0.2,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Woodworking Station",
+      "time": 10
+    },
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Advanced Woodworking Station",
+      "time": 8
+    },
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Artificer Woodworking Station",
+      "time": 6
+    }
+  ],
+  "projectileDamage": {
+    "damage": 3,
+    "penetration": 100
+  },
+  "toolInfo": [
+    {
+      "toolType": "RepeaterBolt",
+      "tier": 1
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "name": "Panda Walker Schematic",
+  "type": "PandaSchematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Panda Walker"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

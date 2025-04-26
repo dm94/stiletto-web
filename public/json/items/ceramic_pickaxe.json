@@ -1,0 +1,39 @@
+{
+  "name": "Ceramic Pickaxe",
+  "parent": "Bone Pickaxe",
+  "type": "CeramicPickaxe_C",
+  "trade_price": 98.2,
+  "weight": 5,
+  "experiencieReward": 120,
+  "durability": 550,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 2,
+          "name": "Bone Glue"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ],
+  "weaponInfo": {
+    "weaponLength": 66,
+    "damage": 30
+  },
+  "toolInfo": [
+    {
+      "toolType": "Mining",
+      "tier": 15
+    }
+  ]
+}

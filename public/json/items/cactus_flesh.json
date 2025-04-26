@@ -1,0 +1,9 @@
+{
+  "name": "Cactus Flesh",
+  "type": "CactusFlesh_C",
+  "category": "Resources",
+  "trade_price": 0.2,
+  "stackSize": 100,
+  "weight": 0.12,
+  "experiencieReward": 2
+}

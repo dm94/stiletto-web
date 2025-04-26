@@ -1,0 +1,32 @@
+{
+  "name": "Schmetterling Walker Wings Heavy (1 of 2)",
+  "type": "SchmetterlingWings_T2_Heavy_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 220,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 28,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 30,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 48,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 6800
+  }
+}

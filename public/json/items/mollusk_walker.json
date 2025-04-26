@@ -1,0 +1,43 @@
+{
+  "name": "Mollusk Walker",
+  "parent": "Steering Levers",
+  "type": "Mollusk_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 185,
+          "name": "Wood"
+        },
+        {
+          "count": 7,
+          "name": "Rope"
+        },
+        {
+          "count": 110,
+          "name": "Fiber"
+        },
+        {
+          "count": 57,
+          "name": "Stone"
+        },
+        {
+          "count": 4,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 26000
+  },
+  "walkerinfo": {
+    "category": "Medium"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Koa (T4)",
+  "category": "Structure",
+  "tier": "T4",
+  "drops": [
+    {
+      "name": "Spearmint",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "spearmint_t4"
+    }
+  ],
+  "originalName": "Koa_T4"
+}

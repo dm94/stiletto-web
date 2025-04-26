@@ -1,0 +1,29 @@
+{
+  "name": "Lamp Standing",
+  "type": "Lamp2_C",
+  "category": "Furniture",
+  "weight": 1,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood"
+        },
+        {
+          "count": 2,
+          "name": "Stone"
+        },
+        {
+          "count": 8,
+          "name": "Animal Fat"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 150
+  }
+}

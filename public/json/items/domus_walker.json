@@ -1,0 +1,55 @@
+{
+  "name": "Domus Walker",
+  "parent": "Mollusk Walker",
+  "type": "Domus_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 4110,
+          "name": "Lightwood"
+        },
+        {
+          "count": 235,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1350,
+          "name": "Fiber"
+        },
+        {
+          "count": 140,
+          "name": "Rope"
+        },
+        {
+          "count": 90,
+          "name": "Obsidian"
+        },
+        {
+          "count": 9,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 510,
+          "name": "Stone"
+        },
+        {
+          "count": 1,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 30,
+          "name": "Iron Nails"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 65000
+  },
+  "walkerinfo": {
+    "category": "Capital"
+  }
+}

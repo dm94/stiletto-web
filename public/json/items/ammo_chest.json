@@ -1,0 +1,33 @@
+{
+  "name": "Ammo Chest",
+  "parent": "Small Chest",
+  "type": "ChestAmmo_C",
+  "category": "Containers",
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 20,
+          "name": "Stone"
+        },
+        {
+          "count": 40,
+          "name": "Fiber"
+        },
+        {
+          "count": 25,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3750
+  }
+}

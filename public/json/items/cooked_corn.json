@@ -1,0 +1,19 @@
+{
+  "name": "Cooked Corn",
+  "type": "CookedCorn_C",
+  "category": "Vitamins",
+  "stackSize": 100,
+  "weight": 1,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Corn"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 30
+    }
+  ]
+}

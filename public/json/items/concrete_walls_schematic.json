@@ -1,0 +1,56 @@
+{
+  "name": "Concrete Walls Schematic",
+  "type": "ConcreteWallsSchematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Cement Wall With Windows 2",
+    "Cement Wall With Windows 1",
+    "Cement Wall With Window 2",
+    "Cement Wall With Window 1",
+    "Cement Floor / Roof",
+    "Cement Foundation",
+    "Cement Door",
+    "Cement Corner",
+    "Cement Battlements",
+    "Cement Wall 2",
+    "Cement Wall 1"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T4"
+    }
+  ]
+}

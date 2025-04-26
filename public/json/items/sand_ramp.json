@@ -1,0 +1,29 @@
+{
+  "name": "Sand Ramp",
+  "type": "WallSandRamp_C",
+  "category": "Basic Protection",
+  "weight": 8,
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Fiber"
+        },
+        {
+          "count": 20,
+          "name": "Sand"
+        },
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 500
+  }
+}

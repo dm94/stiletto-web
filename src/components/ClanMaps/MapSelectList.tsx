@@ -1,7 +1,7 @@
 import type React from "react";
 import { memo, useCallback, useMemo } from "react";
 import type { MouseEvent } from "react";
-import type { MapJsonInfo } from "../../types/dto/maps";
+import type { MapJsonInfo } from "@ctypes/dto/maps";
 
 interface MapSelectListProps {
   maps: MapJsonInfo[];
@@ -36,7 +36,7 @@ const MapSelectList: React.FC<MapSelectListProps> = ({
         <img
           src={map.image}
           className={`w-full h-auto rounded-lg ${
-            map.name === mapSelectInput
+            `${map.name}_new` === mapSelectInput
               ? "ring-2 ring-blue-500"
               : "hover:opacity-75"
           }`}

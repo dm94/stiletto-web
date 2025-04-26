@@ -1,0 +1,19 @@
+{
+  "name": "Rupu Bone Javelin",
+  "type": "RupuBoneJavelin_C",
+  "category": "Ammo",
+  "trade_price": 5,
+  "stackSize": 20,
+  "weight": 0.3,
+  "experiencieReward": 15,
+  "wikiVisibility": false,
+  "projectileDamage": {
+    "damage": 50
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 2
+    }
+  ]
+}

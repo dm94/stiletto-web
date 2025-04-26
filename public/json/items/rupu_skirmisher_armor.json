@@ -1,0 +1,27 @@
+{
+  "name": "Rupu Skirmisher Armor",
+  "type": "RupuSkirmisherArmor_C",
+  "category": "Armors",
+  "stackSize": 100,
+  "weight": 1,
+  "durability": 1000,
+  "wikiVisibility": false,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Fiber"
+        },
+        {
+          "count": 1,
+          "name": "Charcoal"
+        }
+      ]
+    }
+  ],
+  "armorInfo": {
+    "reduction": 3,
+    "speedReduction": 2
+  }
+}

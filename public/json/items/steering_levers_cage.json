@@ -1,0 +1,33 @@
+{
+  "name": "Steering Levers Cage",
+  "parent": "Steering Levers",
+  "type": "SteeringLeversCage_C",
+  "category": "Walker Tools",
+  "experiencieReward": 208,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 210,
+          "name": "Wood"
+        },
+        {
+          "count": 60,
+          "name": "Stone"
+        },
+        {
+          "count": 30,
+          "name": "Rope"
+        },
+        {
+          "count": 15,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 5000
+  }
+}

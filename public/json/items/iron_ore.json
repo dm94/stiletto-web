@@ -1,0 +1,26 @@
+{
+  "name": "Iron Ore",
+  "type": "IronOre_C",
+  "category": "Resources",
+  "trade_price": 8,
+  "stackSize": 100,
+  "weight": 0.78,
+  "experiencieReward": 9,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Salt Flats"
+        },
+        {
+          "count": 5,
+          "name": "Animal Fat"
+        }
+      ],
+      "output": 10,
+      "station": "Artisan Soil Auger",
+      "time": 30
+    }
+  ]
+}

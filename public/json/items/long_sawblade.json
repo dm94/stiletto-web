@@ -1,0 +1,13 @@
+{
+  "name": "Long Sawblade",
+  "parent": "Sawblade",
+  "type": "Sawblade_T2_C",
+  "category": "Walker Tools",
+  "weight": 70,
+  "toolInfo": [
+    {
+      "toolType": "Sawblade",
+      "tier": 18
+    }
+  ]
+}

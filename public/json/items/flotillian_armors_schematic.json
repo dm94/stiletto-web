@@ -1,0 +1,54 @@
+{
+  "name": "Flotillian Armors Schematic",
+  "type": "Armors_T4Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Feather Boots",
+    "Iron Studded Boots",
+    "Nibirian Boots",
+    "Iron Studded Gauntlets",
+    "Nibirian Gauntlets",
+    "Winged Helmet",
+    "Iron Studded Armor",
+    "Nibirian Armor",
+    "Cloak"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

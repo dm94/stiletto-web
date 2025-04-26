@@ -1,0 +1,47 @@
+{
+  "name": "Ceramic Scattershot Ammo",
+  "parent": "BoneScattershot",
+  "type": "CeramicScattershot_C",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 8,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 8,
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 350
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scattershot",
+      "tier": 3
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T3)",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "BigHotspotLoot (T3)",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    }
+  ]
+}

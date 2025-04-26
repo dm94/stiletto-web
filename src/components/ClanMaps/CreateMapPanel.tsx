@@ -2,7 +2,7 @@ import type React from "react";
 import { useState, useCallback, type FormEvent, memo } from "react";
 import { useTranslation } from "react-i18next";
 import MapSelectList from "./MapSelectList";
-import type { MapJsonInfo } from "../../types/dto/maps";
+import type { MapJsonInfo } from "@ctypes/dto/maps";
 
 interface CreateMapPanelProps {
   maps: MapJsonInfo[];

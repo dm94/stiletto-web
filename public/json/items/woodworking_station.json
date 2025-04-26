@@ -1,0 +1,25 @@
+{
+  "name": "Woodworking Station",
+  "parent": "Crafting",
+  "type": "WoodworkingStation_C",
+  "category": "Crafting",
+  "experiencieReward": 92,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Wood"
+        },
+        {
+          "count": 28,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 900
+  }
+}

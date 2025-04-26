@@ -1,0 +1,38 @@
+{
+  "name": "Lathe",
+  "parent": "Advanced Woodworking Station",
+  "type": "Lathe_C",
+  "category": "Crafting",
+  "description": "A more sophisticated contraption that processes solid materials into various objects.",
+  "experiencieReward": 40,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 75,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 4,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 15,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 17,
+          "name": "Obsidian"
+        },
+        {
+          "count": 26,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 500
+  }
+}

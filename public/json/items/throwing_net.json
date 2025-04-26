@@ -1,0 +1,242 @@
+{
+  "name": "Throwing Net",
+  "parent": "Beat Stick",
+  "type": "ThrowingNet_C",
+  "category": "Weapons",
+  "trade_price": 8.4,
+  "weight": 3,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 8,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 3,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "toolInfo": [
+    {
+      "toolType": "Net",
+      "tier": 1
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "BigHotspotLoot (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Cowardly Rupu",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "EasyRupu (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "EasyRupu (T1) Quality",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "EasyRupuCamp (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Green Rupu",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "HardRupu (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupu (T1) Quality",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupuCamp (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HotspotLoot (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupu (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupu (T1) Quality",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupuCamp (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Prophet",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Berserker",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Forerunner",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Forerunner (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Harasser (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Hero (Rupu)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Oracle (Rupu)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Overseer (Rupu)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Priestess",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Scavenger (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Sentinel (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Skirmisher (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Thug (Easy)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Rupu Warrior",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Tar Dweller",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "TreasureChest (T1)",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "Yellow Rupu",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Zharvakko",
+      "chance": 8.064516,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    }
+  ]
+}

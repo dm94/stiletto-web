@@ -1,0 +1,7 @@
+{
+  "name": "Armor Strongbox",
+  "type": "LootBoxArmors_C",
+  "category": "Interactables",
+  "stackSize": 100,
+  "weight": 1
+}

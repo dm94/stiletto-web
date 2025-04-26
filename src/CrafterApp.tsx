@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
-import CookieConsent from "./components/CookieConsent";
-import Menu from "./components/Menu";
-import ChangeLanguageModal from "./components/ChangeLanguageModal";
-import { getStoredItem, storeItem } from "./functions/services";
+import CookieConsent from "@components/CookieConsent";
+import Menu from "@components/Menu";
+import ChangeLanguageModal from "@components/ChangeLanguageModal";
+import { getStoredItem, storeItem } from "@functions/services";
 import AppRoutes from "./router";
-import { usePageTracking } from "./page-tracking";
-import NotificationList from "./components/Notifications/NotificationList";
-import Footer from "./components/Footer";
-import { UserProvider } from "./store";
+import { usePageTracking } from "@functions/page-tracking";
+import NotificationList from "@components/Notifications/NotificationList";
+import Footer from "@components/Footer";
+import { UserProvider } from "@store/userStore";
 
 const CrafterApp: React.FC = () => {
   const navigate = useNavigate();

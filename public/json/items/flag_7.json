@@ -1,0 +1,24 @@
+{
+  "name": "Flag 7",
+  "type": "Flag_7_C",
+  "category": "Furniture",
+  "weight": 5,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 100
+  }
+}

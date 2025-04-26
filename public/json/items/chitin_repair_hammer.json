@@ -1,0 +1,26 @@
+{
+  "name": "Chitin Repair Hammer",
+  "parent": "Bone Repair Hammer",
+  "type": "ChitinRepairHammer_C",
+  "durability": 1500,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 10,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 5,
+          "name": "Rope"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ]
+}

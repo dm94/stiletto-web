@@ -1,0 +1,47 @@
+{
+  "name": "Proxy Walker",
+  "parent": "Steering Levers",
+  "type": "Proxy_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 225,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 750,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1400,
+          "name": "Wood"
+        },
+        {
+          "count": 300,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 150,
+          "name": "Rope"
+        },
+        {
+          "count": 300,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 1,
+          "name": "Proxy License"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 100000
+  },
+  "walkerinfo": {
+    "category": "Large"
+  }
+}

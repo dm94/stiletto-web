@@ -1,0 +1,31 @@
+{
+  "name": "Drill Spade",
+  "parent": "Tube Spade",
+  "type": "DrillSpade_C",
+  "category": "Tools",
+  "durability": 350,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Wood"
+        },
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Rope"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ]
+}

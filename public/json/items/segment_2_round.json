@@ -1,0 +1,24 @@
+{
+  "name": "Segment 2 (round)",
+  "type": "Arena_Segment_2_C",
+  "category": "Furniture",
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 2000
+  }
+}

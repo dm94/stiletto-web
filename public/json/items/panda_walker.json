@@ -1,0 +1,59 @@
+{
+  "name": "Panda Walker",
+  "parent": "Tusker Walker",
+  "type": "Panda_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1360,
+          "name": "Lightwood"
+        },
+        {
+          "count": 600,
+          "name": "Fiber"
+        },
+        {
+          "count": 350,
+          "name": "Stone"
+        },
+        {
+          "count": 121,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 86,
+          "name": "Rope"
+        },
+        {
+          "count": 5,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 110,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 35,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 1,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 30,
+          "name": "Iron Nails"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 65000
+  },
+  "walkerinfo": {
+    "category": "Large"
+  }
+}

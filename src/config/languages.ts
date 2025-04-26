@@ -1,4 +1,4 @@
-import type { Language } from "../types";
+import type { Language } from "@ctypes";
 
 export const supportedLanguages: Language[] = [
   { key: "en", name: "English" },

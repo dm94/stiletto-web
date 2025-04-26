@@ -1,0 +1,28 @@
+{
+  "name": "Fast Grappling Hook",
+  "parent": "Nomad Grappling Hook",
+  "type": "FastGrapplingHook_C",
+  "category": "Grappling Hooks",
+  "trade_price": 19.4,
+  "experiencieReward": 45,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 8,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 12,
+          "name": "Rope"
+        }
+      ],
+      "station": "Crafting Bench",
+      "time": 2
+    }
+  ]
+}

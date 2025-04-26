@@ -1,0 +1,34 @@
+{
+  "name": "Hammock",
+  "parent": "Sand Bed",
+  "type": "BedHammock_C",
+  "category": "Interactables",
+  "description": "A simple bed with a small water container that, when filled, allows a couple respawns.",
+  "experiencieReward": 21,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 35,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 46,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Rupu Pelt"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 500
+  }
+}

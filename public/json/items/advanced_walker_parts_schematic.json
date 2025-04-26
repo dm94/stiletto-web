@@ -1,0 +1,198 @@
+{
+  "name": "Advanced Walker Parts Schematic",
+  "type": "WalkerPartsAdvancedSchematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Schmetterling Walker Legs Heavy (1 of 2)",
+    "Tusker Walker Legs Heavy (1 of 2)",
+    "Proxy Walker Legs Heavy (1 of 2)",
+    "Falco Walker Legs Heavy (1 of 2)",
+    "Domus Walker Legs Heavy (1 of 2)",
+    "Panda Walker Legs Heavy (1 of 2)",
+    "Titan Walker Legs Heavy (1 of 2)",
+    "Toboggan Walker Legs Heavy (1 of 2)",
+    "Hornet Walker Legs Heavy (1 of 2)",
+    "Buffalo Walker Legs Heavy (1 of 2)",
+    "Silur Walker Legs Heavy (1 of 2)",
+    "Buffalo Walker Wings Rugged (1 of 2)",
+    "Mollusk Walker Wings Rugged (1 of 2)",
+    "Schmetterling Walker Wings Rugged (1 of 2)",
+    "Tusker Walker Wings Rugged (1 of 2)",
+    "Falco Walker Wings Rugged (1 of 2)",
+    "Domus Walker Wings Rugged (1 of 2)",
+    "Panda Walker Wings Rugged (1 of 2)",
+    "Titan Walker Wings Rugged (1 of 2)",
+    "Stiletto Walker Wings Rugged (1 of 2)",
+    "Toboggan Walker Wings Rugged (1 of 2)",
+    "Hornet Walker Wings Rugged (1 of 2)",
+    "Hercul Walker Wings Rugged (1 of 2)",
+    "Schmetterling Walker Wings Large (1 of 2)",
+    "Tusker Walker Wings Large (1 of 2)",
+    "Falco Walker Wings Large (1 of 2)",
+    "Domus Walker Wings Large (1 of 2)",
+    "Panda Walker Wings Large (1 of 2)",
+    "Titan Walker Wings Large (1 of 2)",
+    "Toboggan Walker Wings Large (1 of 2)",
+    "Hornet Walker Wings Large (1 of 2)",
+    "Buffalo Walker Wings Medium (1 of 2)",
+    "Mollusk Walker Wings Medium (1 of 2)",
+    "Schmetterling Walker Wings Medium (1 of 2)",
+    "Tusker Walker Wings Medium (1 of 2)",
+    "Falco Walker Wings Medium (1 of 2)",
+    "Domus Walker Wings Medium (1 of 2)",
+    "Panda Walker Wings Medium (1 of 2)",
+    "Titan Walker Wings Medium (1 of 2)",
+    "Stiletto Walker Wings Medium (1 of 2)",
+    "Toboggan Walker Wings Medium (1 of 2)",
+    "Hornet Walker Wings Medium (1 of 2)",
+    "Hercul Walker Wings Medium (1 of 2)",
+    "Buffalo Walker Wings Raider (1 of 2)",
+    "Mollusk Walker Wings Raider (1 of 2)",
+    "Schmetterling Walker Wings Raider (1 of 2)",
+    "Tusker Walker Wings Raider (1 of 2)",
+    "Falco Walker Wings Raider (1 of 2)",
+    "Domus Walker Wings Raider (1 of 2)",
+    "Panda Walker Wings Raider (1 of 2)",
+    "Titan Walker Wings Raider (1 of 2)",
+    "Stiletto Walker Wings Raider (1 of 2)",
+    "Toboggan Walker Wings Raider (1 of 2)",
+    "Hornet Walker Wings Raider (1 of 2)",
+    "Hercul Walker Wings Raider (1 of 2)"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "EasyRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "LargeNurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Nurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Okkam (T3)",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Papak (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
+  ]
+}

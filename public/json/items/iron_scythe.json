@@ -1,0 +1,36 @@
+{
+  "name": "Iron Scythe",
+  "parent": "CeramicScythe",
+  "type": "IronScythe_C",
+  "durability": 1200,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 10,
+          "name": "Rope"
+        },
+        {
+          "count": 4,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 4,
+          "name": "Iron Ingot"
+        }
+      ],
+      "station": "Smithing",
+      "time": 20
+    }
+  ],
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 20
+    }
+  ]
+}

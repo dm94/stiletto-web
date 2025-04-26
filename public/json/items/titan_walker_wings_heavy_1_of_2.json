@@ -1,0 +1,32 @@
+{
+  "name": "Titan Walker Wings Heavy (1 of 2)",
+  "type": "TitanWings_T2_Heavy_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 212,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 26,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 28,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 44,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 6400
+  }
+}

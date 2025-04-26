@@ -1,0 +1,33 @@
+{
+  "name": "Tool Pod",
+  "parent": "Advanced Walker Weapons",
+  "type": "ToolPod_C",
+  "category": "Walker Tools",
+  "experiencieReward": 34,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 15,
+          "name": "Leather"
+        },
+        {
+          "count": 30,
+          "name": "Rope"
+        },
+        {
+          "count": 24,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 5000
+  }
+}

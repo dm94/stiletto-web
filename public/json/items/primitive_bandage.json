@@ -1,0 +1,25 @@
+{
+  "name": "Primitive Bandage",
+  "parent": "Equipment",
+  "type": "FiberBandage_C",
+  "category": "Interactables",
+  "trade_price": 1.2,
+  "stackSize": 100,
+  "weight": 0.03,
+  "experiencieReward": 2,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Fiber"
+        },
+        {
+          "count": 1,
+          "name": "Ash"
+        }
+      ],
+      "output": 4
+    }
+  ]
+}

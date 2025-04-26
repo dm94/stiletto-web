@@ -1,0 +1,60 @@
+{
+  "name": "Clay Walls Schematic",
+  "type": "ClayWallsSchematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Clay Wall with Windows",
+    "Clay Wall with Window",
+    "Clay Floor / Roof",
+    "Clay Foundation",
+    "Clay Door",
+    "Clay Corner",
+    "Clay Battlement",
+    "Clay Wall"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam (T3)",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    },
+    {
+      "name": "Papak (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "tier": "T3"
+    }
+  ]
+}

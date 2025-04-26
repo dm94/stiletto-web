@@ -1,0 +1,32 @@
+{
+  "name": "Falco Walker Legs Heavy (1 of 2)",
+  "type": "FalcoLegs_T3_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 72,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 12,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 5,
+          "name": "Tar"
+        },
+        {
+          "count": 60,
+          "name": "Worm Scale"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 7200
+  }
+}

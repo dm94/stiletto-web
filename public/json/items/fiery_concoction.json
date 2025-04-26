@@ -1,0 +1,11 @@
+{
+  "name": "Fiery Concoction",
+  "parent": "Clay Pot",
+  "type": "HellfireMixture_C",
+  "category": "Resources",
+  "trade_price": 1,
+  "stackSize": 5,
+  "weight": 0.2,
+  "experiencieReward": 35,
+  "onlyDevs": true
+}

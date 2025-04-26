@@ -1,0 +1,31 @@
+{
+  "name": "Lumberjack Module",
+  "type": "LegLoggingBoost_C",
+  "category": "Resources",
+  "weight": 0.24,
+  "experiencieReward": 65,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Gasket"
+        },
+        {
+          "count": 1,
+          "name": "Spring"
+        },
+        {
+          "count": 1,
+          "name": "Spline"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 1
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "name": "Flint Harpoon",
+  "parent": "Ballista",
+  "type": "FlintHarpoon_C",
+  "category": "Ammo",
+  "trade_price": 4.4,
+  "stackSize": 20,
+  "weight": 0.8,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Flint Bolt"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Vine"
+        }
+      ],
+      "station": "Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Flint Bolt"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Vine"
+        }
+      ],
+      "station": "Advanced Woodworking Station",
+      "time": 4
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Flint Bolt"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Vine"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 4
+    }
+  ],
+  "projectileDamage": {
+    "damage": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 1
+    }
+  ]
+}

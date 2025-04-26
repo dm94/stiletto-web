@@ -1,0 +1,24 @@
+{
+  "name": "Fence 1",
+  "type": "Throne_Fence_01_C",
+  "category": "Furniture",
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 100
+  }
+}

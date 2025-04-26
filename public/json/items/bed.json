@@ -1,0 +1,30 @@
+{
+  "name": "Bed",
+  "parent": "Hammock",
+  "type": "Bed_C",
+  "category": "Interactables",
+  "description": "Comfortable bed with a big water container to hold multiple respawns.",
+  "experiencieReward": 155,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 32,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 45,
+          "name": "Cotton"
+        },
+        {
+          "count": 2,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 800
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Toboggan Walker",
+  "parent": "Steering Levers",
+  "type": "Toboggan_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 310,
+          "name": "Wood"
+        },
+        {
+          "count": 29,
+          "name": "Rope"
+        },
+        {
+          "count": 2,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 115,
+          "name": "Fiber"
+        },
+        {
+          "count": 27,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 24,
+          "name": "Leather"
+        },
+        {
+          "count": 45,
+          "name": "Stone"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 27000
+  },
+  "walkerinfo": {
+    "category": "Medium"
+  }
+}

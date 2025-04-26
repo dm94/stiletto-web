@@ -1,0 +1,33 @@
+{
+  "name": "Gun Pod",
+  "parent": "Advanced Walker Weapons",
+  "type": "GunPod_C",
+  "category": "Weapons",
+  "experiencieReward": 34,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 27,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        },
+        {
+          "count": 8,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 35,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3500
+  }
+}

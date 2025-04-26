@@ -1,0 +1,32 @@
+{
+  "name": "Toboggan Walker Legs Heavy (1 of 2)",
+  "type": "TobogganLegs_T3_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 27,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 95,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 25,
+          "name": "Animal Fat"
+        },
+        {
+          "count": 112,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 3960
+  }
+}

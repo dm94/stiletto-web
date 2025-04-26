@@ -1,0 +1,14 @@
+{
+  "name": "Spring",
+  "type": "Spring_C",
+  "stackSize": 10,
+  "droppedBy": [
+    {
+      "name": "HotspotLoot (T1)",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    }
+  ]
+}

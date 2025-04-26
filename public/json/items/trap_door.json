@@ -1,0 +1,29 @@
+{
+  "name": "Trap Door",
+  "parent": "Bomb Chest Trap",
+  "type": "TrapDoor_C",
+  "category": "Defenses",
+  "experiencieReward": 48,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 45,
+          "name": "Wood"
+        },
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 200
+  }
+}

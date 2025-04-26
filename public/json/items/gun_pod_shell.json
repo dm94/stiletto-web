@@ -1,0 +1,25 @@
+{
+  "name": "Gun Pod Shell",
+  "parent": "Gun Pod",
+  "type": "GunPodShell_C",
+  "category": "Weapons",
+  "experiencieReward": 34,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 7,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 26,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 89,
+          "name": "Wood"
+        }
+      ]
+    }
+  ]
+}

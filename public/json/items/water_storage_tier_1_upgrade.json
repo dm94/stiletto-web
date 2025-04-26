@@ -1,0 +1,8 @@
+{
+  "name": "Water Storage - Tier 1 Upgrade",
+  "type": "SparePartWoodWater_C",
+  "category": "Spare Parts",
+  "experiencieReward": 10,
+  "durability": 100,
+  "wikiVisibility": false
+}

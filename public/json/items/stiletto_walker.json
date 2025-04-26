@@ -1,0 +1,43 @@
+{
+  "name": "Stiletto Walker",
+  "parent": "Steering Levers",
+  "type": "Stiletto_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 295,
+          "name": "Wood"
+        },
+        {
+          "count": 23,
+          "name": "Rope"
+        },
+        {
+          "count": 87,
+          "name": "Fiber"
+        },
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 50,
+          "name": "Stone"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 22000
+  },
+  "walkerinfo": {
+    "category": "Medium"
+  }
+}

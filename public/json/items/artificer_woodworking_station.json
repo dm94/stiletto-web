@@ -1,0 +1,33 @@
+{
+  "name": "Artificer Woodworking Station",
+  "parent": "Advanced Woodworking Station",
+  "type": "WoodworkingStation_T3_C",
+  "category": "Crafting",
+  "experiencieReward": 300,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 120,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 15,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 3,
+          "name": "Nurr Fang"
+        },
+        {
+          "count": 8,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 5000
+  }
+}

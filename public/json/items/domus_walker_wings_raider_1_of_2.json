@@ -1,0 +1,32 @@
+{
+  "name": "Domus Walker Wings Raider (1 of 2)",
+  "type": "DomusWings_T3_Raider_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 32,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 110,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 30,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 15,
+          "name": "Worm Scale"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 6200
+  }
+}

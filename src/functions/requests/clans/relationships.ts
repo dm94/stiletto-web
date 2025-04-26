@@ -1,11 +1,11 @@
 import { getStoredItem } from "../../services";
-import { config } from "../../../config/config";
+import { config } from "@config/config";
 import type {
   CreateRelationshipRequestQueryParams,
   RelationshipInfo,
-} from "../../../types/dto/relationship";
+} from "@ctypes/dto/relationship";
 import { objectToURLSearchParams } from "../../utils";
-import type { GenericResponse } from "../../../types/dto/generic";
+import type { GenericResponse } from "@ctypes/dto/generic";
 
 export const getRelationships = async (
   clanid: number,

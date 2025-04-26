@@ -1,0 +1,24 @@
+{
+  "name": "Crate 2",
+  "type": "Throne_Crates_02_C",
+  "category": "Furniture",
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 200
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Foraging Pouch",
+  "parent": "Equipment",
+  "type": "ForagingPouch_C",
+  "category": "Equipment",
+  "trade_price": 5.6,
+  "stackSize": 100,
+  "weight": 0.2,
+  "experiencieReward": 26,
+  "durability": 70,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 28,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ]
+}

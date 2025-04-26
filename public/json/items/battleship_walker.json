@@ -1,0 +1,29 @@
+{
+  "name": "Battleship Walker",
+  "parent": "Flotillian Walkers",
+  "type": "Battleship_C",
+  "category": "Walkers",
+  "onlyDevs": true,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3964,
+          "name": "Wood"
+        },
+        {
+          "count": 1711,
+          "name": "Fiber"
+        },
+        {
+          "count": 4,
+          "name": "Reinforced Plank"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 80000
+  }
+}

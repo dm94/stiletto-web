@@ -1,0 +1,25 @@
+{
+  "name": "Chair Comfortable",
+  "type": "Chair3_C",
+  "category": "Furniture",
+  "weight": 2,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Wood"
+        },
+        {
+          "count": 1,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 150
+  }
+}

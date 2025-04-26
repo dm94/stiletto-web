@@ -1,0 +1,36 @@
+{
+  "name": "Mollusk Walker Wings (1 of 2)",
+  "type": "MolluskWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Wood"
+        },
+        {
+          "count": 8,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 4,
+          "name": "Rope"
+        },
+        {
+          "count": 4,
+          "name": "Hide"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 6750
+  }
+}

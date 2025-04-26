@@ -1,0 +1,178 @@
+{
+  "name": "Mollusk Walker Rig T2 Schematic",
+  "type": "MolluskRig_T2Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Mollusk Walker Rig T2"
+  ],
+  "droppedBy": [
+    {
+      "name": "BasketLoot (T2) (AC)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "BigHotspotLoot (T2)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Bounty Hunter",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupuCamp (T2)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2) (AC)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupuCamp (T2)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T2)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T2) (AC)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLootWindmill (T2) (AC)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Marshland Stalker",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Matriarch",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T2)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Dunestalker (Medium)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Forager (Medium)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Harasser (Medium)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Hazraki (Medium)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Plainstrider (Medium)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Priestess (Medium)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Raider",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Shaman (Medium)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Rupu Zealot (Medium)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "TreasureChest (T2)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "White Death (Medium) (T2)",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    }
+  ]
+}

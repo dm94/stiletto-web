@@ -1,0 +1,33 @@
+{
+  "name": "Windmill",
+  "parent": "Camp Fire",
+  "type": "Windmill_C",
+  "category": "Crafting",
+  "experiencieReward": 34,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Wood"
+        },
+        {
+          "count": 22,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 4,
+          "name": "Rope"
+        },
+        {
+          "count": 5,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 2500
+  }
+}

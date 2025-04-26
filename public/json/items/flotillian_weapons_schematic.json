@@ -1,0 +1,56 @@
+{
+  "name": "Flotillian Weapons Schematic",
+  "type": "Weapons_T4Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Wyndanblade Quarterstaff",
+    "Nibiran Curved Dagger",
+    "Nibiran Decapitator",
+    "Wyndan Flame Sword",
+    "Wyndan Hammer",
+    "Wyndan Sabre",
+    "Nibiran Hammer",
+    "Ironblade Quarterstaff",
+    "Nibiran Quarterstaff",
+    "Wyndan Warhammer",
+    "Nibiran Warhammer"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

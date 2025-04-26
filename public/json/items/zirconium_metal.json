@@ -1,0 +1,9 @@
+{
+  "name": "Zirconium Metal",
+  "type": "ZirconiumMetal_C",
+  "category": "Resources",
+  "trade_price": 0.4,
+  "stackSize": 100,
+  "weight": 1,
+  "experiencieReward": 25
+}

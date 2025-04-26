@@ -1,0 +1,38 @@
+{
+  "name": "Nibiran Warhammer",
+  "type": "TwoHandedRareMetalMace2_C",
+  "category": "Weapons",
+  "trade_price": 2217.3,
+  "stackSize": 100,
+  "weight": 5.1,
+  "experiencieReward": 1509,
+  "durability": 780,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 6,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 14,
+          "name": "Lightwood"
+        }
+      ],
+      "station": "Smithing",
+      "time": 100
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 115,
+    "impact": 90,
+    "stability": 80,
+    "weaponLength": 88,
+    "damage": 70,
+    "penetration": 10
+  }
+}

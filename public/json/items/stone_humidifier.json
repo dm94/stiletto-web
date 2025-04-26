@@ -1,0 +1,28 @@
+{
+  "name": "Stone Humidifier",
+  "parent": "Maintenance Box",
+  "type": "Humidifier_C",
+  "category": "Interactables",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Stone"
+        },
+        {
+          "count": 8,
+          "name": "Wood"
+        },
+        {
+          "count": 4,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 500
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "Split Bone Bottle",
+  "parent": "Bone Bottle",
+  "type": "SplitBoneBottle_C",
+  "category": "Equipment",
+  "trade_price": 13.3,
+  "stackSize": 100,
+  "weight": 3.2,
+  "experiencieReward": 55,
+  "durability": 130,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 7,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 35,
+          "name": "Fiber"
+        },
+        {
+          "count": 1,
+          "name": "Nomad Cloth"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 2
+    },
+    {
+      "ingredients": [
+        {
+          "count": 7,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 35,
+          "name": "Fiber"
+        },
+        {
+          "count": 1,
+          "name": "Nomad Cloth"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 2
+    }
+  ]
+}

@@ -3,17 +3,17 @@ import { useState, useEffect, useCallback, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import SkillNodeBtn from "./SkillNodeBtn";
-import { getItemUrl } from "../../functions/utils";
-import { getStoredItem, storeItem } from "../../functions/services";
-import type { Item } from "../../types/item";
-import type { Tree } from "../../types/dto/tech";
-import type { SkillStateMap } from "../../types/Skill";
+import { getItemUrl } from "@functions/utils";
+import { getStoredItem, storeItem } from "@functions/services";
+import type { TechItem } from "@ctypes/item";
+import type { Tree } from "@ctypes/dto/tech";
+import type { SkillStateMap } from "@ctypes/Skill";
 import "../../styles/ModernSkillTree.css";
 
 interface NodeData {
   id: string;
   title: string;
-  item: Item;
+  item: TechItem;
   children: NodeData[];
   level: number;
   x: number;
@@ -31,7 +31,7 @@ interface EdgeData {
 interface ModernSkillTreeProps {
   treeId: Tree;
   title: string;
-  items: Item[];
+  items: TechItem[];
   clan?: number;
 }
 
@@ -189,19 +189,14 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     [nodes, skills],
   );
 
-  // Toggle node selection
   const toggleNode = useCallback(
     (nodeId: string) => {
-      console.log("Toggling node:", nodeId);
-
       setSkills((prevSkills) => {
         const newSkills = { ...prevSkills };
 
-        // If node is already selected, deselect it
         if (newSkills[nodeId]?.nodeState === "selected") {
           newSkills[nodeId] = { nodeState: "unlocked" };
         } else {
-          // Check if this node can be learned (parent is selected)
           const node = nodes.find((n) => n.id === nodeId);
           if (
             node?.parentId &&
@@ -214,7 +209,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
           newSkills[nodeId] = { nodeState: "selected" };
         }
 
-        // Save to storage
         storeItem(`skills-${treeId}`, JSON.stringify(newSkills));
 
         return newSkills;
@@ -223,7 +217,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     [treeId, nodes],
   );
 
-  // Show tooltip
   const showTooltip = useCallback((nodeId: string) => {
     setTooltipInfo({
       visible: true,
@@ -231,13 +224,14 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     });
   }, []);
 
-  // Generate tooltip content
   const getTooltipContent = useCallback(
     (nodeId: string) => {
       const node = nodes.find((n) => n.id === nodeId);
       if (!node) {
         return null;
       }
+
+      const canLearn = canLearnNode(nodeId);
 
       return (
         <div className="mx-auto">
@@ -252,6 +246,15 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               {node.id}
             </a>
           </div>
+          {canLearn && (
+            <button
+              type="button"
+              className="btn btn-sm my-2 p-2"
+              onClick={() => toggleNode(node.id)}
+            >
+              {t("techTree.toggleLearned")}
+            </button>
+          )}
           <p className="text-center border-b border-warning">
             {t("crafting.whoHasLearnedIt")}
           </p>
@@ -268,7 +271,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         </div>
       );
     },
-    [clan, nodes, t, treeId],
+    [clan, nodes, t, treeId, toggleNode, canLearnNode],
   );
 
   // Zoom controls
@@ -377,10 +380,10 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               const path = `M ${x1} ${y1} C ${midX} ${y1}, ${midX} ${y2}, ${x2} ${y2}`;
 
               // Determine if this is a selected path
-              const strokeColor = edge.selected ? "#2ecc2e" : "#262625";
+              const strokeColor = edge.selected ? "#2ecc2e" : "#d95f32";
               const strokeWidth = edge.selected ? 4 : 2;
               const strokeOpacity = edge.selected ? 1 : 0.5;
-              const glowFilter = edge.selected ? "url(#glow)" : "";
+              const glowFilter = edge.selected ? "url(#glow)" : undefined;
 
               return (
                 <path
@@ -399,14 +402,11 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
 
           {nodes.map((node) => {
             // Determine if node can be learned
-            const canLearn = canLearnNode(node.id);
 
             // Extract the nested ternary into a separate statement
             let nodeClass = "";
             if (node.selected) {
               nodeClass = "selected";
-            } else if (!canLearn && node.parentId) {
-              nodeClass = "locked";
             }
 
             return (
@@ -419,13 +419,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
                   top: `${node.y}px`,
                   zIndex: node.selected ? 10 : 5,
                 }}
-                onClick={() => toggleNode(node.id)}
-                onMouseEnter={() => showTooltip(node.id)}
-                title={
-                  !canLearn && node.parentId
-                    ? t("techTree.needParentSkill")
-                    : ""
-                }
+                onClick={() => showTooltip(node.id)}
               >
                 <div className="node-title">{node.title}</div>
               </button>

@@ -1,0 +1,35 @@
+{
+  "name": "Spider Walker",
+  "parent": "Walkers",
+  "type": "Spider_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 50,
+          "name": "Wood"
+        },
+        {
+          "count": 60,
+          "name": "Fiber"
+        },
+        {
+          "count": 12,
+          "name": "Stone"
+        },
+        {
+          "count": 6,
+          "name": "Rupu Vine"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 1500
+  },
+  "walkerinfo": {
+    "category": "Small"
+  }
+}

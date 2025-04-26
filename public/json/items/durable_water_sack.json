@@ -1,0 +1,41 @@
+{
+  "name": "Durable Water Sack",
+  "parent": "Improvised Bottle",
+  "type": "Barrel_C",
+  "category": "Equipment",
+  "trade_price": 7.9,
+  "stackSize": 100,
+  "weight": 3,
+  "experiencieReward": 35,
+  "durability": 80,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 3,
+          "name": "Earth Wax"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 1
+    },
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 3,
+          "name": "Earth Wax"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 1
+    }
+  ]
+}

@@ -1,22 +1,42 @@
 import type React from "react";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
+import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getItems } from "../functions/services";
-import { sendEvent } from "../page-tracking";
-import Ingredient from "../components/Ingredient";
-import { getDomain } from "../functions/utils";
-import HeaderMeta from "../components/HeaderMeta";
-import { useLocation } from "react-router";
-import type { Item } from "../types/item";
+import { getItems, getCreatures } from "@functions/github";
+import { sendEvent } from "@functions/page-tracking";
+import { getDomain } from "@functions/utils";
+import HeaderMeta from "@components/HeaderMeta";
+import { useLocation, useNavigate } from "react-router";
+import type { Item } from "@ctypes/item";
+import type { Creature } from "@ctypes/creature";
+
+import ContentTypeSelector from "@components/Wiki/ContentTypeSelector";
+import SearchBar from "@components/Wiki/SearchBar";
+import CategoryFilter from "@components/Wiki/CategoryFilter";
+import WikiContent from "@components/Wiki/WikiContent";
+import Pagination from "@components/Wiki/Pagination";
 
 const Wiki = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { t } = useTranslation();
+  const [contentType, setContentType] = useState<"items" | "creatures">(
+    "items",
+  );
+
+  // Items state
   const [items, setItems] = useState<Item[]>([]);
-  const [searchText, setSearchText] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
   const [displayedItems, setDisplayedItems] = useState<Item[]>([]);
+
+  // Creatures state
+  const [creatures, setCreatures] = useState<Creature[]>([]);
+  const [filteredCreatures, setFilteredCreatures] = useState<Creature[]>([]);
+  const [displayedCreatures, setDisplayedCreatures] = useState<Creature[]>([]);
+
+  // Common state
+  const [searchText, setSearchText] = useState<string>("");
   const [categories, setCategories] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string>("All");
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -24,133 +44,164 @@ const Wiki = () => {
   const [hasMore, setHasMore] = useState<boolean>(true);
   const ITEMS_PER_PAGE = 12;
 
+  // Extract categories from data items
+  const extractCategories = <T extends { category?: string }>(
+    data: T[],
+  ): string[] => {
+    const allCategories: string[] = [];
+
+    for (const item of data) {
+      if (item.category && !allCategories.includes(item.category)) {
+        allCategories.push(item.category);
+      }
+    }
+
+    return allCategories.sort((a, b) => a.localeCompare(b));
+  };
+
+  // Update state with fetched items data
+  const processItemsData = (fetchedItems: Item[]) => {
+    const allCategories = extractCategories(fetchedItems);
+
+    setItems(fetchedItems);
+    setCategories(allCategories);
+    setFilteredItems(fetchedItems);
+    setDisplayedItems(fetchedItems.slice(0, ITEMS_PER_PAGE));
+    setHasMore(fetchedItems.length > ITEMS_PER_PAGE);
+  };
+
+  // Update state with fetched creatures data
+  const processCreaturesData = (fetchedCreatures: Creature[]) => {
+    const allCategories = extractCategories(fetchedCreatures);
+
+    setCreatures(fetchedCreatures);
+    setCategories(allCategories);
+    setFilteredCreatures(fetchedCreatures);
+    setDisplayedCreatures(fetchedCreatures.slice(0, ITEMS_PER_PAGE));
+    setHasMore(fetchedCreatures.length > ITEMS_PER_PAGE);
+  };
+
+  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
-    const updateRecipes = async () => {
+    const loadData = async () => {
       setIsLoading(true);
       try {
-        const fetchedItems = await getItems();
-        if (fetchedItems != null) {
-          const allCategories: string[] = [];
-
-          for (const item of fetchedItems) {
-            if (item.category && !allCategories.includes(item.category)) {
-              allCategories.push(item.category);
-            }
+        if (contentType === "items") {
+          const fetchedItems = await getItems();
+          if (fetchedItems != null) {
+            processItemsData(fetchedItems);
           }
-
-          allCategories.sort((a, b) => a.localeCompare(b));
-
-          setItems(fetchedItems);
-          setCategories(allCategories);
+        } else {
+          const fetchedCreatures = await getCreatures();
+          if (fetchedCreatures != null) {
+            processCreaturesData(fetchedCreatures);
+          }
         }
       } catch (error) {
-        console.error("Error fetching items:", error);
+        console.error(`Error fetching ${contentType}:`, error);
       } finally {
         setIsLoading(false);
       }
     };
 
-    updateRecipes();
-  }, []);
+    loadData();
+  }, [contentType]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  const searchItems = useCallback(
+  const searchContent = useCallback(
     (search = searchText, category = categoryFilter) => {
       sendEvent("search", { props: { term: search } });
 
-      let filtered = items;
+      if (contentType === "items") {
+        let filtered = items;
 
-      if (category && category !== "All") {
-        filtered = filtered.filter((item) => item.category === category);
+        if (category && category !== "All") {
+          filtered = filtered.filter((item) => item.category === category);
+        }
+
+        if (search.trim()) {
+          const searchTerms = search.toLowerCase().split(" ").filter(Boolean);
+
+          filtered = filtered.filter((it) => {
+            const itemName = t(it.name).toLowerCase();
+            return searchTerms.every((term) => itemName.includes(term));
+          });
+        }
+
+        setFilteredItems(filtered);
+        setCurrentPage(1);
+        setDisplayedItems(filtered.slice(0, ITEMS_PER_PAGE));
+        setHasMore(filtered.length > ITEMS_PER_PAGE);
+      } else {
+        let filtered = creatures;
+
+        if (category && category !== "All") {
+          filtered = filtered.filter(
+            (creature) => creature.category === category,
+          );
+        }
+
+        if (search.trim()) {
+          const searchTerms = search.toLowerCase().split(" ").filter(Boolean);
+
+          filtered = filtered.filter((cr) => {
+            const creatureName = t(cr.name, { ns: "creatures" }).toLowerCase();
+            return searchTerms.every((term) => creatureName.includes(term));
+          });
+        }
+
+        setFilteredCreatures(filtered);
+        setCurrentPage(1);
+        setDisplayedCreatures(filtered.slice(0, ITEMS_PER_PAGE));
+        setHasMore(filtered.length > ITEMS_PER_PAGE);
       }
-
-      if (search.trim()) {
-        const searchTerms = search.toLowerCase().split(" ").filter(Boolean);
-
-        filtered = filtered.filter((it) => {
-          const itemName = t(it.name).toLowerCase();
-          return searchTerms.every((term) => itemName.includes(term));
-        });
-      }
-
-      setFilteredItems(filtered);
-
-      setCurrentPage(1);
-      setDisplayedItems(filtered.slice(0, ITEMS_PER_PAGE));
-      setHasMore(filtered.length > ITEMS_PER_PAGE);
     },
-    [items, searchText, t],
+    [items, creatures, searchText, t, contentType],
   );
 
   useEffect(() => {
-    if (location?.search && items.length > 0) {
+    if (location?.search) {
       const parsed = queryString.parse(location.search);
 
-      if (parsed?.s) {
-        searchItems(String(parsed.s), "All");
+      if (
+        parsed?.type &&
+        (parsed.type === "items" || parsed.type === "creatures")
+      ) {
+        setContentType(parsed.type);
       }
-    } else if (items.length > 0) {
-      setFilteredItems(items);
-      setDisplayedItems(items.slice(0, ITEMS_PER_PAGE));
-      setHasMore(items.length > ITEMS_PER_PAGE);
+
+      // Read the category parameter from URL
+      if (parsed?.category && typeof parsed.category === "string") {
+        setCategoryFilter(parsed.category);
+      }
+
+      if (parsed?.s) {
+        // Use the category from URL if available, or "All" if not
+        const categoryToUse = parsed?.category
+          ? String(parsed.category)
+          : "All";
+        searchContent(String(parsed.s), categoryToUse);
+      }
     }
-  }, [location, items, searchItems]);
+  }, [location, searchContent]);
 
   const handleLoadMore = useCallback(() => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
-    const nextItems = filteredItems.slice(0, nextPage * ITEMS_PER_PAGE);
-    setDisplayedItems(nextItems);
-    setHasMore(nextItems.length < filteredItems.length);
-  }, [filteredItems, currentPage]);
 
-  const showItems = useMemo(() => {
-    if (isLoading) {
-      return (
-        <div className="w-full" key="wiki-loading">
-          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
-            <div className="p-6 text-center text-gray-300 text-lg">
-              {t("common.loading")}
-            </div>
-          </div>
-        </div>
+    if (contentType === "items") {
+      const nextItems = filteredItems.slice(0, nextPage * ITEMS_PER_PAGE);
+      setDisplayedItems(nextItems);
+      setHasMore(nextItems.length < filteredItems.length);
+    } else {
+      const nextCreatures = filteredCreatures.slice(
+        0,
+        nextPage * ITEMS_PER_PAGE,
       );
+      setDisplayedCreatures(nextCreatures);
+      setHasMore(nextCreatures.length < filteredCreatures.length);
     }
-
-    if (displayedItems.length > 0) {
-      return displayedItems.map((item) => (
-        <div
-          key={`wiki-${item.name}`}
-          className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
-          data-cy="wiki-item"
-        >
-          <div className="bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
-            <div className="p-4">
-              <Ingredient ingredient={item} value={1} />
-            </div>
-          </div>
-        </div>
-      ));
-    }
-
-    return (
-      <div className="w-full" key="wiki-notfound">
-        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
-          <div className="p-6 text-center text-gray-300 text-lg">
-            {t("wiki.nothingFound")}
-          </div>
-        </div>
-      </div>
-    );
-  }, [displayedItems, isLoading, t]);
-
-  const showCategories = useMemo(() => {
-    return categories.map((category) => (
-      <option key={`option-${category}`} value={category}>
-        {t(category)}
-      </option>
-    ));
-  }, [categories, t]);
+  }, [filteredItems, filteredCreatures, currentPage, contentType]);
 
   const handleSearchTextChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -159,27 +210,98 @@ const Wiki = () => {
     [],
   );
 
+  // Helper function to build URL parameters
+  const buildSearchParams = useCallback(
+    (search: string, category: string, type: "items" | "creatures") => {
+      const searchParams = new URLSearchParams();
+
+      // Add search parameter if it exists
+      if (search.trim()) {
+        searchParams.set("s", search);
+      }
+
+      // Always add content type
+      searchParams.set("type", type);
+
+      // Add category only if it's not "All"
+      if (category !== "All") {
+        searchParams.set("category", category);
+      }
+
+      return searchParams;
+    },
+    [],
+  );
+
   const handleCategoryChange = useCallback(
     (e: React.ChangeEvent<HTMLSelectElement>) => {
       const newCategory = e.target.value;
       setCategoryFilter(newCategory);
-      searchItems(searchText, newCategory);
+      searchContent(searchText, newCategory);
+
+      const searchParams = buildSearchParams(
+        searchText,
+        newCategory,
+        contentType,
+      );
+      navigate(`/wiki?${searchParams.toString()}`);
     },
-    [searchText, searchItems],
+    [searchText, searchContent, navigate, contentType, buildSearchParams],
   );
 
   const handleKeyPress = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "Enter") {
-        searchItems(searchText, categoryFilter);
+        searchContent(searchText, categoryFilter);
+
+        const searchParams = buildSearchParams(
+          searchText,
+          categoryFilter,
+          contentType,
+        );
+        navigate(`/wiki?${searchParams.toString()}`);
       }
     },
-    [searchItems, searchText, categoryFilter],
+    [
+      searchContent,
+      searchText,
+      categoryFilter,
+      navigate,
+      contentType,
+      buildSearchParams,
+    ],
   );
 
   const handleSearchClick = useCallback(() => {
-    searchItems(searchText, categoryFilter);
-  }, [searchItems, searchText, categoryFilter]);
+    searchContent(searchText, categoryFilter);
+
+    const searchParams = buildSearchParams(
+      searchText,
+      categoryFilter,
+      contentType,
+    );
+    navigate(`/wiki?${searchParams.toString()}`);
+  }, [
+    searchContent,
+    searchText,
+    categoryFilter,
+    navigate,
+    contentType,
+    buildSearchParams,
+  ]);
+
+  const handleContentTypeChange = useCallback(
+    (type: "items" | "creatures") => {
+      setContentType(type);
+      setSearchText("");
+      setCategoryFilter("All");
+      setCurrentPage(1);
+
+      const searchParams = buildSearchParams("", "All", type);
+      navigate(`/wiki?${searchParams.toString()}`);
+    },
+    [navigate, buildSearchParams],
+  );
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -190,82 +312,56 @@ const Wiki = () => {
       />
       <div className="w-full mb-8">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
-          <div className="p-6 text-center">
+          <div className="p-3 md:p-6 text-center">
             <h1 className="text-2xl font-bold text-white mb-4">
               {t("menu.wiki")}
             </h1>
-            <div className="max-w-2xl mx-auto">
-              <div
-                className="flex"
-                itemProp="potentialAction"
-                data-cy="wiki-search"
-              >
-                <input
-                  type="search"
-                  className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder={t("common.search")}
-                  aria-label={t("common.search")}
-                  onChange={handleSearchTextChange}
-                  onKeyDown={handleKeyPress}
-                  value={searchText}
-                />
-                <button
-                  type="button"
-                  className="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
-                  onClick={handleSearchClick}
-                >
-                  {t("common.search")}
-                </button>
-              </div>
-            </div>
+
+            {/* Content Type Selector */}
+            <ContentTypeSelector
+              contentType={contentType}
+              onContentTypeChange={handleContentTypeChange}
+            />
+
+            {/* Search Bar */}
+            <SearchBar
+              searchText={searchText}
+              onSearchTextChange={handleSearchTextChange}
+              onKeyPress={handleKeyPress}
+              onSearchClick={handleSearchClick}
+            />
           </div>
-          <div className="p-6 border-t border-gray-700 bg-gray-850">
-            <div className="max-w-md mx-auto">
-              <div className="flex">
-                <label
-                  className="px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300"
-                  htmlFor="category-filter"
-                >
-                  {t("wiki.filterByCategory")}
-                </label>
-                <select
-                  id="category-filter"
-                  className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-r-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  value={categoryFilter}
-                  onChange={handleCategoryChange}
-                >
-                  <option key="all" value="All">
-                    {t("common.all")}
-                  </option>
-                  {showCategories}
-                </select>
-              </div>
-            </div>
-          </div>
+
+          {/* Category Filter */}
+          {categories.length > 0 && (
+            <CategoryFilter
+              categories={categories}
+              categoryFilter={categoryFilter}
+              onCategoryChange={handleCategoryChange}
+            />
+          )}
         </div>
       </div>
       <div className="w-full">
-        <div className="flex flex-wrap -m-3">{showItems}</div>
-        {hasMore && !isLoading && displayedItems.length > 0 && (
-          <div className="mt-8 text-center">
-            <button
-              type="button"
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
-              onClick={handleLoadMore}
-              data-cy="load-more-btn"
-            >
-              {t("common.loadMore")}
-            </button>
-          </div>
-        )}
-        {!isLoading && displayedItems.length > 0 && (
-          <div className="mt-4 text-center text-gray-400">
-            {t("wiki.showingItems", {
-              displayed: displayedItems.length,
-              total: filteredItems.length,
-            })}
-          </div>
-        )}
+        {/* Wiki Content */}
+        <WikiContent
+          contentType={contentType}
+          isLoading={isLoading}
+          displayedItems={displayedItems}
+          displayedCreatures={displayedCreatures}
+        />
+
+        {/* Pagination */}
+        <Pagination
+          contentType={contentType}
+          isLoading={isLoading}
+          hasMore={hasMore}
+          displayedItems={displayedItems}
+          displayedCreatures={displayedCreatures}
+          filteredItems={filteredItems}
+          filteredCreatures={filteredCreatures}
+          onLoadMore={handleLoadMore}
+        />
       </div>
     </div>
   );

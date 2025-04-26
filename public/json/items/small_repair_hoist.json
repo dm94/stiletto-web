@@ -1,0 +1,36 @@
+{
+  "name": "Small Repair Hoist",
+  "parent": "Medium Wood Walls",
+  "type": "SmallRepairHoist_C",
+  "category": "Walker Tools",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 25,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 18,
+          "name": "Rope"
+        },
+        {
+          "count": 45,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1250
+  }
+}

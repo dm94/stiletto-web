@@ -1,0 +1,31 @@
+{
+  "name": "Infused Pickaxe",
+  "type": "InfusedPickaxe_C",
+  "durability": 1200,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 4,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 35,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 4,
+          "name": "Nomad Cloth"
+        }
+      ],
+      "station": "Smithing",
+      "time": 80
+    }
+  ],
+  "toolInfo": [
+    {
+      "toolType": "Mining",
+      "tier": 25
+    }
+  ]
+}

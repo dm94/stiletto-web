@@ -1,0 +1,266 @@
+{
+  "name": "Tar",
+  "parent": "Furnace",
+  "type": "Tar_C",
+  "category": "Liquids",
+  "trade_price": 3.2,
+  "stackSize": 100,
+  "weight": 0.15,
+  "description": "Extracted from deep below volcanic soil.",
+  "experiencieReward": 100,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Tree Sap"
+        }
+      ],
+      "station": "Furnace",
+      "time": 360
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Tree Sap"
+        }
+      ],
+      "station": "Advanced Furnace",
+      "time": 180
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "BigHotspotLoot (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "BigHotspotLoot (T4)",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "EasyRupu (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T3) Quality",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T4)",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "EasyRupuCamp (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupuCamp (T4)",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T3) Quality",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T4)",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupuCamp (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupuCamp (T4)",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLoot (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "HotspotLoot (T4)",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T3) Quality",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T4)",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupuCamp (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupuCamp (T4)",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Ashdweller",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Drudge (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Firebrand",
+      "chance": 8.333333,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Hunter",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Oracle (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Overseer (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Plainstrider (Hard)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Rabble",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Scuttler",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "Rupu Seeker",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    },
+    {
+      "name": "White Death (Medium) (T3)",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": "T3"
+    }
+  ]
+}

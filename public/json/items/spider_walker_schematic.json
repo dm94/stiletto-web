@@ -1,0 +1,33 @@
+{
+  "name": "Spider Walker Schematic",
+  "type": "SpiderSchematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Spider Walker",
+    "Spider Walker"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    }
+  ]
+}

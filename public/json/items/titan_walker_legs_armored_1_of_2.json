@@ -1,0 +1,32 @@
+{
+  "name": "Titan Walker Legs Armored (1 of 2)",
+  "type": "TitanLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 370,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 392,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 130,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 16,
+          "name": "Tar"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 9840
+  }
+}

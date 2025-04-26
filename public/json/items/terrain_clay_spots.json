@@ -1,0 +1,8 @@
+{
+  "name": "Terrain: Clay Spots",
+  "type": "Clay_GroundSource_C",
+  "category": "Resources",
+  "trade_price": 1,
+  "weight": 1,
+  "wikiVisibility": false
+}

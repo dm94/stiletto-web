@@ -1,0 +1,32 @@
+{
+  "name": "Water Bed",
+  "type": "BedWater_C",
+  "category": "Interactables",
+  "weight": 77,
+  "experiencieReward": 83,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 188,
+          "name": "Wood"
+        },
+        {
+          "count": 1,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 15,
+          "name": "Purified Water"
+        },
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 100
+  }
+}

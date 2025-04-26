@@ -1,0 +1,40 @@
+{
+  "name": "Toboggan Walker Wings (1 of 2)",
+  "type": "TobogganWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 5,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 4,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 4,
+          "name": "Hide"
+        },
+        {
+          "count": 2,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 7500
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Lumbermill",
+  "parent": "Artisan Woodworking Station",
+  "type": "LumberMill_C",
+  "category": "Crafting",
+  "experiencieReward": 1500,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 250,
+          "name": "Lightwood"
+        },
+        {
+          "count": 12,
+          "name": "Iron Nails"
+        },
+        {
+          "count": 2,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 10,
+          "name": "Shardrock"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 20000
+  }
+}

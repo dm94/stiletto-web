@@ -1,6 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import type { MemberRequest } from "../../types/dto/members";
+import type { MemberRequest } from "@ctypes/dto/members";
 
 interface RequestMemberListItemProps {
   isLeader: boolean;

@@ -1,0 +1,54 @@
+{
+  "name": "Improved Weapons Schematic",
+  "type": "Weapons_T2Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Throwing Net",
+    "Bonespike Sword",
+    "Nurrfang Toothclub",
+    "Rawbone Maul",
+    "Rawbone Maul",
+    "Rawbone Quarterstaff",
+    "Rawbone Club",
+    "Heavy Javelin",
+    "Long Bonespike Swordstaff"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "LargeNurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Nurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    }
+  ]
+}

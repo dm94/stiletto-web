@@ -1,0 +1,59 @@
+{
+  "name": "Buffalo Walker",
+  "parent": "Stiletto Walker",
+  "type": "Buffalo_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 287,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 344,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 190,
+          "name": "Rope"
+        },
+        {
+          "count": 279,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 327,
+          "name": "Stone"
+        },
+        {
+          "count": 22,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 87,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 238,
+          "name": "Wood"
+        },
+        {
+          "count": 265,
+          "name": "Fiber"
+        },
+        {
+          "count": 1,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 40000
+  },
+  "walkerinfo": {
+    "category": "Large"
+  }
+}

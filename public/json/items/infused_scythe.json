@@ -1,0 +1,39 @@
+{
+  "name": "Infused Scythe",
+  "type": "InfusedScythe_C",
+  "durability": 1800,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 10,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 2,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 8,
+          "name": "Stone"
+        },
+        {
+          "count": 2,
+          "name": "Nibiran Ingot"
+        }
+      ],
+      "station": "Smithing",
+      "time": 40
+    }
+  ],
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 25
+    }
+  ]
+}

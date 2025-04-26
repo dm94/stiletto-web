@@ -4,8 +4,8 @@ import Ingredients from "../Ingredients";
 import Icon from "../Icon";
 import CraftingTime from "../CraftingTime";
 import Station from "../Station";
-import { getDomain } from "../../functions/utils";
-import type { CraftItem } from "../../types/item";
+import { getItemUrl } from "@functions/utils";
+import type { CraftItem } from "@ctypes/item";
 
 interface SelectedItemProps {
   item: CraftItem;
@@ -99,9 +99,7 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
     onChangeCount(item.name, Number.parseInt(item.count.toString()) + count);
   };
 
-  const url = `${getDomain()}/item/${encodeURI(
-    item.name.replaceAll(" ", "_"),
-  )}`;
+  const url = getItemUrl(item.name);
 
   return (
     <div className="w-full" data-cy="selected-item">

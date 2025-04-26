@@ -1,0 +1,9 @@
+{
+  "name": "Toxic Remains",
+  "type": "ToxicRemains_C",
+  "category": "Resources",
+  "trade_price": 0.5,
+  "stackSize": 100,
+  "weight": 0.01,
+  "experiencieReward": 1
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Falco Walker",
+  "parent": "Stiletto Walker",
+  "type": "Falco_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 512,
+          "name": "Wood"
+        },
+        {
+          "count": 333,
+          "name": "Fiber"
+        },
+        {
+          "count": 209,
+          "name": "Stone"
+        },
+        {
+          "count": 104,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 63,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 96,
+          "name": "Rope"
+        },
+        {
+          "count": 300,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 79,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 3,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 38000
+  },
+  "walkerinfo": {
+    "category": "Large"
+  }
+}

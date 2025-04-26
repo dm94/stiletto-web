@@ -1,0 +1,31 @@
+{
+  "name": "Hardening Module",
+  "type": "HullHardeningBoost_C",
+  "category": "Resources",
+  "weight": 0.24,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Spline"
+        },
+        {
+          "count": 1,
+          "name": "Spring"
+        },
+        {
+          "count": 1,
+          "name": "Rotor"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 2.5,
+    "maxIncrease": 50
+  }
+}

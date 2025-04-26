@@ -1,11 +1,11 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { getMapNames } from "../../functions/services";
+import { getMapNames } from "@functions/github";
 import CreateMapPanel from "./CreateMapPanel";
-import { getDomain } from "../../functions/utils";
-import { addMap } from "../../functions/requests/maps";
-import type { MapJsonInfo } from "../../types/dto/maps";
+import { getDomain } from "@functions/utils";
+import { addMap } from "@functions/requests/maps";
+import type { MapJsonInfo } from "@ctypes/dto/maps";
 
 interface CreateMapNoLogProps {
   onOpen: (id: number, pass: string) => void;

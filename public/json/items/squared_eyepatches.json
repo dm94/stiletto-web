@@ -1,0 +1,24 @@
+{
+  "name": "Squared eyepatches",
+  "type": "DiamondMask_C",
+  "category": "Armors",
+  "trade_price": 13.2,
+  "stackSize": 100,
+  "weight": 0.2,
+  "experiencieReward": 10,
+  "durability": 250,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "armorInfo": {
+    "absorbing": 6,
+    "reduction": 1
+  }
+}

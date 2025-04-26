@@ -1,0 +1,81 @@
+{
+  "name": "Titan Walker Rig T3 Schematic",
+  "type": "TitanRig_T3Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Titan Walker Rig T3"
+  ],
+  "droppedBy": [
+    {
+      "name": "BigHotspotLoot (T4)",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "EasyRupuCamp (T4)",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T4)",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupuCamp (T4)",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLoot (T4)",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupu (T4)",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "MediumRupuCamp (T4)",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Firebrand",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "TreasureChest (T4)",
+      "chance": 3.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
+}

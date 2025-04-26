@@ -1,0 +1,14 @@
+{
+  "name": "Rupu Stone Mace",
+  "type": "RupuStoneMace_C",
+  "category": "Weapons",
+  "stackSize": 100,
+  "weight": 4.58,
+  "durability": 300,
+  "wikiVisibility": false,
+  "weaponInfo": {
+    "weaponLength": 92,
+    "damage": 38,
+    "penetration": 10
+  }
+}

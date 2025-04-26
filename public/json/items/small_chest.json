@@ -1,0 +1,29 @@
+{
+  "name": "Small Chest",
+  "parent": "Construction",
+  "type": "ChestSmall_C",
+  "category": "Containers",
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood"
+        },
+        {
+          "count": 5,
+          "name": "Stone"
+        },
+        {
+          "count": 15,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 500
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Advanced Fiberworking Station",
+  "parent": "Fiberworking Station",
+  "type": "FiberworkingStation_T2_C",
+  "category": "Crafting",
+  "experiencieReward": 235,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Wood"
+        },
+        {
+          "count": 8,
+          "name": "Nurr Fang"
+        },
+        {
+          "count": 35,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3000
+  }
+}

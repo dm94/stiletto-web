@@ -1,0 +1,29 @@
+{
+  "name": "Lava Fuel",
+  "parent": "Obsidian Machine",
+  "type": "LavaFuel_C",
+  "category": "Liquids",
+  "stackSize": 100,
+  "weight": 0.5,
+  "experiencieReward": 3,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 17,
+          "name": "Lava"
+        },
+        {
+          "count": 8,
+          "name": "Corn"
+        },
+        {
+          "count": 5,
+          "name": "Purified Water"
+        }
+      ],
+      "station": "Obsidian Machine",
+      "time": 90
+    }
+  ]
+}

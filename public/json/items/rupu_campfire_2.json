@@ -1,0 +1,28 @@
+{
+  "name": "Rupu Campfire 2",
+  "type": "RupuCampfire_02_C",
+  "category": "Furniture",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Wood"
+        },
+        {
+          "count": 11,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1500
+  }
+}

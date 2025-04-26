@@ -1,11 +1,11 @@
-import { config } from "../../../config/config";
-import type { GenericResponse } from "../../../types/dto/generic";
+import { config } from "@config/config";
+import type { GenericResponse } from "@ctypes/dto/generic";
 import type {
   AddMapRequestParams,
   AddMapResponse,
   EditMapRequestBody,
   MapInfo,
-} from "../../../types/dto/maps";
+} from "@ctypes/dto/maps";
 import { getStoredItem } from "../../services";
 import { objectToURLSearchParams } from "../../utils";
 

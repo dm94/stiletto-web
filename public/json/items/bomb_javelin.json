@@ -1,0 +1,37 @@
+{
+  "name": "Bomb Javelin",
+  "parent": "Heavy Javelin",
+  "type": "BombJavelin_C",
+  "category": "Weapons",
+  "trade_price": 1.6,
+  "stackSize": 5,
+  "weight": 2,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Heavy Javelin"
+        },
+        {
+          "count": 12,
+          "name": "Tar"
+        },
+        {
+          "count": 24,
+          "name": "Lava"
+        },
+        {
+          "count": 2,
+          "name": "Spearmint"
+        }
+      ],
+      "station": "Lathe",
+      "time": 10
+    }
+  ],
+  "weaponInfo": {
+    "damage": 20,
+    "penetration": 30
+  }
+}

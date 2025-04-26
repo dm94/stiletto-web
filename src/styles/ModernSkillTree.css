@@ -73,7 +73,6 @@
   background-color: #3a3a3a;
   border: 2px solid #555;
   opacity: 0.7;
-  cursor: not-allowed;
   box-shadow: 0 0 5px rgba(85, 85, 85, 0.3);
   background-image: linear-gradient(
     135deg,
@@ -84,8 +83,6 @@
 
 .skill-node.locked:hover {
   transform: scale(1.05);
-  filter: brightness(1.1);
-  border-color: #ff6b6b;
 }
 
 /* Node title */

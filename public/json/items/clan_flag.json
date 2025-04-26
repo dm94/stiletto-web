@@ -1,0 +1,24 @@
+{
+  "name": "Clan Flag",
+  "type": "ClanFlag_C",
+  "category": "Furniture",
+  "weight": 1,
+  "experiencieReward": 6,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood"
+        },
+        {
+          "count": 1,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 100
+  }
+}

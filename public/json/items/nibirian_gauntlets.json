@@ -1,0 +1,31 @@
+{
+  "name": "Nibirian Gauntlets",
+  "type": "T4_NibirianGloves_C",
+  "category": "Armors",
+  "trade_price": 41.1,
+  "stackSize": 100,
+  "weight": 5,
+  "experiencieReward": 140,
+  "durability": 330,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 30
+    }
+  ],
+  "armorInfo": {
+    "absorbing": 23,
+    "reduction": 5,
+    "speedReduction": 5
+  }
+}

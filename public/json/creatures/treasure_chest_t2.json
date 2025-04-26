@@ -1,0 +1,267 @@
+{
+  "name": "Treasure Chest (T2)",
+  "category": "Container",
+  "tier": "T2",
+  "drops": [
+    {
+      "name": "Baskwood Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Baskwood Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Sandals",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Baskwood Bracers",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Sleeves",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Bracers",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Nurrfang Toothclub",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Club",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Hand Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Heavy Rawbone Hand Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Bonespike Sword",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Quarterstaff",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Battle Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Maul",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Long Bonespike Swordstaff",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Sawsword",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Stiletto Walker Rig T2 Schematic",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t2"
+    },
+    {
+      "name": "Stiletto Walker Rig T3 Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t2"
+    },
+    {
+      "name": "Mollusk Walker Rig T2 Schematic",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t2"
+    },
+    {
+      "name": "Mollusk Walker Rig T3 Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t2"
+    },
+    {
+      "name": "Toboggan Walker Rig T3 Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t2"
+    },
+    {
+      "name": "Proxy Walker Rig T2 Schematic",
+      "chance": 26.31579,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t2"
+    },
+    {
+      "name": "Proxy Walker Rig T3 Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t2"
+    },
+    {
+      "name": "Animal Fat",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Ash",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Charcoal",
+      "chance": 9.090909,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Huge Cactus Fruit",
+      "chance": 9.090909,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Fruit Pulp",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Rupu Pelt",
+      "chance": 9.090909,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Hide",
+      "chance": 9.090909,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Sand",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Purified Water",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Mushroom Flesh",
+      "chance": 9.090909,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "extraresources_t2"
+    },
+    {
+      "name": "Rupu Gel",
+      "chance": 9.090909,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t2"
+    }
+  ],
+  "originalName": "TreasureChest (T2)"
+}

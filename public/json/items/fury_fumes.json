@@ -1,0 +1,55 @@
+{
+  "name": "Fury Fumes",
+  "parent": "Desert Mule",
+  "type": "FuryFumes_C",
+  "category": "Vitamins",
+  "trade_price": 39.4,
+  "stackSize": 100,
+  "weight": 0.5,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Gelatinous Goo"
+        },
+        {
+          "count": 6,
+          "name": "Aloe Gel"
+        },
+        {
+          "count": 3,
+          "name": "Blood Turnip"
+        },
+        {
+          "count": 1,
+          "name": "Glass"
+        }
+      ],
+      "station": "Camp Fire",
+      "time": 60
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Gelatinous Goo"
+        },
+        {
+          "count": 6,
+          "name": "Aloe Gel"
+        },
+        {
+          "count": 3,
+          "name": "Blood Turnip"
+        },
+        {
+          "count": 1,
+          "name": "Glass"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 60
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Floating Mine",
+  "parent": "Fire Dart",
+  "type": "FloatingMine_C",
+  "category": "Ammo",
+  "trade_price": 96.4,
+  "stackSize": 28,
+  "weight": 0.8,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 12,
+          "name": "Lava Fuel"
+        }
+      ],
+      "output": 8,
+      "station": "Artificer Woodworking Station",
+      "time": 4
+    }
+  ],
+  "projectileDamage": {
+    "damage": 150
+  }
+}

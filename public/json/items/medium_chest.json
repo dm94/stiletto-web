@@ -1,0 +1,37 @@
+{
+  "name": "Medium Chest",
+  "parent": "Small Chest",
+  "type": "ChestMedium_C",
+  "category": "Containers",
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 45,
+          "name": "Stone"
+        },
+        {
+          "count": 2,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 36,
+          "name": "Wood"
+        },
+        {
+          "count": 16,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3750
+  }
+}

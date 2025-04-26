@@ -1,0 +1,67 @@
+{
+  "name": "Tusker Walker",
+  "parent": "Toboggan Walker",
+  "type": "Tusker_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2182,
+          "name": "Wood"
+        },
+        {
+          "count": 270,
+          "name": "Rope"
+        },
+        {
+          "count": 52,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 629,
+          "name": "Fiber"
+        },
+        {
+          "count": 500,
+          "name": "Stone"
+        },
+        {
+          "count": 280,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 52,
+          "name": "Leather"
+        },
+        {
+          "count": 215,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 30,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 135,
+          "name": "Tar"
+        },
+        {
+          "count": 5,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 1,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 55000
+  },
+  "walkerinfo": {
+    "category": "Capital"
+  }
+}

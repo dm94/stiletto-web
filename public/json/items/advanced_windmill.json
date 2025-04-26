@@ -1,0 +1,33 @@
+{
+  "name": "Advanced Windmill",
+  "type": "Windmill_Tier2_C",
+  "category": "Crafting",
+  "weight": 10,
+  "experiencieReward": 34,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 87,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 34,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 16,
+          "name": "Rope"
+        },
+        {
+          "count": 45,
+          "name": "Cotton"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 2500
+  }
+}

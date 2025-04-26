@@ -1,0 +1,10 @@
+{
+  "name": "Relic of the Stars",
+  "type": "AltarOfTheStars_C",
+  "category": "Resources",
+  "trade_price": 2500,
+  "stackSize": 100,
+  "weight": 0.25,
+  "experiencieReward": 3,
+  "wikiVisibility": false
+}

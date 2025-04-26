@@ -1,0 +1,36 @@
+{
+  "name": "Green Death Bomb",
+  "parent": "Sulfur Bomb",
+  "type": "GasBomb_C",
+  "category": "Ammo",
+  "trade_price": 36,
+  "stackSize": 10,
+  "weight": 3,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Cotton"
+        },
+        {
+          "count": 3,
+          "name": "Gelatinous Goo"
+        },
+        {
+          "count": 2,
+          "name": "Tallow"
+        },
+        {
+          "count": 8,
+          "name": "Mushroom Flesh"
+        }
+      ],
+      "station": "Clay Pot",
+      "time": 75
+    }
+  ],
+  "projectileDamage": {
+    "damage": 20
+  }
+}

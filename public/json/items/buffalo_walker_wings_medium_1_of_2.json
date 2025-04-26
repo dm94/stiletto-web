@@ -1,0 +1,28 @@
+{
+  "name": "Buffalo Walker Wings Medium (1 of 2)",
+  "type": "BuffaloWings_T3_Medium_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 43,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 26,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 5,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 9600
+  }
+}

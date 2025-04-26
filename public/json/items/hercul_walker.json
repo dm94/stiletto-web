@@ -1,0 +1,47 @@
+{
+  "name": "Hercul Walker",
+  "parent": "Buffalo Walker",
+  "type": "Hercul_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1580,
+          "name": "Wood"
+        },
+        {
+          "count": 270,
+          "name": "Stone"
+        },
+        {
+          "count": 1200,
+          "name": "Fiber"
+        },
+        {
+          "count": 15,
+          "name": "Rope"
+        },
+        {
+          "count": 38,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 10,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 1,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 21000
+  },
+  "walkerinfo": {
+    "category": "Large"
+  }
+}

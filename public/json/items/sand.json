@@ -1,0 +1,243 @@
+{
+  "name": "Sand",
+  "parent": "Crafting",
+  "type": "Sand_C",
+  "category": "Liquids",
+  "stackSize": 100,
+  "weight": 0.22,
+  "description": "Tiny green mineral flecks dot the sand.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Sand"
+        }
+      ],
+      "output": 100,
+      "station": "Soil Excavator",
+      "time": 60
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Terrain: Sand"
+        }
+      ],
+      "output": 100,
+      "station": "Artisan Soil Auger",
+      "time": 30
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Stone"
+        }
+      ],
+      "output": 10,
+      "station": "Stomping Station",
+      "time": 5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Stone"
+        }
+      ],
+      "output": 11,
+      "station": "Advanced Stomping Station",
+      "time": 4.5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Stone"
+        }
+      ],
+      "output": 12,
+      "station": "Flotillian Stomping Station",
+      "time": 4
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "BasketLoot (T2) (AC)",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupuCamp (T1)",
+      "chance": 11.111111,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "EasyRupuCamp (T2)",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupuCamp (T3)",
+      "chance": 8.333333,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 7.6923075,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupuCamp (T1)",
+      "chance": 11.111111,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupuCamp (T2)",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupuCamp (T3)",
+      "chance": 8.333333,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLoot (T1)",
+      "chance": 11.111111,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "HotspotLoot (T2)",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T2) (AC)",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T3)",
+      "chance": 8.333333,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T3"
+    },
+    {
+      "name": "HotspotLoot (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T4"
+    },
+    {
+      "name": "HotspotLootWindmill (T2) (AC)",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupuCamp (T1)",
+      "chance": 11.111111,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupuCamp (T2)",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupuCamp (T3)",
+      "chance": 8.333333,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupuCamp (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T4"
+    },
+    {
+      "name": "TreasureChest (T1)",
+      "chance": 11.111111,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "tier": "T1"
+    },
+    {
+      "name": "TreasureChest (T2)",
+      "chance": 9.090909,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "TreasureChest (T3)",
+      "chance": 8.333333,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T3"
+    },
+    {
+      "name": "TreasureChest (T4)",
+      "chance": 7.6923075,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "tier": "T4"
+    }
+  ]
+}

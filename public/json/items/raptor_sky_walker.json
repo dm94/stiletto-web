@@ -1,0 +1,55 @@
+{
+  "name": "Raptor Sky Walker",
+  "parent": "Dinghy Walker",
+  "type": "Raptor_C",
+  "category": "Walkers",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 460,
+          "name": "Lightwood"
+        },
+        {
+          "count": 100,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 142,
+          "name": "Rope"
+        },
+        {
+          "count": 710,
+          "name": "Fiber"
+        },
+        {
+          "count": 80,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 100,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 240,
+          "name": "Stone"
+        },
+        {
+          "count": 1,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 10,
+          "name": "Iron Nails"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Hard",
+    "hp": 14000
+  },
+  "walkerinfo": {
+    "category": "Flying"
+  }
+}

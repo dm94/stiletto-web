@@ -1,0 +1,39 @@
+{
+  "name": "Basic Armors Schematic",
+  "type": "Armors_T1Schematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Fiber Sandals",
+    "Rupu Fur Sandals",
+    "Fiber Arm Wraps",
+    "Rupu Fur Sleeves",
+    "Fiber Headwrap",
+    "Fiber Shirt and Trousers",
+    "Rupu Fur Armor",
+    "Cloaked Rupu Fur Armor"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    }
+  ]
+}

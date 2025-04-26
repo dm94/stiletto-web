@@ -1,0 +1,180 @@
+{
+  "name": "Base Walker Parts Schematic",
+  "type": "WalkerPartsBaseSchematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Buffalo Walker Legs (1 of 2)",
+    "Mollusk Walker Legs (1 of 2)",
+    "Schmetterling Walker Legs (1 of 2)",
+    "Tusker Walker Legs (1 of 2)",
+    "Proxy Walker Legs (1 of 2)",
+    "Dinghy Walker Legs (1 of 2)",
+    "Falco Walker Legs (1 of 2)",
+    "Firefly Walker Legs (1 of 2)",
+    "Domus Walker Legs (1 of 2)",
+    "Panda Walker Legs (1 of 2)",
+    "Camelop Walker Legs (1 of 2)",
+    "Titan Walker Legs (1 of 2)",
+    "Spider Walker Legs (1 of 2)",
+    "Stiletto Walker Legs (1 of 2)",
+    "Cobra Walker Legs (1 of 2)",
+    "Toboggan Walker Legs (1 of 2)",
+    "Hornet Walker Legs (1 of 2)",
+    "Silur Walker Legs (1 of 2)",
+    "Hercul Walker Legs (1 of 2)",
+    "Balang Walker Legs (1 of 2)",
+    "Raptor Sky Walker Legs (1 of 2)",
+    "Buffalo Walker Wings (1 of 2)",
+    "Mollusk Walker Wings (1 of 2)",
+    "Schmetterling Walker Wings (1 of 2)",
+    "Tusker Walker Wings (1 of 2)",
+    "Dinghy Walker Wings (1 of 2)",
+    "Falco Walker Wings (1 of 2)",
+    "Firefly Walker Wings (1 of 2)",
+    "Domus Walker Wings (1 of 2)",
+    "Panda Walker Wings (1 of 2)",
+    "Titan Walker Wings (1 of 2)",
+    "Stiletto Walker Wings (1 of 2)",
+    "Toboggan Walker Wings (1 of 2)",
+    "Hornet Walker Wings (1 of 2)",
+    "Hercul Walker Wings (1 of 2)",
+    "Balang Walker Wings (1 of 2)",
+    "Raptor Sky Walker Wings (1 of 2)"
+  ],
+  "droppedBy": [
+    {
+      "name": "EasyRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "EasyRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "EasyRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "EasyRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "GoGo (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "HardRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "HardRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "HardRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Koa (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "LargeNurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T1) Quality",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T1"
+    },
+    {
+      "name": "MediumRupu (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "MediumRupu (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "MediumRupu (T4) Quality",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Nurr (T2) Quality",
+      "chance": 5.5555553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Okkam (T3)",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Okkam (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Papak (T3) Quality",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
+  ]
+}
