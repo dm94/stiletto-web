@@ -50,7 +50,7 @@
       "tier": "T4"
     },
     {
-      "name": "Basket Loot_T2_AC",
+      "name": "BasketLoot (T2) (AC)",
       "chance": 12.5,
       "minQuantity": 12,
       "maxQuantity": 12,
@@ -167,13 +167,6 @@
       "maxQuantity": 10
     },
     {
-      "name": "Hard Rupu_T2_AC",
-      "chance": 12.5,
-      "minQuantity": 12,
-      "maxQuantity": 12,
-      "tier": "T2"
-    },
-    {
       "name": "HardRupu (T1)",
       "chance": 26.31579,
       "minQuantity": 10,
@@ -189,6 +182,13 @@
     },
     {
       "name": "HardRupu (T2)",
+      "chance": 12.5,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "HardRupu (T2) (AC)",
       "chance": 12.5,
       "minQuantity": 12,
       "maxQuantity": 12,
@@ -258,20 +258,6 @@
       "tier": "T4"
     },
     {
-      "name": "Hotspot Loot Windmill_T2_AC",
-      "chance": 12.5,
-      "minQuantity": 12,
-      "maxQuantity": 12,
-      "tier": "T2"
-    },
-    {
-      "name": "Hotspot Loot_T2_AC",
-      "chance": 12.5,
-      "minQuantity": 12,
-      "maxQuantity": 12,
-      "tier": "T2"
-    },
-    {
       "name": "HotspotLoot (T1)",
       "chance": 26.31579,
       "minQuantity": 10,
@@ -280,6 +266,13 @@
     },
     {
       "name": "HotspotLoot (T2)",
+      "chance": 12.5,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
+    },
+    {
+      "name": "HotspotLoot (T2) (AC)",
       "chance": 12.5,
       "minQuantity": 12,
       "maxQuantity": 12,
@@ -298,6 +291,13 @@
       "minQuantity": 14,
       "maxQuantity": 14,
       "tier": "T4"
+    },
+    {
+      "name": "HotspotLootWindmill (T2) (AC)",
+      "chance": 12.5,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "tier": "T2"
     },
     {
       "name": "Marshland Stalker",
