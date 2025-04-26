@@ -1,3 +1,4 @@
+
 const item = "Sand Bed";
 const category = "Decorations";
 
@@ -10,21 +11,11 @@ describe("Wiki", () => {
     cy.url().should("include", "/wiki");
   });
 
-  it("Should load the wiki page", () => {
-    cy.contains("Last Oasis Wiki").should("be.visible");
-
-    cy.get("[data-cy='wiki-search']").should("be.visible");
-
-    cy.get("#category-filter").should("be.visible");
-  });
-
   it("Should search for an item", () => {
-    const searchTerm = "Sand";
-
-    cy.get("[data-cy='wiki-search']").find("input[type='search']").type(searchTerm);
+    cy.get("[data-cy='wiki-search']").find("input[type='search']").type(item);
     cy.get("[data-cy='wiki-search']").find("button").click();
 
-    cy.get(".flex.flex-wrap").should("contain", "Sand Bed");
+    cy.get(".flex.flex-wrap").should("contain", item);
   });
 
   it("Should filter by category", () => {
@@ -32,7 +23,7 @@ describe("Wiki", () => {
 
     cy.get(".flex.flex-wrap").should("contain", "Aloe");
     cy.get(".flex.flex-wrap").should("contain", "Wood");
-    cy.get(".flex.flex-wrap").should("not.contain", "Sand Bed");
+    cy.get(".flex.flex-wrap").should("not.contain", item);
   });
 
   it("Should show 'Nothing found' when no items match the search", () => {

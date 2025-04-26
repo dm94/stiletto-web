@@ -1,88 +1,94 @@
-const itemsRequest = () => {
+export const itemsRequest = () => {
   cy.intercept(
-    { method: "GET", url: "**/items" },
-    { fixture: "items.json" }
+    { method: "GET", url: "*/json/items_min.json" },
+    { statusCode: 200, fixture: "items.json" }
   ).as("getItems");
 };
 
-const tradesRequest = () => {
+export const tradesRequest = () => {
   cy.intercept(
-    { method: "GET", url: "**/trades*" },
-    { fixture: "trades.json" },
+    { method: "GET", url: "/api/trades*" },
+    { statusCode: 200, fixture: "trades.json" }
   ).as("getTrades");
 
   cy.intercept(
-    { method: "GET", url: "**/clusters*" },
-    { fixture: "clusters.json" },
+    { method: "GET", url: "/api/clusters*" },
+    { statusCode: 200, fixture: "clusters.json" }
   ).as("getClusters");
 };
 
-const clansRequest = () => {
+export const clansRequest = () => {
   cy.intercept(
-    { method: "GET", url: "**/clans*" },
-    { statusCode: 202, fixture: "clans.json" },
+    { method: "GET", url: "/api/clans*" },
+    { statusCode: 200, fixture: "clans.json" }
   ).as("getClans");
 };
 
-const imageRequests = () => {
-  cy.intercept({ method: "GET", url: "**/items/*" }, { fixture: "aloe.png" }).as(
-    "itemMock",
-  );
+export const imageRequests = () => {
+  cy.intercept(
+    { method: "GET", url: "/api/items/*" },
+    { statusCode: 200, fixture: "aloe.png" }
+  ).as("itemMock");
 
   cy.intercept(
-    { method: "GET", url: "**/symbols/*" },
-    { fixture: "aloe.png" },
+    { method: "GET", url: "/api/symbols/*" },
+    { statusCode: 200, fixture: "aloe.png" }
   ).as("symbolMock");
 
-  cy.intercept({ method: "GET", url: "**/maps/*" }, { fixture: "map.jpg" }).as(
-    "mapMock",
-  );
+  cy.intercept(
+    { method: "GET", url: "/api/maps/*" },
+    { statusCode: 200, fixture: "map.jpg" }
+  ).as("mapMock");
 };
 
-const recipeRequests = () => {
+export const recipeRequests = () => {
   cy.intercept(
-    { method: "POST", url: "**/recipes*" },
-    { statusCode: 201, fixture: "recipes.json" },
+    { method: "POST", url: "/api/recipes*" },
+    { statusCode: 201, fixture: "recipes.json" }
   ).as("addRecipe");
 
   cy.intercept(
-    { method: "GET", url: "**/recipes/*" },
-    { statusCode: 200, fixture: "recipes.json" },
+    { method: "GET", url: "/api/recipes/*" },
+    { statusCode: 200, fixture: "recipes.json" }
   ).as("getRecipe");
 };
 
-const mapRequest = () => {
+export const mapRequest = () => {
   cy.intercept(
-    { method: "GET", url: "**/maps/*/resources*" },
-    { statusCode: 200, fixture: "get-resources.json" },
+    { method: "GET", url: "/api/maps/*/resources*" },
+    { statusCode: 200, fixture: "get-resources.json" }
   ).as("getResources");
 
   cy.intercept(
-    { method: "POST", url: "**/maps/*/resources*" },
-    { statusCode: 202, fixture: "add-resource-map.json" },
+    { method: "POST", url: "/api/maps/*/resources*" },
+    { statusCode: 202, fixture: "add-resource-map.json" }
   ).as("addResourceMap");
 
   cy.intercept(
-    { method: "DELETE", url: "**/maps/*/resources*" },
-    { statusCode: 204 },
+    { method: "DELETE", url: "/api/maps/*/resources*" },
+    { statusCode: 204 }
   ).as("deleteResource");
 
   cy.intercept(
-    { method: "POST", url: "**/maps" },
-    { statusCode: 201, fixture: "add-map.json" },
+    { method: "POST", url: "/api/maps" },
+    { statusCode: 201, fixture: "add-map.json" }
   ).as("addMap");
 
   cy.intercept(
-    { method: "GET", url: "**/maps" },
-    { statusCode: 200, fixture: "get-map.json" },
+    { method: "GET", url: "/api/maps" },
+    { statusCode: 200, fixture: "get-map.json" }
   ).as("getMap");
 };
 
 Cypress.Commands.add("userRequest", () => {
-  cy.intercept("GET", "**/users*", {
-    statusCode: 200,
-    fixture: "users.json",
-  }).as("getUser");
+  cy.intercept(
+    "GET",
+    "/api/users*",
+    {
+      statusCode: 200,
+      fixture: "users.json",
+    }
+  ).as("getUser");
 });
 
 Cypress.Commands.add("checkValueInClipboard", (value) => {
@@ -95,7 +101,7 @@ Cypress.Commands.add("checkValueInClipboard", (value) => {
 
 Cypress.Commands.add("waitForPageLoad", () => {
   cy.get("body").should("be.visible");
-  cy.wait(500); // Pequeña espera para asegurar que la página ha cargado completamente
+  cy.wait(500); // Small wait to ensure the page has fully loaded
 });
 
 Cypress.Commands.add("interceptLoguedRequest", () => {
@@ -111,18 +117,18 @@ Cypress.Commands.add("interceptRequest", () => {
   mapRequest();
 });
 
-// Comando para verificar si un elemento existe y es visible
+// Command to check if an element exists and is visible
 Cypress.Commands.add("isVisible", (selector) => {
-  cy.get("body").then($body => {
-    if ($body.find(selector).length > 0) {
+  return cy.get("body").then($body => {
+    const exists = $body.find(selector).length > 0;
+    if (exists) {
       cy.get(selector).should("be.visible");
-      return true;
     }
-    return false;
+    return exists;
   });
 });
 
-// Comando para hacer click en un elemento si existe
+// Command to click on an element if it exists
 Cypress.Commands.add("clickIfExists", (selector) => {
   cy.get("body").then($body => {
     if ($body.find(selector).length > 0) {
