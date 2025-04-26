@@ -15,7 +15,7 @@ const CategoryFilter = ({
   const { t } = useTranslation();
 
   return (
-    <div className="p-6 border-t border-gray-700 bg-gray-850">
+    <div className="p-3 md:p-6 border-t border-gray-700 bg-gray-850">
       <div className="max-w-md mx-auto">
         <div className="flex">
           <label
