@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, type KeyboardEvent } from "react";
+import { useState, useRef, type KeyboardEvent } from "react";
 import { Link } from "react-router";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
@@ -21,6 +21,17 @@ const Menu: React.FC<MenuProps> = ({
   const [searchText, setSearchText] = useState<string>("");
   const { t } = useTranslation();
   const { isConnected } = useUser();
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const closeMenu = (): void => {
+    if (
+      menuRef.current &&
+      !menuRef.current.classList.contains("hidden") &&
+      window.innerWidth < 768
+    ) {
+      menuRef.current.classList.add("hidden");
+    }
+  };
 
   const getLanguageFlag = (lng?: string): string => {
     if (!lng) {
@@ -49,7 +60,11 @@ const Menu: React.FC<MenuProps> = ({
     <header className="bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap md:flex-nowrap items-center justify-between py-2">
-          <Link to="/" className="flex items-center space-x-2 text-white">
+          <Link
+            to="/"
+            className="flex items-center space-x-2 text-white"
+            onClick={closeMenu}
+          >
             <span className="text-2xl font-medium web-title">Stiletto</span>
             <img
               width="35"
@@ -65,8 +80,7 @@ const Menu: React.FC<MenuProps> = ({
             className="md:hidden p-2 text-white hover:bg-gray-700 rounded-lg"
             type="button"
             onClick={() => {
-              const menu = document.getElementById("navbar-main-menu");
-              menu?.classList.toggle("hidden");
+              menuRef.current?.classList.toggle("hidden");
             }}
             aria-label="Toggle Menu"
           >
@@ -90,7 +104,7 @@ const Menu: React.FC<MenuProps> = ({
 
           {/* Navigation menu */}
           <div
-            id="navbar-main-menu"
+            ref={menuRef}
             className="hidden md:flex md:items-center w-full md:justify-around"
           >
             <ul className="flex flex-col md:flex-row md:space-x-4 mt-4 md:mt-0">
@@ -98,6 +112,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/crafter"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.crafting")}
                 </Link>
@@ -106,6 +121,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to={isConnected ? "/maps" : "/map"}
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.resourceMaps")}
                 </Link>
@@ -114,6 +130,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/clanlist"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.clanList")}
                 </Link>
@@ -122,6 +139,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/trades"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.trades")}
                 </Link>
@@ -130,6 +148,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/wiki"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.wiki")}
                 </Link>
@@ -138,6 +157,7 @@ const Menu: React.FC<MenuProps> = ({
                 <Link
                   to="/tech"
                   className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
                 >
                   {t("menu.techTree")}
                 </Link>
