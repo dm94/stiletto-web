@@ -6,6 +6,7 @@
   "trade_price": 0.8,
   "stackSize": 100,
   "weight": 0.11,
+  "description": "A crude fabric woven from strands of natural fiber.",
   "experiencieReward": 1,
   "crafting": [
     {
@@ -717,5 +718,6 @@
       "minQuantity": 10,
       "maxQuantity": 10
     }
-  ]
+  ],
+  "whereToFarm": "Carried by Rupu living in camps."
 }

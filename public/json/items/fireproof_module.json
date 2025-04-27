@@ -3,6 +3,7 @@
   "type": "FireproofBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Lowers the damage from all fire sources for the walker and all structures.",
   "crafting": [
     {
       "ingredients": [

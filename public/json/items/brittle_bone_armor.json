@@ -5,6 +5,7 @@
   "trade_price": 13.7,
   "stackSize": 100,
   "weight": 4.2,
+  "description": "The flexible bone plates are stitched into a scalemail that provides increased protection.",
   "experiencieReward": 250,
   "durability": 240,
   "crafting": [

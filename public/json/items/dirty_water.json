@@ -4,5 +4,6 @@
   "category": "Liquids",
   "trade_price": 0.1,
   "stackSize": 100,
-  "weight": 0.5
+  "weight": 0.5,
+  "description": "While sometimes found in small amounts around the scorched deserts of the Earth, Dirty Water needs to be cooked to be consumed. Nomads desperate enough to try ingest it directly report feeling ill for many hours."
 }

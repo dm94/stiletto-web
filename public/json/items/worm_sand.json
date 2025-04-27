@@ -6,6 +6,7 @@
   "trade_price": 5,
   "stackSize": 100,
   "weight": 0.1,
+  "description": "Appearing in the sands roamed by the Old Ones - giant worms of the desert, this substance has strange properties affecting both living creatures and mechanical constructions in ways that affect the energy inside them.",
   "experiencieReward": 22,
   "crafting": [
     {
@@ -30,5 +31,6 @@
       "station": "Artisan Soil Auger",
       "time": 30
     }
-  ]
+  ],
+  "whereToFarm": "Excavated from red sands near worm sightings."
 }

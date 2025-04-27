@@ -6,6 +6,7 @@
   "trade_price": 5.6,
   "stackSize": 100,
   "weight": 2.8,
+  "description": "A little extra inventory space to carry the bare necessities.",
   "experiencieReward": 55,
   "durability": 120,
   "crafting": [

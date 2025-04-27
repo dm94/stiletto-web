@@ -4,5 +4,7 @@
   "category": "Liquids",
   "trade_price": 0.1,
   "stackSize": 100,
-  "weight": 0.5
+  "weight": 0.5,
+  "description": "A pungent, mineral-rich liquid that bubbles to the surface in natural hotsprings, brine is a precious resource that, when boiled down, yields salt—an essential commodity for survival and trade in the wastes.",
+  "whereToFarm": "Collected from natural hotsprings in volcanic regions."
 }

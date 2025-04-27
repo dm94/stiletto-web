@@ -6,6 +6,7 @@
   "trade_price": 5.2,
   "stackSize": 24,
   "weight": 0.3,
+  "description": "Ammo for Scattershot gun. A mixed bag of blunt and sharp debris that spread out when fired.",
   "experiencieReward": 1,
   "crafting": [
     {

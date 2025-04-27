@@ -4,6 +4,7 @@
   "type": "BoneHarpoon_C",
   "trade_price": 7.6,
   "weight": 0.4,
+  "description": "Ammo for Ballista. Easily penetrates and latches into wood. A strong tether holds it in place.",
   "experiencieReward": 10,
   "crafting": [
     {

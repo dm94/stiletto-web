@@ -1,5 +1,6 @@
 {
   "name": "Large Wing",
   "type": "LargeFastWing_C",
-  "category": "Walker Parts"
+  "category": "Walker Parts",
+  "description": "Generates the highest possible physical force for walker movement. Very complicated to construct due to their size."
 }

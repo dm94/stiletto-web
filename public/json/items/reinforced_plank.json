@@ -1,5 +1,6 @@
 {
   "name": "Reinforced Plank",
   "parent": "Artisan Woodworking Station",
-  "type": "ReinforcedPlank_C"
+  "type": "ReinforcedPlank_C",
+  "description": "Strong wooden plank reinforced using a forgotten technology at Ancient Crafting Sites."
 }

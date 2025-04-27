@@ -6,6 +6,7 @@
   "trade_price": 3.1,
   "stackSize": 10,
   "weight": 0.3,
+  "description": "Ammo for slingshot. Deals higher damage the more tension there is on release.",
   "crafting": [
     {
       "ingredients": [

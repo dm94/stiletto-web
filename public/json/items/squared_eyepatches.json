@@ -5,6 +5,7 @@
   "trade_price": 13.2,
   "stackSize": 100,
   "weight": 0.2,
+  "description": "Odd-looking eyepatches partially disguising wearer's identity.",
   "experiencieReward": 10,
   "durability": 250,
   "crafting": [

@@ -4,7 +4,7 @@
   "category": "Resources",
   "trade_price": 0.5,
   "stackSize": 999999,
-  "description": "Used by nomads to trade with each other at trading stations located in most oases.",
+  "description": "Currency of the Flotilla. Can be withdrawn and deposited at any Trading Station.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T1)",

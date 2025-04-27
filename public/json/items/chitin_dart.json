@@ -1,6 +1,7 @@
 {
   "name": "Chitin Dart",
   "type": "ChitinDart_C",
+  "description": "Ammo for Stingers and Repeater.  Tipped with razor-sharp shards of chitin, this small bolt can cause some nasty wounds.",
   "wikiVisibility": false,
   "projectileDamage": {
     "damage": 17

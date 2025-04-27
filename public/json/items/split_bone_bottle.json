@@ -6,6 +6,7 @@
   "trade_price": 13.3,
   "stackSize": 100,
   "weight": 3.2,
+  "description": "A small bottle with two seperate containers that can each hold a different type of liquid.",
   "experiencieReward": 55,
   "durability": 130,
   "crafting": [

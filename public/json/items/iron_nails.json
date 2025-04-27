@@ -6,6 +6,7 @@
   "trade_price": 0.4,
   "stackSize": 100,
   "weight": 0.28,
+  "description": "Hardened ceramic nails used for construction of more advanced structures and walkers.",
   "experiencieReward": 8,
   "crafting": [
     {

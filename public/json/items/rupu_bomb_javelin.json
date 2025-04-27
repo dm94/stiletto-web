@@ -5,6 +5,7 @@
   "trade_price": 17.8,
   "stackSize": 20,
   "weight": 0.3,
+  "description": "A volatile projectile used by the Rupu Raiders to damage walkers.",
   "experiencieReward": 15,
   "wikiVisibility": false,
   "projectileDamage": {

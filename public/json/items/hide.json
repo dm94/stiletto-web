@@ -183,5 +183,6 @@
       "maxQuantity": 5,
       "tier": "T4"
     }
-  ]
+  ],
+  "whereToFarm": "Collected from creatures. Requires an axe for larger ones."
 }

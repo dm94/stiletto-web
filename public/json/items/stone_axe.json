@@ -6,6 +6,7 @@
   "trade_price": 1.2,
   "stackSize": 100,
   "weight": 1.8,
+  "description": "Nearly all nomads are expert carpenters, and the hatchet is essential to their way of life.",
   "durability": 315,
   "crafting": [
     {

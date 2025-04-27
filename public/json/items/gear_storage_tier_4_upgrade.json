@@ -2,6 +2,7 @@
   "name": "Gear Storage - Tier 4 Upgrade",
   "type": "SparePartIronHatch_C",
   "category": "Spare Parts",
+  "description": "The gear storage holds weapons and armors and is automatically equipped on respawn. Keep your gear storage stocked and sorted - you will need if hostile nomads engage you.",
   "experiencieReward": 40,
   "durability": 100,
   "wikiVisibility": false

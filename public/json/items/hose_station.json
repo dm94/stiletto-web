@@ -3,6 +3,7 @@
   "parent": "Advanced Walker Weapons",
   "type": "HoseStation_C",
   "category": "Weapons",
+  "description": "Push hostiles off your walker with a powerful water jetstream or cool down molten lava. Can also use fuel to spread it around and set on fire against the enemy.",
   "experiencieReward": 203,
   "crafting": [
     {

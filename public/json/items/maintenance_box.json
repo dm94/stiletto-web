@@ -3,6 +3,7 @@
   "parent": "Basic Constructions",
   "type": "ChestBaseMaintenance_T1_C",
   "category": "Containers",
+  "description": "A requirement for every Nomad's base. Prevents a base decaying over time with sufficient resources inside. Requires each resource a base is made of to properly maintain it.",
   "crafting": [
     {
       "ingredients": [

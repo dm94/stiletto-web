@@ -6,6 +6,7 @@
   "trade_price": 2.4,
   "stackSize": 100,
   "weight": 0.2,
+  "description": "A helmet which provides superior filtration of particulates.",
   "experiencieReward": 10,
   "durability": 120,
   "crafting": [

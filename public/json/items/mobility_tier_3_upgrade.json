@@ -2,6 +2,7 @@
   "name": "Mobility - Tier 3 Upgrade",
   "type": "SparePartClayGears_C",
   "category": "Spare Parts",
+  "description": "Gears increase the maneuverability of your Walker. Faster acceleration and turn rates help you traverse the world more efficiently.",
   "experiencieReward": 30,
   "durability": 100,
   "wikiVisibility": false

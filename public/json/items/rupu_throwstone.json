@@ -5,6 +5,7 @@
   "trade_price": 16.9,
   "stackSize": 5,
   "weight": 0.3,
+  "description": "Used by Rupus by hitting rocks against each other to produce a more usable projectile for throwing at unexpecting Nomads",
   "experiencieReward": 3,
   "wikiVisibility": false,
   "projectileDamage": {

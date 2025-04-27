@@ -4,6 +4,7 @@
   "category": "Resources",
   "trade_price": 1,
   "stackSize": 999999,
+  "description": "Intricate coin with carvings of an unknown language. Used by an ancient civilization that only left the mysterious ruins behind as a reminder of themselves, which are currently overrun by Rupu as their mating ground. Collected by the Flotillan Historic Society and exchanged on the black market by nomadic merchants for Relics of the same origin.",
   "experiencieReward": 3,
   "droppedBy": [
     {
@@ -41,5 +42,6 @@
       "maxQuantity": 1,
       "tier": "T2"
     }
-  ]
+  ],
+  "whereToFarm": "Can be found in Ancient Cities or bought for Relics from black market vendors."
 }

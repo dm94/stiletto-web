@@ -6,6 +6,7 @@
   "trade_price": 34.8,
   "stackSize": 100,
   "weight": 0.8,
+  "description": "Said to induce hallucinations that can reveal ancient wisdom. Grants Nomad the ancient wisdom to build a Walker.",
   "crafting": [
     {
       "ingredients": [

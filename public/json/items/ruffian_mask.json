@@ -5,6 +5,7 @@
   "trade_price": 13.2,
   "stackSize": 100,
   "weight": 0.2,
+  "description": "Makes recognition of another flotilla citizen harder so various miscreants use it to unconfinedly perform their mischievous deeds.",
   "experiencieReward": 10,
   "durability": 250,
   "crafting": [

@@ -5,6 +5,7 @@
   "trade_price": 29,
   "stackSize": 100,
   "weight": 1,
+  "description": "Nomads are accustomed to leaving their fate to the winds. While some Nomads have managed to stay airborn for long periods of time and can perform nimble landings, many drop like a leaf.",
   "experiencieReward": 162,
   "durability": 120,
   "wikiVisibility": false

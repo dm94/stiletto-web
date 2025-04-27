@@ -1,4 +1,5 @@
 {
   "name": "Construction",
-  "type": "ConstructionRoot_C"
+  "type": "ConstructionRoot_C",
+  "description": "Allows you to build various structures"
 }

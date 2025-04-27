@@ -1,5 +1,6 @@
 {
   "name": "Iron Ingot",
   "parent": "Advanced Furnace",
-  "type": "IronIngot_C"
+  "type": "IronIngot_C",
+  "description": "Extremely strong material used in high quality productions."
 }

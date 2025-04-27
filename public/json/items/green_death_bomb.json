@@ -6,6 +6,7 @@
   "trade_price": 36,
   "stackSize": 10,
   "weight": 3,
+  "description": "Ammo for sling or catapult. Explodes on impact, releasing a toxic cloud. The poison acts extremely quickly and does consistent damage.",
   "crafting": [
     {
       "ingredients": [

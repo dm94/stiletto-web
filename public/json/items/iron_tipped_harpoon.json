@@ -4,6 +4,7 @@
   "type": "IronHarpoon_C",
   "trade_price": 30.6,
   "weight": 0.8,
+  "description": "Ammo for Ballista. The fishing titanium head refuses to come unhooked. A durable tether is hard to snap.",
   "experiencieReward": 75,
   "crafting": [
     {

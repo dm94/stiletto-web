@@ -3,6 +3,7 @@
   "parent": "Advanced Walker Weapons",
   "type": "GunPod_C",
   "category": "Weapons",
+  "description": "A rotating pod made to attach below walker decks. Houses a single weapon.",
   "experiencieReward": 34,
   "crafting": [
     {

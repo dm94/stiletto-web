@@ -4,6 +4,7 @@
   "type": "BonePickaxe_C",
   "trade_price": 24,
   "weight": 4,
+  "description": "Mine stone and other minerals at higher efficiency with this bone tool.",
   "experiencieReward": 70,
   "durability": 410,
   "crafting": [

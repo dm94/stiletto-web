@@ -3,6 +3,7 @@
   "parent": "Clay",
   "type": "ClayPot_C",
   "category": "Crafting",
+  "description": "Campfires are good enough for basic cooking, but when a Nomad wants to prepare something more sophisticated, they need a more suitable pot for it.",
   "experiencieReward": 40,
   "crafting": [
     {

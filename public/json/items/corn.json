@@ -6,5 +6,6 @@
   "stackSize": 50,
   "weight": 0.33,
   "description": "Corn is seeded by expeditionary planters on the fringe of the Ice Lands.",
-  "experiencieReward": 7
+  "experiencieReward": 7,
+  "whereToFarm": "Grows on green flatlands and hills."
 }

@@ -2,6 +2,7 @@
   "name": "Hangar Wall",
   "type": "HangarWall_C",
   "category": "Walker Hangar",
+  "description": "Hangar Parts allow protecting Walkers from Enemies and the Environment",
   "crafting": [
     {
       "ingredients": [

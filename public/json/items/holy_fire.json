@@ -5,6 +5,7 @@
   "trade_price": 16.9,
   "stackSize": 5,
   "weight": 0.3,
+  "description": "Holy Fire. Used by Rupu Matriarch to ignite the Altar of Stars.",
   "experiencieReward": 20,
   "weaponInfo": {
     "damage": 20,

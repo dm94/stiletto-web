@@ -2,6 +2,7 @@
   "name": "Iron Rok",
   "parent": "Obsidian Rok",
   "type": "IronRok_C",
+  "description": "Ammo for the Rokker. The pinnacle of hull-piercing ammunition, short of the largest of boulders.",
   "experiencieReward": 5,
   "crafting": [
     {

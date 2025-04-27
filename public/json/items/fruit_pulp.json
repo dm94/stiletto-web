@@ -5,6 +5,7 @@
   "category": "Resources",
   "stackSize": 100,
   "weight": 0.34,
+  "description": "A concentrated dose of nutrition. Conceived by Longhorn nomads who needed a reliable food source for their repeated explorations of the North Sea.",
   "experiencieReward": 3,
   "onlyDevs": true,
   "crafting": [

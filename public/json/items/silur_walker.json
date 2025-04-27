@@ -3,6 +3,7 @@
   "parent": "Balang Walker",
   "type": "Silur_C",
   "category": "Walkers",
+  "description": "Founder Walker type of moderate size and protection. Allows to pack and carry a base made of heavy solid materials.",
   "crafting": [
     {
       "ingredients": [

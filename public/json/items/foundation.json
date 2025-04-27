@@ -3,6 +3,7 @@
   "type": "WallClayFoundation_C",
   "category": "Clay",
   "weight": 5,
+  "description": "Above average strength, can be packed on walkers.",
   "experiencieReward": 22,
   "crafting": [
     {

@@ -6,6 +6,7 @@
   "trade_price": 16.9,
   "stackSize": 5,
   "weight": 0.3,
+  "description": "Handheld ammunition. Can create a smokescreen reducing vision in the area.",
   "experiencieReward": 20,
   "crafting": [
     {

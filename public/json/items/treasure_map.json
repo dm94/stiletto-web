@@ -3,5 +3,6 @@
   "type": "BlueprintGeneratedClass",
   "category": "Interactables",
   "trade_price": 500,
-  "weight": 0.1
+  "weight": 0.1,
+  "description": "The faded ink and worn paper hint at a long-abandoned civilization, with cryptic symbols and markings pointing the way to a hidden oasis or buried treasure. Brave explorers who can decipher the map's secrets and navigate the unforgiving desert terrain will be rewarded with valuable relics and a glimpse into the mysteries of a bygone era."
 }

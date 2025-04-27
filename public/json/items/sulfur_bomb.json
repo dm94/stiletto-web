@@ -6,6 +6,7 @@
   "trade_price": 52.2,
   "stackSize": 10,
   "weight": 4,
+  "description": "Ammo for sling or catapult. Releases a short duration sulfur cloud on impact that deals health as well as corrosive durability damage.",
   "experiencieReward": 200,
   "crafting": [
     {

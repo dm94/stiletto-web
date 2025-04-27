@@ -3,6 +3,7 @@
   "type": "RaptorWings_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Wings powered by torque that flap like those of flying creatures.",
   "crafting": [
     {
       "ingredients": [

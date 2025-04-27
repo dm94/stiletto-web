@@ -5,6 +5,7 @@
   "trade_price": 13.2,
   "stackSize": 100,
   "weight": 0.2,
+  "description": "Decorated leatherwork cap covering wearer's eyes.",
   "experiencieReward": 10,
   "durability": 250,
   "crafting": [

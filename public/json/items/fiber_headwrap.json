@@ -2,6 +2,7 @@
   "name": "Fiber Headwrap",
   "parent": "FiberTorso",
   "type": "FiberHeadwrap_C",
+  "description": "Worn by nomads who toil in the Flotilla's underbelly, these itchy fibers may only protect against a sunburn.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T1)",

@@ -3,6 +3,7 @@
   "parent": "Small Base Walker Packer",
   "type": "BaseWalkerPackerLarge_C",
   "category": "Containers",
+  "description": "Allows to pack a single walker of any type. Requires a foundation of a base to support itself.",
   "experiencieReward": 32,
   "crafting": [
     {

@@ -5,6 +5,7 @@
   "trade_price": 2.6,
   "stackSize": 100,
   "weight": 0.73,
+  "description": "A harder, more sought after wood used for specialty constructions.",
   "experiencieReward": 12,
   "droppedBy": [
     {
@@ -91,5 +92,6 @@
       "maxQuantity": 8,
       "tier": "T4"
     }
-  ]
+  ],
+  "whereToFarm": "Grows in lush green forests."
 }

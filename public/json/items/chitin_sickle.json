@@ -4,6 +4,7 @@
   "type": "ChitinSickle_C",
   "trade_price": 6.2,
   "weight": 2.2,
+  "description": "Returns a good yield when used to harvest small plants.",
   "experiencieReward": 25,
   "durability": 900,
   "crafting": [

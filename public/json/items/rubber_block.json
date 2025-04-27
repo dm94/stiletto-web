@@ -6,6 +6,7 @@
   "trade_price": 1.1,
   "stackSize": 100,
   "weight": 0.34,
+  "description": "A springy block of unusual material. Invaluable for more advanced contraptions due to its physical properties.",
   "experiencieReward": 3,
   "crafting": [
     {

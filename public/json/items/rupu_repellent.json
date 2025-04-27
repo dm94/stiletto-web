@@ -5,5 +5,6 @@
   "trade_price": 79.9,
   "stackSize": 100,
   "weight": 0.5,
+  "description": "A malodorous perfume that makes every other living creature want to run away. Reduces rupu aggressiveness toward Nomad.",
   "wikiVisibility": false
 }

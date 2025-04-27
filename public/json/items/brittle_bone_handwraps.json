@@ -2,6 +2,7 @@
   "name": "Brittle Bone Handwraps",
   "parent": "BrittleBoneTorso",
   "type": "BrittleBoneGloves_C",
+  "description": "Heavy armored protection for soft handed Nomads",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T3)",

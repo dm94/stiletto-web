@@ -5,6 +5,7 @@
   "trade_price": 1504.8,
   "stackSize": 100,
   "weight": 5.3,
+  "description": "Metal is rare, even on the battlefield. Most nomads can't comprehend how sharp an iron blade is until they are cut with one.",
   "experiencieReward": 1521,
   "durability": 740,
   "crafting": [

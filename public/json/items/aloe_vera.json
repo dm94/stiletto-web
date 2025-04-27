@@ -5,5 +5,7 @@
   "trade_price": 0.3,
   "stackSize": 100,
   "weight": 0.4,
-  "experiencieReward": 6
+  "description": "This hardy plant grows in the hottest of conditions. Great for stomping.",
+  "experiencieReward": 6,
+  "whereToFarm": "Grows in warm areas."
 }

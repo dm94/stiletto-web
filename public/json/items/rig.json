@@ -1,5 +1,6 @@
 {
   "name": "Rig",
   "type": "DefaultBattleshipRig_T1_C",
-  "category": "Rigs"
+  "category": "Rigs",
+  "description": "Tusker Walker"
 }

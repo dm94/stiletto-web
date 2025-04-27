@@ -4,5 +4,7 @@
   "category": "Resources",
   "trade_price": 30,
   "stackSize": 100,
-  "weight": 0.18
+  "weight": 0.18,
+  "description": "Shardrock is a rare, jagged mineral prized by nomads for its hardness, often used to enhance Walkers and craft advanced technologies.",
+  "whereToFarm": "Shardrock can be harvested from the remains of fallen Gogo, whose tough shells naturally accumulate the rare mineral over time."
 }

@@ -3,6 +3,7 @@
   "type": "MeatRack_01_C",
   "category": "Furniture",
   "weight": 5,
+  "description": "Decorate your surroundings with these succulent chunks of meat.",
   "crafting": [
     {
       "ingredients": [

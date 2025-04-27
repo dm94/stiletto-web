@@ -3,6 +3,7 @@
   "parent": "Basic Walker Weapons",
   "type": "Spinner_C",
   "category": "Weapons",
+  "description": "A small spinning weapon for remote control while driving walkers. Quickly launches darts in short succession.",
   "experiencieReward": 78,
   "crafting": [
     {

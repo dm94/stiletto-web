@@ -6,6 +6,7 @@
   "trade_price": 1.2,
   "stackSize": 100,
   "weight": 1.8,
+  "description": "A roughly chipped piece of stone hastily tied to a stick. Will chop a few trees down, but don't expect it to last.",
   "experiencieReward": 25,
   "durability": 123,
   "crafting": [

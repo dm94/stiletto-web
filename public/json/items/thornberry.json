@@ -5,5 +5,7 @@
   "trade_price": 2.6,
   "stackSize": 100,
   "weight": 0.05,
-  "experiencieReward": 4
+  "description": "Grows inside a notoriously dangerous, bulbous plant. The thornberry has mystical properties and is said to have appeared with the arrival of Nibiru.",
+  "experiencieReward": 4,
+  "whereToFarm": "Grows inside a mutated Thornberry Cactus in wet areas."
 }

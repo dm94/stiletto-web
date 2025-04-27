@@ -1,4 +1,5 @@
 {
   "name": "Equipment",
-  "type": "EquipmentRoot_C"
+  "type": "EquipmentRoot_C",
+  "description": "Items you can directly use and wear"
 }

@@ -6,6 +6,7 @@
   "trade_price": 15,
   "stackSize": 100,
   "weight": 3.8,
+  "description": "A symbol of status among many Nomad tribes,  the Sawsword is valued for its devastating damage.",
   "experiencieReward": 100,
   "durability": 500,
   "crafting": [

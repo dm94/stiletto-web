@@ -3,6 +3,7 @@
   "parent": "Steering Levers",
   "type": "Proxy_C",
   "category": "Walkers",
+  "description": "The proxy walker is designed to establish a protectorate over an oasis by deploying into an unmovable claim, provided that its owner possesses an official proxy license from the Flotilla. Can only be deployed while an oasis is unclaimed or contested and only becomes the claimant after no other deployed proxy walkers are left standing.",
   "crafting": [
     {
       "ingredients": [

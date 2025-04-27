@@ -6,6 +6,7 @@
   "trade_price": 87.6,
   "stackSize": 100,
   "weight": 0.5,
+  "description": "Snorting this will make a Nomad hyper focused. Grants Nomad more damage and faster reloading with board weapons.",
   "crafting": [
     {
       "ingredients": [

@@ -6,6 +6,7 @@
   "trade_price": 1.2,
   "stackSize": 100,
   "weight": 0.03,
+  "description": "Restores a small amount of HP over a period of time. Not usable while in combat.",
   "experiencieReward": 2,
   "crafting": [
     {

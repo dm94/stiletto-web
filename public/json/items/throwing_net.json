@@ -5,6 +5,7 @@
   "category": "Weapons",
   "trade_price": 8.4,
   "weight": 3,
+  "description": "A portable net with a release mechanism that allows to throw it by hand.",
   "crafting": [
     {
       "ingredients": [

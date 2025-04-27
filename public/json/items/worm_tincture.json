@@ -6,6 +6,7 @@
   "trade_price": 1200,
   "stackSize": 100,
   "weight": 0.5,
+  "description": "An extremely potent essence of worm secretion that grants Nomads vivid memoirs of the events long forgotten. Drinking grants +10 attack attribute points until death.",
   "experiencieReward": 100,
   "crafting": [
     {

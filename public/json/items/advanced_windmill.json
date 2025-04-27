@@ -3,6 +3,7 @@
   "type": "Windmill_Tier2_C",
   "category": "Crafting",
   "weight": 10,
+  "description": "Advanced Windmill used to generate even more torque through additional fins and a sleek design.",
   "experiencieReward": 34,
   "crafting": [
     {

@@ -5,6 +5,7 @@
   "trade_price": 5.2,
   "stackSize": 10,
   "weight": 5,
+  "description": "Unwieldy, big projectile used by the Rupu as ammo for their looted Rokkers.",
   "wikiVisibility": false,
   "projectileDamage": {
     "damage": 100,

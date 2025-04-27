@@ -1,6 +1,7 @@
 {
   "name": "Armor Shipment",
   "type": "ArmorShipment_C",
+  "description": "An assortment of armor package for delivery to the trade station.",
   "crafting": [
     {
       "ingredients": [

@@ -4,5 +4,6 @@
   "category": "Interactables",
   "stackSize": 100,
   "weight": 0.01,
+  "description": "Forget everything you know about yourself. Resets stats of your character and returns all points.",
   "experiencieReward": 2
 }

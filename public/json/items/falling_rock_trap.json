@@ -3,6 +3,7 @@
   "type": "TrapRockFalling_C",
   "category": "Defenses",
   "weight": 10,
+  "description": "Hang a rock below below a platform and manually release it over the heads of your enemies.",
   "experiencieReward": 61,
   "crafting": [
     {

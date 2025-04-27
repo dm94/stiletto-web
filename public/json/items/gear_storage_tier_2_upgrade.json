@@ -2,6 +2,7 @@
   "name": "Gear Storage - Tier 2 Upgrade",
   "type": "SparePartBoneHatch_C",
   "category": "Spare Parts",
+  "description": "The gear storage holds weapons and armors and is automatically equipped on respawn. Keep your gear storage stocked and sorted - you will need if hostile nomads engage you.",
   "experiencieReward": 20,
   "durability": 100,
   "wikiVisibility": false

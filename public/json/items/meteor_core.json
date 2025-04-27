@@ -5,5 +5,7 @@
   "trade_price": 600,
   "stackSize": 100,
   "weight": 0.3,
-  "experiencieReward": 50
+  "description": "Strange crystal that exudes an almost mesmerising glow. If you listen closely, you can hear a steady humming noise emanating from its energized interior.",
+  "experiencieReward": 50,
+  "whereToFarm": "Extract from meteor splinters."
 }

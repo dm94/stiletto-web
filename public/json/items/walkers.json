@@ -1,4 +1,5 @@
 {
   "name": "Walkers",
-  "type": "WalkersRoot_C"
+  "type": "WalkersRoot_C",
+  "description": "Walkers and Upgrades"
 }

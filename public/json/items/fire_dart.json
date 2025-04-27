@@ -6,6 +6,7 @@
   "trade_price": 15.6,
   "stackSize": 20,
   "weight": 0.2,
+  "description": "A small dart covered in chunks of sulfur and other flammable substances. Good for setting stuff on fire.",
   "experiencieReward": 6,
   "crafting": [
     {

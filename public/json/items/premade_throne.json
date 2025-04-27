@@ -3,6 +3,7 @@
   "type": "Throne_Prefab_01_C",
   "category": "Furniture",
   "weight": 100,
+  "description": "Make your adversaries bow before this intimidating assembly of sticks and planks.",
   "crafting": [
     {
       "ingredients": [

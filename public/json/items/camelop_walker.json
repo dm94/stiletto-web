@@ -3,6 +3,7 @@
   "parent": "Hercul Walker",
   "type": "Camelop_C",
   "category": "Walkers",
+  "description": "Being able to pump water and lava out of lakes, while storing large amounts of liquid, makes this walker an essential tool in various mass productions. Uses torque to move and while pumping.",
   "crafting": [
     {
       "ingredients": [

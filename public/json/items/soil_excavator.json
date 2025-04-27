@@ -3,6 +3,7 @@
   "parent": "Camp Fire",
   "type": "SoilExcavator_C",
   "category": "Crafting",
+  "description": "Basic crafting station extracts different types of soil from the ground, like sand from the desert, or with more advanced knowledge, clay from mud puddles.",
   "experiencieReward": 18,
   "crafting": [
     {

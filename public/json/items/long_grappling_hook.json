@@ -4,6 +4,7 @@
   "type": "LongGrapplingHook_C",
   "category": "Grappling Hooks",
   "trade_price": 23.5,
+  "description": "Gets a Nomad places others can't reach. Slower reeling speed may be disadvantegous while fighting.",
   "experiencieReward": 25,
   "crafting": [
     {

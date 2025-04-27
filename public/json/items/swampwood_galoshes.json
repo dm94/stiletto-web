@@ -6,6 +6,7 @@
   "trade_price": 34,
   "stackSize": 100,
   "weight": 0.4,
+  "description": "Developed by the secretive Swampwood tribe, these rubber boots protect Nomads from the painful sting of toxic water.",
   "experiencieReward": 11,
   "durability": 1000,
   "crafting": [

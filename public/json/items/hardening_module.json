@@ -3,6 +3,7 @@
   "type": "HullHardeningBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Stacking this module reduces damage to a walker from all sources except those that can damage Reinforced armor.",
   "crafting": [
     {
       "ingredients": [

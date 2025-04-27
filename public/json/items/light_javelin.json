@@ -6,6 +6,7 @@
   "trade_price": 1.6,
   "stackSize": 20,
   "weight": 2,
+  "description": "The first Throwers were members of a rogue sect of cannabilistic warriors. Their numbers have waned, but they still periodically cause havoc for Flotillan supply caravans.",
   "crafting": [
     {
       "ingredients": [

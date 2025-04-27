@@ -3,6 +3,7 @@
   "parent": "Medium Water Bag",
   "type": "WaterBagLarge_C",
   "category": "Containers",
+  "description": "Store large volumes of liquid. Liquid is protected unless the container is severely damaged.",
   "experiencieReward": 98,
   "crafting": [
     {

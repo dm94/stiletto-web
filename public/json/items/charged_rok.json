@@ -6,6 +6,7 @@
   "trade_price": 5.2,
   "stackSize": 10,
   "weight": 50,
+  "description": "A hardened Rok, glowing with the power a meteor core. An incredibly destructive force.",
   "experiencieReward": 500,
   "crafting": [
     {

@@ -6,6 +6,7 @@
   "trade_price": 1.4,
   "stackSize": 24,
   "weight": 0.3,
+  "description": "Ammo for Rupu Sling. Rupus refuse to throw anything else.",
   "crafting": [
     {
       "ingredients": [

@@ -3,6 +3,7 @@
   "parent": "Construction",
   "type": "GrapplingBeltChargingStation_C",
   "category": "Interactables",
+  "description": "Generate torque manually. Requires nomads to wear a torque belt while using.",
   "experiencieReward": 304,
   "crafting": [
     {

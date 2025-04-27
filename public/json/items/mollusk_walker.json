@@ -3,6 +3,7 @@
   "parent": "Steering Levers",
   "type": "Mollusk_C",
   "category": "Walkers",
+  "description": "Small cabin of the walker provides protection to possessions and the driver. While walls may let a nomad live longer, obstructed view from inside the cabin could be a serious drawback in a battle. Has a decent deck and good movement capabilities.",
   "crafting": [
     {
       "ingredients": [

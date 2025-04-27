@@ -6,6 +6,7 @@
   "trade_price": 16.9,
   "stackSize": 5,
   "weight": 0.3,
+  "description": "Handheld ammunition. a sack of angry insects sure to distract and confuse enemies while disabling their movement.",
   "experiencieReward": 20,
   "crafting": [
     {

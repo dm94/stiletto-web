@@ -4,6 +4,7 @@
   "type": "Sawblade_C",
   "category": "Walker Tools",
   "weight": 60,
+  "description": "A mechanical arm with a spinning saw blade attached to it harvests lumber from a distance. Requires torque while sawing.",
   "toolInfo": [
     {
       "toolType": "Sawblade",

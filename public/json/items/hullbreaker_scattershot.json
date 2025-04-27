@@ -3,6 +3,7 @@
   "parent": "CeramicScattershot",
   "type": "HullbreakerScattershot_C",
   "trade_price": 61.8,
+  "description": "Ammo for scattershot gun. Blows apart wooden constructions while also dealing some damage to sturdier materials.",
   "crafting": [
     {
       "ingredients": [

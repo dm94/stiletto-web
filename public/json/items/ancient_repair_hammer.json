@@ -5,6 +5,7 @@
   "trade_price": 9.5,
   "stackSize": 100,
   "weight": 3.12,
+  "description": "Used to repair the Altar of Winds.",
   "experiencieReward": 50,
   "durability": 50,
   "crafting": [

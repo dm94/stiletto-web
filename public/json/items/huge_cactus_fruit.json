@@ -5,6 +5,7 @@
   "trade_price": 1.6,
   "stackSize": 100,
   "weight": 1.2,
+  "description": "Some strange plants with psychoactive properties can be turned into mind enhancing vitamins.",
   "droppedBy": [
     {
       "name": "BasketLoot (T2) (AC)",
@@ -181,5 +182,6 @@
       "maxQuantity": 4,
       "tier": "T4"
     }
-  ]
+  ],
+  "whereToFarm": "Grows on large mutated cactus trees."
 }

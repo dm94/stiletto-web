@@ -5,6 +5,7 @@
   "trade_price": 0.1,
   "stackSize": 10000,
   "weight": 0.01,
+  "description": "Torque Consumption",
   "experiencieReward": 1,
   "wikiVisibility": false,
   "crafting": [

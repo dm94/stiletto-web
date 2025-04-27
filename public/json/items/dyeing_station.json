@@ -3,6 +3,7 @@
   "parent": "Crafting",
   "type": "DyeingStation_C",
   "category": "Crafting",
+  "description": "Bizarre construction that lets you dye your gear.",
   "crafting": [
     {
       "ingredients": [

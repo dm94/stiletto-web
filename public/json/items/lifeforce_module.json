@@ -3,6 +3,7 @@
   "type": "RespawnEffectBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Nomads that respawn on a walker will recieve a beneficial status effect. Stacking this module increases the potency of this effect.",
   "experiencieReward": 65,
   "crafting": [
     {

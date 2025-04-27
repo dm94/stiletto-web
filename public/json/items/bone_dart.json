@@ -3,6 +3,7 @@
   "parent": "Repeater",
   "type": "BoneDart_C",
   "trade_price": 5,
+  "description": "Ammo for Stingers and Repeater. Tipped with a sharpened piece of bone, it will shatter inside the target.",
   "crafting": [
     {
       "ingredients": [

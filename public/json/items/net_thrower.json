@@ -3,6 +3,7 @@
   "parent": "Basic Walker Weapons",
   "type": "NetThrower_C",
   "category": "Weapons",
+  "description": "Launch nets to temporarily entangle small structures, mannable weapons, and other objects.",
   "experiencieReward": 249,
   "crafting": [
     {

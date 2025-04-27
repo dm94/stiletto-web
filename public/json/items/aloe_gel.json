@@ -6,6 +6,7 @@
   "trade_price": 1.4,
   "stackSize": 100,
   "weight": 0.44,
+  "description": "The gel extracted from aloe plants contained amazing healing properties",
   "experiencieReward": 8,
   "onlyDevs": true,
   "crafting": [

@@ -6,6 +6,7 @@
   "trade_price": 3.2,
   "stackSize": 100,
   "weight": 0.8,
+  "description": "The nomads travel where the land is always bright, but eclipses will cause periods of unexpected darkness.",
   "durability": 100,
   "crafting": [
     {

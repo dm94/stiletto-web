@@ -6,6 +6,7 @@
   "trade_price": 10.7,
   "stackSize": 100,
   "weight": 2.9,
+  "description": "Heavier than its counterpart, but the intelligence required to wield it is still low.",
   "experiencieReward": 100,
   "durability": 550,
   "crafting": [

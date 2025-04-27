@@ -2,6 +2,7 @@
   "name": "Brittle Bone Boots",
   "parent": "BrittleBoneTorso",
   "type": "BrittleBoneBoots_C",
+  "description": "Hardened armor for the feet on Nomads. Useful to protect your toes from falling limbs.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T3)",

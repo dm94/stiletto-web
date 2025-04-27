@@ -238,5 +238,6 @@
       "maxQuantity": 14,
       "tier": "T4"
     }
-  ]
+  ],
+  "whereToFarm": "Leftover from burning materials."
 }

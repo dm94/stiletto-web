@@ -6,6 +6,7 @@
   "trade_price": 0.1,
   "stackSize": 100,
   "weight": 0.35,
+  "description": "Extracted with Soil Excavator from mud puddles in hard oases.",
   "experiencieReward": 1,
   "crafting": [
     {
@@ -271,5 +272,6 @@
       "maxQuantity": 4,
       "tier": "T3"
     }
-  ]
+  ],
+  "whereToFarm": "Extracted with Soil Excavator from mud puddles in hard oases."
 }

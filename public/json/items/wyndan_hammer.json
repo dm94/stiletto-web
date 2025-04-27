@@ -2,6 +2,7 @@
   "name": "Wyndan Hammer",
   "parent": "Short Ceramic Hoofmace",
   "type": "OneHandedIronMace_C",
+  "description": "Flotillan scholars claim that the Wyndan tribe has roots as a prominent civilization that existed long before the apocalypse.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T4)",

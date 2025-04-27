@@ -6,6 +6,7 @@
   "trade_price": 0.4,
   "stackSize": 100,
   "weight": 0.21,
+  "description": "The Rupu are skilled imitators, and can crudely reproduce human fighting techniques and constructions. They use wood shafts to prop up their mud huts, giving them a striking resemblance to the Nomads' walkers.",
   "crafting": [
     {
       "ingredients": [
@@ -716,5 +717,6 @@
       "minQuantity": 10,
       "maxQuantity": 10
     }
-  ]
+  ],
+  "whereToFarm": "Often wielded by Rupu as a weapon."
 }

@@ -3,6 +3,7 @@
   "type": "StilettoWings_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Developed as the successor to the dinghy walker, the sleek stiletto walker is fast, has a short turn radius, and flaunts more deck space and a stronger hull than its predecessor. Ideal for nomads who prefer to travel alone or in small groups.",
   "crafting": [
     {
       "ingredients": [

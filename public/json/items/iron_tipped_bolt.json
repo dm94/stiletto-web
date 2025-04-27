@@ -3,6 +3,7 @@
   "parent": "Ceramic Bolt",
   "type": "IronBolt_C",
   "trade_price": 25,
+  "description": "Ammo for Ballista. An iron tip easily penetrates armor and makes holes in bodies that can't be patched.",
   "experiencieReward": 50,
   "crafting": [
     {

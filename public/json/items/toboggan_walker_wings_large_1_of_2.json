@@ -3,6 +3,7 @@
   "type": "TobogganWings_T4_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Generates the highest possible physical force for walker movement. Very complicated to construct due to their size.",
   "crafting": [
     {
       "ingredients": [

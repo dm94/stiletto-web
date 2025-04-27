@@ -5,6 +5,7 @@
   "trade_price": 102.5,
   "stackSize": 100,
   "weight": 0.75,
+  "description": "Iron ingot coated with scraped off green mineral of unkown origin.",
   "experiencieReward": 50,
   "crafting": [
     {

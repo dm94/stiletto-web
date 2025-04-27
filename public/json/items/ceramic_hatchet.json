@@ -6,6 +6,7 @@
   "trade_price": 56.2,
   "stackSize": 100,
   "weight": 4.5,
+  "description": "Even the most obstinate nomad has fun chopping food with this extremely efficient tool.",
   "experiencieReward": 200,
   "durability": 900,
   "crafting": [

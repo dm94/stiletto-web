@@ -5,6 +5,7 @@
   "trade_price": 41.1,
   "stackSize": 100,
   "weight": 5,
+  "description": "Most tribes eschew iron armor, despite its protective value. History has proven that it is not pirates whom a nomad must fear most, but the sun.",
   "experiencieReward": 140,
   "durability": 330,
   "crafting": [

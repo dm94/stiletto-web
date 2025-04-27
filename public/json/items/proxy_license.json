@@ -6,6 +6,7 @@
   "trade_price": 1,
   "stackSize": 5,
   "weight": 0.2,
+  "description": "A permit to build one proxy walker to claim an oasis.",
   "experiencieReward": 500,
   "crafting": [
     {
@@ -38,5 +39,6 @@
       "station": "Artificer Woodworking Station",
       "time": 600
     }
-  ]
+  ],
+  "whereToFarm": "Bought from Trading Stations for Flots."
 }

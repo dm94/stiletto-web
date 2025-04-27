@@ -6,6 +6,7 @@
   "trade_price": 11.9,
   "stackSize": 100,
   "weight": 1.7,
+  "description": "A bottle with an aftertaste.",
   "experiencieReward": 50,
   "durability": 100,
   "crafting": [

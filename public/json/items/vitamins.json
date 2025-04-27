@@ -1,4 +1,5 @@
 {
   "name": "Vitamins",
-  "type": "VitaminsRoot_C"
+  "type": "VitaminsRoot_C",
+  "description": "Creation of Vitamins, enhancing your abilities"
 }

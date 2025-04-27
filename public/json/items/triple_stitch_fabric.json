@@ -6,6 +6,7 @@
   "trade_price": 28,
   "stackSize": 100,
   "weight": 0.24,
+  "description": "A tightly woven cloth that is hard to cut and nearly waterproof. The Flotillan standard.",
   "experiencieReward": 6,
   "crafting": [
     {

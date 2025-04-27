@@ -5,6 +5,7 @@
   "trade_price": 8,
   "stackSize": 100,
   "weight": 0.78,
+  "description": "Over the centuries, nomads have experimented with iron in the construction of their walkers and armor. However, in the race to outrun the sun, it was those who travelled lightest that survived longest.",
   "experiencieReward": 9,
   "crafting": [
     {
@@ -22,5 +23,6 @@
       "station": "Artisan Soil Auger",
       "time": 30
     }
-  ]
+  ],
+  "whereToFarm": "Mined from asteroids or in low quantities from rocks."
 }

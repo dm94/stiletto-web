@@ -3,6 +3,7 @@
   "type": "RupuCage_01_C",
   "category": "Furniture",
   "weight": 10,
+  "description": "Decorate your surroundings with this object of casual incapacitation.",
   "crafting": [
     {
       "ingredients": [

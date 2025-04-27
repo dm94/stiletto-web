@@ -2,6 +2,7 @@
   "name": "Cargo Hold - Tier 3 Upgrade",
   "type": "SparePartClayCargo_C",
   "category": "Spare Parts",
+  "description": "The cargo hold of your Walker is usually the safest spot for your valuables. Hostile nomads need to break into your hull to gain access, which is costly and takes a long time.",
   "experiencieReward": 30,
   "durability": 100,
   "wikiVisibility": false

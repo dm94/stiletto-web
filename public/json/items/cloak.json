@@ -1,5 +1,6 @@
 {
   "name": "Cloak",
   "parent": "Fiber Headwrap",
-  "type": "Cloak_C"
+  "type": "Cloak_C",
+  "description": "Medium cloak designed to protect nomads from harsh wind gusts full of sand. A mixture of lightwood from the lands of Kali and worm silk left behind by roaming Long Ones."
 }

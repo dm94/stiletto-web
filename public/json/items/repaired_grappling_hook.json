@@ -2,5 +2,6 @@
   "name": "Repaired Grappling Hook",
   "type": "GrapplingHook_C",
   "category": "Tools",
-  "stackSize": 100
+  "stackSize": 100,
+  "description": "Grapple to any object, reel in and swing. An essential tool for any Nomad who wants to live long enough to see the next oasis."
 }

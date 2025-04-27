@@ -3,6 +3,7 @@
   "parent": "WoodenWalls",
   "type": "DefensiveTower_C",
   "category": "Defenses",
+  "description": "Build weapons on the tower to protect your territory. Relatively cheap and easy to build.",
   "experiencieReward": 32,
   "crafting": [
     {

@@ -6,6 +6,7 @@
   "trade_price": 3.6,
   "stackSize": 10,
   "weight": 2.4,
+  "description": "Ammo for sling or catapult. Releases thick smoke cloud in area. Does not deal any damage.",
   "crafting": [
     {
       "ingredients": [

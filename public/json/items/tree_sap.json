@@ -4,5 +4,6 @@
   "category": "Resources",
   "trade_price": 3.2,
   "stackSize": 100,
-  "weight": 0.15
+  "weight": 0.15,
+  "description": "Lifeblood of the Redwood trees, this sticky substance is valued by flotillan alchemists for its adhesive properties."
 }

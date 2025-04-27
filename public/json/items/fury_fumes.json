@@ -6,6 +6,7 @@
   "trade_price": 39.4,
   "stackSize": 100,
   "weight": 0.5,
+  "description": "A bottle of gas that when inhaled infuses a Nomad with rage. Increases Nomad's damage with melee weapons, but also increases damage received.",
   "crafting": [
     {
       "ingredients": [

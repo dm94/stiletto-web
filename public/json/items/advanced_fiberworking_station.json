@@ -3,6 +3,7 @@
   "parent": "Fiberworking Station",
   "type": "FiberworkingStation_T2_C",
   "category": "Crafting",
+  "description": "Advanced crafting station manufactures fabrics more efficiently.",
   "experiencieReward": 235,
   "crafting": [
     {

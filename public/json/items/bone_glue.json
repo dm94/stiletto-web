@@ -6,6 +6,7 @@
   "trade_price": 1.9,
   "stackSize": 100,
   "weight": 0.17,
+  "description": "Rapidly bonds after application. Discovered by a Flotillan cook who stewed powdered bones of an unknown creature into his soup broth. The nomads he served died of asphyxiation.",
   "experiencieReward": 12,
   "crafting": [
     {

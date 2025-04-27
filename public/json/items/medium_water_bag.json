@@ -3,6 +3,7 @@
   "parent": "Small Water Bag",
   "type": "WaterBagMedium_C",
   "category": "Containers",
+  "description": "Store moderate volumes of liquid. Liquid is protected unless the container is severely damaged.",
   "experiencieReward": 65,
   "crafting": [
     {

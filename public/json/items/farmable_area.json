@@ -3,6 +3,7 @@
   "type": "FarmableArea_C",
   "category": "Crafting",
   "weight": 1000,
+  "description": "Grow your own trees from seeds overnight with the help of some Nibiran fertilizer.",
   "experiencieReward": 100,
   "crafting": [
     {

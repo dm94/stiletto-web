@@ -3,6 +3,7 @@
   "parent": "Obsidian Pot",
   "type": "ObsidianContainerLarge_C",
   "category": "Containers",
+  "description": "Extremely durable, large container resistant to highest temperatures.",
   "experiencieReward": 300,
   "crafting": [
     {

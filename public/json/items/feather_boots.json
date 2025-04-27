@@ -6,6 +6,7 @@
   "trade_price": 34,
   "stackSize": 100,
   "weight": 0.4,
+  "description": "Thick feather-padded soles mitigate fall damage.",
   "experiencieReward": 413,
   "durability": 1000,
   "crafting": [

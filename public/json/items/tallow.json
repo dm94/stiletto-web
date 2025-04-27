@@ -6,6 +6,7 @@
   "trade_price": 3.7,
   "stackSize": 100,
   "weight": 0.5,
+  "description": "Animal fat rendered down into a non-perishable liquid,  used to lubricate rotating components and as an alternative fuel source.",
   "experiencieReward": 3,
   "crafting": [
     {
@@ -23,5 +24,6 @@
       "station": "Purification Station",
       "time": 60
     }
-  ]
+  ],
+  "whereToFarm": "Can be rendered using a purification station."
 }

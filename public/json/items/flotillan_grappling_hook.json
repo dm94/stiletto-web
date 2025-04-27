@@ -4,6 +4,7 @@
   "type": "FlotillanGrapplingHook_C",
   "category": "Grappling Hooks",
   "trade_price": 16,
+  "description": "Better in every way than the regular nomadic variety, but not specialized in any aspects like other grappling hook types.",
   "experiencieReward": 76,
   "crafting": [
     {

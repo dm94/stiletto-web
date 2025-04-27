@@ -3,6 +3,7 @@
   "type": "BedWater_C",
   "category": "Interactables",
   "weight": 77,
+  "description": "Luxurious bed with a huge water container to hold the most amount of respawns possible.",
   "experiencieReward": 83,
   "crafting": [
     {

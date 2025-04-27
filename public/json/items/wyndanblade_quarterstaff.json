@@ -2,6 +2,7 @@
   "name": "Wyndanblade Quarterstaff",
   "parent": "Paddleblade Quarterstaff",
   "type": "IronQuarterstaff_C",
+  "description": "Long ago, the Wyndan tribe mediated a lasting peace between the plains people. Today, they serve the Guardians as peacekeepers and engineers.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T4)",

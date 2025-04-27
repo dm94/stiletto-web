@@ -5,6 +5,7 @@
   "trade_price": 16.9,
   "stackSize": 5,
   "weight": 0.3,
+  "description": "Lightweight obsidian ball containing highly flammable mixture. Throw it at enemies to deal fire damage.",
   "experiencieReward": 20,
   "wikiVisibility": false,
   "weaponInfo": {

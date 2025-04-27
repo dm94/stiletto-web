@@ -2,6 +2,7 @@
   "name": "Strut",
   "type": "Strut_C",
   "stackSize": 10,
+  "description": "Ancient technology scavenged from the waste. No one is sure what they were used for in the past, but crafty Nomads can use them at ancient fabricators to construct modules which can be installed in Walkers to give them special abilties.",
   "droppedBy": [
     {
       "name": "HotspotLoot (T1)",

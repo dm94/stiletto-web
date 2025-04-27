@@ -5,6 +5,7 @@
   "trade_price": 8.9,
   "stackSize": 100,
   "weight": 1,
+  "description": "Provides average protection and meanueverability.",
   "experiencieReward": 70,
   "durability": 200,
   "crafting": [

@@ -3,6 +3,7 @@
   "type": "RupuArch_01_C",
   "category": "Furniture",
   "weight": 20,
+  "description": "Decorate your surroundings with this peculiar construction - a pinnacle of fine rupu craftsmenship.",
   "crafting": [
     {
       "ingredients": [

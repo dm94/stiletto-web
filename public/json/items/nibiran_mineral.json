@@ -5,5 +5,7 @@
   "trade_price": 16.5,
   "stackSize": 100,
   "weight": 0.28,
-  "experiencieReward": 12
+  "description": "This inconspicuous rock glows brightly when the Moon and Sun align. The mineral has permeated the soil, water, plant life, and possibly more.",
+  "experiencieReward": 12,
+  "whereToFarm": "Found in rocks glowing during eclipses."
 }

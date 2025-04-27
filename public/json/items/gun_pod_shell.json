@@ -3,6 +3,7 @@
   "parent": "Gun Pod",
   "type": "GunPodShell_C",
   "category": "Weapons",
+  "description": "Attach a light shell of armor to the gun pod to make it safer from attack.",
   "experiencieReward": 34,
   "crafting": [
     {

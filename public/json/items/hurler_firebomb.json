@@ -5,6 +5,7 @@
   "trade_price": 49.8,
   "stackSize": 5,
   "weight": 8,
+  "description": "Massive burning projectiles that the Rupu lob at their enemies from great distances.",
   "wikiVisibility": false,
   "projectileDamage": {
     "damage": 150

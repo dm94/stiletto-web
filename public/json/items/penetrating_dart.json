@@ -6,6 +6,7 @@
   "trade_price": 1.5,
   "stackSize": 500,
   "weight": 0.2,
+  "description": "Ammo for Anti-Personnel turret.",
   "crafting": [
     {
       "ingredients": [

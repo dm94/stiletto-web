@@ -6,6 +6,7 @@
   "trade_price": 0.1,
   "stackSize": 100,
   "weight": 0.15,
+  "description": "Burns hotter in a furnace than normal wood. Produced from wood burning and found as mineral in rocks.",
   "experiencieReward": 1,
   "crafting": [
     {
@@ -246,5 +247,6 @@
       "maxQuantity": 5,
       "tier": "T4"
     }
-  ]
+  ],
+  "whereToFarm": "Mined from rocks or as leftover from burning wood."
 }

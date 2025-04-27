@@ -6,6 +6,7 @@
   "trade_price": 7.9,
   "stackSize": 100,
   "weight": 3,
+  "description": "Carry large volumes of liquid. Essential for water traders.",
   "experiencieReward": 35,
   "durability": 80,
   "crafting": [

@@ -6,6 +6,7 @@
   "trade_price": 8.4,
   "stackSize": 100,
   "weight": 0.1,
+  "description": "Stores torque by winding up a mechanism with a rope inside.",
   "experiencieReward": 26,
   "durability": 120,
   "crafting": [
@@ -45,5 +46,6 @@
       "station": "Artisan Fiberworking Station",
       "time": 2
     }
-  ]
+  ],
+  "whereToFarm": "Crafted in Character Crafting. Stores torque."
 }

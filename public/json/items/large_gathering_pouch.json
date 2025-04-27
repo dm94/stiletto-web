@@ -6,6 +6,7 @@
   "trade_price": 10,
   "stackSize": 100,
   "weight": 0.5,
+  "description": "Holds a lot more fiber than its predecessor.",
   "experiencieReward": 83,
   "durability": 100,
   "crafting": [

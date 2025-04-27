@@ -3,6 +3,7 @@
   "type": "FireGoblet_C",
   "category": "Furniture",
   "weight": 2.5,
+  "description": "Burns wood to light the surrounding area.",
   "experiencieReward": 6,
   "crafting": [
     {

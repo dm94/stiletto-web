@@ -3,6 +3,7 @@
   "parent": "Woodworking Station",
   "type": "CraftingBench_C",
   "category": "Crafting",
+  "description": "The crafting bench produces tools, weapons, armors and ammunition that require a fair amount of skills for their creation.",
   "experiencieReward": 85,
   "crafting": [
     {

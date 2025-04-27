@@ -3,6 +3,7 @@
   "parent": "Camelop Walker",
   "type": "Cobra_C",
   "category": "Walkers",
+  "description": "Mobile shooting tower operated automatically with wooden machinery that shoots enemy weapons nearby. Requires deployment to shoot, which blocks its steering.",
   "crafting": [
     {
       "ingredients": [

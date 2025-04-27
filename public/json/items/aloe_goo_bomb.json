@@ -6,6 +6,7 @@
   "trade_price": 40.5,
   "stackSize": 10,
   "weight": 3.2,
+  "description": "Filled with restorative properties, this bomb will heal nomads within a large area upon impact.",
   "crafting": [
     {
       "ingredients": [

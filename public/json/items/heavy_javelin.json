@@ -6,6 +6,7 @@
   "trade_price": 1.6,
   "stackSize": 20,
   "weight": 2,
+  "description": "While short spears were found to be cumbersome in boarding actions, their stopping power when thrown proved useful for fighting bigger kinds of the Rupu.",
   "crafting": [
     {
       "ingredients": [

@@ -4,6 +4,7 @@
   "type": "CeramicPickaxe_C",
   "trade_price": 98.2,
   "weight": 5,
+  "description": "A nearly unbreakable, highly efficient mining tool.",
   "experiencieReward": 120,
   "durability": 550,
   "crafting": [

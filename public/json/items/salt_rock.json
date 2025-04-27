@@ -5,6 +5,7 @@
   "trade_price": 0.1,
   "stackSize": 100,
   "weight": 0.23,
+  "description": "Mined from desert salt lakes.",
   "experiencieReward": 3,
   "crafting": [
     {

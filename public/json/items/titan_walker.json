@@ -3,6 +3,7 @@
   "parent": "Buffalo Walker",
   "type": "Titan_C",
   "category": "Walkers",
+  "description": "An iconic walker distinguished by tiered design and open, flat deck spaces. Dozens of large weapons can be stationed on it, but without a crew it's not very defensible.",
   "crafting": [
     {
       "ingredients": [

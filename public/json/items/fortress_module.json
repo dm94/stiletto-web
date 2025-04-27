@@ -3,6 +3,7 @@
   "type": "StructuresArmorBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Stacking this module increases the armor value of all structures attached to a walker.",
   "experiencieReward": 65,
   "crafting": [
     {

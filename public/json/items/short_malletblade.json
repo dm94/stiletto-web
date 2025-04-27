@@ -6,6 +6,7 @@
   "trade_price": 88.8,
   "stackSize": 100,
   "weight": 4,
+  "description": "The blunt force behind the blade makes it cut much deeper than other swords.",
   "experiencieReward": 200,
   "durability": 500,
   "crafting": [

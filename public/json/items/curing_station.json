@@ -3,6 +3,7 @@
   "parent": "Fiberworking Station",
   "type": "CuringStation_C",
   "category": "Crafting",
+  "description": "Combination of a simple alchemical station and a tanning rack that allows processing and curing of various resources.",
   "experiencieReward": 40,
   "crafting": [
     {

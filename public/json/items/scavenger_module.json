@@ -3,6 +3,7 @@
   "type": "LegItemLootingBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Walker legs will automatically pick up dropped items when travelling at slow speed. Stacking this module increases the maximum speed at which items are picked up.",
   "experiencieReward": 65,
   "crafting": [
     {

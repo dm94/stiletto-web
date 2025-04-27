@@ -3,6 +3,7 @@
   "type": "TravelCostBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Stacking this module decreases the water cost of travelling.",
   "experiencieReward": 65,
   "crafting": [
     {

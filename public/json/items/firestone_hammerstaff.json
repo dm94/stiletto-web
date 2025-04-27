@@ -2,6 +2,7 @@
   "name": "Firestone Hammerstaff",
   "parent": "Paddleblade Quarterstaff",
   "type": "LavaQuarterstaff_C",
+  "description": "While not being sharp like a similarly built bladestaff, the weight and sturdyness of hammerstaff tips allows to crack enemy skulls with ease and grace.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T3)",

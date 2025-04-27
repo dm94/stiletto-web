@@ -651,5 +651,6 @@
       "minQuantity": 2,
       "maxQuantity": 2
     }
-  ]
+  ],
+  "whereToFarm": "Drops from Palms when they're cut down."
 }

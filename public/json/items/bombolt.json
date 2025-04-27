@@ -6,6 +6,7 @@
   "trade_price": 11.7,
   "stackSize": 20,
   "weight": 0.3,
+  "description": "Used in Tower Walker weapon. Essentially a harpoon with a bomb on its tip that has devastating damage, but low accuracy due to the shape.",
   "experiencieReward": 15,
   "crafting": [
     {

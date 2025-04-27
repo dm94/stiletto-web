@@ -3,6 +3,7 @@
   "type": "StilettoLegs_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "These versatile legs can step over fissures, climb rocky mountains, and ford fast flowing rivers. While not very protected, they're light and cheap to construct.",
   "crafting": [
     {
       "ingredients": [

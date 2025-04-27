@@ -1,9 +1,10 @@
 {
   "name": "Iron Pickaxe",
-  "parent": "CeramicPickaxe",
+  "parent": "Ceramic Pickaxe",
   "type": "IronPickaxe_C",
   "trade_price": 38.7,
   "weight": 6,
+  "description": "Mine minerals with increased efficiency.",
   "experiencieReward": 160,
   "durability": 950,
   "crafting": [

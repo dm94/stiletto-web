@@ -6,6 +6,7 @@
   "trade_price": 99.8,
   "stackSize": 100,
   "weight": 0.5,
+  "description": "Makes a Nomad want to race other Nomads. Allows Nomad to sprint without losing stamina.",
   "crafting": [
     {
       "ingredients": [

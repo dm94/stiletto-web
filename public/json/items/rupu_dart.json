@@ -5,6 +5,7 @@
   "trade_price": 1.5,
   "stackSize": 28,
   "weight": 0.6,
+  "description": "Little more than sharpened stick, used by the Rupu as ammo for their light weapons.",
   "wikiVisibility": false,
   "projectileDamage": {
     "damage": 20,

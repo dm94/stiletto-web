@@ -3,6 +3,7 @@
   "type": "Ballista_T4_C",
   "category": "Weapons",
   "weight": 50,
+  "description": "The ultimate, heavy-duty ballista.",
   "experiencieReward": 78,
   "crafting": [
     {

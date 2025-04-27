@@ -6,6 +6,7 @@
   "trade_price": 103,
   "stackSize": 100,
   "weight": 4.2,
+  "description": "Until the discovery of lava processing, kopesh swords were made of noble metals as ceremonial weapons. Using new methods of production, they can now be seen on battlefields as well.",
   "experiencieReward": 210,
   "durability": 685,
   "crafting": [

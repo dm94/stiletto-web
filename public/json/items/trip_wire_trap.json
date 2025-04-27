@@ -3,6 +3,7 @@
   "parent": "Advanced Constructions",
   "type": "TrapTripWire_C",
   "category": "Defenses",
+  "description": "Triggers a small explosion when a nomad steps on the tripwire.",
   "experiencieReward": 97,
   "crafting": [
     {

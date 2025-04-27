@@ -6,6 +6,7 @@
   "trade_price": 8.4,
   "stackSize": 100,
   "weight": 150,
+  "description": "Infused battery allowing to store significant amounts of torque at a cost of extreme weight.",
   "experiencieReward": 26,
   "durability": 210,
   "crafting": [
@@ -27,5 +28,6 @@
       "station": "Artisan Fiberworking Station",
       "time": 3
     }
-  ]
+  ],
+  "whereToFarm": "Crafted in Character Crafting. Stores torque."
 }

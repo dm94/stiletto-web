@@ -5,7 +5,7 @@
   "trade_price": 0.1,
   "stackSize": 100,
   "weight": 0.19,
-  "description": "This versatile material is the focus of Flotillan engineering.",
+  "description": "This versatile material is the focus of Flotillan engineering. Produces ash and charcoal when burnt.",
   "experiencieReward": 1,
   "crafting": [
     {
@@ -672,5 +672,6 @@
       "minQuantity": 10,
       "maxQuantity": 10
     }
-  ]
+  ],
+  "whereToFarm": "Found as driftwood on the ground or by chopping trees."
 }

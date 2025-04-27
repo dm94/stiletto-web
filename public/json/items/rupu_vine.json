@@ -5,6 +5,7 @@
   "trade_price": 0.5,
   "stackSize": 100,
   "weight": 0.01,
+  "description": "These vines grow exclusively in rupu excrement, which the rupu use as a binding agent in the construction of their mud huts.",
   "experiencieReward": 18,
   "droppedBy": [
     {
@@ -651,5 +652,6 @@
       "minQuantity": 1,
       "maxQuantity": 1
     }
-  ]
+  ],
+  "whereToFarm": "Grows on top of Rupu camps and huts."
 }

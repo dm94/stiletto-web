@@ -6,5 +6,6 @@
   "stackSize": 100,
   "weight": 0.01,
   "description": "Its extremely hard carapace evolved to shield it from extreme weather.",
-  "experiencieReward": 18
+  "experiencieReward": 18,
+  "whereToFarm": "Found in fields of Corn and other meadows."
 }

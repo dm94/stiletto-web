@@ -2,6 +2,7 @@
   "name": "Ceramic Orb",
   "parent": "Lobber",
   "type": "CeramicOrb_C",
+  "description": "Ceramic orb with sharp edges that shatters on impact. Devastating damage to walkers and siege weapons.",
   "onlyDevs": true,
   "projectileDamage": {
     "damage": 200

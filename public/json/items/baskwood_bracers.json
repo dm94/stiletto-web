@@ -5,6 +5,7 @@
   "trade_price": 13.7,
   "stackSize": 100,
   "weight": 3.8,
+  "description": "A heavy armor issued to Flotillan servicemen whose responsibilities range from reconnaissance, expiditionary planting, and trade station operation and disassemblement.",
   "experiencieReward": 60,
   "durability": 200,
   "crafting": [

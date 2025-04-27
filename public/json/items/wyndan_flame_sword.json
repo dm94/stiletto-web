@@ -2,6 +2,7 @@
   "name": "Wyndan Flame Sword",
   "parent": "Singblade",
   "type": "TwoHandedIronSword_C",
+  "description": "The Wyndan tribe is said to have pioneered the first walkers.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T4)",

@@ -6,6 +6,7 @@
   "trade_price": 14,
   "stackSize": 100,
   "weight": 2.8,
+  "description": "Razor-sharp bone splinters stick out of the shaft, punching holes in unprotected flesh with every strike.",
   "experiencieReward": 55,
   "durability": 430,
   "crafting": [

@@ -3,6 +3,7 @@
   "type": "Basket1_C",
   "category": "Furniture",
   "weight": 1,
+  "description": "Baskets can store something small in them, but are usually used for decorative purposes only.",
   "experiencieReward": 6,
   "crafting": [
     {

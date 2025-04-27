@@ -3,6 +3,7 @@
   "type": "WallConcreteBattlement_C",
   "category": "Concrete",
   "weight": 12,
+  "description": "Above average strength, can be packed on walkers.",
   "experiencieReward": 30,
   "crafting": [
     {

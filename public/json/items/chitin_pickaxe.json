@@ -1,7 +1,8 @@
 {
   "name": "Chitin PickAxe",
-  "parent": "CeramicPickaxe",
+  "parent": "Ceramic Pickaxe",
   "type": "ChitinPickAxe_C",
+  "description": "Mine stone and other minerals at higher efficiency with this chitin tool.",
   "durability": 504,
   "crafting": [
     {

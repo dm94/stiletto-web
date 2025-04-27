@@ -837,5 +837,6 @@
       "minQuantity": 12,
       "maxQuantity": 12
     }
-  ]
+  ],
+  "whereToFarm": "Harvested from bushes."
 }

@@ -6,6 +6,7 @@
   "trade_price": 1.1,
   "stackSize": 100,
   "weight": 0.34,
+  "description": "A potent, alchemical type of glue that is capable of withstanding strong tensions of the bonded materials.",
   "experiencieReward": 3,
   "onlyDevs": true,
   "crafting": [

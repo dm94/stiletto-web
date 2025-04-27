@@ -3,6 +3,7 @@
   "type": "GuardRail_C",
   "category": "Wood: light",
   "weight": 1,
+  "description": "Fence off your territory or build on walker decks to prevent Nomads from falling off.",
   "experiencieReward": 28,
   "crafting": [
     {

@@ -3,6 +3,7 @@
   "parent": "Bomb Chest Trap",
   "type": "TrapDoor_C",
   "category": "Defenses",
+  "description": "Opens automatically when a nomad steps on it. Deadly in combination with other traps, like spikes.",
   "experiencieReward": 48,
   "crafting": [
     {

@@ -6,6 +6,7 @@
   "trade_price": 81,
   "stackSize": 100,
   "weight": 4.9,
+  "description": "Reinforced by solidified lava, bluedgeons are often brought back to the Flotilla by the Nomads who dare to explore volcanic areas.",
   "experiencieReward": 210,
   "durability": 775,
   "crafting": [

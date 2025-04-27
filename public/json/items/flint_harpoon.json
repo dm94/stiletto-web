@@ -6,6 +6,7 @@
   "trade_price": 4.4,
   "stackSize": 20,
   "weight": 0.8,
+  "description": "Ammo for Ballista. Tether to any target and reel in until the harpoon is destroyed or the tether snaps.",
   "crafting": [
     {
       "ingredients": [

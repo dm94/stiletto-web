@@ -3,6 +3,7 @@
   "type": "WallConcreteWindow3_C",
   "category": "Concrete",
   "weight": 8,
+  "description": "Almost impossible to break. Can only be packed on Founder Walker types (Silur Walker).",
   "experiencieReward": 32,
   "crafting": [
     {

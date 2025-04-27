@@ -5,6 +5,7 @@
   "trade_price": 5,
   "stackSize": 20,
   "weight": 0.3,
+  "description": "Invented by the Rupu out of pure spite for Nomads' creations, these projectiles are used to tear wings apart and snap their beams to immobilize walkers.",
   "experiencieReward": 15,
   "wikiVisibility": false,
   "projectileDamage": {

@@ -6,6 +6,7 @@
   "trade_price": 13.2,
   "stackSize": 100,
   "weight": 0.4,
+  "description": "Protects the wearer against gases if worn correctly, but needs to be replaced regularly. Surprisingly easy to breath through.",
   "experiencieReward": 10,
   "durability": 240,
   "crafting": [

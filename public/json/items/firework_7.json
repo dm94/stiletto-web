@@ -1,4 +1,5 @@
 {
   "name": "Firework 7",
-  "type": "Firework_06_C"
+  "type": "Firework_06_C",
+  "description": "Shoots a firework with a colorful, sparkling explosion."
 }

@@ -3,6 +3,7 @@
   "parent": "Barrier Base",
   "type": "WalkerBarrierTopPlace_C",
   "category": "Defenses",
+  "description": "Obstructs walkers from passing through.",
   "experiencieReward": 78,
   "crafting": [
     {

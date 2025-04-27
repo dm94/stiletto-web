@@ -3,6 +3,7 @@
   "parent": "Flotillian Walker Weapons",
   "type": "BattleFan_C",
   "category": "Weapons",
+  "description": "Recent Flotillian invention allows nomads to manipulate the air by sucking and blowing. Although created to move and store gas clouds, it can also push nomads as well as a walker it's built on using a powerful Superblow.",
   "experiencieReward": 78,
   "crafting": [
     {

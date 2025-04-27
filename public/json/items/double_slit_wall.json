@@ -3,6 +3,7 @@
   "type": "WallWoodHeavyWindow2_C",
   "category": "Wood: heavy",
   "weight": 3,
+  "description": "Above average strength, can be packed on walkers.",
   "experiencieReward": 46,
   "crafting": [
     {

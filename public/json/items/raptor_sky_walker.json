@@ -3,6 +3,7 @@
   "parent": "Dinghy Walker",
   "type": "Raptor_C",
   "category": "Walkers",
+  "description": "Using a technology discovered during an expedition to a city in the sky, the Raptor Sky Walker is the first of its kind created by Nomads. Allows to soar in the sky like a leaf on the wind using torque for flapping its wings.",
   "crafting": [
     {
       "ingredients": [

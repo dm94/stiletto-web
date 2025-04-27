@@ -3,6 +3,7 @@
   "parent": "Beat Stick",
   "type": "TubeSpade_C",
   "category": "Tools",
+  "description": "[Use from Inventory or Quick Slots] Used for harvesting resources from the soil. Long ago, Nomads invented it as the simplest and most efficient way of digging in the ground while traveling.",
   "durability": 100,
   "crafting": [
     {

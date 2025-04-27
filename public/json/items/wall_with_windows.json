@@ -3,6 +3,7 @@
   "type": "WallClayWindow2_C",
   "category": "Clay",
   "weight": 7,
+  "description": "Extremely durable. Can only be packed on Founder Walker types (Silur Walker).",
   "experiencieReward": 32,
   "crafting": [
     {

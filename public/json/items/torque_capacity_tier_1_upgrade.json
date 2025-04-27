@@ -2,6 +2,7 @@
   "name": "Torque Capacity - Tier 1 Upgrade",
   "type": "SparePartWoodTorque_C",
   "category": "Spare Parts",
+  "description": "Produces torque while the walker is moving. Hold SHIFT to consume torque on a walker, or use it to power advanced crafting stations.",
   "experiencieReward": 10,
   "durability": 100,
   "wikiVisibility": false

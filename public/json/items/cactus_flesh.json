@@ -5,5 +5,7 @@
   "trade_price": 0.2,
   "stackSize": 100,
   "weight": 0.12,
-  "experiencieReward": 2
+  "description": "Significantly reduces stamina regenarion if eaten raw, but drinking clean water inreaes it again.The last resort for nomads dying of thirst.",
+  "experiencieReward": 2,
+  "whereToFarm": "Grows in deserts."
 }

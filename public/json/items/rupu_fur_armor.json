@@ -5,6 +5,7 @@
   "trade_price": 2.6,
   "stackSize": 100,
   "weight": 2.8,
+  "description": "Worn by nomads who don't mind the smell. Extremely light and maneuverable.",
   "durability": 150,
   "crafting": [
     {

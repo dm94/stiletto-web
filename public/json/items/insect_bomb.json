@@ -6,6 +6,7 @@
   "trade_price": 24.2,
   "stackSize": 10,
   "weight": 2.6,
+  "description": "Nomads attacked by a swarm of insects have to fight back. Insects will break grappling hook tethers and deal moderate health damage.",
   "crafting": [
     {
       "ingredients": [

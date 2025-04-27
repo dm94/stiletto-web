@@ -3,6 +3,7 @@
   "type": "WallClayCorner_C",
   "category": "Clay",
   "weight": 5,
+  "description": "Average strength",
   "experiencieReward": 30,
   "crafting": [
     {

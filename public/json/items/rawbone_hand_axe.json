@@ -5,6 +5,7 @@
   "trade_price": 4.8,
   "stackSize": 100,
   "weight": 2.2,
+  "description": "Nomads quickly learned that sharpened chunks of sun-dried bone are quite useful for chopping things.",
   "experiencieReward": 50,
   "durability": 400,
   "crafting": [

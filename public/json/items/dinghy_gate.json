@@ -2,6 +2,7 @@
   "name": "Dinghy Gate",
   "type": "LightWoodGate_C",
   "weight": 30,
+  "description": "Medium gate for a garage that fits a Dinghy Walker. Average strength, requires 3 walls height for building.",
   "experiencieReward": 22,
   "crafting": [
     {

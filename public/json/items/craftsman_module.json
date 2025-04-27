@@ -3,6 +3,7 @@
   "type": "CraftingTimeBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Stacking this module decreases the crafting time of stations attached to a walker.",
   "experiencieReward": 65,
   "crafting": [
     {

@@ -1,4 +1,5 @@
 {
   "name": "Celestial Tablet",
-  "type": "KnowledgeTabletCelestial_C"
+  "type": "KnowledgeTabletCelestial_C",
+  "description": "Carved images of celestial bodies can be felt on this tablet."
 }

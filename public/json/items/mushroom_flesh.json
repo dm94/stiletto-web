@@ -5,6 +5,7 @@
   "trade_price": 0.4,
   "stackSize": 100,
   "weight": 0.01,
+  "description": "Make a meal out of it, or a bomb.",
   "experiencieReward": 2,
   "droppedBy": [
     {
@@ -147,5 +148,6 @@
       "maxQuantity": 5,
       "tier": "T4"
     }
-  ]
+  ],
+  "whereToFarm": "Grows near water sources and forests."
 }

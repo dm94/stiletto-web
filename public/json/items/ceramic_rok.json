@@ -6,6 +6,7 @@
   "trade_price": 5.2,
   "stackSize": 10,
   "weight": 5,
+  "description": "Ammo for the Rokker. Slow but powerful.",
   "experiencieReward": 1,
   "crafting": [
     {

@@ -2,6 +2,7 @@
   "name": "Durability - Tier 2 Upgrade",
   "type": "SparePartBoneArmor_C",
   "category": "Spare Parts",
+  "description": "Increases HP of the hull. The higher the HP, the more costly it is for enemies to break in. Often, enemy nomads leave the hull of a walker untouched, allowing you to recover the Walker after a loss.",
   "experiencieReward": 20,
   "durability": 100,
   "wikiVisibility": false

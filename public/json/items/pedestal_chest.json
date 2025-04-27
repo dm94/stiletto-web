@@ -3,6 +3,7 @@
   "type": "ChestPedestal_C",
   "category": "Containers",
   "weight": 23,
+  "description": "A durable chest with adaquate inventory space. Items are protected unless the chest is severely damaged.",
   "experiencieReward": 50,
   "crafting": [
     {

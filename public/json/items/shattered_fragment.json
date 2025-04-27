@@ -4,5 +4,6 @@
   "category": "Resources",
   "trade_price": 3,
   "stackSize": 100,
+  "description": "A shattered fragment - some simple information can still be extracted, but without some restoration work it's hard to learn about complex topics from it.",
   "experiencieReward": 10
 }

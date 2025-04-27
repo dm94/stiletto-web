@@ -5,6 +5,7 @@
   "trade_price": 6.6,
   "stackSize": 100,
   "weight": 0.01,
+  "description": "Skittering parasites make their nests between the gooey cracks. Harvesting chitin is dirty work.",
   "experiencieReward": 15,
   "crafting": [
     {
@@ -46,5 +47,6 @@
       "maxQuantity": 1,
       "tier": "T3"
     }
-  ]
+  ],
+  "whereToFarm": "Found in creatures that have scales or hard plates."
 }

@@ -5,6 +5,7 @@
   "trade_price": 0.4,
   "stackSize": 100,
   "weight": 0.28,
+  "description": "Flexible bones make excellent tools and armor.",
   "experiencieReward": 8,
   "droppedBy": [
     {
@@ -454,5 +455,6 @@
       "maxQuantity": 4,
       "tier": "T3"
     }
-  ]
+  ],
+  "whereToFarm": "Creature remains can be found in various oases, dead worms, and some rupus."
 }

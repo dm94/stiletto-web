@@ -3,6 +3,7 @@
   "parent": "Dinghy Walker",
   "type": "Balang_C",
   "category": "Walkers",
+  "description": "Founder Walker type of the smallest size and least protection. Allows to pack and carry a base made of heavy solid materials.",
   "crafting": [
     {
       "ingredients": [

@@ -3,6 +3,7 @@
   "parent": "Medium Wood Walls",
   "type": "SmallRepairHoist_C",
   "category": "Walker Tools",
+  "description": "Intricate ceiling-mounted contraption that uses raw materials to repair the Walker parked under it.",
   "crafting": [
     {
       "ingredients": [

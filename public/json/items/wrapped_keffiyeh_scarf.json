@@ -5,6 +5,7 @@
   "trade_price": 13.2,
   "stackSize": 100,
   "weight": 0.2,
+  "description": "Used by nomads as protection from the burning sun and the all-present sand.",
   "experiencieReward": 10,
   "durability": 250,
   "crafting": [

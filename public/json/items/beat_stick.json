@@ -6,6 +6,7 @@
   "trade_price": 1.7,
   "stackSize": 100,
   "weight": 3.2,
+  "description": "The fastest way to dispatch a rupu.",
   "experiencieReward": 1,
   "durability": 150,
   "crafting": [

@@ -6,6 +6,7 @@
   "trade_price": 48.5,
   "stackSize": 100,
   "weight": 0.5,
+  "description": "Enables nomads to transport torque between various devices. The belt also significantly increases the effectiveness of grappling hooks.",
   "experiencieReward": 154,
   "durability": 200,
   "onlyDevs": true,

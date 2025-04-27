@@ -6,6 +6,7 @@
   "trade_price": 1.6,
   "stackSize": 5,
   "weight": 2,
+  "description": "The Nomad that came up with the innovative idea of attaching a bomb to a stick was rewarded with a large walker by the Flotilla for their contribution to science.",
   "crafting": [
     {
       "ingredients": [

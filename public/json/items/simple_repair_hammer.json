@@ -6,6 +6,7 @@
   "trade_price": 9.5,
   "stackSize": 100,
   "weight": 3.12,
+  "description": "Repair wings, legs, and any other structures by hammering them. Always cheaper to fix than to rebuild.",
   "experiencieReward": 50,
   "durability": 200,
   "crafting": [

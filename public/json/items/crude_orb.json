@@ -5,6 +5,7 @@
   "trade_price": 5.2,
   "stackSize": 100,
   "weight": 5,
+  "description": "A shaped orb that shatters on impact. Cuts through rupu fur like butter.",
   "wikiVisibility": false,
   "projectileDamage": {
     "damage": 50

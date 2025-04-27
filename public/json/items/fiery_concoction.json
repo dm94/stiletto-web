@@ -6,6 +6,8 @@
   "trade_price": 1,
   "stackSize": 5,
   "weight": 0.2,
+  "description": "A mixture of ingredients with dashes of wood splinters kept in secret by the nomadic outlaws. Used in production of Hellfire Bolts to make fire burn at extremely high temperatures, allowing to damage even the strongest materials.",
   "experiencieReward": 35,
-  "onlyDevs": true
+  "onlyDevs": true,
+  "whereToFarm": "Sold by ammo merchants for Flots."
 }

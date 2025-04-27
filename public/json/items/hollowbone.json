@@ -4,5 +4,7 @@
   "category": "Resources",
   "trade_price": 30,
   "stackSize": 100,
-  "weight": 0.18
+  "weight": 0.18,
+  "description": "Hollowbone is a lightweight yet incredibly strong material extracted from the remains of Koa. Its natural hollow structure makes it perfect for crafting lightweight techonlogies, prized by nomads who value speed and mobility.",
+  "whereToFarm": "Hollowbone can only be obtained by defeating a Koa in battle, as the rare material is harvested directly from their massive skeleton after they fall."
 }

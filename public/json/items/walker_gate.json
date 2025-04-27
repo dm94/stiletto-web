@@ -3,6 +3,7 @@
   "type": "WalkerGate_C",
   "category": "Wood: light",
   "weight": 18.5,
+  "description": "Opens and closes to obstruct walkers or allow them passage.",
   "experiencieReward": 98,
   "crafting": [
     {

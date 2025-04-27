@@ -6,6 +6,7 @@
   "trade_price": 5.2,
   "stackSize": 100,
   "weight": 1.5,
+  "description": "A shaped piece of flint that shatters on impact. Cuts through rupu fur like butter.",
   "experiencieReward": 1,
   "wikiVisibility": false,
   "onlyDevs": true,

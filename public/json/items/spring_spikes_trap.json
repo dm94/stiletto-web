@@ -3,6 +3,7 @@
   "parent": "Bomb Chest Trap",
   "type": "TrapSpikesSpring_C",
   "category": "Defenses",
+  "description": "Automatically stabs nomads with hidden spikes when they step on the trigger plate.",
   "experiencieReward": 60,
   "crafting": [
     {

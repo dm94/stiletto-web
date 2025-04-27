@@ -3,6 +3,7 @@
   "parent": "Advanced Woodworking Station",
   "type": "WoodworkingStation_T3_C",
   "category": "Crafting",
+  "description": "Artificer crafting station unlocks all available recipes and is the most efficient woodworking station.",
   "experiencieReward": 300,
   "crafting": [
     {

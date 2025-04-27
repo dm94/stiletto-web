@@ -3,6 +3,7 @@
   "parent": "Small Chest",
   "type": "ChestMedium_C",
   "category": "Containers",
+  "description": "Stack size: 200. A sturdy chest with a moderate amount of inventory space. Items are protected unless the chest is severely damaged.",
   "experiencieReward": 32,
   "crafting": [
     {

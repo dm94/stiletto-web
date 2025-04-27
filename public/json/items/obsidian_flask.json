@@ -6,6 +6,7 @@
   "trade_price": 23,
   "stackSize": 100,
   "weight": 1,
+  "description": "Incredibly durable flask resistant to highest temperatures.",
   "experiencieReward": 50,
   "durability": 200,
   "crafting": [

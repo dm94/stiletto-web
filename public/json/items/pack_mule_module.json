@@ -3,6 +3,7 @@
   "type": "WeightBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Stacking this module increases the maximum weight limit of a walker.",
   "experiencieReward": 65,
   "crafting": [
     {

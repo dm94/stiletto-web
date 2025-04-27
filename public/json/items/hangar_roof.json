@@ -2,6 +2,7 @@
   "name": "Hangar Roof",
   "type": "HangarRoof_C",
   "category": "Walker Hangar",
+  "description": "Hangar Parts allow protecting Walkers from Enemies and the Environment",
   "crafting": [
     {
       "ingredients": [

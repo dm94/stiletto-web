@@ -3,5 +3,6 @@
   "type": "LootBoxEquipment_C",
   "category": "Interactables",
   "stackSize": 100,
-  "weight": 1
+  "weight": 1,
+  "description": "Equipment seized from pirates by the Flotilla. May contain various types and quantities of equipment items."
 }

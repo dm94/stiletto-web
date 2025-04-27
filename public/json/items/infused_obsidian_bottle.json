@@ -6,6 +6,7 @@
   "trade_price": 26,
   "stackSize": 100,
   "weight": 1.5,
+  "description": "A large container made of obsidian with nibiran coating. Withstands very high temperatures.",
   "experiencieReward": 50,
   "durability": 220,
   "crafting": [

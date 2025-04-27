@@ -3,6 +3,7 @@
   "type": "WallSandGate_C",
   "category": "Basic Protection",
   "weight": 13,
+  "description": "Weak gate for a small Firefly Walker garage. Only sand structures can be used with a sand base.",
   "experiencieReward": 22,
   "crafting": [
     {

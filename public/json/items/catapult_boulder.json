@@ -6,6 +6,7 @@
   "trade_price": 8,
   "stackSize": 10,
   "weight": 2,
+  "description": "Ammo for catapult. This massive boulder obliterates bodies and smashes wood to bits.",
   "crafting": [
     {
       "ingredients": [

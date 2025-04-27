@@ -3,6 +3,7 @@
   "type": "ArtisanSoilAuger_C",
   "category": "Walker Tools",
   "weight": 300,
+  "description": "Advanced mobile drilling station designed for seasoned Nomads. Mounted on a walker frame, this heavy-duty auger extracts valuable resources directly from terrain. Consumes Torque to operate and immobilizes the walker while active. Capable of harvesting Sand from arid dunes, Earthwax from volcanic soil, Salt from desiccated lakebeds, and Clay from rich mud deposits.Built for those who know where to dig — and what to dig for.",
   "experiencieReward": 125,
   "crafting": [
     {

@@ -3,6 +3,7 @@
   "parent": "Maintenance Box",
   "type": "Humidifier_C",
   "category": "Interactables",
+  "description": "When placed in a base and filled with water and charcoal, this ingenious contraption slowly releases a mist that  keeps you hydrated over time. Its efficiency depends on the number of Nomads gathered around it.",
   "crafting": [
     {
       "ingredients": [

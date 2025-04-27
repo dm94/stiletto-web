@@ -3,6 +3,7 @@
   "parent": "Medium Chest",
   "type": "ChestLarge_C",
   "category": "Containers",
+  "description": "Stack size: 300. A very strong chest with a large amount of inventory space. Items are protected unless the chest is severely damaged.",
   "experiencieReward": 32,
   "crafting": [
     {

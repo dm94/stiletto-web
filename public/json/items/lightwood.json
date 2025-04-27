@@ -6,5 +6,6 @@
   "stackSize": 100,
   "weight": 0.1,
   "description": "A type of very light wood with a porous structure and air trapped between the layers of the fiber.",
-  "experiencieReward": 12
+  "experiencieReward": 12,
+  "whereToFarm": "Grows in crevices of gigantic rock formations."
 }

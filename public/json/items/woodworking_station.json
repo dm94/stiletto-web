@@ -3,6 +3,7 @@
   "parent": "Crafting",
   "type": "WoodworkingStation_C",
   "category": "Crafting",
+  "description": "Basic crafting station cuts wood into basic parts.",
   "experiencieReward": 92,
   "crafting": [
     {

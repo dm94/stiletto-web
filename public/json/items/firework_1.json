@@ -5,6 +5,7 @@
   "trade_price": 3,
   "stackSize": 100,
   "weight": 0.15,
+  "description": "Shoots a firework with a circular, colorful explosion.",
   "crafting": [
     {
       "ingredients": [

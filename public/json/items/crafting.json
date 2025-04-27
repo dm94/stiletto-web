@@ -1,4 +1,5 @@
 {
   "name": "Crafting",
-  "type": "CraftingRoot_C"
+  "type": "CraftingRoot_C",
+  "description": "Crafting Stations and Resource Handling"
 }

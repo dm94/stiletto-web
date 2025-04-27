@@ -2,6 +2,7 @@
   "name": "Purified Water",
   "parent": "Camp Fire",
   "type": "Water_T1_C",
+  "description": "Torque Consumption",
   "droppedBy": [
     {
       "name": "BasketLoot (T2) (AC)",

@@ -239,5 +239,6 @@
       "maxQuantity": 14,
       "tier": "T4"
     }
-  ]
+  ],
+  "whereToFarm": "Standing on a sandy surface automatically provides this resource for crafting."
 }

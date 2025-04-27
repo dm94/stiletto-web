@@ -5,6 +5,7 @@
   "trade_price": 84.7,
   "stackSize": 10,
   "weight": 30,
+  "description": "Ammo for sling or catapult. Spawns dozens of tiny explosions covering a large surface area. Very effective at disrupting walkers and nomads on the ground.",
   "wikiVisibility": false,
   "projectileDamage": {
     "damage": 20,

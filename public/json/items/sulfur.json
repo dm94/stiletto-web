@@ -5,5 +5,6 @@
   "trade_price": 1.4,
   "stackSize": 100,
   "weight": 0.03,
-  "description": "A yellow mineral that typically forms in sulfur lakes."
+  "description": "A yellow mineral that typically forms in sulfur lakes.",
+  "whereToFarm": "Mined from sulfur rocks or collected from mutated mushroom gases."
 }

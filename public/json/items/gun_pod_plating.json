@@ -3,6 +3,7 @@
   "parent": "Gun Pod Shell",
   "type": "GunPodShell_T2_C",
   "category": "Weapons",
+  "description": "Attach heavy armor plating to the gun pod to make it safer from attack.",
   "experiencieReward": 34,
   "crafting": [
     {

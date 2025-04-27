@@ -2,6 +2,7 @@
   "name": "Wyndan Sabre",
   "parent": "Short Malletblade",
   "type": "OneHandedIronSword_C",
+  "description": "The Wyndan tribe is said to have pioneered the first walkers.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T4)",

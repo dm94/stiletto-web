@@ -3,6 +3,7 @@
   "type": "WallSand_C",
   "category": "Basic Protection",
   "weight": 10,
+  "description": "Weak structure that still protects nomads from dangers. Only sand structures can be used with a sand base.",
   "experiencieReward": 30,
   "crafting": [
     {

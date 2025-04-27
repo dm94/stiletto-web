@@ -3,6 +3,7 @@
   "parent": "Advanced Walker Weapons",
   "type": "Rokker_C",
   "category": "Weapons",
+  "description": "A heavy weapon that launches deadly roks. Invented out of necessity when various Nomad factions started fielding large Walkers against each other.",
   "experiencieReward": 188,
   "crafting": [
     {

@@ -4,6 +4,7 @@
   "category": "Vitamins",
   "stackSize": 100,
   "weight": 1,
+  "description": "Mouth-watering dish made out of cooked apples and some seasoning. Juicy and spicy at the same time, it quenches thirst and energizes the Nomads that eat it.",
   "crafting": [
     {
       "ingredients": [

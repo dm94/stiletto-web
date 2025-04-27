@@ -3,6 +3,7 @@
   "type": "Throne_Brazier_01_C",
   "category": "Furniture",
   "weight": 20,
+  "description": "Make your adversaries bow before this intimidating assembly of sticks and planks.",
   "crafting": [
     {
       "ingredients": [

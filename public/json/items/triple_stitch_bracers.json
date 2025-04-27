@@ -5,6 +5,7 @@
   "trade_price": 16.8,
   "stackSize": 100,
   "weight": 1.4,
+  "description": "A secret weaving technique creates surprisingly strong armor with no loss in meanueverability.",
   "experiencieReward": 65,
   "durability": 250,
   "crafting": [

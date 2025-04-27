@@ -2,5 +2,6 @@
   "name": "Delivery Token",
   "type": "DeliveryTokenQuestItem_C",
   "category": "Resources",
-  "stackSize": 100
+  "stackSize": 100,
+  "description": "Bring it to any Trade Station while having a delivery quest to exchange it for a Flots reward."
 }

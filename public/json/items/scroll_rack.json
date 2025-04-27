@@ -3,6 +3,7 @@
   "parent": "Small Chest",
   "type": "ScrollRack_C",
   "category": "Containers",
+  "description": "Designed by Flotillan inventors as a mean of storing and accessing their precious schematics while building new marvels around their workshop, this container is invaluable for any Nomad.",
   "experiencieReward": 50,
   "crafting": [
     {

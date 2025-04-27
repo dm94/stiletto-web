@@ -3,6 +3,7 @@
   "type": "SchmetterlingWings_T3_Medium_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Upscaled wings that are better at generating force for walker movement.",
   "crafting": [
     {
       "ingredients": [

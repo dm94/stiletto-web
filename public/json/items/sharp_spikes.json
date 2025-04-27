@@ -3,6 +3,7 @@
   "parent": "Bomb Chest Trap",
   "type": "TrapSpikesSharp_C",
   "category": "Defenses",
+  "description": "Sharp spikes that stick out of the ground deal serious damage to nomads who fall or step on them.",
   "experiencieReward": 49,
   "crafting": [
     {

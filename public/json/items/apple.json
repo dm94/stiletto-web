@@ -6,5 +6,6 @@
   "stackSize": 100,
   "weight": 0.266,
   "description": "Crisp and delicious. No worms guaranteed.",
-  "experiencieReward": 8
+  "experiencieReward": 8,
+  "whereToFarm": "Grows on apple trees."
 }

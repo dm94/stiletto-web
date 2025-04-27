@@ -3,6 +3,7 @@
   "type": "TobogganWings_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "The standard merchant's vessel built for outrunning pirates and getting the goods where they need to go. There's no room for weapons, so this walker is usually accompanied by at least one battle-capable walker on its transport runs.",
   "crafting": [
     {
       "ingredients": [

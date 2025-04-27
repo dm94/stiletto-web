@@ -5,6 +5,7 @@
   "trade_price": 450,
   "stackSize": 100,
   "weight": 0.4,
+  "description": "An ancient relic of unknown purpose. The Flotillan Historical Society, who studies the relics for lost secrets of the past,  accepts them as donations in exchange for access to exclusive treasures only available to their most trusted partners. As is the case with anything valuable, there are black markets to found.",
   "experiencieReward": 3,
   "wikiVisibility": false,
   "droppedBy": [
@@ -50,5 +51,6 @@
       "maxQuantity": 1,
       "tier": "T2"
     }
-  ]
+  ],
+  "whereToFarm": "Found in Ancient Cities"
 }

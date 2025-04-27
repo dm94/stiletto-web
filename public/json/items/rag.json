@@ -3,6 +3,7 @@
   "type": "Throne_Scrap_01_C",
   "category": "Furniture",
   "weight": 0.2,
+  "description": "Make your adversaries bow before this intimidating assembly of sticks and planks.",
   "experiencieReward": 6,
   "crafting": [
     {

@@ -3,6 +3,7 @@
   "type": "DinghyWings_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Before the nomadic Flotillans had become aware of the route they needed to take to circumnavigate the planet efficiently, many of them died in the process of locating safe passage. These crudely constructed wind-powered walkers were first devised as scouting vessels because of their cheap cost and the high likelihood that a Nomad would not return from these missions. Has ample deck space for two Nomads.",
   "crafting": [
     {
       "ingredients": [

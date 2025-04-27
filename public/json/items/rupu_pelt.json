@@ -5,6 +5,7 @@
   "trade_price": 0.2,
   "stackSize": 100,
   "weight": 0.55,
+  "description": "Garments made from this oily fur are favoured for voyages into the Ice Lands.",
   "droppedBy": [
     {
       "name": "BasketLoot (T2) (AC)",
@@ -343,5 +344,6 @@
       "minQuantity": 1,
       "maxQuantity": 1
     }
-  ]
+  ],
+  "whereToFarm": "Harvested by killing Rupu."
 }

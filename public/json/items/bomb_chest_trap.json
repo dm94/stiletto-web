@@ -3,6 +3,7 @@
   "parent": "Ammo Chest",
   "type": "TrapBombChest_C",
   "category": "Defenses",
+  "description": "Looks like a normal chest, feels like an explosion. Booby trap this chest with any type of bomb.",
   "experiencieReward": 78,
   "crafting": [
     {

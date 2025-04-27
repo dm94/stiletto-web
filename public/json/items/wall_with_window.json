@@ -3,6 +3,7 @@
   "type": "WallClayWindow_C",
   "category": "Clay",
   "weight": 7,
+  "description": "Very strong and heavy, damageable only with high tier ammo. Can only be packed on Founder Walker types (Balang or Silur Walker).",
   "experiencieReward": 32,
   "crafting": [
     {

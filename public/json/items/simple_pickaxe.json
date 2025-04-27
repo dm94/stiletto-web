@@ -6,6 +6,7 @@
   "trade_price": 8.4,
   "stackSize": 100,
   "weight": 3,
+  "description": "Mine stone and other minerals with this crude tool.",
   "experiencieReward": 55,
   "durability": 315,
   "crafting": [

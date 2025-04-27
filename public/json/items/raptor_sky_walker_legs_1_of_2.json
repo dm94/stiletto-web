@@ -3,6 +3,7 @@
   "type": "RaptorLegs_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Special landing gear for Sky Walkers, allowing to soften the blow.",
   "crafting": [
     {
       "ingredients": [

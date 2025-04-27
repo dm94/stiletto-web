@@ -3,6 +3,7 @@
   "parent": "IronBolt",
   "type": "NibirianBolt_C",
   "trade_price": 35,
+  "description": "Ammo for ballista. During an eclipse, these bolts will light up the sky and make enemies glow from the inside out.",
   "experiencieReward": 100,
   "crafting": [
     {

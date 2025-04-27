@@ -2,6 +2,7 @@
   "name": "Pine Tree",
   "type": "TreePine_C",
   "category": "Crafting",
+  "description": "Grow your own trees from seeds overnight with the help of some Nibiran fertilizer.",
   "crafting": [
     {
       "ingredients": [

@@ -6,6 +6,7 @@
   "trade_price": 700,
   "stackSize": 100,
   "weight": 0.55,
+  "description": "Masterfully crafted contraption that automatically releases energy and bolsters transmission of walker gear mechanisms. Essential in construction of heavier walkers.",
   "experiencieReward": 25,
   "crafting": [
     {

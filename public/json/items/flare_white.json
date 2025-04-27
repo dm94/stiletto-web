@@ -5,6 +5,7 @@
   "trade_price": 3,
   "stackSize": 100,
   "weight": 0.15,
+  "description": "Fires an illuminating projectile high in the air that is visible from a long distance. The primary function is position signaling.",
   "crafting": [
     {
       "ingredients": [

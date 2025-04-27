@@ -5,5 +5,6 @@
   "trade_price": 3.5,
   "stackSize": 100,
   "weight": 0.58,
-  "description": "Historically believed to be the remains of nomads who were burnt by the Sun, it's been recently discovered to be useful in various productions of fuels, bombs, and other items."
+  "description": "Historically believed to be the remains of nomads who were burnt by the Sun, it's been recently discovered to be useful in various productions of fuels, bombs, and other items.",
+  "whereToFarm": "Requires obsidian container to collect it."
 }

@@ -5,6 +5,7 @@
   "category": "Liquids",
   "stackSize": 100,
   "weight": 0.5,
+  "description": "Being almost as hot as lava itself, it's often used in crafting and combat by spraying it and setting on fire.",
   "experiencieReward": 3,
   "crafting": [
     {
@@ -25,5 +26,6 @@
       "station": "Obsidian Machine",
       "time": 90
     }
-  ]
+  ],
+  "whereToFarm": "Can be rendered using a purification station."
 }

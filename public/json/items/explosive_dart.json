@@ -6,6 +6,7 @@
   "trade_price": 49.8,
   "stackSize": 200,
   "weight": 0.6,
+  "description": "Shot with Repeater and Exoskeleton. Explodes on impact, damaging everyone in the affected area.",
   "crafting": [
     {
       "ingredients": [

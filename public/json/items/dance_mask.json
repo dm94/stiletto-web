@@ -5,6 +5,7 @@
   "trade_price": 2.4,
   "stackSize": 100,
   "weight": 0.2,
+  "description": "An ancient mask that makes you dance... for some reason... don't ask me why",
   "experiencieReward": 10,
   "durability": 300,
   "wikiVisibility": false,

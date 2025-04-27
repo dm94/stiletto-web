@@ -4,5 +4,7 @@
   "category": "Knowledge",
   "trade_price": 500,
   "stackSize": 100,
-  "wikiVisibility": false
+  "description": "Utilizing a mixture of glass, shattered fragments, and crystals from meteor cores, the Flotillans have devised new ways of producing and distributing knowledge tablets.",
+  "wikiVisibility": false,
+  "whereToFarm": "Crafted in Ancient Fabricators found in the most difficult Oases."
 }

@@ -6,5 +6,6 @@
   "stackSize": 100,
   "weight": 2.5,
   "description": "Molten rock flowed across the world's surface, and the metropolises were buried.",
-  "experiencieReward": 16
+  "experiencieReward": 16,
+  "whereToFarm": "Mined from obsidian rocks created by watering lava pools."
 }

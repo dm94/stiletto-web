@@ -3,6 +3,7 @@
   "type": "Arena_Fence_1_C",
   "category": "Furniture",
   "weight": 20,
+  "description": "Decorative wooden construction perfect for building combat arenas, stadiums and hippodromes.",
   "crafting": [
     {
       "ingredients": [

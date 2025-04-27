@@ -6,6 +6,7 @@
   "trade_price": 38,
   "stackSize": 10,
   "weight": 3,
+  "description": "Ammo for sling or catapult. Primitive explosive detonates on impact, releasing lava and setting fire to its surroundings.",
   "crafting": [
     {
       "ingredients": [

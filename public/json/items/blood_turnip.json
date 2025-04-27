@@ -5,5 +5,7 @@
   "trade_price": 0.9,
   "stackSize": 100,
   "weight": 0.5,
-  "experiencieReward": 16
+  "description": "The wandering wisemen use a divining technique to locate the rare blood turnip root, which when cut open bleeds like a slaughtered animal. Many have tried without success to cultivate it.",
+  "experiencieReward": 16,
+  "whereToFarm": "Often grows in forests."
 }

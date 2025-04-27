@@ -3,6 +3,7 @@
   "parent": "Defensive Tower",
   "type": "PoachingHut_C",
   "category": "Interactables",
+  "description": "A placeable that creates a mini-claim area in moderate radius. Additional resouces will go into this placeable instead of Proxy Walker.",
   "experiencieReward": 1000,
   "crafting": [
     {

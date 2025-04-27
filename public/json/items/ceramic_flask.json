@@ -6,6 +6,7 @@
   "trade_price": 71.6,
   "stackSize": 100,
   "weight": 2,
+  "description": "Ceramic items are difficult to make and usually seen as a mark of quality craftsmanship.",
   "experiencieReward": 65,
   "durability": 150,
   "crafting": [

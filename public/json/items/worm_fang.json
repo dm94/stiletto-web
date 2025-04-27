@@ -5,5 +5,7 @@
   "trade_price": 3500,
   "stackSize": 100,
   "weight": 20,
-  "experiencieReward": 22
+  "description": "A trophy of tremendous value proving the ultimate hunting skills and heroism among Nomads. Exchange for valuable rewards!",
+  "experiencieReward": 22,
+  "whereToFarm": "Very rare drop extracted from the interior mandible of the Worm."
 }

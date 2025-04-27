@@ -3,6 +3,7 @@
   "type": "WallGiantGate_C",
   "category": "Defenses",
   "weight": 20,
+  "description": "(CAN BE BUILT ONLY BY CLAIM OWNERS) Sturdy gate of a massive size that slides to the side when opened. Large enough to fit most of the walker types known to Nomads.",
   "experiencieReward": 40,
   "crafting": [
     {

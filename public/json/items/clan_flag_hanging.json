@@ -3,6 +3,7 @@
   "type": "ClanFlagHanging_C",
   "category": "Furniture",
   "weight": 1,
+  "description": "Various styles of flags that display a nomad's clan colors and clan insignia.",
   "experiencieReward": 8,
   "crafting": [
     {

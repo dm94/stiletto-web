@@ -6,5 +6,6 @@
   "stackSize": 100,
   "weight": 0.4,
   "description": "A sharp mineral, handy for the production of primitive blades and extra pointy sticks",
-  "experiencieReward": 3
+  "experiencieReward": 3,
+  "whereToFarm": "Can be picked up as pebbles or mined from rocks."
 }

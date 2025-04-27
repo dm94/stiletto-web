@@ -3,6 +3,7 @@
   "parent": "Gun Pod",
   "type": "GunPodScattershotGun_C",
   "category": "Weapons",
+  "description": "Miniature version of a scattershot gun that fits inside a gun pod.",
   "experiencieReward": 366,
   "crafting": [
     {

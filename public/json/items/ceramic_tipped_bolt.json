@@ -3,6 +3,7 @@
   "parent": "Bone Bolt",
   "type": "CeramicBolt_C",
   "trade_price": 11,
+  "description": "Ammo for Ballista. Ceramic tips guarantee their sharpness and strength.",
   "crafting": [
     {
       "ingredients": [

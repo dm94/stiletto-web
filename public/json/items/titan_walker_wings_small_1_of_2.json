@@ -3,6 +3,7 @@
   "type": "TitanWings_T2_Small_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Mesmerizing to watch as they catch the wind, these intricate wings boast more power and efficiency than standard wings. Their horizontal, low profile design make them smaller targets for incoming projectiles, and at the same time allow nomads to shoot over them.",
   "crafting": [
     {
       "ingredients": [

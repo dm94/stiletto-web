@@ -6,6 +6,7 @@
   "trade_price": 10.3,
   "stackSize": 100,
   "weight": 5.2,
+  "description": "Grants additional inventory space.",
   "experiencieReward": 150,
   "durability": 140,
   "crafting": [

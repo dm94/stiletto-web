@@ -5,6 +5,7 @@
   "trade_price": 0.4,
   "stackSize": 100,
   "weight": 0.28,
+  "description": "Sharp fangs make excellent tools and weapons.",
   "experiencieReward": 8,
   "droppedBy": [
     {
@@ -21,5 +22,6 @@
       "maxQuantity": 1,
       "tier": "T2"
     }
-  ]
+  ],
+  "whereToFarm": "Fangs taken by the Rupus from a dead Nurr, very sharp."
 }

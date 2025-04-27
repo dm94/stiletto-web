@@ -6,6 +6,7 @@
   "trade_price": 3.7,
   "stackSize": 100,
   "weight": 8.5,
+  "description": "The serrated flint blade is designed to inflict the utmost pain, without necessarily being lethal. The preferred weapon of many pirates.",
   "experiencieReward": 10,
   "durability": 350,
   "crafting": [

@@ -6,6 +6,7 @@
   "trade_price": 16.9,
   "stackSize": 5,
   "weight": 0.3,
+  "description": "Handheld ammunition. Covers nomads in green goo that heals them for short duration.",
   "experiencieReward": 20,
   "crafting": [
     {

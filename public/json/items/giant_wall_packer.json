@@ -3,6 +3,7 @@
   "type": "WallGiantPacker_C",
   "category": "Defenses",
   "weight": 150,
+  "description": "(CAN BE BUILT ONLY BY CLAIM OWNERS) Large structure allowing Nomads to pack their Giant Wall defenses in a single compartment. Can only be built on bases and packed together with Founder Walkers due to its weight and size.",
   "experiencieReward": 40,
   "crafting": [
     {

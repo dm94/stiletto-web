@@ -6,5 +6,6 @@
   "stackSize": 100,
   "weight": 0.01,
   "description": "An abundant marsh plant favoured by nomads for its medicinal properties.",
-  "experiencieReward": 1
+  "experiencieReward": 1,
+  "whereToFarm": "Grows in warm lakes and puddles."
 }

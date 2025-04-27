@@ -3,6 +3,7 @@
   "parent": "Steering Levers",
   "type": "SteeringLeversCage_C",
   "category": "Walker Tools",
+  "description": "Sturdy contraption made of strong wood and tight ropes, allowing Nomads to place it around Walker Steering Levers to protect their driver.",
   "experiencieReward": 208,
   "crafting": [
     {

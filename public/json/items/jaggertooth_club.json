@@ -6,6 +6,7 @@
   "trade_price": 2.5,
   "stackSize": 100,
   "weight": 7.5,
+  "description": "A weapon that is deeply symbolic of nomadic culture, straddling the line between barbarism and innovation.",
   "durability": 320,
   "crafting": [
     {

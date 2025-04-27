@@ -3,6 +3,7 @@
   "parent": "Falco Walker",
   "type": "Schmetterling_C",
   "category": "Walkers",
+  "description": "One of the oldest walker designs, the schmetterlings provided mobile homes that an entire family could live on while chasing after the temperate climate. A large cargo hold affords tons of cargo space, and a wide open deck provides enough room for nomads to stretch their legs and build freely. The heavy weight of the schmetterling makes it less maneuverable.",
   "crafting": [
     {
       "ingredients": [

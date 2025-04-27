@@ -3,6 +3,7 @@
   "type": "LegHarvestingBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Walker legs will automatically harvest foliage when travelling at slow speed. Stacking this module increases the amount of foliage harvested.",
   "experiencieReward": 65,
   "crafting": [
     {

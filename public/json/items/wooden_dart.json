@@ -6,6 +6,7 @@
   "trade_price": 1.5,
   "stackSize": 500,
   "weight": 0.1,
+  "description": "Ammo for Stingers and Repeater.  Weak and crude, best suited for hunting Phemke and unarmored Nomads.",
   "crafting": [
     {
       "ingredients": [

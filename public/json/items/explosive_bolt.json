@@ -6,6 +6,7 @@
   "trade_price": 17.8,
   "stackSize": 20,
   "weight": 0.3,
+  "description": "Ammo for Ballista. Explodes on impact, slightly damaging and throwing back everyone in the affected area.",
   "experiencieReward": 15,
   "crafting": [
     {

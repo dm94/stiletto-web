@@ -3,6 +3,7 @@
   "type": "LegLoggingBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Walker legs will chop wood when they impact with trees. Stacking this module increases the amount of wood.",
   "experiencieReward": 65,
   "crafting": [
     {

@@ -6,6 +6,7 @@
   "trade_price": 131.5,
   "stackSize": 100,
   "weight": 7.5,
+  "description": "Loads of new inventory space.",
   "durability": 500,
   "crafting": [
     {

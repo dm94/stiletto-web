@@ -3,6 +3,7 @@
   "parent": "Advanced Constructions",
   "type": "WalkerBarrierBase_C",
   "category": "Defenses",
+  "description": "Obstructs walkers from passing through.",
   "experiencieReward": 34,
   "crafting": [
     {

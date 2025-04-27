@@ -4,6 +4,7 @@
   "type": "FixedGrapplingHook_C",
   "category": "Grappling Hooks",
   "trade_price": 10,
+  "description": "Grapple to any object, reel in and swing. An essential tool for any nomad who wants to live long enough to see the next oasis.",
   "experiencieReward": 38,
   "crafting": [
     {

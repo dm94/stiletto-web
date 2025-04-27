@@ -3,6 +3,7 @@
   "parent": "Ammo Chest",
   "type": "AmmoScrollRack_C",
   "category": "Containers",
+  "description": "Store all of your ammunition schematics.",
   "experiencieReward": 50,
   "onlyDevs": true,
   "crafting": [

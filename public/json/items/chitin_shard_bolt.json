@@ -2,6 +2,7 @@
   "name": "Chitin Shard Bolt",
   "type": "ChitinBolt_C",
   "trade_price": 5,
+  "description": "Ammo for Ballista. Naturally serrated shards of chitin make fine, if terrifying, tips for bolts.",
   "wikiVisibility": false,
   "projectileDamage": {
     "damage": 70

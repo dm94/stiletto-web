@@ -6,6 +6,7 @@
   "trade_price": 34.5,
   "stackSize": 100,
   "weight": 0.6,
+  "description": "These refreshing eye drops deceive a Nomad into thinking his or her heatstroke is gone. Allows Nomad to carry more weight.",
   "crafting": [
     {
       "ingredients": [

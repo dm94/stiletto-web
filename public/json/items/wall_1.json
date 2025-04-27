@@ -3,6 +3,7 @@
   "type": "Arena_Wall_1_C",
   "category": "Furniture",
   "weight": 20,
+  "description": "Average strength, can be packed on walkers.",
   "crafting": [
     {
       "ingredients": [

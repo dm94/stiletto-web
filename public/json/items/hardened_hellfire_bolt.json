@@ -2,6 +2,7 @@
   "name": "Hardened Hellfire Bolt",
   "parent": "HellfireBolt",
   "type": "HardenedHellfireBolt_C",
+  "description": "Ammo for ballista. Burns quicker while dealing the same damage to the target as a Hellfire Bolt due to its structural properties. Much more difficult to destroy.",
   "experiencieReward": 115,
   "crafting": [
     {

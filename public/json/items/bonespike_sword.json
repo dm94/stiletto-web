@@ -6,6 +6,7 @@
   "trade_price": 6.2,
   "stackSize": 100,
   "weight": 2.5,
+  "description": "Rawbone weapons are favoured by many Nomad tribes for its connection to the beasts of the land.",
   "experiencieReward": 55,
   "durability": 450,
   "crafting": [

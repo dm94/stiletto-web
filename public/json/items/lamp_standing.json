@@ -3,6 +3,7 @@
   "type": "Lamp2_C",
   "category": "Furniture",
   "weight": 1,
+  "description": "Burns wood to light the surrounding area.",
   "experiencieReward": 6,
   "crafting": [
     {

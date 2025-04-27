@@ -5,6 +5,7 @@
   "trade_price": 1.6,
   "stackSize": 100,
   "weight": 2,
+  "description": "Worn by nomads who toil in the Flotilla's underbelly, these itchy fibers may only protect against a sunburn.",
   "durability": 120,
   "crafting": [
     {

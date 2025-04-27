@@ -6,6 +6,7 @@
   "trade_price": 0.1,
   "stackSize": 100,
   "weight": 0.1,
+  "description": "A crude wooden briquette, used in construction and as a better fuel source. Burns cleanly to ash.",
   "crafting": [
     {
       "ingredients": [

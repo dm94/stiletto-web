@@ -5,6 +5,7 @@
   "trade_price": 1,
   "stackSize": 100,
   "weight": 0.2,
+  "description": "Rupu Gel is highly flammable, and a sideproduct of a shamanic ritual. A rare ingredient used in crafting ammo and often traded in Trade Stations.",
   "droppedBy": [
     {
       "name": "BasketLoot (T2) (AC)",
@@ -146,5 +147,6 @@
       "maxQuantity": 6,
       "tier": "T4"
     }
-  ]
+  ],
+  "whereToFarm": "Found on totems inside Rupu Camps"
 }

@@ -4,5 +4,7 @@
   "category": "Liquids",
   "trade_price": 0.1,
   "stackSize": 100,
-  "weight": 0.5
+  "weight": 0.5,
+  "description": "Unfortunately for Nomads who still roam the dying World, the only water still found in abundance is contaminated by toxic elements in the topsoil. Requires a complex Purification Station to clean, as even the fumes are corrosive to human skin.",
+  "whereToFarm": "Collected from toxic lakes and puddles."
 }

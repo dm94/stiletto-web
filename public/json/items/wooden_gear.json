@@ -6,6 +6,7 @@
   "trade_price": 700,
   "stackSize": 100,
   "weight": 0.55,
+  "description": "A large wooden gear made out of primitive materials. Used as the base rotational axis for mid-sized walkers.",
   "experiencieReward": 25,
   "crafting": [
     {
@@ -485,5 +486,6 @@
       "maxQuantity": 2,
       "tier": "T3"
     }
-  ]
+  ],
+  "whereToFarm": "Can be found scattered throughout the oasis or crafted at an Advanced Woodworking Station."
 }

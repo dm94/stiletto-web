@@ -6,6 +6,7 @@
   "trade_price": 24.5,
   "stackSize": 100,
   "weight": 4.5,
+  "description": "They call nomads who specialize in using rawbone weaponry \"boneheads,\" an ancient term meaning simpleton.",
   "experiencieReward": 100,
   "durability": 440,
   "crafting": [

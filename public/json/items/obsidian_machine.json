@@ -3,6 +3,7 @@
   "parent": "Clay Pot",
   "type": "ObsidianMachine_C",
   "category": "Crafting",
+  "description": "With parts carved out of solid obsidian, the machine can safely hold lava to use it in various productions.",
   "experiencieReward": 36,
   "crafting": [
     {

@@ -3,6 +3,7 @@
   "parent": "Artisan Woodworking Station",
   "type": "LumberMill_C",
   "category": "Crafting",
+  "description": "A huge crafting station uses torque to turn logs into tons of wood. Extremely efficient.",
   "experiencieReward": 1500,
   "crafting": [
     {

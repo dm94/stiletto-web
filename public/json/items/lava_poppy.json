@@ -4,5 +4,6 @@
   "category": "Resources",
   "trade_price": 0.1,
   "stackSize": 100,
-  "weight": 0.01
+  "weight": 0.01,
+  "description": "Requires high concentrations of volcanic ash to grow."
 }

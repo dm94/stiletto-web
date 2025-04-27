@@ -4,5 +4,7 @@
   "category": "Knowledge",
   "trade_price": 500,
   "stackSize": 100,
-  "wikiVisibility": false
+  "description": "Carved images of animals can be felt on this tablet.",
+  "wikiVisibility": false,
+  "whereToFarm": "Crafted in Ancient Fabricators found in the most difficult Oases."
 }

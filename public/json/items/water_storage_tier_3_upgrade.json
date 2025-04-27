@@ -2,6 +2,7 @@
   "name": "Water Storage - Tier 3 Upgrade",
   "type": "SparePartClayWater_C",
   "category": "Spare Parts",
+  "description": "Water allows you to respawn and to travel to other oases. Try and keep your water storage filled - running out of water during combat means certain defeat.",
   "experiencieReward": 30,
   "durability": 100,
   "wikiVisibility": false

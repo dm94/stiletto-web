@@ -2,6 +2,7 @@
   "name": "Glass",
   "parent": "Furnace",
   "type": "Glass_C",
+  "description": "A transparent material",
   "droppedBy": [
     {
       "name": "BasketLoot (T2) (AC)",

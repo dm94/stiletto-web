@@ -3,6 +3,7 @@
   "type": "TuskerWings_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Enough deck space for large weapons and a huge crew to operate them. The cargo walker is a juggernaut when it comes to hauling space, and is primarily used by rich traders that need to transport tons of valuable goods. Slow and unmaneuverable, it's often escorted by swift combat walkers. Owners of cargo walkers rarely fail to get a return on their investment.",
   "crafting": [
     {
       "ingredients": [

@@ -3,6 +3,7 @@
   "parent": "Clay Pot",
   "type": "PurificationStation_C",
   "category": "Crafting",
+  "description": "All toxic water that is transported to the Flotilla is first cleansed in an ancient water purifying machine. The Guardians are the sole keepers of this machine, a technological relic of the old world which has sustained the Flotillans to this day. However, nomads developed a similar, yet more primitive version of this technology.",
   "experiencieReward": 125,
   "crafting": [
     {

@@ -4,6 +4,7 @@
   "category": "Vitamins",
   "stackSize": 100,
   "weight": 1,
+  "description": "Seasoned with salt and boiled in water, this way of eating corn is much more enjoyable than eating it raw, giving Nomads strength to overcome their enemies easier.",
   "crafting": [
     {
       "ingredients": [

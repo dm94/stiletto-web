@@ -3,6 +3,7 @@
   "type": "Chair1_C",
   "category": "Furniture",
   "weight": 3.5,
+  "description": "Allows nomads to sit comfortably.",
   "experiencieReward": 6,
   "crafting": [
     {

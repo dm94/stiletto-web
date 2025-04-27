@@ -5,6 +5,7 @@
   "trade_price": 0.3,
   "stackSize": 100,
   "weight": 0.34,
+  "description": "A greasy leftover from a once noble creature.",
   "experiencieReward": 3,
   "droppedBy": [
     {

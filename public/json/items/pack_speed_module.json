@@ -3,6 +3,7 @@
   "type": "PackingTimeBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Decreases the time it takes to pack bases and structures.",
   "crafting": [
     {
       "ingredients": [

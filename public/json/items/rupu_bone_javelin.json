@@ -5,6 +5,7 @@
   "trade_price": 5,
   "stackSize": 20,
   "weight": 0.3,
+  "description": "A crude javelin made out of sharpened bone used by the Rupu to damage walkers.",
   "experiencieReward": 15,
   "wikiVisibility": false,
   "projectileDamage": {

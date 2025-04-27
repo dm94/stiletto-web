@@ -5,6 +5,7 @@
   "trade_price": 1.3,
   "stackSize": 20,
   "weight": 0.7,
+  "description": "Roughly sharpened pieces of Walker wrecks, fashioned by the Rupu into crude bolts and used as ammo for Ballista.",
   "experiencieReward": 12,
   "wikiVisibility": false,
   "projectileDamage": {

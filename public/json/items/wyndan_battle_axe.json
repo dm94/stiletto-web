@@ -2,6 +2,7 @@
   "name": "Wyndan Battle Axe",
   "parent": "Firestone Battle Axe",
   "type": "TwoHandedIronAxe_C",
+  "description": "Flotillan scholars claim that the Wyndan tribe has roots as a prominent civilization that existed long before the apocalypse.",
   "droppedBy": [
     {
       "name": "BigHotspotLoot (T4)",

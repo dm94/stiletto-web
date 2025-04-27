@@ -3,6 +3,7 @@
   "type": "TobogganWings_T2_Skirmish_C",
   "category": "Walker Parts",
   "weight": 9.75,
+  "description": "Providing comparable efficiency to medium-sized wings while being slightly more sturdy than the base ones, Skirmish wings are useful when you don't know what to expect on your travels.",
   "crafting": [
     {
       "ingredients": [

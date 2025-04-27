@@ -5,6 +5,7 @@
   "trade_price": 1.9,
   "stackSize": 100,
   "weight": 0.17,
+  "description": "A foul, viscous liquid collected from the glands of the Mist Papak.",
   "experiencieReward": 12,
   "droppedBy": [
     {

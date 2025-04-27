@@ -3,6 +3,7 @@
   "type": "TorqueBatteryBoost_C",
   "category": "Resources",
   "weight": 0.24,
+  "description": "Stacking this module increases the torque battery's maximum capacity.",
   "experiencieReward": 65,
   "crafting": [
     {

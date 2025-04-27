@@ -3,6 +3,7 @@
   "type": "Carpet1_C",
   "category": "Furniture",
   "weight": 0.2,
+  "description": "Used for decorative purposes. Ties any room together.",
   "experiencieReward": 6,
   "crafting": [
     {

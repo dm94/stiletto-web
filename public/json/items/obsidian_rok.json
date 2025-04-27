@@ -2,6 +2,7 @@
   "name": "Obsidian Rok",
   "parent": "Ceramic Rok",
   "type": "ObsidianRok_C",
+  "description": "Ammo for the Rokker. A solid chunk of ceramic fashioned into a terrifying projectile.",
   "crafting": [
     {
       "ingredients": [

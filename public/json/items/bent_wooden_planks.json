@@ -6,6 +6,7 @@
   "trade_price": 0.1,
   "stackSize": 100,
   "weight": 0.21,
+  "description": "Produced using a much more wasteful method of log processing than simple lumber, bent planks are significantly more sturdy and don't require any other materials.",
   "experiencieReward": 1,
   "crafting": [
     {
@@ -18,5 +19,6 @@
       "station": "Lumbermill",
       "time": 60
     }
-  ]
+  ],
+  "whereToFarm": "Produced in lumbermills using tree trunks."
 }

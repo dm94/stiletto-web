@@ -5,5 +5,7 @@
   "trade_price": 16.5,
   "stackSize": 100,
   "weight": 0.01,
-  "experiencieReward": 22
+  "description": "Worm silk exists in vastly different tensile strengths and purities, and must be graded by the Flotillan Merchant's Guild before it can be legally sold at markets. Aside from certain prohibited substances, it is one of the most desirable luxury goods.",
+  "experiencieReward": 22,
+  "whereToFarm": "Excreted by live worms or found fossilized on some trees."
 }

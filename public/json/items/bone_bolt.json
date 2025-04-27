@@ -3,6 +3,7 @@
   "parent": "Ballista",
   "type": "BoneBolt_C",
   "trade_price": 5,
+  "description": "Ammo for Ballista. Bone tips are notorious for splintering and ricocheting inside the body.",
   "crafting": [
     {
       "ingredients": [

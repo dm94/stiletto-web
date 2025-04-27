@@ -1,5 +1,6 @@
 {
   "name": "Delivery Package",
   "type": "DeliverPackageQuestItem_C",
-  "category": "Resources"
+  "category": "Resources",
+  "description": "Bring this package to any Delivery Merchant on any tile. The Merchant will provide you with a special Token that can be exchanged for Flots at the Trade Station."
 }
