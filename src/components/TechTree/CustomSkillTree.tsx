@@ -358,7 +358,9 @@ const CustomSkillTree: React.FC<{
         children: any[];
         item: TechItem;
       }> = [];
-      const filteredItems = items.filter((it) => it.parent === parent);
+      const filteredItems = items
+        .filter((it) => !it.onlyDevs)
+        .filter((it) => it.parent === parent);
 
       for (const i of filteredItems) {
         const item = {
