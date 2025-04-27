@@ -4,9 +4,7 @@ import { useTranslation } from "react-i18next";
 import type { TechItem } from "@ctypes/item";
 import type { Tree } from "@ctypes/dto/tech";
 import type { SkillStateMap } from "@ctypes/Skill";
-import { getItemUrl } from "@functions/utils";
 import Icon from "../Icon";
-import SkillNodeBtn from "./SkillNodeBtn";
 
 interface NodeData {
   id: string;
@@ -348,7 +346,6 @@ const CustomSkillTree: React.FC<{
   treeId: Tree;
   title: string;
   items: TechItem[];
-  clan?: number;
 }> = ({ theme, treeId, title, items }) => {
   const { t } = useTranslation();
 
