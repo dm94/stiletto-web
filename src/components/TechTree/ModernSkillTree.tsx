@@ -246,6 +246,20 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
               {node.id}
             </a>
           </div>
+          <div className="text-center mb-2">
+            {node.item?.level && (
+              <p className="text-sm text-sandLight mb-1">
+                <span className="font-bold">{t("techTree.level")}: </span>
+                {node.item.level}
+              </p>
+            )}
+            {node.item?.pointsCost && (
+              <p className="text-sm text-sandLight mb-1">
+                <span className="font-bold">{t("techTree.pointsCost")}: </span>
+                {node.item.pointsCost}
+              </p>
+            )}
+          </div>
           {canLearn && (
             <button
               type="button"

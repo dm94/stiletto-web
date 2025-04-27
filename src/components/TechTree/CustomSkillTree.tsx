@@ -4,9 +4,7 @@ import { useTranslation } from "react-i18next";
 import type { TechItem } from "@ctypes/item";
 import type { Tree } from "@ctypes/dto/tech";
 import type { SkillStateMap } from "@ctypes/Skill";
-import { getItemUrl } from "@functions/utils";
 import Icon from "../Icon";
-import SkillNodeBtn from "./SkillNodeBtn";
 
 interface NodeData {
   id: string;
@@ -348,8 +346,7 @@ const CustomSkillTree: React.FC<{
   treeId: Tree;
   title: string;
   items: TechItem[];
-  clan?: number;
-}> = ({ theme, treeId, title, items, clan }) => {
+}> = ({ theme, treeId, title, items }) => {
   const { t } = useTranslation();
 
   // Function to build the tree structure
@@ -358,7 +355,6 @@ const CustomSkillTree: React.FC<{
       const childrens: Array<{
         id: string;
         title: string;
-        tooltip: { content: React.ReactNode };
         children: any[];
         item: TechItem;
       }> = [];
@@ -368,7 +364,6 @@ const CustomSkillTree: React.FC<{
         const item = {
           id: i.name,
           title: t(i.name),
-          tooltip: { content: getContentItem(i) },
           children: getChildrens(i.name),
           item: i,
         };
@@ -378,41 +373,6 @@ const CustomSkillTree: React.FC<{
       return childrens;
     },
     [items, t],
-  );
-
-  // Function to generate tooltip content
-  const getContentItem = useCallback(
-    (item: TechItem): React.ReactNode => {
-      return (
-        <div className="mx-auto">
-          <div className="text-center mb-1">
-            <a
-              href={getItemUrl(item.name)}
-              target="_blank"
-              rel="noopener noreferrer"
-              title={t("menu.wiki")}
-            >
-              <Icon key={item.name} name={item.name} width={35} />
-              {t("menu.wiki")}
-            </a>
-          </div>
-          <p className="text-center border-b border-warning">
-            {t("crafting.whoHasLearnedIt")}
-          </p>
-          {clan ? (
-            <SkillNodeBtn
-              key={`btn-${item.name}`}
-              item={item}
-              clan={clan}
-              tree={treeId}
-            />
-          ) : (
-            t("techTree.needClanForFunction")
-          )}
-        </div>
-      );
-    },
-    [clan, t, treeId],
   );
 
   // Function to save skills to storage

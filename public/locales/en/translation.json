@@ -257,6 +257,8 @@
   "techTree.noOneHasLearnedIt": "No one has learnt it",
   "techTree.needClanForFunction": "You need a clan for this function",
   "techTree.toggleLearned": "Toggle learned",
+  "techTree.level": "Level",
+  "techTree.pointsCost": "Points Cost",
   "common.privacyPolicy": "Privacy Policy",
   "walkers.searchWalkers": "Search Walkers",
   "common.yes": "Yes",

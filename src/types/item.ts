@@ -70,6 +70,9 @@ export type TechItem = {
   name: string;
   parent: string;
   unlocks?: string[];
+  level?: number;
+  pointsCost?: number;
+  onlyDevs?: boolean;
 };
 
 export type ItemCompleteInfo = {
