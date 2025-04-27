@@ -10,7 +10,9 @@ interface CommentsProps {
 const Comments: React.FC<CommentsProps> = ({ name }) => {
   const { t } = useTranslation();
 
-  if (name && localStorage.getItem("acceptscookies")) {
+  const cookiesAccepted = localStorage.getItem("giscus");
+
+  if (name && cookiesAccepted) {
     const language = getStoredItem("i18nextLng");
     return (
       <div className="w-full p-4">
