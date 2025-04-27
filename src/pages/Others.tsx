@@ -6,7 +6,9 @@ const Others: React.FC = () => {
   const { t } = useTranslation();
 
   const showDiscord = useMemo(() => {
-    if (localStorage.getItem("acceptscookies")) {
+    const cookiesAccepted = localStorage.getItem("discord-iframe");
+
+    if (cookiesAccepted) {
       return (
         <iframe
           title="discord"

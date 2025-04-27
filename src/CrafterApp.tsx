@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
-import CookieConsent from "@components/CookieConsent";
+import VanillaCookieConsent from "@components/VanillaCookieConsent";
 import Menu from "@components/Menu";
 import ChangeLanguageModal from "@components/ChangeLanguageModal";
 import { getStoredItem, storeItem } from "@functions/services";
@@ -54,7 +54,7 @@ const CrafterApp: React.FC = () => {
           </div>
         </main>
         <Footer />
-        <CookieConsent />
+        <VanillaCookieConsent />
         <NotificationList />
       </React.Fragment>
     </UserProvider>
