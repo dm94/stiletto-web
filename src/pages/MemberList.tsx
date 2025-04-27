@@ -6,7 +6,6 @@ import LoadingScreen from "@components/LoadingScreen";
 import ClanConfig from "@components/ClanConfig";
 import MemberListItem from "@components/MemberList/MemberListItem";
 import RequestMemberListItem from "@components/MemberList/RequestMemberListItem";
-import DiscordConfig from "@components/MemberList/DiscordConfig";
 import MemberPermissionsConfig from "@components/MemberList/MemberPermissionsConfig";
 import { sendNotification } from "@functions/broadcast";
 import { getDomain } from "@functions/utils";
@@ -40,7 +39,6 @@ const MemberList = () => {
   const [showRequestModal, setShowRequestModal] = useState(false);
   const [requestData, setRequestData] = useState<MemberRequest>();
   const [isLeader, setIsLeader] = useState(false);
-  const [showBotConfig, setShowBotConfig] = useState(false);
   const [clanid, setClanid] = useState<number>();
 
   const [showClanConfig, setShowClanConfig] = useState(false);
@@ -412,28 +410,6 @@ const MemberList = () => {
               </button>
             </div>
           </div>
-          <div className="mb-4">
-            <div className="inline-flex rounded-md shadow-sm">
-              <button
-                type="button"
-                className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
-                disabled
-              >
-                <i className="fab fa-discord" />
-              </button>
-              <button
-                type="button"
-                className={
-                  isLeader || hasBotPermissions
-                    ? "px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    : "hidden"
-                }
-                onClick={() => setShowBotConfig(true)}
-              >
-                {t("discord.discordBotConfiguration")}
-              </button>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -552,15 +528,6 @@ const MemberList = () => {
           </div>
         </div>
       </div>
-
-      {showBotConfig && (
-        <DiscordConfig
-          key="discordbotconfig"
-          clanid={clanid}
-          onClose={() => setShowBotConfig(false)}
-          onError={(error) => sendNotification(error, "common.error")}
-        />
-      )}
       {showClanConfig && (
         <ClanConfig
           key="clanconfig"

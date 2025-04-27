@@ -6,7 +6,6 @@ import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
-import Icon from "../Icon";
 import ClanConfig from "../ClanConfig";
 import { getDomain } from "@functions/utils";
 import { deleteUser, addNick, getUser } from "@functions/requests/users";
@@ -213,14 +212,7 @@ const PrivateProfile = () => {
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <i className="fas fa-users mr-2" />
-                  {t("menu.members")}
-                </Link>
-                <Link
-                  to="/walkerlist"
-                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
-                >
-                  <Icon key="Base Wings" name="Base Wings" width={30} />
-                  {t("menu.walkerList")}
+                  {t("menu.clanGeneral")}
                 </Link>
                 <Link
                   to="/diplomacy"
