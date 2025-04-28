@@ -380,7 +380,7 @@ const ItemWiki = () => {
         {itemInfo?.structureInfo && (
           <GenericInfo
             key="structureInfo"
-            name="wiki.StructureInfo"
+            name="wiki.structureInfo"
             dataInfo={itemInfo.structureInfo}
             rarity={rarity}
             textColor={textColor}

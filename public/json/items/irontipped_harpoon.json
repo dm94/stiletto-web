@@ -1,0 +1,38 @@
+{
+  "name": "Iron-Tipped Harpoon",
+  "parent": "IronBolt",
+  "type": "IronHarpoon_C",
+  "trade_price": 30.6,
+  "weight": 0.8,
+  "description": "Ammo for Ballista. The fishing titanium head refuses to come unhooked. A durable tether is hard to snap.",
+  "experiencieReward": 75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Iron-Tipped Bolt"
+        },
+        {
+          "count": 2,
+          "name": "Hide"
+        },
+        {
+          "count": 10,
+          "name": "Rope"
+        }
+      ],
+      "station": "Artificer Woodworking Station",
+      "time": 5
+    }
+  ],
+  "projectileDamage": {
+    "damage": 25
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 4
+    }
+  ]
+}
