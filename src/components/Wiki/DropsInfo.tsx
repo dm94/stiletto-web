@@ -1,6 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import type { Drop } from "@ctypes/item";
+import { getCreatureUrl } from "@functions/utils";
 
 interface DropsInfoProps {
   drops?: Drop[];
@@ -20,8 +21,13 @@ const DropsInfo: React.FC<DropsInfoProps> = ({ drops = [] }) => {
           key={`${drop.name}-${index}`}
           title={titleInfo}
         >
-          <div className="p-2 bg-gray-800 border border-gray-700 rounded-lg text-neutral-300">
-            {t(drop.name)} {drop?.tier && `(${drop.tier})`}
+          <div className="p-2 bg-gray-800 border border-gray-700 rounded-lg flex items-center space-x-2">
+            <a
+              href={getCreatureUrl(drop.name)}
+              className="text-blue-400 hover:text-blue-300"
+            >
+              {t(drop.name, { ns: "items" })} {drop?.tier && `(${drop.tier})`}
+            </a>
           </div>
         </li>
       );
