@@ -3,6 +3,7 @@
   "parent": "Steering Levers",
   "type": "Toboggan_C",
   "category": "Walkers",
+  "weight": 34.02,
   "description": "The standard merchant's vessel built for outrunning pirates and getting the goods where they need to go. There's not much room for weapons, so this walker is usually accompanied by at least one battle-capable walker on its transport runs.",
   "crafting": [
     {

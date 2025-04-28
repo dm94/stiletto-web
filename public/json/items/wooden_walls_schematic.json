@@ -4,10 +4,10 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Light Wood Walker Gate",
-    "Light Wood Guard Rail",
+    "Walker Gate",
+    "Guard Rail",
     "Dinghy Gate",
-    "Light Wood Scaffolding",
+    "Scaffolding",
     "Wall",
     "Battlements",
     "Corner",

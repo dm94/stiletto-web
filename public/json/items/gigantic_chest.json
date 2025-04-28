@@ -3,6 +3,7 @@
   "parent": "Large Chest",
   "type": "ChestGigantic_C",
   "category": "Containers",
+  "weight": 12,
   "description": "Stack size: 500. An extremely strong chest with a very large amount of inventory space. Items are protected unless the chest is severely damaged.",
   "experiencieReward": 32,
   "crafting": [

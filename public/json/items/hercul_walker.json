@@ -3,6 +3,7 @@
   "parent": "Buffalo Walker",
   "type": "Hercul_C",
   "category": "Walkers",
+  "weight": 29.44,
   "description": "Capable of producing mass quantities of torque by heating up water with lava, Hercul Walker is an essential tool for any Nomad requiring large amounts of power. Will generate torque over time while holding its water container above a lava lake.",
   "crafting": [
     {

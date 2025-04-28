@@ -3,6 +3,7 @@
   "parent": "Gun Pod",
   "type": "GunpodStinger_C",
   "category": "Weapons",
+  "weight": 11.41,
   "description": "Miniature version of a ballista that fits inside a gun pod.",
   "experiencieReward": 78,
   "crafting": [

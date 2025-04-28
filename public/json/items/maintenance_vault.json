@@ -3,6 +3,7 @@
   "parent": "ChestBaseMaintenance_T2",
   "type": "ChestBaseMaintenance_T3_C",
   "category": "Containers",
+  "weight": 5,
   "description": "An earthern work vault with the capacity to store large amounts of materials needed for general repairs and upkeep in nomad fortifications.",
   "experiencieReward": 32,
   "crafting": [

@@ -3,6 +3,7 @@
   "parent": "Furnace",
   "type": "Furnace_T2_C",
   "category": "Crafting",
+  "weight": 15,
   "description": "Advanced crafting station smelts raw ore into refined metal.",
   "experiencieReward": 36,
   "crafting": [

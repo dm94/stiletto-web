@@ -3,6 +3,7 @@
   "parent": "Stiletto Walker",
   "type": "Hornet_C",
   "category": "Walkers",
+  "weight": 29.44,
   "description": "Devised by worm hunters who needed a sturdy walker with a low center of mass so they would not be toppled over, and a high top speed to outrun the giant beasts.",
   "crafting": [
     {

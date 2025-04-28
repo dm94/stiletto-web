@@ -3,6 +3,7 @@
   "parent": "Advanced Walker Weapons",
   "type": "ToolPod_C",
   "category": "Walker Tools",
+  "weight": 25,
   "description": "A rotating pod made to attach below walker decks. Houses a single tool, like a saw blade.",
   "experiencieReward": 34,
   "crafting": [

@@ -3,6 +3,7 @@
   "parent": "Steering Levers",
   "type": "Stiletto_C",
   "category": "Walkers",
+  "weight": 29.44,
   "description": "Developed as the successor to the dinghy walker, the sleek stiletto walker is fast, has a short turn radius, and flaunts more deck space and a stronger hull than its predecessor. Ideal for nomads who prefer to travel alone or in small groups.",
   "crafting": [
     {

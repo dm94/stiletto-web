@@ -52,5 +52,21 @@
       "toolType": "BallistaHarpoon",
       "tier": 3
     }
+  ],
+  "droppedBy": [
+    {
+      "name": "AmmoBox (T3)",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "BigHotspotLoot (T3)",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    }
   ]
 }

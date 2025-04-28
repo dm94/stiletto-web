@@ -3,6 +3,7 @@
   "parent": "Mollusk Walker",
   "type": "Domus_C",
   "category": "Walkers",
+  "weight": 34.02,
   "description": "Heavily protected with strong walls all around, Domus Walkers are often used to safely transport large numbers of nomads. While slow and difficult to handle, they can withstand massive damages, ensuring structural integrity during battles and defending everything inside.",
   "crafting": [
     {

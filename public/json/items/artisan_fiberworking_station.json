@@ -3,6 +3,7 @@
   "parent": "Advanced Fiberworking Station",
   "type": "FiberworkingStation_T3_C",
   "category": "Crafting",
+  "weight": 8.5,
   "description": "Craft the highest quality textiles and wearables.",
   "experiencieReward": 235,
   "crafting": [

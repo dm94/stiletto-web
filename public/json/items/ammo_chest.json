@@ -3,6 +3,7 @@
   "parent": "Small Chest",
   "type": "ChestAmmo_C",
   "category": "Containers",
+  "weight": 5.8,
   "description": "When placed on a walker, weapons will use the ammo from the chest to reload. Placing in a base will only allow to store ammo.",
   "experiencieReward": 32,
   "crafting": [

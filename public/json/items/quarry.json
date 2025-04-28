@@ -5,6 +5,28 @@
   "category": "Crafting",
   "weight": 1000,
   "description": "A huge crafting station uses torque to automatically mine stone, iron and other minerals within a certain radius.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 300,
+          "name": "Lightwood"
+        },
+        {
+          "count": 3,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 15,
+          "name": "Shardrock"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 20000
+  },
   "toolInfo": [
     {
       "toolType": "Quarrying",

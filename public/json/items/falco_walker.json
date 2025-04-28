@@ -3,6 +3,7 @@
   "parent": "Stiletto Walker",
   "type": "Falco_C",
   "category": "Walkers",
+  "weight": 34.02,
   "description": "It's streamlined shape is built for speed, making it a favorite among pirates. It's elevated deck doesn't sport much space for large weapons, but it's height allows for easy boarding of other walkers. Dedicated rear-facing spots for Gun Pods make it easy to fire projectiles at pursuers.",
   "crafting": [
     {

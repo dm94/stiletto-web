@@ -3,6 +3,7 @@
   "parent": "Sand Bed",
   "type": "BedHammock_C",
   "category": "Interactables",
+  "weight": 2.6,
   "description": "A simple bed with a small water container that, when filled, allows a couple respawns.",
   "experiencieReward": 21,
   "crafting": [

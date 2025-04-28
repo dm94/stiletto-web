@@ -3,6 +3,7 @@
   "parent": "Walkers",
   "type": "Spider_C",
   "category": "Walkers",
+  "weight": 6.42,
   "description": "A pedal-powered walker most nomads build to begin their journey on. Has an additional seat in the back with a built-in ballista!",
   "crafting": [
     {

@@ -4,13 +4,13 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Medium Wood Double Slit Wall",
-    "Medium Wood Slit Wall",
-    "Medium Wood Floor / Roof",
-    "Medium Wood Foundation",
-    "Medium Wood Door",
-    "Medium Wood Battlements",
-    "Medium Wood Wall"
+    "Double Slit Wall",
+    "Slit Wall",
+    "Floor / Roof",
+    "Foundation",
+    "Door",
+    "Battlements",
+    "Wall"
   ],
   "droppedBy": [
     {

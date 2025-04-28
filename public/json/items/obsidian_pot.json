@@ -3,6 +3,7 @@
   "parent": "Advanced Constructions",
   "type": "ObsidianContainerSmall_C",
   "category": "Containers",
+  "weight": 35,
   "description": "Extremly durable container resistant to highest temperatures.",
   "experiencieReward": 60,
   "crafting": [

@@ -4,7 +4,7 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "ChestBaseMaintenance_T2",
+    "Base Maintenance Chest",
     "Walker Packing Compartment",
     "Bomb Chest Trap",
     "Sharp Spikes",
@@ -14,14 +14,14 @@
     "Rangefinder",
     "Steering Levers",
     "Steering Levers Cage",
-    "RupuSling",
+    "Rupu Sling",
     "Defensive Tower",
     "Large Base Walker Packer",
     "Hammock",
     "Poaching Hut",
     "Small Repair Hoist",
     "Trap Door",
-    "TrapSpikesSpring"
+    "Spring Spikes Trap"
   ],
   "droppedBy": [
     {

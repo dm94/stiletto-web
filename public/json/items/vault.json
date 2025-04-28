@@ -3,6 +3,7 @@
   "parent": "Construction",
   "type": "Vault_C",
   "category": "Containers",
+  "weight": 1000,
   "experiencieReward": 32,
   "crafting": [
     {

@@ -3,6 +3,7 @@
   "parent": "Advanced Constructions",
   "type": "WallGiant_C",
   "category": "Defenses",
+  "weight": 20,
   "description": "(CAN BE BUILT ONLY BY CLAIM OWNERS) Sturdy walls of a massive size used by groups of nomads to defend their territory against walker attacks. Can be packed into a Giant Wall Packer.",
   "experiencieReward": 40,
   "crafting": [

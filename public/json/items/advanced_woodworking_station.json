@@ -3,6 +3,7 @@
   "parent": "Woodworking Station",
   "type": "WoodworkingStation_T2_C",
   "category": "Crafting",
+  "weight": 12,
   "description": "Advanced crafting station unlocks new available recipes and cuts wood more efficiently.",
   "experiencieReward": 149,
   "crafting": [

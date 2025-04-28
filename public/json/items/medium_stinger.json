@@ -3,6 +3,7 @@
   "parent": "Improved Walker Weapons",
   "type": "Stinger_T2_C",
   "category": "Weapons",
+  "weight": 2,
   "description": "A Small Ballista that can be remotely controlled by the driver, placed on a rotating platform.",
   "experiencieReward": 78,
   "onlyDevs": true,

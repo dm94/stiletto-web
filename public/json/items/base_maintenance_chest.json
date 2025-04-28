@@ -3,6 +3,7 @@
   "parent": "Maintenance Box",
   "type": "ChestBaseMaintenance_T2_C",
   "category": "Containers",
+  "weight": 5,
   "description": "A requirement for every Nomad's base. Prevents a base decaying over time with sufficient resources inside. Requires each resource a base is made of to properly maintain it.",
   "experiencieReward": 32,
   "crafting": [

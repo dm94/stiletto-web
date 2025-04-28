@@ -3,6 +3,7 @@
   "parent": "Basic Walker Weapons",
   "type": "Repeater_C",
   "category": "Weapons",
+  "weight": 70,
   "description": "Unload a rapid volley of darts that are deadly against lightly armored targets. Weak against walkers and structures.",
   "experiencieReward": 304,
   "crafting": [

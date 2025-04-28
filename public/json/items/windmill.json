@@ -3,6 +3,7 @@
   "parent": "Camp Fire",
   "type": "Windmill_C",
   "category": "Crafting",
+  "weight": 10,
   "description": "Harnesses wind to generate torque automatically. A torque battery is required to transfer the torque between devices.",
   "experiencieReward": 34,
   "crafting": [

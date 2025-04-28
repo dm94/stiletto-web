@@ -3,6 +3,7 @@
   "parent": "Advanced Stomping Station",
   "type": "StompingStation_T3_C",
   "category": "Crafting",
+  "weight": 4.83,
   "description": "Basic crafting station simulates the blunt force of a foot to crush vegetables and soft minerals. An important tool for nomads who must always keep their feet in top condition.",
   "experiencieReward": 125,
   "crafting": [

@@ -3,6 +3,7 @@
   "parent": "Basic Walker Weapons",
   "type": "Stinger_C",
   "category": "Weapons",
+  "weight": 2,
   "description": "Small Ballista for remote control while steering. Needs to be reloaded manually.",
   "experiencieReward": 78,
   "crafting": [

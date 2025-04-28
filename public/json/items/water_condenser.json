@@ -3,6 +3,7 @@
   "parent": "Stone Humidifier",
   "type": "WaterCondenser_C",
   "category": "Crafting",
+  "weight": 50,
   "description": "Collects moisture from the air and stores it as clean water. Efficiency depends on the area where the condenser is built.",
   "experiencieReward": 78,
   "crafting": [

@@ -3,6 +3,7 @@
   "parent": "Dinghy Walker",
   "type": "SteeringLevers_C",
   "category": "Walker Tools",
+  "weight": 10.8,
   "description": "The control mechanism required to drive more complex walkers.",
   "experiencieReward": 208,
   "crafting": [

@@ -4,17 +4,17 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Cement Wall With Windows 2",
-    "Cement Wall With Windows 1",
-    "Cement Wall With Window 2",
-    "Cement Wall With Window 1",
-    "Cement Floor / Roof",
-    "Cement Foundation",
-    "Cement Door",
-    "Cement Corner",
-    "Cement Battlements",
-    "Cement Wall 2",
-    "Cement Wall 1"
+    "Wall With Windows 2",
+    "Wall With Windows 1",
+    "Wall With Window 2",
+    "Wall With Window 1",
+    "Floor / Roof",
+    "Foundation",
+    "Door",
+    "Corner",
+    "Battlements",
+    "Wall 2",
+    "Wall 1"
   ],
   "droppedBy": [
     {

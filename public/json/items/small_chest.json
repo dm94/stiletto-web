@@ -3,6 +3,7 @@
   "parent": "Construction",
   "type": "ChestSmall_C",
   "category": "Containers",
+  "weight": 4,
   "description": "A weak chest with a small amount of inventory space. Items are protected unless the chest is severely damaged.",
   "experiencieReward": 32,
   "crafting": [

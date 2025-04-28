@@ -3,6 +3,7 @@
   "parent": "Crafting",
   "type": "CampFire_C",
   "category": "Crafting",
+  "weight": 9.75,
   "description": "Basic crafting station can formulate new liquids and vitamins, in addition to other useful items.",
   "experiencieReward": 18,
   "crafting": [

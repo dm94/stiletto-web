@@ -3,6 +3,7 @@
   "parent": "Sand Structures",
   "type": "BaseWalkerPackerSmall_C",
   "category": "Containers",
+  "weight": 15,
   "description": "Allows to pack a single small walkers up to a Dinghy type. Requires a foundation of a base to support itself.",
   "experiencieReward": 32,
   "crafting": [

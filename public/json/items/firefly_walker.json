@@ -3,6 +3,7 @@
   "parent": "Spider Walker",
   "type": "Firefly_C",
   "category": "Walkers",
+  "weight": 6.42,
   "description": "A pedal-powered walker that nomads build when they want to begin their journey. Has a small deck and can be upgraded by building wings.",
   "crafting": [
     {

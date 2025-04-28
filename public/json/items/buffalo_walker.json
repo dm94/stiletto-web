@@ -3,6 +3,7 @@
   "parent": "Stiletto Walker",
   "type": "Buffalo_C",
   "category": "Walkers",
+  "weight": 29.44,
   "description": "Before the Flotilla grew too large and switched to manpower, hundreds of buffalo walkers were used to tow the Flotilla on days there was no breeze. Named after an ancient beast, the buffalo's wide frame, ample deck space, and good maneuverability make it suited for almost any task.",
   "crafting": [
     {

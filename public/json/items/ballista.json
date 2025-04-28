@@ -3,6 +3,7 @@
   "parent": "Basic Walker Weapons",
   "type": "Ballista_C",
   "category": "Weapons",
+  "weight": 50,
   "description": "Ballista shoots bolts or tethering harpoons that attach to walkers and the environment.",
   "experiencieReward": 78,
   "crafting": [

@@ -3,6 +3,7 @@
   "parent": "Rope",
   "type": "RepairStation_C",
   "category": "Interactables",
+  "weight": 5,
   "description": "Basic crafting station repairs damaged equipment at a lower cost than crafting new ones.",
   "experiencieReward": 92,
   "crafting": [

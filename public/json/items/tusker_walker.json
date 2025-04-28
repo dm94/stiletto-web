@@ -3,6 +3,7 @@
   "parent": "Toboggan Walker",
   "type": "Tusker_C",
   "category": "Walkers",
+  "weight": 34.02,
   "description": "Enough deck space for both large weapons and the crew needed to operate them. The tusker walker is a juggernaut when it comes to hauling space, and is primarily used by rich traders that need to transport tons of valuable goods. Slow and hard to maneuver, it's often escorted by swift combat walkers. Owners of tusker walkers rarely fail to get a return on their investment.",
   "crafting": [
     {

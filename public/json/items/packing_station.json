@@ -3,6 +3,7 @@
   "parent": "Camp Fire",
   "type": "PackingStation_C",
   "category": "Crafting",
+  "weight": 10,
   "description": "Used to prepare packages for delivery to the trade station.",
   "experiencieReward": 92,
   "crafting": [

@@ -3,6 +3,7 @@
   "parent": "Defensive Tower",
   "type": "RupuSling_C",
   "category": "Weapons",
+  "weight": 12.71,
   "description": "Tied down rupu that throws specially made rupu rocks at intruders. Precise and deadly when the target is close, but very wasteful at longer distances, making it a perfect defense inside a base.",
   "experiencieReward": 44,
   "crafting": [

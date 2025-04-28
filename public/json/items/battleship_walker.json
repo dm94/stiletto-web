@@ -3,6 +3,7 @@
   "parent": "Flotillian Walkers",
   "type": "Battleship_C",
   "category": "Walkers",
+  "weight": 101.84,
   "onlyDevs": true,
   "crafting": [
     {

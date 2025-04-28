@@ -3,6 +3,7 @@
   "parent": "Tusker Walker",
   "type": "Panda_C",
   "category": "Walkers",
+  "weight": 34.02,
   "description": "Large walker carrier capable of storing up to 5 walkers of any size and hauling them, providing they're not too heavy. Limited deck size allows to build some weapons for protection.",
   "crafting": [
     {

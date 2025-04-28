@@ -3,6 +3,7 @@
   "parent": "Advanced Walker Weapons",
   "type": "Catapult_C",
   "category": "Weapons",
+  "weight": 100,
   "description": "Launches boulders and bombs extremely far distances. Effective against fortified structures.",
   "experiencieReward": 188,
   "crafting": [

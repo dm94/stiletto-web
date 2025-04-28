@@ -4,7 +4,7 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Ceramic Bottle",
+    "Ceramic Flask",
     "Ceramic Pickaxe",
     "Ceramic Repair Hammer",
     "Scythe",
@@ -18,7 +18,7 @@
     "Firestone Axe",
     "Ceramic Hatchet",
     "Split Ceramic Flask",
-    "Firestone Battle Axe"
+    "Firestone Battleaxe"
   ],
   "droppedBy": [
     {

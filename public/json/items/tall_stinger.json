@@ -3,6 +3,7 @@
   "parent": "Advanced Walker Weapons",
   "type": "Stinger_T3_C",
   "category": "Weapons",
+  "weight": 2,
   "description": "A Small Ballista placed on a raised arm that lets the driver get better firing angles.",
   "experiencieReward": 78,
   "onlyDevs": true,

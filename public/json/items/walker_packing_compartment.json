@@ -3,6 +3,7 @@
   "parent": "ChestBaseMaintenance_T2",
   "type": "SmallWalkerPacker_C",
   "category": "Walker Tools",
+  "weight": 25,
   "description": "Enables walker to pack other walkers into special compartments attached to the hull.",
   "experiencieReward": 34,
   "crafting": [

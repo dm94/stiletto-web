@@ -3,6 +3,7 @@
   "parent": "Crafting",
   "type": "FiberworkingStation_C",
   "category": "Crafting",
+  "weight": 5,
   "description": "Basic crafting station manufactures fabrics for walker sails and armors.",
   "experiencieReward": 36,
   "crafting": [

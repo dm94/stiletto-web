@@ -3,6 +3,7 @@
   "parent": "Construction",
   "type": "WaterBagSmall_C",
   "category": "Containers",
+  "weight": 3,
   "description": "Store small volumes of liquid. Liquid is protected unless the container is severely damaged.",
   "experiencieReward": 38,
   "crafting": [

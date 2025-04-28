@@ -1,7 +1,7 @@
 {
   "name": "Table",
-  "type": "Table_C",
-  "category": "Furniture",
+  "type": "OkkamStatue_C",
+  "category": "OkkamStatue",
   "weight": 3,
   "description": "Decorative furniture that also allows to place objects on it.",
   "experiencieReward": 6,
@@ -9,15 +9,7 @@
     {
       "ingredients": [
         {
-          "count": 45,
-          "name": "Wood"
-        },
-        {
-          "count": 6,
-          "name": "Rupu Pelt"
-        },
-        {
-          "count": 10,
+          "count": 300,
           "name": "Stone"
         }
       ]

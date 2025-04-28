@@ -4,9 +4,9 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Ceramic Bolt",
-    "Hellfire Bolt",
     "Ceramic-Tipped Bolt",
+    "Hellfire Bolt",
+    "Ceramic-Tipped Harpoon",
     "Explosive Bolt",
     "Ceramic Scattershot Ammo",
     "Obsidian Rok",
@@ -21,7 +21,7 @@
     "Green Death Bomb",
     "Catapult Boulder",
     "Throwable Insect Bomb",
-    "Throwable Smoke Bomb (Gas)"
+    "Throwable Smoke Bomb"
   ],
   "droppedBy": [
     {

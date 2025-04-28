@@ -3,6 +3,7 @@
   "parent": "Construction",
   "type": "BedSand_C",
   "category": "Interactables",
+  "weight": 0.84,
   "description": "Uncomfortable bed that's good for occasional respawn.",
   "experiencieReward": 21,
   "crafting": [

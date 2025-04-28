@@ -45,5 +45,7 @@
       "time": 60
     }
   ],
-  "projectileDamage": {}
+  "projectileDamage": {
+    "damage": 0
+  }
 }

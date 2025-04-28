@@ -3,6 +3,7 @@
   "parent": "Camp Fire",
   "type": "CauterizingStation_C",
   "category": "Interactables",
+  "weight": 73,
   "description": "Quickly heals by cauterizing fresh wounds. Requires a vitamin to be added in order to work.",
   "experiencieReward": 340,
   "crafting": [

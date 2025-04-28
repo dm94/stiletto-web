@@ -3,6 +3,7 @@
   "parent": "Construction",
   "type": "WalkerClimber_C",
   "category": "Walker Tools",
+  "weight": 5,
   "description": "A buildable attachement that helps yank nomads onto a walker's deck for quick and easy boarding.",
   "experiencieReward": 78,
   "crafting": [
