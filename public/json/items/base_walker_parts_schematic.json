@@ -44,133 +44,133 @@
   ],
   "droppedBy": [
     {
-      "name": "EasyRupu (T1) Quality",
+      "name": "Easy Rupu T1 Q",
       "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "EasyRupu (T2) Quality",
+      "name": "Easy Rupu T2 Q",
       "chance": 5.5555553,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "EasyRupu (T3) Quality",
+      "name": "Easy Rupu T3 Q",
       "chance": 4.7619047,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
-      "name": "EasyRupu (T4) Quality",
+      "name": "Easy Rupu T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "GoGo (T4) Quality",
+      "name": "Go Go T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "HardRupu (T1) Quality",
+      "name": "Hard Rupu T1 Q",
       "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "HardRupu (T2) Quality",
+      "name": "Hard Rupu T2 Q",
       "chance": 5.5555553,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "HardRupu (T3) Quality",
+      "name": "Hard Rupu T3 Q",
       "chance": 4.7619047,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
-      "name": "HardRupu (T4) Quality",
+      "name": "Hard Rupu T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "Koa (T4) Quality",
+      "name": "Koa T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "LargeNurr (T2) Quality",
+      "name": "Large Nurr T2 Q",
       "chance": 5.5555553,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "MediumRupu (T1) Quality",
+      "name": "Medium Rupu T1 Q",
       "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "MediumRupu (T2) Quality",
+      "name": "Medium Rupu T2 Q",
       "chance": 5.5555553,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "MediumRupu (T3) Quality",
+      "name": "Medium Rupu T3 Q",
       "chance": 4.7619047,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
-      "name": "MediumRupu (T4) Quality",
+      "name": "Medium Rupu T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "Nurr (T2) Quality",
+      "name": "Nurr T2 Q",
       "chance": 5.5555553,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Okkam (T3)",
+      "name": "Okkam T3",
       "chance": 4.7619047,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
-      "name": "Okkam (T3) Quality",
+      "name": "Okkam T3 Q",
       "chance": 4.7619047,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
-      "name": "Papak (T3) Quality",
+      "name": "Papak T3 Q",
       "chance": 4.7619047,
       "minQuantity": 1,
       "maxQuantity": 1,

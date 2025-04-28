@@ -1,5 +1,5 @@
 {
-  "name": "Ammo Box (T3)",
+  "name": "Ammo Box T3",
   "category": "Container",
   "tier": "T3",
   "drops": [
@@ -109,5 +109,5 @@
       "source": "baseresources_t3"
     }
   ],
-  "originalName": "AmmoBox (T3)"
+  "originalName": "AmmoBox T3"
 }

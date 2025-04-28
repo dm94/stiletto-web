@@ -1,5 +1,5 @@
 {
-  "name": "Medium Rupu (T2)",
+  "name": "Medium Rupu T2",
   "category": "Rupu",
   "tier": "T2",
   "drops": [
@@ -305,5 +305,5 @@
       "source": "rigs_t2"
     }
   ],
-  "originalName": "MediumRupu (T2)"
+  "originalName": "MediumRupu T2"
 }

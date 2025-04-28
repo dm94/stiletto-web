@@ -1,0 +1,330 @@
+{
+  "name": "Treasure Chest (T3)",
+  "category": "Container",
+  "tier": "T3",
+  "drops": [
+    {
+      "name": "Brittle Bone Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Brittle Bone Handwraps",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Brittle Bone Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Carapace Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Carapace Gauntlets",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Carapace Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Redwood Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Redwood Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Firestone Axe",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Bludgeon",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Kopesh",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Ceramic Hatchet",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Short Ceramic Hoofmace",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Short Malletblade",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Hammerstaff",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Bladestaff",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Paddleblade Quarterstaff",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Throwable Aloe Bomb",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firebomb",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Battleaxe",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Bozdogan",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Longblade",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Long Ceramic Hoofmace",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Singblade",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Hornet Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Hornet Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Falco Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Falco Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Buffalo Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Buffalo Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Tusker Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Tusker Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Hercul Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Hercul Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Animal Fat",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Ash",
+      "chance": 8.333333,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Charcoal",
+      "chance": 8.333333,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Huge Cactus Fruit",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Fruit Pulp",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Rupu Pelt",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Hide",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Sand",
+      "chance": 8.333333,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Purified Water",
+      "chance": 8.333333,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Mushroom Flesh",
+      "chance": 8.333333,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Rupu Gel",
+      "chance": 8.333333,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "extraresources_t3"
+    },
+    {
+      "name": "Redwood Wood",
+      "chance": 8.333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "extraresources_t3"
+    }
+  ],
+  "originalName": "TreasureChest (T3)"
+}

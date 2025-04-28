@@ -1,5 +1,5 @@
 {
-  "name": "Easy Rupu Camp (T2)",
+  "name": "Easy Rupu Camp T2",
   "category": "Rupu",
   "tier": "T2",
   "drops": [
@@ -382,5 +382,5 @@
       "source": "rigs_t2"
     }
   ],
-  "originalName": "EasyRupuCamp (T2)"
+  "originalName": "EasyRupuCamp T2"
 }

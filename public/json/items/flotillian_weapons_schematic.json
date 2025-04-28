@@ -18,35 +18,35 @@
   ],
   "droppedBy": [
     {
-      "name": "EasyRupu (T4) Quality",
+      "name": "Easy Rupu T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "GoGo (T4) Quality",
+      "name": "Go Go T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "HardRupu (T4) Quality",
+      "name": "Hard Rupu T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "Koa (T4) Quality",
+      "name": "Koa T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "MediumRupu (T4) Quality",
+      "name": "Medium Rupu T4 Q",
       "chance": 5.882353,
       "minQuantity": 1,
       "maxQuantity": 1,

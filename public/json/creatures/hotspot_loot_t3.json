@@ -1,5 +1,5 @@
 {
-  "name": "Hotspot Loot (T3)",
+  "name": "Hotspot Loot T3",
   "category": "Resource",
   "tier": "T3",
   "drops": [
@@ -473,5 +473,5 @@
       "source": "rigs_t3"
     }
   ],
-  "originalName": "HotspotLoot (T3)"
+  "originalName": "HotspotLoot T3"
 }

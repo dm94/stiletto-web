@@ -8,56 +8,56 @@
   ],
   "droppedBy": [
     {
-      "name": "BigHotspotLoot (T1)",
+      "name": "Big Hotspot Loot T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "EasyRupuCamp (T1)",
+      "name": "Easy Rupu Camp T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "HardRupu (T1)",
+      "name": "Hard Rupu Camp T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "HardRupuCamp (T1)",
+      "name": "Hard Rupu T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "HotspotLoot (T1)",
+      "name": "Hotspot Loot T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "MediumRupu (T1)",
+      "name": "Medium Rupu Camp T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "MediumRupuCamp (T1)",
+      "name": "Medium Rupu T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Phemke",
+      "name": "Phemke T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -85,7 +85,7 @@
       "tier": "T1"
     },
     {
-      "name": "TreasureChest (T1)",
+      "name": "Treasure Chest T1",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,

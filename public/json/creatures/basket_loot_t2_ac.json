@@ -1,5 +1,5 @@
 {
-  "name": "Basket Loot (T2) (AC)",
+  "name": "Basket Loot T2 AC",
   "category": "Structure",
   "tier": "T2",
   "drops": [
@@ -410,5 +410,5 @@
       "source": "ac_forebearcoins"
     }
   ],
-  "originalName": "BasketLoot (T2) (AC)"
+  "originalName": "BasketLoot T2 AC"
 }
