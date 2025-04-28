@@ -265,7 +265,7 @@ const ItemWiki = () => {
                 )}
                 {itemInfo?.trade_price && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Trade Price")}</div>
+                    <div className="text-gray-300">{t("wiki.tradePrice")}</div>
                     <div className="text-gray-400">
                       {itemInfo.trade_price} flots
                     </div>
@@ -273,13 +273,15 @@ const ItemWiki = () => {
                 )}
                 {itemInfo?.stackSize && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Character Stack")}</div>
+                    <div className="text-gray-300">
+                      {t("wiki.characterStack")}
+                    </div>
                     <div className="text-gray-400">{itemInfo.stackSize}</div>
                   </li>
                 )}
                 {itemInfo?.weight && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Weight")}</div>
+                    <div className="text-gray-300">{t("wiki.weight")}</div>
                     <div className={textColor}>
                       {calcRarityValue(
                         rarity,
@@ -293,7 +295,7 @@ const ItemWiki = () => {
                 {itemInfo?.experiencieReward && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
                     <div className="text-gray-300">
-                      {t("Experience by crafting")}
+                      {t("wiki.experiencieReward")}
                     </div>
                     <div className={textColor}>
                       {calcRarityValue(
@@ -307,7 +309,7 @@ const ItemWiki = () => {
                 )}
                 {itemInfo?.durability && (
                   <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                    <div className="text-gray-300">{t("Durability")}</div>
+                    <div className="text-gray-300">{t("wiki.durability")}</div>
                     <div className={textColor}>
                       {calcRarityValue(
                         rarity,
@@ -378,7 +380,7 @@ const ItemWiki = () => {
         {itemInfo?.structureInfo && (
           <GenericInfo
             key="structureInfo"
-            name="Structure Info"
+            name="wiki.StructureInfo"
             dataInfo={itemInfo.structureInfo}
             rarity={rarity}
             textColor={textColor}
@@ -388,7 +390,7 @@ const ItemWiki = () => {
         {itemInfo?.projectileDamage && (
           <GenericInfo
             key="proyectileInfo"
-            name="Projectile Info"
+            name="wiki.ProjectileInfo"
             dataInfo={itemInfo.projectileDamage}
             rarity={rarity}
             textColor={textColor}
@@ -398,7 +400,7 @@ const ItemWiki = () => {
         {itemInfo?.weaponInfo && (
           <GenericInfo
             key="weaponinfo"
-            name="Weapon Info"
+            name="wiki.WeaponInfo"
             dataInfo={itemInfo.weaponInfo}
             rarity={rarity}
             textColor={textColor}
@@ -408,7 +410,7 @@ const ItemWiki = () => {
         {itemInfo?.armorInfo && (
           <GenericInfo
             key="armorinfo"
-            name="Armor Info"
+            name="wiki.ArmorInfo"
             dataInfo={itemInfo.armorInfo}
             rarity={rarity}
             textColor={textColor}

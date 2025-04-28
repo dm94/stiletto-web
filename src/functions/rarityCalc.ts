@@ -345,6 +345,9 @@ const getFactorName = (
       break;
     case "experiencieReward":
       factorName = "CraftingExpFactor";
+      if (category === "Resources") {
+        factorName = "FoliageExpFactor";
+      }
       break;
     default:
       break;
