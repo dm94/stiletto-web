@@ -1,0 +1,18 @@
+{
+  "name": "Spider Walker Upgrade Gear Tier 1",
+  "type": "Spider Walker Upgrade Gear Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 5
+  }
+}

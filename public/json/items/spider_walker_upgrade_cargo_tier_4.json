@@ -1,0 +1,26 @@
+{
+  "name": "Spider Walker Upgrade Cargo Tier 4",
+  "type": "Spider Walker Upgrade Cargo Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 30,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 22
+  }
+}

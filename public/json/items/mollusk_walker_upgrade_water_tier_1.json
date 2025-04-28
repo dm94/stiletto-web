@@ -1,0 +1,26 @@
+{
+  "name": "Mollusk Walker Upgrade Water Tier 1",
+  "type": "Mollusk Walker Upgrade Water Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 6,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 70
+  }
+}

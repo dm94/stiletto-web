@@ -1,0 +1,8 @@
+{
+  "name": "Cobra Walker Upgrade Cargo Tier 4",
+  "type": "Cobra Walker Upgrade Cargo Tier 4",
+  "category": "Upgrades",
+  "upgradeInfo": {
+    "containerSlots": 5
+  }
+}

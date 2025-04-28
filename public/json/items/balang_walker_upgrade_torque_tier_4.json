@@ -1,0 +1,30 @@
+{
+  "name": "Balang Walker Upgrade Torque Tier 4",
+  "type": "Balang Walker Upgrade Torque Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Rope"
+        },
+        {
+          "count": 60,
+          "name": "Wood"
+        },
+        {
+          "count": 65,
+          "name": "Fiber"
+        },
+        {
+          "count": 15,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 3000
+  }
+}

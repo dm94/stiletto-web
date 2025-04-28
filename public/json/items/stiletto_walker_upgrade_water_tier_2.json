@@ -1,0 +1,22 @@
+{
+  "name": "Stiletto Walker Upgrade Water Tier 2",
+  "type": "Stiletto Walker Upgrade Water Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 28,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 12,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 110
+  }
+}

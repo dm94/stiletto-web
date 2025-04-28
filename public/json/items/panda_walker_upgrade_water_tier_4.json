@@ -1,0 +1,26 @@
+{
+  "name": "Panda Walker Upgrade Water Tier 4",
+  "type": "Panda Walker Upgrade Water Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Eucalyptus Leaf"
+        },
+        {
+          "count": 44,
+          "name": "Leather"
+        },
+        {
+          "count": 23,
+          "name": "Iron Ore"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 480
+  }
+}

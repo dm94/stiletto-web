@@ -1,0 +1,20 @@
+{
+  "name": "Nomad Walker Upgrade Mobility Tier 4",
+  "type": "Nomad Walker Upgrade Mobility Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Stone"
+        },
+        {
+          "count": 35,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

@@ -1,0 +1,30 @@
+{
+  "name": "Schmetterling Walker Upgrade Water Tier 4",
+  "type": "Schmetterling Walker Upgrade Water Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Charcoal"
+        },
+        {
+          "count": 25,
+          "name": "Shardrock"
+        },
+        {
+          "count": 12,
+          "name": "Eucalyptus Leaf"
+        },
+        {
+          "count": 15,
+          "name": "Rubber Block"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 800
+  }
+}

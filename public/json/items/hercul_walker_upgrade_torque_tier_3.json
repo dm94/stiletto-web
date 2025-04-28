@@ -1,0 +1,8 @@
+{
+  "name": "Hercul Walker Upgrade Torque Tier 3",
+  "type": "Hercul Walker Upgrade Torque Tier 3",
+  "category": "Upgrades",
+  "upgradeInfo": {
+    "stackSizeOverride": 18000
+  }
+}

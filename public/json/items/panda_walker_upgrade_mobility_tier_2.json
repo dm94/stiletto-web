@@ -1,0 +1,24 @@
+{
+  "name": "Panda Walker Upgrade Mobility Tier 2",
+  "type": "Panda Walker Upgrade Mobility Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 38,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 88,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 50,
+          "name": "Rubber Block"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

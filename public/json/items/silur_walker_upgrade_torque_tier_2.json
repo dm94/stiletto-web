@@ -1,0 +1,26 @@
+{
+  "name": "Silur Walker Upgrade Torque Tier 2",
+  "type": "Silur Walker Upgrade Torque Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Compacted Torque Battery"
+        },
+        {
+          "count": 13,
+          "name": "Tallow"
+        },
+        {
+          "count": 6,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 2400
+  }
+}

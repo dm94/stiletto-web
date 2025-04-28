@@ -1,0 +1,26 @@
+{
+  "name": "Mollusk Walker Upgrade Torque Tier 4",
+  "type": "Mollusk Walker Upgrade Torque Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Rope"
+        },
+        {
+          "count": 13,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 4000
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Hercul Walker Upgrade Water Tier 2",
+  "type": "Hercul Walker Upgrade Water Tier 2",
+  "category": "Upgrades",
+  "upgradeInfo": {
+    "stackSizeOverride": 350
+  }
+}

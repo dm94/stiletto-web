@@ -1,0 +1,22 @@
+{
+  "name": "Cobra Walker Upgrade Water Tier 2",
+  "type": "Cobra Walker Upgrade Water Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 32,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 24,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 300
+  }
+}

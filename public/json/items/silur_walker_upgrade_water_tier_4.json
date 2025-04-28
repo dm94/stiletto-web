@@ -1,0 +1,22 @@
+{
+  "name": "Silur Walker Upgrade Water Tier 4",
+  "type": "Silur Walker Upgrade Water Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 48,
+          "name": "Leather"
+        },
+        {
+          "count": 12,
+          "name": "Gelatinous Goo"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 320
+  }
+}

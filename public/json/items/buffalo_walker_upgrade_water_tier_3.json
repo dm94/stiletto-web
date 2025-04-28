@@ -1,0 +1,26 @@
+{
+  "name": "Buffalo Walker Upgrade Water Tier 3",
+  "type": "Buffalo Walker Upgrade Water Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 17,
+          "name": "Leather"
+        },
+        {
+          "count": 40,
+          "name": "Spearmint"
+        },
+        {
+          "count": 25,
+          "name": "Charcoal"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 290
+  }
+}

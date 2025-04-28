@@ -1,0 +1,26 @@
+{
+  "name": "Panda Walker Upgrade Torque Tier 3",
+  "type": "Panda Walker Upgrade Torque Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Tar"
+        },
+        {
+          "count": 34,
+          "name": "Shardrock"
+        },
+        {
+          "count": 55,
+          "name": "Lightwood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 2000
+  }
+}

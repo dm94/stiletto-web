@@ -1,0 +1,22 @@
+{
+  "name": "Tusker Walker Upgrade Cargo Tier 1",
+  "type": "Tusker Walker Upgrade Cargo Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 50,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 75,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 20
+  }
+}

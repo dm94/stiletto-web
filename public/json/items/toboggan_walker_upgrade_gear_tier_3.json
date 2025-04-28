@@ -1,0 +1,26 @@
+{
+  "name": "Toboggan Walker Upgrade Gear Tier 3",
+  "type": "Toboggan Walker Upgrade Gear Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 16,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 45,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 15
+  }
+}

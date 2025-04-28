@@ -1,0 +1,22 @@
+{
+  "name": "Nomad Walker Upgrade Gear Tier 3",
+  "type": "Nomad Walker Upgrade Gear Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 22,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 15
+  }
+}

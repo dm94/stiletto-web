@@ -1,0 +1,26 @@
+{
+  "name": "Titan Walker Upgrade Water Tier 1",
+  "type": "Titan Walker Upgrade Water Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 44,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 63,
+          "name": "Eucalyptus Leaf"
+        },
+        {
+          "count": 13,
+          "name": "Leather"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 300
+  }
+}

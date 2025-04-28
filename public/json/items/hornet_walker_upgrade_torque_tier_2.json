@@ -1,0 +1,26 @@
+{
+  "name": "Hornet Walker Upgrade Torque Tier 2",
+  "type": "Hornet Walker Upgrade Torque Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 13,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 8,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 5,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 1800
+  }
+}

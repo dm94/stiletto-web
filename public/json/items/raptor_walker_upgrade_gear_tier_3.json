@@ -1,0 +1,26 @@
+{
+  "name": "Raptor Walker Upgrade Gear Tier 3",
+  "type": "Raptor Walker Upgrade Gear Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Shardrock"
+        },
+        {
+          "count": 32,
+          "name": "Iron Nails"
+        },
+        {
+          "count": 12,
+          "name": "Lightwood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 15
+  }
+}

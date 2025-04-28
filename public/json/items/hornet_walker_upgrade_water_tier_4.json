@@ -1,0 +1,26 @@
+{
+  "name": "Hornet Walker Upgrade Water Tier 4",
+  "type": "Hornet Walker Upgrade Water Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood"
+        },
+        {
+          "count": 40,
+          "name": "Clay"
+        },
+        {
+          "count": 3,
+          "name": "Gelatinous Goo"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 400
+  }
+}

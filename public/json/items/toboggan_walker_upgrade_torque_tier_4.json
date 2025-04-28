@@ -1,0 +1,26 @@
+{
+  "name": "Toboggan Walker Upgrade Torque Tier 4",
+  "type": "Toboggan Walker Upgrade Torque Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Wooden Gear"
+        },
+        {
+          "count": 16,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 13,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 4000
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Mollusk Walker Upgrade Gear Tier 4",
+  "type": "Mollusk Walker Upgrade Gear Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 38,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 13,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 33
+  }
+}

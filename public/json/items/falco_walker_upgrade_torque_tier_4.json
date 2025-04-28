@@ -1,0 +1,26 @@
+{
+  "name": "Falco Walker Upgrade Torque Tier 4",
+  "type": "Falco Walker Upgrade Torque Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 17,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 13,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 10,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 5000
+  }
+}

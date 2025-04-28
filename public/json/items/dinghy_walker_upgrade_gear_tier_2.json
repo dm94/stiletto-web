@@ -1,0 +1,22 @@
+{
+  "name": "Dinghy Walker Upgrade Gear Tier 2",
+  "type": "Dinghy Walker Upgrade Gear Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 30,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 10
+  }
+}

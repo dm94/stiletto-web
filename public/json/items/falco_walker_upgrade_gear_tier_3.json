@@ -1,0 +1,26 @@
+{
+  "name": "Falco Walker Upgrade Gear Tier 3",
+  "type": "Falco Walker Upgrade Gear Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 45,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 15,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 15
+  }
+}

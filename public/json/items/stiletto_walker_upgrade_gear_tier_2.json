@@ -1,0 +1,22 @@
+{
+  "name": "Stiletto Walker Upgrade Gear Tier 2",
+  "type": "Stiletto Walker Upgrade Gear Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 16,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 15
+  }
+}

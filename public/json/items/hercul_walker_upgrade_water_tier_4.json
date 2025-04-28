@@ -1,0 +1,30 @@
+{
+  "name": "Hercul Walker Upgrade Water Tier 4",
+  "type": "Hercul Walker Upgrade Water Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 44,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 65,
+          "name": "Wood"
+        },
+        {
+          "count": 62,
+          "name": "Hide"
+        },
+        {
+          "count": 32,
+          "name": "Ceramic Shard"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 1300
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Mollusk Walker Upgrade Gear Tier 2",
+  "type": "Mollusk Walker Upgrade Gear Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 38,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 20
+  }
+}

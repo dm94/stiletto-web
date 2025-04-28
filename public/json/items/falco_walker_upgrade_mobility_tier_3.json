@@ -1,0 +1,24 @@
+{
+  "name": "Falco Walker Upgrade Mobility Tier 3",
+  "type": "Falco Walker Upgrade Mobility Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 32,
+          "name": "Clay"
+        },
+        {
+          "count": 5,
+          "name": "Gelatinous Goo"
+        },
+        {
+          "count": 5,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

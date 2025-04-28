@@ -1,0 +1,20 @@
+{
+  "name": "Firefly Walker Upgrade Cargo Tier 2",
+  "type": "Firefly Walker Upgrade Cargo Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Fiber"
+        },
+        {
+          "count": 20,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

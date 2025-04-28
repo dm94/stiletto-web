@@ -1,0 +1,26 @@
+{
+  "name": "Mollusk Walker Upgrade Cargo Tier 3",
+  "type": "Mollusk Walker Upgrade Cargo Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 24,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 40,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 22,
+          "name": "Triple Stitch Fabric"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 28
+  }
+}

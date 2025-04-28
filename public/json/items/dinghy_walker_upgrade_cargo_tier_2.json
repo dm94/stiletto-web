@@ -1,0 +1,22 @@
+{
+  "name": "Dinghy Walker Upgrade Cargo Tier 2",
+  "type": "Dinghy Walker Upgrade Cargo Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 12
+  }
+}

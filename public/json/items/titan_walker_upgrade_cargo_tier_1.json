@@ -1,0 +1,26 @@
+{
+  "name": "Titan Walker Upgrade Cargo Tier 1",
+  "type": "Titan Walker Upgrade Cargo Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 55,
+          "name": "Lightwood"
+        },
+        {
+          "count": 12,
+          "name": "Iron Ore"
+        },
+        {
+          "count": 15,
+          "name": "Rubber Block"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 12
+  }
+}

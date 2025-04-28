@@ -1,0 +1,26 @@
+{
+  "name": "Spider Walker Upgrade Cargo Tier 3",
+  "type": "Spider Walker Upgrade Cargo Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 18
+  }
+}

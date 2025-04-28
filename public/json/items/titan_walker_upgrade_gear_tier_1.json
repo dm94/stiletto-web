@@ -1,0 +1,26 @@
+{
+  "name": "Titan Walker Upgrade Gear Tier 1",
+  "type": "Titan Walker Upgrade Gear Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 17,
+          "name": "Iron Nails"
+        },
+        {
+          "count": 45,
+          "name": "Lightwood"
+        },
+        {
+          "count": 55,
+          "name": "Triple Stitch Fabric"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 10
+  }
+}

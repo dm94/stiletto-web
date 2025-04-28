@@ -1,0 +1,26 @@
+{
+  "name": "Buffalo Walker Upgrade Gear Tier 1",
+  "type": "Buffalo Walker Upgrade Gear Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 27,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 15,
+          "name": "Tar"
+        },
+        {
+          "count": 9,
+          "name": "Triple Stitch Fabric"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 10
+  }
+}

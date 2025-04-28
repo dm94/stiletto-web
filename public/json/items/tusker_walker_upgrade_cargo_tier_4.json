@@ -1,0 +1,26 @@
+{
+  "name": "Tusker Walker Upgrade Cargo Tier 4",
+  "type": "Tusker Walker Upgrade Cargo Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Stone"
+        },
+        {
+          "count": 75,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 50,
+          "name": "Chitin Plate"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 60
+  }
+}

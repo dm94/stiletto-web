@@ -1,0 +1,8 @@
+{
+  "name": "Spider Walker Upgrade Water Tier 1",
+  "type": "Spider Walker Upgrade Water Tier 1",
+  "category": "Upgrades",
+  "upgradeInfo": {
+    "stackSizeOverride": 30
+  }
+}

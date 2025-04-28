@@ -1,0 +1,22 @@
+{
+  "name": "Dinghy Walker Upgrade Water Tier 1",
+  "type": "Dinghy Walker Upgrade Water Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 25,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 60
+  }
+}

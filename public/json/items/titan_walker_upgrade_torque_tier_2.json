@@ -1,0 +1,26 @@
+{
+  "name": "Titan Walker Upgrade Torque Tier 2",
+  "type": "Titan Walker Upgrade Torque Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Tar"
+        },
+        {
+          "count": 20,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 12,
+          "name": "Hollowbone"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 1000
+  }
+}

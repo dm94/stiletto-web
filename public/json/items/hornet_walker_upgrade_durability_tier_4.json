@@ -1,0 +1,24 @@
+{
+  "name": "Hornet Walker Upgrade Durability Tier 4",
+  "type": "Hornet Walker Upgrade Durability Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 17,
+          "name": "Tar"
+        },
+        {
+          "count": 38,
+          "name": "Rupu Pelt"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

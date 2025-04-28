@@ -1,0 +1,26 @@
+{
+  "name": "Spider Walker Upgrade Gear Tier 3",
+  "type": "Spider Walker Upgrade Gear Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 18,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 22,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 15
+  }
+}

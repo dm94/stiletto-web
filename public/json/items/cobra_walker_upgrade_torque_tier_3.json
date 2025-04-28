@@ -1,0 +1,8 @@
+{
+  "name": "Cobra Walker Upgrade Torque Tier 3",
+  "type": "Cobra Walker Upgrade Torque Tier 3",
+  "category": "Upgrades",
+  "upgradeInfo": {
+    "stackSizeOverride": 2000
+  }
+}

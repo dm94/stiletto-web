@@ -1,0 +1,22 @@
+{
+  "name": "Balang Walker Upgrade Water Tier 2",
+  "type": "Balang Walker Upgrade Water Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 45,
+          "name": "Fiber"
+        },
+        {
+          "count": 10,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 125
+  }
+}

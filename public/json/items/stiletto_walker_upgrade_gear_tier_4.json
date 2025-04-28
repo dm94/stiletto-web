@@ -1,0 +1,26 @@
+{
+  "name": "Stiletto Walker Upgrade Gear Tier 4",
+  "type": "Stiletto Walker Upgrade Gear Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 13,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 16,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 25
+  }
+}

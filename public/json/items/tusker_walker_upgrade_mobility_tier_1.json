@@ -1,0 +1,24 @@
+{
+  "name": "Tusker Walker Upgrade Mobility Tier 1",
+  "type": "Tusker Walker Upgrade Mobility Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 50,
+          "name": "Tar"
+        },
+        {
+          "count": 38,
+          "name": "Obsidian"
+        },
+        {
+          "count": 5,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

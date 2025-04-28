@@ -1,0 +1,26 @@
+{
+  "name": "Raptor Walker Upgrade Torque Tier 2",
+  "type": "Raptor Walker Upgrade Torque Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Lightwood"
+        },
+        {
+          "count": 32,
+          "name": "Iron Ore"
+        },
+        {
+          "count": 7,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 10500
+  }
+}

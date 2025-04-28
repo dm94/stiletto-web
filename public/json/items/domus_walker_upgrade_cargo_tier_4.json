@@ -1,0 +1,26 @@
+{
+  "name": "Domus Walker Upgrade Cargo Tier 4",
+  "type": "Domus Walker Upgrade Cargo Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 75,
+          "name": "Lightwood"
+        },
+        {
+          "count": 50,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 25,
+          "name": "Iron Ore"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 23
+  }
+}

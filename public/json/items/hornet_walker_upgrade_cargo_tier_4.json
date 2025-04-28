@@ -1,0 +1,22 @@
+{
+  "name": "Hornet Walker Upgrade Cargo Tier 4",
+  "type": "Hornet Walker Upgrade Cargo Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 48,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 32,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 35
+  }
+}

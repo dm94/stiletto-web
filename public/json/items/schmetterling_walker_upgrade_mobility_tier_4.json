@@ -1,0 +1,24 @@
+{
+  "name": "Schmetterling Walker Upgrade Mobility Tier 4",
+  "type": "Schmetterling Walker Upgrade Mobility Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 24,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 38,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 5,
+          "name": "Iron Gear"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

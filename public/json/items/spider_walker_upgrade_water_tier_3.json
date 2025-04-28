@@ -1,0 +1,26 @@
+{
+  "name": "Spider Walker Upgrade Water Tier 3",
+  "type": "Spider Walker Upgrade Water Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 50
+  }
+}

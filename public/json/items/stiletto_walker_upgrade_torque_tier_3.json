@@ -1,0 +1,26 @@
+{
+  "name": "Stiletto Walker Upgrade Torque Tier 3",
+  "type": "Stiletto Walker Upgrade Torque Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 7,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 25,
+          "name": "Rope"
+        },
+        {
+          "count": 13,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 2100
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Firefly Walker Upgrade Water Tier 3",
+  "type": "Firefly Walker Upgrade Water Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 20,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 60
+  }
+}

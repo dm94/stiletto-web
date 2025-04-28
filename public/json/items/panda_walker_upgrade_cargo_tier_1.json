@@ -1,0 +1,26 @@
+{
+  "name": "Panda Walker Upgrade Cargo Tier 1",
+  "type": "Panda Walker Upgrade Cargo Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 75,
+          "name": "Lightwood"
+        },
+        {
+          "count": 50,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 25,
+          "name": "Iron Nails"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 8
+  }
+}

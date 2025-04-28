@@ -1,0 +1,26 @@
+{
+  "name": "Tusker Walker Upgrade Torque Tier 3",
+  "type": "Tusker Walker Upgrade Torque Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Tallow"
+        },
+        {
+          "count": 45,
+          "name": "Clay"
+        },
+        {
+          "count": 22,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 3000
+  }
+}

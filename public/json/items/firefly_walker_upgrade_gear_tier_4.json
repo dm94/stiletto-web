@@ -1,0 +1,22 @@
+{
+  "name": "Firefly Walker Upgrade Gear Tier 4",
+  "type": "Firefly Walker Upgrade Gear Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 4,
+          "name": "Wooden Slab"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 18
+  }
+}

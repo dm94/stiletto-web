@@ -1,0 +1,22 @@
+{
+  "name": "Stiletto Walker Upgrade Torque Tier 1",
+  "type": "Stiletto Walker Upgrade Torque Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 7,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 25,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 600
+  }
+}

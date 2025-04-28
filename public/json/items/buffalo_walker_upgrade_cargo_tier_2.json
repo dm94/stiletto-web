@@ -1,0 +1,26 @@
+{
+  "name": "Buffalo Walker Upgrade Cargo Tier 2",
+  "type": "Buffalo Walker Upgrade Cargo Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 10,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 22,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 13
+  }
+}

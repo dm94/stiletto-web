@@ -1,0 +1,26 @@
+{
+  "name": "Falco Walker Upgrade Durability Tier 3",
+  "type": "Falco Walker Upgrade Durability Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 40,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 45,
+          "name": "Obsidian"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 20000
+  }
+}

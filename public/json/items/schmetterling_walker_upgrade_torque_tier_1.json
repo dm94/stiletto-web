@@ -1,0 +1,26 @@
+{
+  "name": "Schmetterling Walker Upgrade Torque Tier 1",
+  "type": "Schmetterling Walker Upgrade Torque Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 24,
+          "name": "Shardrock"
+        },
+        {
+          "count": 20,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 25,
+          "name": "Tar"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 800
+  }
+}

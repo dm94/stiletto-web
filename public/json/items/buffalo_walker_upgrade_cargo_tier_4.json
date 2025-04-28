@@ -1,0 +1,26 @@
+{
+  "name": "Buffalo Walker Upgrade Cargo Tier 4",
+  "type": "Buffalo Walker Upgrade Cargo Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 10,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 22,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 19
+  }
+}

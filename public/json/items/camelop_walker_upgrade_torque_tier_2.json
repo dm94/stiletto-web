@@ -1,0 +1,8 @@
+{
+  "name": "Camelop Walker Upgrade Torque Tier 2",
+  "type": "Camelop Walker Upgrade Torque Tier 2",
+  "category": "Upgrades",
+  "upgradeInfo": {
+    "stackSizeOverride": 2400
+  }
+}

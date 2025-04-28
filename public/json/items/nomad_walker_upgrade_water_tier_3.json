@@ -1,0 +1,26 @@
+{
+  "name": "Nomad Walker Upgrade Water Tier 3",
+  "type": "Nomad Walker Upgrade Water Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Palm Leaves"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 50
+  }
+}

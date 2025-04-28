@@ -1,0 +1,26 @@
+{
+  "name": "Schmetterling Walker Upgrade Gear Tier 1",
+  "type": "Schmetterling Walker Upgrade Gear Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 45,
+          "name": "Iron Nails"
+        },
+        {
+          "count": 55,
+          "name": "Lightwood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "containerSlots": 5
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Dinghy Walker Upgrade Water Tier 2",
+  "type": "Dinghy Walker Upgrade Water Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 25,
+          "name": "Fiber Weave"
+        }
+      ],
+      "time": 10
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 80
+  }
+}

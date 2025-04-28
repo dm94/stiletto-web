@@ -1,0 +1,26 @@
+{
+  "name": "Schmetterling Walker Upgrade Durability Tier 2",
+  "type": "Schmetterling Walker Upgrade Durability Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 38,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 45,
+          "name": "Shardrock"
+        },
+        {
+          "count": 63,
+          "name": "Iron Ingot"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 15000
+  }
+}

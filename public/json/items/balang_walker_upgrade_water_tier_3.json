@@ -1,0 +1,26 @@
+{
+  "name": "Balang Walker Upgrade Water Tier 3",
+  "type": "Balang Walker Upgrade Water Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 45,
+          "name": "Fiber"
+        },
+        {
+          "count": 10,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSizeOverride": 200
+  }
+}

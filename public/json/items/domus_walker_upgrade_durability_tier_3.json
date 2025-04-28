@@ -1,0 +1,28 @@
+{
+  "name": "Domus Walker Upgrade Durability Tier 3",
+  "type": "Domus Walker Upgrade Durability Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 55,
+          "name": "Iron Ore"
+        },
+        {
+          "count": 34,
+          "name": "Shardrock"
+        },
+        {
+          "count": 38,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 24,
+          "name": "Worm Scale"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

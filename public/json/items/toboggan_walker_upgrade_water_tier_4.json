@@ -1,0 +1,24 @@
+{
+  "name": "Toboggan Walker Upgrade Water Tier 4",
+  "type": "Toboggan Walker Upgrade Water Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Salt Rock"
+        },
+        {
+          "count": 30,
+          "name": "Leather"
+        },
+        {
+          "count": 28,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

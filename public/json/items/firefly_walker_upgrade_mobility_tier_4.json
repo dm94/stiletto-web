@@ -1,0 +1,24 @@
+{
+  "name": "Firefly Walker Upgrade Mobility Tier 4",
+  "type": "Firefly Walker Upgrade Mobility Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Palm Leaves"
+        },
+        {
+          "count": 15,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 35,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}
