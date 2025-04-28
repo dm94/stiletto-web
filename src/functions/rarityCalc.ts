@@ -309,6 +309,11 @@ const getFactorName = (
       break;
     case "durability":
       factorName = "ItemDurabilityFactor";
+      if (category === "Weapons") {
+        factorName = "WeaponDurabilityFactor";
+      } else if (category === "Armors") {
+        factorName = "ArmorDurabilityFactor";
+      }
       break;
     case "weaponSpeed":
       factorName = "WeaponItemSpeedBonus";
@@ -333,6 +338,15 @@ const getFactorName = (
         factorName = "AutomatonHealthFactor";
       } else {
         factorName = "StructureHealthFactor";
+      }
+      break;
+    case "toolTier":
+      factorName = "ToolTierFactor";
+      break;
+    case "experiencieReward":
+      factorName = "CraftingExpFactor";
+      if (category === "Resources") {
+        factorName = "FoliageExpFactor";
       }
       break;
     default:

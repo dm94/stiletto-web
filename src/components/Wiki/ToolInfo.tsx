@@ -1,26 +1,38 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import type { ToolInfo as Info } from "@ctypes/item";
+import { calcRarityValue } from "@functions/rarityCalc";
 
 interface ToolInfoProps {
   toolInfo?: Info[];
+  rarity?: string;
+  textColor?: string;
 }
 
-const ToolInfo: React.FC<ToolInfoProps> = ({ toolInfo }) => {
+const ToolInfo: React.FC<ToolInfoProps> = ({ toolInfo, rarity, textColor }) => {
   const { t } = useTranslation();
 
   const showToolInfo = () => {
-    return toolInfo?.map((tool) => (
-      <li
-        key={`${tool.toolType}-${tool.tier}`}
-        className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0"
-      >
-        {tool?.toolType && (
-          <div className="text-gray-300">{t(tool.toolType)}</div>
-        )}
-        <div className="text-gray-400">{tool.tier}</div>
-      </li>
-    ));
+    return toolInfo?.map((tool) => {
+      const value = calcRarityValue(
+        rarity,
+        "toolTier",
+        undefined,
+        tool.tier ?? 0,
+      );
+
+      return (
+        <li
+          key={`${tool.toolType}-${value}`}
+          className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0"
+        >
+          {tool?.toolType && (
+            <div className="text-gray-300">{t(tool.toolType)}</div>
+          )}
+          <div className={textColor}>{value}</div>
+        </li>
+      );
+    });
   };
 
   if (toolInfo) {
