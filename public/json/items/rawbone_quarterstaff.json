@@ -134,6 +134,13 @@
       "tier": "T2"
     },
     {
+      "name": "Lootbox Weapons Canyon",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
+    },
+    {
       "name": "Marshland Stalker",
       "chance": 9.090909,
       "minQuantity": 1,

@@ -1,10 +1,7 @@
 {
-  "name": "Armor Strongbox",
-  "type": "LootBoxArmors_C",
-  "category": "Interactables",
-  "stackSize": 100,
-  "weight": 1,
-  "description": "Armors seized from pirates by the Flotilla. May contain various types and quantities of armors.",
+  "name": "Loot Box Armors",
+  "category": "Container",
+  "tier": null,
   "drops": [
     {
       "name": "Fiber Shirt and Trousers",
@@ -62,5 +59,6 @@
       "maxQuantity": 1,
       "source": "armors_t1"
     }
-  ]
+  ],
+  "originalName": "LootBoxArmors"
 }

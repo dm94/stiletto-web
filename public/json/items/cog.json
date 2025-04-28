@@ -10,6 +10,13 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
+    },
+    {
+      "name": "Loot Box Modules",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
     }
   ]
 }

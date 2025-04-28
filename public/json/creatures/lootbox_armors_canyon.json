@@ -1,0 +1,71 @@
+{
+  "name": "Lootbox Armors Canyon",
+  "category": "Structure",
+  "tier": null,
+  "drops": [
+    {
+      "name": "Baskwood Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Baskwood Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Sandals",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Baskwood Bracers",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Sleeves",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Bracers",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    }
+  ],
+  "originalName": "LootboxArmorsCanyon"
+}

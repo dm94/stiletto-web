@@ -94,6 +94,13 @@
       "tier": "T1"
     },
     {
+      "name": "Loot Box Armors",
+      "chance": 19.801981,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
+    },
+    {
       "name": "MediumRupu (T1)",
       "chance": 19.801981,
       "minQuantity": 1,

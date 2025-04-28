@@ -1,10 +1,7 @@
 {
-  "name": "Modules Strongbox",
-  "type": "LootBoxModules_C",
-  "category": "Interactables",
-  "stackSize": 100,
-  "weight": 1,
-  "description": "Walker Modules seized from pirates by the Flotilla. May contain various types and quantities of modules.",
+  "name": "Loot Box Modules",
+  "category": "Container",
+  "tier": null,
   "drops": [
     {
       "name": "Weightless Module",
@@ -188,5 +185,6 @@
       "maxQuantity": 1,
       "source": "components_t1"
     }
-  ]
+  ],
+  "originalName": "LootBoxModules"
 }

@@ -1,0 +1,78 @@
+{
+  "name": "Lootbox Weapons Canyon",
+  "category": "Structure",
+  "tier": null,
+  "drops": [
+    {
+      "name": "Nurrfang Toothclub",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Club",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Hand Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Heavy Rawbone Hand Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Bonespike Sword",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Quarterstaff",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Battle Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Maul",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Long Bonespike Swordstaff",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Sawsword",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    }
+  ],
+  "originalName": "LootboxWeaponsCanyon"
+}

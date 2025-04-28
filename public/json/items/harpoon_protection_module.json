@@ -27,5 +27,14 @@
     "max": 20,
     "increase": 4.5,
     "maxIncrease": 90
-  }
+  },
+  "droppedBy": [
+    {
+      "name": "Loot Box Modules",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
+    }
+  ]
 }

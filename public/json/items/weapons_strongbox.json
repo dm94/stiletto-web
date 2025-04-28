@@ -4,5 +4,6 @@
   "category": "Interactables",
   "stackSize": 100,
   "weight": 1,
-  "description": "Weapons seized from pirates by the Flotilla. May contain various types and quantities of weapons."
+  "description": "Weapons seized from pirates by the Flotilla. May contain various types and quantities of weapons.",
+  "drops": []
 }
