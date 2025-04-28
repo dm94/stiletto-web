@@ -311,6 +311,8 @@ const getFactorName = (
       factorName = "ItemDurabilityFactor";
       if (category === "Weapons") {
         factorName = "WeaponDurabilityFactor";
+      } else if (category === "Armors") {
+        factorName = "ArmorDurabilityFactor";
       }
       break;
     case "weaponSpeed":
