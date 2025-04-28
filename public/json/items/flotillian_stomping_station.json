@@ -1,6 +1,6 @@
 {
   "name": "Flotillian Stomping Station",
-  "parent": "StompingStation_T2",
+  "parent": "Advanced Stomping Station",
   "type": "StompingStation_T3_C",
   "category": "Crafting",
   "description": "Basic crafting station simulates the blunt force of a foot to crush vegetables and soft minerals. An important tool for nomads who must always keep their feet in top condition.",
