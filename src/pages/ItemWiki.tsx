@@ -39,6 +39,9 @@ const CanBeUsedInfo = React.lazy(
 const SchematicItems = React.lazy(
   () => import("@components/Wiki/SchematicItems"),
 );
+const CreatureDropsInfo = React.lazy(
+  () => import("@components/Wiki/CreatureDropsInfo"),
+);
 
 const ItemWiki = () => {
   const { t } = useTranslation();
@@ -427,6 +430,11 @@ const ItemWiki = () => {
         <Suspense fallback={loadingItemPart()}>
           {itemInfo?.droppedBy && (
             <DropsInfo key="dropInfo" drops={itemInfo?.droppedBy} />
+          )}
+        </Suspense>
+        <Suspense fallback={loadingItemPart()}>
+          {itemInfo?.drops && (
+            <CreatureDropsInfo key="droppedInfo" drops={itemInfo?.drops} />
           )}
         </Suspense>
         <Suspense fallback={loadingItemPart()}>

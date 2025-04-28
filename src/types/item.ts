@@ -96,6 +96,7 @@ export type ItemCompleteInfo = {
   cost?: Cost;
   wikiVisibility?: boolean;
   learn?: string[];
+  drops?: Drop[];
 };
 
 export type Item = {
