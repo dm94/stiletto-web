@@ -21,6 +21,6 @@
     }
   ],
   "upgradeInfo": {
-    "containerSlots": 20
+    "slots": 20
   }
 }

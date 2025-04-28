@@ -3,6 +3,6 @@
   "type": "Cobra Walker Upgrade Torque Tier 4",
   "category": "Upgrades",
   "upgradeInfo": {
-    "stackSizeOverride": 4000
+    "stackSize": 4000
   }
 }

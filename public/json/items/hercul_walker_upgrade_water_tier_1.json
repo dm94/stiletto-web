@@ -3,6 +3,6 @@
   "type": "Hercul Walker Upgrade Water Tier 1",
   "category": "Upgrades",
   "upgradeInfo": {
-    "stackSizeOverride": 200
+    "stackSize": 200
   }
 }

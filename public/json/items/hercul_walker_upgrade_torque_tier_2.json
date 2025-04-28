@@ -3,6 +3,6 @@
   "type": "Hercul Walker Upgrade Torque Tier 2",
   "category": "Upgrades",
   "upgradeInfo": {
-    "stackSizeOverride": 12000
+    "stackSize": 12000
   }
 }

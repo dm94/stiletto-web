@@ -97,6 +97,7 @@ export type ItemCompleteInfo = {
   wikiVisibility?: boolean;
   learn?: string[];
   drops?: Drop[];
+  upgradeInfo: any;
 };
 
 export type Item = {

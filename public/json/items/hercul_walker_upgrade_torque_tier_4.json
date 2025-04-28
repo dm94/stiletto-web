@@ -3,6 +3,6 @@
   "type": "Hercul Walker Upgrade Torque Tier 4",
   "category": "Upgrades",
   "upgradeInfo": {
-    "stackSizeOverride": 25000
+    "stackSize": 25000
   }
 }

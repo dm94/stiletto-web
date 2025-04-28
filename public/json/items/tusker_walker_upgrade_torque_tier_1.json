@@ -21,6 +21,6 @@
     }
   ],
   "upgradeInfo": {
-    "stackSizeOverride": 1000
+    "stackSize": 1000
   }
 }

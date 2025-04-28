@@ -3,6 +3,6 @@
   "type": "Balang Walker Upgrade Torque Tier 2",
   "category": "Upgrades",
   "upgradeInfo": {
-    "stackSizeOverride": 1200
+    "stackSize": 1200
   }
 }

@@ -3,6 +3,6 @@
   "type": "Cobra Walker Upgrade Cargo Tier 2",
   "category": "Upgrades",
   "upgradeInfo": {
-    "containerSlots": 3
+    "slots": 3
   }
 }

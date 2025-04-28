@@ -3,6 +3,6 @@
   "type": "Spider Walker Upgrade Water Tier 1",
   "category": "Upgrades",
   "upgradeInfo": {
-    "stackSizeOverride": 30
+    "stackSize": 30
   }
 }

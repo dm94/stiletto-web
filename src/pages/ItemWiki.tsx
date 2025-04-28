@@ -417,6 +417,16 @@ const ItemWiki = () => {
             category={itemInfo.category}
           />
         )}
+        {itemInfo?.upgradeInfo && (
+          <GenericInfo
+            key="upgradeInfo"
+            name="wiki.upgradeInfo"
+            dataInfo={itemInfo.upgradeInfo}
+            rarity={rarity}
+            textColor={textColor}
+            category={itemInfo.category}
+          />
+        )}
         {itemInfo?.toolInfo && (
           <ToolInfo
             key="toolinfo"
