@@ -131,7 +131,7 @@ const ItemWiki = () => {
         setTextColor("text-green-400");
         break;
       case Rarity.Rare:
-        setTextColor("text-blue-400");
+        setTextColor("text-blue-500");
         break;
       case Rarity.Epic:
         setTextColor("text-red-400");
@@ -295,8 +295,13 @@ const ItemWiki = () => {
                     <div className="text-gray-300">
                       {t("Experience by crafting")}
                     </div>
-                    <div className="text-gray-400">
-                      {itemInfo.experiencieReward}
+                    <div className={textColor}>
+                      {calcRarityValue(
+                        rarity,
+                        "experiencieReward",
+                        itemInfo.category,
+                        itemInfo.experiencieReward,
+                      )}
                     </div>
                   </li>
                 )}
@@ -411,7 +416,12 @@ const ItemWiki = () => {
           />
         )}
         {itemInfo?.toolInfo && (
-          <ToolInfo key="toolinfo" toolInfo={itemInfo.toolInfo} />
+          <ToolInfo
+            key="toolinfo"
+            toolInfo={itemInfo.toolInfo}
+            rarity={rarity}
+            textColor={textColor}
+          />
         )}
         {itemInfo?.moduleInfo && (
           <ModuleInfo key="moduleinfo" moduleInfo={itemInfo.moduleInfo} />
