@@ -1,10 +1,8 @@
 {
-  "name": "Wall With Window 1",
-  "type": "WallConcreteWindow_C",
+  "name": "Cement Foundation",
+  "type": "WallConcreteFoundation_C",
   "category": "Concrete",
-  "weight": 8,
-  "description": "Almost impossible to break. Can only be packed on Founder Walker types (Silur Walker).",
-  "experiencieReward": 32,
+  "experiencieReward": 22,
   "crafting": [
     {
       "ingredients": [

@@ -1,10 +1,8 @@
 {
-  "name": "Wall With Windows 2",
-  "type": "WallConcreteWindow4_C",
+  "name": "Cement Battlements",
+  "type": "WallConcreteBattlement_C",
   "category": "Concrete",
-  "weight": 8,
-  "description": "Almost impossible to break. Can only be packed on Founder Walker types (Silur Walker).",
-  "experiencieReward": 32,
+  "experiencieReward": 30,
   "crafting": [
     {
       "ingredients": [

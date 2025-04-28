@@ -1,0 +1,27 @@
+{
+  "name": "Heavy Wood Foundation",
+  "type": "WallWoodHeavyFoundation_C",
+  "category": "Wood: heavy",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 5,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 1,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 40000
+  }
+}

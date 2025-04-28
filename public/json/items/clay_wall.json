@@ -1,10 +1,8 @@
 {
-  "name": "Wall with Windows",
-  "type": "WallClayWindow2_C",
+  "name": "Clay Wall",
+  "type": "WallClay_C",
   "category": "Clay",
-  "weight": 7,
-  "description": "Extremely durable. Can only be packed on Founder Walker types (Silur Walker).",
-  "experiencieReward": 32,
+  "experiencieReward": 30,
   "crafting": [
     {
       "ingredients": [
@@ -17,7 +15,7 @@
           "name": "Wooden Slab"
         },
         {
-          "count": 15,
+          "count": 20,
           "name": "Clay"
         }
       ]

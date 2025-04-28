@@ -1,0 +1,28 @@
+{
+  "name": "Heavy Wood Battlements",
+  "type": "WallWoodHeavyBattlement_C",
+  "category": "Wood: heavy",
+  "experiencieReward": 46,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 5,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 1,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 40000
+  }
+}

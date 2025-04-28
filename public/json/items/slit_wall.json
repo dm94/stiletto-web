@@ -1,7 +1,6 @@
 {
   "name": "Slit Wall",
-  "type": "WallWoodHeavyWindow_C",
-  "category": "Wood: heavy",
+  "type": "WallWoodLightWindow_C",
   "weight": 3,
   "description": "Above average strength, can be packed on walkers.",
   "experiencieReward": 46,
@@ -9,22 +8,18 @@
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Redwood Wood"
+          "count": 2,
+          "name": "Wooden Slab"
         },
         {
-          "count": 5,
-          "name": "Iron Ingot"
-        },
-        {
-          "count": 1,
-          "name": "Bone Glue"
+          "count": 14,
+          "name": "Fiber"
         }
       ]
     }
   ],
   "structureInfo": {
     "type": "Reinforced",
-    "hp": 40000
+    "hp": 10000
   }
 }

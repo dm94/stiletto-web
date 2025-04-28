@@ -4,16 +4,16 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Double Slit Wall",
-    "Slit Wall",
+    "Heavy Wood Double Slit Wall",
+    "Heavy Wood Slit Wall",
     "Stairs",
-    "Floor / Roof",
-    "Foundation",
-    "Door",
-    "Corner",
-    "Battlements",
-    "Wall 2",
-    "Wall 1"
+    "Heavy Wood Floor / Roof",
+    "Heavy Wood Foundation",
+    "Heavy Wood Door",
+    "Heavy Wood Corner",
+    "Heavy Wood Battlements",
+    "Heavy Wood Wall 2",
+    "Heavy Wood Wall 1"
   ],
   "droppedBy": [
     {

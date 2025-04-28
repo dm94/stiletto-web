@@ -1,0 +1,28 @@
+{
+  "name": "Sand Sandbag Roof",
+  "type": "WallSandRoof_C",
+  "category": "Basic Protection",
+  "experiencieReward": 22,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Wood"
+        },
+        {
+          "count": 8,
+          "name": "Palm Leaves"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 500
+  }
+}

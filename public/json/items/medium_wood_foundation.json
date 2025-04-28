@@ -1,0 +1,28 @@
+{
+  "name": "Medium Wood Foundation",
+  "type": "WallWoodMediumFoundation_C",
+  "category": "Wood: medium",
+  "experiencieReward": 10,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 8,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 4,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Reinforced",
+    "hp": 20000
+  }
+}

@@ -1,34 +1,25 @@
 {
   "name": "Battlements",
-  "type": "WallConcreteBattlement_C",
-  "category": "Concrete",
-  "weight": 12,
+  "type": "WallWoodLightBattlement_C",
+  "weight": 3,
   "description": "Above average strength, can be packed on walkers.",
-  "experiencieReward": 30,
+  "experiencieReward": 46,
   "crafting": [
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Lightwood"
+          "count": 2,
+          "name": "Wooden Slab"
         },
         {
-          "count": 6,
-          "name": "Iron Ingot"
-        },
-        {
-          "count": 4,
-          "name": "Iron Nails"
-        },
-        {
-          "count": 6,
-          "name": "Tar"
+          "count": 14,
+          "name": "Fiber"
         }
       ]
     }
   ],
   "structureInfo": {
-    "type": "Solid",
-    "hp": 40000
+    "type": "Reinforced",
+    "hp": 10000
   }
 }

@@ -4,13 +4,13 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Sandbag Wall",
-    "Cloth Door",
-    "Sand Foundation",
-    "Sandbag Gate",
-    "Sand Ramp",
-    "Sandbag Roof",
-    "Sandbag Wall Window"
+    "Sand Sandbag Wall",
+    "Sand Cloth Door",
+    "Sand Sand Foundation",
+    "Sand Sandbag Gate",
+    "Sand Sand Ramp",
+    "Sand Sandbag Roof",
+    "Sand Sandbag Wall Window"
   ],
   "droppedBy": [
     {

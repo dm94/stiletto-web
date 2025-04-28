@@ -1,0 +1,32 @@
+{
+  "name": "Stone Foundation",
+  "type": "WallStoneFoundation_C",
+  "category": "Stone",
+  "experiencieReward": 22,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 1,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Tree Sap"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 10000
+  }
+}

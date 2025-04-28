@@ -1,0 +1,28 @@
+{
+  "name": "Clay Floor / Roof",
+  "type": "WallClayRoof_C",
+  "category": "Clay",
+  "experiencieReward": 22,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Cattail"
+        },
+        {
+          "count": 3,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 20,
+          "name": "Clay"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 20000
+  }
+}

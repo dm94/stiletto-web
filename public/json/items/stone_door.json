@@ -1,0 +1,32 @@
+{
+  "name": "Stone Door",
+  "type": "WallStoneDoor_C",
+  "category": "Stone",
+  "experiencieReward": 4,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
+        },
+        {
+          "count": 1,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Tree Sap"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 10000
+  }
+}

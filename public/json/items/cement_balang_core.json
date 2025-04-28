@@ -2,7 +2,6 @@
   "name": "Cement Balang Core",
   "type": "BalangCore_C",
   "category": "Concrete",
-  "weight": 10,
   "crafting": [
     {
       "ingredients": [

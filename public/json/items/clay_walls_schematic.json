@@ -4,14 +4,14 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Wall with Windows",
-    "Wall with Window",
-    "Floor / Roof",
-    "Foundation",
-    "Door",
-    "Corner",
-    "Battlement",
-    "Wall"
+    "Clay Wall with Windows",
+    "Clay Wall with Window",
+    "Clay Floor / Roof",
+    "Clay Foundation",
+    "Clay Door",
+    "Clay Corner",
+    "Clay Battlement",
+    "Clay Wall"
   ],
   "droppedBy": [
     {

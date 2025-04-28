@@ -4,11 +4,11 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Wall with Window",
-    "Floor / Roof",
-    "Foundation",
-    "Door",
-    "Wall"
+    "Stone Wall with Window",
+    "Stone Floor / Roof",
+    "Stone Foundation",
+    "Stone Door",
+    "Stone Wall"
   ],
   "droppedBy": [
     {

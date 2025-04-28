@@ -1,23 +1,21 @@
 {
-  "name": "Sandbag Roof",
-  "type": "WallSandRoof_C",
+  "name": "Sand Sandbag Gate",
+  "type": "WallSandGate_C",
   "category": "Basic Protection",
-  "weight": 2,
-  "description": "Weak structure that still protects nomads from dangers. Only sand structures can be used with a sand base.",
   "experiencieReward": 22,
   "crafting": [
     {
       "ingredients": [
         {
-          "count": 6,
+          "count": 16,
           "name": "Fiber"
         },
         {
-          "count": 5,
-          "name": "Wood"
+          "count": 8,
+          "name": "Wood Shaft"
         },
         {
-          "count": 8,
+          "count": 12,
           "name": "Palm Leaves"
         }
       ]

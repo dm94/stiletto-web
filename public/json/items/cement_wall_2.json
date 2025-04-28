@@ -1,9 +1,7 @@
 {
-  "name": "Wall 2",
+  "name": "Cement Wall 2",
   "type": "WallConcrete2_C",
   "category": "Concrete",
-  "weight": 15,
-  "description": "Average strength, can be packed on walkers.",
   "experiencieReward": 30,
   "crafting": [
     {

@@ -1,0 +1,28 @@
+{
+  "name": "Clay Foundation",
+  "type": "WallClayFoundation_C",
+  "category": "Clay",
+  "experiencieReward": 22,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Cattail"
+        },
+        {
+          "count": 3,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 25,
+          "name": "Clay"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Solid",
+    "hp": 20000
+  }
+}
