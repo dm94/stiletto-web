@@ -19,7 +19,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
   onClickEditPermissions,
 }) => {
   const { t } = useTranslation();
-  const { discordId } = useUser();
+  const { userProfile } = useUser();
 
   const renderKickButton = (): React.ReactNode => {
     if (!isLeader && !hasPermissions) {
@@ -27,7 +27,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
     }
 
     if (
-      member.discordid === discordId ||
+      member.discordid === userProfile?.discordid ||
       member.discordid === member.leaderid
     ) {
       return null;
@@ -52,7 +52,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
     }
 
     if (
-      member.discordid === discordId ||
+      member.discordid === userProfile?.discordid ||
       member.discordid === member.leaderid
     ) {
       return null;

@@ -28,7 +28,7 @@ interface ResourceMapProps {
 
 const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const { t } = useTranslation();
-  const { isConnected, discordId } = useUser();
+  const { isConnected, userProfile } = useUser();
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
   const [items, setItems] = useState<Marker[]>([]);
@@ -157,7 +157,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   };
 
   const renderEditMapTab = () => {
-    if (discordId === map.discordid) {
+    if (userProfile?.discordid === map.discordid) {
       return (
         <div className="p-4">
           <form onSubmit={handleChangeDataMap}>
@@ -253,7 +253,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     return false;
   };
 
-  if (!discordId || !isConnected) {
+  if (!isConnected) {
     return (
       <ModalMessage
         message={{
@@ -383,7 +383,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
             >
               {t("Create")}
             </button>
-            {discordId === map?.discordid && (
+            {userProfile?.discordid === map?.discordid && (
               <button
                 type="button"
                 className={`flex-1 p-3 text-sm font-medium ${

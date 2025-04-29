@@ -20,7 +20,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   onDelete,
 }) => {
   const { t } = useTranslation();
-  const { discordId } = useUser();
+  const { userProfile } = useUser();
 
   const handleOpenMap = useCallback(() => {
     onOpen(map);
@@ -35,8 +35,8 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   }, [map.mapid, map.pass]);
 
   const isOwner = useMemo(
-    () => map?.discordid === discordId,
-    [map?.discordid, discordId],
+    () => map?.discordid === userProfile?.discordid,
+    [map?.discordid, userProfile],
   );
 
   const mapImageSrc = useMemo(() => {
