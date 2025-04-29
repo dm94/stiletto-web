@@ -120,7 +120,6 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   };
 
   // Memoize the context value to prevent unnecessary re-renders
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const value = useMemo(
     () => ({
       isConnected,
@@ -130,7 +129,8 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       logout,
       refreshUserProfile,
     }),
-    [isConnected, userProfile, isLoading],
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+    [isConnected, userProfile, isLoading, login, logout, refreshUserProfile],
   );
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
