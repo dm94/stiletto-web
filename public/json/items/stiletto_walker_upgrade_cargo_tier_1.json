@@ -1,0 +1,24 @@
+{
+  "name": "Stiletto Walker Upgrade Cargo Tier 1",
+  "type": "Stiletto Walker Upgrade Cargo Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Wood"
+        },
+        {
+          "count": 22,
+          "name": "Fiber"
+        },
+        {
+          "count": 24,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

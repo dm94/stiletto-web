@@ -1,0 +1,54 @@
+{
+  "name": "Iron-Tipped Bolt",
+  "parent": "Ceramic Bolt",
+  "type": "IronBolt_C",
+  "trade_price": 25,
+  "description": "Ammo for Ballista. An iron tip easily penetrates armor and makes holes in bodies that can't be patched.",
+  "experiencieReward": 50,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 1,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 8,
+          "name": "Lightwood"
+        }
+      ],
+      "output": 10,
+      "station": "Artificer Woodworking Station",
+      "time": 3
+    }
+  ],
+  "projectileDamage": {
+    "damage": 80
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 4
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Ammo Box T4",
+      "chance": 28.571428,
+      "minQuantity": 1,
+      "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Big Hotspot Loot T4",
+      "chance": 28.571428,
+      "minQuantity": 1,
+      "maxQuantity": 6,
+      "tier": "T4"
+    }
+  ]
+}

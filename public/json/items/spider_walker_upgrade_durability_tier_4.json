@@ -1,0 +1,24 @@
+{
+  "name": "Spider Walker Upgrade Durability Tier 4",
+  "type": "Spider Walker Upgrade Durability Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Wood"
+        },
+        {
+          "count": 40,
+          "name": "Stone"
+        },
+        {
+          "count": 8,
+          "name": "Hide"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

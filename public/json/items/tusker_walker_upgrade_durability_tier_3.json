@@ -1,0 +1,24 @@
+{
+  "name": "Tusker Walker Upgrade Durability Tier 3",
+  "type": "Tusker Walker Upgrade Durability Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 65,
+          "name": "Obsidian"
+        },
+        {
+          "count": 65,
+          "name": "Tar"
+        },
+        {
+          "count": 70,
+          "name": "Chitin Plate"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

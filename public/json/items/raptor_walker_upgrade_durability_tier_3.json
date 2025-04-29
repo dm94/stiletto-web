@@ -1,0 +1,26 @@
+{
+  "name": "Raptor Walker Upgrade Durability Tier 3",
+  "type": "Raptor Walker Upgrade Durability Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 32,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 12,
+          "name": "Lightwood"
+        },
+        {
+          "count": 15,
+          "name": "Hollowbone"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 3000
+  }
+}

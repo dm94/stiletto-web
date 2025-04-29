@@ -5,63 +5,63 @@
   "description": "Long ago, the Wyndan tribe mediated a lasting peace between the plains people. Today, they serve the Guardians as peacekeepers and engineers.",
   "droppedBy": [
     {
-      "name": "BigHotspotLoot (T4)",
+      "name": "Big Hotspot Loot T4",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "EasyRupu (T4)",
+      "name": "Easy Rupu T4",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "EasyRupu (T4) Quality",
+      "name": "Easy Rupu T4 Q",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "HardRupu (T4)",
+      "name": "Hard Rupu Camp T4",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "HardRupu (T4) Quality",
+      "name": "Hard Rupu T4",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "HardRupuCamp (T4)",
+      "name": "Hard Rupu T4 Q",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "MediumRupu (T4)",
+      "name": "Medium Rupu Camp T4",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "MediumRupu (T4) Quality",
+      "name": "Medium Rupu T4",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
-      "name": "MediumRupuCamp (T4)",
+      "name": "Medium Rupu T4 Q",
       "chance": 14.285714,
       "minQuantity": 1,
       "maxQuantity": 1,

@@ -41,7 +41,7 @@ const GenericInfo: React.FC<GenericInfoProps> = ({
     });
   };
 
-  if (dataInfo) {
+  if (dataInfo && Object.keys(dataInfo)?.length > 0) {
     return (
       <div className="w-full md:w-1/2 px-4">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">

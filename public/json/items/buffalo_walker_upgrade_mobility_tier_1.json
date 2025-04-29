@@ -1,0 +1,24 @@
+{
+  "name": "Buffalo Walker Upgrade Mobility Tier 1",
+  "type": "Buffalo Walker Upgrade Mobility Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 56,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 24,
+          "name": "Tallow"
+        },
+        {
+          "count": 5,
+          "name": "Reinforced Gear"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

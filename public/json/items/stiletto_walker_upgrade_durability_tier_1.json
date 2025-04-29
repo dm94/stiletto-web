@@ -1,0 +1,26 @@
+{
+  "name": "Stiletto Walker Upgrade Durability Tier 1",
+  "type": "Stiletto Walker Upgrade Durability Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 56,
+          "name": "Wood"
+        },
+        {
+          "count": 18,
+          "name": "Triple Stitch Fabric"
+        },
+        {
+          "count": 18,
+          "name": "Bone Glue"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 1000
+  }
+}

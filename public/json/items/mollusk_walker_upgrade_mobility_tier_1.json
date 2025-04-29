@@ -1,0 +1,24 @@
+{
+  "name": "Mollusk Walker Upgrade Mobility Tier 1",
+  "type": "Mollusk Walker Upgrade Mobility Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 28,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

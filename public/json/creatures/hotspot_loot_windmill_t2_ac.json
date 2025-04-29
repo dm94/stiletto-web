@@ -1,5 +1,5 @@
 {
-  "name": "Hotspot Loot Windmill (T2) (AC)",
+  "name": "Hotspot Loot Windmill T2 AC",
   "category": "Resource",
   "tier": "T2",
   "drops": [
@@ -389,5 +389,5 @@
       "source": "rigs_t2"
     }
   ],
-  "originalName": "HotspotLootWindmill (T2) (AC)"
+  "originalName": "HotspotLootWindmill T2 AC"
 }

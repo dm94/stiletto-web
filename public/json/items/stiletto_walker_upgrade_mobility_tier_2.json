@@ -1,0 +1,24 @@
+{
+  "name": "Stiletto Walker Upgrade Mobility Tier 2",
+  "type": "Stiletto Walker Upgrade Mobility Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 14,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 8,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 28,
+          "name": "Palm Leaves"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

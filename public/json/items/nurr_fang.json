@@ -9,14 +9,14 @@
   "experiencieReward": 8,
   "droppedBy": [
     {
-      "name": "LargeNurr (T2)",
+      "name": "Large Nurr T2",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Nurr (T2)",
+      "name": "Nurr T2",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,

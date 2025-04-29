@@ -1,0 +1,24 @@
+{
+  "name": "Spider Walker Upgrade Mobility Tier 4",
+  "type": "Spider Walker Upgrade Mobility Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Wood"
+        },
+        {
+          "count": 15,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 20,
+          "name": "Palm Leaves"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

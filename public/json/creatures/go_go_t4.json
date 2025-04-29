@@ -1,5 +1,5 @@
 {
-  "name": "Go Go (T4)",
+  "name": "Go Go T4",
   "category": "Structure",
   "tier": "T4",
   "drops": [
@@ -102,5 +102,5 @@
       "source": "extraresources_t4"
     }
   ],
-  "originalName": "GoGo (T4)"
+  "originalName": "GoGo T4"
 }

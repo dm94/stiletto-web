@@ -1,0 +1,358 @@
+{
+  "name": "Big Hotspot Loot (T3)",
+  "category": "Resource",
+  "tier": "T3",
+  "drops": [
+    {
+      "name": "Ceramic-Tipped Bolt",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "source": "ammo_t3"
+    },
+    {
+      "name": "Ceramic Scattershot Ammo",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "source": "ammo_t3"
+    },
+    {
+      "name": "Ceramic Dart",
+      "chance": 40,
+      "minQuantity": 5,
+      "maxQuantity": 30,
+      "source": "ammo_t3"
+    },
+    {
+      "name": "Obsidian Rok",
+      "chance": 12,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "source": "ammo_t3"
+    },
+    {
+      "name": "Catapult Boulder",
+      "chance": 16,
+      "minQuantity": 1,
+      "maxQuantity": 5,
+      "source": "ammo_t3"
+    },
+    {
+      "name": "Brittle Bone Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Brittle Bone Handwraps",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Brittle Bone Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Carapace Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Carapace Gauntlets",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Carapace Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Redwood Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Redwood Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
+      "name": "Firestone Axe",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Bludgeon",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Kopesh",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Ceramic Hatchet",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Short Ceramic Hoofmace",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Short Malletblade",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Hammerstaff",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Bladestaff",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Paddleblade Quarterstaff",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Throwable Aloe Bomb",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firebomb",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Battleaxe",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Bozdogan",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Firestone Longblade",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Long Ceramic Hoofmace",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Singblade",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t3"
+    },
+    {
+      "name": "Bone Glue",
+      "chance": 11.764706,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Wooden Gear",
+      "chance": 11.764706,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Triple Stitch Fabric",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Nomad Cloth",
+      "chance": 11.764706,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Leather",
+      "chance": 11.764706,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Aloe Gel",
+      "chance": 11.764706,
+      "minQuantity": 7,
+      "maxQuantity": 7,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Clay",
+      "chance": 5.882353,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Ceramic Shard",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Glass",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Tar",
+      "chance": 5.882353,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Reinforced Gear",
+      "chance": 5.882353,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t3"
+    },
+    {
+      "name": "Hornet Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Hornet Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Falco Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Falco Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Buffalo Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Buffalo Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Tusker Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Tusker Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Hercul Walker Rig T2 Schematic",
+      "chance": 16.666666,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    },
+    {
+      "name": "Hercul Walker Rig T3 Schematic",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "rigs_t3"
+    }
+  ],
+  "originalName": "BigHotspotLoot (T3)"
+}

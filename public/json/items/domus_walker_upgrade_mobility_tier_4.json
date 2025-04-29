@@ -1,0 +1,24 @@
+{
+  "name": "Domus Walker Upgrade Mobility Tier 4",
+  "type": "Domus Walker Upgrade Mobility Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Iron Gear"
+        },
+        {
+          "count": 38,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 23,
+          "name": "Shardrock"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}
