@@ -39,7 +39,7 @@ const Icon: React.FC<IconProps> = ({ name: initialName, width = 16 }) => {
       }
     }
 
-    return processedName.replace("Body", "").trim();
+    return processedName.replace("Body", "").toLocaleLowerCase().trim();
   };
 
   if (!loaded) {
