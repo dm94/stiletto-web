@@ -15,7 +15,6 @@ interface UserContextType {
   isConnected: boolean;
   userProfile: UserInfo | undefined;
   isLoading: boolean;
-  discordId: string | undefined;
   login: (discordId: string, token: string) => void;
   logout: () => void;
   refreshUserProfile: () => Promise<void>;
@@ -25,7 +24,6 @@ interface UserContextType {
 const defaultUserContext: UserContextType = {
   isConnected: false,
   userProfile: undefined,
-  discordId: undefined,
   isLoading: false,
   login: (_discordId: string, _token: string) => {
     // Default implementation - will be overridden by provider
@@ -55,7 +53,6 @@ interface UserProviderProps {
 export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [isConnected, setIsConnected] = useState<boolean>(false);
   const [userProfile, setUserProfile] = useState<UserInfo>();
-  const [discordId, setDiscordId] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // Check if the user is connected when loading the component
@@ -63,11 +60,11 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     const checkUserConnection = async () => {
       setIsLoading(true);
       const token = getStoredItem("token");
-      const discordId = getStoredItem("discordid");
 
-      if (token && discordId) {
+      console.log("Token:", token);
+
+      if (token) {
         setIsConnected(true);
-        setDiscordId(discordId);
         try {
           await refreshUserProfile();
         } catch (err) {
@@ -86,7 +83,8 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
    */
   const refreshUserProfile = async (): Promise<void> => {
     try {
-      if (!isConnected) {
+      const token = getStoredItem("token");
+      if (!token) {
         setUserProfile(undefined);
         return;
       }
@@ -94,7 +92,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       setIsLoading(true);
       const userData = await getUser();
       setUserProfile(userData);
-      setDiscordId(userData.discordid);
+      setIsConnected(true);
     } catch (err) {
       console.error("Error getting user data:", err);
       logout();
@@ -126,18 +124,17 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   };
 
   // Memoize the context value to prevent unnecessary re-renders
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const value = useMemo(
     () => ({
       isConnected,
       userProfile,
       isLoading,
-      discordId,
       login,
       logout,
       refreshUserProfile,
     }),
-    [isConnected, userProfile, isLoading, discordId],
+    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+    [isConnected, userProfile, isLoading, login, logout, refreshUserProfile],
   );
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
