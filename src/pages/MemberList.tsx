@@ -34,8 +34,10 @@ const MemberList = () => {
   const [error, setError] = useState<string>();
   const [isLoadedRequestList, setIsLoadedRequestList] = useState(false);
   const [redirectMessage, setRedirectMessage] = useState<string>();
-  const { discordId } = useUser();
-  const [selectNewOwner, setSelectNewOwner] = useState<string>(discordId ?? "");
+  const { userProfile } = useUser();
+  const [selectNewOwner, setSelectNewOwner] = useState<string>(
+    userProfile?.discordid ?? "",
+  );
   const [showRequestModal, setShowRequestModal] = useState(false);
   const [requestData, setRequestData] = useState<MemberRequest>();
   const [isLeader, setIsLeader] = useState(false);

@@ -61,6 +61,8 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       setIsLoading(true);
       const token = getStoredItem("token");
 
+      console.log("Token:", token);
+
       if (token) {
         setIsConnected(true);
         try {
@@ -81,7 +83,8 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
    */
   const refreshUserProfile = async (): Promise<void> => {
     try {
-      if (!isConnected) {
+      const token = getStoredItem("token");
+      if (!token) {
         setUserProfile(undefined);
         return;
       }
@@ -89,6 +92,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       setIsLoading(true);
       const userData = await getUser();
       setUserProfile(userData);
+      setIsConnected(true);
     } catch (err) {
       console.error("Error getting user data:", err);
       logout();
