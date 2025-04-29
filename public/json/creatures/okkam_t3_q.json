@@ -1,0 +1,154 @@
+{
+  "name": "Okkam T3 Q",
+  "category": "Structure",
+  "tier": "T3",
+  "drops": [
+    {
+      "name": "Advanced Ammo Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Armors Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Constructions Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Crafting Stations Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Tools Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Potions Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Walker Weapons Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Weapons Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Hornet Walker Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Falco Walker Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Buffalo Walker Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Silur Walker Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Camelop Walker Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Hercul Walker Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Cobra Walker Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Tusker Walker Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Base Walker Parts Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Improved Walker Parts Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Walker Parts Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Clay Walls Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Heavy Walls Schematic",
+      "chance": 4.7619047,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t3"
+    }
+  ]
+}

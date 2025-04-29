@@ -8,21 +8,21 @@
   "experiencieReward": 25,
   "droppedBy": [
     {
-      "name": "BasketLoot (T2) (AC)",
+      "name": "Basket Loot T2 AC",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "HotspotLoot (T2) (AC)",
+      "name": "Hotspot Loot T2 AC",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "HotspotLootWindmill (T2) (AC)",
+      "name": "Hotspot Loot Windmill T2 AC",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,

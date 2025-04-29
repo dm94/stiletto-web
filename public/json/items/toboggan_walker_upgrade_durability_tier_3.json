@@ -1,0 +1,26 @@
+{
+  "name": "Toboggan Walker Upgrade Durability Tier 3",
+  "type": "Toboggan Walker Upgrade Durability Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 28,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 24,
+          "name": "Triple Stitch Fabric"
+        },
+        {
+          "count": 47,
+          "name": "Tree Sap"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 15000
+  }
+}

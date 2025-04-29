@@ -1,0 +1,24 @@
+{
+  "name": "Toboggan Walker Upgrade Cargo Tier 3",
+  "type": "Toboggan Walker Upgrade Cargo Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 22,
+          "name": "Fiber"
+        },
+        {
+          "count": 8,
+          "name": "Wooden Slab"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

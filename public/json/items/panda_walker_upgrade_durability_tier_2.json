@@ -1,0 +1,26 @@
+{
+  "name": "Panda Walker Upgrade Durability Tier 2",
+  "type": "Panda Walker Upgrade Durability Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 43,
+          "name": "Shardrock"
+        },
+        {
+          "count": 29,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 38,
+          "name": "Hollowbone"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 15000
+  }
+}

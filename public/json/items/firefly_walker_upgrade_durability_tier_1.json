@@ -1,0 +1,22 @@
+{
+  "name": "Firefly Walker Upgrade Durability Tier 1",
+  "type": "Firefly Walker Upgrade Durability Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 15,
+          "name": "Stone"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 200
+  }
+}

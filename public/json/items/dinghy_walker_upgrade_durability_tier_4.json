@@ -1,0 +1,30 @@
+{
+  "name": "Dinghy Walker Upgrade Durability Tier 4",
+  "type": "Dinghy Walker Upgrade Durability Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 8,
+          "name": "Hide"
+        },
+        {
+          "count": 40,
+          "name": "Stone"
+        },
+        {
+          "count": 12,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 12000
+  }
+}

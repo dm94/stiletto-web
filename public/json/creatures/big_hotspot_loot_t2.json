@@ -1,5 +1,5 @@
 {
-  "name": "Big Hotspot Loot (T2)",
+  "name": "Big Hotspot Loot T2",
   "category": "Resource",
   "tier": "T2",
   "drops": [
@@ -270,5 +270,5 @@
       "source": "rigs_t2"
     }
   ],
-  "originalName": "BigHotspotLoot (T2)"
+  "originalName": "BigHotspotLoot T2"
 }

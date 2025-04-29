@@ -1,5 +1,5 @@
 {
-  "name": "Hard Rupu Camp (T3)",
+  "name": "Hard Rupu Camp T3",
   "category": "Rupu",
   "tier": "T3",
   "drops": [
@@ -473,5 +473,5 @@
       "source": "rigs_t3"
     }
   ],
-  "originalName": "HardRupuCamp (T3)"
+  "originalName": "HardRupuCamp T3"
 }

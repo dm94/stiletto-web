@@ -1,0 +1,24 @@
+{
+  "name": "Falco Walker Upgrade Cargo Tier 1",
+  "type": "Falco Walker Upgrade Cargo Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 31,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 20,
+          "name": "Clay"
+        },
+        {
+          "count": 15,
+          "name": "Chitin Plate"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

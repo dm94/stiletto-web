@@ -1,0 +1,24 @@
+{
+  "name": "Tusker Walker Upgrade Gear Tier 4",
+  "type": "Tusker Walker Upgrade Gear Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Tar"
+        },
+        {
+          "count": 22,
+          "name": "Wooden Slab"
+        },
+        {
+          "count": 55,
+          "name": "Cotton"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

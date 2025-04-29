@@ -9,175 +9,175 @@
   "experiencieReward": 3,
   "droppedBy": [
     {
-      "name": "BasketLoot (T2) (AC)",
+      "name": "Basket Loot T2 AC",
       "chance": 9.090909,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "EasyRupuCamp (T1)",
+      "name": "Easy Rupu Camp T1",
       "chance": 11.111111,
       "minQuantity": 2,
       "maxQuantity": 2,
       "tier": "T1"
     },
     {
-      "name": "EasyRupuCamp (T2)",
+      "name": "Easy Rupu Camp T2",
       "chance": 9.090909,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "EasyRupuCamp (T3)",
+      "name": "Easy Rupu Camp T3",
       "chance": 8.333333,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T3"
     },
     {
-      "name": "EasyRupuCamp (T4)",
+      "name": "Easy Rupu Camp T4",
       "chance": 7.6923075,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "GoGo (T4)",
+      "name": "Go Go T4",
       "chance": 7.6923075,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "GoGo (T4) Quality",
+      "name": "Go Go T4 Q",
       "chance": 7.6923075,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "HardRupuCamp (T1)",
+      "name": "Hard Rupu Camp T1",
       "chance": 11.111111,
       "minQuantity": 2,
       "maxQuantity": 2,
       "tier": "T1"
     },
     {
-      "name": "HardRupuCamp (T2)",
+      "name": "Hard Rupu Camp T2",
       "chance": 9.090909,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "HardRupuCamp (T3)",
+      "name": "Hard Rupu Camp T3",
       "chance": 8.333333,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T3"
     },
     {
-      "name": "HardRupuCamp (T4)",
+      "name": "Hard Rupu Camp T4",
       "chance": 7.6923075,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "HotspotLoot (T1)",
+      "name": "Hotspot Loot T1",
       "chance": 11.111111,
       "minQuantity": 2,
       "maxQuantity": 2,
       "tier": "T1"
     },
     {
-      "name": "HotspotLoot (T2)",
+      "name": "Hotspot Loot T2",
       "chance": 9.090909,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "HotspotLoot (T2) (AC)",
+      "name": "Hotspot Loot T2 AC",
       "chance": 9.090909,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "HotspotLoot (T3)",
+      "name": "Hotspot Loot T3",
       "chance": 8.333333,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T3"
     },
     {
-      "name": "HotspotLoot (T4)",
+      "name": "Hotspot Loot T4",
       "chance": 7.6923075,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "HotspotLootWindmill (T2) (AC)",
+      "name": "Hotspot Loot Windmill T2 AC",
       "chance": 9.090909,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "MediumRupuCamp (T1)",
+      "name": "Medium Rupu Camp T1",
       "chance": 11.111111,
       "minQuantity": 2,
       "maxQuantity": 2,
       "tier": "T1"
     },
     {
-      "name": "MediumRupuCamp (T2)",
+      "name": "Medium Rupu Camp T2",
       "chance": 9.090909,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "MediumRupuCamp (T3)",
+      "name": "Medium Rupu Camp T3",
       "chance": 8.333333,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T3"
     },
     {
-      "name": "MediumRupuCamp (T4)",
+      "name": "Medium Rupu Camp T4",
       "chance": 7.6923075,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
-      "name": "TreasureChest (T1)",
+      "name": "Treasure Chest T1",
       "chance": 11.111111,
       "minQuantity": 2,
       "maxQuantity": 2,
       "tier": "T1"
     },
     {
-      "name": "TreasureChest (T2)",
+      "name": "Treasure Chest T2",
       "chance": 9.090909,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
-      "name": "TreasureChest (T3)",
+      "name": "Treasure Chest T3",
       "chance": 8.333333,
       "minQuantity": 4,
       "maxQuantity": 4,
       "tier": "T3"
     },
     {
-      "name": "TreasureChest (T4)",
+      "name": "Treasure Chest T4",
       "chance": 7.6923075,
       "minQuantity": 5,
       "maxQuantity": 5,

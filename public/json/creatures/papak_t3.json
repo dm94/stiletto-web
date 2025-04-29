@@ -1,5 +1,5 @@
 {
-  "name": "Papak (T3)",
+  "name": "Papak T3",
   "category": "Structure",
   "tier": "T3",
   "drops": [
@@ -10,6 +10,5 @@
       "maxQuantity": 1,
       "source": "gelatinousgoo_t3"
     }
-  ],
-  "originalName": "Papak_T3"
+  ]
 }

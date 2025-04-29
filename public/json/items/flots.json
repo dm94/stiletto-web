@@ -7,21 +7,21 @@
   "description": "Currency of the Flotilla. Can be withdrawn and deposited at any Trading Station.",
   "droppedBy": [
     {
-      "name": "BigHotspotLoot (T1)",
+      "name": "Big Hotspot Loot T1",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "HotspotLoot (T1)",
+      "name": "Hotspot Loot T1",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "TreasureChest (T1)",
+      "name": "Treasure Chest T1",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,

@@ -1,0 +1,24 @@
+{
+  "name": "Buffalo Walker Upgrade Durability Tier 1",
+  "type": "Buffalo Walker Upgrade Durability Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 40,
+          "name": "Obsidian"
+        },
+        {
+          "count": 24,
+          "name": "Tar"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

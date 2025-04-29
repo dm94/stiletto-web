@@ -1,0 +1,24 @@
+{
+  "name": "Panda Walker Upgrade Gear Tier 2",
+  "type": "Panda Walker Upgrade Gear Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 37,
+          "name": "Iron Ore"
+        },
+        {
+          "count": 24,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 8,
+          "name": "Hollowbone"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

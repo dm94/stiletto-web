@@ -380,7 +380,7 @@ const ItemWiki = () => {
         {itemInfo?.structureInfo && (
           <GenericInfo
             key="structureInfo"
-            name="wiki.StructureInfo"
+            name="wiki.structureInfo"
             dataInfo={itemInfo.structureInfo}
             rarity={rarity}
             textColor={textColor}
@@ -412,6 +412,16 @@ const ItemWiki = () => {
             key="armorinfo"
             name="wiki.ArmorInfo"
             dataInfo={itemInfo.armorInfo}
+            rarity={rarity}
+            textColor={textColor}
+            category={itemInfo.category}
+          />
+        )}
+        {itemInfo?.upgradeInfo && (
+          <GenericInfo
+            key="upgradeInfo"
+            name="wiki.upgradeInfo"
+            dataInfo={itemInfo.upgradeInfo}
             rarity={rarity}
             textColor={textColor}
             category={itemInfo.category}

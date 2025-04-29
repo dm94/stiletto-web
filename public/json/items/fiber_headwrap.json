@@ -5,7 +5,7 @@
   "description": "Worn by nomads who toil in the Flotilla's underbelly, these itchy fibers may only protect against a sunburn.",
   "droppedBy": [
     {
-      "name": "BigHotspotLoot (T1)",
+      "name": "Big Hotspot Loot T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -18,21 +18,21 @@
       "maxQuantity": 1
     },
     {
-      "name": "EasyRupu (T1)",
+      "name": "Easy Rupu Camp T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "EasyRupu (T1) Quality",
+      "name": "Easy Rupu T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "EasyRupuCamp (T1)",
+      "name": "Easy Rupu T1 Q",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -45,28 +45,28 @@
       "maxQuantity": 1
     },
     {
-      "name": "HardRupu (T1)",
+      "name": "Hard Rupu Camp T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "HardRupu (T1) Quality",
+      "name": "Hard Rupu T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "HardRupuCamp (T1)",
+      "name": "Hard Rupu T1 Q",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "HotspotLoot (T1)",
+      "name": "Hotspot Loot T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -80,21 +80,21 @@
       "tier": null
     },
     {
-      "name": "MediumRupu (T1)",
+      "name": "Medium Rupu Camp T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "MediumRupu (T1) Quality",
+      "name": "Medium Rupu T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "MediumRupuCamp (T1)",
+      "name": "Medium Rupu T1 Q",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -197,7 +197,7 @@
       "maxQuantity": 1
     },
     {
-      "name": "TreasureChest (T1)",
+      "name": "Treasure Chest T1",
       "chance": 19.801981,
       "minQuantity": 1,
       "maxQuantity": 1,

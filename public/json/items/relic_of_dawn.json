@@ -10,21 +10,21 @@
   "wikiVisibility": false,
   "droppedBy": [
     {
-      "name": "AC_Relic_1",
+      "name": "AC Relic 1",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": null
     },
     {
-      "name": "BasketLoot (T2) (AC)",
+      "name": "Basket Loot T2 AC",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "HardRupu (T2) (AC)",
+      "name": "Hard Rupu T2 AC",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,

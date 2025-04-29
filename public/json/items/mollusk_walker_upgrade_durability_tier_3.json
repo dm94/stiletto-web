@@ -1,0 +1,26 @@
+{
+  "name": "Mollusk Walker Upgrade Durability Tier 3",
+  "type": "Mollusk Walker Upgrade Durability Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 28,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 24,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 42,
+          "name": "Rupu Pelt"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 18000
+  }
+}

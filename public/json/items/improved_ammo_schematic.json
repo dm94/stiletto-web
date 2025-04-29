@@ -19,35 +19,35 @@
   ],
   "droppedBy": [
     {
-      "name": "EasyRupu (T2) Quality",
+      "name": "Easy Rupu T2 Q",
       "chance": 5.5555553,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "HardRupu (T2) Quality",
+      "name": "Hard Rupu T2 Q",
       "chance": 5.5555553,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "LargeNurr (T2) Quality",
+      "name": "Large Nurr T2 Q",
       "chance": 5.5555553,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "MediumRupu (T2) Quality",
+      "name": "Medium Rupu T2 Q",
       "chance": 5.5555553,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "Nurr (T2) Quality",
+      "name": "Nurr T2 Q",
       "chance": 5.5555553,
       "minQuantity": 5,
       "maxQuantity": 5,

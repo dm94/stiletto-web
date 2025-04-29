@@ -1,0 +1,72 @@
+{
+  "name": "Ceramic-Tipped Bolt",
+  "parent": "Bone Bolt",
+  "type": "CeramicBolt_C",
+  "trade_price": 11,
+  "description": "Ammo for Ballista. Ceramic tips guarantee their sharpness and strength.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 8,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 5,
+      "station": "Advanced Woodworking Station",
+      "time": 5
+    },
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 8,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 20,
+          "name": "Fiber Weave"
+        }
+      ],
+      "output": 5,
+      "station": "Artificer Woodworking Station",
+      "time": 3
+    }
+  ],
+  "projectileDamage": {
+    "damage": 64
+  },
+  "toolInfo": [
+    {
+      "toolType": "BallistaHarpoon",
+      "tier": 3
+    }
+  ],
+  "droppedBy": [
+    {
+      "name": "Ammo Box T3",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    },
+    {
+      "name": "Big Hotspot Loot T3",
+      "chance": 16,
+      "minQuantity": 5,
+      "maxQuantity": 15,
+      "tier": "T3"
+    }
+  ]
+}

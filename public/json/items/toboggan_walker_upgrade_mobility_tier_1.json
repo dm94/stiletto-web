@@ -1,0 +1,24 @@
+{
+  "name": "Toboggan Walker Upgrade Mobility Tier 1",
+  "type": "Toboggan Walker Upgrade Mobility Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 48,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 3,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

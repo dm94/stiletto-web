@@ -1,0 +1,24 @@
+{
+  "name": "Hornet Walker Upgrade Mobility Tier 1",
+  "type": "Hornet Walker Upgrade Mobility Tier 1",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Reinforced Gear"
+        },
+        {
+          "count": 32,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 24,
+          "name": "Tallow"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Schmetterling Walker Upgrade Durability Tier 4",
+  "type": "Schmetterling Walker Upgrade Durability Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 63,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 38,
+          "name": "Rubber Block"
+        },
+        {
+          "count": 45,
+          "name": "Shardrock"
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {}
+}

@@ -1,5 +1,5 @@
 {
-  "name": "Hard Rupu (T2) (AC)",
+  "name": "Hard Rupu T2 AC",
   "category": "Rupu",
   "tier": "T2",
   "drops": [
@@ -333,5 +333,5 @@
       "source": "rigs_t2"
     }
   ],
-  "originalName": "HardRupu (T2) (AC)"
+  "originalName": "HardRupu T2 AC"
 }
