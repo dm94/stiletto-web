@@ -186,7 +186,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       // Check if parent node is selected
       return skills[node.parentId]?.nodeState === "selected";
     },
-    [nodes, skills],
+    [nodes, skills]
   );
 
   const toggleNode = useCallback(
@@ -214,7 +214,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         return newSkills;
       });
     },
-    [treeId, nodes],
+    [treeId, nodes]
   );
 
   const showTooltip = useCallback((nodeId: string) => {
@@ -285,7 +285,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         </div>
       );
     },
-    [clan, nodes, t, treeId, toggleNode, canLearnNode],
+    [clan, nodes, t, treeId, toggleNode, canLearnNode]
   );
 
   // Zoom controls
@@ -320,23 +320,27 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       setPosition((prev) => ({ x: prev.x + dx, y: prev.y + dy }));
       setDragStart({ x: e.clientX, y: e.clientY });
     },
-    [isDragging, dragStart],
+    [isDragging, dragStart]
   );
 
   const handleMouseUp = useCallback(() => {
     setIsDragging(false);
   }, []);
 
-  // Calculate container dimensions
+  // Calculate container dimensions and offsets
   const containerDimensions = useMemo(() => {
     if (nodes.length === 0) {
-      return { width: 1000, height: 600 };
+      return { width: 1000, height: 600, offsetX: 0, offsetY: 0 };
     }
 
+    const minX = Math.min(...nodes.map((n) => n.x));
+    const minY = Math.min(...nodes.map((n) => n.y));
     const maxX = Math.max(...nodes.map((n) => n.x)) + 100;
     const maxY = Math.max(...nodes.map((n) => n.y)) + 100;
-
-    return { width: maxX, height: maxY };
+    // Offset to ensure all nodes are visible (no negative positions)
+    const offsetX = minX < 0 ? -minX + 20 : 0;
+    const offsetY = minY < 0 ? -minY + 20 : 0;
+    return { width: maxX + offsetX, height: maxY + offsetY, offsetX, offsetY };
   }, [nodes]);
 
   return (
@@ -381,11 +385,11 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
                 return null;
               }
 
-              // Calculate positions for the path
-              const x1 = fromNode.x + 60; // Right side of the node
-              const y1 = fromNode.y + 50; // Middle of the node
-              const x2 = toNode.x; // Left side of the node
-              const y2 = toNode.y + 50; // Middle of the node
+              // Apply offset to all node positions
+              const x1 = fromNode.x + 60 + containerDimensions.offsetX; // Right side of the node
+              const y1 = fromNode.y + 50 + containerDimensions.offsetY; // Middle of the node
+              const x2 = toNode.x + containerDimensions.offsetX; // Left side of the node
+              const y2 = toNode.y + 50 + containerDimensions.offsetY; // Middle of the node
 
               // Calculate control points for the curve
               const midX = (x1 + x2) / 2;
@@ -429,8 +433,8 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
                 key={node.id}
                 className={`skill-node ${nodeClass}`}
                 style={{
-                  left: `${node.x}px`,
-                  top: `${node.y}px`,
+                  left: `${node.x + containerDimensions.offsetX}px`,
+                  top: `${node.y + containerDimensions.offsetY}px`,
                   zIndex: node.selected ? 10 : 5,
                 }}
                 onClick={() => showTooltip(node.id)}
