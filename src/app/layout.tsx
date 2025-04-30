@@ -1,4 +1,7 @@
-import "../styles/globals.css";
+import "../styles/normalize.css";
+import "../styles/style.css";
+import "../styles/tribal-ui.css";
+import "../styles/desert-theme.css";
 import type { ReactNode } from "react";
 
 export const metadata = {

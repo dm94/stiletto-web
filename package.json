@@ -31,14 +31,13 @@
     "vanilla-cookieconsent": "3.1.0"
   },
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "cypress": "cypress open",
-    "cypress:test": "cypress run",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome lint --write ./src",
     "format": "biome format --write ./src",
-    "lint": "biome lint --write ./src"
+    "cypress": "cypress open",
+    "cypress:test": "cypress run"
   },
   "browserslist": {
     "production": [
