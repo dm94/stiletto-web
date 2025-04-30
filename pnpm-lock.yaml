@@ -102,9 +102,6 @@ importers:
       typescript:
         specifier: 5.8.3
         version: 5.8.3
-      vite:
-        specifier: ^6.2.6
-        version: 6.2.6(@types/node@22.15.3)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(yaml@2.7.0)
 
 packages:
 
