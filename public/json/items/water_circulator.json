@@ -1,6 +1,31 @@
 {
   "name": "Water Circulator",
-  "parent": "Ceramic Bottle",
-  "type": "Stillsuit_C",
-  "description": "This insulating suit traps excreted fluids and recycles them with state-of-the-art worm technology."
+  "type": "Stillsuit2_C",
+  "category": "Equipment",
+  "trade_price": 679.5,
+  "stackSize": 100,
+  "weight": 3,
+  "description": "This insulating suit traps excreted fluids and recycles them with state-of-the-art worm technology.",
+  "experiencieReward": 255,
+  "durability": 400,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 38,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 5,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 25,
+          "name": "Rope"
+        }
+      ],
+      "station": "Smithing",
+      "time": 25
+    }
+  ]
 }

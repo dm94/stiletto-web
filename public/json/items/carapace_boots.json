@@ -1,7 +1,38 @@
 {
   "name": "Carapace Boots",
-  "parent": "CarapaceTorso",
-  "type": "CarapaceBoots_C",
+  "type": "T3_CarapaceBoots_C",
+  "category": "Armors",
+  "trade_price": 190.5,
+  "stackSize": 100,
+  "weight": 3.3,
+  "description": "Layers of tough hides are sewn together into a heavy armor worn by the most seasoned nomadic fighters.",
+  "experiencieReward": 100,
+  "durability": 280,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 3,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 15,
+          "name": "Earth Wax"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 2
+    }
+  ],
+  "armorInfo": {
+    "absorbing": 15,
+    "reduction": 2,
+    "speedReduction": 5
+  },
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T3",

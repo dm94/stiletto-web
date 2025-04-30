@@ -1,7 +1,46 @@
 {
   "name": "Triple Stitch Boots",
-  "parent": "TripleStitchTorso",
-  "type": "TripleStitchBoots_C",
+  "type": "T2_TripleStitchBoots_C",
+  "category": "Armors",
+  "trade_price": 61.1,
+  "stackSize": 100,
+  "weight": 1.5,
+  "description": "A secret weaving technique creates surprisingly strong armor with no loss in meanueverability.",
+  "experiencieReward": 45,
+  "durability": 250,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 6,
+          "name": "Triple Stitch Fabric"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 3
+    },
+    {
+      "ingredients": [
+        {
+          "count": 8,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 6,
+          "name": "Triple Stitch Fabric"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 2
+    }
+  ],
+  "armorInfo": {
+    "reduction": 4
+  },
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",

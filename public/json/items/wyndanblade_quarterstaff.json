@@ -1,8 +1,38 @@
 {
   "name": "Wyndanblade Quarterstaff",
-  "parent": "Paddleblade Quarterstaff",
-  "type": "IronQuarterstaff_C",
+  "type": "IronQuarterstaff2_C",
+  "category": "Weapons",
+  "trade_price": 152,
+  "stackSize": 100,
+  "weight": 4.8,
   "description": "Long ago, the Wyndan tribe mediated a lasting peace between the plains people. Today, they serve the Guardians as peacekeepers and engineers.",
+  "experiencieReward": 1227,
+  "durability": 740,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Lightwood"
+        },
+        {
+          "count": 6,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 3,
+          "name": "Iron Ingot"
+        }
+      ],
+      "station": "Smithing",
+      "time": 15
+    }
+  ],
+  "weaponInfo": {
+    "weaponLength": 107,
+    "damage": 48,
+    "penetration": 20
+  },
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T4",

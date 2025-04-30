@@ -1,8 +1,33 @@
 {
   "name": "Glass",
-  "parent": "Furnace",
-  "type": "Glass_C",
+  "type": "EmptyGlassVial_C",
+  "category": "Resources",
+  "trade_price": 1.4,
+  "stackSize": 100,
+  "weight": 0.05,
   "description": "A transparent material",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 3,
+          "name": "Sand"
+        }
+      ],
+      "station": "Furnace",
+      "time": 1200
+    },
+    {
+      "ingredients": [
+        {
+          "count": 2,
+          "name": "Sand"
+        }
+      ],
+      "station": "Advanced Furnace",
+      "time": 900
+    }
+  ],
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",
@@ -451,5 +476,6 @@
       "maxQuantity": 3,
       "tier": "T3"
     }
-  ]
+  ],
+  "whereToFarm": "Found in rupu camps."
 }

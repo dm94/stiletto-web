@@ -1,8 +1,47 @@
 {
   "name": "Wyndan Flame Sword",
-  "parent": "Singblade",
-  "type": "TwoHandedIronSword_C",
+  "type": "TwoHandedIronSword2_C",
+  "category": "Weapons",
+  "trade_price": 336.6,
+  "stackSize": 100,
+  "weight": 4.8,
   "description": "The Wyndan tribe is said to have pioneered the first walkers.",
+  "experiencieReward": 1349,
+  "durability": 800,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Lightwood"
+        },
+        {
+          "count": 6,
+          "name": "Triple Stitch Fabric"
+        },
+        {
+          "count": 3,
+          "name": "Iron Ingot"
+        }
+      ],
+      "station": "Smithing",
+      "time": 15
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 130,
+    "impact": 45,
+    "stability": 55,
+    "weaponLength": 96,
+    "damage": 60,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 1
+    }
+  ],
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T4",

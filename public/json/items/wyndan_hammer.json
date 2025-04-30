@@ -1,8 +1,40 @@
 {
   "name": "Wyndan Hammer",
-  "parent": "Short Ceramic Hoofmace",
-  "type": "OneHandedIronMace_C",
+  "type": "OneHandedIronMace2_C",
+  "category": "Weapons",
+  "trade_price": 316.4,
+  "stackSize": 100,
+  "weight": 4.5,
   "description": "Flotillan scholars claim that the Wyndan tribe has roots as a prominent civilization that existed long before the apocalypse.",
+  "experiencieReward": 1197,
+  "durability": 760,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Lightwood"
+        },
+        {
+          "count": 4,
+          "name": "Leather"
+        },
+        {
+          "count": 3,
+          "name": "Iron Ingot"
+        }
+      ],
+      "station": "Smithing",
+      "time": 15
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 90,
+    "impact": 70,
+    "weaponLength": 61,
+    "damage": 60,
+    "penetration": 10
+  },
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T4",

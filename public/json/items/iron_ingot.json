@@ -1,6 +1,21 @@
 {
   "name": "Iron Ingot",
-  "parent": "Advanced Furnace",
-  "type": "IronIngot_C",
-  "description": "Extremely strong material used in high quality productions."
+  "type": "IronIngot2_C",
+  "category": "Resources",
+  "trade_price": 12,
+  "stackSize": 100,
+  "weight": 0.65,
+  "description": "Extremely strong material used in high quality productions.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Iron Ore"
+        }
+      ],
+      "station": "Advanced Furnace",
+      "time": 2100
+    }
+  ]
 }

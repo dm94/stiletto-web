@@ -1,8 +1,46 @@
 {
   "name": "Wyndan Battle Axe",
-  "parent": "Firestone Battle Axe",
-  "type": "TwoHandedIronAxe_C",
+  "type": "TwoHandedIronAxe2_C",
+  "category": "Weapons",
+  "trade_price": 320.4,
+  "stackSize": 100,
+  "weight": 5.8,
   "description": "Flotillan scholars claim that the Wyndan tribe has roots as a prominent civilization that existed long before the apocalypse.",
+  "experiencieReward": 1622,
+  "durability": 780,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Lightwood"
+        },
+        {
+          "count": 6,
+          "name": "Leather"
+        },
+        {
+          "count": 3,
+          "name": "Iron Ingot"
+        }
+      ],
+      "station": "Smithing",
+      "time": 15
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 115,
+    "stability": 65,
+    "weaponLength": 62,
+    "damage": 60,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "TreeCutting",
+      "tier": 0
+    }
+  ],
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T4",

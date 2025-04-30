@@ -1,8 +1,47 @@
 {
   "name": "Wyndan Hand Axe",
-  "parent": "Ceramic Hatchet",
-  "type": "OneHandedIronAxe_C",
+  "type": "OneHandedIronAxe2_C",
+  "category": "Weapons",
+  "trade_price": 234.4,
+  "stackSize": 100,
+  "weight": 4,
   "description": "Flotillan scholars claim that the Wyndan tribe has roots as a prominent civilization that existed long before the apocalypse.",
+  "experiencieReward": 1203,
+  "durability": 1000,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 6,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 3,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 5,
+          "name": "Rope"
+        }
+      ],
+      "station": "Smithing",
+      "time": 15
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 95,
+    "impact": 55,
+    "stability": 45,
+    "weaponLength": 72,
+    "damage": 60,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "TreeCutting",
+      "tier": 20
+    }
+  ],
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T4",

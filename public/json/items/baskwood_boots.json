@@ -1,7 +1,48 @@
 {
   "name": "Baskwood Boots",
-  "parent": "BaskwoodTorso",
-  "type": "BaskwoodBoots_C",
+  "type": "T2_BaskwoodBoots_C",
+  "category": "Armors",
+  "trade_price": 19.8,
+  "stackSize": 100,
+  "weight": 4.3,
+  "description": "A heavy armor issued to Flotillan servicemen whose responsibilities range from reconnaissance, expiditionary planting, and trade station operation and disassemblement.",
+  "experiencieReward": 75,
+  "durability": 200,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Tree Sap"
+        },
+        {
+          "count": 2,
+          "name": "Leather"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 3
+    },
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Tree Sap"
+        },
+        {
+          "count": 2,
+          "name": "Leather"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 2
+    }
+  ],
+  "armorInfo": {
+    "absorbing": 10,
+    "reduction": 1,
+    "speedReduction": 4
+  },
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",

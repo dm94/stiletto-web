@@ -1,6 +1,35 @@
 {
   "name": "Split Durable Water Sack",
-  "parent": "Durable Water Sack",
-  "type": "SplitBarrel_C",
-  "description": "A huge water bag worn on the back with two separate compartments."
+  "type": "SplitBarrel2_C",
+  "category": "Equipment",
+  "trade_price": 143.4,
+  "stackSize": 100,
+  "weight": 3,
+  "description": "A huge water bag worn on the back with two separate compartments.",
+  "experiencieReward": 300,
+  "durability": 380,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 35,
+          "name": "Palm Leaves"
+        },
+        {
+          "count": 112,
+          "name": "Fiber"
+        },
+        {
+          "count": 15,
+          "name": "Beeswax"
+        }
+      ],
+      "station": "Smithing",
+      "time": 60
+    }
+  ]
 }

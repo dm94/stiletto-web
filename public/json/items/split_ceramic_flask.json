@@ -1,6 +1,6 @@
 {
   "name": "Split Ceramic Flask",
-  "parent": "Ceramic Bottle",
+  "parent": "Ceramic Flask",
   "type": "SplitCeramicBottle_C",
   "category": "Equipment",
   "trade_price": 51.6,

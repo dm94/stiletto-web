@@ -1,5 +1,32 @@
 {
   "name": "Nibirian Boots",
-  "parent": "NibirianTorso",
-  "type": "NibirianBoots_C"
+  "type": "T4_NibirianBoots_C",
+  "category": "Armors",
+  "trade_price": 75.8,
+  "stackSize": 100,
+  "weight": 4,
+  "description": "Most tribes eschew iron armor, despite its protective value. History has proven that it is not pirates whom a nomad must fear most, but the sun.",
+  "experiencieReward": 170,
+  "durability": 330,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 5,
+          "name": "Nibiran Ingot"
+        },
+        {
+          "count": 15,
+          "name": "Worm Silk"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 30
+    }
+  ],
+  "armorInfo": {
+    "absorbing": 23,
+    "reduction": 4,
+    "speedReduction": 5
+  }
 }

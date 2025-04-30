@@ -1,8 +1,47 @@
 {
   "name": "Wyndan Sabre",
-  "parent": "Short Malletblade",
-  "type": "OneHandedIronSword_C",
+  "type": "OneHandedIronSword2_C",
+  "category": "Weapons",
+  "trade_price": 259.7,
+  "stackSize": 100,
+  "weight": 2.5,
   "description": "The Wyndan tribe is said to have pioneered the first walkers.",
+  "experiencieReward": 1242,
+  "durability": 770,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Lightwood"
+        },
+        {
+          "count": 6,
+          "name": "Leather"
+        },
+        {
+          "count": 3,
+          "name": "Iron Ingot"
+        }
+      ],
+      "station": "Smithing",
+      "time": 15
+    }
+  ],
+  "weaponInfo": {
+    "weaponSpeed": 130,
+    "impact": 25,
+    "stability": 10,
+    "weaponLength": 55,
+    "damage": 60,
+    "penetration": 10
+  },
+  "toolInfo": [
+    {
+      "toolType": "Scythe",
+      "tier": 1
+    }
+  ],
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T4",
