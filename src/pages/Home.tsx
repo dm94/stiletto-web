@@ -22,17 +22,17 @@ const Home: React.FC = () => {
   return (
     <div className="container mx-auto px-4">
       <Helmet>
-        <title>Stiletto for the Last Oasis</title>
+        <title>{t("app.title")} - {t("app.subtitle", "for the Last Oasis")}</title>
         <meta
           name="description"
-          content="Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more..."
+          content={t("app.metaDescription", "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...")}
         />
         <meta name="theme-color" content="#FFFFFF" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Stiletto for Last Oasis" />
+        <meta name="twitter:title" content={`${t("app.title")} ${t("app.subtitle", "for Last Oasis")}`} />
         <meta
           name="twitter:description"
-          content="Stiletto the page with utilities for the game Last Oasis"
+          content={t("app.twitterDescription", "Stiletto the page with utilities for the game Last Oasis")}
         />
         <meta
           name="twitter:image"

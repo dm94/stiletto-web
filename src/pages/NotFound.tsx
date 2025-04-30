@@ -10,8 +10,8 @@ const NotFoundPage = () => {
   const helmetInfo = useMemo(
     () => (
       <Helmet>
-        <title>{"Page not found - Stiletto for Last Oasis"}</title>
-        <meta name="description" content={"Page not found"} />
+        <title>{t("errors.pageNotFoundTitle", "Page not found")} - {t("app.title")} {t("app.subtitle", "for Last Oasis")}</title>
+        <meta name="description" content={t("errors.pageNotFoundDescription", "Page not found")} />
         <meta name="robots" content="noindex" />
         <link rel="canonical" href={`${getDomain()}/not-found`} />
       </Helmet>

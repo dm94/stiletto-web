@@ -392,7 +392,7 @@ const WalkerList: React.FC = () => {
                 <option value="Personal">{t("common.personal")}</option>
                 <option value="PVP">{t("common.pvp")}</option>
                 <option value="Farming">{t("common.farming")}</option>
-                <option value="RAM">{t("RAM")}</option>
+                <option value="RAM">{t("common.ram")}</option>
               </select>
             </div>
             <div>
