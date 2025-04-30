@@ -357,6 +357,7 @@
   "wiki.writeComment": "撰写评论...",
   "wiki.nothingFound": "未找到任何内容",
   "wiki.filterByCategory": "按类别筛选",
+  "wiki.walkerInfo": "Walker info",
   "notification.share": "共享代码已生成",
   "error.databaseConnection": "连接数据库时出错",
   "error.discordClanNotLinked": "你的部族没有链接的不和对",
