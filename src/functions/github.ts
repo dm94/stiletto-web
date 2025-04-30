@@ -5,8 +5,9 @@ import type { MapJsonInfo } from "@ctypes/dto/maps";
 import { toSnakeCase } from "./utils";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 
-const RESOURCE_CACHE_TIME_CHECK = import.meta.env.PROD ? 86400000 : 1;
-const REPO_JSON_URL = import.meta.env.PROD
+const IS_PROD = process.env.NODE_ENV === "production";
+const RESOURCE_CACHE_TIME_CHECK = IS_PROD ? 86400000 : 1;
+const REPO_JSON_URL = IS_PROD
   ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json"
   : "/json";
 

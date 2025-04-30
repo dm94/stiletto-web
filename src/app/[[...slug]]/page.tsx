@@ -1,9 +1,9 @@
-"use client";
+import ClientOnly from "./client";
 
-import dynamic from "next/dynamic";
-
-const App = dynamic(() => import("../../CrafterApp"), { ssr: false });
+export function generateStaticParams() {
+  return [{ slug: [""] }];
+}
 
 export default function Page() {
-  return <App />;
+  return <ClientOnly />;
 }
