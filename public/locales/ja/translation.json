@@ -357,6 +357,7 @@
   "wiki.writeComment": "コメントを書く...",
   "wiki.nothingFound": "何も見つかりませんでした",
   "wiki.filterByCategory": "カテゴリでフィルター",
+  "wiki.walkerInfo": "Walker info",
   "notification.share": "共有コードが生成されました",
   "error.databaseConnection": "データベースへの接続エラー",
   "error.discordClanNotLinked": "クランはリンクされた不和を持っていません",
