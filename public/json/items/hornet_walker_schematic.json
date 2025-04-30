@@ -6,6 +6,9 @@
   "learn": [
     "Hornet Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 4800
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",

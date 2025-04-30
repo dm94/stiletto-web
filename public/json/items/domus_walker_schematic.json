@@ -6,6 +6,9 @@
   "learn": [
     "Domus Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 10500
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T4 Q",

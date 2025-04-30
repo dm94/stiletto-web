@@ -357,6 +357,7 @@
   "wiki.writeComment": "Write a comment...",
   "wiki.nothingFound": "Nothing found",
   "wiki.filterByCategory": "Filter by category",
+  "wiki.walkerInfo": "Walker info",
   "notification.share": "Sharing code has been generated",
   "error.databaseConnection": "Error connecting to database",
   "error.discordClanNotLinked": "Your clan does not have a linked discord",

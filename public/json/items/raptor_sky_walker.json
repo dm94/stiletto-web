@@ -51,7 +51,8 @@
     "type": "Hard",
     "hp": 14000
   },
-  "walkerinfo": {
-    "category": "Flying"
+  "walkerInfo": {
+    "category": "Flying",
+    "carryCapacity": 12500
   }
 }

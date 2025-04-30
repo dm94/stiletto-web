@@ -24,5 +24,8 @@
   "structureInfo": {
     "type": "Reinforced",
     "hp": 34200
+  },
+  "walkerInfo": {
+    "carryCapacity": 20000
   }
 }

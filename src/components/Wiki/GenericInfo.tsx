@@ -22,7 +22,10 @@ const GenericInfo: React.FC<GenericInfoProps> = ({
   const showValues = () => {
     return Object.keys(dataInfo).map((key) => {
       if (dataInfo[key]) {
-        const value = calcRarityValue(rarity, key, category, dataInfo[key]);
+        const value =
+          typeof dataInfo[key] === "number"
+            ? calcRarityValue(rarity, key, category, dataInfo[key])
+            : dataInfo[key];
         return (
           <li
             key={`infolist-${name}-${key}`}
@@ -32,7 +35,7 @@ const GenericInfo: React.FC<GenericInfoProps> = ({
             <div
               className={value !== dataInfo[key] ? textColor : "text-gray-400"}
             >
-              {value}
+              {t(value)}
             </div>
           </li>
         );

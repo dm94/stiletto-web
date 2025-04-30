@@ -6,6 +6,9 @@
   "learn": [
     "Hercul Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 4050
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",

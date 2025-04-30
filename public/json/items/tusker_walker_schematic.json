@@ -6,6 +6,9 @@
   "learn": [
     "Tusker Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 12500
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",

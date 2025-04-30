@@ -47,7 +47,8 @@
     "type": "BlueprintGeneratedClassCamelopLegsDamageOverride_C'",
     "hp": 13000
   },
-  "walkerinfo": {
-    "category": "Large"
+  "walkerInfo": {
+    "category": "Large",
+    "carryCapacity": 12500
   }
 }

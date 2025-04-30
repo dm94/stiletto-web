@@ -6,6 +6,9 @@
   "learn": [
     "Toboggan Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 7500
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T2 Q",

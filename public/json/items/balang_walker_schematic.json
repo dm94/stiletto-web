@@ -6,6 +6,9 @@
   "learn": [
     "Balang Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 4500
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T2 Q",

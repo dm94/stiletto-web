@@ -6,6 +6,9 @@
   "learn": [
     "Buffalo Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 5200
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",

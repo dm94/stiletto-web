@@ -40,5 +40,8 @@
       "time": 600
     }
   ],
+  "walkerInfo": {
+    "carryCapacity": 8000
+  },
   "whereToFarm": "Bought from Trading Stations for Flots."
 }

@@ -6,6 +6,9 @@
   "learn": [
     "Cobra Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 3100
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",

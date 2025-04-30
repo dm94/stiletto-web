@@ -6,6 +6,9 @@
   "learn": [
     "Rig T2"
   ],
+  "walkerInfo": {
+    "carryCapacity": 3200
+  },
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",

@@ -6,6 +6,9 @@
   "learn": [
     "Dinghy Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 1500
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T1 Q",

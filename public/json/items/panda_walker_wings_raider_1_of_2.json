@@ -29,5 +29,8 @@
   "structureInfo": {
     "type": "Medium",
     "hp": 6100
+  },
+  "walkerInfo": {
+    "carryCapacity": 25000
   }
 }
