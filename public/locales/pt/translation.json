@@ -357,6 +357,7 @@
   "wiki.writeComment": "Escreva um comentário...",
   "wiki.nothingFound": "Nada foi encontrado",
   "wiki.filterByCategory": "Filtrar por categoria",
+  "wiki.walkerInfo": "Walker info",
   "notification.share": "O código de compartilhamento foi gerado",
   "error.databaseConnection": "Erro ao conectar ao banco de dados",
   "error.discordClanNotLinked": "Seu clã não tem uma discórdia ligada",
