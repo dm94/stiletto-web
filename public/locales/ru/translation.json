@@ -357,6 +357,7 @@
   "wiki.writeComment": "Написать комментарий...",
   "wiki.nothingFound": "Ничего не найдено",
   "wiki.filterByCategory": "Фильтр по категориям",
+  "wiki.walkerInfo": "Walker info",
   "notification.share": "Код общего доступа был создан",
   "error.databaseConnection": "Ошибка при подключении к базе данных",
   "error.discordClanNotLinked": "У вашего клана нет связей",
