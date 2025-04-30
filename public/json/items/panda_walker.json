@@ -55,7 +55,8 @@
     "type": "Hard",
     "hp": 65000
   },
-  "walkerinfo": {
-    "category": "Large"
+  "walkerInfo": {
+    "category": "Large",
+    "carryCapacity": 12500
   }
 }

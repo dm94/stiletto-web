@@ -6,6 +6,9 @@
   "learn": [
     "Titan Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 15000
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T4 Q",

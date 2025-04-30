@@ -6,6 +6,9 @@
   "learn": [
     "Rig T2"
   ],
+  "walkerInfo": {
+    "carryCapacity": 15000
+  },
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T4",

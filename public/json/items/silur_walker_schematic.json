@@ -6,6 +6,9 @@
   "learn": [
     "Silur Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 20000
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",

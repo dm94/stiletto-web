@@ -75,6 +75,11 @@ export type TechItem = {
   onlyDevs?: boolean;
 };
 
+export type WalkerInfo = {
+  carryCapacity?: number;
+  category?: string;
+};
+
 export type ItemCompleteInfo = {
   name: string;
   category?: string;
@@ -97,7 +102,8 @@ export type ItemCompleteInfo = {
   wikiVisibility?: boolean;
   learn?: string[];
   drops?: Drop[];
-  upgradeInfo: any;
+  upgradeInfo?: any;
+  walkerInfo?: WalkerInfo;
 };
 
 export type Item = {

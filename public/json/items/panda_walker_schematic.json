@@ -6,6 +6,9 @@
   "learn": [
     "Panda Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 25000
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T4 Q",

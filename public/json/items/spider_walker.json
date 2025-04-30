@@ -31,7 +31,8 @@
     "type": "Hard",
     "hp": 1500
   },
-  "walkerinfo": {
-    "category": "Small"
+  "walkerInfo": {
+    "category": "Small",
+    "carryCapacity": 12500
   }
 }

@@ -6,6 +6,9 @@
   "learn": [
     "Camelop  Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 3350
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",

@@ -43,7 +43,8 @@
     "type": "Solid",
     "hp": 150000
   },
-  "walkerinfo": {
-    "category": "Small"
+  "walkerInfo": {
+    "category": "Small",
+    "carryCapacity": 12500
   }
 }

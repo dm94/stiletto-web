@@ -63,7 +63,8 @@
     "type": "Hard",
     "hp": 55000
   },
-  "walkerinfo": {
-    "category": "Capital"
+  "walkerInfo": {
+    "category": "Capital",
+    "carryCapacity": 12500
   }
 }

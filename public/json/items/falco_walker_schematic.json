@@ -6,6 +6,9 @@
   "learn": [
     "Falco Walker"
   ],
+  "walkerInfo": {
+    "carryCapacity": 5000
+  },
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",

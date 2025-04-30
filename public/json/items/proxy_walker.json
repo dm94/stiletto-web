@@ -43,7 +43,8 @@
     "type": "Reinforced",
     "hp": 100000
   },
-  "walkerinfo": {
-    "category": "Large"
+  "walkerInfo": {
+    "category": "Large",
+    "carryCapacity": 12500
   }
 }
