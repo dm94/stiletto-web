@@ -65,7 +65,7 @@ const Menu: React.FC<MenuProps> = ({
             className="flex items-center space-x-2 text-white"
             onClick={closeMenu}
           >
-            <span className="text-2xl font-medium web-title">{t("app.title", "Stiletto")}</span>
+            <span className="text-2xl font-medium web-title">Stiletto</span>
             <img
               width="35"
               height="35"
