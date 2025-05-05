@@ -1,5 +1,6 @@
 import type React from "react";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { getClusters } from "@functions/requests/clusters";
 
 interface Cluster {
@@ -21,6 +22,7 @@ const ClusterList: React.FC<ClusterListProps> = ({
   filter,
   id,
 }) => {
+  const { t } = useTranslation();
   const [clusters, setClusters] = useState<Cluster[]>([]);
 
   useEffect(() => {
@@ -57,7 +59,7 @@ const ClusterList: React.FC<ClusterListProps> = ({
       value={value}
       onChange={(event) => onChange?.(event.target.value)}
     >
-      {filter && <option value="All">All</option>}
+      {filter && <option value="All">{t("common.all")}</option>}
       {renderClusterOptions()}
     </select>
   );

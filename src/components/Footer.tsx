@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <div className="bg-gray-800 text-white py-3">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center space-x-2">
-            <span>By Dm94Dani</span>
+            <span>{t("about.byAuthor", "By Dm94Dani")}</span>
             <span>|</span>
             <Link className="text-white hover:text-gray-300" to="/privacy">
               {t("common.privacyPolicy")}
