@@ -44,6 +44,7 @@
   "common.analyticsCookiesDescription": "Ці кукі-файли допомагають нам зрозуміти, як відвідувачі взаємодіють із сайтом, і допомагають нам покращити наші послуги.",
   "common.functionality": "Функціонал",
   "common.functionalityCookiesDescription": "Ці кукі-файли дозволяють забезпечити розширену функціональність і персоналізацію.",
+  "common.produces": "Produces",
   "auth.loginWithDiscord": "Увійти за допомогою discord",
   "auth.connectDemo": "Підключитися в демо-режимі",
   "crafting.calculator": "Виробник",

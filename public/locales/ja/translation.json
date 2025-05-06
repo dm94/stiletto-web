@@ -44,6 +44,7 @@
   "common.analyticsCookiesDescription": "これらのクッキーは、訪問者がどのようにウェブサイトとやり取りするかを理解し、当社のサービスを改善するのに役立ちます。",
   "common.functionality": "機能",
   "common.functionalityCookiesDescription": "これらのクッキーにより、ウェブサイトは拡張機能とパーソナライゼーションを提供することができます。",
+  "common.produces": "Produces",
   "auth.loginWithDiscord": "Discordでログイン",
   "auth.connectDemo": "デモモードで接続する",
   "crafting.calculator": "Crafter",

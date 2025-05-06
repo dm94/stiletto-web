@@ -44,6 +44,7 @@
   "common.analyticsCookiesDescription": "这些cookie帮助我们了解访客如何与网站互动，并帮助我们改进我们的服务。",
   "common.functionality": "功能",
   "common.functionalityCookiesDescription": "这些cookie使网站能够提供更强的功能和个性化。",
+  "common.produces": "Produces",
   "auth.loginWithDiscord": "不和登录",
   "auth.connectDemo": "在演示模式下连接",
   "crafting.calculator": "制造者",
