@@ -44,6 +44,7 @@
   "common.analyticsCookiesDescription": "These cookies help us understand how visitors interact with the website, and help us improve our services.",
   "common.functionality": "Functionality",
   "common.functionalityCookiesDescription": "These cookies enable the website to provide enhanced functionality and personalization.",
+  "common.produces": "Produces",
   "auth.loginWithDiscord": "Connectar-se amb Discord",
   "auth.connectDemo": "Connectar-se amb el mode de demostració",
   "crafting.calculator": "Calculadora de crafteig",
