@@ -44,6 +44,7 @@
   "common.analyticsCookiesDescription": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec le site Web et nous aident à améliorer nos services.",
   "common.functionality": "Fonctionnalité",
   "common.functionalityCookiesDescription": "Ces cookies permettent au site Web de fournir des fonctionnalités et une personnalisation améliorées.",
+  "common.produces": "Produces",
   "auth.loginWithDiscord": "Se connecter avec Discord",
   "auth.connectDemo": "Mode démo",
   "crafting.calculator": "Calculatrice",
