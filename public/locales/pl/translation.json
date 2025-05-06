@@ -44,6 +44,7 @@
   "common.analyticsCookiesDescription": "Te pliki cookie pomagają nam zrozumieć, jak odwiedzający współdziałają ze stroną internetową i pomagają nam ulepszyć nasze usługi.",
   "common.functionality": "Funkcjonalność",
   "common.functionalityCookiesDescription": "Te pliki cookie umożliwiają witrynie zapewnienie ulepszonej funkcjonalności i personalizacji.",
+  "common.produces": "Produces",
   "auth.loginWithDiscord": "Zaloguj się za pomocą discorda",
   "auth.connectDemo": "Połącz w trybie demo",
   "crafting.calculator": "Wytwórca",
