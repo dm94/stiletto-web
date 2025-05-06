@@ -44,6 +44,7 @@
   "common.analyticsCookiesDescription": "Эти файлы cookie помогают нам понять, как посетители взаимодействуют с сайтом, и помочь нам улучшить наши услуги.",
   "common.functionality": "Функциональность",
   "common.functionalityCookiesDescription": "Эти файлы cookie позволяют веб-сайту обеспечивать расширенную функциональность и персонализацию.",
+  "common.produces": "Produces",
   "auth.loginWithDiscord": "Войти в систему с помощью discord",
   "auth.connectDemo": "Подключение в демонстрационном режиме",
   "crafting.calculator": "Калькулятор крафта",
