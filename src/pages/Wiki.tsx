@@ -308,7 +308,7 @@ const Wiki = () => {
       <HeaderMeta
         title="Wiki - Stiletto for Last Oasis"
         description="Last oasis Wiki"
-        cannonical={`${getDomain()}/wiki`}
+        canonical={`${getDomain()}/wiki`}
       />
       <div className="w-full mb-8">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">

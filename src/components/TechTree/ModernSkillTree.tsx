@@ -186,7 +186,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       // Check if parent node is selected
       return skills[node.parentId]?.nodeState === "selected";
     },
-    [nodes, skills]
+    [nodes, skills],
   );
 
   const toggleNode = useCallback(
@@ -214,7 +214,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         return newSkills;
       });
     },
-    [treeId, nodes]
+    [treeId, nodes],
   );
 
   const showTooltip = useCallback((nodeId: string) => {
@@ -285,7 +285,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         </div>
       );
     },
-    [clan, nodes, t, treeId, toggleNode, canLearnNode]
+    [clan, nodes, t, treeId, toggleNode, canLearnNode],
   );
 
   // Zoom controls
@@ -320,7 +320,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       setPosition((prev) => ({ x: prev.x + dx, y: prev.y + dy }));
       setDragStart({ x: e.clientX, y: e.clientY });
     },
-    [isDragging, dragStart]
+    [isDragging, dragStart],
   );
 
   const handleMouseUp = useCallback(() => {
