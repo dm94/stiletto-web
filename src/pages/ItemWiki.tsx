@@ -53,7 +53,9 @@ const ItemWiki = () => {
   const [allItems, setAllItems] = useState<Item[]>([]);
   const [textColor, setTextColor] = useState<string>("text-gray-400");
 
-  const rarity = (rarityParam as Rarity) ?? Rarity.Common;
+  const rarity = Object.values(Rarity).includes(rarityParam as Rarity)
+    ? (rarityParam as Rarity)
+    : Rarity.Common;
 
   useEffect(() => {
     const loadData = async () => {
