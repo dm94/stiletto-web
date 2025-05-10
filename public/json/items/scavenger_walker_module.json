@@ -1,9 +1,9 @@
 {
-  "name": "Bullrush Module",
-  "type": "RespawnTimeBoost_C",
+  "name": "Scavenger Walker Module",
+  "type": "WalkerLegItemLootingModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Stacking this module decreases the wait time before respawning on a walker.",
+  "description": "Walker legs will automatically pick up dropped items when travelling at slow speed. Stacking this module increases the maximum speed at which items are picked up.",
   "experiencieReward": 65,
   "crafting": [
     {
@@ -18,7 +18,7 @@
         },
         {
           "count": 1,
-          "name": "Gasket"
+          "name": "Shackle"
         }
       ],
       "station": "Module Fabricator",
@@ -27,8 +27,7 @@
   ],
   "moduleInfo": {
     "max": 20,
-    "increase": 4,
-    "maxIncrease": 80
+    "increase": 5
   },
   "droppedBy": [
     {

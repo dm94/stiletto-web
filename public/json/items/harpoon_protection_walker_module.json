@@ -1,24 +1,22 @@
 {
-  "name": "Armoury Module",
-  "type": "GearCapacityBoost_C",
+  "name": "Harpoon Protection Walker Module",
+  "type": "WalkerTetherProtectionModule_C",
   "category": "Resources",
-  "weight": 0.24,
-  "description": "Stacking this module increases the capacity of a walker's Armor and Weapons container.",
-  "experiencieReward": 65,
+  "description": "Makes tethers attached to the walker easier to snap.",
   "crafting": [
     {
       "ingredients": [
         {
           "count": 1,
-          "name": "Strut"
+          "name": "Spring"
         },
         {
           "count": 1,
-          "name": "Gasket"
+          "name": "Shackle"
         },
         {
           "count": 1,
-          "name": "Lever"
+          "name": "Cog"
         }
       ],
       "station": "Module Fabricator",
@@ -27,7 +25,8 @@
   ],
   "moduleInfo": {
     "max": 20,
-    "increase": 1
+    "increase": 4.5,
+    "maxIncrease": 90
   },
   "droppedBy": [
     {

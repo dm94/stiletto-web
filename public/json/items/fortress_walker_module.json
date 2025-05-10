@@ -1,6 +1,6 @@
 {
-  "name": "Fortress Module",
-  "type": "StructuresArmorBoost_C",
+  "name": "Fortress Walker Module",
+  "type": "WalkerArmorModule_C",
   "category": "Resources",
   "weight": 0.24,
   "description": "Stacking this module increases the armor value of all structures attached to a walker.",
@@ -14,11 +14,11 @@
         },
         {
           "count": 1,
-          "name": "Cam"
+          "name": "Lever"
         },
         {
           "count": 1,
-          "name": "Shackle"
+          "name": "Cog"
         }
       ],
       "station": "Module Fabricator",

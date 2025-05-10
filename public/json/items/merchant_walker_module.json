@@ -1,9 +1,9 @@
 {
-  "name": "Craftsman Module",
-  "type": "CraftingTimeBoost_C",
+  "name": "Merchant Walker Module",
+  "type": "WalkerCargoModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Stacking this module decreases the crafting time of stations attached to a walker.",
+  "description": "Stacking this module increases the storage capacity of a walker's Cargo container.",
   "experiencieReward": 65,
   "crafting": [
     {
@@ -14,11 +14,11 @@
         },
         {
           "count": 1,
-          "name": "Unusedam"
+          "name": "Spring"
         },
         {
           "count": 1,
-          "name": "Shackle"
+          "name": "Lever"
         }
       ],
       "station": "Module Fabricator",
@@ -27,8 +27,7 @@
   ],
   "moduleInfo": {
     "max": 20,
-    "increase": 4.5,
-    "maxIncrease": 90
+    "increase": 1
   },
   "droppedBy": [
     {

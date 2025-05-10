@@ -1,23 +1,24 @@
 {
-  "name": "Hardening Module",
-  "type": "HullHardeningBoost_C",
+  "name": "Lifeforce Walker Module",
+  "type": "WalkerRespawnEffectModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Stacking this module reduces damage to a walker from all sources except those that can damage Reinforced armor.",
+  "description": "Nomads that respawn on a walker will recieve a beneficial status effect. Stacking this module increases the potency of this effect.",
+  "experiencieReward": 65,
   "crafting": [
     {
       "ingredients": [
-        {
-          "count": 1,
-          "name": "Spline"
-        },
         {
           "count": 1,
           "name": "Spring"
         },
         {
           "count": 1,
-          "name": "Rotor"
+          "name": "Strut"
+        },
+        {
+          "count": 1,
+          "name": "Shackle"
         }
       ],
       "station": "Module Fabricator",
@@ -25,9 +26,7 @@
     }
   ],
   "moduleInfo": {
-    "max": 20,
-    "increase": 2.5,
-    "maxIncrease": 50
+    "max": 20
   },
   "droppedBy": [
     {

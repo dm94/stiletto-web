@@ -1,5 +1,6 @@
 {
   "name": "Phosphorus",
+  "parent": "Stomping Station",
   "type": "Phosphorus_C",
   "category": "Resources",
   "trade_price": 0.4,

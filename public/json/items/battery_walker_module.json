@@ -1,24 +1,24 @@
 {
-  "name": "Lumberjack Module",
-  "type": "LegLoggingBoost_C",
+  "name": "Battery Walker Module",
+  "type": "WalkerTorqueCapacityBoost_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Walker legs will chop wood when they impact with trees. Stacking this module increases the amount of wood.",
+  "description": "Stacking this module increases the torque battery's maximum capacity.",
   "experiencieReward": 65,
   "crafting": [
     {
       "ingredients": [
         {
           "count": 1,
-          "name": "Gasket"
+          "name": "Strut"
         },
         {
           "count": 1,
-          "name": "Spring"
+          "name": "Lever"
         },
         {
           "count": 1,
-          "name": "Spline"
+          "name": "Shackle"
         }
       ],
       "station": "Module Fabricator",
@@ -27,14 +27,14 @@
   ],
   "moduleInfo": {
     "max": 20,
-    "increase": 1
+    "increase": 100
   },
   "droppedBy": [
     {
       "name": "Loot Box Modules",
       "chance": 5.263158,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "tier": null
     }
   ]

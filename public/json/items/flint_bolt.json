@@ -56,7 +56,7 @@
     }
   ],
   "projectileDamage": {
-    "damage": 40,
+    "damage": 60,
     "penetration": 10
   },
   "toolInfo": [

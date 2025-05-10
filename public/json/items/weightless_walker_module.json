@@ -1,24 +1,24 @@
 {
-  "name": "Sandy Module",
-  "type": "SandinessReductionBoost_C",
+  "name": "Weightless Walker Module",
+  "type": "WalkerWeightlessModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Stacking this module increases the rate at which sand is removed from a walker's gears after travelling.",
+  "description": "Stacking this module decreases the weight of a packed base.",
   "experiencieReward": 65,
   "crafting": [
     {
       "ingredients": [
         {
           "count": 1,
-          "name": "Pinion"
+          "name": "Spline"
+        },
+        {
+          "count": 1,
+          "name": "Spring"
         },
         {
           "count": 1,
           "name": "Strut"
-        },
-        {
-          "count": 1,
-          "name": "Sprocket"
         }
       ],
       "station": "Module Fabricator",

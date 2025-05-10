@@ -1,6 +1,6 @@
 {
-  "name": "Hearth Module",
-  "type": "RespawnCostBoost_C",
+  "name": "Hearth Walker Module",
+  "type": "WalkerRespawnCostModule_C",
   "category": "Resources",
   "weight": 0.24,
   "description": "Stacking this module decreases the water cost of respawning on walker.",
@@ -14,11 +14,11 @@
         },
         {
           "count": 1,
-          "name": "Shackle"
+          "name": "Spline"
         },
         {
           "count": 1,
-          "name": "Sprocket"
+          "name": "Strut"
         }
       ],
       "station": "Module Fabricator",
