@@ -1,5 +1,6 @@
 import { config } from "@config/config";
 import { supportedLanguages } from "@config/languages";
+import type { Rarity } from "@ctypes/item";
 
 export const getDomain = () =>
   window.location.protocol.concat("//").concat(window.location.hostname) +
@@ -11,19 +12,18 @@ export const getItemCodedName = (itemName: string) =>
 export const getItemDecodedName = (itemName: string) =>
   decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase().trim();
 
-/**
- * Obtiene el prefijo de idioma válido para las URLs
- * @returns El prefijo de idioma con la barra inicial si es válido, o cadena vacía
- */
 const getValidLangPrefix = (): string => {
-  const currentLang = window.location.pathname.split('/').filter(Boolean)[0];
+  const currentLang = window.location.pathname.split("/").filter(Boolean)[0];
   const supportedLangCodes = supportedLanguages.map((lang) => lang.key);
-  return supportedLangCodes.includes(currentLang) && currentLang ? `/${currentLang}` : '';
+  return supportedLangCodes.includes(currentLang) && currentLang
+    ? `/${currentLang}`
+    : "";
 };
 
-export const getItemUrl = (itemName: string) => {
+export const getItemUrl = (itemName: string, rarity?: Rarity) => {
   const langPrefix = getValidLangPrefix();
-  return `${langPrefix}/item/${encodeURI(getItemCodedName(itemName))}`;
+  const rarityPath = rarity ? `/${rarity}` : "";
+  return `${langPrefix}/item/${encodeURI(getItemCodedName(itemName))}${rarityPath}`;
 };
 
 export const getCreatureUrl = (creatureName: string) => {

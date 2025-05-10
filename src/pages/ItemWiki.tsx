@@ -7,7 +7,7 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { getItems, getItemInfo } from "@functions/github";
-import { Navigate, useParams } from "react-router";
+import { Navigate, useParams, useNavigate } from "react-router";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
 import Icon from "@components/Icon";
@@ -27,31 +27,33 @@ import HeaderMeta from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
 
 const WikiDescription = React.lazy(
-  () => import("@components/Wiki/WikiDescription")
+  () => import("@components/Wiki/WikiDescription"),
 );
 const SchematicDropInfo = React.lazy(
-  () => import("@components/Wiki/SchematicDropInfo")
+  () => import("@components/Wiki/SchematicDropInfo"),
 );
 const DropsInfo = React.lazy(() => import("@components/Wiki/DropsInfo"));
 const CanBeUsedInfo = React.lazy(
-  () => import("@components/Wiki/CanBeUsedInfo")
+  () => import("@components/Wiki/CanBeUsedInfo"),
 );
 const SchematicItems = React.lazy(
-  () => import("@components/Wiki/SchematicItems")
+  () => import("@components/Wiki/SchematicItems"),
 );
 const CreatureDropsInfo = React.lazy(
-  () => import("@components/Wiki/CreatureDropsInfo")
+  () => import("@components/Wiki/CreatureDropsInfo"),
 );
 
 const ItemWiki = () => {
   const { t } = useTranslation();
-  const { name } = useParams();
+  const navigate = useNavigate();
+  const { name, rarity: rarityParam } = useParams();
   const [item, setItem] = useState<Item>();
   const [itemInfo, setItemInfo] = useState<ItemCompleteInfo>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [allItems, setAllItems] = useState<Item[]>([]);
-  const [rarity, setRarity] = useState<string>("Common");
   const [textColor, setTextColor] = useState<string>("text-gray-400");
+
+  const rarity = (rarityParam as Rarity) ?? Rarity.Common;
 
   useEffect(() => {
     const loadData = async () => {
@@ -63,7 +65,7 @@ const ItemWiki = () => {
       const items = await getItems();
       if (items) {
         const foundItem = items.find(
-          (it) => it.name.toLowerCase() === itemName
+          (it) => it.name.toLowerCase() === itemName,
         );
         setItem(foundItem);
         setAllItems(items);
@@ -117,13 +119,11 @@ const ItemWiki = () => {
           </div>
         </div>
       ),
-    [itemInfo?.description, t]
+    [itemInfo?.description, t],
   );
 
-  const updateRarity = useCallback((value: Rarity) => {
-    setRarity(value);
-
-    switch (value) {
+  useEffect(() => {
+    switch (rarity) {
       case Rarity.Common:
         setTextColor("text-gray-400");
         break;
@@ -142,7 +142,16 @@ const ItemWiki = () => {
       default:
         setTextColor("text-gray-400");
     }
-  }, []);
+  }, [rarity]);
+
+  const updateRarity = useCallback(
+    (value: Rarity) => {
+      if (name) {
+        navigate(getItemUrl(name, value));
+      }
+    },
+    [name, navigate],
+  );
 
   const getRarityClass = useCallback(
     (value: Rarity) => {
@@ -187,7 +196,7 @@ const ItemWiki = () => {
         rarity === value ? "bg-opacity-20" : ""
       }`;
     },
-    [rarity]
+    [rarity],
   );
 
   const loadingItemPart = () => (
@@ -220,7 +229,7 @@ const ItemWiki = () => {
       <HeaderMeta
         title={`${itemName} - Stiletto for Last Oasis`}
         description={`All information for ${itemName}`}
-        cannonical={getItemUrl(itemName)}
+        cannonical={getItemUrl(itemName, rarity)}
       />
       <div className="flex flex-wrap -mx-4">
         <div className="w-full md:w-1/2 px-4">
@@ -287,7 +296,7 @@ const ItemWiki = () => {
                         rarity,
                         "weight",
                         itemInfo.category,
-                        itemInfo.weight
+                        itemInfo.weight,
                       )}
                     </div>
                   </li>
@@ -302,7 +311,7 @@ const ItemWiki = () => {
                         rarity,
                         "experiencieReward",
                         itemInfo.category,
-                        itemInfo.experiencieReward
+                        itemInfo.experiencieReward,
                       )}
                     </div>
                   </li>
@@ -315,7 +324,7 @@ const ItemWiki = () => {
                         rarity,
                         "durability",
                         itemInfo.category,
-                        itemInfo.durability
+                        itemInfo.durability,
                       )}
                     </div>
                   </li>
@@ -345,8 +354,8 @@ const ItemWiki = () => {
                     type="button"
                     aria-pressed={rarity === rar}
                     className={`${getRarityClass(
-                      rar
-                    )} flex items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${
+                      rar,
+                    )} flex capitalize items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${
                       rarity === rar ? "ring-2 ring-opacity-50" : ""
                     }`}
                     onClick={() => updateRarity(rar)}

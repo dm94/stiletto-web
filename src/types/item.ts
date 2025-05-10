@@ -1,9 +1,9 @@
 export enum Rarity {
-  Common = "Common",
-  Uncommon = "Uncommon",
-  Rare = "Rare",
-  Epic = "Epic",
-  Legendary = "Legendary",
+  Common = "common",
+  Uncommon = "uncommon",
+  Rare = "rare",
+  Epic = "epic",
+  Legendary = "legendary",
 }
 
 export type ItemIngredient = {
