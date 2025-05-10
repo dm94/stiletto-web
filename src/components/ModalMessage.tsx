@@ -35,7 +35,7 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
   useEffect(() => {
     sendEvent(AnalyticsEvent.MODAL, {
       props: {
-        action: message?.isError ? "Error" : "Information",
+        action: message?.isError ? "error" : "information",
         label: message?.text,
       },
     });
