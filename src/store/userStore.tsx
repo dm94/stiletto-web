@@ -132,7 +132,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       refreshUserProfile,
     }),
     // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-    [isConnected, userProfile, isLoading, login, logout, refreshUserProfile]
+    [isConnected, userProfile, isLoading, login, logout, refreshUserProfile],
   );
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

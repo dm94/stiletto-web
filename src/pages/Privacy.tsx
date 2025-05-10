@@ -13,7 +13,7 @@ const Privacy = () => {
       <HeaderMeta
         title={t("privacy.title")}
         description={t("privacy.description")}
-        cannonical={canonicalUrl}
+        canonical={canonicalUrl}
       />
       <div className="w-full mb-8">
         <h2 className="text-3xl font-bold text-gray-300 text-center mb-4">

@@ -117,7 +117,7 @@ const CreatureWiki = () => {
       <HeaderMeta
         title={`${creatureName} - Stiletto for Last Oasis`}
         description={`All information for ${creatureName}`}
-        cannonical={getCreatureUrl(creatureName)}
+        canonical={getCreatureUrl(creatureName)}
       />
       <div className="flex flex-wrap -mx-4">
         <div className="w-full md:w-1/2 px-4">

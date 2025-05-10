@@ -23,7 +23,7 @@ const MapPage: React.FC = () => {
       <HeaderMeta
         title="Interactive Resource Map - Stiletto for Last Oasis"
         description="Interactive Map of resources shared through a link"
-        cannonical={`${getDomain()}/map`}
+        canonical={`${getDomain()}/map`}
       >
         <meta
           name="twitter:image"

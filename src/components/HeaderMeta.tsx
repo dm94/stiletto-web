@@ -4,14 +4,14 @@ import { Helmet } from "react-helmet";
 interface HeaderMetaProps {
   title: string;
   description: string;
-  cannonical: string;
+  canonical: string;
   children?: React.ReactNode;
 }
 
 const HeaderMeta: React.FC<HeaderMetaProps> = ({
   title,
   description,
-  cannonical,
+  canonical,
   children,
 }) => {
   return (
@@ -21,7 +21,7 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <link rel="canonical" href={cannonical} />
+      <link rel="canonical" href={canonical} />
       {children}
     </Helmet>
   );

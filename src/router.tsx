@@ -39,6 +39,7 @@ const AppRoutes: React.ReactElement = (
     <Route path="tech/" element={<TechTree />} />
     <Route path="privacy" element={<Privacy />} />
     <Route path="item/:name" element={<ItemWiki />} />
+    <Route path="item/:name/:rarity" element={<ItemWiki />} />
     <Route path="item" element={<Wiki />} />
     <Route path="creature/:name" element={<CreatureWiki />} />
     <Route path="creature" element={<Wiki />} />
