@@ -10,11 +10,17 @@ export const getItemCodedName = (itemName: string) =>
 export const getItemDecodedName = (itemName: string) =>
   decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase().trim();
 
-export const getItemUrl = (itemName: string) =>
-  `${getDomain()}/item/${encodeURI(getItemCodedName(itemName))}`;
+export const getItemUrl = (itemName: string) => {
+  const currentLang = window.location.pathname.split('/').filter(Boolean)[0];
+  const langPrefix = currentLang ? `/${currentLang}` : '';
+  return `${langPrefix}/item/${encodeURI(getItemCodedName(itemName))}`;
+};
 
-export const getCreatureUrl = (creatureName: string) =>
-  `${getDomain()}/creature/${encodeURI(getItemCodedName(creatureName))}`;
+export const getCreatureUrl = (creatureName: string) => {
+  const currentLang = window.location.pathname.split('/').filter(Boolean)[0];
+  const langPrefix = currentLang ? `/${currentLang}` : '';
+  return `${langPrefix}/creature/${encodeURI(getItemCodedName(creatureName))}`;
+};
 
 export const getItemCraftUrl = (itemName: string) =>
   `${getDomain()}/crafter?craft=${encodeURI(itemName.toLowerCase())}`;
