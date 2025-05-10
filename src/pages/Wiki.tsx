@@ -4,7 +4,7 @@ import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import { getItems, getCreatures } from "@functions/github";
-import { sendEvent } from "@functions/page-tracking";
+import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import { useLocation, useNavigate } from "react-router";
@@ -110,7 +110,7 @@ const Wiki = () => {
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const searchContent = useCallback(
     (search = searchText, category = categoryFilter) => {
-      sendEvent("search", { props: { term: search } });
+      sendEvent(AnalyticsEvent.SEARCH, { props: { term: search } });
 
       if (contentType === "items") {
         let filtered = items;

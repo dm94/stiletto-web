@@ -1,7 +1,7 @@
 import type React from "react";
 import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { sendEvent } from "@functions/page-tracking";
+import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { useEffect } from "react";
 
 export interface MessageProps {
@@ -33,7 +33,7 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    sendEvent("modal", {
+    sendEvent(AnalyticsEvent.MODAL, {
       props: {
         action: message?.isError ? "Error" : "Information",
         label: message?.text,

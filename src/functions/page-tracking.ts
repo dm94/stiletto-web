@@ -40,12 +40,21 @@ export const usePageTracking = (): void => {
   }, []);
 };
 
+export enum AnalyticsEvent {
+  SHARE = "share",
+  SEARCH = "search",
+  MODAL = "modal",
+}
+
 /**
  * Send an event to Plausible analytics
  * @param eventName - The name of the event
  * @param options - Optional event properties
  */
-export const sendEvent = (eventName: string, props?: EventProps): void => {
+export const sendEvent = (
+  eventName: AnalyticsEvent,
+  props?: EventProps,
+): void => {
   initPlausible();
 
   if (typeof window !== "undefined" && window.plausible) {
