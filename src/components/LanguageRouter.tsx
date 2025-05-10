@@ -27,7 +27,9 @@ const LanguageRouter: React.FC<LanguageRouterProps> = ({ children }) => {
     if (!firstSegment) {
       navigate(`/${DEFAULT_LANGUAGE}${queryParams}`, { replace: true });
     } else if (!supportedLangCodes.includes(firstSegment)) {
-      const newPath = `/${DEFAULT_LANGUAGE}${location.pathname}${queryParams}`;
+      const remainingPath =
+        pathSegments.length > 1 ? `/${pathSegments.slice(1).join("/")}` : "";
+      const newPath = `/${DEFAULT_LANGUAGE}${remainingPath}${queryParams}`;
       navigate(newPath, { replace: true });
     }
   }, [location, navigate, supportedLangCodes]);

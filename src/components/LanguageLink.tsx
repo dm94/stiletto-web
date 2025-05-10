@@ -50,7 +50,11 @@ const LanguageLink: React.FC<LinkProps> = ({ to, children, ...props }) => {
   const newTo =
     typeof to === "string"
       ? getLanguagePrefixedPath(to)
-      : { ...to, pathname: getLanguagePrefixedPath(to.pathname || "/") };
+      : {
+          ...to,
+          pathname: getLanguagePrefixedPath(to.pathname || "/"),
+          search: to.search ?? "",
+        };
 
   return (
     <Link to={newTo} {...props}>
