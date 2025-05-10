@@ -25,6 +25,7 @@
       "@store/*": ["src/store/*"],
       "@ctypes": ["src/types"],
       "@ctypes/*": ["src/types/*"],
+      "@hooks/*": ["src/hooks/*"],
     },
     /* Linting */
     "strict": true,
