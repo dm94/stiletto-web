@@ -24,7 +24,7 @@ const LanguageLink: React.FC<LinkProps> = ({ to, children, ...props }) => {
     }
 
     // If not in the URL, use the language from i18n
-    return i18n.language?.split("-")[0] || DEFAULT_LANGUAGE;
+    return i18n.language?.split("-")[0] ?? DEFAULT_LANGUAGE;
   };
 
   // Build the path with the language prefix
@@ -52,7 +52,7 @@ const LanguageLink: React.FC<LinkProps> = ({ to, children, ...props }) => {
       ? getLanguagePrefixedPath(to)
       : {
           ...to,
-          pathname: getLanguagePrefixedPath(to.pathname || "/"),
+          pathname: getLanguagePrefixedPath(to.pathname ?? "/"),
           search: to.search ?? "",
         };
 
