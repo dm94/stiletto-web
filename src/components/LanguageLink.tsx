@@ -37,6 +37,7 @@ const LanguageLink: React.FC<LinkProps> = ({ to, children, ...props }) => {
       : path;
     const segments = pathWithoutLeadingSlash.split("/");
 
+    // If the first segment is a valid language code, do not modify the route
     if (segments[0] && supportedLangCodes.includes(segments[0])) {
       return path;
     }

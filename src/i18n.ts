@@ -3,6 +3,9 @@ import HttpApi from "i18next-http-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
 import { initReactI18next } from "react-i18next";
 import { DEFAULT_LANGUAGE } from "./config/config";
+import { supportedLanguages } from "./config/languages";
+
+const languageWhitelist = supportedLanguages.map((lang) => lang.key);
 
 i18n
   .use(HttpApi)
@@ -14,6 +17,7 @@ i18n
     preload: [DEFAULT_LANGUAGE],
     ns: ["translation", "items"],
     defaultNS: "translation",
+    supportedLngs: languageWhitelist,
     detection: {
       // Detection order: first URL, then localStorage, etc.
       order: ["path", "localStorage", "navigator"],
@@ -23,6 +27,8 @@ i18n
       convertPathToLanguage: (lng: string) => lng.toLowerCase(),
       // Save the language in localStorage when detected from URL
       caches: ["localStorage"],
+      // Only consider valid language codes from our supported languages list
+      checkWhitelist: true,
     },
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",

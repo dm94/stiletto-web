@@ -20,12 +20,8 @@ import CreatureWiki from "@pages/CreatureWiki";
 import Wiki from "@pages/Wiki";
 import NotFoundPage from "@pages/NotFound";
 
-// Definir las rutas de la aplicación
-// Estas rutas se utilizarán dentro del contexto de LanguageRouter
-// que añade el prefijo de idioma automáticamente
 const AppRoutes: React.ReactElement = (
   <Routes>
-    {/* Rutas principales de la aplicación */}
     <Route path="" element={<Home />} />
     <Route path="profile" element={<DiscordConnection />} />
     <Route path="crafter" element={<Crafter />} />
