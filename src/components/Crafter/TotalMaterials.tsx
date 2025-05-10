@@ -3,7 +3,7 @@ import { memo, useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import ListIngredients from "./ListIngredients";
 import Icon from "../Icon";
-import { sendEvent } from "@functions/page-tracking";
+import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { sendNotification } from "@functions/broadcast";
 import { getDomain, getItemUrl } from "@functions/utils";
 import { addRecipe } from "@functions/requests/recipes";
@@ -20,7 +20,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
     const { t } = useTranslation();
 
     const addRecipeRequest = useCallback(async (): Promise<void> => {
-      sendEvent("share", {
+      sendEvent(AnalyticsEvent.SHARE, {
         props: {
           action: "addRecipe",
         },
@@ -133,7 +133,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
     }, [selectedItems]);
 
     const copyMaterials = useCallback((): void => {
-      sendEvent("share", {
+      sendEvent(AnalyticsEvent.SHARE, {
         props: {
           action: "copyMaterials",
         },
