@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useRef, type KeyboardEvent } from "react";
-import { Link } from "react-router";
+import LanguageLink from "./LanguageLink";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
 import { useUser } from "@store/userStore";
@@ -60,7 +60,7 @@ const Menu: React.FC<MenuProps> = ({
     <header className="bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap md:flex-nowrap items-center justify-between py-2">
-          <Link
+          <LanguageLink
             to="/"
             className="flex items-center space-x-2 text-white"
             onClick={closeMenu}
@@ -73,7 +73,7 @@ const Menu: React.FC<MenuProps> = ({
               className="align-top"
               src="/img/icon-01.png"
             />
-          </Link>
+          </LanguageLink>
 
           {/* Mobile menu button */}
           <button
@@ -109,58 +109,58 @@ const Menu: React.FC<MenuProps> = ({
           >
             <ul className="flex flex-col md:flex-row md:space-x-4 mt-4 md:mt-0">
               <li className="nav-item" data-cy="crafter-link">
-                <Link
+                <LanguageLink
                   to="/crafter"
                   className="block py-2 text-white hover:text-gray-300"
                   onClick={closeMenu}
                 >
                   {t("menu.crafting")}
-                </Link>
+                </LanguageLink>
               </li>
               <li className="nav-item" data-cy="maps-link">
-                <Link
+                <LanguageLink
                   to={isConnected ? "/maps" : "/map"}
                   className="block py-2 text-white hover:text-gray-300"
                   onClick={closeMenu}
                 >
                   {t("menu.resourceMaps")}
-                </Link>
+                </LanguageLink>
               </li>
               <li className="nav-item" data-cy="clanlist-link">
-                <Link
+                <LanguageLink
                   to="/clanlist"
                   className="block py-2 text-white hover:text-gray-300"
                   onClick={closeMenu}
                 >
                   {t("menu.clanList")}
-                </Link>
+                </LanguageLink>
               </li>
               <li className="nav-item" data-cy="trades-link">
-                <Link
+                <LanguageLink
                   to="/trades"
                   className="block py-2 text-white hover:text-gray-300"
                   onClick={closeMenu}
                 >
                   {t("menu.trades")}
-                </Link>
+                </LanguageLink>
               </li>
               <li className="nav-item" data-cy="wiki-link">
-                <Link
+                <LanguageLink
                   to="/wiki"
                   className="block py-2 text-white hover:text-gray-300"
                   onClick={closeMenu}
                 >
                   {t("menu.wiki")}
-                </Link>
+                </LanguageLink>
               </li>
               <li className="nav-item" data-cy="tech-link">
-                <Link
+                <LanguageLink
                   to="/tech"
                   className="block py-2 text-white hover:text-gray-300"
                   onClick={closeMenu}
                 >
                   {t("menu.techTree")}
-                </Link>
+                </LanguageLink>
               </li>
             </ul>
 

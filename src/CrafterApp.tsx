@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import i18next from "i18next";
+import { supportedLanguages } from "@config/languages";
 import { Helmet } from "react-helmet";
 import VanillaCookieConsent from "@components/VanillaCookieConsent";
 import Menu from "@components/Menu";
@@ -64,6 +65,23 @@ const CrafterApp: React.FC = () => {
 function switchLanguage(lng: string): void {
   storeItem("i18nextLng", lng);
   i18next.changeLanguage(lng);
+
+  // Redirigir a la misma página pero con el nuevo prefijo de idioma
+  const currentPath = window.location.pathname;
+  const pathSegments = currentPath.split("/").filter(Boolean);
+
+  // Verificar si el primer segmento es un código de idioma
+  const supportedLangCodes = supportedLanguages.map((lang) => lang.key);
+  const firstSegment = pathSegments[0];
+
+  if (firstSegment && supportedLangCodes.includes(firstSegment)) {
+    // Reemplazar el código de idioma actual con el nuevo
+    pathSegments[0] = lng;
+    window.location.href = `/${pathSegments.join("/")}${window.location.search}`;
+  } else {
+    // Añadir el código de idioma al inicio de la ruta
+    window.location.href = `/${lng}${currentPath}${window.location.search}`;
+  }
 }
 
 export default CrafterApp;
