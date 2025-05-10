@@ -48,7 +48,8 @@ export const useLanguagePrefix = () => {
     }
 
     // Add the language prefix to the path
-    return `/${currentLang}${path.startsWith("/") ? path : `/${path}`}`;
+    const pathWithPrefix = path.startsWith("/") ? path : `/${path}`;
+    return `/${currentLang}${pathWithPrefix}`;
   };
 
   return { getLanguagePrefixedPath, getCurrentLanguage };
