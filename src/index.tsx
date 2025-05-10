@@ -7,9 +7,12 @@ import "./styles/tribal-ui.css";
 import "./styles/desert-theme.css";
 import { BrowserRouter } from "react-router";
 import "./i18n";
+import LanguageRouter from "@components/LanguageRouter";
 
 createRoot(document.getElementById("root") as HTMLElement).render(
   <BrowserRouter>
-    <CrafterApp />
+    <LanguageRouter>
+      <CrafterApp />
+    </LanguageRouter>
   </BrowserRouter>,
 );

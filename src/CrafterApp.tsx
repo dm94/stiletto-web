@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import i18next from "i18next";
+import { supportedLanguages } from "@config/languages";
 import { Helmet } from "react-helmet";
 import VanillaCookieConsent from "@components/VanillaCookieConsent";
 import Menu from "@components/Menu";
@@ -64,6 +65,21 @@ const CrafterApp: React.FC = () => {
 function switchLanguage(lng: string): void {
   storeItem("i18nextLng", lng);
   i18next.changeLanguage(lng);
+
+  const currentPath = window.location.pathname;
+  const pathSegments = currentPath.split("/").filter(Boolean);
+
+  const supportedLangCodes = supportedLanguages.map((lang) => lang.key);
+  const firstSegment = pathSegments[0];
+
+  if (firstSegment && supportedLangCodes.includes(firstSegment)) {
+    pathSegments[0] = lng;
+    const normalizedPath = `/${pathSegments.join("/")}`;
+    window.location.href = `${normalizedPath.replace(/\/+/g, "/")}${window.location.search}`;
+  } else {
+    const normalizedPath = `/${lng}${currentPath}`;
+    window.location.href = `${normalizedPath.replace(/\/+/g, "/")}${window.location.search}`;
+  }
 }
 
 export default CrafterApp;
