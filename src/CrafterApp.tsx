@@ -74,9 +74,11 @@ function switchLanguage(lng: string): void {
 
   if (firstSegment && supportedLangCodes.includes(firstSegment)) {
     pathSegments[0] = lng;
-    window.location.href = `/${pathSegments.join("/")}${window.location.search}`;
+    const normalizedPath = `/${pathSegments.join("/")}`;
+    window.location.href = `${normalizedPath.replace(/\/+/g, "/")}${window.location.search}`;
   } else {
-    window.location.href = `/${lng}${currentPath}${window.location.search}`;
+    const normalizedPath = `/${lng}${currentPath}`;
+    window.location.href = `${normalizedPath.replace(/\/+/g, "/")}${window.location.search}`;
   }
 }
 
