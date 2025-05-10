@@ -21,11 +21,13 @@ const LanguageRouter: React.FC<LanguageRouterProps> = ({ children }) => {
     // Extract the first segment of the path to check if it's a language code
     const pathSegments = location.pathname.split("/").filter(Boolean);
     const firstSegment = pathSegments[0];
+    // Preserve query parameters during redirects
+    const queryParams = location.search ?? "";
 
     if (!firstSegment) {
-      navigate(`/${DEFAULT_LANGUAGE}`, { replace: true });
+      navigate(`/${DEFAULT_LANGUAGE}${queryParams}`, { replace: true });
     } else if (!supportedLangCodes.includes(firstSegment)) {
-      const newPath = `/${DEFAULT_LANGUAGE}${location.pathname}`;
+      const newPath = `/${DEFAULT_LANGUAGE}${location.pathname}${queryParams}`;
       navigate(newPath, { replace: true });
     }
   }, [location, navigate, supportedLangCodes]);
