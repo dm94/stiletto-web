@@ -267,7 +267,7 @@ const TechTree = () => {
         <HeaderMeta
           title="Tech Tree - Stiletto for Last Oasis"
           description="View and control your clan's technology tree"
-          cannonical={`${getDomain()}/tech`}
+          canonical={`${getDomain()}/tech`}
         />
         <LoadingScreen />
       </Fragment>
@@ -279,7 +279,7 @@ const TechTree = () => {
       <HeaderMeta
         title="Tech Tree - Stiletto for Last Oasis"
         description="View and control your clan's technology tree"
-        cannonical={`${getDomain()}/tech`}
+        canonical={`${getDomain()}/tech`}
       />
       <nav className="w-full">
         <div

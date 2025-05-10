@@ -229,7 +229,7 @@ const ItemWiki = () => {
       <HeaderMeta
         title={`${itemName} - Stiletto for Last Oasis`}
         description={`All information for ${itemName}`}
-        cannonical={getItemUrl(itemName, rarity)}
+        canonical={getItemUrl(itemName, rarity)}
       />
       <div className="flex flex-wrap -mx-4">
         <div className="w-full md:w-1/2 px-4">
