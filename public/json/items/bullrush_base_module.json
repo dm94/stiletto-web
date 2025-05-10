@@ -1,0 +1,33 @@
+{
+  "name": "Bullrush Base Module",
+  "type": "BaseRespawnTimeModule_C",
+  "category": "Resources",
+  "weight": 0.24,
+  "description": "Stacking this module decreases the wait time before respawning on a base.",
+  "experiencieReward": 65,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Spring"
+        },
+        {
+          "count": 1,
+          "name": "Strut"
+        },
+        {
+          "count": 1,
+          "name": "Cog"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 4,
+    "maxIncrease": 80
+  }
+}

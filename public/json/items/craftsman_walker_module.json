@@ -1,23 +1,24 @@
 {
-  "name": "Pack Speed Module",
-  "type": "PackingTimeBoost_C",
+  "name": "Craftsman Walker Module",
+  "type": "WalkerCraftingTimeModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Decreases the time it takes to pack bases and structures.",
+  "description": "Stacking this module decreases the crafting time of stations attached to a walker.",
+  "experiencieReward": 65,
   "crafting": [
     {
       "ingredients": [
         {
           "count": 1,
-          "name": "Rotor"
+          "name": "Spline"
         },
         {
           "count": 1,
-          "name": "Strut"
+          "name": "Spring"
         },
         {
           "count": 1,
-          "name": "Pinion"
+          "name": "Shackle"
         }
       ],
       "station": "Module Fabricator",

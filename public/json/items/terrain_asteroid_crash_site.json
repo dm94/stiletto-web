@@ -1,0 +1,7 @@
+{
+  "name": "Terrain: Asteroid Crash Site",
+  "type": "IronOre_GroundSource_C",
+  "category": "Resources",
+  "weight": 1,
+  "wikiVisibility": false
+}

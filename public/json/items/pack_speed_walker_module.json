@@ -1,22 +1,23 @@
 {
-  "name": "Harpoon Protection Module",
-  "type": "TetherProtectionBoost_C",
+  "name": "Pack Speed Walker Module",
+  "type": "WalkerPackingTimeModule_C",
   "category": "Resources",
-  "description": "Makes tethers attached to the walker easier to snap.",
+  "weight": 0.24,
+  "description": "Decreases the time it takes to pack bases and structures.",
   "crafting": [
     {
       "ingredients": [
         {
           "count": 1,
-          "name": "Rotor"
-        },
-        {
-          "count": 1,
-          "name": "Bearing"
-        },
-        {
-          "count": 1,
           "name": "Spline"
+        },
+        {
+          "count": 1,
+          "name": "Shackle"
+        },
+        {
+          "count": 1,
+          "name": "Cog"
         }
       ],
       "station": "Module Fabricator",

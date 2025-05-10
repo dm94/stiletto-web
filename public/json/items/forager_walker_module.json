@@ -1,6 +1,6 @@
 {
-  "name": "Forager Module",
-  "type": "LegHarvestingBoost_C",
+  "name": "Forager Walker Module",
+  "type": "WalkerLegHarvestingModule_C",
   "category": "Resources",
   "weight": 0.24,
   "description": "Walker legs will automatically harvest foliage when travelling at slow speed. Stacking this module increases the amount of foliage harvested.",
@@ -10,15 +10,15 @@
       "ingredients": [
         {
           "count": 1,
-          "name": "Shackle"
+          "name": "Spline"
         },
         {
           "count": 1,
-          "name": "Pinion"
+          "name": "Strut"
         },
         {
           "count": 1,
-          "name": "Cam"
+          "name": "Cog"
         }
       ],
       "station": "Module Fabricator",

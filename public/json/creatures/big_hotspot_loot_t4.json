@@ -33,70 +33,140 @@
     },
     {
       "name": "Iron Studded Boots",
-      "chance": 33.333332,
+      "chance": 30.30303,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Iron Studded Gauntlets",
-      "chance": 33.333332,
+      "chance": 30.30303,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Iron Studded Armor",
-      "chance": 33.333332,
+      "chance": 30.30303,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Nibirian Boots",
+      "chance": 3.030303,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Nibirian Gauntlets",
+      "chance": 3.030303,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t4"
+    },
+    {
+      "name": "Nibirian Armor",
+      "chance": 3.030303,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Wyndan Hand Axe",
-      "chance": 14.285714,
+      "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Hammer",
-      "chance": 14.285714,
+      "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Sabre",
-      "chance": 14.285714,
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Nibiran Hand Axe",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Nibiran Hammer",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Nibiran Curved Dagger",
+      "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndanblade Quarterstaff",
-      "chance": 14.285714,
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Ironblade Quarterstaff",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Nibiran Quarterstaff",
+      "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Battle Axe",
-      "chance": 14.285714,
+      "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Warhammer",
-      "chance": 14.285714,
+      "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Flame Sword",
-      "chance": 14.285714,
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Nibiran Battle Axe",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t4"
+    },
+    {
+      "name": "Nibiran Warhammer",
+      "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"

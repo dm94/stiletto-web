@@ -16,8 +16,8 @@
           "name": "Worm Sand"
         },
         {
-          "count": 100,
-          "name": "Corn"
+          "count": 50,
+          "name": "Purified Water"
         },
         {
           "count": 50,
@@ -28,7 +28,7 @@
           "name": "Worm Fang"
         },
         {
-          "count": 1,
+          "count": 5,
           "name": "Worm Oil"
         }
       ],

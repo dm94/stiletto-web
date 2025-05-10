@@ -1,10 +1,9 @@
 {
-  "name": "Pack Mule Module",
-  "type": "WeightBoost_C",
+  "name": "Structure Hardening Base Module",
+  "type": "BaseArmorModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Stacking this module increases the maximum weight limit of a walker.",
-  "experiencieReward": 65,
+  "description": "Stacking this module increases the health of the whole base.",
   "crafting": [
     {
       "ingredients": [
@@ -14,11 +13,11 @@
         },
         {
           "count": 1,
-          "name": "Gasket"
+          "name": "Strut"
         },
         {
           "count": 1,
-          "name": "Bearing"
+          "name": "Shackle"
         }
       ],
       "station": "Module Fabricator",
@@ -29,14 +28,5 @@
     "max": 20,
     "increase": 2.5,
     "maxIncrease": 50
-  },
-  "droppedBy": [
-    {
-      "name": "Loot Box Modules",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 2,
-      "tier": null
-    }
-  ]
+  }
 }

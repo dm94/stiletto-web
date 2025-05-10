@@ -1,0 +1,32 @@
+{
+  "name": "Pack Speed Base Module",
+  "type": "BasePackingTimeModule_C",
+  "category": "Resources",
+  "weight": 0.24,
+  "description": "Decreases the time it takes to pack bases and structures.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Spline"
+        },
+        {
+          "count": 1,
+          "name": "Shackle"
+        },
+        {
+          "count": 1,
+          "name": "Cog"
+        }
+      ],
+      "station": "Module Fabricator",
+      "time": 30
+    }
+  ],
+  "moduleInfo": {
+    "max": 20,
+    "increase": 4.5,
+    "maxIncrease": 90
+  }
+}

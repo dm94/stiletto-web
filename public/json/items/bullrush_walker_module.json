@@ -1,24 +1,24 @@
 {
-  "name": "Battery Module",
-  "type": "TorqueBatteryBoost_C",
+  "name": "Bullrush Walker Module",
+  "type": "WalkerRespawnTimeModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Stacking this module increases the torque battery's maximum capacity.",
+  "description": "Stacking this module decreases the wait time before respawning on a walker.",
   "experiencieReward": 65,
   "crafting": [
     {
       "ingredients": [
         {
           "count": 1,
-          "name": "Gasket"
+          "name": "Spring"
+        },
+        {
+          "count": 1,
+          "name": "Strut"
         },
         {
           "count": 1,
           "name": "Cog"
-        },
-        {
-          "count": 1,
-          "name": "Cam"
         }
       ],
       "station": "Module Fabricator",
@@ -27,14 +27,15 @@
   ],
   "moduleInfo": {
     "max": 20,
-    "increase": 100
+    "increase": 4,
+    "maxIncrease": 80
   },
   "droppedBy": [
     {
       "name": "Loot Box Modules",
       "chance": 5.263158,
       "minQuantity": 1,
-      "maxQuantity": 5,
+      "maxQuantity": 1,
       "tier": null
     }
   ]

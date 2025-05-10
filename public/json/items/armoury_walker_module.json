@@ -1,9 +1,9 @@
 {
-  "name": "Merchant Module",
-  "type": "CargoCapacityBoost_C",
+  "name": "Armoury Walker Module",
+  "type": "WalkerGearModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Stacking this module increases the storage capacity of a walker's Cargo container.",
+  "description": "Stacking this module increases the capacity of a walker's Armor and Weapons container.",
   "experiencieReward": 65,
   "crafting": [
     {
@@ -14,7 +14,7 @@
         },
         {
           "count": 1,
-          "name": "Spring"
+          "name": "Strut"
         },
         {
           "count": 1,

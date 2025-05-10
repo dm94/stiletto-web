@@ -4,140 +4,140 @@
   "tier": null,
   "drops": [
     {
-      "name": "Weightless Module",
+      "name": "Weightless Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Merchant Module",
+      "name": "Merchant Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Craftsman Module",
+      "name": "Craftsman Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Fireproof Module",
+      "name": "Fireproof Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Armoury Module",
+      "name": "Armoury Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Hardening Module",
+      "name": "Hardening Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Forager Module",
+      "name": "Forager Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Scavenger Module",
+      "name": "Scavenger Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Lumberjack Module",
+      "name": "Lumberjack Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Pack Speed Module",
+      "name": "Pack Speed Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Hearth Module",
+      "name": "Hearth Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Lifeforce Module",
+      "name": "Lifeforce Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Bullrush Module",
+      "name": "Bullrush Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Sandy Module",
+      "name": "Sandy Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Fortress Module",
+      "name": "Fortress Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Harpoon Protection Module",
+      "name": "Harpoon Protection Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Battery Module",
+      "name": "Battery Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 5,
       "source": "modules_t1"
     },
     {
-      "name": "Torque Module",
+      "name": "Torque Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 5,
       "source": "modules_t1"
     },
     {
-      "name": "Watery Module",
+      "name": "Watery Walker Module",
       "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
-      "name": "Pack Mule Module",
+      "name": "Pack Mule Walker Module",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 2,

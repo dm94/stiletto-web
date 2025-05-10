@@ -1,24 +1,24 @@
 {
-  "name": "Scavenger Module",
-  "type": "LegItemLootingBoost_C",
+  "name": "Watery Walker Module",
+  "type": "WalkerTravelCostModule_C",
   "category": "Resources",
   "weight": 0.24,
-  "description": "Walker legs will automatically pick up dropped items when travelling at slow speed. Stacking this module increases the maximum speed at which items are picked up.",
+  "description": "Stacking this module decreases the water cost of travelling.",
   "experiencieReward": 65,
   "crafting": [
     {
       "ingredients": [
         {
           "count": 1,
+          "name": "Strut"
+        },
+        {
+          "count": 1,
+          "name": "Shackle"
+        },
+        {
+          "count": 1,
           "name": "Cog"
-        },
-        {
-          "count": 1,
-          "name": "Sprocket"
-        },
-        {
-          "count": 1,
-          "name": "Bearing"
         }
       ],
       "station": "Module Fabricator",
@@ -27,12 +27,13 @@
   ],
   "moduleInfo": {
     "max": 20,
-    "increase": 5
+    "increase": 4.5,
+    "maxIncrease": 90
   },
   "droppedBy": [
     {
       "name": "Loot Box Modules",
-      "chance": 5.263158,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": null
