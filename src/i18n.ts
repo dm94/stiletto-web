@@ -19,16 +19,11 @@ i18n
     defaultNS: "translation",
     supportedLngs: languageWhitelist,
     detection: {
-      // Detection order: first URL, then localStorage, etc.
-      order: ["path", "localStorage", "navigator"],
-      // Look for language in the path like /es/, /en/, etc.
-      lookupFromPathIndex: 0,
-      // Convert everything to lowercase
+      order: ["localStorage", "navigator"],
       convertPathToLanguage: (lng: string) => lng.toLowerCase(),
-      // Save the language in localStorage when detected from URL
       caches: ["localStorage"],
-      // Only consider valid language codes from our supported languages list
       checkWhitelist: true,
+      skipRouteLocalizationIfPathContainsLocale: true,
     },
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",
