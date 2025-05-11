@@ -15,10 +15,6 @@ const Home: React.FC = () => {
     return isConnected ? "/maps" : "/map";
   }, [isConnected]);
 
-  const canonicalUrl = useMemo(() => {
-    return getDomain();
-  }, []);
-
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
@@ -27,7 +23,7 @@ const Home: React.FC = () => {
           "app.metaDescription",
           "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...",
         )}
-        canonical={canonicalUrl}
+        canonical={getDomain()}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
         keywords="Last Oasis, crafting calculator, resource maps, clan management, quality calculator, game tools, walkers"
       >
