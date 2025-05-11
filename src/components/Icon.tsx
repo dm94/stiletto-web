@@ -57,7 +57,7 @@ const Icon: React.FC<IconProps> = ({
     return false;
   }
 
-  const altText = alt || initialName;
+  const altText = alt ?? initialName;
 
   return (
     <img
