@@ -415,5 +415,9 @@
   "privacy.contactTitle": "9. Contato",
   "privacy.contactText": "Para dúvidas de privacidade, entre em contato com o administrador do Discord (usuário: dm94dani).",
   "privacy.changesTitle": "10. Alterações nesta Política",
-  "privacy.changesText": "O Stiletto reserva-se o direito de modificar esta política para se adaptar a mudanças legais ou funcionais. Alterações significativas serão notificadas no site."
+  "privacy.changesText": "O Stiletto reserva-se o direito de modificar esta política para se adaptar a mudanças legais ou funcionais. Alterações significativas serão notificadas no site.",
+  "seo.auctions.title": "Temporizadores de leilão - Stiletto para Last Oasis",
+  "seo.auctions.description": "Temporizadores para o que você precisa",
+  "seo.clanList.title": "Lista de Clãs - Stiletto para Last Oasis",
+  "seo.clanList.description": "Navegue e pesquise clãs em Last Oasis. Junte-se a um clã ou veja informações sobre clãs."
 }

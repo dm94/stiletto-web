@@ -415,5 +415,9 @@
   "privacy.contactTitle": "9. Контакт",
   "privacy.contactText": "По вопросам конфиденциальности обращайтесь к администратору через Discord (пользователь: dm94dani).",
   "privacy.changesTitle": "10. Изменения в данной политике",
-  "privacy.changesText": "Stiletto оставляет за собой право вносить изменения в эту политику для адаптации к юридическим или функциональным изменениям."
+  "privacy.changesText": "Stiletto оставляет за собой право вносить изменения в эту политику для адаптации к юридическим или функциональным изменениям.",
+  "seo.auctions.title": "Таймеры аукционов - Stiletto для Last Oasis",
+  "seo.auctions.description": "Таймеры для того, что вам нужно",
+  "seo.clanList.title": "Список кланов - Stiletto для Last Oasis",
+  "seo.clanList.description": "Просматривайте и ищите кланы в Last Oasis. Присоединяйтесь к клану или просматривайте информацию о кланах."
 }
