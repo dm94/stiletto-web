@@ -1,11 +1,11 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 import queryString from "query-string";
 import LoadingScreen from "@components/LoadingScreen";
 import PrivateProfile from "@components/DiscordConnection/PrivateProfile";
 import ModalMessage from "@components/ModalMessage";
+import HeaderMeta from "@components/HeaderMeta";
 import { useNavigate, useLocation } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "@functions/utils";
 import { authDiscord } from "@functions/requests/users";
@@ -54,6 +54,10 @@ const DiscordConnection: React.FC = () => {
     }
   }, [location, login]);
 
+  const canonicalUrl = useMemo(() => {
+    return `${getDomain()}/profile`;
+  }, []);
+
   const renderClanInfo = useCallback(() => {
     if (isConnected) {
       return <PrivateProfile key="profile" />;
@@ -61,27 +65,13 @@ const DiscordConnection: React.FC = () => {
 
     return (
       <div className="w-full max-w-2xl mx-auto">
-        <Helmet>
-          <title>Discord Login - Stiletto for Last Oasis</title>
-          <meta
-            name="description"
-            content="Link discord with stiletto and use more functions"
-          />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta
-            name="twitter:title"
-            content="Discord Login - Stiletto for Last Oasis"
-          />
-          <meta
-            name="twitter:description"
-            content="Link discord with stiletto and use more functions"
-          />
-          <meta
-            name="twitter:image"
-            content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
-          />
-          <link rel="canonical" href={`${getDomain()}/profile`} />
-        </Helmet>
+        <HeaderMeta
+          title={t("seo.discord.title", "Discord Login - Stiletto for Last Oasis")}
+          description={t("seo.discord.description", "Link discord with stiletto and use more functions")}
+          canonical={canonicalUrl}
+          image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+          keywords="Last Oasis, Discord integration, game login, Stiletto, clan management"
+        />
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-6">
             <a
@@ -95,7 +85,7 @@ const DiscordConnection: React.FC = () => {
         </div>
       </div>
     );
-  }, [t, discordLoginUrl, isConnected]);
+  }, [t, discordLoginUrl, isConnected, canonicalUrl]);
 
   if (error) {
     return (
