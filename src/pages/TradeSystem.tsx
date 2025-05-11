@@ -323,16 +323,12 @@ const TradeSystem = () => {
     );
   }
 
-  const canonicalUrl = useMemo(() => {
-    return `${getDomain()}/trades`;
-  }, []);
-
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
         title={t("seo.trades.title")}
         description={t("seo.trades.description")}
-        canonical={canonicalUrl}
+        canonical={`${getDomain()}/trades`}
       />
       {renderLoggedPart()}
       <div className="w-full p-4">

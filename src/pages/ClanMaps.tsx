@@ -127,10 +127,6 @@ const ClanMaps = () => {
     ));
   }, [clanMaps, maps, handleOpenMap, handleShowDeleteModal]);
 
-  const canonicalUrl = useMemo(() => {
-    return `${getDomain()}/maps`;
-  }, []);
-
   const renderHelmet = useMemo(
     () => (
       <HeaderMeta
@@ -142,12 +138,12 @@ const ClanMaps = () => {
           "seo.maps.description",
           "Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base.",
         )}
-        canonical={canonicalUrl}
+        canonical={`${getDomain()}/maps`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
         keywords="Last Oasis, interactive maps, game maps, resource locations, clan maps, map markers, gaming maps"
       />
     ),
-    [t, canonicalUrl],
+    [t],
   );
 
   const renderPanel = useMemo(() => {

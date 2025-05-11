@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
@@ -303,16 +303,12 @@ const Wiki = () => {
     [navigate, buildSearchParams],
   );
 
-  const canonicalUrl = useMemo(() => {
-    return `${getDomain()}/wiki`;
-  }, []);
-
   return (
     <div className="container mx-auto px-4 py-8">
       <HeaderMeta
         title={t("seo.wiki.title")}
         description={t("seo.wiki.description")}
-        canonical={canonicalUrl}
+        canonical={`${getDomain()}/wiki`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/wiki.jpg"
         keywords="Last Oasis, wiki, items, creatures, resources, crafting, game, guide, guide"
       />

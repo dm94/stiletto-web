@@ -1,4 +1,4 @@
-import { useState, useCallback, memo, useMemo } from "react";
+import { useState, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Timer from "@components/AuctionTimers/Timer";
 import { getDomain } from "@functions/utils";
@@ -24,10 +24,6 @@ const AuctionTimers = memo(() => {
     return <div className="w-full">{timerElements}</div>;
   }, [timers, playAlarm, playSound]);
 
-  const canonicalUrl = useMemo(() => {
-    return `${getDomain()}/auctions`;
-  }, []);
-
   return (
     <div className="container mx-auto px-4 py-6">
       <HeaderMeta
@@ -36,7 +32,7 @@ const AuctionTimers = memo(() => {
           "Auction Timers - Stiletto for Last Oasis",
         )}
         description={t("seo.auctions.description", "Timers for what you need")}
-        canonical={canonicalUrl}
+        canonical={`${getDomain()}/auctions`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
         keywords="Last Oasis, auction timers, timers, game, guide"
       />

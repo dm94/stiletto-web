@@ -191,16 +191,12 @@ const Crafter: React.FC = () => {
     );
   }
 
-  const canonicalUrl = useMemo(() => {
-    return `${getDomain()}/crafter`;
-  }, []);
-
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
         title={t("seo.crafter.title")}
         description={t("crafting.description")}
-        canonical={canonicalUrl}
+        canonical={`${getDomain()}/crafter`}
       />
       <div className="w-full lg:w-1/4 mb-4 lg:mb-0">
         <form className="flex items-center">

@@ -99,21 +99,20 @@ const ClanList = () => {
     ));
   }, [clans, clanuserid, isLogged]);
 
-  const canonicalUrl = useMemo(() => {
-    return `${getDomain()}/clanlist`;
-  }, []);
-
   const helmetInfo = useMemo(
     () => (
       <HeaderMeta
         title={t("seo.clanList.title", "Clan List - Stiletto for Last Oasis")}
-        description={t("seo.clanList.description", "Browse and search for clans in Last Oasis. Join a clan or view clan information.")}
-        canonical={canonicalUrl}
+        description={t(
+          "seo.clanList.description",
+          "Browse and search for clans in Last Oasis. Join a clan or view clan information.",
+        )}
+        canonical={`${getDomain()}/clanlist`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
         keywords="Last Oasis, clans, clan list, gaming clans, join clan, clan recruitment, clan search"
       />
     ),
-    [t, canonicalUrl],
+    [t],
   );
 
   if (error) {

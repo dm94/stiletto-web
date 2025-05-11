@@ -54,10 +54,6 @@ const DiscordConnection: React.FC = () => {
     }
   }, [location, login]);
 
-  const canonicalUrl = useMemo(() => {
-    return `${getDomain()}/profile`;
-  }, []);
-
   const renderClanInfo = useCallback(() => {
     if (isConnected) {
       return <PrivateProfile key="profile" />;
@@ -66,9 +62,15 @@ const DiscordConnection: React.FC = () => {
     return (
       <div className="w-full max-w-2xl mx-auto">
         <HeaderMeta
-          title={t("seo.discord.title", "Discord Login - Stiletto for Last Oasis")}
-          description={t("seo.discord.description", "Link discord with stiletto and use more functions")}
-          canonical={canonicalUrl}
+          title={t(
+            "seo.discord.title",
+            "Discord Login - Stiletto for Last Oasis",
+          )}
+          description={t(
+            "seo.discord.description",
+            "Link discord with stiletto and use more functions",
+          )}
+          canonical={`${getDomain()}/profile`}
           image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
           keywords="Last Oasis, Discord integration, game login, Stiletto, clan management"
         />
@@ -85,7 +87,7 @@ const DiscordConnection: React.FC = () => {
         </div>
       </div>
     );
-  }, [t, discordLoginUrl, isConnected, canonicalUrl]);
+  }, [t, discordLoginUrl, isConnected]);
 
   if (error) {
     return (
