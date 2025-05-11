@@ -43,6 +43,10 @@ const MapDetail: React.FC = () => {
     navigate("/maps");
   }, [navigate]);
 
+  const canonicalUrl = useMemo(() => {
+    return `${getDomain()}/maps/${map?.mapid}`;
+  }, [map?.mapid]);
+
   if (isLoading) {
     return <LoadingScreen />;
   }
@@ -70,10 +74,6 @@ const MapDetail: React.FC = () => {
       />
     );
   }
-
-  const canonicalUrl = useMemo(() => {
-    return `${getDomain()}/maps/${map?.mapid}`;
-  }, [map?.mapid]);
 
   return (
     <>
