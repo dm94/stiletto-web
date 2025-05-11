@@ -1,11 +1,11 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 import { memo, useMemo } from "react";
 import Others from "@pages/Others";
 import { useUser } from "@store/userStore";
 import { getDomain } from "@functions/utils";
 import { Link } from "react-router";
+import HeaderMeta from "@components/HeaderMeta";
 
 const Home: React.FC = () => {
   const { t } = useTranslation();
@@ -21,34 +21,18 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <Helmet>
-        <title>Stiletto - {t("app.subtitle", "for the Last Oasis")}</title>
-        <meta
-          name="description"
-          content={t(
-            "app.metaDescription",
-            "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...",
-          )}
-        />
+      <HeaderMeta
+        title={`Stiletto - ${t("app.subtitle", "for the Last Oasis")}`}
+        description={t(
+          "app.metaDescription",
+          "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...",
+        )}
+        canonical={canonicalUrl}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
+        keywords="Last Oasis, crafting calculator, resource maps, clan management, quality calculator, game tools, walkers"
+      >
         <meta name="theme-color" content="#FFFFFF" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={`Stiletto ${t("app.subtitle", "for Last Oasis")}`}
-        />
-        <meta
-          name="twitter:description"
-          content={t(
-            "app.twitterDescription",
-            "Stiletto the page with utilities for the game Last Oasis",
-          )}
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
-        />
-        <link rel="canonical" href={canonicalUrl} />
-      </Helmet>
+      </HeaderMeta>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-8">
         <Link
           className="text-center"

@@ -5,9 +5,20 @@ import { config } from "@config/config";
 interface IconProps {
   name: string;
   width?: number;
+  height?: number;
+  className?: string;
+  alt?: string;
+  "aria-hidden"?: boolean;
 }
 
-const Icon: React.FC<IconProps> = ({ name: initialName, width = 16 }) => {
+const Icon: React.FC<IconProps> = ({
+  name: initialName,
+  width = 16,
+  height,
+  className = "mr-2",
+  alt,
+  "aria-hidden": ariaHidden,
+}) => {
   const [loaded, setLoaded] = useState<boolean>(true);
 
   const getProcessedName = (name: string): string => {
@@ -46,17 +57,20 @@ const Icon: React.FC<IconProps> = ({ name: initialName, width = 16 }) => {
     return false;
   }
 
+  const altText = alt || initialName;
+
   return (
     <img
       src={`${config.RESOURCES_URL}/items/${getProcessedName(
         initialName,
       )} icon.png`}
       loading="lazy"
-      onError={() => setLoaded(false)}
-      className="mr-2"
       width={width}
-      height={width}
-      alt={initialName}
+      height={height || width}
+      className={className}
+      alt={ariaHidden ? "" : altText}
+      aria-hidden={ariaHidden}
+      onError={() => setLoaded(false)}
     />
   );
 };

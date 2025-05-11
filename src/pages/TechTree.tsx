@@ -277,9 +277,12 @@ const TechTree = () => {
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
-        title="Tech Tree - Stiletto for Last Oasis"
-        description="View and control your clan's technology tree"
-        canonical={`${getDomain()}/tech`}
+        title={`${t(`tech.${tabSelect}`)} - Stiletto for Last Oasis`}
+        description="Complete tech tree for Last Oasis. Plan your progression, visualise requirements and share your skill tree with your clan."
+        canonical={`${getDomain()}/tech/${tabSelect}`}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/techtree.jpg"
+        keywords="Last Oasis, tech tree, skills, progression, vitamins, equipment, construction, walkers"
+        type="application"
       />
       <nav className="w-full">
         <div
