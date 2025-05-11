@@ -66,7 +66,7 @@ const Icon: React.FC<IconProps> = ({
       )} icon.png`}
       loading="lazy"
       width={width}
-      height={height || width}
+      height={height ?? width}
       className={className}
       alt={ariaHidden ? "" : altText}
       aria-hidden={ariaHidden}
