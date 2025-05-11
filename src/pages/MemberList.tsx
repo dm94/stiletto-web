@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo, Fragment } from "react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
+import HeaderMeta from "@components/HeaderMeta";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import ClanConfig from "@components/ClanConfig";
@@ -328,6 +328,25 @@ const MemberList = () => {
     return "";
   };
 
+  const helmetInfo = useMemo(
+    () => (
+      <HeaderMeta
+        title={t(
+          "seo.memberList.title",
+          "Clan Member List - Stiletto for Last Oasis",
+        )}
+        description={t(
+          "seo.memberList.description",
+          "Manage your clan members, handle join requests, and configure member permissions for your Last Oasis clan",
+        )}
+        canonical={`${getDomain()}/members`}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+        keywords="Last Oasis, clan members, member management, clan permissions, clan leadership"
+      />
+    ),
+    [t],
+  );
+
   if (error) {
     return (
       <ModalMessage
@@ -353,7 +372,12 @@ const MemberList = () => {
   }
 
   if (!isLoaded) {
-    return <LoadingScreen />;
+    return (
+      <Fragment>
+        {helmetInfo}
+        <LoadingScreen />
+      </Fragment>
+    );
   }
 
   if (!clanid) {
@@ -370,27 +394,7 @@ const MemberList = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <Helmet>
-        <title>Clan Member List - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="This is the list of all the members of your clan"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Clan Member List - Stiletto for Last Oasis"
-        />
-        <meta
-          name="twitter:description"
-          content="This is the list of all the members of your clan"
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/members`} />
-      </Helmet>
+      {helmetInfo}
 
       <div className={isLeader || hasBotPermissions ? "w-full mb-6" : "hidden"}>
         <div className="flex flex-wrap justify-between">
