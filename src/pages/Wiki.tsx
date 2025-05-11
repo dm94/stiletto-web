@@ -307,8 +307,10 @@ const Wiki = () => {
     <div className="container mx-auto px-4 py-8">
       <HeaderMeta
         title="Wiki - Stiletto for Last Oasis"
-        description="Last oasis Wiki"
+        description="Complete wiki with all items, creatures and resources in the game Last Oasis. Find detailed information on crafting, stats and more."
         canonical={`${getDomain()}/wiki`}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/wiki.jpg"
+        keywords="Last Oasis, wiki, items, creatures, resources, crafting, game, guide, guide"
       />
       <div className="w-full mb-8">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">

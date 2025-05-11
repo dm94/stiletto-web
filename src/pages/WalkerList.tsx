@@ -3,7 +3,6 @@ import { useState, useEffect, Fragment, useCallback, useMemo } from "react";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 import { getItems } from "@functions/github";
 import { useUser } from "@store/userStore";
 import Pagination from "@components/Pagination";
@@ -22,6 +21,7 @@ import {
   getMembers,
 } from "@functions/requests/clans/members";
 import type { MemberInfo } from "@ctypes/dto/members";
+import HeaderMeta from "@components/HeaderMeta";
 
 const WalkerList: React.FC = () => {
   const { t } = useTranslation();
@@ -272,27 +272,14 @@ const WalkerList: React.FC = () => {
   );
 
   const renderHelmetInfo = () => (
-    <Helmet>
-      <title>Clan Walker List - Stiletto for Last Oasis</title>
-      <meta
-        name="description"
-        content="This is the list of all the walkers of your clan"
-      />
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta
-        name="twitter:title"
-        content="Walker List - Stiletto for Last Oasis"
-      />
-      <meta
-        name="twitter:description"
-        content="This is the list of all the walkers of your clan"
-      />
-      <meta
-        name="twitter:image"
-        content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
-      />
-      <link rel="canonical" href={`${getDomain()}/walkerlist`} />
-    </Helmet>
+    <HeaderMeta
+      title="Clan Walker List - Stiletto for Last Oasis"
+      description="Manage all the walkers in your clan in Last Oasis. Organise, filter and manage your walkers by type, usage and status for better clan coordination."
+      canonical={`${getDomain()}/walkerlist`}
+      image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
+      keywords="Last Oasis, walkers, clan, management, vehicles, stiletto, toboggan, falco, spider, buffalo"
+      type="application"
+    />
   );
 
   if (error) {
