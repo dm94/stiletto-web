@@ -1,15 +1,17 @@
 import type React from "react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useParams, useNavigate } from "react-router";
-import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
 import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
+import HeaderMeta from "@components/HeaderMeta";
 import ResourceMap from "@components/ClanMaps/ResourceMap";
 import { getMapInfo } from "@functions/requests/maps";
 import { getDomain } from "@functions/utils";
 import type { MapInfo } from "@ctypes/dto/maps";
 
 const MapDetail: React.FC = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [map, setMap] = useState<MapInfo>();
@@ -69,29 +71,22 @@ const MapDetail: React.FC = () => {
     );
   }
 
+  const canonicalUrl = useMemo(() => {
+    return `${getDomain()}/maps/${map?.mapid}`;
+  }, [map?.mapid]);
+
   return (
     <>
-      <Helmet>
-        <title>{map.name} - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="Interactive map with resources and markers for Last Oasis game."
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={`${map.name} - Stiletto for Last Oasis`}
-        />
-        <meta
-          name="twitter:description"
-          content="Interactive map with resources and markers for Last Oasis game."
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/maps/${map.mapid}`} />
-      </Helmet>
+      <HeaderMeta
+        title={`${map?.name} map - Stiletto for Last Oasis`}
+        description={t(
+          "seo.mapDetail.description",
+          "Interactive map with resources and markers for Last Oasis game",
+        )}
+        canonical={canonicalUrl}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
+        keywords="Last Oasis, interactive map, game resources, resource markers, clan territory, game locations"
+      />
       <ResourceMap map={map} onReturn={handleReturn} />
     </>
   );
