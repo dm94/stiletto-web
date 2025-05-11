@@ -273,8 +273,8 @@ const WalkerList: React.FC = () => {
 
   const renderHelmetInfo = () => (
     <HeaderMeta
-      title="Clan Walker List - Stiletto for Last Oasis"
-      description="Manage all the walkers in your clan in Last Oasis. Organise, filter and manage your walkers by type, usage and status for better clan coordination."
+      title={t("seo.walkers.title")}
+      description={t("seo.walkers.description")}
       canonical={`${getDomain()}/walkerlist`}
       image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
       keywords="Last Oasis, walkers, clan, management, vehicles, stiletto, toboggan, falco, spider, buffalo"

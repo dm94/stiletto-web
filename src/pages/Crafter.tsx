@@ -1,7 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 import queryString from "query-string";
 import { getItems } from "@functions/github";
 import ModalMessage from "@components/ModalMessage";
@@ -12,6 +11,7 @@ import { getDomain, getItemDecodedName } from "@functions/utils";
 import { getRecipe } from "@functions/requests/recipes";
 import { useLocation } from "react-router";
 import type { CraftItem, Item, ItemRecipe } from "@ctypes/item";
+import HeaderMeta from "@components/HeaderMeta";
 
 const Crafter: React.FC = () => {
   const location = useLocation();
@@ -191,29 +191,17 @@ const Crafter: React.FC = () => {
     );
   }
 
+  const canonicalUrl = useMemo(() => {
+    return `${getDomain()}/crafter`;
+  }, []);
+
   return (
-    <div className="flex flex-col lg:flex-row">
-      <Helmet>
-        <title>Last Oasis Crafting Calculator - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="See the materials needed to build each thing"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Crafter - Stiletto for Last Oasis"
-        />
-        <meta
-          name="twitter:description"
-          content="See the materials needed to build each thing"
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/crafter`} />
-      </Helmet>
+    <div className="container mx-auto px-4">
+      <HeaderMeta
+        title={t("seo.crafter.title")}
+        description={t("crafting.description")}
+        canonical={canonicalUrl}
+      />
       <div className="w-full lg:w-1/4 mb-4 lg:mb-0">
         <form className="flex items-center">
           <input

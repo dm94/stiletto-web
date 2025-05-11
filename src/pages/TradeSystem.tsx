@@ -1,7 +1,7 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
+import HeaderMeta from "@components/HeaderMeta";
 import { getItems } from "@functions/github";
 import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
@@ -323,26 +323,17 @@ const TradeSystem = () => {
     );
   }
 
+  const canonicalUrl = useMemo(() => {
+    return `${getDomain()}/trades`;
+  }, []);
+
   return (
     <div className="container mx-auto px-4">
-      <Helmet>
-        <title>Trades - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="Publish your trade offers or what you need to make it easy for others to trade with you"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Trades - Stiletto for Last Oasis" />
-        <meta
-          name="twitter:description"
-          content="Publish your trade offers or what you need to make it easy for others to trade with you"
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/trades.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/trades`} />
-      </Helmet>
+      <HeaderMeta
+        title={t("seo.trades.title")}
+        description={t("seo.trades.description")}
+        canonical={canonicalUrl}
+      />
       {renderLoggedPart()}
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-blue-500 rounded-lg">

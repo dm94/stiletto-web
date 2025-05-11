@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
@@ -303,12 +303,16 @@ const Wiki = () => {
     [navigate, buildSearchParams],
   );
 
+  const canonicalUrl = useMemo(() => {
+    return `${getDomain()}/wiki`;
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <HeaderMeta
-        title="Wiki - Stiletto for Last Oasis"
-        description="Complete wiki with all items, creatures and resources in the game Last Oasis. Find detailed information on crafting, stats and more."
-        canonical={`${getDomain()}/wiki`}
+        title={t("seo.wiki.title")}
+        description={t("seo.wiki.description")}
+        canonical={canonicalUrl}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/wiki.jpg"
         keywords="Last Oasis, wiki, items, creatures, resources, crafting, game, guide, guide"
       />

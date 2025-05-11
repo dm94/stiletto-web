@@ -22,7 +22,7 @@ const Home: React.FC = () => {
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
-        title={`Stiletto - ${t("app.subtitle", "for the Last Oasis")}`}
+        title={t("seo.home.title")}
         description={t(
           "app.metaDescription",
           "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...",
