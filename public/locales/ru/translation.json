@@ -344,7 +344,7 @@
   "wiki.learnedIn": "Изучено в",
   "wiki.usedFor": "Используется для",
   "wiki.moduleInfo": "Информация о модуле",
-  "wiki.limitPerWalker": "Лимит на прогулку",
+  "wiki.moduleLimit": "Лимит на прогулку",
   "wiki.improvementPerModule": "Улучшение модуля",
   "wiki.tradePrice": "Trade price",
   "wiki.characterStack": "Character Stack",

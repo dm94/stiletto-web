@@ -348,7 +348,7 @@
   "wiki.learnedIn": "Appris dans",
   "wiki.usedFor": "Utilisé pour",
   "wiki.moduleInfo": "Informations sur le module",
-  "wiki.limitPerWalker": "Limite par marcheur",
+  "wiki.moduleLimit": "Limite par marcheur",
   "wiki.improvementPerModule": "Amélioration par module",
   "wiki.tradePrice": "Trade price",
   "wiki.characterStack": "Character Stack",

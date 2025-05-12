@@ -344,7 +344,7 @@
   "wiki.learnedIn": "学习于",
   "wiki.usedFor": "用于：",
   "wiki.moduleInfo": "模块信息",
-  "wiki.limitPerWalker": "限制每个步行者",
+  "wiki.moduleLimit": "限制每个步行者",
   "wiki.improvementPerModule": "每个模块的改进",
   "wiki.tradePrice": "Trade price",
   "wiki.characterStack": "Character Stack",

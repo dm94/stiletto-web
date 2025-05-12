@@ -344,7 +344,7 @@
   "wiki.learnedIn": "学習された場所",
   "wiki.usedFor": "使用先",
   "wiki.moduleInfo": "モジュール情報",
-  "wiki.limitPerWalker": "歩行者あたりの制限",
+  "wiki.moduleLimit": "歩行者あたりの制限",
   "wiki.improvementPerModule": "モジュールごとの改善",
   "wiki.tradePrice": "Trade price",
   "wiki.characterStack": "Character Stack",

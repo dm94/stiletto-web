@@ -28,7 +28,7 @@ const ModuleInfo: React.FC<ModuleInfoProps> = ({ moduleInfo }) => {
           <ul className="space-y-2">
             {moduleInfo?.max && (
               <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
-                <div className="text-gray-300">{t("wiki.limitPerWalker")}</div>
+                <div className="text-gray-300">{t("wiki.moduleLimit")}</div>
                 <div className="text-gray-400">{moduleInfo.max}</div>
               </li>
             )}
