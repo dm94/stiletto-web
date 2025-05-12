@@ -6,7 +6,6 @@ interface HeaderMetaProps {
   description: string;
   canonical: string;
   image?: string;
-  type?: string;
   keywords?: string;
   children?: React.ReactNode;
   locale?: string;
@@ -17,7 +16,6 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
   description,
   canonical,
   image,
-  type = "website",
   keywords,
   children,
   locale = "en_US",
@@ -28,12 +26,7 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
   const getJsonLd = () => {
     const baseStructure = {
       "@context": "https://schema.org",
-      "@type":
-        type === "website"
-          ? "WebSite"
-          : type === "application"
-            ? "SoftwareApplication"
-            : "WebPage",
+      "@type": "WebSite",
       name: title,
       description: description,
       url: canonical,
@@ -65,7 +58,6 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
-      <meta property="og:type" content={type} />
       <meta property="og:locale" content={locale} />
       {image && <meta property="og:image" content={image} />}
       {image && <meta property="og:image:alt" content={title} />}
@@ -77,7 +69,7 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
       {image && <meta name="twitter:image" content={image} />}
       {image && <meta name="twitter:image:alt" content={title} />}
 
-      {/* Datos estructurados JSON-LD */}
+      {/* JSON-LD */}
       <script type="application/ld+json">{getJsonLd()}</script>
 
       {children}

@@ -278,7 +278,6 @@ const WalkerList: React.FC = () => {
       canonical={`${getDomain()}/walkerlist`}
       image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
       keywords="Last Oasis, walkers, clan, management, vehicles, stiletto, toboggan, falco, spider, buffalo"
-      type="application"
     />
   );
 

@@ -285,7 +285,6 @@ const TechTree = () => {
         canonical={`${getDomain()}/tech/${tabSelect}`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/techtree.jpg"
         keywords={`Last Oasis, ${t(`tech.${tabSelect}`).toLowerCase()}, tech tree, skills, progression, ${tabSelect.toLowerCase()} skills, ${tabSelect.toLowerCase()} tech, game progression, Last Oasis ${tabSelect.toLowerCase()}, survival game tech`}
-        type="application"
       />
       <header>
         <h1 className="sr-only">{`${t(`tech.${tabSelect}`)} - ${t("seo.techTree.title")}`}</h1>
