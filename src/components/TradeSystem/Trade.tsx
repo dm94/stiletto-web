@@ -99,14 +99,14 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
         </div>
         <div className="p-4 text-center" data-cy="trade-content">
           {getQualityBadge()}
-          <div
+          <h3
             className="text-lg font-medium text-gray-300 mb-2 flex justify-center"
             data-cy="trade-resource"
           >
             {trade?.amount !== 0 ? `${trade.amount}x ` : ""}{" "}
             <Icon key={trade.resource} name={trade.resource} />
-            <h5>{t(trade.resource, { ns: "items" })}</h5>
-          </div>
+            <span>{t(trade.resource, { ns: "items" })}</span>
+          </h3>
           <p className="text-gray-400 mb-2" data-cy="trade-price">
             {trade?.price !== 0
               ? `${trade.price} Flots/${t("trades.unit")}`

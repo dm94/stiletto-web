@@ -170,9 +170,9 @@ const TradeSystem = () => {
       <div className="w-full p-4">
         <form onSubmit={handleCreateTrade} data-cy="create-trade-form">
           <div className="bg-gray-800 border border-gray-700 rounded-lg">
-            <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
+            <h2 className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
               {t("trades.publishTrade")}
-            </div>
+            </h2>
             <div className="p-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
                 <div className="space-y-2">
@@ -331,12 +331,13 @@ const TradeSystem = () => {
         canonical={`${getDomain()}/trades`}
         keywords="Last Oasis trading, resource exchange, supply and demand, trade system, in-game marketplace, player economy, resource trading, Last Oasis commerce, game trading platform"
       />
+      <h1 className="sr-only">{t("seo.trades.title")}</h1>
       {renderLoggedPart()}
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-blue-500 rounded-lg">
-          <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
+          <h2 className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
             {t("trades.publishedTrades")}
-          </div>
+          </h2>
           <div className="p-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
               <div className="lg:col-span-1">

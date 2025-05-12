@@ -75,6 +75,7 @@ const DiscordConnection: React.FC = () => {
           keywords="Last Oasis Discord, Discord integration, game login, Stiletto app, clan management, Last Oasis account linking, Discord authentication, game profile connection, Last Oasis community, Discord sync, game utility tools"
         />
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+          <h2 className="sr-only">{t("auth.loginWithDiscord")}</h2>
           <div className="p-6">
             <a
               href={discordLoginUrl}
@@ -107,6 +108,9 @@ const DiscordConnection: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center p-4">
+      <h1 className="sr-only">
+        {t("seo.discord.title", "Discord Login - Stiletto for Last Oasis")}
+      </h1>
       {renderClanInfo()}
     </div>
   );
