@@ -192,7 +192,7 @@ const Crafter: React.FC = () => {
   }
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="flex flex-col lg:flex-row">
       <HeaderMeta
         title={t("seo.crafter.title")}
         description={t("crafting.description")}
