@@ -276,19 +276,19 @@ const TechTree = () => {
     );
   }
 
-  const tabSelected = t(`tech.${tabSelect}`).toLowerCase();
+  const tabSelected = t(`tech.${tabSelect}`);
 
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
-        title={`${t(`tech.${tabSelect}`)} - ${t("seo.techTree.title")}`}
+        title={`${tabSelected} - ${t("seo.techTree.title")}`}
         description={t("techTree.description")}
         canonical={`${getDomain()}/tech/${tabSelect}`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/techtree.jpg"
         keywords={`Last Oasis, ${tabSelected}, tech tree, skills, progression, ${tabSelected} skills, ${tabSelected} tech, game progression, Last Oasis ${tabSelected}, survival game tech`}
       />
       <header>
-        <h1 className="sr-only">{`${t(`tech.${tabSelect}`)} - ${t("seo.techTree.title")}`}</h1>
+        <h1 className="sr-only">{`${tabSelected} - ${t("seo.techTree.title")}`}</h1>
       </header>
       <nav className="w-full" aria-label="Tech Tree Navigation">
         <div
