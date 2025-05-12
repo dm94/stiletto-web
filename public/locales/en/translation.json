@@ -210,6 +210,7 @@
   "maps.mapType": "Map Type",
   "maps.createNewMap": "Create new map",
   "maps.backToList": "Back to the list of maps",
+  "maps.loadingResources": "Loading resources",
   "common.list": "List",
   "common.edit": "Edit",
   "common.password": "Password",
