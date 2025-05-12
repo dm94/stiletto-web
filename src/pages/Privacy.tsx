@@ -1,4 +1,4 @@
-import { memo, useMemo } from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import HeaderMeta from "@components/HeaderMeta";
 import { getDomain } from "@functions/utils";
@@ -6,14 +6,13 @@ import PrivacySection from "@components/PrivacySection";
 
 const Privacy = () => {
   const { t } = useTranslation();
-  const canonicalUrl = useMemo(() => `${getDomain()}/privacy`, []);
 
   return (
     <div className="container mx-auto px-4 py-8">
       <HeaderMeta
         title={t("privacy.title")}
         description={t("privacy.description")}
-        canonical={canonicalUrl}
+        canonical={`${getDomain()}/privacy`}
       />
       <div className="w-full mb-8">
         <h2 className="text-3xl font-bold text-gray-300 text-center mb-4">

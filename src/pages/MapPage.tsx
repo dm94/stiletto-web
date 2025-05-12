@@ -24,12 +24,8 @@ const MapPage: React.FC = () => {
         title="Interactive Resource Map - Stiletto for Last Oasis"
         description="Interactive Map of resources shared through a link"
         canonical={`${getDomain()}/map`}
-      >
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
-        />
-      </HeaderMeta>
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
+      />
       {mapId && pass ? (
         <ResourceMapNoLog mapId={mapId} pass={pass} />
       ) : (

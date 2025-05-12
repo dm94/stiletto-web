@@ -6,10 +6,10 @@ import {
   type FormEvent,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import ClanSelect from "@components/Diplomacy/ClanSelect";
+import HeaderMeta from "@components/HeaderMeta";
 import { getUser } from "@functions/requests/users";
 import { getDomain } from "@functions/utils";
 import { config } from "@config/config";
@@ -363,27 +363,19 @@ const Diplomacy = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      <Helmet>
-        <title>Clan Diplomacy - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="View your clan's list of allies, enemies and NAP"
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Clan Diplomacy - Stiletto for Last Oasis"
-        />
-        <meta
-          name="twitter:description"
-          content="View your clan's list of allies, enemies and NAP"
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/diplomacy`} />
-      </Helmet>
+      <HeaderMeta
+        title={t(
+          "seo.diplomacy.title",
+          "Clan Diplomacy - Stiletto for Last Oasis"
+        )}
+        description={t(
+          "seo.diplomacy.description",
+          "View your clan's list of allies, enemies and NAP"
+        )}
+        canonical={`${getDomain()}/diplomacy`}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
+        keywords="Last Oasis, Clan Diplomacy, Allies, Enemies, NAP, Stiletto, clan management"
+      />
       <div className="flex flex-col space-y-4">
         {/* Formulario de creación en una fila completa */}
         {isLeader || hasPermissions ? (

@@ -1,8 +1,15 @@
 # https://www.robotstxt.org/robotstxt.html
 
-User-Agent: Googlebot
+User-Agent: *
+Allow: /
+
 Allow: /*.css$
 Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+Allow: /*.json$
 
+# Sitemaps
 Sitemap: https://stiletto.deeme.dev/sitemap.xml
 Sitemap: https://stiletto.deeme.dev/sitemap_items.xml

@@ -1,6 +1,5 @@
 import { useState, useEffect, Fragment, useMemo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet";
 import { useUser } from "@store/userStore";
 import { getUser } from "@functions/requests/users";
 import LoadingScreen from "@components/LoadingScreen";
@@ -8,6 +7,7 @@ import ClanListItem from "@components/ClanList/ClanListItem";
 import ModalMessage from "@components/ModalMessage";
 import Pagination from "@components/Pagination";
 import ClusterList from "@components/ClusterList";
+import HeaderMeta from "@components/HeaderMeta";
 import { getDomain } from "@functions/utils";
 import { getClans } from "@functions/requests/clans";
 import { sendRequest } from "@functions/requests/clans/requests";
@@ -101,23 +101,18 @@ const ClanList = () => {
 
   const helmetInfo = useMemo(
     () => (
-      <Helmet>
-        <title>Clan List - Stiletto for Last Oasis</title>
-        <meta name="description" content="List of clans" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Clan List - Stiletto for Last Oasis"
-        />
-        <meta name="twitter:description" content="List of clans" />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/clanlist`} />
-      </Helmet>
+      <HeaderMeta
+        title={t("seo.clanList.title", "Clan List - Stiletto for Last Oasis")}
+        description={t(
+          "seo.clanList.description",
+          "Browse and search for clans in Last Oasis. Join a clan or view clan information.",
+        )}
+        canonical={`${getDomain()}/clanlist`}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/timers.jpg"
+        keywords="Last Oasis, clans, clan list, gaming clans, join clan, clan recruitment, clan search"
+      />
     ),
-    [],
+    [t],
   );
 
   if (error) {

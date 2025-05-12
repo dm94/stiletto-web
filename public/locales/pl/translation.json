@@ -344,7 +344,7 @@
   "wiki.learnedIn": "Uczono w",
   "wiki.usedFor": "Używane do",
   "wiki.moduleInfo": "Informacje o module",
-  "wiki.limitPerWalker": "Limit na spacer",
+  "wiki.moduleLimit": "Limit na spacer",
   "wiki.improvementPerModule": "Ulepszenie na moduł",
   "wiki.tradePrice": "Trade price",
   "wiki.characterStack": "Character Stack",
@@ -415,5 +415,9 @@
   "privacy.contactTitle": "9. Kontakt",
   "privacy.contactText": "Aby uzyskać informacje o prywatności, skontaktuj się z administratorem za pośrednictwem Discorda (użytkownik: dm94dani).",
   "privacy.changesTitle": "10. Zmiany w tej polityce",
-  "privacy.changesText": "Stiletto zastrzega sobie prawo do zmiany tej polityki w celu dostosowania się do zmian prawnych lub funkcjonalnych. Znaczne zmiany zostaną zgłoszone na stronie internetowej."
+  "privacy.changesText": "Stiletto zastrzega sobie prawo do zmiany tej polityki w celu dostosowania się do zmian prawnych lub funkcjonalnych. Znaczne zmiany zostaną zgłoszone na stronie internetowej.",
+  "seo.auctions.title": "Timery aukcji - Stiletto dla Last Oasis",
+  "seo.auctions.description": "Timery do tego, czego potrzebujesz",
+  "seo.clanList.title": "Lista klanów - Stiletto dla Last Oasis",
+  "seo.clanList.description": "Przeglądaj i wyszukuj klany w Last Oasis. Dołącz do klanu lub wyświetl informacje o klanie."
 }

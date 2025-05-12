@@ -1,3 +1,5 @@
+import { Rarity } from "@ctypes/item";
+
 interface RarityFactors {
   WalkerHealthFactor?: number;
   WalkerPartHealthFactor?: number;
@@ -211,7 +213,7 @@ const rarityData: RarityData = {
 };
 
 export const calcRarityValue = (
-  rarity: string | undefined,
+  rarity: Rarity | undefined,
   type: string,
   category: string | undefined,
   value: number,
@@ -228,22 +230,22 @@ export const calcRarityValue = (
     }
 
     switch (rarity) {
-      case "Uncommon":
+      case Rarity.Uncommon:
         if (rarityData.Uncommon[factorName]) {
           newValue = newValue * rarityData.Uncommon[factorName];
         }
         break;
-      case "Rare":
+      case Rarity.Rare:
         if (rarityData.Rare[factorName]) {
           newValue = newValue * rarityData.Rare[factorName];
         }
         break;
-      case "Epic":
+      case Rarity.Epic:
         if (rarityData.Epic[factorName]) {
           newValue = newValue * rarityData.Epic[factorName];
         }
         break;
-      case "Legendary":
+      case Rarity.Legendary:
         if (rarityData.Legendary[factorName]) {
           newValue = newValue * rarityData.Legendary[factorName];
         }
@@ -263,28 +265,28 @@ export const calcRarityValue = (
 
 const sumCalcs = (
   factorName: keyof RarityFactors,
-  rarity: string | undefined,
+  rarity: Rarity | undefined,
   value: number,
 ): number => {
   let newValue = value;
 
   switch (rarity) {
-    case "Uncommon":
+    case Rarity.Uncommon:
       if (rarityData.Uncommon?.[factorName]) {
         newValue = newValue + rarityData.Uncommon[factorName];
       }
       break;
-    case "Rare":
+    case Rarity.Rare:
       if (rarityData.Rare?.[factorName]) {
         newValue = newValue + rarityData.Rare[factorName];
       }
       break;
-    case "Epic":
+    case Rarity.Epic:
       if (rarityData.Epic?.[factorName]) {
         newValue = newValue + rarityData.Epic[factorName];
       }
       break;
-    case "Legendary":
+    case Rarity.Legendary:
       if (rarityData.Legendary?.[factorName]) {
         newValue = newValue + rarityData.Legendary[factorName];
       }

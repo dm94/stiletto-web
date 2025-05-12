@@ -217,13 +217,14 @@ const TechTree = () => {
           >
             {isSaving ? (
               <>
-                {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
                 <svg
                   className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
+                  <title>{t("common.deleting")}</title>
                   <circle
                     className="opacity-25"
                     cx="12"
@@ -268,24 +269,33 @@ const TechTree = () => {
           title="Tech Tree - Stiletto for Last Oasis"
           description="View and control your clan's technology tree"
           canonical={`${getDomain()}/tech`}
+          keywords="Last Oasis tech tree, clan technology, skill progression, game advancement, tech skills, Last Oasis progression system"
         />
         <LoadingScreen />
       </Fragment>
     );
   }
 
+  const tabSelected = t(`tech.${tabSelect}`);
+
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
-        title="Tech Tree - Stiletto for Last Oasis"
-        description="View and control your clan's technology tree"
-        canonical={`${getDomain()}/tech`}
+        title={`${tabSelected} - ${t("seo.techTree.title")}`}
+        description={t("techTree.description")}
+        canonical={`${getDomain()}/tech/${tabSelect}`}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/techtree.jpg"
+        keywords={`Last Oasis, ${tabSelected}, tech tree, skills, progression, ${tabSelected} skills, ${tabSelected} tech, game progression, Last Oasis ${tabSelected}, survival game tech`}
       />
-      <nav className="w-full">
+      <header>
+        <h1 className="sr-only">{`${tabSelected} - ${t("seo.techTree.title")}`}</h1>
+      </header>
+      <nav className="w-full" aria-label="Tech Tree Navigation">
         <div
           className="flex border-b border-gray-700"
           id="nav-tab"
           role="tablist"
+          aria-orientation="horizontal"
         >
           <div className="flex-1">
             <NavLink
@@ -295,6 +305,9 @@ const TechTree = () => {
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
                   : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
+              role="tab"
+              aria-selected={tabSelect === Tree.VITAMINS}
+              aria-controls="vitamins-panel"
             >
               <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
               {t("crafting.vitamins")}
@@ -308,6 +321,9 @@ const TechTree = () => {
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
                   : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
+              role="tab"
+              aria-selected={tabSelect === Tree.EQUIPMENT}
+              aria-controls="equipment-panel"
             >
               <Icon key="Equipment" name="Equipment" width={30} />{" "}
               {t("crafting.equipment")}
@@ -321,6 +337,9 @@ const TechTree = () => {
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
                   : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
+              role="tab"
+              aria-selected={tabSelect === Tree.CRAFTING}
+              aria-controls="crafting-panel"
             >
               <Icon key="Crafting" name="Crafting" width={30} />{" "}
               {t("menu.crafting")}
@@ -334,6 +353,9 @@ const TechTree = () => {
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
                   : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
+              role="tab"
+              aria-selected={tabSelect === Tree.CONSTRUCTION}
+              aria-controls="construction-panel"
             >
               <Icon key="Construction" name="Construction" width={30} />{" "}
               {t("crafting.construction")}
@@ -347,6 +369,9 @@ const TechTree = () => {
                   ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
                   : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
               }
+              role="tab"
+              aria-selected={tabSelect === Tree.WALKERS}
+              aria-controls="walkers-panel"
             >
               <Icon key="Walkers" name="Walkers" width={30} />{" "}
               {t("crafting.walkers")}
@@ -356,12 +381,18 @@ const TechTree = () => {
       </nav>
       {saveDeleteButtons}
       <Suspense fallback={<LoadingScreen />}>
-        <SkillTreeTab
-          treeId={tabSelect}
-          title={t(tabSelect)}
-          items={items}
-          clan={clan}
-        />
+        <main
+          id={`${tabSelect.toLowerCase()}-panel`}
+          role="tabpanel"
+          aria-labelledby={`${tabSelect.toLowerCase()}-tab`}
+        >
+          <SkillTreeTab
+            treeId={tabSelect}
+            title={t(tabSelect)}
+            items={items}
+            clan={clan}
+          />
+        </main>
       </Suspense>
     </div>
   );

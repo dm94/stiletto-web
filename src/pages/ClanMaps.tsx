@@ -8,10 +8,10 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
-import { Helmet } from "react-helmet";
 import ModalMessage from "@components/ModalMessage";
 import ClanMapItem from "@components/ClanMaps/ClanMapItem";
 import CreateMapPanel from "@components/ClanMaps/CreateMapPanel";
+import HeaderMeta from "@components/HeaderMeta";
 import { getDomain } from "@functions/utils";
 import { getMaps, addMap, deleteMap } from "@functions/requests/maps";
 import { getMapNames } from "@functions/github";
@@ -129,29 +129,21 @@ const ClanMaps = () => {
 
   const renderHelmet = useMemo(
     () => (
-      <Helmet>
-        <title>Interactive Map List - Stiletto for Last Oasis</title>
-        <meta
-          name="description"
-          content="Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base."
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Map List - Stiletto for Last Oasis"
-        />
-        <meta
-          name="twitter:description"
-          content="Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base."
-        />
-        <meta
-          name="twitter:image"
-          content="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
-        />
-        <link rel="canonical" href={`${getDomain()}/maps`} />
-      </Helmet>
+      <HeaderMeta
+        title={t(
+          "seo.maps.title",
+          "Interactive Map List - Stiletto for Last Oasis",
+        )}
+        description={t(
+          "seo.maps.description",
+          "Create, edit and share game maps by adding markers to them, e.g. to show where there is quality material or an enemy base.",
+        )}
+        canonical={`${getDomain()}/maps`}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/maps.jpg"
+        keywords="Last Oasis, interactive maps, game maps, resource locations, clan maps, map markers, gaming maps"
+      />
     ),
-    [],
+    [t],
   );
 
   const renderPanel = useMemo(() => {
