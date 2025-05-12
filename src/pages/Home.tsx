@@ -29,6 +29,9 @@ const Home: React.FC = () => {
       >
         <meta name="theme-color" content="#FFFFFF" />
       </HeaderMeta>
+      <h1 className="text-4xl text-center lo-title mb-8">
+        {t("seo.home.title", "Stiletto for Last Oasis")}
+      </h1>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-8">
         <Link
           className="text-center"
