@@ -223,7 +223,6 @@ const TechTree = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                   aria-hidden="true"
-                  role="img"
                 >
                   <title>{t("common.deleting")}</title>
                   <circle
