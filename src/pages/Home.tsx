@@ -25,7 +25,7 @@ const Home: React.FC = () => {
         )}
         canonical={getDomain()}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
-        keywords="Last Oasis, crafting calculator, resource maps, clan management, quality calculator, game tools, walkers"
+        keywords="Last Oasis, crafting calculator, resource maps, clan management, quality calculator, game tools, walkers, Last Oasis companion app, survival game tools, Last Oasis resources, game crafting system, walker customization, Last Oasis utility, survival MMO tools"
       >
         <meta name="theme-color" content="#FFFFFF" />
       </HeaderMeta>

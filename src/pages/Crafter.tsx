@@ -197,6 +197,7 @@ const Crafter: React.FC = () => {
         title={t("seo.crafter.title")}
         description={t("crafting.description")}
         canonical={`${getDomain()}/crafter`}
+        keywords="Last Oasis crafting, crafting calculator, resource requirements, item crafting, material calculator, Last Oasis items, crafting materials, game crafting system, resource planning, crafting recipes, Last Oasis resources"
       />
       <div className="w-full lg:w-1/4 mb-4 lg:mb-0">
         <form className="flex items-center">

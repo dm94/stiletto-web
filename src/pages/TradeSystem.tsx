@@ -329,6 +329,7 @@ const TradeSystem = () => {
         title={t("seo.trades.title")}
         description={t("seo.trades.description")}
         canonical={`${getDomain()}/trades`}
+        keywords="Last Oasis trading, resource exchange, supply and demand, trade system, in-game marketplace, player economy, resource trading, Last Oasis commerce, game trading platform"
       />
       {renderLoggedPart()}
       <div className="w-full p-4">

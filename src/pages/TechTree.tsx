@@ -268,6 +268,7 @@ const TechTree = () => {
           title="Tech Tree - Stiletto for Last Oasis"
           description="View and control your clan's technology tree"
           canonical={`${getDomain()}/tech`}
+          keywords="Last Oasis tech tree, clan technology, skill progression, game advancement, tech skills, Last Oasis progression system"
         />
         <LoadingScreen />
       </Fragment>
@@ -281,7 +282,7 @@ const TechTree = () => {
         description={t("techTree.description")}
         canonical={`${getDomain()}/tech/${tabSelect}`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/techtree.jpg"
-        keywords="Last Oasis, tech tree, skills, progression, vitamins, equipment, construction, walkers"
+        keywords={`Last Oasis, ${t(`tech.${tabSelect}`).toLowerCase()}, tech tree, skills, progression, ${tabSelect.toLowerCase()} skills, ${tabSelect.toLowerCase()} tech, game progression, Last Oasis ${tabSelect.toLowerCase()}, survival game tech`}
         type="application"
       />
       <nav className="w-full">

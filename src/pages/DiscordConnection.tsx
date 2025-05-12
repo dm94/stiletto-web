@@ -72,7 +72,7 @@ const DiscordConnection: React.FC = () => {
           )}
           canonical={`${getDomain()}/profile`}
           image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
-          keywords="Last Oasis, Discord integration, game login, Stiletto, clan management"
+          keywords="Last Oasis Discord, Discord integration, game login, Stiletto app, clan management, Last Oasis account linking, Discord authentication, game profile connection, Last Oasis community, Discord sync, game utility tools"
         />
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-6">
