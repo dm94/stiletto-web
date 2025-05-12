@@ -119,6 +119,9 @@ const CreatureWiki = () => {
         description={`All information for ${creatureName}`}
         canonical={getCreatureUrl(creatureName)}
       />
+      <h1 className="text-4xl font-bold text-gray-200 text-center mb-8 mt-4">
+        {t(creatureName, { ns: "creatures" })}
+      </h1>
       <div className="flex flex-wrap -mx-4">
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
