@@ -214,7 +214,7 @@ const ItemWiki = () => {
   }
 
   if (!item) {
-    return <Navigate to={"/not-found"} />;
+    return <Navigate to={"/wiki"} />;
   }
 
   const itemName = item?.name ?? itemInfo?.name;

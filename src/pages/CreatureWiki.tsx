@@ -66,7 +66,7 @@ const CreatureWiki = () => {
   }
 
   if (!creature) {
-    return <Navigate to={"/not-found"} />;
+    return <Navigate to={"/wiki"} />;
   }
 
   const creatureName = creature?.name ?? creatureInfo?.name;
