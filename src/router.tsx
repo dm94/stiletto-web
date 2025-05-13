@@ -43,14 +43,14 @@ const AppRoutes: React.ReactElement = (
       <Route path="map/:id" element={<ResourceMapNoLog />} />
       <Route path="map" element={<MapPage />} />
       <Route path="tech/:tree" element={<TechTree />} />
-      <Route path="tech/" element={<TechTree />} />
+      <Route path="tech" element={<TechTree />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="item/:name" element={<ItemWiki />} />
       <Route path="item/:name/:rarity" element={<ItemWiki />} />
       <Route path="item" element={<Wiki />} />
       <Route path="creature/:name" element={<CreatureWiki />} />
       <Route path="creature" element={<Wiki />} />
-      <Route path="wiki/" element={<Wiki />} />
+      <Route path="wiki" element={<Wiki />} />
       <Route path="not-found" element={<NotFoundPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
