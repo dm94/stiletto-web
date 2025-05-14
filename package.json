@@ -39,7 +39,7 @@
     "format": "biome format --write ./src",
     "lint": "biome lint --write ./src",
     "playwright:test": "playwright test",
-    "playwright:report": "playwright show-report"
+    "playwright:ui": "playwright test --ui"
   },
   "browserslist": {
     "production": [">0.2%", "not dead", "not op_mini all"],
