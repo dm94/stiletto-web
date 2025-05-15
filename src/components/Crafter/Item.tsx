@@ -18,7 +18,7 @@ const Item: React.FC<ItemProps> = memo(({ item, onAdd }) => {
   return (
     <div
       className="p-3 bg-gray-800 border border-gray-700 hover:bg-gray-700 transition-colors"
-      data-cy="list-group-item"
+      data-testid="list-group-item"
     >
       <div className="flex items-center justify-between">
         <span className="text-gray-300">{t(item?.name, { ns: "items" })}</span>

@@ -225,7 +225,7 @@ const ItemWiki = () => {
   return (
     <div
       className="container mx-auto px-4"
-      data-cy="wiki-item"
+      data-testid="wiki-item"
       data-name={itemName}
     >
       <HeaderMeta

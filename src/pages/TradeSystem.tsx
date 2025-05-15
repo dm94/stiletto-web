@@ -168,7 +168,7 @@ const TradeSystem = () => {
 
     return (
       <div className="w-full p-4">
-        <form onSubmit={handleCreateTrade} data-cy="create-trade-form">
+        <form onSubmit={handleCreateTrade} data-testid="create-trade-form">
           <div className="bg-gray-800 border border-gray-700 rounded-lg">
             <h2 className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
               {t("trades.publishTrade")}
@@ -181,7 +181,7 @@ const TradeSystem = () => {
                   </label>
                   <select
                     id="tradeType"
-                    data-cy="trade-type"
+                    data-testid="trade-type"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={tradeTypeInput}
                     onChange={(evt) => setTradeTypeInput(evt.target.value)}
@@ -196,7 +196,7 @@ const TradeSystem = () => {
                   </label>
                   <SearchableSelect
                     id="resourcetype"
-                    data-cy="resource-type"
+                    data-testid="resource-type"
                     value={resourceTypeInput}
                     onChange={setResourceTypeInput}
                     options={
@@ -217,7 +217,7 @@ const TradeSystem = () => {
                     onChange={setRegionInput}
                     filter={false}
                     id="regionInput"
-                    data-cy="region-input"
+                    data-testid="region-input"
                   />
                 </div>
                 <div className="space-y-2">
@@ -226,7 +226,7 @@ const TradeSystem = () => {
                   </label>
                   <input
                     id="amountInput"
-                    data-cy="amount-input"
+                    data-testid="amount-input"
                     type="number"
                     min="0"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -261,7 +261,7 @@ const TradeSystem = () => {
                   </label>
                   <input
                     id="priceInput"
-                    data-cy="price-input"
+                    data-testid="price-input"
                     type="number"
                     min="0"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -379,7 +379,7 @@ const TradeSystem = () => {
                     })) ?? []
                   }
                   placeholder={t("trades.selectResource")}
-                  data-cy="resource-type-filter"
+                  data-testid="resource-type-filter"
                 />
               </div>
               <div className="lg:col-span-1">

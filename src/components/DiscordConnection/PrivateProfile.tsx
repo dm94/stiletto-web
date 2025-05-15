@@ -160,7 +160,7 @@ const PrivateProfile = () => {
             <div className="divide-y divide-gray-700">
               <div className="flex justify-between items-center p-3">
                 <span className="text-gray-300">{t("profile.discordTag")}</span>
-                <span className="text-gray-400" data-cy="discord-tag">
+                <span className="text-gray-400" data-testid="discord-tag">
                   {userData?.discordtag}
                 </span>
               </div>
@@ -224,7 +224,7 @@ const PrivateProfile = () => {
                 {isLoaded && userData?.discordid !== userData?.leaderid && (
                   <button
                     type="button"
-                    data-cy="leave-clan-btn"
+                    data-testid="leave-clan-btn"
                     onClick={handleLeaveClan}
                     className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none"
                   >
@@ -236,14 +236,14 @@ const PrivateProfile = () => {
               <>
                 <Link
                   to="/clanlist"
-                  data-cy="join-clan-btn"
+                  data-testid="join-clan-btn"
                   className="w-full inline-flex justify-center items-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
                 >
                   {t("clan.joinClan")}
                 </Link>
                 <button
                   type="button"
-                  data-cy="create-clan-btn"
+                  data-testid="create-clan-btn"
                   onClick={() => setShowCreateClanConfig(true)}
                   className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
                 >

@@ -206,7 +206,7 @@ const Crafter: React.FC = () => {
             type="search"
             placeholder={t("common.search")}
             aria-label={t("common.search")}
-            data-cy="crafter-search"
+            data-testid="crafter-search"
             onChange={handleInputChangeSearchItem}
             value={searchText}
           />

@@ -108,7 +108,7 @@ const Menu: React.FC<MenuProps> = ({
             className="hidden md:flex md:items-center w-full md:justify-around"
           >
             <ul className="flex flex-col md:flex-row md:space-x-4 mt-4 md:mt-0">
-              <li className="nav-item" data-cy="crafter-link">
+              <li className="nav-item" data-testid="crafter-link">
                 <LanguageLink
                   to="/crafter"
                   className="block py-2 text-white hover:text-gray-300"
@@ -117,7 +117,7 @@ const Menu: React.FC<MenuProps> = ({
                   {t("menu.crafting")}
                 </LanguageLink>
               </li>
-              <li className="nav-item" data-cy="maps-link">
+              <li className="nav-item" data-testid="maps-link">
                 <LanguageLink
                   to={isConnected ? "/maps" : "/map"}
                   className="block py-2 text-white hover:text-gray-300"
@@ -126,7 +126,7 @@ const Menu: React.FC<MenuProps> = ({
                   {t("menu.resourceMaps")}
                 </LanguageLink>
               </li>
-              <li className="nav-item" data-cy="clanlist-link">
+              <li className="nav-item" data-testid="clanlist-link">
                 <LanguageLink
                   to="/clanlist"
                   className="block py-2 text-white hover:text-gray-300"
@@ -135,7 +135,7 @@ const Menu: React.FC<MenuProps> = ({
                   {t("menu.clanList")}
                 </LanguageLink>
               </li>
-              <li className="nav-item" data-cy="trades-link">
+              <li className="nav-item" data-testid="trades-link">
                 <LanguageLink
                   to="/trades"
                   className="block py-2 text-white hover:text-gray-300"
@@ -144,7 +144,7 @@ const Menu: React.FC<MenuProps> = ({
                   {t("menu.trades")}
                 </LanguageLink>
               </li>
-              <li className="nav-item" data-cy="wiki-link">
+              <li className="nav-item" data-testid="wiki-link">
                 <LanguageLink
                   to="/wiki"
                   className="block py-2 text-white hover:text-gray-300"
@@ -153,7 +153,7 @@ const Menu: React.FC<MenuProps> = ({
                   {t("menu.wiki")}
                 </LanguageLink>
               </li>
-              <li className="nav-item" data-cy="tech-link">
+              <li className="nav-item" data-testid="tech-link">
                 <LanguageLink
                   to="/tech"
                   className="block py-2 text-white hover:text-gray-300"
@@ -189,7 +189,7 @@ const Menu: React.FC<MenuProps> = ({
               <button
                 type="button"
                 className="p-2 text-white hover:bg-gray-700 rounded-lg"
-                data-cy="change-languaje-btn"
+                data-testid="change-languaje-btn"
                 aria-label={t("settings.changeLanguage")}
                 onClick={openLanguajeModal}
               >

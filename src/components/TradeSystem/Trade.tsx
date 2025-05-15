@@ -29,7 +29,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
               target="_blank"
               rel="noreferrer noopener"
               aria-label="Send DM"
-              data-cy="discord-link"
+              data-testid="discord-link"
             >
               <i className="fab fa-discord" />
             </a>
@@ -44,7 +44,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
           type="button"
           className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           onClick={() => onDelete?.(trade?.idtrade)}
-          data-cy="delete-trade-btn"
+          data-testid="delete-trade-btn"
         >
           {t("common.delete")}
         </button>
@@ -65,7 +65,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
     return (
       <span
         className={`inline-block px-2 py-1 rounded-full text-white text-sm ${quality.class} mb-2`}
-        data-cy="trade-quality"
+        data-testid="trade-quality"
       >
         {t(quality.text)}
       </span>
@@ -77,14 +77,14 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
   }
 
   return (
-    <div className="w-full" data-cy="trade-item">
+    <div className="w-full" data-testid="trade-item">
       <div
         className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg"
-        data-cy="trade-card"
+        data-testid="trade-card"
       >
         <div
           className="p-3 bg-gray-900 border-b border-gray-700"
-          data-cy="trade-header"
+          data-testid="trade-header"
         >
           <div className="flex items-center justify-center space-x-2">
             {trade.type === "Supply" ? (
@@ -92,22 +92,22 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
             ) : (
               <i className="far fa-arrow-alt-circle-down text-red-400" />
             )}
-            <span className="text-gray-300" data-cy="trade-type-region">
+            <span className="text-gray-300" data-testid="trade-type-region">
               {t(trade.type)} {"//"} {trade.region}
             </span>
           </div>
         </div>
-        <div className="p-4 text-center" data-cy="trade-content">
+        <div className="p-4 text-center" data-testid="trade-content">
           {getQualityBadge()}
           <h3
             className="text-lg font-medium text-gray-300 mb-2 flex justify-center"
-            data-cy="trade-resource"
+            data-testid="trade-resource"
           >
             {trade?.amount !== 0 ? `${trade.amount}x ` : ""}{" "}
             <Icon key={trade.resource} name={trade.resource} />
             <span>{t(trade.resource, { ns: "items" })}</span>
           </h3>
-          <p className="text-gray-400 mb-2" data-cy="trade-price">
+          <p className="text-gray-400 mb-2" data-testid="trade-price">
             {trade?.price !== 0
               ? `${trade.price} Flots/${t("trades.unit")}`
               : ""}
@@ -115,7 +115,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
           {trade.nickname && (
             <p
               className="text-gray-400"
-              data-cy="trade-nickname"
+              data-testid="trade-nickname"
             >{`${t("profile.nickInGame")}: ${trade.nickname}`}</p>
           )}
         </div>
