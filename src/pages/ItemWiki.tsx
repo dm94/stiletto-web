@@ -357,6 +357,7 @@ const ItemWiki = () => {
                   <button
                     key={rar}
                     type="button"
+                    data-testid={`rarity-button-${rar}`}
                     aria-pressed={rarity === rar}
                     className={`${getRarityClass(
                       rar,
