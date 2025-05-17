@@ -17,13 +17,11 @@ import {
 } from "@functions/requests/trades";
 import { type TradeInfo, TradeType } from "@ctypes/dto/trades";
 import type { Item } from "@ctypes/item";
-import { getUser } from "@functions/requests/users";
+import { useUser } from "@store/userStore";
 
 const TradeSystem = () => {
   const { t } = useTranslation();
-  const [isLogged, setIsLogged] = useState<boolean>(false);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [userDiscordId, setUserDiscordId] = useState<string>();
   const [trades, setTrades] = useState<TradeInfo[]>([]);
   const [error, setError] = useState("");
   const [items, setItems] = useState<Item[]>([]);
@@ -38,18 +36,7 @@ const TradeSystem = () => {
   const [regionFilterInput, setRegionFilterInput] = useState("");
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
-
-  const loadProfile = useCallback(async () => {
-    try {
-      const userProfile = await getUser();
-      if (userProfile?.discordid) {
-        setUserDiscordId(userProfile.discordid);
-        setIsLogged(true);
-      }
-    } catch {
-      // Silent error
-    }
-  }, []);
+  const { isConnected, userProfile } = useUser();
 
   const updateRecipes = useCallback(async () => {
     try {
@@ -92,10 +79,9 @@ const TradeSystem = () => {
   );
 
   useEffect(() => {
-    loadProfile();
     updateRecipes();
     updateTrades();
-  }, [loadProfile, updateRecipes, updateTrades]);
+  }, [updateRecipes, updateTrades]);
 
   const handleDeleteTrade = useCallback(
     async (idTrade: number) => {
@@ -154,9 +140,12 @@ const TradeSystem = () => {
   );
 
   const renderLoggedPart = () => {
-    if (!isLogged) {
+    if (!isConnected) {
       return (
-        <div className="w-full lg:w-1/2 p-4">
+        <div
+          className="w-full lg:w-1/2 p-4"
+          data-testid="not-logged-in-message"
+        >
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-4 text-green-400">
               {t("trades.publishTradeNotice")}
@@ -168,7 +157,7 @@ const TradeSystem = () => {
 
     return (
       <div className="w-full p-4">
-        <form onSubmit={handleCreateTrade} data-cy="create-trade-form">
+        <form onSubmit={handleCreateTrade} data-testid="create-trade-form">
           <div className="bg-gray-800 border border-gray-700 rounded-lg">
             <h2 className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
               {t("trades.publishTrade")}
@@ -181,7 +170,7 @@ const TradeSystem = () => {
                   </label>
                   <select
                     id="tradeType"
-                    data-cy="trade-type"
+                    data-testid="trade-type"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     value={tradeTypeInput}
                     onChange={(evt) => setTradeTypeInput(evt.target.value)}
@@ -196,7 +185,7 @@ const TradeSystem = () => {
                   </label>
                   <SearchableSelect
                     id="resourcetype"
-                    data-cy="resource-type"
+                    data-testid="resource-type"
                     value={resourceTypeInput}
                     onChange={setResourceTypeInput}
                     options={
@@ -217,7 +206,7 @@ const TradeSystem = () => {
                     onChange={setRegionInput}
                     filter={false}
                     id="regionInput"
-                    data-cy="region-input"
+                    dataTestId="region-input"
                   />
                 </div>
                 <div className="space-y-2">
@@ -226,7 +215,7 @@ const TradeSystem = () => {
                   </label>
                   <input
                     id="amountInput"
-                    data-cy="amount-input"
+                    data-testid="amount-input"
                     type="number"
                     min="0"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -261,7 +250,7 @@ const TradeSystem = () => {
                   </label>
                   <input
                     id="priceInput"
-                    data-cy="price-input"
+                    data-testid="price-input"
                     type="number"
                     min="0"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -276,6 +265,7 @@ const TradeSystem = () => {
                     className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                     type="submit"
                     value="Submit"
+                    data-testid="submit-trade-button"
                   >
                     {t("trades.publish")}
                   </button>
@@ -298,7 +288,7 @@ const TradeSystem = () => {
         <Trade
           key={`trade${trade.idtrade}`}
           trade={trade}
-          userDiscordId={userDiscordId}
+          userDiscordId={userProfile?.discordid}
           onDelete={handleDeleteTrade}
         />
       ));
@@ -309,7 +299,7 @@ const TradeSystem = () => {
         {t("trades.noTradesFound")}
       </div>
     );
-  }, [isLoaded, trades, userDiscordId, handleDeleteTrade, t]);
+  }, [isLoaded, trades, userProfile?.discordid, handleDeleteTrade, t]);
 
   if (error) {
     return (
@@ -379,7 +369,7 @@ const TradeSystem = () => {
                     })) ?? []
                   }
                   placeholder={t("trades.selectResource")}
-                  data-cy="resource-type-filter"
+                  data-testid="resource-type-filter"
                 />
               </div>
               <div className="lg:col-span-1">
@@ -396,6 +386,7 @@ const TradeSystem = () => {
                   onChange={setRegionFilterInput}
                   filter={true}
                   id="regionFilterInput"
+                  dataTestId="regionFilterInput"
                 />
               </div>
               <div className="lg:col-span-3 flex space-x-2">

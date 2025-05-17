@@ -18,7 +18,11 @@ const SearchBar = ({
 
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="flex" itemProp="potentialAction" data-cy="wiki-search">
+      <div
+        className="flex"
+        itemProp="potentialAction"
+        data-testid="wiki-search"
+      >
         <input
           type="search"
           className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"

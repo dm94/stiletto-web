@@ -111,7 +111,7 @@ const CreatureWiki = () => {
   return (
     <div
       className="container mx-auto px-4"
-      data-cy="wiki-creature"
+      data-testid="wiki-creature"
       data-name={creatureName}
     >
       <HeaderMeta

@@ -49,7 +49,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           onClick={addRecipeRequest}
           title={t("crafting.generateShareLink")}
-          data-cy="share-crafter-btn"
+          data-testid="share-crafter-btn"
           disabled={selectedItems?.length <= 0}
         >
           <i className="fas fa-share-alt" /> {t("common.share")}
@@ -66,7 +66,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
             <input
               type="text"
               className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              data-cy="share-crafter-input"
+              data-testid="share-crafter-input"
               value={url}
               disabled
             />
@@ -167,7 +167,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
             type="button"
             className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
             title={t("common.copyToClipboard")}
-            data-cy="crafter-copy-clipboard"
+            data-testid="crafter-copy-clipboard"
             onClick={copyMaterials}
             disabled={selectedItems?.length <= 0}
           >

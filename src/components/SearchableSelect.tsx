@@ -9,7 +9,7 @@ interface SearchableSelectProps {
   options: Array<{ value: string; label: string }>;
   placeholder?: string;
   className?: string;
-  "data-cy"?: string;
+  "data-testid"?: string;
 }
 
 const SearchableSelect: React.FC<SearchableSelectProps> = ({
@@ -19,7 +19,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
   options,
   placeholder = "",
   className = "",
-  "data-cy": dataCy,
+  "data-testid": dataCy,
 }) => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
@@ -81,7 +81,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
         aria-controls={`${id}-options`}
         aria-label={placeholder}
         tabIndex={0}
-        data-cy={dataCy}
+        data-testid={dataCy}
       >
         <span>{selectedLabel ?? placeholder}</span>
         <i className={`fas fa-chevron-${isOpen ? "up" : "down"}`} />

@@ -102,7 +102,7 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
   const url = getItemUrl(item.name);
 
   return (
-    <div className="w-full" data-cy="selected-item">
+    <div className="w-full" data-testid="selected-item">
       <div className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
         <div className="p-4 text-center relative bg-gray-800 border-b border-gray-700">
           <button
