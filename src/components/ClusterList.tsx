@@ -14,6 +14,7 @@ interface ClusterListProps {
   onChange?: (value: string) => void;
   filter?: boolean;
   id: string;
+  dataTestId?: string;
 }
 
 const ClusterList: React.FC<ClusterListProps> = ({
@@ -21,6 +22,7 @@ const ClusterList: React.FC<ClusterListProps> = ({
   onChange,
   filter,
   id,
+  dataTestId = "region-select",
 }) => {
   const { t } = useTranslation();
   const [clusters, setClusters] = useState<Cluster[]>([]);
@@ -57,6 +59,7 @@ const ClusterList: React.FC<ClusterListProps> = ({
       id={id}
       className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
       value={value}
+      data-testid={dataTestId}
       onChange={(event) => onChange?.(event.target.value)}
     >
       {filter && <option value="All">{t("common.all")}</option>}

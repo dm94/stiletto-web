@@ -103,16 +103,15 @@ test.describe("Trades Page", () => {
     });
     await page.reload();
 
-    await expect(
-      page.getByRole("button", { name: "Post New Trade" }),
-    ).toBeVisible();
-    await page.getByRole("button", { name: "Post New Trade" }).click();
-    await expect(page.getByLabel("Item Name")).toBeVisible();
-    await expect(page.getByLabel("Quantity")).toBeVisible();
-    await expect(page.getByLabel("Price (per item)")).toBeVisible();
-    await expect(
-      page.getByLabel("Location (e.g., Map Name, Coordinates)"),
-    ).toBeVisible();
+    // The form should be visible directly when the user is connected
+    await expect(page.getByTestId("create-trade-form")).toBeVisible();
+
+    // Check for form fields using data-testid
+    await expect(page.getByTestId("trade-type")).toBeVisible();
+    await expect(page.getByTestId("resource-type")).toBeVisible();
+    await expect(page.getByTestId("region-input")).toBeVisible();
+    await expect(page.getByTestId("amount-input")).toBeVisible();
+    await expect(page.getByTestId("price-input")).toBeVisible();
   });
 
   test("should not show post trade form when user is not connected", async ({

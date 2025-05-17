@@ -206,7 +206,7 @@ const TradeSystem = () => {
                     onChange={setRegionInput}
                     filter={false}
                     id="regionInput"
-                    data-testid="region-input"
+                    dataTestId="region-input"
                   />
                 </div>
                 <div className="space-y-2">
@@ -385,6 +385,7 @@ const TradeSystem = () => {
                   onChange={setRegionFilterInput}
                   filter={true}
                   id="regionFilterInput"
+                  dataTestId="regionFilterInput"
                 />
               </div>
               <div className="lg:col-span-3 flex space-x-2">
