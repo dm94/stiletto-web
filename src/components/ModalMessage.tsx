@@ -46,7 +46,10 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+      data-testid="modal-message-container"
+    >
       <div className="bg-gray-800 rounded-lg shadow-xl max-w-md w-full mx-4">
         <div className="p-4 border-b border-gray-700">
           <h5 className="text-xl font-semibold text-white" id="modal">

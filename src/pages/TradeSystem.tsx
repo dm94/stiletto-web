@@ -17,13 +17,11 @@ import {
 } from "@functions/requests/trades";
 import { type TradeInfo, TradeType } from "@ctypes/dto/trades";
 import type { Item } from "@ctypes/item";
-import { getUser } from "@functions/requests/users";
+import { useUser } from "@store/userStore";
 
 const TradeSystem = () => {
   const { t } = useTranslation();
-  const [isLogged, setIsLogged] = useState<boolean>(false);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [userDiscordId, setUserDiscordId] = useState<string>();
   const [trades, setTrades] = useState<TradeInfo[]>([]);
   const [error, setError] = useState("");
   const [items, setItems] = useState<Item[]>([]);
@@ -38,18 +36,7 @@ const TradeSystem = () => {
   const [regionFilterInput, setRegionFilterInput] = useState("");
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
-
-  const loadProfile = useCallback(async () => {
-    try {
-      const userProfile = await getUser();
-      if (userProfile?.discordid) {
-        setUserDiscordId(userProfile.discordid);
-        setIsLogged(true);
-      }
-    } catch {
-      // Silent error
-    }
-  }, []);
+  const { isConnected, userProfile } = useUser();
 
   const updateRecipes = useCallback(async () => {
     try {
@@ -92,10 +79,9 @@ const TradeSystem = () => {
   );
 
   useEffect(() => {
-    loadProfile();
     updateRecipes();
     updateTrades();
-  }, [loadProfile, updateRecipes, updateTrades]);
+  }, [updateRecipes, updateTrades]);
 
   const handleDeleteTrade = useCallback(
     async (idTrade: number) => {
@@ -154,7 +140,7 @@ const TradeSystem = () => {
   );
 
   const renderLoggedPart = () => {
-    if (!isLogged) {
+    if (!isConnected) {
       return (
         <div className="w-full lg:w-1/2 p-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
@@ -298,7 +284,7 @@ const TradeSystem = () => {
         <Trade
           key={`trade${trade.idtrade}`}
           trade={trade}
-          userDiscordId={userDiscordId}
+          userDiscordId={userProfile?.discordid}
           onDelete={handleDeleteTrade}
         />
       ));
@@ -309,7 +295,7 @@ const TradeSystem = () => {
         {t("trades.noTradesFound")}
       </div>
     );
-  }, [isLoaded, trades, userDiscordId, handleDeleteTrade, t]);
+  }, [isLoaded, trades, userProfile?.discordid, handleDeleteTrade, t]);
 
   if (error) {
     return (
