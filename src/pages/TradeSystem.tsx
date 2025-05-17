@@ -142,7 +142,10 @@ const TradeSystem = () => {
   const renderLoggedPart = () => {
     if (!isConnected) {
       return (
-        <div className="w-full lg:w-1/2 p-4">
+        <div
+          className="w-full lg:w-1/2 p-4"
+          data-testid="not-logged-in-message"
+        >
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
             <div className="p-4 text-green-400">
               {t("trades.publishTradeNotice")}
