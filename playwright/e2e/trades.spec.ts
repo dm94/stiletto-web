@@ -128,4 +128,80 @@ test.describe("Trades Page", () => {
     ).not.toBeVisible();
     await expect(page.getByTestId("not-logged-in-message")).toBeVisible();
   });
+
+  test("should allow a connected user to create a new trade", async ({
+    page,
+  }) => {
+    await page.route("**/users", (route) => {
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          discordtag: "testUser#1234",
+          nickname: "TestNickname",
+        }),
+      });
+    });
+
+    await page.evaluate(() => {
+      localStorage.setItem("token", "fake-user-token");
+      localStorage.setItem("discordid", "fake-discord-id");
+    });
+
+    await page.route("**/items_min.json", async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([
+          { name: "Aloe Vera", category: "Resource" },
+          { name: "Wood", category: "Resource" },
+          { name: "Stone", category: "Resource" },
+        ]),
+      });
+    });
+
+    await page.reload();
+
+    await expect(page.getByTestId("create-trade-form")).toBeVisible();
+
+    const tradeData = {
+      type: TradeType.Supply,
+      resource: "Aloe Vera",
+      region: "Official", // Assuming 'Official' is a valid value from the mocked /clusters
+      amount: 100,
+      quality: 2, // Rare
+      price: 50,
+    };
+
+    // Fill the form
+    await page.getByTestId("trade-type").selectOption({ label: "Supply" });
+    await page.getByTestId("amount-input").fill(tradeData.amount.toString());
+    await page
+      .locator("#qualityInput")
+      .selectOption({ value: tradeData.quality.toString() });
+    await page.getByTestId("price-input").fill(tradeData.price.toString());
+
+    // Capture the POST request to /trades
+    let postRequestPayload = null;
+    await page.route("**/trades", async (route) => {
+      const request = route.request();
+      if (request.method() === "POST") {
+        postRequestPayload = request.postDataJSON();
+        await route.fulfill({
+          status: 200,
+          contentType: "application/json",
+          body: JSON.stringify({ message: "Trade created successfully" }),
+        });
+      } else {
+        // Let other /trades requests (like GET) pass through the original beforeEach mock
+        await route.continue();
+      }
+    });
+
+    // Submit the form
+    await page.getByTestId("submit-trade-button").click();
+
+    // Assert the payload of the POST request
+    expect(postRequestPayload).not.toBeNull();
+  });
 });

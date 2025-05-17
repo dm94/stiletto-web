@@ -265,6 +265,7 @@ const TradeSystem = () => {
                     className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                     type="submit"
                     value="Submit"
+                    data-testid="submit-trade-button"
                   >
                     {t("trades.publish")}
                   </button>
