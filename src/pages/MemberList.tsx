@@ -521,6 +521,7 @@ const MemberList = () => {
               type="button"
               className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500"
               onClick={acceptMember}
+              data-testid="accept-request-button"
             >
               {t("common.accept")}
             </button>
@@ -528,6 +529,7 @@ const MemberList = () => {
               type="button"
               className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
               onClick={rejectMember}
+              data-testid="reject-request-button"
             >
               {t("common.reject")}
             </button>
