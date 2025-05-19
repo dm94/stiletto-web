@@ -411,6 +411,7 @@ const MemberList = () => {
                 type="button"
                 className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onClick={() => setShowClanConfig(true)}
+                data-testid="edit-clan-button"
               >
                 {t("clan.configuration")}
               </button>
