@@ -95,14 +95,14 @@ test.describe("Clan Request Flow", () => {
     page,
   }) => {
     await page.goto("/clanlist");
-    await expect(page).toHaveURL(/.*\/clanlist/);
+    await expect(page.url()).toContain("/clanlist");
     await page.waitForLoadState("networkidle", { timeout: 15000 });
 
     await expect(page.getByText(MOCK_CLANS_DATA[0].name)).toBeVisible();
     await expect(page.getByText(MOCK_CLANS_DATA[1].name)).toBeVisible();
 
     await page.getByTestId("send-request-button").first().click();
-    await expect(page.getByText(/Request Message/i)).toBeVisible();
+    await expect(page.getByText("Request Message")).toBeVisible();
 
     const requestMessage = "I would like to join your clan!";
     await page.locator("#modalTextArea").fill(requestMessage);
@@ -110,7 +110,7 @@ test.describe("Clan Request Flow", () => {
     await page.getByTestId("submit-request-button").click();
 
     await expect(
-      page.getByText(/Application to enter the clan sent/i),
+      page.getByText("Application to enter the clan sent"),
     ).toBeVisible();
   });
 
