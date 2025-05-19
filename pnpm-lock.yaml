@@ -73,8 +73,8 @@ importers:
         specifier: ^19.1.2
         version: 19.1.2
       '@types/react-dom':
-        specifier: ^19.1.2
-        version: 19.1.2(@types/react@19.1.2)
+        specifier: ^19.1.5
+        version: 19.1.5(@types/react@19.1.2)
       '@types/react-helmet':
         specifier: ^6.1.11
         version: 6.1.11
@@ -749,8 +749,8 @@ packages:
   '@types/node@22.15.8':
     resolution: {integrity: sha512-VINDWfc4C3DGAa1J+riYRHjzt+IFj5eRaEl768ze7ZqXcjyN/4WHxPLAWMLTwmODpPvFyzuMTAT6A4RMOHlg5g==}
 
-  '@types/react-dom@19.1.2':
-    resolution: {integrity: sha512-XGJkWF41Qq305SKWEILa1O8vzhb3aOo3ogBlSmiqNko/WmRb6QIaweuZCXjKygVDXpzXb5wyxKTSOsmkuqj+Qw==}
+  '@types/react-dom@19.1.5':
+    resolution: {integrity: sha512-CMCjrWucUBZvohgZxkjd6S9h0nZxXjzus6yDfUb+xLxYM7VvjKNH1tQrE9GWLql1XoOP4/Ds3bwFqShHUYraGg==}
     peerDependencies:
       '@types/react': ^19.0.0
 
@@ -2154,7 +2154,7 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/react-dom@19.1.2(@types/react@19.1.2)':
+  '@types/react-dom@19.1.5(@types/react@19.1.2)':
     dependencies:
       '@types/react': 19.1.2
 
