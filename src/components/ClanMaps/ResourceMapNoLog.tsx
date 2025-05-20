@@ -58,7 +58,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
 
     if ((props?.mapId || id) && (props?.pass || parsed?.pass)) {
       try {
-        const markers = (await getMarkers()) as Marker[];
+        const markers = await getMarkers();
         setItems(markers);
 
         const currentMapId = Number(props?.mapId ?? id);
