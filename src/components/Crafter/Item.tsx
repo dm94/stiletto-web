@@ -2,6 +2,7 @@ import type React from "react";
 import { useTranslation } from "react-i18next";
 import { memo } from "react";
 import type { Item as ItemType } from "@ctypes/item";
+import FaIcon from "@components/FaIcon";
 
 interface ItemProps {
   item: ItemType | null;
@@ -28,7 +29,7 @@ const Item: React.FC<ItemProps> = memo(({ item, onAdd }) => {
           aria-label={t("common.addItem")}
           onClick={() => onAdd(item?.name)}
         >
-          <i className="fas fa-plus" />
+          <FaIcon icon="fas fa-plus" className="ml-1" />
         </button>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import FaIcon from "@components/FaIcon";
 
 interface TimerProps {
   value?: boolean;
@@ -122,14 +123,14 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
                 setIsFinish(false);
               }}
             >
-              <i className="fas fa-play mr-2" /> {t("common.start")}
+              <FaIcon icon="fas fa-play" className="mr-2" /> {t("common.start")}
             </button>
             <button
               type="button"
               className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 flex items-center justify-center"
               onClick={() => setIsOn(false)}
             >
-              <i className="fas fa-stop mr-2" /> {t("common.stop")}
+              <FaIcon icon="fas fa-stop" className="mr-2" /> {t("common.stop")}
             </button>
           </div>
         </div>

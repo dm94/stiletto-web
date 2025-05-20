@@ -1,5 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback, memo } from "react";
+import FaIcon from "@components/FaIcon";
 import { useTranslation } from "react-i18next";
 import { getMarkers } from "@functions/github";
 import { useUser } from "@store/userStore";
@@ -296,7 +297,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
           className="text-white text-xl flex items-center"
           aria-live="polite"
         >
-          <i className="fas fa-circle-notch fa-spin mr-2" />
+          <FaIcon icon="fas fa-circle-notch" className="mr-2 animate-spin" />
           {t("maps.loadingResources")}
         </div>
       </div>

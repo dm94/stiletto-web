@@ -1,6 +1,7 @@
 import type React from "react";
 import { useState, memo } from "react";
 import { useTranslation } from "react-i18next";
+import FaIcon from "@components/FaIcon";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
 import { getItemUrl } from "@functions/utils";
@@ -68,8 +69,9 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
                 {t(ingredient?.name, { ns: "items" })}
               </span>
               <span className="ml-2 text-gray-400 bg-gray-700 rounded-full w-5 h-5 flex items-center justify-center">
-                <i
-                  className={`fas fa-chevron-${showList ? "up" : "down"} text-xs`}
+                <FaIcon
+                  icon={`fas fa-chevron-${showList ? "up" : "down"}`}
+                  className="text-xs"
                 />
               </span>
             </div>

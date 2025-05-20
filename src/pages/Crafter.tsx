@@ -12,6 +12,7 @@ import { getRecipe } from "@functions/requests/recipes";
 import { useLocation } from "react-router";
 import type { CraftItem, Item, ItemRecipe } from "@ctypes/item";
 import HeaderMeta from "@components/HeaderMeta";
+import FaIcon from "@components/FaIcon";
 
 const Crafter: React.FC = () => {
   const location = useLocation();
@@ -218,7 +219,7 @@ const Crafter: React.FC = () => {
             aria-expanded={isItemsNavVisible}
             aria-label="Toggle items"
           >
-            <i className="fas fa-list fa-lg" />
+            <FaIcon icon="fas fa-list" size={20} />
           </button>
         </form>
         <nav

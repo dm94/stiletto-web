@@ -1,5 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback } from "react";
+import FaIcon from "@components/FaIcon";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import { getMarkers } from "@functions/github";
@@ -211,7 +212,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
         className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
-        <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
+        <FaIcon icon={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
       </button>
       <div
         className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${

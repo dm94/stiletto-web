@@ -1,6 +1,7 @@
 import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import FaIcon from "@components/FaIcon";
 
 interface SearchableSelectProps {
   id: string;
@@ -84,7 +85,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
         data-testid={dataCy}
       >
         <span>{selectedLabel ?? placeholder}</span>
-        <i className={`fas fa-chevron-${isOpen ? "up" : "down"}`} />
+        <FaIcon icon={`fas fa-chevron-${isOpen ? "up" : "down"}`} />
       </div>
 
       {isOpen && (

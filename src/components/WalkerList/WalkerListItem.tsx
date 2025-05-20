@@ -2,6 +2,7 @@ import type React from "react";
 import { useState, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
+import FaIcon from "../FaIcon";
 import type { MemberInfo } from "@ctypes/dto/members";
 import type { WalkerInfo } from "@ctypes/dto/walkers";
 
@@ -240,7 +241,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     }`}
                     onClick={() => handleWalkerUpdate("isReady", true)}
                   >
-                    <i className="fas fa-check" />
+                    <FaIcon icon="fas fa-check" />
                   </button>
                   <span className="p-2 bg-gray-700 text-gray-300">
                     {t("common.isReady")}
@@ -254,7 +255,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     }`}
                     onClick={() => handleWalkerUpdate("isReady", false)}
                   >
-                    <i className="fas fa-times" />
+                    <FaIcon icon="fas fa-times" />
                   </button>
                 </div>
 
@@ -266,7 +267,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     setIsOpen(false);
                   }}
                 >
-                  <i className="fas fa-save mr-2" /> {t("common.save")}
+                  <FaIcon icon="fas fa-save" className="mr-2" /> {t("common.save")}
                 </button>
 
                 {canEdit && (
@@ -275,7 +276,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-xs"
                     onClick={() => onRemove(walker.walkerid)}
                   >
-                    <i className="fas fa-trash-alt mr-2" /> {t("common.delete")}
+                    <FaIcon icon="fas fa-trash-alt" className="mr-2" /> {t("common.delete")}
                   </button>
                 )}
               </div>
@@ -323,10 +324,9 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
           {walker.description}
         </td>
         <td className="px-6 py-4 text-center whitespace-nowrap">
-          <i
-            className={`fas fa-${
-              walker.isReady ? "check text-green-500" : "times text-red-500"
-            }`}
+          <FaIcon 
+            icon={`fas fa-${walker.isReady ? "check" : "times"}`}
+            className={walker.isReady ? "text-green-500" : "text-red-500"}
           />
         </td>
         <td className="px-6 py-4 text-center whitespace-nowrap">
@@ -338,7 +338,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
               isOpen ? t("common.hideDetails") : t("common.showDetails")
             }
           >
-            <i className={`fas fa-eye${isOpen ? "-slash" : ""}`} />
+            <FaIcon icon={`fas fa-eye${isOpen ? "-slash" : ""}`} />
           </button>
         </td>
       </tr>

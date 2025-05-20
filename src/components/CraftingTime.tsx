@@ -1,5 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
+import FaIcon from "@components/FaIcon";
 
 interface CraftingTimeProps {
   total?: number;
@@ -36,7 +37,7 @@ const CraftingTime: React.FC<CraftingTimeProps> = ({ total = 1, time }) => {
       <div className="flex items-center justify-end space-x-2 text-gray-300">
         <span>{t("Crafting time")}:</span>
         <div className="flex items-center space-x-2 bg-gray-700 px-3 py-1 rounded-lg">
-          <i className="fa fa-clock" />
+          <FaIcon icon="fa fa-clock" />
           <span className="font-medium">{convertSecondsToTime(totalTime)}</span>
         </div>
       </div>

@@ -9,6 +9,7 @@ import { getDomain, getItemUrl } from "@functions/utils";
 import { addRecipe } from "@functions/requests/recipes";
 import type { CraftItem, ItemIngredient } from "@ctypes/item";
 import type { Recipe } from "@ctypes/dto/recipe";
+import FaIcon from "@components/FaIcon";
 
 interface TotalMaterialsProps {
   selectedItems: CraftItem[];
@@ -52,7 +53,8 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           data-testid="share-crafter-btn"
           disabled={selectedItems?.length <= 0}
         >
-          <i className="fas fa-share-alt" /> {t("common.share")}
+          <FaIcon icon="fas fa-share-alt" className="mr-1" />{" "}
+          {t("common.share")}
         </button>
       ),
       [addRecipeRequest, selectedItems, t],
@@ -171,7 +173,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
             onClick={copyMaterials}
             disabled={selectedItems?.length <= 0}
           >
-            <i className="fas fa-copy" />
+            <FaIcon icon="fas fa-copy" />
           </button>
         </div>
         <div className="p-4" id="list-all-items">

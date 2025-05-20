@@ -1,6 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
+import FaIcon from "@components/FaIcon";
 import type { TradeInfo } from "@ctypes/dto/trades";
 
 interface TradeProps {
@@ -31,7 +32,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
               aria-label="Send DM"
               data-testid="discord-link"
             >
-              <i className="fab fa-discord" />
+              <FaIcon icon="fab fa-discord" />
             </a>
           </div>
         </div>
@@ -88,9 +89,9 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
         >
           <div className="flex items-center justify-center space-x-2">
             {trade.type === "Supply" ? (
-              <i className="far fa-arrow-alt-circle-up text-green-400" />
+              <FaIcon icon="far fa-arrow-alt-circle-up" className="text-green-400" />
             ) : (
-              <i className="far fa-arrow-alt-circle-down text-red-400" />
+              <FaIcon icon="far fa-arrow-alt-circle-down" className="text-red-400" />
             )}
             <span className="text-gray-300" data-testid="trade-type-region">
               {t(trade.type)} {"//"} {trade.region}

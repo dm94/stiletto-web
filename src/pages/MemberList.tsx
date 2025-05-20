@@ -7,6 +7,7 @@ import ClanConfig from "@components/ClanConfig";
 import MemberListItem from "@components/MemberList/MemberListItem";
 import RequestMemberListItem from "@components/MemberList/RequestMemberListItem";
 import MemberPermissionsConfig from "@components/MemberList/MemberPermissionsConfig";
+import FaIcon from "@components/FaIcon";
 import { sendNotification } from "@functions/broadcast";
 import { getDomain } from "@functions/utils";
 import { getRequests, updateRequest } from "@functions/requests/clans/requests";
@@ -405,7 +406,7 @@ const MemberList = () => {
                 className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
                 disabled
               >
-                <i className="fas fa-users-cog" />
+                <FaIcon icon="fas fa-users-cog" />
               </button>
               <button
                 type="button"

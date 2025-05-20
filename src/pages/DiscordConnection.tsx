@@ -1,5 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
+import FaIcon from "@components/FaIcon";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import LoadingScreen from "@components/LoadingScreen";
@@ -81,7 +82,7 @@ const DiscordConnection: React.FC = () => {
               href={discordLoginUrl}
               className="w-full inline-flex justify-center items-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors"
             >
-              <i className="fab fa-discord mr-2" />
+              <FaIcon icon="fab fa-discord" className="mr-2" />
               {t("auth.loginWithDiscord")}
             </a>
           </div>

@@ -1,5 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
+import FaIcon from "../FaIcon";
 import type { MemberInfo } from "@ctypes/dto/members";
 import { useUser } from "@store/userStore";
 
@@ -66,7 +67,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
             className="px-2 py-1 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
             disabled
           >
-            <i className="fas fa-user-cog" />
+            <FaIcon icon="fas fa-user-cog" />
           </button>
           <button
             type="button"
@@ -84,7 +85,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
     <tr className="hover:bg-gray-700 transition-colors duration-150">
       <td className="px-4 py-3">
         {member.leaderid === member.discordid && (
-          <i className="fas fa-crown text-yellow-400 mr-1" />
+          <FaIcon icon="fas fa-crown" className="text-yellow-400 mr-1" />
         )}
         <span className="font-medium text-neutral-400">
           {member.discordtag}

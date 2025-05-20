@@ -2,6 +2,7 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import FaIcon from "../FaIcon";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router";
 import LoadingScreen from "../LoadingScreen";
@@ -211,14 +212,14 @@ const PrivateProfile = () => {
                   to="/members"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
-                  <i className="fas fa-users mr-2" />
+                  <FaIcon icon="fas fa-users" className="mr-2" />
                   {t("menu.clanGeneral")}
                 </Link>
                 <Link
                   to="/diplomacy"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
-                  <i className="far fa-flag mr-2" />
+                  <FaIcon icon="far fa-flag" className="mr-2" />
                   {t("menu.diplomacy")}
                 </Link>
                 {isLoaded && userData?.discordid !== userData?.leaderid && (
