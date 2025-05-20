@@ -15,6 +15,7 @@ import { closeSession } from "@functions/services";
 import { DEFAULT_LANGUAGE } from "@config/config";
 import type { UserInfo } from "@ctypes/dto/users";
 import { useUser } from "@store/userStore";
+import { FaUsers, FaFlag } from "react-icons/fa";
 
 const PrivateProfile = () => {
   const { t, i18n } = useTranslation();
@@ -211,14 +212,14 @@ const PrivateProfile = () => {
                   to="/members"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
-                  <i className="fas fa-users mr-2" />
+                  <FaUsers className="mr-2" />
                   {t("menu.clanGeneral")}
                 </Link>
                 <Link
                   to="/diplomacy"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
-                  <i className="far fa-flag mr-2" />
+                  <FaFlag className="mr-2" />
                   {t("menu.diplomacy")}
                 </Link>
                 {isLoaded && userData?.discordid !== userData?.leaderid && (

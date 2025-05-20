@@ -1,6 +1,7 @@
 import type React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { FaPlay, FaStop } from "react-icons/fa";
 
 interface TimerProps {
   value?: boolean;
@@ -44,7 +45,9 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
 
   return (
     <div
-      className={`bg-gray-800 border ${isFinish ? "border-yellow-500" : "border-gray-600"} rounded-lg shadow-md m-2 overflow-hidden`}
+      className={`bg-gray-800 border ${
+        isFinish ? "border-yellow-500" : "border-gray-600"
+      } rounded-lg shadow-md m-2 overflow-hidden`}
     >
       <div className={`p-4 ${isFinish ? "bg-yellow-500 bg-opacity-20" : ""}`}>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
@@ -122,14 +125,14 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
                 setIsFinish(false);
               }}
             >
-              <i className="fas fa-play mr-2" /> {t("common.start")}
+              <FaPlay className="mr-2 inline" /> {t("common.start")}
             </button>
             <button
               type="button"
               className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 flex items-center justify-center"
               onClick={() => setIsOn(false)}
             >
-              <i className="fas fa-stop mr-2" /> {t("common.stop")}
+              <FaStop className="mr-2 inline" /> {t("common.stop")}
             </button>
           </div>
         </div>

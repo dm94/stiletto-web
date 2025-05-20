@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, Fragment } from "react";
 import { useTranslation } from "react-i18next";
+import { FaUsersCog } from "react-icons/fa";
 import HeaderMeta from "@components/HeaderMeta";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
@@ -405,12 +406,13 @@ const MemberList = () => {
                 className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
                 disabled
               >
-                <i className="fas fa-users-cog" />
+                <FaUsersCog />
               </button>
               <button
                 type="button"
                 className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 onClick={() => setShowClanConfig(true)}
+                data-testid="edit-clan-button"
               >
                 {t("clan.configuration")}
               </button>
@@ -521,6 +523,7 @@ const MemberList = () => {
               type="button"
               className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500"
               onClick={acceptMember}
+              data-testid="accept-request-button"
             >
               {t("common.accept")}
             </button>
@@ -528,6 +531,7 @@ const MemberList = () => {
               type="button"
               className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
               onClick={rejectMember}
+              data-testid="reject-request-button"
             >
               {t("common.reject")}
             </button>

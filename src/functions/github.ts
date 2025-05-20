@@ -6,9 +6,12 @@ import { toSnakeCase } from "./utils";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 
 const RESOURCE_CACHE_TIME_CHECK = import.meta.env.PROD ? 86400000 : 1;
+const REPO_URL = "https://raw.githubusercontent.com/dm94/stiletto-web/master";
 const REPO_JSON_URL = import.meta.env.PROD
-  ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json"
+  ? `${REPO_URL}/public/json`
   : "/json";
+
+const WIKI_MD_URL = `${REPO_URL}/wiki`;
 
 const fetchResource = async <T>(
   filePath: string,
@@ -59,3 +62,22 @@ export const getCreatureInfo = (
   fetchResource<CreatureCompleteInfo>(
     `/creatures/${toSnakeCase(creatureName)}.json`,
   );
+
+export const getMDContent = async (
+  type: "items" | "creatures",
+  name: string,
+): Promise<string> => {
+  try {
+    const response = await fetch(`${WIKI_MD_URL}/${type}/${name}.md`, {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error("errors.pageNotFound");
+    }
+
+    return await response.text();
+  } catch {
+    throw new Error("errors.apiConnection");
+  }
+};
