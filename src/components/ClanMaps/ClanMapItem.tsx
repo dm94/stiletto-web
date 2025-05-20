@@ -5,6 +5,7 @@ import { useUser } from "@store/userStore";
 import { getDomain } from "@functions/utils";
 import { config } from "@config/config";
 import type { MapInfo } from "@ctypes/dto/maps";
+import { FaTrashAlt, FaShareAlt, FaEye } from "react-icons/fa";
 
 interface ClanMapItemProps {
   map: MapInfo;
@@ -36,7 +37,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
 
   const isOwner = useMemo(
     () => map?.discordid === userProfile?.discordid,
-    [map?.discordid, userProfile],
+    [map?.discordid, userProfile]
   );
 
   const mapImageSrc = useMemo(() => {
@@ -56,7 +57,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
           className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           onClick={handleDeleteMap}
         >
-          <i className="fas fa-trash-alt mr-2" /> {t("maps.deleteMap")}
+          <FaTrashAlt className="mr-2" /> {t("maps.deleteMap")}
         </button>
       </div>
     );
@@ -75,7 +76,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
           className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           onClick={handleShareMap}
         >
-          <i className="fas fa-share-alt mr-2" /> {t("maps.shareMap")}
+          <FaShareAlt className="mr-2" /> {t("maps.shareMap")}
         </button>
       </div>
     );
@@ -104,7 +105,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
               className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               onClick={handleOpenMap}
             >
-              <i className="fas fa-eye mr-2" /> {t("maps.showMap")}
+              <FaEye className="mr-2" /> {t("maps.showMap")}
             </button>
             {renderDeleteButton}
             {renderShareButton}

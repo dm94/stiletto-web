@@ -25,22 +25,23 @@ import {
 } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
+import { FaTools } from "react-icons/fa";
 
 const WikiDescription = React.lazy(
-  () => import("@components/Wiki/WikiDescription"),
+  () => import("@components/Wiki/WikiDescription")
 );
 const SchematicDropInfo = React.lazy(
-  () => import("@components/Wiki/SchematicDropInfo"),
+  () => import("@components/Wiki/SchematicDropInfo")
 );
 const DropsInfo = React.lazy(() => import("@components/Wiki/DropsInfo"));
 const CanBeUsedInfo = React.lazy(
-  () => import("@components/Wiki/CanBeUsedInfo"),
+  () => import("@components/Wiki/CanBeUsedInfo")
 );
 const SchematicItems = React.lazy(
-  () => import("@components/Wiki/SchematicItems"),
+  () => import("@components/Wiki/SchematicItems")
 );
 const CreatureDropsInfo = React.lazy(
-  () => import("@components/Wiki/CreatureDropsInfo"),
+  () => import("@components/Wiki/CreatureDropsInfo")
 );
 
 const ItemWiki = () => {
@@ -67,7 +68,7 @@ const ItemWiki = () => {
       const items = await getItems();
       if (items) {
         const foundItem = items.find(
-          (it) => it.name.toLowerCase() === itemName,
+          (it) => it.name.toLowerCase() === itemName
         );
         setItem(foundItem);
         setAllItems(items);
@@ -121,7 +122,7 @@ const ItemWiki = () => {
           </div>
         </div>
       ),
-    [itemInfo?.description, t],
+    [itemInfo?.description, t]
   );
 
   useEffect(() => {
@@ -152,7 +153,7 @@ const ItemWiki = () => {
         navigate(getItemUrl(name, value));
       }
     },
-    [name, navigate],
+    [name, navigate]
   );
 
   const getRarityClass = useCallback(
@@ -198,7 +199,7 @@ const ItemWiki = () => {
         rarity === value ? "bg-opacity-20" : ""
       }`;
     },
-    [rarity],
+    [rarity]
   );
 
   const loadingItemPart = () => (
@@ -301,7 +302,7 @@ const ItemWiki = () => {
                         rarity,
                         "weight",
                         itemInfo.category,
-                        itemInfo.weight,
+                        itemInfo.weight
                       )}
                     </div>
                   </li>
@@ -316,7 +317,7 @@ const ItemWiki = () => {
                         rarity,
                         "experiencieReward",
                         itemInfo.category,
-                        itemInfo.experiencieReward,
+                        itemInfo.experiencieReward
                       )}
                     </div>
                   </li>
@@ -329,7 +330,7 @@ const ItemWiki = () => {
                         rarity,
                         "durability",
                         itemInfo.category,
-                        itemInfo.durability,
+                        itemInfo.durability
                       )}
                     </div>
                   </li>
@@ -360,7 +361,7 @@ const ItemWiki = () => {
                     data-testid={`rarity-button-${rar}`}
                     aria-pressed={rarity === rar}
                     className={`${getRarityClass(
-                      rar,
+                      rar
                     )} flex capitalize items-center justify-center px-3 py-2 w-[100px] h-[40px] font-medium text-sm focus:z-10 ${
                       rarity === rar ? "ring-2 ring-opacity-50" : ""
                     }`}
@@ -385,7 +386,7 @@ const ItemWiki = () => {
                   href={craftUrl}
                   className="text-gray-400 hover:text-gray-300"
                 >
-                  <i className="fas fa-tools" />
+                  <FaTools />
                 </a>
               </div>
               <div className="p-4 flex flex-wrap">{showIngredient(item)}</div>

@@ -10,6 +10,7 @@ import { useNavigate, useLocation } from "react-router";
 import { getDomain, getDiscordLoginUrl } from "@functions/utils";
 import { authDiscord } from "@functions/requests/users";
 import { useUser } from "@store/userStore";
+import { FaDiscord } from "react-icons/fa";
 
 const DiscordConnection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -64,11 +65,11 @@ const DiscordConnection: React.FC = () => {
         <HeaderMeta
           title={t(
             "seo.discord.title",
-            "Discord Login - Stiletto for Last Oasis",
+            "Discord Login - Stiletto for Last Oasis"
           )}
           description={t(
             "seo.discord.description",
-            "Link discord with stiletto and use more functions",
+            "Link discord with stiletto and use more functions"
           )}
           canonical={`${getDomain()}/profile`}
           image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
@@ -81,7 +82,7 @@ const DiscordConnection: React.FC = () => {
               href={discordLoginUrl}
               className="w-full inline-flex justify-center items-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors"
             >
-              <i className="fab fa-discord mr-2" />
+              <FaDiscord className="mr-2" />
               {t("auth.loginWithDiscord")}
             </a>
           </div>

@@ -20,6 +20,7 @@ import {
 } from "@functions/requests/maps/resources";
 import type { MapInfo } from "@ctypes/dto/maps";
 import { getMap } from "@functions/requests/maps";
+import { FaTimes, FaBars } from "react-icons/fa";
 
 interface ResourceMapNoLogProps {
   mapId?: number;
@@ -31,7 +32,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const { id } = useParams<{ id: string }>();
   const { t } = useTranslation();
   const [resourcesInTheMap, setResourcesInTheMap] = useState<ResourceInfo[]>(
-    [],
+    []
   );
   const [mapId, setMapId] = useState<number>();
   const [pass, setPass] = useState<string>();
@@ -43,7 +44,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
   const [resourcesFiltered, setResourcesFiltered] = useState<ResourceInfo[]>(
-    [],
+    []
   );
   const [error, setError] = useState<string | null>(null);
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(false);
@@ -98,7 +99,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
         setError("errors.apiConnection");
       }
     },
-    [mapId, fetchData],
+    [mapId, fetchData]
   );
 
   const handleCreateResource = useCallback(
@@ -106,7 +107,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       resourceTypeInput: string,
       qualityInput: number,
       descriptionInput: string,
-      lastHarvested: string,
+      lastHarvested: string
     ) => {
       if (!mapId) {
         return;
@@ -129,7 +130,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
         setError("errors.apiConnection");
       }
     },
-    [mapId, coordinateXInput, coordinateYInput, pass, fetchData],
+    [mapId, coordinateXInput, coordinateYInput, pass, fetchData]
   );
 
   const handleFilterResources = useCallback(
@@ -138,19 +139,19 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
         setResourcesFiltered(resourcesInTheMap ?? []);
       } else {
         const filtered = (resourcesInTheMap ?? [])?.filter(
-          (resource) => resource.resourcetype === resourceType,
+          (resource) => resource.resourcetype === resourceType
         );
         setResourcesFiltered(filtered);
       }
     },
-    [resourcesInTheMap],
+    [resourcesInTheMap]
   );
 
   const handleUpdateResourceTime = async (
     mapid: number,
     resourceid: number,
     token: string,
-    date: string,
+    date: string
   ) => {
     try {
       await editResource(mapid, resourceid, {
@@ -211,7 +212,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
         className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
-        <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
+        {isOpenSidebar ? <FaTimes /> : <FaBars />}
       </button>
       <div
         className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${

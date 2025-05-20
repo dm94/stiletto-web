@@ -9,6 +9,7 @@ import { getDomain, getItemUrl } from "@functions/utils";
 import { addRecipe } from "@functions/requests/recipes";
 import type { CraftItem, ItemIngredient } from "@ctypes/item";
 import type { Recipe } from "@ctypes/dto/recipe";
+import { FaShareAlt, FaCopy } from "react-icons/fa";
 
 interface TotalMaterialsProps {
   selectedItems: CraftItem[];
@@ -52,10 +53,10 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           data-testid="share-crafter-btn"
           disabled={selectedItems?.length <= 0}
         >
-          <i className="fas fa-share-alt" /> {t("common.share")}
+          <FaShareAlt /> {t("common.share")}
         </button>
       ),
-      [addRecipeRequest, selectedItems, t],
+      [addRecipeRequest, selectedItems, t]
     );
 
     const footerPart = useCallback((): React.ReactElement => {
@@ -113,7 +114,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           const output = item.crafting[0].output ?? 1;
           for (const ingredient of item.crafting[0].ingredients) {
             const existingIngredient = totalIngredients.find(
-              (ingre) => ingre.name === ingredient.name,
+              (ingre) => ingre.name === ingredient.name
             );
             if (existingIngredient) {
               existingIngredient.count +=
@@ -171,7 +172,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
             onClick={copyMaterials}
             disabled={selectedItems?.length <= 0}
           >
-            <i className="fas fa-copy" />
+            <FaCopy />
           </button>
         </div>
         <div className="p-4" id="list-all-items">
@@ -188,7 +189,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
         </div>
       </div>
     );
-  },
+  }
 );
 
 export default TotalMaterials;

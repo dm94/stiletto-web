@@ -20,6 +20,7 @@ import type { ResourceInfo } from "@ctypes/dto/resources";
 import { editMap } from "@functions/requests/maps";
 import { sendNotification } from "@functions/broadcast";
 import { useNavigate } from "react-router";
+import { FaCircleNotch, FaTimes, FaBars } from "react-icons/fa";
 
 interface ResourceMapProps {
   map: MapInfo;
@@ -33,21 +34,21 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
   const [items, setItems] = useState<Marker[]>([]);
   const [resourcesInTheMap, setResourcesInTheMap] = useState<ResourceInfo[]>(
-    [],
+    []
   );
   const [pass, setPass] = useState<string>(map?.pass ?? "");
   const [textSuccess, setTextSuccess] = useState<string>();
   const [center, setCenter] = useState<[number, number]>();
   const [mapName, setMapName] = useState<string>(map?.name);
   const [dateOfBurning, setDateOfBurning] = useState<string>(
-    map?.dateofburning ?? "",
+    map?.dateofburning ?? ""
   );
   const [allowEditing, setAllowEditing] = useState<boolean>(map?.allowedit);
   const [resourcesFiltered, setResourcesFiltered] = useState<ResourceInfo[]>(
-    [],
+    []
   );
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(
-    window.innerWidth >= 1440,
+    window.innerWidth >= 1440
   );
   const [error, setError] = useState<string>();
   const [activeTab, setActiveTab] = useState<string>("resources");
@@ -81,7 +82,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     resourceTypeInput: string,
     qualityInput: number,
     descriptionInput: string,
-    lastHarvested: string,
+    lastHarvested: string
   ) => {
     try {
       await addResourceMap(Number(map?.mapid), pass ?? "", {
@@ -117,7 +118,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
 
   const handleDeleteResource = async (
     resourceId: number,
-    resourceToken: string,
+    resourceToken: string
   ) => {
     try {
       await deleteResource(map?.mapid, resourceId, resourceToken);
@@ -131,7 +132,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     mapid: number,
     resourceid: number,
     token: string,
-    date: string,
+    date: string
   ) => {
     try {
       await editResource(mapid, resourceid, {
@@ -150,8 +151,8 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     } else {
       setResourcesFiltered(
         resourcesInTheMap.filter(
-          (resource) => resource.resourcetype === resourceType,
-        ),
+          (resource) => resource.resourcetype === resourceType
+        )
       );
     }
   };
@@ -296,7 +297,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
           className="text-white text-xl flex items-center"
           aria-live="polite"
         >
-          <i className="fas fa-circle-notch fa-spin mr-2" />
+          <FaCircleNotch className="fa-spin mr-2" />
           {t("maps.loadingResources")}
         </div>
       </div>
@@ -330,7 +331,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
         aria-expanded={isOpenSidebar}
         aria-controls="resource-map-sidebar"
       >
-        <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
+        {isOpenSidebar ? <FaTimes /> : <FaBars />}
       </button>
       <div
         id="resource-map-sidebar"
