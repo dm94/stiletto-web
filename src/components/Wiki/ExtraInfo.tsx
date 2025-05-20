@@ -30,7 +30,7 @@ const ExtraInfo: React.FC<ExtraInfoProps> = ({ type, name }) => {
   }, [codedName, type]);
 
   if (error || !content) {
-    return false;
+    return null;
   }
 
   return (
