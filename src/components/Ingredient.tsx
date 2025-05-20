@@ -1,6 +1,7 @@
 import type React from "react";
 import { useState, memo } from "react";
 import { useTranslation } from "react-i18next";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
 import { getItemUrl } from "@functions/utils";
@@ -36,7 +37,7 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
             value={
               ingredients.output != null
                 ? (ingredient?.count ?? 1 * value) / ingredients.output
-                : (ingredient?.count ?? 1 * value)
+                : ingredient?.count ?? 1 * value
             }
           />
         </div>
@@ -68,9 +69,11 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
                 {t(ingredient?.name, { ns: "items" })}
               </span>
               <span className="ml-2 text-gray-400 bg-gray-700 rounded-full w-5 h-5 flex items-center justify-center">
-                <i
-                  className={`fas fa-chevron-${showList ? "up" : "down"} text-xs`}
-                />
+                {showList ? (
+                  <FaChevronUp className="text-xs" />
+                ) : (
+                  <FaChevronDown className="text-xs" />
+                )}
               </span>
             </div>
             {ingredient?.category && (

@@ -332,7 +332,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
         </td>
         <td className="px-6 py-4 text-center whitespace-nowrap">
           <FaCheck
-            className={`fas fa-${
+            className={`${
               walker.isReady ? "check text-green-500" : "times text-red-500"
             }`}
           />
