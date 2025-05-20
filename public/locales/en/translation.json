@@ -445,5 +445,6 @@
   "privacy.contactTitle": "9. Contact",
   "privacy.contactText": "For privacy inquiries, please contact the administrator via Discord (user: dm94dani).",
   "privacy.changesTitle": "10. Changes to this Policy",
-  "privacy.changesText": "Stiletto reserves the right to modify this policy to adapt to legal or functional changes. Significant modifications will be notified on the website."
+  "privacy.changesText": "Stiletto reserves the right to modify this policy to adapt to legal or functional changes. Significant modifications will be notified on the website.",
+  "wiki.extraInfo": "Extra information"
 }

@@ -10,9 +10,12 @@ const REPO_JSON_URL = import.meta.env.PROD
   ? "https://raw.githubusercontent.com/dm94/stiletto-web/master/public/json"
   : "/json";
 
+const WIKI_MD_URL =
+  "https://raw.githubusercontent.com/dm94/stiletto-web/master/wiki";
+
 const fetchResource = async <T>(
   filePath: string,
-  cacheKey?: string,
+  cacheKey?: string
 ): Promise<T> => {
   if (cacheKey) {
     const cachedData = getCachedData(cacheKey, RESOURCE_CACHE_TIME_CHECK);
@@ -54,8 +57,28 @@ export const getCreatures = (): Promise<Creature[]> =>
   fetchResource<Creature[]>("/creatures_min.json");
 
 export const getCreatureInfo = (
-  creatureName: string,
+  creatureName: string
 ): Promise<CreatureCompleteInfo> =>
   fetchResource<CreatureCompleteInfo>(
-    `/creatures/${toSnakeCase(creatureName)}.json`,
+    `/creatures/${toSnakeCase(creatureName)}.json`
   );
+
+export const getMDContent = async (
+  type: "items" | "creatures",
+  name: string
+): Promise<string> => {
+  try {
+    const response = await fetch(`${WIKI_MD_URL}/${type}/${name}.md`, {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error("errors.pageNotFound");
+    }
+
+    const data = await response.text();
+    return data;
+  } catch {
+    throw new Error("errors.apiConnection");
+  }
+};

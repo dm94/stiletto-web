@@ -9,9 +9,10 @@ import { getItemDecodedName, getCreatureUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 import CreatureDropsInfo from "@components/Wiki/CreatureDropsInfo";
+import ExtraInfo from "@components/Wiki/ExtraInfo";
 
 const WikiDescription = React.lazy(
-  () => import("@components/Wiki/WikiDescription"),
+  () => import("@components/Wiki/WikiDescription")
 );
 
 const CreatureWiki = () => {
@@ -31,13 +32,13 @@ const CreatureWiki = () => {
       const creatures = await getCreatures();
       if (creatures) {
         const foundCreature = creatures.find(
-          (cr) => cr.name.toLowerCase() === creatureName?.toLowerCase(),
+          (cr) => cr.name.toLowerCase() === creatureName?.toLowerCase()
         );
         setCreature(foundCreature);
 
         try {
           const creatureInfo = await getCreatureInfo(
-            foundCreature?.name ?? creatureName ?? "",
+            foundCreature?.name ?? creatureName ?? ""
           );
           setCreatureInfo({
             ...creatureInfo,
@@ -135,12 +136,15 @@ const CreatureWiki = () => {
           </div>
         </div>
         <Suspense fallback={loadingCreaturePart()}>
-          <WikiDescription key="wikidescription" name={creatureName} />
-        </Suspense>
-        <Suspense fallback={loadingCreaturePart()}>
           {creatureInfo?.drops && (
             <CreatureDropsInfo key="dropInfo" drops={creatureInfo?.drops} />
           )}
+        </Suspense>
+        <Suspense fallback={loadingCreaturePart()}>
+          <ExtraInfo type="creatures" name={creatureName} />
+        </Suspense>
+        <Suspense fallback={loadingCreaturePart()}>
+          <WikiDescription key="wikidescription" name={creatureName} />
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
           <Comments key="comments" name={creatureName} />
