@@ -17,7 +17,7 @@ const DiscordButton: React.FC = () => {
         to="/profile"
         data-testid="profile-link"
       >
-        <FaUser className="mr-2" /> {t("menu.profile")}
+        <FaUser className="mr-2 inline" /> {t("menu.profile")}
       </Link>
     );
   }

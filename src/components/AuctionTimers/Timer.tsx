@@ -125,14 +125,14 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
                 setIsFinish(false);
               }}
             >
-              <FaPlay className="mr-2" /> {t("common.start")}
+              <FaPlay className="mr-2 inline" /> {t("common.start")}
             </button>
             <button
               type="button"
               className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 flex items-center justify-center"
               onClick={() => setIsOn(false)}
             >
-              <FaStop className="mr-2" /> {t("common.stop")}
+              <FaStop className="mr-2 inline" /> {t("common.stop")}
             </button>
           </div>
         </div>

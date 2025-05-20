@@ -57,7 +57,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
           className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           onClick={handleDeleteMap}
         >
-          <FaTrashAlt className="mr-2" /> {t("maps.deleteMap")}
+          <FaTrashAlt className="mr-2 inline" /> {t("maps.deleteMap")}
         </button>
       </div>
     );
@@ -76,7 +76,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
           className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           onClick={handleShareMap}
         >
-          <FaShareAlt className="mr-2" /> {t("maps.shareMap")}
+          <FaShareAlt className="mr-2 inline" /> {t("maps.shareMap")}
         </button>
       </div>
     );
@@ -105,7 +105,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
               className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
               onClick={handleOpenMap}
             >
-              <FaEye className="mr-2" /> {t("maps.showMap")}
+              <FaEye className="mr-2 inline" /> {t("maps.showMap")}
             </button>
             {renderDeleteButton}
             {renderShareButton}

@@ -85,7 +85,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
     <tr className="hover:bg-gray-700 transition-colors duration-150">
       <td className="px-4 py-3">
         {member.leaderid === member.discordid && (
-          <FaCrown className="text-yellow-400 mr-1" />
+          <FaCrown className="text-yellow-400 mr-1 inline" />
         )}
         <span className="font-medium text-neutral-400">
           {member.discordtag}

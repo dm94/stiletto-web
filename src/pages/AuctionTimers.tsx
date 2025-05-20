@@ -60,7 +60,7 @@ const AuctionTimers = memo(() => {
                   } rounded-l-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(true)}
                 >
-                  <FaVolumeUp className="mr-2" /> {t("common.soundOn")}
+                  <FaVolumeUp className="mr-2 inline" /> {t("common.soundOn")}
                 </button>
                 <button
                   type="button"
@@ -71,7 +71,8 @@ const AuctionTimers = memo(() => {
                   } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(false)}
                 >
-                  <FaVolumeMute className="mr-2" /> {t("common.soundOff")}
+                  <FaVolumeMute className="mr-2 inline" />{" "}
+                  {t("common.soundOff")}
                 </button>
               </div>
             </div>
@@ -90,8 +91,8 @@ const AuctionTimers = memo(() => {
                 className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-medium"
                 onClick={() => setTimers(timers + 1)}
               >
-                <FaPlus className="mr-2" />
-                {t("Add Timer")}
+                <FaPlus className="mr-2 inline" />
+                {t("timers.addTimer")}
               </button>
               <button
                 type="button"
@@ -101,8 +102,8 @@ const AuctionTimers = memo(() => {
                 onClick={() => setTimers(Math.max(1, timers - 1))}
                 disabled={timers <= 1}
               >
-                <FaMinus className="mr-2" />
-                {t("Remove Timer")}
+                <FaMinus className="mr-2 inline" />
+                {t("timers.removeTimer")}
               </button>
             </div>
           </div>
