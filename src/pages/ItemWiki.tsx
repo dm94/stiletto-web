@@ -26,6 +26,7 @@ import {
 import HeaderMeta from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
 import { FaTools } from "react-icons/fa";
+import ExtraInfo from "@components/Wiki/ExtraInfo";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -488,6 +489,9 @@ const ItemWiki = () => {
           {itemInfo?.drops && (
             <CreatureDropsInfo key="droppedInfo" drops={itemInfo?.drops} />
           )}
+        </Suspense>
+        <Suspense fallback={loadingItemPart()}>
+          <ExtraInfo type="items" name={itemName} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <Comments key="comments" name={itemName} />
