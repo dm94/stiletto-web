@@ -40,7 +40,7 @@ const ExtraInfo: React.FC<ExtraInfoProps> = ({ type, name }) => {
           {t("wiki.extraInfo")}
         </div>
         <div className="p-4 text-neutral-400">
-          <ReactMarkdown>{content}</ReactMarkdown>
+          <ReactMarkdown skipHtml={true}>{content}</ReactMarkdown>
         </div>
       </div>
     </div>
