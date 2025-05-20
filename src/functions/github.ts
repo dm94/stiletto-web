@@ -15,7 +15,7 @@ const WIKI_MD_URL = `${REPO_URL}/wiki`;
 
 const fetchResource = async <T>(
   filePath: string,
-  cacheKey?: string
+  cacheKey?: string,
 ): Promise<T> => {
   if (cacheKey) {
     const cachedData = getCachedData(cacheKey, RESOURCE_CACHE_TIME_CHECK);
@@ -57,15 +57,15 @@ export const getCreatures = (): Promise<Creature[]> =>
   fetchResource<Creature[]>("/creatures_min.json");
 
 export const getCreatureInfo = (
-  creatureName: string
+  creatureName: string,
 ): Promise<CreatureCompleteInfo> =>
   fetchResource<CreatureCompleteInfo>(
-    `/creatures/${toSnakeCase(creatureName)}.json`
+    `/creatures/${toSnakeCase(creatureName)}.json`,
   );
 
 export const getMDContent = async (
   type: "items" | "creatures",
-  name: string
+  name: string,
 ): Promise<string> => {
   try {
     const response = await fetch(`${WIKI_MD_URL}/${type}/${name}.md`, {
