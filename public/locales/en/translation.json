@@ -351,6 +351,8 @@
   "common.pvp": "PVP",
   "common.farming": "Farming",
   "common.isReady": "Is ready?",
+  "timers.removeTimer": "Remove timer",
+  "timers.addTimer": "Add timer",
   "crafting.searchItems": "Search items",
   "errors.errorConnectingToAPI": "Error connecting to the API",
   "maps.mapCreated": "Map created",

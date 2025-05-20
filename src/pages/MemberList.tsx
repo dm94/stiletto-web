@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useMemo, Fragment } from "react";
 import { useTranslation } from "react-i18next";
+import { FaUsersCog } from "react-icons/fa";
 import HeaderMeta from "@components/HeaderMeta";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
@@ -405,7 +406,7 @@ const MemberList = () => {
                 className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
                 disabled
               >
-                <i className="fas fa-users-cog" />
+                <FaUsersCog />
               </button>
               <button
                 type="button"

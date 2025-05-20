@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import Timer from "@components/AuctionTimers/Timer";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
+import { FaVolumeUp, FaVolumeMute, FaPlus, FaMinus } from "react-icons/fa";
 
 const AuctionTimers = memo(() => {
   const { t } = useTranslation();
@@ -59,7 +60,7 @@ const AuctionTimers = memo(() => {
                   } rounded-l-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(true)}
                 >
-                  <i className="fas fa-volume-up mr-2" /> {t("common.soundOn")}
+                  <FaVolumeUp className="mr-2 inline" /> {t("common.soundOn")}
                 </button>
                 <button
                   type="button"
@@ -70,7 +71,7 @@ const AuctionTimers = memo(() => {
                   } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(false)}
                 >
-                  <i className="fas fa-volume-mute mr-2" />{" "}
+                  <FaVolumeMute className="mr-2 inline" />{" "}
                   {t("common.soundOff")}
                 </button>
               </div>
@@ -90,8 +91,8 @@ const AuctionTimers = memo(() => {
                 className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-medium"
                 onClick={() => setTimers(timers + 1)}
               >
-                <i className="fas fa-plus mr-2" />
-                {t("Add Timer")}
+                <FaPlus className="mr-2 inline" />
+                {t("timers.addTimer")}
               </button>
               <button
                 type="button"
@@ -101,8 +102,8 @@ const AuctionTimers = memo(() => {
                 onClick={() => setTimers(Math.max(1, timers - 1))}
                 disabled={timers <= 1}
               >
-                <i className="fas fa-minus mr-2" />
-                {t("Remove Timer")}
+                <FaMinus className="mr-2 inline" />
+                {t("timers.removeTimer")}
               </button>
             </div>
           </div>

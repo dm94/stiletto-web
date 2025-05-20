@@ -366,11 +366,11 @@ const Diplomacy = () => {
       <HeaderMeta
         title={t(
           "seo.diplomacy.title",
-          "Clan Diplomacy - Stiletto for Last Oasis"
+          "Clan Diplomacy - Stiletto for Last Oasis",
         )}
         description={t(
           "seo.diplomacy.description",
-          "View your clan's list of allies, enemies and NAP"
+          "View your clan's list of allies, enemies and NAP",
         )}
         canonical={`${getDomain()}/diplomacy`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"

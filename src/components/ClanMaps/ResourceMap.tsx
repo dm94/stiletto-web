@@ -20,6 +20,7 @@ import type { ResourceInfo } from "@ctypes/dto/resources";
 import { editMap } from "@functions/requests/maps";
 import { sendNotification } from "@functions/broadcast";
 import { useNavigate } from "react-router";
+import { FaCircleNotch, FaTimes, FaBars } from "react-icons/fa";
 
 interface ResourceMapProps {
   map: MapInfo;
@@ -296,7 +297,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
           className="text-white text-xl flex items-center"
           aria-live="polite"
         >
-          <i className="fas fa-circle-notch fa-spin mr-2" />
+          <FaCircleNotch className="fa-spin mr-2" />
           {t("maps.loadingResources")}
         </div>
       </div>
@@ -330,7 +331,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
         aria-expanded={isOpenSidebar}
         aria-controls="resource-map-sidebar"
       >
-        <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
+        {isOpenSidebar ? <FaTimes /> : <FaBars />}
       </button>
       <div
         id="resource-map-sidebar"

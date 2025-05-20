@@ -25,6 +25,7 @@ import {
 } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
+import { FaTools } from "react-icons/fa";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -385,7 +386,7 @@ const ItemWiki = () => {
                   href={craftUrl}
                   className="text-gray-400 hover:text-gray-300"
                 >
-                  <i className="fas fa-tools" />
+                  <FaTools />
                 </a>
               </div>
               <div className="p-4 flex flex-wrap">{showIngredient(item)}</div>

@@ -20,6 +20,7 @@ import {
 } from "@functions/requests/maps/resources";
 import type { MapInfo } from "@ctypes/dto/maps";
 import { getMap } from "@functions/requests/maps";
+import { FaTimes, FaBars } from "react-icons/fa";
 
 interface ResourceMapNoLogProps {
   mapId?: number;
@@ -57,7 +58,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
 
     if ((props?.mapId || id) && (props?.pass || parsed?.pass)) {
       try {
-        const markers = (await getMarkers()) as Marker[];
+        const markers = await getMarkers();
         setItems(markers);
 
         const currentMapId = Number(props?.mapId ?? id);
@@ -211,7 +212,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
         className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
-        <i className={`fas ${isOpenSidebar ? "fa-times" : "fa-bars"}`} />
+        {isOpenSidebar ? <FaTimes /> : <FaBars />}
       </button>
       <div
         className={`fixed lg:relative inset-y-0 right-0 z-40 w-full lg:w-1/4 bg-gray-800 border-l border-gray-700 transform transition-transform duration-300 ease-in-out z-10 ${
