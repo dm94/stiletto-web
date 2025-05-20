@@ -31,7 +31,8 @@ const DiscordButton: React.FC = () => {
       className="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
       href={discordAuthUrl}
     >
-      <FaDiscord className="mr-2" /> {t("auth.loginWithDiscord")}
+      <FaDiscord className="mr-2 inline align-middle" />{" "}
+      {t("auth.loginWithDiscord")}
     </a>
   );
 };

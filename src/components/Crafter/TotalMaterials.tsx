@@ -49,11 +49,11 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           type="button"
           className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
           onClick={addRecipeRequest}
-          title={t("crafting.generateShareLink")}
+          title={t("common.share")}
           data-testid="share-crafter-btn"
           disabled={selectedItems?.length <= 0}
         >
-          <FaShareAlt /> {t("common.share")}
+          <FaShareAlt className="inline" /> {t("common.share")}
         </button>
       ),
       [addRecipeRequest, selectedItems, t]
