@@ -119,7 +119,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
           </p>
           {trade.nickname && (
             <p className="text-gray-400" data-testid="trade-nickname">{`${t(
-              "profile.nickInGame"
+              "profile.nickInGame",
             )}: ${trade.nickname}`}</p>
           )}
         </div>

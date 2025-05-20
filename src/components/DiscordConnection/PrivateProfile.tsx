@@ -64,7 +64,7 @@ const PrivateProfile = () => {
   };
 
   const handleAddNickInGame = async (
-    event: React.FormEvent<HTMLFormElement>
+    event: React.FormEvent<HTMLFormElement>,
   ) => {
     event.preventDefault();
     try {

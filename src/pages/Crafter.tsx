@@ -37,7 +37,7 @@ const Crafter: React.FC = () => {
       });
       setFilteredItems(filtered);
     },
-    [allItems, t]
+    [allItems, t],
   );
 
   useEffect(() => {
@@ -85,12 +85,12 @@ const Crafter: React.FC = () => {
         setSearchText(newSearchText);
       }
     },
-    []
+    [],
   );
 
   const removeSelectedItem = useCallback((itemName: string): void => {
     setSelectedItems((prevItems) =>
-      prevItems.filter((it) => it.name !== itemName)
+      prevItems.filter((it) => it.name !== itemName),
     );
   }, []);
 
@@ -103,11 +103,11 @@ const Crafter: React.FC = () => {
 
       setSelectedItems((prevItems) =>
         prevItems.map((item) =>
-          item.name === itemName ? { ...item, count } : item
-        )
+          item.name === itemName ? { ...item, count } : item,
+        ),
       );
     },
-    [removeSelectedItem]
+    [removeSelectedItem],
   );
 
   const getIngredients = useCallback(
@@ -126,10 +126,10 @@ const Crafter: React.FC = () => {
               ? []
               : getIngredients(ingredient.name, true),
           })),
-        })
+        }),
       );
     },
-    [allItems]
+    [allItems],
   );
 
   const handleAdd = useCallback(
@@ -139,7 +139,7 @@ const Crafter: React.FC = () => {
       if (existingItem) {
         changeCount(
           itemName,
-          Number.parseInt(existingItem.count.toString()) + count
+          Number.parseInt(existingItem.count.toString()) + count,
         );
         return;
       }
@@ -158,7 +158,7 @@ const Crafter: React.FC = () => {
         ]);
       }
     },
-    [allItems, selectedItems, changeCount, getIngredients]
+    [allItems, selectedItems, changeCount, getIngredients],
   );
 
   const showAllItems = useMemo((): React.ReactNode => {

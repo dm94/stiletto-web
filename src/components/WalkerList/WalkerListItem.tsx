@@ -45,7 +45,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
         [field]: value,
       }));
     },
-    []
+    [],
   );
 
   const renderWalkerInfo = useCallback(() => {
@@ -174,7 +174,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                           <option key={use} value={use}>
                             {t(use)}
                           </option>
-                        )
+                        ),
                       )}
                     </select>
                   </div>

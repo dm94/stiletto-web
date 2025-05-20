@@ -19,7 +19,7 @@ const AuctionTimers = memo(() => {
     const timerElements = [];
     for (let i = 0; i < timers; i++) {
       timerElements.push(
-        <Timer key={i} onPlay={playAlarm} value={playSound} />
+        <Timer key={i} onPlay={playAlarm} value={playSound} />,
       );
     }
     return <div className="w-full">{timerElements}</div>;
@@ -30,7 +30,7 @@ const AuctionTimers = memo(() => {
       <HeaderMeta
         title={t(
           "seo.auctions.title",
-          "Auction Timers - Stiletto for Last Oasis"
+          "Auction Timers - Stiletto for Last Oasis",
         )}
         description={t("seo.auctions.description", "Timers for what you need")}
         canonical={`${getDomain()}/auctions`}

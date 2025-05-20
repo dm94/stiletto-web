@@ -37,7 +37,7 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
             value={
               ingredients.output != null
                 ? (ingredient?.count ?? 1 * value) / ingredients.output
-                : ingredient?.count ?? 1 * value
+                : (ingredient?.count ?? 1 * value)
             }
           />
         </div>

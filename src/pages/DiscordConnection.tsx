@@ -65,11 +65,11 @@ const DiscordConnection: React.FC = () => {
         <HeaderMeta
           title={t(
             "seo.discord.title",
-            "Discord Login - Stiletto for Last Oasis"
+            "Discord Login - Stiletto for Last Oasis",
           )}
           description={t(
             "seo.discord.description",
-            "Link discord with stiletto and use more functions"
+            "Link discord with stiletto and use more functions",
           )}
           canonical={`${getDomain()}/profile`}
           image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"

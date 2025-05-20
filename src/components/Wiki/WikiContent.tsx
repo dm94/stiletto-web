@@ -99,7 +99,15 @@ const WikiContent = ({
     );
   }, [displayedItems, displayedCreatures, isLoading, t, contentType]);
 
-  return <section className="flex flex-wrap -m-3" aria-label={t(contentType === "items" ? "wiki.items" : "wiki.creatures")} data-testid="wiki-content-area">{content}</section>;
+  return (
+    <section
+      className="flex flex-wrap -m-3"
+      aria-label={t(contentType === "items" ? "wiki.items" : "wiki.creatures")}
+      data-testid="wiki-content-area"
+    >
+      {content}
+    </section>
+  );
 };
 
 export default WikiContent;

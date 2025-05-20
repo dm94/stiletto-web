@@ -40,7 +40,7 @@ const Menu: React.FC<MenuProps> = ({
     }
 
     const lngFound = supportedLanguages.find((l: Language) =>
-      lng.includes(l.key)
+      lng.includes(l.key),
     );
     return lngFound ? `/img/${lngFound.key}.jpg` : "/img/en.jpg";
   };

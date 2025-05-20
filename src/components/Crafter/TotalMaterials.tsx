@@ -56,7 +56,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           <FaShareAlt className="inline" /> {t("common.share")}
         </button>
       ),
-      [addRecipeRequest, selectedItems, t]
+      [addRecipeRequest, selectedItems, t],
     );
 
     const footerPart = useCallback((): React.ReactElement => {
@@ -114,7 +114,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           const output = item.crafting[0].output ?? 1;
           for (const ingredient of item.crafting[0].ingredients) {
             const existingIngredient = totalIngredients.find(
-              (ingre) => ingre.name === ingredient.name
+              (ingre) => ingre.name === ingredient.name,
             );
             if (existingIngredient) {
               existingIngredient.count +=
@@ -189,7 +189,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
         </div>
       </div>
     );
-  }
+  },
 );
 
 export default TotalMaterials;

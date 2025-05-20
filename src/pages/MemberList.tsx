@@ -37,7 +37,7 @@ const MemberList = () => {
   const [redirectMessage, setRedirectMessage] = useState<string>();
   const { userProfile } = useUser();
   const [selectNewOwner, setSelectNewOwner] = useState<string>(
-    userProfile?.discordid ?? ""
+    userProfile?.discordid ?? "",
   );
   const [showRequestModal, setShowRequestModal] = useState(false);
   const [requestData, setRequestData] = useState<MemberRequest>();
@@ -104,7 +104,7 @@ const MemberList = () => {
         try {
           const permissions = await getMemberPermissions(
             userProfile.clanid,
-            userProfile.discordid
+            userProfile.discordid,
           );
 
           setHasBotPermissions(permissions.bot ?? false);
@@ -155,7 +155,7 @@ const MemberList = () => {
       localStorage.removeItem("memberList-lastCheck");
 
       setRequestMembers(
-        requestMembers.filter((m) => m.discordid !== requestData.discordid)
+        requestMembers.filter((m) => m.discordid !== requestData.discordid),
       );
       updateMembers();
       setRequestData(undefined);
@@ -334,18 +334,18 @@ const MemberList = () => {
       <HeaderMeta
         title={t(
           "seo.memberList.title",
-          "Clan Member List - Stiletto for Last Oasis"
+          "Clan Member List - Stiletto for Last Oasis",
         )}
         description={t(
           "seo.memberList.description",
-          "Manage your clan members, handle join requests, and configure member permissions for your Last Oasis clan"
+          "Manage your clan members, handle join requests, and configure member permissions for your Last Oasis clan",
         )}
         canonical={`${getDomain()}/members`}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/diplomacy.jpg"
         keywords="Last Oasis, clan members, member management, clan permissions, clan leadership"
       />
     ),
-    [t]
+    [t],
   );
 
   if (error) {

@@ -37,7 +37,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
 
   const isOwner = useMemo(
     () => map?.discordid === userProfile?.discordid,
-    [map?.discordid, userProfile]
+    [map?.discordid, userProfile],
   );
 
   const mapImageSrc = useMemo(() => {

@@ -33,7 +33,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
       setFilteredOptions(options);
     } else {
       const filtered = options.filter((option) =>
-        option.label.toLowerCase().includes(searchText.toLowerCase())
+        option.label.toLowerCase().includes(searchText.toLowerCase()),
       );
       setFilteredOptions(filtered);
     }
