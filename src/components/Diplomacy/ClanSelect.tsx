@@ -1,5 +1,6 @@
 import type React from "react";
 import { memo } from "react";
+import { FaTrash } from "react-icons/fa";
 import ClanName from "../ClanName";
 import type { RelationshipInfo } from "@ctypes/dto/relationship";
 
@@ -26,7 +27,7 @@ const ClanSelect: React.FC<ClanSelectProps> = ({
           onClick={() => onDelete(clan?.id)}
           aria-label="Delete relationship"
         >
-          <i className="fas fa-trash" />
+          <FaTrash />
         </button>
       </div>
     </div>

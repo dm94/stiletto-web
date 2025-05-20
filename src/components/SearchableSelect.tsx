@@ -1,6 +1,7 @@
 import type React from "react";
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
 interface SearchableSelectProps {
   id: string;
@@ -32,7 +33,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
       setFilteredOptions(options);
     } else {
       const filtered = options.filter((option) =>
-        option.label.toLowerCase().includes(searchText.toLowerCase()),
+        option.label.toLowerCase().includes(searchText.toLowerCase())
       );
       setFilteredOptions(filtered);
     }
@@ -84,7 +85,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
         data-testid={dataCy}
       >
         <span>{selectedLabel ?? placeholder}</span>
-        <i className={`fas fa-chevron-${isOpen ? "up" : "down"}`} />
+        {isOpen ? <FaChevronUp /> : <FaChevronDown />}
       </div>
 
       {isOpen && (
@@ -117,7 +118,9 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
                 <option
                   key={option.value}
                   value={option.value}
-                  className={`p-2 hover:bg-gray-600 hover:text-white ${option.value === value ? "bg-blue-600" : ""}`}
+                  className={`p-2 hover:bg-gray-600 hover:text-white ${
+                    option.value === value ? "bg-blue-600" : ""
+                  }`}
                 >
                   {option.label}
                 </option>

@@ -2,6 +2,11 @@ import type React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import type { TradeInfo } from "@ctypes/dto/trades";
+import {
+  FaDiscord,
+  FaArrowAltCircleUp,
+  FaArrowAltCircleDown,
+} from "react-icons/fa";
 
 interface TradeProps {
   trade: TradeInfo;
@@ -31,7 +36,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
               aria-label="Send DM"
               data-testid="discord-link"
             >
-              <i className="fab fa-discord" />
+              <FaDiscord />
             </a>
           </div>
         </div>
@@ -88,9 +93,9 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
         >
           <div className="flex items-center justify-center space-x-2">
             {trade.type === "Supply" ? (
-              <i className="far fa-arrow-alt-circle-up text-green-400" />
+              <FaArrowAltCircleUp className="text-green-400" />
             ) : (
-              <i className="far fa-arrow-alt-circle-down text-red-400" />
+              <FaArrowAltCircleDown className="text-red-400" />
             )}
             <span className="text-gray-300" data-testid="trade-type-region">
               {t(trade.type)} {"//"} {trade.region}
@@ -113,10 +118,9 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
               : ""}
           </p>
           {trade.nickname && (
-            <p
-              className="text-gray-400"
-              data-testid="trade-nickname"
-            >{`${t("profile.nickInGame")}: ${trade.nickname}`}</p>
+            <p className="text-gray-400" data-testid="trade-nickname">{`${t(
+              "profile.nickInGame"
+            )}: ${trade.nickname}`}</p>
           )}
         </div>
         {renderCardFooter()}

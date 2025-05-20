@@ -1,5 +1,6 @@
 import type React from "react";
 import { useState, useRef, type KeyboardEvent } from "react";
+import { FaSearch } from "react-icons/fa";
 import LanguageLink from "./LanguageLink";
 import DiscordButton from "./DiscordButton";
 import { useTranslation } from "react-i18next";
@@ -39,7 +40,7 @@ const Menu: React.FC<MenuProps> = ({
     }
 
     const lngFound = supportedLanguages.find((l: Language) =>
-      lng.includes(l.key),
+      lng.includes(l.key)
     );
     return lngFound ? `/img/${lngFound.key}.jpg` : "/img/en.jpg";
   };
@@ -181,7 +182,7 @@ const Menu: React.FC<MenuProps> = ({
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
                   onClick={searchItem}
                 >
-                  <i className="fa fa-search" />
+                  <FaSearch />
                 </button>
               </div>
 
