@@ -351,6 +351,8 @@
   "common.pvp": "PVP",
   "common.farming": "Landwirtschaft",
   "common.isReady": "Ist bereit?",
+  "timers.removeTimer": "Remove timer",
+  "timers.addTimer": "Add timer",
   "crafting.searchItems": "Gegenstände suchen",
   "errors.errorConnectingToAPI": "API-Verbindung fehlgeschlagen",
   "maps.mapCreated": "Karte erstellt",
@@ -443,5 +445,6 @@
   "privacy.contactTitle": "9. Kontakt",
   "privacy.contactText": "Für Anfragen zum Schutz der Privatsphäre kontaktiere bitte den Administrator über Discord (Benutzer: dm94dani).",
   "privacy.changesTitle": "10. Änderungen an dieser Richtlinie",
-  "privacy.changesText": "Dennoch behält sich das Recht vor, diese Richtlinie zu ändern, um sich an die rechtlichen oder funktionalen Änderungen anzupassen, wobei wesentliche Änderungen auf der Website mitgeteilt werden."
+  "privacy.changesText": "Dennoch behält sich das Recht vor, diese Richtlinie zu ändern, um sich an die rechtlichen oder funktionalen Änderungen anzupassen, wobei wesentliche Änderungen auf der Website mitgeteilt werden.",
+  "wiki.extraInfo": "Extra information"
 }
