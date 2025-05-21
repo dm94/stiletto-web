@@ -351,6 +351,8 @@
   "common.pvp": "PVP",
   "common.farming": "Agricoltura",
   "common.isReady": "È pronto?",
+  "timers.removeTimer": "Remove timer",
+  "timers.addTimer": "Add timer",
   "crafting.searchItems": "Cerca Ogetti",
   "errors.errorConnectingToAPI": "Errore Connessione API",
   "maps.mapCreated": "Mappa Creata",
@@ -443,5 +445,6 @@
   "privacy.contactTitle": "9. Contatto",
   "privacy.contactText": "Per informazioni sulla privacy, contattare l'amministratore tramite Discord (utente: dm94dani).",
   "privacy.changesTitle": "10. Modifiche a questa politica",
-  "privacy.changesText": "Stiletto si riserva il diritto di modificare questa politica per adattarsi a modifiche legali o funzionali. Le modifiche significative saranno notificate sul sito."
+  "privacy.changesText": "Stiletto si riserva il diritto di modificare questa politica per adattarsi a modifiche legali o funzionali. Le modifiche significative saranno notificate sul sito.",
+  "wiki.extraInfo": "Extra information"
 }

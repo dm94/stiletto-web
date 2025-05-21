@@ -351,6 +351,8 @@
   "common.pvp": "ПВП",
   "common.farming": "Сельское хозяйство",
   "common.isReady": "Готово?",
+  "timers.removeTimer": "Remove timer",
+  "timers.addTimer": "Add timer",
   "crafting.searchItems": "Поиск элементов",
   "errors.errorConnectingToAPI": "Ошибка при подключении к API",
   "maps.mapCreated": "Карта создана",
@@ -443,5 +445,6 @@
   "privacy.contactTitle": "9. Контакт",
   "privacy.contactText": "По вопросам конфиденциальности обращайтесь к администратору через Discord (пользователь: dm94dani).",
   "privacy.changesTitle": "10. Изменения в данной политике",
-  "privacy.changesText": "Stiletto оставляет за собой право вносить изменения в эту политику для адаптации к юридическим или функциональным изменениям."
+  "privacy.changesText": "Stiletto оставляет за собой право вносить изменения в эту политику для адаптации к юридическим или функциональным изменениям.",
+  "wiki.extraInfo": "Extra information"
 }

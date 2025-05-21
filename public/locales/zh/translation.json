@@ -351,6 +351,8 @@
   "common.pvp": "PVP",
   "common.farming": "耕作中",
   "common.isReady": "准备好了吗？",
+  "timers.removeTimer": "Remove timer",
+  "timers.addTimer": "Add timer",
   "crafting.searchItems": "搜索项目",
   "errors.errorConnectingToAPI": "连接到 API 时出错",
   "maps.mapCreated": "地图已创建",
@@ -443,5 +445,6 @@
   "privacy.contactTitle": "9. 联系",
   "privacy.contactText": "关于隐私问题，请通过Discord联系管理员 (用户: dm94dani)。",
   "privacy.changesTitle": "10. 对本政策的修改",
-  "privacy.changesText": "Stiletto保留修改此政策以适应法律或功能变化的权利，网站将通知重大修改。"
+  "privacy.changesText": "Stiletto保留修改此政策以适应法律或功能变化的权利，网站将通知重大修改。",
+  "wiki.extraInfo": "Extra information"
 }

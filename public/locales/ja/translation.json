@@ -351,6 +351,8 @@
   "common.pvp": "PVP",
   "common.farming": "<unk>",
   "common.isReady": "準備はできていますか？",
+  "timers.removeTimer": "Remove timer",
+  "timers.addTimer": "Add timer",
   "crafting.searchItems": "アイテムを検索",
   "errors.errorConnectingToAPI": "APIへの接続エラー",
   "maps.mapCreated": "地図を作成しました",
@@ -443,5 +445,6 @@
   "privacy.contactTitle": "9. お問い合わせ",
   "privacy.contactText": "プライバシーに関するお問い合わせは、Discord(ユーザー:dm94dani)から管理者にお問い合わせください。",
   "privacy.changesTitle": "10. このポリシーの変更",
-  "privacy.changesText": "Stilettoは、法的または機能的な変更に適応するためにこのポリシーを変更する権利を留保します。"
+  "privacy.changesText": "Stilettoは、法的または機能的な変更に適応するためにこのポリシーを変更する権利を留保します。",
+  "wiki.extraInfo": "Extra information"
 }

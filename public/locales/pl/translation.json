@@ -351,6 +351,8 @@
   "common.pvp": "PVP",
   "common.farming": "Rolnictwo",
   "common.isReady": "Czy jest gotowy?",
+  "timers.removeTimer": "Remove timer",
+  "timers.addTimer": "Add timer",
   "crafting.searchItems": "Szukaj przedmiotów",
   "errors.errorConnectingToAPI": "Błąd połączenia z API",
   "maps.mapCreated": "Mapa utworzona",
@@ -443,5 +445,6 @@
   "privacy.contactTitle": "9. Kontakt",
   "privacy.contactText": "Aby uzyskać informacje o prywatności, skontaktuj się z administratorem za pośrednictwem Discorda (użytkownik: dm94dani).",
   "privacy.changesTitle": "10. Zmiany w tej polityce",
-  "privacy.changesText": "Stiletto zastrzega sobie prawo do zmiany tej polityki w celu dostosowania się do zmian prawnych lub funkcjonalnych. Znaczne zmiany zostaną zgłoszone na stronie internetowej."
+  "privacy.changesText": "Stiletto zastrzega sobie prawo do zmiany tej polityki w celu dostosowania się do zmian prawnych lub funkcjonalnych. Znaczne zmiany zostaną zgłoszone na stronie internetowej.",
+  "wiki.extraInfo": "Extra information"
 }
