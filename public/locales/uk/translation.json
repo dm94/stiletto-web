@@ -351,6 +351,8 @@
   "common.pvp": "PVP",
   "common.farming": "Сільське господарство",
   "common.isReady": "Готові?",
+  "timers.removeTimer": "Remove timer",
+  "timers.addTimer": "Add timer",
   "crafting.searchItems": "Пошук товарів",
   "errors.errorConnectingToAPI": "Помилка підключення до API",
   "maps.mapCreated": "Карту створено",
@@ -443,5 +445,6 @@
   "privacy.contactTitle": "9. Зв'яжіться з",
   "privacy.contactText": "Для отримання приватних запитів зверніться до адміністратора Discord (користувач: dm94dani).",
   "privacy.changesTitle": "10. Зміни в цій політиці",
-  "privacy.changesText": "Щоб зберегти право на редагування цієї політики задля адаптації до законних або функціональних змін. Значні зміни будуть повідомлені на веб-сайті."
+  "privacy.changesText": "Щоб зберегти право на редагування цієї політики задля адаптації до законних або функціональних змін. Значні зміни будуть повідомлені на веб-сайті.",
+  "wiki.extraInfo": "Extra information"
 }
