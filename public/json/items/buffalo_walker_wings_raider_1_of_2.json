@@ -8,16 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 32,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 14,
-          "name": "Tallow"
-        },
-        {
-          "count": 25,
-          "name": "Chitin Plate"
+          "count": 1,
+          "name": "WalkerWingAdvanced_T3"
         }
       ]
     }

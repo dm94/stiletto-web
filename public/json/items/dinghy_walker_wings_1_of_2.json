@@ -8,16 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Wood"
-        },
-        {
-          "count": 5,
-          "name": "Fiber Weave"
-        },
-        {
-          "count": 5,
-          "name": "Wood Shaft"
+          "count": 1,
+          "name": "Small Walker Wing"
         }
       ]
     }

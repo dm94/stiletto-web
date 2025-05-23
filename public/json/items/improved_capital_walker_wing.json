@@ -1,0 +1,25 @@
+{
+  "name": "Improved Capital Walker Wing",
+  "type": "WalkerWingImproved_T4_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 30,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Lightwood"
+        },
+        {
+          "count": 25,
+          "name": "Iron Ore"
+        },
+        {
+          "count": 17,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ]
+}

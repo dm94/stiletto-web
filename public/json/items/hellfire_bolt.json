@@ -2,8 +2,12 @@
   "name": "Hellfire Bolt",
   "parent": "FireBolt",
   "type": "HellfireBolt_C",
+  "category": "Ammo",
   "trade_price": 175.3,
+  "stackSize": 20,
+  "weight": 1,
   "description": "Ammo for ballista. Designed to burn down wooden structures over time. A heavy bolt with a crushing bone head, designed to splinter walkers and light wooden structures.",
+  "experiencieReward": 75,
   "crafting": [
     {
       "ingredients": [

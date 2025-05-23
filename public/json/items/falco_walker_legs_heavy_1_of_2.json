@@ -8,20 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 72,
-          "name": "Reinforced Plank"
-        },
-        {
-          "count": 12,
-          "name": "Chitin Plate"
-        },
-        {
-          "count": 5,
-          "name": "Tar"
-        },
-        {
-          "count": 60,
-          "name": "Worm Scale"
+          "count": 1,
+          "name": "Heavy Large Walker Leg"
         }
       ]
     }

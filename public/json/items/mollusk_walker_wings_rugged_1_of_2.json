@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 75,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 25,
-          "name": "Rope"
-        },
-        {
-          "count": 15,
-          "name": "Fiber Weave"
-        },
-        {
-          "count": 35,
-          "name": "Chitin Plate"
-        },
-        {
-          "count": 0,
-          "name": "Wooden Gear"
+          "count": 1,
+          "name": "Advanced Medium Walker Wing"
         }
       ]
     }

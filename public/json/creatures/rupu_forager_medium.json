@@ -78,8 +78,8 @@
     {
       "name": "Bone Glue",
       "chance": 11.111111,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "source": "processedresources_t2"
     },
     {
@@ -120,7 +120,7 @@
     {
       "name": "Glass",
       "chance": 11.111111,
-      "minQuantity": 1,
+      "minQuantity": 2,
       "maxQuantity": 2,
       "source": "processedresources_t2"
     },

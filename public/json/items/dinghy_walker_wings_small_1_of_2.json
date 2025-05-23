@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 12,
-          "name": "Fiber Weave"
-        },
-        {
-          "count": 4,
-          "name": "Rope"
-        },
-        {
           "count": 1,
-          "name": "Bone Glue"
-        },
-        {
-          "count": 1,
-          "name": "Nomad Cloth"
+          "name": "Improved Small Walker Wing"
         }
       ]
     }

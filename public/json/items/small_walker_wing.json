@@ -1,0 +1,21 @@
+{
+  "name": "Small Walker Wing",
+  "type": "WalkerWing_T1_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 5,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 15,
+          "name": "Fiber Weave"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Didgeridoo",
+  "type": "MusicalInstrumentDidgeridoo_C",
+  "category": "Equipment",
+  "weight": 5,
+  "durability": 150,
+  "weaponInfo": {
+    "damage": 10,
+    "penetration": 10
+  }
+}

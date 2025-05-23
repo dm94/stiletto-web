@@ -1,0 +1,26 @@
+{
+  "name": "Armored Large Walker Leg",
+  "type": "WalkerLegArmored_T3_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 30,
+  "experiencieReward": 550,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 25,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 8,
+          "name": "Obsidian"
+        }
+      ]
+    }
+  ]
+}

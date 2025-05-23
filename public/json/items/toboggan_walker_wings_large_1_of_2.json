@@ -8,28 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Wooden Gear"
-        },
-        {
-          "count": 34,
-          "name": "Nomad Cloth"
-        },
-        {
-          "count": 33,
-          "name": "Leather"
-        },
-        {
-          "count": 45,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 17,
-          "name": "Rope"
-        },
-        {
-          "count": 49,
-          "name": "Chitin Plate"
+          "count": 1,
+          "name": "Flotillan Medium Walker Wing"
         }
       ]
     }

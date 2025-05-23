@@ -10,15 +10,17 @@
           "name": "Nomad Cloth"
         },
         {
-          "count": 45,
-          "name": "Iron Nails"
-        },
-        {
           "count": 55,
           "name": "Lightwood"
+        },
+        {
+          "count": 45,
+          "name": "Iron Nails"
         }
       ]
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 20
+  }
 }

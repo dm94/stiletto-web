@@ -32,8 +32,8 @@
     "weaponSpeed": 115,
     "stability": 65,
     "weaponLength": 62,
-    "damage": 60,
-    "penetration": 10
+    "damage": 62,
+    "penetration": 30
   },
   "toolInfo": [
     {

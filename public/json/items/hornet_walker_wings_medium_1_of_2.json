@@ -8,16 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 80,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 8,
-          "name": "Nomad Cloth"
-        },
-        {
-          "count": 42,
-          "name": "Hide"
+          "count": 1,
+          "name": "WalkerWingAdvanced_T3"
         }
       ]
     }

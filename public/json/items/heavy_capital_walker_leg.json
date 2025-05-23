@@ -1,0 +1,26 @@
+{
+  "name": "Heavy Capital Walker Leg",
+  "type": "WalkerLegHeavy_T4_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 40,
+  "experiencieReward": 1000,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Worm Scale"
+        },
+        {
+          "count": 12,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 25,
+          "name": "Lightwood"
+        }
+      ]
+    }
+  ]
+}

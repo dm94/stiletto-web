@@ -1,0 +1,25 @@
+{
+  "name": "Flotillan Large Walker Wing",
+  "type": "WalkerWingFlotillan_T3_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 32,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 35,
+          "name": "Lightwood"
+        },
+        {
+          "count": 28,
+          "name": "Hollowbone"
+        }
+      ]
+    }
+  ]
+}

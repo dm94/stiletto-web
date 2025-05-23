@@ -17,8 +17,8 @@
           "name": "Iron Ingot"
         },
         {
-          "count": 2,
-          "name": "Eucalyptus Leaf"
+          "count": 5,
+          "name": "Worm Silk"
         },
         {
           "count": 6,
@@ -35,6 +35,6 @@
   ],
   "armorInfo": {
     "absorbing": 16,
-    "reduction": 8
+    "reduction": 3
   }
 }

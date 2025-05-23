@@ -1,0 +1,11 @@
+{
+  "name": "Rubab",
+  "type": "MusicalInstrumentRubab_C",
+  "category": "Equipment",
+  "weight": 2,
+  "durability": 150,
+  "weaponInfo": {
+    "damage": 10,
+    "penetration": 10
+  }
+}

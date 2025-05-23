@@ -1,0 +1,26 @@
+{
+  "name": "Medium Walker Leg",
+  "type": "WalkerLeg_T2_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 20,
+  "experiencieReward": 50,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 26,
+          "name": "Wood"
+        },
+        {
+          "count": 8,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ]
+}

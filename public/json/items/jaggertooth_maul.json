@@ -32,6 +32,6 @@
     "stability": 60,
     "weaponLength": 77,
     "damage": 35,
-    "penetration": 10
+    "penetration": 15
   }
 }

@@ -8,16 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 1000,
-          "name": "Wood"
-        },
-        {
-          "count": 124,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 146,
-          "name": "Earth Wax"
+          "count": 1,
+          "name": "Capital Walker Leg"
         }
       ]
     }

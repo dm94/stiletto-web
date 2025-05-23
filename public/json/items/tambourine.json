@@ -1,0 +1,11 @@
+{
+  "name": "Tambourine",
+  "type": "MusicalInstrumentTambourine_C",
+  "category": "Equipment",
+  "weight": 0.4,
+  "durability": 150,
+  "weaponInfo": {
+    "damage": 10,
+    "penetration": 10
+  }
+}

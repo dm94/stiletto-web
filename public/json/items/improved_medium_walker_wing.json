@@ -1,0 +1,25 @@
+{
+  "name": "Improved Medium Walker Wing",
+  "type": "WalkerWingImproved_T2_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 10,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 18,
+          "name": "Triple Stitch Fabric"
+        },
+        {
+          "count": 12,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ]
+}

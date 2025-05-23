@@ -1,0 +1,26 @@
+{
+  "name": "Capital Walker Leg",
+  "type": "WalkerLeg_T4_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 40,
+  "experiencieReward": 300,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Lightwood"
+        },
+        {
+          "count": 22,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 15,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ]
+}

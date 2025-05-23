@@ -6,20 +6,20 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Charcoal"
-        },
-        {
-          "count": 25,
-          "name": "Shardrock"
+          "count": 15,
+          "name": "Rubber Block"
         },
         {
           "count": 12,
           "name": "Eucalyptus Leaf"
         },
         {
-          "count": 15,
-          "name": "Rubber Block"
+          "count": 25,
+          "name": "Shardrock"
+        },
+        {
+          "count": 8,
+          "name": "Charcoal"
         }
       ]
     }

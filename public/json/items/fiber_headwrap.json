@@ -19,7 +19,7 @@
     }
   ],
   "armorInfo": {
-    "absorbing": 1,
+    "absorbing": 4,
     "reduction": 1
   },
   "droppedBy": [

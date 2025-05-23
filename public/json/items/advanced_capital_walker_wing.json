@@ -1,0 +1,25 @@
+{
+  "name": "Advanced Capital Walker Wing",
+  "type": "WalkerWingAdvanced_T4_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 30,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Lightwood"
+        },
+        {
+          "count": 27,
+          "name": "Hollowbone"
+        },
+        {
+          "count": 22,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ]
+}

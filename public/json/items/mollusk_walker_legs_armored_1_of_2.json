@@ -8,20 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 42,
-          "name": "Wood"
-        },
-        {
-          "count": 50,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 25,
-          "name": "Chitin Plate"
-        },
-        {
-          "count": 4,
-          "name": "Bone Glue"
+          "count": 1,
+          "name": "Armored Medium Walker Leg"
         }
       ]
     }

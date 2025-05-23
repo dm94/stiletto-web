@@ -8,26 +8,14 @@
     {
       "ingredients": [
         {
-          "count": 180,
-          "name": "Reinforced Plank"
-        },
-        {
-          "count": 25,
-          "name": "Iron Ingot"
-        },
-        {
-          "count": 120,
-          "name": "Worm Silk"
-        },
-        {
-          "count": 15,
-          "name": "Worm Scale"
+          "count": 1,
+          "name": "WalkerWingAdvanced_T3"
         }
       ]
     }
   ],
   "structureInfo": {
-    "type": "Medium",
+    "type": "Soft",
     "hp": 9000
   },
   "walkerInfo": {

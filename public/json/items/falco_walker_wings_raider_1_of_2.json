@@ -8,20 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 45,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 36,
-          "name": "Tallow"
-        },
-        {
-          "count": 38,
-          "name": "Fiber Weave"
-        },
-        {
-          "count": 4,
-          "name": "Wooden Gear"
+          "count": 1,
+          "name": "WalkerWingAdvanced_T3"
         }
       ]
     }

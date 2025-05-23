@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 85,
-          "name": "Wood"
-        },
-        {
-          "count": 74,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 14,
-          "name": "Tallow"
-        },
-        {
-          "count": 11,
-          "name": "Rope"
-        },
-        {
-          "count": 74,
-          "name": "Wooden Slab"
+          "count": 1,
+          "name": "Armored Large Walker Leg"
         }
       ]
     }

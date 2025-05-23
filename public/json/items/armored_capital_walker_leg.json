@@ -1,0 +1,26 @@
+{
+  "name": "Armored Capital Walker Leg",
+  "type": "WalkerLegArmored_T4_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 40,
+  "experiencieReward": 800,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 32,
+          "name": "Lightwood"
+        },
+        {
+          "count": 22,
+          "name": "Iron Ore"
+        },
+        {
+          "count": 15,
+          "name": "Shardrock"
+        }
+      ]
+    }
+  ]
+}

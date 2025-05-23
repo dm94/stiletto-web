@@ -56,7 +56,7 @@
     }
   ],
   "armorInfo": {
-    "absorbing": 5,
+    "absorbing": 10,
     "reduction": 1
   }
 }

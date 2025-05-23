@@ -1,0 +1,26 @@
+{
+  "name": "Large Walker Leg",
+  "type": "WalkerLeg_T3_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 30,
+  "experiencieReward": 150,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 27,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 14,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 18,
+          "name": "Earth Wax"
+        }
+      ]
+    }
+  ]
+}

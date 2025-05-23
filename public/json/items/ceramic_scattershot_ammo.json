@@ -2,6 +2,12 @@
   "name": "Ceramic Scattershot Ammo",
   "parent": "BoneScattershot",
   "type": "CeramicScattershot_C",
+  "category": "Ammo",
+  "trade_price": 5.2,
+  "stackSize": 24,
+  "weight": 0.3,
+  "description": "Ammo for Scattershot gun. A mixed bag of blunt and sharp debris that spread out when fired.",
+  "experiencieReward": 1,
   "crafting": [
     {
       "ingredients": [
@@ -20,7 +26,10 @@
     }
   ],
   "projectileDamage": {
-    "damage": 350
+    "damage": 235,
+    "penetration": 30,
+    "effectivenessVsSoak": 50,
+    "effectivenessVsReduce": 50
   },
   "toolInfo": [
     {

@@ -1,0 +1,21 @@
+{
+  "name": "Medium Walker Wing",
+  "type": "WalkerWing_T2_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 10,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 15,
+          "name": "Triple Stitch Fabric"
+        }
+      ]
+    }
+  ]
+}

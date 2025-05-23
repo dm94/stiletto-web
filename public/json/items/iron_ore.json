@@ -1,5 +1,6 @@
 {
   "name": "Iron Ore",
+  "parent": "Soil Excavator",
   "type": "IronOre_C",
   "category": "Resources",
   "trade_price": 8,
@@ -19,7 +20,6 @@
           "name": "Animal Fat"
         }
       ],
-      "output": 10,
       "station": "Artisan Soil Auger",
       "time": 30
     }

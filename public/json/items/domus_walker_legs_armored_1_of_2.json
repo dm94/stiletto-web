@@ -8,20 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 420,
-          "name": "Wood"
-        },
-        {
-          "count": 350,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 100,
-          "name": "Ceramic Shard"
-        },
-        {
-          "count": 20,
-          "name": "Tar"
+          "count": 1,
+          "name": "Capital Walker Leg"
         }
       ]
     }

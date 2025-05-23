@@ -20,5 +20,7 @@
       ]
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.05
+  }
 }

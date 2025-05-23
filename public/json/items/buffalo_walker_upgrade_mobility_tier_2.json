@@ -6,19 +6,21 @@
     {
       "ingredients": [
         {
-          "count": 56,
-          "name": "Chitin Plate"
+          "count": 5,
+          "name": "Reinforced Gear"
         },
         {
           "count": 24,
           "name": "Tallow"
         },
         {
-          "count": 5,
-          "name": "Reinforced Gear"
+          "count": 56,
+          "name": "Chitin Plate"
         }
       ]
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.5
+  }
 }

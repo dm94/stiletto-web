@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 92,
-          "name": "Redwood Wood"
-        },
-        {
-          "count": 20,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 48,
-          "name": "Ceramic Shard"
-        },
-        {
-          "count": 20,
-          "name": "Bone Glue"
-        },
-        {
-          "count": 32,
-          "name": "Animal Fat"
+          "count": 1,
+          "name": "Armored Medium Walker Leg"
         }
       ]
     }

@@ -32,8 +32,8 @@
     "weaponSpeed": 90,
     "impact": 70,
     "weaponLength": 61,
-    "damage": 60,
-    "penetration": 10
+    "damage": 64,
+    "penetration": 35
   },
   "droppedBy": [
     {

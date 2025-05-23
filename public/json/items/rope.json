@@ -50,6 +50,34 @@
       "output": 100,
       "station": "Artisan Fiberworking Station",
       "time": 1700
+    },
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Vine"
+        }
+      ],
+      "station": "Advanced Fiberworking Station",
+      "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Vine"
+        }
+      ],
+      "station": "Artisan Fiberworking Station",
+      "time": 20
     }
   ],
   "droppedBy": [

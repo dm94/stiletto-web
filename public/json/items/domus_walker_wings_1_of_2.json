@@ -8,16 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 360,
-          "name": "Wood"
-        },
-        {
-          "count": 30,
-          "name": "Rope"
-        },
-        {
-          "count": 15,
-          "name": "Nomad Cloth"
+          "count": 1,
+          "name": "Capital Walker Wing"
         }
       ]
     }

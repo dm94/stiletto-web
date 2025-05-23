@@ -2,7 +2,12 @@
   "name": "Obsidian Rok",
   "parent": "Ceramic Rok",
   "type": "ObsidianRok_C",
+  "category": "Ammo",
+  "trade_price": 5.2,
+  "stackSize": 10,
+  "weight": 5,
   "description": "Ammo for the Rokker. A solid chunk of ceramic fashioned into a terrifying projectile.",
+  "experiencieReward": 1,
   "crafting": [
     {
       "ingredients": [
@@ -24,8 +29,17 @@
     }
   ],
   "projectileDamage": {
-    "damage": 500
+    "damage": 500,
+    "penetration": 10,
+    "effectivenessVsSoak": 70,
+    "effectivenessVsReduce": 70
   },
+  "toolInfo": [
+    {
+      "toolType": "Scattershot",
+      "tier": 1
+    }
+  ],
   "droppedBy": [
     {
       "name": "Ammo Box T3",

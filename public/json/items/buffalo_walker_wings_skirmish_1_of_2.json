@@ -8,20 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 27,
-          "name": "Nomad Cloth"
-        },
-        {
-          "count": 18,
-          "name": "Rope"
-        },
-        {
-          "count": 35,
-          "name": "Wood Shaft"
-        },
-        {
           "count": 1,
-          "name": "Wooden Gear"
+          "name": "Improved Large Walker Wing"
         }
       ]
     }

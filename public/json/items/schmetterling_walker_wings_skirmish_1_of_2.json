@@ -8,20 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 200,
-          "name": "Reinforced Plank"
-        },
-        {
-          "count": 100,
-          "name": "Worm Silk"
-        },
-        {
-          "count": 14,
-          "name": "Iron Ingot"
-        },
-        {
-          "count": 30,
-          "name": "Redwood Wood"
+          "count": 1,
+          "name": "Improved Capital Walker Wing"
         }
       ]
     }

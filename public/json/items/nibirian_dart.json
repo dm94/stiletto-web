@@ -2,7 +2,11 @@
   "name": "Nibirian Dart",
   "parent": "IronDart",
   "type": "NibirianDart_C",
+  "category": "Ammo",
+  "trade_price": 1.5,
   "stackSize": 999,
+  "weight": 0.1,
+  "description": "Ammo for Stingers, Spinners and Repeater.  Best suited for hunting Phemke, Nurrs and unarmored Nomads.",
   "crafting": [
     {
       "ingredients": [
@@ -25,6 +29,12 @@
     }
   ],
   "projectileDamage": {
-    "damage": 25
-  }
+    "damage": 24.5
+  },
+  "toolInfo": [
+    {
+      "toolType": "RepeaterBolt",
+      "tier": 4
+    }
+  ]
 }

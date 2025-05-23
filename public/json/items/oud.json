@@ -1,0 +1,11 @@
+{
+  "name": "Oud",
+  "type": "MusicalInstrumentOud_C",
+  "category": "Equipment",
+  "weight": 3,
+  "durability": 150,
+  "weaponInfo": {
+    "damage": 10,
+    "penetration": 10
+  }
+}

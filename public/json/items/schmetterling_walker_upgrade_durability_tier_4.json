@@ -10,12 +10,12 @@
           "name": "Iron Ingot"
         },
         {
-          "count": 38,
-          "name": "Rubber Block"
-        },
-        {
           "count": 45,
           "name": "Shardrock"
+        },
+        {
+          "count": 38,
+          "name": "Rubber Block"
         }
       ]
     }

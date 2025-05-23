@@ -2,7 +2,10 @@
   "name": "Nibiran-tipped Bolt",
   "parent": "IronBolt",
   "type": "NibirianBolt_C",
+  "category": "Ammo",
   "trade_price": 35,
+  "stackSize": 20,
+  "weight": 0.3,
   "description": "Ammo for ballista. During an eclipse, these bolts will light up the sky and make enemies glow from the inside out.",
   "experiencieReward": 100,
   "crafting": [
@@ -27,7 +30,8 @@
     }
   ],
   "projectileDamage": {
-    "damage": 220
+    "damage": 185,
+    "penetration": 10
   },
   "toolInfo": [
     {

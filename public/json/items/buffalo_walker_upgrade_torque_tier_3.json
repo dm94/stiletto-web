@@ -6,16 +6,16 @@
     {
       "ingredients": [
         {
-          "count": 13,
-          "name": "Wood Shaft"
+          "count": 36,
+          "name": "Redwood Wood"
         },
         {
           "count": 17,
           "name": "Earth Wax"
         },
         {
-          "count": 36,
-          "name": "Redwood Wood"
+          "count": 13,
+          "name": "Wood Shaft"
         }
       ]
     }

@@ -2,7 +2,10 @@
   "name": "Ceramic Dart",
   "parent": "Bone Dart",
   "type": "CeramicDart_C",
+  "category": "Ammo",
   "trade_price": 1.5,
+  "stackSize": 500,
+  "weight": 0.1,
   "description": "Ammo for Stingers, Spinners and Repeater.  Best suited for hunting Phemke, Nurrs and unarmored Nomads.",
   "crafting": [
     {

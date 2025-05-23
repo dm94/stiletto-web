@@ -33,8 +33,8 @@
     "impact": 25,
     "stability": 10,
     "weaponLength": 55,
-    "damage": 60,
-    "penetration": 10
+    "damage": 63,
+    "penetration": 30
   },
   "toolInfo": [
     {

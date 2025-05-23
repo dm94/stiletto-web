@@ -2,6 +2,10 @@
   "name": "Hardened Hellfire Bolt",
   "parent": "HellfireBolt",
   "type": "HardenedHellfireBolt_C",
+  "category": "Ammo",
+  "trade_price": 175.3,
+  "stackSize": 20,
+  "weight": 1,
   "description": "Ammo for ballista. Burns quicker while dealing the same damage to the target as a Hellfire Bolt due to its structural properties. Much more difficult to destroy.",
   "experiencieReward": 115,
   "crafting": [

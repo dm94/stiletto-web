@@ -1,0 +1,21 @@
+{
+  "name": "Large Walker Wing",
+  "type": "WalkerWing_T3_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 25,
+          "name": "Redwood Wood"
+        }
+      ]
+    }
+  ]
+}

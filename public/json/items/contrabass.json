@@ -1,0 +1,11 @@
+{
+  "name": "Contrabass",
+  "type": "MusicalInstrumentContrabass_C",
+  "category": "Equipment",
+  "weight": 15,
+  "durability": 150,
+  "weaponInfo": {
+    "damage": 10,
+    "penetration": 10
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Armored Medium Walker Leg",
+  "type": "WalkerLegArmored_T2_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 20,
+  "experiencieReward": 350,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 23,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 17,
+          "name": "Bone Splinter"
+        }
+      ]
+    }
+  ]
+}

@@ -11,15 +11,15 @@
     {
       "name": "Basket Loot T2 AC",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu Camp T2",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {
@@ -53,8 +53,8 @@
     {
       "name": "Hard Rupu Camp T2",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {
@@ -74,15 +74,15 @@
     {
       "name": "Hotspot Loot T2",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T2 AC",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {
@@ -102,15 +102,15 @@
     {
       "name": "Hotspot Loot Windmill T2 AC",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu Camp T2",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {
@@ -130,8 +130,8 @@
     {
       "name": "Treasure Chest T2",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {

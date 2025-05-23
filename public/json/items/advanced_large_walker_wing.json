@@ -1,0 +1,25 @@
+{
+  "name": "Advanced Large Walker Wing",
+  "type": "WalkerWingAdvanced_T3_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 25,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 30,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 28,
+          "name": "Chitin Plate"
+        }
+      ]
+    }
+  ]
+}

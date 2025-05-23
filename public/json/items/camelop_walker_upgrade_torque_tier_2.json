@@ -2,6 +2,24 @@
   "name": "Camelop Walker Upgrade Torque Tier 2",
   "type": "Camelop Walker Upgrade Torque Tier 2",
   "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 13,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 52,
+          "name": "Wood"
+        },
+        {
+          "count": 5,
+          "name": "Rope"
+        }
+      ]
+    }
+  ],
   "upgradeInfo": {
     "stackSize": 2400
   }

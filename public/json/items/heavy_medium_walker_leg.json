@@ -1,0 +1,26 @@
+{
+  "name": "Heavy Medium Walker Leg",
+  "type": "WalkerLegHeavy_T2_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 20,
+  "experiencieReward": 400,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 25,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 22,
+          "name": "Animal Fat"
+        }
+      ]
+    }
+  ]
+}

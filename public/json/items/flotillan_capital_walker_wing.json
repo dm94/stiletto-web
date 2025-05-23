@@ -1,0 +1,25 @@
+{
+  "name": "Flotillan Capital Walker Wing",
+  "type": "WalkerWingFlotillan_T4_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 30,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 30,
+          "name": "Lightwood"
+        },
+        {
+          "count": 12,
+          "name": "Nibiran Ingot"
+        }
+      ]
+    }
+  ]
+}

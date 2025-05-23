@@ -251,8 +251,8 @@
     {
       "name": "Mushroom Flesh",
       "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "source": "extraresources_t2"
     },
     {

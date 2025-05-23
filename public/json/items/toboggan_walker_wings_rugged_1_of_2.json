@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Wooden Gear"
-        },
-        {
-          "count": 16,
-          "name": "Tar"
-        },
-        {
-          "count": 24,
-          "name": "Leather"
-        },
-        {
-          "count": 33,
-          "name": "Rope"
-        },
-        {
-          "count": 17,
-          "name": "Nomad Cloth"
+          "count": 1,
+          "name": "Advanced Medium Walker Wing"
         }
       ]
     }

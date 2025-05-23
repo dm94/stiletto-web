@@ -6,21 +6,21 @@
     {
       "ingredients": [
         {
-          "count": 20,
-          "name": "Nomad Cloth"
+          "count": 55,
+          "name": "Lightwood"
         },
         {
           "count": 45,
           "name": "Iron Nails"
         },
         {
-          "count": 55,
-          "name": "Lightwood"
+          "count": 20,
+          "name": "Nomad Cloth"
         }
       ]
     }
   ],
   "upgradeInfo": {
-    "slots": 5
+    "slots": 10
   }
 }

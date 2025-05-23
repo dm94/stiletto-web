@@ -34,8 +34,8 @@
     "impact": 40,
     "stability": 35,
     "weaponLength": 73,
-    "damage": 40,
-    "penetration": 10
+    "damage": 45,
+    "penetration": 15
   },
   "droppedBy": [
     {

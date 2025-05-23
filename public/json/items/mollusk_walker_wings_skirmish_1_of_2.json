@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 14,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 7,
-          "name": "Rope"
-        },
-        {
           "count": 1,
-          "name": "Nomad Cloth"
-        },
-        {
-          "count": 5,
-          "name": "Hide"
-        },
-        {
-          "count": 1,
-          "name": "Earth Wax"
+          "name": "Improved Medium Walker Wing"
         }
       ]
     }

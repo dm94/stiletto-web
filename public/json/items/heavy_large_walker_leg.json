@@ -1,0 +1,26 @@
+{
+  "name": "Heavy Large Walker Leg",
+  "type": "WalkerLegHeavy_T3_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 30,
+  "experiencieReward": 500,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 18,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 30,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 5,
+          "name": "Gelatinous Goo"
+        }
+      ]
+    }
+  ]
+}

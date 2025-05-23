@@ -10,25 +10,22 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Earth Wax"
-        },
-        {
-          "count": 15,
+          "count": 50,
           "name": "Rupu Pelt"
         },
         {
-          "count": 15,
+          "count": 3,
           "name": "Rope"
         },
         {
-          "count": 45,
+          "count": 10,
           "name": "Wood"
         }
       ]
     }
   ],
   "structureInfo": {
-    "hp": 3520
+    "type": "Medium",
+    "hp": 600
   }
 }

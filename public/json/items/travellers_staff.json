@@ -29,8 +29,8 @@
   ],
   "weaponInfo": {
     "weaponLength": 116,
-    "damage": 28,
-    "penetration": 20
+    "damage": 40,
+    "penetration": 5
   },
   "droppedBy": [
     {

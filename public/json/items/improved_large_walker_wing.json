@@ -1,0 +1,25 @@
+{
+  "name": "Improved Large Walker Wing",
+  "type": "WalkerWingImproved_T3_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 20,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 28,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 18,
+          "name": "Ceramic Shard"
+        }
+      ]
+    }
+  ]
+}

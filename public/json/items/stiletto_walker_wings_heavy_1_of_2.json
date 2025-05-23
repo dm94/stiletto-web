@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 12,
-          "name": "Rupu Vine"
-        },
-        {
-          "count": 11,
-          "name": "Bone Splinter"
-        },
-        {
           "count": 1,
-          "name": "Wooden Gear"
-        },
-        {
-          "count": 2,
-          "name": "Earth Wax"
+          "name": "Improved Medium Walker Wing"
         }
       ]
     }

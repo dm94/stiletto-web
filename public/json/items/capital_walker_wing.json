@@ -1,0 +1,21 @@
+{
+  "name": "Capital Walker Wing",
+  "type": "WalkerWing_T4_C",
+  "category": "Walker Parts",
+  "stackSize": 4,
+  "weight": 30,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 22,
+          "name": "Lightwood"
+        },
+        {
+          "count": 20,
+          "name": "Nomad Cloth"
+        }
+      ]
+    }
+  ]
+}

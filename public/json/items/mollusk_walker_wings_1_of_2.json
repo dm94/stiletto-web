@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Wood"
-        },
-        {
-          "count": 8,
-          "name": "Fiber Weave"
-        },
-        {
-          "count": 4,
-          "name": "Rope"
-        },
-        {
-          "count": 4,
-          "name": "Hide"
-        },
-        {
           "count": 1,
-          "name": "Wooden Gear"
+          "name": "Medium Walker Wing"
         }
       ]
     }

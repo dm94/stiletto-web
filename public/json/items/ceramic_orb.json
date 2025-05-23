@@ -2,9 +2,17 @@
   "name": "Ceramic Orb",
   "parent": "Lobber",
   "type": "CeramicOrb_C",
+  "category": "Ammo",
+  "trade_price": 5.2,
+  "stackSize": 100,
+  "weight": 1.5,
   "description": "Ceramic orb with sharp edges that shatters on impact. Devastating damage to walkers and siege weapons.",
+  "experiencieReward": 1,
   "onlyDevs": true,
   "projectileDamage": {
-    "damage": 200
+    "damage": 200,
+    "penetration": 10,
+    "effectivenessVsSoak": 25,
+    "effectivenessVsReduce": 25
   }
 }

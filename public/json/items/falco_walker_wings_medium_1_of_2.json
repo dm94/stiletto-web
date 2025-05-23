@@ -8,23 +8,15 @@
     {
       "ingredients": [
         {
-          "count": 112,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 15,
-          "name": "Nomad Cloth"
-        },
-        {
-          "count": 4,
-          "name": "Wooden Gear"
+          "count": 1,
+          "name": "WalkerWingAdvanced_T3"
         }
       ]
     }
   ],
   "structureInfo": {
     "type": "Soft",
-    "hp": 9500
+    "hp": 9000
   },
   "walkerInfo": {
     "carryCapacity": 5000

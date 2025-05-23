@@ -39,7 +39,7 @@
     }
   ],
   "armorInfo": {
-    "absorbing": 10,
+    "absorbing": 7,
     "reduction": 1,
     "speedReduction": 4
   },

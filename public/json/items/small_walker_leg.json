@@ -1,0 +1,22 @@
+{
+  "name": "Small Walker Leg",
+  "type": "WalkerLeg_T1_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 10,
+  "experiencieReward": 25,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 5,
+          "name": "Wood Shaft"
+        }
+      ]
+    }
+  ]
+}

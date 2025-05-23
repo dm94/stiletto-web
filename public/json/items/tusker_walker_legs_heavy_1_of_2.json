@@ -8,20 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 120,
-          "name": "Reinforced Plank"
-        },
-        {
-          "count": 150,
-          "name": "Redwood Wood"
-        },
-        {
-          "count": 44,
-          "name": "Tar"
-        },
-        {
-          "count": 30,
-          "name": "Worm Scale"
+          "count": 1,
+          "name": "Heavy Large Walker Leg"
         }
       ]
     }

@@ -8,20 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 14,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 22,
-          "name": "Fiber Weave"
-        },
-        {
-          "count": 27,
-          "name": "Earth Wax"
-        },
-        {
           "count": 1,
-          "name": "Wooden Gear"
+          "name": "Large Walker Wing"
         }
       ]
     }

@@ -8,32 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 620,
-          "name": "Wood"
-        },
-        {
-          "count": 276,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 49,
-          "name": "Bone Splinter"
-        },
-        {
-          "count": 16,
-          "name": "Bone Glue"
-        },
-        {
-          "count": 185,
-          "name": "Redwood Wood"
-        },
-        {
-          "count": 65,
-          "name": "Ceramic Shard"
-        },
-        {
-          "count": 8,
-          "name": "Tar"
+          "count": 1,
+          "name": "Armored Capital Walker Leg"
         }
       ]
     }

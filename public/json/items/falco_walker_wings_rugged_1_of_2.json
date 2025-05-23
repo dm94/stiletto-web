@@ -8,16 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 65,
-          "name": "Wood Shaft"
-        },
-        {
-          "count": 35,
-          "name": "Ceramic Shard"
-        },
-        {
-          "count": 21,
-          "name": "Leather"
+          "count": 1,
+          "name": "WalkerWingAdvanced_T3"
         }
       ]
     }

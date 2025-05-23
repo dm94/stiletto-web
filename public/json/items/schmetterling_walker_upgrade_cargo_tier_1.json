@@ -6,19 +6,21 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Iron Ore"
+          "count": 75,
+          "name": "Lightwood"
         },
         {
           "count": 50,
           "name": "Hollowbone"
         },
         {
-          "count": 75,
-          "name": "Lightwood"
+          "count": 25,
+          "name": "Iron Ore"
         }
       ]
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 20
+  }
 }

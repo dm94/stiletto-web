@@ -8,26 +8,14 @@
     {
       "ingredients": [
         {
-          "count": 182,
-          "name": "Reinforced Plank"
-        },
-        {
-          "count": 130,
-          "name": "Worm Silk"
-        },
-        {
-          "count": 10,
-          "name": "Iron Ore"
-        },
-        {
-          "count": 10,
-          "name": "Worm Scale"
+          "count": 1,
+          "name": "Advanced Capital Walker Wing"
         }
       ]
     }
   ],
   "structureInfo": {
-    "type": "Medium",
+    "type": "Soft",
     "hp": 18700
   },
   "walkerInfo": {

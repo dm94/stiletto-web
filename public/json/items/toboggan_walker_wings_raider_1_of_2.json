@@ -8,24 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Wooden Gear"
-        },
-        {
-          "count": 24,
-          "name": "Nomad Cloth"
-        },
-        {
-          "count": 24,
-          "name": "Hide"
-        },
-        {
-          "count": 46,
-          "name": "Chitin Plate"
-        },
-        {
-          "count": 33,
-          "name": "Rope"
+          "count": 1,
+          "name": "Advanced Medium Walker Wing"
         }
       ]
     }
