@@ -10,6 +10,7 @@ import {
 import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useTranslation } from "react-i18next";
+import { useChangeLanguage } from "remix-i18next/react";
 
 import i18next from "./i18next.server"; // your i18n.server.ts
 
@@ -47,6 +48,8 @@ export default function App() {
   // Get the locale from the loader
   const { locale } = useLoaderData<typeof loader>();
   const { i18n } = useTranslation();
+
+  useChangeLanguage(locale);
 
   // This hook will change the i18n instance language to the current locale
   // detected by the loader during SSR.

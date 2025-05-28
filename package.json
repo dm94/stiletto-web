@@ -22,6 +22,7 @@
     "@tanstack/react-virtual": "^3.13.9",
     "i18next": "23.1.0",
     "i18next-fs-backend": "^2.6.0",
+    "i18next-http-backend": "^2.5.2",
     "isbot": "^4.4.0",
     "leaflet": "1.9.4",
     "query-string": "9.1.1",

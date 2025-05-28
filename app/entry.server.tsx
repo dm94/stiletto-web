@@ -1,39 +1,20 @@
 import type { EntryContext, AppLoadContext } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
-import { createInstance } from "i18next";
-import { I18nextProvider, initReactI18next } from "react-i18next";
+import { I18nextProvider } from "react-i18next";
 import i18next from "./i18next.server";
-import Backend from "i18next-fs-backend";
-import i18n from "./i18n"; // your i18n configuration file
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { PassThrough } from "node:stream";
 
 const ABORT_DELAY = 5_000;
 
-export default function handleRequest(
+export default async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext,
   loadContext: AppLoadContext
 ) {
-  const instance = createInstance();
-  const lng = await i18next.getLocale(request);
-  const ns = i18next.getRouteNamespaces(remixContext);
-
-  await instance
-    .use(initReactI18next) // Tell our instance to use react-i18next
-    .use(Backend) // Setup our backend
-    .init({
-      ...i18n, // spread the configuration
-      lng, // The locale we detected above
-      ns, // The namespaces the routes about to render wants to use
-      backend: { loadPath: "./public/locales/{{lng}}/{{ns}}.json" },
-    });
-
-  // Then you can render your app wrapped in the I18nextProvider as in the
-  // entry.client.tsx file
   responseHeaders.set("Content-Type", "text/html");
 
   return isbot(request.headers.get("user-agent") || "")
@@ -41,44 +22,31 @@ export default function handleRequest(
         request,
         responseStatusCode,
         responseHeaders,
-        remixContext
+        remixContext,
+        i18next // Pass the main i18next instance
       )
     : handleBrowserRequest(
         request,
         responseStatusCode,
         responseHeaders,
-        remixContext
+        remixContext,
+        i18next // Pass the main i18next instance
       );
 }
 
-function handleBotRequest(
+async function handleBotRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
-  remixContext: EntryContext
+  remixContext: EntryContext,
+  i18nInstance: typeof i18next
 ) {
-  const instance = createInstance();
-  const lng = await i18next.getLocale(request);
-  const ns = i18next.getRouteNamespaces(remixContext);
-
-  await instance
-    .use(initReactI18next) // Tell our instance to use react-i18next
-    .use(Backend) // Setup our backend
-    .init({
-      ...i18n, // spread the configuration
-      lng, // The locale we detected above
-      ns, // The namespaces the routes about to render wants to use
-      backend: { loadPath: "./public/locales/{{lng}}/{{ns}}.json" },
-    });
-
-  // Then you can render your app wrapped in the I18nextProvider as in the
-  // entry.client.tsx file
   responseHeaders.set("Content-Type", "text/html");
 
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
-      <I18nextProvider i18n={instance}>
+      <I18nextProvider i18n={i18nInstance}>
         <RemixServer
           context={remixContext}
           url={request.url}
@@ -129,34 +97,19 @@ function handleBotRequest(
   });
 }
 
-function handleBrowserRequest(
+async function handleBrowserRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
-  remixContext: EntryContext
+  remixContext: EntryContext,
+  i18nInstance: typeof i18next
 ) {
-  const instance = createInstance();
-  const lng = await i18next.getLocale(request);
-  const ns = i18next.getRouteNamespaces(remixContext);
-
-  await instance
-    .use(initReactI18next) // Tell our instance to use react-i18next
-    .use(Backend) // Setup our backend
-    .init({
-      ...i18n, // spread the configuration
-      lng, // The locale we detected above
-      ns, // The namespaces the routes about to render wants to use
-      backend: { loadPath: "./public/locales/{{lng}}/{{ns}}.json" },
-    });
-
-  // Then you can render your app wrapped in the I18nextProvider as in the
-  // entry.client.tsx file
   responseHeaders.set("Content-Type", "text/html");
 
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
-      <I18nextProvider i18n={instance}>
+      <I18nextProvider i18n={i18nInstance}>
         <RemixServer
           context={remixContext}
           url={request.url}

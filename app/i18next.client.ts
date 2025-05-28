@@ -1,5 +1,5 @@
 import i18n from "i18next";
-
+import HttpBackend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 import { getInitialNamespaces } from "remix-i18next";
 import { DEFAULT_LANGUAGE } from "./config/config";
@@ -8,7 +8,7 @@ import { supportedLanguages } from "./config/languages";
 const languageWhitelist = supportedLanguages.map((lang) => lang.key);
 
 i18n
-
+  .use(HttpBackend) // Registering the HttpBackend
   .use(initReactI18next) // Registering react-i18next
   .init({
     supportedLngs: languageWhitelist,
