@@ -1,5 +1,5 @@
 import type React from "react";
-import { Link, type LinkProps } from "react-router";
+import { Link, type LinkProps } from "@remix-run/react";
 import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 /**

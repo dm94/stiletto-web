@@ -1,5 +1,5 @@
 import type React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate } from "@remix-run/react";
 import { useTranslation } from "react-i18next";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { useEffect } from "react";

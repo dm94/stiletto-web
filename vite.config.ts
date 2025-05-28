@@ -1,24 +1,21 @@
+import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import path from "node:path";
+import tsconfigPaths from "vite-tsconfig-paths";
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  build: {
-    outDir: "./build",
-    emptyOutDir: true,
+  plugins: [
+    remix({
+      ignoredRouteFiles: ["**/*.css"],
+      serverModuleFormat: "cjs",
+    }),
+    tsconfigPaths(),
+  ],
+  ssr: {
+    noExternal: ["i18next-fs-backend", "remix-i18next", "i18next"],
   },
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-      "@functions": path.resolve(__dirname, "./src/functions"),
-      "@components": path.resolve(__dirname, "./src/components"),
-      "@pages": path.resolve(__dirname, "./src/pages"),
-      "@store": path.resolve(__dirname, "./src/store"),
-      "@ctypes": path.resolve(__dirname, "./src/types"),
-      "@config": path.resolve(__dirname, "./src/config"),
-      "@hooks": path.resolve(__dirname, "./src/hooks"),
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true,
     },
   },
 });

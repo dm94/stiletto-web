@@ -9,7 +9,7 @@ import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
 import "../../styles/map-sidebar.css";
-import { useLocation, useParams } from "react-router";
+import { useLocation, useParams } from "@remix-run/react";
 import type { Marker } from "@ctypes/dto/marker";
 import type { ResourceInfo } from "@ctypes/dto/resources";
 import {

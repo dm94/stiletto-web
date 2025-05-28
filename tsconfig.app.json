@@ -1,38 +1,33 @@
 {
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2021",
-    "useDefineForClassFields": true,
-    "lib": ["ES2021", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    "esModuleInterop": true,
     "jsx": "react-jsx",
-
-    /* Path Aliases */
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "target": "ES2022",
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@pages/*": ["src/pages/*"],
-      "@components/*": ["src/components/*"],
-      "@functions/*": ["src/functions/*"],
-      "@config/*": ["src/config/*"],
-      "@store/*": ["src/store/*"],
-      "@ctypes": ["src/types"],
-      "@ctypes/*": ["src/types/*"],
-      "@hooks/*": ["src/hooks/*"],
+      "~/*": ["./app/*"],
+      "@components/*": ["./app/components/*"],
+      "@config/*": ["./app/config/*"],
+      "@functions/*": ["./app/functions/*"],
+      "@hooks/*": ["./app/hooks/*"],
+      "@styles/*": ["./app/styles/*"],
+      "@types/*": ["./app/types/*"]
     },
+    "noEmit": true,
     /* Linting */
-    "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
-  },
-  "include": ["src"]
+  }
 }
