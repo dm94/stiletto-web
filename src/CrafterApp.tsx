@@ -31,6 +31,8 @@ const CrafterApp: React.FC = () => {
   return (
     <UserProvider>
       <React.Fragment>
+        <div className="bg-colorA text-sandLight p-8">TEST GENERIC COLOR A</div>
+        <div className="text-colorB p-8">TEST GENERIC COLOR B</div>
         <Helmet
           htmlAttributes={{
             lang: language ?? "en",
