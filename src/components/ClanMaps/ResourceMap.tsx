@@ -116,7 +116,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     }
   };
 
-  const handleDeleteResource = async (
+  const handleDeleteResource = useCallback(async (
     resourceId: number,
     resourceToken: string,
   ) => {
@@ -126,9 +126,9 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     } catch {
       setError("errors.apiConnection");
     }
-  };
+  }, [map?.mapid, fetchData]);
 
-  const handleUpdateResource = async (
+  const handleUpdateResource = useCallback(async (
     mapid: number,
     resourceid: number,
     token: string,
@@ -143,7 +143,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     } catch {
       setError("errors.apiConnection");
     }
-  };
+  }, [fetchData]);
 
   const handleFilterResources = (resourceType: string) => {
     if (resourceType === "All") {

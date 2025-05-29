@@ -228,7 +228,7 @@ const Diplomacy = () => {
               ? "w-full h-auto rounded-lg border border-gray-300"
               : "w-full h-auto"
           }
-          alt={symbol}
+          alt="" // Decorative as button has aria-label
           id={`symbol-img-${symbol}`}
           loading="lazy"
         />

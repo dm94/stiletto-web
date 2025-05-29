@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { FaPlay, FaStop } from "react-icons/fa";
 
@@ -141,4 +141,4 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
   );
 };
 
-export default Timer;
+export default memo(Timer);

@@ -134,7 +134,7 @@
 
   /* Button Styling */
   .btn {
-    @apply bg-sandDark text-sandLight border-0 transition-colors duration-300;
+    @apply bg-sandDark text-sandLight border-0 transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-sand focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal outline-none;
     clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
   }
 
@@ -143,7 +143,7 @@
   }
 
   .btn-primary {
-    @apply bg-tribal text-sandLight;
+    @apply bg-tribal text-charcoal; /* Changed text-sandLight to text-charcoal for better contrast */
   }
 
   .btn-primary:hover {

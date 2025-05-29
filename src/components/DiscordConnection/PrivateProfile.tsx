@@ -277,6 +277,7 @@ const PrivateProfile = () => {
                 className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
+                aria-label={t("settings.changeLanguage")}
               >
                 {supportedLanguages.map((language) => (
                   <option key={language.key} value={language.key}>
@@ -313,7 +314,7 @@ const PrivateProfile = () => {
                   <input
                     type="text"
                     className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
-                    name="nameInGameInput"
+                    id="user_game_name" // Changed name to id
                     value={nameInGameInput}
                     onChange={(e) => setNameInGameInput(e.target.value)}
                     required

@@ -1,4 +1,5 @@
 import type React from "react";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import type { MemberInfo } from "@ctypes/dto/members";
 import { useUser } from "@store/userStore";
@@ -98,4 +99,4 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
   );
 };
 
-export default MemberListItem;
+export default memo(MemberListItem);
