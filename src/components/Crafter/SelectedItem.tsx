@@ -1,4 +1,5 @@
 import type React from "react";
+import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Ingredients from "../Ingredients";
 import Icon from "../Icon";
@@ -15,17 +16,20 @@ interface SelectedItemProps {
 const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
   const { t } = useTranslation();
 
-  const showIngredient = () => {
+  const itemCrafting = item?.crafting; // Helper for dependency array
+  const itemProjectileDamage = item?.projectileDamage; // Helper for dependency array
+
+  const renderedIngredients = useMemo(() => {
     if (!item) {
       return null;
     }
-    if (!item?.crafting) {
+    if (!itemCrafting) {
       return null;
     }
 
-    const moreThanOne = item.crafting.length > 1;
+    const moreThanOne = itemCrafting.length > 1;
 
-    return item.crafting.map((ingredients, i) => (
+    return itemCrafting.map((ingredients, i) => (
       <div
         className={`${
           moreThanOne ? "w-full border-l-4 border-green-500" : "w-full"
@@ -53,10 +57,10 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
         </div>
       </div>
     ));
-  };
+  }, [item, itemCrafting, t]);
 
-  const showDamage = () => {
-    if (!item?.projectileDamage?.damage) {
+  const renderedDamage = useMemo(() => {
+    if (!itemProjectileDamage?.damage) {
       return null;
     }
 
@@ -69,37 +73,37 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">100%</div>
             <div className="text-red-400 font-bold text-lg">
-              {Math.round(item.projectileDamage.damage * item.count)}
+              {Math.round(itemProjectileDamage.damage * item.count)}
             </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">50%</div>
             <div className="text-red-400 font-bold text-lg">
-              {Math.round(item.projectileDamage.damage * item.count * 0.5)}
+              {Math.round(itemProjectileDamage.damage * item.count * 0.5)}
             </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">30%</div>
             <div className="text-red-400 font-bold text-lg">
-              {Math.round(item.projectileDamage.damage * item.count * 0.3)}
+              {Math.round(itemProjectileDamage.damage * item.count * 0.3)}
             </div>
           </div>
           <div className="bg-gray-800 p-3 rounded-lg text-center">
             <div className="text-xs text-gray-400 mb-1">10%</div>
             <div className="text-red-400 font-bold text-lg">
-              {Math.round(item.projectileDamage.damage * item.count * 0.1)}
+              {Math.round(itemProjectileDamage.damage * item.count * 0.1)}
             </div>
           </div>
         </div>
       </div>
     );
-  };
+  }, [item, itemProjectileDamage, t]);
 
   const handleChange = (count: number) => {
     onChangeCount(item.name, Number.parseInt(item.count.toString()) + count);
   };
 
-  const url = getItemUrl(item.name);
+  const url = useMemo(() => getItemUrl(item.name), [item.name]);
 
   return (
     <div className="w-full" data-testid="selected-item">
@@ -144,8 +148,8 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
           </div>
         </div>
         <div className="p-4">
-          <div className="flex flex-wrap gap-4">{showIngredient()}</div>
-          {showDamage()}
+          <div className="flex flex-wrap gap-4">{renderedIngredients}</div>
+          {renderedDamage}
         </div>
         <div className="p-4 bg-gray-800 border-t border-gray-700">
           <div className="grid grid-cols-6 gap-2">
@@ -198,4 +202,4 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
   );
 };
 
-export default SelectedItem;
+export default memo(SelectedItem);

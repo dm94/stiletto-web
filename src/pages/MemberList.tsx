@@ -121,7 +121,7 @@ const MemberList = () => {
     initializeComponent();
   }, [updateMembers]);
 
-  const kickMember = async (memberdiscordid: string) => {
+  const kickMember = useCallback(async (memberdiscordid: string) => {
     if (!clanid) {
       return;
     }
@@ -134,11 +134,15 @@ const MemberList = () => {
       localStorage.removeItem("memberList-lastCheck");
       sessionStorage.removeItem("memberList-lastCheck");
 
-      setMembers(members.filter((m) => m.discordid !== memberdiscordid));
+      setMembers((prevMembers) => prevMembers.filter((m) => m.discordid !== memberdiscordid));
     } catch {
       setError("errors.apiConnection");
     }
-  };
+  }, [clanid]); // Removed setMembers, setError
+
+  const handleClickEditPermissions = useCallback((discordid: string) => {
+    setMemberForEdit(discordid);
+  }, []); // Removed setMemberForEdit
 
   const changeRequestStatus = async (action: RequestAction) => {
     setShowRequestModal(false);
@@ -216,9 +220,7 @@ const MemberList = () => {
           key={member.discordid}
           member={member}
           onKick={kickMember}
-          onClickEditPermissions={(discordid: string) =>
-            setMemberForEdit(discordid)
-          }
+          onClickEditPermissions={handleClickEditPermissions}
           isLeader={isLeader}
           hasPermissions={hasKickMembersPermisssions}
         />

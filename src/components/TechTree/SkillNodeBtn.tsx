@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useCallback } from "react";
+import { useState, useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import type { Tree } from "@ctypes/dto/tech";
 import { seeWhoHasLearntIt } from "@functions/requests/clans/tech";
@@ -92,4 +92,4 @@ const SkillNodeBtn: React.FC<SkillNodeBtnProps> = ({ clan, tree, item }) => {
   );
 };
 
-export default SkillNodeBtn;
+export default memo(SkillNodeBtn);

@@ -1,5 +1,5 @@
 import type React from "react";
-import { useCallback } from "react";
+import { useCallback, memo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import type { ResourceInfo } from "@ctypes/dto/resources";
@@ -153,4 +153,4 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
   );
 };
 
-export default ResourcePopup;
+export default memo(ResourcePopup);

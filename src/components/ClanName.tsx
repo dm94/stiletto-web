@@ -20,7 +20,7 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
           height="48"
           src={`${config.RESOURCES_URL}/symbols/${clan.symbol}.png`}
           style={{ backgroundColor: clan.flagcolor }}
-          alt={t("diplomacy.symbol")}
+          alt={`${t("diplomacy.symbol")} of ${clan.name}`}
           id={`symbol-img-${clan.name}`}
           className="inline-block rounded"
         />
@@ -33,7 +33,6 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
 
   return (
     <Fragment>
-      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
       <svg
         className="inline-block mr-2"
         width="32"
@@ -41,8 +40,9 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMidYMid slice"
         focusable="false"
-        aria-label={`Clan color ${clan.flagcolor}`}
+        role="img"
       >
+        <title>{t("clan.flagColorTitle", { clanName: clan.name, color: clan.flagcolor })}</title>
         <rect width="90%" height="90%" fill={clan.flagcolor} />
       </svg>
       <span className="inline-block pb-3 text-gray-300">{clan.name}</span>

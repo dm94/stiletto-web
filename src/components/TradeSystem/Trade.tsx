@@ -1,4 +1,5 @@
 import type React from "react";
+import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
 import type { TradeInfo } from "@ctypes/dto/trades";
@@ -22,7 +23,7 @@ interface QualityOption {
 const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
   const { t } = useTranslation();
 
-  const renderCardFooter = (): React.ReactElement => {
+  const renderedCardFooter = useMemo((): React.ReactElement => {
     if (!userDiscordId || userDiscordId !== trade?.discordid) {
       return (
         <div className="p-4 bg-gray-900 border-t border-gray-700">
@@ -55,9 +56,9 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
         </button>
       </div>
     );
-  };
+  }, [userDiscordId, trade, onDelete, t]);
 
-  const getQualityBadge = (): React.ReactElement => {
+  const qualityBadge = useMemo((): React.ReactElement => {
     const qualities: Record<number, QualityOption> = {
       0: { class: "bg-gray-500", text: "crafting.common" },
       1: { class: "bg-green-500", text: "crafting.uncommon" },
@@ -75,7 +76,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
         {t(quality.text)}
       </span>
     );
-  };
+  }, [trade?.quality, t]);
 
   if (!trade) {
     return null;
@@ -103,7 +104,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
           </div>
         </div>
         <div className="p-4 text-center" data-testid="trade-content">
-          {getQualityBadge()}
+          {qualityBadge}
           <h3
             className="text-lg font-medium text-gray-300 mb-2 flex justify-center"
             data-testid="trade-resource"
@@ -123,10 +124,10 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
             )}: ${trade.nickname}`}</p>
           )}
         </div>
-        {renderCardFooter()}
+        {renderedCardFooter}
       </div>
     </div>
   );
 };
 
-export default Trade;
+export default memo(Trade);

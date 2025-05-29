@@ -36,13 +36,13 @@ const Menu: React.FC<MenuProps> = ({
 
   const getLanguageFlag = (lng?: string): string => {
     if (!lng) {
-      return "/img/en.jpg";
+      return "/img/en.webp";
     }
 
     const lngFound = supportedLanguages.find((l: Language) =>
       lng.includes(l.key),
     );
-    return lngFound ? `/img/${lngFound.key}.jpg` : "/img/en.jpg";
+    return lngFound ? `/img/${lngFound.key}.webp` : "/img/en.webp";
   };
 
   const searchItem = (): void => {
@@ -199,7 +199,7 @@ const Menu: React.FC<MenuProps> = ({
                   width="39"
                   height="25"
                   src={getLanguageFlag(language)}
-                  alt={t("settings.changeLanguage")}
+                  alt=""
                 />
               </button>
 

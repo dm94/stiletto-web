@@ -24,7 +24,7 @@ const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({
       >
         <img
           className="w-full rounded-lg border-2 border-gray-600 hover:border-blue-500 transition-colors"
-          src={`/img/${language.key}.jpg`}
+          src={`/img/${language.key}.webp`}
           alt={`${language.name} language`}
         />
         <p className="mt-2 text-sm text-gray-300">{t(language.name)}</p>

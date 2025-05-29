@@ -27,6 +27,14 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
   const [searchText, setSearchText] = useState("");
   const [filteredOptions, setFilteredOptions] = useState(options);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null); // Ref for the search input
+  const triggerRef = useRef<HTMLDivElement>(null); // Ref for the trigger div
+
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
 
   useEffect(() => {
     if (searchText.trim() === "") {
@@ -49,11 +57,20 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
       }
     };
 
+    const handleKeyDownGlobal = (event: KeyboardEvent) => {
+      if (isOpen && event.key === "Escape") {
+        setIsOpen(false);
+        triggerRef.current?.focus(); // Return focus to the trigger
+      }
+    };
+
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDownGlobal);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDownGlobal);
     };
-  }, []);
+  }, [isOpen]); // Added isOpen to dependencies
 
   const selectedLabel =
     options.find((option) => option.value === value)?.label ?? "";
@@ -67,6 +84,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
   return (
     <div className="relative" ref={wrapperRef}>
       <div
+        ref={triggerRef} // Added ref to the trigger
         className={`w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer flex justify-between items-center ${className}`}
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={(e) => {
@@ -74,12 +92,13 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
             e.preventDefault();
             setIsOpen(!isOpen);
           }
+          // Removed Escape key handling from here, will be handled globally for the dropdown
         }}
         // biome-ignore lint/a11y/useSemanticElements: <explanation>
         role="combobox"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        aria-controls={`${id}-options`}
+        aria-controls={`${id}-select`} 
         aria-label={placeholder}
         tabIndex={0}
         data-testid={dataCy}
@@ -95,13 +114,14 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
         >
           <div className="p-2 sticky top-0 bg-gray-700 border-b border-gray-600">
             <input
-              id={id}
+              ref={inputRef} // Added ref to the search input
+              id={`${id}-search-input`} // Ensure unique ID if `id` is used elsewhere
               type="text"
               className="w-full p-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder={t("common.search")}
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()} // Prevent closing dropdown when clicking input
               aria-label={t("common.search")}
             />
           </div>

@@ -130,7 +130,7 @@ const Others: React.FC = () => {
             >
               <img
                 className="w-full h-auto rounded-lg"
-                src="/img/banner-lastoasis.jpg"
+                src="/img/banner-lastoasis.webp"
                 alt="Last Oasis Banner"
                 height="100"
                 width="600"
