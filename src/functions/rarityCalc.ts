@@ -253,11 +253,7 @@ export const calcRarityValue = (
       default:
         break;
     }
-    if (factorName === "ItemWeightFactor") {
-      newValue = Number((newValue / 100).toFixed(3));
-    } else {
-      newValue = Number(newValue.toFixed(0));
-    }
+    newValue = Number(newValue.toFixed(0));
   }
 
   return newValue;
