@@ -1,5 +1,5 @@
 import type React from "react";
-import { Link, type LinkProps } from "react-router";
+import { Link, type LinkProps } from "@tanstack/react-router";
 import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 /**
@@ -20,7 +20,7 @@ const LanguageLink: React.FC<LinkProps> = ({ to, children, ...props }) => {
         };
 
   return (
-    <Link to={newTo} {...props}>
+    <Link to={newTo as any} {...props}> {/* TODO: Fix 'to' prop type */}
       {children}
     </Link>
   );

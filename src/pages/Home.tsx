@@ -4,7 +4,7 @@ import { memo, useMemo } from "react";
 import Others from "@pages/Others";
 import { useUser } from "@store/userStore";
 import { getDomain } from "@functions/utils";
-import { Link } from "react-router";
+import { Link } from "@tanstack/react-router";
 import HeaderMeta from "@components/HeaderMeta";
 
 const Home: React.FC = () => {
