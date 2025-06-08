@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "5.36.1",
+  "version": "5.36.3",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -20,7 +20,7 @@
     "i18next-browser-languagedetector": "8.1.0",
     "i18next-http-backend": "3.0.2",
     "leaflet": "1.9.4",
-    "query-string": "9.1.1",
+    "query-string": "9.2.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-helmet": "6.1.0",
@@ -42,11 +42,7 @@
     "playwright:ui": "playwright test --ui"
   },
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
