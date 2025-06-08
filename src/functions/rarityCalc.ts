@@ -253,7 +253,7 @@ export const calcRarityValue = (
       default:
         break;
     }
-    newValue = Number(newValue.toFixed(0));
+    newValue = Number(newValue.toFixed(2));
   }
 
   return newValue;
@@ -291,7 +291,7 @@ const sumCalcs = (
       break;
   }
 
-  newValue = Number(newValue.toFixed(0));
+  newValue = Number(newValue.toFixed(2));
 
   return newValue;
 };
