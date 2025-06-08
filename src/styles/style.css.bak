@@ -1,4 +1,4 @@
-/* @theme {
+@theme {
   --color-dark: #2E2A26;
   --color-info: #5A7742;
   --color-sand: #C2A57C;
@@ -7,7 +7,7 @@
   --color-tribal: #D95F32;
   --color-nature: #5A7742;
   --color-charcoal: #1B1B1B;
-} */
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
