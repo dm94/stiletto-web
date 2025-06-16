@@ -12,8 +12,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tanstack/react-virtual':
-        specifier: ^3.13.9
-        version: 3.13.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: ^3.13.10
+        version: 3.13.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       i18next:
         specifier: 25.2.1
         version: 25.2.1(typescript@5.8.3)
@@ -717,14 +717,14 @@ packages:
   '@tailwindcss/postcss@4.1.7':
     resolution: {integrity: sha512-88g3qmNZn7jDgrrcp3ZXEQfp9CVox7xjP1HN2TFKI03CltPVd/c61ydn5qJJL8FYunn0OqBaW5HNUga0kmPVvw==}
 
-  '@tanstack/react-virtual@3.13.9':
-    resolution: {integrity: sha512-SPWC8kwG/dWBf7Py7cfheAPOxuvIv4fFQ54PdmYbg7CpXfsKxkucak43Q0qKsxVthhUJQ1A7CIMAIplq4BjVwA==}
+  '@tanstack/react-virtual@3.13.10':
+    resolution: {integrity: sha512-nvrzk4E9mWB4124YdJ7/yzwou7IfHxlSef6ugCFcBfRmsnsma3heciiiV97sBNxyc3VuwtZvmwXd0aB5BpucVw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@tanstack/virtual-core@3.13.9':
-    resolution: {integrity: sha512-3jztt0jpaoJO5TARe2WIHC1UQC3VMLAFUW5mmMo0yrkwtDB2AQP0+sh10BVUpWrnvHjSLvzFizydtEGLCJKFoQ==}
+  '@tanstack/virtual-core@3.13.10':
+    resolution: {integrity: sha512-sPEDhXREou5HyZYqSWIqdU580rsF6FGeN7vpzijmP3KTiOGjOMZASz4Y6+QKjiFQwhWrR58OP8izYaNGVxvViA==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -2384,13 +2384,13 @@ snapshots:
       postcss: 8.5.4
       tailwindcss: 4.1.7
 
-  '@tanstack/react-virtual@3.13.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@tanstack/react-virtual@3.13.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@tanstack/virtual-core': 3.13.9
+      '@tanstack/virtual-core': 3.13.10
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@tanstack/virtual-core@3.13.9': {}
+  '@tanstack/virtual-core@3.13.10': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
