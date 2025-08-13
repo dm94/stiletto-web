@@ -1,52 +1,59 @@
-import type React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router";
-import Crafter from "@pages/Crafter";
-import DiscordConnection from "@pages/DiscordConnection";
-import ClanList from "@pages/ClanList";
-import MemberList from "@pages/MemberList";
-import ClanMaps from "@pages/ClanMaps";
-import MapDetail from "@pages/MapDetail";
-import Home from "@pages/Home";
-import TradeSystem from "@pages/TradeSystem";
-import Diplomacy from "@pages/Diplomacy";
-import AuctionTimers from "@pages/AuctionTimers";
-import Others from "@pages/Others";
-import MapPage from "@pages/MapPage";
-import TechTree from "@pages/TechTree";
-import Privacy from "@pages/Privacy";
-import ResourceMapNoLog from "@components/ClanMaps/ResourceMapNoLog";
-import ItemWiki from "@pages/ItemWiki";
-import CreatureWiki from "@pages/CreatureWiki";
-import Wiki from "@pages/Wiki";
-import NotFoundPage from "@pages/NotFound";
+import LoadingScreen from "@components/LoadingScreen";
+
+// Lazy load all page components
+const Home = React.lazy(() => import("@pages/Home"));
+const Crafter = React.lazy(() => import("@pages/Crafter"));
+const DiscordConnection = React.lazy(() => import("@pages/DiscordConnection"));
+const ClanList = React.lazy(() => import("@pages/ClanList"));
+const MemberList = React.lazy(() => import("@pages/MemberList"));
+const ClanMaps = React.lazy(() => import("@pages/ClanMaps"));
+const MapDetail = React.lazy(() => import("@pages/MapDetail"));
+const TradeSystem = React.lazy(() => import("@pages/TradeSystem"));
+const Diplomacy = React.lazy(() => import("@pages/Diplomacy"));
+const AuctionTimers = React.lazy(() => import("@pages/AuctionTimers"));
+const Others = React.lazy(() => import("@pages/Others"));
+const MapPage = React.lazy(() => import("@pages/MapPage"));
+const TechTree = React.lazy(() => import("@pages/TechTree"));
+const Privacy = React.lazy(() => import("@pages/Privacy"));
+const ItemWiki = React.lazy(() => import("@pages/ItemWiki"));
+const CreatureWiki = React.lazy(() => import("@pages/CreatureWiki"));
+const Wiki = React.lazy(() => import("@pages/Wiki"));
+const NotFoundPage = React.lazy(() => import("@pages/NotFound"));
+const ResourceMapNoLog = React.lazy(
+  () => import("@components/ClanMaps/ResourceMapNoLog"),
+);
 
 const AppRoutes: React.ReactElement = (
-  <Routes>
-    <Route path="" element={<Home />} />
-    <Route path="profile" element={<DiscordConnection />} />
-    <Route path="crafter" element={<Crafter />} />
-    <Route path="members" element={<MemberList />} />
-    <Route path="clanlist" element={<ClanList />} />
-    <Route path="maps" element={<ClanMaps />} />
-    <Route path="maps/:id" element={<MapDetail />} />
-    <Route path="trades" element={<TradeSystem />} />
-    <Route path="diplomacy" element={<Diplomacy />} />
-    <Route path="auctions" element={<AuctionTimers />} />
-    <Route path="others" element={<Others />} />
-    <Route path="map/:id" element={<ResourceMapNoLog />} />
-    <Route path="map" element={<MapPage />} />
-    <Route path="tech/:tree" element={<TechTree />} />
-    <Route path="tech/" element={<TechTree />} />
-    <Route path="privacy" element={<Privacy />} />
-    <Route path="item/:name" element={<ItemWiki />} />
-    <Route path="item/:name/:rarity" element={<ItemWiki />} />
-    <Route path="item" element={<Wiki />} />
-    <Route path="creature/:name" element={<CreatureWiki />} />
-    <Route path="creature" element={<Wiki />} />
-    <Route path="wiki/" element={<Wiki />} />
-    <Route path="not-found" element={<NotFoundPage />} />
-    <Route path="*" element={<NotFoundPage />} />
-  </Routes>
+  <Suspense fallback={<LoadingScreen />}>
+    <Routes>
+      <Route path="" element={<Home />} />
+      <Route path="profile" element={<DiscordConnection />} />
+      <Route path="crafter" element={<Crafter />} />
+      <Route path="members" element={<MemberList />} />
+      <Route path="clanlist" element={<ClanList />} />
+      <Route path="maps" element={<ClanMaps />} />
+      <Route path="maps/:id" element={<MapDetail />} />
+      <Route path="trades" element={<TradeSystem />} />
+      <Route path="diplomacy" element={<Diplomacy />} />
+      <Route path="auctions" element={<AuctionTimers />} />
+      <Route path="others" element={<Others />} />
+      <Route path="map/:id" element={<ResourceMapNoLog />} />
+      <Route path="map" element={<MapPage />} />
+      <Route path="tech/:tree" element={<TechTree />} />
+      <Route path="tech/" element={<TechTree />} />
+      <Route path="privacy" element={<Privacy />} />
+      <Route path="item/:name" element={<ItemWiki />} />
+      <Route path="item/:name/:rarity" element={<ItemWiki />} />
+      <Route path="item" element={<Wiki />} />
+      <Route path="creature/:name" element={<CreatureWiki />} />
+      <Route path="creature" element={<Wiki />} />
+      <Route path="wiki/" element={<Wiki />} />
+      <Route path="not-found" element={<NotFoundPage />} />
+      <Route path="*" element={<NotFoundPage />} />
+    </Routes>
+  </Suspense>
 );
 
 export default AppRoutes;
