@@ -1,6 +1,5 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router";
-import { Suspense } from "react";
 import LoadingScreen from "@components/LoadingScreen";
 
 // Lazy load all page components
