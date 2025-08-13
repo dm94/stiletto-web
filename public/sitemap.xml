@@ -8,11 +8,13 @@
 <url> <loc>https://stiletto.deeme.dev/trades</loc> </url>
 <url> <loc>https://stiletto.deeme.dev/auctions</loc> </url>
 <url> <loc>https://stiletto.deeme.dev/others</loc> </url>
-<url> <loc>https://stiletto.deeme.dev/map/:id</loc> </url>
 <url> <loc>https://stiletto.deeme.dev/map</loc> </url>
-<url> <loc>https://stiletto.deeme.dev/tech/:tree</loc> </url>
 <url> <loc>https://stiletto.deeme.dev/tech</loc> </url>
+<url> <loc>https://stiletto.deeme.dev/tech/Vitamins</loc> </url>
+<url> <loc>https://stiletto.deeme.dev/tech/Equipment</loc> </url>
+<url> <loc>https://stiletto.deeme.dev/tech/Crafting</loc> </url>
+<url> <loc>https://stiletto.deeme.dev/tech/Construction</loc> </url>
+<url> <loc>https://stiletto.deeme.dev/tech/Walkers</loc> </url>
 <url> <loc>https://stiletto.deeme.dev/privacy</loc> </url>
 <url> <loc>https://stiletto.deeme.dev/wiki</loc> </url>
-<url> <loc>https://stiletto.deeme.dev/item/:name</loc> </url>
 </urlset>
