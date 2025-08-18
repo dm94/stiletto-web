@@ -171,7 +171,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
               </label>
               <input
                 type="text"
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 id="mapname"
                 value={mapName}
                 maxLength={30}
@@ -188,7 +188,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
               </label>
               <input
                 type="date"
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 id="mapdate"
                 value={dateOfBurning}
                 onChange={(e) => setDateOfBurning(e.target.value)}
@@ -233,7 +233,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
               </label>
               <input
                 type="text"
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 id="password"
                 value={pass}
                 maxLength={20}
@@ -243,7 +243,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
             </div>
             <button
               type="submit"
-              className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
             >
               {t("common.updateData")}
             </button>
@@ -324,7 +324,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
       <button
         type="button"
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
-        className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
         aria-label={
           isOpenSidebar ? t("common.closeSidebar") : t("common.openSidebar")
         }
@@ -343,7 +343,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
           <div className="p-4 border-b border-gray-700">
             <button
               type="button"
-              className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
               onClick={onReturn}
             >
               {t("Return to map list")}

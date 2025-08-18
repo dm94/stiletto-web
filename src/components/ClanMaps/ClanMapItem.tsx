@@ -54,7 +54,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
         <button
           type="button"
           aria-label={t("maps.deleteMap")}
-          className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="w-full p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-hidden focus:ring-2 focus:ring-red-500"
           onClick={handleDeleteMap}
         >
           <FaTrashAlt className="mr-2 inline" /> {t("maps.deleteMap")}
@@ -73,7 +73,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
         <button
           type="button"
           aria-label={t("maps.shareMap")}
-          className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
           onClick={handleShareMap}
         >
           <FaShareAlt className="mr-2 inline" /> {t("maps.shareMap")}
@@ -102,7 +102,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
             <button
               type="button"
               aria-label={t("maps.showMap")}
-              className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
               onClick={handleOpenMap}
             >
               <FaEye className="mr-2 inline" /> {t("maps.showMap")}

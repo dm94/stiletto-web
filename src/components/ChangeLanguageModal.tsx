@@ -48,7 +48,7 @@ const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({
         <div className="p-4 border-t border-gray-700 flex justify-end">
           <button
             type="button"
-            className="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-md hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             onClick={() => hideModal?.()}
           >
             {t("common.accept")}

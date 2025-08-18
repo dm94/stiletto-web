@@ -24,7 +24,7 @@ const Others: React.FC = () => {
       <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600 mb-4">
         <div className="p-4">
           <a
-            className="w-full block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            className="w-full block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-hidden focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             href="https://discord.deeme.dev/"
             target="_blank"
             rel="noopener noreferrer"
@@ -44,7 +44,7 @@ const Others: React.FC = () => {
             <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600 mb-4">
               <div className="p-4">
                 <a
-                  className="w-full block px-4 py-2 bg-blue-500 text-white text-center rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="w-full block px-4 py-2 bg-blue-500 text-white text-center rounded-md hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   href="https://store.steampowered.com/app/903950/Last_Oasis/?curator_clanid=9919055"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -58,7 +58,7 @@ const Others: React.FC = () => {
             <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600 mb-4">
               <div className="p-4">
                 <a
-                  className="w-full block px-4 py-2 bg-blue-500 text-white text-center rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="w-full block px-4 py-2 bg-blue-500 text-white text-center rounded-md hover:bg-blue-600 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                   href="https://discord.gg/lastoasis"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -73,7 +73,7 @@ const Others: React.FC = () => {
               <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600">
                 <div className="p-4">
                   <a
-                    className="w-full block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                    className="w-full block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-hidden focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                     href="https://ko-fi.com/deeme"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -85,7 +85,7 @@ const Others: React.FC = () => {
               <div className="bg-gray-800 rounded-lg shadow-lg border border-gray-600">
                 <div className="p-4">
                   <a
-                    className="w-full block px-4 py-2 bg-red-500 text-white text-center rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                    className="w-full block px-4 py-2 bg-red-500 text-white text-center rounded-md hover:bg-red-600 focus:outline-hidden focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                     href="https://crowdin.com/project/stiletto"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -103,7 +103,7 @@ const Others: React.FC = () => {
                     {t("discord.botDescription")}
                   </p>
                   <a
-                    className="inline-block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                    className="inline-block px-4 py-2 bg-green-500 text-white text-center rounded-md hover:bg-green-600 focus:outline-hidden focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                     href="https://top.gg/bot/715948052979908911"
                     target="_blank"
                     rel="noopener noreferrer"

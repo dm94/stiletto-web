@@ -210,7 +210,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       <button
         type="button"
         onClick={() => setIsOpenSidebar(!isOpenSidebar)}
-        className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="lg:hidden fixed top-9 left-4 z-50 p-2 bg-gray-800 text-white rounded-lg shadow-lg hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
       >
         {isOpenSidebar ? <FaTimes /> : <FaBars />}
       </button>

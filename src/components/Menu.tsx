@@ -170,7 +170,7 @@ const Menu: React.FC<MenuProps> = ({
               <div className="relative">
                 <input
                   type="search"
-                  className="w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:outline-hidden focus:border-blue-500"
                   placeholder={t("common.search")}
                   aria-label={t("common.search")}
                   onChange={(e) => setSearchText(e.currentTarget.value)}

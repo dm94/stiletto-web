@@ -45,7 +45,7 @@ const WikiDescription: React.FC<WikiDescriptionProps> = ({ name }) => {
           <div className="p-4 bg-gray-900 border-t border-gray-700">
             <a
               type="button"
-              className="block w-full px-4 py-2 text-center text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="block w-full px-4 py-2 text-center text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               target="_blank"
               rel="noopener noreferrer"
               href={wikiUrl}

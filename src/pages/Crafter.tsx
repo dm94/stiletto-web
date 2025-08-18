@@ -203,7 +203,7 @@ const Crafter: React.FC = () => {
       <div className="w-full lg:w-1/4 mb-4 lg:mb-0">
         <form className="flex items-center">
           <input
-            className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             type="search"
             placeholder={t("common.search")}
             aria-label={t("common.search")}
@@ -212,7 +212,7 @@ const Crafter: React.FC = () => {
             value={searchText}
           />
           <button
-            className="lg:hidden ml-3 p-2 text-gray-300 hover:text-white focus:outline-none"
+            className="lg:hidden ml-3 p-2 text-gray-300 hover:text-white focus:outline-hidden"
             type="button"
             onClick={toggleItemsNav}
             aria-controls="items-nav"

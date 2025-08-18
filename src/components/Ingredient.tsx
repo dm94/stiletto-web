@@ -55,10 +55,10 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
           onClick={() => setShowList(!showList)}
           aria-expanded={showList}
         >
-          <div className="flex-shrink-0 bg-gray-700 p-1 rounded-lg">
+          <div className="shrink-0 bg-gray-700 p-1 rounded-lg">
             <Icon key={ingredient?.name} name={ingredient?.name} width={36} />
           </div>
-          <div className="flex-grow">
+          <div className="grow">
             <div className="flex items-center">
               {ingredient?.count != null && value != null && (
                 <span className="font-bold mr-2 text-yellow-400 text-lg">
@@ -85,10 +85,10 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
         </button>
       ) : (
         <div className="flex items-center space-x-3">
-          <div className="flex-shrink-0 bg-gray-700 p-1 rounded-lg">
+          <div className="shrink-0 bg-gray-700 p-1 rounded-lg">
             <Icon key={ingredient?.name} name={ingredient?.name} width={36} />
           </div>
-          <div className="flex-grow">
+          <div className="grow">
             <div className="flex items-center">
               {ingredient?.count != null && value != null && (
                 <span className="font-bold mr-2 text-yellow-400 text-lg">

@@ -59,7 +59,7 @@ const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
                 </label>
                 <input
                   type="text"
-                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   id="map_name"
                   name="map_name"
                   maxLength={30}
@@ -77,7 +77,7 @@ const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
                 </label>
                 <input
                   type="number"
-                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   id="map_date"
                   name="map_date"
                   value={mapDateInput}
@@ -101,7 +101,7 @@ const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
               </div>
             </div>
             <button
-              className="w-full mt-4 p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full mt-4 p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
               type="submit"
               value="Submit"
             >

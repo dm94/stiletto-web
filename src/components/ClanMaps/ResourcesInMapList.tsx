@@ -54,7 +54,7 @@ const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({
       >
         <button
           type="button"
-          className="w-full p-2 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full p-2 text-gray-300 hover:text-white focus:outline-hidden focus:ring-2 focus:ring-blue-500"
           onClick={() => handleResourceSelect(resource)}
           aria-label={`${t(resource.resourcetype)} at coordinates ${Math.floor(resource.x)},${Math.floor(resource.y)}`}
         >

@@ -171,7 +171,7 @@ const TradeSystem = () => {
                   <select
                     id="tradeType"
                     data-testid="trade-type"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     value={tradeTypeInput}
                     onChange={(evt) => setTradeTypeInput(evt.target.value)}
                   >
@@ -218,7 +218,7 @@ const TradeSystem = () => {
                     data-testid="amount-input"
                     type="number"
                     min="0"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     value={amountInput}
                     onChange={(evt) =>
                       setAmountInput(Number.parseInt(evt.target.value, 10))
@@ -231,7 +231,7 @@ const TradeSystem = () => {
                   </label>
                   <select
                     id="qualityInput"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     value={qualityInput}
                     onChange={(evt) =>
                       setQualityInput(Number(evt.target.value))
@@ -253,7 +253,7 @@ const TradeSystem = () => {
                     data-testid="price-input"
                     type="number"
                     min="0"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     value={priceInput}
                     onChange={(evt) =>
                       setPriceInput(Number.parseInt(evt.target.value, 10))
@@ -262,7 +262,7 @@ const TradeSystem = () => {
                 </div>
                 <div className="col-span-full">
                   <button
-                    className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
                     type="submit"
                     value="Submit"
                     data-testid="submit-trade-button"
@@ -341,7 +341,7 @@ const TradeSystem = () => {
               <div className="lg:col-span-2">
                 <select
                   id="tradeTypeFilter"
-                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   value={tradeTypeFilterInput}
                   onChange={(evt) => setTradeTypeFilterInput(evt.target.value)}
                 >
@@ -392,7 +392,7 @@ const TradeSystem = () => {
               <div className="lg:col-span-3 flex space-x-2">
                 <button
                   type="button"
-                  className="flex-1 p-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                  className="flex-1 p-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-gray-500"
                   onClick={() => handleClearButton()}
                 >
                   {t("common.cleanFilter")}

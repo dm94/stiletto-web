@@ -25,7 +25,7 @@ const Item: React.FC<ItemProps> = memo(({ item, onAdd }) => {
         <span className="text-gray-300">{t(item?.name, { ns: "items" })}</span>
         <button
           type="button"
-          className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
           aria-label={t("common.addItem")}
           onClick={() => onAdd(item?.name)}
         >

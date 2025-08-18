@@ -108,7 +108,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
               {t("discord.botLanguage")}
             </label>
             <select
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
               value={botConfig.botLanguaje}
               id="botlanguaje"
               onChange={handleBotLanguageChange}
@@ -125,13 +125,13 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
             className="mb-3 flex items-center"
             title={t("discord.readDiscordClanLogNotice")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="readClanLog"
                 checked={botConfig.readClanLog}
                 onChange={() => toggleConfigOption("readClanLog")}
-                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
               />
             </div>
             <label className="text-sm" htmlFor="readClanLog">
@@ -143,13 +143,13 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
             className="mb-3 flex items-center"
             title={t("discord.readClanLogAndKick")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="automaticKick"
                 checked={botConfig.automaticKick}
                 onChange={() => toggleConfigOption("automaticKick")}
-                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
               />
             </div>
             <label className="text-sm" htmlFor="automaticKick">
@@ -158,13 +158,13 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
           </div>
 
           <div className="mb-3 flex items-center">
-            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="setNotReadyPVP"
                 checked={botConfig.setNotReadyPVP}
                 onChange={() => toggleConfigOption("setNotReadyPVP")}
-                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
               />
             </div>
             <label className="text-sm" htmlFor="setNotReadyPVP">
@@ -176,13 +176,13 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
             className="mb-3 flex items-center"
             title={t("discord.readClanLogAndKick")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="walkerAlarm"
                 checked={botConfig.walkerAlarm}
                 onChange={() => toggleConfigOption("walkerAlarm")}
-                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
               />
             </div>
             <label className="text-sm" htmlFor="walkerAlarm">
@@ -193,14 +193,14 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
         <div className="p-4 bg-gray-900 border-t border-gray-700 flex justify-end space-x-2">
           <button
             type="button"
-            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-gray-500"
             onClick={onClose}
           >
             {t("common.close")}
           </button>
           <button
             type="button"
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             onClick={handleUpdateBotConfig}
           >
             {t("common.save")}

@@ -18,7 +18,7 @@ const SymbolSelector: React.FC<SymbolSelectorProps> = ({
       return (
         <button
           type="button"
-          className={`col-3 p-1 rounded relative ${isSelected ? "bg-blue-600 ring-2 ring-blue-400 ring-opacity-100" : "hover:bg-gray-700"}`}
+          className={`col-3 p-1 rounded-sm relative ${isSelected ? "bg-blue-600 ring-2 ring-blue-400 ring-opacity-100" : "hover:bg-gray-700"}`}
           key={`symbol-${symbol}`}
           onClick={() => onChange(symbol)}
           aria-pressed={isSelected}
@@ -32,7 +32,7 @@ const SymbolSelector: React.FC<SymbolSelectorProps> = ({
           />
           {isSelected && (
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <div className="absolute inset-0 border-2 border-white border-opacity-60 rounded" />
+              <div className="absolute inset-0 border-2 border-white border-opacity-60 rounded-sm" />
             </div>
           )}
         </button>
