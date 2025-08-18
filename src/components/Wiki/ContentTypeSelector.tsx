@@ -16,14 +16,14 @@ const ContentTypeSelector = ({
       <div className="flex justify-center space-x-4">
         <button
           type="button"
-          className={`px-6 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${contentType === "items" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+          className={`px-6 py-3 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${contentType === "items" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
           onClick={() => onContentTypeChange("items")}
         >
           {t("menu.items")}
         </button>
         <button
           type="button"
-          className={`px-6 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${contentType === "creatures" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
+          className={`px-6 py-3 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition-colors duration-200 ${contentType === "creatures" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300 hover:bg-gray-600"}`}
           onClick={() => onContentTypeChange("creatures")}
         >
           {t("menu.creatures")}

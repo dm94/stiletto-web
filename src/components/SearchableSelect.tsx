@@ -67,7 +67,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
   return (
     <div className="relative" ref={wrapperRef}>
       <div
-        className={`w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer flex justify-between items-center ${className}`}
+        className={`w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 cursor-pointer flex justify-between items-center ${className}`}
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -97,7 +97,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
             <input
               id={id}
               type="text"
-              className="w-full p-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
               placeholder={t("common.search")}
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
@@ -107,7 +107,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
           </div>
           {filteredOptions.length > 0 ? (
             <select
-              className="w-full bg-gray-700 border border-gray-600 text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 max-h-60 p-2"
+              className="w-full bg-gray-700 border border-gray-600 text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 max-h-60 p-2"
               size={Math.min(filteredOptions.length, 8)}
               value={value}
               onChange={(e) => handleOptionClick(e.target.value)}

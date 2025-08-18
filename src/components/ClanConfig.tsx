@@ -161,7 +161,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
               </label>
               <input
                 type="text"
-                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 id="clan_name"
                 name="clan_name"
                 maxLength={20}
@@ -195,7 +195,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
               <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
-                  className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded focus:ring-blue-500"
+                  className="w-4 h-4 text-blue-600 bg-gray-700 border-gray-600 rounded-sm focus:ring-blue-500"
                   id="recruitmentInput"
                   checked={formState.recruitInput}
                   onChange={() =>
@@ -226,7 +226,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
                 </span>
                 <input
                   type="text"
-                  className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-r-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-r-md text-white placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   id="discord_invite"
                   name="discord_invite"
                   maxLength={10}
@@ -277,7 +277,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
             <div className="flex justify-end space-x-3 mt-6">
               <button
                 type="button"
-                className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 rounded-md hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="px-4 py-2 text-sm font-medium text-gray-300 bg-gray-700 border border-gray-600 rounded-md hover:bg-gray-600 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 onClick={onClose}
               >
                 {t("common.cancel")}
@@ -285,7 +285,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
               <button
                 data-testid="submit-button"
                 type="submit"
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 {clanid ? t("clanConfig.update") : t("clan.createClan")}
               </button>

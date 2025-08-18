@@ -17,13 +17,13 @@ const ClanSelect: React.FC<ClanSelectProps> = ({
 }) => {
   return (
     <div className="flex items-center">
-      <div className="flex-grow">
+      <div className="grow">
         <ClanName clan={clan} />
       </div>
       <div className={isLeader ? "ml-2" : "hidden"}>
         <button
           type="button"
-          className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-hidden focus:ring-2 focus:ring-red-500"
           onClick={() => onDelete(clan?.id)}
           aria-label="Delete relationship"
         >

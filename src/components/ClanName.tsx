@@ -22,7 +22,7 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
           style={{ backgroundColor: clan.flagcolor }}
           alt={t("diplomacy.symbol")}
           id={`symbol-img-${clan.name}`}
-          className="inline-block rounded"
+          className="inline-block rounded-sm"
         />
         <span className="inline-block pb-3 ml-2 text-gray-300">
           {clan.name}

@@ -33,7 +33,7 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
         key={`${item.name}-${item.count}-${i}`}
       >
         {moreThanOne && (
-          <div className="absolute top-2 right-2 bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs font-medium">
+          <div className="absolute top-2 right-2 bg-gray-800 text-gray-300 px-2 py-1 rounded-sm text-xs font-medium">
             {t("crafting.recipe")} {i + 1}
           </div>
         )}
@@ -123,7 +123,7 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
             <div className="relative">
               <input
                 type="number"
-                className="w-24 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold text-lg"
+                className="w-24 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 text-center focus:outline-hidden focus:ring-2 focus:ring-blue-500 font-bold text-lg"
                 value={item.count}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   onChangeCount(item.name, Number.parseInt(e.target.value))
@@ -151,42 +151,42 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
           <div className="grid grid-cols-6 gap-2">
             <button
               type="button"
-              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
+              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
               onClick={() => handleChange(1)}
             >
               +1
             </button>
             <button
               type="button"
-              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
+              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
               onClick={() => handleChange(10)}
             >
               +10
             </button>
             <button
               type="button"
-              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
+              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500 transition-colors duration-200 font-medium"
               onClick={() => handleChange(100)}
             >
               +100
             </button>
             <button
               type="button"
-              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
+              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-hidden focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
               onClick={() => handleChange(-1)}
             >
               -1
             </button>
             <button
               type="button"
-              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
+              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-hidden focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
               onClick={() => handleChange(-10)}
             >
               -10
             </button>
             <button
               type="button"
-              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
+              className="p-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-hidden focus:ring-2 focus:ring-red-500 transition-colors duration-200 font-medium"
               onClick={() => handleChange(-100)}
             >
               -100

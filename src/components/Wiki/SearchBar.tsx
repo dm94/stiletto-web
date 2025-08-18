@@ -25,7 +25,7 @@ const SearchBar = ({
       >
         <input
           type="search"
-          className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-l-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
           placeholder={t("common.search")}
           aria-label={t("common.search")}
           onChange={onSearchTextChange}
@@ -34,7 +34,7 @@ const SearchBar = ({
         />
         <button
           type="button"
-          className="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+          className="px-6 py-3 bg-blue-600 text-white rounded-r-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
           onClick={onSearchClick}
         >
           {t("common.search")}

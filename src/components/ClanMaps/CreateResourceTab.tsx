@@ -70,7 +70,7 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
           </label>
           <select
             id="resourcetype"
-            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             value={resourceTypeInput}
             onChange={(evt) => setResourceTypeInput(evt.target.value)}
           >
@@ -86,7 +86,7 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
           </label>
           <input
             type="number"
-            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             name="coordinateXInput"
             value={coordinateXInput}
             onChange={(evt) => onChangeX(Number(evt.target.value))}
@@ -102,7 +102,7 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
           </label>
           <input
             type="number"
-            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             name="coordinateYInput"
             value={coordinateYInput}
             onChange={(evt) => onChangeY(Number(evt.target.value))}
@@ -118,7 +118,7 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
           </label>
           <input
             type="text"
-            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             name="descriptionInput"
             value={descriptionInput}
             onChange={(evt) => setDescriptionInput(evt.target.value)}
@@ -134,14 +134,14 @@ const CreateResourceTab: React.FC<CreateResourceTabProps> = ({
           </label>
           <input
             type="datetime-local"
-            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             name="Last Harvested"
             value={lastHarvestedInput}
             onChange={(evt) => setLastHarvestedInput(evt.target.value)}
           />
         </div>
         <button
-          className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
           type="submit"
           value="Submit"
           aria-label={t("resources.createResource")}

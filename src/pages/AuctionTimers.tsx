@@ -50,14 +50,14 @@ const AuctionTimers = memo(() => {
         <div className="w-full lg:w-1/3 px-2">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
             <div className="p-4 text-center">
-              <div className="inline-flex rounded-md shadow-sm">
+              <div className="inline-flex rounded-md shadow-xs">
                 <button
                   type="button"
                   className={`px-4 py-2 ${
                     playSound
                       ? "bg-blue-600 text-white"
                       : "bg-gray-700 text-gray-300"
-                  } rounded-l-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
+                  } rounded-l-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(true)}
                 >
                   <FaVolumeUp className="mr-2 inline" /> {t("common.soundOn")}
@@ -68,7 +68,7 @@ const AuctionTimers = memo(() => {
                     !playSound
                       ? "bg-blue-600 text-white"
                       : "bg-gray-700 text-gray-300"
-                  } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
+                  } rounded-r-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(false)}
                 >
                   <FaVolumeMute className="mr-2 inline" />{" "}
@@ -88,7 +88,7 @@ const AuctionTimers = memo(() => {
             <div className="grid grid-cols-2 gap-4">
               <button
                 type="button"
-                className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-medium"
+                className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-lg font-medium"
                 onClick={() => setTimers(timers + 1)}
               >
                 <FaPlus className="mr-2 inline" />
@@ -96,7 +96,7 @@ const AuctionTimers = memo(() => {
               </button>
               <button
                 type="button"
-                className={`px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 text-lg font-medium ${
+                className={`px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-red-500 text-lg font-medium ${
                   timers <= 1 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
                 onClick={() => setTimers(Math.max(1, timers - 1))}

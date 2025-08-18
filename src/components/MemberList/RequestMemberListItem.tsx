@@ -23,7 +23,7 @@ const RequestMemberListItem: React.FC<RequestMemberListItemProps> = ({
     return (
       <button
         type="button"
-        className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+        className="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm"
         onClick={() => onShowRequest(member)}
       >
         {t("trades.showRequest")}

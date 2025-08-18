@@ -47,7 +47,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
       (): React.ReactElement => (
         <button
           type="button"
-          className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
           onClick={addRecipeRequest}
           title={t("common.share")}
           data-testid="share-crafter-btn"
@@ -66,13 +66,13 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           <div className="flex space-x-2">
             <input
               type="text"
-              className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
               data-testid="share-crafter-input"
               value={url}
               disabled
             />
             <button
-              className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
               type="button"
               onClick={() => navigator.clipboard.writeText(url)}
             >
@@ -166,7 +166,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
           </div>
           <button
             type="button"
-            className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             title={t("common.copyToClipboard")}
             data-testid="crafter-copy-clipboard"
             onClick={copyMaterials}

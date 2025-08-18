@@ -92,13 +92,13 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("discord.allowToChangeBotSettings")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="botInput"
                   checked={permissions.bot}
                   onChange={() => togglePermission("bot")}
-                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
                 />
               </div>
               <label className="text-sm" htmlFor="botInput">
@@ -110,13 +110,13 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("discord.allowEditingWalkers")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="walkersInput"
                   checked={permissions.walkers}
                   onChange={() => togglePermission("walkers")}
-                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
                 />
               </div>
               <label className="text-sm" htmlFor="walkersInput">
@@ -128,13 +128,13 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("discord.allowEditingDiplomacy")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="diplomacyInput"
                   checked={permissions.diplomacy}
                   onChange={() => togglePermission("diplomacy")}
-                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
                 />
               </div>
               <label className="text-sm" htmlFor="diplomacyInput">
@@ -146,13 +146,13 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("Allow management of request")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="requestInput"
                   checked={permissions.request}
                   onChange={() => togglePermission("request")}
-                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
                 />
               </div>
               <label className="text-sm" htmlFor="requestInput">
@@ -164,13 +164,13 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("discord.allowKickMembers")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="kickmembersInput"
                   checked={permissions.kickmembers}
                   onChange={() => togglePermission("kickmembers")}
-                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-none duration-200 ease-in"
+                  className="absolute block w-6 h-6 rounded-full bg-white border-4 border-gray-300 appearance-none cursor-pointer checked:right-0 checked:border-blue-500 focus:outline-hidden duration-200 ease-in"
                 />
               </div>
               <label className="text-sm" htmlFor="kickmembersInput">
@@ -182,14 +182,14 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
         <div className="p-4 bg-gray-900 border-t border-gray-700 flex justify-end space-x-2">
           <button
             type="button"
-            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-gray-500"
             onClick={onClose}
           >
             {t("common.close")}
           </button>
           <button
             type="button"
-            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             onClick={handleUpdateMemberPermissions}
           >
             {t("common.save")}

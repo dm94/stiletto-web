@@ -67,7 +67,7 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
   return (
     <div className="flex gap-4 flex-col p-4">
       <div className="w-full">
-        <div className="rounded shadow p-4 mb-4 bg-gray-800 text-white">
+        <div className="rounded shadow-sm p-4 mb-4 bg-gray-800 text-white">
           <div className="text-lg font-semibold mb-2 border-b pb-2">
             {t("maps.openExistingMap")}
           </div>
@@ -82,7 +82,7 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
                 </label>
                 <input
                   type="number"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-md focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   id="map_id"
                   name="map_id"
                   maxLength={4}
@@ -100,7 +100,7 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border rounded-md focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   id="map_pass"
                   name="map_pass"
                   maxLength={30}
@@ -123,7 +123,7 @@ const CreateMapNoLog: React.FC<CreateMapNoLogProps> = ({ onOpen }) => {
       <CreateMapPanel maps={maps} onCreateMap={createMap} />
       {showShareMap && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded shadow p-4 dark:bg-gray-800 dark:text-white w-1/2">
+          <div className="bg-white rounded-sm shadow-sm p-4 dark:bg-gray-800 dark:text-white w-1/2">
             <div className="text-lg font-semibold mb-4 border-b pb-2">
               {t("maps.mapCreated")}
             </div>

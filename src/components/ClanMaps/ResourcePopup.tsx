@@ -58,7 +58,7 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
       <div className="resource-quality-info bg-gray-800/30 p-3 rounded-md shadow-inner">
         <button
           type="button"
-          className="w-full p-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3 font-medium transition-all duration-200 transform hover:translate-y-[-1px] shadow-md"
+          className="w-full p-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500 mb-3 font-medium transition-all duration-200 transform hover:-translate-y-px shadow-md"
           onClick={() =>
             updateResource?.(
               resource.mapid,
@@ -119,7 +119,7 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
         {resource.token && (
           <button
             type="button"
-            className="w-full p-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all duration-200 transform hover:translate-y-[-1px] font-medium shadow-md"
+            className="w-full p-2.5 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-hidden focus:ring-2 focus:ring-red-500 transition-all duration-200 transform hover:-translate-y-px font-medium shadow-md"
             onClick={handleDeleteResource}
             aria-label={`${t("common.delete")} ${t(resource.resourcetype)} ${t("common.at")} ${Math.floor(resource.x)},${Math.floor(resource.y)}`}
           >

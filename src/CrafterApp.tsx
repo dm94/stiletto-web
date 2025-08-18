@@ -43,7 +43,7 @@ const CrafterApp: React.FC = () => {
           }}
           setRedirectTo={(value: string) => setRedirectTo(value)}
         />
-        <main className="flex-shrink-0">
+        <main className="shrink-0">
           <div className="container-fluid pt-4">
             {AppRoutes}
             {showChangeLanguageModal && (

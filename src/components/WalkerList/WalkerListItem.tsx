@@ -70,7 +70,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     <input
                       id="walkerID"
                       type="text"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       value={walker.walkerid}
                       readOnly
                     />
@@ -91,7 +91,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     <input
                       id="lastUser"
                       type="text"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       value={walker.lastuser}
                       readOnly
                     />
@@ -112,7 +112,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     <input
                       id="lastUse"
                       type="text"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       value={walker.datelastuse}
                       readOnly
                     />
@@ -131,7 +131,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                       {t("common.owner")}
                     </label>
                     <select
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       id="inputOwner"
                       value={walkerState.ownerUser ?? ""}
                       onChange={(e) =>
@@ -161,7 +161,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                       {t("common.use")}
                     </label>
                     <select
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       id="inputUse"
                       value={walkerState.use ?? "None"}
                       onChange={(e) =>
@@ -192,7 +192,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                       {t("common.type")}
                     </label>
                     <select
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       id="inputType"
                       value={walkerState.type ?? ""}
                       onChange={(e) =>
@@ -223,7 +223,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                     </label>
                     <textarea
                       id="description"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       value={walkerState.description ?? ""}
                       onChange={(e) =>
                         handleWalkerUpdate("description", e.target.value)
@@ -241,7 +241,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                 <div className="flex space-x-2">
                   <button
                     type="button"
-                    className={`p-2 rounded-l-lg focus:outline-none ${
+                    className={`p-2 rounded-l-lg focus:outline-hidden ${
                       walkerState.isReady
                         ? "bg-green-600 text-white"
                         : "bg-gray-700 text-gray-300 hover:bg-green-600 hover:text-white"
@@ -255,7 +255,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                   </span>
                   <button
                     type="button"
-                    className={`p-2 rounded-r-lg focus:outline-none ${
+                    className={`p-2 rounded-r-lg focus:outline-hidden ${
                       !walkerState.isReady
                         ? "bg-red-600 text-white"
                         : "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
@@ -268,7 +268,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
 
                 <button
                   type="button"
-                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 w-full max-w-xs"
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500 w-full max-w-xs"
                   onClick={() => {
                     onSave(walkerState);
                     setIsOpen(false);
@@ -280,7 +280,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                 {canEdit && (
                   <button
                     type="button"
-                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-xs"
+                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-hidden focus:ring-2 focus:ring-red-500 w-full max-w-xs"
                     onClick={() => onRemove(walker.walkerid)}
                   >
                     <FaTrashAlt className="mr-2 inline" /> {t("common.delete")}
@@ -339,7 +339,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
         </td>
         <td className="px-6 py-4 text-center whitespace-nowrap">
           <button
-            className="text-blue-400 hover:text-blue-300 focus:outline-none"
+            className="text-blue-400 hover:text-blue-300 focus:outline-hidden"
             onClick={() => setIsOpen(!isOpen)}
             type="button"
             aria-label={

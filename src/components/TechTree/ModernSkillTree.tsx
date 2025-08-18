@@ -250,13 +250,13 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
           </div>
           <div className="text-center mb-2">
             {node.item?.level && (
-              <p className="text-sm text-sandLight mb-1">
+              <p className="text-sm text-sand-light mb-1">
                 <span className="font-bold">{t("techTree.level")}: </span>
                 {node.item.level}
               </p>
             )}
             {node.item?.pointsCost && (
-              <p className="text-sm text-sandLight mb-1">
+              <p className="text-sm text-sand-light mb-1">
                 <span className="font-bold">{t("techTree.pointsCost")}: </span>
                 {node.item.pointsCost}
               </p>
@@ -347,7 +347,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
 
   return (
     <div className="modern-skill-tree p-6 bg-charcoal rounded-lg border-2 border-tribal">
-      <h2 className="text-2xl font-bold mb-6 text-sand font-['Okami'] border-b-2 border-tribal pb-2">
+      <h2 className="text-2xl font-bold mb-6 text-sand web-title border-b-2 border-tribal pb-2">
         {title}
       </h2>
 

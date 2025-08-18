@@ -21,7 +21,7 @@ const ActionButton: React.FC<{
 }> = ({ onClick }) => (
   <button
     type="button"
-    className="w-full px-4 py-2 text-sm font-medium text-yellow-500 border border-yellow-500 rounded-md hover:bg-yellow-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+    className="w-full px-4 py-2 text-sm font-medium text-yellow-500 border border-yellow-500 rounded-md hover:bg-yellow-500 hover:text-white focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
     onClick={onClick}
   >
     OK

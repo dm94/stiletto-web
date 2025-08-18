@@ -80,7 +80,7 @@ const DiscordConnection: React.FC = () => {
           <div className="p-6">
             <a
               href={discordLoginUrl}
-              className="w-full inline-flex justify-center items-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors"
+              className="w-full inline-flex justify-center items-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-colors"
             >
               <FaDiscord className="mr-2" />
               {t("auth.loginWithDiscord")}

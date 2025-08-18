@@ -1,35 +1,179 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-@font-face {
-  font-family: "Okami";
-  src: url("../fonts/okami.otf") format("opentype");
-  font-display: swap;
-  font-style: normal;
-  font-weight: normal;
+@theme {
+  --color-dark: #2e2a26;
+  --color-info: #5a7742;
+  --color-sand: #c2a57c;
+  --color-sand-light: #e0c9a6;
+  --color-sand-dark: #4a3b31;
+  --color-tribal: #d95f32;
+  --color-nature: #5a7742;
+  --color-charcoal: #1b1b1b;
+
+  --animate-spin-slow: spin 2s linear infinite;
+  --animate-spin-medium: spin 3s linear infinite;
+  --animate-spin-fast: spin 1.5s linear infinite;
+
+  --background-image-sand-texture: url('/img/sand-texture.jpg');
 }
 
-:root {
-  --dark: #2e2a26;
-  --sand: #c2a57c;
-  --sand-light: #e0c9a6;
-  --sand-dark: #4a3b31;
-  --tribal: #d95f32;
-  --nature: #5a7742;
-  --charcoal: #1b1b1b;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility card {
+  /* Card and Modal Styling */
+  @apply bg-charcoal border-2 border-tribal rounded-none;
+  clip-path: polygon(0 0, 100% 0, 98% 98%, 0 100%);
+}
+
+@utility modal-content {
+  @apply bg-charcoal border-2 border-tribal rounded-none;
+  clip-path: polygon(0 0, 100% 0, 98% 98%, 0 100%);
+}
+
+@utility card-header {
+  @apply font-['Okami'] text-2xl text-sand border-b-2 border-tribal py-3 px-4;
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+
+  & .input-group {
+    @apply font-['Roboto'] font-['Helvetica_Neue'] font-sans;
+  }
+}
+
+@utility modal-header {
+  @apply font-['Okami'] text-2xl text-sand border-b-2 border-tribal py-3 px-4;
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
+}
+
+@utility input-group {
+  .card-header & {
+    @apply font-['Roboto'] font-['Helvetica_Neue'] font-sans;
+  }
+}
+
+@utility card-body {
+  @apply p-4;
+}
+
+@utility navbar {
+  /* Navigation Styling */
+  @apply bg-sand-dark border-b-2 border-tribal;
+}
+
+@utility navbar-brand {
+  @apply font-['Okami'] font-normal text-sand;
+
+  & span {
+    @apply text-2xl!;
+  }
+}
+
+@utility lo-title {
+  /* Title Styling */
+  @apply font-['Okami'] font-medium text-tribal;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+@utility web-title {
+  @apply font-['Okami'];
+}
+
+@utility btn {
+  /* Button Styling */
+  @apply bg-sand-dark text-sand-light border-0 transition-colors duration-300;
+  clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
+
+  &:hover {
+    @apply bg-tribal;
+  }
+}
+
+@utility btn-primary {
+  @apply bg-tribal text-sand-light;
+
+  &:hover {
+    @apply bg-sand;
+  }
+}
+
+@utility tab-content-tree {
+  /* Other Components */
+  & h1 {
+    @apply text-2xl!;
+  }
+  @apply min-h-[200vh];
+}
+
+@utility tippy-content {
+  & h1 {
+    @apply text-3xl;
+  }
+  @apply bg-charcoal border border-tribal text-sand-light;
+}
+
+@utility notifications {
+  @apply fixed right-0 bottom-0 z-10;
+
+  & .toast {
+    @apply opacity-100 bg-charcoal border-l-4 border-tribal;
+  }
+}
+
+@utility toast {
+  .notifications & {
+    @apply opacity-100 bg-charcoal border-l-4 border-tribal;
+  }
+}
+
+@utility content-v-a {
+  content-visibility: auto;
+}
+
+@layer utilities {
+  @font-face {
+    font-family: 'Okami';
+    src: url('../fonts/okami.otf') format('opentype');
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+  }
+
+  :root {
+    --dark: #2e2a26;
+    --sand: #c2a57c;
+    --sand-light: #e0c9a6;
+    --sand-dark: #4a3b31;
+    --tribal: #d95f32;
+    --nature: #5a7742;
+    --charcoal: #1b1b1b;
+  }
 }
 
 @layer base {
   html {
-    @apply min-h-screen min-h-[100dvh] h-full;
+    @apply min-h-screen min-h-dvh h-full;
   }
 
   body {
     background-color: var(--dark);
     background-repeat: repeat;
     background-attachment: fixed;
-    @apply text-sandLight;
+    @apply text-sand-light;
   }
 
   a {
@@ -46,13 +190,13 @@
   }
 
   button {
-    @apply bg-sandDark hover:bg-tribal text-sandLight transition-colors duration-300;
+    @apply bg-sand-dark hover:bg-tribal text-sand-light transition-colors duration-300;
   }
 
   input,
   select,
   textarea {
-    @apply bg-charcoal border-sandDark text-sandLight focus:border-tribal focus:ring-1 focus:ring-tribal;
+    @apply bg-charcoal border-sand-dark text-sand-light focus:border-tribal focus:ring-1 focus:ring-tribal;
   }
 }
 
@@ -88,103 +232,12 @@
     scrollbar-color: var(--sand-dark) var(--charcoal);
   }
 
-  /* Card and Modal Styling */
-  .card,
-  .modal-content {
-    @apply bg-charcoal border-2 border-tribal rounded-none;
-    clip-path: polygon(0 0, 100% 0, 98% 98%, 0 100%);
-  }
-
-  .card-header,
-  .modal-header {
-    @apply font-['Okami'] text-2xl text-sand border-b-2 border-tribal py-3 px-4;
-    clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
-  }
-
-  .card-header .input-group {
-    @apply font-['Roboto'] font-['Helvetica_Neue'] font-sans;
-  }
-
-  .card-body {
-    @apply p-4;
-  }
-
-  /* Navigation Styling */
-  .navbar {
-    @apply bg-sandDark border-b-2 border-tribal;
-  }
-
-  .navbar-brand {
-    @apply font-['Okami'] font-normal text-sand;
-  }
-
-  .navbar-brand span {
-    @apply text-2xl !important;
-  }
-
-  /* Title Styling */
-  .lo-title {
-    @apply font-['Okami'] font-medium text-tribal;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  }
-
-  .web-title {
-    @apply font-['Okami'];
-  }
-
-  /* Button Styling */
-  .btn {
-    @apply bg-sandDark text-sandLight border-0 transition-colors duration-300;
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
-  }
-
-  .btn:hover {
-    @apply bg-tribal;
-  }
-
-  .btn-primary {
-    @apply bg-tribal text-sandLight;
-  }
-
-  .btn-primary:hover {
-    @apply bg-sand;
-  }
-
   /* Table Styling */
   table {
-    @apply border-sandDark bg-charcoal text-sandLight;
+    @apply border-sand-dark bg-charcoal text-sand-light;
   }
 
   th {
-    @apply bg-sandDark text-sand border-b border-tribal;
-  }
-
-  /* Other Components */
-  .tab-content-tree h1 {
-    @apply text-2xl !important;
-  }
-
-  .tab-content-tree {
-    @apply min-h-[200vh];
-  }
-
-  .tippy-content h1 {
-    @apply text-3xl;
-  }
-
-  .tippy-content {
-    @apply bg-charcoal border border-tribal text-sandLight;
-  }
-
-  .notifications {
-    @apply fixed right-0 bottom-0 z-10;
-  }
-
-  .notifications .toast {
-    @apply opacity-100 bg-charcoal border-l-4 border-tribal;
-  }
-
-  .content-v-a {
-    content-visibility: auto;
+    @apply bg-sand-dark text-sand border-b border-tribal;
   }
 }

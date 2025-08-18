@@ -38,7 +38,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
       <td className="px-4 py-3">
         <button
           type="button"
-          className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 text-sm"
+          className="px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-red-500 text-sm"
           onClick={() => onKick(member.discordid)}
         >
           {t("members.kick")}
@@ -61,7 +61,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
 
     return (
       <td className="px-4 py-3">
-        <div className="inline-flex rounded-md shadow-sm">
+        <div className="inline-flex rounded-md shadow-xs">
           <button
             type="button"
             className="px-2 py-1 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
@@ -71,7 +71,7 @@ const MemberListItem: React.FC<MemberListItemProps> = ({
           </button>
           <button
             type="button"
-            className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+            className="px-3 py-1 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-sm"
             onClick={() => onClickEditPermissions(member.discordid)}
           >
             {t("common.edit")}

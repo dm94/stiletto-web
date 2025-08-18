@@ -186,14 +186,14 @@ const PrivateProfile = () => {
                 closeSession();
                 setRedirect(true);
               }}
-              className="w-full p-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 focus:outline-none"
+              className="w-full p-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 focus:outline-hidden"
             >
               {t("auth.closeSession")}
             </button>
             <button
               type="button"
               onClick={() => setShowDeleteModal(true)}
-              className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none"
+              className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-hidden"
             >
               {t("profile.deleteUser")}
             </button>
@@ -210,14 +210,14 @@ const PrivateProfile = () => {
               <>
                 <Link
                   to="/members"
-                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
+                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-hidden"
                 >
                   <FaUsers className="mr-2" />
                   {t("menu.clanGeneral")}
                 </Link>
                 <Link
                   to="/diplomacy"
-                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
+                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-hidden"
                 >
                   <FaFlag className="mr-2" />
                   {t("menu.diplomacy")}
@@ -227,7 +227,7 @@ const PrivateProfile = () => {
                     type="button"
                     data-testid="leave-clan-btn"
                     onClick={handleLeaveClan}
-                    className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-none"
+                    className="w-full p-3 bg-red-500 text-white rounded-lg hover:bg-red-600 focus:outline-hidden"
                   >
                     {t("clan.leaveClan")}
                   </button>
@@ -238,7 +238,7 @@ const PrivateProfile = () => {
                 <Link
                   to="/clanlist"
                   data-testid="join-clan-btn"
-                  className="w-full inline-flex justify-center items-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
+                  className="w-full inline-flex justify-center items-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden"
                 >
                   {t("clan.joinClan")}
                 </Link>
@@ -246,7 +246,7 @@ const PrivateProfile = () => {
                   type="button"
                   data-testid="create-clan-btn"
                   onClick={() => setShowCreateClanConfig(true)}
-                  className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
+                  className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden"
                 >
                   {t("clan.createClan")}
                 </button>
@@ -258,7 +258,7 @@ const PrivateProfile = () => {
           <div className="p-3">
             <Link
               to="/maps"
-              className="w-full inline-flex justify-center items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
+              className="w-full inline-flex justify-center items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-hidden"
             >
               {t("menu.resourceMaps")}
             </Link>
@@ -274,7 +274,7 @@ const PrivateProfile = () => {
             <div className="flex space-x-2">
               <select
                 id="changeLanguajeSelect"
-                className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
+                className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-hidden"
                 value={language}
                 onChange={(e) => setLanguage(e.target.value)}
               >
@@ -287,7 +287,7 @@ const PrivateProfile = () => {
               <button
                 type="button"
                 onClick={handleLanguageChange}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
+                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden"
               >
                 {t("settings.changeLanguage")}
               </button>
@@ -312,7 +312,7 @@ const PrivateProfile = () => {
                   </label>
                   <input
                     type="text"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-none"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-white focus:outline-hidden"
                     name="nameInGameInput"
                     value={nameInGameInput}
                     onChange={(e) => setNameInGameInput(e.target.value)}
@@ -321,7 +321,7 @@ const PrivateProfile = () => {
                 </div>
                 <button
                   type="submit"
-                  className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none"
+                  className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden"
                 >
                   {t("common.update")}
                 </button>
@@ -363,14 +363,14 @@ const PrivateProfile = () => {
               <div className="bg-gray-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
                   type="button"
-                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  className="w-full inline-flex justify-center rounded-md border border-transparent shadow-xs px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={handleDeleteUser}
                 >
                   {t("profile.deleteUser")}
                 </button>
                 <button
                   type="button"
-                  className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-700 shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-gray-300 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                  className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-700 shadow-xs px-4 py-2 bg-gray-800 text-base font-medium text-gray-300 hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                   onClick={() => setShowDeleteModal(false)}
                 >
                   {t("common.cancel")}

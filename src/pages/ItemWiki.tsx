@@ -196,7 +196,7 @@ const ItemWiki = () => {
           focusColor = "focus:ring-gray-500";
       }
 
-      return `px-4 py-2 border rounded-lg hover:text-gray-300 ${textColor} ${outlineColor} ${hoverColor} focus:outline-none focus:ring-2 ${focusColor} ${
+      return `px-4 py-2 border rounded-lg hover:text-gray-300 ${textColor} ${outlineColor} ${hoverColor} focus:outline-hidden focus:ring-2 ${focusColor} ${
         rarity === value ? "bg-opacity-20" : ""
       }`;
     },
@@ -343,7 +343,7 @@ const ItemWiki = () => {
                 {t("common.selectRarity")}
               </div>
               <fieldset
-                className="inline-flex rounded-lg shadow-sm"
+                className="inline-flex rounded-lg shadow-xs"
                 aria-label={t("common.raritySelection")}
               >
                 <legend className="sr-only">

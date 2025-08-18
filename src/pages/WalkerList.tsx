@@ -260,7 +260,7 @@ const WalkerList: React.FC = () => {
       <div className="p-4">
         <div className="mb-3 text-gray-300">{t("discord.botDescription")}</div>
         <a
-          className="w-full inline-flex justify-center items-center p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="w-full inline-flex justify-center items-center p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
           href="https://top.gg/bot/715948052979908911"
           target="_blank"
           rel="noopener noreferrer"
@@ -336,7 +336,7 @@ const WalkerList: React.FC = () => {
               </label>
               <select
                 id="walkerTypeSearch"
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 value={walkerTypeSearch || "All"}
                 onChange={(e) => setWalkerTypeSearch(e.target.value)}
               >
@@ -352,7 +352,7 @@ const WalkerList: React.FC = () => {
                 {t("common.name")}
               </label>
               <input
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 id="search-name"
                 type="search"
                 placeholder="Name.."
@@ -370,7 +370,7 @@ const WalkerList: React.FC = () => {
               </label>
               <select
                 id="useWalkerSearch"
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 value={useWalkerSearch || "All"}
                 onChange={(e) => setUseWalkerSearch(e.target.value)}
               >
@@ -389,7 +389,7 @@ const WalkerList: React.FC = () => {
                 {t("common.description")}
               </label>
               <input
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 id="search-description"
                 type="search"
                 aria-label="Search"
@@ -406,7 +406,7 @@ const WalkerList: React.FC = () => {
               </label>
               <select
                 id="isReadySearch"
-                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 value={isReadySearch || "All"}
                 onChange={(e) => setIsReadySearch(e.target.value)}
               >
@@ -419,14 +419,14 @@ const WalkerList: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-2">
                 <button
                   type="button"
-                  className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   onClick={() => updateWalkers()}
                 >
                   {t("walkers.filterWalkers")}
                 </button>
                 <button
                   type="button"
-                  className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                  className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-gray-500"
                   onClick={() => {
                     setSearchInput("");
                     setWalkerTypeSearch("All");

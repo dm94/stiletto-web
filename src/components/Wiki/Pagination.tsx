@@ -30,7 +30,7 @@ const Pagination = ({
       <div className="mt-8 text-center">
         <button
           type="button"
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
           onClick={onLoadMore}
           data-testid="load-more-btn"
         >

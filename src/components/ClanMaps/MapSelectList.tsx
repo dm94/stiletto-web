@@ -29,7 +29,7 @@ const MapSelectList: React.FC<MapSelectListProps> = ({
     return maps.map((map: MapJsonInfo) => (
       <button
         type="button"
-        className="p-2 text-center focus:outline-none"
+        className="p-2 text-center focus:outline-hidden"
         key={`selectmap${map.idMap}`}
         onClick={handleMapSelect}
       >
