@@ -211,6 +211,7 @@
   "maps.createNewMap": "Создать новую карту",
   "maps.backToList": "Вернуться к списку карт",
   "maps.loadingResources": "Loading resources",
+  "maps.noMapsFound": "Карты не найдены",
   "common.list": "Список",
   "common.edit": "Редактирование",
   "common.password": "Пароль",

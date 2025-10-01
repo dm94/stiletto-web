@@ -211,6 +211,7 @@
   "maps.createNewMap": "新しい地図を作成",
   "maps.backToList": "地図一覧に戻る",
   "maps.loadingResources": "Loading resources",
+  "maps.noMapsFound": "地図が見つかりません",
   "common.list": "リスト",
   "common.edit": "編集",
   "common.password": "パスワード",

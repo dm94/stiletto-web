@@ -211,6 +211,7 @@
   "maps.createNewMap": "Crea Mappa",
   "maps.backToList": "Torna all'Elenco",
   "maps.loadingResources": "Loading resources",
+  "maps.noMapsFound": "Nessuna mappa trovata",
   "common.list": "Elenco",
   "common.edit": "Modifica",
   "common.password": "Password",
