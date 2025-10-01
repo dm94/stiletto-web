@@ -96,7 +96,12 @@ export const deleteMap = async (mapId: number): Promise<GenericResponse> => {
     },
   });
 
-  if (response) {
+  if (response.ok) {
+    // If it's 204 No Content, return a success message
+    if (response.status === 204) {
+      return { message: "Map deleted successfully" };
+    }
+    // If it has content, try to parse JSON
     return await response.json();
   }
 
