@@ -211,7 +211,7 @@
   "maps.createNewMap": "Create new map",
   "maps.backToList": "Back to the list of maps",
   "maps.loadingResources": "Loading resources",
-  "maps.noMapsFound": "지도를 찾을 수 없습니다",
+  "maps.noMapsFound": "No maps found",
   "common.list": "List",
   "common.edit": "Edit",
   "common.password": "Password",
