@@ -211,7 +211,7 @@
   "maps.createNewMap": "Crear mapa nou",
   "maps.backToList": "Tornar a la llista de mapes",
   "maps.loadingResources": "Loading resources",
-  "maps.noMapsFound": "No s'han trobat mapes",
+  "maps.noMapsFound": "No maps found",
   "common.list": "Llista",
   "common.edit": "Editar",
   "common.password": "Contrasenya",
