@@ -211,7 +211,7 @@
   "maps.createNewMap": "创建新地图",
   "maps.backToList": "返回地图列表",
   "maps.loadingResources": "Loading resources",
-  "maps.noMapsFound": "未找到地图",
+  "maps.noMapsFound": "No maps found",
   "common.list": "列表",
   "common.edit": "编辑",
   "common.password": "密码",
