@@ -211,7 +211,7 @@
   "maps.createNewMap": "Створення нової карти",
   "maps.backToList": "Назад до переліку карт",
   "maps.loadingResources": "Loading resources",
-  "maps.noMapsFound": "Карти не знайдено",
+  "maps.noMapsFound": "No maps found",
   "common.list": "Перелік",
   "common.edit": "Редагувати",
   "common.password": "Пароль",
