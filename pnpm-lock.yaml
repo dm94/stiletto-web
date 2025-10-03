@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@giscus/react':
         specifier: 3.1.0
-        version: 3.1.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 3.1.0(react-dom@19.1.0(react@19.1.1))(react@19.1.1)
       '@tanstack/react-virtual':
         specifier: ^3.13.11
-        version: 3.13.11(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 3.13.11(react-dom@19.1.0(react@19.1.1))(react@19.1.1)
       i18next:
         specifier: 25.2.1
         version: 25.2.1(typescript@5.8.3)
@@ -30,29 +30,29 @@ importers:
         specifier: 9.2.0
         version: 9.2.0
       react:
-        specifier: 19.1.0
-        version: 19.1.0
+        specifier: 19.1.1
+        version: 19.1.1
       react-dom:
         specifier: 19.1.0
-        version: 19.1.0(react@19.1.0)
+        version: 19.1.0(react@19.1.1)
       react-helmet:
         specifier: 6.1.0
-        version: 6.1.0(react@19.1.0)
+        version: 6.1.0(react@19.1.1)
       react-i18next:
         specifier: 15.5.2
-        version: 15.5.2(i18next@25.2.1(typescript@5.8.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)
+        version: 15.5.2(i18next@25.2.1(typescript@5.8.3))(react-dom@19.1.0(react@19.1.1))(react@19.1.1)(typescript@5.8.3)
       react-icons:
         specifier: ^5.5.0
-        version: 5.5.0(react@19.1.0)
+        version: 5.5.0(react@19.1.1)
       react-leaflet:
         specifier: 4.2.1
-        version: 4.2.1(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 4.2.1(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.1))(react@19.1.1)
       react-markdown:
         specifier: ^10.1.0
-        version: 10.1.0(@types/react@19.1.2)(react@19.1.0)
+        version: 10.1.0(@types/react@19.1.10)(react@19.1.1)
       react-router:
         specifier: ^7.6.2
-        version: 7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 7.6.2(react-dom@19.1.0(react@19.1.1))(react@19.1.1)
       vanilla-cookieconsent:
         specifier: 3.1.0
         version: 3.1.0
@@ -76,17 +76,17 @@ importers:
         specifier: ^22.15.8
         version: 22.15.8
       '@types/react':
-        specifier: ^19.1.2
-        version: 19.1.2
+        specifier: ^19.1.10
+        version: 19.1.10
       '@types/react-dom':
         specifier: ^19.1.6
-        version: 19.1.6(@types/react@19.1.2)
+        version: 19.1.6(@types/react@19.1.10)
       '@types/react-helmet':
         specifier: ^6.1.11
         version: 6.1.11
       '@types/react-leaflet':
         specifier: ^3.0.0
-        version: 3.0.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 3.0.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.1))(react@19.1.1)
       '@types/react-router':
         specifier: ^5.1.20
         version: 5.1.20
@@ -471,6 +471,9 @@ packages:
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
     engines: {node: '>=18.0.0'}
 
+  '@jridgewell/gen-mapping@0.3.13':
+    resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
+
   '@jridgewell/gen-mapping@0.3.8':
     resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
     engines: {node: '>=6.0.0'}
@@ -483,14 +486,20 @@ packages:
     resolution: {integrity: sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==}
     engines: {node: '>=6.0.0'}
 
-  '@jridgewell/source-map@0.3.6':
-    resolution: {integrity: sha512-1ZJTZebgqllO79ue2bm3rIGud/bOe0pP5BjSRCRxxYkEZS8STV7zN84UBbiYu7jy+eCKSnVIUgoWWE/tt+shMQ==}
+  '@jridgewell/source-map@0.3.11':
+    resolution: {integrity: sha512-ZMp1V8ZFcPG5dIWnQLr3NSI1MiCU7UETdS/A0G8V/XWHvJv3ZsFqutJn1Y5RPmAPX6F3BiE397OqveU/9NCuIA==}
 
   '@jridgewell/sourcemap-codec@1.5.0':
     resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
 
+  '@jridgewell/sourcemap-codec@1.5.5':
+    resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
+
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+
+  '@jridgewell/trace-mapping@0.3.30':
+    resolution: {integrity: sha512-GQ7Nw5G2lTu/BtHTKfXhKHok2WGetd4XYcVKGx00SjAk8GMwgJM3zr6zORiPGuOE+/vkc90KtTosSSvaCjKb2Q==}
 
   '@lit-labs/ssr-dom-shim@1.3.0':
     resolution: {integrity: sha512-nQIWonJ6eFAvUUrSlwyHDm/aE8PBDu5kRpL0vHMg6K8fK3Diq1xdPjTnsJSwxABhaZ+5eBi1btQB5ShUTKo4nQ==}
@@ -783,8 +792,8 @@ packages:
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
-  '@types/react@19.1.2':
-    resolution: {integrity: sha512-oxLPMytKchWGbnQM9O7D67uPa9paTNxO7jVoNMXgkkErULBPhPARCfkKL9ytcIJJRGjbsVwW4ugJzyFFvm/Tiw==}
+  '@types/react@19.1.10':
+    resolution: {integrity: sha512-EhBeSYX0Y6ye8pNebpKrwFJq7BoQ8J5SO6NlvNwwHjSj6adXJViPQrKlsyPw7hLBLvckEMO1yxeGdR82YBBlDg==}
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
@@ -1599,8 +1608,8 @@ packages:
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0
 
-  react@19.1.0:
-    resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
+  react@19.1.1:
+    resolution: {integrity: sha512-w8nqGImo45dmMIfljjMwOGtbmC/mk4CMYhWIicdSflH91J9TyCyczcPFXJzrZ/ZXcgGRFeP6BU0BEJTw6tZdfQ==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -2177,11 +2186,11 @@ snapshots:
   '@esbuild/win32-x64@0.25.4':
     optional: true
 
-  '@giscus/react@3.1.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@giscus/react@3.1.0(react-dom@19.1.0(react@19.1.1))(react@19.1.1)':
     dependencies:
       giscus: 1.6.0
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
+      react: 19.1.1
+      react-dom: 19.1.0(react@19.1.1)
 
   '@isaacs/cliui@8.0.2':
     dependencies:
@@ -2196,6 +2205,12 @@ snapshots:
     dependencies:
       minipass: 7.1.2
 
+  '@jridgewell/gen-mapping@0.3.13':
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/trace-mapping': 0.3.30
+    optional: true
+
   '@jridgewell/gen-mapping@0.3.8':
     dependencies:
       '@jridgewell/set-array': 1.2.1
@@ -2206,18 +2221,27 @@ snapshots:
 
   '@jridgewell/set-array@1.2.1': {}
 
-  '@jridgewell/source-map@0.3.6':
+  '@jridgewell/source-map@0.3.11':
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.8
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/gen-mapping': 0.3.13
+      '@jridgewell/trace-mapping': 0.3.30
     optional: true
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
+
+  '@jridgewell/sourcemap-codec@1.5.5':
+    optional: true
 
   '@jridgewell/trace-mapping@0.3.25':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@jridgewell/trace-mapping@0.3.30':
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.2
+      '@jridgewell/sourcemap-codec': 1.5.5
+    optional: true
 
   '@lit-labs/ssr-dom-shim@1.3.0': {}
 
@@ -2244,11 +2268,11 @@ snapshots:
     dependencies:
       playwright: 1.52.0
 
-  '@react-leaflet/core@2.1.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@react-leaflet/core@2.1.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.1))(react@19.1.1)':
     dependencies:
       leaflet: 1.9.4
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
+      react: 19.1.1
+      react-dom: 19.1.0(react@19.1.1)
 
   '@rolldown/pluginutils@1.0.0-beta.11': {}
 
@@ -2384,11 +2408,11 @@ snapshots:
       postcss: 8.5.4
       tailwindcss: 4.1.7
 
-  '@tanstack/react-virtual@3.13.11(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@tanstack/react-virtual@3.13.11(react-dom@19.1.0(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@tanstack/virtual-core': 3.13.11
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
+      react: 19.1.1
+      react-dom: 19.1.0(react@19.1.1)
 
   '@tanstack/virtual-core@3.13.11': {}
 
@@ -2445,17 +2469,17 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/react-dom@19.1.6(@types/react@19.1.2)':
+  '@types/react-dom@19.1.6(@types/react@19.1.10)':
     dependencies:
-      '@types/react': 19.1.2
+      '@types/react': 19.1.10
 
   '@types/react-helmet@6.1.11':
     dependencies:
-      '@types/react': 19.1.2
+      '@types/react': 19.1.10
 
-  '@types/react-leaflet@3.0.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@types/react-leaflet@3.0.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.1))(react@19.1.1)':
     dependencies:
-      react-leaflet: 4.2.1(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-leaflet: 4.2.1(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.1))(react@19.1.1)
     transitivePeerDependencies:
       - leaflet
       - react
@@ -2464,9 +2488,9 @@ snapshots:
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.1.2
+      '@types/react': 19.1.10
 
-  '@types/react@19.1.2':
+  '@types/react@19.1.10':
     dependencies:
       csstype: 3.1.3
 
@@ -3292,54 +3316,54 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  react-dom@19.1.0(react@19.1.0):
+  react-dom@19.1.0(react@19.1.1):
     dependencies:
-      react: 19.1.0
+      react: 19.1.1
       scheduler: 0.26.0
 
   react-fast-compare@3.2.2: {}
 
-  react-helmet@6.1.0(react@19.1.0):
+  react-helmet@6.1.0(react@19.1.1):
     dependencies:
       object-assign: 4.1.1
       prop-types: 15.8.1
-      react: 19.1.0
+      react: 19.1.1
       react-fast-compare: 3.2.2
-      react-side-effect: 2.1.2(react@19.1.0)
+      react-side-effect: 2.1.2(react@19.1.1)
 
-  react-i18next@15.5.2(i18next@25.2.1(typescript@5.8.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3):
+  react-i18next@15.5.2(i18next@25.2.1(typescript@5.8.3))(react-dom@19.1.0(react@19.1.1))(react@19.1.1)(typescript@5.8.3):
     dependencies:
       '@babel/runtime': 7.27.1
       html-parse-stringify: 3.0.1
       i18next: 25.2.1(typescript@5.8.3)
-      react: 19.1.0
+      react: 19.1.1
     optionalDependencies:
-      react-dom: 19.1.0(react@19.1.0)
+      react-dom: 19.1.0(react@19.1.1)
       typescript: 5.8.3
 
-  react-icons@5.5.0(react@19.1.0):
+  react-icons@5.5.0(react@19.1.1):
     dependencies:
-      react: 19.1.0
+      react: 19.1.1
 
   react-is@16.13.1: {}
 
-  react-leaflet@4.2.1(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-leaflet@4.2.1(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.1))(react@19.1.1):
     dependencies:
-      '@react-leaflet/core': 2.1.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@react-leaflet/core': 2.1.0(leaflet@1.9.4)(react-dom@19.1.0(react@19.1.1))(react@19.1.1)
       leaflet: 1.9.4
-      react: 19.1.0
-      react-dom: 19.1.0(react@19.1.0)
+      react: 19.1.1
+      react-dom: 19.1.0(react@19.1.1)
 
-  react-markdown@10.1.0(@types/react@19.1.2)(react@19.1.0):
+  react-markdown@10.1.0(@types/react@19.1.10)(react@19.1.1):
     dependencies:
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
-      '@types/react': 19.1.2
+      '@types/react': 19.1.10
       devlop: 1.1.0
       hast-util-to-jsx-runtime: 2.3.6
       html-url-attributes: 3.0.1
       mdast-util-to-hast: 13.2.0
-      react: 19.1.0
+      react: 19.1.1
       remark-parse: 11.0.0
       remark-rehype: 11.1.2
       unified: 11.0.5
@@ -3350,19 +3374,19 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
-  react-router@7.6.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+  react-router@7.6.2(react-dom@19.1.0(react@19.1.1))(react@19.1.1):
     dependencies:
       cookie: 1.0.2
-      react: 19.1.0
+      react: 19.1.1
       set-cookie-parser: 2.7.1
     optionalDependencies:
-      react-dom: 19.1.0(react@19.1.0)
+      react-dom: 19.1.0(react@19.1.1)
 
-  react-side-effect@2.1.2(react@19.1.0):
+  react-side-effect@2.1.2(react@19.1.1):
     dependencies:
-      react: 19.1.0
+      react: 19.1.1
 
-  react@19.1.0: {}
+  react@19.1.1: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -3543,7 +3567,7 @@ snapshots:
 
   terser@5.39.0:
     dependencies:
-      '@jridgewell/source-map': 0.3.6
+      '@jridgewell/source-map': 0.3.11
       acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
