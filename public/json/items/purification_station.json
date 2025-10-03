@@ -1,6 +1,6 @@
 {
   "name": "Purification Station",
-  "parent": "Clay Pot",
+  "parent": "ClayPot",
   "type": "PurificationStation_C",
   "category": "Crafting",
   "weight": 5,

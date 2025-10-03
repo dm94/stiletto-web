@@ -1,6 +1,6 @@
 {
   "name": "Infused Obsidian Bottle",
-  "parent": "Obsidian Flask",
+  "parent": "LavaBottleSmall",
   "type": "LavaBottleLarge_C",
   "category": "Equipment",
   "trade_price": 26,

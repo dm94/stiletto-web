@@ -79,15 +79,15 @@
     {
       "name": "Ammo Box T1",
       "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
+      "minQuantity": 20,
+      "maxQuantity": 20,
       "tier": "T1"
     },
     {
       "name": "Big Hotspot Loot T1",
       "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
+      "minQuantity": 20,
+      "maxQuantity": 20,
       "tier": "T1"
     }
   ]

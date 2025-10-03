@@ -1,6 +1,6 @@
 {
   "name": "Large Base Walker Packer",
-  "parent": "Small Base Walker Packer",
+  "parent": "BaseWalkerPackerSmall",
   "type": "BaseWalkerPackerLarge_C",
   "category": "Containers",
   "weight": 35,

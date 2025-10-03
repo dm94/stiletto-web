@@ -1,6 +1,6 @@
 {
   "name": "Toboggan Walker",
-  "parent": "Steering Levers",
+  "parent": "SteeringLevers",
   "type": "Toboggan_C",
   "category": "Walkers",
   "weight": 34.02,

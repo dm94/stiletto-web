@@ -9,52 +9,66 @@
   "experiencieReward": 1,
   "droppedBy": [
     {
-      "name": "Easy Rupu Camp T4",
-      "chance": 7.6923075,
+      "name": "Broken Tusker 3",
+      "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,
+      "tier": null
+    },
+    {
+      "name": "Broken Tusker 4",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
+    },
+    {
+      "name": "Easy Rupu Camp T4",
+      "chance": 7.6923075,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "tier": "T4"
     },
     {
       "name": "Go Go T4",
       "chance": 7.6923075,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "tier": "T4"
     },
     {
       "name": "Go Go T4 Q",
       "chance": 7.6923075,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "tier": "T4"
     },
     {
       "name": "Hard Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "tier": "T4"
     },
     {
       "name": "Hotspot Loot T4",
       "chance": 7.6923075,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "tier": "T4"
     },
     {
       "name": "Medium Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "tier": "T4"
     },
     {
       "name": "Treasure Chest T4",
       "chance": 7.6923075,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "tier": "T4"
     }
   ]

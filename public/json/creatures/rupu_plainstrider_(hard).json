@@ -1,8 +1,0 @@
-{
-  "name": "Rupu Plainstrider (Hard)",
-  "type": "T3_RupuPlainstrider_C",
-  "health": 160,
-  "lootTemplate": "EasyRupu_T3",
-  "category": "Rupu",
-  "tier": "T3"
-}

@@ -1,7 +1,7 @@
 {
   "name": "Rupu Drudge",
   "type": "T3_RupuDrudge_C",
-  "health": 125,
+  "health": 200,
   "experiencie": 1200,
   "lootTemplate": "EasyRupu_T3",
   "category": "Rupu",

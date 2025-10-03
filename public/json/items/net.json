@@ -1,6 +1,6 @@
 {
   "name": "Net",
-  "parent": "Net Thrower",
+  "parent": "NetThrower",
   "type": "Net_C",
   "category": "Ammo",
   "trade_price": 10.4,

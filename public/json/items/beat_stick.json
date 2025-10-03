@@ -134,20 +134,26 @@
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Forerunner",
+      "name": "Rupu Forerunner (Rupu)",
       "chance": 16.129032,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Forerunner (Easy)",
+      "name": "Rupu Forerunner (T1)",
       "chance": 16.129032,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Rupu Harasser (Easy)",
+      "name": "Rupu Gunner",
+      "chance": 16.129032,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Rupu Harasser (T1)",
       "chance": 16.129032,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -172,34 +178,34 @@
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Priestess",
+      "name": "Rupu Priestess (Rupu)",
       "chance": 16.129032,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
-      "name": "Rupu Scavenger (Easy)",
+      "name": "Rupu Scavenger",
       "chance": 16.129032,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Rupu Sentinel (Easy)",
+      "name": "Rupu Sentinel",
       "chance": 16.129032,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Rupu Skirmisher (Easy)",
+      "name": "Rupu Skirmisher (T1)",
       "chance": 16.129032,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Rupu Thug (Easy)",
+      "name": "Rupu Thug",
       "chance": 16.129032,
       "minQuantity": 1,
       "maxQuantity": 1,

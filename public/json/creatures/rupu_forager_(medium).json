@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Forager (Medium)",
-  "type": "T2_RupuForager_C",
-  "health": 135,
-  "experiencie": 140,
-  "lootTemplate": "MediumRupu_T2",
-  "category": "Rupu",
-  "tier": "T2"
-}

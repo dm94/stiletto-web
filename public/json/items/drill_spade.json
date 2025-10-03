@@ -1,6 +1,6 @@
 {
   "name": "Drill Spade",
-  "parent": "Tube Spade",
+  "parent": "TubeSpade",
   "type": "DrillSpade_C",
   "category": "Tools",
   "description": "An improved version of a Tube Spade designed by the Flotillans to dig up resources from the ground more efficiently.",

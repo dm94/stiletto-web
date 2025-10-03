@@ -30,7 +30,7 @@
     }
   ],
   "projectileDamage": {
-    "damage": 145,
+    "damage": 165,
     "penetration": 10
   },
   "toolInfo": [
@@ -43,15 +43,15 @@
     {
       "name": "Ammo Box T4",
       "chance": 28.571428,
-      "minQuantity": 1,
-      "maxQuantity": 6,
+      "minQuantity": 5,
+      "maxQuantity": 5,
       "tier": "T4"
     },
     {
       "name": "Big Hotspot Loot T4",
       "chance": 28.571428,
-      "minQuantity": 1,
-      "maxQuantity": 6,
+      "minQuantity": 5,
+      "maxQuantity": 5,
       "tier": "T4"
     }
   ]

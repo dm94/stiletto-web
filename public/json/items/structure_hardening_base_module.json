@@ -28,5 +28,21 @@
     "max": 20,
     "increase": 2.5,
     "maxIncrease": 50
-  }
+  },
+  "droppedBy": [
+    {
+      "name": "Broken Tusker 1",
+      "chance": 0.45225528,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
+    },
+    {
+      "name": "Loot Box Modules",
+      "chance": 0.45225528,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
+    }
+  ]
 }

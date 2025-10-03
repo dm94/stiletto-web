@@ -49,7 +49,7 @@
     }
   ],
   "projectileDamage": {
-    "damage": 115,
+    "damage": 130,
     "penetration": 10
   },
   "toolInfo": [
@@ -62,15 +62,15 @@
     {
       "name": "Ammo Box T3",
       "chance": 16,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T3"
     },
     {
       "name": "Big Hotspot Loot T3",
       "chance": 16,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T3"
     }
   ]

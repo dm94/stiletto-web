@@ -1,6 +1,6 @@
 {
   "name": "Fast Grappling Hook",
-  "parent": "Nomad Grappling Hook",
+  "parent": "Repaired Grappling Hook",
   "type": "FastGrapplingHook_C",
   "category": "Grappling Hooks",
   "trade_price": 19.4,

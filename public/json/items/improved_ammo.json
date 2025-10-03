@@ -1,6 +1,0 @@
-{
-  "name": "Improved Ammo",
-  "parent": "Improved Crafting",
-  "type": "Ammo_T2_C",
-  "onlyDevs": true
-}

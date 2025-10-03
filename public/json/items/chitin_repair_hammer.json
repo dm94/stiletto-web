@@ -1,6 +1,6 @@
 {
   "name": "Chitin Repair Hammer",
-  "parent": "Bone Repair Hammer",
+  "parent": "BoneRepairHammer",
   "type": "ChitinRepairHammer_C",
   "durability": 1500,
   "crafting": [

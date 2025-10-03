@@ -1,6 +1,6 @@
 {
   "name": "Short Ceramic Hoofmace",
-  "parent": "Rawbone Club",
+  "parent": "Spikebone Club",
   "type": "OneHandedZirconiumMace_C",
   "category": "Weapons",
   "trade_price": 75.8,
@@ -44,6 +44,13 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
+    },
+    {
+      "name": "Broken Tusker 3",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
     },
     {
       "name": "Easy Rupu Camp T3",
@@ -151,13 +158,6 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Plainstrider (Hard)",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
       "name": "Rupu Rabble",
       "chance": 6.25,
       "minQuantity": 1,
@@ -186,7 +186,7 @@
       "tier": "T3"
     },
     {
-      "name": "White Death (Medium) (T3)",
+      "name": "White Death (T3)",
       "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,

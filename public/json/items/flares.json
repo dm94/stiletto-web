@@ -1,5 +1,5 @@
 {
   "name": "Flares",
-  "parent": "Dyeing Station",
+  "parent": "DyeingStation",
   "type": "Flares_C"
 }

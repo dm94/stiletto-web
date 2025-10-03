@@ -1,6 +1,0 @@
-{
-  "name": "Basic Crafting",
-  "parent": "Crafting",
-  "type": "Crafting_T1_C",
-  "onlyDevs": true
-}

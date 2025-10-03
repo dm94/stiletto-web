@@ -2,7 +2,7 @@
   "name": "Rupu Ashdweller",
   "category": "Rupu",
   "tier": "T3",
-  "health": 150,
+  "health": 200,
   "experiencie": 560,
   "drops": [
     {
@@ -85,8 +85,8 @@
     {
       "name": "Wooden Gear",
       "chance": 11.764706,
-      "minQuantity": 2,
-      "maxQuantity": 2,
+      "minQuantity": 1,
+      "maxQuantity": 1,
       "source": "processedresources_t3"
     },
     {
@@ -106,8 +106,8 @@
     {
       "name": "Leather",
       "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "source": "processedresources_t3"
     },
     {

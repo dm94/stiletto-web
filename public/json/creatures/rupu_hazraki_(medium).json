@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Hazraki (Medium)",
-  "type": "T2_RupuHazraki_C",
-  "health": 180,
-  "experiencie": 800,
-  "lootTemplate": "MediumRupu_T2",
-  "category": "Rupu",
-  "tier": "T2"
-}

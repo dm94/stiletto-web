@@ -256,127 +256,113 @@
       "source": "weapons_t2"
     },
     {
-      "name": "Improved Ammo Schematic",
-      "chance": 5.5555553,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "schematics_t2"
-    },
-    {
       "name": "Improved Armors Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Balang Walker Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Improved Constructions Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Mollusk Walker Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Reinforced Walls Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 5,
       "maxQuantity": 5,
       "source": "schematics_t2"
     },
     {
       "name": "Improved Crafting Stations Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Stiletto Walker Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Stone Walls Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 5,
       "maxQuantity": 5,
       "source": "schematics_t2"
     },
     {
       "name": "Toboggan Walker Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Improved Tools Schematic",
-      "chance": 5.5555553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t2"
-    },
-    {
-      "name": "Improved Potions Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Improved Walker Weapons Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Improved Weapons Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Base Walker Parts Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Improved Walker Parts Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Advanced Walker Parts Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"
     },
     {
       "name": "Proxy Walker Schematic",
-      "chance": 5.5555553,
+      "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t2"

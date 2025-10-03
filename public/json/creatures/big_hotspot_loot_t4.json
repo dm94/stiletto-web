@@ -6,29 +6,29 @@
     {
       "name": "Iron-Tipped Bolt",
       "chance": 28.571428,
-      "minQuantity": 1,
-      "maxQuantity": 6,
+      "minQuantity": 5,
+      "maxQuantity": 5,
       "source": "ammo_t4"
     },
     {
       "name": "Hullbreaker Scattershot",
       "chance": 28.571428,
-      "minQuantity": 2,
-      "maxQuantity": 12,
+      "minQuantity": 5,
+      "maxQuantity": 5,
       "source": "ammo_t4"
     },
     {
       "name": "Iron Dart",
       "chance": 28.571428,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "source": "ammo_t4"
     },
     {
       "name": "Iron Rok",
       "chance": 14.285714,
-      "minQuantity": 1,
-      "maxQuantity": 3,
+      "minQuantity": 2,
+      "maxQuantity": 2,
       "source": "ammo_t4"
     },
     {
@@ -172,85 +172,64 @@
       "source": "weapons_t4"
     },
     {
-      "name": "Bone Glue",
-      "chance": 8.333333,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "processedresources_t4"
-    },
-    {
-      "name": "Wooden Gear",
-      "chance": 8.333333,
-      "minQuantity": 2,
-      "maxQuantity": 2,
-      "source": "processedresources_t4"
-    },
-    {
-      "name": "Triple Stitch Fabric",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "source": "processedresources_t4"
-    },
-    {
-      "name": "Nomad Cloth",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "processedresources_t4"
-    },
-    {
-      "name": "Leather",
-      "chance": 8.333333,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "processedresources_t4"
-    },
-    {
-      "name": "Aloe Gel",
-      "chance": 8.333333,
+      "name": "Clay",
+      "chance": 10.964912,
       "minQuantity": 7,
       "maxQuantity": 7,
       "source": "processedresources_t4"
     },
     {
-      "name": "Clay",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "processedresources_t4"
-    },
-    {
       "name": "Rubber Block",
-      "chance": 8.333333,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 10.964912,
+      "minQuantity": 6,
+      "maxQuantity": 6,
       "source": "processedresources_t4"
     },
     {
       "name": "Ceramic Shard",
-      "chance": 8.333333,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "processedresources_t4"
-    },
-    {
-      "name": "Glass",
-      "chance": 8.333333,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 10.964912,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "source": "processedresources_t4"
     },
     {
       "name": "Tar",
-      "chance": 8.333333,
+      "chance": 10.964912,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Reinforced Gear",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Iron Ingot",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Wood Log",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Iron Nails",
+      "chance": 10.964912,
       "minQuantity": 3,
       "maxQuantity": 3,
       "source": "processedresources_t4"
     },
     {
-      "name": "Reinforced Gear",
-      "chance": 8.333333,
+      "name": "Nibiran Ingot",
+      "chance": 1.3157896,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "processedresources_t4"
