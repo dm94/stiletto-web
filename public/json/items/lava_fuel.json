@@ -1,6 +1,6 @@
 {
   "name": "Lava Fuel",
-  "parent": "Obsidian Machine",
+  "parent": "ObsidianMachine",
   "type": "LavaFuel_C",
   "category": "Liquids",
   "stackSize": 100,
@@ -23,7 +23,7 @@
           "name": "Purified Water"
         }
       ],
-      "station": "Obsidian Machine",
+      "station": "ObsidianMachine",
       "time": 90
     }
   ],

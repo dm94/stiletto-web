@@ -18,6 +18,13 @@
       "tier": "T3"
     },
     {
+      "name": "Broken Tusker 1",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
+    },
+    {
       "name": "Easy Rupu Camp T3",
       "chance": 3.3333333,
       "minQuantity": 1,
@@ -95,7 +102,7 @@
       "tier": "T3"
     },
     {
-      "name": "White Death (Medium) (T3)",
+      "name": "White Death (T3)",
       "chance": 3.3333333,
       "minQuantity": 1,
       "maxQuantity": 1,

@@ -1,6 +1,6 @@
 {
   "name": "Throwable Smoke Bomb",
-  "parent": "Chalk Bomb",
+  "parent": "Choking Cloud",
   "type": "ThrowableSmokeBomb_C",
   "category": "Weapons",
   "trade_price": 16.9,

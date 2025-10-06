@@ -1,6 +1,6 @@
 {
   "name": "Mollusk Walker",
-  "parent": "Steering Levers",
+  "parent": "SteeringLevers",
   "type": "Mollusk_C",
   "category": "Walkers",
   "weight": 29.44,

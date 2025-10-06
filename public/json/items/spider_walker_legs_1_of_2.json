@@ -8,12 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Wood"
-        },
-        {
-          "count": 12,
-          "name": "Fiber"
+          "count": 1,
+          "name": "Small Walker Leg"
         }
       ]
     }

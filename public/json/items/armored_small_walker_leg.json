@@ -1,0 +1,26 @@
+{
+  "name": "Armored Small Walker Leg",
+  "type": "WalkerLegArmored_T1_C",
+  "category": "Walker Parts",
+  "stackSize": 2,
+  "weight": 20,
+  "experiencieReward": 25,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 20,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 12,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 5,
+          "name": "Stone"
+        }
+      ]
+    }
+  ]
+}

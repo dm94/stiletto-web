@@ -1,9 +1,0 @@
-{
-  "name": "Grave Digger (Medium)",
-  "type": "T2_RupuGraveDigger_C",
-  "health": 60,
-  "experiencie": 240,
-  "lootTemplate": "EasyRupu_T2",
-  "category": "Rupu",
-  "tier": "T2"
-}

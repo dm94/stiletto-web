@@ -20,14 +20,14 @@
         },
         {
           "count": 2,
-          "name": "Tallow"
+          "name": "Liquid Fuel"
         },
         {
           "count": 8,
           "name": "Mushroom Flesh"
         }
       ],
-      "station": "Clay Pot",
+      "station": "ClayPot",
       "time": 75
     }
   ],

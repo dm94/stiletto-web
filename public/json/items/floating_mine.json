@@ -1,6 +1,6 @@
 {
   "name": "Floating Mine",
-  "parent": "Fire Dart",
+  "parent": "FireDart",
   "type": "FloatingMine_C",
   "category": "Ammo",
   "trade_price": 96.4,

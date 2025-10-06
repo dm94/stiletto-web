@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Sentinel (Easy)",
-  "type": "T1_RupuSentinel_C",
-  "health": 145,
-  "experiencie": 150,
-  "lootTemplate": "HardRupu_T1",
-  "category": "Rupu",
-  "tier": "T1"
-}

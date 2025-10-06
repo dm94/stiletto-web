@@ -7,7 +7,7 @@
   "stackSize": 100,
   "weight": 0.23,
   "description": "Mined from desert salt lakes.",
-  "experiencieReward": 3,
+  "experiencieReward": 100,
   "crafting": [
     {
       "ingredients": [
@@ -17,7 +17,7 @@
         }
       ],
       "output": 3,
-      "station": "Clay Pot",
+      "station": "ClayPot",
       "time": 20
     },
     {
@@ -30,6 +30,17 @@
       "output": 10,
       "station": "Artisan Soil Auger",
       "time": 20
+    },
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Purified Water"
+        }
+      ],
+      "output": 5,
+      "station": "WaterBoiling",
+      "time": 30
     }
   ]
 }

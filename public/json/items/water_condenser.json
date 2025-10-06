@@ -1,6 +1,6 @@
 {
   "name": "Water Condenser",
-  "parent": "Stone Humidifier",
+  "parent": "Humidifier",
   "type": "WaterCondenser_C",
   "category": "Crafting",
   "weight": 50,
@@ -10,12 +10,12 @@
     {
       "ingredients": [
         {
-          "count": 6,
+          "count": 10,
           "name": "Ceramic Shard"
         },
         {
-          "count": 5,
-          "name": "Tar"
+          "count": 3,
+          "name": "Triple Stitch Fabric"
         },
         {
           "count": 12,

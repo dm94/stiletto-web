@@ -21,6 +21,13 @@
       "tier": "T3"
     },
     {
+      "name": "Broken Tusker 3",
+      "chance": 6.25,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "tier": null
+    },
+    {
       "name": "Easy Rupu Camp T3",
       "chance": 6.25,
       "minQuantity": 3,
@@ -126,13 +133,6 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Plainstrider (Hard)",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
       "name": "Rupu Rabble",
       "chance": 6.25,
       "minQuantity": 3,
@@ -161,7 +161,7 @@
       "tier": "T3"
     },
     {
-      "name": "White Death (Medium) (T3)",
+      "name": "White Death (T3)",
       "chance": 6.25,
       "minQuantity": 3,
       "maxQuantity": 3,

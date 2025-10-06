@@ -1,6 +1,6 @@
 {
   "name": "Torque Battery",
-  "parent": "Nomad Grappling Hook",
+  "parent": "Repaired Grappling Hook",
   "type": "TorqueContainer_C",
   "category": "Equipment",
   "trade_price": 8.4,

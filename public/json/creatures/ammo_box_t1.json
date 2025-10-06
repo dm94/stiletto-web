@@ -6,55 +6,55 @@
     {
       "name": "Flint Bolt",
       "chance": 33.333332,
-      "minQuantity": 3,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "source": "ammo_t1"
     },
     {
       "name": "Scattershot Ammo",
       "chance": 33.333332,
-      "minQuantity": 2,
-      "maxQuantity": 18,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "source": "ammo_t1"
     },
     {
       "name": "Wooden Dart",
       "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 25,
+      "minQuantity": 20,
+      "maxQuantity": 20,
       "source": "ammo_t1"
     },
     {
       "name": "Fiber",
-      "chance": 26.31579,
+      "chance": 20,
       "minQuantity": 12,
       "maxQuantity": 12,
       "source": "baseresources_t1"
     },
     {
       "name": "Stone",
-      "chance": 26.31579,
+      "chance": 20,
       "minQuantity": 8,
       "maxQuantity": 8,
       "source": "baseresources_t1"
     },
     {
       "name": "Wood",
-      "chance": 26.31579,
+      "chance": 20,
       "minQuantity": 10,
       "maxQuantity": 10,
       "source": "baseresources_t1"
     },
     {
       "name": "Rupu Vine",
-      "chance": 10.526316,
+      "chance": 20,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "baseresources_t1"
     },
     {
       "name": "Palm Leaves",
-      "chance": 10.526316,
+      "chance": 20,
       "minQuantity": 2,
       "maxQuantity": 2,
       "source": "baseresources_t1"

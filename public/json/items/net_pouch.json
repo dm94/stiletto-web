@@ -1,6 +1,6 @@
 {
   "name": "Net Pouch",
-  "parent": "Throwing Net",
+  "parent": "ThrowingNet",
   "type": "NetPouch_C",
   "category": "Equipment",
   "trade_price": 5.6,

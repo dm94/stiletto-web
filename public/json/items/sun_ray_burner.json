@@ -1,0 +1,21 @@
+{
+  "name": "Sun Ray Burner",
+  "type": "SunRayBurner_C",
+  "category": "Weapons",
+  "weight": 50,
+  "experiencieReward": 200,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 40,
+          "name": "Iron Ingot"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 3000
+  }
+}

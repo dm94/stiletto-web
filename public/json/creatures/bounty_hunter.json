@@ -2,7 +2,7 @@
   "name": "Bounty Hunter",
   "category": "Rupu",
   "tier": "T2",
-  "health": 55,
+  "health": 200,
   "experiencie": 600,
   "drops": [
     {

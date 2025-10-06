@@ -211,6 +211,7 @@
   "maps.createNewMap": "Criar novo mapa",
   "maps.backToList": "Voltar à lista de mapas",
   "maps.loadingResources": "Carregado recursos",
+  "maps.noMapsFound": "Nenhum mapa encontrado",
   "common.list": "Lista",
   "common.edit": "Alterar",
   "common.password": "Palavra-passe",

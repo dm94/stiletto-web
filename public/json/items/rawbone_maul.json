@@ -80,7 +80,7 @@
       "tier": "T2"
     },
     {
-      "name": "Grave Digger (Medium)",
+      "name": "Grave Digger",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -177,49 +177,49 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Dunestalker (Medium)",
+      "name": "Rupu Dunestalker",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Forager (Medium)",
+      "name": "Rupu Forager",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Harasser (Medium)",
+      "name": "Rupu Harasser (T2)",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Hazraki (Medium)",
+      "name": "Rupu Hazraki",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Hermit (Medium)",
+      "name": "Rupu Hermit",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Plainstrider (Medium)",
+      "name": "Rupu Plainstrider",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Priestess (Medium)",
+      "name": "Rupu Priestess (T2)",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -233,21 +233,21 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Shaman (Medium)",
+      "name": "Rupu Shaman",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Skirmisher (Medium)",
+      "name": "Rupu Skirmisher (T2)",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Zealot (Medium)",
+      "name": "Rupu Zealot",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -261,7 +261,7 @@
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium) (T2)",
+      "name": "White Death (T2)",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,

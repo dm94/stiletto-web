@@ -1,6 +1,6 @@
 {
   "name": "Steering Levers Cage",
-  "parent": "Steering Levers",
+  "parent": "SteeringLevers",
   "type": "SteeringLeversCage_C",
   "category": "Walker Tools",
   "weight": 2000,

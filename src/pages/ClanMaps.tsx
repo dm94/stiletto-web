@@ -113,7 +113,11 @@ const ClanMaps = () => {
 
   const renderClanMapList = useMemo(() => {
     if (!clanMaps || !maps || clanMaps.length === 0) {
-      return "";
+      return (
+        <div className="col-span-full text-center py-8">
+          <p className="text-gray-400 text-lg">{t("maps.noMapsFound")}</p>
+        </div>
+      );
     }
 
     return clanMaps.map((map) => (
@@ -125,7 +129,7 @@ const ClanMaps = () => {
         onDelete={handleShowDeleteModal}
       />
     ));
-  }, [clanMaps, maps, handleOpenMap, handleShowDeleteModal]);
+  }, [clanMaps, maps, handleOpenMap, handleShowDeleteModal, t]);
 
   const renderHelmet = useMemo(
     () => (

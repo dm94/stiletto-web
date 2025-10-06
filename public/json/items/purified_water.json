@@ -25,7 +25,7 @@
           "name": "Cactus Flesh"
         }
       ],
-      "station": "Clay Pot",
+      "station": "ClayPot",
       "time": 35
     },
     {
@@ -45,7 +45,7 @@
           "name": "Fruit Pulp"
         }
       ],
-      "station": "Clay Pot",
+      "station": "ClayPot",
       "time": 35
     },
     {
@@ -59,13 +59,13 @@
           "name": "Charcoal"
         },
         {
-          "count": 25,
+          "count": 5,
           "name": "Sand"
         }
       ],
       "output": 50,
       "station": "Purification Station",
-      "time": 150
+      "time": 120
     },
     {
       "ingredients": [
@@ -94,7 +94,7 @@
         }
       ],
       "output": 5,
-      "station": "Clay Pot",
+      "station": "ClayPot",
       "time": 55
     },
     {
@@ -114,7 +114,7 @@
           "name": "Thornberry"
         }
       ],
-      "station": "Clay Pot",
+      "station": "ClayPot",
       "time": 35
     },
     {
@@ -136,7 +136,7 @@
         }
       ],
       "output": 3,
-      "station": "Clay Pot",
+      "station": "ClayPot",
       "time": 40
     },
     {
@@ -158,7 +158,7 @@
         }
       ],
       "output": 3,
-      "station": "Clay Pot",
+      "station": "ClayPot",
       "time": 35
     }
   ],
@@ -201,8 +201,8 @@
     {
       "name": "Easy Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
@@ -243,8 +243,8 @@
     {
       "name": "Hard Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
@@ -278,8 +278,8 @@
     {
       "name": "Hotspot Loot T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
@@ -313,8 +313,8 @@
     {
       "name": "Medium Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
@@ -341,8 +341,8 @@
     {
       "name": "Treasure Chest T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     }
   ]

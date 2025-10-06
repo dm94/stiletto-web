@@ -8,7 +8,7 @@
   "weight": 0.2,
   "description": "A helmet which provides superior filtration of particulates.",
   "experiencieReward": 10,
-  "durability": 120,
+  "durability": 330,
   "crafting": [
     {
       "ingredients": [

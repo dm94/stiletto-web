@@ -20,21 +20,21 @@
   "droppedBy": [
     {
       "name": "Easy Rupu T1 Q",
-      "chance": 6.25,
+      "chance": 7.142857,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T1"
     },
     {
       "name": "Hard Rupu T1 Q",
-      "chance": 6.25,
+      "chance": 7.142857,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T1"
     },
     {
       "name": "Medium Rupu T1 Q",
-      "chance": 6.25,
+      "chance": 7.142857,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T1"

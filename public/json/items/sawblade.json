@@ -1,6 +1,6 @@
 {
   "name": "Sawblade",
-  "parent": "Tool Pod",
+  "parent": "ToolPod",
   "type": "Sawblade_C",
   "category": "Walker Tools",
   "weight": 60,

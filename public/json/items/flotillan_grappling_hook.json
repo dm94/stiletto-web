@@ -1,6 +1,6 @@
 {
   "name": "Flotillan Grappling Hook",
-  "parent": "Nomad Grappling Hook",
+  "parent": "Repaired Grappling Hook",
   "type": "FlotillanGrapplingHook_C",
   "category": "Grappling Hooks",
   "trade_price": 16,

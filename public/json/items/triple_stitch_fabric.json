@@ -63,18 +63,18 @@
       "tier": "T3"
     },
     {
-      "name": "Big Hotspot Loot T4",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
       "name": "Bounty Hunter",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
+    },
+    {
+      "name": "Broken Tusker 3",
+      "chance": 11.764706,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "tier": null
     },
     {
       "name": "Easy Rupu Camp T2",
@@ -89,13 +89,6 @@
       "minQuantity": 6,
       "maxQuantity": 6,
       "tier": "T3"
-    },
-    {
-      "name": "Easy Rupu Camp T4",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
     },
     {
       "name": "Easy Rupu T2",
@@ -126,21 +119,7 @@
       "tier": "T3"
     },
     {
-      "name": "Easy Rupu T4",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
-      "name": "Easy Rupu T4 Q",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
-      "name": "Grave Digger (Medium)",
+      "name": "Grave Digger",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
@@ -159,13 +138,6 @@
       "minQuantity": 6,
       "maxQuantity": 6,
       "tier": "T3"
-    },
-    {
-      "name": "Hard Rupu Camp T4",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
     },
     {
       "name": "Hard Rupu T2",
@@ -203,20 +175,6 @@
       "tier": "T3"
     },
     {
-      "name": "Hard Rupu T4",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
-      "name": "Hard Rupu T4 Q",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
       "name": "Hotspot Loot T2",
       "chance": 11.111111,
       "minQuantity": 5,
@@ -236,13 +194,6 @@
       "minQuantity": 6,
       "maxQuantity": 6,
       "tier": "T3"
-    },
-    {
-      "name": "Hotspot Loot T4",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
     },
     {
       "name": "Hotspot Loot Windmill T2 AC",
@@ -279,13 +230,6 @@
       "tier": "T3"
     },
     {
-      "name": "Medium Rupu Camp T4",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
       "name": "Medium Rupu T2",
       "chance": 11.111111,
       "minQuantity": 5,
@@ -314,20 +258,6 @@
       "tier": "T3"
     },
     {
-      "name": "Medium Rupu T4",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
-      "name": "Medium Rupu T4 Q",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
       "name": "Rupu Ashdweller",
       "chance": 11.764706,
       "minQuantity": 6,
@@ -342,42 +272,35 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Dunestalker (Medium)",
+      "name": "Rupu Dunestalker",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "Rupu Firebrand",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Forager (Medium)",
+      "name": "Rupu Forager",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "Rupu Harasser (Medium)",
+      "name": "Rupu Harasser (T2)",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "Rupu Hazraki (Medium)",
+      "name": "Rupu Hazraki",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "Rupu Hermit (Medium)",
+      "name": "Rupu Hermit",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
@@ -405,21 +328,14 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Plainstrider (Hard)",
-      "chance": 11.764706,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider (Medium)",
+      "name": "Rupu Plainstrider",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "Rupu Priestess (Medium)",
+      "name": "Rupu Priestess (T2)",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
@@ -454,35 +370,35 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Shaman (Medium)",
+      "name": "Rupu Shaman",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "Rupu Skirmisher (Medium)",
+      "name": "Rupu Skirmisher (T2)",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "Rupu Zealot (Medium)",
+      "name": "Rupu Zealot",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium) (T2)",
+      "name": "White Death (T2)",
       "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium) (T3)",
+      "name": "White Death (T3)",
       "chance": 11.764706,
       "minQuantity": 6,
       "maxQuantity": 6,

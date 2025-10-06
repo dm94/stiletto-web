@@ -56,10 +56,10 @@
     }
   ],
   "projectileDamage": {
-    "damage": 185,
-    "penetration": 30,
-    "effectivenessVsSoak": 50,
-    "effectivenessVsReduce": 50
+    "damage": 150,
+    "penetration": 40,
+    "effectivenessVsSoak": 40,
+    "effectivenessVsReduce": 65
   },
   "toolInfo": [
     {
@@ -71,15 +71,15 @@
     {
       "name": "Ammo Box T2",
       "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     },
     {
       "name": "Big Hotspot Loot T2",
       "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T2"
     }
   ]

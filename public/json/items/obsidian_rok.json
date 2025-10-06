@@ -1,6 +1,6 @@
 {
   "name": "Obsidian Rok",
-  "parent": "Ceramic Rok",
+  "parent": "CeramicRok",
   "type": "ObsidianRok_C",
   "category": "Ammo",
   "trade_price": 5.2,
@@ -44,15 +44,15 @@
     {
       "name": "Ammo Box T3",
       "chance": 12,
-      "minQuantity": 1,
-      "maxQuantity": 3,
+      "minQuantity": 2,
+      "maxQuantity": 2,
       "tier": "T3"
     },
     {
       "name": "Big Hotspot Loot T3",
       "chance": 12,
-      "minQuantity": 1,
-      "maxQuantity": 3,
+      "minQuantity": 2,
+      "maxQuantity": 2,
       "tier": "T3"
     }
   ]
