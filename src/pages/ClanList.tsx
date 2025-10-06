@@ -187,7 +187,7 @@ const ClanList = () => {
                       {t("common.name")}
                     </label>
                     <input
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       id="search-name"
                       type="search"
                       placeholder="Name.."
@@ -202,7 +202,7 @@ const ClanList = () => {
                   <div className="md:col-span-7 flex items-end space-x-2">
                     <button
                       type="button"
-                      className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                       onClick={() => updateClans()}
                       data-testid="search-button"
                     >
@@ -210,7 +210,7 @@ const ClanList = () => {
                     </button>
                     <button
                       type="button"
-                      className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                      className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-gray-500"
                       onClick={() => {
                         setSearchInput("");
                         setRegionSearch("All");
@@ -297,7 +297,7 @@ const ClanList = () => {
                   {t("common.requestMessage")}
                 </label>
                 <textarea
-                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 placeholder-gray-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   id="modalTextArea"
                   rows={3}
                   value={textAreaModelValue}
@@ -308,14 +308,14 @@ const ClanList = () => {
             <div className="p-4 border-t border-gray-700 flex justify-end space-x-2">
               <button
                 type="button"
-                className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                className="p-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-gray-500"
                 onClick={() => setShowRequestModal(false)}
               >
                 {t("common.cancel")}
               </button>
               <button
                 type="button"
-                className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-hidden focus:ring-2 focus:ring-green-500"
                 onClick={handleSendRequest}
                 data-testid="submit-request-button"
               >

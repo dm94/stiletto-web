@@ -257,7 +257,7 @@ const Diplomacy = () => {
                   </label>
                   <select
                     id="typedInput"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                     value={typedInput}
                     onChange={(evt) =>
                       setTypedInput(
@@ -297,7 +297,7 @@ const Diplomacy = () => {
                 </label>
                 <input
                   type="text"
-                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   id="nameOtherClanInput"
                   name="nameOtherClanInput"
                   maxLength={20}
@@ -319,7 +319,7 @@ const Diplomacy = () => {
               </div>
               <div className="flex justify-center">
                 <button
-                  className="w-full md:w-1/2 lg:w-1/3 p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full md:w-1/2 lg:w-1/3 p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                   type="submit"
                   value="Submit"
                 >

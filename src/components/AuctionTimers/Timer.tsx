@@ -65,7 +65,7 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
               onChange={(e) => setHours(Number(e.target.value))}
               max="24"
               min="0"
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-xl"
             />
           </div>
           <div className="md:col-span-1">
@@ -82,7 +82,7 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
               onChange={(e) => setMinutes(Number(e.target.value))}
               max="59"
               min="0"
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-xl"
             />
           </div>
           <div className="md:col-span-1">
@@ -99,7 +99,7 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
               onChange={(e) => setSeconds(Number(e.target.value))}
               max="59"
               min="0"
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xl"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-right text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-xl"
             />
           </div>
           <div className="md:col-span-5">
@@ -112,14 +112,14 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
             <input
               type="text"
               id="description"
-              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
               placeholder={t("common.description")}
             />
           </div>
           <div className="md:col-span-4 grid grid-cols-2 gap-2">
             <button
               type="button"
-              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 flex items-center justify-center"
+              className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-green-500 flex items-center justify-center"
               onClick={() => {
                 setIsOn(true);
                 setIsFinish(false);
@@ -129,7 +129,7 @@ const Timer: React.FC<TimerProps> = ({ value, onPlay }) => {
             </button>
             <button
               type="button"
-              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 flex items-center justify-center"
+              className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-red-500 flex items-center justify-center"
               onClick={() => setIsOn(false)}
             >
               <FaStop className="mr-2 inline" /> {t("common.stop")}

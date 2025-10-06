@@ -271,7 +271,7 @@ const MemberList = () => {
             <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
               <button
                 type="button"
-                className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-red-500"
                 onClick={handleDeleteClan}
               >
                 {t("common.delete")}
@@ -302,7 +302,7 @@ const MemberList = () => {
               </label>
               <select
                 id="selectNewOwner"
-                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 value={selectNewOwner}
                 onChange={(evt) => setSelectNewOwner(evt.target.value)}
               >
@@ -316,7 +316,7 @@ const MemberList = () => {
             <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
               <button
                 type="button"
-                className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+                className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-red-500"
                 onClick={changeOwner}
               >
                 {t("clan.changeLeader")}
@@ -400,7 +400,7 @@ const MemberList = () => {
       <div className={isLeader || hasBotPermissions ? "w-full mb-6" : "hidden"}>
         <div className="flex flex-wrap justify-between">
           <div className={isLeader ? "mb-4" : "hidden"}>
-            <div className="inline-flex rounded-md shadow-sm">
+            <div className="inline-flex rounded-md shadow-xs">
               <button
                 type="button"
                 className="px-4 py-2 bg-blue-600 text-white rounded-l-lg flex items-center justify-center"
@@ -410,7 +410,7 @@ const MemberList = () => {
               </button>
               <button
                 type="button"
-                className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
                 onClick={() => setShowClanConfig(true)}
                 data-testid="edit-clan-button"
               >
@@ -521,7 +521,7 @@ const MemberList = () => {
           <div className="p-4 bg-gray-900 border-t border-gray-700 flex flex-col space-y-2">
             <button
               type="button"
-              className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-green-500"
               onClick={acceptMember}
               data-testid="accept-request-button"
             >
@@ -529,7 +529,7 @@ const MemberList = () => {
             </button>
             <button
               type="button"
-              className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-hidden focus:ring-2 focus:ring-red-500"
               onClick={rejectMember}
               data-testid="reject-request-button"
             >

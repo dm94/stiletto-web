@@ -26,7 +26,7 @@ const ClanListItem: React.FC<ClanListItemProps> = ({
         return (
           <button
             type="button"
-            className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             onClick={() => onSendRequest?.(Number(clan.clanid))}
             aria-label={t("common.sendRequest")}
             data-testid="send-request-button"
@@ -38,7 +38,7 @@ const ClanListItem: React.FC<ClanListItemProps> = ({
       if (clanuserid === clan.clanid) {
         return (
           <Link
-            className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 text-center block"
+            className="w-full p-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-hidden focus:ring-2 focus:ring-blue-500 text-center block"
             to="/members"
             aria-label={t("menu.members")}
             data-testid="view-members-button"

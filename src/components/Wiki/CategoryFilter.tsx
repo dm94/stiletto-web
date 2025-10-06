@@ -26,7 +26,7 @@ const CategoryFilter = ({
           </label>
           <select
             id="category-filter"
-            className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-r-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-r-lg text-gray-300 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
             value={categoryFilter}
             onChange={onCategoryChange}
           >

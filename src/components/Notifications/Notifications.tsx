@@ -37,7 +37,7 @@ const Notifications: React.FC<NotificationsProps> = ({
           )}
           <button
             type="button"
-            className="text-gray-600 hover:text-gray-800 focus:outline-none"
+            className="text-gray-600 hover:text-gray-800 focus:outline-hidden"
             aria-label="Close"
             onClick={() => close?.(data.date)}
           >
