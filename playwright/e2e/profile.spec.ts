@@ -23,8 +23,6 @@ test.describe("Profile Page", () => {
 
     await page.goto("/profile");
 
-    await page.waitForLoadState("networkidle", { timeout: 15000 });
-
     const response = await userApiResponsePromise;
     expect(response.ok()).toBe(true);
 

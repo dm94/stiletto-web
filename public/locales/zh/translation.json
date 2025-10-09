@@ -447,5 +447,6 @@
   "privacy.contactText": "关于隐私问题，请通过Discord联系管理员 (用户: dm94dani)。",
   "privacy.changesTitle": "10. 对本政策的修改",
   "privacy.changesText": "Stiletto保留修改此政策以适应法律或功能变化的权利，网站将通知重大修改。",
-  "wiki.extraInfo": "Extra information"
+  "wiki.extraInfo": "Extra information",
+  "wiki.lastUpdate": "最後更新"
 }

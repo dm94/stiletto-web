@@ -11,6 +11,8 @@ const REPO_JSON_URL = import.meta.env.PROD
   ? `${REPO_URL}/public/json`
   : "/json";
 
+const GITHUB_API_URL = "https://api.github.com/repos/dm94/stiletto-web";
+
 const WIKI_MD_URL = `${REPO_URL}/wiki`;
 
 const fetchResource = async <T>(
@@ -35,6 +37,35 @@ const fetchResource = async <T>(
     return data;
   } catch {
     throw new Error("errors.apiConnection");
+  }
+};
+
+export const getWikiLastUpdate = async (): Promise<string | null> => {
+  const cacheKey = "wikiLastUpdate";
+  const cachedData = getCachedData(cacheKey, RESOURCE_CACHE_TIME_CHECK);
+
+  if (cachedData) {
+    return cachedData;
+  }
+
+  try {
+    const response = await fetch(
+      `${GITHUB_API_URL}/commits?path=wiki&per_page=1`,
+    );
+    if (!response.ok) {
+      return null;
+    }
+
+    const commits = await response.json();
+    if (commits.length > 0) {
+      const lastUpdate = commits[0].commit.committer.date;
+      addCachedData(cacheKey, lastUpdate);
+      return lastUpdate;
+    }
+
+    return null;
+  } catch {
+    return null;
   }
 };
 
