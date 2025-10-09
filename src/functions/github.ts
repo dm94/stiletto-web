@@ -5,13 +5,14 @@ import type { MapJsonInfo } from "@ctypes/dto/maps";
 import { toSnakeCase } from "./utils";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 
+const USER_REPO = "dm94/stiletto-web";
 const RESOURCE_CACHE_TIME_CHECK = import.meta.env.PROD ? 86400000 : 1;
-const REPO_URL = "https://raw.githubusercontent.com/dm94/stiletto-web/master";
+const REPO_URL = `https://raw.githubusercontent.com/${USER_REPO}/master`;
 const REPO_JSON_URL = import.meta.env.PROD
   ? `${REPO_URL}/public/json`
   : "/json";
 
-const GITHUB_API_URL = "https://api.github.com/repos/dm94/stiletto-web";
+const GITHUB_API_URL = `https://api.github.com/repos/${USER_REPO}`;
 
 const WIKI_MD_URL = `${REPO_URL}/wiki`;
 
@@ -50,7 +51,7 @@ export const getWikiLastUpdate = async (): Promise<string | null> => {
 
   try {
     const response = await fetch(
-      `${GITHUB_API_URL}/commits?path=wiki&per_page=1`,
+      `${GITHUB_API_URL}/commits?path=public&per_page=1`,
     );
     if (!response.ok) {
       return null;
