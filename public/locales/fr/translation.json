@@ -447,5 +447,6 @@
   "privacy.contactText": "Pour des questions de confidentialité, veuillez contacter l'administrateur via Discord (utilisateur: dm94dani).",
   "privacy.changesTitle": "10. Modifications apportées à cette politique",
   "privacy.changesText": "Stiletto se réserve le droit de modifier cette politique afin de s’adapter aux changements juridiques ou fonctionnels.",
-  "wiki.extraInfo": "Extra information"
+  "wiki.extraInfo": "Extra information",
+  "wiki.lastUpdate": "Dernière mise à jour"
 }

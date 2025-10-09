@@ -447,5 +447,6 @@
   "privacy.contactText": "Для отримання приватних запитів зверніться до адміністратора Discord (користувач: dm94dani).",
   "privacy.changesTitle": "10. Зміни в цій політиці",
   "privacy.changesText": "Щоб зберегти право на редагування цієї політики задля адаптації до законних або функціональних змін. Значні зміни будуть повідомлені на веб-сайті.",
-  "wiki.extraInfo": "Extra information"
+  "wiki.extraInfo": "Extra information",
+  "wiki.lastUpdate": "Останнє оновлення"
 }

@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getItems, getCreatures } from "@functions/github";
+import { getItems, getCreatures, getWikiLastUpdate } from "@functions/github";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
@@ -24,6 +24,7 @@ const Wiki = () => {
   const [contentType, setContentType] = useState<"items" | "creatures">(
     "items",
   );
+  const [wikiLastUpdate, setWikiLastUpdate] = useState<string>();
 
   // Items state
   const [items, setItems] = useState<Item[]>([]);
@@ -104,7 +105,13 @@ const Wiki = () => {
       }
     };
 
+    const fetchWikiUpdate = async () => {
+      const lastUpdate = await getWikiLastUpdate();
+      setWikiLastUpdate(lastUpdate);
+    };
+
     loadData();
+    fetchWikiUpdate();
   }, [contentType]);
 
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
@@ -318,6 +325,13 @@ const Wiki = () => {
             <h1 className="text-2xl font-bold text-white mb-4">
               {t("menu.wiki")}
             </h1>
+
+            {wikiLastUpdate && (
+              <p className="text-sm text-gray-400 mb-4">
+                {t("wiki.lastUpdate")}:{" "}
+                {new Date(wikiLastUpdate).toLocaleDateString()}
+              </p>
+            )}
 
             {/* Content Type Selector */}
             <ContentTypeSelector
