@@ -24,7 +24,7 @@ const Wiki = () => {
   const [contentType, setContentType] = useState<"items" | "creatures">(
     "items",
   );
-  const [wikiLastUpdate, setWikiLastUpdate] = useState<string | null>(null);
+  const [wikiLastUpdate, setWikiLastUpdate] = useState<string>();
 
   // Items state
   const [items, setItems] = useState<Item[]>([]);

@@ -41,7 +41,7 @@ const fetchResource = async <T>(
   }
 };
 
-export const getWikiLastUpdate = async (): Promise<string | null> => {
+export const getWikiLastUpdate = async (): Promise<string | undefined> => {
   const cacheKey = "wikiLastUpdate";
   const cachedData = getCachedData(cacheKey, RESOURCE_CACHE_TIME_CHECK);
 
@@ -54,7 +54,7 @@ export const getWikiLastUpdate = async (): Promise<string | null> => {
       `${GITHUB_API_URL}/commits?path=public&per_page=1`,
     );
     if (!response.ok) {
-      return null;
+      return undefined;
     }
 
     const commits = await response.json();
@@ -64,9 +64,9 @@ export const getWikiLastUpdate = async (): Promise<string | null> => {
       return lastUpdate;
     }
 
-    return null;
+    return undefined;
   } catch {
-    return null;
+    return undefined;
   }
 };
 
