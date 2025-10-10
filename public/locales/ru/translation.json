@@ -447,5 +447,6 @@
   "privacy.contactText": "По вопросам конфиденциальности обращайтесь к администратору через Discord (пользователь: dm94dani).",
   "privacy.changesTitle": "10. Изменения в данной политике",
   "privacy.changesText": "Stiletto оставляет за собой право вносить изменения в эту политику для адаптации к юридическим или функциональным изменениям.",
-  "wiki.extraInfo": "Extra information"
+  "wiki.extraInfo": "Extra information",
+  "wiki.lastUpdate": "Last updated"
 }
