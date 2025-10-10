@@ -1,3 +1,6 @@
 {
-  "name": "The Long One"
+  "name": "The Long One",
+  "category": "Worm",
+  "health": 45000,
+  "experiencie": 100000
 }

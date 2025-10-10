@@ -1,5 +1,6 @@
 {
   "name": "Small Worm",
+  "category": "Worm",
   "health": 150,
   "experiencie": 144
 }
