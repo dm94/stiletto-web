@@ -4,6 +4,7 @@ import type { Item, ItemCompleteInfo, TechItem } from "@ctypes/item";
 import type { MapJsonInfo } from "@ctypes/dto/maps";
 import { toSnakeCase } from "./utils";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
+import type { Perk } from "@ctypes/perk";
 
 const USER_REPO = "dm94/stiletto-web";
 const RESOURCE_CACHE_TIME_CHECK = import.meta.env.PROD ? 86400000 : 1;
@@ -87,6 +88,9 @@ export const getItemInfo = (itemName: string): Promise<ItemCompleteInfo> =>
 
 export const getCreatures = (): Promise<Creature[]> =>
   fetchResource<Creature[]>("/creatures_min.json");
+
+export const getPerks = (): Promise<Perk[]> =>
+  fetchResource<Perk[]>("/perks_min.json");
 
 export const getCreatureInfo = (
   creatureName: string,

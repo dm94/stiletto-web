@@ -1,13 +1,15 @@
 import { useTranslation } from "react-i18next";
 
 type PaginationProps = {
-  contentType: "items" | "creatures";
+  contentType: "items" | "creatures" | "perks";
   isLoading: boolean;
   hasMore: boolean;
   displayedItems: any[];
   displayedCreatures: any[];
+  displayedPerks: any[];
   filteredItems: any[];
   filteredCreatures: any[];
+  filteredPerks: any[];
   onLoadMore: () => void;
 };
 
@@ -17,8 +19,10 @@ const Pagination = ({
   hasMore,
   displayedItems,
   displayedCreatures,
+  displayedPerks,
   filteredItems,
   filteredCreatures,
+  filteredPerks,
   onLoadMore,
 }: PaginationProps) => {
   const { t } = useTranslation();
@@ -26,7 +30,8 @@ const Pagination = ({
   const loadMoreButton = hasMore &&
     !isLoading &&
     ((contentType === "items" && displayedItems.length > 0) ||
-      (contentType === "creatures" && displayedCreatures.length > 0)) && (
+      (contentType === "creatures" && displayedCreatures.length > 0) ||
+      (contentType === "perks" && displayedPerks.length > 0)) && (
       <div className="mt-8 text-center">
         <button
           type="button"
@@ -48,17 +53,21 @@ const Pagination = ({
           total: filteredItems.length,
         })}
       </div>
-    ) : (
-      contentType === "creatures" &&
-      displayedCreatures.length > 0 && (
-        <div className="mt-4 text-center text-gray-400">
-          {t("wiki.showingItems", {
-            displayed: displayedCreatures.length,
-            total: filteredCreatures.length,
-          })}
-        </div>
-      )
-    ));
+    ) : contentType === "creatures" && displayedCreatures.length > 0 ? (
+      <div className="mt-4 text-center text-gray-400">
+        {t("wiki.showingItems", {
+          displayed: displayedCreatures.length,
+          total: filteredCreatures.length,
+        })}
+      </div>
+    ) : contentType === "perks" && displayedPerks.length > 0 ? (
+      <div className="mt-4 text-center text-gray-400">
+        {t("wiki.showingItems", {
+          displayed: displayedPerks.length,
+          total: filteredPerks.length,
+        })}
+      </div>
+    ) : null);
 
   return (
     <>

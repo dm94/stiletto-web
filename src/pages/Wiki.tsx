@@ -3,13 +3,14 @@ import { useState, useEffect, useCallback } from "react";
 import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getItems, getCreatures, getWikiLastUpdate } from "@functions/github";
+import { getItems, getCreatures, getPerks, getWikiLastUpdate } from "@functions/github";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import { useLocation, useNavigate } from "react-router";
 import type { Item } from "@ctypes/item";
 import type { Creature } from "@ctypes/creature";
+import type { Perk } from "@ctypes/perk";
 
 import ContentTypeSelector from "@components/Wiki/ContentTypeSelector";
 import SearchBar from "@components/Wiki/SearchBar";
@@ -21,7 +22,7 @@ const Wiki = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [contentType, setContentType] = useState<"items" | "creatures">(
+  const [contentType, setContentType] = useState<"items" | "creatures" | "perks">(
     "items",
   );
   const [wikiLastUpdate, setWikiLastUpdate] = useState<string>();
@@ -35,6 +36,11 @@ const Wiki = () => {
   const [creatures, setCreatures] = useState<Creature[]>([]);
   const [filteredCreatures, setFilteredCreatures] = useState<Creature[]>([]);
   const [displayedCreatures, setDisplayedCreatures] = useState<Creature[]>([]);
+
+  // Perks state
+  const [perks, setPerks] = useState<Perk[]>([]);
+  const [filteredPerks, setFilteredPerks] = useState<Perk[]>([]);
+  const [displayedPerks, setDisplayedPerks] = useState<Perk[]>([]);
 
   // Common state
   const [searchText, setSearchText] = useState<string>("");
@@ -82,6 +88,16 @@ const Wiki = () => {
     setHasMore(fetchedCreatures.length > ITEMS_PER_PAGE);
   };
 
+  // Update state with fetched perks data
+  const processPerksData = (fetchedPerks: Perk[]) => {
+    // Perks don't have categories in the JSON, so we set empty categories
+    setPerks(fetchedPerks);
+    setCategories([]);
+    setFilteredPerks(fetchedPerks);
+    setDisplayedPerks(fetchedPerks.slice(0, ITEMS_PER_PAGE));
+    setHasMore(fetchedPerks.length > ITEMS_PER_PAGE);
+  };
+
   // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const loadData = async () => {
@@ -92,10 +108,15 @@ const Wiki = () => {
           if (fetchedItems != null) {
             processItemsData(fetchedItems);
           }
-        } else {
+        } else if (contentType === "creatures") {
           const fetchedCreatures = await getCreatures();
           if (fetchedCreatures != null) {
             processCreaturesData(fetchedCreatures);
+          }
+        } else if (contentType === "perks") {
+          const fetchedPerks = await getPerks();
+          if (fetchedPerks != null) {
+            processPerksData(fetchedPerks);
           }
         }
       } catch (error) {
@@ -139,7 +160,7 @@ const Wiki = () => {
         setCurrentPage(1);
         setDisplayedItems(filtered.slice(0, ITEMS_PER_PAGE));
         setHasMore(filtered.length > ITEMS_PER_PAGE);
-      } else {
+      } else if (contentType === "creatures") {
         let filtered = creatures;
 
         if (category && category !== "All") {
@@ -161,9 +182,30 @@ const Wiki = () => {
         setCurrentPage(1);
         setDisplayedCreatures(filtered.slice(0, ITEMS_PER_PAGE));
         setHasMore(filtered.length > ITEMS_PER_PAGE);
+      } else if (contentType === "perks") {
+        let filtered = perks;
+
+        // Perks don't have categories, so we skip category filtering
+
+        if (search.trim()) {
+          const searchTerms = search.toLowerCase().split(" ").filter(Boolean);
+
+          filtered = filtered.filter((perk) => {
+            const perkName = perk.name.toLowerCase();
+            const perkDescription = perk.description.toLowerCase();
+            return searchTerms.every((term) => 
+              perkName.includes(term) || perkDescription.includes(term)
+            );
+          });
+        }
+
+        setFilteredPerks(filtered);
+        setCurrentPage(1);
+        setDisplayedPerks(filtered.slice(0, ITEMS_PER_PAGE));
+        setHasMore(filtered.length > ITEMS_PER_PAGE);
       }
     },
-    [items, creatures, searchText, t, contentType],
+    [items, creatures, perks, searchText, t, contentType],
   );
 
   useEffect(() => {
@@ -172,7 +214,7 @@ const Wiki = () => {
 
       if (
         parsed?.type &&
-        (parsed.type === "items" || parsed.type === "creatures")
+        (parsed.type === "items" || parsed.type === "creatures" || parsed.type === "perks")
       ) {
         setContentType(parsed.type);
       }
@@ -200,15 +242,19 @@ const Wiki = () => {
       const nextItems = filteredItems.slice(0, nextPage * ITEMS_PER_PAGE);
       setDisplayedItems(nextItems);
       setHasMore(nextItems.length < filteredItems.length);
-    } else {
+    } else if (contentType === "creatures") {
       const nextCreatures = filteredCreatures.slice(
         0,
         nextPage * ITEMS_PER_PAGE,
       );
       setDisplayedCreatures(nextCreatures);
       setHasMore(nextCreatures.length < filteredCreatures.length);
+    } else if (contentType === "perks") {
+      const nextPerks = filteredPerks.slice(0, nextPage * ITEMS_PER_PAGE);
+      setDisplayedPerks(nextPerks);
+      setHasMore(nextPerks.length < filteredPerks.length);
     }
-  }, [filteredItems, filteredCreatures, currentPage, contentType]);
+  }, [filteredItems, filteredCreatures, filteredPerks, currentPage, contentType]);
 
   const handleSearchTextChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -219,7 +265,7 @@ const Wiki = () => {
 
   // Helper function to build URL parameters
   const buildSearchParams = useCallback(
-    (search: string, category: string, type: "items" | "creatures") => {
+    (search: string, category: string, type: "items" | "creatures" | "perks") => {
       const searchParams = new URLSearchParams();
 
       // Add search parameter if it exists
@@ -230,8 +276,8 @@ const Wiki = () => {
       // Always add content type
       searchParams.set("type", type);
 
-      // Add category only if it's not "All"
-      if (category !== "All") {
+      // Add category only if it's not "All" and type is not "perks" (perks don't have categories)
+      if (category !== "All" && type !== "perks") {
         searchParams.set("category", category);
       }
 
@@ -298,7 +344,7 @@ const Wiki = () => {
   ]);
 
   const handleContentTypeChange = useCallback(
-    (type: "items" | "creatures") => {
+    (type: "items" | "creatures" | "perks") => {
       setContentType(type);
       setSearchText("");
       setCategoryFilter("All");
@@ -335,8 +381,8 @@ const Wiki = () => {
 
             {/* Content Type Selector */}
             <ContentTypeSelector
-              contentType={contentType}
-              onContentTypeChange={handleContentTypeChange}
+              selectedType={contentType}
+              onTypeChange={handleContentTypeChange}
             />
 
             {/* Search Bar */}
@@ -365,6 +411,7 @@ const Wiki = () => {
           isLoading={isLoading}
           displayedItems={displayedItems}
           displayedCreatures={displayedCreatures}
+          displayedPerks={displayedPerks}
         />
 
         {/* Pagination */}
@@ -374,8 +421,10 @@ const Wiki = () => {
           hasMore={hasMore}
           displayedItems={displayedItems}
           displayedCreatures={displayedCreatures}
+          displayedPerks={displayedPerks}
           filteredItems={filteredItems}
           filteredCreatures={filteredCreatures}
+          filteredPerks={filteredPerks}
           onLoadMore={handleLoadMore}
         />
       </div>
