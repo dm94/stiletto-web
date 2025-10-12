@@ -1,6 +1,6 @@
 {
   "name": "Poaching Hut",
-  "parent": "DefensiveTower",
+  "parent": "Defensive Tower",
   "type": "PoachingHut_C",
   "category": "Interactables",
   "weight": 10,

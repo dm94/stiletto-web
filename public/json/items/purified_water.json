@@ -25,7 +25,7 @@
           "name": "Cactus Flesh"
         }
       ],
-      "station": "ClayPot",
+      "station": "Clay Pot",
       "time": 35
     },
     {
@@ -45,7 +45,7 @@
           "name": "Fruit Pulp"
         }
       ],
-      "station": "ClayPot",
+      "station": "Clay Pot",
       "time": 35
     },
     {
@@ -94,7 +94,7 @@
         }
       ],
       "output": 5,
-      "station": "ClayPot",
+      "station": "Clay Pot",
       "time": 55
     },
     {
@@ -114,7 +114,7 @@
           "name": "Thornberry"
         }
       ],
-      "station": "ClayPot",
+      "station": "Clay Pot",
       "time": 35
     },
     {
@@ -136,7 +136,7 @@
         }
       ],
       "output": 3,
-      "station": "ClayPot",
+      "station": "Clay Pot",
       "time": 40
     },
     {
@@ -158,7 +158,7 @@
         }
       ],
       "output": 3,
-      "station": "ClayPot",
+      "station": "Clay Pot",
       "time": 35
     }
   ],

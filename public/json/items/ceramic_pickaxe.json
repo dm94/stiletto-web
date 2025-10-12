@@ -1,6 +1,6 @@
 {
   "name": "Ceramic Pickaxe",
-  "parent": "BonePickaxe",
+  "parent": "Bone Pickaxe",
   "type": "CeramicPickaxe_C",
   "trade_price": 98.2,
   "weight": 5,

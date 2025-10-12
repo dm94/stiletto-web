@@ -1,6 +1,6 @@
 {
   "name": "Obsidian Machine",
-  "parent": "ClayPot",
+  "parent": "Clay Pot",
   "type": "ObsidianMachine_C",
   "category": "Crafting",
   "weight": 15,

@@ -1,6 +1,6 @@
 {
   "name": "Water Condenser",
-  "parent": "Humidifier",
+  "parent": "Stone Humidifier",
   "type": "WaterCondenser_C",
   "category": "Crafting",
   "weight": 50,

@@ -1,6 +1,6 @@
 {
   "name": "Wingsuit",
-  "parent": "Repaired Grappling Hook",
+  "parent": "Nomad Grappling Hook",
   "type": "WingSuit_C",
   "category": "Equipment",
   "trade_price": 29,

@@ -1,6 +1,6 @@
 {
   "name": "Hellfire",
-  "parent": "ClayPot",
+  "parent": "Clay Pot",
   "type": "HellfireMixture_C",
   "category": "Resources",
   "trade_price": 1,

@@ -1,6 +1,6 @@
 {
   "name": "Stiletto Walker",
-  "parent": "SteeringLevers",
+  "parent": "Steering Levers",
   "type": "Stiletto_C",
   "category": "Walkers",
   "weight": 29.44,

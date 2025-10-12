@@ -1,6 +1,6 @@
 {
   "name": "Throwable Aloe Bomb",
-  "parent": "HealingBomb",
+  "parent": "Aloe Goo Bomb",
   "type": "ThrowableAloeBomb_C",
   "category": "Weapons",
   "trade_price": 16.9,

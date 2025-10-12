@@ -1,6 +1,6 @@
 {
   "name": "Bonespike Sword",
-  "parent": "Sawtooth Sword",
+  "parent": "Rawbone Sawsword",
   "type": "OneHandedBoneSword_C",
   "category": "Weapons",
   "trade_price": 6.2,

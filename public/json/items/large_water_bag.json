@@ -1,6 +1,6 @@
 {
   "name": "Large Water Bag",
-  "parent": "WaterBagMedium",
+  "parent": "Medium Water Bag",
   "type": "WaterBagLarge_C",
   "category": "Containers",
   "weight": 12.7,

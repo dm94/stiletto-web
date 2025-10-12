@@ -1,6 +1,6 @@
 {
   "name": "Proxy Walker",
-  "parent": "SteeringLevers",
+  "parent": "Steering Levers",
   "type": "Proxy_C",
   "category": "Walkers",
   "weight": 34.02,

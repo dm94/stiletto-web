@@ -1,6 +1,6 @@
 {
   "name": "Firestone Axe",
-  "parent": "Advanced Hatchet",
+  "parent": "Ceramic Hatchet",
   "type": "OneHandedLavaAxe_C",
   "category": "Weapons",
   "trade_price": 80.8,
