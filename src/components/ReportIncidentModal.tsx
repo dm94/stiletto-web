@@ -33,7 +33,7 @@ const ReportIncidentModal: React.FC<ReportIncidentModalProps> = ({
     try {
       const requestParams: ReportIncidentRequest = {
         message: message.trim(),
-        url: window.location.href,
+        url: globalThis.location.href,
       };
 
       await reportIncident(requestParams);
