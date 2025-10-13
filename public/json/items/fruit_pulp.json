@@ -232,22 +232,22 @@
     {
       "name": "Easy Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "tier": "T4"
     },
     {
       "name": "Go Go T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "tier": "T4"
     },
     {
       "name": "Go Go T4 Q",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "tier": "T4"
     },
     {
@@ -274,8 +274,8 @@
     {
       "name": "Hard Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "tier": "T4"
     },
     {
@@ -309,8 +309,8 @@
     {
       "name": "Hotspot Loot T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "tier": "T4"
     },
     {
@@ -344,8 +344,8 @@
     {
       "name": "Medium Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "tier": "T4"
     },
     {
@@ -372,8 +372,8 @@
     {
       "name": "Treasure Chest T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "tier": "T4"
     }
   ]

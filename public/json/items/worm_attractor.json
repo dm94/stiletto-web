@@ -1,0 +1,37 @@
+{
+  "name": "Worm Attractor",
+  "type": "WormAttractor_C",
+  "category": "Interactables",
+  "weight": 1,
+  "experiencieReward": 50,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 100,
+          "name": "Stone"
+        },
+        {
+          "count": 20,
+          "name": "Glass"
+        },
+        {
+          "count": 15,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        },
+        {
+          "count": 50,
+          "name": "Wood"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 5000
+  }
+}

@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Skirmisher (Medium)",
-  "type": "T2_RupuSkirmisher_C",
-  "health": 135,
-  "experiencie": 300,
-  "lootTemplate": "EasyRupu_T2",
-  "category": "Rupu",
-  "tier": "T2"
-}

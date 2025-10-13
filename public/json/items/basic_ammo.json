@@ -1,6 +1,0 @@
-{
-  "name": "Basic Ammo",
-  "parent": "Basic Crafting",
-  "type": "Ammo_T1_C",
-  "onlyDevs": true
-}

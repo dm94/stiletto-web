@@ -6,36 +6,36 @@
     {
       "name": "Ceramic-Tipped Bolt",
       "chance": 16,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "source": "ammo_t3"
     },
     {
       "name": "Ceramic Scattershot Ammo",
       "chance": 16,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "source": "ammo_t3"
     },
     {
       "name": "Ceramic Dart",
       "chance": 40,
-      "minQuantity": 5,
-      "maxQuantity": 30,
+      "minQuantity": 20,
+      "maxQuantity": 20,
       "source": "ammo_t3"
     },
     {
       "name": "Obsidian Rok",
       "chance": 12,
-      "minQuantity": 1,
-      "maxQuantity": 3,
+      "minQuantity": 2,
+      "maxQuantity": 2,
       "source": "ammo_t3"
     },
     {
       "name": "Catapult Boulder",
       "chance": 16,
-      "minQuantity": 1,
-      "maxQuantity": 5,
+      "minQuantity": 3,
+      "maxQuantity": 3,
       "source": "ammo_t3"
     },
     {

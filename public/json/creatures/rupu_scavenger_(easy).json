@@ -1,8 +1,0 @@
-{
-  "name": "Rupu Scavenger (Easy)",
-  "type": "T1_RupuScavenger_C",
-  "experiencie": 75,
-  "lootTemplate": "EasyRupu_T1",
-  "category": "Rupu",
-  "tier": "T1"
-}

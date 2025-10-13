@@ -20,7 +20,7 @@
   "menu.wiki": "Wiki",
   "menu.creatures": "Существа / Сайты",
   "menu.items": "Предметы",
-  "menu.perks": "Perks",
+  "menu.perks": "Перки",
   "meta.description": "Stiletto лучший сайт для последнего оазиса",
   "app.subtitle": "for the Last Oasis",
   "app.metaDescription": "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...",
@@ -411,7 +411,7 @@
   "common.loadMore": "Загрузить больше",
   "common.noResults": "Нет результатов",
   "wiki.showingItems": "Показаны {{displayed}} из {{total}} элементов",
-  "wiki.perks": "Perks",
+  "wiki.perks": "Перки",
   "creature.experience": "Опыт работы",
   "creature.tier": "Этап",
   "creature.health": "Здоровье",
@@ -450,5 +450,5 @@
   "privacy.changesTitle": "10. Изменения в данной политике",
   "privacy.changesText": "Stiletto оставляет за собой право вносить изменения в эту политику для адаптации к юридическим или функциональным изменениям.",
   "wiki.extraInfo": "Extra information",
-  "wiki.lastUpdate": "Last updated"
+  "wiki.lastUpdate": "Последнее обновление"
 }

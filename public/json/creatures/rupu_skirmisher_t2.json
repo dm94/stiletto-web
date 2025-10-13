@@ -1,0 +1,261 @@
+{
+  "name": "Rupu Skirmisher (T2)",
+  "category": "Rupu",
+  "tier": "T2",
+  "health": 150,
+  "experiencie": 300,
+  "drops": [
+    {
+      "name": "Fiber",
+      "chance": 12.5,
+      "minQuantity": 14,
+      "maxQuantity": 14,
+      "source": "baseresources_t2"
+    },
+    {
+      "name": "Stone",
+      "chance": 12.5,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "baseresources_t2"
+    },
+    {
+      "name": "Wood",
+      "chance": 12.5,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "source": "baseresources_t2"
+    },
+    {
+      "name": "Rupu Vine",
+      "chance": 12.5,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "baseresources_t2"
+    },
+    {
+      "name": "Palm Leaves",
+      "chance": 12.5,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "baseresources_t2"
+    },
+    {
+      "name": "Fiber Weave",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "baseresources_t2"
+    },
+    {
+      "name": "Wood Shaft",
+      "chance": 12.5,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "baseresources_t2"
+    },
+    {
+      "name": "Bone Splinter",
+      "chance": 12.5,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "baseresources_t2"
+    },
+    {
+      "name": "Earth Wax",
+      "chance": 11.111111,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Rope",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Bone Glue",
+      "chance": 11.111111,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Wooden Gear",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Triple Stitch Fabric",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Nomad Cloth",
+      "chance": 11.111111,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Leather",
+      "chance": 11.111111,
+      "minQuantity": 4,
+      "maxQuantity": 4,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Aloe Gel",
+      "chance": 11.111111,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Glass",
+      "chance": 11.111111,
+      "minQuantity": 2,
+      "maxQuantity": 2,
+      "source": "processedresources_t2"
+    },
+    {
+      "name": "Baskwood Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Armor",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Baskwood Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Sandals",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Boots",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Baskwood Bracers",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Forester's Sleeves",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Triple Stitch Bracers",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t2"
+    },
+    {
+      "name": "Nurrfang Toothclub",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Club",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Hand Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Heavy Rawbone Hand Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Bonespike Sword",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Quarterstaff",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Battle Axe",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Maul",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Long Bonespike Swordstaff",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    },
+    {
+      "name": "Rawbone Sawsword",
+      "chance": 9.090909,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "weapons_t2"
+    }
+  ]
+}

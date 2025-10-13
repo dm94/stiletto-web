@@ -1,0 +1,29 @@
+{
+  "name": "Torque Chest",
+  "type": "TorqueChest_C",
+  "category": "Containers",
+  "weight": 20,
+  "experiencieReward": 32,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 55,
+          "name": "Wood"
+        },
+        {
+          "count": 35,
+          "name": "Rope"
+        },
+        {
+          "count": 15,
+          "name": "Fiber"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1500
+  }
+}

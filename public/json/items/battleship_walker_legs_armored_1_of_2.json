@@ -7,16 +7,8 @@
     {
       "ingredients": [
         {
-          "count": 900,
-          "name": "Wood"
-        },
-        {
-          "count": 500,
-          "name": "Fiber"
-        },
-        {
-          "count": 3,
-          "name": "Reinforced Plank"
+          "count": 1,
+          "name": "Armored Capital Walker Leg"
         }
       ]
     }

@@ -1,0 +1,27 @@
+{
+  "name": "Gunpod Ballista",
+  "parent": "Gun Pod",
+  "type": "GunPodBallista_C",
+  "category": "Weapons",
+  "weight": 45,
+  "description": "Miniature version of a ballista that fits inside a gun pod.",
+  "experiencieReward": 366,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 45,
+          "name": "Stone"
+        },
+        {
+          "count": 7,
+          "name": "Rope"
+        }
+      ]
+    }
+  ]
+}

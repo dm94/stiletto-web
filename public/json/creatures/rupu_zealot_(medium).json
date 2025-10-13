@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Zealot (Medium)",
-  "type": "T2_RupuZealot_C",
-  "health": 250,
-  "experiencie": 600,
-  "lootTemplate": "HardRupu_T2_AC",
-  "category": "Rupu",
-  "tier": "T2"
-}

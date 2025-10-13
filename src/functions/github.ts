@@ -4,12 +4,16 @@ import type { Item, ItemCompleteInfo, TechItem } from "@ctypes/item";
 import type { MapJsonInfo } from "@ctypes/dto/maps";
 import { toSnakeCase } from "./utils";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
+import type { Perk } from "@ctypes/perk";
 
+const USER_REPO = "dm94/stiletto-web";
 const RESOURCE_CACHE_TIME_CHECK = import.meta.env.PROD ? 86400000 : 1;
-const REPO_URL = "https://raw.githubusercontent.com/dm94/stiletto-web/master";
+const REPO_URL = `https://raw.githubusercontent.com/${USER_REPO}/master`;
 const REPO_JSON_URL = import.meta.env.PROD
   ? `${REPO_URL}/public/json`
   : "/json";
+
+const GITHUB_API_URL = `https://api.github.com/repos/${USER_REPO}`;
 
 const WIKI_MD_URL = `${REPO_URL}/wiki`;
 
@@ -38,6 +42,35 @@ const fetchResource = async <T>(
   }
 };
 
+export const getWikiLastUpdate = async (): Promise<string | undefined> => {
+  const cacheKey = "wikiLastUpdate";
+  const cachedData = getCachedData(cacheKey, RESOURCE_CACHE_TIME_CHECK);
+
+  if (cachedData) {
+    return cachedData;
+  }
+
+  try {
+    const response = await fetch(
+      `${GITHUB_API_URL}/commits?path=public&per_page=1`,
+    );
+    if (!response.ok) {
+      return undefined;
+    }
+
+    const commits = await response.json();
+    if (commits.length > 0) {
+      const lastUpdate = commits[0].commit.committer.date;
+      addCachedData(cacheKey, lastUpdate);
+      return lastUpdate;
+    }
+
+    return undefined;
+  } catch {
+    return undefined;
+  }
+};
+
 export const getMarkers = (): Promise<Marker[]> =>
   fetchResource<Marker[]>("/markers.min.json", "markers");
 
@@ -55,6 +88,9 @@ export const getItemInfo = (itemName: string): Promise<ItemCompleteInfo> =>
 
 export const getCreatures = (): Promise<Creature[]> =>
   fetchResource<Creature[]>("/creatures_min.json");
+
+export const getPerks = (): Promise<Perk[]> =>
+  fetchResource<Perk[]>("/perks_min.json");
 
 export const getCreatureInfo = (
   creatureName: string,

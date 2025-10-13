@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Hermit (Medium)",
-  "type": "T2_RupuHermit_C",
-  "health": 60,
-  "experiencie": 432,
-  "lootTemplate": "EasyRupu_T2",
-  "category": "Rupu",
-  "tier": "T2"
-}

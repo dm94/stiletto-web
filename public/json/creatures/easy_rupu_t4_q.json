@@ -4,155 +4,127 @@
   "tier": "T4",
   "drops": [
     {
-      "name": "Fiber",
-      "chance": 9.090909,
-      "minQuantity": 16,
-      "maxQuantity": 16,
+      "name": "Rupu Vine",
+      "chance": 11.111112,
+      "minQuantity": 18,
+      "maxQuantity": 18,
       "source": "baseresources_t4"
     },
     {
-      "name": "Stone",
-      "chance": 9.090909,
+      "name": "Palm Leaves",
+      "chance": 11.111112,
+      "minQuantity": 15,
+      "maxQuantity": 15,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Fiber Weave",
+      "chance": 11.111112,
+      "minQuantity": 15,
+      "maxQuantity": 15,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Rope",
+      "chance": 11.111112,
       "minQuantity": 12,
       "maxQuantity": 12,
       "source": "baseresources_t4"
     },
     {
-      "name": "Wood",
-      "chance": 9.090909,
-      "minQuantity": 14,
-      "maxQuantity": 14,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Rupu Vine",
-      "chance": 9.090909,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Palm Leaves",
-      "chance": 9.090909,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Fiber Weave",
-      "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Wood Shaft",
-      "chance": 9.090909,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Bone Splinter",
-      "chance": 9.090909,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Rope",
-      "chance": 9.090909,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Earth Wax",
-      "chance": 9.090909,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "baseresources_t4"
-    },
-    {
       "name": "Bone Glue",
-      "chance": 9.090909,
+      "chance": 11.111111,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "source": "baseresources_t4"
+    },
+    {
+      "name": "Sulfur",
+      "chance": 11.111111,
       "minQuantity": 5,
       "maxQuantity": 5,
       "source": "baseresources_t4"
     },
     {
-      "name": "Wooden Gear",
-      "chance": 8.333333,
-      "minQuantity": 2,
-      "maxQuantity": 2,
-      "source": "processedresources_t4"
+      "name": "Nibiran Mineral",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "baseresources_t4"
     },
     {
-      "name": "Triple Stitch Fabric",
-      "chance": 8.333333,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "source": "processedresources_t4"
+      "name": "Eucalyptus Leaf",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "baseresources_t4"
     },
     {
-      "name": "Nomad Cloth",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "processedresources_t4"
+      "name": "Spearmint",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "baseresources_t4"
     },
     {
-      "name": "Leather",
-      "chance": 8.333333,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "processedresources_t4"
-    },
-    {
-      "name": "Aloe Gel",
-      "chance": 8.333333,
+      "name": "Clay",
+      "chance": 10.964912,
       "minQuantity": 7,
       "maxQuantity": 7,
       "source": "processedresources_t4"
     },
     {
-      "name": "Clay",
-      "chance": 8.333333,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "source": "processedresources_t4"
-    },
-    {
       "name": "Rubber Block",
-      "chance": 8.333333,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 10.964912,
+      "minQuantity": 6,
+      "maxQuantity": 6,
       "source": "processedresources_t4"
     },
     {
       "name": "Ceramic Shard",
-      "chance": 8.333333,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "source": "processedresources_t4"
-    },
-    {
-      "name": "Glass",
-      "chance": 8.333333,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 10.964912,
+      "minQuantity": 8,
+      "maxQuantity": 8,
       "source": "processedresources_t4"
     },
     {
       "name": "Tar",
-      "chance": 8.333333,
+      "chance": 10.964912,
+      "minQuantity": 6,
+      "maxQuantity": 6,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Reinforced Gear",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Iron Ingot",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Wood Log",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "processedresources_t4"
+    },
+    {
+      "name": "Iron Nails",
+      "chance": 10.964912,
       "minQuantity": 3,
       "maxQuantity": 3,
       "source": "processedresources_t4"
     },
     {
-      "name": "Reinforced Gear",
-      "chance": 8.333333,
+      "name": "Nibiran Ingot",
+      "chance": 1.3157896,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "processedresources_t4"
@@ -298,120 +270,106 @@
       "source": "weapons_t4"
     },
     {
-      "name": "Flotillian Ammo Schematic",
-      "chance": 5.882353,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "source": "schematics_t4"
-    },
-    {
       "name": "Flotillian Armors Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Constructions Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Crafting Stations Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Tools Schematic",
-      "chance": 5.882353,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "schematics_t4"
-    },
-    {
-      "name": "Flotillian Potions Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Walker Weapons Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Weapons Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Domus Walker Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Schmetterling Walker Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Titan Walker Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Raptor Sky Walker Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Panda Walker Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Base Walker Parts Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Improved Walker Parts Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Advanced Walker Parts Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Concrete Walls Schematic",
-      "chance": 5.882353,
+      "chance": 6.6666665,
       "minQuantity": 5,
       "maxQuantity": 5,
       "source": "schematics_t4"

@@ -67,21 +67,21 @@
       "tier": "T1"
     },
     {
-      "name": "Rupu Harasser (Easy)",
+      "name": "Rupu Harasser (T1)",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Rupu Sentinel (Easy)",
+      "name": "Rupu Sentinel",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
     },
     {
-      "name": "Rupu Skirmisher (Easy)",
+      "name": "Rupu Skirmisher (T1)",
       "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,

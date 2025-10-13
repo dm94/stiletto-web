@@ -101,42 +101,42 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Dunestalker (Medium)",
+      "name": "Rupu Dunestalker",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Forager (Medium)",
+      "name": "Rupu Forager",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Harasser (Medium)",
+      "name": "Rupu Harasser (T2)",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Hazraki (Medium)",
+      "name": "Rupu Hazraki",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Plainstrider (Medium)",
+      "name": "Rupu Plainstrider",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Priestess (Medium)",
+      "name": "Rupu Priestess (T2)",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -150,14 +150,14 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Shaman (Medium)",
+      "name": "Rupu Shaman",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Rupu Zealot (Medium)",
+      "name": "Rupu Zealot",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -171,7 +171,7 @@
       "tier": "T2"
     },
     {
-      "name": "White Death (Medium) (T2)",
+      "name": "White Death (T2)",
       "chance": 26.31579,
       "minQuantity": 1,
       "maxQuantity": 1,

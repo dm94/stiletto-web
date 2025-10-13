@@ -59,13 +59,13 @@
           "name": "Charcoal"
         },
         {
-          "count": 25,
+          "count": 5,
           "name": "Sand"
         }
       ],
       "output": 50,
       "station": "Purification Station",
-      "time": 150
+      "time": 120
     },
     {
       "ingredients": [
@@ -201,8 +201,8 @@
     {
       "name": "Easy Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
@@ -243,8 +243,8 @@
     {
       "name": "Hard Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
@@ -278,8 +278,8 @@
     {
       "name": "Hotspot Loot T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
@@ -313,8 +313,8 @@
     {
       "name": "Medium Rupu Camp T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
@@ -341,8 +341,8 @@
     {
       "name": "Treasure Chest T4",
       "chance": 7.6923075,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "tier": "T4"
     }
   ]

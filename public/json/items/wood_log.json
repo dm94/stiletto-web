@@ -5,5 +5,98 @@
   "trade_price": 2,
   "stackSize": 999,
   "weight": 100,
-  "description": "Manufactured at a lumber mill."
+  "description": "Manufactured at a lumber mill.",
+  "droppedBy": [
+    {
+      "name": "Big Hotspot Loot T4",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Broken Tusker 2",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": null
+    },
+    {
+      "name": "Easy Rupu Camp T4",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Easy Rupu T4",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Easy Rupu T4 Q",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Hard Rupu Camp T4",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Hard Rupu T4",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Hard Rupu T4 Q",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Hotspot Loot T4",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Medium Rupu Camp T4",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Medium Rupu T4",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Medium Rupu T4 Q",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    },
+    {
+      "name": "Rupu Firebrand",
+      "chance": 10.964912,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T4"
+    }
+  ]
 }

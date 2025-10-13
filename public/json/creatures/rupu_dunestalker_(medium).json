@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Dunestalker (Medium)",
-  "type": "T2_RupuDunestalker_C",
-  "health": 150,
-  "experiencie": 300,
-  "lootTemplate": "MediumRupu_T2",
-  "category": "Rupu",
-  "tier": "T2"
-}

@@ -6,22 +6,22 @@
     {
       "name": "Bone Bolt",
       "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "source": "ammo_t2"
     },
     {
       "name": "Bone Scattershot Ammo",
       "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 15,
+      "minQuantity": 10,
+      "maxQuantity": 10,
       "source": "ammo_t2"
     },
     {
       "name": "Bone Dart",
       "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 30,
+      "minQuantity": 20,
+      "maxQuantity": 20,
       "source": "ammo_t2"
     },
     {

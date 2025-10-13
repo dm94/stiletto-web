@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Harasser (Easy)",
-  "type": "T1_RupuHarasser_C",
-  "health": 120,
-  "experiencie": 150,
-  "lootTemplate": "MediumRupu_T1",
-  "category": "Rupu",
-  "tier": "T1"
-}

@@ -1,9 +1,0 @@
-{
-  "name": "Rupu Forerunner (Easy)",
-  "type": "T1_RupuForerunner_C",
-  "health": 135,
-  "experiencie": 75,
-  "lootTemplate": "EasyRupu_T1",
-  "category": "Rupu",
-  "tier": "T1"
-}

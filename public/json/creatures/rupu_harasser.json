@@ -1,0 +1,9 @@
+{
+  "name": "Rupu Harasser",
+  "type": "T2_RupuHarasser_C",
+  "health": 200,
+  "experiencie": 300,
+  "lootTemplate": "MediumRupu_T2",
+  "category": "Rupu",
+  "tier": "T2"
+}

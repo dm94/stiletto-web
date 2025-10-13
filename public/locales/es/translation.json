@@ -20,7 +20,7 @@
   "menu.wiki": "Wiki",
   "menu.creatures": "Criaturas / sitios",
   "menu.items": "Elementos",
-  "menu.perks": "Perks",
+  "menu.perks": "Ventajas",
   "meta.description": "Stiletto la mejor web para el Last Oasis",
   "app.subtitle": "for the Last Oasis",
   "app.metaDescription": "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...",
@@ -411,7 +411,7 @@
   "common.loadMore": "Cargar más",
   "common.noResults": "Sin resultados",
   "wiki.showingItems": "Mostrando {{displayed}} de {{total}} objetos",
-  "wiki.perks": "Perks",
+  "wiki.perks": "Ventajas",
   "creature.experience": "Experiencia",
   "creature.tier": "Nivel",
   "creature.health": "Salud",
@@ -450,5 +450,5 @@
   "privacy.changesTitle": "10. Cambios a esta Política",
   "privacy.changesText": "Stiletto se reserva el derecho de modificar esta política para adaptarse a los cambios legales o funcionales, y se notificarán modificaciones significativas en el sitio web.",
   "wiki.extraInfo": "Extra information",
-  "wiki.lastUpdate": "Last updated"
+  "wiki.lastUpdate": "Última actualización"
 }

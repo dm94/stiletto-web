@@ -8,128 +8,128 @@
   "drops": [
     {
       "name": "Weightless Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Merchant Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Craftsman Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Fireproof Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Armoury Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Hardening Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Forager Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Scavenger Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Lumberjack Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Pack Speed Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Hearth Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Lifeforce Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Bullrush Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Sandy Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Fortress Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Harpoon Protection Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Battery Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
-      "maxQuantity": 5,
+      "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
       "name": "Torque Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
-      "maxQuantity": 5,
+      "maxQuantity": 1,
       "source": "modules_t1"
     },
     {
@@ -141,9 +141,37 @@
     },
     {
       "name": "Pack Mule Walker Module",
-      "chance": 5.263158,
+      "chance": 4.5252676,
       "minQuantity": 1,
-      "maxQuantity": 2,
+      "maxQuantity": 1,
+      "source": "modules_t1"
+    },
+    {
+      "name": "Structure Hardening Base Module",
+      "chance": 0.45225528,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "modules_t1"
+    },
+    {
+      "name": "Craftsman Base Module",
+      "chance": 4.522553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "modules_t1"
+    },
+    {
+      "name": "Pack Speed Base Module",
+      "chance": 4.522553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "modules_t1"
+    },
+    {
+      "name": "Bullrush Base Module",
+      "chance": 4.522553,
+      "minQuantity": 1,
+      "maxQuantity": 1,
       "source": "modules_t1"
     },
     {

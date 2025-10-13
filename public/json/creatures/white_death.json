@@ -1,0 +1,8 @@
+{
+  "name": "White Death",
+  "type": "T3_WhiteDeath_C",
+  "health": 250,
+  "experiencie": 2200,
+  "lootTemplate": "MediumRupu_T3",
+  "tier": "T3"
+}

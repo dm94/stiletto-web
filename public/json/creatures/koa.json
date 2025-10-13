@@ -1,3 +1,4 @@
 {
-  "name": "Koa"
+  "name": "Koa",
+  "health": 3000
 }

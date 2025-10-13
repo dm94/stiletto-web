@@ -6,12 +6,14 @@ import Icon from "@components/Icon";
 import { getCreatureUrl } from "@functions/utils";
 import type { Item } from "@ctypes/item";
 import type { Creature } from "@ctypes/creature";
+import type { Perk } from "@ctypes/perk";
 
 type WikiContentProps = {
-  contentType: "items" | "creatures";
+  contentType: "items" | "creatures" | "perks";
   isLoading: boolean;
   displayedItems: Item[];
   displayedCreatures: Creature[];
+  displayedPerks: Perk[];
 };
 
 const WikiContent = ({
@@ -19,6 +21,7 @@ const WikiContent = ({
   isLoading,
   displayedItems,
   displayedCreatures,
+  displayedPerks,
 }: WikiContentProps) => {
   const { t } = useTranslation();
 
@@ -85,6 +88,34 @@ const WikiContent = ({
       ));
     }
 
+    if (contentType === "perks" && displayedPerks.length > 0) {
+      return displayedPerks.map((perk, index) => (
+        <article
+          key={`perk-${perk.name}-${index}`}
+          className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
+          data-testid="wiki-perk"
+        >
+          <div className="bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
+            <div className="p-4">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-lg font-semibold text-white">
+                  {perk.name}
+                </h3>
+                {perk.cost && (
+                  <span className="text-sm text-yellow-400 font-medium">
+                    {perk.cost} points
+                  </span>
+                )}
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {perk.description}
+              </p>
+            </div>
+          </div>
+        </article>
+      ));
+    }
+
     return (
       <section className="w-full" key="wiki-notfound" aria-live="polite">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
@@ -97,12 +128,25 @@ const WikiContent = ({
         </div>
       </section>
     );
-  }, [displayedItems, displayedCreatures, isLoading, t, contentType]);
+  }, [
+    displayedItems,
+    displayedCreatures,
+    displayedPerks,
+    isLoading,
+    t,
+    contentType,
+  ]);
 
   return (
     <section
       className="flex flex-wrap -m-3"
-      aria-label={t(contentType === "items" ? "wiki.items" : "wiki.creatures")}
+      aria-label={t(
+        contentType === "items"
+          ? "wiki.items"
+          : contentType === "creatures"
+            ? "wiki.creatures"
+            : "wiki.perks",
+      )}
       data-testid="wiki-content-area"
     >
       {content}
