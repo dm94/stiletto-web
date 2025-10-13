@@ -25,8 +25,9 @@ import {
 } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
-import { FaTools } from "react-icons/fa";
+import { FaTools, FaExclamationTriangle } from "react-icons/fa";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
+import ReportIncidentModal from "@components/ReportIncidentModal";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -54,6 +55,7 @@ const ItemWiki = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [allItems, setAllItems] = useState<Item[]>([]);
   const [textColor, setTextColor] = useState<string>("text-gray-400");
+  const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
 
   const rarity = Object.values(Rarity).includes(rarityParam as Rarity)
     ? (rarityParam as Rarity)
@@ -235,9 +237,26 @@ const ItemWiki = () => {
         description={`All information for ${itemName}`}
         canonical={getItemUrl(itemName, rarity)}
       />
-      <h1 className="text-4xl font-bold text-gray-200 text-center mb-8 mt-4">
-        {itemName}
-      </h1>
+      <div className="flex items-center flex-wrap justify-center mb-8 mt-4">
+        <h1 className="text-4xl font-bold text-gray-200 text-center">
+          {itemName}
+        </h1>
+        <button
+          type="button"
+          onClick={() => setIsReportModalOpen(true)}
+          className="ml-4 p-2 text-yellow-500 hover:text-yellow-400 hover:bg-gray-800 rounded-full transition-colors"
+          title={t("report.incident")}
+          aria-label={t("report.incident")}
+        >
+          <FaExclamationTriangle size={20} />
+        </button>
+      </div>
+
+      <ReportIncidentModal
+        isOpen={isReportModalOpen}
+        onClose={() => setIsReportModalOpen(false)}
+      />
+
       <div className="flex flex-wrap -mx-4">
         <div className="w-full md:w-1/2 px-4">
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
