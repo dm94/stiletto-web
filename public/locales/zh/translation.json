@@ -450,5 +450,13 @@
   "privacy.changesTitle": "10. 对本政策的修改",
   "privacy.changesText": "Stiletto保留修改此政策以适应法律或功能变化的权利，网站将通知重大修改。",
   "wiki.extraInfo": "Extra information",
-  "wiki.lastUpdate": "最後更新"
+  "wiki.lastUpdate": "Last updated",
+  "report.incident": "Report error",
+  "report.incidentTitle": "Report an error",
+  "report.message": "Message",
+  "report.messagePlaceholder": "Describe the error...",
+  "report.submit": "Submit Report",
+  "report.submitting": "Submitting...",
+  "report.success": "error reported successfully",
+  "report.error": "Error with the API"
 }
