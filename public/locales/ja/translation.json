@@ -450,5 +450,13 @@
   "privacy.changesTitle": "10. このポリシーの変更",
   "privacy.changesText": "Stilettoは、法的または機能的な変更に適応するためにこのポリシーを変更する権利を留保します。",
   "wiki.extraInfo": "Extra information",
-  "wiki.lastUpdate": "最終更新日"
+  "wiki.lastUpdate": "Last updated",
+  "report.incident": "Report error",
+  "report.incidentTitle": "Report an error",
+  "report.message": "Message",
+  "report.messagePlaceholder": "Describe the error...",
+  "report.submit": "Submit Report",
+  "report.submitting": "Submitting...",
+  "report.success": "error reported successfully",
+  "report.error": "Error with the API"
 }
