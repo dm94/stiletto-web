@@ -450,5 +450,13 @@
   "privacy.changesTitle": "10. Зміни в цій політиці",
   "privacy.changesText": "Щоб зберегти право на редагування цієї політики задля адаптації до законних або функціональних змін. Значні зміни будуть повідомлені на веб-сайті.",
   "wiki.extraInfo": "Extra information",
-  "wiki.lastUpdate": "Останнє оновлення"
+  "wiki.lastUpdate": "Last updated",
+  "report.incident": "Report error",
+  "report.incidentTitle": "Report an error",
+  "report.message": "Message",
+  "report.messagePlaceholder": "Describe the error...",
+  "report.submit": "Submit Report",
+  "report.submitting": "Submitting...",
+  "report.success": "error reported successfully",
+  "report.error": "Error with the API"
 }

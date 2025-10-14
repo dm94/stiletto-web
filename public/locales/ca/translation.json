@@ -450,5 +450,13 @@
   "privacy.changesTitle": "10. Changes to this Policy",
   "privacy.changesText": "Stiletto reserves the right to modify this policy to adapt to legal or functional changes. Significant modifications will be notified on the website.",
   "wiki.extraInfo": "Extra information",
-  "wiki.lastUpdate": "Darrera actualització"
+  "wiki.lastUpdate": "Last updated",
+  "report.incident": "Report error",
+  "report.incidentTitle": "Report an error",
+  "report.message": "Message",
+  "report.messagePlaceholder": "Describe the error...",
+  "report.submit": "Submit Report",
+  "report.submitting": "Submitting...",
+  "report.success": "error reported successfully",
+  "report.error": "Error with the API"
 }
