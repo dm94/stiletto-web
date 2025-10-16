@@ -13,55 +13,52 @@ permissions:
 jobs:
   update-items:
     runs-on: ubuntu-latest
-    env:
-      BRANCH_NAME: update/items-${{ github.run_id }}
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v5
       with:
-        # Checkout with write permissions to create PR
         token: ${{ secrets.GITHUB_TOKEN }}
         fetch-depth: 0
 
-    - name: Check for updates
-      id: check-updates
+    - name: Download and update items
       run: |
         # Download the remote file
         curl -s https://raw.githubusercontent.com/Stiletto-lo/loDataExtractor/main/exported/items_min.json > remote_items.json
         
-        # Compare files
-        if ! diff -q remote_items.json public/json/items_min.json; then
-          echo "Files are different, update needed"
+        # Compare files and update if different
+        if ! diff -q remote_items.json public/json/items_min.json > /dev/null 2>&1; then
+          echo "Files are different, updating items_min.json"
           cp remote_items.json public/json/items_min.json
-          echo "needs-update=true" >> $GITHUB_OUTPUT
-          # Copy the updated file to the correct location
-          mv remote_items.json public/json/items_min.json
+          echo "UPDATE_NEEDED=true" >> $GITHUB_ENV
         else
           echo "Files are identical, no update needed"
-          echo "needs-update=false" >> $GITHUB_OUTPUT
+          echo "UPDATE_NEEDED=false" >> $GITHUB_ENV
         fi
-
-    - name: Commit changes
-      if: steps.check-updates.outputs.needs-update == 'true'
-      uses: stefanzweifel/git-auto-commit-action@28e16e81777b558cc906c8750092100bbb34c5e3
-      with:
-        file_pattern: 'public/json/items_min.json'
-        commit_message: 'chore: Update items from loDataExtractor'
-        commit_user_name: 'github-actions[bot]'
-        commit_user_email: 'github-actions[bot]@users.noreply.github.com'
-        branch: ${{ env.BRANCH_NAME }}
-        create_branch: true
+        
+        # Clean up temporary file
+        rm -f remote_items.json
 
     - name: Create Pull Request
-      if: steps.check-updates.outputs.needs-update == 'true'
+      if: env.UPDATE_NEEDED == 'true'
       uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        title: "Update items from loDataExtractor"
-        body: "This PR updates items_min.json with the latest version from the loDataExtractor repository."
-        branch: ${{ env.BRANCH_NAME }}
+        title: "chore: Update items from loDataExtractor"
+        body: |
+          This PR updates `items_min.json` with the latest version from the loDataExtractor repository.
+          
+          **Changes:**
+          - Updated `public/json/items_min.json` with latest data
+          
+          This is an automated update that runs daily.
+        branch: update/items-${{ github.run_id }}
         commit-message: "chore: Update items from loDataExtractor"
-        labels: "automated,update"
+        committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+        author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+        labels: |
+          automated
+          update
+          data
         delete-branch: true
         base: master
