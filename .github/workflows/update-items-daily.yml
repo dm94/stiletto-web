@@ -12,6 +12,8 @@ permissions:
 jobs:
   update-items-json:
     runs-on: ubuntu-latest
+    env:
+      BRANCH_NAME: update/items-${{ github.run_id }}  # rama única por ejecución
     
     steps:
     - name: Checkout repository
@@ -43,9 +45,12 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@28e16e81777b558cc906c8750092100bbb34c5e3
       with:
         file_pattern: 'public/json/items_min.json'
-        commit_message: 'chore: Update items_min.json from loDataExtractor'
+        commit_message: 'chore: Update items from loDataExtractor'
         commit_user_name: 'github-actions[bot]'
         commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+        branch: ${{ env.BRANCH_NAME }}
+        delete-branch: true
+        base: master
 
     - name: Create Pull Request
       if: steps.check-updates.outputs.needs-update == 'true'
