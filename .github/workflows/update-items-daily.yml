@@ -40,7 +40,7 @@ jobs:
 
     - name: Commit changes
       if: steps.check-updates.outputs.needs-update == 'true'
-      uses: stefanzweifel/git-auto-commit-action@v7.0.0
+      uses: stefanzweifel/git-auto-commit-action@28e16e81777b558cc906c8750092100bbb34c5e3
       with:
         file_pattern: 'public/json/items_min.json'
         commit_message: 'chore: Update items_min.json from loDataExtractor'
@@ -49,7 +49,7 @@ jobs:
 
     - name: Create Pull Request
       if: steps.check-updates.outputs.needs-update == 'true'
-      uses: peter-evans/create-pull-request@v7.0.8
+      uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: "Update items_min.json from loDataExtractor"
