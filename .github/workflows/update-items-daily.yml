@@ -14,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       BRANCH_NAME: update/items-${{ github.run_id }}
-    permissions:
-      contents: write
     
     steps:
     - name: Checkout repository
