@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-items:
@@ -63,6 +64,7 @@ jobs:
         commit-message: "chore: Update items from loDataExtractor"
         labels: "automated,update"
         delete-branch: true
+        base: master
         # Use the existing commit instead of creating a new one
         commit: "HEAD"
 
