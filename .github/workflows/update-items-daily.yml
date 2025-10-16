@@ -35,7 +35,7 @@ jobs:
           echo "Files are different, update needed"
           echo "needs-update=true" >> $GITHUB_OUTPUT
           # Copy the updated file to the correct location
-          cp remote_items.json public/json/items_min.json
+          mv remote_items.json public/json/items_min.json
         else
           echo "Files are identical, no update needed"
           echo "needs-update=false" >> $GITHUB_OUTPUT
@@ -58,7 +58,7 @@ jobs:
       uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        title: "Update items_min.json from loDataExtractor"
+        title: "Update items from loDataExtractor"
         body: "This PR updates items_min.json with the latest version from the loDataExtractor repository."
         branch: ${{ env.BRANCH_NAME }}
         commit-message: "chore: Update items from loDataExtractor"
@@ -67,8 +67,3 @@ jobs:
         base: master
         # Use the existing commit instead of creating a new one
         commit: "HEAD"
-
-    - name: Cleanup
-      if: always()
-      run: |
-        rm -f remote_items.json
