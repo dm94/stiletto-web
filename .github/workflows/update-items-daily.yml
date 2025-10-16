@@ -1,0 +1,67 @@
+name: Update Items daily
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every day
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-items-json:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        # Checkout with write permissions to create PR
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+
+    - name: Check for updates
+      id: check-updates
+      run: |
+        # Download the remote file
+        curl -s https://raw.githubusercontent.com/Stiletto-lo/loDataExtractor/main/exported/items_min.json > remote_items.json
+        
+        # Compare files
+        if ! diff -q remote_items.json public/json/items_min.json; then
+          echo "Files are different, update needed"
+          echo "needs-update=true" >> $GITHUB_OUTPUT
+          # Copy the updated file to the correct location
+          cp remote_items.json public/json/items_min.json
+        else
+          echo "Files are identical, no update needed"
+          echo "needs-update=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Commit changes
+      if: steps.check-updates.outputs.needs-update == 'true'
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        file_pattern: 'public/json/items_min.json'
+        commit_message: 'chore: Update items_min.json from loDataExtractor'
+        commit_user_name: 'github-actions[bot]'
+        commit_user_email: 'github-actions[bot]@users.noreply.github.com'
+
+    - name: Create Pull Request
+      if: steps.check-updates.outputs.needs-update == 'true'
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "Update items_min.json from loDataExtractor"
+        body: "This PR updates items_min.json with the latest version from the loDataExtractor repository."
+        branch: "update/items-min-json"
+        commit-message: "chore: Update items_min.json from loDataExtractor"
+        labels: "automated,update"
+        delete-branch: true
+        # Use the existing commit instead of creating a new one
+        commit: "HEAD"
+
+    - name: Cleanup
+      if: always()
+      run: |
+        rm -f remote_items.json
