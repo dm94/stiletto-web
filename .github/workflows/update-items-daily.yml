@@ -33,6 +33,7 @@ jobs:
         # Compare files
         if ! diff -q remote_items.json public/json/items_min.json; then
           echo "Files are different, update needed"
+          cp remote_items.json public/json/items_min.json
           echo "needs-update=true" >> $GITHUB_OUTPUT
           # Copy the updated file to the correct location
           mv remote_items.json public/json/items_min.json
@@ -51,7 +52,6 @@ jobs:
         commit_user_email: 'github-actions[bot]@users.noreply.github.com'
         branch: ${{ env.BRANCH_NAME }}
         create_branch: true
-        base: master
 
     - name: Create Pull Request
       if: steps.check-updates.outputs.needs-update == 'true'
@@ -65,5 +65,3 @@ jobs:
         labels: "automated,update"
         delete-branch: true
         base: master
-        # Use the existing commit instead of creating a new one
-        commit: "HEAD"
