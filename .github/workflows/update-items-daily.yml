@@ -10,14 +10,16 @@ permissions:
   contents: write
 
 jobs:
-  update-items-json:
+  update-items:
     runs-on: ubuntu-latest
     env:
-      BRANCH_NAME: update/items-${{ github.run_id }}  # rama única por ejecución
+      BRANCH_NAME: update/items-${{ github.run_id }}
+    permissions:
+      contents: write
     
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         # Checkout with write permissions to create PR
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -50,6 +52,7 @@ jobs:
         commit_user_email: 'github-actions[bot]@users.noreply.github.com'
         branch: ${{ env.BRANCH_NAME }}
         delete-branch: true
+        create_branch: true
         base: master
 
     - name: Create Pull Request
