@@ -1,0 +1,154 @@
+name: Update game data daily
+
+on:
+  schedule:
+    # Runs at 00:00 UTC every day
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-items:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+
+    - name: Download and update items
+      run: |
+        # Download the remote items_min.json file to check for changes
+        curl -s https://raw.githubusercontent.com/Stiletto-lo/loDataExtractor/main/exported/items_min.json > remote_items_min.json
+        
+        # Compare files and update if different
+        if ! diff -q remote_items_min.json public/json/items_min.json > /dev/null 2>&1; then
+          echo "items_min.json has changed, updating entire items folder"
+          
+          # Clone the loDataExtractor repository to get all items files
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/Stiletto-lo/loDataExtractor.git temp_repo
+          cd temp_repo
+          git sparse-checkout set exported/items
+          cd ..
+          
+          # Remove existing items folder and replace with new content
+          rm -rf public/json/items/*
+          
+          # Copy all files from the cloned repository to our items folder
+          cp -r temp_repo/exported/items/* public/json/items/
+          
+          # Update items_min.json as well
+          cp remote_items_min.json public/json/items_min.json
+          
+          # Clean up
+          rm -rf temp_repo
+          
+          echo "UPDATE_NEEDED=true" >> $GITHUB_ENV
+        else
+          echo "items_min.json is identical, no update needed"
+          echo "UPDATE_NEEDED=false" >> $GITHUB_ENV
+        fi
+        
+        # Clean up temporary file
+        rm -f remote_items_min.json
+
+    - name: Create Pull Request
+      if: env.UPDATE_NEEDED == 'true'
+      uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "chore: Update items from loDataExtractor"
+        body: |
+          This PR updates the items folder with the latest version from the loDataExtractor repository.
+          
+          **Changes:**
+          - Updated `public/json/items_min.json` with latest data
+          - Synchronized entire `public/json/items/` folder with loDataExtractor
+          
+          This is an automated update that runs daily when changes are detected in items_min.json.
+        branch: update/items-${{ github.run_id }}
+        commit-message: "chore: Update items from loDataExtractor"
+        committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+        author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+        labels: |
+          automated
+          update
+          data
+        delete-branch: true
+        base: master
+
+  update-creatures:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
+
+    - name: Download and update creatures
+      run: |
+        # Download the remote creatures_min.json file to check for changes
+        curl -s https://raw.githubusercontent.com/Stiletto-lo/loDataExtractor/main/exported/creatures_min.json > remote_creatures_min.json
+        
+        # Compare files and update if different
+        if ! diff -q remote_creatures_min.json public/json/creatures_min.json > /dev/null 2>&1; then
+          echo "creatures_min.json has changed, updating entire creatures folder"
+          
+          # Clone the loDataExtractor repository to get all creatures files
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/Stiletto-lo/loDataExtractor.git temp_repo
+          cd temp_repo
+          git sparse-checkout set exported/creatures
+          cd ..
+          
+          # Remove existing creatures folder and replace with new content
+          rm -rf public/json/creatures/*
+          
+          # Copy all files from the cloned repository to our items folder
+          cp -r temp_repo/exported/creatures/* public/json/creatures/
+          
+          # Update creatures_min.json as well
+          cp remote_creatures_min.json public/json/creatures_min.json
+          
+          # Clean up
+          rm -rf temp_repo
+          
+          echo "UPDATE_NEEDED_CREATURES=true" >> $GITHUB_ENV
+        else
+          echo "creatures_min.json is identical, no update needed"
+          echo "UPDATE_NEEDED_CREATURES=false" >> $GITHUB_ENV
+        fi
+        
+        # Clean up temporary file
+        rm -f remote_creatures_min.json
+
+    - name: Create Pull Request
+      if: env.UPDATE_NEEDED_CREATURES == 'true'
+      uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        title: "chore: Update creatures from loDataExtractor"
+        body: |
+          This PR updates the creatures folder with the latest version from the loDataExtractor repository.
+          
+          **Changes:**
+          - Updated `public/json/creatures_min.json` with latest data
+          - Synchronized entire `public/json/creatures/` folder with loDataExtractor
+          
+          This is an automated update that runs daily when changes are detected in creatures_min.json.
+        branch: update/creatures-${{ github.run_id }}
+        commit-message: "chore: Update creatures from loDataExtractor"
+        committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+        author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
+        labels: |
+          automated
+          update
+          data
+        delete-branch: true
+        base: master
