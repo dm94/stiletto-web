@@ -1,0 +1,23 @@
+{
+  "name": "Battleship Walker Wings Large",
+  "type": "BattleshipWings_T4_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Flotillan Capital Walker Wing"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 3750
+  },
+  "walkerInfo": {
+    "carryCapacity": 20000
+  }
+}

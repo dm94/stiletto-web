@@ -1,0 +1,24 @@
+{
+  "name": "Proxy Walker Legs Armored",
+  "type": "ProxyLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Armored legs that easily deflect simple projectiles.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Armored Medium Walker Leg"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 30000
+  },
+  "walkerInfo": {
+    "carryCapacity": 8000
+  }
+}

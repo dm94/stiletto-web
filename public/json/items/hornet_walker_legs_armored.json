@@ -1,0 +1,24 @@
+{
+  "name": "Hornet Walker Legs Armored",
+  "type": "HornetLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Armored legs that easily deflect simple projectiles.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Armored Large Walker Leg"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 6750
+  },
+  "walkerInfo": {
+    "carryCapacity": 4800
+  }
+}

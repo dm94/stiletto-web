@@ -1,0 +1,24 @@
+{
+  "name": "Falco Walker Legs Armored",
+  "type": "FalcoLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Armored legs that easily deflect simple projectiles.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Armored Large Walker Leg"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 7500
+  },
+  "walkerInfo": {
+    "carryCapacity": 5000
+  }
+}

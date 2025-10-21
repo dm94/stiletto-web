@@ -1,0 +1,24 @@
+{
+  "name": "Toboggan Walker Legs Armored",
+  "type": "TobogganLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Armored legs that easily deflect simple projectiles.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Armored Medium Walker Leg"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 4125
+  },
+  "walkerInfo": {
+    "carryCapacity": 7500
+  }
+}

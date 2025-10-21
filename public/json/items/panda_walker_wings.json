@@ -1,0 +1,23 @@
+{
+  "name": "Panda Walker Wings",
+  "type": "PandaWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Capital Walker Wing"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 12000
+  },
+  "walkerInfo": {
+    "carryCapacity": 25000
+  }
+}

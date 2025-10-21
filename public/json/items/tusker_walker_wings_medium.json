@@ -1,0 +1,24 @@
+{
+  "name": "Tusker Walker Wings Medium",
+  "type": "TuskerWings_T3_Medium_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Upscaled wings that are better at generating force for walker movement.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "WalkerWingAdvanced_T3"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 8200
+  },
+  "walkerInfo": {
+    "carryCapacity": 12500
+  }
+}

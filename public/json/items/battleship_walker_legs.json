@@ -1,0 +1,23 @@
+{
+  "name": "Battleship Walker Legs",
+  "type": "BattleshipLegs_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Capital Walker Leg"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 18000
+  },
+  "walkerInfo": {
+    "carryCapacity": 20000
+  }
+}
