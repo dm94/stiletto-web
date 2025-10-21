@@ -1,0 +1,20 @@
+{
+  "name": "Spider Walker Legs Armored",
+  "type": "SpiderLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Armored Small Walker Leg"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 1350
+  }
+}

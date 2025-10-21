@@ -1,0 +1,25 @@
+{
+  "name": "Firefly Walker Wings",
+  "type": "FireflyWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "These towering wings harness the power of the wind to push the walker forward. They are not discreet and generally make good target practice for enemies.",
+  "experiencieReward": 100,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Small Walker Wing"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 1500
+  },
+  "walkerInfo": {
+    "carryCapacity": 450
+  }
+}

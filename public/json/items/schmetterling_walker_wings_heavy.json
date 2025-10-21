@@ -1,0 +1,24 @@
+{
+  "name": "Schmetterling Walker Wings Heavy",
+  "type": "SchmetterlingWings_T2_Heavy_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Large and heavy cloth of the heavy wings can withstand more intense battles than any other type.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Improved Capital Walker Wing"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 15300
+  },
+  "walkerInfo": {
+    "carryCapacity": 6500
+  }
+}

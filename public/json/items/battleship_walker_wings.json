@@ -1,0 +1,22 @@
+{
+  "name": "Battleship Walker Wings",
+  "type": "BattleshipWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Capital Walker Wing"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 1350
+  },
+  "walkerInfo": {
+    "carryCapacity": 20000
+  }
+}

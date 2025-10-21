@@ -1,0 +1,24 @@
+{
+  "name": "Titan Walker Legs Armored",
+  "type": "TitanLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Armored legs that easily deflect simple projectiles.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Armored Capital Walker Leg"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 14250
+  },
+  "walkerInfo": {
+    "carryCapacity": 15000
+  }
+}

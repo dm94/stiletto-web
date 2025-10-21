@@ -1,0 +1,23 @@
+{
+  "name": "Buffalo Walker Wings Heavy",
+  "type": "BuffaloWings_T2_Heavy_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Large and heavy cloth of the heavy wings can withstand more intense battles than any other type.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Improved Large Walker Wing"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 11500
+  },
+  "walkerInfo": {
+    "carryCapacity": 5200
+  }
+}

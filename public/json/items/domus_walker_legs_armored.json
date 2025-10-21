@@ -1,0 +1,24 @@
+{
+  "name": "Domus Walker Legs Armored",
+  "type": "DomusLegs_T2_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Armored legs that easily deflect simple projectiles.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Armored Capital Walker Leg"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Medium",
+    "hp": 12000
+  },
+  "walkerInfo": {
+    "carryCapacity": 10500
+  }
+}

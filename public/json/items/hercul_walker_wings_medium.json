@@ -1,0 +1,24 @@
+{
+  "name": "Hercul Walker Wings Medium",
+  "type": "HerculWings_T3_Medium_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Upscaled wings that are better at generating force for walker movement.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "WalkerWingAdvanced_T3"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 2400
+  },
+  "walkerInfo": {
+    "carryCapacity": 4050
+  }
+}

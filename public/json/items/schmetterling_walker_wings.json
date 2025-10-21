@@ -1,0 +1,24 @@
+{
+  "name": "Schmetterling Walker Wings",
+  "type": "SchmetterlingWings_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "One of the oldest walker designs, the caravelas provided mobile homes that an entire family could live on while chasing after the temperate climate. A large cargo hold affords tons of cargo space, and a wide open deck provides enough room for nomads to stretch their legs and build freely. The heavy weight of the caravela makes it less maneuverable.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Capital Walker Wing"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 11500
+  },
+  "walkerInfo": {
+    "carryCapacity": 6500
+  }
+}

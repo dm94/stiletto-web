@@ -1,0 +1,24 @@
+{
+  "name": "Hercul Walker Wings Heavy",
+  "type": "HerculWings_T2_Heavy_C",
+  "category": "Walker Parts",
+  "weight": 9.75,
+  "description": "Large and heavy cloth of the heavy wings can withstand more intense battles than any other type.",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 1,
+          "name": "Improved Large Walker Wing"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "type": "Soft",
+    "hp": 4300
+  },
+  "walkerInfo": {
+    "carryCapacity": 4050
+  }
+}
