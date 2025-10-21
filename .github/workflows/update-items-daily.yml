@@ -23,21 +23,39 @@ jobs:
 
     - name: Download and update items
       run: |
-        # Download the remote file
-        curl -s https://raw.githubusercontent.com/Stiletto-lo/loDataExtractor/main/exported/items_min.json > remote_items.json
+        # Download the remote items_min.json file to check for changes
+        curl -s https://raw.githubusercontent.com/Stiletto-lo/loDataExtractor/main/exported/items_min.json > remote_items_min.json
         
         # Compare files and update if different
-        if ! diff -q remote_items.json public/json/items_min.json > /dev/null 2>&1; then
-          echo "Files are different, updating items_min.json"
-          cp remote_items.json public/json/items_min.json
+        if ! diff -q remote_items_min.json public/json/items_min.json > /dev/null 2>&1; then
+          echo "items_min.json has changed, updating entire items folder"
+          
+          # Clone the loDataExtractor repository to get all items files
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/Stiletto-lo/loDataExtractor.git temp_repo
+          cd temp_repo
+          git sparse-checkout set exported/items
+          cd ..
+          
+          # Remove existing items folder and replace with new content
+          rm -rf public/json/items/*
+          
+          # Copy all files from the cloned repository to our items folder
+          cp -r temp_repo/exported/items/* public/json/items/
+          
+          # Update items_min.json as well
+          cp remote_items_min.json public/json/items_min.json
+          
+          # Clean up
+          rm -rf temp_repo
+          
           echo "UPDATE_NEEDED=true" >> $GITHUB_ENV
         else
-          echo "Files are identical, no update needed"
+          echo "items_min.json is identical, no update needed"
           echo "UPDATE_NEEDED=false" >> $GITHUB_ENV
         fi
         
         # Clean up temporary file
-        rm -f remote_items.json
+        rm -f remote_items_min.json
 
     - name: Create Pull Request
       if: env.UPDATE_NEEDED == 'true'
@@ -46,12 +64,13 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         title: "chore: Update items from loDataExtractor"
         body: |
-          This PR updates `items_min.json` with the latest version from the loDataExtractor repository.
+          This PR updates the items folder with the latest version from the loDataExtractor repository.
           
           **Changes:**
           - Updated `public/json/items_min.json` with latest data
+          - Synchronized entire `public/json/items/` folder with loDataExtractor
           
-          This is an automated update that runs daily.
+          This is an automated update that runs daily when changes are detected in items_min.json.
         branch: update/items-${{ github.run_id }}
         commit-message: "chore: Update items from loDataExtractor"
         committer: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
