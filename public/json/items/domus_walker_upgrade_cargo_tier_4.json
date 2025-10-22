@@ -16,8 +16,29 @@
         {
           "count": 25,
           "name": "Iron Ore"
+        },
+        {
+          "count": 25,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 70,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 30,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 150,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 63,
+          "name": "Worm Silk"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
   "upgradeInfo": {

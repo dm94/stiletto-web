@@ -20,8 +20,29 @@
         {
           "count": 15,
           "name": "Bone Splinter"
+        },
+        {
+          "count": 15,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 38,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 10,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 50,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 120,
+          "name": "Redwood Wood"
         }
-      ]
+      ],
+      "time": 180
     }
   ],
   "upgradeInfo": {

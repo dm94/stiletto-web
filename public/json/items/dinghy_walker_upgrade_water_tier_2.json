@@ -16,6 +16,18 @@
         {
           "count": 25,
           "name": "Fiber Weave"
+        },
+        {
+          "count": 10,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 100,
+          "name": "Fiber"
+        },
+        {
+          "count": 15,
+          "name": "Wood"
         }
       ],
       "time": 10

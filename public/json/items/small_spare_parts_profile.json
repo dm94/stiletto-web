@@ -2,5 +2,8 @@
   "name": "Small Spare Parts Profile",
   "type": "SmallSparePartsProfile",
   "category": "Upgrades",
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "additionalParts": 80,
+    "additionalSlots": 4
+  }
 }

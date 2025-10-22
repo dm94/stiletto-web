@@ -16,8 +16,21 @@
         {
           "count": 40,
           "name": "Spearmint"
+        },
+        {
+          "count": 48,
+          "name": "Wood"
+        },
+        {
+          "count": 40,
+          "name": "Fiber"
+        },
+        {
+          "count": 8,
+          "name": "Hide"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
   "upgradeInfo": {

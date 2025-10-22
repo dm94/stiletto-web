@@ -16,8 +16,25 @@
         {
           "count": 24,
           "name": "Shardrock"
+        },
+        {
+          "count": 38,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 95,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 125,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 300,
+          "name": "Redwood Wood"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
   "upgradeInfo": {

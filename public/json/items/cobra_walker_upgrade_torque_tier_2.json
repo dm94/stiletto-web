@@ -2,6 +2,29 @@
   "name": "Cobra Walker Upgrade Torque Tier 2",
   "type": "Cobra Walker Upgrade Torque Tier 2",
   "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 24,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 104,
+          "name": "Fiber"
+        },
+        {
+          "count": 96,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Rope"
+        }
+      ],
+      "time": 40
+    }
+  ],
   "upgradeInfo": {
     "stackSize": 1200
   }

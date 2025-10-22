@@ -16,9 +16,24 @@
         {
           "count": 40,
           "name": "Chitin Plate"
+        },
+        {
+          "count": 64,
+          "name": "Wood"
+        },
+        {
+          "count": 64,
+          "name": "Stone"
+        },
+        {
+          "count": 24,
+          "name": "Rupu Pelt"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 3000
+  }
 }

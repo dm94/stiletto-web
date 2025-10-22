@@ -16,8 +16,17 @@
         {
           "count": 45,
           "name": "Obsidian"
+        },
+        {
+          "count": 7,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 16,
+          "name": "Chitin Plate"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
   "upgradeInfo": {

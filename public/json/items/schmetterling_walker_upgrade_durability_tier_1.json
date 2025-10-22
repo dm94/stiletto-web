@@ -16,8 +16,21 @@
         {
           "count": 38,
           "name": "Rubber Block"
+        },
+        {
+          "count": 100,
+          "name": "Wood"
+        },
+        {
+          "count": 100,
+          "name": "Stone"
+        },
+        {
+          "count": 38,
+          "name": "Rupu Pelt"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

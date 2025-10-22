@@ -16,8 +16,21 @@
         {
           "count": 45,
           "name": "Obsidian"
+        },
+        {
+          "count": 45,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 56,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 80,
+          "name": "Nomad Cloth"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

@@ -16,8 +16,25 @@
         {
           "count": 23,
           "name": "Leather"
+        },
+        {
+          "count": 25,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 250,
+          "name": "Fiber"
+        },
+        {
+          "count": 38,
+          "name": "Hide"
+        },
+        {
+          "count": 38,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 63
     }
   ],
   "upgradeInfo": {

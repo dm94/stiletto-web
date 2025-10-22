@@ -16,9 +16,28 @@
         {
           "count": 55,
           "name": "Cotton"
+        },
+        {
+          "count": 20,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 250,
+          "name": "Fiber"
+        },
+        {
+          "count": 200,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 63
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 10
+  }
 }

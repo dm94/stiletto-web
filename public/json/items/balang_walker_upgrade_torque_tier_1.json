@@ -20,8 +20,13 @@
         {
           "count": 12,
           "name": "Rope"
+        },
+        {
+          "count": 8,
+          "name": "Wood Shaft"
         }
-      ]
+      ],
+      "time": 10
     }
   ],
   "upgradeInfo": {

@@ -16,8 +16,25 @@
         {
           "count": 22,
           "name": "Wood Shaft"
+        },
+        {
+          "count": 75,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 88,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 63,
+          "name": "Rope"
+        },
+        {
+          "count": 200,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 150
     }
   ],
   "upgradeInfo": {

@@ -16,8 +16,21 @@
         {
           "count": 15,
           "name": "Tar"
+        },
+        {
+          "count": 160,
+          "name": "Fiber"
+        },
+        {
+          "count": 128,
+          "name": "Wood"
+        },
+        {
+          "count": 16,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 40
     }
   ],
   "upgradeInfo": {

@@ -16,8 +16,29 @@
         {
           "count": 17,
           "name": "Leather"
+        },
+        {
+          "count": 13,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 40,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 128,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 48,
+          "name": "Rupu Gel"
+        },
+        {
+          "count": 24,
+          "name": "Bone Glue"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

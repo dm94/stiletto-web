@@ -16,9 +16,29 @@
         {
           "count": 3,
           "name": "Iron Gear"
+        },
+        {
+          "count": 100,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 10,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 200,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 13,
+          "name": "Bone Glue"
         }
-      ]
+      ],
+      "time": 150
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.35,
+    "sprintingTorqueDiscount": 0.3
+  }
 }

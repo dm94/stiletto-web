@@ -12,9 +12,24 @@
         {
           "count": 4,
           "name": "Wooden Slab"
+        },
+        {
+          "count": 22,
+          "name": "Wood"
+        },
+        {
+          "count": 18,
+          "name": "Fiber"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 10
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 2
+  }
 }

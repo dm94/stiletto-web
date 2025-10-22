@@ -16,9 +16,25 @@
         {
           "count": 23,
           "name": "Shardrock"
+        },
+        {
+          "count": 88,
+          "name": "Wood"
+        },
+        {
+          "count": 38,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 50,
+          "name": "Palm Leaves"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.1,
+    "sprintingTorqueDiscount": 0.1
+  }
 }

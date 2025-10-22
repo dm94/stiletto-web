@@ -16,8 +16,21 @@
         {
           "count": 25,
           "name": "Iron Nails"
+        },
+        {
+          "count": 75,
+          "name": "Wood"
+        },
+        {
+          "count": 50,
+          "name": "Fiber"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

@@ -16,9 +16,29 @@
         {
           "count": 32,
           "name": "Wood Shaft"
+        },
+        {
+          "count": 32,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 48,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 16,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 48,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 40
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.2,
+    "sprintingTorqueDiscount": 0.2
+  }
 }

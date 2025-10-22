@@ -2,5 +2,8 @@
   "name": "Large Spare Parts Profile",
   "type": "LargeSparePartsProfile",
   "category": "Upgrades",
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "additionalParts": 80,
+    "additionalSlots": 4
+  }
 }

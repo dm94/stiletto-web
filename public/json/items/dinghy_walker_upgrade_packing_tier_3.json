@@ -2,5 +2,8 @@
   "name": "Dinghy Walker Upgrade Packing Tier 3",
   "type": "Dinghy Walker Upgrade Packing Tier 3",
   "category": "Upgrades",
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "additionalParts": 60,
+    "additionalSlots": 3
+  }
 }

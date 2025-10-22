@@ -16,9 +16,24 @@
         {
           "count": 40,
           "name": "Wood"
+        },
+        {
+          "count": 30,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 15,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 2,
+          "name": "Chitin Plate"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 2000
+  }
 }

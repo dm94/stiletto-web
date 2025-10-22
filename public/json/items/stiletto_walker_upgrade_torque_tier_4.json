@@ -16,8 +16,29 @@
         {
           "count": 25,
           "name": "Rope"
+        },
+        {
+          "count": 24,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 61,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 16,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 80,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 192,
+          "name": "Redwood Wood"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

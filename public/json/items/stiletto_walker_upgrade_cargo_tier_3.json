@@ -16,9 +16,28 @@
         {
           "count": 24,
           "name": "Bone Splinter"
+        },
+        {
+          "count": 40,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 20,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 56,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 80,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 24
+  }
 }

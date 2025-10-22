@@ -2,6 +2,29 @@
   "name": "Balang Walker Upgrade Torque Tier 2",
   "type": "Balang Walker Upgrade Torque Tier 2",
   "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 15,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 65,
+          "name": "Fiber"
+        },
+        {
+          "count": 60,
+          "name": "Wood"
+        },
+        {
+          "count": 12,
+          "name": "Rope"
+        }
+      ],
+      "time": 25
+    }
+  ],
   "upgradeInfo": {
     "stackSize": 1200
   }

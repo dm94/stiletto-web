@@ -16,8 +16,21 @@
         {
           "count": 22,
           "name": "Triple Stitch Fabric"
+        },
+        {
+          "count": 40,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 20,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 80,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
   "upgradeInfo": {

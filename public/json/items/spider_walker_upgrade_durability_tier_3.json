@@ -16,9 +16,28 @@
         {
           "count": 8,
           "name": "Hide"
+        },
+        {
+          "count": 45,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 50,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 4,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 10,
+          "name": "Chitin Plate"
         }
-      ]
+      ],
+      "time": 60
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 3000
+  }
 }

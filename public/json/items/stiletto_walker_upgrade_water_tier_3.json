@@ -16,8 +16,17 @@
         {
           "count": 28,
           "name": "Fiber Weave"
+        },
+        {
+          "count": 32,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 136,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
   "upgradeInfo": {

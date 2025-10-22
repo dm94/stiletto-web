@@ -16,8 +16,21 @@
         {
           "count": 55,
           "name": "Cotton"
+        },
+        {
+          "count": 55,
+          "name": "Wood"
+        },
+        {
+          "count": 45,
+          "name": "Fiber"
+        },
+        {
+          "count": 20,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

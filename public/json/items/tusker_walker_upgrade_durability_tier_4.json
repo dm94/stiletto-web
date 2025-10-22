@@ -16,9 +16,24 @@
         {
           "count": 65,
           "name": "Obsidian"
+        },
+        {
+          "count": 70,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 300,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 150,
+          "name": "Nomad Cloth"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 40000
+  }
 }

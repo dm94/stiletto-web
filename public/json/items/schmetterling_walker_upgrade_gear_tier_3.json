@@ -16,8 +16,21 @@
         {
           "count": 45,
           "name": "Iron Nails"
+        },
+        {
+          "count": 63,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 100,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 188,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 150
     }
   ],
   "upgradeInfo": {

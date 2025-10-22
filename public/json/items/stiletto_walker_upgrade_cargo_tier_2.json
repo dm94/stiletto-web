@@ -12,9 +12,24 @@
         {
           "count": 6,
           "name": "Fiber Weave"
+        },
+        {
+          "count": 24,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 160,
+          "name": "Fiber"
+        },
+        {
+          "count": 16,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 40
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 16
+  }
 }

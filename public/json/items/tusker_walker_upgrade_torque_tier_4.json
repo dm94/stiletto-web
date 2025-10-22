@@ -16,8 +16,29 @@
         {
           "count": 22,
           "name": "Wood Shaft"
+        },
+        {
+          "count": 38,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 95,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 25,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 125,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 300,
+          "name": "Redwood Wood"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
   "upgradeInfo": {

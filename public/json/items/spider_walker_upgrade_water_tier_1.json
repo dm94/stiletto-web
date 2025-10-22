@@ -2,6 +2,25 @@
   "name": "Spider Walker Upgrade Water Tier 1",
   "type": "Spider Walker Upgrade Water Tier 1",
   "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Pelt"
+        }
+      ],
+      "time": 10
+    }
+  ],
   "upgradeInfo": {
     "stackSize": 30
   }

@@ -20,8 +20,29 @@
         {
           "count": 45,
           "name": "Iron Nails"
+        },
+        {
+          "count": 20,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 63,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 200,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 75,
+          "name": "Rupu Gel"
+        },
+        {
+          "count": 38,
+          "name": "Bone Glue"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
   "upgradeInfo": {

@@ -16,9 +16,24 @@
         {
           "count": 70,
           "name": "Chitin Plate"
+        },
+        {
+          "count": 75,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 38,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 65,
+          "name": "Rupu Pelt"
         }
-      ]
+      ],
+      "time": 63
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 10000
+  }
 }

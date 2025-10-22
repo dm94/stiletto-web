@@ -16,9 +16,21 @@
         {
           "count": 8,
           "name": "Wood Shaft"
+        },
+        {
+          "count": 48,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 48,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 40
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.2,
+    "sprintingTorqueDiscount": 0.2
+  }
 }

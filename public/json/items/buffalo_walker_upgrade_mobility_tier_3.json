@@ -16,8 +16,25 @@
         {
           "count": 56,
           "name": "Chitin Plate"
+        },
+        {
+          "count": 64,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 7,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 128,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 8,
+          "name": "Bone Glue"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
   "upgradeInfo": {

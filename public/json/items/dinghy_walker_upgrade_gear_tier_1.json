@@ -12,8 +12,21 @@
         {
           "count": 30,
           "name": "Wood Shaft"
+        },
+        {
+          "count": 22,
+          "name": "Wood"
+        },
+        {
+          "count": 18,
+          "name": "Fiber"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 10
     }
   ],
   "upgradeInfo": {

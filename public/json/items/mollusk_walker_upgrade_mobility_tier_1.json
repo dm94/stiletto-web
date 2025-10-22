@@ -16,9 +16,21 @@
         {
           "count": 28,
           "name": "Earth Wax"
+        },
+        {
+          "count": 56,
+          "name": "Wood"
+        },
+        {
+          "count": 32,
+          "name": "Palm Leaves"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.1,
+    "sprintingTorqueDiscount": 0.1
+  }
 }

@@ -2,6 +2,25 @@
   "name": "Cobra Walker Upgrade Cargo Tier 1",
   "type": "Cobra Walker Upgrade Cargo Tier 1",
   "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 48,
+          "name": "Wood"
+        },
+        {
+          "count": 32,
+          "name": "Fiber"
+        },
+        {
+          "count": 16,
+          "name": "Stone"
+        }
+      ],
+      "time": 16
+    }
+  ],
   "upgradeInfo": {
     "slots": 2
   }

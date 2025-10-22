@@ -16,8 +16,29 @@
         {
           "count": 56,
           "name": "Chitin Plate"
+        },
+        {
+          "count": 24,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 23,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 32,
+          "name": "Worm Silk"
+        },
+        {
+          "count": 42,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 64,
+          "name": "Tar"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

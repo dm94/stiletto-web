@@ -2,6 +2,29 @@
   "name": "Cobra Walker Upgrade Torque Tier 3",
   "type": "Cobra Walker Upgrade Torque Tier 3",
   "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 48,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 56,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 40,
+          "name": "Rope"
+        },
+        {
+          "count": 128,
+          "name": "Wood"
+        }
+      ],
+      "time": 96
+    }
+  ],
   "upgradeInfo": {
     "stackSize": 2000
   }

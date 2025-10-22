@@ -16,9 +16,25 @@
         {
           "count": 35,
           "name": "Wood"
+        },
+        {
+          "count": 15,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 30,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 10,
+          "name": "Earth Wax"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.2,
+    "sprintingTorqueDiscount": 0.2
+  }
 }

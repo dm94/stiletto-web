@@ -16,9 +16,28 @@
         {
           "count": 48,
           "name": "Wood Shaft"
+        },
+        {
+          "count": 16,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 160,
+          "name": "Fiber"
+        },
+        {
+          "count": 24,
+          "name": "Hide"
+        },
+        {
+          "count": 24,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 40
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "stackSize": 100
+  }
 }

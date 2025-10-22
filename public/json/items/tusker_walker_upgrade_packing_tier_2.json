@@ -2,5 +2,8 @@
   "name": "Tusker Walker Upgrade Packing Tier 2",
   "type": "Tusker Walker Upgrade Packing Tier 2",
   "category": "Upgrades",
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "additionalParts": 40,
+    "additionalSlots": 2
+  }
 }

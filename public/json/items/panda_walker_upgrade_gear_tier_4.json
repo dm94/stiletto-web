@@ -16,9 +16,28 @@
         {
           "count": 8,
           "name": "Hollowbone"
+        },
+        {
+          "count": 25,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 88,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 275,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 50,
+          "name": "Worm Silk"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 20
+  }
 }

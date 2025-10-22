@@ -16,8 +16,21 @@
         {
           "count": 45,
           "name": "Lightwood"
+        },
+        {
+          "count": 75,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 88,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 200,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 150
     }
   ],
   "upgradeInfo": {

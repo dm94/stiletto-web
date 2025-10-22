@@ -16,8 +16,21 @@
         {
           "count": 15,
           "name": "Hollowbone"
+        },
+        {
+          "count": 64,
+          "name": "Wood"
+        },
+        {
+          "count": 64,
+          "name": "Stone"
+        },
+        {
+          "count": 24,
+          "name": "Rupu Pelt"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
   "upgradeInfo": {

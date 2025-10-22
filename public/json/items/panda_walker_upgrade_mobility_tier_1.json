@@ -16,9 +16,21 @@
         {
           "count": 50,
           "name": "Rubber Block"
+        },
+        {
+          "count": 88,
+          "name": "Wood"
+        },
+        {
+          "count": 50,
+          "name": "Palm Leaves"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.1,
+    "sprintingTorqueDiscount": 0.1
+  }
 }
