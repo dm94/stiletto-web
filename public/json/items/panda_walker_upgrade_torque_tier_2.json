@@ -16,8 +16,25 @@
         {
           "count": 55,
           "name": "Lightwood"
+        },
+        {
+          "count": 38,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 163,
+          "name": "Fiber"
+        },
+        {
+          "count": 150,
+          "name": "Wood"
+        },
+        {
+          "count": 30,
+          "name": "Rope"
         }
-      ]
+      ],
+      "time": 63
     }
   ],
   "upgradeInfo": {

@@ -12,8 +12,21 @@
         {
           "count": 75,
           "name": "Redwood Wood"
+        },
+        {
+          "count": 75,
+          "name": "Wood"
+        },
+        {
+          "count": 50,
+          "name": "Fiber"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

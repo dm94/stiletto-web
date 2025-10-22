@@ -16,8 +16,17 @@
         {
           "count": 10,
           "name": "Stone"
+        },
+        {
+          "count": 25,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 12,
+          "name": "Nomad Cloth"
         }
-      ]
+      ],
+      "time": 60
     }
   ],
   "upgradeInfo": {

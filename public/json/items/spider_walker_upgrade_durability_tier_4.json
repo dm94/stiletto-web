@@ -16,9 +16,32 @@
         {
           "count": 8,
           "name": "Hide"
+        },
+        {
+          "count": 28,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 120,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 35,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 50,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 5,
+          "name": "Obsidian"
         }
-      ]
+      ],
+      "time": 180
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 4000
+  }
 }

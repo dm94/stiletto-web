@@ -16,8 +16,21 @@
         {
           "count": 9,
           "name": "Rope"
+        },
+        {
+          "count": 80,
+          "name": "Wood"
+        },
+        {
+          "count": 20,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 88,
+          "name": "Fiber"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

@@ -16,8 +16,21 @@
         {
           "count": 13,
           "name": "Leather"
+        },
+        {
+          "count": 75,
+          "name": "Wood"
+        },
+        {
+          "count": 63,
+          "name": "Fiber"
+        },
+        {
+          "count": 13,
+          "name": "Hide"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

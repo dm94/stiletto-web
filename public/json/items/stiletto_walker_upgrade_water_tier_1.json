@@ -16,8 +16,17 @@
         {
           "count": 24,
           "name": "Hide"
+        },
+        {
+          "count": 48,
+          "name": "Wood"
+        },
+        {
+          "count": 40,
+          "name": "Fiber"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
   "upgradeInfo": {

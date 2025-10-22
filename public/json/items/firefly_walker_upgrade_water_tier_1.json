@@ -12,9 +12,16 @@
         {
           "count": 3,
           "name": "Rupu Pelt"
+        },
+        {
+          "count": 25,
+          "name": "Fiber"
         }
-      ]
+      ],
+      "time": 10
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "stackSize": 40
+  }
 }

@@ -16,9 +16,28 @@
         {
           "count": 8,
           "name": "Hollowbone"
+        },
+        {
+          "count": 63,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 25,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 100,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 188,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 150
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 15
+  }
 }

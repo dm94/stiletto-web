@@ -16,8 +16,29 @@
         {
           "count": 42,
           "name": "Rupu Pelt"
+        },
+        {
+          "count": 45,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 192,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 56,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 80,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 8,
+          "name": "Obsidian"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

@@ -2,6 +2,29 @@
   "name": "Hercul Walker Upgrade Water Tier 2",
   "type": "Hercul Walker Upgrade Water Tier 2",
   "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 16,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 160,
+          "name": "Fiber"
+        },
+        {
+          "count": 24,
+          "name": "Hide"
+        },
+        {
+          "count": 24,
+          "name": "Wood"
+        }
+      ],
+      "time": 40
+    }
+  ],
   "upgradeInfo": {
     "stackSize": 350
   }

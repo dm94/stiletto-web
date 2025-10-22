@@ -16,9 +16,24 @@
         {
           "count": 38,
           "name": "Reinforced Plank"
+        },
+        {
+          "count": 100,
+          "name": "Wood"
+        },
+        {
+          "count": 100,
+          "name": "Stone"
+        },
+        {
+          "count": 38,
+          "name": "Rupu Pelt"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 5000
+  }
 }

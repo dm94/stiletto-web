@@ -16,8 +16,21 @@
         {
           "count": 10,
           "name": "Stone"
+        },
+        {
+          "count": 25,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 12,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 35,
+          "name": "Wood Shaft"
         }
-      ]
+      ],
+      "time": 60
     }
   ],
   "upgradeInfo": {

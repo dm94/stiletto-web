@@ -16,8 +16,21 @@
         {
           "count": 10,
           "name": "Bone Glue"
+        },
+        {
+          "count": 20,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 85,
+          "name": "Wood"
+        },
+        {
+          "count": 35,
+          "name": "Fiber Weave"
         }
-      ]
+      ],
+      "time": 60
     }
   ],
   "upgradeInfo": {

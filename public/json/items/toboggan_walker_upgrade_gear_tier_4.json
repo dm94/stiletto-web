@@ -16,8 +16,29 @@
         {
           "count": 16,
           "name": "Fiber Weave"
+        },
+        {
+          "count": 16,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 56,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 32,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 176,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 40,
+          "name": "Worm Silk"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

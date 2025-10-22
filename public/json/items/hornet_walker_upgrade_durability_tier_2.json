@@ -16,8 +16,21 @@
         {
           "count": 17,
           "name": "Tar"
+        },
+        {
+          "count": 48,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 24,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 4,
+          "name": "Chitin Plate"
         }
-      ]
+      ],
+      "time": 40
     }
   ],
   "upgradeInfo": {

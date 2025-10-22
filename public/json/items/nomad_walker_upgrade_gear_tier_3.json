@@ -12,8 +12,21 @@
         {
           "count": 22,
           "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 10,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 40,
+          "name": "Earth Wax"
         }
-      ]
+      ],
+      "time": 60
     }
   ],
   "upgradeInfo": {

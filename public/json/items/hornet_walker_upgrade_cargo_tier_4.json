@@ -12,8 +12,25 @@
         {
           "count": 32,
           "name": "Fiber Weave"
+        },
+        {
+          "count": 16,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 45,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 20,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 25,
+          "name": "Worm Silk"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

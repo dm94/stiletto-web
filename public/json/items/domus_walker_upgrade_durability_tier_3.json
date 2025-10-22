@@ -20,9 +20,28 @@
         {
           "count": 24,
           "name": "Worm Scale"
+        },
+        {
+          "count": 113,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 125,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 10,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 25,
+          "name": "Chitin Plate"
         }
-      ]
+      ],
+      "time": 150
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 20000
+  }
 }

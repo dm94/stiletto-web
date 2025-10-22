@@ -16,8 +16,29 @@
         {
           "count": 40,
           "name": "Wood Shaft"
+        },
+        {
+          "count": 16,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 45,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 20,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 96,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 25,
+          "name": "Worm Silk"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

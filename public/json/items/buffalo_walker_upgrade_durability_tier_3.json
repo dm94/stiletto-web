@@ -16,8 +16,21 @@
         {
           "count": 40,
           "name": "Chitin Plate"
+        },
+        {
+          "count": 72,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 80,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 7,
+          "name": "Bone Glue"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
   "upgradeInfo": {

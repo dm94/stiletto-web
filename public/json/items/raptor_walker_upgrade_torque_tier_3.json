@@ -16,8 +16,21 @@
         {
           "count": 32,
           "name": "Iron Ore"
+        },
+        {
+          "count": 48,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 56,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 128,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
   "upgradeInfo": {

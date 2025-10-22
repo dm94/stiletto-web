@@ -2,5 +2,8 @@
   "name": "Domus Walker Upgrade Packing Tier 4",
   "type": "Domus Walker Upgrade Packing Tier 4",
   "category": "Upgrades",
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "additionalParts": 80,
+    "additionalSlots": 4
+  }
 }

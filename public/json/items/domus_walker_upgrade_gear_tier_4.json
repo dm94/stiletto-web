@@ -16,8 +16,21 @@
         {
           "count": 45,
           "name": "Lightwood"
+        },
+        {
+          "count": 25,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 275,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 50,
+          "name": "Worm Silk"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
   "upgradeInfo": {

@@ -12,8 +12,21 @@
         {
           "count": 10,
           "name": "Bone Glue"
+        },
+        {
+          "count": 10,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 15,
+          "name": "Rupu Pelt"
+        },
+        {
+          "count": 15,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

@@ -16,8 +16,21 @@
         {
           "count": 5,
           "name": "Reinforced Gear"
+        },
+        {
+          "count": 56,
+          "name": "Wood"
+        },
+        {
+          "count": 24,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 32,
+          "name": "Palm Leaves"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
   "upgradeInfo": {

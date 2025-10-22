@@ -16,9 +16,29 @@
         {
           "count": 20,
           "name": "Palm Leaves"
+        },
+        {
+          "count": 40,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 4,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 80,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 5,
+          "name": "Bone Glue"
         }
-      ]
+      ],
+      "time": 60
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.35,
+    "sprintingTorqueDiscount": 0.3
+  }
 }

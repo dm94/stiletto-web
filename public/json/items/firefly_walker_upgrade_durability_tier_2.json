@@ -16,8 +16,21 @@
         {
           "count": 15,
           "name": "Stone"
+        },
+        {
+          "count": 30,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 15,
+          "name": "Fiber Weave"
+        },
+        {
+          "count": 2,
+          "name": "Chitin Plate"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

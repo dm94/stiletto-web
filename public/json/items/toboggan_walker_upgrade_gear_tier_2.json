@@ -16,8 +16,17 @@
         {
           "count": 16,
           "name": "Fiber Weave"
+        },
+        {
+          "count": 160,
+          "name": "Fiber"
+        },
+        {
+          "count": 16,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 40
     }
   ],
   "upgradeInfo": {

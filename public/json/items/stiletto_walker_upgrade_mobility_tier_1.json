@@ -16,9 +16,17 @@
         {
           "count": 28,
           "name": "Palm Leaves"
+        },
+        {
+          "count": 56,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.1,
+    "sprintingTorqueDiscount": 0.1
+  }
 }

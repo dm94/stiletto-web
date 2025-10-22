@@ -16,9 +16,20 @@
         {
           "count": 42,
           "name": "Rupu Pelt"
+        },
+        {
+          "count": 64,
+          "name": "Wood"
+        },
+        {
+          "count": 64,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 3000
+  }
 }

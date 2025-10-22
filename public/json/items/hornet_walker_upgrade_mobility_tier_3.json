@@ -16,9 +16,29 @@
         {
           "count": 32,
           "name": "Wood Shaft"
+        },
+        {
+          "count": 64,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 7,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 128,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 8,
+          "name": "Bone Glue"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.35,
+    "sprintingTorqueDiscount": 0.3
+  }
 }

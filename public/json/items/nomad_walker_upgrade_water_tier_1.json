@@ -8,8 +8,21 @@
         {
           "count": 25,
           "name": "Palm Leaves"
+        },
+        {
+          "count": 30,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Fiber"
+        },
+        {
+          "count": 5,
+          "name": "Rupu Pelt"
         }
-      ]
+      ],
+      "time": 10
     }
   ],
   "upgradeInfo": {

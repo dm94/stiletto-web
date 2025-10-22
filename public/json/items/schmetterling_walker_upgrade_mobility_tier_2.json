@@ -16,9 +16,29 @@
         {
           "count": 24,
           "name": "Reinforced Plank"
+        },
+        {
+          "count": 50,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 75,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 25,
+          "name": "Earth Wax"
+        },
+        {
+          "count": 75,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 63
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.2,
+    "sprintingTorqueDiscount": 0.2
+  }
 }

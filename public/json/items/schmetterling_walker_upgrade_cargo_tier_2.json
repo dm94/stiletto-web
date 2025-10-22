@@ -16,9 +16,27 @@
         {
           "count": 25,
           "name": "Iron Ore"
+        },
+        {
+          "count": 38,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 250,
+          "name": "Fiber"
+        },
+        {
+          "count": 188,
+          "name": "Wood"
+        },
+        {
+          "count": 25,
+          "name": "Stone"
         }
       ]
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 20
+  }
 }

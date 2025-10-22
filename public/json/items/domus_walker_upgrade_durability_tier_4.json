@@ -20,9 +20,32 @@
         {
           "count": 24,
           "name": "Worm Scale"
+        },
+        {
+          "count": 70,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 300,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 88,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 150,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 13,
+          "name": "Obsidian"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 40000
+  }
 }

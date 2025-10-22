@@ -16,9 +16,28 @@
         {
           "count": 38,
           "name": "Rubber Block"
+        },
+        {
+          "count": 300,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 88,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 150,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 13,
+          "name": "Obsidian"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "bonusHp": 40000
+  }
 }

@@ -16,8 +16,25 @@
         {
           "count": 50,
           "name": "Chitin Plate"
+        },
+        {
+          "count": 25,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 70,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 30,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 63,
+          "name": "Worm Silk"
         }
-      ]
+      ],
+      "time": 450
     }
   ],
   "upgradeInfo": {

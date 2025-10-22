@@ -20,6 +20,22 @@
         {
           "count": 45,
           "name": "Iron Nails"
+        },
+        {
+          "count": 50,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 113,
+          "name": "Hide"
+        },
+        {
+          "count": 213,
+          "name": "Wood"
+        },
+        {
+          "count": 88,
+          "name": "Fiber Weave"
         }
       ],
       "time": 500

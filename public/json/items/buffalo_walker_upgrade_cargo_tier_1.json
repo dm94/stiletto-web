@@ -16,9 +16,20 @@
         {
           "count": 22,
           "name": "Stone"
+        },
+        {
+          "count": 48,
+          "name": "Wood"
+        },
+        {
+          "count": 32,
+          "name": "Fiber"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 10
+  }
 }

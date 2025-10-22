@@ -16,9 +16,16 @@
         {
           "count": 24,
           "name": "Bone Splinter"
+        },
+        {
+          "count": 16,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
-  "upgradeInfo": {}
+  "upgradeInfo": {
+    "slots": 10
+  }
 }

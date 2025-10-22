@@ -16,8 +16,25 @@
         {
           "count": 38,
           "name": "Rubber Block"
+        },
+        {
+          "count": 113,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 125,
+          "name": "Redwood Wood"
+        },
+        {
+          "count": 10,
+          "name": "Bone Glue"
+        },
+        {
+          "count": 25,
+          "name": "Chitin Plate"
         }
-      ]
+      ],
+      "time": 150
     }
   ],
   "upgradeInfo": {

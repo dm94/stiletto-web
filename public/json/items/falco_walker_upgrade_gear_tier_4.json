@@ -16,8 +16,25 @@
         {
           "count": 15,
           "name": "Bone Splinter"
+        },
+        {
+          "count": 16,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 56,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 32,
+          "name": "Reinforced Plank"
+        },
+        {
+          "count": 40,
+          "name": "Worm Silk"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

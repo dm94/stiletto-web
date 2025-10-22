@@ -2,5 +2,27 @@
   "name": "Dinghy Walker Upgrade Mobility Tier 1",
   "type": "Dinghy Walker Upgrade Mobility Tier 1",
   "category": "Upgrades",
-  "upgradeInfo": {}
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 35,
+          "name": "Wood"
+        },
+        {
+          "count": 15,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 20,
+          "name": "Palm Leaves"
+        }
+      ],
+      "time": 10
+    }
+  ],
+  "upgradeInfo": {
+    "engineTorqueMultiplier": 1.1,
+    "sprintingTorqueDiscount": 0.1
+  }
 }

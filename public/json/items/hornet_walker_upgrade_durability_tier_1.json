@@ -16,8 +16,17 @@
         {
           "count": 38,
           "name": "Rupu Pelt"
+        },
+        {
+          "count": 64,
+          "name": "Wood"
+        },
+        {
+          "count": 64,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 16
     }
   ],
   "upgradeInfo": {

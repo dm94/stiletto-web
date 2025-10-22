@@ -16,8 +16,17 @@
         {
           "count": 45,
           "name": "Clay"
+        },
+        {
+          "count": 80,
+          "name": "Wood"
+        },
+        {
+          "count": 88,
+          "name": "Fiber"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

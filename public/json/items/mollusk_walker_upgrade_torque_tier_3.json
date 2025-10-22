@@ -16,8 +16,21 @@
         {
           "count": 5,
           "name": "Earth Wax"
+        },
+        {
+          "count": 48,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 56,
+          "name": "Rupu Vine"
+        },
+        {
+          "count": 128,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 96
     }
   ],
   "upgradeInfo": {

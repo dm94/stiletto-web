@@ -16,8 +16,21 @@
         {
           "count": 40,
           "name": "Obsidian"
+        },
+        {
+          "count": 45,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 192,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 80,
+          "name": "Nomad Cloth"
         }
-      ]
+      ],
+      "time": 288
     }
   ],
   "upgradeInfo": {

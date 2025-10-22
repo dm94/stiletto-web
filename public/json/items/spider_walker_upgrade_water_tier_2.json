@@ -16,8 +16,13 @@
         {
           "count": 30,
           "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Bone Splinter"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

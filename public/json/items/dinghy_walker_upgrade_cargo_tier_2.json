@@ -12,8 +12,25 @@
         {
           "count": 20,
           "name": "Fiber Weave"
+        },
+        {
+          "count": 15,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 100,
+          "name": "Fiber"
+        },
+        {
+          "count": 75,
+          "name": "Wood"
+        },
+        {
+          "count": 10,
+          "name": "Stone"
         }
-      ]
+      ],
+      "time": 25
     }
   ],
   "upgradeInfo": {

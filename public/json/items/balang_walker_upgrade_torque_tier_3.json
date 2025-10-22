@@ -20,8 +20,17 @@
         {
           "count": 60,
           "name": "Wood"
+        },
+        {
+          "count": 30,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 35,
+          "name": "Rupu Vine"
         }
-      ]
+      ],
+      "time": 60
     }
   ],
   "upgradeInfo": {

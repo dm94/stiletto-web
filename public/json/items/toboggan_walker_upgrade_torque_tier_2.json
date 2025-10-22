@@ -16,8 +16,21 @@
         {
           "count": 13,
           "name": "Rope"
+        },
+        {
+          "count": 24,
+          "name": "Bone Splinter"
+        },
+        {
+          "count": 104,
+          "name": "Fiber"
+        },
+        {
+          "count": 96,
+          "name": "Wood"
         }
-      ]
+      ],
+      "time": 40
     }
   ],
   "upgradeInfo": {
