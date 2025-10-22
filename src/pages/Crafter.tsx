@@ -12,7 +12,8 @@ import { getRecipe } from "@functions/requests/recipes";
 import { useLocation } from "react-router";
 import type { CraftItem, Item, ItemRecipe } from "@ctypes/item";
 import HeaderMeta from "@components/HeaderMeta";
-import { FaList } from "react-icons/fa";
+import { FaList, FaExclamationTriangle } from "react-icons/fa";
+import ReportIncidentModal from "@components/ReportIncidentModal";
 
 const Crafter: React.FC = () => {
   const location = useLocation();
@@ -23,6 +24,7 @@ const Crafter: React.FC = () => {
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
   const [error, setError] = useState<string>("");
   const [isItemsNavVisible, setIsItemsNavVisible] = useState<boolean>(false);
+  const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     updateRecipes();
@@ -180,6 +182,10 @@ const Crafter: React.FC = () => {
     setIsItemsNavVisible((prev) => !prev);
   }, []);
 
+  const toggleReportModal = useCallback((): void => {
+    setIsReportModalOpen((prev) => !prev);
+  }, []);
+
   if (error) {
     return (
       <ModalMessage
@@ -212,6 +218,15 @@ const Crafter: React.FC = () => {
             value={searchText}
           />
           <button
+            className="ml-3 p-2 text-gray-300 hover:text-white focus:outline-none"
+            type="button"
+            onClick={toggleReportModal}
+            aria-label={t("crafter.reportBug")}
+            title={t("crafter.reportBug")}
+          >
+            <FaExclamationTriangle className="fa-lg" />
+          </button>
+          <button
             className="lg:hidden ml-3 p-2 text-gray-300 hover:text-white focus:outline-none"
             type="button"
             onClick={toggleItemsNav}
@@ -241,6 +256,12 @@ const Crafter: React.FC = () => {
           />
         </div>
       </main>
+      {isReportModalOpen && (
+        <ReportIncidentModal
+          isOpen={isReportModalOpen}
+          onClose={toggleReportModal}
+        />
+      )}
     </div>
   );
 };
