@@ -1,7 +1,8 @@
 {
   "name": "Loot Box Armors",
+  "type": "LootBoxArmors_C",
+  "lootTemplate": "LootBoxArmors_C",
   "category": "Container",
-  "tier": null,
   "drops": [
     {
       "name": "Fiber Shirt and Trousers",

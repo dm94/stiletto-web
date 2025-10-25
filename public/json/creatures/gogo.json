@@ -1,4 +1,109 @@
 {
   "name": "Gogo",
-  "health": 3000
+  "type": "GogoMob_C",
+  "health": 12000,
+  "experience": 20000,
+  "lootTemplate": "GoGo_T4",
+  "category": "Rock Crawler",
+  "drops": [
+    {
+      "name": "Pearl",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 3,
+      "source": "clampearls_t4"
+    },
+    {
+      "name": "Purified Water",
+      "chance": 60,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "clampearls_t4"
+    },
+    {
+      "name": "Animal Fat",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 50,
+      "source": "clampearls_t4"
+    },
+    {
+      "name": "Ash",
+      "chance": 7.6923075,
+      "minQuantity": 20,
+      "maxQuantity": 20,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Charcoal",
+      "chance": 7.6923075,
+      "minQuantity": 9,
+      "maxQuantity": 9,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Huge Cactus Fruit",
+      "chance": 7.6923075,
+      "minQuantity": 7,
+      "maxQuantity": 7,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Fruit Pulp",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Rupu Pelt",
+      "chance": 7.6923075,
+      "minQuantity": 12,
+      "maxQuantity": 12,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Hide",
+      "chance": 7.6923075,
+      "minQuantity": 10,
+      "maxQuantity": 10,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Sand",
+      "chance": 7.6923075,
+      "minQuantity": 20,
+      "maxQuantity": 20,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Mushroom Flesh",
+      "chance": 7.6923075,
+      "minQuantity": 15,
+      "maxQuantity": 15,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Rupu Gel",
+      "chance": 7.6923075,
+      "minQuantity": 15,
+      "maxQuantity": 15,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Redwood Wood",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8,
+      "source": "extraresources_t4"
+    },
+    {
+      "name": "Red Banana",
+      "chance": 7.6923075,
+      "minQuantity": 3,
+      "maxQuantity": 3,
+      "source": "extraresources_t4"
+    }
+  ],
+  "speed": 2000
 }

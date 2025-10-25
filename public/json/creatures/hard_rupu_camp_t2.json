@@ -1,5 +1,7 @@
 {
   "name": "Hard Rupu Camp T2",
+  "type": "HardRupuCamp_T2_C",
+  "lootTemplate": "HardRupuCamp_T2_C",
   "category": "Rupu",
   "tier": "T2",
   "drops": [

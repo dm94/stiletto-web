@@ -1,5 +1,7 @@
 {
   "name": "Treasure Chest T1",
+  "type": "TreasureChest_T1_C",
+  "lootTemplate": "TreasureChest_T1_C",
   "category": "Container",
   "tier": "T1",
   "drops": [

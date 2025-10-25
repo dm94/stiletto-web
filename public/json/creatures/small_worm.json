@@ -1,6 +1,5 @@
 {
   "name": "Small Worm",
-  "category": "Worm",
-  "health": 150,
-  "experiencie": 144
+  "type": "SmallWormMob_C",
+  "category": "Worm"
 }

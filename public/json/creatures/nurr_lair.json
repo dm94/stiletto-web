@@ -1,5 +1,5 @@
 {
   "name": "Nurr Lair",
-  "category": "Nurr",
-  "tier": "T2"
+  "type": "NurrLair_T2_C",
+  "category": "Nurr"
 }

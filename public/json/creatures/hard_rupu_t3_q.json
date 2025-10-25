@@ -1,5 +1,7 @@
 {
   "name": "Hard Rupu T3 Q",
+  "type": "HardRupu_T3_Q_C",
+  "lootTemplate": "HardRupu_T3_Q_C",
   "category": "Rupu",
   "tier": "T3",
   "drops": [

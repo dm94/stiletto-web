@@ -1,7 +1,8 @@
 {
   "name": "Tutorial Beat Stick Loot",
+  "type": "TutorialBeatStickLoot_C",
+  "lootTemplate": "TutorialBeatStickLoot_C",
   "category": "Structure",
-  "tier": null,
   "drops": [],
   "originalName": "TutorialBeatStickLoot"
 }

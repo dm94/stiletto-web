@@ -1,5 +1,7 @@
 {
   "name": "Hotspot Loot T2 AC",
+  "type": "HotspotLoot_T2_AC_C",
+  "lootTemplate": "HotspotLoot_T2_AC_C",
   "category": "Resource",
   "tier": "T2",
   "drops": [

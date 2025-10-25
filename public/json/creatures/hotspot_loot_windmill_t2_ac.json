@@ -1,5 +1,7 @@
 {
   "name": "Hotspot Loot Windmill T2 AC",
+  "type": "HotspotLootWindmill_T2_AC_C",
+  "lootTemplate": "HotspotLootWindmill_T2_AC_C",
   "category": "Resource",
   "tier": "T2",
   "drops": [

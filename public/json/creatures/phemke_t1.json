@@ -1,5 +1,7 @@
 {
   "name": "Phemke T1",
+  "type": "Phemke_T1_C",
+  "lootTemplate": "Phemke_T1_C",
   "category": "Structure",
   "tier": "T1",
   "drops": [

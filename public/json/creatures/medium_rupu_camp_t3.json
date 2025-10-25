@@ -1,5 +1,7 @@
 {
   "name": "Medium Rupu Camp T3",
+  "type": "MediumRupuCamp_T3_C",
+  "lootTemplate": "MediumRupuCamp_T3_C",
   "category": "Rupu",
   "tier": "T3",
   "drops": [

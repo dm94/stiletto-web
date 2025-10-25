@@ -1,8 +1,0 @@
-{
-  "name": "Rupu Oracle",
-  "type": "RupuOracle_C",
-  "health": 175,
-  "experiencie": 55,
-  "lootTemplate": "EasyRupu_T1",
-  "category": "Rupu"
-}

@@ -1,5 +1,7 @@
 {
   "name": "Asteroid T4",
+  "type": "Asteroid_T4_C",
+  "lootTemplate": "Asteroid_T4_C",
   "category": "Resource",
   "tier": "T4",
   "drops": []

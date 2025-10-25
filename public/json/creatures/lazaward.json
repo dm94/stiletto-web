@@ -1,5 +1,18 @@
 {
   "name": "Lazaward",
+  "type": "NurrMobLarge_C",
+  "health": 4000,
+  "experience": 5000,
+  "lootTemplate": "LargeNurr_T2",
   "category": "Nurr",
-  "health": 190
+  "drops": [
+    {
+      "name": "Nurr Fang",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "nurrfang_t2"
+    }
+  ],
+  "speed": 3400
 }

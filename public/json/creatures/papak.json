@@ -1,5 +1,18 @@
 {
   "name": "Papak",
+  "type": "PapakMob_C",
+  "health": 5000,
+  "experience": 15000,
+  "lootTemplate": "Papak_T3",
   "category": "Papak",
-  "health": 750
+  "drops": [
+    {
+      "name": "Gelatinous Goo",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "gelatinousgoo_t3"
+    }
+  ],
+  "speed": 1200
 }

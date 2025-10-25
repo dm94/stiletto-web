@@ -1,5 +1,5 @@
 {
   "name": "Rupu Prayer Site",
-  "category": "Rupu",
-  "tier": "T1"
+  "type": "T1_TinyRupuCamp_02_C",
+  "category": "Rupu"
 }

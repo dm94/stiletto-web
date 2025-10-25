@@ -1,5 +1,7 @@
 {
   "name": "Papak T3",
+  "type": "Papak_T3_C",
+  "lootTemplate": "Papak_T3_C",
   "category": "Structure",
   "tier": "T3",
   "drops": [

@@ -1,7 +1,8 @@
 {
   "name": "Mushroom Gas",
+  "type": "MushroomGas_C",
+  "lootTemplate": "MushroomGas_C",
   "category": "Structure",
-  "tier": null,
   "drops": [],
   "originalName": "MushroomGas"
 }

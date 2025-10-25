@@ -1,7 +1,8 @@
 {
   "name": "Loot Box Modules",
+  "type": "LootBoxModules_C",
+  "lootTemplate": "LootBoxModules_C",
   "category": "Container",
-  "tier": null,
   "drops": [
     {
       "name": "Weightless Walker Module",

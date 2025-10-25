@@ -1,7 +1,8 @@
 {
   "name": "Broken Tusker 2",
+  "type": "BrokenTusker_2_C",
+  "lootTemplate": "BrokenTusker_2_C",
   "category": "Structure",
-  "tier": null,
   "drops": [
     {
       "name": "Iron Studded Boots",
