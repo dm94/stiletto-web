@@ -1,5 +1,7 @@
 {
   "name": "Nurr T2",
+  "type": "Nurr_T2_C",
+  "lootTemplate": "Nurr_T2_C",
   "category": "Structure",
   "tier": "T2",
   "drops": [

@@ -1,6 +1,7 @@
 {
   "name": "Crane",
+  "type": "Crane_C",
+  "lootTemplate": "Crane_C",
   "category": "Structure",
-  "tier": null,
   "drops": []
 }

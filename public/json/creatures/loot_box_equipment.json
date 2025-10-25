@@ -1,7 +1,8 @@
 {
   "name": "Loot Box Equipment",
+  "type": "LootBoxEquipment_C",
+  "lootTemplate": "LootBoxEquipment_C",
   "category": "Container",
-  "tier": null,
   "drops": [],
   "originalName": "LootBoxEquipment"
 }

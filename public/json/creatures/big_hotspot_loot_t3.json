@@ -1,5 +1,7 @@
 {
   "name": "Big Hotspot Loot T3",
+  "type": "BigHotspotLoot_T3_C",
+  "lootTemplate": "BigHotspotLoot_T3_C",
   "category": "Resource",
   "tier": "T3",
   "drops": [

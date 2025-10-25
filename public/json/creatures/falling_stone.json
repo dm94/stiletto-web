@@ -1,7 +1,8 @@
 {
   "name": "Falling Stone",
+  "type": "FallingStone_C",
+  "lootTemplate": "FallingStone_C",
   "category": "Structure",
-  "tier": null,
   "drops": [],
   "originalName": "FallingStone"
 }

@@ -1,5 +1,7 @@
 {
   "name": "Okkam T3",
+  "type": "Okkam_T3_C",
+  "lootTemplate": "Okkam_T3_C",
   "category": "Structure",
   "tier": "T3",
   "drops": [

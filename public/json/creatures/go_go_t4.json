@@ -1,5 +1,7 @@
 {
   "name": "Go Go T4",
+  "type": "GoGo_T4_C",
+  "lootTemplate": "GoGo_T4_C",
   "category": "Structure",
   "tier": "T4",
   "drops": [

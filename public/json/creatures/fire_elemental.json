@@ -1,5 +1,8 @@
 {
   "name": "Fire Elemental",
+  "type": "FireElementalMob_C",
   "health": 9000,
+  "experience": 980,
+  "speed": 2000,
   "originalName": "FireElemental"
 }

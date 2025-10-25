@@ -1,5 +1,7 @@
 {
   "name": "Medium Rupu T2",
+  "type": "MediumRupu_T2_C",
+  "lootTemplate": "MediumRupu_T2_C",
   "category": "Rupu",
   "tier": "T2",
   "drops": [

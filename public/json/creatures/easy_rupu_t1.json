@@ -1,5 +1,7 @@
 {
   "name": "Easy Rupu T1",
+  "type": "EasyRupu_T1_C",
+  "lootTemplate": "EasyRupu_T1_C",
   "category": "Rupu",
   "tier": "T1",
   "drops": [

@@ -1,5 +1,7 @@
 {
   "name": "Basket Loot T2 AC",
+  "type": "BasketLoot_T2_AC_C",
+  "lootTemplate": "BasketLoot_T2_AC_C",
   "category": "Structure",
   "tier": "T2",
   "drops": [

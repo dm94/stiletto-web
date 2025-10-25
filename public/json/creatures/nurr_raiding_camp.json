@@ -1,5 +1,6 @@
 {
   "name": "Nurr Raiding Camp",
+  "type": "T2_RaiderOutpost_C",
   "category": "Raider",
   "tier": "T2"
 }

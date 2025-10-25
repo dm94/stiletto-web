@@ -1,8 +1,0 @@
-{
-  "name": "Rupu Priestess",
-  "type": "RupuPriestessFireBomb_C",
-  "health": 800,
-  "experiencie": 600,
-  "lootTemplate": "EasyRupu_T1",
-  "category": "Rupu"
-}

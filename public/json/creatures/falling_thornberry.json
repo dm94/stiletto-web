@@ -1,7 +1,8 @@
 {
   "name": "Falling Thornberry",
+  "type": "FallingThornberry_C",
+  "lootTemplate": "FallingThornberry_C",
   "category": "Structure",
-  "tier": null,
   "drops": [],
   "originalName": "FallingThornberry"
 }

@@ -1,4 +1,6 @@
 {
   "name": "Toxic Papak",
-  "category": "Papak"
+  "type": "SwampPapakMob_C",
+  "category": "Papak",
+  "speed": 2400
 }
