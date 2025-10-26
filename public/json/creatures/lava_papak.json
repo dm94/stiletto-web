@@ -1,4 +1,6 @@
 {
   "name": "Lava Papak",
-  "category": "Papak"
+  "type": "LavaPapakMob_C",
+  "category": "Papak",
+  "speed": 2400
 }

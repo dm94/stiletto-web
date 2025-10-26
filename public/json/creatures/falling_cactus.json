@@ -1,7 +1,8 @@
 {
   "name": "Falling Cactus",
+  "type": "FallingCactus_C",
+  "lootTemplate": "FallingCactus_C",
   "category": "Structure",
-  "tier": null,
   "drops": [],
   "originalName": "FallingCactus"
 }

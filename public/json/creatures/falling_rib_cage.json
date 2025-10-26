@@ -1,7 +1,8 @@
 {
   "name": "Falling Rib Cage",
+  "type": "FallingRibCage_C",
+  "lootTemplate": "FallingRibCage_C",
   "category": "Structure",
-  "tier": null,
   "drops": [],
   "originalName": "FallingRibCage"
 }

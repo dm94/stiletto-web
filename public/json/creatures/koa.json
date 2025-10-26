@@ -1,4 +1,17 @@
 {
   "name": "Koa",
-  "health": 3000
+  "type": "KoaMob_C",
+  "health": 20000,
+  "experience": 80000,
+  "lootTemplate": "Koa_T4",
+  "drops": [
+    {
+      "name": "Spearmint",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "spearmint_t4"
+    }
+  ],
+  "speed": 6000
 }

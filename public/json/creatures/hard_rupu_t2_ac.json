@@ -1,5 +1,7 @@
 {
   "name": "Hard Rupu T2 AC",
+  "type": "HardRupu_T2_AC_C",
+  "lootTemplate": "HardRupu_T2_AC_C",
   "category": "Rupu",
   "tier": "T2",
   "drops": [

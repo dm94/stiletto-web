@@ -1,7 +1,8 @@
 {
   "name": "Tutorial Completed Loot",
+  "type": "TutorialCompletedLoot_C",
+  "lootTemplate": "TutorialCompletedLoot_C",
   "category": "Structure",
-  "tier": null,
   "drops": [],
   "originalName": "TutorialCompletedLoot"
 }

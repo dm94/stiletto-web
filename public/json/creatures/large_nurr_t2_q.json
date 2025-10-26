@@ -1,5 +1,7 @@
 {
   "name": "Large Nurr T2 Q",
+  "type": "LargeNurr_T2_Q_C",
+  "lootTemplate": "LargeNurr_T2_Q_C",
   "category": "Structure",
   "tier": "T2",
   "drops": [

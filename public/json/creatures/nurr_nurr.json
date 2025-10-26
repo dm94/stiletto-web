@@ -1,5 +1,18 @@
 {
   "name": "Nurr (Nurr)",
+  "type": "NurrMob_C",
+  "health": 600,
+  "experience": 800,
+  "lootTemplate": "Nurr_T2",
   "category": "Nurr",
-  "health": 190
+  "drops": [
+    {
+      "name": "Nurr Fang",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "nurrfang_t2"
+    }
+  ],
+  "speed": 3000
 }
