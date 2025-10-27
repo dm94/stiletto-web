@@ -1,4 +1,7 @@
 {
   "name": "Mountable Nurr",
+  "type": "MountableNurrMob_C",
+  "health": 1000,
+  "experience": 500,
   "category": "Nurr"
 }
