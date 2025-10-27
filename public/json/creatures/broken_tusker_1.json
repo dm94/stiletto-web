@@ -1,7 +1,8 @@
 {
   "name": "Broken Tusker 1",
+  "type": "BrokenTusker_1_C",
+  "lootTemplate": "BrokenTusker_1_C",
   "category": "Structure",
-  "tier": null,
   "drops": [
     {
       "name": "Relic of Dusk",

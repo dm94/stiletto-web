@@ -1,6 +1,5 @@
 {
   "name": "The Long One",
-  "category": "Worm",
-  "health": 45000,
-  "experiencie": 100000
+  "type": "Worm6_C",
+  "category": "Worm"
 }

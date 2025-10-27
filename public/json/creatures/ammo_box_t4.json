@@ -1,5 +1,7 @@
 {
   "name": "Ammo Box T4",
+  "type": "AmmoBox_T4_C",
+  "lootTemplate": "AmmoBox_T4_C",
   "category": "Container",
   "tier": "T4",
   "drops": [

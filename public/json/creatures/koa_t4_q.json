@@ -1,5 +1,7 @@
 {
   "name": "Koa T4 Q",
+  "type": "Koa_T4_Q_C",
+  "lootTemplate": "Koa_T4_Q_C",
   "category": "Structure",
   "tier": "T4",
   "drops": [

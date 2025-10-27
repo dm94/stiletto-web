@@ -1,5 +1,7 @@
 {
   "name": "Nurr (Killin)",
-  "category": "Killin",
-  "health": 300
+  "type": "KillinMob_C",
+  "health": 300,
+  "experience": 500,
+  "category": "Killin"
 }
