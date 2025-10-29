@@ -25,7 +25,7 @@
     }
   ],
   "structureInfo": {
-    "type": "Medium",
-    "hp": 750
+    "hp": 750,
+    "type": "Medium"
   }
 }

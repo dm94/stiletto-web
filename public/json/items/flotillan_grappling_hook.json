@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 8
         },
         {
-          "count": 17,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 17
         },
         {
-          "count": 5,
-          "name": "Leather"
+          "name": "Leather",
+          "count": 5
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 6
+      "time": 6,
+      "station": "Artificer Woodworking Station"
     }
   ]
 }

@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 60,
       "ingredients": [
         {
           "count": 20,
@@ -25,8 +26,7 @@
           "count": 12,
           "name": "Nomad Cloth"
         }
-      ],
-      "time": 60
+      ]
     }
   ],
   "upgradeInfo": {

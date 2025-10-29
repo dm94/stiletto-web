@@ -11,30 +11,30 @@
     {
       "ingredients": [
         {
-          "count": 18,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 18
         },
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 3
+      "time": 3,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 18,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 18
         },
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "armorInfo": {
@@ -58,13 +58,6 @@
       "tier": "T2"
     },
     {
-      "name": "Bounty Hunter",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
       "name": "Easy Rupu Camp T2",
       "chance": 11.111111,
       "minQuantity": 1,
@@ -80,13 +73,6 @@
     },
     {
       "name": "Easy Rupu T2 Q",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Grave Digger",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -145,21 +131,7 @@
       "name": "Lootbox Armors Canyon",
       "chance": 11.111111,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
-    },
-    {
-      "name": "Marshland Stalker",
-      "chance": 11.111111,
-      "minQuantity": 1,
       "maxQuantity": 1
-    },
-    {
-      "name": "Matriarch",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
     },
     {
       "name": "Medium Rupu Camp T2",
@@ -183,91 +155,7 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Dunestalker",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Forager",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Harasser (T2)",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hermit",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Plainstrider",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (T2)",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Shaman",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Skirmisher (T2)",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
       "name": "Treasure Chest T2",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T2)",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,

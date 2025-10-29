@@ -11,20 +11,20 @@
     {
       "ingredients": [
         {
-          "count": 17,
-          "name": "Lava"
+          "name": "Lava",
+          "count": 17
         },
         {
-          "count": 8,
-          "name": "Corn"
+          "name": "Corn",
+          "count": 8
         },
         {
-          "count": 5,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 5
         }
       ],
-      "station": "Obsidian Machine",
-      "time": 90
+      "time": 90,
+      "station": "Obsidian Machine"
     }
   ],
   "whereToFarm": "Can be rendered using a purification station."

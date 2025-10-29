@@ -8,16 +8,16 @@
     {
       "ingredients": [
         {
-          "count": 18,
-          "name": "Worm Silk"
+          "name": "Worm Silk",
+          "count": 18
         },
         {
-          "count": 30,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 30
         },
         {
-          "count": 12,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 12
         }
       ]
     }

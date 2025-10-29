@@ -11,20 +11,20 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 3
         },
         {
-          "count": 28,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 28
         },
         {
-          "count": 1,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 1
         }
       ],
-      "station": "Smithing",
-      "time": 15
+      "time": 15,
+      "station": "Smithing"
     }
   ],
   "weaponInfo": {
@@ -32,8 +32,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Mining",
-      "tier": 20
+      "tier": 20,
+      "toolType": "Mining"
     }
   ]
 }

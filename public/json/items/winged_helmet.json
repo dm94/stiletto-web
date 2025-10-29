@@ -13,24 +13,24 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 2
         },
         {
-          "count": 5,
-          "name": "Worm Silk"
+          "name": "Worm Silk",
+          "count": 5
         },
         {
-          "count": 6,
-          "name": "Leather"
+          "name": "Leather",
+          "count": 6
         },
         {
-          "count": 22,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 22
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 120
+      "time": 120,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "armorInfo": {

@@ -13,12 +13,12 @@
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 4
         },
         {
-          "count": 12,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 12
         }
       ]
     }

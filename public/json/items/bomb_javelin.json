@@ -11,24 +11,24 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Heavy Javelin"
+          "name": "Heavy Javelin",
+          "count": 1
         },
         {
-          "count": 12,
-          "name": "Tar"
+          "name": "Tar",
+          "count": 12
         },
         {
-          "count": 24,
-          "name": "Lava"
+          "name": "Lava",
+          "count": 24
         },
         {
-          "count": 2,
-          "name": "Spearmint"
+          "name": "Spearmint",
+          "count": 2
         }
       ],
-      "station": "Lathe",
-      "time": 10
+      "time": 10,
+      "station": "Lathe"
     }
   ],
   "weaponInfo": {

@@ -6,20 +6,20 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 10
         },
         {
-          "count": 55,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 55
         },
         {
-          "count": 3,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 3
         }
       ],
-      "station": "Smithing",
-      "time": 60
+      "time": 60,
+      "station": "Smithing"
     }
   ]
 }

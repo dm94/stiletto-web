@@ -12,12 +12,12 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wood Log"
+          "name": "Wood Log",
+          "count": 1
         }
       ],
-      "station": "Lumbermill",
-      "time": 60
+      "time": 60,
+      "station": "Lumbermill"
     }
   ],
   "whereToFarm": "Produced in lumbermills using tree trunks."

@@ -10,12 +10,12 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 5
         },
         {
-          "count": 5,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 5
         }
       ]
     }

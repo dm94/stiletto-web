@@ -32,13 +32,13 @@
     }
   ],
   "structureInfo": {
-    "type": "Medium",
-    "hp": 7000
+    "hp": 7000,
+    "type": "Medium"
   },
   "toolInfo": [
     {
-      "toolType": "Digging",
-      "tier": 5
+      "tier": 5,
+      "toolType": "Digging"
     }
   ]
 }

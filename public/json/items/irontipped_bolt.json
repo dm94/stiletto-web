@@ -12,21 +12,21 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 8
         },
         {
-          "count": 1,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 1
         },
         {
-          "count": 8,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 8
         }
       ],
       "output": 10,
-      "station": "Artificer Woodworking Station",
-      "time": 3
+      "time": 3,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -35,8 +35,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "BallistaHarpoon",
-      "tier": 4
+      "tier": 4,
+      "toolType": "BallistaHarpoon"
     }
   ],
   "droppedBy": [

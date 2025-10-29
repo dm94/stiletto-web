@@ -25,13 +25,6 @@
       "tier": "T2"
     },
     {
-      "name": "Bounty Hunter",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
       "name": "Easy Rupu Camp T2",
       "chance": 5.263158,
       "minQuantity": 1,
@@ -81,19 +74,6 @@
       "tier": "T2"
     },
     {
-      "name": "Marshland Stalker",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Matriarch",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
       "name": "Medium Rupu T2",
       "chance": 5.263158,
       "minQuantity": 1,
@@ -101,77 +81,7 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Dunestalker",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Forager",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Harasser (T2)",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Plainstrider",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (T2)",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Shaman",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
       "name": "Treasure Chest T2",
-      "chance": 5.263158,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T2)",
       "chance": 5.263158,
       "minQuantity": 1,
       "maxQuantity": 1,

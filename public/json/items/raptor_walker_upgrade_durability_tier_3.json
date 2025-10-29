@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 96,
       "ingredients": [
         {
           "count": 32,
@@ -33,8 +34,7 @@
           "count": 16,
           "name": "Chitin Plate"
         }
-      ],
-      "time": 96
+      ]
     }
   ],
   "upgradeInfo": {

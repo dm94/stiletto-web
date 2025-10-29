@@ -19,8 +19,7 @@
       "name": "Desert Clam",
       "chance": 33.333332,
       "minQuantity": 5,
-      "maxQuantity": 50,
-      "tier": null
+      "maxQuantity": 50
     },
     {
       "name": "Easy Rupu Camp T1",
@@ -63,6 +62,12 @@
       "minQuantity": 5,
       "maxQuantity": 50,
       "tier": "T4"
+    },
+    {
+      "name": "Gogo",
+      "chance": 33.333332,
+      "minQuantity": 5,
+      "maxQuantity": 50
     },
     {
       "name": "Hard Rupu Camp T1",

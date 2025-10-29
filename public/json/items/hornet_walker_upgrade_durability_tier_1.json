@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 16,
       "ingredients": [
         {
           "count": 22,
@@ -25,8 +26,7 @@
           "count": 64,
           "name": "Stone"
         }
-      ],
-      "time": 16
+      ]
     }
   ],
   "upgradeInfo": {

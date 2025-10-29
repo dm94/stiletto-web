@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 40,
       "ingredients": [
         {
           "count": 13,
@@ -25,8 +26,7 @@
           "count": 104,
           "name": "Fiber"
         }
-      ],
-      "time": 40
+      ]
     }
   ],
   "upgradeInfo": {

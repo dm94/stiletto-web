@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 10
         },
         {
-          "count": 5,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 5
         },
         {
-          "count": 4,
-          "name": "Rubber Block"
+          "name": "Rubber Block",
+          "count": 4
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "armorInfo": {

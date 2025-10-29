@@ -12,25 +12,25 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Iron Ore"
+          "name": "Iron Ore",
+          "count": 5
         },
         {
-          "count": 8,
-          "name": "Tar"
+          "name": "Tar",
+          "count": 8
         },
         {
-          "count": 12,
-          "name": "Sulfur"
+          "name": "Sulfur",
+          "count": 12
         },
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         }
       ],
       "output": 8,
-      "station": "Artificer Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -41,8 +41,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scattershot",
-      "tier": 4
+      "tier": 4,
+      "toolType": "Scattershot"
     }
   ],
   "droppedBy": [

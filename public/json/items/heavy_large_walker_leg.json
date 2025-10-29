@@ -9,16 +9,16 @@
     {
       "ingredients": [
         {
-          "count": 18,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 18
         },
         {
-          "count": 30,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 30
         },
         {
-          "count": 5,
-          "name": "Gelatinous Goo"
+          "name": "Gelatinous Goo",
+          "count": 5
         }
       ]
     }

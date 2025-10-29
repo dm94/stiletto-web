@@ -13,16 +13,16 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Worm Silk"
+          "name": "Worm Silk",
+          "count": 2
         },
         {
-          "count": 2,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 2
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "armorInfo": {

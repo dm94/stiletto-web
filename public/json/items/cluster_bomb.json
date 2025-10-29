@@ -11,28 +11,28 @@
     {
       "ingredients": [
         {
-          "count": 30,
-          "name": "Obsidian"
+          "name": "Obsidian",
+          "count": 30
         },
         {
-          "count": 10,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 10
         },
         {
-          "count": 25,
-          "name": "Phosphorus"
+          "name": "Phosphorus",
+          "count": 25
         },
         {
-          "count": 1,
-          "name": "Lava Fuel"
+          "name": "Lava Fuel",
+          "count": 1
         },
         {
-          "count": 10,
-          "name": "Tar"
+          "name": "Tar",
+          "count": 10
         }
       ],
-      "station": "Clay Pot",
-      "time": 75
+      "time": 75,
+      "station": "Clay Pot"
     }
   ],
   "projectileDamage": {

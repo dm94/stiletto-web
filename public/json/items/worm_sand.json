@@ -12,24 +12,24 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Worm Sand"
+          "name": "Terrain: Worm Sand",
+          "count": 1
         }
       ],
       "output": 10,
-      "station": "Soil Excavator",
-      "time": 60
+      "time": 60,
+      "station": "Soil Excavator"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Worm Sand"
+          "name": "Terrain: Worm Sand",
+          "count": 1
         }
       ],
       "output": 10,
-      "station": "Artisan Soil Auger",
-      "time": 30
+      "time": 30,
+      "station": "Artisan Soil Auger"
     }
   ],
   "whereToFarm": "Excavated from red sands near worm sightings."

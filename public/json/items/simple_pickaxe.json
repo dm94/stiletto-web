@@ -13,20 +13,20 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 2
         },
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 12,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 12
         },
         {
-          "count": 5,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 5
         }
       ]
     }
@@ -38,8 +38,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Mining",
-      "tier": 5
+      "tier": 5,
+      "toolType": "Mining"
     }
   ]
 }

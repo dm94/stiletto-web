@@ -12,16 +12,16 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 12
         },
         {
-          "count": 9,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 9
         },
         {
-          "count": 2,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 2
         }
       ]
     }

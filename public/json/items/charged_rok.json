@@ -12,38 +12,38 @@
     {
       "ingredients": [
         {
-          "count": 65,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 65
         },
         {
-          "count": 3,
-          "name": "Meteor Core"
+          "name": "Meteor Core",
+          "count": 3
         },
         {
-          "count": 22,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 22
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 8
+      "time": 8,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 65,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 65
         },
         {
-          "count": 3,
-          "name": "Meteor Core"
+          "name": "Meteor Core",
+          "count": 3
         },
         {
-          "count": 22,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 22
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -54,8 +54,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scattershot",
-      "tier": 1
+      "tier": 1,
+      "toolType": "Scattershot"
     }
   ]
 }

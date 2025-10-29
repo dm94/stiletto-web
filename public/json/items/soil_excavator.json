@@ -33,13 +33,13 @@
     }
   ],
   "structureInfo": {
-    "type": "Soft",
-    "hp": 3000
+    "hp": 3000,
+    "type": "Soft"
   },
   "toolInfo": [
     {
-      "toolType": "Digging",
-      "tier": 5
+      "tier": 5,
+      "toolType": "Digging"
     }
   ]
 }

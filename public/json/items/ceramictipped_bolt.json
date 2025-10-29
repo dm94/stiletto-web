@@ -12,40 +12,40 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 8,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 8
         },
         {
-          "count": 20,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 20
         }
       ],
       "output": 5,
-      "station": "Advanced Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 8,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 8
         },
         {
-          "count": 20,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 20
         }
       ],
       "output": 5,
-      "station": "Artificer Woodworking Station",
-      "time": 3
+      "time": 3,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -54,8 +54,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "BallistaHarpoon",
-      "tier": 3
+      "tier": 3,
+      "toolType": "BallistaHarpoon"
     }
   ],
   "droppedBy": [

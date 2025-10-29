@@ -11,24 +11,24 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Cotton"
+          "name": "Cotton",
+          "count": 1
         },
         {
-          "count": 3,
-          "name": "Gelatinous Goo"
+          "name": "Gelatinous Goo",
+          "count": 3
         },
         {
-          "count": 2,
-          "name": "Tallow"
+          "name": "Tallow",
+          "count": 2
         },
         {
-          "count": 8,
-          "name": "Mushroom Flesh"
+          "name": "Mushroom Flesh",
+          "count": 8
         }
       ],
-      "station": "Clay Pot",
-      "time": 75
+      "time": 75,
+      "station": "Clay Pot"
     }
   ],
   "projectileDamage": {

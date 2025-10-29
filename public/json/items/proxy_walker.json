@@ -40,8 +40,8 @@
     }
   ],
   "structureInfo": {
-    "type": "Reinforced",
-    "hp": 100000
+    "hp": 100000,
+    "type": "Reinforced"
   },
   "walkerInfo": {
     "category": "Large",

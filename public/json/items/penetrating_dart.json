@@ -11,59 +11,59 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 3,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 3
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         }
       ],
       "output": 10,
-      "station": "Woodworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 3,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 3
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         }
       ],
       "output": 10,
-      "station": "Advanced Woodworking Station",
-      "time": 8
+      "time": 8,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 3,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 3
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         }
       ],
       "output": 10,
-      "station": "Artificer Woodworking Station",
-      "time": 6
+      "time": 6,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -72,8 +72,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "RepeaterBolt",
-      "tier": 1
+      "tier": 1,
+      "toolType": "RepeaterBolt"
     }
   ]
 }

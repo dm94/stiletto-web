@@ -15,12 +15,6 @@
       "tier": "T2"
     },
     {
-      "name": "Cowardly Rupu",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
       "name": "Easy Rupu Camp T1",
       "chance": 11.111111,
       "minQuantity": 2,
@@ -77,10 +71,10 @@
       "tier": "T4"
     },
     {
-      "name": "Green Rupu",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
+      "name": "Gogo",
+      "chance": 7.6923075,
+      "minQuantity": 12,
+      "maxQuantity": 12
     },
     {
       "name": "Hard Rupu Camp T1",
@@ -209,103 +203,7 @@
       "tier": "T1"
     },
     {
-      "name": "Prophet",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Berserker",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Forerunner (Rupu)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Forerunner (T1)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Gunner",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Harasser (T1)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Hero (Rupu)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Oracle (Rupu)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Overseer (Rupu)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Priestess (Rupu)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Scavenger",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Sentinel",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Skirmisher (T1)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Thug",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Warrior",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Tar Dweller",
+      "name": "Nurr Raider",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1
@@ -337,18 +235,6 @@
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
-    },
-    {
-      "name": "Yellow Rupu",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Zharvakko",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
     }
   ],
   "whereToFarm": "Harvested by killing Rupu."

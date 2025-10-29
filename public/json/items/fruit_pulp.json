@@ -12,192 +12,192 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Apple"
+          "name": "Apple",
+          "count": 1
         }
       ],
       "output": 7,
-      "station": "Stomping Station",
-      "time": 24
+      "time": 24,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Apple"
+          "name": "Apple",
+          "count": 1
         }
       ],
       "output": 9,
-      "station": "Advanced Stomping Station",
-      "time": 22
+      "time": 22,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Apple"
+          "name": "Apple",
+          "count": 1
         }
       ],
       "output": 11,
-      "station": "Flotillian Stomping Station",
-      "time": 20
+      "time": 20,
+      "station": "Flotillian Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Corn"
+          "name": "Corn",
+          "count": 6
         }
       ],
-      "station": "Stomping Station",
-      "time": 24
+      "time": 24,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Corn"
+          "name": "Corn",
+          "count": 5
         }
       ],
-      "station": "Advanced Stomping Station",
-      "time": 22
+      "time": 22,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Corn"
+          "name": "Corn",
+          "count": 4
         }
       ],
-      "station": "Flotillian Stomping Station",
-      "time": 20
+      "time": 20,
+      "station": "Flotillian Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Blood Turnip"
+          "name": "Blood Turnip",
+          "count": 1
         }
       ],
-      "station": "Stomping Station",
-      "time": 24
+      "time": 24,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Blood Turnip"
+          "name": "Blood Turnip",
+          "count": 1
         }
       ],
       "output": 2,
-      "station": "Advanced Stomping Station",
-      "time": 22
+      "time": 22,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Blood Turnip"
+          "name": "Blood Turnip",
+          "count": 1
         }
       ],
       "output": 3,
-      "station": "Flotillian Stomping Station",
-      "time": 20
+      "time": 20,
+      "station": "Flotillian Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Huge Cactus Fruit"
+          "name": "Huge Cactus Fruit",
+          "count": 1
         }
       ],
       "output": 6,
-      "station": "Stomping Station",
-      "time": 32
+      "time": 32,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Huge Cactus Fruit"
+          "name": "Huge Cactus Fruit",
+          "count": 1
         }
       ],
       "output": 7,
-      "station": "Advanced Stomping Station",
-      "time": 29
+      "time": 29,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Huge Cactus Fruit"
+          "name": "Huge Cactus Fruit",
+          "count": 1
         }
       ],
       "output": 8,
-      "station": "Flotillian Stomping Station",
-      "time": 26
+      "time": 26,
+      "station": "Flotillian Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Thornberry"
+          "name": "Thornberry",
+          "count": 1
         }
       ],
-      "station": "Stomping Station",
-      "time": 24
+      "time": 24,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Thornberry"
+          "name": "Thornberry",
+          "count": 1
         }
       ],
       "output": 2,
-      "station": "Advanced Stomping Station",
-      "time": 22
+      "time": 22,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Thornberry"
+          "name": "Thornberry",
+          "count": 1
         }
       ],
       "output": 3,
-      "station": "Flotillian Stomping Station",
-      "time": 20
+      "time": 20,
+      "station": "Flotillian Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Cactus Flesh"
+          "name": "Cactus Flesh",
+          "count": 5
         }
       ],
-      "station": "Stomping Station",
-      "time": 18
+      "time": 18,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Cactus Flesh"
+          "name": "Cactus Flesh",
+          "count": 4
         }
       ],
-      "station": "Advanced Stomping Station",
-      "time": 16
+      "time": 16,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Cactus Flesh"
+          "name": "Cactus Flesh",
+          "count": 3
         }
       ],
-      "station": "Flotillian Stomping Station",
-      "time": 15
+      "time": 15,
+      "station": "Flotillian Stomping Station"
     }
   ],
   "droppedBy": [
@@ -249,6 +249,12 @@
       "minQuantity": 8,
       "maxQuantity": 8,
       "tier": "T4"
+    },
+    {
+      "name": "Gogo",
+      "chance": 7.6923075,
+      "minQuantity": 8,
+      "maxQuantity": 8
     },
     {
       "name": "Hard Rupu Camp T1",

@@ -10,57 +10,57 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Sand"
+          "name": "Terrain: Sand",
+          "count": 1
         }
       ],
       "output": 100,
-      "station": "Soil Excavator",
-      "time": 60
+      "time": 60,
+      "station": "Soil Excavator"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Sand"
+          "name": "Terrain: Sand",
+          "count": 1
         }
       ],
       "output": 100,
-      "station": "Artisan Soil Auger",
-      "time": 30
+      "time": 30,
+      "station": "Artisan Soil Auger"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 1
         }
       ],
       "output": 10,
-      "station": "Stomping Station",
-      "time": 5
+      "time": 5,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 1
         }
       ],
       "output": 11,
-      "station": "Advanced Stomping Station",
-      "time": 4.5
+      "time": 4.5,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 1
         }
       ],
       "output": 12,
-      "station": "Flotillian Stomping Station",
-      "time": 4
+      "time": 4,
+      "station": "Flotillian Stomping Station"
     }
   ],
   "droppedBy": [
@@ -112,6 +112,12 @@
       "minQuantity": 20,
       "maxQuantity": 20,
       "tier": "T4"
+    },
+    {
+      "name": "Gogo",
+      "chance": 7.6923075,
+      "minQuantity": 20,
+      "maxQuantity": 20
     },
     {
       "name": "Hard Rupu Camp T1",

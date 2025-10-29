@@ -11,30 +11,30 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Huge Cactus Fruit"
+          "name": "Huge Cactus Fruit",
+          "count": 3
         },
         {
-          "count": 5,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 5
         }
       ],
-      "station": "Camp Fire",
-      "time": 30
+      "time": 30,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Huge Cactus Fruit"
+          "name": "Huge Cactus Fruit",
+          "count": 3
         },
         {
-          "count": 5,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 5
         }
       ],
-      "station": "Clay Pot",
-      "time": 30
+      "time": 30,
+      "station": "Clay Pot"
     }
   ]
 }

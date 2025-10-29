@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 25,
       "ingredients": [
         {
           "count": 5,
@@ -29,8 +30,7 @@
           "count": 50,
           "name": "Palm Leaves"
         }
-      ],
-      "time": 25
+      ]
     }
   ],
   "upgradeInfo": {

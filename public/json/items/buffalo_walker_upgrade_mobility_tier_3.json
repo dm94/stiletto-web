@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 96,
       "ingredients": [
         {
           "count": 5,
@@ -33,11 +34,11 @@
           "count": 8,
           "name": "Bone Glue"
         }
-      ],
-      "time": 96
+      ]
     }
   ],
   "upgradeInfo": {
-    "engineTorqueMultiplier": 1.7
+    "engineTorqueMultiplier": 1.7,
+    "sprintingTorqueDiscount": 0.3
   }
 }

@@ -7,26 +7,26 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 6
         },
         {
-          "count": 10,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 10
         },
         {
-          "count": 4,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 4
         }
       ],
-      "station": "Crafting Bench",
-      "time": 2
+      "time": 2,
+      "station": "Crafting Bench"
     }
   ],
   "toolInfo": [
     {
-      "toolType": "Mining",
-      "tier": 17
+      "tier": 17,
+      "toolType": "Mining"
     }
   ]
 }

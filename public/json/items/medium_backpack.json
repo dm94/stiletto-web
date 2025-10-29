@@ -13,38 +13,38 @@
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 4
         },
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         },
         {
-          "count": 1,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 1
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 4
         },
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         },
         {
-          "count": 1,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 1
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
     }
   ]
 }

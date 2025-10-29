@@ -12,17 +12,17 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Tree Sap"
+          "name": "Tree Sap",
+          "count": 10
         },
         {
-          "count": 20,
-          "name": "Sulfur"
+          "name": "Sulfur",
+          "count": 20
         }
       ],
       "output": 5,
-      "station": "Curing",
-      "time": 15
+      "time": 15,
+      "station": "Curing"
     }
   ],
   "droppedBy": [
@@ -37,8 +37,7 @@
       "name": "Broken Tusker 2",
       "chance": 10.964912,
       "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": null
+      "maxQuantity": 6
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -105,13 +104,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 10.964912,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 10.964912,
       "minQuantity": 6,
       "maxQuantity": 6,

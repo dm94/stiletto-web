@@ -13,16 +13,16 @@
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 4
         },
         {
-          "count": 9,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 9
         },
         {
-          "count": 2,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 2
         }
       ]
     }
@@ -37,8 +37,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scythe",
-      "tier": 1
+      "tier": 1,
+      "toolType": "Scythe"
     }
   ]
 }

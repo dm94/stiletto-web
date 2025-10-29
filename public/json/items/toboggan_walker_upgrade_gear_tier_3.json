@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 96,
       "ingredients": [
         {
           "count": 18,
@@ -29,8 +30,7 @@
           "count": 64,
           "name": "Earth Wax"
         }
-      ],
-      "time": 96
+      ]
     }
   ],
   "upgradeInfo": {

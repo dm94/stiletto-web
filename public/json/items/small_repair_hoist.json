@@ -31,7 +31,7 @@
     }
   ],
   "structureInfo": {
-    "type": "Soft",
-    "hp": 1250
+    "hp": 1250,
+    "type": "Soft"
   }
 }

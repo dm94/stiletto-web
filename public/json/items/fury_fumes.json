@@ -11,46 +11,46 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Gelatinous Goo"
+          "name": "Gelatinous Goo",
+          "count": 1
         },
         {
-          "count": 6,
-          "name": "Aloe Gel"
+          "name": "Aloe Gel",
+          "count": 6
         },
         {
-          "count": 3,
-          "name": "Blood Turnip"
+          "name": "Blood Turnip",
+          "count": 3
         },
         {
-          "count": 1,
-          "name": "Glass"
+          "name": "Glass",
+          "count": 1
         }
       ],
-      "station": "Camp Fire",
-      "time": 60
+      "time": 60,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Gelatinous Goo"
+          "name": "Gelatinous Goo",
+          "count": 1
         },
         {
-          "count": 6,
-          "name": "Aloe Gel"
+          "name": "Aloe Gel",
+          "count": 6
         },
         {
-          "count": 3,
-          "name": "Blood Turnip"
+          "name": "Blood Turnip",
+          "count": 3
         },
         {
-          "count": 1,
-          "name": "Glass"
+          "name": "Glass",
+          "count": 1
         }
       ],
-      "station": "Clay Pot",
-      "time": 60
+      "time": 60,
+      "station": "Clay Pot"
     }
   ]
 }

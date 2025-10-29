@@ -21,8 +21,7 @@
       "name": "Broken Tusker 1",
       "chance": 3.3333333,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T3",
@@ -67,6 +66,12 @@
       "tier": "T3"
     },
     {
+      "name": "Okkam",
+      "chance": 3.3333333,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
       "name": "Okkam T3",
       "chance": 3.3333333,
       "minQuantity": 1,
@@ -74,35 +79,7 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Oracle (T3)",
-      "chance": 3.3333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer (T3)",
-      "chance": 3.3333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 3.3333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
       "name": "Treasure Chest T3",
-      "chance": 3.3333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "White Death (T3)",
       "chance": 3.3333333,
       "minQuantity": 1,
       "maxQuantity": 1,

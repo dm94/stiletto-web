@@ -58,6 +58,12 @@
       "tier": "T4"
     },
     {
+      "name": "Gogo",
+      "chance": 7.6923075,
+      "minQuantity": 10,
+      "maxQuantity": 10
+    },
+    {
       "name": "Hard Rupu Camp T1",
       "chance": 11.111111,
       "minQuantity": 2,

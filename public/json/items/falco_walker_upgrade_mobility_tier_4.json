@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 288,
       "ingredients": [
         {
           "count": 32,
@@ -37,8 +38,7 @@
           "count": 64,
           "name": "Tar"
         }
-      ],
-      "time": 288
+      ]
     }
   ],
   "upgradeInfo": {

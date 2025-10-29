@@ -12,8 +12,7 @@
       "name": "Desert Clam",
       "chance": 6.6666665,
       "minQuantity": 1,
-      "maxQuantity": 3,
-      "tier": null
+      "maxQuantity": 3
     },
     {
       "name": "Go Go T4",
@@ -28,6 +27,12 @@
       "minQuantity": 1,
       "maxQuantity": 3,
       "tier": "T4"
+    },
+    {
+      "name": "Gogo",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 3
     }
   ],
   "whereToFarm": "Found in dried salt lakes."

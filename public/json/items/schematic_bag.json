@@ -13,16 +13,16 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 3
         },
         {
-          "count": 10,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 10
         },
         {
-          "count": 20,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 20
         }
       ]
     }

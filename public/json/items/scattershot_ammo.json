@@ -12,47 +12,47 @@
     {
       "ingredients": [
         {
-          "count": 20,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 20
         },
         {
-          "count": 4,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 4
         }
       ],
       "output": 8,
-      "station": "Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 20,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 20
         },
         {
-          "count": 4,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 4
         }
       ],
       "output": 8,
-      "station": "Advanced Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 20,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 20
         },
         {
-          "count": 4,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 4
         }
       ],
       "output": 8,
-      "station": "Artificer Woodworking Station",
-      "time": 3
+      "time": 3,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -63,8 +63,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scattershot",
-      "tier": 1
+      "tier": 1,
+      "toolType": "Scattershot"
     }
   ],
   "droppedBy": [

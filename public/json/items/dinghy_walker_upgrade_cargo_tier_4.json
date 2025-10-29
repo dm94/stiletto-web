@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 180,
       "ingredients": [
         {
           "count": 30,
@@ -37,8 +38,7 @@
           "count": 25,
           "name": "Worm Silk"
         }
-      ],
-      "time": 180
+      ]
     }
   ],
   "upgradeInfo": {

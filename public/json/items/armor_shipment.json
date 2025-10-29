@@ -6,70 +6,70 @@
     {
       "ingredients": [
         {
-          "count": 20,
-          "name": "Brittle Bone Armor"
+          "name": "Brittle Bone Armor",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Forester's Armor"
+          "name": "Forester's Armor",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Brittle Bone Handwraps"
+          "name": "Brittle Bone Handwraps",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Forester's Sleeves"
+          "name": "Forester's Sleeves",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Brittle Bone Boots"
+          "name": "Brittle Bone Boots",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Forester's Sandals"
+          "name": "Forester's Sandals",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Fiber Headwrap"
+          "name": "Fiber Headwrap",
+          "count": 20
         }
       ],
-      "station": "PackageCrafting",
-      "time": 60
+      "time": 60,
+      "station": "PackageCrafting"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Baskwood Armor"
+          "name": "Baskwood Armor",
+          "count": 10
         },
         {
-          "count": 10,
-          "name": "Baskwood Bracers"
+          "name": "Baskwood Bracers",
+          "count": 10
         },
         {
-          "count": 10,
-          "name": "Baskwood Boots"
+          "name": "Baskwood Boots",
+          "count": 10
         },
         {
-          "count": 10,
-          "name": "Triple Stitch Boots"
+          "name": "Triple Stitch Boots",
+          "count": 10
         },
         {
-          "count": 10,
-          "name": "Triple Stitch Bracers"
+          "name": "Triple Stitch Bracers",
+          "count": 10
         },
         {
-          "count": 10,
-          "name": "Triple Stitch Armor"
+          "name": "Triple Stitch Armor",
+          "count": 10
         },
         {
-          "count": 10,
-          "name": "Fiber Headwrap"
+          "name": "Fiber Headwrap",
+          "count": 10
         }
       ],
-      "station": "PackageCrafting",
-      "time": 60
+      "time": 60,
+      "station": "PackageCrafting"
     }
   ]
 }

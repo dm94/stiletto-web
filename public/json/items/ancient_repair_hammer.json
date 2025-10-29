@@ -12,16 +12,16 @@
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 100
         },
         {
-          "count": 50,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 50
         }
       ],
-      "station": "Empty",
-      "time": 2
+      "time": 2,
+      "station": "Empty"
     }
   ],
   "weaponInfo": {
@@ -32,27 +32,6 @@
   "droppedBy": [
     {
       "name": "Hard Rupu T2 AC",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Matriarch",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (T2)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot",
       "chance": 100,
       "minQuantity": 1,
       "maxQuantity": 1,

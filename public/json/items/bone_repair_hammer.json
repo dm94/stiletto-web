@@ -7,16 +7,16 @@
     {
       "ingredients": [
         {
-          "count": 26,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 26
         },
         {
-          "count": 11,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 11
         }
       ],
-      "station": "Crafting Bench",
-      "time": 2
+      "time": 2,
+      "station": "Crafting Bench"
     }
   ]
 }

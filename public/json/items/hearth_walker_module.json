@@ -9,20 +9,20 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Lever"
+          "name": "Lever",
+          "count": 1
         },
         {
-          "count": 1,
-          "name": "Spline"
+          "name": "Spline",
+          "count": 1
         },
         {
-          "count": 1,
-          "name": "Strut"
+          "name": "Strut",
+          "count": 1
         }
       ],
-      "station": "Module Fabricator",
-      "time": 30
+      "time": 30,
+      "station": "Module Fabricator"
     }
   ],
   "moduleInfo": {
@@ -35,15 +35,13 @@
       "name": "Broken Tusker 1",
       "chance": 4.5252676,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Loot Box Modules",
       "chance": 4.5252676,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     }
   ]
 }

@@ -12,17 +12,17 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Animal Fat"
+          "name": "Animal Fat",
+          "count": 5
         },
         {
-          "count": 10,
-          "name": "Phosphorus"
+          "name": "Phosphorus",
+          "count": 10
         }
       ],
       "output": 5,
-      "station": "Purification Station",
-      "time": 60
+      "time": 60,
+      "station": "Purification Station"
     }
   ],
   "whereToFarm": "Can be rendered using a purification station."

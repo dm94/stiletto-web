@@ -12,155 +12,155 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Black Soil"
+          "name": "Terrain: Black Soil",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 2
         }
       ],
       "output": 5,
-      "station": "Soil Excavator",
-      "time": 20
+      "time": 20,
+      "station": "Soil Excavator"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Black Soil"
+          "name": "Terrain: Black Soil",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 2
         }
       ],
       "output": 10,
-      "station": "Artisan Soil Auger",
-      "time": 20
+      "time": 20,
+      "station": "Artisan Soil Auger"
     },
     {
       "ingredients": [
         {
-          "count": 15,
-          "name": "Palm Leaves"
+          "name": "Palm Leaves",
+          "count": 15
         }
       ],
-      "station": "Stomping Station",
-      "time": 25
+      "time": 25,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 14,
-          "name": "Palm Leaves"
+          "name": "Palm Leaves",
+          "count": 14
         }
       ],
-      "station": "Advanced Stomping Station",
-      "time": 22.5
+      "time": 22.5,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 13,
-          "name": "Palm Leaves"
+          "name": "Palm Leaves",
+          "count": 13
         }
       ],
-      "station": "Flotillian Stomping Station",
-      "time": 20
+      "time": 20,
+      "station": "Flotillian Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 10
         }
       ],
-      "station": "Stomping Station",
-      "time": 25
+      "time": 25,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 9,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 9
         }
       ],
-      "station": "Advanced Stomping Station",
-      "time": 22.5
+      "time": 22.5,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 8
         }
       ],
-      "station": "Flotillian Stomping Station",
-      "time": 20
+      "time": 20,
+      "station": "Flotillian Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 1
         }
       ],
       "output": 3,
-      "station": "Stomping Station",
-      "time": 25
+      "time": 25,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 1
         }
       ],
       "output": 5,
-      "station": "Advanced Stomping Station",
-      "time": 22.5
+      "time": 22.5,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 1
         }
       ],
       "output": 10,
-      "station": "Flotillian Stomping Station",
-      "time": 20
+      "time": 20,
+      "station": "Flotillian Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Mushroom Flesh"
+          "name": "Mushroom Flesh",
+          "count": 10
         }
       ],
-      "station": "Stomping Station",
-      "time": 25
+      "time": 25,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 9,
-          "name": "Mushroom Flesh"
+          "name": "Mushroom Flesh",
+          "count": 9
         }
       ],
-      "station": "Advanced Stomping Station",
-      "time": 22.5
+      "time": 22.5,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Mushroom Flesh"
+          "name": "Mushroom Flesh",
+          "count": 8
         }
       ],
-      "station": "Flotillian Stomping Station",
-      "time": 20
+      "time": 20,
+      "station": "Flotillian Stomping Station"
     }
   ],
   "droppedBy": [
@@ -186,18 +186,10 @@
       "tier": "T2"
     },
     {
-      "name": "Bounty Hunter",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
       "name": "Broken Tusker 4",
       "chance": 10.718528,
       "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": null
+      "maxQuantity": 3
     },
     {
       "name": "Easy Rupu Camp T2",
@@ -240,13 +232,6 @@
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T3"
-    },
-    {
-      "name": "Grave Digger",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
     },
     {
       "name": "Hard Rupu Camp T2",
@@ -326,19 +311,6 @@
       "tier": "T2"
     },
     {
-      "name": "Marshland Stalker",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6
-    },
-    {
-      "name": "Matriarch",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
       "name": "Medium Rupu Camp T2",
       "chance": 11.111111,
       "minQuantity": 6,
@@ -375,153 +347,6 @@
     },
     {
       "name": "Medium Rupu T3 Q",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Ashdweller",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge (T3)",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Dunestalker",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Forager",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Harasser (T2)",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hermit",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle (T3)",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer (T3)",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (T2)",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Shaman",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Skirmisher (T2)",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T2)",
-      "chance": 11.111111,
-      "minQuantity": 6,
-      "maxQuantity": 6,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T3)",
       "chance": 10.718528,
       "minQuantity": 3,
       "maxQuantity": 3,

@@ -13,16 +13,16 @@
     {
       "ingredients": [
         {
-          "count": 22,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 22
         },
         {
-          "count": 17,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 17
         },
         {
-          "count": 15,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 15
         }
       ]
     }

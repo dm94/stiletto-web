@@ -12,32 +12,32 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Clay Spots"
+          "name": "Terrain: Clay Spots",
+          "count": 1
         },
         {
-          "count": 10,
-          "name": "Ash"
+          "name": "Ash",
+          "count": 10
         }
       ],
       "output": 5,
-      "station": "Soil Excavator",
-      "time": 20
+      "time": 20,
+      "station": "Soil Excavator"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Clay Spots"
+          "name": "Terrain: Clay Spots",
+          "count": 1
         },
         {
-          "count": 10,
-          "name": "Ash"
+          "name": "Ash",
+          "count": 10
         }
       ],
       "output": 10,
-      "station": "Artisan Soil Auger",
-      "time": 20
+      "time": 20,
+      "station": "Artisan Soil Auger"
     }
   ],
   "droppedBy": [
@@ -59,15 +59,13 @@
       "name": "Broken Tusker 2",
       "chance": 10.964912,
       "minQuantity": 7,
-      "maxQuantity": 7,
-      "tier": null
+      "maxQuantity": 7
     },
     {
       "name": "Broken Tusker 3",
       "chance": 5.882353,
       "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": null
+      "maxQuantity": 4
     },
     {
       "name": "Easy Rupu Camp T3",
@@ -208,76 +206,6 @@
       "minQuantity": 7,
       "maxQuantity": 7,
       "tier": "T4"
-    },
-    {
-      "name": "Rupu Ashdweller",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge (T3)",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Firebrand",
-      "chance": 10.964912,
-      "minQuantity": 7,
-      "maxQuantity": 7,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle (T3)",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer (T3)",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
-    },
-    {
-      "name": "White Death (T3)",
-      "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
-      "tier": "T3"
     }
   ],
   "whereToFarm": "Extracted with Soil Excavator from mud puddles in hard oases."

@@ -12,24 +12,24 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 12
         },
         {
-          "count": 35,
-          "name": "Palm Leaves"
+          "name": "Palm Leaves",
+          "count": 35
         },
         {
-          "count": 112,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 112
         },
         {
-          "count": 15,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 15
         }
       ],
-      "station": "Smithing",
-      "time": 60
+      "time": 60,
+      "station": "Smithing"
     }
   ]
 }

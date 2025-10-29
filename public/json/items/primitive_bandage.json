@@ -12,12 +12,12 @@
     {
       "ingredients": [
         {
-          "count": 16,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 16
         },
         {
-          "count": 1,
-          "name": "Ash"
+          "name": "Ash",
+          "count": 1
         }
       ],
       "output": 4

@@ -11,35 +11,41 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Insects"
+          "name": "Insects",
+          "count": 5
         }
       ],
-      "station": "Stomping Station",
-      "time": 25
+      "time": 25,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Insects"
+          "name": "Insects",
+          "count": 5
         }
       ],
-      "station": "Advanced Stomping Station",
-      "time": 15
+      "time": 15,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Insects"
+          "name": "Insects",
+          "count": 5
         }
       ],
-      "station": "Flotillian Stomping Station",
-      "time": 5
+      "time": 5,
+      "station": "Flotillian Stomping Station"
     }
   ],
   "droppedBy": [
+    {
+      "name": "Okkam",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
     {
       "name": "Okkam T3",
       "chance": 100,

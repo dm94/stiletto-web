@@ -9,8 +9,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "HoseStation",
-      "tier": 1
+      "tier": 1,
+      "toolType": "HoseStation"
     }
   ]
 }

@@ -10,42 +10,42 @@
     {
       "ingredients": [
         {
-          "count": 23,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 23
         },
         {
-          "count": 15,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 15
         },
         {
-          "count": 11,
-          "name": "Triple Stitch Fabric"
+          "name": "Triple Stitch Fabric",
+          "count": 11
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 15,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 15
         },
         {
-          "count": 8,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 8
         },
         {
-          "count": 12,
-          "name": "Tree Sap"
+          "name": "Tree Sap",
+          "count": 12
         },
         {
-          "count": 6,
-          "name": "Triple Stitch Fabric"
+          "name": "Triple Stitch Fabric",
+          "count": 6
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artificer Woodworking Station"
     }
   ]
 }

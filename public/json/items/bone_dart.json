@@ -11,59 +11,59 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         },
         {
-          "count": 6,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 6
         },
         {
-          "count": 12,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 12
         }
       ],
       "output": 10,
-      "station": "Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         },
         {
-          "count": 6,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 6
         },
         {
-          "count": 12,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 12
         }
       ],
       "output": 10,
-      "station": "Advanced Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         },
         {
-          "count": 6,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 6
         },
         {
-          "count": 12,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 12
         }
       ],
       "output": 10,
-      "station": "Artificer Woodworking Station",
-      "time": 3
+      "time": 3,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -71,8 +71,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "RepeaterBolt",
-      "tier": 2
+      "tier": 2,
+      "toolType": "RepeaterBolt"
     }
   ],
   "droppedBy": [

@@ -10,46 +10,46 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Spearmint"
+          "name": "Spearmint",
+          "count": 2
         },
         {
-          "count": 6,
-          "name": "Lava Poppy"
+          "name": "Lava Poppy",
+          "count": 6
         },
         {
-          "count": 3,
-          "name": "Tar"
+          "name": "Tar",
+          "count": 3
         },
         {
-          "count": 1,
-          "name": "Glass"
+          "name": "Glass",
+          "count": 1
         }
       ],
-      "station": "Camp Fire",
-      "time": 135
+      "time": 135,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Spearmint"
+          "name": "Spearmint",
+          "count": 2
         },
         {
-          "count": 6,
-          "name": "Lava Poppy"
+          "name": "Lava Poppy",
+          "count": 6
         },
         {
-          "count": 3,
-          "name": "Tar"
+          "name": "Tar",
+          "count": 3
         },
         {
-          "count": 1,
-          "name": "Glass"
+          "name": "Glass",
+          "count": 1
         }
       ],
-      "station": "Clay Pot",
-      "time": 135
+      "time": 135,
+      "station": "Clay Pot"
     }
   ]
 }

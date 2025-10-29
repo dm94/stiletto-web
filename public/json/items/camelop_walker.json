@@ -44,8 +44,8 @@
     }
   ],
   "structureInfo": {
-    "type": "BlueprintGeneratedClassCamelopLegsDamageOverride_C'",
-    "hp": 13000
+    "hp": 13000,
+    "type": "BlueprintGeneratedClassCamelopLegsDamageOverride_C'"
   },
   "walkerInfo": {
     "category": "Large",

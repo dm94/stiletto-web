@@ -12,21 +12,21 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 8
         },
         {
-          "count": 1,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 1
         },
         {
-          "count": 8,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 8
         }
       ],
       "output": 10,
-      "station": "Artificer Woodworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -35,8 +35,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "BallistaHarpoon",
-      "tier": 5
+      "tier": 5,
+      "toolType": "BallistaHarpoon"
     }
   ]
 }

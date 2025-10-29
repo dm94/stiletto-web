@@ -9,16 +9,16 @@
     {
       "ingredients": [
         {
-          "count": 16,
-          "name": "Worm Scale"
+          "name": "Worm Scale",
+          "count": 16
         },
         {
-          "count": 12,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 12
         },
         {
-          "count": 25,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 25
         }
       ]
     }

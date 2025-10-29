@@ -11,30 +11,30 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 2,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 2
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 1.5
+      "time": 1.5,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 2,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 2
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 1
+      "time": 1,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -45,8 +45,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scattershot",
-      "tier": 1
+      "tier": 1,
+      "toolType": "Scattershot"
     }
   ]
 }

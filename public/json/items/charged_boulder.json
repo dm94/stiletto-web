@@ -12,56 +12,56 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Meteor Core"
+          "name": "Meteor Core",
+          "count": 3
         },
         {
-          "count": 25,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 25
         },
         {
-          "count": 5,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 5
         }
       ],
-      "station": "Woodworking Station",
-      "time": 15
+      "time": 15,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Meteor Core"
+          "name": "Meteor Core",
+          "count": 3
         },
         {
-          "count": 25,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 25
         },
         {
-          "count": 5,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 5
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Meteor Core"
+          "name": "Meteor Core",
+          "count": 3
         },
         {
-          "count": 25,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 25
         },
         {
-          "count": 5,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 5
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -72,8 +72,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "CatapultRock",
-      "tier": 3
+      "tier": 3,
+      "toolType": "CatapultRock"
     }
   ]
 }
