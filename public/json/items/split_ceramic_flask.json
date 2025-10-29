@@ -13,20 +13,20 @@
     {
       "ingredients": [
         {
-          "count": 7,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 7
         },
         {
-          "count": 2,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 2
         },
         {
-          "count": 4,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 4
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
     }
   ]
 }

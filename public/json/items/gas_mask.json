@@ -13,46 +13,46 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 1
         },
         {
-          "count": 6,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 6
         },
         {
-          "count": 4,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 4
         },
         {
-          "count": 8,
-          "name": "Aloe Gel"
+          "name": "Aloe Gel",
+          "count": 8
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 1
         },
         {
-          "count": 6,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 6
         },
         {
-          "count": 4,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 4
         },
         {
-          "count": 8,
-          "name": "Aloe Gel"
+          "name": "Aloe Gel",
+          "count": 8
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 9
+      "time": 9,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "armorInfo": {

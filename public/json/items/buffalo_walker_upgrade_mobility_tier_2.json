@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 40,
       "ingredients": [
         {
           "count": 5,
@@ -33,11 +34,11 @@
           "count": 48,
           "name": "Wood"
         }
-      ],
-      "time": 40
+      ]
     }
   ],
   "upgradeInfo": {
-    "engineTorqueMultiplier": 1.5
+    "engineTorqueMultiplier": 1.5,
+    "sprintingTorqueDiscount": 0.2
   }
 }

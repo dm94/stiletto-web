@@ -36,6 +36,12 @@
       "tier": "T3"
     },
     {
+      "name": "Okkam",
+      "chance": 5.263158,
+      "minQuantity": 5,
+      "maxQuantity": 5
+    },
+    {
       "name": "Okkam T3",
       "chance": 5.263158,
       "minQuantity": 5,
@@ -55,6 +61,18 @@
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T3"
+    },
+    {
+      "name": "Toxic War Papak",
+      "chance": 5.263158,
+      "minQuantity": 5,
+      "maxQuantity": 5
+    },
+    {
+      "name": "War Okkam",
+      "chance": 5.263158,
+      "minQuantity": 5,
+      "maxQuantity": 5
     }
   ]
 }

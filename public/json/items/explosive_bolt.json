@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         },
         {
-          "count": 2,
-          "name": "Lava"
+          "name": "Lava",
+          "count": 2
         },
         {
-          "count": 1,
-          "name": "Phosphorus"
+          "name": "Phosphorus",
+          "count": 1
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 3
+      "time": 3,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {

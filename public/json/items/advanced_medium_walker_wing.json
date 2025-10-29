@@ -8,16 +8,16 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 25
         },
         {
-          "count": 12,
-          "name": "Triple Stitch Fabric"
+          "name": "Triple Stitch Fabric",
+          "count": 12
         },
         {
-          "count": 12,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 12
         }
       ]
     }

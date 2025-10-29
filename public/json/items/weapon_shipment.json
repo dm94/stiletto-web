@@ -5,78 +5,78 @@
     {
       "ingredients": [
         {
-          "count": 20,
-          "name": "Rawbone Quarterstaff"
+          "name": "Rawbone Quarterstaff",
+          "count": 20
         },
         {
-          "count": 10,
-          "name": "Rawbone Battle Axe"
+          "name": "Rawbone Battle Axe",
+          "count": 10
         },
         {
-          "count": 30,
-          "name": "Rawbone Maul"
+          "name": "Rawbone Maul",
+          "count": 30
         },
         {
-          "count": 10,
-          "name": "Rawbone Sawsword"
+          "name": "Rawbone Sawsword",
+          "count": 10
         },
         {
-          "count": 30,
-          "name": "Rawbone Club"
+          "name": "Rawbone Club",
+          "count": 30
         },
         {
-          "count": 40,
-          "name": "Rawbone Maul"
+          "name": "Rawbone Maul",
+          "count": 40
         },
         {
-          "count": 10,
-          "name": "Bonespike Sword"
+          "name": "Bonespike Sword",
+          "count": 10
         },
         {
-          "count": 50,
-          "name": "Rawbone Hand Axe"
+          "name": "Rawbone Hand Axe",
+          "count": 50
         }
       ],
-      "station": "PackageCrafting",
-      "time": 60
+      "time": 60,
+      "station": "PackageCrafting"
     },
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Paddleblade Quarterstaff"
+          "name": "Paddleblade Quarterstaff",
+          "count": 12
         },
         {
-          "count": 8,
-          "name": "Ceramic Hatchet"
+          "name": "Ceramic Hatchet",
+          "count": 8
         },
         {
-          "count": 15,
-          "name": "Short Ceramic Hoofmace"
+          "name": "Short Ceramic Hoofmace",
+          "count": 15
         },
         {
-          "count": 20,
-          "name": "Short Malletblade"
+          "name": "Short Malletblade",
+          "count": 20
         },
         {
-          "count": 18,
-          "name": "Long Ceramic Hoofmace"
+          "name": "Long Ceramic Hoofmace",
+          "count": 18
         },
         {
-          "count": 10,
-          "name": "Singblade"
+          "name": "Singblade",
+          "count": 10
         },
         {
-          "count": 15,
-          "name": "Heavy Rawbone Hand Axe"
+          "name": "Heavy Rawbone Hand Axe",
+          "count": 15
         },
         {
-          "count": 20,
-          "name": "Long Bonespike Swordstaff"
+          "name": "Long Bonespike Swordstaff",
+          "count": 20
         }
       ],
-      "station": "PackageCrafting",
-      "time": 60
+      "time": 60,
+      "station": "PackageCrafting"
     }
   ]
 }

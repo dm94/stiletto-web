@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 60,
       "ingredients": [
         {
           "count": 12,
@@ -25,8 +26,7 @@
           "count": 25,
           "name": "Rope"
         }
-      ],
-      "time": 60
+      ]
     }
   ],
   "upgradeInfo": {

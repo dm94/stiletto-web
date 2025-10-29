@@ -10,28 +10,28 @@
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 35
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 8,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 8
         },
         {
-          "count": 3,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 3
         }
       ]
     }
   ],
   "toolInfo": [
     {
-      "toolType": "Net",
-      "tier": 1
+      "tier": 1,
+      "toolType": "Net"
     }
   ],
   "droppedBy": [
@@ -41,12 +41,6 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
-    },
-    {
-      "name": "Cowardly Rupu",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T1",
@@ -68,12 +62,6 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
-    },
-    {
-      "name": "Green Rupu",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
     },
     {
       "name": "Hard Rupu Camp T1",
@@ -125,103 +113,7 @@
       "tier": "T1"
     },
     {
-      "name": "Prophet",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Berserker",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Forerunner (Rupu)",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Forerunner (T1)",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Gunner",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Harasser (T1)",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Hero (Rupu)",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Oracle (Rupu)",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Overseer (Rupu)",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Priestess (Rupu)",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Rupu Scavenger",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Sentinel",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Skirmisher (T1)",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Thug",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T1"
-    },
-    {
-      "name": "Rupu Warrior",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Tar Dweller",
+      "name": "Nurr Raider",
       "chance": 8.064516,
       "minQuantity": 1,
       "maxQuantity": 1
@@ -232,18 +124,6 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T1"
-    },
-    {
-      "name": "Yellow Rupu",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
-    },
-    {
-      "name": "Zharvakko",
-      "chance": 8.064516,
-      "minQuantity": 1,
-      "maxQuantity": 1
     }
   ]
 }

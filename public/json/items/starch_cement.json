@@ -13,21 +13,21 @@
     {
       "ingredients": [
         {
-          "count": 30,
-          "name": "Corn"
+          "name": "Corn",
+          "count": 30
         },
         {
-          "count": 10,
-          "name": "Tree Sap"
+          "name": "Tree Sap",
+          "count": 10
         },
         {
-          "count": 5,
-          "name": "Salt Rock"
+          "name": "Salt Rock",
+          "count": 5
         }
       ],
       "output": 5,
-      "station": "Curing",
-      "time": 20
+      "time": 20,
+      "station": "Curing"
     }
   ]
 }

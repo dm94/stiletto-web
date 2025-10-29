@@ -12,16 +12,16 @@
     {
       "ingredients": [
         {
-          "count": 15,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 15
         },
         {
-          "count": 30,
-          "name": "Worm Silk"
+          "name": "Worm Silk",
+          "count": 30
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 30
+      "time": 30,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "armorInfo": {
@@ -41,8 +41,7 @@
       "name": "Broken Tusker 2",
       "chance": 3.030303,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -109,13 +108,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 3.030303,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 3.030303,
       "minQuantity": 1,
       "maxQuantity": 1,

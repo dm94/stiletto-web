@@ -36,8 +36,8 @@
     }
   ],
   "structureInfo": {
-    "type": "Hard",
-    "hp": 26000
+    "hp": 26000,
+    "type": "Hard"
   },
   "walkerInfo": {
     "category": "Medium",

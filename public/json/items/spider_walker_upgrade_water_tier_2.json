@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 25,
       "ingredients": [
         {
           "count": 25,
@@ -21,8 +22,7 @@
           "count": 10,
           "name": "Bone Splinter"
         }
-      ],
-      "time": 25
+      ]
     }
   ],
   "upgradeInfo": {

@@ -12,32 +12,32 @@
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Stone Plank"
+          "name": "Stone Plank",
+          "count": 100
         }
       ],
-      "station": "Woodworking Station",
-      "time": 900
+      "time": 900,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Stone Plank"
+          "name": "Stone Plank",
+          "count": 100
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 750
+      "time": 750,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Stone Plank"
+          "name": "Stone Plank",
+          "count": 100
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 600
+      "time": 600,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "walkerInfo": {

@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 6
         },
         {
-          "count": 8,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 8
         },
         {
-          "count": 18,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 18
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "armorInfo": {
@@ -45,8 +45,7 @@
       "name": "Broken Tusker 3",
       "chance": 11.111111,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T3",
@@ -119,70 +118,7 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Ashdweller",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge (T3)",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle (T3)",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer (T3)",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
       "name": "Treasure Chest T3",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "White Death (T3)",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,

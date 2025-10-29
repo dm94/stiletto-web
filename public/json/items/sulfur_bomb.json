@@ -12,46 +12,46 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Salt Rock"
+          "name": "Salt Rock",
+          "count": 12
         },
         {
-          "count": 18,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 18
         },
         {
-          "count": 25,
-          "name": "Sulfur"
+          "name": "Sulfur",
+          "count": 25
         },
         {
-          "count": 4,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 4
         }
       ],
-      "station": "Camp Fire",
-      "time": 120
+      "time": 120,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Salt Rock"
+          "name": "Salt Rock",
+          "count": 12
         },
         {
-          "count": 18,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 18
         },
         {
-          "count": 25,
-          "name": "Sulfur"
+          "name": "Sulfur",
+          "count": 25
         },
         {
-          "count": 4,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 4
         }
       ],
-      "station": "Clay Pot",
-      "time": 90
+      "time": 90,
+      "station": "Clay Pot"
     }
   ],
   "projectileDamage": {

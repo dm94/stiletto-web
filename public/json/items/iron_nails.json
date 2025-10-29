@@ -12,13 +12,13 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 1
         }
       ],
       "output": 25,
-      "station": "Lathe",
-      "time": 15
+      "time": 15,
+      "station": "Lathe"
     }
   ],
   "droppedBy": [
@@ -33,8 +33,7 @@
       "name": "Broken Tusker 2",
       "chance": 10.964912,
       "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": null
+      "maxQuantity": 3
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -101,13 +100,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 10.964912,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 10.964912,
       "minQuantity": 3,
       "maxQuantity": 3,

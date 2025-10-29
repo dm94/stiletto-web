@@ -8,16 +8,16 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 25
         },
         {
-          "count": 18,
-          "name": "Triple Stitch Fabric"
+          "name": "Triple Stitch Fabric",
+          "count": 18
         },
         {
-          "count": 12,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 12
         }
       ]
     }

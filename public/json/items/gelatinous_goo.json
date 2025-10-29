@@ -9,6 +9,12 @@
   "experiencieReward": 12,
   "droppedBy": [
     {
+      "name": "Papak",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
       "name": "Papak T3",
       "chance": 100,
       "minQuantity": 1,

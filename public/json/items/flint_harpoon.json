@@ -11,56 +11,56 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Flint Bolt"
+          "name": "Flint Bolt",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 2
         },
         {
-          "count": 5,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 5
         }
       ],
-      "station": "Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Flint Bolt"
+          "name": "Flint Bolt",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 2
         },
         {
-          "count": 5,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 5
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Flint Bolt"
+          "name": "Flint Bolt",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 2
         },
         {
-          "count": 5,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 5
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -68,8 +68,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "BallistaHarpoon",
-      "tier": 1
+      "tier": 1,
+      "toolType": "BallistaHarpoon"
     }
   ]
 }

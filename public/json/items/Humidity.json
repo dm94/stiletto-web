@@ -12,22 +12,22 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 1
         }
       ],
-      "station": "HumidificationFuelConsumption",
-      "time": 14400
+      "time": 14400,
+      "station": "HumidificationFuelConsumption"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 1
         }
       ],
-      "station": "HumidificationWaterConsumption",
-      "time": 43200
+      "time": 43200,
+      "station": "HumidificationWaterConsumption"
     }
   ]
 }

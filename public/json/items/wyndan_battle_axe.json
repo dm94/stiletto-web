@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 10
         },
         {
-          "count": 6,
-          "name": "Leather"
+          "name": "Leather",
+          "count": 6
         },
         {
-          "count": 3,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 3
         }
       ],
-      "station": "Crafting Bench",
-      "time": 15
+      "time": 15,
+      "station": "Crafting Bench"
     }
   ],
   "weaponInfo": {
@@ -37,8 +37,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "TreeCutting",
-      "tier": 0
+      "tier": 0,
+      "toolType": "TreeCutting"
     }
   ],
   "droppedBy": [
@@ -53,8 +53,7 @@
       "name": "Broken Tusker 2",
       "chance": 7.142857,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -121,13 +120,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,

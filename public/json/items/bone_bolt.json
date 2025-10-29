@@ -12,59 +12,59 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 5,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 5
         },
         {
-          "count": 12,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 12
         }
       ],
       "output": 3,
-      "station": "Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 5,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 5
         },
         {
-          "count": 12,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 12
         }
       ],
       "output": 3,
-      "station": "Advanced Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 5
         },
         {
-          "count": 5,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 5
         },
         {
-          "count": 12,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 12
         }
       ],
       "output": 3,
-      "station": "Artificer Woodworking Station",
-      "time": 3
+      "time": 3,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -73,8 +73,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "BallistaHarpoon",
-      "tier": 2
+      "tier": 2,
+      "toolType": "BallistaHarpoon"
     }
   ],
   "droppedBy": [

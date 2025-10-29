@@ -6,34 +6,34 @@
     {
       "ingredients": [
         {
-          "count": 14,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 14
         },
         {
-          "count": 10,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 10
         },
         {
-          "count": 2,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 2
         },
         {
-          "count": 8,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 8
         },
         {
-          "count": 2,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 2
         }
       ],
-      "station": "Smithing",
-      "time": 40
+      "time": 40,
+      "station": "Smithing"
     }
   ],
   "toolInfo": [
     {
-      "toolType": "Scythe",
-      "tier": 25
+      "tier": 25,
+      "toolType": "Scythe"
     }
   ]
 }

@@ -12,56 +12,56 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Bone Bolt"
+          "name": "Bone Bolt",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 2
         },
         {
-          "count": 4,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 4
         }
       ],
-      "station": "Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Bone Bolt"
+          "name": "Bone Bolt",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 2
         },
         {
-          "count": 4,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 4
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Bone Bolt"
+          "name": "Bone Bolt",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 2
         },
         {
-          "count": 4,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 4
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 3
+      "time": 3,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -69,8 +69,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "BallistaHarpoon",
-      "tier": 2
+      "tier": 2,
+      "toolType": "BallistaHarpoon"
     }
   ]
 }

@@ -12,8 +12,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "RepeaterBolt",
-      "tier": 3
+      "tier": 3,
+      "toolType": "RepeaterBolt"
     }
   ]
 }

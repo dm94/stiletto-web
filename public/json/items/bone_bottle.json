@@ -13,38 +13,38 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 1
         },
         {
-          "count": 5,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 5
         },
         {
-          "count": 32,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 32
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 1
+      "time": 1,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 1
         },
         {
-          "count": 5,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 5
         },
         {
-          "count": 32,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 32
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 1
+      "time": 1,
+      "station": "Artisan Fiberworking Station"
     }
   ]
 }

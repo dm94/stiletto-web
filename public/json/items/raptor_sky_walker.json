@@ -48,8 +48,8 @@
     }
   ],
   "structureInfo": {
-    "type": "Hard",
-    "hp": 14000
+    "hp": 14000,
+    "type": "Hard"
   },
   "walkerInfo": {
     "category": "Flying",

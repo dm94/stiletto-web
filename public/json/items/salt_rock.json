@@ -12,35 +12,35 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Brine"
+          "name": "Brine",
+          "count": 1
         }
       ],
       "output": 3,
-      "station": "Clay Pot",
-      "time": 20
+      "time": 20,
+      "station": "Clay Pot"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Salt Flats"
+          "name": "Terrain: Salt Flats",
+          "count": 1
         }
       ],
       "output": 10,
-      "station": "Artisan Soil Auger",
-      "time": 20
+      "time": 20,
+      "station": "Artisan Soil Auger"
     },
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 100
         }
       ],
       "output": 5,
-      "station": "WaterBoiling",
-      "time": 30
+      "time": 30,
+      "station": "WaterBoiling"
     }
   ]
 }

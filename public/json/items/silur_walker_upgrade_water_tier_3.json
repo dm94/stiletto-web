@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 96,
       "ingredients": [
         {
           "count": 48,
@@ -29,8 +30,7 @@
           "count": 56,
           "name": "Fiber Weave"
         }
-      ],
-      "time": 96
+      ]
     }
   ],
   "upgradeInfo": {

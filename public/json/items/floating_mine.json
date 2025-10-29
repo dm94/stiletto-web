@@ -11,17 +11,17 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 8
         },
         {
-          "count": 12,
-          "name": "Lava Fuel"
+          "name": "Lava Fuel",
+          "count": 12
         }
       ],
       "output": 8,
-      "station": "Artificer Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {

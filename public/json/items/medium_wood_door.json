@@ -22,7 +22,7 @@
     }
   ],
   "structureInfo": {
-    "type": "Reinforced",
-    "hp": 20000
+    "hp": 20000,
+    "type": "Reinforced"
   }
 }

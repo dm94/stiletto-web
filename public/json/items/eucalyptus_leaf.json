@@ -18,8 +18,7 @@
       "name": "Broken Tusker 3",
       "chance": 11.111111,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -86,13 +85,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 11.111111,
       "minQuantity": 1,
       "maxQuantity": 1,

@@ -12,15 +12,13 @@
       "name": "Broken Tusker 3",
       "chance": 100,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Broken Tusker 4",
       "chance": 100,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -42,6 +40,12 @@
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T4"
+    },
+    {
+      "name": "Gogo",
+      "chance": 7.6923075,
+      "minQuantity": 3,
+      "maxQuantity": 3
     },
     {
       "name": "Hard Rupu Camp T4",

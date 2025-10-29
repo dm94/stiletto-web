@@ -6,26 +6,26 @@
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 4
         },
         {
-          "count": 35,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 35
         },
         {
-          "count": 4,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 4
         }
       ],
-      "station": "Smithing",
-      "time": 80
+      "time": 80,
+      "station": "Smithing"
     }
   ],
   "toolInfo": [
     {
-      "toolType": "Mining",
-      "tier": 25
+      "tier": 25,
+      "toolType": "Mining"
     }
   ]
 }

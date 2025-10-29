@@ -13,20 +13,20 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 2
         },
         {
-          "count": 22,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 22
         },
         {
-          "count": 8,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 8
         },
         {
-          "count": 2,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 2
         }
       ]
     }
@@ -38,8 +38,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scythe",
-      "tier": 5
+      "tier": 5,
+      "toolType": "Scythe"
     }
   ]
 }

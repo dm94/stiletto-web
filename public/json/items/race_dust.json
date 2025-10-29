@@ -11,46 +11,46 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Nurr Fang"
+          "name": "Nurr Fang",
+          "count": 6
         },
         {
-          "count": 6,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 6
         },
         {
-          "count": 6,
-          "name": "Sulfur"
+          "name": "Sulfur",
+          "count": 6
         },
         {
-          "count": 1,
-          "name": "Glass"
+          "name": "Glass",
+          "count": 1
         }
       ],
-      "station": "Camp Fire",
-      "time": 60
+      "time": 60,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Nurr Fang"
+          "name": "Nurr Fang",
+          "count": 6
         },
         {
-          "count": 6,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 6
         },
         {
-          "count": 6,
-          "name": "Sulfur"
+          "name": "Sulfur",
+          "count": 6
         },
         {
-          "count": 1,
-          "name": "Glass"
+          "name": "Glass",
+          "count": 1
         }
       ],
-      "station": "Clay Pot",
-      "time": 60
+      "time": 60,
+      "station": "Clay Pot"
     }
   ]
 }

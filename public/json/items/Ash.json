@@ -12,54 +12,54 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1
         }
       ],
-      "station": "FuelBurning",
-      "time": 13
+      "time": 13,
+      "station": "FuelBurning"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1
         }
       ],
-      "station": "FuelLightSource",
-      "time": 20
+      "time": 20,
+      "station": "FuelLightSource"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 1
         }
       ],
-      "station": "FuelBurning",
-      "time": 600
+      "time": 600,
+      "station": "FuelBurning"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 1
         }
       ],
       "output": 15,
-      "station": "Furnace",
-      "time": 15
+      "time": 15,
+      "station": "Furnace"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 1
         }
       ],
       "output": 15,
-      "station": "Advanced Furnace",
-      "time": 12
+      "time": 12,
+      "station": "Advanced Furnace"
     }
   ],
   "droppedBy": [
@@ -111,6 +111,12 @@
       "minQuantity": 20,
       "maxQuantity": 20,
       "tier": "T4"
+    },
+    {
+      "name": "Gogo",
+      "chance": 7.6923075,
+      "minQuantity": 20,
+      "maxQuantity": 20
     },
     {
       "name": "Hard Rupu Camp T1",

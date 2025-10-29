@@ -25,7 +25,7 @@
     }
   ],
   "structureInfo": {
-    "type": "BlueprintGeneratedClassInvincibleDamageOverride_C'",
-    "hp": 5000
+    "hp": 5000,
+    "type": "BlueprintGeneratedClassInvincibleDamageOverride_C'"
   }
 }

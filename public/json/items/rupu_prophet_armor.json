@@ -10,12 +10,12 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 25
         },
         {
-          "count": 1,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 1
         }
       ]
     }

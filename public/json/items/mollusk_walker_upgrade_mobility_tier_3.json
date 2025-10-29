@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 96,
       "ingredients": [
         {
           "count": 14,
@@ -29,8 +30,7 @@
           "count": 8,
           "name": "Bone Glue"
         }
-      ],
-      "time": 96
+      ]
     }
   ],
   "upgradeInfo": {

@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 38,
-          "name": "Worm Silk"
+          "name": "Worm Silk",
+          "count": 38
         },
         {
-          "count": 5,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 5
         },
         {
-          "count": 25,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 25
         }
       ],
-      "station": "Smithing",
-      "time": 25
+      "time": 25,
+      "station": "Smithing"
     }
   ]
 }

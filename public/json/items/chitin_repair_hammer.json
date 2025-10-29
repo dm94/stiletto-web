@@ -7,20 +7,20 @@
     {
       "ingredients": [
         {
-          "count": 14,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 14
         },
         {
-          "count": 10,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 10
         },
         {
-          "count": 5,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 5
         }
       ],
-      "station": "Crafting Bench",
-      "time": 2
+      "time": 2,
+      "station": "Crafting Bench"
     }
   ]
 }

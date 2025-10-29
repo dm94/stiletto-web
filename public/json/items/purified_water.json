@@ -11,155 +11,155 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Cactus Flesh"
+          "name": "Cactus Flesh",
+          "count": 10
         }
       ],
-      "station": "Camp Fire",
-      "time": 35
+      "time": 35,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Cactus Flesh"
+          "name": "Cactus Flesh",
+          "count": 10
         }
       ],
-      "station": "Clay Pot",
-      "time": 35
+      "time": 35,
+      "station": "Clay Pot"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Fruit Pulp"
+          "name": "Fruit Pulp",
+          "count": 1
         }
       ],
-      "station": "Camp Fire",
-      "time": 35
+      "time": 35,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Fruit Pulp"
+          "name": "Fruit Pulp",
+          "count": 1
         }
       ],
-      "station": "Clay Pot",
-      "time": 35
+      "time": 35,
+      "station": "Clay Pot"
     },
     {
       "ingredients": [
         {
-          "count": 50,
-          "name": "Toxic Water"
+          "name": "Toxic Water",
+          "count": 50
         },
         {
-          "count": 6,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 6
         },
         {
-          "count": 5,
-          "name": "Sand"
+          "name": "Sand",
+          "count": 5
         }
       ],
       "output": 50,
-      "station": "Purification Station",
-      "time": 120
+      "time": 120,
+      "station": "Purification Station"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Toxic Water"
+          "name": "Toxic Water",
+          "count": 5
         },
         {
-          "count": 1,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 1
         }
       ],
       "output": 3,
-      "station": "Camp Fire",
-      "time": 35
+      "time": 35,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Toxic Water"
+          "name": "Toxic Water",
+          "count": 5
         },
         {
-          "count": 1,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 1
         }
       ],
       "output": 5,
-      "station": "Clay Pot",
-      "time": 55
+      "time": 55,
+      "station": "Clay Pot"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Thornberry"
+          "name": "Thornberry",
+          "count": 3
         }
       ],
-      "station": "Camp Fire",
-      "time": 35
+      "time": 35,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Thornberry"
+          "name": "Thornberry",
+          "count": 3
         }
       ],
-      "station": "Clay Pot",
-      "time": 35
+      "time": 35,
+      "station": "Clay Pot"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Huge Cactus Fruit"
-        }
-      ],
-      "output": 3,
-      "station": "Camp Fire",
-      "time": 40
-    },
-    {
-      "ingredients": [
-        {
-          "count": 1,
-          "name": "Huge Cactus Fruit"
+          "name": "Huge Cactus Fruit",
+          "count": 1
         }
       ],
       "output": 3,
-      "station": "Clay Pot",
-      "time": 40
+      "time": 40,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Aloe Vera"
+          "name": "Huge Cactus Fruit",
+          "count": 1
         }
       ],
       "output": 3,
-      "station": "Camp Fire",
-      "time": 35
+      "time": 40,
+      "station": "Clay Pot"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Aloe Vera"
+          "name": "Aloe Vera",
+          "count": 10
         }
       ],
       "output": 3,
-      "station": "Clay Pot",
-      "time": 35
+      "time": 35,
+      "station": "Camp Fire"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Aloe Vera",
+          "count": 10
+        }
+      ],
+      "output": 3,
+      "time": 35,
+      "station": "Clay Pot"
     }
   ],
   "droppedBy": [
@@ -174,8 +174,7 @@
       "name": "Desert Clam",
       "chance": 60,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T1",
@@ -218,6 +217,12 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
+    },
+    {
+      "name": "Gogo",
+      "chance": 60,
+      "minQuantity": 1,
+      "maxQuantity": 1
     },
     {
       "name": "Hard Rupu Camp T1",

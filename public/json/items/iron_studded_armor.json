@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 35
         },
         {
-          "count": 15,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 15
         },
         {
-          "count": 30,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 30
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 30
+      "time": 30,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "armorInfo": {
@@ -45,8 +45,7 @@
       "name": "Broken Tusker 2",
       "chance": 30.30303,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -113,13 +112,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 30.30303,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 30.30303,
       "minQuantity": 1,
       "maxQuantity": 1,

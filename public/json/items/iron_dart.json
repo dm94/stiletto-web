@@ -11,25 +11,25 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         },
         {
-          "count": 2,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 2
         },
         {
-          "count": 1,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 1
         },
         {
-          "count": 6,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 6
         }
       ],
       "output": 10,
-      "station": "Artificer Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -37,8 +37,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "RepeaterBolt",
-      "tier": 4
+      "tier": 4,
+      "toolType": "RepeaterBolt"
     }
   ],
   "droppedBy": [

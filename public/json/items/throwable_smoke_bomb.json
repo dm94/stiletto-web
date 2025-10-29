@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Tar"
+          "name": "Tar",
+          "count": 1
         },
         {
-          "count": 3,
-          "name": "Cotton"
+          "name": "Cotton",
+          "count": 3
         },
         {
-          "count": 2,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 2
         }
       ],
-      "station": "Curing",
-      "time": 2
+      "time": 2,
+      "station": "Curing"
     }
   ],
   "weaponInfo": {

@@ -37,7 +37,7 @@
     }
   ],
   "structureInfo": {
-    "type": "Hard",
-    "hp": 7000
+    "hp": 7000,
+    "type": "Hard"
   }
 }

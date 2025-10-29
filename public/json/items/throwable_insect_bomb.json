@@ -12,24 +12,24 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Insects"
+          "name": "Insects",
+          "count": 6
         },
         {
-          "count": 3,
-          "name": "Cotton"
+          "name": "Cotton",
+          "count": 3
         },
         {
-          "count": 2,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 2
         },
         {
-          "count": 6,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 6
         }
       ],
-      "station": "Curing",
-      "time": 2
+      "time": 2,
+      "station": "Curing"
     }
   ],
   "weaponInfo": {

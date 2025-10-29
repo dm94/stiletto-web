@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 16,
       "ingredients": [
         {
           "count": 8,
@@ -29,8 +30,7 @@
           "count": 8,
           "name": "Hide"
         }
-      ],
-      "time": 16
+      ]
     }
   ],
   "upgradeInfo": {

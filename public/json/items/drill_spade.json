@@ -9,24 +9,24 @@
     {
       "ingredients": [
         {
-          "count": 18,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 18
         },
         {
-          "count": 8,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 8
         },
         {
-          "count": 1,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 1
         },
         {
-          "count": 1,
-          "name": "Wooden Gear"
+          "name": "Wooden Gear",
+          "count": 1
         }
       ],
-      "station": "Crafting Bench",
-      "time": 2
+      "time": 2,
+      "station": "Crafting Bench"
     }
   ]
 }

@@ -11,20 +11,20 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 1
         },
         {
-          "count": 8,
-          "name": "Nibiran Mineral"
+          "name": "Nibiran Mineral",
+          "count": 8
         },
         {
-          "count": 2,
-          "name": "Worm Oil"
+          "name": "Worm Oil",
+          "count": 2
         }
       ],
-      "station": "Advanced Furnace",
-      "time": 340
+      "time": 340,
+      "station": "Advanced Furnace"
     }
   ],
   "droppedBy": [
@@ -39,8 +39,7 @@
       "name": "Broken Tusker 2",
       "chance": 1.3157896,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -107,13 +106,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 1.3157896,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 1.3157896,
       "minQuantity": 1,
       "maxQuantity": 1,

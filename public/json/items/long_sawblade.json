@@ -30,8 +30,8 @@
   ],
   "toolInfo": [
     {
-      "toolType": "Sawblade",
-      "tier": 18
+      "tier": 18,
+      "toolType": "Sawblade"
     }
   ]
 }

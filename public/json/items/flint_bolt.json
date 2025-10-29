@@ -12,47 +12,47 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         },
         {
-          "count": 9,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 9
         }
       ],
       "output": 3,
-      "station": "Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         },
         {
-          "count": 9,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 9
         }
       ],
       "output": 3,
-      "station": "Advanced Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         },
         {
-          "count": 9,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 9
         }
       ],
       "output": 3,
-      "station": "Artificer Woodworking Station",
-      "time": 4
+      "time": 4,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -61,8 +61,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "BallistaHarpoon",
-      "tier": 1
+      "tier": 1,
+      "toolType": "BallistaHarpoon"
     }
   ],
   "droppedBy": [

@@ -13,30 +13,30 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         },
         {
-          "count": 3,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 3
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 1
+      "time": 1,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         },
         {
-          "count": 3,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 3
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 1
+      "time": 1,
+      "station": "Artisan Fiberworking Station"
     }
   ]
 }

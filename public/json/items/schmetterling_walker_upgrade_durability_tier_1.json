@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 25,
       "ingredients": [
         {
           "count": 63,
@@ -29,8 +30,7 @@
           "count": 38,
           "name": "Rupu Pelt"
         }
-      ],
-      "time": 25
+      ]
     }
   ],
   "upgradeInfo": {

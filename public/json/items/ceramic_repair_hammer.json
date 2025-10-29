@@ -7,24 +7,24 @@
     {
       "ingredients": [
         {
-          "count": 22,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 22
         },
         {
-          "count": 14,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 14
         },
         {
-          "count": 6,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 6
         },
         {
-          "count": 24,
-          "name": "Cotton"
+          "name": "Cotton",
+          "count": 24
         }
       ],
-      "station": "Crafting Bench",
-      "time": 2
+      "time": 2,
+      "station": "Crafting Bench"
     }
   ]
 }

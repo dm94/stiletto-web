@@ -13,20 +13,20 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Obsidian"
+          "name": "Obsidian",
+          "count": 10
         },
         {
-          "count": 50,
-          "name": "Ash"
+          "name": "Ash",
+          "count": 50
         },
         {
-          "count": 50,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 50
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
     }
   ]
 }

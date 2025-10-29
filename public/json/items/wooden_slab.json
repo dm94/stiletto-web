@@ -11,89 +11,89 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 10
         },
         {
-          "count": 2,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 2
         }
       ],
-      "station": "Woodworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 10
         },
         {
-          "count": 2,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 2
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 8
+      "time": 8,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 10
         },
         {
-          "count": 2,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 2
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 6
+      "time": 6,
+      "station": "Artificer Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 100
         },
         {
-          "count": 20,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 20
         }
       ],
       "output": 10,
-      "station": "Woodworking Station",
-      "time": 60
+      "time": 60,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 100
         },
         {
-          "count": 20,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 20
         }
       ],
       "output": 10,
-      "station": "Advanced Woodworking Station",
-      "time": 60
+      "time": 60,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 100
         },
         {
-          "count": 20,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 20
         }
       ],
       "output": 10,
-      "station": "Artificer Woodworking Station",
-      "time": 60
+      "time": 60,
+      "station": "Artificer Woodworking Station"
     }
   ]
 }

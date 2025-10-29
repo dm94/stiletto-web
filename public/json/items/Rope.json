@@ -12,72 +12,72 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 8
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 18
+      "time": 18,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 8
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 18
+      "time": 18,
+      "station": "Artisan Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 800,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 800
         }
       ],
       "output": 100,
-      "station": "Advanced Fiberworking Station",
-      "time": 1700
+      "time": 1700,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 800,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 800
         }
       ],
       "output": 100,
-      "station": "Artisan Fiberworking Station",
-      "time": 1700
+      "time": 1700,
+      "station": "Artisan Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 30,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 30
         },
         {
-          "count": 5,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 5
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 20
+      "time": 20,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 30,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 30
         },
         {
-          "count": 5,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 5
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 20
+      "time": 20,
+      "station": "Artisan Fiberworking Station"
     }
   ],
   "droppedBy": [
@@ -110,25 +110,16 @@
       "tier": "T2"
     },
     {
-      "name": "Bounty Hunter",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
       "name": "Broken Tusker 3",
       "chance": 11.111112,
       "minQuantity": 12,
-      "maxQuantity": 12,
-      "tier": null
+      "maxQuantity": 12
     },
     {
       "name": "Broken Tusker 4",
       "chance": 10.718528,
       "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": null
+      "maxQuantity": 3
     },
     {
       "name": "Easy Rupu Camp T2",
@@ -192,13 +183,6 @@
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
-    },
-    {
-      "name": "Grave Digger",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
     },
     {
       "name": "Hard Rupu Camp T2",
@@ -306,19 +290,6 @@
       "tier": "T2"
     },
     {
-      "name": "Marshland Stalker",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5
-    },
-    {
-      "name": "Matriarch",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
       "name": "Medium Rupu Camp T2",
       "chance": 11.111111,
       "minQuantity": 5,
@@ -380,160 +351,6 @@
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
-    },
-    {
-      "name": "Rupu Ashdweller",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge (T3)",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Dunestalker",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Firebrand",
-      "chance": 11.111112,
-      "minQuantity": 12,
-      "maxQuantity": 12,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Forager",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Harasser (T2)",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hermit",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle (T3)",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer (T3)",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (T2)",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Shaman",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Skirmisher (T2)",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T2)",
-      "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T3)",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
     }
   ]
 }

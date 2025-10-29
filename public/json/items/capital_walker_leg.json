@@ -9,16 +9,16 @@
     {
       "ingredients": [
         {
-          "count": 18,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 18
         },
         {
-          "count": 22,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 22
         },
         {
-          "count": 15,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 15
         }
       ]
     }

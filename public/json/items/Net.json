@@ -12,56 +12,56 @@
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 35
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 3,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 3
         }
       ],
-      "station": "Woodworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 35
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 3,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 3
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 35
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 3,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 3
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -69,8 +69,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Net",
-      "tier": 0
+      "tier": 0,
+      "toolType": "Net"
     }
   ]
 }

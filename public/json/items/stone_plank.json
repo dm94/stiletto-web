@@ -18,8 +18,7 @@
       "name": "Broken Tusker 1",
       "chance": 100,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Hotspot Loot T2 AC",

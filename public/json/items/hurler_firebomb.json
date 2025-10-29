@@ -12,8 +12,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "SlingshotRock",
-      "tier": 1
+      "tier": 1,
+      "toolType": "SlingshotRock"
     }
   ]
 }

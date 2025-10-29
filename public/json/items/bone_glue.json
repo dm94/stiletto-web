@@ -12,58 +12,58 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 10
         },
         {
-          "count": 3,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 3
         }
       ],
-      "station": "Camp Fire",
-      "time": 45
+      "time": 45,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 4
         },
         {
-          "count": 1,
-          "name": "Nurr Fang"
+          "name": "Nurr Fang",
+          "count": 1
         }
       ],
-      "station": "Camp Fire",
-      "time": 50
+      "time": 50,
+      "station": "Camp Fire"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 10
         },
         {
-          "count": 3,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 3
         }
       ],
-      "station": "Clay Pot",
-      "time": 45
+      "time": 45,
+      "station": "Clay Pot"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Nurr Fang"
+          "name": "Nurr Fang",
+          "count": 1
         },
         {
-          "count": 4,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 4
         }
       ],
-      "station": "Clay Pot",
-      "time": 45
+      "time": 45,
+      "station": "Clay Pot"
     }
   ],
   "droppedBy": [
@@ -96,18 +96,10 @@
       "tier": "T3"
     },
     {
-      "name": "Bounty Hunter",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
       "name": "Broken Tusker 3",
       "chance": 11.764706,
       "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": null
+      "maxQuantity": 5
     },
     {
       "name": "Easy Rupu Camp T2",
@@ -171,13 +163,6 @@
       "minQuantity": 8,
       "maxQuantity": 8,
       "tier": "T4"
-    },
-    {
-      "name": "Grave Digger",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
     },
     {
       "name": "Hard Rupu Camp T2",
@@ -285,19 +270,6 @@
       "tier": "T2"
     },
     {
-      "name": "Marshland Stalker",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3
-    },
-    {
-      "name": "Matriarch",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
       "name": "Medium Rupu Camp T2",
       "chance": 11.111111,
       "minQuantity": 3,
@@ -359,160 +331,6 @@
       "minQuantity": 8,
       "maxQuantity": 8,
       "tier": "T4"
-    },
-    {
-      "name": "Rupu Ashdweller",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge (T3)",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Dunestalker",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Firebrand",
-      "chance": 11.111111,
-      "minQuantity": 8,
-      "maxQuantity": 8,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Forager",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Harasser (T2)",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hermit",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle (T3)",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer (T3)",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Plainstrider",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (T2)",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Shaman",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Skirmisher (T2)",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T2)",
-      "chance": 11.111111,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T3)",
-      "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
-      "tier": "T3"
     }
   ]
 }

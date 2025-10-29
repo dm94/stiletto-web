@@ -11,24 +11,24 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 2
         },
         {
-          "count": 22,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 22
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 4,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 4
         }
       ],
-      "station": "Crafting Bench",
-      "time": 2
+      "time": 2,
+      "station": "Crafting Bench"
     }
   ],
   "weaponInfo": {
@@ -36,8 +36,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scythe",
-      "tier": 17
+      "tier": 17,
+      "toolType": "Scythe"
     }
   ]
 }

@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 96,
       "ingredients": [
         {
           "count": 24,
@@ -25,8 +26,7 @@
           "count": 136,
           "name": "Wood"
         }
-      ],
-      "time": 96
+      ]
     }
   ],
   "upgradeInfo": {

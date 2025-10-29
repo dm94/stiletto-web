@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 5
         },
         {
-          "count": 12,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 12
         },
         {
-          "count": 3,
-          "name": "Rubber Block"
+          "name": "Rubber Block",
+          "count": 3
         }
       ],
-      "station": "Smithing",
-      "time": 100
+      "time": 100,
+      "station": "Smithing"
     }
   ],
   "weaponInfo": {
@@ -37,8 +37,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "TreeCutting",
-      "tier": 25
+      "tier": 25,
+      "toolType": "TreeCutting"
     }
   ],
   "droppedBy": [
@@ -53,8 +53,7 @@
       "name": "Broken Tusker 2",
       "chance": 7.142857,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -121,13 +120,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,

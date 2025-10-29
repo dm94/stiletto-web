@@ -11,44 +11,44 @@
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 35
         },
         {
-          "count": 10,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 10
         }
       ],
-      "station": "Woodworking Station",
-      "time": 10
+      "time": 10,
+      "station": "Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 35
         },
         {
-          "count": 10,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 10
         }
       ],
-      "station": "Advanced Woodworking Station",
-      "time": 8
+      "time": 8,
+      "station": "Advanced Woodworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 35
         },
         {
-          "count": 10,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 10
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -59,8 +59,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "SlingshotRock",
-      "tier": 1
+      "tier": 1,
+      "toolType": "SlingshotRock"
     }
   ]
 }

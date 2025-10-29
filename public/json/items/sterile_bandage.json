@@ -12,12 +12,12 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 2
         },
         {
-          "count": 1,
-          "name": "Aloe Gel"
+          "name": "Aloe Gel",
+          "count": 1
         }
       ],
       "output": 2

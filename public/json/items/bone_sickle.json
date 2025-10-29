@@ -7,30 +7,30 @@
     {
       "ingredients": [
         {
-          "count": 2,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 2
         },
         {
-          "count": 22,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 22
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 10,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 10
         }
       ],
-      "station": "Crafting Bench",
-      "time": 2
+      "time": 2,
+      "station": "Crafting Bench"
     }
   ],
   "toolInfo": [
     {
-      "toolType": "Scythe",
-      "tier": 10
+      "tier": 10,
+      "toolType": "Scythe"
     }
   ]
 }

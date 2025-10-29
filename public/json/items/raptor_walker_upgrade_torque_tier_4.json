@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 288,
       "ingredients": [
         {
           "count": 7,
@@ -37,8 +38,7 @@
           "count": 192,
           "name": "Redwood Wood"
         }
-      ],
-      "time": 288
+      ]
     }
   ],
   "upgradeInfo": {

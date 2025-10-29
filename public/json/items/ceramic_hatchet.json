@@ -13,20 +13,20 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Cotton"
+          "name": "Cotton",
+          "count": 12
         },
         {
-          "count": 3,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 3
         },
         {
-          "count": 6,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 6
         }
       ],
-      "station": "Lathe",
-      "time": 2
+      "time": 2,
+      "station": "Lathe"
     }
   ],
   "weaponInfo": {
@@ -38,8 +38,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "TreeCutting",
-      "tier": 15
+      "tier": 15,
+      "toolType": "TreeCutting"
     }
   ],
   "droppedBy": [
@@ -54,8 +54,7 @@
       "name": "Broken Tusker 3",
       "chance": 6.25,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T3",
@@ -128,70 +127,7 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Ashdweller",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge (T3)",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle (T3)",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer (T3)",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
       "name": "Treasure Chest T3",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T3"
-    },
-    {
-      "name": "White Death (T3)",
       "chance": 6.25,
       "minQuantity": 1,
       "maxQuantity": 1,

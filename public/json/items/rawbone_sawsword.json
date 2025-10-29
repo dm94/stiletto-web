@@ -13,16 +13,16 @@
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 4
         },
         {
-          "count": 2,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 2
         },
         {
-          "count": 8,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 8
         }
       ]
     }
@@ -37,8 +37,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scythe",
-      "tier": 1
+      "tier": 1,
+      "toolType": "Scythe"
     }
   ],
   "droppedBy": [
@@ -51,13 +51,6 @@
     },
     {
       "name": "Big Hotspot Loot T2",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Bounty Hunter",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -79,13 +72,6 @@
     },
     {
       "name": "Easy Rupu T2 Q",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Grave Digger",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,
@@ -144,21 +130,7 @@
       "name": "Lootbox Weapons Canyon",
       "chance": 9.090909,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
-    },
-    {
-      "name": "Marshland Stalker",
-      "chance": 9.090909,
-      "minQuantity": 1,
       "maxQuantity": 1
-    },
-    {
-      "name": "Matriarch",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
     },
     {
       "name": "Medium Rupu Camp T2",
@@ -182,91 +154,7 @@
       "tier": "T2"
     },
     {
-      "name": "Rupu Dunestalker",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Forager",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Harasser (T2)",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hazraki",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Hermit",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Plainstrider",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (T2)",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Raider",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Shaman",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Skirmisher (T2)",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
       "name": "Treasure Chest T2",
-      "chance": 9.090909,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "White Death (T2)",
       "chance": 9.090909,
       "minQuantity": 1,
       "maxQuantity": 1,

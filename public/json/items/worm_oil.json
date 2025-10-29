@@ -11,13 +11,13 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Worm Egg"
+          "name": "Worm Egg",
+          "count": 1
         }
       ],
       "output": 10,
-      "station": "Flotillian Stomping Station",
-      "time": 15
+      "time": 15,
+      "station": "Flotillian Stomping Station"
     }
   ]
 }

@@ -29,13 +29,13 @@
     }
   ],
   "structureInfo": {
-    "type": "Soft",
-    "hp": 20000
+    "hp": 20000,
+    "type": "Soft"
   },
   "toolInfo": [
     {
-      "toolType": "Lumbermill",
-      "tier": 1
+      "tier": 1,
+      "toolType": "Lumbermill"
     }
   ]
 }

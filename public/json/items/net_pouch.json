@@ -13,38 +13,38 @@
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 4
         },
         {
-          "count": 25,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 25
         },
         {
-          "count": 4,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 4
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 4
         },
         {
-          "count": 25,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 25
         },
         {
-          "count": 4,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 4
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 2
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
     }
   ]
 }

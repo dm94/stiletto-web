@@ -24,8 +24,7 @@
       "name": "Broken Tusker 3",
       "chance": 6.25,
       "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": null
+      "maxQuantity": 3
     },
     {
       "name": "Easy Rupu Camp T3",
@@ -98,70 +97,7 @@
       "tier": "T3"
     },
     {
-      "name": "Rupu Ashdweller",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Drudge (T3)",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Hunter",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Oracle (T3)",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Overseer (T3)",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Rabble",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Scuttler",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "Rupu Seeker",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
       "name": "Treasure Chest T3",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
-      "tier": "T3"
-    },
-    {
-      "name": "White Death (T3)",
       "chance": 6.25,
       "minQuantity": 3,
       "maxQuantity": 3,

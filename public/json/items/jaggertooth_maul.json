@@ -13,16 +13,16 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 8
         },
         {
-          "count": 4,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 4
         },
         {
-          "count": 6,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 6
         }
       ]
     }

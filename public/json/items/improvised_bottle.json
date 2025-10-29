@@ -13,16 +13,16 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Huge Cactus Fruit"
+          "name": "Huge Cactus Fruit",
+          "count": 1
         },
         {
-          "count": 20,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 20
         },
         {
-          "count": 2,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 2
         }
       ]
     }

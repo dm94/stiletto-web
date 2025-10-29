@@ -11,35 +11,35 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 10
         }
       ],
       "output": 5,
-      "station": "Stomping Station",
-      "time": 12
+      "time": 12,
+      "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 10
         }
       ],
       "output": 5,
-      "station": "Advanced Stomping Station",
-      "time": 10
+      "time": 10,
+      "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 10
         }
       ],
       "output": 5,
-      "station": "Flotillian Stomping Station",
-      "time": 8
+      "time": 8,
+      "station": "Flotillian Stomping Station"
     }
   ]
 }

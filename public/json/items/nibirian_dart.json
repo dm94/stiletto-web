@@ -11,21 +11,21 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 2
         },
         {
-          "count": 1,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 1
         }
       ],
       "output": 15,
-      "station": "Artificer Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -33,8 +33,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "RepeaterBolt",
-      "tier": 4
+      "tier": 4,
+      "toolType": "RepeaterBolt"
     }
   ]
 }

@@ -16,8 +16,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "BallistaHarpoon",
-      "tier": 1
+      "tier": 1,
+      "toolType": "BallistaHarpoon"
     }
   ]
 }

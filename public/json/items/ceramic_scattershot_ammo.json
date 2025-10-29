@@ -12,17 +12,17 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 6
         },
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         }
       ],
       "output": 8,
-      "station": "Artificer Woodworking Station",
-      "time": 5
+      "time": 5,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -33,8 +33,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "Scattershot",
-      "tier": 3
+      "tier": 3,
+      "toolType": "Scattershot"
     }
   ],
   "droppedBy": [

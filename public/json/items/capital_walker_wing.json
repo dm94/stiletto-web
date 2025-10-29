@@ -8,12 +8,12 @@
     {
       "ingredients": [
         {
-          "count": 22,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 22
         },
         {
-          "count": 20,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 20
         }
       ]
     }

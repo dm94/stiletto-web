@@ -4,6 +4,7 @@
   "category": "Upgrades",
   "crafting": [
     {
+      "time": 10,
       "ingredients": [
         {
           "count": 60,
@@ -25,8 +26,7 @@
           "count": 8,
           "name": "Wood Shaft"
         }
-      ],
-      "time": 10
+      ]
     }
   ],
   "upgradeInfo": {

@@ -15,8 +15,8 @@
     }
   ],
   "structureInfo": {
-    "type": "Soft",
-    "hp": 8900
+    "hp": 8900,
+    "type": "Soft"
   },
   "walkerInfo": {
     "carryCapacity": 4800

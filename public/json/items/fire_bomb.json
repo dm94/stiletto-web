@@ -11,24 +11,24 @@
     {
       "ingredients": [
         {
-          "count": 4,
-          "name": "Lava"
+          "name": "Lava",
+          "count": 4
         },
         {
-          "count": 3,
-          "name": "Cotton"
+          "name": "Cotton",
+          "count": 3
         },
         {
-          "count": 1,
-          "name": "Gelatinous Goo"
+          "name": "Gelatinous Goo",
+          "count": 1
         },
         {
-          "count": 1,
-          "name": "Phosphorus"
+          "name": "Phosphorus",
+          "count": 1
         }
       ],
-      "station": "Clay Pot",
-      "time": 60
+      "time": 60,
+      "station": "Clay Pot"
     }
   ],
   "projectileDamage": {

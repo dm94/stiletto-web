@@ -9,16 +9,16 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 12
         },
         {
-          "count": 23,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 23
         },
         {
-          "count": 17,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 17
         }
       ]
     }

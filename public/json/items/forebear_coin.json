@@ -20,27 +20,6 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
-    },
-    {
-      "name": "Matriarch",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Priestess (T2)",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
-    },
-    {
-      "name": "Rupu Zealot",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T2"
     }
   ],
   "whereToFarm": "Can be found in Ancient Cities or bought for Relics from black market vendors."

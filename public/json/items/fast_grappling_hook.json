@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 22,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 22
         },
         {
-          "count": 8,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 8
         },
         {
-          "count": 12,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 12
         }
       ],
-      "station": "Crafting Bench",
-      "time": 2
+      "time": 2,
+      "station": "Crafting Bench"
     }
   ]
 }

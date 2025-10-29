@@ -9,12 +9,12 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Apple"
+          "name": "Apple",
+          "count": 3
         }
       ],
-      "station": "Clay Pot",
-      "time": 60
+      "time": 60,
+      "station": "Clay Pot"
     }
   ]
 }

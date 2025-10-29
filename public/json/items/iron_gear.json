@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 50,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 50
         },
         {
-          "count": 10,
-          "name": "Tree Sap"
+          "name": "Tree Sap",
+          "count": 10
         },
         {
-          "count": 10,
-          "name": "Iron Ore"
+          "name": "Iron Ore",
+          "count": 10
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 30
+      "time": 30,
+      "station": "Artificer Woodworking Station"
     }
   ]
 }

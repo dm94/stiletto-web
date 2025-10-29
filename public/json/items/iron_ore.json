@@ -12,16 +12,16 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Terrain: Asteroid Crash Site"
+          "name": "Terrain: Asteroid Crash Site",
+          "count": 1
         },
         {
-          "count": 5,
-          "name": "Animal Fat"
+          "name": "Animal Fat",
+          "count": 5
         }
       ],
-      "station": "Artisan Soil Auger",
-      "time": 30
+      "time": 30,
+      "station": "Artisan Soil Auger"
     }
   ],
   "whereToFarm": "Mined from asteroids or in low quantities from rocks."

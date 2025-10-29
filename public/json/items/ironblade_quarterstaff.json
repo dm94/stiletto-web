@@ -12,20 +12,20 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 5
         },
         {
-          "count": 3,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 3
         },
         {
-          "count": 6,
-          "name": "Triple Stitch Fabric"
+          "name": "Triple Stitch Fabric",
+          "count": 6
         }
       ],
-      "station": "Smithing",
-      "time": 100
+      "time": 100,
+      "station": "Smithing"
     }
   ],
   "weaponInfo": {
@@ -45,8 +45,7 @@
       "name": "Broken Tusker 2",
       "chance": 7.142857,
       "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": null
+      "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T4",
@@ -113,13 +112,6 @@
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "tier": "T4"
-    },
-    {
-      "name": "Rupu Firebrand",
       "chance": 7.142857,
       "minQuantity": 1,
       "maxQuantity": 1,

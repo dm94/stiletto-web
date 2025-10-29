@@ -12,63 +12,63 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1
         }
       ],
-      "station": "FuelBurning",
-      "time": 21
+      "time": 21,
+      "station": "FuelBurning"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1
         }
       ],
-      "station": "Furnace",
-      "time": 300
+      "time": 300,
+      "station": "Furnace"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1
         }
       ],
-      "station": "FuelLightSource",
-      "time": 72
+      "time": 72,
+      "station": "FuelLightSource"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 1
         }
       ],
-      "station": "FuelBurning",
-      "time": 600
+      "time": 600,
+      "station": "FuelBurning"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 1
         }
       ],
-      "station": "Furnace",
-      "time": 12
+      "time": 12,
+      "station": "Furnace"
     },
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 1
         }
       ],
       "output": 2,
-      "station": "Furnace",
-      "time": 8
+      "time": 8,
+      "station": "Furnace"
     }
   ],
   "droppedBy": [
@@ -120,6 +120,12 @@
       "minQuantity": 9,
       "maxQuantity": 9,
       "tier": "T4"
+    },
+    {
+      "name": "Gogo",
+      "chance": 7.6923075,
+      "minQuantity": 9,
+      "maxQuantity": 9
     },
     {
       "name": "Hard Rupu Camp T1",

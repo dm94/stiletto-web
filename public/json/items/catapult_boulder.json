@@ -11,16 +11,16 @@
     {
       "ingredients": [
         {
-          "count": 50,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 50
         },
         {
-          "count": 5,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 5
         }
       ],
-      "station": "Artificer Woodworking Station",
-      "time": 8
+      "time": 8,
+      "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
@@ -31,8 +31,8 @@
   },
   "toolInfo": [
     {
-      "toolType": "CatapultRock",
-      "tier": 2
+      "tier": 2,
+      "toolType": "CatapultRock"
     }
   ],
   "droppedBy": [

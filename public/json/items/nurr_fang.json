@@ -16,6 +16,18 @@
       "tier": "T2"
     },
     {
+      "name": "Lazaward",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Nurr (Nurr)",
+      "chance": 100,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
       "name": "Nurr T2",
       "chance": 100,
       "minQuantity": 1,

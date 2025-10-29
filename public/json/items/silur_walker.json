@@ -44,8 +44,8 @@
     }
   ],
   "structureInfo": {
-    "type": "Solid",
-    "hp": 400000
+    "hp": 400000,
+    "type": "Solid"
   },
   "walkerInfo": {
     "category": "Large",

@@ -18,7 +18,7 @@
     }
   ],
   "structureInfo": {
-    "type": "Solid",
-    "hp": 500
+    "hp": 500,
+    "type": "Solid"
   }
 }

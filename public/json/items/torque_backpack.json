@@ -14,46 +14,46 @@
     {
       "ingredients": [
         {
-          "count": 22,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 22
         },
         {
-          "count": 4,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 4
         },
         {
-          "count": 30,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 30
         },
         {
-          "count": 85,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 85
         }
       ],
-      "station": "Advanced Fiberworking Station",
-      "time": 1
+      "time": 1,
+      "station": "Advanced Fiberworking Station"
     },
     {
       "ingredients": [
         {
-          "count": 22,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 22
         },
         {
-          "count": 4,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 4
         },
         {
-          "count": 30,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 30
         },
         {
-          "count": 85,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 85
         }
       ],
-      "station": "Artisan Fiberworking Station",
-      "time": 1
+      "time": 1,
+      "station": "Artisan Fiberworking Station"
     }
   ]
 }
