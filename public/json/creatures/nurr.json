@@ -1,10 +1,10 @@
 {
-  "name": "Nurr",
   "type": "NurrMob_C",
+  "name": "Nurr",
   "health": 600,
   "experience": 800,
+  "lootTemplate": "Nurr_T2",
   "damage": 60,
   "speed": 3000,
-  "lootTemplate": "Nurr_T2",
   "category": "Nurr"
 }
