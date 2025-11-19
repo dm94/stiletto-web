@@ -54,6 +54,13 @@
       "source": "armors_t3"
     },
     {
+      "name": "Redwood Sleeves",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
       "name": "Redwood Armor",
       "chance": 11.111111,
       "minQuantity": 1,
@@ -251,58 +258,37 @@
     },
     {
       "name": "Rupu Vine",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 18,
       "maxQuantity": 18,
       "source": "baseresources_t4"
     },
     {
       "name": "Palm Leaves",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 15,
       "maxQuantity": 15,
       "source": "baseresources_t4"
     },
     {
       "name": "Fiber Weave",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 15,
       "maxQuantity": 15,
       "source": "baseresources_t4"
     },
     {
       "name": "Rope",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "source": "baseresources_t4"
     },
     {
       "name": "Sulfur",
-      "chance": 11.111111,
+      "chance": 16.666666,
       "minQuantity": 5,
       "maxQuantity": 5,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Nibiran Mineral",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Eucalyptus Leaf",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
-      "source": "baseresources_t4"
-    },
-    {
-      "name": "Spearmint",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
       "source": "baseresources_t4"
     },
     {

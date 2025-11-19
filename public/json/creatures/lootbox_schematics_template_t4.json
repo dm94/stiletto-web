@@ -1,0 +1,394 @@
+{
+  "name": "Lootbox Schematics Template T4",
+  "type": "LootboxSchematics_TemplateT4_C",
+  "lootTemplate": "LootboxSchematics_TemplateT4_C",
+  "category": "Structure",
+  "drops": [
+    {
+      "name": "Improved Armors Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Balang Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Constructions Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Mollusk Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Reinforced Walls Schematic",
+      "chance": 6.25,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Crafting Stations Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Stiletto Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Stone Walls Schematic",
+      "chance": 6.25,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Toboggan Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Tools Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Walker Weapons Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Weapons Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Base Walker Parts Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Walker Parts Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Advanced Walker Parts Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Proxy Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Basic Armors Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Basic Constructions Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Dinghy Walker Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Firefly Walker Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Basic Crafting Stations Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Basic Tools Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Basic Walker Weapons Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Wooden Walls Schematic",
+      "chance": 7.142857,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Basic Weapons Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Sand Structures Schematic",
+      "chance": 7.142857,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Spider Walker Schematic",
+      "chance": 7.142857,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t1"
+    },
+    {
+      "name": "Advanced Armors Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Constructions Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Crafting Stations Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Tools Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Walker Weapons Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Advanced Weapons Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Hornet Walker Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Falco Walker Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Buffalo Walker Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Silur Walker Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Camelop Walker Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Hercul Walker Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Cobra Walker Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Tusker Walker Schematic",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Clay Walls Schematic",
+      "chance": 5.263158,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Heavy Walls Schematic",
+      "chance": 5.263158,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t3"
+    },
+    {
+      "name": "Flotillian Armors Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Flotillian Constructions Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Flotillian Crafting Stations Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Flotillian Tools Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Flotillian Walker Weapons Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Flotillian Weapons Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Domus Walker Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Schmetterling Walker Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Titan Walker Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Raptor Sky Walker Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Panda Walker Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t4"
+    },
+    {
+      "name": "Concrete Walls Schematic",
+      "chance": 6.6666665,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t4"
+    }
+  ],
+  "originalName": "LootboxSchematics TemplateT4"
+}

@@ -55,6 +55,13 @@
       "source": "armors_t3"
     },
     {
+      "name": "Redwood Sleeves",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "armors_t3"
+    },
+    {
       "name": "Redwood Armor",
       "chance": 11.111111,
       "minQuantity": 1,
