@@ -46,6 +46,25 @@
       "tier": "T2"
     },
     {
+      "name": "Loot Box Schematics Template T2",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T2"
+    },
+    {
+      "name": "Lootbox Schematics Template T3",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Lootbox Schematics Template T4",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
       "name": "Medium Rupu T2 Q",
       "chance": 6.25,
       "minQuantity": 1,
