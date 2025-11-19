@@ -1,0 +1,8 @@
+{
+  "name": "Loot Box Rigs",
+  "type": "LootBoxRigs_C",
+  "lootTemplate": "LootBoxRigs_C",
+  "category": "Container",
+  "drops": [],
+  "originalName": "LootBoxRigs"
+}

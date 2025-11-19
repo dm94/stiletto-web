@@ -1,0 +1,122 @@
+{
+  "name": "Loot Box Schematics Template T2",
+  "type": "LootBoxSchematics_Template_T2_C",
+  "lootTemplate": "LootBoxSchematics_Template_T2_C",
+  "category": "Container",
+  "tier": "T2",
+  "drops": [
+    {
+      "name": "Improved Armors Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Balang Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Constructions Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Mollusk Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Reinforced Walls Schematic",
+      "chance": 6.25,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Crafting Stations Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Stiletto Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Stone Walls Schematic",
+      "chance": 6.25,
+      "minQuantity": 5,
+      "maxQuantity": 5,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Toboggan Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Tools Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Walker Weapons Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Weapons Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Base Walker Parts Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Improved Walker Parts Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Advanced Walker Parts Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    },
+    {
+      "name": "Proxy Walker Schematic",
+      "chance": 6.25,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "source": "schematics_t2"
+    }
+  ],
+  "originalName": "LootBoxSchematics Template T2"
+}

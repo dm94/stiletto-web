@@ -1,0 +1,9 @@
+{
+  "name": "Lootbox Potions Template T1",
+  "type": "LootboxPotionsTemplate_T1_C",
+  "lootTemplate": "LootboxPotionsTemplate_T1_C",
+  "category": "Structure",
+  "tier": "T1",
+  "drops": [],
+  "originalName": "LootboxPotionsTemplate T1"
+}
