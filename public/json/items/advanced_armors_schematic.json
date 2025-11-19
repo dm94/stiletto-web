@@ -9,7 +9,7 @@
     "Redwood Boots",
     "Brittle Bone Handwraps",
     "Carapace Gauntlets",
-    "Redwood Boots",
+    "Redwood Sleeves",
     "Brittle Bone Armor",
     "Carapace Armor",
     "Redwood Armor"
@@ -28,6 +28,18 @@
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
+    },
+    {
+      "name": "Lootbox Schematics Template T3",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Lootbox Schematics Template T4",
+      "chance": 5.263158,
+      "minQuantity": 1,
+      "maxQuantity": 1
     },
     {
       "name": "Medium Rupu T3 Q",

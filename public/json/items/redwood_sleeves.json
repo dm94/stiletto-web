@@ -1,0 +1,128 @@
+{
+  "name": "Redwood Sleeves",
+  "type": "T3_RedwoodWoodGloves_C",
+  "category": "Armors",
+  "trade_price": 388.2,
+  "stackSize": 100,
+  "weight": 1.8,
+  "description": "The Swampwood tribe rarely make contact with the Flotillans or venture beyond their fleet, making the specialty armor they construct from redwood, a sought after commodity.",
+  "experiencieReward": 150,
+  "durability": 420,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Nomad Cloth",
+          "count": 2
+        },
+        {
+          "name": "Redwood Wood",
+          "count": 22
+        },
+        {
+          "name": "Clay",
+          "count": 8
+        }
+      ],
+      "time": 2,
+      "station": "Artisan Fiberworking Station"
+    }
+  ],
+  "armorInfo": {
+    "absorbing": 1,
+    "reduction": 5,
+    "speedReduction": 1
+  },
+  "droppedBy": [
+    {
+      "name": "Big Hotspot Loot T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Broken Tusker 3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1
+    },
+    {
+      "name": "Easy Rupu Camp T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Easy Rupu T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Easy Rupu T3 Q",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu Camp T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hard Rupu T3 Q",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Hotspot Loot T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu Camp T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Medium Rupu T3 Q",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    },
+    {
+      "name": "Treasure Chest T3",
+      "chance": 11.111111,
+      "minQuantity": 1,
+      "maxQuantity": 1,
+      "tier": "T3"
+    }
+  ]
+}

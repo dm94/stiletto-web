@@ -102,12 +102,6 @@
       "tier": "T1"
     },
     {
-      "name": "Broken Tusker 4",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5
-    },
-    {
       "name": "Easy Rupu Camp T1",
       "chance": 50,
       "minQuantity": 10,

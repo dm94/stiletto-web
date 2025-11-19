@@ -1,9 +1,19 @@
 {
   "name": "Rubab",
   "type": "MusicalInstrumentRubab_C",
-  "category": "Equipment",
+  "category": "Musical Instruments",
   "weight": 2,
   "durability": 150,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Wood",
+          "count": 25
+        }
+      ]
+    }
+  ],
   "weaponInfo": {
     "damage": 10,
     "penetration": 10

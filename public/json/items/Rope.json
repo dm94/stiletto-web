@@ -90,7 +90,7 @@
     },
     {
       "name": "Ammo Box T4",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
@@ -111,15 +111,15 @@
     },
     {
       "name": "Broken Tusker 3",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12
     },
     {
       "name": "Broken Tusker 4",
-      "chance": 10.718528,
-      "minQuantity": 3,
-      "maxQuantity": 3
+      "chance": 16.666668,
+      "minQuantity": 12,
+      "maxQuantity": 12
     },
     {
       "name": "Easy Rupu Camp T2",
@@ -137,7 +137,7 @@
     },
     {
       "name": "Easy Rupu Camp T4",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
@@ -172,14 +172,14 @@
     },
     {
       "name": "Easy Rupu T4",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
     },
     {
       "name": "Easy Rupu T4 Q",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
@@ -200,7 +200,7 @@
     },
     {
       "name": "Hard Rupu Camp T4",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
@@ -242,14 +242,14 @@
     },
     {
       "name": "Hard Rupu T4",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
     },
     {
       "name": "Hard Rupu T4 Q",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
@@ -277,7 +277,7 @@
     },
     {
       "name": "Hotspot Loot T4",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
@@ -305,7 +305,7 @@
     },
     {
       "name": "Medium Rupu Camp T4",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
@@ -340,14 +340,14 @@
     },
     {
       "name": "Medium Rupu T4",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 11.111112,
+      "chance": 16.666668,
       "minQuantity": 12,
       "maxQuantity": 12,
       "tier": "T4"
