@@ -97,12 +97,12 @@
 
   .card-header,
   .modal-header {
-    @apply font-['Okami'] text-2xl text-sand border-b-2 border-tribal py-3 px-4;
+    @apply font-okami text-2xl text-sand border-b-2 border-tribal py-3 px-4;
     clip-path: polygon(0 0, 100% 0, 98% 100%, 0 100%);
   }
 
   .card-header .input-group {
-    @apply font-['Roboto'] font-['Helvetica_Neue'] font-sans;
+    @apply font-sans;
   }
 
   .card-body {
@@ -115,21 +115,21 @@
   }
 
   .navbar-brand {
-    @apply font-['Okami'] font-normal text-sand;
+    @apply font-okami font-normal text-sand;
   }
 
   .navbar-brand span {
-    @apply text-2xl !important;
+    @apply text-2xl;
   }
 
   /* Title Styling */
   .lo-title {
-    @apply font-['Okami'] font-medium text-tribal;
+    @apply font-okami font-medium text-tribal;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
 
   .web-title {
-    @apply font-['Okami'];
+    @apply font-okami;
   }
 
   /* Button Styling */
@@ -161,7 +161,7 @@
 
   /* Other Components */
   .tab-content-tree h1 {
-    @apply text-2xl !important;
+    @apply text-2xl;
   }
 
   .tab-content-tree {
@@ -171,7 +171,6 @@
   .tippy-content h1 {
     @apply text-3xl;
   }
-
   .tippy-content {
     @apply bg-charcoal border border-tribal text-sandLight;
   }

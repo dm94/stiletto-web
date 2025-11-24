@@ -96,9 +96,6 @@ importers:
       autoprefixer:
         specifier: 10.4.21
         version: 10.4.21(postcss@8.5.4)
-      postcss:
-        specifier: 8.5.4
-        version: 8.5.4
       tailwindcss:
         specifier: 3.4.17
         version: 3.4.17

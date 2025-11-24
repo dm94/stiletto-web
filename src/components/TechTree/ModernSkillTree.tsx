@@ -347,7 +347,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
 
   return (
     <div className="modern-skill-tree p-6 bg-charcoal rounded-lg border-2 border-tribal">
-      <h2 className="text-2xl font-bold mb-6 text-sand font-['Okami'] border-b-2 border-tribal pb-2">
+      <h2 className="text-2xl font-bold mb-6 text-sand font-okami border-b-2 border-tribal pb-2">
         {title}
       </h2>
 

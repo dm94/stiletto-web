@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "5.42.0",
+  "version": "5.42.1",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -68,7 +68,6 @@
     "@types/react-router": "^5.1.20",
     "@vitejs/plugin-react": "^4.5.2",
     "autoprefixer": "10.4.21",
-    "postcss": "8.5.4",
     "tailwindcss": "3.4.17",
     "typescript": "5.8.3",
     "vite": "^6.3.5"
