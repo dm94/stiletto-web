@@ -1,5 +1,5 @@
 {
   "name": "Flotillian Walkers",
-  "parent": "WalkerPartsAdvanced_T2",
-  "type": "WalkerPartsFlotillan_T2_C"
+  "parent": "Advanced Walkers",
+  "type": "Walkers_T4_C"
 }

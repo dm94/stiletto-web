@@ -22,6 +22,26 @@
     {
       "ingredients": [
         {
+          "name": "Redwood Wood",
+          "count": 1
+        }
+      ],
+      "time": 20,
+      "station": "FuelBurning"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 1
+        }
+      ],
+      "time": 30,
+      "station": "FuelBurning"
+    },
+    {
+      "ingredients": [
+        {
           "name": "Wood",
           "count": 1
         }
@@ -32,11 +52,31 @@
     {
       "ingredients": [
         {
+          "name": "Redwood Wood",
+          "count": 1
+        }
+      ],
+      "time": 30,
+      "station": "FuelLightSource"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 1
+        }
+      ],
+      "time": 40,
+      "station": "FuelLightSource"
+    },
+    {
+      "ingredients": [
+        {
           "name": "Wooden Slab",
           "count": 1
         }
       ],
-      "time": 600,
+      "time": 60,
       "station": "FuelBurning"
     },
     {
