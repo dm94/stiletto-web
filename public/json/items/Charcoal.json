@@ -22,12 +22,32 @@
     {
       "ingredients": [
         {
-          "name": "Wood",
+          "name": "Redwood Wood",
           "count": 1
         }
       ],
-      "time": 300,
-      "station": "Furnace"
+      "time": 30,
+      "station": "FuelBurning"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 1
+        }
+      ],
+      "time": 40,
+      "station": "FuelBurning"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Wooden Slab",
+          "count": 1
+        }
+      ],
+      "time": 60,
+      "station": "FuelBurning"
     },
     {
       "ingredients": [
@@ -42,12 +62,32 @@
     {
       "ingredients": [
         {
-          "name": "Wooden Slab",
+          "name": "Redwood Wood",
           "count": 1
         }
       ],
-      "time": 600,
-      "station": "FuelBurning"
+      "time": 90,
+      "station": "FuelLightSource"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 1
+        }
+      ],
+      "time": 120,
+      "station": "FuelLightSource"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Wood",
+          "count": 1
+        }
+      ],
+      "time": 60,
+      "station": "Furnace"
     },
     {
       "ingredients": [
@@ -62,13 +102,45 @@
     {
       "ingredients": [
         {
+          "name": "Lightwood",
+          "count": 1
+        }
+      ],
+      "time": 8,
+      "station": "Furnace"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Wood",
+          "count": 1
+        }
+      ],
+      "output": 2,
+      "time": 60,
+      "station": "Advanced Furnace"
+    },
+    {
+      "ingredients": [
+        {
           "name": "Redwood Wood",
           "count": 1
         }
       ],
       "output": 2,
+      "time": 12,
+      "station": "Advanced Furnace"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 1
+        }
+      ],
+      "output": 2,
       "time": 8,
-      "station": "Furnace"
+      "station": "Advanced Furnace"
     }
   ],
   "droppedBy": [
