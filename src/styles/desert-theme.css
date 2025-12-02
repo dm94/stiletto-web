@@ -1,5 +1,80 @@
 @tailwind utilities;
 @layer utilities {
+  .text-tribal {
+    color: var(--tribal);
+  }
+  .text-sand {
+    color: var(--sand);
+  }
+  .text-sandLight {
+    color: var(--sand-light);
+  }
+  .text-sandDark {
+    color: var(--sand-dark);
+  }
+  .text-nature {
+    color: var(--nature);
+  }
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+
+  .bg-tribal {
+    background-color: var(--tribal);
+  }
+  .bg-sand {
+    background-color: var(--sand);
+  }
+  .bg-sandLight {
+    background-color: var(--sand-light);
+  }
+  .bg-sandDark {
+    background-color: var(--sand-dark);
+  }
+  .bg-nature {
+    background-color: var(--nature);
+  }
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+
+  .border-tribal {
+    border-color: var(--tribal);
+  }
+  .border-sand {
+    border-color: var(--sand);
+  }
+  .border-sandLight {
+    border-color: var(--sand-light);
+  }
+  .border-sandDark {
+    border-color: var(--sand-dark);
+  }
+  .border-nature {
+    border-color: var(--nature);
+  }
+  .border-charcoal {
+    border-color: var(--charcoal);
+  }
+
+  .ring-tribal {
+    --tw-ring-color: var(--tribal);
+  }
+  .ring-sand {
+    --tw-ring-color: var(--sand);
+  }
+  .ring-sandLight {
+    --tw-ring-color: var(--sand-light);
+  }
+  .ring-sandDark {
+    --tw-ring-color: var(--sand-dark);
+  }
+  .ring-nature {
+    --tw-ring-color: var(--nature);
+  }
+  .ring-charcoal {
+    --tw-ring-color: var(--charcoal);
+  }
   .text-theme-primary {
     @apply text-tribal;
   }
