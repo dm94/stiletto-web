@@ -125,7 +125,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
             className="mb-3 flex items-center"
             title={t("discord.readDiscordClanLogNotice")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="readClanLog"
@@ -143,7 +143,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
             className="mb-3 flex items-center"
             title={t("discord.readClanLogAndKick")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="automaticKick"
@@ -158,7 +158,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
           </div>
 
           <div className="mb-3 flex items-center">
-            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="setNotReadyPVP"
@@ -176,7 +176,7 @@ const DiscordConfig: React.FC<DiscordConfigProps> = ({
             className="mb-3 flex items-center"
             title={t("discord.readClanLogAndKick")}
           >
-            <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+            <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
               <input
                 type="checkbox"
                 id="walkerAlarm"

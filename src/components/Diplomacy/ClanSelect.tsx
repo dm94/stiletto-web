@@ -17,7 +17,7 @@ const ClanSelect: React.FC<ClanSelectProps> = ({
 }) => {
   return (
     <div className="flex items-center">
-      <div className="flex-grow">
+      <div className="grow">
         <ClanName clan={clan} />
       </div>
       <div className={isLeader ? "ml-2" : "hidden"}>
