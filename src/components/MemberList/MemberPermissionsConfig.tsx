@@ -92,7 +92,7 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("discord.allowToChangeBotSettings")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="botInput"
@@ -110,7 +110,7 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("discord.allowEditingWalkers")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="walkersInput"
@@ -128,7 +128,7 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("discord.allowEditingDiplomacy")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="diplomacyInput"
@@ -146,7 +146,7 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("Allow management of request")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="requestInput"
@@ -164,7 +164,7 @@ const MemberPermissionsConfig: React.FC<MemberPermissionsConfigProps> = ({
               className="flex items-center justify-start"
               title={t("discord.allowKickMembers")}
             >
-              <div className="relative inline-block w-10 mr-2 align-middle select-none flex-shrink-0 flex items-center">
+              <div className="relative inline-block w-10 mr-2 align-middle select-none shrink-0 flex items-center">
                 <input
                   type="checkbox"
                   id="kickmembersInput"

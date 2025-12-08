@@ -1,4 +1,4 @@
-@tailwind utilities;
+/* Tailwind v4 import is handled in style.css */
 @layer utilities {
   .text-tribal {
     color: var(--tribal);
@@ -75,462 +75,172 @@
   .ring-charcoal {
     --tw-ring-color: var(--charcoal);
   }
-  .text-theme-primary {
-    @apply text-tribal;
-  }
-  .text-theme-secondary {
-    @apply text-sand;
-  }
-  .text-theme-light {
-    @apply text-sandLight;
-  }
-  .text-theme-dark {
-    @apply text-sandDark;
-  }
-  .text-theme-accent {
-    @apply text-nature;
-  }
-  .text-theme-charcoal {
-    @apply text-charcoal;
-  }
+  .text-theme-primary { color: var(--tribal); }
+  .text-theme-secondary { color: var(--sand); }
+  .text-theme-light { color: var(--sand-light); }
+  .text-theme-dark { color: var(--sand-dark); }
+  .text-theme-accent { color: var(--nature); }
+  .text-theme-charcoal { color: var(--charcoal); }
 
-  .bg-theme-primary {
-    @apply bg-tribal;
-  }
-  .bg-theme-secondary {
-    @apply bg-sand;
-  }
-  .bg-theme-light {
-    @apply bg-sandLight;
-  }
-  .bg-theme-dark {
-    @apply bg-sandDark;
-  }
-  .bg-theme-accent {
-    @apply bg-nature;
-  }
-  .bg-theme-charcoal {
-    @apply bg-charcoal;
-  }
+  .bg-theme-primary { background-color: var(--tribal); }
+  .bg-theme-secondary { background-color: var(--sand); }
+  .bg-theme-light { background-color: var(--sand-light); }
+  .bg-theme-dark { background-color: var(--sand-dark); }
+  .bg-theme-accent { background-color: var(--nature); }
+  .bg-theme-charcoal { background-color: var(--charcoal); }
 
-  .border-theme-primary {
-    @apply border-tribal;
-  }
-  .border-theme-secondary {
-    @apply border-sand;
-  }
-  .border-theme-light {
-    @apply border-sandLight;
-  }
-  .border-theme-dark {
-    @apply border-sandDark;
-  }
-  .border-theme-accent {
-    @apply border-nature;
-  }
-  .border-theme-charcoal {
-    @apply border-charcoal;
-  }
+  .border-theme-primary { border-color: var(--tribal); }
+  .border-theme-secondary { border-color: var(--sand); }
+  .border-theme-light { border-color: var(--sand-light); }
+  .border-theme-dark { border-color: var(--sand-dark); }
+  .border-theme-accent { border-color: var(--nature); }
+  .border-theme-charcoal { border-color: var(--charcoal); }
 
-  .ring-theme-primary {
-    @apply ring-tribal;
-  }
-  .ring-theme-secondary {
-    @apply ring-sand;
-  }
-  .ring-theme-light {
-    @apply ring-sandLight;
-  }
-  .ring-theme-dark {
-    @apply ring-sandDark;
-  }
-  .ring-theme-accent {
-    @apply ring-nature;
-  }
-  .ring-theme-charcoal {
-    @apply ring-charcoal;
-  }
+  .ring-theme-primary { --tw-ring-color: var(--tribal); }
+  .ring-theme-secondary { --tw-ring-color: var(--sand); }
+  .ring-theme-light { --tw-ring-color: var(--sand-light); }
+  .ring-theme-dark { --tw-ring-color: var(--sand-dark); }
+  .ring-theme-accent { --tw-ring-color: var(--nature); }
+  .ring-theme-charcoal { --tw-ring-color: var(--charcoal); }
 
-  .hover-text-theme-primary {
-    @apply hover:text-tribal;
-  }
-  .hover-text-theme-secondary {
-    @apply hover:text-sand;
-  }
-  .hover-text-theme-light {
-    @apply hover:text-sandLight;
-  }
-  .hover-text-theme-dark {
-    @apply hover:text-sandDark;
-  }
-  .hover-text-theme-accent {
-    @apply hover:text-nature;
-  }
-  .hover-text-theme-charcoal {
-    @apply hover:text-charcoal;
-  }
+  .hover-text-theme-primary:hover { color: var(--tribal); }
+  .hover-text-theme-secondary:hover { color: var(--sand); }
+  .hover-text-theme-light:hover { color: var(--sand-light); }
+  .hover-text-theme-dark:hover { color: var(--sand-dark); }
+  .hover-text-theme-accent:hover { color: var(--nature); }
+  .hover-text-theme-charcoal:hover { color: var(--charcoal); }
 
-  .hover-bg-theme-primary {
-    @apply hover:bg-tribal;
-  }
-  .hover-bg-theme-secondary {
-    @apply hover:bg-sand;
-  }
-  .hover-bg-theme-light {
-    @apply hover:bg-sandLight;
-  }
-  .hover-bg-theme-dark {
-    @apply hover:bg-sandDark;
-  }
-  .hover-bg-theme-accent {
-    @apply hover:bg-nature;
-  }
-  .hover-bg-theme-charcoal {
-    @apply hover:bg-charcoal;
-  }
+  .hover-bg-theme-primary:hover { background-color: var(--tribal); }
+  .hover-bg-theme-secondary:hover { background-color: var(--sand); }
+  .hover-bg-theme-light:hover { background-color: var(--sand-light); }
+  .hover-bg-theme-dark:hover { background-color: var(--sand-dark); }
+  .hover-bg-theme-accent:hover { background-color: var(--nature); }
+  .hover-bg-theme-charcoal:hover { background-color: var(--charcoal); }
 
-  .hover-border-theme-primary {
-    @apply hover:border-tribal;
-  }
-  .hover-border-theme-secondary {
-    @apply hover:border-sand;
-  }
-  .hover-border-theme-light {
-    @apply hover:border-sandLight;
-  }
-  .hover-border-theme-dark {
-    @apply hover:border-sandDark;
-  }
-  .hover-border-theme-accent {
-    @apply hover:border-nature;
-  }
-  .hover-border-theme-charcoal {
-    @apply hover:border-charcoal;
-  }
+  .hover-border-theme-primary:hover { border-color: var(--tribal); }
+  .hover-border-theme-secondary:hover { border-color: var(--sand); }
+  .hover-border-theme-light:hover { border-color: var(--sand-light); }
+  .hover-border-theme-dark:hover { border-color: var(--sand-dark); }
+  .hover-border-theme-accent:hover { border-color: var(--nature); }
+  .hover-border-theme-charcoal:hover { border-color: var(--charcoal); }
 
-  .text-blue-300 {
-    @apply text-theme-light;
-  }
-  .text-blue-400 {
-    @apply text-theme-secondary;
-  }
-  .text-blue-500 {
-    @apply text-theme-primary;
-  }
-  .text-blue-600 {
-    @apply text-theme-primary;
-  }
-  .text-blue-700 {
-    @apply text-theme-dark;
-  }
+  .text-blue-300 { color: var(--sand-light); }
+  .text-blue-400 { color: var(--sand); }
+  .text-blue-500 { color: var(--tribal); }
+  .text-blue-600 { color: var(--tribal); }
+  .text-blue-700 { color: var(--sand-dark); }
 
-  .bg-blue-300 {
-    @apply bg-theme-light;
-  }
-  .bg-blue-400 {
-    @apply bg-theme-secondary;
-  }
-  .bg-blue-500 {
-    @apply bg-theme-primary;
-  }
-  .bg-blue-600 {
-    @apply bg-theme-primary;
-  }
-  .bg-blue-700 {
-    @apply bg-theme-dark;
-  }
+  .bg-blue-300 { background-color: var(--sand-light); }
+  .bg-blue-400 { background-color: var(--sand); }
+  .bg-blue-500 { background-color: var(--tribal); }
+  .bg-blue-600 { background-color: var(--tribal); }
+  .bg-blue-700 { background-color: var(--sand-dark); }
 
-  .border-blue-300 {
-    @apply border-theme-light;
-  }
-  .border-blue-400 {
-    @apply border-theme-secondary;
-  }
-  .border-blue-500 {
-    @apply border-theme-primary;
-  }
-  .border-blue-600 {
-    @apply border-theme-primary;
-  }
-  .border-blue-700 {
-    @apply border-theme-dark;
-  }
+  .border-blue-300 { border-color: var(--sand-light); }
+  .border-blue-400 { border-color: var(--sand); }
+  .border-blue-500 { border-color: var(--tribal); }
+  .border-blue-600 { border-color: var(--tribal); }
+  .border-blue-700 { border-color: var(--sand-dark); }
 
-  .ring-blue-300 {
-    @apply ring-theme-light;
-  }
-  .ring-blue-400 {
-    @apply ring-theme-secondary;
-  }
-  .ring-blue-500 {
-    @apply ring-theme-primary;
-  }
-  .ring-blue-600 {
-    @apply ring-theme-primary;
-  }
-  .ring-blue-700 {
-    @apply ring-theme-dark;
-  }
+  .ring-blue-300 { --tw-ring-color: var(--sand-light); }
+  .ring-blue-400 { --tw-ring-color: var(--sand); }
+  .ring-blue-500 { --tw-ring-color: var(--tribal); }
+  .ring-blue-600 { --tw-ring-color: var(--tribal); }
+  .ring-blue-700 { --tw-ring-color: var(--sand-dark); }
 
-  .hover\:text-blue-300:hover {
-    @apply hover:text-sandLight;
-  }
-  .hover\:text-blue-400:hover {
-    @apply hover:text-sand;
-  }
-  .hover\:text-blue-500:hover {
-    @apply hover:text-tribal;
-  }
-  .hover\:text-blue-600:hover {
-    @apply hover:text-tribal;
-  }
-  .hover\:text-blue-700:hover {
-    @apply hover:text-sandDark;
-  }
+  .hover\:text-blue-300:hover { color: var(--sand-light); }
+  .hover\:text-blue-400:hover { color: var(--sand); }
+  .hover\:text-blue-500:hover { color: var(--tribal); }
+  .hover\:text-blue-600:hover { color: var(--tribal); }
+  .hover\:text-blue-700:hover { color: var(--sand-dark); }
 
-  .hover\:bg-blue-300:hover {
-    @apply hover:bg-sandLight;
-  }
-  .hover\:bg-blue-400:hover {
-    @apply hover:bg-sand;
-  }
-  .hover\:bg-blue-500:hover {
-    @apply hover:bg-tribal;
-  }
-  .hover\:bg-blue-600:hover {
-    @apply hover:bg-tribal;
-  }
-  .hover\:bg-blue-700:hover {
-    @apply hover:bg-sandDark;
-  }
+  .hover\:bg-blue-300:hover { background-color: var(--sand-light); }
+  .hover\:bg-blue-400:hover { background-color: var(--sand); }
+  .hover\:bg-blue-500:hover { background-color: var(--tribal); }
+  .hover\:bg-blue-600:hover { background-color: var(--tribal); }
+  .hover\:bg-blue-700:hover { background-color: var(--sand-dark); }
 
-  .hover\:border-blue-300:hover {
-    @apply hover:border-sandLight;
-  }
-  .hover\:border-blue-400:hover {
-    @apply hover:border-sand;
-  }
-  .hover\:border-blue-500:hover {
-    @apply hover:border-tribal;
-  }
-  .hover\:border-blue-600:hover {
-    @apply hover:border-tribal;
-  }
-  .hover\:border-blue-700:hover {
-    @apply hover:border-sandDark;
-  }
+  .hover\:border-blue-300:hover { border-color: var(--sand-light); }
+  .hover\:border-blue-400:hover { border-color: var(--sand); }
+  .hover\:border-blue-500:hover { border-color: var(--tribal); }
+  .hover\:border-blue-600:hover { border-color: var(--tribal); }
+  .hover\:border-blue-700:hover { border-color: var(--sand-dark); }
 
-  .focus\:ring-blue-500:focus {
-    @apply focus:ring-tribal;
-  }
-  .focus\:ring-blue-600:focus {
-    @apply focus:ring-tribal;
-  }
-  .focus\:ring-blue-700:focus {
-    @apply focus:ring-sandDark;
-  }
-  .focus\:ring-offset-blue-500:focus {
-    @apply focus:ring-offset-tribal;
-  }
-  .focus\:ring-offset-blue-600:focus {
-    @apply focus:ring-offset-tribal;
-  }
-  .focus\:ring-offset-blue-700:focus {
-    @apply focus:ring-offset-sandDark;
-  }
+  .focus\:ring-blue-500:focus { --tw-ring-color: var(--tribal); }
+  .focus\:ring-blue-600:focus { --tw-ring-color: var(--tribal); }
+  .focus\:ring-blue-700:focus { --tw-ring-color: var(--sand-dark); }
+  .focus\:ring-offset-blue-500:focus { --tw-ring-offset-color: var(--tribal); }
+  .focus\:ring-offset-blue-600:focus { --tw-ring-offset-color: var(--tribal); }
+  .focus\:ring-offset-blue-700:focus { --tw-ring-offset-color: var(--sand-dark); }
 
-  .text-gray-300 {
-    @apply text-theme-light;
-  }
-  .text-gray-400 {
-    @apply text-theme-secondary;
-  }
-  .text-gray-500 {
-    @apply text-theme-secondary;
-  }
-  .text-gray-600 {
-    @apply text-theme-dark;
-  }
-  .text-gray-700 {
-    @apply text-theme-dark;
-  }
-  .text-gray-800 {
-    @apply text-theme-charcoal;
-  }
-  .text-gray-900 {
-    @apply text-theme-charcoal;
-  }
+  .text-gray-300 { color: var(--sand-light); }
+  .text-gray-400 { color: var(--sand); }
+  .text-gray-500 { color: var(--sand); }
+  .text-gray-600 { color: var(--sand-dark); }
+  .text-gray-700 { color: var(--sand-dark); }
+  .text-gray-800 { color: var(--charcoal); }
+  .text-gray-900 { color: var(--charcoal); }
 
-  .bg-gray-300 {
-    @apply bg-theme-light;
-  }
-  .bg-gray-400 {
-    @apply bg-theme-secondary;
-  }
-  .bg-gray-500 {
-    @apply bg-theme-secondary;
-  }
-  .bg-gray-600 {
-    @apply bg-theme-dark;
-  }
-  .bg-gray-700 {
-    @apply bg-theme-dark;
-  }
-  .bg-gray-800 {
-    @apply bg-theme-charcoal;
-  }
-  .bg-gray-850 {
-    @apply bg-theme-charcoal;
-  }
-  .bg-gray-900 {
-    @apply bg-theme-charcoal;
-  }
+  .bg-gray-300 { background-color: var(--sand-light); }
+  .bg-gray-400 { background-color: var(--sand); }
+  .bg-gray-500 { background-color: var(--sand); }
+  .bg-gray-600 { background-color: var(--sand-dark); }
+  .bg-gray-700 { background-color: var(--sand-dark); }
+  .bg-gray-800 { background-color: var(--charcoal); }
+  .bg-gray-850 { background-color: var(--charcoal); }
+  .bg-gray-900 { background-color: var(--charcoal); }
 
-  .border-gray-300 {
-    @apply border-theme-light;
-  }
-  .border-gray-400 {
-    @apply border-theme-secondary;
-  }
-  .border-gray-500 {
-    @apply border-theme-secondary;
-  }
-  .border-gray-600 {
-    @apply border-theme-dark;
-  }
-  .border-gray-700 {
-    @apply border-theme-dark;
-  }
-  .border-gray-800 {
-    @apply border-theme-charcoal;
-  }
-  .border-gray-900 {
-    @apply border-theme-charcoal;
-  }
+  .border-gray-300 { border-color: var(--sand-light); }
+  .border-gray-400 { border-color: var(--sand); }
+  .border-gray-500 { border-color: var(--sand); }
+  .border-gray-600 { border-color: var(--sand-dark); }
+  .border-gray-700 { border-color: var(--sand-dark); }
+  .border-gray-800 { border-color: var(--charcoal); }
+  .border-gray-900 { border-color: var(--charcoal); }
 
-  .ring-gray-300 {
-    @apply ring-theme-light;
-  }
-  .ring-gray-400 {
-    @apply ring-theme-secondary;
-  }
-  .ring-gray-500 {
-    @apply ring-theme-secondary;
-  }
-  .ring-gray-600 {
-    @apply ring-theme-dark;
-  }
-  .ring-gray-700 {
-    @apply ring-theme-dark;
-  }
-  .ring-gray-800 {
-    @apply ring-theme-charcoal;
-  }
-  .ring-gray-900 {
-    @apply ring-theme-charcoal;
-  }
+  .ring-gray-300 { --tw-ring-color: var(--sand-light); }
+  .ring-gray-400 { --tw-ring-color: var(--sand); }
+  .ring-gray-500 { --tw-ring-color: var(--sand); }
+  .ring-gray-600 { --tw-ring-color: var(--sand-dark); }
+  .ring-gray-700 { --tw-ring-color: var(--sand-dark); }
+  .ring-gray-800 { --tw-ring-color: var(--charcoal); }
+  .ring-gray-900 { --tw-ring-color: var(--charcoal); }
 
-  .hover\:text-gray-300:hover {
-    @apply hover:text-sandLight;
-  }
-  .hover\:text-gray-400:hover {
-    @apply hover:text-sand;
-  }
-  .hover\:text-gray-500:hover {
-    @apply hover:text-sand;
-  }
-  .hover\:text-gray-600:hover {
-    @apply hover:text-sandDark;
-  }
-  .hover\:text-gray-700:hover {
-    @apply hover:text-sandDark;
-  }
-  .hover\:text-gray-800:hover {
-    @apply hover:text-charcoal;
-  }
-  .hover\:text-gray-900:hover {
-    @apply hover:text-charcoal;
-  }
+  .hover\:text-gray-300:hover { color: var(--sand-light); }
+  .hover\:text-gray-400:hover { color: var(--sand); }
+  .hover\:text-gray-500:hover { color: var(--sand); }
+  .hover\:text-gray-600:hover { color: var(--sand-dark); }
+  .hover\:text-gray-700:hover { color: var(--sand-dark); }
+  .hover\:text-gray-800:hover { color: var(--charcoal); }
+  .hover\:text-gray-900:hover { color: var(--charcoal); }
 
-  .hover\:bg-gray-300:hover {
-    @apply hover:bg-sandLight;
-  }
-  .hover\:bg-gray-400:hover {
-    @apply hover:bg-sand;
-  }
-  .hover\:bg-gray-500:hover {
-    @apply hover:bg-sand;
-  }
-  .hover\:bg-gray-600:hover {
-    @apply hover:bg-sandDark;
-  }
-  .hover\:bg-gray-700:hover {
-    @apply hover:bg-sandDark;
-  }
-  .hover\:bg-gray-800:hover {
-    @apply hover:bg-charcoal;
-  }
-  .hover\:bg-charcoal:hover {
-    @apply hover:bg-charcoal;
-  }
+  .hover\:bg-gray-300:hover { background-color: var(--sand-light); }
+  .hover\:bg-gray-400:hover { background-color: var(--sand); }
+  .hover\:bg-gray-500:hover { background-color: var(--sand); }
+  .hover\:bg-gray-600:hover { background-color: var(--sand-dark); }
+  .hover\:bg-gray-700:hover { background-color: var(--sand-dark); }
+  .hover\:bg-gray-800:hover { background-color: var(--charcoal); }
+  .hover\:bg-charcoal:hover { background-color: var(--charcoal); }
 
-  .hover\:border-gray-300:hover {
-    @apply hover:border-sandLight;
-  }
-  .hover\:border-gray-400:hover {
-    @apply hover:border-sand;
-  }
-  .hover\:border-gray-500:hover {
-    @apply hover:border-sand;
-  }
-  .hover\:border-gray-600:hover {
-    @apply hover:border-sandDark;
-  }
-  .hover\:border-gray-700:hover {
-    @apply hover:border-sandDark;
-  }
-  .hover\:border-gray-800:hover {
-    @apply hover:border-charcoal;
-  }
-  .hover\:border-gray-900:hover {
-    @apply hover:border-charcoal;
-  }
+  .hover\:border-gray-300:hover { border-color: var(--sand-light); }
+  .hover\:border-gray-400:hover { border-color: var(--sand); }
+  .hover\:border-gray-500:hover { border-color: var(--sand); }
+  .hover\:border-gray-600:hover { border-color: var(--sand-dark); }
+  .hover\:border-gray-700:hover { border-color: var(--sand-dark); }
+  .hover\:border-gray-800:hover { border-color: var(--charcoal); }
+  .hover\:border-gray-900:hover { border-color: var(--charcoal); }
 
-  .focus\:ring-gray-300:focus {
-    @apply focus:ring-sandLight;
-  }
-  .focus\:ring-gray-400:focus {
-    @apply focus:ring-sand;
-  }
-  .focus\:ring-gray-500:focus {
-    @apply focus:ring-sand;
-  }
-  .focus\:ring-gray-600:focus {
-    @apply focus:ring-sandDark;
-  }
-  .focus\:ring-gray-700:focus {
-    @apply focus:ring-sandDark;
-  }
-  .focus\:ring-gray-800:focus {
-    @apply focus:ring-charcoal;
-  }
-  .focus\:ring-gray-900:focus {
-    @apply focus:ring-charcoal;
-  }
+  .focus\:ring-gray-300:focus { --tw-ring-color: var(--sand-light); }
+  .focus\:ring-gray-400:focus { --tw-ring-color: var(--sand); }
+  .focus\:ring-gray-500:focus { --tw-ring-color: var(--sand); }
+  .focus\:ring-gray-600:focus { --tw-ring-color: var(--sand-dark); }
+  .focus\:ring-gray-700:focus { --tw-ring-color: var(--sand-dark); }
+  .focus\:ring-gray-800:focus { --tw-ring-color: var(--charcoal); }
+  .focus\:ring-gray-900:focus { --tw-ring-color: var(--charcoal); }
 
-  .placeholder-gray-300::placeholder {
-    @apply text-sandLight;
-  }
-  .placeholder-gray-400::placeholder {
-    @apply text-sand;
-  }
-  .placeholder-gray-500::placeholder {
-    @apply text-sand;
-  }
-  .placeholder-gray-600::placeholder {
-    @apply text-sandDark;
-  }
-  .placeholder-gray-700::placeholder {
-    @apply text-sandDark;
-  }
+  .placeholder-gray-300::placeholder { color: var(--sand-light); }
+  .placeholder-gray-400::placeholder { color: var(--sand); }
+  .placeholder-gray-500::placeholder { color: var(--sand); }
+  .placeholder-gray-600::placeholder { color: var(--sand-dark); }
+  .placeholder-gray-700::placeholder { color: var(--sand-dark); }
 }
