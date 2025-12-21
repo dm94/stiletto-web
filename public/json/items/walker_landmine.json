@@ -1,0 +1,33 @@
+{
+  "name": "Walker Landmine",
+  "type": "TrapWalkerLandmine_C",
+  "category": "Defenses",
+  "weight": 10,
+  "experiencieReward": 97,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 12,
+          "name": "Sulfur"
+        },
+        {
+          "count": 4,
+          "name": "Charcoal"
+        },
+        {
+          "count": 6,
+          "name": "Phosphorus"
+        },
+        {
+          "count": 10,
+          "name": "Ceramic Shard"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 300,
+    "type": "Soft"
+  }
+}

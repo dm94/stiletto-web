@@ -2,7 +2,7 @@
   "name": "Automaton",
   "parent": "Improved Walker Weapons",
   "type": "Automaton_C",
-  "category": "Walker Tools",
+  "category": "Interactables",
   "weight": 1500,
   "description": "A remote-controlled mechanical tool that can handle mounted weapons.",
   "experiencieReward": 78,
