@@ -47,7 +47,7 @@ test.describe("Clan Edit Flow", () => {
       });
     });
 
-    await page.route(`**/clans/${MOCK_CLAN_ID}`, (route) => {
+    await page.route(`**/clans/${MOCK_CLAN_ID}*`, (route) => {
       const request = route.request();
       if (request.method() === "GET") {
         route.fulfill({
@@ -160,8 +160,6 @@ test.describe("Clan Edit Flow", () => {
     page,
   }) => {
     await page.goto("/members");
-
-    await page.waitForLoadState("networkidle", { timeout: 30000 });
 
     const editButton = page.getByTestId("edit-clan-button");
     await editButton.waitFor({ state: "visible", timeout: 30000 });

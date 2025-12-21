@@ -182,11 +182,14 @@ test.describe("Trades Page", () => {
     await page.getByTestId("price-input").fill(tradeData.price.toString());
 
     // Capture the POST request to /trades
-    let postRequestPayload = null;
+    const postRequestPromise = page.waitForRequest(
+      (request) =>
+        request.url().includes("/trades") && request.method() === "POST",
+    );
+
     await page.route("**/trades", async (route) => {
       const request = route.request();
       if (request.method() === "POST") {
-        postRequestPayload = request.postDataJSON();
         await route.fulfill({
           status: 200,
           contentType: "application/json",
@@ -200,6 +203,9 @@ test.describe("Trades Page", () => {
 
     // Submit the form
     await page.getByTestId("submit-trade-button").click();
+
+    const postRequest = await postRequestPromise;
+    const postRequestPayload = postRequest.postDataJSON();
 
     // Assert the payload of the POST request
     expect(postRequestPayload).not.toBeNull();

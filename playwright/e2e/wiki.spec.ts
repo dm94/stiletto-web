@@ -84,7 +84,7 @@ test.describe("Wiki", () => {
   test("Should filter by category", async ({ page }) => {
     await filterByCategory(page, "Resources");
     await expectItemInContentArea(page, "Aloe");
-    await expectItemInContentArea(page, "Wood");
+    await expectItemInContentArea(page, "Apple");
     await expectItemNotInContentArea(page, item);
   });
 
