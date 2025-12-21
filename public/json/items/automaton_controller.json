@@ -1,0 +1,33 @@
+{
+  "name": "Automaton Controller",
+  "type": "AutomatonController_C",
+  "category": "Interactables",
+  "weight": 10.8,
+  "experiencieReward": 208,
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 10,
+          "name": "Wood Shaft"
+        },
+        {
+          "count": 5,
+          "name": "Rope"
+        },
+        {
+          "count": 50,
+          "name": "Wood"
+        },
+        {
+          "count": 2,
+          "name": "Wooden Gear"
+        }
+      ]
+    }
+  ],
+  "structureInfo": {
+    "hp": 500,
+    "type": "Soft"
+  }
+}
