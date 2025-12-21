@@ -96,8 +96,7 @@ test.describe("Clan Request Flow", () => {
   }) => {
     await page.goto("/clanlist");
     await expect(page.url()).toContain("/clanlist");
-    await page.waitForLoadState("networkidle", { timeout: 15000 });
-
+    
     await expect(page.getByText(MOCK_CLANS_DATA[0].name)).toBeVisible();
     await expect(page.getByText(MOCK_CLANS_DATA[1].name)).toBeVisible();
 
@@ -124,7 +123,6 @@ test.describe("Clan Request Flow", () => {
     });
 
     await page.goto("/clanlist");
-    await page.waitForLoadState("networkidle", { timeout: 15000 });
     await expect(page.getByText(MOCK_CLANS_DATA[0].name)).toBeVisible();
 
     await expect(page.getByTestId("send-request-button")).not.toBeVisible({

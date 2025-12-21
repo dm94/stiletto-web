@@ -27,7 +27,7 @@ test.describe("Clan Creation Flow", () => {
     });
 
     // Mock clan creation API endpoint
-    await page.route("**/clans", async (route) => {
+    await page.route("**/clans*", async (route) => {
       const request = route.request();
       if (request.method() === "POST") {
         await route.fulfill({
@@ -73,7 +73,7 @@ test.describe("Clan Creation Flow", () => {
 
     // Navigate to profile page
     await page.goto("/profile");
-    await page.waitForLoadState("networkidle", { timeout: 15000 });
+    await expect(page.getByTestId("discord-tag")).toBeVisible({ timeout: 15000 });
   });
 
   test("Should open clan creation modal and create a clan", async ({

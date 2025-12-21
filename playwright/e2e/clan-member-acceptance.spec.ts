@@ -134,8 +134,6 @@ test.describe("Clan Member Acceptance Flow", () => {
   }) => {
     await page.goto("/members");
 
-    await page.waitForLoadState("networkidle", { timeout: 15000 });
-
     const testUserRequest = page.getByText("TestUser#5678");
     await expect(testUserRequest).toBeVisible();
 
