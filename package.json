@@ -21,7 +21,7 @@
     "i18next-http-backend": "3.0.2",
     "leaflet": "1.9.4",
     "query-string": "9.3.1",
-    "react": "19.2.1",
+    "react": "19.2.3",
     "react-dom": "19.2.1",
     "react-helmet": "6.1.0",
     "react-i18next": "16.5.0",
