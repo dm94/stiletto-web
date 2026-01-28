@@ -362,7 +362,7 @@ const ItemWiki = () => {
                 {t("common.selectRarity")}
               </div>
               <fieldset
-                className="inline-flex rounded-lg shadow-sm"
+                className="inline-flex flex-wrap gap-2 rounded-lg shadow-sm"
                 aria-label={t("common.raritySelection")}
               >
                 <legend className="sr-only">
@@ -387,9 +387,8 @@ const ItemWiki = () => {
                     }`}
                     onClick={() => updateRarity(rar)}
                   >
-                    <span className="w-4 mr-1">
-                      {rar === rarity ? "✓" : ""}
-                    </span>
+                    {rar === rarity ? <span className="w-4 mr-1">✓</span> : ""}
+
                     {t(rar)}
                   </button>
                 ))}
