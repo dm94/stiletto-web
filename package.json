@@ -66,7 +66,7 @@
     "@types/react-helmet": "^6.1.11",
     "@types/react-leaflet": "^3.0.0",
     "@types/react-router": "^5.1.20",
-    "@vitejs/plugin-react": "^5.1.2",
+    "@vitejs/plugin-react": "^5.1.4",
     "autoprefixer": "10.4.24",
     "tailwindcss": "^4.1.18",
     "typescript": "5.9.3",
