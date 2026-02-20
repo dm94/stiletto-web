@@ -1,9 +1,5 @@
 {
   "name": "Hornet Walker Upgrade Packing Tier 2",
   "type": "Hornet Walker Upgrade Packing Tier 2",
-  "category": "Upgrades",
-  "upgradeInfo": {
-    "additionalParts": 40,
-    "additionalSlots": 2
-  }
+  "category": "Upgrades"
 }

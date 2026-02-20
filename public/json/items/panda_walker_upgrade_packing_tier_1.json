@@ -1,9 +1,5 @@
 {
   "name": "Panda Walker Upgrade Packing Tier 1",
   "type": "Panda Walker Upgrade Packing Tier 1",
-  "category": "Upgrades",
-  "upgradeInfo": {
-    "additionalParts": 20,
-    "additionalSlots": 1
-  }
+  "category": "Upgrades"
 }

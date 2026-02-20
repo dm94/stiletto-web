@@ -1,9 +1,5 @@
 {
   "name": "Titan Walker Upgrade Packing Tier 4",
   "type": "Titan Walker Upgrade Packing Tier 4",
-  "category": "Upgrades",
-  "upgradeInfo": {
-    "additionalParts": 80,
-    "additionalSlots": 4
-  }
+  "category": "Upgrades"
 }

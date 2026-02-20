@@ -1,9 +1,5 @@
 {
   "name": "Hercul Walker Upgrade Packing Tier 3",
   "type": "Hercul Walker Upgrade Packing Tier 3",
-  "category": "Upgrades",
-  "upgradeInfo": {
-    "additionalParts": 60,
-    "additionalSlots": 3
-  }
+  "category": "Upgrades"
 }
