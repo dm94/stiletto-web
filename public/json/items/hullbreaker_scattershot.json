@@ -35,7 +35,7 @@
   ],
   "projectileDamage": {
     "damage": 240,
-    "penetration": 65,
+    "penetration": 10,
     "effectivenessVsSoak": 40,
     "effectivenessVsReduce": 65
   },

@@ -1,0 +1,9 @@
+{
+  "name": "Cinema",
+  "type": "Cinema_C",
+  "category": "Interactables",
+  "structureInfo": {
+    "hp": 1000000,
+    "type": "BlueprintGeneratedClassInvincibleDamageOverride_C'"
+  }
+}

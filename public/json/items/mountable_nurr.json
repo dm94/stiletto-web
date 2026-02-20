@@ -4,6 +4,7 @@
   "type": "MountableNurr_C",
   "category": "Interactables",
   "experiencieReward": 300,
+  "onlyDevs": true,
   "crafting": [
     {
       "ingredients": [

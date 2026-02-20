@@ -1,0 +1,8 @@
+{
+  "name": "Friend Nomad",
+  "type": "FriendNomadBot_C",
+  "category": "Interactables",
+  "structureInfo": {
+    "hp": 100
+  }
+}

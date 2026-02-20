@@ -2,8 +2,33 @@
   "name": "Medium Spare Parts Profile",
   "type": "MediumSparePartsProfile",
   "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "count": 45,
+          "name": "Iron Ingot"
+        },
+        {
+          "count": 192,
+          "name": "Ceramic Shard"
+        },
+        {
+          "count": 56,
+          "name": "Chitin Plate"
+        },
+        {
+          "count": 80,
+          "name": "Nomad Cloth"
+        },
+        {
+          "count": 8,
+          "name": "Obsidian"
+        }
+      ]
+    }
+  ],
   "upgradeInfo": {
-    "additionalParts": 80,
-    "additionalSlots": 4
+    "bonusHp": 15000
   }
 }

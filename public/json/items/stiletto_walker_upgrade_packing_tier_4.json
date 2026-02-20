@@ -1,9 +1,5 @@
 {
   "name": "Stiletto Walker Upgrade Packing Tier 4",
   "type": "Stiletto Walker Upgrade Packing Tier 4",
-  "category": "Upgrades",
-  "upgradeInfo": {
-    "additionalParts": 80,
-    "additionalSlots": 4
-  }
+  "category": "Upgrades"
 }

@@ -4,7 +4,6 @@
   "category": "Upgrades",
   "crafting": [
     {
-      "time": 60,
       "ingredients": [
         {
           "count": 8,
