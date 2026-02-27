@@ -1,0 +1,23 @@
+{
+  "name": "Explosive Boulder",
+  "type": "ExplosiveBoulder_C",
+  "category": "Ammo",
+  "trade_price": 150,
+  "stackSize": 5,
+  "weight": 10,
+  "description": "Ammo for catapult. Big boulder filled with iron splinters, charged with meteor core's energy. Designed to shred wood to pieces and severely damage even the sturdiest materials.",
+  "experiencieReward": 300,
+  "wikiVisibility": false,
+  "projectileDamage": {
+    "damage": 2000,
+    "penetration": 10,
+    "effectivenessVsSoak": 70,
+    "effectivenessVsReduce": 70
+  },
+  "toolInfo": [
+    {
+      "tier": 3,
+      "toolType": "CatapultRock"
+    }
+  ]
+}
