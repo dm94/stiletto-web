@@ -78,28 +78,6 @@
       ],
       "time": 60,
       "station": "FuelBurning"
-    },
-    {
-      "ingredients": [
-        {
-          "name": "Lightwood",
-          "count": 1
-        }
-      ],
-      "output": 15,
-      "time": 15,
-      "station": "Furnace"
-    },
-    {
-      "ingredients": [
-        {
-          "name": "Lightwood",
-          "count": 1
-        }
-      ],
-      "output": 15,
-      "time": 12,
-      "station": "Advanced Furnace"
     }
   ],
   "droppedBy": [

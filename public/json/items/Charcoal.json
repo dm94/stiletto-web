@@ -96,7 +96,7 @@
           "count": 1
         }
       ],
-      "time": 12,
+      "time": 40,
       "station": "Furnace"
     },
     {
@@ -106,7 +106,7 @@
           "count": 1
         }
       ],
-      "time": 8,
+      "time": 30,
       "station": "Furnace"
     },
     {
@@ -128,7 +128,7 @@
         }
       ],
       "output": 2,
-      "time": 12,
+      "time": 40,
       "station": "Advanced Furnace"
     },
     {
@@ -139,7 +139,7 @@
         }
       ],
       "output": 2,
-      "time": 8,
+      "time": 30,
       "station": "Advanced Furnace"
     }
   ],
