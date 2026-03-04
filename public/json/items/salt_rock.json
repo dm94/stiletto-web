@@ -13,11 +13,11 @@
       "ingredients": [
         {
           "name": "Brine",
-          "count": 1
+          "count": 10
         }
       ],
-      "output": 3,
-      "time": 20,
+      "output": 5,
+      "time": 120,
       "station": "Clay Pot"
     },
     {
@@ -28,7 +28,7 @@
         }
       ],
       "output": 10,
-      "time": 20,
+      "time": 30,
       "station": "Artisan Soil Auger"
     },
     {
@@ -39,7 +39,7 @@
         }
       ],
       "output": 5,
-      "time": 30,
+      "time": 120,
       "station": "WaterBoiling"
     }
   ]
