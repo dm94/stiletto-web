@@ -16,30 +16,50 @@
         }
       ],
       "output": 5,
-      "time": 12,
+      "time": 30,
       "station": "Stomping Station"
     },
     {
       "ingredients": [
         {
           "name": "Bone Splinter",
-          "count": 10
+          "count": 9
         }
       ],
       "output": 5,
-      "time": 10,
+      "time": 25,
       "station": "Advanced Stomping Station"
     },
     {
       "ingredients": [
         {
           "name": "Bone Splinter",
-          "count": 10
+          "count": 8
         }
       ],
       "output": 5,
-      "time": 8,
+      "time": 20,
       "station": "Flotillian Stomping Station"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Chitin Plate",
+          "count": 2
+        }
+      ],
+      "time": 600,
+      "station": "Furnace"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Chitin Plate",
+          "count": 2
+        }
+      ],
+      "time": 450,
+      "station": "Advanced Furnace"
     }
   ]
 }

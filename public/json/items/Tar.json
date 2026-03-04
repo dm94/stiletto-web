@@ -7,16 +7,16 @@
   "stackSize": 100,
   "weight": 0.15,
   "description": "Thick liquid used in heavy and complex constructions. Ignitable in combination with other materials.",
-  "experiencieReward": 100,
+  "experiencieReward": 20,
   "crafting": [
     {
       "ingredients": [
         {
           "name": "Tree Sap",
-          "count": 1
+          "count": 2
         }
       ],
-      "time": 360,
+      "time": 600,
       "station": "Furnace"
     },
     {
@@ -26,7 +26,7 @@
           "count": 1
         }
       ],
-      "time": 180,
+      "time": 450,
       "station": "Advanced Furnace"
     }
   ],

@@ -83,63 +83,60 @@
       "ingredients": [
         {
           "name": "Wood",
-          "count": 1
+          "count": 4
         }
       ],
-      "time": 60,
+      "time": 600,
       "station": "Furnace"
     },
     {
       "ingredients": [
         {
           "name": "Redwood Wood",
-          "count": 1
+          "count": 4
         }
       ],
-      "time": 40,
+      "time": 450,
       "station": "Furnace"
     },
     {
       "ingredients": [
         {
           "name": "Lightwood",
-          "count": 1
+          "count": 4
         }
       ],
-      "time": 30,
+      "time": 300,
       "station": "Furnace"
     },
     {
       "ingredients": [
         {
           "name": "Wood",
-          "count": 1
+          "count": 2
         }
       ],
-      "output": 2,
-      "time": 60,
+      "time": 600,
       "station": "Advanced Furnace"
     },
     {
       "ingredients": [
         {
           "name": "Redwood Wood",
-          "count": 1
+          "count": 2
         }
       ],
-      "output": 2,
-      "time": 40,
+      "time": 450,
       "station": "Advanced Furnace"
     },
     {
       "ingredients": [
         {
           "name": "Lightwood",
-          "count": 1
+          "count": 2
         }
       ],
-      "output": 2,
-      "time": 30,
+      "time": 300,
       "station": "Advanced Furnace"
     }
   ],
