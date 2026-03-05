@@ -2,6 +2,7 @@
   "name": "Fireproof Walker Module",
   "type": "WalkerFireproofModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Lowers the damage from all fire sources for the walker and all structures.",
   "crafting": [

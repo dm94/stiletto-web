@@ -2,6 +2,7 @@
   "name": "Harpoon Protection Walker Module",
   "type": "WalkerTetherProtectionModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "description": "Makes tethers attached to the walker easier to snap.",
   "crafting": [
     {

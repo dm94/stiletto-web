@@ -3,7 +3,7 @@
   "parent": "Woodworking Station",
   "type": "ProxyLicense_C",
   "category": "Interactables",
-  "trade_price": 1,
+  "trade_price": 10000,
   "stackSize": 5,
   "weight": 0.2,
   "description": "A permit to build one proxy walker to claim an oasis.",

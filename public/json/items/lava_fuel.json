@@ -3,6 +3,7 @@
   "parent": "Obsidian Machine",
   "type": "LavaFuel_C",
   "category": "Liquids",
+  "trade_price": 5,
   "stackSize": 100,
   "weight": 0.5,
   "description": "Being almost as hot as lava itself, it's often used in crafting and combat by spraying it and setting on fire.",

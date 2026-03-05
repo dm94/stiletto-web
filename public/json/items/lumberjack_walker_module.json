@@ -2,6 +2,7 @@
   "name": "Lumberjack Walker Module",
   "type": "WalkerLegLoggingModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Walker legs will chop wood when they impact with trees. Stacking this module increases the amount of wood.",
   "experiencieReward": 65,

@@ -2,6 +2,7 @@
   "name": "Sandy Walker Module",
   "type": "WalkerSandinessReductionModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Stacking this module increases the rate at which sand is removed from a walker's gears after travelling.",
   "experiencieReward": 65,

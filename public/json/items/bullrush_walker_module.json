@@ -2,6 +2,7 @@
   "name": "Bullrush Walker Module",
   "type": "WalkerRespawnTimeModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Stacking this module decreases the wait time before respawning on a walker.",
   "experiencieReward": 65,

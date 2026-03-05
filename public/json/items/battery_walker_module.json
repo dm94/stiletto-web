@@ -2,6 +2,7 @@
   "name": "Battery Walker Module",
   "type": "WalkerTorqueCapacityBoost_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Stacking this module increases the torque battery's maximum capacity.",
   "experiencieReward": 65,

@@ -2,7 +2,7 @@
   "name": "Stone Plank",
   "type": "StonePlank_C",
   "category": "Resources",
-  "trade_price": 0.4,
+  "trade_price": 100,
   "stackSize": 100,
   "weight": 1,
   "experiencieReward": 25,

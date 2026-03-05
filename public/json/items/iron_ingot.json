@@ -2,7 +2,7 @@
   "name": "Iron Ingot",
   "type": "IronIngot2_C",
   "category": "Resources",
-  "trade_price": 12,
+  "trade_price": 50,
   "stackSize": 100,
   "weight": 0.65,
   "description": "Extremely strong material used in high quality productions.",

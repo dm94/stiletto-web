@@ -2,6 +2,7 @@
   "name": "Apple Kambaro",
   "type": "AppleKambaro_C",
   "category": "Vitamins",
+  "trade_price": 2,
   "stackSize": 100,
   "weight": 1,
   "description": "Mouth-watering dish made out of cooked apples and some seasoning. Juicy and spicy at the same time, it quenches thirst and energizes the Nomads that eat it.",

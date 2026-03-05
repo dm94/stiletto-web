@@ -2,6 +2,7 @@
   "name": "Craftsman Base Module",
   "type": "BaseCraftingTimeModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Stacking this module decreases the crafting time of stations built inside the base.",
   "experiencieReward": 65,

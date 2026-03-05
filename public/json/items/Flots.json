@@ -2,7 +2,7 @@
   "name": "Flots",
   "type": "Currency_C",
   "category": "Resources",
-  "trade_price": 0.5,
+  "trade_price": 1,
   "stackSize": 999999,
   "description": "Currency of the Flotilla. Can be withdrawn and deposited at any Trading Station.",
   "droppedBy": [

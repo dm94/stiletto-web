@@ -3,7 +3,7 @@
   "parent": "Wooden Gear",
   "type": "ReinforcedGear_C",
   "category": "Resources",
-  "trade_price": 700,
+  "trade_price": 400,
   "stackSize": 100,
   "weight": 0.55,
   "description": "Masterfully crafted contraption that automatically releases energy and bolsters transmission of walker gear mechanisms. Essential in construction of heavier walkers.",

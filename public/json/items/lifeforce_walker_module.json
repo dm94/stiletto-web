@@ -2,6 +2,7 @@
   "name": "Lifeforce Walker Module",
   "type": "WalkerRespawnEffectModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Nomads that respawn on a walker will recieve a beneficial status effect. Stacking this module increases the potency of this effect.",
   "experiencieReward": 65,

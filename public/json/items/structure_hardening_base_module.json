@@ -2,6 +2,7 @@
   "name": "Structure Hardening Base Module",
   "type": "BaseArmorModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Stacking this module increases the health of the whole base.",
   "crafting": [

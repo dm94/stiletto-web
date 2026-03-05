@@ -3,7 +3,7 @@
   "parent": "Lathe",
   "type": "IronNails_C",
   "category": "Resources",
-  "trade_price": 0.4,
+  "trade_price": 5,
   "stackSize": 100,
   "weight": 0.28,
   "description": "Hardened ceramic nails used for construction of more advanced structures and walkers.",

@@ -2,6 +2,7 @@
   "name": "Armoury Walker Module",
   "type": "WalkerGearModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Stacking this module increases the capacity of a walker's Armor and Weapons container.",
   "experiencieReward": 65,

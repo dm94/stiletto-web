@@ -2,6 +2,7 @@
   "name": "Forager Walker Module",
   "type": "WalkerLegHarvestingModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Walker legs will automatically harvest foliage when travelling at slow speed. Stacking this module increases the amount of foliage harvested.",
   "experiencieReward": 65,

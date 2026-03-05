@@ -2,6 +2,7 @@
   "name": "Bullrush Base Module",
   "type": "BaseRespawnTimeModule_C",
   "category": "Resources",
+  "trade_price": 100,
   "weight": 0.24,
   "description": "Stacking this module decreases the wait time before respawning on a base.",
   "experiencieReward": 65,

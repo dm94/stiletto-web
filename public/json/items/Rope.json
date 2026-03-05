@@ -3,7 +3,7 @@
   "parent": "Advanced Fiberworking Station",
   "type": "Rope_C",
   "category": "Resources",
-  "trade_price": 0.5,
+  "trade_price": 5,
   "stackSize": 100,
   "weight": 0.25,
   "description": "A strong cord used for crafting and construction",

@@ -3,7 +3,7 @@
   "parent": "Advanced Woodworking Station",
   "type": "WoodenGear_C",
   "category": "Resources",
-  "trade_price": 700,
+  "trade_price": 200,
   "stackSize": 100,
   "weight": 0.55,
   "description": "A large wooden gear made out of primitive materials. Used as the base rotational axis for mid-sized walkers.",
