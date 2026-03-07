@@ -26,7 +26,9 @@ const CreateMapPanel: React.FC<CreateMapPanelProps> = ({
     (evt: FormEvent) => {
       evt.preventDefault();
       const date = new Date();
-      date.setDate(date.getDate() + Number.parseInt(mapDateInput.toString()));
+      date.setDate(
+        date.getDate() + Number.parseInt(mapDateInput.toString(), 10),
+      );
       onCreateMap(
         mapNameInput,
         date.toISOString().split("T")[0],

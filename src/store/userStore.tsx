@@ -5,6 +5,7 @@ import {
   useState,
   useEffect,
   useMemo,
+  useCallback,
   type ReactNode,
 } from "react";
 import { getUser } from "@functions/requests/users";
@@ -55,6 +56,48 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [userProfile, setUserProfile] = useState<UserInfo>();
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const logout = useCallback((): void => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("discordid");
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("discordid");
+    setIsConnected(false);
+    setUserProfile(undefined);
+  }, []);
+
+  /**
+   * Updates the user profile information from the API
+   */
+  const refreshUserProfile = useCallback(async (): Promise<void> => {
+    try {
+      const token = getStoredItem("token");
+      if (!token) {
+        setUserProfile(undefined);
+        return;
+      }
+
+      setIsLoading(true);
+      const userData = await getUser();
+      setUserProfile(userData);
+      setIsConnected(true);
+    } catch (err) {
+      console.error("Error getting user data:", err);
+      logout();
+    } finally {
+      setIsLoading(false);
+    }
+  }, [logout]);
+
+  const login = useCallback(
+    (discordId: string, token: string): void => {
+      storeItem("discordid", discordId);
+      storeItem("token", token);
+      setIsConnected(true);
+      refreshUserProfile();
+    },
+    [refreshUserProfile],
+  );
+
   // Check if the user is connected when loading the component
   useEffect(() => {
     const checkUserConnection = async () => {
@@ -74,52 +117,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     };
 
     checkUserConnection();
-  }, []);
-
-  /**
-   * Updates the user profile information from the API
-   */
-  const refreshUserProfile = async (): Promise<void> => {
-    try {
-      const token = getStoredItem("token");
-      if (!token) {
-        setUserProfile(undefined);
-        return;
-      }
-
-      setIsLoading(true);
-      const userData = await getUser();
-      setUserProfile(userData);
-      setIsConnected(true);
-    } catch (err) {
-      console.error("Error getting user data:", err);
-      logout();
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  /**
-   * User login
-   */
-  const login = (discordId: string, token: string): void => {
-    storeItem("discordid", discordId);
-    storeItem("token", token);
-    setIsConnected(true);
-    refreshUserProfile();
-  };
-
-  /**
-   * User logout
-   */
-  const logout = (): void => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("discordid");
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("discordid");
-    setIsConnected(false);
-    setUserProfile(undefined);
-  };
+  }, [refreshUserProfile]);
 
   // Memoize the context value to prevent unnecessary re-renders
   const value = useMemo(
@@ -131,7 +129,6 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
       logout,
       refreshUserProfile,
     }),
-    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
     [isConnected, userProfile, isLoading, login, logout, refreshUserProfile],
   );
 

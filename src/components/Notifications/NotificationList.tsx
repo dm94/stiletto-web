@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Notifications from "./Notifications";
 
 interface Notification {
@@ -8,10 +8,27 @@ interface Notification {
   type?: string;
 }
 
+const NOTIFICATION_TTL_MS = 5000;
+const CLEANUP_INTERVAL_MS = 1000;
+
+const getRecentNotifications = (
+  currentNotifications: Notification[],
+  minTime: number,
+): Notification[] => {
+  return currentNotifications.filter(
+    (notification) => notification.date >= minTime,
+  );
+};
+
 const NotificationList: React.FC = () => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
-  const channel = new BroadcastChannel("notifications");
-  const [seconds, setSeconds] = useState<number>(0);
+  const channel = useMemo(() => new BroadcastChannel("notifications"), []);
+  const removeExpiredNotifications = useCallback((): void => {
+    const minTime = Date.now() - NOTIFICATION_TTL_MS;
+    setNotifications((prevNotifications) =>
+      getRecentNotifications(prevNotifications, minTime),
+    );
+  }, []);
 
   useEffect(() => {
     channel.onmessage = (e) => {
@@ -19,30 +36,24 @@ const NotificationList: React.FC = () => {
     };
 
     return () => {
+      channel.onmessage = null;
       channel.close();
     };
   }, [channel]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
-    const interval = setInterval(() => {
-      checkOldNotifications();
-      setSeconds((s) => s + 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [seconds]);
+    const interval = setInterval(
+      removeExpiredNotifications,
+      CLEANUP_INTERVAL_MS,
+    );
 
-  const checkOldNotifications = (): void => {
-    const minTime = Date.now() - 5000;
-    for (const data of notifications) {
-      if (data.date < minTime) {
-        deleteNotification(data.date);
-      }
-    }
-  };
+    return () => clearInterval(interval);
+  }, [removeExpiredNotifications]);
 
   const deleteNotification = (id: number): void => {
-    setNotifications(notifications.filter((data) => data.date !== id));
+    setNotifications((prevNotifications) =>
+      prevNotifications.filter((data) => data.date !== id),
+    );
   };
 
   return (

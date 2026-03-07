@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import type React from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router";
 import i18next from "i18next";
 import { supportedLanguages } from "@config/languages";
@@ -30,34 +31,32 @@ const CrafterApp: React.FC = () => {
 
   return (
     <UserProvider>
-      <React.Fragment>
-        <Helmet
-          htmlAttributes={{
-            lang: language ?? "en",
-          }}
-        />
-        <Menu
-          language={language ?? "en"}
-          openLanguajeModal={() => {
-            setShowChangeLanguageModal(true);
-          }}
-          setRedirectTo={(value: string) => setRedirectTo(value)}
-        />
-        <main className="shrink-0">
-          <div className="container-fluid pt-4">
-            {AppRoutes}
-            {showChangeLanguageModal && (
-              <ChangeLanguageModal
-                switchLanguage={(lng: string) => switchLanguage(lng)}
-                hideModal={() => setShowChangeLanguageModal(false)}
-              />
-            )}
-          </div>
-        </main>
-        <Footer />
-        <VanillaCookieConsent />
-        <NotificationList />
-      </React.Fragment>
+      <Helmet
+        htmlAttributes={{
+          lang: language ?? "en",
+        }}
+      />
+      <Menu
+        language={language ?? "en"}
+        openLanguajeModal={() => {
+          setShowChangeLanguageModal(true);
+        }}
+        setRedirectTo={(value: string) => setRedirectTo(value)}
+      />
+      <main className="shrink-0">
+        <div className="container-fluid pt-4">
+          {AppRoutes}
+          {showChangeLanguageModal && (
+            <ChangeLanguageModal
+              switchLanguage={(lng: string) => switchLanguage(lng)}
+              hideModal={() => setShowChangeLanguageModal(false)}
+            />
+          )}
+        </div>
+      </main>
+      <Footer />
+      <VanillaCookieConsent />
+      <NotificationList />
     </UserProvider>
   );
 };

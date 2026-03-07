@@ -5,10 +5,10 @@ import Icon from "../Icon";
 import CraftingTime from "../CraftingTime";
 import Station from "../Station";
 import { getItemUrl } from "@functions/utils";
-import type { CraftItem } from "@ctypes/item";
+import type { CraftItem, ProjectileDamage } from "@ctypes/item";
 
 interface SelectedItemProps {
-  item: CraftItem;
+  item: CraftItem & { projectileDamage?: ProjectileDamage };
   onChangeCount: (itemName: string, count: number) => void;
 }
 
@@ -25,34 +25,47 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
 
     const moreThanOne = item.crafting.length > 1;
 
-    return item.crafting.map((ingredients, i) => (
-      <div
-        className={`${
-          moreThanOne ? "w-full border-l-4 border-green-500" : "w-full"
-        } p-4 bg-gray-900 rounded-lg relative`}
-        key={`${item.name}-${item.count}-${i}`}
-      >
-        {moreThanOne && (
-          <div className="absolute top-2 right-2 bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs font-medium">
-            {t("crafting.recipe")} {i + 1}
-          </div>
-        )}
-        <Ingredients
-          crafting={ingredients}
-          value={
-            ingredients.output != null
-              ? item.count / ingredients.output
-              : item.count
-          }
-        />
-        <div className="mt-4 flex flex-col space-y-2">
-          {ingredients.station && <Station name={ingredients.station} />}
-          {ingredients.time && (
-            <CraftingTime time={ingredients.time} total={item.count} />
+    return item.crafting.map((ingredients, i) => {
+      const ingredientRecipeKey =
+        ingredients.ingredients
+          ?.map((ingredient) => `${ingredient.name}-${ingredient.count}`)
+          .join("|") ?? "no-ingredients";
+      const recipeKey = [
+        item.name,
+        ingredients.station ?? "no-station",
+        ingredients.time ?? "no-time",
+        ingredients.output ?? "no-output",
+        ingredientRecipeKey,
+      ].join("-");
+      return (
+        <div
+          className={`${
+            moreThanOne ? "w-full border-l-4 border-green-500" : "w-full"
+          } p-4 bg-gray-900 rounded-lg relative`}
+          key={recipeKey}
+        >
+          {moreThanOne && (
+            <div className="absolute top-2 right-2 bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs font-medium">
+              {t("crafting.recipe")} {i + 1}
+            </div>
           )}
+          <Ingredients
+            crafting={ingredients}
+            value={
+              ingredients.output != null
+                ? item.count / ingredients.output
+                : item.count
+            }
+          />
+          <div className="mt-4 flex flex-col space-y-2">
+            {ingredients.station && <Station name={ingredients.station} />}
+            {ingredients.time && (
+              <CraftingTime time={ingredients.time} total={item.count} />
+            )}
+          </div>
         </div>
-      </div>
-    ));
+      );
+    });
   };
 
   const showDamage = () => {
@@ -96,7 +109,7 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
   };
 
   const handleChange = (count: number) => {
-    onChangeCount(item.name, Number.parseInt(item.count.toString()) + count);
+    onChangeCount(item.name, item.count + count);
   };
 
   const url = getItemUrl(item.name);
@@ -126,7 +139,7 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
                 className="w-24 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 font-bold text-lg"
                 value={item.count}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                  onChangeCount(item.name, Number.parseInt(e.target.value))
+                  onChangeCount(item.name, Number.parseInt(e.target.value, 10))
                 }
                 min="1"
                 max="9999"

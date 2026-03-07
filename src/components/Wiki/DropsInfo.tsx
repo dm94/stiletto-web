@@ -11,16 +11,13 @@ const DropsInfo: React.FC<DropsInfoProps> = ({ drops = [] }) => {
   const { t } = useTranslation();
 
   const showDrops = () => {
-    return drops?.map((drop, index) => {
+    return drops?.map((drop) => {
       const titleInfo = `Drop ${drop?.chance ?? "unknown"}% -> ${
         drop?.minQuantity ?? "unknown"
       }/${drop?.maxQuantity ?? "unknown"}`;
+      const dropKey = `${drop.name}-${drop.tier ?? "no-tier"}-${drop.minQuantity ?? "no-min"}-${drop.maxQuantity ?? "no-max"}-${drop.chance ?? "no-chance"}`;
       return (
-        <li
-          className="inline-block mr-2 mb-2"
-          key={`${drop.name}-${index}`}
-          title={titleInfo}
-        >
+        <li className="inline-block mr-2 mb-2" key={dropKey} title={titleInfo}>
           <div className="p-2 bg-gray-800 border border-gray-700 rounded-lg flex items-center space-x-2">
             <a
               href={getCreatureUrl(drop.name)}

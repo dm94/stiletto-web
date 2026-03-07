@@ -33,7 +33,6 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
 
   return (
     <Fragment>
-      {/* biome-ignore lint/a11y/noSvgWithoutTitle: <explanation> */}
       <svg
         className="inline-block mr-2"
         width="32"
@@ -43,6 +42,7 @@ const ClanName: React.FC<ClanNameProps> = ({ clan }) => {
         focusable="false"
         aria-label={`Clan color ${clan.flagcolor}`}
       >
+        <title>{`Clan color ${clan.flagcolor}`}</title>
         <rect width="90%" height="90%" fill={clan.flagcolor} />
       </svg>
       <span className="inline-block pb-3 text-gray-300">{clan.name}</span>
