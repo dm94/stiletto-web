@@ -15,6 +15,53 @@ import HeaderMeta from "@components/HeaderMeta";
 import { FaList, FaExclamationTriangle } from "react-icons/fa";
 import ReportIncidentModal from "@components/ReportIncidentModal";
 
+const getIngredientsFromItems = (
+  items: Item[],
+  itemName: string,
+  secondTree: boolean,
+): ItemRecipe[] => {
+  const selectedItem = items.find((it) => it.name === itemName);
+  if (!selectedItem?.crafting) {
+    return [];
+  }
+
+  return selectedItem.crafting.map(
+    (itemRecipe): ItemRecipe => ({
+      ...itemRecipe,
+      ingredients: itemRecipe.ingredients?.map((ingredient) => ({
+        ...ingredient,
+        ingredients: secondTree
+          ? []
+          : getIngredientsFromItems(items, ingredient.name, true),
+      })),
+    }),
+  );
+};
+
+const mapRecipeItemsToSelectedItems = (
+  items: Item[],
+  recipes: Array<{ name: string; count: number }>,
+): CraftItem[] => {
+  const nextSelectedItems: CraftItem[] = [];
+
+  for (const recipeItem of recipes) {
+    const selectedItem = items.find((item) => item.name === recipeItem.name);
+    if (!selectedItem) {
+      continue;
+    }
+
+    nextSelectedItems.push({
+      ...selectedItem,
+      name: selectedItem.name,
+      category: selectedItem.category ?? "",
+      crafting: getIngredientsFromItems(items, selectedItem.name, false),
+      count: recipeItem.count,
+    });
+  }
+
+  return nextSelectedItems;
+};
+
 const Crafter: React.FC = () => {
   const location = useLocation();
   const { t } = useTranslation();
@@ -26,6 +73,23 @@ const Crafter: React.FC = () => {
   const [isItemsNavVisible, setIsItemsNavVisible] = useState<boolean>(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
 
+  const loadRecipeSelection = useCallback(
+    async (recipeToken: string, craftableItems: Item[]): Promise<void> => {
+      try {
+        const response = await getRecipe(recipeToken);
+        const recipes = response.items ?? [];
+        const nextSelectedItems = mapRecipeItemsToSelectedItems(
+          craftableItems,
+          recipes,
+        );
+        setSelectedItems(nextSelectedItems);
+      } catch {
+        setError("errors.apiConnection");
+      }
+    },
+    [],
+  );
+
   useEffect(() => {
     const updateRecipes = async (): Promise<void> => {
       const itemsData = await getItems();
@@ -36,69 +100,25 @@ const Crafter: React.FC = () => {
       const craftableItems = itemsData.filter((it) => it.crafting);
       setAllItems(craftableItems);
 
-      const parsed = queryString.parse(location?.search);
-      const { recipe, craft } = parsed;
+      const parsed = queryString.parse(location.search);
+      const recipeToken =
+        typeof parsed.recipe === "string" ? parsed.recipe : undefined;
+      const craftToken =
+        typeof parsed.craft === "string" ? parsed.craft : undefined;
 
-      if (recipe) {
-        try {
-          const response = await getRecipe(String(recipe));
-          if (response.items) {
-            const getIngredientsByItems = (
-              itemName: string,
-              secondTree: boolean,
-            ): ItemRecipe[] => {
-              const selectedItem = craftableItems.find(
-                (it) => it.name === itemName,
-              );
-              if (!selectedItem?.crafting) {
-                return [];
-              }
+      if (recipeToken) {
+        await loadRecipeSelection(recipeToken, craftableItems);
+        return;
+      }
 
-              return selectedItem.crafting.map(
-                (itemRecipe): ItemRecipe => ({
-                  ...itemRecipe,
-                  ingredients: itemRecipe.ingredients?.map((ingredient) => ({
-                    ...ingredient,
-                    ingredients: secondTree
-                      ? []
-                      : getIngredientsByItems(ingredient.name, true),
-                  })),
-                }),
-              );
-            };
-
-            const nextSelectedItems: CraftItem[] = [];
-            for (const recipeItem of response.items) {
-              const selectedItem = craftableItems.find(
-                (item) => item.name === recipeItem.name,
-              );
-
-              if (!selectedItem) {
-                continue;
-              }
-
-              nextSelectedItems.push({
-                ...selectedItem,
-                name: selectedItem.name,
-                category: selectedItem.category ?? "",
-                crafting: getIngredientsByItems(selectedItem.name, false),
-                count: recipeItem.count,
-              });
-            }
-
-            setSelectedItems(nextSelectedItems);
-          }
-        } catch {
-          setError("errors.apiConnection");
-        }
-      } else if (craft) {
-        const decodedName = getItemDecodedName(String(craft));
+      if (craftToken) {
+        const decodedName = getItemDecodedName(craftToken);
         setSearchText(decodedName);
       }
     };
 
     updateRecipes();
-  }, [location.search]);
+  }, [location.search, loadRecipeSelection]);
 
   const updateSearch = useCallback(
     (searchText: string): void => {
@@ -151,24 +171,8 @@ const Crafter: React.FC = () => {
   );
 
   const getIngredients = useCallback(
-    (itemName: string, secondTree: boolean): any => {
-      const selectedItem = allItems.find((it) => it.name === itemName);
-      if (!selectedItem?.crafting) {
-        return [];
-      }
-
-      return selectedItem.crafting.map(
-        (recipe): ItemRecipe => ({
-          ...recipe,
-          ingredients: recipe.ingredients?.map((ingredient) => ({
-            ...ingredient,
-            ingredients: secondTree
-              ? []
-              : getIngredients(ingredient.name, true),
-          })),
-        }),
-      );
-    },
+    (itemName: string, secondTree: boolean): ItemRecipe[] =>
+      getIngredientsFromItems(allItems, itemName, secondTree),
     [allItems],
   );
 
