@@ -23,13 +23,13 @@ import CategoryFilter from "@components/Wiki/CategoryFilter";
 import WikiContent from "@components/Wiki/WikiContent";
 import Pagination from "@components/Wiki/Pagination";
 
+type WikiContentType = "items" | "creatures" | "perks";
+
 const Wiki = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [contentType, setContentType] = useState<
-    "items" | "creatures" | "perks"
-  >("items");
+  const [contentType, setContentType] = useState<WikiContentType>("items");
   const [wikiLastUpdate, setWikiLastUpdate] = useState<string>();
 
   // Items state
