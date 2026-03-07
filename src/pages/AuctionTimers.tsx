@@ -106,7 +106,7 @@ const AuctionTimers = memo(() => {
                 onClick={() =>
                   setTimerIds((prevTimerIds) =>
                     prevTimerIds.length > 1
-                      ? prevTimerIds.slice(0, prevTimerIds.length - 1)
+                      ? prevTimerIds.slice(0, -1)
                       : prevTimerIds,
                   )
                 }
