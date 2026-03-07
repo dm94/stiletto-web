@@ -9,10 +9,6 @@ interface ListIngredientsProps {
 
 const ListIngredients: React.FC<ListIngredientsProps> = memo(
   ({ selectedItems }) => {
-    if (!selectedItems) {
-      return null;
-    }
-
     const totalIngredients = useMemo(() => {
       const ingredients: Array<{
         name: string;
@@ -45,6 +41,10 @@ const ListIngredients: React.FC<ListIngredientsProps> = memo(
 
       return ingredients;
     }, [selectedItems]);
+
+    if (!selectedItems) {
+      return null;
+    }
 
     return totalIngredients.map((ingredient) => (
       <Ingredient key={ingredient.name} ingredient={ingredient} value={1} />

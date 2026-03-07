@@ -40,7 +40,7 @@ const ResourcePopup: React.FC<ResourcePopupProps> = ({
   const getResourceEstimatedQuality = useCallback(() => {
     const quality = 4;
     const diff = Math.abs(
-      new Date().getTime() - new Date(resource.lastharvested ?? "").getTime(),
+      Date.now() - new Date(resource.lastharvested ?? "").getTime(),
     );
     const minutes = Math.floor(diff / 1000 / 60);
     const estimatedQuality = (minutes - 45) / 10;

@@ -14,16 +14,13 @@ const CreatureDropsInfo: React.FC<CreatureDropsInfoProps> = ({
   const { t } = useTranslation();
 
   const showDrops = () => {
-    return drops?.map((drop, index) => {
+    return drops?.map((drop) => {
       const titleInfo = `Drop ${drop?.chance ?? "unknown"}% -> ${
         drop?.minQuantity ?? "unknown"
       }/${drop?.maxQuantity ?? "unknown"}`;
+      const dropKey = `${drop.name}-${drop.tier ?? "no-tier"}-${drop.minQuantity ?? "no-min"}-${drop.maxQuantity ?? "no-max"}-${drop.chance ?? "no-chance"}`;
       return (
-        <li
-          className="inline-block mr-2 mb-2"
-          key={`${drop.name}-${index}`}
-          title={titleInfo}
-        >
+        <li className="inline-block mr-2 mb-2" key={dropKey} title={titleInfo}>
           <Link to={getItemUrl(drop.name)}>
             <div className="p-2 bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg text-neutral-300 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
               {t(drop.name)} {drop?.tier && `(${drop.tier})`}

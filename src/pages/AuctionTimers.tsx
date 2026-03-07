@@ -7,7 +7,8 @@ import { FaVolumeUp, FaVolumeMute, FaPlus, FaMinus } from "react-icons/fa";
 
 const AuctionTimers = memo(() => {
   const { t } = useTranslation();
-  const [timers, setTimers] = useState(1);
+  const [timerIds, setTimerIds] = useState<number[]>([0]);
+  const [nextTimerId, setNextTimerId] = useState(1);
   const [playSound, setPlaySound] = useState(false);
 
   const playAlarm = useCallback(() => {
@@ -17,13 +18,13 @@ const AuctionTimers = memo(() => {
 
   const renderTimers = useCallback(() => {
     const timerElements = [];
-    for (let i = 0; i < timers; i++) {
+    for (const timerId of timerIds) {
       timerElements.push(
-        <Timer key={i} onPlay={playAlarm} value={playSound} />,
+        <Timer key={timerId} onPlay={playAlarm} value={playSound} />,
       );
     }
     return <div className="w-full">{timerElements}</div>;
-  }, [timers, playAlarm, playSound]);
+  }, [timerIds, playAlarm, playSound]);
 
   return (
     <div className="container mx-auto px-4 py-6">
@@ -89,7 +90,10 @@ const AuctionTimers = memo(() => {
               <button
                 type="button"
                 className="px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg font-medium"
-                onClick={() => setTimers(timers + 1)}
+                onClick={() => {
+                  setTimerIds((prevTimerIds) => [...prevTimerIds, nextTimerId]);
+                  setNextTimerId((prevNextTimerId) => prevNextTimerId + 1);
+                }}
               >
                 <FaPlus className="mr-2 inline" />
                 {t("timers.addTimer")}
@@ -97,10 +101,16 @@ const AuctionTimers = memo(() => {
               <button
                 type="button"
                 className={`px-4 py-3 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 text-lg font-medium ${
-                  timers <= 1 ? "opacity-50 cursor-not-allowed" : ""
+                  timerIds.length <= 1 ? "opacity-50 cursor-not-allowed" : ""
                 }`}
-                onClick={() => setTimers(Math.max(1, timers - 1))}
-                disabled={timers <= 1}
+                onClick={() =>
+                  setTimerIds((prevTimerIds) =>
+                    prevTimerIds.length > 1
+                      ? prevTimerIds.slice(0, prevTimerIds.length - 1)
+                      : prevTimerIds,
+                  )
+                }
+                disabled={timerIds.length <= 1}
               >
                 <FaMinus className="mr-2 inline" />
                 {t("timers.removeTimer")}

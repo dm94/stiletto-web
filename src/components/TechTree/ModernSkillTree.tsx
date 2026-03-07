@@ -58,19 +58,6 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    try {
-      const savedSkills = getStoredItem(`skills-${treeId}`);
-      if (savedSkills) {
-        setSkills(JSON.parse(savedSkills));
-      }
-    } catch (error) {
-      console.error("Error loading saved skills:", error);
-    }
-
-    resetZoom();
-  }, [treeId]);
-
   // Build tree structure from items
   const buildTreeData = useCallback(() => {
     const buildChildren = (parent: string, level = 0): NodeData[] => {
@@ -303,6 +290,19 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     setScale(1);
     setPosition({ x: 0, y: 0 });
   }, []);
+
+  useEffect(() => {
+    try {
+      const savedSkills = getStoredItem(`skills-${treeId}`);
+      if (savedSkills) {
+        setSkills(JSON.parse(savedSkills));
+      }
+    } catch (error) {
+      console.error("Error loading saved skills:", error);
+    }
+
+    resetZoom();
+  }, [treeId, resetZoom]);
 
   // Pan functionality
   const handleMouseDown = useCallback((e: React.MouseEvent) => {

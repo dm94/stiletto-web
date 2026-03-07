@@ -97,20 +97,23 @@ const ItemWiki = () => {
       return;
     }
 
-    return ingre?.crafting?.map((recipe, index) => (
-      <div
-        className={
-          ingre?.crafting && ingre?.crafting?.length > 1
-            ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
-            : "w-full flex flex-col gap-2"
-        }
-        key={`ingredients-${index}-${ingre.name}`}
-      >
-        <Ingredients crafting={recipe} value={1} />
-        {recipe.station && <Station name={recipe.station} />}
-        {recipe.time && <CraftingTime time={recipe.time} />}
-      </div>
-    ));
+    return ingre?.crafting?.map((recipe) => {
+      const recipeKey = `${ingre.name}-${recipe.station ?? "no-station"}-${recipe.time ?? "no-time"}-${recipe.output ?? "no-output"}-${recipe.ingredients?.map((ingredient) => `${ingredient.name}-${ingredient.count}`).join("|") ?? "no-ingredients"}`;
+      return (
+        <div
+          className={
+            ingre?.crafting && ingre?.crafting?.length > 1
+              ? "w-full border-l-4 border-green-500 p-4 bg-gray-900 rounded-lg lg:w-1/2 flex gap-2 flex-col"
+              : "w-full flex flex-col gap-2"
+          }
+          key={recipeKey}
+        >
+          <Ingredients crafting={recipe} value={1} />
+          {recipe.station && <Station name={recipe.station} />}
+          {recipe.time && <CraftingTime time={recipe.time} />}
+        </div>
+      );
+    });
   }, []);
 
   const showDescription = useMemo(

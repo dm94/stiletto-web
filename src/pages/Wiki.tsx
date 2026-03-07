@@ -3,7 +3,12 @@ import { useState, useEffect, useCallback } from "react";
 import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { getItems, getCreatures, getPerks, getWikiLastUpdate } from "@functions/github";
+import {
+  getItems,
+  getCreatures,
+  getPerks,
+  getWikiLastUpdate,
+} from "@functions/github";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
@@ -22,9 +27,9 @@ const Wiki = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [contentType, setContentType] = useState<"items" | "creatures" | "perks">(
-    "items",
-  );
+  const [contentType, setContentType] = useState<
+    "items" | "creatures" | "perks"
+  >("items");
   const [wikiLastUpdate, setWikiLastUpdate] = useState<string>();
 
   // Items state
@@ -52,53 +57,59 @@ const Wiki = () => {
   const ITEMS_PER_PAGE = 12;
 
   // Extract categories from data items
-  const extractCategories = <T extends { category?: string }>(
-    data: T[],
-  ): string[] => {
-    const allCategories: string[] = [];
+  const extractCategories = useCallback(
+    <T extends { category?: string }>(data: T[]): string[] => {
+      const allCategories: string[] = [];
 
-    for (const item of data) {
-      if (item.category && !allCategories.includes(item.category)) {
-        allCategories.push(item.category);
+      for (const item of data) {
+        if (item.category && !allCategories.includes(item.category)) {
+          allCategories.push(item.category);
+        }
       }
-    }
 
-    return allCategories.sort((a, b) => a.localeCompare(b));
-  };
+      return allCategories.sort((a, b) => a.localeCompare(b));
+    },
+    [],
+  );
 
   // Update state with fetched items data
-  const processItemsData = (fetchedItems: Item[]) => {
-    const allCategories = extractCategories(fetchedItems);
+  const processItemsData = useCallback(
+    (fetchedItems: Item[]) => {
+      const allCategories = extractCategories(fetchedItems);
 
-    setItems(fetchedItems);
-    setCategories(allCategories);
-    setFilteredItems(fetchedItems);
-    setDisplayedItems(fetchedItems.slice(0, ITEMS_PER_PAGE));
-    setHasMore(fetchedItems.length > ITEMS_PER_PAGE);
-  };
+      setItems(fetchedItems);
+      setCategories(allCategories);
+      setFilteredItems(fetchedItems);
+      setDisplayedItems(fetchedItems.slice(0, ITEMS_PER_PAGE));
+      setHasMore(fetchedItems.length > ITEMS_PER_PAGE);
+    },
+    [extractCategories],
+  );
 
   // Update state with fetched creatures data
-  const processCreaturesData = (fetchedCreatures: Creature[]) => {
-    const allCategories = extractCategories(fetchedCreatures);
+  const processCreaturesData = useCallback(
+    (fetchedCreatures: Creature[]) => {
+      const allCategories = extractCategories(fetchedCreatures);
 
-    setCreatures(fetchedCreatures);
-    setCategories(allCategories);
-    setFilteredCreatures(fetchedCreatures);
-    setDisplayedCreatures(fetchedCreatures.slice(0, ITEMS_PER_PAGE));
-    setHasMore(fetchedCreatures.length > ITEMS_PER_PAGE);
-  };
+      setCreatures(fetchedCreatures);
+      setCategories(allCategories);
+      setFilteredCreatures(fetchedCreatures);
+      setDisplayedCreatures(fetchedCreatures.slice(0, ITEMS_PER_PAGE));
+      setHasMore(fetchedCreatures.length > ITEMS_PER_PAGE);
+    },
+    [extractCategories],
+  );
 
   // Update state with fetched perks data
-  const processPerksData = (fetchedPerks: Perk[]) => {
+  const processPerksData = useCallback((fetchedPerks: Perk[]) => {
     // Perks don't have categories in the JSON, so we set empty categories
     setPerks(fetchedPerks);
     setCategories([]);
     setFilteredPerks(fetchedPerks);
     setDisplayedPerks(fetchedPerks.slice(0, ITEMS_PER_PAGE));
     setHasMore(fetchedPerks.length > ITEMS_PER_PAGE);
-  };
+  }, []);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   useEffect(() => {
     const loadData = async () => {
       setIsLoading(true);
@@ -133,9 +144,8 @@ const Wiki = () => {
 
     loadData();
     fetchWikiUpdate();
-  }, [contentType]);
+  }, [contentType, processItemsData, processCreaturesData, processPerksData]);
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
   const searchContent = useCallback(
     (search = searchText, category = categoryFilter) => {
       sendEvent(AnalyticsEvent.SEARCH, { props: { term: search } });
@@ -193,8 +203,9 @@ const Wiki = () => {
           filtered = filtered.filter((perk) => {
             const perkName = perk.name.toLowerCase();
             const perkDescription = perk.description.toLowerCase();
-            return searchTerms.every((term) => 
-              perkName.includes(term) || perkDescription.includes(term)
+            return searchTerms.every(
+              (term) =>
+                perkName.includes(term) || perkDescription.includes(term),
             );
           });
         }
@@ -205,7 +216,7 @@ const Wiki = () => {
         setHasMore(filtered.length > ITEMS_PER_PAGE);
       }
     },
-    [items, creatures, perks, searchText, t, contentType],
+    [items, creatures, perks, searchText, categoryFilter, t, contentType],
   );
 
   useEffect(() => {
@@ -214,7 +225,9 @@ const Wiki = () => {
 
       if (
         parsed?.type &&
-        (parsed.type === "items" || parsed.type === "creatures" || parsed.type === "perks")
+        (parsed.type === "items" ||
+          parsed.type === "creatures" ||
+          parsed.type === "perks")
       ) {
         setContentType(parsed.type);
       }
@@ -254,7 +267,13 @@ const Wiki = () => {
       setDisplayedPerks(nextPerks);
       setHasMore(nextPerks.length < filteredPerks.length);
     }
-  }, [filteredItems, filteredCreatures, filteredPerks, currentPage, contentType]);
+  }, [
+    filteredItems,
+    filteredCreatures,
+    filteredPerks,
+    currentPage,
+    contentType,
+  ]);
 
   const handleSearchTextChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -265,7 +284,11 @@ const Wiki = () => {
 
   // Helper function to build URL parameters
   const buildSearchParams = useCallback(
-    (search: string, category: string, type: "items" | "creatures" | "perks") => {
+    (
+      search: string,
+      category: string,
+      type: "items" | "creatures" | "perks",
+    ) => {
       const searchParams = new URLSearchParams();
 
       // Add search parameter if it exists

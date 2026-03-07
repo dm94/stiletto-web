@@ -66,7 +66,8 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
 
   return (
     <div className="relative" ref={wrapperRef}>
-      <div
+      <button
+        type="button"
         className={`w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer flex justify-between items-center ${className}`}
         onClick={() => setIsOpen(!isOpen)}
         onKeyDown={(e) => {
@@ -75,7 +76,6 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
             setIsOpen(!isOpen);
           }
         }}
-        // biome-ignore lint/a11y/useSemanticElements: <explanation>
         role="combobox"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
@@ -86,7 +86,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
       >
         <span>{selectedLabel ?? placeholder}</span>
         {isOpen ? <FaChevronUp /> : <FaChevronDown />}
-      </div>
+      </button>
 
       {isOpen && (
         <div
