@@ -18,6 +18,7 @@ const NotificationList: React.FC = () => {
     };
 
     return () => {
+      channel.onmessage = null;
       channel.close();
     };
   }, [channel]);
