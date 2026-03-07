@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Notifications from "./Notifications";
 
 interface Notification {
@@ -8,9 +8,27 @@ interface Notification {
   type?: string;
 }
 
+const NOTIFICATION_TTL_MS = 5000;
+const CLEANUP_INTERVAL_MS = 1000;
+
+const getRecentNotifications = (
+  currentNotifications: Notification[],
+  minTime: number,
+): Notification[] => {
+  return currentNotifications.filter(
+    (notification) => notification.date >= minTime,
+  );
+};
+
 const NotificationList: React.FC = () => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const channel = useMemo(() => new BroadcastChannel("notifications"), []);
+  const removeExpiredNotifications = useCallback((): void => {
+    const minTime = Date.now() - NOTIFICATION_TTL_MS;
+    setNotifications((prevNotifications) =>
+      getRecentNotifications(prevNotifications, minTime),
+    );
+  }, []);
 
   useEffect(() => {
     channel.onmessage = (e) => {
@@ -24,17 +42,13 @@ const NotificationList: React.FC = () => {
   }, [channel]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const minTime = Date.now() - 5000;
-      setNotifications((prevNotifications) =>
-        prevNotifications.filter(
-          (notification) => notification.date >= minTime,
-        ),
-      );
-    }, 1000);
+    const interval = setInterval(
+      removeExpiredNotifications,
+      CLEANUP_INTERVAL_MS,
+    );
 
     return () => clearInterval(interval);
-  }, []);
+  }, [removeExpiredNotifications]);
 
   const deleteNotification = (id: number): void => {
     setNotifications((prevNotifications) =>
