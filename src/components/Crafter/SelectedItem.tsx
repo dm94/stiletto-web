@@ -5,10 +5,10 @@ import Icon from "../Icon";
 import CraftingTime from "../CraftingTime";
 import Station from "../Station";
 import { getItemUrl } from "@functions/utils";
-import type { CraftItem } from "@ctypes/item";
+import type { CraftItem, ProjectileDamage } from "@ctypes/item";
 
 interface SelectedItemProps {
-  item: CraftItem;
+  item: CraftItem & { projectileDamage?: ProjectileDamage };
   onChangeCount: (itemName: string, count: number) => void;
 }
 
@@ -26,7 +26,17 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
     const moreThanOne = item.crafting.length > 1;
 
     return item.crafting.map((ingredients, i) => {
-      const recipeKey = `${item.name}-${ingredients.station ?? "no-station"}-${ingredients.time ?? "no-time"}-${ingredients.output ?? "no-output"}-${ingredients.ingredients?.map((ingredient) => `${ingredient.name}-${ingredient.count}`).join("|") ?? "no-ingredients"}`;
+      const ingredientRecipeKey =
+        ingredients.ingredients
+          ?.map((ingredient) => `${ingredient.name}-${ingredient.count}`)
+          .join("|") ?? "no-ingredients";
+      const recipeKey = [
+        item.name,
+        ingredients.station ?? "no-station",
+        ingredients.time ?? "no-time",
+        ingredients.output ?? "no-output",
+        ingredientRecipeKey,
+      ].join("-");
       return (
         <div
           className={`${
