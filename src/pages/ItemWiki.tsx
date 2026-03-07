@@ -98,7 +98,17 @@ const ItemWiki = () => {
     }
 
     return ingre?.crafting?.map((recipe) => {
-      const recipeKey = `${ingre.name}-${recipe.station ?? "no-station"}-${recipe.time ?? "no-time"}-${recipe.output ?? "no-output"}-${recipe.ingredients?.map((ingredient) => `${ingredient.name}-${ingredient.count}`).join("|") ?? "no-ingredients"}`;
+      const ingredientKey =
+        recipe.ingredients
+          ?.map((ingredient) => `${ingredient.name}-${ingredient.count}`)
+          .join("|") ?? "no-ingredients";
+      const recipeKey = [
+        ingre.name,
+        recipe.station ?? "no-station",
+        recipe.time ?? "no-time",
+        recipe.output ?? "no-output",
+        ingredientKey,
+      ].join("-");
       return (
         <div
           className={
