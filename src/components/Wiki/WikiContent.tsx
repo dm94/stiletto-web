@@ -36,7 +36,7 @@ const WikiContent = ({
         >
           <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-md">
             <div className="p-6 text-center text-gray-300 text-lg relative">
-              <div className="loader-small" aria-label={t("common.loading")} />
+              <div className="loader-small" />
             </div>
           </div>
         </section>
@@ -44,9 +44,9 @@ const WikiContent = ({
     }
 
     if (contentType === "items" && displayedItems.length > 0) {
-      return displayedItems.map((item, index) => (
+      return displayedItems.map((item) => (
         <article
-          key={`wiki-${item.name}-${index}`}
+          key={`wiki-${item.name}`}
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
           data-testid="wiki-item"
         >
@@ -60,9 +60,9 @@ const WikiContent = ({
     }
 
     if (contentType === "creatures" && displayedCreatures.length > 0) {
-      return displayedCreatures.map((creature, index) => (
+      return displayedCreatures.map((creature) => (
         <article
-          key={`creature-${creature.name}-${index}`}
+          key={`creature-${creature.name}`}
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
           data-testid="wiki-creature"
         >
@@ -89,9 +89,9 @@ const WikiContent = ({
     }
 
     if (contentType === "perks" && displayedPerks.length > 0) {
-      return displayedPerks.map((perk, index) => (
+      return displayedPerks.map((perk) => (
         <article
-          key={`perk-${perk.name}-${index}`}
+          key={`perk-${perk.name}`}
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
           data-testid="wiki-perk"
         >
