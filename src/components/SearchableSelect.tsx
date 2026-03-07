@@ -70,18 +70,10 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
         type="button"
         className={`w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer flex justify-between items-center ${className}`}
         onClick={() => setIsOpen(!isOpen)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            setIsOpen(!isOpen);
-          }
-        }}
-        role="combobox"
         aria-expanded={isOpen}
         aria-haspopup="listbox"
         aria-controls={`${id}-options`}
         aria-label={placeholder}
-        tabIndex={0}
         data-testid={dataCy}
       >
         <span>{selectedLabel ?? placeholder}</span>
