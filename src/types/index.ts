@@ -15,6 +15,8 @@ export interface Ingredient {
   category?: string;
   ingredients?: Ingredient[];
   output?: number;
+  station?: string;
+  time?: number;
 }
 
 export interface Language {
