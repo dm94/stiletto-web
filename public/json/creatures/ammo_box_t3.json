@@ -111,5 +111,14 @@
       "source": "baseresources_t3"
     }
   ],
+  "related": [
+    "Rupu Artillery Camp",
+    "Ash Oracle Fortress",
+    "Ash Hills Watchtower",
+    "Foragers Outpost",
+    "Fortified Rupu Village",
+    "Rupu Watch Tower",
+    "Rupu Observation Point"
+  ],
   "originalName": "AmmoBox T3"
 }

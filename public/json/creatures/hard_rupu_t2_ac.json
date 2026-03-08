@@ -335,5 +335,11 @@
       "source": "rigs_t2"
     }
   ],
+  "related": [
+    "Excavation Site",
+    "Matriarch",
+    "Rupu Priestess",
+    "Rupu Zealot"
+  ],
   "originalName": "HardRupu T2 AC"
 }

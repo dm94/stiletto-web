@@ -384,5 +384,11 @@
       "source": "rigs_t2"
     }
   ],
+  "related": [
+    "Temple of Stars",
+    "Rupu Fortress",
+    "Nurr Lair",
+    "Nurr Raiding Camp"
+  ],
   "originalName": "HardRupuCamp T2"
 }

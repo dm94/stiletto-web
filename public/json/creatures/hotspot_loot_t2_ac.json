@@ -391,5 +391,9 @@
       "source": "rigs_t2"
     }
   ],
+  "related": [
+    "Excavation Site",
+    "Rupu Gifting Altar"
+  ],
   "originalName": "HotspotLoot T2 AC"
 }

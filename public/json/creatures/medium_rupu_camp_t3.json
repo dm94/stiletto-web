@@ -482,5 +482,10 @@
       "source": "rigs_t3"
     }
   ],
+  "related": [
+    "Ash Hills Watchtower",
+    "Fortified Rupu Village",
+    "Sunken Temple"
+  ],
   "originalName": "MediumRupuCamp T3"
 }

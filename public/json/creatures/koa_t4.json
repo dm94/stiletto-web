@@ -12,5 +12,8 @@
       "maxQuantity": 1,
       "source": "spearmint_t4"
     }
+  ],
+  "related": [
+    "Koa"
   ]
 }

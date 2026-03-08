@@ -384,5 +384,11 @@
       "source": "rigs_t2"
     }
   ],
+  "related": [
+    "Excavation Site",
+    "Rupu Raiding Checkpoint",
+    "Rupu Defensive Storage",
+    "Ancient Pyramid"
+  ],
   "originalName": "HotspotLoot T2"
 }

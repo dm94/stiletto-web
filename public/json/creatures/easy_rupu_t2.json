@@ -258,5 +258,10 @@
       "source": "weapons_t2"
     }
   ],
+  "related": [
+    "Grave Digger",
+    "Rupu Hermit",
+    "Rupu Skirmisher"
+  ],
   "originalName": "EasyRupu T2"
 }

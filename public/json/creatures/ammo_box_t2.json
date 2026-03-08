@@ -83,5 +83,21 @@
       "source": "baseresources_t2"
     }
   ],
+  "related": [
+    "Temple of Stars",
+    "Great Rupu Wall",
+    "Rock Thrower",
+    "Tower of The Holly Fire",
+    "Gas Thrower",
+    "Foragers Outpost",
+    "Rupu Shelter",
+    "Rupu Moisture Collector",
+    "Fortified Rupu Village",
+    "Rupu Fortress",
+    "Fortified Rupu Town",
+    "Reinforced Rupu Outpost",
+    "Small Rupu Village",
+    "Nurr Raiding Camp"
+  ],
   "originalName": "AmmoBox T2"
 }

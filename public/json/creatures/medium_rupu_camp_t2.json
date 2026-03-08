@@ -335,5 +335,14 @@
       "source": "weapons_t2"
     }
   ],
+  "related": [
+    "Rupu Shelter",
+    "Rupu Moisture Collector",
+    "Fortified Rupu Village",
+    "Fortified Rupu Town",
+    "Reinforced Rupu Outpost",
+    "Small Rupu Village",
+    "Rupu Gifting Altar"
+  ],
   "originalName": "MediumRupuCamp T2"
 }

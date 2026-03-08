@@ -181,5 +181,24 @@
       "source": "weapons_t1"
     }
   ],
+  "related": [
+    "Rupu Forerunner",
+    "Rupu Scavenger",
+    "Rupu Thug",
+    "Cowardly Rupu",
+    "Green Rupu",
+    "Yellow Rupu",
+    "Rupu Hero",
+    "Rupu Warrior",
+    "Rupu Berserker",
+    "Rupu Oracle",
+    "Rupu Overseer",
+    "Rupu Priestess",
+    "Prophet",
+    "Tar Dweller",
+    "Zharvakko",
+    "Rupu Gunner",
+    "Nurr Raider"
+  ],
   "originalName": "EasyRupu T1"
 }

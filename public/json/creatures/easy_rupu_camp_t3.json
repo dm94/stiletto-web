@@ -482,5 +482,10 @@
       "source": "rigs_t3"
     }
   ],
+  "related": [
+    "Rupu Artillery Camp",
+    "Foragers Outpost",
+    "Rupu Watch Tower"
+  ],
   "originalName": "EasyRupuCamp T3"
 }
