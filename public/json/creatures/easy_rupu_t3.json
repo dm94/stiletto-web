@@ -328,5 +328,12 @@
       "source": "weapons_t3"
     }
   ],
+  "related": [
+    "Rupu Ashdweller",
+    "Rupu Drudge",
+    "Rupu Hunter",
+    "Rupu Rabble",
+    "Rupu Scuttler"
+  ],
   "originalName": "EasyRupu T3"
 }

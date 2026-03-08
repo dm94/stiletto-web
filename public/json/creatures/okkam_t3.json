@@ -215,5 +215,8 @@
       "maxQuantity": 5,
       "source": "schematics_t3"
     }
+  ],
+  "related": [
+    "Okkam"
   ]
 }

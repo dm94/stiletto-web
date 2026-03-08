@@ -265,5 +265,9 @@
       "source": "rigs_t1"
     }
   ],
+  "related": [
+    "Small Rupu Outpost",
+    "Rupu Watch Tower"
+  ],
   "originalName": "MediumRupuCamp T1"
 }

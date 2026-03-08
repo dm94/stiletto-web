@@ -384,5 +384,11 @@
       "source": "rigs_t2"
     }
   ],
+  "related": [
+    "Temple of Stars",
+    "Sarcophagus of the Ancient",
+    "Excavation Site",
+    "Foragers Outpost"
+  ],
   "originalName": "EasyRupuCamp T2"
 }
