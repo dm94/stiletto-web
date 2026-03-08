@@ -398,6 +398,7 @@
   "wiki.nothingFound": "Rien trouvé",
   "wiki.filterByCategory": "Filtrer par catégorie",
   "wiki.walkerInfo": "Walker info",
+  "wiki.related": "Related",
   "notification.share": "Le code de partage a été généré",
   "error.databaseConnection": "Erreur de connexion à la base de données",
   "error.discordClanNotLinked": "Votre clan n'a pas de discorde liée",

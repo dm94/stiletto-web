@@ -398,6 +398,7 @@
   "wiki.nothingFound": "Нічого не знайдено",
   "wiki.filterByCategory": "Фільтр за категоріями",
   "wiki.walkerInfo": "Walker info",
+  "wiki.related": "Related",
   "notification.share": "Код спільного користування було створено",
   "error.databaseConnection": "Помилка підключення до бази даних",
   "error.discordClanNotLinked": "У вашому клану немає пов'язаного розколу",
