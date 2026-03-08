@@ -398,6 +398,7 @@
   "wiki.nothingFound": "Nada foi encontrado",
   "wiki.filterByCategory": "Filtrar por categoria",
   "wiki.walkerInfo": "Informação sobre Walkers",
+  "wiki.related": "Related",
   "notification.share": "O código de compartilhamento foi gerado",
   "error.databaseConnection": "Erro ao conectar ao banco de dados",
   "error.discordClanNotLinked": "Seu clã não tem uma discórdia ligada",
