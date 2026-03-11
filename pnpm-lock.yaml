@@ -12,8 +12,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@tanstack/react-virtual':
-        specifier: ^3.13.19
-        version: 3.13.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: ^3.13.21
+        version: 3.13.21(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       i18next:
         specifier: 25.8.13
         version: 25.8.13(typescript@5.9.3)
@@ -42,8 +42,8 @@ importers:
         specifier: 16.5.4
         version: 16.5.4(i18next@25.8.13(typescript@5.9.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
       react-icons:
-        specifier: ^5.5.0
-        version: 5.5.0(react@19.2.3)
+        specifier: ^5.6.0
+        version: 5.6.0(react@19.2.3)
       react-leaflet:
         specifier: 4.2.1
         version: 4.2.1(leaflet@1.9.4)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -723,14 +723,14 @@ packages:
   '@tailwindcss/postcss@4.1.18':
     resolution: {integrity: sha512-Ce0GFnzAOuPyfV5SxjXGn0CubwGcuDB0zcdaPuCSzAa/2vII24JTkH+I6jcbXLb1ctjZMZZI6OjDaLPJQL1S0g==}
 
-  '@tanstack/react-virtual@3.13.19':
-    resolution: {integrity: sha512-KzwmU1IbE0IvCZSm6OXkS+kRdrgW2c2P3Ho3NC+zZXWK6oObv/L+lcV/2VuJ+snVESRlMJ+w/fg4WXI/JzoNGQ==}
+  '@tanstack/react-virtual@3.13.21':
+    resolution: {integrity: sha512-SYXFrmrbPgXBvf+HsOsKhFgqSe4M6B29VHOsX9Jih9TlNkNkDWx0hWMiMLUghMEzyUz772ndzdEeCEBx+3GIZw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@tanstack/virtual-core@3.13.19':
-    resolution: {integrity: sha512-/BMP7kNhzKOd7wnDeB8NrIRNLwkf5AhCYCvtfZV2GXWbBieFm/el0n6LOAXlTi6ZwHICSNnQcIxRCWHrLzDY+g==}
+  '@tanstack/virtual-core@3.13.21':
+    resolution: {integrity: sha512-ww+fmLHyCbPSf7JNbWZP3g7wl6SdNo3ah5Aiw+0e9FDErkVHLKprYUrwTm7dF646FtEkN/KkAKPYezxpmvOjxw==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -1294,8 +1294,8 @@ packages:
       typescript:
         optional: true
 
-  react-icons@5.5.0:
-    resolution: {integrity: sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==}
+  react-icons@5.6.0:
+    resolution: {integrity: sha512-RH93p5ki6LfOiIt0UtDyNg/cee+HLVR6cHHtW3wALfo+eOHTp8RnU2kRkI6E+H19zMIs03DyxUG/GfZMOGvmiA==}
     peerDependencies:
       react: '*'
 
@@ -2021,13 +2021,13 @@ snapshots:
       postcss: 8.5.6
       tailwindcss: 4.1.18
 
-  '@tanstack/react-virtual@3.13.19(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@tanstack/react-virtual@3.13.21(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@tanstack/virtual-core': 3.13.19
+      '@tanstack/virtual-core': 3.13.21
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
-  '@tanstack/virtual-core@3.13.19': {}
+  '@tanstack/virtual-core@3.13.21': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
@@ -2719,7 +2719,7 @@ snapshots:
       react-dom: 19.2.3(react@19.2.3)
       typescript: 5.9.3
 
-  react-icons@5.5.0(react@19.2.3):
+  react-icons@5.6.0(react@19.2.3):
     dependencies:
       react: 19.2.3
 
