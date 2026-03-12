@@ -1,4 +1,7 @@
 {
   "name": "Tower of The Holly Fire",
-  "type": "AC_StarTowerFire_C"
+  "type": "AC_StarTowerFire_C",
+  "maps": [
+    "Ancient City"
+  ]
 }

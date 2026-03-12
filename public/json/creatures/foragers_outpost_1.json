@@ -1,4 +1,7 @@
 {
   "name": "Foragers Outpost (1)",
-  "type": "CanyonForagersOutpost1_C"
+  "type": "CanyonForagersOutpost1_C",
+  "maps": [
+    "Canyon"
+  ]
 }

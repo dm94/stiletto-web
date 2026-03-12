@@ -1,4 +1,7 @@
 {
   "name": "Rupu Shelter",
-  "type": "CanyonIslandShelter_C"
+  "type": "CanyonIslandShelter_C",
+  "maps": [
+    "Canyon"
+  ]
 }

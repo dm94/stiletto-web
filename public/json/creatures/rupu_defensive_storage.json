@@ -1,4 +1,7 @@
 {
   "name": "Rupu Defensive Storage",
-  "type": "CanyonDragableChest_C"
+  "type": "CanyonDragableChest_C",
+  "maps": [
+    "Canyon"
+  ]
 }

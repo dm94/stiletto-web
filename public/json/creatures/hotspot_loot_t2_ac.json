@@ -395,5 +395,8 @@
     "Excavation Site",
     "Rupu Gifting Altar"
   ],
+  "maps": [
+    "Ancient City"
+  ],
   "originalName": "HotspotLoot T2 AC"
 }

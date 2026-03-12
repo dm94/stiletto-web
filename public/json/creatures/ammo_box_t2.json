@@ -99,5 +99,9 @@
     "Small Rupu Village",
     "Nurr Raiding Camp"
   ],
+  "maps": [
+    "Ancient City",
+    "Canyon"
+  ],
   "originalName": "AmmoBox T2"
 }
