@@ -1,11 +1,12 @@
 import type React from "react";
-import { useState, memo } from "react";
+import { useState, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
 import { getItemUrl } from "@functions/utils";
 import type { CustomItem } from "@ctypes";
+import { RarityTierEnum } from "@ctypes/item";
 
 interface IngredientProps {
   ingredient: CustomItem;
@@ -20,6 +21,32 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
     ingredient?.ingredients && ingredient?.ingredients.length > 0;
 
   const url = getItemUrl(ingredient?.name);
+
+  const getRarityColor = useCallback(
+      (value: RarityTierEnum) => {
+        let color = "";
+
+        switch (value) {
+          case RarityTierEnum.LEGENDARY:
+            color = "bg-yellow-500";
+            break;
+          case RarityTierEnum.EPIC:
+            color = "bg-red-500";
+            break;
+          case RarityTierEnum.RARE:
+            color = "bg-blue-500";
+            break;
+          case RarityTierEnum.UNCOMMON:
+            color = "bg-green-500";
+            break;
+          default:
+            color = "bg-gray-500";
+        }
+  
+        return `shrink-0 p-1 rounded-lg ${color}`;
+      },
+      [value],
+    );
 
   const renderSubList = () => {
     if (
@@ -99,6 +126,11 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
               </div>
             )}
           </div>
+          {
+            ingredient?.rarity && (
+              <div title={t(`rarity.${ingredient?.rarity}`)} className={getRarityColor(ingredient?.rarity)}></div>
+            )
+          }
         </button>
       ) : (
         <div className="flex items-center space-x-3">
@@ -125,6 +157,11 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
               </div>
             )}
           </div>
+          {
+            ingredient?.rarity && (
+              <div title={t(`rarity.${ingredient?.rarity}`)} className={getRarityColor(ingredient?.rarity)}></div>
+            )
+          }
         </div>
       )}
       {hasIngredients && <div className="mt-2">{renderSubList()}</div>}

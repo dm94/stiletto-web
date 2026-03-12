@@ -6,11 +6,20 @@ export enum Rarity {
   Legendary = "legendary",
 }
 
+export enum RarityTierEnum {
+	COMMON = 0,
+	UNCOMMON = 1,
+	RARE = 2,
+	EPIC = 3,
+	LEGENDARY = 4,
+} 
+
 export type ItemIngredient = {
   ingredients?: ItemIngredient[];
   name: string;
   count: number;
   category?: string;
+  rarity?: RarityTierEnum;
 };
 
 export type ItemRecipe = {

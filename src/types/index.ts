@@ -1,4 +1,4 @@
-import type { ItemRecipe } from "./item";
+import type { ItemRecipe, RarityTierEnum } from "./item";
 
 export interface CustomItem {
   name: string;
@@ -7,12 +7,14 @@ export interface CustomItem {
   crafting?: ItemRecipe[];
   ingredients?: Ingredient[];
   value?: number;
+  rarity?: RarityTierEnum;
 }
 
 export interface Ingredient {
   name: string;
   count: number;
   category?: string;
+  rarity?: RarityTierEnum;
   ingredients?: Ingredient[];
   output?: number;
   station?: string;
