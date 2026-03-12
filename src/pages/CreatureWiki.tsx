@@ -106,6 +106,12 @@ const CreatureWiki = () => {
             <div className="text-gray-400">{creatureInfo.tier}</div>
           </li>
         )}
+        {creatureInfo.maps && (
+          <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+            <div className="text-gray-300">{t("wiki.maps")}</div>
+            <div className="text-gray-400">{creatureInfo.maps.join(", ")}</div>
+          </li>
+        )}
       </ul>
     );
   };
@@ -137,13 +143,13 @@ const CreatureWiki = () => {
           </div>
         </div>
         <Suspense fallback={loadingCreaturePart()}>
-          {creatureInfo?.drops && (
-            <CreatureDropsInfo key="dropInfo" drops={creatureInfo?.drops} />
+          {creatureInfo?.related && (
+            <RelatedCreatures key="relatedInfo" related={creatureInfo?.related} />
           )}
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
-          {creatureInfo?.related && (
-            <RelatedCreatures key="relatedInfo" related={creatureInfo?.related} />
+          {creatureInfo?.drops && (
+            <CreatureDropsInfo key="dropInfo" drops={creatureInfo?.drops} />
           )}
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>

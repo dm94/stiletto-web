@@ -404,6 +404,7 @@
   "wiki.filterByCategory": "Filter by category",
   "wiki.walkerInfo": "Walker info",
   "wiki.related": "Related",
+  "wiki.maps": "Maps",
   "notification.share": "Sharing code has been generated",
   "error.databaseConnection": "Error connecting to database",
   "error.discordClanNotLinked": "Your clan does not have a linked discord",

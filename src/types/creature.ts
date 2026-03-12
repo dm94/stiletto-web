@@ -18,6 +18,7 @@ export type CreatureCompleteInfo = {
   experiencie?: number;
   drops?: CreatureDrop[];
   related?: RelatedCreature[];
+  maps?: string[];
 };
 
 export type RelatedCreature = string;
