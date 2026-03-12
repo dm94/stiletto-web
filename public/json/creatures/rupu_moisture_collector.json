@@ -1,5 +1,8 @@
 {
   "name": "Rupu Moisture Collector",
   "type": "CanyonMountainTopSmallRupuCamp_C",
-  "category": "Rupu"
+  "category": "Rupu",
+  "maps": [
+    "Canyon"
+  ]
 }

@@ -341,5 +341,8 @@
     "Rupu Priestess",
     "Rupu Zealot"
   ],
+  "maps": [
+    "Ancient City"
+  ],
   "originalName": "HardRupu T2 AC"
 }

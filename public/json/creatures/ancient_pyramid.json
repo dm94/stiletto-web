@@ -1,4 +1,7 @@
 {
   "name": "Ancient Pyramid",
-  "type": "AC_Pyramid_C"
+  "type": "AC_Pyramid_C",
+  "maps": [
+    "Ancient City"
+  ]
 }
