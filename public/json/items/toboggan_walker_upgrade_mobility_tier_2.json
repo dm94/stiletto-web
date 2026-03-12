@@ -6,12 +6,14 @@
     {
       "ingredients": [
         {
+          "name": "Bone Splinter",
           "count": 40,
-          "name": "Bone Splinter"
+          "quality": 2
         },
         {
+          "name": "Wooden Gear",
           "count": 3,
-          "name": "Wooden Gear"
+          "quality": 2
         }
       ]
     }

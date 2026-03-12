@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Wooden Gear",
           "count": 1,
-          "name": "Wooden Gear"
+          "quality": 1
         },
         {
+          "name": "Earth Wax",
           "count": 16,
-          "name": "Earth Wax"
+          "quality": 1
         },
         {
+          "name": "Rope",
           "count": 13,
-          "name": "Rope"
+          "quality": 1
         }
       ]
     }

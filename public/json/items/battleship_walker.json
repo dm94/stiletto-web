@@ -9,16 +9,16 @@
     {
       "ingredients": [
         {
-          "count": 3964,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 3964
         },
         {
-          "count": 1711,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 1711
         },
         {
-          "count": 4,
-          "name": "Reinforced Plank"
+          "name": "Reinforced Plank",
+          "count": 4
         }
       ]
     }

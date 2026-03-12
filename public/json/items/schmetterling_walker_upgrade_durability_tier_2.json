@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Iron Ingot",
           "count": 63,
-          "name": "Iron Ingot"
+          "quality": 2
         },
         {
+          "name": "Shardrock",
           "count": 45,
-          "name": "Shardrock"
+          "quality": 2
         },
         {
+          "name": "Rubber Block",
           "count": 38,
-          "name": "Rubber Block"
+          "quality": 2
         }
       ]
     }

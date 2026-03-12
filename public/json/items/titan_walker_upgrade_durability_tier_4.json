@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Iron Ingot",
           "count": 50,
-          "name": "Iron Ingot"
+          "quality": 4
         },
         {
+          "name": "Shardrock",
           "count": 26,
-          "name": "Shardrock"
+          "quality": 4
         },
         {
+          "name": "Reinforced Plank",
           "count": 38,
-          "name": "Reinforced Plank"
+          "quality": 4
         }
       ]
     }

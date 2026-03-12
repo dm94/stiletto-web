@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Tar",
           "count": 20,
-          "name": "Tar"
+          "quality": 4
         },
         {
+          "name": "Wooden Slab",
           "count": 22,
-          "name": "Wooden Slab"
+          "quality": 4
         },
         {
+          "name": "Cotton",
           "count": 55,
-          "name": "Cotton"
+          "quality": 4
         }
       ]
     }

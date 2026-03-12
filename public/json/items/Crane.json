@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 150,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 150
         },
         {
-          "count": 15,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 15
         },
         {
-          "count": 15,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 15
         },
         {
-          "count": 30,
-          "name": "Tar"
+          "name": "Tar",
+          "count": 30
         }
       ]
     }

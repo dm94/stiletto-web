@@ -10,24 +10,24 @@
     {
       "ingredients": [
         {
-          "count": 120,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 120
         },
         {
-          "count": 100,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 100
         },
         {
-          "count": 35,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 35
         },
         {
-          "count": 5,
-          "name": "Iron Ore"
+          "name": "Iron Ore",
+          "count": 5
         },
         {
-          "count": 30,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 30
         }
       ]
     }

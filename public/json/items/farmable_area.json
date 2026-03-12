@@ -9,12 +9,12 @@
     {
       "ingredients": [
         {
-          "count": 500,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 500
         },
         {
-          "count": 50,
-          "name": "Clay"
+          "name": "Clay",
+          "count": 50
         }
       ]
     }

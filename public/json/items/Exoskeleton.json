@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 45,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 45
         },
         {
-          "count": 15,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 15
         },
         {
-          "count": 5,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 5
         },
         {
-          "count": 30,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 30
         }
       ]
     }

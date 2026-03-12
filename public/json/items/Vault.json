@@ -9,16 +9,16 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 25
         },
         {
-          "count": 10,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 10
         },
         {
-          "count": 40,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 40
         }
       ]
     }

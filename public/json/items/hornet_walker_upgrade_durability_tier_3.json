@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Ceramic Shard",
           "count": 22,
-          "name": "Ceramic Shard"
+          "quality": 3
         },
         {
+          "name": "Tar",
           "count": 17,
-          "name": "Tar"
+          "quality": 3
         },
         {
+          "name": "Rupu Pelt",
           "count": 38,
-          "name": "Rupu Pelt"
+          "quality": 3
         }
       ]
     }

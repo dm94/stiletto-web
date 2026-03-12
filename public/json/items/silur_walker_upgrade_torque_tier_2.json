@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Compacted Torque Battery",
           "count": 1,
-          "name": "Compacted Torque Battery"
+          "quality": 2
         },
         {
+          "name": "Tallow",
           "count": 13,
-          "name": "Tallow"
+          "quality": 2
         },
         {
+          "name": "Rope",
           "count": 6,
-          "name": "Rope"
+          "quality": 2
         }
       ]
     }

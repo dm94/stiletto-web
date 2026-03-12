@@ -9,12 +9,12 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 1
         },
         {
-          "count": 5,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 5
         }
       ]
     }

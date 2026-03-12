@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Salt Rock",
           "count": 16,
-          "name": "Salt Rock"
+          "quality": 2
         },
         {
+          "name": "Leather",
           "count": 30,
-          "name": "Leather"
+          "quality": 2
         },
         {
+          "name": "Earth Wax",
           "count": 28,
-          "name": "Earth Wax"
+          "quality": 2
         }
       ]
     }

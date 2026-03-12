@@ -9,24 +9,24 @@
     {
       "ingredients": [
         {
-          "count": 126,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 126
         },
         {
-          "count": 88,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 88
         },
         {
-          "count": 43,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 43
         },
         {
-          "count": 8,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 8
         },
         {
-          "count": 8,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 8
         }
       ]
     }

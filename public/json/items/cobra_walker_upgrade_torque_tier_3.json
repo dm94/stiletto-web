@@ -6,20 +6,24 @@
     {
       "ingredients": [
         {
+          "name": "Ceramic Shard",
           "count": 48,
-          "name": "Ceramic Shard"
+          "quality": 3
         },
         {
+          "name": "Rupu Vine",
           "count": 56,
-          "name": "Rupu Vine"
+          "quality": 3
         },
         {
+          "name": "Rope",
           "count": 40,
-          "name": "Rope"
+          "quality": 3
         },
         {
+          "name": "Wood",
           "count": 128,
-          "name": "Wood"
+          "quality": 3
         }
       ]
     }

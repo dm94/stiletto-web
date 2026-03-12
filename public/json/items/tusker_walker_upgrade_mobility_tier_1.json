@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Tar",
           "count": 50,
-          "name": "Tar"
+          "quality": 1
         },
         {
+          "name": "Obsidian",
           "count": 38,
-          "name": "Obsidian"
+          "quality": 1
         },
         {
+          "name": "Reinforced Gear",
           "count": 5,
-          "name": "Reinforced Gear"
+          "quality": 1
         }
       ]
     }

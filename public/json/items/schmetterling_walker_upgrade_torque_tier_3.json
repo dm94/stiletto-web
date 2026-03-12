@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Tar",
           "count": 25,
-          "name": "Tar"
+          "quality": 3
         },
         {
+          "name": "Reinforced Plank",
           "count": 20,
-          "name": "Reinforced Plank"
+          "quality": 3
         },
         {
+          "name": "Shardrock",
           "count": 24,
-          "name": "Shardrock"
+          "quality": 3
         }
       ]
     }

@@ -9,16 +9,16 @@
     {
       "ingredients": [
         {
-          "count": 50,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 50
         },
         {
-          "count": 25,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 25
         },
         {
-          "count": 45,
-          "name": "Animal Fat"
+          "name": "Animal Fat",
+          "count": 45
         }
       ]
     }

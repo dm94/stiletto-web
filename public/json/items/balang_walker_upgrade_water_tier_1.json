@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Bone Glue",
           "count": 10,
-          "name": "Bone Glue"
+          "quality": 1
         },
         {
+          "name": "Fiber",
           "count": 45,
-          "name": "Fiber"
+          "quality": 1
         },
         {
+          "name": "Rupu Pelt",
           "count": 15,
-          "name": "Rupu Pelt"
+          "quality": 1
         }
       ]
     }

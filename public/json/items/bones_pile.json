@@ -8,12 +8,12 @@
     {
       "ingredients": [
         {
-          "count": 20,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 20
         },
         {
-          "count": 5,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 5
         }
       ]
     }

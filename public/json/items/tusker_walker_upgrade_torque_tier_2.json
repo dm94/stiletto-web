@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Tallow",
           "count": 25,
-          "name": "Tallow"
+          "quality": 2
         },
         {
+          "name": "Clay",
           "count": 45,
-          "name": "Clay"
+          "quality": 2
         },
         {
+          "name": "Wood Shaft",
           "count": 22,
-          "name": "Wood Shaft"
+          "quality": 2
         }
       ]
     }

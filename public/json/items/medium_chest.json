@@ -10,24 +10,24 @@
     {
       "ingredients": [
         {
-          "count": 22,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 22
         },
         {
-          "count": 45,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 45
         },
         {
-          "count": 2,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 2
         },
         {
-          "count": 36,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 36
         },
         {
-          "count": 16,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 16
         }
       ]
     }

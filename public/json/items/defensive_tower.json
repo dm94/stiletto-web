@@ -10,24 +10,24 @@
     {
       "ingredients": [
         {
-          "count": 480,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 480
         },
         {
-          "count": 345,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 345
         },
         {
-          "count": 117,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 117
         },
         {
-          "count": 22,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 22
         },
         {
-          "count": 15,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 15
         }
       ]
     }

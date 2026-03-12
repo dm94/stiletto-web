@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Reinforced Plank",
           "count": 24,
-          "name": "Reinforced Plank"
+          "quality": 4
         },
         {
+          "name": "Iron Gear",
           "count": 5,
-          "name": "Iron Gear"
+          "quality": 4
         },
         {
+          "name": "Rubber Block",
           "count": 38,
-          "name": "Rubber Block"
+          "quality": 4
         }
       ]
     }

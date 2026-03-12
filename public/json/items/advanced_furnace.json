@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Iron Gear"
+          "name": "Iron Gear",
+          "count": 25
         },
         {
-          "count": 10,
-          "name": "Shardrock"
+          "name": "Shardrock",
+          "count": 10
         },
         {
-          "count": 12,
-          "name": "Gelatinous Goo"
+          "name": "Gelatinous Goo",
+          "count": 12
         },
         {
-          "count": 100,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 100
         }
       ]
     }

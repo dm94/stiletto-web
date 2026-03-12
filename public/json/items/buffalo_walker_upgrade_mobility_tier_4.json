@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Reinforced Gear",
           "count": 5,
-          "name": "Reinforced Gear"
+          "quality": 4
         },
         {
+          "name": "Tallow",
           "count": 24,
-          "name": "Tallow"
+          "quality": 4
         },
         {
+          "name": "Chitin Plate",
           "count": 56,
-          "name": "Chitin Plate"
+          "quality": 4
         }
       ]
     }

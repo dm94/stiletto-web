@@ -6,20 +6,24 @@
     {
       "ingredients": [
         {
+          "name": "Ceramic Shard",
           "count": 40,
-          "name": "Ceramic Shard"
+          "quality": 3
         },
         {
+          "name": "Nomad Cloth",
           "count": 20,
-          "name": "Nomad Cloth"
+          "quality": 3
         },
         {
+          "name": "Wood Shaft",
           "count": 56,
-          "name": "Wood Shaft"
+          "quality": 3
         },
         {
+          "name": "Stone",
           "count": 80,
-          "name": "Stone"
+          "quality": 3
         }
       ]
     }

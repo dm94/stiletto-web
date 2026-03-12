@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Iron Nails",
           "count": 17,
-          "name": "Iron Nails"
+          "quality": 2
         },
         {
+          "name": "Lightwood",
           "count": 45,
-          "name": "Lightwood"
+          "quality": 2
         },
         {
+          "name": "Triple Stitch Fabric",
           "count": 55,
-          "name": "Triple Stitch Fabric"
+          "quality": 2
         }
       ]
     }

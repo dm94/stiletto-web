@@ -6,8 +6,9 @@
     {
       "ingredients": [
         {
+          "name": "Wood",
           "count": 30,
-          "name": "Wood"
+          "quality": 2
         }
       ]
     }

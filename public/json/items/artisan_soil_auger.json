@@ -9,24 +9,24 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Reinforced Gear"
+          "name": "Reinforced Gear",
+          "count": 6
         },
         {
-          "count": 35,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 35
         },
         {
-          "count": 60,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 60
         },
         {
-          "count": 16,
-          "name": "Nurr Fang"
+          "name": "Nurr Fang",
+          "count": 16
         },
         {
-          "count": 10,
-          "name": "Leather"
+          "name": "Leather",
+          "count": 10
         }
       ]
     }

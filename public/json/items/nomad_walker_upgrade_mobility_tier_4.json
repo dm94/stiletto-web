@@ -6,12 +6,14 @@
     {
       "ingredients": [
         {
+          "name": "Stone",
           "count": 20,
-          "name": "Stone"
+          "quality": 4
         },
         {
+          "name": "Wood",
           "count": 35,
-          "name": "Wood"
+          "quality": 4
         }
       ]
     }

@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 1000,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1000
         },
         {
-          "count": 50,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 50
         },
         {
-          "count": 100,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 100
         }
       ]
     }

@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Rupu Pelt",
           "count": 8,
-          "name": "Rupu Pelt"
+          "quality": 3
         },
         {
+          "name": "Nomad Cloth",
           "count": 15,
-          "name": "Nomad Cloth"
+          "quality": 3
         },
         {
+          "name": "Wood Shaft",
           "count": 48,
-          "name": "Wood Shaft"
+          "quality": 3
         }
       ]
     }

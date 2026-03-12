@@ -9,20 +9,20 @@
     {
       "ingredients": [
         {
-          "count": 5,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 5
         },
         {
-          "count": 40,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 40
         },
         {
-          "count": 7,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 7
         },
         {
-          "count": 10,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 10
         }
       ]
     }

@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Reinforced Plank"
+          "name": "Reinforced Plank",
+          "count": 6
         },
         {
-          "count": 35,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 35
         },
         {
-          "count": 60,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 60
         },
         {
-          "count": 5,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 5
         }
       ]
     }

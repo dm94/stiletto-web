@@ -6,20 +6,24 @@
     {
       "ingredients": [
         {
+          "name": "Iron Ore",
           "count": 55,
-          "name": "Iron Ore"
+          "quality": 3
         },
         {
+          "name": "Shardrock",
           "count": 34,
-          "name": "Shardrock"
+          "quality": 3
         },
         {
+          "name": "Rubber Block",
           "count": 38,
-          "name": "Rubber Block"
+          "quality": 3
         },
         {
+          "name": "Worm Scale",
           "count": 24,
-          "name": "Worm Scale"
+          "quality": 3
         }
       ]
     }

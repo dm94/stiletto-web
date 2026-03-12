@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Wood",
           "count": 48,
-          "name": "Wood"
+          "quality": 1
         },
         {
+          "name": "Fiber",
           "count": 40,
-          "name": "Fiber"
+          "quality": 1
         },
         {
+          "name": "Hide",
           "count": 8,
-          "name": "Hide"
+          "quality": 1
         }
       ]
     }

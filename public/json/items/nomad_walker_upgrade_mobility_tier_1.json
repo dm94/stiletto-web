@@ -6,8 +6,9 @@
     {
       "ingredients": [
         {
+          "name": "Stone",
           "count": 20,
-          "name": "Stone"
+          "quality": 1
         }
       ]
     }

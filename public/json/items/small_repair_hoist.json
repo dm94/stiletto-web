@@ -8,24 +8,24 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 8
         },
         {
-          "count": 3,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 3
         },
         {
-          "count": 25,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 25
         },
         {
-          "count": 18,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 18
         },
         {
-          "count": 45,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 45
         }
       ]
     }

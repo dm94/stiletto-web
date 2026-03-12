@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 12
         },
         {
-          "count": 20,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 20
         },
         {
-          "count": 40,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 40
         },
         {
-          "count": 25,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 25
         }
       ]
     }

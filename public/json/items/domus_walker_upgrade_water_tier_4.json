@@ -6,20 +6,24 @@
     {
       "ingredients": [
         {
+          "name": "Rubber Block",
           "count": 15,
-          "name": "Rubber Block"
+          "quality": 4
         },
         {
+          "name": "Eucalyptus Leaf",
           "count": 12,
-          "name": "Eucalyptus Leaf"
+          "quality": 4
         },
         {
+          "name": "Reinforced Plank",
           "count": 8,
-          "name": "Reinforced Plank"
+          "quality": 4
         },
         {
+          "name": "Iron Nails",
           "count": 45,
-          "name": "Iron Nails"
+          "quality": 4
         }
       ]
     }

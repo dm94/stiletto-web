@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Charcoal",
           "count": 13,
-          "name": "Charcoal"
+          "quality": 4
         },
         {
+          "name": "Cotton",
           "count": 63,
-          "name": "Cotton"
+          "quality": 4
         },
         {
+          "name": "Leather",
           "count": 23,
-          "name": "Leather"
+          "quality": 4
         }
       ]
     }

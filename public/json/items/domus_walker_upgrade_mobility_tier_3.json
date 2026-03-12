@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Iron Gear",
           "count": 6,
-          "name": "Iron Gear"
+          "quality": 3
         },
         {
+          "name": "Rubber Block",
           "count": 38,
-          "name": "Rubber Block"
+          "quality": 3
         },
         {
+          "name": "Shardrock",
           "count": 23,
-          "name": "Shardrock"
+          "quality": 3
         }
       ]
     }

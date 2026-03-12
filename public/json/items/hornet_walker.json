@@ -9,48 +9,48 @@
     {
       "ingredients": [
         {
-          "count": 1285,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1285
         },
         {
-          "count": 400,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 400
         },
         {
-          "count": 550,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 550
         },
         {
-          "count": 18,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 18
         },
         {
-          "count": 130,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 130
         },
         {
-          "count": 42,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 42
         },
         {
-          "count": 36,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 36
         },
         {
-          "count": 82,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 82
         },
         {
-          "count": 20,
-          "name": "Leather"
+          "name": "Leather",
+          "count": 20
         },
         {
-          "count": 55,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 55
         },
         {
-          "count": 1,
-          "name": "Reinforced Gear"
+          "name": "Reinforced Gear",
+          "count": 1
         }
       ]
     }

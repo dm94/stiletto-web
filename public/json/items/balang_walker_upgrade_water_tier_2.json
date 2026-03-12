@@ -6,12 +6,14 @@
     {
       "ingredients": [
         {
+          "name": "Fiber",
           "count": 45,
-          "name": "Fiber"
+          "quality": 2
         },
         {
+          "name": "Bone Glue",
           "count": 10,
-          "name": "Bone Glue"
+          "quality": 2
         }
       ]
     }

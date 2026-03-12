@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 45,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 45
         },
         {
-          "count": 20,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Aloe Vera"
+          "name": "Aloe Vera",
+          "count": 20
         }
       ]
     }

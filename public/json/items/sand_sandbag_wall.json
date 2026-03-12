@@ -7,16 +7,16 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 3
         },
         {
-          "count": 12,
-          "name": "Sand"
+          "name": "Sand",
+          "count": 12
         },
         {
-          "count": 2,
-          "name": "Palm Leaves"
+          "name": "Palm Leaves",
+          "count": 2
         }
       ]
     }

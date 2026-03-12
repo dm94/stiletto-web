@@ -7,16 +7,16 @@
     {
       "ingredients": [
         {
-          "count": 40,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 40
         },
         {
-          "count": 6,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 6
         },
         {
-          "count": 8,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 8
         }
       ]
     }

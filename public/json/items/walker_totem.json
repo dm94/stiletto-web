@@ -8,12 +8,12 @@
     {
       "ingredients": [
         {
-          "count": 60,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 60
         },
         {
-          "count": 35,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 35
         }
       ]
     }

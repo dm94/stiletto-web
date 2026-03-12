@@ -9,40 +9,40 @@
     {
       "ingredients": [
         {
-          "count": 460,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 460
         },
         {
-          "count": 100,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 100
         },
         {
-          "count": 142,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 142
         },
         {
-          "count": 710,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 710
         },
         {
-          "count": 80,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 80
         },
         {
-          "count": 100,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 100
         },
         {
-          "count": 240,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 240
         },
         {
-          "count": 1,
-          "name": "Iron Gear"
+          "name": "Iron Gear",
+          "count": 1
         },
         {
-          "count": 10,
-          "name": "Iron Nails"
+          "name": "Iron Nails",
+          "count": 10
         }
       ]
     }

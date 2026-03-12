@@ -6,20 +6,24 @@
     {
       "ingredients": [
         {
+          "name": "Fiber Weave",
           "count": 44,
-          "name": "Fiber Weave"
+          "quality": 4
         },
         {
+          "name": "Wood",
           "count": 65,
-          "name": "Wood"
+          "quality": 4
         },
         {
+          "name": "Hide",
           "count": 62,
-          "name": "Hide"
+          "quality": 4
         },
         {
+          "name": "Ceramic Shard",
           "count": 32,
-          "name": "Ceramic Shard"
+          "quality": 4
         }
       ]
     }

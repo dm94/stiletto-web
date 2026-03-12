@@ -6,12 +6,14 @@
     {
       "ingredients": [
         {
+          "name": "Wood Shaft",
           "count": 42,
-          "name": "Wood Shaft"
+          "quality": 2
         },
         {
+          "name": "Rope",
           "count": 28,
-          "name": "Rope"
+          "quality": 2
         }
       ]
     }

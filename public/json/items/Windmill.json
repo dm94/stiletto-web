@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 25
         },
         {
-          "count": 22,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 22
         },
         {
-          "count": 4,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 4
         },
         {
-          "count": 5,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 5
         }
       ]
     }

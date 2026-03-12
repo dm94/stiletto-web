@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Fiber",
           "count": 25,
-          "name": "Fiber"
+          "quality": 2
         },
         {
+          "name": "Rupu Pelt",
           "count": 3,
-          "name": "Rupu Pelt"
+          "quality": 2
         },
         {
+          "name": "Wood",
           "count": 20,
-          "name": "Wood"
+          "quality": 2
         }
       ]
     }

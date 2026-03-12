@@ -8,12 +8,12 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 3
         },
         {
-          "count": 14,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 14
         }
       ]
     }

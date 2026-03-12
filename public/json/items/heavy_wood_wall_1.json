@@ -7,16 +7,16 @@
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 35
         },
         {
-          "count": 2,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 2
         },
         {
-          "count": 1,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 1
         }
       ]
     }

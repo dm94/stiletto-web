@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Lava"
+          "name": "Lava",
+          "count": 12
         },
         {
-          "count": 4,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 4
         },
         {
-          "count": 6,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 6
         }
       ]
     }

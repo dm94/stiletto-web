@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 6
         },
         {
-          "count": 75,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 75
         },
         {
-          "count": 2,
-          "name": "Wooden Gear"
+          "name": "Wooden Gear",
+          "count": 2
         }
       ]
     }

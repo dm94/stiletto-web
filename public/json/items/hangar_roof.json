@@ -7,12 +7,12 @@
     {
       "ingredients": [
         {
-          "count": 40,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 40
         },
         {
-          "count": 12,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 12
         }
       ]
     }

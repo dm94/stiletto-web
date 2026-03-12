@@ -9,28 +9,28 @@
     {
       "ingredients": [
         {
-          "count": 185,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 185
         },
         {
-          "count": 7,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 7
         },
         {
-          "count": 110,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 110
         },
         {
-          "count": 57,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 57
         },
         {
-          "count": 4,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 4
         },
         {
-          "count": 1,
-          "name": "Wooden Gear"
+          "name": "Wooden Gear",
+          "count": 1
         }
       ]
     }

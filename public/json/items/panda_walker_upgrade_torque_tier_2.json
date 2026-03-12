@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Tar",
           "count": 22,
-          "name": "Tar"
+          "quality": 2
         },
         {
+          "name": "Shardrock",
           "count": 34,
-          "name": "Shardrock"
+          "quality": 2
         },
         {
+          "name": "Lightwood",
           "count": 55,
-          "name": "Lightwood"
+          "quality": 2
         }
       ]
     }

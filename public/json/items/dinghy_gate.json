@@ -8,16 +8,16 @@
     {
       "ingredients": [
         {
-          "count": 6,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 6
         },
         {
-          "count": 20,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 20
         },
         {
-          "count": 12,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 12
         }
       ]
     }

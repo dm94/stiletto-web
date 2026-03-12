@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 10
         }
       ]
     }

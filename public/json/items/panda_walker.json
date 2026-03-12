@@ -9,44 +9,44 @@
     {
       "ingredients": [
         {
-          "count": 1360,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 1360
         },
         {
-          "count": 600,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 600
         },
         {
-          "count": 350,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 350
         },
         {
-          "count": 121,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 121
         },
         {
-          "count": 86,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 86
         },
         {
-          "count": 5,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 5
         },
         {
-          "count": 110,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 110
         },
         {
-          "count": 35,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 35
         },
         {
-          "count": 1,
-          "name": "Iron Gear"
+          "name": "Iron Gear",
+          "count": 1
         },
         {
-          "count": 30,
-          "name": "Iron Nails"
+          "name": "Iron Nails",
+          "count": 30
         }
       ]
     }

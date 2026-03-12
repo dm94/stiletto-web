@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Tallow",
           "count": 20,
-          "name": "Tallow"
+          "quality": 3
         },
         {
+          "name": "Triple Stitch Fabric",
           "count": 25,
-          "name": "Triple Stitch Fabric"
+          "quality": 3
         },
         {
+          "name": "Spearmint",
           "count": 40,
-          "name": "Spearmint"
+          "quality": 3
         }
       ]
     }

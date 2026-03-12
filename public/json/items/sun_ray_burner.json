@@ -8,8 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 40,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 40
         }
       ]
     }

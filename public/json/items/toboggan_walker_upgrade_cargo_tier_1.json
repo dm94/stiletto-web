@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Wooden Slab",
           "count": 8,
-          "name": "Wooden Slab"
+          "quality": 1
         },
         {
+          "name": "Fiber",
           "count": 22,
-          "name": "Fiber"
+          "quality": 1
         },
         {
+          "name": "Bone Splinter",
           "count": 30,
-          "name": "Bone Splinter"
+          "quality": 1
         }
       ]
     }

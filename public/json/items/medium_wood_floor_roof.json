@@ -7,16 +7,16 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 3
         },
         {
-          "count": 8,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 8
         },
         {
-          "count": 4,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 4
         }
       ]
     }
