@@ -1,5 +1,8 @@
 {
   "name": "Fortified Rupu Village (Rupu)",
   "type": "CanyonSavannahMediumRupuCamp_01_C",
-  "category": "Rupu"
+  "category": "Rupu",
+  "maps": [
+    "Canyon"
+  ]
 }

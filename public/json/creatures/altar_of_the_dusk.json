@@ -1,4 +1,7 @@
 {
   "name": "Altar of the Dusk",
-  "type": "AC_RelicPOI2_C"
+  "type": "AC_RelicPOI2_C",
+  "maps": [
+    "Ancient City"
+  ]
 }

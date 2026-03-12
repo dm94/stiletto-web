@@ -344,5 +344,8 @@
     "Small Rupu Village",
     "Rupu Gifting Altar"
   ],
+  "maps": [
+    "Canyon"
+  ],
   "originalName": "MediumRupuCamp T2"
 }

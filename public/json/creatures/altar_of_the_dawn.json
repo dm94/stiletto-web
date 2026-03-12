@@ -1,4 +1,7 @@
 {
   "name": "Altar of the Dawn",
-  "type": "AC_RelicPOI1_C"
+  "type": "AC_RelicPOI1_C",
+  "maps": [
+    "Ancient City"
+  ]
 }
