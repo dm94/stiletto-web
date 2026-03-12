@@ -390,5 +390,9 @@
     "Excavation Site",
     "Foragers Outpost"
   ],
+  "maps": [
+    "Ancient City",
+    "Canyon"
+  ],
   "originalName": "EasyRupuCamp T2"
 }

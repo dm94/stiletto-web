@@ -1,4 +1,7 @@
 {
   "name": "Gas Thrower",
-  "type": "AC_StarTowerGas_C"
+  "type": "AC_StarTowerGas_C",
+  "maps": [
+    "Ancient City"
+  ]
 }

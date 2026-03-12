@@ -1,4 +1,7 @@
 {
   "name": "Excavation Site (2)",
-  "type": "AC_WorkersGrave_C"
+  "type": "AC_WorkersGrave_C",
+  "maps": [
+    "Ancient City"
+  ]
 }
