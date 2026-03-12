@@ -20,26 +20,6 @@
         {
           "count": 12,
           "name": "Wood"
-        },
-        {
-          "count": 28,
-          "name": "Iron Ingot"
-        },
-        {
-          "count": 120,
-          "name": "Ceramic Shard"
-        },
-        {
-          "count": 35,
-          "name": "Chitin Plate"
-        },
-        {
-          "count": 50,
-          "name": "Nomad Cloth"
-        },
-        {
-          "count": 5,
-          "name": "Obsidian"
         }
       ]
     }
