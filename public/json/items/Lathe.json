@@ -9,24 +9,24 @@
     {
       "ingredients": [
         {
-          "count": 75,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 75
         },
         {
-          "count": 4,
-          "name": "Wooden Gear"
+          "name": "Wooden Gear",
+          "count": 4
         },
         {
-          "count": 15,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 15
         },
         {
-          "count": 17,
-          "name": "Obsidian"
+          "name": "Obsidian",
+          "count": 17
         },
         {
-          "count": 26,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 26
         }
       ]
     }

@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Lightwood",
           "count": 55,
-          "name": "Lightwood"
+          "quality": 1
         },
         {
+          "name": "Iron Nails",
           "count": 45,
-          "name": "Iron Nails"
+          "quality": 1
         },
         {
+          "name": "Nomad Cloth",
           "count": 20,
-          "name": "Nomad Cloth"
+          "quality": 1
         }
       ]
     }

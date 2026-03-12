@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 9,
-          "name": "Bent Wooden Planks"
+          "name": "Bent Wooden Planks",
+          "count": 9
         },
         {
-          "count": 50,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 50
         },
         {
-          "count": 12,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 12
         }
       ]
     }

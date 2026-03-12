@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 250,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 250
         },
         {
-          "count": 12,
-          "name": "Iron Nails"
+          "name": "Iron Nails",
+          "count": 12
         },
         {
-          "count": 2,
-          "name": "Iron Gear"
+          "name": "Iron Gear",
+          "count": 2
         },
         {
-          "count": 10,
-          "name": "Shardrock"
+          "name": "Shardrock",
+          "count": 10
         }
       ]
     }

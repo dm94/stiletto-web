@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Bone Splinter",
           "count": 14,
-          "name": "Bone Splinter"
+          "quality": 3
         },
         {
+          "name": "Earth Wax",
           "count": 28,
-          "name": "Earth Wax"
+          "quality": 3
         },
         {
+          "name": "Wood Shaft",
           "count": 8,
-          "name": "Wood Shaft"
+          "quality": 3
         }
       ]
     }

@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Hollowbone",
           "count": 23,
-          "name": "Hollowbone"
+          "quality": 1
         },
         {
+          "name": "Shardrock",
           "count": 25,
-          "name": "Shardrock"
+          "quality": 1
         },
         {
+          "name": "Iron Gear",
           "count": 3,
-          "name": "Iron Gear"
+          "quality": 1
         }
       ]
     }

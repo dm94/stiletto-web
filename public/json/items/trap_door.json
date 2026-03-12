@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 45,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 45
         },
         {
-          "count": 4,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 4
         },
         {
-          "count": 3,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 3
         }
       ]
     }

@@ -6,24 +6,29 @@
     {
       "ingredients": [
         {
+          "name": "Iron Ingot",
           "count": 16,
-          "name": "Iron Ingot"
+          "quality": 4
         },
         {
+          "name": "Nomad Cloth",
           "count": 45,
-          "name": "Nomad Cloth"
+          "quality": 4
         },
         {
+          "name": "Bone Glue",
           "count": 20,
-          "name": "Bone Glue"
+          "quality": 4
         },
         {
+          "name": "Redwood Wood",
           "count": 96,
-          "name": "Redwood Wood"
+          "quality": 4
         },
         {
+          "name": "Worm Silk",
           "count": 25,
-          "name": "Worm Silk"
+          "quality": 4
         }
       ]
     }

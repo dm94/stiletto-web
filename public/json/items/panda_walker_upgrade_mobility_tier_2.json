@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Iron Gear",
           "count": 38,
-          "name": "Iron Gear"
+          "quality": 2
         },
         {
+          "name": "Wood Shaft",
           "count": 88,
-          "name": "Wood Shaft"
+          "quality": 2
         },
         {
+          "name": "Rubber Block",
           "count": 50,
-          "name": "Rubber Block"
+          "quality": 2
         }
       ]
     }

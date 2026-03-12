@@ -9,40 +9,40 @@
     {
       "ingredients": [
         {
-          "count": 512,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 512
         },
         {
-          "count": 333,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 333
         },
         {
-          "count": 209,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 209
         },
         {
-          "count": 104,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 104
         },
         {
-          "count": 63,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 63
         },
         {
-          "count": 96,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 96
         },
         {
-          "count": 300,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 300
         },
         {
-          "count": 79,
-          "name": "Chitin Plate"
+          "name": "Chitin Plate",
+          "count": 79
         },
         {
-          "count": 3,
-          "name": "Reinforced Gear"
+          "name": "Reinforced Gear",
+          "count": 3
         }
       ]
     }

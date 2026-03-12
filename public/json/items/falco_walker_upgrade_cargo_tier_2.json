@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Wood Shaft",
           "count": 31,
-          "name": "Wood Shaft"
+          "quality": 2
         },
         {
+          "name": "Clay",
           "count": 20,
-          "name": "Clay"
+          "quality": 2
         },
         {
+          "name": "Chitin Plate",
           "count": 15,
-          "name": "Chitin Plate"
+          "quality": 2
         }
       ]
     }

@@ -7,20 +7,20 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 3
         },
         {
-          "count": 10,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 10
         },
         {
-          "count": 1,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 1
         },
         {
-          "count": 3,
-          "name": "Tree Sap"
+          "name": "Tree Sap",
+          "count": 3
         }
       ]
     }

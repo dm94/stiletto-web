@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 164,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 164
         },
         {
-          "count": 12,
-          "name": "Obsidian"
+          "name": "Obsidian",
+          "count": 12
         },
         {
-          "count": 37,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 37
         }
       ]
     }

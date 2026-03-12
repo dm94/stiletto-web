@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Rupu Vine",
           "count": 12,
-          "name": "Rupu Vine"
+          "quality": 3
         },
         {
+          "name": "Wood Shaft",
           "count": 8,
-          "name": "Wood Shaft"
+          "quality": 3
         },
         {
+          "name": "Wood",
           "count": 32,
-          "name": "Wood"
+          "quality": 3
         }
       ]
     }

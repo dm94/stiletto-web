@@ -6,20 +6,24 @@
     {
       "ingredients": [
         {
+          "name": "Rope",
           "count": 12,
-          "name": "Rope"
+          "quality": 4
         },
         {
+          "name": "Wood",
           "count": 60,
-          "name": "Wood"
+          "quality": 4
         },
         {
+          "name": "Fiber",
           "count": 65,
-          "name": "Fiber"
+          "quality": 4
         },
         {
+          "name": "Bone Splinter",
           "count": 15,
-          "name": "Bone Splinter"
+          "quality": 4
         }
       ]
     }

@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Rubber Block",
           "count": 32,
-          "name": "Rubber Block"
+          "quality": 1
         },
         {
+          "name": "Lightwood",
           "count": 12,
-          "name": "Lightwood"
+          "quality": 1
         },
         {
+          "name": "Hollowbone",
           "count": 15,
-          "name": "Hollowbone"
+          "quality": 1
         }
       ]
     }

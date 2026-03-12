@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Tar",
           "count": 12,
-          "name": "Tar"
+          "quality": 3
         },
         {
+          "name": "Rope",
           "count": 9,
-          "name": "Rope"
+          "quality": 3
         },
         {
+          "name": "Lightwood",
           "count": 45,
-          "name": "Lightwood"
+          "quality": 3
         }
       ]
     }

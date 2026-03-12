@@ -10,24 +10,24 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 12
         },
         {
-          "count": 25,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 25
         },
         {
-          "count": 120,
-          "name": "Clay"
+          "name": "Clay",
+          "count": 120
         },
         {
-          "count": 14,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 14
         },
         {
-          "count": 40,
-          "name": "Leather"
+          "name": "Leather",
+          "count": 40
         }
       ]
     }

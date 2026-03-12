@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Lightwood",
           "count": 75,
-          "name": "Lightwood"
+          "quality": 4
         },
         {
+          "name": "Rubber Block",
           "count": 50,
-          "name": "Rubber Block"
+          "quality": 4
         },
         {
+          "name": "Iron Ore",
           "count": 25,
-          "name": "Iron Ore"
+          "quality": 4
         }
       ]
     }

@@ -8,12 +8,12 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 10
         },
         {
-          "count": 8,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 8
         }
       ]
     }

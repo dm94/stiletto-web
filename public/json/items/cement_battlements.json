@@ -7,20 +7,20 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 25
         },
         {
-          "count": 2,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 2
         },
         {
-          "count": 4,
-          "name": "Iron Nails"
+          "name": "Iron Nails",
+          "count": 4
         },
         {
-          "count": 6,
-          "name": "Tar"
+          "name": "Tar",
+          "count": 6
         }
       ]
     }

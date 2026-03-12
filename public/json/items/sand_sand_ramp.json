@@ -7,16 +7,16 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 10
         },
         {
-          "count": 20,
-          "name": "Sand"
+          "name": "Sand",
+          "count": 20
         },
         {
-          "count": 4,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 4
         }
       ]
     }

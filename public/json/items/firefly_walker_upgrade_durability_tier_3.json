@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Wood Shaft",
           "count": 3,
-          "name": "Wood Shaft"
+          "quality": 3
         },
         {
+          "name": "Hide",
           "count": 8,
-          "name": "Hide"
+          "quality": 3
         },
         {
+          "name": "Stone",
           "count": 15,
-          "name": "Stone"
+          "quality": 3
         }
       ]
     }

@@ -8,20 +8,20 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Sulfur"
+          "name": "Sulfur",
+          "count": 12
         },
         {
-          "count": 4,
-          "name": "Charcoal"
+          "name": "Charcoal",
+          "count": 4
         },
         {
-          "count": 6,
-          "name": "Phosphorus"
+          "name": "Phosphorus",
+          "count": 6
         },
         {
-          "count": 10,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 10
         }
       ]
     }

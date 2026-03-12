@@ -9,40 +9,40 @@
     {
       "ingredients": [
         {
-          "count": 4110,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 4110
         },
         {
-          "count": 235,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 235
         },
         {
-          "count": 1350,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 1350
         },
         {
-          "count": 140,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 140
         },
         {
-          "count": 90,
-          "name": "Obsidian"
+          "name": "Obsidian",
+          "count": 90
         },
         {
-          "count": 9,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 9
         },
         {
-          "count": 510,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 510
         },
         {
-          "count": 1,
-          "name": "Iron Gear"
+          "name": "Iron Gear",
+          "count": 1
         },
         {
-          "count": 30,
-          "name": "Iron Nails"
+          "name": "Iron Nails",
+          "count": 30
         }
       ]
     }

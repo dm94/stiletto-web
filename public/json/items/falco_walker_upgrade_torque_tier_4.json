@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Chitin Plate",
           "count": 17,
-          "name": "Chitin Plate"
+          "quality": 4
         },
         {
+          "name": "Wood Shaft",
           "count": 13,
-          "name": "Wood Shaft"
+          "quality": 4
         },
         {
+          "name": "Earth Wax",
           "count": 10,
-          "name": "Earth Wax"
+          "quality": 4
         }
       ]
     }

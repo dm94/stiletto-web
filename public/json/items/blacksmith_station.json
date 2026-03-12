@@ -9,20 +9,20 @@
     {
       "ingredients": [
         {
-          "count": 15,
-          "name": "Nibiran Ingot"
+          "name": "Nibiran Ingot",
+          "count": 15
         },
         {
-          "count": 10,
-          "name": "Worm Scale"
+          "name": "Worm Scale",
+          "count": 10
         },
         {
-          "count": 115,
-          "name": "Lightwood"
+          "name": "Lightwood",
+          "count": 115
         },
         {
-          "count": 12,
-          "name": "Shardrock"
+          "name": "Shardrock",
+          "count": 12
         }
       ]
     }

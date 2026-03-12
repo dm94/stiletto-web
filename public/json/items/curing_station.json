@@ -9,24 +9,24 @@
     {
       "ingredients": [
         {
-          "count": 13,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 13
         },
         {
-          "count": 15,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 15
         },
         {
-          "count": 26,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 26
         },
         {
-          "count": 45,
-          "name": "Salt Rock"
+          "name": "Salt Rock",
+          "count": 45
         },
         {
-          "count": 12,
-          "name": "Tree Sap"
+          "name": "Tree Sap",
+          "count": 12
         }
       ]
     }

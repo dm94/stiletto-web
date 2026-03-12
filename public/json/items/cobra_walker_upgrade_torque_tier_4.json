@@ -6,24 +6,29 @@
     {
       "ingredients": [
         {
+          "name": "Iron Ingot",
           "count": 24,
-          "name": "Iron Ingot"
+          "quality": 4
         },
         {
+          "name": "Chitin Plate",
           "count": 61,
-          "name": "Chitin Plate"
+          "quality": 4
         },
         {
+          "name": "Reinforced Plank",
           "count": 16,
-          "name": "Reinforced Plank"
+          "quality": 4
         },
         {
+          "name": "Ceramic Shard",
           "count": 80,
-          "name": "Ceramic Shard"
+          "quality": 4
         },
         {
+          "name": "Redwood Wood",
           "count": 192,
-          "name": "Redwood Wood"
+          "quality": 4
         }
       ]
     }

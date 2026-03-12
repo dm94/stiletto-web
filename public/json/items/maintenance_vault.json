@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 25
         },
         {
-          "count": 40,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 40
         },
         {
-          "count": 85,
-          "name": "Clay"
+          "name": "Clay",
+          "count": 85
         },
         {
-          "count": 38,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 38
         }
       ]
     }

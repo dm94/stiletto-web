@@ -6,12 +6,14 @@
     {
       "ingredients": [
         {
+          "name": "Fiber Weave",
           "count": 2,
-          "name": "Fiber Weave"
+          "quality": 2
         },
         {
+          "name": "Wooden Slab",
           "count": 4,
-          "name": "Wooden Slab"
+          "quality": 2
         }
       ]
     }

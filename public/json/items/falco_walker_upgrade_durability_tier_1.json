@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Redwood Wood",
           "count": 40,
-          "name": "Redwood Wood"
+          "quality": 1
         },
         {
+          "name": "Ceramic Shard",
           "count": 25,
-          "name": "Ceramic Shard"
+          "quality": 1
         },
         {
+          "name": "Obsidian",
           "count": 45,
-          "name": "Obsidian"
+          "quality": 1
         }
       ]
     }

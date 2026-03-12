@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 150,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 150
         },
         {
-          "count": 8,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 8
         },
         {
-          "count": 6,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 6
         }
       ]
     }

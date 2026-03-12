@@ -6,20 +6,24 @@
     {
       "ingredients": [
         {
+          "name": "Bone Splinter",
           "count": 16,
-          "name": "Bone Splinter"
+          "quality": 2
         },
         {
+          "name": "Fiber",
           "count": 160,
-          "name": "Fiber"
+          "quality": 2
         },
         {
+          "name": "Hide",
           "count": 24,
-          "name": "Hide"
+          "quality": 2
         },
         {
+          "name": "Wood",
           "count": 24,
-          "name": "Wood"
+          "quality": 2
         }
       ]
     }

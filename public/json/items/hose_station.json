@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 134,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 134
         },
         {
-          "count": 38,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 38
         },
         {
-          "count": 80,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 80
         },
         {
-          "count": 40,
-          "name": "Purified Water"
+          "name": "Purified Water",
+          "count": 40
         }
       ]
     }

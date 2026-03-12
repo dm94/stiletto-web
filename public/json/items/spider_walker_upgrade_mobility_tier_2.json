@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Wood Shaft",
           "count": 15,
-          "name": "Wood Shaft"
+          "quality": 2
         },
         {
+          "name": "Palm Leaves",
           "count": 20,
-          "name": "Palm Leaves"
+          "quality": 2
         },
         {
+          "name": "Wood",
           "count": 35,
-          "name": "Wood"
+          "quality": 2
         }
       ]
     }

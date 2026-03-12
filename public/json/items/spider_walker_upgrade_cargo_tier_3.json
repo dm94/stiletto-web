@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Fiber Weave",
           "count": 20,
-          "name": "Fiber Weave"
+          "quality": 3
         },
         {
+          "name": "Wood",
           "count": 30,
-          "name": "Wood"
+          "quality": 3
         },
         {
+          "name": "Stone",
           "count": 10,
-          "name": "Stone"
+          "quality": 3
         }
       ]
     }

@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Iron Ingot",
           "count": 29,
-          "name": "Iron Ingot"
+          "quality": 4
         },
         {
+          "name": "Shardrock",
           "count": 43,
-          "name": "Shardrock"
+          "quality": 4
         },
         {
+          "name": "Hollowbone",
           "count": 38,
-          "name": "Hollowbone"
+          "quality": 4
         }
       ]
     }

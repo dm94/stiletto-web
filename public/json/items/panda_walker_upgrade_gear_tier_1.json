@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Iron Ore",
           "count": 37,
-          "name": "Iron Ore"
+          "quality": 1
         },
         {
+          "name": "Reinforced Plank",
           "count": 24,
-          "name": "Reinforced Plank"
+          "quality": 1
         },
         {
+          "name": "Hollowbone",
           "count": 8,
-          "name": "Hollowbone"
+          "quality": 1
         }
       ]
     }

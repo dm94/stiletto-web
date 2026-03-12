@@ -8,32 +8,32 @@
     {
       "ingredients": [
         {
-          "count": 375,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 375
         },
         {
-          "count": 80,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 80
         },
         {
-          "count": 185,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 185
         },
         {
-          "count": 15,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 15
         },
         {
-          "count": 20,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 20
         },
         {
-          "count": 5,
-          "name": "Beeswax"
+          "name": "Beeswax",
+          "count": 5
         }
       ]
     }

@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 25
         },
         {
-          "count": 15,
-          "name": "Leather"
+          "name": "Leather",
+          "count": 15
         },
         {
-          "count": 30,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 30
         },
         {
-          "count": 24,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 24
         }
       ]
     }

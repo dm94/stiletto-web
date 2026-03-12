@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Clay",
           "count": 32,
-          "name": "Clay"
+          "quality": 4
         },
         {
+          "name": "Gelatinous Goo",
           "count": 5,
-          "name": "Gelatinous Goo"
+          "quality": 4
         },
         {
+          "name": "Reinforced Gear",
           "count": 5,
-          "name": "Reinforced Gear"
+          "quality": 4
         }
       ]
     }

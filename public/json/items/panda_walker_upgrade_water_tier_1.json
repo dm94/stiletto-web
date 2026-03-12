@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Eucalyptus Leaf",
           "count": 25,
-          "name": "Eucalyptus Leaf"
+          "quality": 1
         },
         {
+          "name": "Leather",
           "count": 44,
-          "name": "Leather"
+          "quality": 1
         },
         {
+          "name": "Iron Ore",
           "count": 23,
-          "name": "Iron Ore"
+          "quality": 1
         }
       ]
     }

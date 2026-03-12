@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Charcoal",
           "count": 20,
-          "name": "Charcoal"
+          "quality": 1
         },
         {
+          "name": "Triple Stitch Fabric",
           "count": 25,
-          "name": "Triple Stitch Fabric"
+          "quality": 1
         },
         {
+          "name": "Spearmint",
           "count": 40,
-          "name": "Spearmint"
+          "quality": 1
         }
       ]
     }

@@ -6,8 +6,9 @@
     {
       "ingredients": [
         {
+          "name": "Fiber Weave",
           "count": 18,
-          "name": "Fiber Weave"
+          "quality": 1
         }
       ]
     }

@@ -7,16 +7,16 @@
     {
       "ingredients": [
         {
-          "count": 8,
-          "name": "Cattail"
+          "name": "Cattail",
+          "count": 8
         },
         {
-          "count": 3,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 3
         },
         {
-          "count": 25,
-          "name": "Clay"
+          "name": "Clay",
+          "count": 25
         }
       ]
     }

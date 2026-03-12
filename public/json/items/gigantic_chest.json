@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 25,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 25
         },
         {
-          "count": 85,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 85
         },
         {
-          "count": 110,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 110
         }
       ]
     }

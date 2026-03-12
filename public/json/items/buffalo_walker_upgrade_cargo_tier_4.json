@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Stone",
           "count": 22,
-          "name": "Stone"
+          "quality": 4
         },
         {
+          "name": "Chitin Plate",
           "count": 10,
-          "name": "Chitin Plate"
+          "quality": 4
         },
         {
+          "name": "Ceramic Shard",
           "count": 14,
-          "name": "Ceramic Shard"
+          "quality": 4
         }
       ]
     }

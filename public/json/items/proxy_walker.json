@@ -9,32 +9,32 @@
     {
       "ingredients": [
         {
-          "count": 225,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 225
         },
         {
-          "count": 750,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 750
         },
         {
-          "count": 1400,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1400
         },
         {
-          "count": 300,
-          "name": "Nomad Cloth"
+          "name": "Nomad Cloth",
+          "count": 300
         },
         {
-          "count": 150,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 150
         },
         {
-          "count": 300,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 300
         },
         {
-          "count": 1,
-          "name": "Proxy License"
+          "name": "Proxy License",
+          "count": 1
         }
       ]
     }

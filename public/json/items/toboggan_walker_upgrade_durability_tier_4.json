@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Bone Splinter",
           "count": 28,
-          "name": "Bone Splinter"
+          "quality": 4
         },
         {
+          "name": "Triple Stitch Fabric",
           "count": 24,
-          "name": "Triple Stitch Fabric"
+          "quality": 4
         },
         {
+          "name": "Tree Sap",
           "count": 47,
-          "name": "Tree Sap"
+          "quality": 4
         }
       ]
     }

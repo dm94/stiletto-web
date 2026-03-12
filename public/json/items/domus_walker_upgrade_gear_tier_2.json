@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Reinforced Plank",
           "count": 14,
-          "name": "Reinforced Plank"
+          "quality": 2
         },
         {
+          "name": "Lightwood",
           "count": 45,
-          "name": "Lightwood"
+          "quality": 2
         },
         {
+          "name": "Nomad Cloth",
           "count": 45,
-          "name": "Nomad Cloth"
+          "quality": 2
         }
       ]
     }

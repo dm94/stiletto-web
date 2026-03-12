@@ -9,40 +9,40 @@
     {
       "ingredients": [
         {
-          "count": 310,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 310
         },
         {
-          "count": 29,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 29
         },
         {
-          "count": 2,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 2
         },
         {
-          "count": 12,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 12
         },
         {
-          "count": 115,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 115
         },
         {
-          "count": 27,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 27
         },
         {
-          "count": 24,
-          "name": "Leather"
+          "name": "Leather",
+          "count": 24
         },
         {
-          "count": 45,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 45
         },
         {
-          "count": 1,
-          "name": "Wooden Gear"
+          "name": "Wooden Gear",
+          "count": 1
         }
       ]
     }

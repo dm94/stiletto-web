@@ -11,24 +11,24 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 12
         },
         {
-          "count": 2,
-          "name": "Bone Glue"
+          "name": "Bone Glue",
+          "count": 2
         },
         {
-          "count": 16,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 16
         },
         {
-          "count": 12,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 12
         },
         {
-          "count": 4,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 4
         }
       ]
     }

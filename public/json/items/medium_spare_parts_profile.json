@@ -6,24 +6,29 @@
     {
       "ingredients": [
         {
+          "name": "Iron Ingot",
           "count": 45,
-          "name": "Iron Ingot"
+          "quality": 4
         },
         {
+          "name": "Ceramic Shard",
           "count": 192,
-          "name": "Ceramic Shard"
+          "quality": 4
         },
         {
+          "name": "Chitin Plate",
           "count": 56,
-          "name": "Chitin Plate"
+          "quality": 4
         },
         {
+          "name": "Nomad Cloth",
           "count": 80,
-          "name": "Nomad Cloth"
+          "quality": 4
         },
         {
+          "name": "Obsidian",
           "count": 8,
-          "name": "Obsidian"
+          "quality": 4
         }
       ]
     }

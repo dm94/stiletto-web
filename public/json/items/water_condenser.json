@@ -10,16 +10,16 @@
     {
       "ingredients": [
         {
-          "count": 10,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 10
         },
         {
-          "count": 3,
-          "name": "Triple Stitch Fabric"
+          "name": "Triple Stitch Fabric",
+          "count": 3
         },
         {
-          "count": 12,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 12
         }
       ]
     }

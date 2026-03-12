@@ -6,12 +6,14 @@
     {
       "ingredients": [
         {
+          "name": "Fiber Weave",
           "count": 28,
-          "name": "Fiber Weave"
+          "quality": 2
         },
         {
+          "name": "Earth Wax",
           "count": 12,
-          "name": "Earth Wax"
+          "quality": 2
         }
       ]
     }

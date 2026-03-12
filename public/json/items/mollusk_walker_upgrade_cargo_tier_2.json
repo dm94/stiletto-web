@@ -6,12 +6,14 @@
     {
       "ingredients": [
         {
+          "name": "Triple Stitch Fabric",
           "count": 22,
-          "name": "Triple Stitch Fabric"
+          "quality": 2
         },
         {
+          "name": "Wood Shaft",
           "count": 40,
-          "name": "Wood Shaft"
+          "quality": 2
         }
       ]
     }

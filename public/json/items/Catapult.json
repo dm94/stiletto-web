@@ -10,28 +10,28 @@
     {
       "ingredients": [
         {
-          "count": 140,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 140
         },
         {
-          "count": 60,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 60
         },
         {
-          "count": 35,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 35
         },
         {
-          "count": 35,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 35
         },
         {
-          "count": 20,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 20
         },
         {
-          "count": 20,
-          "name": "Ceramic Shard"
+          "name": "Ceramic Shard",
+          "count": 20
         }
       ]
     }

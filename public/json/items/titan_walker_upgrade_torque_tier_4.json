@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Reinforced Plank",
           "count": 20,
-          "name": "Reinforced Plank"
+          "quality": 4
         },
         {
+          "name": "Tar",
           "count": 25,
-          "name": "Tar"
+          "quality": 4
         },
         {
+          "name": "Hollowbone",
           "count": 12,
-          "name": "Hollowbone"
+          "quality": 4
         }
       ]
     }

@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 1,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 1
         },
         {
-          "count": 2,
-          "name": "Rupu Pelt"
+          "name": "Rupu Pelt",
+          "count": 2
         },
         {
-          "count": 15,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 15
         },
         {
-          "count": 4,
-          "name": "Hide"
+          "name": "Hide",
+          "count": 4
         }
       ]
     }

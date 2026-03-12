@@ -6,12 +6,14 @@
     {
       "ingredients": [
         {
+          "name": "Reinforced Gear",
           "count": 24,
-          "name": "Reinforced Gear"
+          "quality": 4
         },
         {
+          "name": "Tallow",
           "count": 23,
-          "name": "Tallow"
+          "quality": 4
         }
       ]
     }

@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Obsidian",
           "count": 65,
-          "name": "Obsidian"
+          "quality": 1
         },
         {
+          "name": "Chitin Plate",
           "count": 70,
-          "name": "Chitin Plate"
+          "quality": 1
         },
         {
+          "name": "Tar",
           "count": 24,
-          "name": "Tar"
+          "quality": 1
         }
       ]
     }

@@ -8,24 +8,24 @@
     {
       "ingredients": [
         {
-          "count": 100,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 100
         },
         {
-          "count": 20,
-          "name": "Glass"
+          "name": "Glass",
+          "count": 20
         },
         {
-          "count": 15,
-          "name": "Iron Ingot"
+          "name": "Iron Ingot",
+          "count": 15
         },
         {
-          "count": 20,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 20
         },
         {
-          "count": 50,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 50
         }
       ]
     }

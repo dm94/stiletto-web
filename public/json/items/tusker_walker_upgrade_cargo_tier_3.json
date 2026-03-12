@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Chitin Plate",
           "count": 50,
-          "name": "Chitin Plate"
+          "quality": 3
         },
         {
+          "name": "Redwood Wood",
           "count": 75,
-          "name": "Redwood Wood"
+          "quality": 3
         },
         {
+          "name": "Stone",
           "count": 25,
-          "name": "Stone"
+          "quality": 3
         }
       ]
     }

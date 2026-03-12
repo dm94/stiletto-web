@@ -8,8 +8,8 @@
     {
       "ingredients": [
         {
-          "count": 300,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 300
         }
       ]
     }

@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Fiber Weave",
           "count": 16,
-          "name": "Fiber Weave"
+          "quality": 3
         },
         {
+          "name": "Wood Shaft",
           "count": 38,
-          "name": "Wood Shaft"
+          "quality": 3
         },
         {
+          "name": "Bone Splinter",
           "count": 13,
-          "name": "Bone Splinter"
+          "quality": 3
         }
       ]
     }

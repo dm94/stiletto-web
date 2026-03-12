@@ -9,32 +9,32 @@
     {
       "ingredients": [
         {
-          "count": 1580,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 1580
         },
         {
-          "count": 270,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 270
         },
         {
-          "count": 1200,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 1200
         },
         {
-          "count": 15,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 15
         },
         {
-          "count": 38,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 38
         },
         {
-          "count": 10,
-          "name": "Earth Wax"
+          "name": "Earth Wax",
+          "count": 10
         },
         {
-          "count": 1,
-          "name": "Reinforced Gear"
+          "name": "Reinforced Gear",
+          "count": 1
         }
       ]
     }

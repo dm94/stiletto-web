@@ -10,24 +10,24 @@
     {
       "ingredients": [
         {
-          "count": 85,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 85
         },
         {
-          "count": 90,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 90
         },
         {
-          "count": 32,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 32
         },
         {
-          "count": 15,
-          "name": "Clay"
+          "name": "Clay",
+          "count": 15
         },
         {
-          "count": 24,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 24
         }
       ]
     }

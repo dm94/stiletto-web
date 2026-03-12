@@ -10,20 +10,20 @@
     {
       "ingredients": [
         {
-          "count": 3,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 3
         },
         {
-          "count": 5,
-          "name": "Fiber Weave"
+          "name": "Fiber Weave",
+          "count": 5
         },
         {
-          "count": 2,
-          "name": "Rupu Vine"
+          "name": "Rupu Vine",
+          "count": 2
         },
         {
-          "count": 3,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 3
         }
       ]
     }

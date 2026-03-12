@@ -10,28 +10,28 @@
     {
       "ingredients": [
         {
-          "count": 12,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 12
         },
         {
-          "count": 26,
-          "name": "Bone Splinter"
+          "name": "Bone Splinter",
+          "count": 26
         },
         {
-          "count": 20,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 20
         },
         {
-          "count": 2,
-          "name": "Wooden Gear"
+          "name": "Wooden Gear",
+          "count": 2
         },
         {
-          "count": 4,
-          "name": "Wooden Slab"
+          "name": "Wooden Slab",
+          "count": 4
         },
         {
-          "count": 40,
-          "name": "Redwood Wood"
+          "name": "Redwood Wood",
+          "count": 40
         }
       ]
     }

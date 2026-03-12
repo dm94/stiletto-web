@@ -10,24 +10,24 @@
     {
       "ingredients": [
         {
-          "count": 35,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 35
         },
         {
-          "count": 6,
-          "name": "Rope"
+          "name": "Rope",
+          "count": 6
         },
         {
-          "count": 3,
-          "name": "Nurr Fang"
+          "name": "Nurr Fang",
+          "count": 3
         },
         {
-          "count": 1,
-          "name": "Terrain: Excavatable"
+          "name": "Terrain: Excavatable",
+          "count": 1
         },
         {
-          "count": 12,
-          "name": "Wood Shaft"
+          "name": "Wood Shaft",
+          "count": 12
         }
       ]
     }

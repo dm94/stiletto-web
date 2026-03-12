@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Hollowbone",
           "count": 15,
-          "name": "Hollowbone"
+          "quality": 1
         },
         {
+          "name": "Iron Nails",
           "count": 32,
-          "name": "Iron Nails"
+          "quality": 1
         },
         {
+          "name": "Lightwood",
           "count": 12,
-          "name": "Lightwood"
+          "quality": 1
         }
       ]
     }

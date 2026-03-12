@@ -9,20 +9,20 @@
     {
       "ingredients": [
         {
-          "count": 135,
-          "name": "Wood"
+          "name": "Wood",
+          "count": 135
         },
         {
-          "count": 165,
-          "name": "Fiber"
+          "name": "Fiber",
+          "count": 165
         },
         {
-          "count": 35,
-          "name": "Stone"
+          "name": "Stone",
+          "count": 35
         },
         {
-          "count": 32,
-          "name": "Palm Leaves"
+          "name": "Palm Leaves",
+          "count": 32
         }
       ]
     }

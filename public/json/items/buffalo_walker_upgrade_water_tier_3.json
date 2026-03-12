@@ -6,16 +6,19 @@
     {
       "ingredients": [
         {
+          "name": "Charcoal",
           "count": 25,
-          "name": "Charcoal"
+          "quality": 3
         },
         {
+          "name": "Spearmint",
           "count": 40,
-          "name": "Spearmint"
+          "quality": 3
         },
         {
+          "name": "Leather",
           "count": 17,
-          "name": "Leather"
+          "quality": 3
         }
       ]
     }
