@@ -1,4 +1,7 @@
 {
   "name": "Rupu Raiding Checkpoint",
-  "type": "CanyonBurnableChest_C"
+  "type": "CanyonBurnableChest_C",
+  "maps": [
+    "Canyon"
+  ]
 }

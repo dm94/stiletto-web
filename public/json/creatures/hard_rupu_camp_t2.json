@@ -390,5 +390,8 @@
     "Nurr Lair",
     "Nurr Raiding Camp"
   ],
+  "maps": [
+    "Ancient City"
+  ],
   "originalName": "HardRupuCamp T2"
 }
