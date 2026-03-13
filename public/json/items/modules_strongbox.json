@@ -9,212 +9,212 @@
   "drops": [
     {
       "name": "Weightless Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Merchant Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Craftsman Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Fireproof Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Armoury Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Hardening Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Forager Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Scavenger Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Lumberjack Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Pack Speed Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Hearth Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Lifeforce Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Bullrush Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Sandy Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Fortress Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Harpoon Protection Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Battery Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Torque Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Watery Walker Module",
       "chance": 0,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Pack Mule Walker Module",
-      "chance": 4.5252676,
+      "chance": 0.7919218300000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Structure Hardening Base Module",
-      "chance": 0.45225528,
+      "chance": 0.079144674,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Craftsman Base Module",
-      "chance": 4.522553,
+      "chance": 0.7914467750000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Pack Speed Base Module",
-      "chance": 4.522553,
+      "chance": 0.7914467750000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Bullrush Base Module",
-      "chance": 4.522553,
+      "chance": 0.7914467750000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "modules_t1"
     },
     {
       "name": "Spring",
-      "chance": 16.666666,
+      "chance": 62.4999975,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "source": "components_t1"
     },
     {
       "name": "Shackle",
-      "chance": 16.666666,
+      "chance": 62.4999975,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "source": "components_t1"
     },
     {
       "name": "Strut",
-      "chance": 16.666666,
+      "chance": 62.4999975,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "source": "components_t1"
     },
     {
       "name": "Cog",
-      "chance": 16.666666,
+      "chance": 62.4999975,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "source": "components_t1"
     },
     {
       "name": "Lever",
-      "chance": 16.666666,
+      "chance": 62.4999975,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "source": "components_t1"
     },
     {
       "name": "Spline",
-      "chance": 16.666666,
+      "chance": 62.4999975,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "source": "components_t1"
     }
   ]

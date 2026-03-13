@@ -11,47 +11,47 @@
   "droppedBy": [
     {
       "name": "Easy Rupu T4 Q",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
       "name": "Go Go T4 Q",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "tier": "T4"
     },
     {
       "name": "Hard Rupu T4 Q",
-      "chance": 6.6666665,
+      "chance": 3.33333325,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
       "name": "Koa T4 Q",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"
     },
     {
       "name": "Lootbox Schematics Template T3",
-      "chance": 6.6666665,
+      "chance": 0.19999999500000004,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 3
     },
     {
       "name": "Lootbox Schematics Template T4",
-      "chance": 6.6666665,
+      "chance": 18.74999953125,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 3
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 6.6666665,
+      "chance": 2.6666666,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T4"

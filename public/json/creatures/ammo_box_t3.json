@@ -8,106 +8,106 @@
     {
       "name": "Ceramic-Tipped Bolt",
       "chance": 16,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "minQuantity": 6,
+      "maxQuantity": 12,
       "source": "ammo_t3"
     },
     {
       "name": "Ceramic Scattershot Ammo",
       "chance": 16,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "minQuantity": 6,
+      "maxQuantity": 12,
       "source": "ammo_t3"
     },
     {
       "name": "Ceramic Dart",
       "chance": 40,
-      "minQuantity": 20,
-      "maxQuantity": 20,
+      "minQuantity": 12,
+      "maxQuantity": 24,
       "source": "ammo_t3"
     },
     {
       "name": "Obsidian Rok",
       "chance": 12,
-      "minQuantity": 2,
+      "minQuantity": 1,
       "maxQuantity": 2,
       "source": "ammo_t3"
     },
     {
       "name": "Catapult Boulder",
       "chance": 16,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "source": "ammo_t3"
     },
     {
       "name": "Fiber",
       "chance": 10.718528,
       "minQuantity": 16,
-      "maxQuantity": 16,
+      "maxQuantity": 32,
       "source": "baseresources_t3"
     },
     {
       "name": "Stone",
       "chance": 10.718528,
       "minQuantity": 12,
-      "maxQuantity": 12,
+      "maxQuantity": 24,
       "source": "baseresources_t3"
     },
     {
       "name": "Wood",
       "chance": 10.718528,
       "minQuantity": 14,
-      "maxQuantity": 14,
+      "maxQuantity": 28,
       "source": "baseresources_t3"
     },
     {
       "name": "Rupu Vine",
       "chance": 6.769596,
       "minQuantity": 3,
-      "maxQuantity": 3,
+      "maxQuantity": 6,
       "source": "baseresources_t3"
     },
     {
       "name": "Palm Leaves",
       "chance": 7.4821854,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "source": "baseresources_t3"
     },
     {
       "name": "Fiber Weave",
       "chance": 10.718528,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "source": "baseresources_t3"
     },
     {
       "name": "Wood Shaft",
       "chance": 10.718528,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "source": "baseresources_t3"
     },
     {
       "name": "Bone Splinter",
       "chance": 10.718528,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "source": "baseresources_t3"
     },
     {
       "name": "Rope",
       "chance": 10.718528,
       "minQuantity": 3,
-      "maxQuantity": 3,
+      "maxQuantity": 6,
       "source": "baseresources_t3"
     },
     {
       "name": "Earth Wax",
       "chance": 10.718528,
       "minQuantity": 3,
-      "maxQuantity": 3,
+      "maxQuantity": 6,
       "source": "baseresources_t3"
     }
   ],

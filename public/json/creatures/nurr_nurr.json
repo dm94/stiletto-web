@@ -8,9 +8,9 @@
   "drops": [
     {
       "name": "Nurr Fang",
-      "chance": 100,
+      "chance": 50,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 4,
       "source": "nurrfang_t2"
     }
   ],

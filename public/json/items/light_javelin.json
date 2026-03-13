@@ -29,91 +29,91 @@
     {
       "name": "Big Hotspot Loot T1",
       "chance": 8.064516,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "minQuantity": 24,
+      "maxQuantity": 48,
       "tier": "T1"
     },
     {
       "name": "Easy Rupu Camp T1",
-      "chance": 8.064516,
+      "chance": 0.024193548,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Easy Rupu T1",
-      "chance": 8.064516,
+      "chance": 0.016129031999999998,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Easy Rupu T1 Q",
-      "chance": 8.064516,
+      "chance": 0.016129031999999998,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Hard Rupu Camp T1",
-      "chance": 8.064516,
+      "chance": 0.08064516,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Hard Rupu T1",
-      "chance": 8.064516,
+      "chance": 0.06451612799999999,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Hard Rupu T1 Q",
-      "chance": 8.064516,
+      "chance": 0.06451612799999999,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Hotspot Loot T1",
-      "chance": 8.064516,
+      "chance": 0.8064515999999999,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Medium Rupu Camp T1",
-      "chance": 8.064516,
+      "chance": 0.048387096,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Medium Rupu T1",
-      "chance": 8.064516,
+      "chance": 0.016129031999999998,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Medium Rupu T1 Q",
-      "chance": 8.064516,
+      "chance": 0.016129031999999998,
       "minQuantity": 3,
       "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Nurr Raider",
-      "chance": 8.064516,
+      "chance": 0.016129031999999998,
       "minQuantity": 3,
       "maxQuantity": 3
     },
     {
       "name": "Treasure Chest T1",
-      "chance": 8.064516,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 9.677419200000001,
+      "minQuantity": 9,
+      "maxQuantity": 18,
       "tier": "T1"
     }
   ]

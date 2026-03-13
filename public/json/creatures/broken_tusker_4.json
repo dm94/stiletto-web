@@ -6,51 +6,51 @@
   "drops": [
     {
       "name": "Rupu Vine",
-      "chance": 16.666668,
-      "minQuantity": 18,
-      "maxQuantity": 18,
+      "chance": 133.333344,
+      "minQuantity": 90,
+      "maxQuantity": 180,
       "source": "baseresources_t4"
     },
     {
       "name": "Palm Leaves",
-      "chance": 16.666668,
-      "minQuantity": 15,
-      "maxQuantity": 15,
+      "chance": 133.333344,
+      "minQuantity": 75,
+      "maxQuantity": 150,
       "source": "baseresources_t4"
     },
     {
       "name": "Fiber Weave",
-      "chance": 16.666668,
-      "minQuantity": 15,
-      "maxQuantity": 15,
+      "chance": 133.333344,
+      "minQuantity": 75,
+      "maxQuantity": 150,
       "source": "baseresources_t4"
     },
     {
       "name": "Rope",
-      "chance": 16.666668,
-      "minQuantity": 12,
-      "maxQuantity": 12,
+      "chance": 133.333344,
+      "minQuantity": 60,
+      "maxQuantity": 120,
       "source": "baseresources_t4"
     },
     {
       "name": "Bone Glue",
-      "chance": 16.666666,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 133.333328,
+      "minQuantity": 40,
+      "maxQuantity": 80,
       "source": "baseresources_t4"
     },
     {
       "name": "Sulfur",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 133.333328,
+      "minQuantity": 25,
+      "maxQuantity": 50,
       "source": "baseresources_t4"
     },
     {
       "name": "Red Banana",
       "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 5,
+      "maxQuantity": 10,
       "source": "redbanana_t4"
     }
   ],

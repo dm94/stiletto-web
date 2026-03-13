@@ -13,54 +13,54 @@
   "droppedBy": [
     {
       "name": "Easy Rupu T2 Q",
-      "chance": 6.25,
+      "chance": 0,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T2 Q",
-      "chance": 6.25,
+      "chance": 0,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
       "name": "Large Nurr T2 Q",
-      "chance": 6.25,
+      "chance": 3.7500000000000004,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
       "name": "Loot Box Schematics Template T2",
-      "chance": 6.25,
+      "chance": 19.53125,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 25,
       "tier": "T2"
     },
     {
       "name": "Lootbox Schematics Template T3",
-      "chance": 6.25,
+      "chance": 17.5,
       "minQuantity": 5,
-      "maxQuantity": 5
+      "maxQuantity": 25
     },
     {
       "name": "Lootbox Schematics Template T4",
-      "chance": 6.25,
+      "chance": 10.9375,
       "minQuantity": 5,
-      "maxQuantity": 5
+      "maxQuantity": 15
     },
     {
       "name": "Medium Rupu T2 Q",
-      "chance": 6.25,
+      "chance": 0,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"
     },
     {
       "name": "Nurr T2 Q",
-      "chance": 6.25,
+      "chance": 2.5,
       "minQuantity": 5,
       "maxQuantity": 5,
       "tier": "T2"

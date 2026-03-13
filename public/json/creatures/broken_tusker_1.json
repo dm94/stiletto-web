@@ -6,331 +6,331 @@
   "drops": [
     {
       "name": "Relic of Dusk",
-      "chance": 100,
+      "chance": 30,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "ac_relic_2"
     },
     {
       "name": "Relic of Dawn",
-      "chance": 100,
+      "chance": 30,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "ac_relic_1"
     },
     {
       "name": "Panda Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 12.4999995,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Panda Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 2.49999975,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 12.4999995,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 2.49999975,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 12.4999995,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 2.49999975,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 12.4999995,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 2.500000125,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 12.4999995,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 2.500000125,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Hornet Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 20.833332499999997,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Hornet Walker Rig T3 Schematic",
-      "chance": 3.3333333,
+      "chance": 4.166666625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Falco Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 20.833332499999997,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Falco Walker Rig T3 Schematic",
-      "chance": 3.3333333,
+      "chance": 4.166666625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Buffalo Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 20.833332499999997,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Buffalo Walker Rig T3 Schematic",
-      "chance": 3.3333333,
+      "chance": 4.166666625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Tusker Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 20.833332499999997,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Tusker Walker Rig T3 Schematic",
-      "chance": 3.3333333,
+      "chance": 4.166666625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Hercul Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 20.833332499999997,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Hercul Walker Rig T3 Schematic",
-      "chance": 3.3333333,
+      "chance": 4.166666625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t3"
     },
     {
       "name": "Stone Plank",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 150,
+      "minQuantity": 3,
+      "maxQuantity": 8,
       "source": "stoneplank_t2"
     },
     {
       "name": "Weightless Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Merchant Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Craftsman Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Fireproof Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Armoury Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Hardening Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Forager Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Scavenger Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Lumberjack Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Pack Speed Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Hearth Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Lifeforce Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Bullrush Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Sandy Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Fortress Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Harpoon Protection Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Battery Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Torque Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Watery Walker Module",
       "chance": 0,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Pack Mule Walker Module",
-      "chance": 4.5252676,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.0505352,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Structure Hardening Base Module",
-      "chance": 0.45225528,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 0.90451056,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Craftsman Base Module",
-      "chance": 4.522553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.045106,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Pack Speed Base Module",
-      "chance": 4.522553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.045106,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     },
     {
       "name": "Bullrush Base Module",
-      "chance": 4.522553,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.045106,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "modules_t1"
     }
   ],

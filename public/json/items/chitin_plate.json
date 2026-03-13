@@ -42,15 +42,15 @@
   "droppedBy": [
     {
       "name": "Okkam",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
+      "chance": 50,
+      "minQuantity": 50,
+      "maxQuantity": 200
     },
     {
       "name": "Okkam T3",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 50,
+      "minQuantity": 50,
+      "maxQuantity": 200,
       "tier": "T3"
     }
   ],

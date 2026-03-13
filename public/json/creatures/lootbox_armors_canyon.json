@@ -6,65 +6,65 @@
   "drops": [
     {
       "name": "Baskwood Armor",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     },
     {
       "name": "Forester's Armor",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     },
     {
       "name": "Triple Stitch Armor",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     },
     {
       "name": "Baskwood Boots",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     },
     {
       "name": "Forester's Sandals",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     },
     {
       "name": "Triple Stitch Boots",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     },
     {
       "name": "Baskwood Bracers",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     },
     {
       "name": "Forester's Sleeves",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     },
     {
       "name": "Triple Stitch Bracers",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33.333332999999996,
+      "minQuantity": 8,
+      "maxQuantity": 10,
       "source": "armors_t2"
     }
   ],

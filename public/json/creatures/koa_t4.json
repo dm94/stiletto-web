@@ -7,9 +7,9 @@
   "drops": [
     {
       "name": "Spearmint",
-      "chance": 100,
+      "chance": 50,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 4,
       "source": "spearmint_t4"
     }
   ],

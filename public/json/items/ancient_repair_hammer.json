@@ -32,7 +32,7 @@
   "droppedBy": [
     {
       "name": "Hard Rupu T2 AC",
-      "chance": 100,
+      "chance": 20,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"

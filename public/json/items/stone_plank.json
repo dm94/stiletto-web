@@ -9,29 +9,29 @@
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",
-      "chance": 100,
+      "chance": 20,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "tier": "T2"
     },
     {
       "name": "Broken Tusker 1",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
+      "chance": 150,
+      "minQuantity": 3,
+      "maxQuantity": 8
     },
     {
       "name": "Hotspot Loot T2 AC",
-      "chance": 100,
+      "chance": 1.5000000000000002,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot Windmill T2 AC",
-      "chance": 100,
+      "chance": 60.00000000000001,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 6,
       "tier": "T2"
     }
   ]

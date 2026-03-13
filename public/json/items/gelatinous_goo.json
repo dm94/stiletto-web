@@ -10,15 +10,15 @@
   "droppedBy": [
     {
       "name": "Papak",
-      "chance": 100,
+      "chance": 30,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 40
     },
     {
       "name": "Papak T3",
-      "chance": 100,
+      "chance": 30,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 40,
       "tier": "T3"
     }
   ]

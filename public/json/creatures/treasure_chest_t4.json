@@ -7,163 +7,163 @@
   "drops": [
     {
       "name": "Panda Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 1.3333332800000002,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Panda Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 0.26666664000000007,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 1.3333332800000002,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 0.26666664000000007,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 1.3333332800000002,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 0.26666664000000007,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 1.3333332800000002,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 0.26666668000000004,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 1.3333332800000002,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 0.26666668000000004,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Animal Fat",
-      "chance": 7.6923075,
-      "minQuantity": 12,
-      "maxQuantity": 12,
+      "chance": 9.230769000000002,
+      "minQuantity": 60,
+      "maxQuantity": 120,
       "source": "extraresources_t4"
     },
     {
       "name": "Ash",
-      "chance": 7.6923075,
-      "minQuantity": 20,
-      "maxQuantity": 20,
+      "chance": 9.230769000000002,
+      "minQuantity": 100,
+      "maxQuantity": 200,
       "source": "extraresources_t4"
     },
     {
       "name": "Charcoal",
-      "chance": 7.6923075,
-      "minQuantity": 9,
-      "maxQuantity": 9,
+      "chance": 9.230769000000002,
+      "minQuantity": 45,
+      "maxQuantity": 90,
       "source": "extraresources_t4"
     },
     {
       "name": "Huge Cactus Fruit",
-      "chance": 7.6923075,
-      "minQuantity": 7,
-      "maxQuantity": 7,
+      "chance": 9.230769000000002,
+      "minQuantity": 35,
+      "maxQuantity": 70,
       "source": "extraresources_t4"
     },
     {
       "name": "Fruit Pulp",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 9.230769000000002,
+      "minQuantity": 40,
+      "maxQuantity": 80,
       "source": "extraresources_t4"
     },
     {
       "name": "Rupu Pelt",
-      "chance": 7.6923075,
-      "minQuantity": 12,
-      "maxQuantity": 12,
+      "chance": 9.230769000000002,
+      "minQuantity": 60,
+      "maxQuantity": 120,
       "source": "extraresources_t4"
     },
     {
       "name": "Hide",
-      "chance": 7.6923075,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 9.230769000000002,
+      "minQuantity": 50,
+      "maxQuantity": 100,
       "source": "extraresources_t4"
     },
     {
       "name": "Sand",
-      "chance": 7.6923075,
-      "minQuantity": 20,
-      "maxQuantity": 20,
+      "chance": 9.230769000000002,
+      "minQuantity": 100,
+      "maxQuantity": 200,
       "source": "extraresources_t4"
     },
     {
       "name": "Purified Water",
-      "chance": 7.6923075,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 9.230769000000002,
+      "minQuantity": 50,
+      "maxQuantity": 100,
       "source": "extraresources_t4"
     },
     {
       "name": "Mushroom Flesh",
-      "chance": 7.6923075,
-      "minQuantity": 15,
-      "maxQuantity": 15,
+      "chance": 9.230769000000002,
+      "minQuantity": 75,
+      "maxQuantity": 150,
       "source": "extraresources_t4"
     },
     {
       "name": "Rupu Gel",
-      "chance": 7.6923075,
-      "minQuantity": 15,
-      "maxQuantity": 15,
+      "chance": 9.230769000000002,
+      "minQuantity": 75,
+      "maxQuantity": 150,
       "source": "extraresources_t4"
     },
     {
       "name": "Redwood Wood",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 9.230769000000002,
+      "minQuantity": 40,
+      "maxQuantity": 80,
       "source": "extraresources_t4"
     },
     {
       "name": "Red Banana",
-      "chance": 7.6923075,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 9.230769000000002,
+      "minQuantity": 15,
+      "maxQuantity": 30,
       "source": "extraresources_t4"
     }
   ],

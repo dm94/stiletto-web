@@ -12,77 +12,77 @@
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",
-      "chance": 5.263158,
+      "chance": 0.02631579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Big Hotspot Loot T2",
-      "chance": 5.263158,
+      "chance": 4.2105264,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu Camp T2",
-      "chance": 5.263158,
+      "chance": 0.010526315999999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu Camp T2",
-      "chance": 5.263158,
+      "chance": 0.015789474,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T2",
-      "chance": 5.263158,
+      "chance": 0.015789474,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T2 AC",
-      "chance": 5.263158,
+      "chance": 0.021052631999999998,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T2",
-      "chance": 5.263158,
+      "chance": 0.02631579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T2 AC",
-      "chance": 5.263158,
+      "chance": 0.047368422,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot Windmill T2 AC",
-      "chance": 5.263158,
+      "chance": 0.047368422,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu T2",
-      "chance": 5.263158,
+      "chance": 0.015789474,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Treasure Chest T2",
-      "chance": 5.263158,
+      "chance": 1.0526316,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"

@@ -7,273 +7,273 @@
   "drops": [
     {
       "name": "Pearl",
-      "chance": 6.6666665,
-      "minQuantity": 1,
-      "maxQuantity": 3,
+      "chance": 3.6666665750000003,
+      "minQuantity": 5,
+      "maxQuantity": 75,
       "source": "clampearls_t4"
     },
     {
       "name": "Purified Water",
-      "chance": 60,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 33,
+      "minQuantity": 5,
+      "maxQuantity": 25,
       "source": "clampearls_t4"
     },
     {
       "name": "Animal Fat",
-      "chance": 33.333332,
-      "minQuantity": 5,
-      "maxQuantity": 50,
+      "chance": 18.333332600000002,
+      "minQuantity": 25,
+      "maxQuantity": 1250,
       "source": "clampearls_t4"
     },
     {
       "name": "Ash",
-      "chance": 7.6923075,
-      "minQuantity": 20,
-      "maxQuantity": 20,
+      "chance": 1.5384615000000001,
+      "minQuantity": 500,
+      "maxQuantity": 1000,
       "source": "extraresources_t4"
     },
     {
       "name": "Charcoal",
-      "chance": 7.6923075,
-      "minQuantity": 9,
-      "maxQuantity": 9,
+      "chance": 1.5384615000000001,
+      "minQuantity": 225,
+      "maxQuantity": 450,
       "source": "extraresources_t4"
     },
     {
       "name": "Huge Cactus Fruit",
-      "chance": 7.6923075,
-      "minQuantity": 7,
-      "maxQuantity": 7,
+      "chance": 1.5384615000000001,
+      "minQuantity": 175,
+      "maxQuantity": 350,
       "source": "extraresources_t4"
     },
     {
       "name": "Fruit Pulp",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 1.5384615000000001,
+      "minQuantity": 200,
+      "maxQuantity": 400,
       "source": "extraresources_t4"
     },
     {
       "name": "Rupu Pelt",
-      "chance": 7.6923075,
-      "minQuantity": 12,
-      "maxQuantity": 12,
+      "chance": 1.5384615000000001,
+      "minQuantity": 300,
+      "maxQuantity": 600,
       "source": "extraresources_t4"
     },
     {
       "name": "Hide",
-      "chance": 7.6923075,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 1.5384615000000001,
+      "minQuantity": 250,
+      "maxQuantity": 500,
       "source": "extraresources_t4"
     },
     {
       "name": "Sand",
-      "chance": 7.6923075,
-      "minQuantity": 20,
-      "maxQuantity": 20,
+      "chance": 1.5384615000000001,
+      "minQuantity": 500,
+      "maxQuantity": 1000,
       "source": "extraresources_t4"
     },
     {
       "name": "Mushroom Flesh",
-      "chance": 7.6923075,
-      "minQuantity": 15,
-      "maxQuantity": 15,
+      "chance": 1.5384615000000001,
+      "minQuantity": 375,
+      "maxQuantity": 750,
       "source": "extraresources_t4"
     },
     {
       "name": "Rupu Gel",
-      "chance": 7.6923075,
-      "minQuantity": 15,
-      "maxQuantity": 15,
+      "chance": 1.5384615000000001,
+      "minQuantity": 375,
+      "maxQuantity": 750,
       "source": "extraresources_t4"
     },
     {
       "name": "Redwood Wood",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 1.5384615000000001,
+      "minQuantity": 200,
+      "maxQuantity": 400,
       "source": "extraresources_t4"
     },
     {
       "name": "Red Banana",
-      "chance": 7.6923075,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 1.5384615000000001,
+      "minQuantity": 75,
+      "maxQuantity": 150,
       "source": "extraresources_t4"
     },
     {
       "name": "Flotillian Armors Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Constructions Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Crafting Stations Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Tools Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Walker Weapons Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Weapons Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Domus Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Schmetterling Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Titan Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Raptor Sky Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Panda Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Base Walker Parts Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Improved Walker Parts Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Advanced Walker Parts Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "source": "schematics_t4"
     },
     {
       "name": "Concrete Walls Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999500000003,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 15,
       "source": "schematics_t4"
     },
     {
       "name": "Panda Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Panda Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 1.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 1.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 1.6666665,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 1.66666675,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 8.333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 1.66666675,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"

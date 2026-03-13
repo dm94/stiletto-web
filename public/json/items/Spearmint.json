@@ -10,15 +10,15 @@
   "droppedBy": [
     {
       "name": "Koa",
-      "chance": 100,
+      "chance": 50,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 4
     },
     {
       "name": "Koa T4",
-      "chance": 100,
+      "chance": 50,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 4,
       "tier": "T4"
     }
   ],

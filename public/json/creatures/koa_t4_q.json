@@ -7,105 +7,105 @@
   "drops": [
     {
       "name": "Flotillian Armors Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Constructions Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Crafting Stations Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Tools Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Walker Weapons Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Flotillian Weapons Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Domus Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Schmetterling Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Titan Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Raptor Sky Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Panda Walker Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Base Walker Parts Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Improved Walker Parts Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Advanced Walker Parts Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t4"
     },
     {
       "name": "Concrete Walls Schematic",
-      "chance": 6.6666665,
+      "chance": 1.9999999499999999,
       "minQuantity": 5,
       "maxQuantity": 5,
       "source": "schematics_t4"

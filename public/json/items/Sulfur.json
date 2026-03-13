@@ -11,89 +11,89 @@
       "name": "Ammo Box T4",
       "chance": 16.666666,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
       "name": "Broken Tusker 3",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5
+      "chance": 33.333332,
+      "minQuantity": 25,
+      "maxQuantity": 50
     },
     {
       "name": "Broken Tusker 4",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5
+      "chance": 133.333328,
+      "minQuantity": 25,
+      "maxQuantity": 50
     },
     {
       "name": "Easy Rupu Camp T4",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 20.833332499999997,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T4"
     },
     {
       "name": "Easy Rupu T4",
-      "chance": 16.666666,
-      "minQuantity": 5,
+      "chance": 20.833332499999997,
+      "minQuantity": 3,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
       "name": "Easy Rupu T4 Q",
-      "chance": 16.666666,
-      "minQuantity": 5,
+      "chance": 20.833332499999997,
+      "minQuantity": 3,
       "maxQuantity": 5,
       "tier": "T4"
     },
     {
       "name": "Hard Rupu Camp T4",
-      "chance": 16.666666,
+      "chance": 20.833332499999997,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
       "name": "Hard Rupu T4",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 20.833332499999997,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T4"
     },
     {
       "name": "Hard Rupu T4 Q",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 20.833332499999997,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T4"
     },
     {
       "name": "Hotspot Loot T4",
-      "chance": 16.666666,
+      "chance": 33.333332,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T4"
     },
     {
       "name": "Medium Rupu Camp T4",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 20.833332499999997,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T4"
     },
     {
       "name": "Medium Rupu T4",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 20.833332499999997,
+      "minQuantity": 3,
+      "maxQuantity": 7,
       "tier": "T4"
     },
     {
       "name": "Medium Rupu T4 Q",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 20.833332499999997,
+      "minQuantity": 3,
+      "maxQuantity": 7,
       "tier": "T4"
     }
   ],

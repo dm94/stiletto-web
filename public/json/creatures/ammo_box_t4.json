@@ -8,28 +8,28 @@
     {
       "name": "Iron-Tipped Bolt",
       "chance": 28.571428,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "ammo_t4"
     },
     {
       "name": "Hullbreaker Scattershot",
       "chance": 28.571428,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "ammo_t4"
     },
     {
       "name": "Iron Dart",
       "chance": 28.571428,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "minQuantity": 6,
+      "maxQuantity": 12,
       "source": "ammo_t4"
     },
     {
       "name": "Iron Rok",
       "chance": 14.285714,
-      "minQuantity": 2,
+      "minQuantity": 1,
       "maxQuantity": 2,
       "source": "ammo_t4"
     },
@@ -37,42 +37,42 @@
       "name": "Rupu Vine",
       "chance": 16.666668,
       "minQuantity": 18,
-      "maxQuantity": 18,
+      "maxQuantity": 36,
       "source": "baseresources_t4"
     },
     {
       "name": "Palm Leaves",
       "chance": 16.666668,
       "minQuantity": 15,
-      "maxQuantity": 15,
+      "maxQuantity": 30,
       "source": "baseresources_t4"
     },
     {
       "name": "Fiber Weave",
       "chance": 16.666668,
       "minQuantity": 15,
-      "maxQuantity": 15,
+      "maxQuantity": 30,
       "source": "baseresources_t4"
     },
     {
       "name": "Rope",
       "chance": 16.666668,
       "minQuantity": 12,
-      "maxQuantity": 12,
+      "maxQuantity": 24,
       "source": "baseresources_t4"
     },
     {
       "name": "Bone Glue",
       "chance": 16.666666,
       "minQuantity": 8,
-      "maxQuantity": 8,
+      "maxQuantity": 16,
       "source": "baseresources_t4"
     },
     {
       "name": "Sulfur",
       "chance": 16.666666,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "source": "baseresources_t4"
     }
   ],
