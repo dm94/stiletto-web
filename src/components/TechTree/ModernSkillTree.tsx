@@ -134,8 +134,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     // Flatten the tree for easier processing
     const flattenTree = (nodes: NodeData[]): NodeData[] => {
       return nodes.reduce((acc, node) => {
-        acc.push(node);
-        acc.push(...flattenTree(node.children));
+        acc.push(node, ...flattenTree(node.children));
         return acc;
       }, [] as NodeData[]);
     };
