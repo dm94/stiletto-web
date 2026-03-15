@@ -23,75 +23,75 @@
   "droppedBy": [
     {
       "name": "Easy Rupu T3 Q",
-      "chance": 5.263158,
+      "chance": 1.5789474,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu T3 Q",
-      "chance": 5.263158,
+      "chance": 2.631579,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Lootbox Schematics Template T3",
-      "chance": 5.263158,
+      "chance": 4.2105264,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 3
     },
     {
       "name": "Lootbox Schematics Template T4",
-      "chance": 5.263158,
+      "chance": 33.6842112,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 5
     },
     {
       "name": "Medium Rupu T3 Q",
-      "chance": 5.263158,
+      "chance": 2.1052632,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Okkam",
-      "chance": 5.263158,
+      "chance": 1.1842105499999998,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 5
     },
     {
       "name": "Okkam T3",
-      "chance": 5.263158,
+      "chance": 1.1842105499999998,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "tier": "T3"
     },
     {
       "name": "Okkam T3 Q",
-      "chance": 5.263158,
+      "chance": 0.23684211,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 5,
       "tier": "T3"
     },
     {
       "name": "Papak T3 Q",
-      "chance": 5.263158,
+      "chance": 1.5789474,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 25,
       "tier": "T3"
     },
     {
       "name": "Toxic War Papak",
-      "chance": 5.263158,
+      "chance": 1.5789474,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 25
     },
     {
       "name": "War Okkam",
-      "chance": 5.263158,
+      "chance": 0.23684211,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 5
     }
   ]
 }

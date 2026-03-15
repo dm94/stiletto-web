@@ -10,29 +10,29 @@
   "droppedBy": [
     {
       "name": "Desert Clam",
-      "chance": 6.6666665,
+      "chance": 9.99999975,
       "minQuantity": 1,
       "maxQuantity": 3
     },
     {
       "name": "Go Go T4",
-      "chance": 6.6666665,
-      "minQuantity": 1,
-      "maxQuantity": 3,
+      "chance": 3.6666665750000003,
+      "minQuantity": 5,
+      "maxQuantity": 75,
       "tier": "T4"
     },
     {
       "name": "Go Go T4 Q",
-      "chance": 6.6666665,
-      "minQuantity": 1,
-      "maxQuantity": 3,
+      "chance": 3.6666665750000003,
+      "minQuantity": 5,
+      "maxQuantity": 75,
       "tier": "T4"
     },
     {
       "name": "Gogo",
-      "chance": 6.6666665,
-      "minQuantity": 1,
-      "maxQuantity": 3
+      "chance": 3.6666665750000003,
+      "minQuantity": 5,
+      "maxQuantity": 75
     }
   ],
   "whereToFarm": "Found in dried salt lakes."

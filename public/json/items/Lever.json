@@ -7,22 +7,22 @@
   "droppedBy": [
     {
       "name": "Broken Tusker 2",
-      "chance": 16.666666,
-      "minQuantity": 1,
-      "maxQuantity": 1
+      "chance": 24.999999,
+      "minQuantity": 3,
+      "maxQuantity": 9
     },
     {
       "name": "Hotspot Loot T1",
-      "chance": 16.666666,
+      "chance": 2.3333332399999995,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Loot Box Modules",
-      "chance": 16.666666,
+      "chance": 62.4999975,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 5
     }
   ]
 }

@@ -12,75 +12,75 @@
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T3",
-      "chance": 16.666666,
+      "chance": 13.3333328,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Broken Tusker 1",
-      "chance": 16.666666,
+      "chance": 20.833332499999997,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
       "name": "Easy Rupu Camp T3",
-      "chance": 16.666666,
+      "chance": 0.033333332,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu Camp T3",
-      "chance": 16.666666,
+      "chance": 0.049999998,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu T3",
-      "chance": 16.666666,
+      "chance": 0.049999998,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Hotspot Loot T3",
-      "chance": 16.666666,
+      "chance": 0.08333333,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu Camp T3",
-      "chance": 16.666666,
+      "chance": 0.049999998,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu T3",
-      "chance": 16.666666,
+      "chance": 0.049999998,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Okkam",
-      "chance": 16.666666,
+      "chance": 3.3333332,
       "minQuantity": 1,
       "maxQuantity": 1
     },
     {
       "name": "Okkam T3",
-      "chance": 16.666666,
+      "chance": 3.3333332,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Treasure Chest T3",
-      "chance": 16.666666,
+      "chance": 3.3333332,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"

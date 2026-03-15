@@ -8,78 +8,78 @@
     {
       "name": "Bone Bolt",
       "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "minQuantity": 6,
+      "maxQuantity": 12,
       "source": "ammo_t2"
     },
     {
       "name": "Bone Scattershot Ammo",
       "chance": 33.333332,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "minQuantity": 6,
+      "maxQuantity": 12,
       "source": "ammo_t2"
     },
     {
       "name": "Bone Dart",
       "chance": 33.333332,
-      "minQuantity": 20,
-      "maxQuantity": 20,
+      "minQuantity": 12,
+      "maxQuantity": 24,
       "source": "ammo_t2"
     },
     {
       "name": "Fiber",
       "chance": 12.5,
       "minQuantity": 14,
-      "maxQuantity": 14,
+      "maxQuantity": 28,
       "source": "baseresources_t2"
     },
     {
       "name": "Stone",
       "chance": 12.5,
       "minQuantity": 10,
-      "maxQuantity": 10,
+      "maxQuantity": 20,
       "source": "baseresources_t2"
     },
     {
       "name": "Wood",
       "chance": 12.5,
       "minQuantity": 12,
-      "maxQuantity": 12,
+      "maxQuantity": 24,
       "source": "baseresources_t2"
     },
     {
       "name": "Rupu Vine",
       "chance": 12.5,
       "minQuantity": 2,
-      "maxQuantity": 2,
+      "maxQuantity": 4,
       "source": "baseresources_t2"
     },
     {
       "name": "Palm Leaves",
       "chance": 12.5,
       "minQuantity": 3,
-      "maxQuantity": 3,
+      "maxQuantity": 6,
       "source": "baseresources_t2"
     },
     {
       "name": "Fiber Weave",
       "chance": 12.5,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "source": "baseresources_t2"
     },
     {
       "name": "Wood Shaft",
       "chance": 12.5,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "source": "baseresources_t2"
     },
     {
       "name": "Bone Splinter",
       "chance": 12.5,
       "minQuantity": 3,
-      "maxQuantity": 3,
+      "maxQuantity": 6,
       "source": "baseresources_t2"
     }
   ],

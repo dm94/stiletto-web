@@ -6,296 +6,296 @@
   "drops": [
     {
       "name": "Brittle Bone Boots",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Brittle Bone Handwraps",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Brittle Bone Armor",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Carapace Boots",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Carapace Gauntlets",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Carapace Armor",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Redwood Boots",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Redwood Sleeves",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Redwood Armor",
-      "chance": 11.111111,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 6.666666600000001,
+      "minQuantity": 5,
+      "maxQuantity": 15,
       "source": "armors_t3"
     },
     {
       "name": "Firestone Axe",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Firestone Bludgeon",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Firestone Kopesh",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Ceramic Hatchet",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Short Ceramic Hoofmace",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Short Malletblade",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Firestone Hammerstaff",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Firestone Bladestaff",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Paddleblade Quarterstaff",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Throwable Aloe Bomb",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 9.375,
+      "minQuantity": 9,
+      "maxQuantity": 30,
       "source": "weapons_t3"
     },
     {
       "name": "Firebomb",
-      "chance": 6.25,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 9.375,
+      "minQuantity": 9,
+      "maxQuantity": 30,
       "source": "weapons_t3"
     },
     {
       "name": "Firestone Battleaxe",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Firestone Bozdogan",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Firestone Longblade",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Long Ceramic Hoofmace",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Singblade",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10,
       "source": "weapons_t3"
     },
     {
       "name": "Bone Glue",
       "chance": 11.764706,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 75,
+      "maxQuantity": 150,
       "source": "processedresources_t3"
     },
     {
       "name": "Wooden Gear",
       "chance": 11.764706,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 15,
+      "maxQuantity": 30,
       "source": "processedresources_t3"
     },
     {
       "name": "Triple Stitch Fabric",
       "chance": 11.764706,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "minQuantity": 90,
+      "maxQuantity": 180,
       "source": "processedresources_t3"
     },
     {
       "name": "Nomad Cloth",
       "chance": 11.764706,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "minQuantity": 60,
+      "maxQuantity": 120,
       "source": "processedresources_t3"
     },
     {
       "name": "Leather",
       "chance": 11.764706,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "minQuantity": 45,
+      "maxQuantity": 90,
       "source": "processedresources_t3"
     },
     {
       "name": "Aloe Gel",
       "chance": 11.764706,
-      "minQuantity": 7,
-      "maxQuantity": 7,
+      "minQuantity": 105,
+      "maxQuantity": 210,
       "source": "processedresources_t3"
     },
     {
       "name": "Clay",
       "chance": 5.882353,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "minQuantity": 60,
+      "maxQuantity": 120,
       "source": "processedresources_t3"
     },
     {
       "name": "Ceramic Shard",
       "chance": 5.882353,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "minQuantity": 45,
+      "maxQuantity": 90,
       "source": "processedresources_t3"
     },
     {
       "name": "Glass",
       "chance": 5.882353,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "minQuantity": 45,
+      "maxQuantity": 90,
       "source": "processedresources_t3"
     },
     {
       "name": "Tar",
       "chance": 5.882353,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "minQuantity": 45,
+      "maxQuantity": 90,
       "source": "processedresources_t3"
     },
     {
       "name": "Reinforced Gear",
       "chance": 5.882353,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 15,
+      "maxQuantity": 30,
       "source": "processedresources_t3"
     },
     {
       "name": "Rupu Vine",
-      "chance": 16.666668,
-      "minQuantity": 18,
-      "maxQuantity": 18,
+      "chance": 33.333336,
+      "minQuantity": 90,
+      "maxQuantity": 180,
       "source": "baseresources_t4"
     },
     {
       "name": "Palm Leaves",
-      "chance": 16.666668,
-      "minQuantity": 15,
-      "maxQuantity": 15,
+      "chance": 33.333336,
+      "minQuantity": 75,
+      "maxQuantity": 150,
       "source": "baseresources_t4"
     },
     {
       "name": "Fiber Weave",
-      "chance": 16.666668,
-      "minQuantity": 15,
-      "maxQuantity": 15,
+      "chance": 33.333336,
+      "minQuantity": 75,
+      "maxQuantity": 150,
       "source": "baseresources_t4"
     },
     {
       "name": "Rope",
-      "chance": 16.666668,
-      "minQuantity": 12,
-      "maxQuantity": 12,
+      "chance": 33.333336,
+      "minQuantity": 60,
+      "maxQuantity": 120,
       "source": "baseresources_t4"
     },
     {
       "name": "Sulfur",
-      "chance": 16.666666,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 33.333332,
+      "minQuantity": 25,
+      "maxQuantity": 50,
       "source": "baseresources_t4"
     },
     {
       "name": "Red Banana",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 520,
+      "minQuantity": 4,
+      "maxQuantity": 4,
       "source": "redbanana_t4"
     }
   ],

@@ -45,15 +45,15 @@
     {
       "name": "Ammo Box T4",
       "chance": 28.571428,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "minQuantity": 6,
+      "maxQuantity": 12,
       "tier": "T4"
     },
     {
       "name": "Big Hotspot Loot T4",
       "chance": 28.571428,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "minQuantity": 60,
+      "maxQuantity": 80,
       "tier": "T4"
     }
   ]

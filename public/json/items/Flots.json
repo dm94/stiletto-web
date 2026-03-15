@@ -8,29 +8,29 @@
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T1",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 30.000000000000004,
+      "minQuantity": 500,
+      "maxQuantity": 1000,
       "tier": "T1"
     },
     {
       "name": "Broken Tusker 2",
       "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1
+      "minQuantity": 25,
+      "maxQuantity": 100
     },
     {
       "name": "Hotspot Loot T1",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 80,
+      "minQuantity": 10,
+      "maxQuantity": 30,
       "tier": "T1"
     },
     {
       "name": "Treasure Chest T1",
-      "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 0,
+      "minQuantity": 300,
+      "maxQuantity": 600,
       "tier": "T1"
     }
   ]

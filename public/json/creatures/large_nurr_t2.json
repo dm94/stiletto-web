@@ -9,7 +9,7 @@
       "name": "Nurr Fang",
       "chance": 100,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 8,
       "source": "nurrfang_t2"
     }
   ],

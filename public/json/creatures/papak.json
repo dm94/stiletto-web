@@ -8,9 +8,9 @@
   "drops": [
     {
       "name": "Gelatinous Goo",
-      "chance": 100,
+      "chance": 30,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 40,
       "source": "gelatinousgoo_t3"
     }
   ],

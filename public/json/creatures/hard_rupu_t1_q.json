@@ -7,273 +7,273 @@
   "drops": [
     {
       "name": "Fiber",
-      "chance": 20,
-      "minQuantity": 12,
-      "maxQuantity": 12,
+      "chance": 25,
+      "minQuantity": 10,
+      "maxQuantity": 19,
       "source": "baseresources_t1"
     },
     {
       "name": "Stone",
-      "chance": 20,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 25,
+      "minQuantity": 6,
+      "maxQuantity": 13,
       "source": "baseresources_t1"
     },
     {
       "name": "Wood",
-      "chance": 20,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 25,
+      "minQuantity": 8,
+      "maxQuantity": 16,
       "source": "baseresources_t1"
     },
     {
       "name": "Rupu Vine",
-      "chance": 20,
+      "chance": 25,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 2,
       "source": "baseresources_t1"
     },
     {
       "name": "Palm Leaves",
-      "chance": 20,
+      "chance": 25,
       "minQuantity": 2,
-      "maxQuantity": 2,
+      "maxQuantity": 3,
       "source": "baseresources_t1"
     },
     {
       "name": "Rupu Pelt",
       "chance": 100,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "rupufur_t1"
     },
     {
       "name": "Wood Shaft",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 5,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "processedresources_t1"
     },
     {
       "name": "Fiber Weave",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 5,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "source": "processedresources_t1"
     },
     {
       "name": "Fiber Shirt and Trousers",
-      "chance": 19.801981,
+      "chance": 0.15841584800000003,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t1"
     },
     {
       "name": "Rupu Fur Armor",
-      "chance": 5.940594,
+      "chance": 0.047524752,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t1"
     },
     {
       "name": "Cloaked Rupu Fur Armor",
-      "chance": 2.970297,
+      "chance": 0.023762376,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t1"
     },
     {
       "name": "Fiber Sandals",
-      "chance": 19.801981,
+      "chance": 0.15841584800000003,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t1"
     },
     {
       "name": "Rupu Fur Sandals",
-      "chance": 5.940594,
+      "chance": 0.047524752,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t1"
     },
     {
       "name": "Fiber Arm Wraps",
-      "chance": 19.801981,
+      "chance": 0.15841584800000003,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t1"
     },
     {
       "name": "Rupu Fur Sleeves",
-      "chance": 5.940594,
+      "chance": 0.047524752,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t1"
     },
     {
       "name": "Fiber Headwrap",
-      "chance": 19.801981,
+      "chance": 0.15841584800000003,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t1"
     },
     {
       "name": "Beat Stick",
-      "chance": 16.129032,
+      "chance": 0.12903225599999998,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t1"
     },
     {
       "name": "Stone Axe",
-      "chance": 12.903226,
+      "chance": 0.103225808,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t1"
     },
     {
       "name": "Jaggertooth Club",
-      "chance": 9.67742,
+      "chance": 0.07741935999999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t1"
     },
     {
       "name": "Crude Hatchet",
-      "chance": 11.290322,
+      "chance": 0.090322576,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t1"
     },
     {
       "name": "Blunt Quarterstaff",
-      "chance": 16.129032,
+      "chance": 0.12903225599999998,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t1"
     },
     {
       "name": "Traveller’s Staff",
-      "chance": 9.67742,
+      "chance": 0.07741935999999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t1"
     },
     {
       "name": "Light Javelin",
-      "chance": 8.064516,
+      "chance": 0.06451612799999999,
       "minQuantity": 3,
       "maxQuantity": 3,
       "source": "weapons_t1"
     },
     {
       "name": "Throwing Net",
-      "chance": 8.064516,
+      "chance": 0.06451612799999999,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t1"
     },
     {
       "name": "Throwstone",
-      "chance": 8.064516,
+      "chance": 0.06451612799999999,
       "minQuantity": 3,
       "maxQuantity": 3,
       "source": "weapons_t1"
     },
     {
       "name": "Basic Armors Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Basic Constructions Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Dinghy Walker Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Firefly Walker Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Basic Crafting Stations Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Basic Tools Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Basic Walker Weapons Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Wooden Walls Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 5,
       "maxQuantity": 5,
       "source": "schematics_t1"
     },
     {
       "name": "Basic Weapons Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Base Walker Parts Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Improved Walker Parts Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Advanced Walker Parts Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"
     },
     {
       "name": "Sand Structures Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 5,
       "maxQuantity": 5,
       "source": "schematics_t1"
     },
     {
       "name": "Spider Walker Schematic",
-      "chance": 7.142857,
+      "chance": 0,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "schematics_t1"

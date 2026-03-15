@@ -35,14 +35,14 @@
     {
       "name": "Broken Tusker 1",
       "chance": 0,
-      "minQuantity": 1,
-      "maxQuantity": 1
+      "minQuantity": 3,
+      "maxQuantity": 6
     },
     {
       "name": "Loot Box Modules",
       "chance": 0,
       "minQuantity": 1,
-      "maxQuantity": 1
+      "maxQuantity": 3
     }
   ]
 }

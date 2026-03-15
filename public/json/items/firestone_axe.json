@@ -50,91 +50,91 @@
     {
       "name": "Big Hotspot Loot T3",
       "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 8,
+      "maxQuantity": 16,
       "tier": "T3"
     },
     {
       "name": "Broken Tusker 3",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1
+      "chance": 9.375,
+      "minQuantity": 3,
+      "maxQuantity": 10
     },
     {
       "name": "Easy Rupu Camp T3",
-      "chance": 6.25,
+      "chance": 0.01875,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Easy Rupu T3",
-      "chance": 6.25,
+      "chance": 0.0125,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Easy Rupu T3 Q",
-      "chance": 6.25,
+      "chance": 0.0125,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu Camp T3",
-      "chance": 6.25,
+      "chance": 0.0625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu T3",
-      "chance": 6.25,
+      "chance": 0.05,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu T3 Q",
-      "chance": 6.25,
+      "chance": 0.05,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Hotspot Loot T3",
-      "chance": 6.25,
+      "chance": 0.625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu Camp T3",
-      "chance": 6.25,
+      "chance": 0.01875,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu T3",
-      "chance": 6.25,
+      "chance": 0.0125,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu T3 Q",
-      "chance": 6.25,
+      "chance": 0.0125,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T3"
     },
     {
       "name": "Treasure Chest T3",
-      "chance": 6.25,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 7.500000000000001,
+      "minQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T3"
     }
   ]

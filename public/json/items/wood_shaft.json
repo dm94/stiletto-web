@@ -77,266 +77,266 @@
       "name": "Ammo Box T2",
       "chance": 12.5,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T2"
     },
     {
       "name": "Ammo Box T3",
       "chance": 10.718528,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T3"
     },
     {
       "name": "Basket Loot T2 AC",
-      "chance": 12.5,
+      "chance": 6.25,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T2"
     },
     {
       "name": "Big Hotspot Loot T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 40,
+      "minQuantity": 30,
+      "maxQuantity": 50,
       "tier": "T1"
     },
     {
       "name": "Easy Rupu Camp T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 20,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T1"
     },
     {
       "name": "Easy Rupu Camp T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 2,
+      "maxQuantity": 5,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu Camp T3",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 13.398159999999999,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T3"
     },
     {
       "name": "Easy Rupu T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 5,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "tier": "T1"
     },
     {
       "name": "Easy Rupu T1 Q",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 5,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "tier": "T1"
     },
     {
       "name": "Easy Rupu T2",
-      "chance": 12.5,
-      "minQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 2,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu T2 Q",
-      "chance": 12.5,
-      "minQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 2,
       "maxQuantity": 4,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu T3",
-      "chance": 10.718528,
-      "minQuantity": 5,
+      "chance": 13.398159999999999,
+      "minQuantity": 3,
       "maxQuantity": 5,
       "tier": "T3"
     },
     {
       "name": "Easy Rupu T3 Q",
-      "chance": 10.718528,
-      "minQuantity": 5,
+      "chance": 13.398159999999999,
+      "minQuantity": 3,
       "maxQuantity": 5,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu Camp T1",
-      "chance": 50,
-      "minQuantity": 10,
+      "chance": 30,
+      "minQuantity": 5,
       "maxQuantity": 10,
       "tier": "T1"
     },
     {
       "name": "Hard Rupu Camp T2",
-      "chance": 12.5,
+      "chance": 15.625,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu Camp T3",
-      "chance": 10.718528,
+      "chance": 13.398159999999999,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 5,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T1"
     },
     {
       "name": "Hard Rupu T1 Q",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 5,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T1"
     },
     {
       "name": "Hard Rupu T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T2 AC",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T2 Q",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T3",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 13.398159999999999,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu T3 Q",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 13.398159999999999,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T3"
     },
     {
       "name": "Hotspot Loot T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 30,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T1"
     },
     {
       "name": "Hotspot Loot T2",
-      "chance": 12.5,
+      "chance": 25,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T2 AC",
-      "chance": 12.5,
+      "chance": 0,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T3",
-      "chance": 10.718528,
+      "chance": 21.437056,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T3"
     },
     {
       "name": "Hotspot Loot Windmill T2 AC",
-      "chance": 12.5,
+      "chance": 0,
       "minQuantity": 4,
-      "maxQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu Camp T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 25,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T1"
     },
     {
       "name": "Medium Rupu Camp T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 2,
+      "maxQuantity": 5,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu Camp T3",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 13.398159999999999,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu T1",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 5,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "tier": "T1"
     },
     {
       "name": "Medium Rupu T1 Q",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "chance": 5,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "tier": "T1"
     },
     {
       "name": "Medium Rupu T2",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu T2 Q",
-      "chance": 12.5,
-      "minQuantity": 4,
-      "maxQuantity": 4,
+      "chance": 15.625,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu T3",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 13.398159999999999,
+      "minQuantity": 3,
+      "maxQuantity": 7,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu T3 Q",
-      "chance": 10.718528,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "chance": 13.398159999999999,
+      "minQuantity": 3,
+      "maxQuantity": 7,
       "tier": "T3"
     },
     {
       "name": "Nurr Raider",
-      "chance": 50,
-      "minQuantity": 10,
-      "maxQuantity": 10
+      "chance": 5,
+      "minQuantity": 2,
+      "maxQuantity": 4
     }
   ],
   "whereToFarm": "Often wielded by Rupu as a weapon."

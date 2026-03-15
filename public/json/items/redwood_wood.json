@@ -10,50 +10,50 @@
   "droppedBy": [
     {
       "name": "Easy Rupu Camp T3",
-      "chance": 8.333333,
+      "chance": 1.49999994,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 2,
       "tier": "T3"
     },
     {
       "name": "Easy Rupu Camp T4",
-      "chance": 7.6923075,
+      "chance": 1.38461535,
       "minQuantity": 8,
-      "maxQuantity": 8,
+      "maxQuantity": 16,
       "tier": "T4"
     },
     {
       "name": "Go Go T4",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 1.5384615000000001,
+      "minQuantity": 200,
+      "maxQuantity": 400,
       "tier": "T4"
     },
     {
       "name": "Go Go T4 Q",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 1.5384615000000001,
+      "minQuantity": 200,
+      "maxQuantity": 400,
       "tier": "T4"
     },
     {
       "name": "Gogo",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8
+      "chance": 1.5384615000000001,
+      "minQuantity": 200,
+      "maxQuantity": 400
     },
     {
       "name": "Hard Rupu Camp T3",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 2.2499999099999997,
+      "minQuantity": 2,
+      "maxQuantity": 3,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu Camp T4",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 2.0769230249999997,
+      "minQuantity": 12,
+      "maxQuantity": 24,
       "tier": "T4"
     },
     {
@@ -66,36 +66,36 @@
     {
       "name": "Hotspot Loot T4",
       "chance": 7.6923075,
-      "minQuantity": 8,
+      "minQuantity": 4,
       "maxQuantity": 8,
       "tier": "T4"
     },
     {
       "name": "Medium Rupu Camp T3",
-      "chance": 8.333333,
+      "chance": 1.49999994,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 2,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu Camp T4",
-      "chance": 7.6923075,
+      "chance": 1.38461535,
       "minQuantity": 8,
-      "maxQuantity": 8,
+      "maxQuantity": 16,
       "tier": "T4"
     },
     {
       "name": "Treasure Chest T3",
-      "chance": 8.333333,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 9.9999996,
+      "minQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T3"
     },
     {
       "name": "Treasure Chest T4",
-      "chance": 7.6923075,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 9.230769000000002,
+      "minQuantity": 40,
+      "maxQuantity": 80,
       "tier": "T4"
     }
   ],

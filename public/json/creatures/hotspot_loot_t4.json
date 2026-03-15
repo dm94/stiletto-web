@@ -7,406 +7,406 @@
   "drops": [
     {
       "name": "Rupu Vine",
-      "chance": 16.666668,
+      "chance": 33.333336,
       "minQuantity": 18,
-      "maxQuantity": 18,
+      "maxQuantity": 36,
       "source": "baseresources_t4"
     },
     {
       "name": "Palm Leaves",
-      "chance": 16.666668,
+      "chance": 33.333336,
       "minQuantity": 15,
-      "maxQuantity": 15,
+      "maxQuantity": 30,
       "source": "baseresources_t4"
     },
     {
       "name": "Fiber Weave",
-      "chance": 16.666668,
+      "chance": 33.333336,
       "minQuantity": 15,
-      "maxQuantity": 15,
+      "maxQuantity": 30,
       "source": "baseresources_t4"
     },
     {
       "name": "Rope",
-      "chance": 16.666668,
+      "chance": 33.333336,
       "minQuantity": 12,
-      "maxQuantity": 12,
+      "maxQuantity": 24,
       "source": "baseresources_t4"
     },
     {
       "name": "Bone Glue",
-      "chance": 16.666666,
+      "chance": 33.333332,
       "minQuantity": 8,
-      "maxQuantity": 8,
+      "maxQuantity": 16,
       "source": "baseresources_t4"
     },
     {
       "name": "Sulfur",
-      "chance": 16.666666,
+      "chance": 33.333332,
       "minQuantity": 5,
-      "maxQuantity": 5,
+      "maxQuantity": 10,
       "source": "baseresources_t4"
     },
     {
       "name": "Animal Fat",
       "chance": 7.6923075,
-      "minQuantity": 12,
+      "minQuantity": 6,
       "maxQuantity": 12,
       "source": "extraresources_t4"
     },
     {
       "name": "Ash",
       "chance": 7.6923075,
-      "minQuantity": 20,
+      "minQuantity": 10,
       "maxQuantity": 20,
       "source": "extraresources_t4"
     },
     {
       "name": "Charcoal",
       "chance": 7.6923075,
-      "minQuantity": 9,
+      "minQuantity": 5,
       "maxQuantity": 9,
       "source": "extraresources_t4"
     },
     {
       "name": "Huge Cactus Fruit",
       "chance": 7.6923075,
-      "minQuantity": 7,
+      "minQuantity": 4,
       "maxQuantity": 7,
       "source": "extraresources_t4"
     },
     {
       "name": "Fruit Pulp",
       "chance": 7.6923075,
-      "minQuantity": 8,
+      "minQuantity": 4,
       "maxQuantity": 8,
       "source": "extraresources_t4"
     },
     {
       "name": "Rupu Pelt",
       "chance": 7.6923075,
-      "minQuantity": 12,
+      "minQuantity": 6,
       "maxQuantity": 12,
       "source": "extraresources_t4"
     },
     {
       "name": "Hide",
       "chance": 7.6923075,
-      "minQuantity": 10,
+      "minQuantity": 5,
       "maxQuantity": 10,
       "source": "extraresources_t4"
     },
     {
       "name": "Sand",
       "chance": 7.6923075,
-      "minQuantity": 20,
+      "minQuantity": 10,
       "maxQuantity": 20,
       "source": "extraresources_t4"
     },
     {
       "name": "Purified Water",
       "chance": 7.6923075,
-      "minQuantity": 10,
+      "minQuantity": 5,
       "maxQuantity": 10,
       "source": "extraresources_t4"
     },
     {
       "name": "Mushroom Flesh",
       "chance": 7.6923075,
-      "minQuantity": 15,
+      "minQuantity": 8,
       "maxQuantity": 15,
       "source": "extraresources_t4"
     },
     {
       "name": "Rupu Gel",
       "chance": 7.6923075,
-      "minQuantity": 15,
+      "minQuantity": 8,
       "maxQuantity": 15,
       "source": "extraresources_t4"
     },
     {
       "name": "Redwood Wood",
       "chance": 7.6923075,
-      "minQuantity": 8,
+      "minQuantity": 4,
       "maxQuantity": 8,
       "source": "extraresources_t4"
     },
     {
       "name": "Red Banana",
       "chance": 7.6923075,
-      "minQuantity": 3,
+      "minQuantity": 2,
       "maxQuantity": 3,
       "source": "extraresources_t4"
     },
     {
       "name": "Clay",
-      "chance": 10.964912,
-      "minQuantity": 7,
-      "maxQuantity": 7,
+      "chance": 6.5789472,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "source": "processedresources_t4"
     },
     {
       "name": "Rubber Block",
-      "chance": 10.964912,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "chance": 6.5789472,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "source": "processedresources_t4"
     },
     {
       "name": "Ceramic Shard",
-      "chance": 10.964912,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 6.5789472,
+      "minQuantity": 2,
+      "maxQuantity": 5,
       "source": "processedresources_t4"
     },
     {
       "name": "Tar",
-      "chance": 10.964912,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "chance": 6.5789472,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "source": "processedresources_t4"
     },
     {
       "name": "Reinforced Gear",
-      "chance": 10.964912,
-      "minQuantity": 1,
+      "chance": 6.5789472,
+      "minQuantity": 0,
       "maxQuantity": 1,
       "source": "processedresources_t4"
     },
     {
       "name": "Iron Ingot",
-      "chance": 10.964912,
-      "minQuantity": 1,
+      "chance": 6.5789472,
+      "minQuantity": 0,
       "maxQuantity": 1,
       "source": "processedresources_t4"
     },
     {
       "name": "Wood Log",
-      "chance": 10.964912,
-      "minQuantity": 1,
+      "chance": 6.5789472,
+      "minQuantity": 0,
       "maxQuantity": 1,
       "source": "processedresources_t4"
     },
     {
       "name": "Iron Nails",
-      "chance": 10.964912,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 6.5789472,
+      "minQuantity": 1,
+      "maxQuantity": 2,
       "source": "processedresources_t4"
     },
     {
       "name": "Nibiran Ingot",
-      "chance": 1.3157896,
-      "minQuantity": 1,
+      "chance": 0.78947376,
+      "minQuantity": 0,
       "maxQuantity": 1,
       "source": "processedresources_t4"
     },
     {
       "name": "Iron Studded Boots",
-      "chance": 30.30303,
+      "chance": 3.030303,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Iron Studded Gauntlets",
-      "chance": 30.30303,
+      "chance": 3.030303,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Iron Studded Armor",
-      "chance": 30.30303,
+      "chance": 3.030303,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Nibirian Boots",
-      "chance": 3.030303,
+      "chance": 0.30303030000000003,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Nibirian Gauntlets",
-      "chance": 3.030303,
+      "chance": 0.30303030000000003,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Nibirian Armor",
-      "chance": 3.030303,
+      "chance": 0.30303030000000003,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "armors_t4"
     },
     {
       "name": "Wyndan Hand Axe",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Hammer",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Sabre",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Hand Axe",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Hammer",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Curved Dagger",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndanblade Quarterstaff",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Ironblade Quarterstaff",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Quarterstaff",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Battle Axe",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Warhammer",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Flame Sword",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Battle Axe",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Warhammer",
-      "chance": 7.142857,
+      "chance": 0.7142857,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "weapons_t4"
     },
     {
       "name": "Panda Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 0.029166665499999994,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Panda Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 0.00583333275,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 0.029166665499999994,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 0.00583333275,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 0.029166665499999994,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 0.00583333275,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 0.029166665499999994,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 0.005833333625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 0.029166665499999994,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 0.005833333625,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"

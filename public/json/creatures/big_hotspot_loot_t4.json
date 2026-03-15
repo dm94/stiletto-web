@@ -8,300 +8,300 @@
     {
       "name": "Iron-Tipped Bolt",
       "chance": 28.571428,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 30,
+      "maxQuantity": 40,
       "source": "ammo_t4"
     },
     {
       "name": "Hullbreaker Scattershot",
       "chance": 28.571428,
-      "minQuantity": 5,
-      "maxQuantity": 5,
+      "minQuantity": 30,
+      "maxQuantity": 40,
       "source": "ammo_t4"
     },
     {
       "name": "Iron Dart",
       "chance": 28.571428,
-      "minQuantity": 10,
-      "maxQuantity": 10,
+      "minQuantity": 60,
+      "maxQuantity": 80,
       "source": "ammo_t4"
     },
     {
       "name": "Iron Rok",
       "chance": 14.285714,
-      "minQuantity": 2,
-      "maxQuantity": 2,
+      "minQuantity": 12,
+      "maxQuantity": 16,
       "source": "ammo_t4"
     },
     {
       "name": "Iron Studded Boots",
-      "chance": 30.30303,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 36.36363600000001,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "armors_t4"
     },
     {
       "name": "Iron Studded Gauntlets",
-      "chance": 30.30303,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 36.36363600000001,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "armors_t4"
     },
     {
       "name": "Iron Studded Armor",
-      "chance": 30.30303,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 36.36363600000001,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "armors_t4"
     },
     {
       "name": "Nibirian Boots",
-      "chance": 3.030303,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 3.6363636000000006,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "armors_t4"
     },
     {
       "name": "Nibirian Gauntlets",
-      "chance": 3.030303,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 3.6363636000000006,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "armors_t4"
     },
     {
       "name": "Nibirian Armor",
-      "chance": 3.030303,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 3.6363636000000006,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "armors_t4"
     },
     {
       "name": "Wyndan Hand Axe",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Hammer",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Sabre",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Hand Axe",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Hammer",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Curved Dagger",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndanblade Quarterstaff",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Ironblade Quarterstaff",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Quarterstaff",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Battle Axe",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Warhammer",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Wyndan Flame Sword",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Battle Axe",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Nibiran Warhammer",
       "chance": 7.142857,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "source": "weapons_t4"
     },
     {
       "name": "Clay",
-      "chance": 10.964912,
-      "minQuantity": 7,
-      "maxQuantity": 7,
+      "chance": 8.7719296,
+      "minQuantity": 21,
+      "maxQuantity": 35,
       "source": "processedresources_t4"
     },
     {
       "name": "Rubber Block",
-      "chance": 10.964912,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "chance": 8.7719296,
+      "minQuantity": 18,
+      "maxQuantity": 30,
       "source": "processedresources_t4"
     },
     {
       "name": "Ceramic Shard",
-      "chance": 10.964912,
-      "minQuantity": 8,
-      "maxQuantity": 8,
+      "chance": 8.7719296,
+      "minQuantity": 24,
+      "maxQuantity": 40,
       "source": "processedresources_t4"
     },
     {
       "name": "Tar",
-      "chance": 10.964912,
-      "minQuantity": 6,
-      "maxQuantity": 6,
+      "chance": 8.7719296,
+      "minQuantity": 18,
+      "maxQuantity": 30,
       "source": "processedresources_t4"
     },
     {
       "name": "Reinforced Gear",
-      "chance": 10.964912,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 8.7719296,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "source": "processedresources_t4"
     },
     {
       "name": "Iron Ingot",
-      "chance": 10.964912,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 8.7719296,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "source": "processedresources_t4"
     },
     {
       "name": "Wood Log",
-      "chance": 10.964912,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 8.7719296,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "source": "processedresources_t4"
     },
     {
       "name": "Iron Nails",
-      "chance": 10.964912,
-      "minQuantity": 3,
-      "maxQuantity": 3,
+      "chance": 8.7719296,
+      "minQuantity": 9,
+      "maxQuantity": 15,
       "source": "processedresources_t4"
     },
     {
       "name": "Nibiran Ingot",
-      "chance": 1.3157896,
-      "minQuantity": 1,
-      "maxQuantity": 1,
+      "chance": 1.05263168,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "source": "processedresources_t4"
     },
     {
       "name": "Panda Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 13.3333328,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Panda Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 2.6666664000000004,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 13.3333328,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Schmetterling Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 2.6666664000000004,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 13.3333328,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Titan Walker Rig T3 Schematic",
-      "chance": 3.333333,
+      "chance": 2.6666664000000004,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 13.3333328,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Domus Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 2.6666668000000002,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T2 Schematic",
-      "chance": 16.666666,
+      "chance": 13.3333328,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
     },
     {
       "name": "Raptor Sky Walker Rig T3 Schematic",
-      "chance": 3.3333335,
+      "chance": 2.6666668000000002,
       "minQuantity": 1,
       "maxQuantity": 1,
       "source": "rigs_t4"
