@@ -185,11 +185,12 @@ const PerkTree = ({
             const isSelectable = canSelect(node.id, selectedPerks, graph);
             const isLocked = !isSelected && !isSelectable;
 
-            const stateClass = isSelected
-              ? "selected"
-              : isLocked
-                ? "locked"
-                : "available";
+            let stateClass = "available";
+            if (isSelected) {
+              stateClass = "selected";
+            } else if (isLocked) {
+              stateClass = "locked";
+            }
             const isActiveNode = focusedNodeId === node.id;
 
             return (
