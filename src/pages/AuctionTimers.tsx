@@ -66,9 +66,9 @@ const AuctionTimers = memo(() => {
                 <button
                   type="button"
                   className={`px-4 py-2 ${
-                    !playSound
-                      ? "bg-blue-600 text-white"
-                      : "bg-gray-700 text-gray-300"
+                    playSound
+                      ? "bg-gray-700 text-gray-300"
+                      : "bg-blue-600 text-white"
                   } rounded-r-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 flex items-center justify-center`}
                   onClick={() => setPlaySound(false)}
                 >
