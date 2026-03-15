@@ -254,14 +254,14 @@ const PerkCostCalculator = () => {
   }, [location.search, savedBuild]);
 
   const shareUrl = useMemo(() => {
-    if (typeof window === "undefined") {
+    if (typeof globalThis.window === "undefined") {
       return `${location.pathname}?${shareSearch}`;
     }
-    return `${window.location.origin}${location.pathname}?${shareSearch}`;
+    return `${globalThis.window.location.origin}${location.pathname}?${shareSearch}`;
   }, [location.pathname, shareSearch]);
 
   const nextPerkInfo = useMemo(() => {
-    const currentCost = computeTotalCost(selectedPerks, perkGraph);
+    const currentCost = totalCost;
     let bestPerkName: string | undefined;
     let bestIncrementalCost: number | undefined;
 
@@ -291,7 +291,7 @@ const PerkCostCalculator = () => {
       perkName: bestPerkName,
       incrementalCost: bestIncrementalCost ?? 0,
     };
-  }, [perkGraph, selectedPerks]);
+  }, [perkGraph, selectedPerks, totalCost]);
 
   const handleShareBuild = useCallback(async () => {
     navigate(`${location.pathname}?${shareSearch}`);
