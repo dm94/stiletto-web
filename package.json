@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "5.48.1",
+  "version": "5.49.0",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -35,6 +35,8 @@
   "scripts": {
     "dev": "vite",
     "start": "vite",
+    "generate:sitemap": "node generate-sitemap.mjs",
+    "prebuild": "pnpm run generate:sitemap",
     "build": "vite build",
     "preview": "vite preview",
     "format": "biome format --write ./src",
