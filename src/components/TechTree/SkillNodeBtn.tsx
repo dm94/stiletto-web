@@ -39,7 +39,7 @@ const SkillNodeBtn: React.FC<SkillNodeBtnProps> = ({ clan, tree, item }) => {
       }
 
       setLoaded(true);
-    } catch (_err) {
+    } catch {
       setError(true);
     } finally {
       setIsLoading(false);
