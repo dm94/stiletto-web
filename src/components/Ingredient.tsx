@@ -22,31 +22,28 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
 
   const url = getItemUrl(ingredient?.name);
 
-  const getRarityColor = useCallback(
-      (value: RarityTierEnum) => {
-        let color = "";
+  const getRarityColor = useCallback((value: RarityTierEnum) => {
+    let color = "";
 
-        switch (value) {
-          case RarityTierEnum.LEGENDARY:
-            color = "bg-yellow-500";
-            break;
-          case RarityTierEnum.EPIC:
-            color = "bg-red-500";
-            break;
-          case RarityTierEnum.RARE:
-            color = "bg-blue-500";
-            break;
-          case RarityTierEnum.UNCOMMON:
-            color = "bg-green-500";
-            break;
-          default:
-            color = "bg-gray-500";
-        }
-  
-        return `shrink-0 p-1 rounded-lg ${color}`;
-      },
-      [value],
-    );
+    switch (value) {
+      case RarityTierEnum.LEGENDARY:
+        color = "bg-yellow-500";
+        break;
+      case RarityTierEnum.EPIC:
+        color = "bg-red-500";
+        break;
+      case RarityTierEnum.RARE:
+        color = "bg-blue-500";
+        break;
+      case RarityTierEnum.UNCOMMON:
+        color = "bg-green-500";
+        break;
+      default:
+        color = "bg-gray-500";
+    }
+
+    return `shrink-0 p-1 rounded-lg ${color}`;
+  }, []);
 
   const renderSubList = () => {
     if (
@@ -126,11 +123,12 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
               </div>
             )}
           </div>
-          {
-            ingredient?.rarity && (
-              <div title={t(`rarity.${ingredient?.rarity}`)} className={getRarityColor(ingredient?.rarity)}></div>
-            )
-          }
+          {ingredient?.rarity && (
+            <div
+              title={t(`rarity.${ingredient?.rarity}`)}
+              className={getRarityColor(ingredient?.rarity)}
+            ></div>
+          )}
         </button>
       ) : (
         <div className="flex items-center space-x-3">
@@ -157,11 +155,12 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
               </div>
             )}
           </div>
-          {
-            ingredient?.rarity && (
-              <div title={t(`rarity.${ingredient?.rarity}`)} className={getRarityColor(ingredient?.rarity)}></div>
-            )
-          }
+          {ingredient?.rarity && (
+            <div
+              title={t(`rarity.${ingredient?.rarity}`)}
+              className={getRarityColor(ingredient?.rarity)}
+            ></div>
+          )}
         </div>
       )}
       {hasIngredients && <div className="mt-2">{renderSubList()}</div>}

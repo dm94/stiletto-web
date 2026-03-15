@@ -1,4 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import type { PerkGraph } from "@functions/perkCostEngine";
 import { canSelect } from "@functions/perkCostEngine";
 import "../../styles/PerkTree.css";
@@ -34,6 +35,7 @@ const PerkTree = ({
   selectedPerks,
   onTogglePerk,
 }: PerkTreeProps) => {
+  const { t } = useTranslation();
   const [focusedNodeId, setFocusedNodeId] = useState<string>();
 
   const treeData = useMemo(() => {
@@ -136,7 +138,7 @@ const PerkTree = ({
       <div
         className="perk-tree-stage"
         role="tree"
-        aria-label={`Perk tree ${activeRoot}`}
+        aria-label={t("perksCalculator.tree.ariaLabel", { root: activeRoot })}
       >
         <div
           className="perk-tree-canvas"
@@ -146,7 +148,7 @@ const PerkTree = ({
           }}
         >
           <svg width="100%" height="100%" className="perk-tree-lines">
-            <title>Perk dependencies</title>
+            <title>{t("perksCalculator.tree.dependencies")}</title>
             {treeData.edges.map((edge) => {
               const fromNode = treeData.nodes.find(
                 (node) => node.id === edge.from,
@@ -201,7 +203,9 @@ const PerkTree = ({
                 }}
                 onClick={() => handleNodeClick(node.id)}
                 aria-pressed={isSelected}
-                aria-label={node.id}
+                aria-label={t("perksCalculator.tree.nodeAriaLabel", {
+                  nodeName: node.id,
+                })}
               >
                 <span className="perk-node-title">{node.id}</span>
                 <span className="perk-node-cost">
@@ -215,7 +219,9 @@ const PerkTree = ({
 
       <aside className="perk-tree-detail">
         {focusedPerk == null ? (
-          <p className="text-gray-300">Select a perk node to see details.</p>
+          <p className="text-gray-300">
+            {t("perksCalculator.tree.selectNodeHelp")}
+          </p>
         ) : (
           <div className="space-y-3">
             <h3 className="text-xl font-semibold text-sand">
@@ -223,7 +229,7 @@ const PerkTree = ({
             </h3>
             <p className="text-gray-300 text-sm">{focusedPerk.description}</p>
             <p className="text-gray-200 text-sm">
-              Cost:{" "}
+              {t("perksCalculator.tree.cost")}:{" "}
               <span className="font-semibold text-yellow-300">
                 {focusedPerk.cost}
               </span>
@@ -244,8 +250,8 @@ const PerkTree = ({
               aria-pressed={selectedPerks.has(focusedPerk.name)}
             >
               {selectedPerks.has(focusedPerk.name)
-                ? "Deselect perk"
-                : "Select perk"}
+                ? t("perksCalculator.tree.actions.deselectPerk")
+                : t("perksCalculator.tree.actions.selectPerk")}
             </button>
           </div>
         )}
