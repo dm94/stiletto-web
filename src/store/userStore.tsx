@@ -37,7 +37,6 @@ const defaultUserContext: UserContextType = {
   refreshUserProfile: async () => {
     // Default implementation - will be overridden by provider
     console.warn("refreshUserProfile called outside of UserProvider");
-    return Promise.resolve();
   },
 };
 
