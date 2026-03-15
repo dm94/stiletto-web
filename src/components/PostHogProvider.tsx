@@ -14,6 +14,36 @@ const hasAnalyticsConsent = (): boolean => {
   return globalThis?.localStorage.getItem(ANALYTICS_CONSENT_KEY) === "true";
 };
 
+const shouldCaptureWithPostHog = (): boolean => {
+  return Boolean(POSTHOG_KEY) && isPostHogInitialized && hasAnalyticsConsent();
+};
+
+const captureException = (
+  exception: unknown,
+  extraProperties?: Record<string, unknown>,
+): void => {
+  if (!shouldCaptureWithPostHog()) {
+    return;
+  }
+
+  const posthogWithCaptureException = posthog as typeof posthog & {
+    captureException?: (
+      error: unknown,
+      additionalProperties?: Record<string, unknown>,
+    ) => void;
+  };
+
+  if (typeof posthogWithCaptureException.captureException === "function") {
+    posthogWithCaptureException.captureException(exception, extraProperties);
+    return;
+  }
+
+  posthog.capture("exception_autocaptured", {
+    exception: String(exception),
+    ...(extraProperties ?? {}),
+  });
+};
+
 const initializePostHog = (): void => {
   if (!POSTHOG_KEY || isPostHogInitialized) {
     return;
@@ -71,7 +101,35 @@ export function PostHogPageView(): null {
   }, []);
 
   useEffect(() => {
-    if (POSTHOG_KEY && isPostHogInitialized && hasAnalyticsConsent()) {
+    const handleUnhandledError = (event: ErrorEvent): void => {
+      captureException(event.error ?? event.message, {
+        source: "window.onerror",
+        filename: event.filename,
+        lineno: event.lineno,
+        colno: event.colno,
+      });
+    };
+
+    const handleUnhandledRejection = (event: PromiseRejectionEvent): void => {
+      captureException(event.reason, {
+        source: "window.unhandledrejection",
+      });
+    };
+
+    globalThis.addEventListener("error", handleUnhandledError);
+    globalThis.addEventListener("unhandledrejection", handleUnhandledRejection);
+
+    return () => {
+      globalThis.removeEventListener("error", handleUnhandledError);
+      globalThis.removeEventListener(
+        "unhandledrejection",
+        handleUnhandledRejection,
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    if (shouldCaptureWithPostHog()) {
       const currentUrl = `${globalThis.location.origin}${location.pathname}${location.search}${location.hash}`;
       posthog.capture("$pageview", {
         $current_url: currentUrl,
