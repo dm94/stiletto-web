@@ -386,7 +386,7 @@ const PrivateProfile = () => {
           onClose={() => handleCreateClan()}
           onError={() => {
             setShowCreateClanConfig(false);
-            window.location.reload();
+            globalThis.location.reload();
           }}
         />
       )}

@@ -298,7 +298,7 @@ const PerkCostCalculator = () => {
     if (globalThis.window === undefined) {
       return `${location.pathname}?${shareSearch}`;
     }
-    return `${globalThis.window.location.origin}${location.pathname}?${shareSearch}`;
+    return `${globalThis.globalThis.location.origin}${location.pathname}?${shareSearch}`;
   }, [location.pathname, shareSearch]);
 
   const nextPerkInfo = useMemo(() => {

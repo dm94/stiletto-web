@@ -59,5 +59,5 @@ export const addCachedData = (name: string, data: unknown) => {
 export const closeSession = () => {
   localStorage.clear();
   sessionStorage.clear();
-  window.location.reload();
+  globalThis.location.reload();
 };

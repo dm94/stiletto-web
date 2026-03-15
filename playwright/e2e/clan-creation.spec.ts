@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import type { CreateClanRequestParams } from "../../src/types/dto/clan";
 
 const MOCK_USER_DATA = {
   discordtag: "testUser#1234",
@@ -67,8 +66,8 @@ test.describe("Clan Creation Flow", () => {
 
     // Set authentication in localStorage
     await page.addInitScript(() => {
-      window.localStorage.setItem("token", "mock-test-token");
-      window.localStorage.setItem("discordid", "mock-discord-id");
+      globalThis.localStorage.setItem("token", "mock-test-token");
+      globalThis.localStorage.setItem("discordid", "mock-discord-id");
     });
 
     // Navigate to profile page

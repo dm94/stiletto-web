@@ -151,8 +151,8 @@ test.describe("Clan Edit Flow", () => {
 
     // Set up localStorage before navigation
     await page.addInitScript(() => {
-      window.localStorage.setItem("token", "mock-test-token");
-      window.localStorage.setItem("discordid", "leader-discord-id");
+      globalThis.localStorage.setItem("token", "mock-test-token");
+      globalThis.localStorage.setItem("discordid", "leader-discord-id");
     });
   });
 

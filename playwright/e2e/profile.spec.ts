@@ -18,7 +18,7 @@ test.describe("Profile Page", () => {
     });
 
     await page.addInitScript(() => {
-      window.localStorage.setItem("token", "mock-test-token");
+      globalThis.localStorage.setItem("token", "mock-test-token");
     });
 
     await page.goto("/profile");

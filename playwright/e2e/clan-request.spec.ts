@@ -86,8 +86,8 @@ test.describe("Clan Request Flow", () => {
     });
 
     await page.addInitScript(() => {
-      window.localStorage.setItem("token", "mock-test-token");
-      window.localStorage.setItem("discordid", "mock-discord-id");
+      globalThis.localStorage.setItem("token", "mock-test-token");
+      globalThis.localStorage.setItem("discordid", "mock-discord-id");
     });
   });
 
@@ -117,9 +117,9 @@ test.describe("Clan Request Flow", () => {
     page,
   }) => {
     await page.addInitScript(() => {
-      window.localStorage.clear();
-      window.localStorage.removeItem("token");
-      window.localStorage.removeItem("discordid");
+      globalThis.localStorage.clear();
+      globalThis.localStorage.removeItem("token");
+      globalThis.localStorage.removeItem("discordid");
     });
 
     await page.goto("/clanlist");

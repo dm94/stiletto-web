@@ -3,8 +3,8 @@ import { supportedLanguages } from "@config/languages";
 import type { Rarity } from "@ctypes/item";
 
 export const getDomain = () =>
-  window.location.protocol.concat("//").concat(window.location.hostname) +
-  (window.location.port ? `:${window.location.port}` : "");
+  globalThis.location.protocol.concat("//").concat(globalThis.location.hostname) +
+  (globalThis.location.port ? `:${globalThis.location.port}` : "");
 
 export const getItemCodedName = (itemName: string) =>
   itemName.toLowerCase().replaceAll(" ", "_");
@@ -13,7 +13,7 @@ export const getItemDecodedName = (itemName: string) =>
   decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase().trim();
 
 const getValidLangPrefix = (): string => {
-  const currentLang = window.location.pathname.split("/").filter(Boolean)[0];
+  const currentLang = globalThis.location.pathname.split("/").filter(Boolean)[0];
   const supportedLangCodes = supportedLanguages.map((lang) => lang.key);
   return supportedLangCodes.includes(currentLang) && currentLang
     ? `/${currentLang}`

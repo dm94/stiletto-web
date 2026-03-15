@@ -67,7 +67,7 @@ function switchLanguage(lng: string): void {
   storeItem("i18nextLng", lng);
   i18next.changeLanguage(lng);
 
-  const currentPath = window.location.pathname;
+  const currentPath = globalThis.location.pathname;
   const pathSegments = currentPath.split("/").filter(Boolean);
 
   const supportedLangCodes = supportedLanguages.map((lang) => lang.key);
@@ -76,10 +76,10 @@ function switchLanguage(lng: string): void {
   if (firstSegment && supportedLangCodes.includes(firstSegment)) {
     pathSegments[0] = lng;
     const normalizedPath = `/${pathSegments.join("/")}`;
-    window.location.href = `${normalizedPath.replace(/\/+/g, "/")}${window.location.search}`;
+    globalThis.location.href = `${normalizedPath.replaceAll(/\/+/g, "/")}${globalThis.location.search}`;
   } else {
     const normalizedPath = `/${lng}${currentPath}`;
-    window.location.href = `${normalizedPath.replace(/\/+/g, "/")}${window.location.search}`;
+    globalThis.location.href = `${normalizedPath.replaceAll(/\/+/g, "/")}${globalThis.location.search}`;
   }
 }
 
