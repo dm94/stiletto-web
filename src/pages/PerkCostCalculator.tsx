@@ -1,10 +1,21 @@
-import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import {
+  Fragment,
+  type KeyboardEvent,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { useTranslation } from "react-i18next";
+import queryString from "query-string";
+import { useLocation, useNavigate } from "react-router";
 import { getPerks } from "@functions/github";
 import {
   buildPerkGraph,
   canSelect,
   computeTotalCost,
+  getRequiredChain,
   togglePerk,
 } from "@functions/perkCostEngine";
 import type { Perk } from "@ctypes/perk";
@@ -13,14 +24,71 @@ import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
 import PerkTree from "@components/Perks/PerkTree";
 import { getDomain } from "@functions/utils";
+import { getStoredItem, storeItem } from "@functions/services";
+
+const PERK_BUILD_STORAGE_KEY = "perk-calculator-build-v1";
+const BUILD_QUERY_KEY = "build";
+
+type SavedPerkBuild = {
+  activeRoot?: string;
+  selectedPerks: string[];
+};
+
+const parseSavedBuild = (rawValue?: string): SavedPerkBuild | undefined => {
+  if (rawValue == null || rawValue.length === 0) {
+    return undefined;
+  }
+
+  try {
+    const parsedValue = JSON.parse(rawValue) as Partial<SavedPerkBuild>;
+    const selectedPerks = Array.isArray(parsedValue.selectedPerks)
+      ? parsedValue.selectedPerks.filter(
+          (perkName): perkName is string => typeof perkName === "string",
+        )
+      : [];
+    const activeRoot =
+      typeof parsedValue.activeRoot === "string"
+        ? parsedValue.activeRoot
+        : undefined;
+
+    return { activeRoot, selectedPerks };
+  } catch {
+    return undefined;
+  }
+};
+
+const decodeBuildToken = (buildToken?: string): SavedPerkBuild | undefined => {
+  if (buildToken == null || buildToken.length === 0) {
+    return undefined;
+  }
+
+  try {
+    return parseSavedBuild(decodeURIComponent(buildToken));
+  } catch {
+    return undefined;
+  }
+};
+
+const encodeBuildToken = (savedBuild: SavedPerkBuild): string =>
+  encodeURIComponent(JSON.stringify(savedBuild));
+
+const removeStoredBuild = (): void => {
+  localStorage.removeItem(PERK_BUILD_STORAGE_KEY);
+  sessionStorage.removeItem(PERK_BUILD_STORAGE_KEY);
+};
 
 const PerkCostCalculator = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [perks, setPerks] = useState<Perk[]>([]);
   const [selectedPerks, setSelectedPerks] = useState<Set<string>>(new Set());
   const [activeRoot, setActiveRoot] = useState<string>();
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string>();
+  const [didHydrateBuild, setDidHydrateBuild] = useState(false);
+  const [shareStatus, setShareStatus] = useState<string>("");
+  const rootTabRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   useEffect(() => {
     let isMounted = true;
@@ -55,9 +123,75 @@ const PerkCostCalculator = () => {
 
   const logicalRoots = useMemo(
     () =>
-      [...perkGraph.roots].sort((left, right) => left.localeCompare(right, "en")),
+      [...perkGraph.roots].sort((left, right) =>
+        left.localeCompare(right, "en"),
+      ),
     [perkGraph.roots],
   );
+
+  const normalizeSelection = useCallback(
+    (incomingSelection: readonly string[]): Set<string> => {
+      const validNames: string[] = [];
+      for (const perkName of incomingSelection) {
+        if (perkGraph.byName.has(perkName)) {
+          validNames.push(perkName);
+        }
+      }
+
+      validNames.sort((left, right) => {
+        const leftDepth = getRequiredChain(left, perkGraph).length;
+        const rightDepth = getRequiredChain(right, perkGraph).length;
+        if (leftDepth !== rightDepth) {
+          return leftDepth - rightDepth;
+        }
+        return left.localeCompare(right, "en");
+      });
+
+      let normalized = new Set<string>();
+      for (const perkName of validNames) {
+        normalized = togglePerk(perkName, normalized, perkGraph);
+      }
+
+      return normalized;
+    },
+    [perkGraph],
+  );
+
+  useEffect(() => {
+    if (!isLoaded || didHydrateBuild) {
+      return;
+    }
+
+    const parsedQuery = queryString.parse(location.search);
+    const queryToken =
+      typeof parsedQuery[BUILD_QUERY_KEY] === "string"
+        ? parsedQuery[BUILD_QUERY_KEY]
+        : undefined;
+    const buildFromQuery = decodeBuildToken(queryToken);
+    const buildFromStorage = parseSavedBuild(
+      getStoredItem(PERK_BUILD_STORAGE_KEY) ?? "",
+    );
+    const initialBuild = buildFromQuery ?? buildFromStorage;
+
+    if (initialBuild != null) {
+      setSelectedPerks(normalizeSelection(initialBuild.selectedPerks));
+
+      if (
+        initialBuild.activeRoot != null &&
+        logicalRoots.includes(initialBuild.activeRoot)
+      ) {
+        setActiveRoot(initialBuild.activeRoot);
+      }
+    }
+
+    setDidHydrateBuild(true);
+  }, [
+    didHydrateBuild,
+    isLoaded,
+    location.search,
+    logicalRoots,
+    normalizeSelection,
+  ]);
 
   useEffect(() => {
     if (activeRoot != null) {
@@ -68,6 +202,24 @@ const PerkCostCalculator = () => {
       setActiveRoot(logicalRoots[0]);
     }
   }, [activeRoot, logicalRoots]);
+
+  const savedBuild = useMemo<SavedPerkBuild>(
+    () => ({
+      activeRoot,
+      selectedPerks: [...selectedPerks].sort((left, right) =>
+        left.localeCompare(right, "en"),
+      ),
+    }),
+    [activeRoot, selectedPerks],
+  );
+
+  useEffect(() => {
+    if (!didHydrateBuild) {
+      return;
+    }
+
+    storeItem(PERK_BUILD_STORAGE_KEY, JSON.stringify(savedBuild));
+  }, [didHydrateBuild, savedBuild]);
 
   const toggleSelection = useCallback(
     (perkName: string) => {
@@ -89,6 +241,19 @@ const PerkCostCalculator = () => {
     return selectedNames;
   }, [selectedPerks]);
 
+  const shareSearch = useMemo(() => {
+    const parsedQuery = queryString.parse(location.search);
+    parsedQuery[BUILD_QUERY_KEY] = encodeBuildToken(savedBuild);
+    return queryString.stringify(parsedQuery);
+  }, [location.search, savedBuild]);
+
+  const shareUrl = useMemo(() => {
+    if (typeof window === "undefined") {
+      return `${location.pathname}?${shareSearch}`;
+    }
+    return `${window.location.origin}${location.pathname}?${shareSearch}`;
+  }, [location.pathname, shareSearch]);
+
   const nextPerkInfo = useMemo(() => {
     const currentCost = computeTotalCost(selectedPerks, perkGraph);
     let bestPerkName: string | undefined;
@@ -107,7 +272,10 @@ const PerkCostCalculator = () => {
       const nextCost = computeTotalCost(nextSelection, perkGraph);
       const incrementalCost = nextCost - currentCost;
 
-      if (bestIncrementalCost == null || incrementalCost < bestIncrementalCost) {
+      if (
+        bestIncrementalCost == null ||
+        incrementalCost < bestIncrementalCost
+      ) {
         bestIncrementalCost = incrementalCost;
         bestPerkName = perkName;
       }
@@ -118,6 +286,59 @@ const PerkCostCalculator = () => {
       incrementalCost: bestIncrementalCost ?? 0,
     };
   }, [perkGraph, selectedPerks]);
+
+  const handleShareBuild = useCallback(async () => {
+    navigate(`${location.pathname}?${shareSearch}`);
+
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setShareStatus("Build link copied");
+    } catch {
+      setShareStatus("Build link ready to copy");
+    }
+  }, [location.pathname, navigate, shareSearch, shareUrl]);
+
+  const handleResetBuild = useCallback(() => {
+    setSelectedPerks(new Set());
+    removeStoredBuild();
+    setShareStatus("Build reset");
+
+    const parsedQuery = queryString.parse(location.search);
+    delete parsedQuery[BUILD_QUERY_KEY];
+    const nextSearch = queryString.stringify(parsedQuery);
+    navigate(
+      nextSearch.length > 0
+        ? `${location.pathname}?${nextSearch}`
+        : location.pathname,
+      { replace: true },
+    );
+  }, [location.pathname, location.search, navigate]);
+
+  const handleRootTabKeyDown = useCallback(
+    (event: KeyboardEvent<HTMLButtonElement>, index: number) => {
+      if (logicalRoots.length === 0) {
+        return;
+      }
+
+      const keyPressed = event.key;
+      const isNextKey =
+        keyPressed === "ArrowRight" || keyPressed === "ArrowDown";
+      const isPrevKey = keyPressed === "ArrowLeft" || keyPressed === "ArrowUp";
+
+      if (!isNextKey && !isPrevKey) {
+        return;
+      }
+
+      event.preventDefault();
+      const delta = isNextKey ? 1 : -1;
+      const nextIndex =
+        (index + logicalRoots.length + delta) % logicalRoots.length;
+      const nextRoot = logicalRoots[nextIndex];
+      setActiveRoot(nextRoot);
+      rootTabRefs.current[nextIndex]?.focus();
+    },
+    [logicalRoots],
+  );
 
   if (error != null) {
     return (
@@ -161,20 +382,31 @@ const PerkCostCalculator = () => {
       </header>
 
       <nav className="w-full mb-4" aria-label="Perk tree roots">
-        <div className="flex border-b border-gray-700 overflow-x-auto">
-          {logicalRoots.map((rootName) => {
+        <div
+          className="flex border-b border-gray-700 overflow-x-auto"
+          role="tablist"
+          aria-label="Perk roots"
+        >
+          {logicalRoots.map((rootName, tabIndex) => {
             const isSelected = activeRoot === rootName;
             return (
               <button
                 type="button"
                 key={rootName}
+                ref={(buttonRef) => {
+                  rootTabRefs.current[tabIndex] = buttonRef;
+                }}
                 className={
                   isSelected
-                    ? "px-4 py-2 text-white border-b-2 border-blue-500 bg-gray-800 whitespace-nowrap"
-                    : "px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent whitespace-nowrap"
+                    ? "px-4 py-2 text-white border-b-2 border-blue-500 bg-gray-800 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                    : "px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                 }
                 onClick={() => setActiveRoot(rootName)}
-                aria-pressed={isSelected}
+                onKeyDown={(event) => handleRootTabKeyDown(event, tabIndex)}
+                aria-selected={isSelected}
+                aria-controls="perk-tree-panel"
+                role="tab"
+                tabIndex={isSelected ? 0 : -1}
               >
                 {rootName}
               </button>
@@ -184,7 +416,7 @@ const PerkCostCalculator = () => {
       </nav>
 
       <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_340px] gap-4 pb-8">
-        <main>
+        <main id="perk-tree-panel" role="tabpanel" aria-live="polite">
           {activeRoot != null ? (
             <PerkTree
               activeRoot={activeRoot}
@@ -200,7 +432,9 @@ const PerkCostCalculator = () => {
         </main>
 
         <aside className="sticky top-4 h-fit rounded-lg border border-gray-700 bg-gray-900 p-4">
-          <h2 className="text-xl font-semibold text-white mb-4">Build summary</h2>
+          <h2 className="text-xl font-semibold text-white mb-4">
+            Build summary
+          </h2>
           <div className="space-y-2 mb-4">
             <p className="text-gray-200">
               Total points:{" "}
@@ -219,12 +453,51 @@ const PerkCostCalculator = () => {
               </span>
             </p>
             {nextPerkInfo.perkName != null && (
-              <p className="text-sm text-gray-400">Suggested: {nextPerkInfo.perkName}</p>
+              <p className="text-sm text-gray-400">
+                Suggested: {nextPerkInfo.perkName}
+              </p>
             )}
           </div>
 
+          <div className="flex gap-2 mb-4">
+            <button
+              type="button"
+              className="flex-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
+              onClick={() => {
+                void handleShareBuild();
+              }}
+            >
+              Share build
+            </button>
+            <button
+              type="button"
+              className="flex-1 rounded-md bg-gray-700 px-3 py-2 text-sm font-semibold text-white hover:bg-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
+              onClick={handleResetBuild}
+            >
+              Reset
+            </button>
+          </div>
+
+          <div className="mb-4">
+            <label className="text-xs text-gray-400" htmlFor="perk-share-link">
+              Share URL
+            </label>
+            <input
+              id="perk-share-link"
+              type="text"
+              readOnly
+              value={shareUrl}
+              className="mt-1 w-full rounded-md border border-gray-700 bg-gray-800 px-2 py-1 text-xs text-gray-200"
+            />
+            <output className="mt-1 text-xs text-gray-400" aria-live="polite">
+              {shareStatus}
+            </output>
+          </div>
+
           <div className="border-t border-gray-700 pt-3">
-            <h3 className="text-md font-semibold text-white mb-2">Selected perks</h3>
+            <h3 className="text-md font-semibold text-white mb-2">
+              Selected perks
+            </h3>
             {selectedPerkList.length === 0 ? (
               <p className="text-gray-400 text-sm">No perks selected yet.</p>
             ) : (
