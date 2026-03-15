@@ -5,7 +5,7 @@ const FIRST_PERK = "Boltmaster I";
 const SECOND_PERK = "Boltmaster II";
 
 const escapeRegex = (text: string): string =>
-  text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  text.replaceAll(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const getSummaryValue = async (page: Page, label: string): Promise<number> => {
   const summaryRow = page.locator("aside p", { hasText: label }).first();
