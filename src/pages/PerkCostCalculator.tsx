@@ -469,7 +469,7 @@ const PerkCostCalculator = () => {
               type="button"
               className="flex-1 rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
               onClick={() => {
-                void handleShareBuild();
+                handleShareBuild();
               }}
             >
               {t("perksCalculator.actions.shareBuild")}
