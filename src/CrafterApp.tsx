@@ -13,6 +13,7 @@ import { usePageTracking } from "@functions/page-tracking";
 import NotificationList from "@components/Notifications/NotificationList";
 import Footer from "@components/Footer";
 import { UserProvider } from "@store/userStore";
+import { PostHogPageView } from "@components/PostHogProvider";
 
 const CrafterApp: React.FC = () => {
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ const CrafterApp: React.FC = () => {
 
   return (
     <UserProvider>
+      <PostHogPageView />
       <Helmet
         htmlAttributes={{
           lang: language ?? "en",
