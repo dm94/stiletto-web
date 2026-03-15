@@ -26,21 +26,14 @@ const captureException = (
     return;
   }
 
-  const posthogWithCaptureException = posthog as typeof posthog & {
-    captureException?: (
-      error: unknown,
-      additionalProperties?: Record<string, unknown>,
-    ) => void;
-  };
-
-  if (typeof posthogWithCaptureException.captureException === "function") {
-    posthogWithCaptureException.captureException(exception, extraProperties);
+  if (typeof posthog.captureException === "function") {
+    posthog.captureException(exception, extraProperties);
     return;
   }
 
   posthog.capture("exception_autocaptured", {
     exception: String(exception),
-    ...(extraProperties ?? {}),
+    ...extraProperties,
   });
 };
 
