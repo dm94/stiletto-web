@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, Fragment, useCallback, useMemo } from "react";
+import { useState, Fragment, useCallback, useMemo, useEffect } from "react";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import { useTranslation } from "react-i18next";
@@ -25,7 +25,7 @@ import HeaderMeta from "@components/HeaderMeta";
 
 const WalkerList: React.FC = () => {
   const { t } = useTranslation();
-  const { isConnected } = useUser();
+  const { isConnected, isLoading: isUserLoading } = useUser();
   const [isLoaded, setIsLoaded] = useState(false);
   const [walkers, setWalkers] = useState<WalkerInfo[]>([]);
   const [error, setError] = useState("");
@@ -113,7 +113,7 @@ const WalkerList: React.FC = () => {
     [updateWalkers, t],
   );
 
-  const setupUserProfile = useCallback(async () => {
+  const setupUserProfile = useCallback(async (): Promise<number | null> => {
     let userIsLeader = false;
     let clan: number | undefined;
     let discordId: string | undefined;
@@ -122,7 +122,7 @@ const WalkerList: React.FC = () => {
       const data = await getUser();
       if (!data) {
         setIsLoaded(true);
-        return false;
+        return null;
       }
 
       const { discordid, leaderid, clanid, nickname } = data;
@@ -137,7 +137,7 @@ const WalkerList: React.FC = () => {
     } catch {
       setError(t("errors.apiConnection"));
       setIsLoaded(true);
-      return false;
+      return null;
     }
 
     try {
@@ -149,44 +149,46 @@ const WalkerList: React.FC = () => {
       // Silent error - permissions default to leader status
     }
 
-    return true;
+    return clan ?? null;
   }, [t]);
 
-  const loadMembersAndItems = useCallback(async () => {
-    if (!clanId) {
-      return;
-    }
+  const loadMembersAndItems = useCallback(
+    async (targetClanId: number) => {
+      try {
+        const membersResponse = await getMembers(targetClanId);
+        setMembers(membersResponse);
 
-    try {
-      const membersResponse = await getMembers(clanId);
-      setMembers(membersResponse);
-
-      const itemsResponse = await getItems();
-      if (itemsResponse) {
-        const walkerTypeList = itemsResponse
-          .filter((item: Item) => item.category === "Walkers")
-          .map((item: Item) => item.name.replace("Walker", "").trim());
-        setWalkerTypes(walkerTypeList);
+        const itemsResponse = await getItems();
+        if (itemsResponse) {
+          const walkerTypeList = itemsResponse
+            .filter((item: Item) => item.category === "Walkers")
+            .map((item: Item) => item.name.replace("Walker", "").trim());
+          setWalkerTypes(walkerTypeList);
+        }
+      } catch {
+        setError(t("errors.apiConnection"));
       }
-    } catch {
-      setError(t("errors.apiConnection"));
-    }
-  }, [clanId, t]);
+    },
+    [t],
+  );
 
-  const initializeData = async () => {
+  const initializeData = useCallback(async () => {
     if (!isConnected) {
       setError(t("errors.loginRequired"));
+      setIsLoaded(true);
       return;
     }
 
-    const profileSuccess = await setupUserProfile();
-    if (!profileSuccess) {
+    setError("");
+    const resolvedClanId = await setupUserProfile();
+    if (!resolvedClanId) {
+      setIsLoaded(true);
       return;
     }
 
-    await loadMembersAndItems();
+    await loadMembersAndItems(resolvedClanId);
     await updateWalkers();
-  };
+  }, [isConnected, t, setupUserProfile, loadMembersAndItems, updateWalkers]);
 
   const renderWalkerList = useMemo(() => {
     if (!walkers) {
@@ -228,7 +230,13 @@ const WalkerList: React.FC = () => {
     ));
   }, [walkerTypes, t]);
 
-  initializeData();
+  useEffect(() => {
+    if (isUserLoading) {
+      return;
+    }
+
+    void initializeData();
+  }, [initializeData, isUserLoading]);
 
   const renderServerLinkButton = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
@@ -291,6 +299,15 @@ const WalkerList: React.FC = () => {
     );
   }
 
+  if (!isLoaded) {
+    return (
+      <Fragment>
+        {renderHelmetInfo()}
+        <LoadingScreen />
+      </Fragment>
+    );
+  }
+
   if (!clanId) {
     return (
       <ModalMessage
@@ -300,15 +317,6 @@ const WalkerList: React.FC = () => {
           redirectPage: "/profile",
         }}
       />
-    );
-  }
-
-  if (!isLoaded) {
-    return (
-      <Fragment>
-        {renderHelmetInfo()}
-        <LoadingScreen />
-      </Fragment>
     );
   }
 
@@ -335,7 +343,7 @@ const WalkerList: React.FC = () => {
               <select
                 id="walkerTypeSearch"
                 className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={walkerTypeSearch || "All"}
+                value={walkerTypeSearch ?? "All"}
                 onChange={(e) => setWalkerTypeSearch(e.target.value)}
               >
                 <option value="All">{t("common.all")}</option>
@@ -369,7 +377,7 @@ const WalkerList: React.FC = () => {
               <select
                 id="useWalkerSearch"
                 className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={useWalkerSearch || "All"}
+                value={useWalkerSearch ?? "All"}
                 onChange={(e) => setUseWalkerSearch(e.target.value)}
               >
                 <option value="All">{t("common.all")}</option>
@@ -405,7 +413,7 @@ const WalkerList: React.FC = () => {
               <select
                 id="isReadySearch"
                 className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={isReadySearch || "All"}
+                value={isReadySearch ?? "All"}
                 onChange={(e) => setIsReadySearch(e.target.value)}
               >
                 <option value="All">{t("common.all")}</option>
@@ -430,6 +438,7 @@ const WalkerList: React.FC = () => {
                     setWalkerTypeSearch("All");
                     setSearchDescription("");
                     setUseWalkerSearch("All");
+                    setIsReadySearch("All");
                     updateWalkers();
                   }}
                 >
