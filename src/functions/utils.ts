@@ -43,9 +43,9 @@ export const getDiscordLoginUrl = () => {
 export const toSnakeCase = (str: string) =>
   str
     .toLowerCase()
-    .replace(/\s+/g, "_")
-    .replace(/[^a-z0-9_]/g, "")
-    .replace(/_+/g, "_");
+    .replaceAll(/\s+/g, "_")
+    .replaceAll(/[^a-z0-9_]/g, "")
+    .replaceAll(/_+/g, "_");
 
 export const objectToURLSearchParams = (obj: object): URLSearchParams => {
   const keyValuePairs = Object.keys(obj)
