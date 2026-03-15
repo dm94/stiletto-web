@@ -163,6 +163,15 @@ const Menu: React.FC<MenuProps> = ({
                   {t("menu.techTree")}
                 </LanguageLink>
               </li>
+              <li className="nav-item" data-testid="perks-link">
+                <LanguageLink
+                  to="/perks"
+                  className="block py-2 text-white hover:text-gray-300"
+                  onClick={closeMenu}
+                >
+                  {t("menu.perks")}
+                </LanguageLink>
+              </li>
             </ul>
 
             {/* Search bar */}
