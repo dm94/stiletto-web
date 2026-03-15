@@ -137,16 +137,18 @@ const WikiContent = ({
     contentType,
   ]);
 
+  let contentAriaLabelKey = "wiki.perks";
+
+  if (contentType === "items") {
+    contentAriaLabelKey = "wiki.items";
+  } else if (contentType === "creatures") {
+    contentAriaLabelKey = "wiki.creatures";
+  }
+
   return (
     <section
       className="flex flex-wrap -m-3"
-      aria-label={t(
-        contentType === "items"
-          ? "wiki.items"
-          : contentType === "creatures"
-            ? "wiki.creatures"
-            : "wiki.perks",
-      )}
+      aria-label={t(contentAriaLabelKey)}
       data-testid="wiki-content-area"
     >
       {content}
