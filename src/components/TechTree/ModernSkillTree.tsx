@@ -72,7 +72,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         x: 0,
         y: 0,
         selected: skills[item.name]?.nodeState === "selected",
-        parentId: parent !== treeId ? parent : undefined,
+        parentId: parent === treeId ? undefined : parent,
       }));
 
       return children;
