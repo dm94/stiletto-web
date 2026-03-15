@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect, Fragment, useCallback, useMemo } from "react";
+import { useState, Fragment, useCallback, useMemo } from "react";
 import ModalMessage from "@components/ModalMessage";
 import LoadingScreen from "@components/LoadingScreen";
 import { useTranslation } from "react-i18next";
@@ -173,24 +173,20 @@ const WalkerList: React.FC = () => {
     }
   }, [clanId, t]);
 
-  useEffect(() => {
-    const initializeData = async () => {
-      if (!isConnected) {
-        setError(t("errors.loginRequired"));
-        return;
-      }
+  const initializeData = async () => {
+    if (!isConnected) {
+      setError(t("errors.loginRequired"));
+      return;
+    }
 
-      const profileSuccess = await setupUserProfile();
-      if (!profileSuccess) {
-        return;
-      }
+    const profileSuccess = await setupUserProfile();
+    if (!profileSuccess) {
+      return;
+    }
 
-      await loadMembersAndItems();
-      await updateWalkers();
-    };
-
-    initializeData();
-  }, [updateWalkers, setupUserProfile, loadMembersAndItems, t, isConnected]);
+    await loadMembersAndItems();
+    await updateWalkers();
+  };
 
   const renderWalkerList = useMemo(() => {
     if (!walkers) {
@@ -231,6 +227,8 @@ const WalkerList: React.FC = () => {
       </option>
     ));
   }, [walkerTypes, t]);
+
+  initializeData();
 
   const renderServerLinkButton = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
