@@ -30,7 +30,7 @@ export const initPlausible = (): void => {
   const element = document.createElement("script");
   element.src = PLAUSIBLE_URL;
   element.defer = true;
-  element.setAttribute("data-domain", document.location.hostname);
+  element.dataset.domain = document.location.hostname;
   document.head.appendChild(element);
 };
 
