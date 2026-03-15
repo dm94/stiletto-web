@@ -6,8 +6,13 @@ export type PerkGraph = {
   roots: Set<string>;
 };
 
+const CYCLE_ERROR_PREFIX = "Cycle detected in perk dependencies at";
+
 const createCycleError = (perkName: string): Error =>
-  new Error(`Cycle detected in perk dependencies at "${perkName}"`);
+  new Error(`${CYCLE_ERROR_PREFIX} "${perkName}"`);
+
+const isCycleError = (error: unknown): boolean =>
+  error instanceof Error && error.message.startsWith(CYCLE_ERROR_PREFIX);
 
 export const buildPerkGraph = (perks: Perk[]): PerkGraph => {
   const byName = new Map<string, Perk>();
@@ -66,6 +71,21 @@ export const getRequiredChain = (
   return chain;
 };
 
+export const tryGetRequiredChain = (
+  perkName: string,
+  graph: PerkGraph,
+): string[] | undefined => {
+  try {
+    return getRequiredChain(perkName, graph);
+  } catch (error) {
+    if (isCycleError(error)) {
+      return undefined;
+    }
+
+    throw error;
+  }
+};
+
 const getSelectionClosure = (
   selectedPerks: ReadonlySet<string>,
   graph: PerkGraph,
@@ -77,8 +97,12 @@ const getSelectionClosure = (
       continue;
     }
 
+    const requiredChain = tryGetRequiredChain(perkName, graph);
+    if (requiredChain == null) {
+      continue;
+    }
+
     closure.add(perkName);
-    const requiredChain = getRequiredChain(perkName, graph);
     for (const requiredPerk of requiredChain) {
       closure.add(requiredPerk);
     }
@@ -162,7 +186,11 @@ export const togglePerk = (
     return nextSelection;
   }
 
-  const requiredChain = getRequiredChain(perkName, graph);
+  const requiredChain = tryGetRequiredChain(perkName, graph);
+  if (requiredChain == null) {
+    return new Set(selectedSet);
+  }
+
   for (const requiredPerk of requiredChain) {
     nextSelection.add(requiredPerk);
   }

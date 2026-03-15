@@ -15,7 +15,7 @@ import {
   buildPerkGraph,
   canSelect,
   computeTotalCost,
-  getRequiredChain,
+  tryGetRequiredChain,
   togglePerk,
 } from "@functions/perkCostEngine";
 import type { Perk } from "@ctypes/perk";
@@ -138,15 +138,24 @@ const PerkCostCalculator = () => {
   const normalizeSelection = useCallback(
     (incomingSelection: readonly string[]): Set<string> => {
       const validNames: string[] = [];
+      const depthByPerkName = new Map<string, number>();
       for (const perkName of incomingSelection) {
-        if (perkGraph.byName.has(perkName)) {
-          validNames.push(perkName);
+        if (!perkGraph.byName.has(perkName)) {
+          continue;
         }
+
+        const requiredChain = tryGetRequiredChain(perkName, perkGraph);
+        if (requiredChain == null) {
+          continue;
+        }
+
+        validNames.push(perkName);
+        depthByPerkName.set(perkName, requiredChain.length);
       }
 
       validNames.sort((left, right) => {
-        const leftDepth = getRequiredChain(left, perkGraph).length;
-        const rightDepth = getRequiredChain(right, perkGraph).length;
+        const leftDepth = depthByPerkName.get(left) ?? 0;
+        const rightDepth = depthByPerkName.get(right) ?? 0;
         if (leftDepth !== rightDepth) {
           return leftDepth - rightDepth;
         }
