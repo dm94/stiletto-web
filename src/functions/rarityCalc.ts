@@ -212,6 +212,21 @@ const rarityData: RarityData = {
   },
 };
 
+const RARITY_MAP: Partial<Record<Rarity, keyof RarityData>> = {
+  [Rarity.Uncommon]: "Uncommon",
+  [Rarity.Rare]: "Rare",
+  [Rarity.Epic]: "Epic",
+  [Rarity.Legendary]: "Legendary",
+};
+
+const getRarityFactor = (
+  rarity: Rarity | undefined,
+  factorName: keyof RarityFactors,
+): number | undefined => {
+  const rarityKey = rarity ? RARITY_MAP[rarity] : undefined;
+  return rarityKey ? rarityData[rarityKey][factorName] : undefined;
+};
+
 export const calcRarityValue = (
   rarity: Rarity | undefined,
   type: string,
@@ -219,44 +234,22 @@ export const calcRarityValue = (
   value: number,
 ) => {
   const factorName = getFactorName(type, category ?? "");
-  let newValue = value;
 
-  if (factorName != null) {
-    if (
-      factorName === "WeaponItemSpeedBonus" ||
-      factorName === "ArmorItemReduceBonus"
-    ) {
-      return sumCalcs(factorName, rarity, newValue);
-    }
-
-    switch (rarity) {
-      case Rarity.Uncommon:
-        if (rarityData.Uncommon[factorName]) {
-          newValue = newValue * rarityData.Uncommon[factorName];
-        }
-        break;
-      case Rarity.Rare:
-        if (rarityData.Rare[factorName]) {
-          newValue = newValue * rarityData.Rare[factorName];
-        }
-        break;
-      case Rarity.Epic:
-        if (rarityData.Epic[factorName]) {
-          newValue = newValue * rarityData.Epic[factorName];
-        }
-        break;
-      case Rarity.Legendary:
-        if (rarityData.Legendary[factorName]) {
-          newValue = newValue * rarityData.Legendary[factorName];
-        }
-        break;
-      default:
-        break;
-    }
-    newValue = Number(newValue.toFixed(2));
+  if (factorName == null) {
+    return value;
   }
 
-  return newValue;
+  if (
+    factorName === "WeaponItemSpeedBonus" ||
+    factorName === "ArmorItemReduceBonus"
+  ) {
+    return sumCalcs(factorName, rarity, value);
+  }
+
+  const factorValue = getRarityFactor(rarity, factorName);
+  const newValue = factorValue == null ? value : value * factorValue;
+
+  return Number(newValue.toFixed(2));
 };
 
 const sumCalcs = (
@@ -264,36 +257,10 @@ const sumCalcs = (
   rarity: Rarity | undefined,
   value: number,
 ): number => {
-  let newValue = value;
+  const factorValue = getRarityFactor(rarity, factorName);
+  const newValue = factorValue == null ? value : value + factorValue;
 
-  switch (rarity) {
-    case Rarity.Uncommon:
-      if (rarityData.Uncommon?.[factorName]) {
-        newValue = newValue + rarityData.Uncommon[factorName];
-      }
-      break;
-    case Rarity.Rare:
-      if (rarityData.Rare?.[factorName]) {
-        newValue = newValue + rarityData.Rare[factorName];
-      }
-      break;
-    case Rarity.Epic:
-      if (rarityData.Epic?.[factorName]) {
-        newValue = newValue + rarityData.Epic[factorName];
-      }
-      break;
-    case Rarity.Legendary:
-      if (rarityData.Legendary?.[factorName]) {
-        newValue = newValue + rarityData.Legendary[factorName];
-      }
-      break;
-    default:
-      break;
-  }
-
-  newValue = Number(newValue.toFixed(2));
-
-  return newValue;
+  return Number(newValue.toFixed(2));
 };
 
 const getFactorName = (
