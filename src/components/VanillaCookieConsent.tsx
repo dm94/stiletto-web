@@ -12,9 +12,9 @@ const syncAnalyticsConsent = (): void => {
   const analyticsAccepted = CookieConsent.acceptedCategory(ANALYTICS_CATEGORY);
 
   if (analyticsAccepted) {
-    localStorage.setItem(ANALYTICS_CONSENT_KEY, "true");
+    globalThis?.localStorage.setItem(ANALYTICS_CONSENT_KEY, "true");
   } else {
-    localStorage.removeItem(ANALYTICS_CONSENT_KEY);
+    globalThis?.localStorage.removeItem(ANALYTICS_CONSENT_KEY);
   }
 
   window.dispatchEvent(
