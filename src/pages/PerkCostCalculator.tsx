@@ -263,7 +263,7 @@ const PerkCostCalculator = () => {
   }, [location.search, savedBuild]);
 
   const shareUrl = useMemo(() => {
-    if (typeof globalThis.window === "undefined") {
+    if (globalThis.window === undefined) {
       return `${location.pathname}?${shareSearch}`;
     }
     return `${globalThis.window.location.origin}${location.pathname}?${shareSearch}`;
