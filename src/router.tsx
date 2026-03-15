@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router";
 import LoadingScreen from "@components/LoadingScreen";
+import WalkerList from "@pages/WalkerList";
 
 // Lazy load all page components
 const Home = React.lazy(() => import("@pages/Home"));
@@ -16,7 +17,9 @@ const AuctionTimers = React.lazy(() => import("@pages/AuctionTimers"));
 const Others = React.lazy(() => import("@pages/Others"));
 const MapPage = React.lazy(() => import("@pages/MapPage"));
 const TechTree = React.lazy(() => import("@pages/TechTree"));
-const PerkCostCalculator = React.lazy(() => import("@pages/PerkCostCalculator"));
+const PerkCostCalculator = React.lazy(
+  () => import("@pages/PerkCostCalculator"),
+);
 const Privacy = React.lazy(() => import("@pages/Privacy"));
 const ItemWiki = React.lazy(() => import("@pages/ItemWiki"));
 const CreatureWiki = React.lazy(() => import("@pages/CreatureWiki"));
@@ -33,6 +36,7 @@ const AppRoutes: React.ReactElement = (
       <Route path="profile" element={<DiscordConnection />} />
       <Route path="crafter" element={<Crafter />} />
       <Route path="members" element={<MemberList />} />
+      <Route path="clan/walkers" element={<WalkerList />} />
       <Route path="clanlist" element={<ClanList />} />
       <Route path="maps" element={<ClanMaps />} />
       <Route path="maps/:id" element={<MapDetail />} />
