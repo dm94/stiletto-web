@@ -504,7 +504,7 @@ const PerkCostCalculator = () => {
               className="mt-1 w-full rounded-md border border-gray-700 bg-gray-800 px-2 py-1 text-xs text-gray-200"
             />
             <output className="mt-1 text-xs text-gray-400" aria-live="polite">
-              {shareStatusKey != null ? t(shareStatusKey) : ""}
+              {shareStatusKey ? t(shareStatusKey) : ""}
             </output>
           </div>
 
