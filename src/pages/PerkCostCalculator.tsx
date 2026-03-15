@@ -183,7 +183,7 @@ const PerkCostCalculator = () => {
       setSelectedPerks(normalizeSelection(initialBuild.selectedPerks));
 
       if (
-        initialBuild.activeRoot != null &&
+        initialBuild.activeRoot &&
         logicalRoots.includes(initialBuild.activeRoot)
       ) {
         setActiveRoot(initialBuild.activeRoot);
@@ -200,7 +200,7 @@ const PerkCostCalculator = () => {
   ]);
 
   useEffect(() => {
-    if (activeRoot != null) {
+    if (activeRoot) {
       return;
     }
 
@@ -421,7 +421,7 @@ const PerkCostCalculator = () => {
 
       <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,1fr)_340px] gap-4 pb-8">
         <main id="perk-tree-panel" role="tabpanel" aria-live="polite">
-          {activeRoot != null ? (
+          {activeRoot ? (
             <PerkTree
               activeRoot={activeRoot}
               graph={perkGraph}
