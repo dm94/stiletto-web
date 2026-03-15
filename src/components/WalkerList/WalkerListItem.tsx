@@ -256,9 +256,9 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
                   <button
                     type="button"
                     className={`p-2 rounded-r-lg focus:outline-none ${
-                      !walkerState.isReady
-                        ? "bg-red-600 text-white"
-                        : "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
+                      walkerState.isReady
+                        ? "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
+                        : "bg-red-600 text-white"
                     }`}
                     onClick={() => handleWalkerUpdate("isReady", false)}
                   >
