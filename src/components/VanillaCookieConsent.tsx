@@ -17,7 +17,7 @@ const syncAnalyticsConsent = (): void => {
     globalThis?.localStorage.removeItem(ANALYTICS_CONSENT_KEY);
   }
 
-  window.dispatchEvent(
+  globalThis.dispatchEvent(
     new CustomEvent(COOKIE_CONSENT_UPDATED_EVENT, {
       detail: { analyticsAccepted },
     }),
