@@ -9,25 +9,52 @@ interface CanBeUsedInfoProps {
   items: Item[];
 }
 
+const ITEMS_PER_PAGE = 10;
+
+const itemUsesIngredient = (
+  crafting: Item["crafting"],
+  ingredientName: string,
+): boolean => {
+  if (!crafting) {
+    return false;
+  }
+
+  for (const recipe of crafting) {
+    for (const ingredient of recipe.ingredients ?? []) {
+      if (ingredient.name.toLowerCase() === ingredientName) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+};
+
+const getCanBeUsedItems = (items: Item[], name: string): Item[] => {
+  if (!name) {
+    return [];
+  }
+
+  const ingredientName = name.toLowerCase();
+  const filteredItems: Item[] = [];
+
+  for (const item of items ?? []) {
+    if (itemUsesIngredient(item.crafting, ingredientName)) {
+      filteredItems.push(item);
+    }
+  }
+
+  return filteredItems;
+};
+
 const CanBeUsedInfo: React.FC<CanBeUsedInfoProps> = ({ name, items = [] }) => {
-  const ITEMS_PER_PAGE = 10;
   const { t } = useTranslation();
   const [canBeUsed, setCanBeUsed] = useState<Item[]>([]);
   const [visibleItems, setVisibleItems] = useState<number>(ITEMS_PER_PAGE);
 
   useEffect(() => {
-    if (items && name) {
-      const lowerCaseName = name?.toLowerCase();
-      const filteredItems = items.filter((item) =>
-        item?.crafting?.some((recipe) =>
-          recipe?.ingredients.some(
-            (ingredient) => ingredient.name.toLowerCase() === lowerCaseName,
-          ),
-        ),
-      );
-      setCanBeUsed(filteredItems);
-      setVisibleItems(ITEMS_PER_PAGE);
-    }
+    setCanBeUsed(getCanBeUsedItems(items, name));
+    setVisibleItems(ITEMS_PER_PAGE);
   }, [name, items]);
 
   const loadMoreItems = useCallback(() => {
