@@ -1,6 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import { calcRarityValue } from "@functions/rarityCalc";
+import type { Rarity } from "@ctypes/item";
 
 interface GenericInfoProps {
   dataInfo: Record<string, any>;
@@ -24,7 +25,7 @@ const GenericInfo: React.FC<GenericInfoProps> = ({
       if (dataInfo[key]) {
         const value =
           typeof dataInfo[key] === "number"
-            ? calcRarityValue(rarity, key, category, dataInfo[key])
+            ? calcRarityValue(rarity as Rarity, key, category, dataInfo[key])
             : dataInfo[key];
         return (
           <li
@@ -33,7 +34,7 @@ const GenericInfo: React.FC<GenericInfoProps> = ({
           >
             <div className="text-gray-300 capitalize">{t(key)}</div>
             <div
-              className={value !== dataInfo[key] ? textColor : "text-gray-400"}
+              className={value === dataInfo[key] ? "text-gray-400" : textColor}
             >
               {t(value)}
             </div>
