@@ -3,6 +3,28 @@ import { useTranslation } from "react-i18next";
 import "vanilla-cookieconsent/dist/cookieconsent.css";
 import * as CookieConsent from "vanilla-cookieconsent";
 import i18n from "i18next";
+import {
+  ANALYTICS_CONSENT_KEY,
+  COOKIE_CONSENT_UPDATED_EVENT,
+} from "../config/analyticsConsentConstants";
+
+const ANALYTICS_CATEGORY = "analytics";
+
+const syncAnalyticsConsent = (): void => {
+  const analyticsAccepted = CookieConsent.acceptedCategory(ANALYTICS_CATEGORY);
+
+  if (analyticsAccepted) {
+    globalThis?.localStorage.setItem(ANALYTICS_CONSENT_KEY, "true");
+  } else {
+    globalThis?.localStorage.removeItem(ANALYTICS_CONSENT_KEY);
+  }
+
+  globalThis.dispatchEvent(
+    new CustomEvent(COOKIE_CONSENT_UPDATED_EVENT, {
+      detail: { analyticsAccepted },
+    }),
+  );
+};
 
 const VanillaCookieConsent = () => {
   const { t } = useTranslation();
@@ -47,6 +69,15 @@ const VanillaCookieConsent = () => {
     };
 
     CookieConsent.run({
+      onFirstConsent: () => {
+        syncAnalyticsConsent();
+      },
+      onConsent: () => {
+        syncAnalyticsConsent();
+      },
+      onChange: () => {
+        syncAnalyticsConsent();
+      },
       guiOptions: {
         consentModal: {
           layout: "box",
@@ -75,11 +106,11 @@ const VanillaCookieConsent = () => {
           },
         },
         analytics: {
-          enabled: true,
+          enabled: false,
           readOnly: false,
         },
         functionality: {
-          enabled: true,
+          enabled: false,
           readOnly: false,
           services: {
             discordModal: {
