@@ -101,7 +101,7 @@ const WikiContent = ({
                 <h3 className="text-lg font-semibold text-white">
                   {perk.name}
                 </h3>
-                {perk.cost && (
+                {Boolean(perk.cost) && (
                   <span className="text-sm text-yellow-400 font-medium">
                     {perk.cost} points
                   </span>
