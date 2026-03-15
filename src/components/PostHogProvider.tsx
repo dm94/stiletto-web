@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 import posthog from "posthog-js";
+import {
+  ANALYTICS_CONSENT_KEY,
+  COOKIE_CONSENT_UPDATED_EVENT,
+} from "../config/analyticsConsentConstants";
 
 const POSTHOG_KEY = import.meta.env.VITE_PUBLIC_POSTHOG_KEY;
 const POSTHOG_HOST = import.meta.env.VITE_PUBLIC_POSTHOG_HOST;
-const ANALYTICS_CONSENT_KEY = "analytics-consent";
-const COOKIE_CONSENT_UPDATED_EVENT = "cookie-consent-updated";
 let isPostHogInitialized = false;
 
 const hasAnalyticsConsent = (): boolean => {
