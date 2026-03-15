@@ -9,7 +9,7 @@ import { supportedLanguages } from "@config/languages";
  */
 export const useLanguagePrefix = () => {
   const location = useLocation();
-  const supportedLangCodes = supportedLanguages.map((lang) => lang.key);
+  const supportedLangCodes = new Set(supportedLanguages.map((lang) => lang.key));
 
   /**
    * Gets the current language from URL or i18n state
@@ -17,10 +17,10 @@ export const useLanguagePrefix = () => {
    */
   const getCurrentLanguage = (): string => {
     // Try to extract the language from the current URL
-    const pathSegments = location.pathname.split("/").filter(Boolean);
-    const firstSegment = pathSegments[0];
+    const pathSegment = location.pathname.split("/").find(Boolean);
+    const firstSegment = pathSegment;
 
-    if (firstSegment && supportedLangCodes.includes(firstSegment)) {
+    if (firstSegment && supportedLangCodes.has(firstSegment)) {
       return firstSegment;
     }
 
@@ -43,7 +43,7 @@ export const useLanguagePrefix = () => {
     const segments = pathWithoutLeadingSlash.split("/");
 
     // If the first segment is a valid language code, do not modify the route
-    if (segments[0] && supportedLangCodes.includes(segments[0])) {
+    if (segments[0] && supportedLangCodes.has(segments[0])) {
       return path;
     }
 

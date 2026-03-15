@@ -52,9 +52,7 @@ const SelectedItem: React.FC<SelectedItemProps> = ({ item, onChangeCount }) => {
           <Ingredients
             crafting={ingredients}
             value={
-              ingredients.output != null
-                ? item.count / ingredients.output
-                : item.count
+              ingredients.output ? item.count / ingredients.output : item.count
             }
           />
           <div className="mt-4 flex flex-col space-y-2">

@@ -48,13 +48,58 @@ const TechTree = () => {
     }
   }, []);
 
+  const syncUserTechData = useCallback(
+    async (selectedTree: Tree) => {
+      if (!isConnected) {
+        return;
+      }
+
+      const userData = await getUser();
+
+      if (userData?.clanid) {
+        setClan(userData.clanid);
+      }
+
+      const userDiscordId = userData?.discordid;
+      if (!userDiscordId) {
+        return;
+      }
+
+      setDiscordId(userDiscordId);
+
+      try {
+        const response = await getLearned(userDiscordId, selectedTree);
+        if (!response) {
+          return;
+        }
+
+        const learnedTrees = [
+          ["Vitamins", response.Vitamins],
+          ["Equipment", response.Equipment],
+          ["Crafting", response.Crafting],
+          ["Construction", response.Construction],
+          ["Walkers", response.Walkers],
+        ] as const;
+
+        for (const [treeName, learnedItems] of learnedTrees) {
+          updateLearnedTree(treeName, learnedItems);
+        }
+      } catch {
+        return;
+      }
+    },
+    [isConnected, updateLearnedTree],
+  );
+
   useEffect(() => {
     let isMounted = true;
 
     const fetchData = async () => {
       try {
+        const selectedTree = tree ? (tree as Tree) : tabSelect;
+
         if (tree && tree !== tabSelect) {
-          setTabSelect(tree as Tree);
+          setTabSelect(selectedTree);
         }
 
         const fetchedItems = await getTechItems();
@@ -67,30 +112,7 @@ const TechTree = () => {
           setItems(filteredItems);
         }
 
-        if (isConnected) {
-          const userData = await getUser();
-
-          if (userData?.clanid) {
-            setClan(userData.clanid);
-          }
-
-          if (userData?.discordid) {
-            setDiscordId(userData.discordid);
-
-            try {
-              const response = await getLearned(userData.discordid, tabSelect);
-              if (response) {
-                updateLearnedTree("Vitamins", response.Vitamins);
-                updateLearnedTree("Equipment", response.Equipment);
-                updateLearnedTree("Crafting", response.Crafting);
-                updateLearnedTree("Construction", response.Construction);
-                updateLearnedTree("Walkers", response.Walkers);
-              }
-            } catch {
-              // Silent error
-            }
-          }
-        }
+        await syncUserTechData(selectedTree);
 
         if (isMounted) {
           setIsLoaded(true);
@@ -105,7 +127,7 @@ const TechTree = () => {
     return () => {
       isMounted = false;
     };
-  }, [tree, tabSelect, updateLearnedTree, isConnected]);
+  }, [tree, tabSelect, syncUserTechData]);
 
   const saveTree = useCallback(async () => {
     if (isSaving || !discordId) {
