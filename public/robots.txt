@@ -12,4 +12,3 @@ Allow: /*.json$
 
 # Sitemaps
 Sitemap: https://stiletto.deeme.dev/sitemap.xml
-Sitemap: https://stiletto.deeme.dev/sitemap_items.xml
