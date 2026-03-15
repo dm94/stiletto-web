@@ -44,30 +44,29 @@ const Pagination = ({
       </div>
     );
 
+  let displayedCount = 0;
+  let totalCount = 0;
+
+  if (contentType === "items") {
+    displayedCount = displayedItems.length;
+    totalCount = filteredItems.length;
+  } else if (contentType === "creatures") {
+    displayedCount = displayedCreatures.length;
+    totalCount = filteredCreatures.length;
+  } else if (contentType === "perks") {
+    displayedCount = displayedPerks.length;
+    totalCount = filteredPerks.length;
+  }
+
   const paginationInfo =
-    !isLoading &&
-    (contentType === "items" && displayedItems.length > 0 ? (
+    !isLoading && displayedCount > 0 ? (
       <div className="mt-4 text-center text-gray-400">
         {t("wiki.showingItems", {
-          displayed: displayedItems.length,
-          total: filteredItems.length,
+          displayed: displayedCount,
+          total: totalCount,
         })}
       </div>
-    ) : contentType === "creatures" && displayedCreatures.length > 0 ? (
-      <div className="mt-4 text-center text-gray-400">
-        {t("wiki.showingItems", {
-          displayed: displayedCreatures.length,
-          total: filteredCreatures.length,
-        })}
-      </div>
-    ) : contentType === "perks" && displayedPerks.length > 0 ? (
-      <div className="mt-4 text-center text-gray-400">
-        {t("wiki.showingItems", {
-          displayed: displayedPerks.length,
-          total: filteredPerks.length,
-        })}
-      </div>
-    ) : null);
+    ) : null;
 
   return (
     <>
