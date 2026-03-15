@@ -28,6 +28,7 @@ import { getStoredItem, storeItem } from "@functions/services";
 
 const PERK_BUILD_STORAGE_KEY = "perk-calculator-build-v1";
 const BUILD_QUERY_KEY = "build";
+const MAX_TOTAL_PERK_COST = 100;
 
 type SavedPerkBuild = {
   activeRoot?: string;
@@ -164,7 +165,11 @@ const PerkCostCalculator = () => {
 
       let normalized = new Set<string>();
       for (const perkName of validNames) {
-        normalized = togglePerk(perkName, normalized, perkGraph);
+        const nextSelection = togglePerk(perkName, normalized, perkGraph);
+        const nextCost = computeTotalCost(nextSelection, perkGraph);
+        if (nextCost <= MAX_TOTAL_PERK_COST) {
+          normalized = nextSelection;
+        }
       }
 
       return normalized;
@@ -236,13 +241,40 @@ const PerkCostCalculator = () => {
     storeItem(PERK_BUILD_STORAGE_KEY, JSON.stringify(savedBuild));
   }, [didHydrateBuild, savedBuild]);
 
-  const toggleSelection = useCallback(
-    (perkName: string) => {
-      setSelectedPerks((currentSelection) =>
-        togglePerk(perkName, currentSelection, perkGraph),
-      );
+  const canSelectWithCostLimit = useCallback(
+    (perkName: string, currentSelection: ReadonlySet<string>): boolean => {
+      if (currentSelection.has(perkName)) {
+        return true;
+      }
+
+      if (!canSelect(perkName, currentSelection, perkGraph)) {
+        return false;
+      }
+
+      const nextSelection = togglePerk(perkName, currentSelection, perkGraph);
+      const nextCost = computeTotalCost(nextSelection, perkGraph);
+      return nextCost <= MAX_TOTAL_PERK_COST;
     },
     [perkGraph],
+  );
+
+  const canTogglePerk = useCallback(
+    (perkName: string): boolean =>
+      canSelectWithCostLimit(perkName, selectedPerks),
+    [canSelectWithCostLimit, selectedPerks],
+  );
+
+  const toggleSelection = useCallback(
+    (perkName: string) => {
+      setSelectedPerks((currentSelection) => {
+        if (!canSelectWithCostLimit(perkName, currentSelection)) {
+          return currentSelection;
+        }
+
+        return togglePerk(perkName, currentSelection, perkGraph);
+      });
+    },
+    [canSelectWithCostLimit, perkGraph],
   );
 
   const totalCost = useMemo(
@@ -279,7 +311,7 @@ const PerkCostCalculator = () => {
         continue;
       }
 
-      if (!canSelect(perkName, selectedPerks, perkGraph)) {
+      if (!canSelectWithCostLimit(perkName, selectedPerks)) {
         continue;
       }
 
@@ -300,7 +332,7 @@ const PerkCostCalculator = () => {
       perkName: bestPerkName,
       incrementalCost: bestIncrementalCost ?? 0,
     };
-  }, [perkGraph, selectedPerks, totalCost]);
+  }, [canSelectWithCostLimit, perkGraph, selectedPerks, totalCost]);
 
   const handleShareBuild = useCallback(async () => {
     navigate(`${location.pathname}?${shareSearch}`);
@@ -436,6 +468,7 @@ const PerkCostCalculator = () => {
               graph={perkGraph}
               selectedPerks={selectedPerks}
               onTogglePerk={toggleSelection}
+              canTogglePerk={canTogglePerk}
             />
           ) : (
             <div className="rounded-lg border border-gray-700 bg-gray-900 p-6 text-gray-300">

@@ -1,7 +1,6 @@
 import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { PerkGraph } from "@functions/perkCostEngine";
-import { canSelect } from "@functions/perkCostEngine";
 import "../../styles/PerkTree.css";
 
 type PerkTreeProps = {
@@ -9,6 +8,7 @@ type PerkTreeProps = {
   graph: PerkGraph;
   selectedPerks: ReadonlySet<string>;
   onTogglePerk: (perkName: string) => void;
+  canTogglePerk: (perkName: string) => boolean;
 };
 
 type NodeData = {
@@ -34,6 +34,7 @@ const PerkTree = ({
   graph,
   selectedPerks,
   onTogglePerk,
+  canTogglePerk,
 }: PerkTreeProps) => {
   const { t } = useTranslation();
   const [focusedNodeId, setFocusedNodeId] = useState<string>();
@@ -113,24 +114,19 @@ const PerkTree = ({
   const focusedPerk = focusedNodeId
     ? graph.byName.get(focusedNodeId)
     : undefined;
-  const canToggleFocused = focusedNodeId
-    ? selectedPerks.has(focusedNodeId) ||
-      canSelect(focusedNodeId, selectedPerks, graph)
-    : false;
+  const canToggleFocused = focusedNodeId ? canTogglePerk(focusedNodeId) : false;
 
   const handleNodeClick = useCallback(
     (nodeId: string) => {
       setFocusedNodeId(nodeId);
 
-      const canToggle =
-        selectedPerks.has(nodeId) || canSelect(nodeId, selectedPerks, graph);
-      if (!canToggle) {
+      if (!canTogglePerk(nodeId)) {
         return;
       }
 
       onTogglePerk(nodeId);
     },
-    [graph, onTogglePerk, selectedPerks],
+    [canTogglePerk, onTogglePerk],
   );
 
   return (
@@ -182,7 +178,7 @@ const PerkTree = ({
 
           {treeData.nodes.map((node) => {
             const isSelected = selectedPerks.has(node.id);
-            const isSelectable = canSelect(node.id, selectedPerks, graph);
+            const isSelectable = canTogglePerk(node.id);
             const isLocked = !isSelected && !isSelectable;
 
             let stateClass = "available";
