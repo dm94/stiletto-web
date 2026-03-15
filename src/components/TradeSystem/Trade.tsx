@@ -108,14 +108,12 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
             className="text-lg font-medium text-gray-300 mb-2 flex justify-center"
             data-testid="trade-resource"
           >
-            {trade?.amount !== 0 ? `${trade.amount}x ` : ""}{" "}
+            {trade?.amount ? `${trade.amount}x ` : ""}{" "}
             <Icon key={trade.resource} name={trade.resource} />
             <span>{t(trade.resource, { ns: "items" })}</span>
           </h3>
           <p className="text-gray-400 mb-2" data-testid="trade-price">
-            {trade?.price !== 0
-              ? `${trade.price} Flots/${t("trades.unit")}`
-              : ""}
+            {trade?.price ? `${trade.price} Flots/${t("trades.unit")}` : ""}
           </p>
           {trade.nickname && (
             <p className="text-gray-400" data-testid="trade-nickname">{`${t(
