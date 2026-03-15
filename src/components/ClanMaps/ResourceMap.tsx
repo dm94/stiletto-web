@@ -48,7 +48,7 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
     [],
   );
   const [isOpenSidebar, setIsOpenSidebar] = useState<boolean>(
-    window.innerWidth >= 1440,
+    globalThis.innerWidth >= 1440,
   );
   const [error, setError] = useState<string>();
   const [activeTab, setActiveTab] = useState<string>("resources");

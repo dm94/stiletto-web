@@ -28,7 +28,7 @@ const Menu: React.FC<MenuProps> = ({
     if (
       menuRef.current &&
       !menuRef.current.classList.contains("hidden") &&
-      window.innerWidth < 768
+      globalThis.innerWidth < 768
     ) {
       menuRef.current.classList.add("hidden");
     }

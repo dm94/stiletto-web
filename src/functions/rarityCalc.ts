@@ -103,7 +103,7 @@ const rarityData: RarityData = {
     SiegeWeaponReloadTimeFactor: 0.92,
     SiegeWeaponRotationSpeedFactor: 1.1,
     CraftingTimeFactor: 0.75,
-    VitaminDurationFactor: 2.0,
+    VitaminDurationFactor: 2,
     GrapplingHookStaminaCostFactor: 0.6,
     ProjectileInitialVelocityFactor: 1.1,
     WingsuitStaminaCostFactor: 0.7,
@@ -123,7 +123,7 @@ const rarityData: RarityData = {
     ToolDurabilityFactor: 1.7,
     ToolTierFactor: 1.4,
     WeaponItemDamageFactor: 1.28,
-    WeaponItemSpeedBonus: 2.0,
+    WeaponItemSpeedBonus: 2,
     ArmorItemSoakFactor: 1.28,
     ArmorItemReduceBonus: 1.28,
     WeaponStaminaCostFactor: 0.92,
@@ -154,9 +154,9 @@ const rarityData: RarityData = {
     StorageContainerSlotFactor: 1.75,
     HarvestCriticalChance: 0.45,
     SiegeWeaponDamageFactor: 1.35,
-    CraftingExpFactor: 4.0,
+    CraftingExpFactor: 4,
     ItemUsageExpFactor: 1.3,
-    FoliageExpFactor: 2.0,
+    FoliageExpFactor: 2,
     ItemWeightFactor: 0.65,
     WeaponDurabilityFactor: 2.3,
     ArmorDurabilityFactor: 2.3,
@@ -173,43 +173,58 @@ const rarityData: RarityData = {
     MobProjectileDamageFactor: 1.75,
   },
   Legendary: {
-    WalkerHealthFactor: 2.0,
-    WalkerPartHealthFactor: 2.0,
+    WalkerHealthFactor: 2,
+    WalkerPartHealthFactor: 2,
     WalkerTorqueGenerationFactor: 1.2,
-    StructureHealthFactor: 2.0,
-    ExoskeletonHealthFactor: 2.0,
+    StructureHealthFactor: 2,
+    ExoskeletonHealthFactor: 2,
     ExoskeletonAmmoSlotIncrease: 2,
     AutomatonRotationRateFactor: 1.5,
     SiegeWeaponReloadTimeFactor: 0.85,
     SiegeWeaponRotationSpeedFactor: 1.25,
-    VitaminDurationFactor: 3.0,
+    VitaminDurationFactor: 3,
     GrapplingHookStaminaCostFactor: 0.2,
     ProjectileInitialVelocityFactor: 1.2,
     WingsuitStaminaCostFactor: 0.4,
     HealingStatusEffectFactor: 1.3,
     LiquidContainerStackSizeFactor: 1.2,
     TorqueContainerStackSizeFactor: 1.2,
-    BagContainerSlotFactor: 2.0,
-    StorageContainerSlotFactor: 2.0,
+    BagContainerSlotFactor: 2,
+    StorageContainerSlotFactor: 2,
     HarvestCriticalChance: 0.6,
     SiegeWeaponDamageFactor: 1.5,
     CraftingExpFactor: 6.5,
     ItemUsageExpFactor: 1.4,
-    FoliageExpFactor: 5.0,
+    FoliageExpFactor: 5,
     ItemWeightFactor: 0.5,
-    WeaponDurabilityFactor: 3.0,
-    ArmorDurabilityFactor: 3.0,
-    ToolDurabilityFactor: 3.0,
+    WeaponDurabilityFactor: 3,
+    ArmorDurabilityFactor: 3,
+    ToolDurabilityFactor: 3,
     ToolTierFactor: 1.8,
     WeaponItemDamageFactor: 1.4,
     ArmorItemSoakFactor: 1.4,
     ArmorItemReduceBonus: 1.4,
     WeaponStaminaCostFactor: 0.85,
-    MobHealthFactor: 2.0,
-    MobDamageFactor: 2.0,
-    MobStructureHealthFactor: 2.0,
-    MobProjectileDamageFactor: 2.0,
+    MobHealthFactor: 2,
+    MobDamageFactor: 2,
+    MobStructureHealthFactor: 2,
+    MobProjectileDamageFactor: 2,
   },
+};
+
+const RARITY_MAP: Partial<Record<Rarity, keyof RarityData>> = {
+  [Rarity.Uncommon]: "Uncommon",
+  [Rarity.Rare]: "Rare",
+  [Rarity.Epic]: "Epic",
+  [Rarity.Legendary]: "Legendary",
+};
+
+const getRarityFactor = (
+  rarity: Rarity | undefined,
+  factorName: keyof RarityFactors,
+): number | undefined => {
+  const rarityKey = rarity ? RARITY_MAP[rarity] : undefined;
+  return rarityKey ? rarityData[rarityKey][factorName] : undefined;
 };
 
 export const calcRarityValue = (
@@ -219,44 +234,22 @@ export const calcRarityValue = (
   value: number,
 ) => {
   const factorName = getFactorName(type, category ?? "");
-  let newValue = value;
 
-  if (factorName != null) {
-    if (
-      factorName === "WeaponItemSpeedBonus" ||
-      factorName === "ArmorItemReduceBonus"
-    ) {
-      return sumCalcs(factorName, rarity, newValue);
-    }
-
-    switch (rarity) {
-      case Rarity.Uncommon:
-        if (rarityData.Uncommon[factorName]) {
-          newValue = newValue * rarityData.Uncommon[factorName];
-        }
-        break;
-      case Rarity.Rare:
-        if (rarityData.Rare[factorName]) {
-          newValue = newValue * rarityData.Rare[factorName];
-        }
-        break;
-      case Rarity.Epic:
-        if (rarityData.Epic[factorName]) {
-          newValue = newValue * rarityData.Epic[factorName];
-        }
-        break;
-      case Rarity.Legendary:
-        if (rarityData.Legendary[factorName]) {
-          newValue = newValue * rarityData.Legendary[factorName];
-        }
-        break;
-      default:
-        break;
-    }
-    newValue = Number(newValue.toFixed(2));
+  if (factorName == null) {
+    return value;
   }
 
-  return newValue;
+  if (
+    factorName === "WeaponItemSpeedBonus" ||
+    factorName === "ArmorItemReduceBonus"
+  ) {
+    return sumCalcs(factorName, rarity, value);
+  }
+
+  const factorValue = getRarityFactor(rarity, factorName);
+  const newValue = factorValue == null ? value : value * factorValue;
+
+  return Number(newValue.toFixed(2));
 };
 
 const sumCalcs = (
@@ -264,36 +257,10 @@ const sumCalcs = (
   rarity: Rarity | undefined,
   value: number,
 ): number => {
-  let newValue = value;
+  const factorValue = getRarityFactor(rarity, factorName);
+  const newValue = factorValue == null ? value : value + factorValue;
 
-  switch (rarity) {
-    case Rarity.Uncommon:
-      if (rarityData.Uncommon?.[factorName]) {
-        newValue = newValue + rarityData.Uncommon[factorName];
-      }
-      break;
-    case Rarity.Rare:
-      if (rarityData.Rare?.[factorName]) {
-        newValue = newValue + rarityData.Rare[factorName];
-      }
-      break;
-    case Rarity.Epic:
-      if (rarityData.Epic?.[factorName]) {
-        newValue = newValue + rarityData.Epic[factorName];
-      }
-      break;
-    case Rarity.Legendary:
-      if (rarityData.Legendary?.[factorName]) {
-        newValue = newValue + rarityData.Legendary[factorName];
-      }
-      break;
-    default:
-      break;
-  }
-
-  newValue = Number(newValue.toFixed(2));
-
-  return newValue;
+  return Number(newValue.toFixed(2));
 };
 
 const getFactorName = (

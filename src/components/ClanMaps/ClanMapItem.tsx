@@ -32,7 +32,7 @@ const ClanMapItem: React.FC<ClanMapItemProps> = ({
   }, [map.mapid, onDelete]);
 
   const handleShareMap = useCallback(() => {
-    window.open(`${getDomain()}/map/${map.mapid}?pass=${map.pass}`);
+    globalThis.open(`${getDomain()}/map/${map.mapid}?pass=${map.pass}`);
   }, [map.mapid, map.pass]);
 
   const isOwner = useMemo(
