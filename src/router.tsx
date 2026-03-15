@@ -16,6 +16,7 @@ const AuctionTimers = React.lazy(() => import("@pages/AuctionTimers"));
 const Others = React.lazy(() => import("@pages/Others"));
 const MapPage = React.lazy(() => import("@pages/MapPage"));
 const TechTree = React.lazy(() => import("@pages/TechTree"));
+const PerkCostCalculator = React.lazy(() => import("@pages/PerkCostCalculator"));
 const Privacy = React.lazy(() => import("@pages/Privacy"));
 const ItemWiki = React.lazy(() => import("@pages/ItemWiki"));
 const CreatureWiki = React.lazy(() => import("@pages/CreatureWiki"));
@@ -43,6 +44,7 @@ const AppRoutes: React.ReactElement = (
       <Route path="map" element={<MapPage />} />
       <Route path="tech/:tree" element={<TechTree />} />
       <Route path="tech/" element={<TechTree />} />
+      <Route path="perks" element={<PerkCostCalculator />} />
       <Route path="privacy" element={<Privacy />} />
       <Route path="item/:name" element={<ItemWiki />} />
       <Route path="item/:name/:rarity" element={<ItemWiki />} />
