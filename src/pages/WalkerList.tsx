@@ -11,6 +11,7 @@ import { getDomain } from "@functions/utils";
 import {
   getWalkers,
   editWalker,
+  addWalkerFromUser,
   deleteWalker,
 } from "@functions/requests/walkers";
 import { WalkerEnum, type WalkerInfo, WalkerUse } from "@ctypes/dto/walkers";
@@ -42,6 +43,8 @@ const WalkerList: React.FC = () => {
   const [hasPermissions, setHasPermissions] = useState<boolean>(false);
   const [isReadySearch, setIsReadySearch] = useState<string>("All");
   const [clanId, setClanId] = useState<number>();
+  const [newWalkerName, setNewWalkerName] = useState<string>("");
+  const [isCreatingWalker, setIsCreatingWalker] = useState<boolean>(false);
 
   const updateWalkers = useCallback(
     async (currentPage = page) => {
@@ -112,6 +115,26 @@ const WalkerList: React.FC = () => {
     },
     [updateWalkers, t],
   );
+
+  const handleCreateWalker = useCallback(async () => {
+    const trimmedWalkerName = newWalkerName.trim();
+    if (!trimmedWalkerName) {
+      return;
+    }
+
+    setIsCreatingWalker(true);
+    try {
+      await addWalkerFromUser({
+        name: trimmedWalkerName,
+      });
+      setNewWalkerName("");
+      await updateWalkers(1);
+    } catch {
+      setError(t("errors.apiConnection"));
+    } finally {
+      setIsCreatingWalker(false);
+    }
+  }, [newWalkerName, updateWalkers, t]);
 
   const setupUserProfile = useCallback(async (): Promise<number | null> => {
     let userIsLeader = false;
@@ -324,6 +347,40 @@ const WalkerList: React.FC = () => {
     <div className="container mx-auto px-4 py-6">
       {renderHelmetInfo()}
       {renderServerLinkButton()}
+
+      <div className="bg-gray-800 border border-green-500 rounded-lg shadow-md mb-6">
+        <div className="p-3 bg-gray-900 border-b border-gray-700">
+          <h2 className="text-lg font-semibold text-gray-300">
+            {t("common.add")}
+          </h2>
+        </div>
+        <div className="p-4">
+          <form
+            className="flex flex-col sm:flex-row gap-2"
+            onSubmit={(event) => {
+              event.preventDefault();
+              handleCreateWalker();
+            }}
+          >
+            <input
+              className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
+              type="text"
+              value={newWalkerName}
+              maxLength={60}
+              placeholder={t("common.name")}
+              onChange={(event) => setNewWalkerName(event.target.value)}
+              required
+            />
+            <button
+              type="submit"
+              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:bg-green-900 disabled:cursor-not-allowed"
+              disabled={!newWalkerName.trim() || isCreatingWalker}
+            >
+              {t("common.add")}
+            </button>
+          </form>
+        </div>
+      </div>
 
       <div className="bg-gray-800 border border-blue-500 rounded-lg shadow-md mb-6">
         <div className="p-3 bg-gray-900 border-b border-gray-700">

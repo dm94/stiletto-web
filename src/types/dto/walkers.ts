@@ -3,6 +3,12 @@ export enum WalkerUse {
   FARMING = "farming",
   PERSONAL = "personal",
   RAM = "ram",
+  SCOUT = "scout",
+  RAIDER = "raider",
+  SUPPORT = "support",
+  HAULER = "hauler",
+  CRAFT = "craft",
+  STORAGE = "storage",
 }
 
 export enum WalkerEnum {
@@ -48,6 +54,15 @@ export type EditWalkerRequestBody = {
   use: WalkerUse;
   type: WalkerEnum;
   description: string;
+};
+
+export type AddWalkerFromUserRequestBody = {
+  name: string;
+  owner?: string;
+  use?: WalkerUse;
+  ready?: boolean;
+  type?: WalkerEnum;
+  description?: string;
 };
 
 export type WalkerInfo = {
