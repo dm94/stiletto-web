@@ -7,6 +7,7 @@ import { getItems } from "@functions/github";
 import { useUser } from "@store/userStore";
 import Pagination from "@components/Pagination";
 import WalkerListItem from "@components/WalkerList/WalkerListItem";
+import CreateWalkerModal from "@components/WalkerList/CreateWalkerModal";
 import { getDomain } from "@functions/utils";
 import {
   getWalkers,
@@ -14,7 +15,12 @@ import {
   addWalkerFromUser,
   deleteWalker,
 } from "@functions/requests/walkers";
-import { WalkerEnum, type WalkerInfo, WalkerUse } from "@ctypes/dto/walkers";
+import {
+  WalkerEnum,
+  type WalkerInfo,
+  WalkerUse,
+  type AddWalkerFromUserRequestBody,
+} from "@ctypes/dto/walkers";
 import type { Item } from "@ctypes/item";
 import { getUser } from "@functions/requests/users";
 import {
@@ -43,7 +49,8 @@ const WalkerList: React.FC = () => {
   const [hasPermissions, setHasPermissions] = useState<boolean>(false);
   const [isReadySearch, setIsReadySearch] = useState<string>("All");
   const [clanId, setClanId] = useState<number>();
-  const [newWalkerName, setNewWalkerName] = useState<string>("");
+  const [isCreateWalkerModalOpen, setIsCreateWalkerModalOpen] =
+    useState<boolean>(false);
   const [isCreatingWalker, setIsCreatingWalker] = useState<boolean>(false);
 
   const updateWalkers = useCallback(
@@ -116,25 +123,56 @@ const WalkerList: React.FC = () => {
     [updateWalkers, t],
   );
 
-  const handleCreateWalker = useCallback(async () => {
-    const trimmedWalkerName = newWalkerName.trim();
-    if (!trimmedWalkerName) {
-      return;
-    }
+  const handleCreateWalker = useCallback(
+    async (requestBody: AddWalkerFromUserRequestBody) => {
+      const trimmedWalkerName = requestBody.name.trim();
+      if (!trimmedWalkerName) {
+        return;
+      }
 
-    setIsCreatingWalker(true);
-    try {
-      await addWalkerFromUser({
+      const normalizedRequestBody: AddWalkerFromUserRequestBody = {
+        ...requestBody,
         name: trimmedWalkerName,
-      });
-      setNewWalkerName("");
-      await updateWalkers(1);
-    } catch {
-      setError(t("errors.apiConnection"));
-    } finally {
-      setIsCreatingWalker(false);
+      };
+
+      setIsCreatingWalker(true);
+      try {
+        await addWalkerFromUser(normalizedRequestBody);
+        setIsCreateWalkerModalOpen(false);
+        await updateWalkers(1);
+      } catch (error: unknown) {
+        setError(
+          error instanceof Error ? error.message : t("errors.apiConnection"),
+        );
+      } finally {
+        setIsCreatingWalker(false);
+      }
+    },
+    [updateWalkers, t],
+  );
+
+  const openCreateWalkerModal = useCallback(() => {
+    setIsCreateWalkerModalOpen(true);
+  }, []);
+
+  const closeCreateWalkerModal = useCallback(() => {
+    if (!isCreatingWalker) {
+      setIsCreateWalkerModalOpen(false);
     }
-  }, [newWalkerName, updateWalkers, t]);
+  }, [isCreatingWalker]);
+
+  const renderCreateWalkerSection = () => (
+    <div className="mb-6">
+      <button
+        type="button"
+        className="w-full rounded-lg bg-green-600 p-2 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:cursor-not-allowed disabled:bg-green-900 sm:w-auto sm:px-6"
+        onClick={openCreateWalkerModal}
+        disabled={isCreatingWalker}
+      >
+        Add walker
+      </button>
+    </div>
+  );
 
   const setupUserProfile = useCallback(async (): Promise<number | null> => {
     let userIsLeader = false;
@@ -347,40 +385,7 @@ const WalkerList: React.FC = () => {
     <div className="container mx-auto px-4 py-6">
       {renderHelmetInfo()}
       {renderServerLinkButton()}
-
-      <div className="bg-gray-800 border border-green-500 rounded-lg shadow-md mb-6">
-        <div className="p-3 bg-gray-900 border-b border-gray-700">
-          <h2 className="text-lg font-semibold text-gray-300">
-            {t("common.add")}
-          </h2>
-        </div>
-        <div className="p-4">
-          <form
-            className="flex flex-col sm:flex-row gap-2"
-            onSubmit={(event) => {
-              event.preventDefault();
-              handleCreateWalker();
-            }}
-          >
-            <input
-              className="flex-1 p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500"
-              type="text"
-              value={newWalkerName}
-              maxLength={60}
-              placeholder={t("common.name")}
-              onChange={(event) => setNewWalkerName(event.target.value)}
-              required
-            />
-            <button
-              type="submit"
-              className="p-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:bg-green-900 disabled:cursor-not-allowed"
-              disabled={!newWalkerName.trim() || isCreatingWalker}
-            >
-              {t("common.add")}
-            </button>
-          </form>
-        </div>
-      </div>
+      {renderCreateWalkerSection()}
 
       <div className="bg-gray-800 border border-blue-500 rounded-lg shadow-md mb-6">
         <div className="p-3 bg-gray-900 border-b border-gray-700">
@@ -545,6 +550,15 @@ const WalkerList: React.FC = () => {
           onNext={() => updateWalkers(page + 1)}
         />
       </div>
+
+      <CreateWalkerModal
+        isOpen={isCreateWalkerModalOpen}
+        isSubmitting={isCreatingWalker}
+        walkerTypes={walkerTypes}
+        memberList={members}
+        onClose={closeCreateWalkerModal}
+        onSubmit={handleCreateWalker}
+      />
     </div>
   );
 };

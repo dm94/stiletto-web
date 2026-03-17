@@ -63,6 +63,10 @@ export const addWalkerFromUser = async (
     return await response.json();
   }
 
+  if (response.status === 405) {
+    throw new Error("errors.discordServerNotLinked");
+  }
+
   throw new Error("errors.apiConnection");
 };
 
