@@ -222,6 +222,13 @@ const PrivateProfile = () => {
                   <FaFlag className="mr-2" />
                   {t("menu.diplomacy")}
                 </Link>
+                <Link
+                  to="/clan/walkers"
+                  className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
+                >
+                  <FaFlag className="mr-2" />
+                  {t("menu.walkers")}
+                </Link>
                 {isLoaded && userData?.discordid !== userData?.leaderid && (
                   <button
                     type="button"
