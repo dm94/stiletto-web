@@ -1,6 +1,7 @@
 import { getStoredItem } from "../services";
 import { config } from "@config/config";
 import type {
+  AddWalkerFromUserRequestBody,
   GetWalkersRequestParams,
   EditWalkerRequestBody,
   WalkerInfo,
@@ -41,6 +42,29 @@ export const editWalker = async (
 
   if (response.ok) {
     return await response.json();
+  }
+
+  throw new Error("errors.apiConnection");
+};
+
+export const addWalkerFromUser = async (
+  requestBody: AddWalkerFromUserRequestBody,
+): Promise<GenericResponse> => {
+  const response = await fetch(`${config.API_URL}/walkers`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${getStoredItem("token")}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestBody),
+  });
+
+  if (response.ok) {
+    return await response.json();
+  }
+
+  if (response.status === 405) {
+    throw new Error("errors.discordServerNotLinked");
   }
 
   throw new Error("errors.apiConnection");

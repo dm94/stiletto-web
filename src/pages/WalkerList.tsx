@@ -7,13 +7,20 @@ import { getItems } from "@functions/github";
 import { useUser } from "@store/userStore";
 import Pagination from "@components/Pagination";
 import WalkerListItem from "@components/WalkerList/WalkerListItem";
+import CreateWalkerModal from "@components/WalkerList/CreateWalkerModal";
 import { getDomain } from "@functions/utils";
 import {
   getWalkers,
   editWalker,
+  addWalkerFromUser,
   deleteWalker,
 } from "@functions/requests/walkers";
-import { WalkerEnum, type WalkerInfo, WalkerUse } from "@ctypes/dto/walkers";
+import {
+  WalkerEnum,
+  type WalkerInfo,
+  WalkerUse,
+  type AddWalkerFromUserRequestBody,
+} from "@ctypes/dto/walkers";
 import type { Item } from "@ctypes/item";
 import { getUser } from "@functions/requests/users";
 import {
@@ -42,6 +49,9 @@ const WalkerList: React.FC = () => {
   const [hasPermissions, setHasPermissions] = useState<boolean>(false);
   const [isReadySearch, setIsReadySearch] = useState<string>("All");
   const [clanId, setClanId] = useState<number>();
+  const [isCreateWalkerModalOpen, setIsCreateWalkerModalOpen] =
+    useState<boolean>(false);
+  const [isCreatingWalker, setIsCreatingWalker] = useState<boolean>(false);
 
   const updateWalkers = useCallback(
     async (currentPage = page) => {
@@ -111,6 +121,57 @@ const WalkerList: React.FC = () => {
       }
     },
     [updateWalkers, t],
+  );
+
+  const handleCreateWalker = useCallback(
+    async (requestBody: AddWalkerFromUserRequestBody) => {
+      const trimmedWalkerName = requestBody.name.trim();
+      if (!trimmedWalkerName) {
+        return;
+      }
+
+      const normalizedRequestBody: AddWalkerFromUserRequestBody = {
+        ...requestBody,
+        name: trimmedWalkerName,
+      };
+
+      setIsCreatingWalker(true);
+      try {
+        await addWalkerFromUser(normalizedRequestBody);
+        setIsCreateWalkerModalOpen(false);
+        await updateWalkers(1);
+      } catch (error: unknown) {
+        setError(
+          error instanceof Error ? error.message : t("errors.apiConnection"),
+        );
+      } finally {
+        setIsCreatingWalker(false);
+      }
+    },
+    [updateWalkers, t],
+  );
+
+  const openCreateWalkerModal = useCallback(() => {
+    setIsCreateWalkerModalOpen(true);
+  }, []);
+
+  const closeCreateWalkerModal = useCallback(() => {
+    if (!isCreatingWalker) {
+      setIsCreateWalkerModalOpen(false);
+    }
+  }, [isCreatingWalker]);
+
+  const renderCreateWalkerSection = () => (
+    <div className="mb-6">
+      <button
+        type="button"
+        className="w-full rounded-lg bg-green-600 p-2 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:cursor-not-allowed disabled:bg-green-900 sm:w-auto sm:px-6"
+        onClick={openCreateWalkerModal}
+        disabled={isCreatingWalker}
+      >
+        {t("common.add")}
+      </button>
+    </div>
   );
 
   const setupUserProfile = useCallback(async (): Promise<number | null> => {
@@ -324,6 +385,7 @@ const WalkerList: React.FC = () => {
     <div className="container mx-auto px-4 py-6">
       {renderHelmetInfo()}
       {renderServerLinkButton()}
+      {renderCreateWalkerSection()}
 
       <div className="bg-gray-800 border border-blue-500 rounded-lg shadow-md mb-6">
         <div className="p-3 bg-gray-900 border-b border-gray-700">
@@ -488,6 +550,15 @@ const WalkerList: React.FC = () => {
           onNext={() => updateWalkers(page + 1)}
         />
       </div>
+
+      <CreateWalkerModal
+        isOpen={isCreateWalkerModalOpen}
+        isSubmitting={isCreatingWalker}
+        walkerTypes={walkerTypes}
+        memberList={members}
+        onClose={closeCreateWalkerModal}
+        onSubmit={handleCreateWalker}
+      />
     </div>
   );
 };
