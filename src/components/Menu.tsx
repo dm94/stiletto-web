@@ -188,7 +188,7 @@ const Menu: React.FC<MenuProps> = ({
                 />
                 <button
                   type="button"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800 bg-transparent"
                   onClick={searchItem}
                 >
                   <FaSearch />

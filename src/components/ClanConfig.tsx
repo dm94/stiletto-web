@@ -124,7 +124,7 @@ const ClanConfig: React.FC<ClanConfigProps> = ({
           </h5>
           <button
             type="button"
-            className="text-gray-400 hover:text-white"
+            className="text-gray-400 hover:text-white bg-transparent"
             onClick={onClose}
             aria-label="Close"
             title="Close"
