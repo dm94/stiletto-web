@@ -257,7 +257,7 @@ const Crafter: React.FC = () => {
             value={searchText}
           />
           <button
-            className="ml-3 p-2 text-gray-300 hover:text-white focus:outline-none"
+            className="ml-3 p-2 text-gray-300 hover:text-white focus:outline-none bg-transparent"
             type="button"
             onClick={toggleReportModal}
             aria-label={t("crafter.reportBug")}
