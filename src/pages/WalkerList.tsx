@@ -169,7 +169,7 @@ const WalkerList: React.FC = () => {
         onClick={openCreateWalkerModal}
         disabled={isCreatingWalker}
       >
-        Add walker
+        {t("common.add")}
       </button>
     </div>
   );
