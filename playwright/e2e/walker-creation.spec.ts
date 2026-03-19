@@ -131,13 +131,13 @@ test.describe("Walker Creation Flow", () => {
 
     await page.goto("/clan/walkers");
 
-    await expect(page.getByRole("button", { name: "Add walker" })).toBeVisible(
+    await expect(page.getByRole("button", { name: "Add" })).toBeVisible(
       {
         timeout: 15000,
       },
     );
 
-    await page.getByRole("button", { name: "Add walker" }).click();
+    await page.getByRole("button", { name: "Add" }).click();
     await expect(page.locator("#create-walker-name")).toBeVisible();
 
     await page.locator("#create-walker-name").fill("   Fresh Walker   ");
