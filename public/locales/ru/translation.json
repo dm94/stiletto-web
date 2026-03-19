@@ -494,5 +494,6 @@
   "perksCalculator.tree.selectNodeHelp": "Select a perk node to see details.",
   "perksCalculator.tree.cost": "Cost",
   "perksCalculator.tree.actions.selectPerk": "Select perk",
-  "perksCalculator.tree.actions.deselectPerk": "Deselect perk"
+  "perksCalculator.tree.actions.deselectPerk": "Deselect perk",
+  "crafter.reportBug": "Report bug"
 }
