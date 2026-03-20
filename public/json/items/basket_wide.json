@@ -20,6 +20,7 @@
     }
   ],
   "structureInfo": {
-    "hp": 50
+    "hp": 50,
+    "containerCapacity": 1
   }
 }

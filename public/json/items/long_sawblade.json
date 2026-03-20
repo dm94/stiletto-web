@@ -28,6 +28,9 @@
       ]
     }
   ],
+  "structureInfo": {
+    "containerCapacity": 16
+  },
   "toolInfo": [
     {
       "tier": 18,

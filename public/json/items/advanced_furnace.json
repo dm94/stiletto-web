@@ -30,6 +30,11 @@
   ],
   "structureInfo": {
     "hp": 5000,
-    "type": "Soft"
+    "type": "Soft",
+    "containerCapacity": {
+      "FuelContainer": 1,
+      "MetalContainer": 4,
+      "OreContainer": 4
+    }
   }
 }

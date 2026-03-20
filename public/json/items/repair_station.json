@@ -25,6 +25,10 @@
     }
   ],
   "structureInfo": {
-    "hp": 1000
+    "hp": 1000,
+    "containerCapacity": {
+      "Inputs": 8,
+      "Outputs": 8
+    }
   }
 }

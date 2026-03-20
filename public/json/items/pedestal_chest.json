@@ -24,6 +24,7 @@
     }
   ],
   "structureInfo": {
-    "hp": 5000
+    "hp": 5000,
+    "containerCapacity": 25
   }
 }

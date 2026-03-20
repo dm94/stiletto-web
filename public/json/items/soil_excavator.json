@@ -34,7 +34,11 @@
   ],
   "structureInfo": {
     "hp": 3000,
-    "type": "Soft"
+    "type": "Soft",
+    "containerCapacity": {
+      "Inputs": 3,
+      "Outputs": 8
+    }
   },
   "toolInfo": [
     {

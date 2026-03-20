@@ -43,6 +43,7 @@ export type ArmorInfo = {
 export type StructureInfo = {
   type?: string;
   hp?: number;
+  containerCapacity?: number | Record<string, number>;
 };
 
 export type Cost = {

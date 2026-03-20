@@ -25,6 +25,10 @@
   ],
   "structureInfo": {
     "hp": 150,
-    "type": "Soft"
+    "type": "Soft",
+    "containerCapacity": {
+      "FuelContainer": 1,
+      "OutputsContainer": 8
+    }
   }
 }

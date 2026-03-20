@@ -47,6 +47,14 @@ export const toSnakeCase = (str: string) =>
     .replaceAll(/[^a-z0-9_]/g, "")
     .replaceAll(/_+/g, "_");
 
+export const toCamelCase = (str: string) =>
+  str
+    .toLowerCase()
+    .replaceAll(/\s+/g, "")
+    .replaceAll(/[^a-z0-9]/g, "")
+    .replaceAll(/_+/g, "")
+    .replaceAll(/(^|_)([a-z])/g, (_, __, letter) => letter.toUpperCase());
+
 export const objectToURLSearchParams = (obj: object): URLSearchParams => {
   const keyValuePairs = Object.keys(obj)
     .filter((key) => obj[key as keyof typeof obj] !== undefined)

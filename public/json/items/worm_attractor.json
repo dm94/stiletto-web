@@ -32,6 +32,10 @@
   ],
   "structureInfo": {
     "hp": 5000,
-    "type": "Medium"
+    "type": "Medium",
+    "containerCapacity": {
+      "FuelContainer": 1,
+      "OutputsContainer": 8
+    }
   }
 }

@@ -314,6 +314,13 @@ const getFactorName = (
         factorName = "FoliageExpFactor";
       }
       break;
+    case "storage":
+      if (category === "Crafting") {
+        break;
+      } 
+      
+      factorName = "StorageContainerSlotFactor";
+      break;
     default:
       break;
   }
