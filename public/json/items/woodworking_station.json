@@ -22,6 +22,10 @@
   ],
   "structureInfo": {
     "hp": 900,
-    "type": "Soft"
+    "type": "Soft",
+    "containerCapacity": {
+      "Inputs": 8,
+      "Outputs": 8
+    }
   }
 }

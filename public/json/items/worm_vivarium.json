@@ -19,6 +19,10 @@
     }
   ],
   "structureInfo": {
-    "hp": 100
+    "hp": 100,
+    "containerCapacity": {
+      "WormInputs": 8,
+      "WormOutputs": 8
+    }
   }
 }

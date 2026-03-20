@@ -30,6 +30,10 @@
   ],
   "structureInfo": {
     "hp": 1000,
-    "type": "Soft"
+    "type": "Soft",
+    "containerCapacity": {
+      "Inputs": 16,
+      "Outputs": 8
+    }
   }
 }

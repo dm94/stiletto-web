@@ -25,7 +25,8 @@
   ],
   "structureInfo": {
     "hp": 20000,
-    "type": "Soft"
+    "type": "Soft",
+    "containerCapacity": 30
   },
   "toolInfo": [
     {

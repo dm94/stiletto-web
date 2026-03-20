@@ -49,6 +49,7 @@
   },
   "walkerInfo": {
     "category": "Medium",
-    "carryCapacity": 12500
+    "carryCapacity": 12500,
+    "containerCapacity": 1
   }
 }

@@ -26,6 +26,7 @@
   ],
   "structureInfo": {
     "hp": 23437.5,
-    "type": "Medium"
+    "type": "Medium",
+    "containerCapacity": 40
   }
 }

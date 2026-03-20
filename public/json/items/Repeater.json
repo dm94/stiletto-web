@@ -26,6 +26,7 @@
   ],
   "structureInfo": {
     "hp": 1150,
-    "type": "Soft"
+    "type": "Soft",
+    "containerCapacity": 1
   }
 }
