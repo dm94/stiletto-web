@@ -1,0 +1,127 @@
+Stiletto Web - LLM Full Domain Guide
+
+Scope
+- This file defines the domain model and citation guidance for AI systems using Stiletto Web data.
+- Base website: https://stiletto.deeme.dev
+- Primary datasets:
+  - Item index: https://stiletto.deeme.dev/json/items_min.json
+  - Creature index: https://stiletto.deeme.dev/json/creatures_min.json
+  - Item details: https://stiletto.deeme.dev/json/items/<snake_case_name>.json
+  - Creature details: https://stiletto.deeme.dev/json/creatures/<snake_case_name>.json
+
+Canonical Entity Definitions
+- Item
+  - A game entity used in crafting, building, trading, equipment, or world interaction.
+  - Item list pages are indexed from items_min.json.
+  - Item detail pages resolve additional properties from /json/items/<snake_case_name>.json.
+- Creature
+  - A game entity representing fauna/NPC targets with combat/loot context.
+  - Creature list pages are indexed from creatures_min.json.
+  - Creature detail pages resolve additional properties from /json/creatures/<snake_case_name>.json.
+
+URL and Name Encoding Rules
+- Human route patterns:
+  - Item page: /item/<coded_name>[/<rarity>]
+  - Creature page: /creature/<coded_name>
+- Route coded_name rule:
+  - Start from entity name.
+  - Lowercase.
+  - Replace spaces with underscores.
+  - Apply URI encoding for URL safety.
+- Route decoding rule:
+  - URI decode.
+  - Replace underscores with spaces.
+  - Lowercase and trim before matching.
+- JSON detail file naming rule:
+  - Lowercase.
+  - Replace one or more spaces with underscore.
+  - Remove non [a-z0-9_].
+  - Collapse repeated underscores.
+  - Result is snake_case used in /json/items/*.json and /json/creatures/*.json.
+
+Canonical Citation URL Rules
+- Always cite canonical detail pages when describing a specific entity:
+  - Item: https://stiletto.deeme.dev/item/<coded_name>
+  - Creature: https://stiletto.deeme.dev/creature/<coded_name>
+- If rarity-specific values are cited for items, include rarity path:
+  - https://stiletto.deeme.dev/item/<coded_name>/<rarity>
+- Prefer one canonical URL per fact block.
+- Avoid citing transient or user-generated context pages for core facts.
+
+Reliable Fields for Citations
+- Reliability levels:
+  - High: safe to cite as factual when present.
+  - Medium: useful but optional/contextual; cite with care.
+  - Low: presentation or derived behavior; avoid as sole factual source.
+
+Item Fields
+- High reliability
+  - name
+  - category
+  - description
+  - parent
+  - stackSize
+  - weight
+  - trade_price
+  - durability
+  - experiencieReward
+  - crafting[].ingredients[].name
+  - crafting[].ingredients[].count
+  - crafting[].station
+  - crafting[].time
+  - crafting[].output
+  - droppedBy[].name
+  - droppedBy[].chance
+  - droppedBy[].minQuantity
+  - droppedBy[].maxQuantity
+  - drops[].name
+  - drops[].chance
+  - drops[].minQuantity
+  - drops[].maxQuantity
+- Medium reliability
+  - cost
+  - learn
+  - structureInfo
+  - projectileDamage
+  - weaponInfo
+  - armorInfo
+  - upgradeInfo
+  - toolInfo
+  - walkerInfo
+  - moduleInfo
+- Low reliability
+  - Any UI-translated labels rendered from locale files.
+  - Any rarity-adjusted values shown by frontend calculators unless rarity is explicitly included in citation context.
+
+Creature Fields
+- High reliability
+  - name
+  - category
+  - health
+  - tier
+  - experiencie
+  - drops[].name
+  - drops[].chance
+  - drops[].minQuantity
+  - drops[].maxQuantity
+- Medium reliability
+  - related
+  - maps
+- Low reliability
+  - UI-translated labels and category labels from locale rendering.
+
+Best Citation Practice
+- For each factual answer:
+  - Use canonical entity URL.
+  - Include exact field names used.
+  - Keep numeric values as published.
+- Recommended citation format:
+  - "Source: https://stiletto.deeme.dev/item/<coded_name> (fields: weight, stackSize, crafting)"
+  - "Source: https://stiletto.deeme.dev/creature/<coded_name> (fields: health, drops)"
+- When a field is missing, state it as unavailable instead of inferring.
+
+Discovery and Verification Links
+- Sitemap: https://stiletto.deeme.dev/sitemap.xml
+- Wiki index: https://stiletto.deeme.dev/wiki
+- Items index route: https://stiletto.deeme.dev/item
+- Creatures index route: https://stiletto.deeme.dev/creature
