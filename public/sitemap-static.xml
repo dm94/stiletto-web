@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://stiletto.deeme.dev/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/auctions</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/auctions" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/auctions" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/auctions" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/auctions" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/auctions" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/auctions" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/auctions" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/auctions" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/auctions" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/auctions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/auctions" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/auctions" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/clan/walkers</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/clan/walkers" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/clan/walkers" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/clanlist</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/clanlist" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/clanlist" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/clanlist" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/clanlist" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/clanlist" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/clanlist" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/clanlist" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/clanlist" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/clanlist" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/clanlist" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/clanlist" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/clanlist" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/crafter</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/crafter" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/crafter" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/crafter" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/crafter" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/crafter" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/crafter" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/crafter" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/crafter" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/crafter" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/crafter" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/crafter" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/crafter" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/creature</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/creature" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/creature" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/creature" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/creature" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/creature" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/creature" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/creature" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/creature" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/creature" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/creature" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/creature" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/creature" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/diplomacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/diplomacy" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/diplomacy" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/item</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/item" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/item" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/item" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/item" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/item" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/item" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/item" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/item" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/item" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/item" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/item" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/item" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/map</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/map" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/map" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/map" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/map" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/map" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/map" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/map" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/map" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/map" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/map" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/map" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/map" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/maps</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/maps" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/maps" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/maps" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/maps" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/maps" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/maps" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/maps" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/maps" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/maps" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/maps" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/maps" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/maps" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/members</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/members" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/members" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/members" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/members" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/members" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/members" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/members" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/members" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/members" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/members" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/members" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/members" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/others</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/others" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/others" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/others" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/others" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/others" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/others" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/others" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/others" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/others" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/others" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/others" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/others" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/perks</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/perks" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/perks" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/perks" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/perks" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/perks" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/perks" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/perks" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/perks" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/perks" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/perks" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/perks" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/perks" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/privacy" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/privacy" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/privacy" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/privacy" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/privacy" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/privacy" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/privacy" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/privacy" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/privacy" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/profile</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/profile" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/profile" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/profile" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/profile" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/profile" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/profile" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/profile" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/profile" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/profile" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/profile" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/profile" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/profile" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/tech</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/tech" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/tech" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/tech" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/tech" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/tech" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/tech" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/tech" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/tech" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/tech" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/tech" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/tech" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/tech" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/tech/Construction</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/tech/Construction" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/tech/Construction" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/tech/Crafting</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/tech/Crafting" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/tech/Crafting" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/tech/Equipment</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/tech/Equipment" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/tech/Equipment" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/tech/Vitamins</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/tech/Vitamins" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/tech/Vitamins" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/tech/Walkers</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/tech/Walkers" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/tech/Walkers" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/trades</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/trades" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/trades" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/trades" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/trades" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/trades" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/trades" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/trades" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/trades" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/trades" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/trades" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/trades" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/trades" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://stiletto.deeme.dev/wiki</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://stiletto.deeme.dev/wiki" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://stiletto.deeme.dev/en/wiki" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://stiletto.deeme.dev/es/wiki" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://stiletto.deeme.dev/ru/wiki" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://stiletto.deeme.dev/fr/wiki" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://stiletto.deeme.dev/de/wiki" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://stiletto.deeme.dev/it/wiki" />
+    <xhtml:link rel="alternate" hreflang="ja" href="https://stiletto.deeme.dev/ja/wiki" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://stiletto.deeme.dev/pl/wiki" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://stiletto.deeme.dev/zh/wiki" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://stiletto.deeme.dev/pt/wiki" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://stiletto.deeme.dev/uk/wiki" />
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
