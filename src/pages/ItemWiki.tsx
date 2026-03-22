@@ -23,7 +23,7 @@ import {
   getItemCraftUrl,
   getItemDecodedName,
 } from "@functions/utils";
-import HeaderMeta from "@components/HeaderMeta";
+import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
 import { FaTools, FaExclamationTriangle } from "react-icons/fa";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
@@ -246,9 +246,10 @@ const ItemWiki = () => {
       data-name={itemName}
     >
       <HeaderMeta
-        title={`${itemName} - Stiletto for Last Oasis`}
-        description={`All information for ${itemName}`}
+        title={`${itemName} Item Wiki - Stiletto for Last Oasis`}
+        description={`Crafting, stats and usages for ${itemName} in Last Oasis.`}
         canonical={getItemUrl(itemName, rarity)}
+        ogType={OpenGraphType.Article}
       />
       <div className="flex items-center flex-wrap justify-center mb-8 mt-4">
         <h1 className="text-4xl font-bold text-gray-200 text-center">

@@ -16,9 +16,8 @@ const NotFoundPage = () => {
         title={`${t("errors.pageNotFoundTitle", "Page not found")} - Stiletto ${t("app.subtitle", "for Last Oasis")}`}
         description={t("errors.pageNotFoundDescription", "Page not found")}
         canonical={`${getDomain()}/not-found`}
-      >
-        <meta name="robots" content="noindex" />
-      </HeaderMeta>
+        robots="noindex, nofollow"
+      />
       <div className="text-center">
         <h1 className="text-8xl font-bold text-gray-300">404</h1>
         <h2 className="text-2xl font-semibold text-gray-300 mb-4">

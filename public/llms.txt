@@ -1,0 +1,39 @@
+Stiletto Web - LLM Access Guide
+
+Purpose
+- Stiletto Web is a community knowledge and utility site for Last Oasis.
+- It provides reliable game data for crafting, items, creatures, maps, clans, trades, and tools.
+
+Main Sections
+- Home: https://stiletto.deeme.dev/
+- Wiki (search/index): https://stiletto.deeme.dev/wiki
+- Item detail pages: https://stiletto.deeme.dev/item/<item_name>
+- Creature detail pages: https://stiletto.deeme.dev/creature/<creature_name>
+- Crafter: https://stiletto.deeme.dev/crafter
+- Maps: https://stiletto.deeme.dev/map
+- Tech tree: https://stiletto.deeme.dev/tech
+
+Source of Truth
+- Main structured datasets: /public/json/**
+- Item index dataset: https://stiletto.deeme.dev/json/items_min.json
+- Creature index dataset: https://stiletto.deeme.dev/json/creatures_min.json
+- Full item detail datasets: https://stiletto.deeme.dev/json/items/
+- Full creature detail datasets: https://stiletto.deeme.dev/json/creatures/
+- Canonical URLs are generated from route patterns in the frontend router.
+
+Usage and License
+- Repository package license is marked as UNLICENSED.
+- Content should be treated as all rights reserved unless explicit permission is granted by maintainers.
+- For reuse, attribution, or redistribution requests, contact maintainers through repository issues.
+
+Contact
+- Website: https://stiletto.deeme.dev
+- Repository: https://github.com/dm94/stiletto-web
+- Issues: https://github.com/dm94/stiletto-web/issues
+
+Discovery Links
+- Sitemap: https://stiletto.deeme.dev/sitemap.xml
+- Wiki: https://stiletto.deeme.dev/wiki
+- Items: https://stiletto.deeme.dev/item
+- Creatures: https://stiletto.deeme.dev/creature
+- Public API (project): https://github.com/dm94/stiletto-node-api

@@ -9,6 +9,13 @@ interface HeaderMetaProps {
   keywords?: string;
   children?: React.ReactNode;
   locale?: string;
+  robots?: string;
+  ogType?: OpenGraphType;
+}
+
+export enum OpenGraphType {
+  Website = "website",
+  Article = "article",
 }
 
 const HeaderMeta: React.FC<HeaderMetaProps> = ({
@@ -19,10 +26,11 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
   keywords,
   children,
   locale = "en_US",
+  robots = "index, follow",
+  ogType = OpenGraphType.Website,
 }) => {
   const author = "@Dm94Dani";
 
-  // Crear datos estructurados JSON-LD según el tipo de contenido
   const getJsonLd = () => {
     const baseStructure = {
       "@context": "https://schema.org",
@@ -51,25 +59,21 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
       <title>{title}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
+      <meta name="robots" content={robots} />
       <link rel="canonical" href={canonical} />
       <meta name="author" content={author} />
-
-      {/* Open Graph */}
+      <meta property="og:type" content={ogType} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:locale" content={locale} />
       {image && <meta property="og:image" content={image} />}
       {image && <meta property="og:image:alt" content={title} />}
-
-      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       {image && <meta name="twitter:image" content={image} />}
       {image && <meta name="twitter:image:alt" content={title} />}
-
-      {/* JSON-LD */}
       <script type="application/ld+json">{getJsonLd()}</script>
 
       {children}

@@ -6,7 +6,7 @@ import Icon from "@components/Icon";
 import LoadingScreen from "@components/LoadingScreen";
 import Comments from "@components/Wiki/Comments";
 import { getItemDecodedName, getCreatureUrl } from "@functions/utils";
-import HeaderMeta from "@components/HeaderMeta";
+import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 import CreatureDropsInfo from "@components/Wiki/CreatureDropsInfo";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
@@ -123,9 +123,10 @@ const CreatureWiki = () => {
       data-name={creatureName}
     >
       <HeaderMeta
-        title={`${creatureName} - Stiletto for Last Oasis`}
-        description={`All information for ${creatureName}`}
+        title={`${creatureName} Creature Wiki - Stiletto for Last Oasis`}
+        description={`Drops, stats and locations for ${creatureName} in Last Oasis.`}
         canonical={getCreatureUrl(creatureName)}
+        ogType={OpenGraphType.Article}
       />
       <h1 className="text-4xl font-bold text-gray-200 text-center mb-8 mt-4">
         {t(creatureName, { ns: "creatures" })}
