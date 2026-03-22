@@ -16,6 +16,7 @@ const STATIC_ROUTES = [
   "profile",
   "crafter",
   "members",
+  "clan/walkers",
   "clanlist",
   "maps",
   "trades",
@@ -32,15 +33,30 @@ const STATIC_ROUTES = [
   "privacy",
   "wiki",
   "perks",
+  "item",
+  "creature",
 ];
 
 const toCodedName = (name) => name.toLowerCase().replaceAll(" ", "_");
+const SUPPORTED_LANGUAGES = [
+  "en",
+  "es",
+  "ru",
+  "fr",
+  "de",
+  "it",
+  "ja",
+  "pl",
+  "zh",
+  "pt",
+  "uk",
+];
 
-const toItemPath = (name) => `/item/${encodeURI(toCodedName(name))}`;
 
-const toCreaturePath = (name) => `/creature/${encodeURI(toCodedName(name))}`;
-
+const toItemPath = (name) => `item/${encodeURI(toCodedName(name))}`;
+const toCreaturePath = (name) => `creature/${encodeURI(toCodedName(name))}`;
 const trimSlash = (value) => value.replace(/\/+$/, "");
+
 
 const escapeXml = (value) =>
   value
@@ -96,11 +112,56 @@ const getLastModifiedDate = async () => {
   return new Date(latestMtime).toISOString().slice(0, 10);
 };
 
-const toUrlNode = (url, lastmod, changefreq, priority) => {
+const buildRouteUrl = (baseUrl, routePath) => {
+  if (routePath === "") {
+    return `${baseUrl}/`;
+  }
+
+  return `${baseUrl}/${routePath}`;
+};
+
+const buildLocalizedRoutePath = (routePath, languageCode) => {
+  if (routePath === "") {
+    return languageCode;
+  }
+
+  return `${languageCode}/${routePath}`;
+};
+
+const buildAlternateLinks = (baseUrl, routePath) => {
+  const canonicalUrl = buildRouteUrl(baseUrl, routePath);
+
+  const alternates = [
+    {
+      hreflang: "x-default",
+      href: canonicalUrl,
+    },
+  ];
+
+  for (const languageCode of SUPPORTED_LANGUAGES) {
+    alternates.push({
+      hreflang: languageCode,
+      href: buildRouteUrl(
+        baseUrl,
+        buildLocalizedRoutePath(routePath, languageCode),
+      ),
+    });
+  }
+
+  return alternates;
+};
+
+const toUrlNode = (url, lastmod, changefreq, priority, alternates) => {
   const safeUrl = escapeXml(url);
+  const alternateNodes = alternates.map((alternate) => {
+    const safeHref = escapeXml(alternate.href);
+    return `    <xhtml:link rel="alternate" hreflang="${alternate.hreflang}" href="${safeHref}" />`;
+  });
+
   return [
     "  <url>",
     `    <loc>${safeUrl}</loc>`,
+    ...alternateNodes,
     `    <lastmod>${lastmod}</lastmod>`,
     `    <changefreq>${changefreq}</changefreq>`,
     `    <priority>${priority.toFixed(1)}</priority>`,
@@ -111,7 +172,7 @@ const toUrlNode = (url, lastmod, changefreq, priority) => {
 const buildSitemap = (urls) =>
   [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ...urls,
     "</urlset>",
     "",
@@ -131,10 +192,11 @@ const run = async () => {
   const routeMap = new Map();
 
   for (const route of STATIC_ROUTES) {
-    const fullUrl = route === "" ? `${baseUrl}/` : `${baseUrl}/${route}`;
+    const fullUrl = buildRouteUrl(baseUrl, route);
     routeMap.set(fullUrl, {
       changefreq: route === "" ? "daily" : "weekly",
       priority: route === "" ? 1.0 : 0.8,
+      routePath: route,
     });
   }
 
@@ -144,8 +206,13 @@ const run = async () => {
       continue;
     }
 
-    const itemUrl = `${baseUrl}${toItemPath(name)}`;
-    routeMap.set(itemUrl, { changefreq: "weekly", priority: 0.6 });
+    const itemRoutePath = toItemPath(name);
+    const itemUrl = buildRouteUrl(baseUrl, itemRoutePath);
+    routeMap.set(itemUrl, {
+      changefreq: "weekly",
+      priority: 0.6,
+      routePath: itemRoutePath,
+    });
   }
 
   for (const creature of creatures) {
@@ -154,8 +221,13 @@ const run = async () => {
       continue;
     }
 
-    const creatureUrl = `${baseUrl}${toCreaturePath(name)}`;
-    routeMap.set(creatureUrl, { changefreq: "weekly", priority: 0.6 });
+    const creatureRoutePath = toCreaturePath(name);
+    const creatureUrl = buildRouteUrl(baseUrl, creatureRoutePath);
+    routeMap.set(creatureUrl, {
+      changefreq: "weekly",
+      priority: 0.6,
+      routePath: creatureRoutePath,
+    });
   }
 
   const orderedEntries = [...routeMap.entries()].sort((left, right) =>
@@ -165,7 +237,13 @@ const run = async () => {
   const urlNodes = [];
   for (const [url, metadata] of orderedEntries) {
     urlNodes.push(
-      toUrlNode(url, lastmod, metadata.changefreq, metadata.priority),
+      toUrlNode(
+        url,
+        lastmod,
+        metadata.changefreq,
+        metadata.priority,
+        buildAlternateLinks(baseUrl, metadata.routePath),
+      ),
     );
   }
 
