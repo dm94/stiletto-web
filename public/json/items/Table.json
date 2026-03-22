@@ -1,7 +1,7 @@
 {
   "name": "Table",
   "type": "OkkamStatue_C",
-  "category": "OkkamStatue",
+  "category": "Table",
   "weight": 3,
   "description": "Decorative furniture that also allows to place objects on it.",
   "experiencieReward": 6,
