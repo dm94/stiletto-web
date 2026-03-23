@@ -1,11 +1,16 @@
-import React, { useState, useEffect, Suspense } from "react";
+import React, { useState, useEffect, Suspense, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { getCreatures, getCreatureInfo } from "@functions/github";
 import { Navigate, useParams } from "react-router";
 import Icon from "@components/Icon";
 import LoadingScreen from "@components/LoadingScreen";
 import Comments from "@components/Wiki/Comments";
-import { getItemDecodedName, getCreatureUrl } from "@functions/utils";
+import {
+  getDomain,
+  getItemDecodedName,
+  getCreatureUrl,
+  getItemUrl,
+} from "@functions/utils";
 import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 import CreatureDropsInfo from "@components/Wiki/CreatureDropsInfo";
@@ -17,7 +22,7 @@ const WikiDescription = React.lazy(
 );
 
 const CreatureWiki = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { name } = useParams();
   const [creature, setCreature] = useState<Creature>();
   const [creatureInfo, setCreatureInfo] = useState<CreatureCompleteInfo>();
@@ -62,6 +67,95 @@ const CreatureWiki = () => {
       </div>
     </div>
   );
+  const creatureName =
+    creature?.name ?? creatureInfo?.name ?? getItemDecodedName(name ?? "");
+  const domain = getDomain();
+  const canonical = `${domain}${getCreatureUrl(creatureName)}`;
+  const creatureDescription = `Drops, stats and locations for ${creatureName} in Last Oasis.`;
+  const creatureStructuredData = useMemo(() => {
+    const additionalProperty: Array<Record<string, unknown>> = [];
+    const mentions: Array<Record<string, unknown>> = [];
+
+    if (creatureInfo?.category) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "category",
+        value: creatureInfo.category,
+      });
+    }
+
+    if (creatureInfo?.health !== undefined) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "health",
+        value: creatureInfo.health,
+      });
+    }
+
+    if (creatureInfo?.experiencie !== undefined) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "experience",
+        value: creatureInfo.experiencie,
+      });
+    }
+
+    if (creatureInfo?.tier) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "tier",
+        value: creatureInfo.tier,
+      });
+    }
+
+    if (creatureInfo?.maps) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "maps",
+        value: creatureInfo.maps.join(", "),
+      });
+    }
+
+    for (const relatedCreature of creatureInfo?.related ?? []) {
+      mentions.push({
+        "@type": "Thing",
+        name: relatedCreature,
+        url: `${domain}${getCreatureUrl(relatedCreature)}`,
+      });
+    }
+
+    for (const creatureDrop of creatureInfo?.drops ?? []) {
+      mentions.push({
+        "@type": "Thing",
+        name: creatureDrop.name,
+        url: `${domain}${getItemUrl(creatureDrop.name)}`,
+      });
+    }
+
+    const data: Record<string, unknown> = {
+      "@context": "https://schema.org",
+      "@type": "Thing",
+      name: creatureName,
+      description: creatureDescription,
+      url: canonical,
+      inLanguage: i18n.language,
+      isPartOf: {
+        "@type": "CollectionPage",
+        name: t("seo.wiki.title"),
+        url: `${domain}/wiki`,
+      },
+    };
+
+    if (additionalProperty.length > 0) {
+      data.additionalProperty = additionalProperty;
+    }
+
+    if (mentions.length > 0) {
+      data.mentions = mentions;
+    }
+
+    return data;
+  }, [canonical, creatureDescription, creatureInfo, creatureName, domain, i18n.language, t]);
 
   if (!isLoaded) {
     return <LoadingScreen />;
@@ -70,8 +164,6 @@ const CreatureWiki = () => {
   if (!creature) {
     return <Navigate to={"/wiki"} />;
   }
-
-  const creatureName = creature?.name ?? creatureInfo?.name;
 
   const showCreatureInfo = () => {
     if (!creatureInfo) {
@@ -124,9 +216,10 @@ const CreatureWiki = () => {
     >
       <HeaderMeta
         title={`${creatureName} Creature Wiki - Stiletto for Last Oasis`}
-        description={`Drops, stats and locations for ${creatureName} in Last Oasis.`}
-        canonical={getCreatureUrl(creatureName)}
+        description={creatureDescription}
+        canonical={canonical}
         ogType={OpenGraphType.Article}
+        structuredData={creatureStructuredData}
       />
       <h1 className="text-4xl font-bold text-gray-200 text-center mb-8 mt-4">
         {t(creatureName, { ns: "creatures" })}
