@@ -8,24 +8,48 @@ import { Link } from "react-router";
 import HeaderMeta from "@components/HeaderMeta";
 
 const Home: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { isConnected } = useUser();
+  const domain = getDomain();
+  const homeDescription = t(
+    "app.metaDescription",
+    "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...",
+  );
 
   const resourceMapsUrl = useMemo(() => {
     return isConnected ? "/maps" : "/map";
   }, [isConnected]);
+  const homeStructuredData = useMemo(
+    () => ({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": `${domain}/#website`,
+          name: t("seo.home.title"),
+          description: homeDescription,
+          url: domain,
+          inLanguage: i18n.language,
+          potentialAction: {
+            "@type": "SearchAction",
+            target: `${domain}/wiki?s={search_term_string}&type=items`,
+            "query-input": "required name=search_term_string",
+          },
+        },
+      ],
+    }),
+    [domain, homeDescription, i18n.language, t],
+  );
 
   return (
     <div className="container mx-auto px-4">
       <HeaderMeta
         title={t("seo.home.title")}
-        description={t(
-          "app.metaDescription",
-          "Stiletto the page with utilities for the game Last Oasis. Crafting calculator, Resources map, Quality calculator, Clan management and more...",
-        )}
-        canonical={getDomain()}
+        description={homeDescription}
+        canonical={domain}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/crafter.jpg"
         keywords="Last Oasis, crafting calculator, resource maps, clan management, quality calculator, game tools, walkers, Last Oasis companion app, survival game tools, Last Oasis resources, game crafting system, walker customization, Last Oasis utility, survival MMO tools"
+        structuredData={homeStructuredData}
       >
         <meta name="theme-color" content="#FFFFFF" />
       </HeaderMeta>

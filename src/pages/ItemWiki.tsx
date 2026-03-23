@@ -19,6 +19,8 @@ import GenericInfo from "@components/Wiki/GenericInfo";
 import Comments from "@components/Wiki/Comments";
 import { calcRarityValue } from "@functions/rarityCalc";
 import {
+  getCreatureUrl,
+  getDomain,
   getItemUrl,
   getItemCraftUrl,
   getItemDecodedName,
@@ -47,7 +49,7 @@ const CreatureDropsInfo = React.lazy(
 );
 
 const ItemWiki = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { name, rarity: rarityParam } = useParams();
   const [item, setItem] = useState<Item>();
@@ -225,6 +227,142 @@ const ItemWiki = () => {
       </div>
     </div>
   );
+  const itemName =
+    item?.name ?? itemInfo?.name ?? getItemDecodedName(name ?? "");
+  const domain = getDomain();
+  const canonical = `${domain}${getItemUrl(itemName, rarity)}`;
+  const itemDescription = `Crafting, stats and usages for ${itemName} in Last Oasis.`;
+  const category = itemInfo?.category ?? item?.category;
+  const parentUrl = itemInfo?.parent && getItemUrl(itemInfo.parent);
+  const craftUrl = getItemCraftUrl(name ?? itemName);
+  const itemStructuredData = useMemo(() => {
+    const additionalProperty: Array<Record<string, unknown>> = [];
+    const mentions: Array<Record<string, unknown>> = [];
+
+    if (category) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "category",
+        value: category,
+      });
+    }
+
+    if (itemInfo?.trade_price !== undefined) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "tradePrice",
+        value: itemInfo.trade_price,
+      });
+    }
+
+    if (itemInfo?.stackSize !== undefined) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "stackSize",
+        value: itemInfo.stackSize,
+      });
+    }
+
+    if (itemInfo?.weight !== undefined) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "weight",
+        value: itemInfo.weight,
+      });
+    }
+
+    if (itemInfo?.experiencieReward !== undefined) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "experienceReward",
+        value: itemInfo.experiencieReward,
+      });
+    }
+
+    if (itemInfo?.durability !== undefined) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "durability",
+        value: itemInfo.durability,
+      });
+    }
+
+    if (itemInfo?.structureInfo?.hp !== undefined) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "hp",
+        value: itemInfo.structureInfo.hp,
+      });
+    }
+
+    if (itemInfo?.structureInfo?.type) {
+      additionalProperty.push({
+        "@type": "PropertyValue",
+        name: "structureType",
+        value: itemInfo.structureInfo.type,
+      });
+    }
+
+    for (const itemDrop of itemInfo?.drops ?? []) {
+      mentions.push({
+        "@type": "Thing",
+        name: itemDrop.name,
+        url: `${domain}${getItemUrl(itemDrop.name)}`,
+      });
+    }
+
+    for (const droppedBy of itemInfo?.droppedBy ?? []) {
+      mentions.push({
+        "@type": "Thing",
+        name: droppedBy.name,
+        url: `${domain}${getCreatureUrl(droppedBy.name)}`,
+      });
+    }
+
+    for (const relatedLearn of itemInfo?.learn ?? []) {
+      mentions.push({
+        "@type": "Thing",
+        name: relatedLearn,
+        url: `${domain}${getItemUrl(relatedLearn)}`,
+      });
+    }
+
+    const data: Record<string, unknown> = {
+      "@context": "https://schema.org",
+      "@type": "DefinedTerm",
+      name: itemName,
+      description: itemDescription,
+      url: canonical,
+      inLanguage: i18n.language,
+      inDefinedTermSet: `${domain}/wiki`,
+    };
+
+    if (additionalProperty.length > 0) {
+      data.additionalProperty = additionalProperty;
+    }
+
+    if (itemInfo?.parent) {
+      data.isPartOf = {
+        "@type": "DefinedTerm",
+        name: itemInfo.parent,
+        url: `${domain}${getItemUrl(itemInfo.parent)}`,
+      };
+    }
+
+    if (mentions.length > 0) {
+      data.mentions = mentions;
+    }
+
+    return data;
+  }, [
+    canonical,
+    category,
+    domain,
+    i18n.language,
+    itemDescription,
+    itemInfo,
+    itemName,
+  ]);
 
   if (!isLoaded) {
     return <LoadingScreen />;
@@ -234,11 +372,6 @@ const ItemWiki = () => {
     return <Navigate to={"/wiki"} />;
   }
 
-  const itemName = item?.name ?? itemInfo?.name;
-  const category = itemInfo?.category ?? item?.category;
-  const parentUrl = itemInfo?.parent && getItemUrl(itemInfo.parent);
-  const craftUrl = getItemCraftUrl(name ?? itemName);
-
   return (
     <div
       className="container mx-auto px-4"
@@ -247,9 +380,10 @@ const ItemWiki = () => {
     >
       <HeaderMeta
         title={`${itemName} Item Wiki - Stiletto for Last Oasis`}
-        description={`Crafting, stats and usages for ${itemName} in Last Oasis.`}
-        canonical={getItemUrl(itemName, rarity)}
+        description={itemDescription}
+        canonical={canonical}
         ogType={OpenGraphType.Article}
+        structuredData={itemStructuredData}
       />
       <div className="flex items-center flex-wrap justify-center mb-8 mt-4">
         <h1 className="text-4xl font-bold text-gray-200 text-center">
