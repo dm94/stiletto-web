@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
@@ -10,7 +10,7 @@ import {
   getWikiLastUpdate,
 } from "@functions/github";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
-import { getDomain } from "@functions/utils";
+import { getCreatureUrl, getDomain, getItemUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import { useLocation, useNavigate } from "react-router";
 import type { Item } from "@ctypes/item";
@@ -28,7 +28,10 @@ type WikiContentType = "items" | "creatures" | "perks";
 const Wiki = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const domain = getDomain();
+  const wikiCanonical = `${domain}/wiki`;
+  const wikiDescription = t("seo.wiki.description");
   const [contentType, setContentType] = useState<WikiContentType>("items");
   const [wikiLastUpdate, setWikiLastUpdate] = useState<string>();
 
@@ -379,14 +382,98 @@ const Wiki = () => {
     [navigate, buildSearchParams],
   );
 
+  const wikiStructuredData = useMemo(() => {
+    const listElements: Array<Record<string, unknown>> = [];
+    const maxEntities = 12;
+
+    if (contentType === "items") {
+      for (const currentItem of displayedItems.slice(0, maxEntities)) {
+        listElements.push({
+          "@type": "ListItem",
+          item: {
+            "@type": "DefinedTerm",
+            name: currentItem.name,
+            url: `${domain}${getItemUrl(currentItem.name)}`,
+          },
+        });
+      }
+    } else if (contentType === "creatures") {
+      for (const currentCreature of displayedCreatures.slice(0, maxEntities)) {
+        listElements.push({
+          "@type": "ListItem",
+          item: {
+            "@type": "Thing",
+            name: currentCreature.name,
+            url: `${domain}${getCreatureUrl(currentCreature.name)}`,
+          },
+        });
+      }
+    } else {
+      for (const currentPerk of displayedPerks.slice(0, maxEntities)) {
+        listElements.push({
+          "@type": "ListItem",
+          item: {
+            "@type": "DefinedTerm",
+            name: currentPerk.name,
+          },
+        });
+      }
+    }
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: t("seo.wiki.title"),
+      description: wikiDescription,
+      url: wikiCanonical,
+      inLanguage: i18n.language,
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": `${domain}/#website`,
+        url: domain,
+      },
+      mainEntity: {
+        "@type": "ItemList",
+        itemListOrder: "https://schema.org/ItemListUnordered",
+        numberOfItems: listElements.length,
+        itemListElement: listElements,
+      },
+      about: [
+        {
+          "@type": "Thing",
+          name: "Items",
+        },
+        {
+          "@type": "Thing",
+          name: "Creatures",
+        },
+        {
+          "@type": "Thing",
+          name: "Perks",
+        },
+      ],
+    };
+  }, [
+    contentType,
+    displayedCreatures,
+    displayedItems,
+    displayedPerks,
+    domain,
+    i18n.language,
+    t,
+    wikiCanonical,
+    wikiDescription,
+  ]);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <HeaderMeta
         title={t("seo.wiki.title")}
-        description={t("seo.wiki.description")}
-        canonical={`${getDomain()}/wiki`}
+        description={wikiDescription}
+        canonical={wikiCanonical}
         image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/wiki.jpg"
         keywords="Last Oasis, wiki, items, creatures, resources, crafting, game, guide, guide"
+        structuredData={wikiStructuredData}
       />
       <div className="w-full mb-8">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">
