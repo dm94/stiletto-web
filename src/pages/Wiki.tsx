@@ -10,7 +10,7 @@ import {
   getWikiLastUpdate,
 } from "@functions/github";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
-import { getDomain } from "@functions/utils";
+import { getCreatureUrl, getDomain, getItemUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import { useLocation, useNavigate } from "react-router";
 import type { Item } from "@ctypes/item";
@@ -393,7 +393,7 @@ const Wiki = () => {
           item: {
             "@type": "DefinedTerm",
             name: currentItem.name,
-            url: `${domain}/item/${encodeURIComponent(currentItem.name.toLowerCase().replaceAll(" ", "_"))}`,
+            url: `${domain}${getItemUrl(currentItem.name)}`,
           },
         });
       }
@@ -404,7 +404,7 @@ const Wiki = () => {
           item: {
             "@type": "Thing",
             name: currentCreature.name,
-            url: `${domain}/creature/${encodeURIComponent(currentCreature.name.toLowerCase().replaceAll(" ", "_"))}`,
+            url: `${domain}${getCreatureUrl(currentCreature.name)}`,
           },
         });
       }
