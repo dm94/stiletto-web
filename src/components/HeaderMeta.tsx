@@ -51,7 +51,11 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
       baseStructure.image = image;
     }
 
-    return JSON.stringify(structuredData ?? baseStructure);
+    return JSON.stringify(
+      Array.isArray(structuredData) && structuredData.length > 0
+        ? structuredData
+        : baseStructure,
+    );
   };
 
   return (
