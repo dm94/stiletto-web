@@ -155,7 +155,15 @@ const CreatureWiki = () => {
     }
 
     return data;
-  }, [canonical, creatureDescription, creatureInfo, creatureName, domain, i18n.language, t]);
+  }, [
+    canonical,
+    creatureDescription,
+    creatureInfo,
+    creatureName,
+    domain,
+    i18n.language,
+    t,
+  ]);
 
   if (!isLoaded) {
     return <LoadingScreen />;
@@ -238,7 +246,10 @@ const CreatureWiki = () => {
         </div>
         <Suspense fallback={loadingCreaturePart()}>
           {creatureInfo?.related && (
-            <RelatedCreatures key="relatedInfo" related={creatureInfo?.related} />
+            <RelatedCreatures
+              key="relatedInfo"
+              related={creatureInfo?.related}
+            />
           )}
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
