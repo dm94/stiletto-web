@@ -11,6 +11,7 @@ interface HeaderMetaProps {
   locale?: string;
   robots?: string;
   ogType?: OpenGraphType;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 export enum OpenGraphType {
@@ -28,11 +29,12 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
   locale = "en_US",
   robots = "index, follow",
   ogType = OpenGraphType.Website,
+  structuredData,
 }) => {
   const author = "@Dm94Dani";
 
   const getJsonLd = () => {
-    const baseStructure = {
+    const baseStructure: Record<string, unknown> = {
       "@context": "https://schema.org",
       "@type": "WebSite",
       name: title,
@@ -46,11 +48,14 @@ const HeaderMeta: React.FC<HeaderMetaProps> = ({
     };
 
     if (image) {
-      // @ts-expect-error - image is a string
       baseStructure.image = image;
     }
 
-    return JSON.stringify(baseStructure);
+    return JSON.stringify(
+      Array.isArray(structuredData) && structuredData.length > 0
+        ? structuredData
+        : baseStructure,
+    );
   };
 
   return (
