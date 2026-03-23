@@ -36,11 +36,6 @@ const Home: React.FC = () => {
             "query-input": "required name=search_term_string",
           },
         },
-        {
-          "@type": "SearchAction",
-          target: `${domain}/wiki?s={search_term_string}&type=items`,
-          "query-input": "required name=search_term_string",
-        },
       ],
     }),
     [domain, homeDescription, i18n.language, t],
