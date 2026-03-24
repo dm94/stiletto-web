@@ -1,6 +1,6 @@
 {
   "name": "Flotillian Armors",
-  "parent": "Armors_T3",
+  "parent": "Advanced Armors",
   "type": "Armors_T4_C",
   "onlyDevs": true
 }

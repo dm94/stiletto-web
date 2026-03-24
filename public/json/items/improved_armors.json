@@ -1,6 +1,6 @@
 {
   "name": "Improved Armors",
-  "parent": "Armors_T1",
+  "parent": "Basic Armors",
   "type": "Armors_T2_C",
   "onlyDevs": true
 }

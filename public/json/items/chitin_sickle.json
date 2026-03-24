@@ -1,6 +1,6 @@
 {
   "name": "Chitin Sickle",
-  "parent": "CeramicScythe",
+  "parent": "Scythe",
   "type": "ChitinSickle_C",
   "trade_price": 6.2,
   "weight": 2.2,

@@ -1,6 +1,6 @@
 {
   "name": "Nibirian Dart",
-  "parent": "IronDart",
+  "parent": "Iron Dart",
   "type": "NibirianDart_C",
   "category": "Ammo",
   "trade_price": 1.5,

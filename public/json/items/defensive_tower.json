@@ -1,6 +1,6 @@
 {
   "name": "Defensive Tower",
-  "parent": "WoodenWalls",
+  "parent": "Wooden Walls",
   "type": "DefensiveTower_C",
   "category": "Defenses",
   "weight": 145,

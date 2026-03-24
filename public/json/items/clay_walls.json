@@ -1,5 +1,5 @@
 {
   "name": "Clay Walls",
-  "parent": "StoneWalls",
+  "parent": "Stone Walls",
   "type": "ClayWalls_C"
 }

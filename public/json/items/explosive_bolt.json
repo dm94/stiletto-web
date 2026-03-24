@@ -1,6 +1,6 @@
 {
   "name": "Explosive Bolt",
-  "parent": "FireBolt",
+  "parent": "Fire Bolt",
   "type": "ExplosiveBolt_C",
   "category": "Ammo",
   "trade_price": 17.8,

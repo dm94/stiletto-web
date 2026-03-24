@@ -1,6 +1,6 @@
 {
   "name": "Hellfire Bolt",
-  "parent": "FireBolt",
+  "parent": "Fire Bolt",
   "type": "HellfireBolt_C",
   "category": "Ammo",
   "trade_price": 175.3,

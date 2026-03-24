@@ -1,6 +1,6 @@
 {
   "name": "Ceramic Scattershot Ammo",
-  "parent": "BoneScattershot",
+  "parent": "Bone Scattershot Ammo",
   "type": "CeramicScattershot_C",
   "category": "Ammo",
   "trade_price": 5.2,
