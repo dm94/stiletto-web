@@ -1,6 +1,6 @@
 {
   "name": "Hardened Hellfire Bolt",
-  "parent": "HellfireBolt",
+  "parent": "Hellfire Bolt",
   "type": "HardenedHellfireBolt_C",
   "category": "Ammo",
   "trade_price": 175.3,

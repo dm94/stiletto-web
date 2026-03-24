@@ -1,6 +1,6 @@
 {
   "name": "Advanced Potions",
-  "parent": "Vitamins_T2",
+  "parent": "Improved Potions",
   "type": "Vitamins_T3_C",
   "onlyDevs": true
 }

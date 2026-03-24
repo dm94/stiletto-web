@@ -1,6 +1,6 @@
 {
   "name": "Iron-Tipped Harpoon",
-  "parent": "IronBolt",
+  "parent": "Iron-Tipped Bolt",
   "type": "IronHarpoon_C",
   "category": "Ammo",
   "trade_price": 30.6,

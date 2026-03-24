@@ -1,5 +1,5 @@
 {
   "name": "Medium Wood Walls",
-  "parent": "WoodenWalls",
+  "parent": "Wooden Walls",
   "type": "ReinforcedWalls_C"
 }

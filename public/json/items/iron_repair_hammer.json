@@ -1,6 +1,6 @@
 {
   "name": "Iron Repair Hammer",
-  "parent": "CeramicRepairHammer",
+  "parent": "Ceramic Repair Hammer",
   "type": "IronRepairHammer_C",
   "durability": 3000,
   "crafting": [

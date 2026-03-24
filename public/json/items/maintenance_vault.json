@@ -1,6 +1,6 @@
 {
   "name": "Maintenance Vault",
-  "parent": "ChestBaseMaintenance_T2",
+  "parent": "Base Maintenance Chest",
   "type": "ChestBaseMaintenance_T3_C",
   "category": "Containers",
   "weight": 5,

@@ -1,6 +1,6 @@
 {
   "name": "Walker Packing Compartment",
-  "parent": "ChestBaseMaintenance_T2",
+  "parent": "Base Maintenance Chest",
   "type": "SmallWalkerPacker_C",
   "category": "Walker Tools",
   "weight": 25,

@@ -1,6 +1,6 @@
 {
   "name": "Iron Dart",
-  "parent": "CeramicDart",
+  "parent": "Ceramic Dart",
   "type": "IronDart_C",
   "category": "Ammo",
   "trade_price": 1.5,

@@ -1,163 +1,156 @@
 {
-  "name": "Triple Stitch Boots",
-  "type": "T2_TripleStitchBoots_C",
-  "category": "Armors",
-  "trade_price": 61.1,
+  "name": "Nurrfang Maul",
+  "parent": "Jaggertooth Maul",
+  "type": "TwoHandedBoneMace_C",
+  "category": "Weapons",
+  "trade_price": 24.5,
   "stackSize": 100,
-  "weight": 1.5,
-  "description": "A secret weaving technique creates surprisingly strong armor with no loss in meanueverability.",
-  "experiencieReward": 45,
-  "durability": 250,
+  "weight": 4.5,
+  "description": "They call nomads who specialize in using rawbone weaponry \"boneheads,\" an ancient term meaning simpleton.",
+  "experiencieReward": 100,
+  "durability": 440,
   "crafting": [
     {
       "ingredients": [
         {
-          "name": "Bone Splinter",
-          "count": 8
+          "name": "Wood Shaft",
+          "count": 4
         },
         {
-          "name": "Triple Stitch Fabric",
-          "count": 6
-        }
-      ],
-      "time": 3,
-      "station": "Advanced Fiberworking Station"
-    },
-    {
-      "ingredients": [
-        {
-          "name": "Bone Splinter",
-          "count": 8
+          "name": "Nurr Fang",
+          "count": 1
         },
         {
-          "name": "Triple Stitch Fabric",
+          "name": "Rope",
           "count": 6
         }
       ],
       "time": 2,
-      "station": "Artisan Fiberworking Station"
+      "station": "Crafting Bench"
     }
   ],
-  "armorInfo": {
-    "absorbing": 1,
-    "reduction": 2,
-    "speedReduction": 1
+  "weaponInfo": {
+    "weaponSpeed": 120,
+    "stability": 65,
+    "weaponLength": 80,
+    "damage": 48,
+    "penetration": 15
   },
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",
-      "chance": 0.22222222,
+      "chance": 0.18181818,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Big Hotspot Loot T2",
-      "chance": 17.7777776,
-      "minQuantity": 7,
-      "maxQuantity": 14,
+      "chance": 9.090909,
+      "minQuantity": 8,
+      "maxQuantity": 16,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu Camp T2",
-      "chance": 0.033333333,
+      "chance": 0.027272727,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu T2",
-      "chance": 0.022222222,
+      "chance": 0.018181818,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu T2 Q",
-      "chance": 0.022222222,
+      "chance": 0.018181818,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu Camp T2",
-      "chance": 0.11111111,
+      "chance": 0.09090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T2",
-      "chance": 0.088888888,
+      "chance": 0.072727272,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T2 AC",
-      "chance": 0.088888888,
+      "chance": 0.072727272,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu T2 Q",
-      "chance": 0.088888888,
+      "chance": 0.072727272,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T2",
-      "chance": 1.1111111,
+      "chance": 0.9090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T2 AC",
-      "chance": 1.1111111,
+      "chance": 0.9090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot Windmill T2 AC",
-      "chance": 1.1111111,
+      "chance": 0.9090909,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
-      "name": "Lootbox Armors Canyon",
-      "chance": 33.333332999999996,
-      "minQuantity": 8,
-      "maxQuantity": 10
+      "name": "Lootbox Weapons Canyon",
+      "chance": 27.272727,
+      "minQuantity": 6,
+      "maxQuantity": 8
     },
     {
       "name": "Medium Rupu Camp T2",
-      "chance": 0.033333333,
+      "chance": 0.027272727,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu T2",
-      "chance": 0.022222222,
+      "chance": 0.018181818,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu T2 Q",
-      "chance": 0.022222222,
+      "chance": 0.018181818,
       "minQuantity": 1,
       "maxQuantity": 1,
       "tier": "T2"
     },
     {
       "name": "Treasure Chest T2",
-      "chance": 13.333333200000002,
+      "chance": 10.909090800000001,
       "minQuantity": 5,
       "maxQuantity": 10,
       "tier": "T2"

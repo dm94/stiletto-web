@@ -1,6 +1,6 @@
 {
   "name": "Nibiran-tipped Bolt",
-  "parent": "IronBolt",
+  "parent": "Iron-Tipped Bolt",
   "type": "NibirianBolt_C",
   "category": "Ammo",
   "trade_price": 35,

@@ -1,6 +1,6 @@
 {
   "name": "Advanced Tools",
-  "parent": "Tools_T2",
+  "parent": "Improved Tools",
   "type": "Tools_T3_C",
   "onlyDevs": true
 }

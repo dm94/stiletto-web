@@ -1,6 +1,6 @@
 {
   "name": "Hullbreaker Scattershot",
-  "parent": "CeramicScattershot",
+  "parent": "Ceramic Scattershot Ammo",
   "type": "HullbreakerScattershot_C",
   "category": "Ammo",
   "trade_price": 61.8,
