@@ -192,7 +192,7 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
   };
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full p-4">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
         <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
           {upgradesTitle}
