@@ -64,7 +64,7 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
       String.raw`\$&`,
     );
     const walkerUpgradePattern = new RegExp(
-      `^${escapedItemName} Upgrade (Cargo|Water|Gear|Durability|Mobility|Torque|Packing) Tier ([1-4])$`,
+      `^${escapedItemName} Upgrade (Cargo|Water|Gear|Durability|Mobility|Torque) Tier ([1-4])$`,
       "i",
     );
 
