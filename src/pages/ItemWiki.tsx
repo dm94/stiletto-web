@@ -17,6 +17,7 @@ import ModuleInfo from "@components/Wiki/ModuleInfo";
 import ToolInfo from "@components/Wiki/ToolInfo";
 import GenericInfo from "@components/Wiki/GenericInfo";
 import Comments from "@components/Wiki/Comments";
+import WalkerUpgrades from "@components/Wiki/WalkerUpgrades";
 import { calcRarityValue } from "@functions/rarityCalc";
 import {
   getCreatureUrl,
@@ -235,6 +236,7 @@ const ItemWiki = () => {
   const category = itemInfo?.category ?? item?.category;
   const parentUrl = itemInfo?.parent && getItemUrl(itemInfo.parent);
   const craftUrl = getItemCraftUrl(name ?? itemName);
+
   const itemStructuredData = useMemo(() => {
     const additionalProperty: Array<Record<string, unknown>> = [];
     const mentions: Array<Record<string, unknown>> = [];
@@ -632,6 +634,12 @@ const ItemWiki = () => {
             category={itemInfo.category}
           />
         )}
+        <WalkerUpgrades
+          itemName={itemName}
+          category={category}
+          allItems={allItems}
+          textColor={textColor}
+        />
         {itemInfo?.moduleInfo && (
           <ModuleInfo key="moduleinfo" moduleInfo={itemInfo.moduleInfo} />
         )}
