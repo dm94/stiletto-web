@@ -579,7 +579,7 @@ const ItemWiki = () => {
         {itemInfo?.projectileDamage && (
           <GenericInfo
             key="proyectileInfo"
-            name="wiki.ProjectileInfo"
+            name="wiki.projectileInfo"
             dataInfo={itemInfo.projectileDamage}
             rarity={rarity}
             textColor={textColor}
