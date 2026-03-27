@@ -14,16 +14,12 @@
         {
           "name": "Fiber Weave",
           "count": 8
-        },
-        {
-          "name": "Wooden Slab",
-          "count": 5
         }
       ]
     }
   ],
   "structureInfo": {
-    "hp": 600,
+    "hp": 1000,
     "type": "Soft"
   }
 }

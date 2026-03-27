@@ -13,9 +13,9 @@
     },
     {
       "name": "Hotspot Loot T1",
-      "chance": 1.1666666199999998,
+      "chance": 2.3333332399999995,
       "minQuantity": 1,
-      "maxQuantity": 1,
+      "maxQuantity": 3,
       "tier": "T1"
     },
     {
