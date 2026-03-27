@@ -53,7 +53,7 @@ interface RarityData {
 const rarityData: RarityData = {
   Uncommon: {
     WalkerHealthFactor: 1.25,
-    WalkerPartHealthFactor: 1.25,
+    WalkerPartHealthFactor: 1.125,
     WalkerTorqueGenerationFactor: 1.05,
     StructureHealthFactor: 1.25,
     ExoskeletonHealthFactor: 1.25,
@@ -77,11 +77,11 @@ const rarityData: RarityData = {
     ItemUsageExpFactor: 1.1,
     FoliageExpFactor: 1.1,
     ItemWeightFactor: 0.9,
-    WeaponDurabilityFactor: 1.3,
-    ArmorDurabilityFactor: 1.3,
-    ToolDurabilityFactor: 1.3,
+    WeaponDurabilityFactor: 1.8,
+    ArmorDurabilityFactor: 5,
+    ToolDurabilityFactor: 4,
     ToolTierFactor: 1.2,
-    WeaponItemDamageFactor: 1.2,
+    WeaponItemDamageFactor: 0.98,
     WeaponItemSpeedBonus: 1.5,
     ArmorItemSoakFactor: 1.2,
     ArmorItemReduceBonus: 1.2,
@@ -93,7 +93,7 @@ const rarityData: RarityData = {
   },
   Rare: {
     WalkerHealthFactor: 1.5,
-    WalkerPartHealthFactor: 1.5,
+    WalkerPartHealthFactor: 1.25,
     WalkerTorqueGenerationFactor: 1.1,
     StructureHealthFactor: 1.5,
     ExoskeletonHealthFactor: 1.5,
@@ -118,11 +118,11 @@ const rarityData: RarityData = {
     ItemUsageExpFactor: 1.2,
     FoliageExpFactor: 1.5,
     ItemWeightFactor: 0.8,
-    WeaponDurabilityFactor: 1.7,
-    ArmorDurabilityFactor: 1.7,
-    ToolDurabilityFactor: 1.7,
+    WeaponDurabilityFactor: 2.3,
+    ArmorDurabilityFactor: 7,
+    ToolDurabilityFactor: 5.5,
     ToolTierFactor: 1.4,
-    WeaponItemDamageFactor: 1.28,
+    WeaponItemDamageFactor: 1.035,
     WeaponItemSpeedBonus: 2,
     ArmorItemSoakFactor: 1.28,
     ArmorItemReduceBonus: 1.28,
@@ -134,7 +134,7 @@ const rarityData: RarityData = {
   },
   Epic: {
     WalkerHealthFactor: 1.75,
-    WalkerPartHealthFactor: 1.75,
+    WalkerPartHealthFactor: 1.375,
     WalkerTorqueGenerationFactor: 1.15,
     StructureHealthFactor: 1.75,
     ExoskeletonHealthFactor: 1.75,
@@ -158,11 +158,11 @@ const rarityData: RarityData = {
     ItemUsageExpFactor: 1.3,
     FoliageExpFactor: 2,
     ItemWeightFactor: 0.65,
-    WeaponDurabilityFactor: 2.3,
-    ArmorDurabilityFactor: 2.3,
-    ToolDurabilityFactor: 2.3,
+    WeaponDurabilityFactor: 2.7,
+    ArmorDurabilityFactor: 8.5,
+    ToolDurabilityFactor: 7,
     ToolTierFactor: 1.6,
-    WeaponItemDamageFactor: 1.35,
+    WeaponItemDamageFactor: 1.07,
     WeaponItemSpeedBonus: 2.5,
     ArmorItemSoakFactor: 1.35,
     ArmorItemReduceBonus: 1.35,
@@ -174,7 +174,7 @@ const rarityData: RarityData = {
   },
   Legendary: {
     WalkerHealthFactor: 2,
-    WalkerPartHealthFactor: 2,
+    WalkerPartHealthFactor: 1.5,
     WalkerTorqueGenerationFactor: 1.2,
     StructureHealthFactor: 2,
     ExoskeletonHealthFactor: 2,
@@ -198,10 +198,10 @@ const rarityData: RarityData = {
     FoliageExpFactor: 5,
     ItemWeightFactor: 0.5,
     WeaponDurabilityFactor: 3,
-    ArmorDurabilityFactor: 3,
-    ToolDurabilityFactor: 3,
+    ArmorDurabilityFactor: 10,
+    ToolDurabilityFactor: 8,
     ToolTierFactor: 1.8,
-    WeaponItemDamageFactor: 1.4,
+    WeaponItemDamageFactor: 1.1,
     ArmorItemSoakFactor: 1.4,
     ArmorItemReduceBonus: 1.4,
     WeaponStaminaCostFactor: 0.85,
@@ -317,8 +317,8 @@ const getFactorName = (
     case "storage":
       if (category === "Crafting") {
         break;
-      } 
-      
+      }
+
       factorName = "StorageContainerSlotFactor";
       break;
     default:
