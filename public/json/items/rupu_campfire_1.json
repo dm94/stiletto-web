@@ -8,12 +8,12 @@
     {
       "ingredients": [
         {
-          "name": "Wood Shaft",
-          "count": 6
+          "name": "Wood",
+          "count": 16
         },
         {
-          "name": "Fiber Weave",
-          "count": 12
+          "name": "Fiber",
+          "count": 11
         },
         {
           "name": "Stone",
@@ -23,7 +23,7 @@
     }
   ],
   "structureInfo": {
-    "hp": 150,
+    "hp": 1500,
     "type": "Soft",
     "containerCapacity": {
       "FuelContainer": 1,

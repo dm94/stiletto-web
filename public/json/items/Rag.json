@@ -9,25 +9,17 @@
     {
       "ingredients": [
         {
-          "name": "Wood Shaft",
-          "count": 10
+          "name": "Rupu Vine",
+          "count": 1
         },
         {
           "name": "Fiber Weave",
-          "count": 10
-        },
-        {
-          "name": "Wooden Slab",
-          "count": 6
-        },
-        {
-          "name": "Rupu Vine",
-          "count": 25
+          "count": 5
         }
       ]
     }
   ],
   "structureInfo": {
-    "hp": 100
+    "hp": 30
   }
 }

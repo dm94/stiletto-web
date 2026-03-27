@@ -1,24 +1,28 @@
 {
   "name": "Rawbone Maul",
-  "parent": "Rawbone Maul",
-  "type": "TwoHandedBoneSpikedClub_C",
+  "parent": "Jaggertooth Maul",
+  "type": "TwoHandedBoneMace_C",
   "category": "Weapons",
-  "trade_price": 15.8,
+  "trade_price": 24.5,
   "stackSize": 100,
-  "weight": 4.6,
-  "description": "Sharpened bone splinters are used to make this weapon deal as much damage as possible.",
-  "experiencieReward": 105,
-  "durability": 420,
+  "weight": 4.5,
+  "description": "They call nomads who specialize in using rawbone weaponry \"boneheads,\" an ancient term meaning simpleton.",
+  "experiencieReward": 100,
+  "durability": 440,
   "crafting": [
     {
       "ingredients": [
         {
-          "name": "Bone Splinter",
-          "count": 9
+          "name": "Wood Shaft",
+          "count": 4
         },
         {
-          "name": "Fiber Weave",
-          "count": 4
+          "name": "Nurr Fang",
+          "count": 1
+        },
+        {
+          "name": "Rope",
+          "count": 6
         }
       ],
       "time": 2,
@@ -27,8 +31,9 @@
   ],
   "weaponInfo": {
     "weaponSpeed": 120,
-    "weaponLength": 97,
-    "damage": 47,
+    "stability": 65,
+    "weaponLength": 80,
+    "damage": 40,
     "penetration": 15
   },
   "droppedBy": [

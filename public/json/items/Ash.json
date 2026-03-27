@@ -7,6 +7,7 @@
   "stackSize": 100,
   "weight": 0.01,
   "description": "A product of burning wood.",
+  "experiencieReward": 1,
   "crafting": [
     {
       "ingredients": [
@@ -76,16 +77,6 @@
         }
       ],
       "time": 60,
-      "station": "FuelBurning"
-    },
-    {
-      "ingredients": [
-        {
-          "name": "Rupu Gel",
-          "count": 1
-        }
-      ],
-      "time": 600,
       "station": "FuelBurning"
     }
   ],

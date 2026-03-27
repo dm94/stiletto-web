@@ -10,12 +10,16 @@
     {
       "ingredients": [
         {
+          "name": "Ceramic Shard",
+          "count": 8
+        },
+        {
           "name": "Wood Shaft",
           "count": 17
         },
         {
-          "name": "Chitin Plate",
-          "count": 12
+          "name": "Leather",
+          "count": 5
         }
       ],
       "time": 6,

@@ -8,16 +8,12 @@
     {
       "ingredients": [
         {
-          "name": "Fiber Weave",
-          "count": 6
+          "name": "Fiber",
+          "count": 20
         },
         {
           "name": "Rupu Pelt",
           "count": 5
-        },
-        {
-          "name": "Bone Splinter",
-          "count": 6
         }
       ]
     }

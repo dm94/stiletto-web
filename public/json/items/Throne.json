@@ -8,26 +8,18 @@
     {
       "ingredients": [
         {
-          "name": "Wood Shaft",
-          "count": 5
+          "name": "Wood",
+          "count": 20
         },
         {
-          "name": "Fiber Weave",
+          "name": "Stone",
           "count": 10
-        },
-        {
-          "name": "Wooden Slab",
-          "count": 6
-        },
-        {
-          "name": "Redwood Wood",
-          "count": 15
         }
       ]
     }
   ],
   "structureInfo": {
-    "hp": 300,
+    "hp": 250,
     "type": "Soft"
   }
 }
