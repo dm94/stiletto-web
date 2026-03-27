@@ -13,6 +13,7 @@ const WALKER_UPGRADE_TYPES = [
   "mobility",
   "torque",
 ] as const;
+const WALKER_UPGRADES_TRANSLATION_PREFIX = "wiki.walkerUpgrades";
 
 type WalkerUpgradeType = (typeof WALKER_UPGRADE_TYPES)[number];
 type WalkerUpgradeTier = (typeof WALKER_UPGRADE_TIERS)[number];
@@ -144,6 +145,13 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
     return null;
   }
 
+  const upgradesTitle = t(`${WALKER_UPGRADES_TRANSLATION_PREFIX}.title`, {
+    defaultValue: "Upgrades",
+  });
+  const tierHeader = t(`${WALKER_UPGRADES_TRANSLATION_PREFIX}.tierHeader`, {
+    defaultValue: "Tier",
+  });
+
   const renderUpgradeCell = (upgradeCell?: WalkerUpgradeCell) => {
     if (!upgradeCell) {
       return <span className="text-gray-500">-</span>;
@@ -168,7 +176,12 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
               className="text-xs leading-5"
             >
               <span className="text-gray-300 capitalize">
-                {t(upgradeKey, { defaultValue: upgradeKey })}
+                {t(
+                  `${WALKER_UPGRADES_TRANSLATION_PREFIX}.stats.${upgradeKey}`,
+                  {
+                    defaultValue: t(upgradeKey, { defaultValue: upgradeKey }),
+                  },
+                )}
               </span>
               <span className={`ml-2 ${textColor}`}>{parsedUpgradeValue}</span>
             </div>
@@ -182,19 +195,22 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
     <div className="w-full px-4">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
         <div className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
-          Upgrades
+          {upgradesTitle}
         </div>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[920px] text-left text-sm">
             <thead>
               <tr className="border-b border-gray-700">
-                <th className="p-3 text-gray-300">Tier</th>
+                <th className="p-3 text-gray-300">{tierHeader}</th>
                 {WALKER_UPGRADE_TYPES.map((upgradeType) => (
                   <th
                     key={upgradeType}
                     className="p-3 text-gray-300 capitalize whitespace-nowrap"
                   >
-                    {upgradeType}
+                    {t(
+                      `${WALKER_UPGRADES_TRANSLATION_PREFIX}.types.${upgradeType}`,
+                      { defaultValue: upgradeType },
+                    )}
                   </th>
                 ))}
               </tr>
@@ -206,7 +222,10 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
                   className="border-b border-gray-700 last:border-b-0"
                 >
                   <td className="p-3 text-gray-300 font-medium whitespace-nowrap">
-                    Tier {tier}
+                    {t(`${WALKER_UPGRADES_TRANSLATION_PREFIX}.tierLabel`, {
+                      defaultValue: `Tier ${tier}`,
+                      tier,
+                    })}
                   </td>
                   {WALKER_UPGRADE_TYPES.map((upgradeType) => (
                     <td
