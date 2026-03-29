@@ -153,13 +153,6 @@ const MapLayer: React.FC<MapLayerProps> = ({
     });
   }, []);
 
-  const setPoachingHutRadius = useCallback((radius: number) => {
-    dispatch({
-      type: MapLayerActionType.SetPoachingHutRadius,
-      payload: radius,
-    });
-  }, []);
-
   const getMarkers = useMemo(() => {
     if (!resourcesInTheMap?.[0]?.resourceid) {
       return null;
@@ -177,7 +170,12 @@ const MapLayer: React.FC<MapLayerProps> = ({
               poachingHutRadius={poachingHutRadius}
               updateResource={updateResource}
               deleteResource={deleteResource}
-              setPoachingHutRadius={setPoachingHutRadius}
+              setPoachingHutRadius={(radius: number) => {
+                dispatch({
+                  type: MapLayerActionType.SetPoachingHutRadius,
+                  payload: radius,
+                });
+              }}
             />
           </Popup>
         </Marker>
@@ -197,7 +195,6 @@ const MapLayer: React.FC<MapLayerProps> = ({
     poachingHutRadius,
     updateResource,
     deleteResource,
-    setPoachingHutRadius,
   ]);
 
   const handleMapClick = useCallback(
