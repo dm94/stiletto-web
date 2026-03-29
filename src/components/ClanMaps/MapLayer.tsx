@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, memo } from "react";
+import React, { useReducer, useCallback, useMemo, memo } from "react";
 import {
   TileLayer,
   Marker,
@@ -42,6 +42,81 @@ type MapClickHandlerProps = {
   onMapClick: (lat: number, lng: number) => void;
 };
 
+interface MapLayerState {
+  coordinateXInput: number;
+  coordinateYInput: number;
+  hasLocation: boolean;
+  gridOpacity: number;
+  poachingHutRadius: number;
+}
+
+enum MapLayerActionType {
+  SetCoordinates = "SET_COORDINATES",
+  SetGridOpacity = "SET_GRID_OPACITY",
+  SetPoachingHutRadius = "SET_POACHING_HUT_RADIUS",
+}
+
+type MapLayerAction =
+  | {
+      type: MapLayerActionType.SetCoordinates;
+      payload: {
+        coordinateXInput: number;
+        coordinateYInput: number;
+        hasLocation: boolean;
+      };
+    }
+  | {
+      type: MapLayerActionType.SetGridOpacity;
+      payload: {
+        gridOpacity: number;
+      };
+    }
+  | {
+      type: MapLayerActionType.SetPoachingHutRadius;
+      payload: {
+        poachingHutRadius: number;
+      };
+    };
+
+const initialMapLayerState: MapLayerState = {
+  coordinateXInput: 0,
+  coordinateYInput: 0,
+  hasLocation: false,
+  gridOpacity: 0,
+  poachingHutRadius: 150,
+};
+
+const mapLayerReducer = (
+  state: MapLayerState,
+  action: MapLayerAction,
+): MapLayerState => {
+  switch (action.type) {
+    case MapLayerActionType.SetCoordinates: {
+      return {
+        ...state,
+        coordinateXInput: action.payload.coordinateXInput,
+        coordinateYInput: action.payload.coordinateYInput,
+        hasLocation: action.payload.hasLocation,
+      };
+    }
+    case MapLayerActionType.SetGridOpacity: {
+      return {
+        ...state,
+        gridOpacity: action.payload.gridOpacity,
+      };
+    }
+    case MapLayerActionType.SetPoachingHutRadius: {
+      return {
+        ...state,
+        poachingHutRadius: action.payload.poachingHutRadius,
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
 const MapClickHandler: React.FC<MapClickHandlerProps> = ({ onMapClick }) => {
   useMapEvents({
     click: (e) => {
@@ -63,11 +138,14 @@ const MapLayer: React.FC<MapLayerProps> = ({
   changeInput,
 }) => {
   const { t } = useTranslation();
-  const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
-  const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
-  const [hasLocation, setHasLocation] = useState<boolean>(false);
-  const [gridOpacity, setGridOpacity] = useState<number>(0);
-  const [poachingHutRadius, setPoachingHutRadius] = useState<number>(150);
+  const [state, dispatch] = useReducer(mapLayerReducer, initialMapLayerState);
+  const {
+    coordinateXInput,
+    coordinateYInput,
+    hasLocation,
+    gridOpacity,
+    poachingHutRadius,
+  } = state;
 
   const getMarketDesign = useCallback((resource: string) => {
     const res = resource.replaceAll(" ", "_");
@@ -76,6 +154,15 @@ const MapLayer: React.FC<MapLayerProps> = ({
       iconSize: [25, 41],
       iconAnchor: [13, 44],
       popupAnchor: [-6, -20],
+    });
+  }, []);
+
+  const setPoachingHutRadius = useCallback((radius: number) => {
+    dispatch({
+      type: MapLayerActionType.SetPoachingHutRadius,
+      payload: {
+        poachingHutRadius: radius,
+      },
     });
   }, []);
 
@@ -116,20 +203,41 @@ const MapLayer: React.FC<MapLayerProps> = ({
     poachingHutRadius,
     updateResource,
     deleteResource,
+    setPoachingHutRadius,
   ]);
 
   const handleMapClick = useCallback(
     (roundedLat: number, roundedLng: number) => {
-      setHasLocation(true);
-      setCoordinateXInput(roundedLat);
-      setCoordinateYInput(roundedLng);
+      dispatch({
+        type: MapLayerActionType.SetCoordinates,
+        payload: {
+          coordinateXInput: roundedLat,
+          coordinateYInput: roundedLng,
+          hasLocation: true,
+        },
+      });
       changeInput?.(roundedLat, roundedLng);
     },
     [changeInput],
   );
 
-  const handleShowGrid = useCallback(() => setGridOpacity(1), []);
-  const handleHideGrid = useCallback(() => setGridOpacity(0), []);
+  const handleShowGrid = useCallback(() => {
+    dispatch({
+      type: MapLayerActionType.SetGridOpacity,
+      payload: {
+        gridOpacity: 1,
+      },
+    });
+  }, []);
+
+  const handleHideGrid = useCallback(() => {
+    dispatch({
+      type: MapLayerActionType.SetGridOpacity,
+      payload: {
+        gridOpacity: 0,
+      },
+    });
+  }, []);
 
   const position: [number, number] = useMemo(
     () => [coordinateXInput, coordinateYInput],
