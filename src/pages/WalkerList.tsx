@@ -161,19 +161,6 @@ const WalkerList: React.FC = () => {
     }
   }, [isCreatingWalker]);
 
-  const renderCreateWalkerSection = () => (
-    <div className="mb-6">
-      <button
-        type="button"
-        className="w-full rounded-lg bg-green-600 p-2 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:cursor-not-allowed disabled:bg-green-900 sm:w-auto sm:px-6"
-        onClick={openCreateWalkerModal}
-        disabled={isCreatingWalker}
-      >
-        {t("common.add")}
-      </button>
-    </div>
-  );
-
   const setupUserProfile = useCallback(async (): Promise<number | null> => {
     let userIsLeader = false;
     let clan: number | undefined;
@@ -251,45 +238,24 @@ const WalkerList: React.FC = () => {
     await updateWalkers();
   }, [isConnected, t, setupUserProfile, loadMembersAndItems, updateWalkers]);
 
-  const renderWalkerList = useMemo(() => {
-    if (!walkers) {
-      return "";
-    }
+  const walkerRows = walkers.map((walker) => (
+    <WalkerListItem
+      key={`witem${walker.walkerid}`}
+      walker={walker}
+      walkerListTypes={walkerTypes}
+      memberList={members}
+      isLeader={isLeader ?? hasPermissions}
+      nickname={nickname ?? ""}
+      onRemove={handleDeleteWalker}
+      onSave={updateWalker}
+    />
+  ));
 
-    return walkers.map((walker) => (
-      <WalkerListItem
-        key={`witem${walker.walkerid}`}
-        walker={walker}
-        walkerListTypes={walkerTypes}
-        memberList={members}
-        isLeader={isLeader ?? hasPermissions}
-        nickname={nickname ?? ""}
-        onRemove={handleDeleteWalker}
-        onSave={updateWalker}
-      />
-    ));
-  }, [
-    walkers,
-    walkerTypes,
-    members,
-    isLeader,
-    hasPermissions,
-    nickname,
-    handleDeleteWalker,
-    updateWalker,
-  ]);
-
-  const renderWalkerOptionList = useMemo(() => {
-    if (!walkerTypes) {
-      return "";
-    }
-
-    return walkerTypes.map((walker) => (
-      <option key={walker} value={walker}>
-        {t(walker)}
-      </option>
-    ));
-  }, [walkerTypes, t]);
+  const walkerOptionRows = walkerTypes.map((walker) => (
+    <option key={walker} value={walker}>
+      {t(walker)}
+    </option>
+  ));
 
   useEffect(() => {
     if (isUserLoading) {
@@ -299,46 +265,8 @@ const WalkerList: React.FC = () => {
     void initializeData();
   }, [initializeData, isUserLoading]);
 
-  const renderServerLinkButton = () => (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-      <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
-        <div className="p-4">
-          <div className="text-blue-400 mb-3">
-            {t("walkers.discordLinkNotice")}
-          </div>
-          <div className="text-yellow-400">
-            {t(
-              "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot.",
-            )}
-          </div>
-        </div>
-      </div>
-      {renderDiscordBotSection()}
-    </div>
-  );
-
-  const renderDiscordBotSection = () => (
-    <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
-      <div className="p-3 bg-gray-900 border-b border-gray-700">
-        <h2 className="text-lg font-semibold text-gray-300">
-          {t("discord.bot")}
-        </h2>
-      </div>
-      <div className="p-4">
-        <div className="mb-3 text-gray-300">{t("discord.botDescription")}</div>
-        <a
-          className="w-full inline-flex justify-center items-center p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-          href="https://top.gg/bot/715948052979908911"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {t("discord.bot")}
-        </a>
-      </div>
-    </div>
-  );
-
-  const renderHelmetInfo = () => (
+  const helmetInfo = useMemo(
+    () => (
     <HeaderMeta
       title={t("seo.walkers.title")}
       description={t("seo.walkers.description")}
@@ -346,6 +274,8 @@ const WalkerList: React.FC = () => {
       image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
       keywords="Last Oasis, walkers, clan, management, vehicles, stiletto, toboggan, falco, spider, buffalo"
     />
+    ),
+    [t],
   );
 
   if (error) {
@@ -363,7 +293,7 @@ const WalkerList: React.FC = () => {
   if (!isLoaded) {
     return (
       <Fragment>
-        {renderHelmetInfo()}
+        {helmetInfo}
         <LoadingScreen />
       </Fragment>
     );
@@ -383,9 +313,51 @@ const WalkerList: React.FC = () => {
 
   return (
     <div className="container mx-auto px-4 py-6">
-      {renderHelmetInfo()}
-      {renderServerLinkButton()}
-      {renderCreateWalkerSection()}
+      {helmetInfo}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+        <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
+          <div className="p-4">
+            <div className="text-blue-400 mb-3">
+              {t("walkers.discordLinkNotice")}
+            </div>
+            <div className="text-yellow-400">
+              {t(
+                "You can link the discord server more easily by typing /linkserver in your discord server when you have added the bot.",
+              )}
+            </div>
+          </div>
+        </div>
+        <div className="bg-gray-800 border border-gray-600 rounded-lg overflow-hidden">
+          <div className="p-3 bg-gray-900 border-b border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-300">
+              {t("discord.bot")}
+            </h2>
+          </div>
+          <div className="p-4">
+            <div className="mb-3 text-gray-300">
+              {t("discord.botDescription")}
+            </div>
+            <a
+              className="w-full inline-flex justify-center items-center p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+              href="https://top.gg/bot/715948052979908911"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("discord.bot")}
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="mb-6">
+        <button
+          type="button"
+          className="w-full rounded-lg bg-green-600 p-2 text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:cursor-not-allowed disabled:bg-green-900 sm:w-auto sm:px-6"
+          onClick={openCreateWalkerModal}
+          disabled={isCreatingWalker}
+        >
+          {t("common.add")}
+        </button>
+      </div>
 
       <div className="bg-gray-800 border border-blue-500 rounded-lg shadow-md mb-6">
         <div className="p-3 bg-gray-900 border-b border-gray-700">
@@ -409,7 +381,7 @@ const WalkerList: React.FC = () => {
                 onChange={(e) => setWalkerTypeSearch(e.target.value)}
               >
                 <option value="All">{t("common.all")}</option>
-                {renderWalkerOptionList}
+                {walkerOptionRows}
               </select>
             </div>
             <div>
@@ -537,7 +509,7 @@ const WalkerList: React.FC = () => {
             </tr>
           </thead>
           <tbody className="bg-gray-800 divide-y divide-gray-700">
-            {renderWalkerList}
+            {walkerRows}
           </tbody>
         </table>
       </div>

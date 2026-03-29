@@ -39,20 +39,14 @@ const ClusterList: React.FC<ClusterListProps> = ({
     fetchClusters();
   }, []);
 
-  const renderClusterOptions = () => {
-    if (!clusters.length) {
-      return null;
-    }
-
-    return clusters.map((cluster) => (
-      <option
-        key={`${cluster.region}-${cluster.name}`}
-        value={`${cluster.region}-${cluster.name}`}
-      >
-        {`${[cluster.region]} ${cluster.name} (${cluster.clan_limit})`}
-      </option>
-    ));
-  };
+  const clusterOptions = clusters.map((cluster) => (
+    <option
+      key={`${cluster.region}-${cluster.name}`}
+      value={`${cluster.region}-${cluster.name}`}
+    >
+      {`${[cluster.region]} ${cluster.name} (${cluster.clan_limit})`}
+    </option>
+  ));
 
   return (
     <select
@@ -63,7 +57,7 @@ const ClusterList: React.FC<ClusterListProps> = ({
       onChange={(event) => onChange?.(event.target.value)}
     >
       {filter && <option value="All">{t("common.all")}</option>}
-      {renderClusterOptions()}
+      {clusterOptions}
     </select>
   );
 };

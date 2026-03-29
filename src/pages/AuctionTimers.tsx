@@ -16,15 +16,10 @@ const AuctionTimers = memo(() => {
     audio.play();
   }, []);
 
-  const renderTimers = useCallback(() => {
-    const timerElements = [];
-    for (const timerId of timerIds) {
-      timerElements.push(
-        <Timer key={timerId} onPlay={playAlarm} value={playSound} />,
-      );
-    }
-    return <div className="w-full">{timerElements}</div>;
-  }, [timerIds, playAlarm, playSound]);
+  const timerElements = [];
+  for (const timerId of timerIds) {
+    timerElements.push(<Timer key={timerId} onPlay={playAlarm} value={playSound} />);
+  }
 
   return (
     <div className="container mx-auto px-4 py-6">
@@ -81,7 +76,7 @@ const AuctionTimers = memo(() => {
         </div>
       </div>
 
-      {renderTimers()}
+      <div className="w-full">{timerElements}</div>
 
       <div className="w-full mt-6">
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg">

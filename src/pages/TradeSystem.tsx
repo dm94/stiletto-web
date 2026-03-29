@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import HeaderMeta from "@components/HeaderMeta";
 import { getItems } from "@functions/github";
@@ -139,167 +139,148 @@ const TradeSystem = () => {
     ],
   );
 
-  const renderLoggedPart = () => {
-    if (!isConnected) {
-      return (
-        <div
-          className="w-full lg:w-1/2 p-4"
-          data-testid="not-logged-in-message"
-        >
-          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-            <div className="p-4 text-green-400">
-              {t("trades.publishTradeNotice")}
-            </div>
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <div className="w-full p-4">
-        <form onSubmit={handleCreateTrade} data-testid="create-trade-form">
-          <div className="bg-gray-800 border border-gray-700 rounded-lg">
-            <h2 className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
-              {t("trades.publishTrade")}
-            </h2>
-            <div className="p-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="tradeType" className="block text-gray-300">
-                    {t("common.type")}
-                  </label>
-                  <select
-                    id="tradeType"
-                    data-testid="trade-type"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    value={tradeTypeInput}
-                    onChange={(evt) => setTradeTypeInput(evt.target.value)}
-                  >
-                    <option value="Supply">{t("common.supply")}</option>
-                    <option value="Demand">{t("trades.demand")}</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="resourcetype" className="block text-gray-300">
-                    {t("trades.resourceOrMatsFor")}
-                  </label>
-                  <SearchableSelect
-                    id="resourcetype"
-                    data-testid="resource-type"
-                    value={resourceTypeInput}
-                    onChange={setResourceTypeInput}
-                    options={
-                      items?.map((item) => ({
-                        value: item.name,
-                        label: t(item.name, { ns: "items" }),
-                      })) ?? []
-                    }
-                    placeholder={t("trades.selectResource")}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="regionInput" className="block text-gray-300">
-                    {t("common.region")}
-                  </label>
-                  <ClusterList
-                    value={regionInput}
-                    onChange={setRegionInput}
-                    filter={false}
-                    id="regionInput"
-                    dataTestId="region-input"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="amountInput" className="block text-gray-300">
-                    {t("trades.quantity")}
-                  </label>
-                  <input
-                    id="amountInput"
-                    data-testid="amount-input"
-                    type="number"
-                    min="0"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    value={amountInput}
-                    onChange={(evt) =>
-                      setAmountInput(Number.parseInt(evt.target.value, 10))
-                    }
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="qualityInput" className="block text-gray-300">
-                    {t("common.quality")}
-                  </label>
-                  <select
-                    id="qualityInput"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    value={qualityInput}
-                    onChange={(evt) =>
-                      setQualityInput(Number(evt.target.value))
-                    }
-                  >
-                    <option value="0">{t("crafting.common")}</option>
-                    <option value="1">{t("crafting.uncommon")}</option>
-                    <option value="2">{t("crafting.rare")}</option>
-                    <option value="3">{t("crafting.epic")}</option>
-                    <option value="4">{t("crafting.legendary")}</option>
-                  </select>
-                </div>
-                <div className="space-y-2">
-                  <label htmlFor="priceInput" className="block text-gray-300">
-                    {t("trades.pricePerUnit")}
-                  </label>
-                  <input
-                    id="priceInput"
-                    data-testid="price-input"
-                    type="number"
-                    min="0"
-                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    value={priceInput}
-                    onChange={(evt) =>
-                      setPriceInput(Number.parseInt(evt.target.value, 10))
-                    }
-                  />
-                </div>
-                <div className="col-span-full">
-                  <button
-                    className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-                    type="submit"
-                    value="Submit"
-                    data-testid="submit-trade-button"
-                  >
-                    {t("trades.publish")}
-                  </button>
-                </div>
+  const loggedPart = !isConnected ? (
+    <div className="w-full lg:w-1/2 p-4" data-testid="not-logged-in-message">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+        <div className="p-4 text-green-400">{t("trades.publishTradeNotice")}</div>
+      </div>
+    </div>
+  ) : (
+    <div className="w-full p-4">
+      <form onSubmit={handleCreateTrade} data-testid="create-trade-form">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg">
+          <h2 className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
+            {t("trades.publishTrade")}
+          </h2>
+          <div className="p-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4">
+              <div className="space-y-2">
+                <label htmlFor="tradeType" className="block text-gray-300">
+                  {t("common.type")}
+                </label>
+                <select
+                  id="tradeType"
+                  data-testid="trade-type"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={tradeTypeInput}
+                  onChange={(evt) => setTradeTypeInput(evt.target.value)}
+                >
+                  <option value="Supply">{t("common.supply")}</option>
+                  <option value="Demand">{t("trades.demand")}</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="resourcetype" className="block text-gray-300">
+                  {t("trades.resourceOrMatsFor")}
+                </label>
+                <SearchableSelect
+                  id="resourcetype"
+                  data-testid="resource-type"
+                  value={resourceTypeInput}
+                  onChange={setResourceTypeInput}
+                  options={
+                    items?.map((item) => ({
+                      value: item.name,
+                      label: t(item.name, { ns: "items" }),
+                    })) ?? []
+                  }
+                  placeholder={t("trades.selectResource")}
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="regionInput" className="block text-gray-300">
+                  {t("common.region")}
+                </label>
+                <ClusterList
+                  value={regionInput}
+                  onChange={setRegionInput}
+                  filter={false}
+                  id="regionInput"
+                  dataTestId="region-input"
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="amountInput" className="block text-gray-300">
+                  {t("trades.quantity")}
+                </label>
+                <input
+                  id="amountInput"
+                  data-testid="amount-input"
+                  type="number"
+                  min="0"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={amountInput}
+                  onChange={(evt) =>
+                    setAmountInput(Number.parseInt(evt.target.value, 10))
+                  }
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="qualityInput" className="block text-gray-300">
+                  {t("common.quality")}
+                </label>
+                <select
+                  id="qualityInput"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={qualityInput}
+                  onChange={(evt) => setQualityInput(Number(evt.target.value))}
+                >
+                  <option value="0">{t("crafting.common")}</option>
+                  <option value="1">{t("crafting.uncommon")}</option>
+                  <option value="2">{t("crafting.rare")}</option>
+                  <option value="3">{t("crafting.epic")}</option>
+                  <option value="4">{t("crafting.legendary")}</option>
+                </select>
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="priceInput" className="block text-gray-300">
+                  {t("trades.pricePerUnit")}
+                </label>
+                <input
+                  id="priceInput"
+                  data-testid="price-input"
+                  type="number"
+                  min="0"
+                  className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  value={priceInput}
+                  onChange={(evt) =>
+                    setPriceInput(Number.parseInt(evt.target.value, 10))
+                  }
+                />
+              </div>
+              <div className="col-span-full">
+                <button
+                  className="w-full p-3 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  type="submit"
+                  value="Submit"
+                  data-testid="submit-trade-button"
+                >
+                  {t("trades.publish")}
+                </button>
               </div>
             </div>
           </div>
-        </form>
-      </div>
-    );
-  };
+        </div>
+      </form>
+    </div>
+  );
 
-  const renderTradeList = useMemo(() => {
-    if (!isLoaded) {
-      return <LoadingScreen />;
-    }
-
-    if (trades && trades.length > 0) {
-      return trades.map((trade) => (
-        <Trade
-          key={`trade${trade.idtrade}`}
-          trade={trade}
-          userDiscordId={userProfile?.discordid}
-          onDelete={handleDeleteTrade}
-        />
-      ));
-    }
-
-    return (
-      <div className="col-span-full text-center text-gray-400 py-8">
-        {t("trades.noTradesFound")}
-      </div>
-    );
-  }, [isLoaded, trades, userProfile?.discordid, handleDeleteTrade, t]);
+  const tradeListContent = !isLoaded ? (
+    <LoadingScreen />
+  ) : trades.length > 0 ? (
+    trades.map((trade) => (
+      <Trade
+        key={`trade${trade.idtrade}`}
+        trade={trade}
+        userDiscordId={userProfile?.discordid}
+        onDelete={handleDeleteTrade}
+      />
+    ))
+  ) : (
+    <div className="col-span-full text-center text-gray-400 py-8">
+      {t("trades.noTradesFound")}
+    </div>
+  );
 
   if (error) {
     return (
@@ -322,7 +303,7 @@ const TradeSystem = () => {
         keywords="Last Oasis trading, resource exchange, supply and demand, trade system, in-game marketplace, player economy, resource trading, Last Oasis commerce, game trading platform"
       />
       <h1 className="sr-only">{t("seo.trades.title")}</h1>
-      {renderLoggedPart()}
+      {loggedPart}
       <div className="w-full p-4">
         <div className="bg-gray-800 border border-blue-500 rounded-lg">
           <h2 className="p-3 bg-gray-900 border-b border-gray-700 text-neutral-300">
@@ -404,7 +385,7 @@ const TradeSystem = () => {
       </div>
       <div className="w-full p-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {renderTradeList}
+          {tradeListContent}
         </div>
         <Pagination
           currentPage={page}

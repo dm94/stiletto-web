@@ -209,125 +209,102 @@ const MemberList = () => {
     }
   };
 
-  const renderMemberList = () => {
-    if (members) {
-      return members?.map((member) => (
-        <MemberListItem
-          key={member.discordid}
-          member={member}
-          onKick={kickMember}
-          onClickEditPermissions={(discordid: string) =>
-            setMemberForEdit(discordid)
-          }
-          isLeader={isLeader}
-          hasPermissions={hasKickMembersPermisssions}
-        />
-      ));
-    }
-    return "";
-  };
+  const memberRows = members.map((member) => (
+    <MemberListItem
+      key={member.discordid}
+      member={member}
+      onKick={kickMember}
+      onClickEditPermissions={(discordid: string) => setMemberForEdit(discordid)}
+      isLeader={isLeader}
+      hasPermissions={hasKickMembersPermisssions}
+    />
+  ));
 
-  const renderRequestList = () => {
-    if (isLoadedRequestList) {
-      if (requestMembers && requestMembers.length > 0) {
-        return requestMembers.map((member) => (
+  const requestRows = isLoadedRequestList
+    ? requestMembers.length > 0
+      ? requestMembers.map((member) => (
           <RequestMemberListItem
             key={member.discordid}
             member={member}
             isLeader={isLeader || hasRequestPermissions}
-            onShowRequest={(r: MemberRequest) => {
-              setRequestData(r);
+            onShowRequest={(requestMember: MemberRequest) => {
+              setRequestData(requestMember);
               setShowRequestModal(true);
             }}
           />
-        ));
-      }
-      return (
+        ))
+      : (
+          <tr>
+            <td colSpan={4} className="text-center py-4 text-gray-400">
+              {t("members.noPendingRequests")}
+            </td>
+          </tr>
+        )
+    : (
         <tr>
           <td colSpan={4} className="text-center py-4 text-gray-400">
-            {t("members.noPendingRequests")}
+            {t("members.loadingRequests")}
           </td>
         </tr>
       );
-    }
-    return (
-      <tr>
-        <td colSpan={4} className="text-center py-4 text-gray-400">
-          {t("members.loadingRequests")}
-        </td>
-      </tr>
-    );
-  };
 
-  const renderDeleteClanButton = () => {
-    if (members && isLeader) {
-      return (
-        <div className="w-full lg:w-1/3 px-2">
-          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg mb-4">
-            <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
-              {t("clan.deleteClan")}
-            </div>
-            <div className="p-4 text-gray-300">{t("clan.deleteWarning")}</div>
-            <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
-              <button
-                type="button"
-                className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
-                onClick={handleDeleteClan}
-              >
-                {t("common.delete")}
-              </button>
-            </div>
-          </div>
+  const showLeaderPanels = members.length > 0 && isLeader;
+  const transferOwnerPanel = showLeaderPanels ? (
+    <div className="w-full lg:w-1/3 px-2">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg mb-4">
+        <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
+          {t("clan.transferClan")}
         </div>
-      );
-    }
-    return "";
-  };
+        <div className="p-4 text-gray-300">
+          <p className="mb-4">{t("clan.transferWarning")}</p>
+          <label htmlFor="selectNewOwner" className="block mb-2 text-sm font-medium">
+            {t("clan.newLeader")}
+          </label>
+          <select
+            id="selectNewOwner"
+            className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={selectNewOwner}
+            onChange={(evt) => setSelectNewOwner(evt.target.value)}
+          >
+            {members.map((member) => (
+              <option key={member.discordid} value={member.discordid}>
+                {member.discordtag}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
+          <button
+            type="button"
+            className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+            onClick={changeOwner}
+          >
+            {t("clan.changeLeader")}
+          </button>
+        </div>
+      </div>
+    </div>
+  ) : null;
 
-  const renderTransferOwnerPanel = () => {
-    if (members && isLeader) {
-      return (
-        <div className="w-full lg:w-1/3 px-2">
-          <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg mb-4">
-            <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
-              {t("clan.transferClan")}
-            </div>
-            <div className="p-4 text-gray-300">
-              <p className="mb-4">{t("clan.transferWarning")}</p>
-              <label
-                htmlFor="selectNewOwner"
-                className="block mb-2 text-sm font-medium"
-              >
-                {t("clan.newLeader")}
-              </label>
-              <select
-                id="selectNewOwner"
-                className="w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={selectNewOwner}
-                onChange={(evt) => setSelectNewOwner(evt.target.value)}
-              >
-                {members.map((member) => (
-                  <option key={member.discordid} value={member.discordid}>
-                    {member.discordtag}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
-              <button
-                type="button"
-                className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
-                onClick={changeOwner}
-              >
-                {t("clan.changeLeader")}
-              </button>
-            </div>
-          </div>
+  const deleteClanPanel = showLeaderPanels ? (
+    <div className="w-full lg:w-1/3 px-2">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg mb-4">
+        <div className="bg-gray-900 px-4 py-3 border-b border-gray-700 font-medium text-white">
+          {t("clan.deleteClan")}
         </div>
-      );
-    }
-    return "";
-  };
+        <div className="p-4 text-gray-300">{t("clan.deleteWarning")}</div>
+        <div className="px-4 py-3 bg-gray-900 border-t border-gray-700">
+          <button
+            type="button"
+            className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
+            onClick={handleDeleteClan}
+          >
+            {t("common.delete")}
+          </button>
+        </div>
+      </div>
+    </div>
+  ) : null;
 
   const helmetInfo = useMemo(
     () => (
@@ -457,7 +434,7 @@ const MemberList = () => {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-700">
-                    {renderMemberList()}
+                    {memberRows}
                   </tbody>
                 </table>
               </div>
@@ -491,7 +468,7 @@ const MemberList = () => {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-700">
-                    {renderRequestList()}
+                    {requestRows}
                   </tbody>
                 </table>
               </div>
@@ -499,8 +476,8 @@ const MemberList = () => {
           </div>
         </div>
 
-        {renderTransferOwnerPanel()}
-        {renderDeleteClanButton()}
+        {transferOwnerPanel}
+        {deleteClanPanel}
       </div>
 
       {/* Request Modal */}
