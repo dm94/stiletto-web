@@ -38,6 +38,22 @@ const myMarker = L.icon({
   popupAnchor: [-6, -20],
 });
 
+type MapClickHandlerProps = {
+  onMapClick: (lat: number, lng: number) => void;
+};
+
+const MapClickHandler: React.FC<MapClickHandlerProps> = ({ onMapClick }) => {
+  useMapEvents({
+    click: (e) => {
+      const roundedLat = Math.round(e.latlng.lat * 100) / 100;
+      const roundedLng = Math.round(e.latlng.lng * 100) / 100;
+      onMapClick(roundedLat, roundedLng);
+    },
+  });
+
+  return null;
+};
+
 const MapLayer: React.FC<MapLayerProps> = ({
   resourcesInTheMap,
   center,
@@ -102,21 +118,15 @@ const MapLayer: React.FC<MapLayerProps> = ({
     deleteResource,
   ]);
 
-  // Map click handler component using useMapEvents hook
-  const MapClickHandler = () => {
-    useMapEvents({
-      click: (e) => {
-        const roundedLat = Math.round(e.latlng.lat * 100) / 100;
-        const roundedLng = Math.round(e.latlng.lng * 100) / 100;
-
-        setHasLocation(true);
-        setCoordinateXInput(roundedLat);
-        setCoordinateYInput(roundedLng);
-        changeInput?.(roundedLat, roundedLng);
-      },
-    });
-    return null;
-  };
+  const handleMapClick = useCallback(
+    (roundedLat: number, roundedLng: number) => {
+      setHasLocation(true);
+      setCoordinateXInput(roundedLat);
+      setCoordinateYInput(roundedLng);
+      changeInput?.(roundedLat, roundedLng);
+    },
+    [changeInput],
+  );
 
   const handleShowGrid = useCallback(() => setGridOpacity(1), []);
   const handleHideGrid = useCallback(() => setGridOpacity(0), []);
@@ -174,7 +184,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
         center={center}
         attributionControl={false}
       >
-        <MapClickHandler />
+        <MapClickHandler onMapClick={handleMapClick} />
         <ImageOverlay
           bounds={[
             [85.5, -180],
