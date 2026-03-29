@@ -139,13 +139,7 @@ const TradeSystem = () => {
     ],
   );
 
-  const loggedPart = !isConnected ? (
-    <div className="w-full lg:w-1/2 p-4" data-testid="not-logged-in-message">
-      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-        <div className="p-4 text-green-400">{t("trades.publishTradeNotice")}</div>
-      </div>
-    </div>
-  ) : (
+  const loggedPart = isConnected ? (
     <div className="w-full p-4">
       <form onSubmit={handleCreateTrade} data-testid="create-trade-form">
         <div className="bg-gray-800 border border-gray-700 rounded-lg">
@@ -263,11 +257,15 @@ const TradeSystem = () => {
         </div>
       </form>
     </div>
+  ) : (
+    <div className="w-full lg:w-1/2 p-4" data-testid="not-logged-in-message">
+      <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+        <div className="p-4 text-green-400">{t("trades.publishTradeNotice")}</div>
+      </div>
+    </div>
   );
 
-  const tradeListContent = !isLoaded ? (
-    <LoadingScreen />
-  ) : trades.length > 0 ? (
+  const tradeListContent = isLoaded ? trades.length > 0 ? (
     trades.map((trade) => (
       <Trade
         key={`trade${trade.idtrade}`}
@@ -280,6 +278,8 @@ const TradeSystem = () => {
     <div className="col-span-full text-center text-gray-400 py-8">
       {t("trades.noTradesFound")}
     </div>
+  ) : (
+    <LoadingScreen />
   );
 
   if (error) {
