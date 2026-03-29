@@ -265,22 +265,25 @@ const TradeSystem = () => {
     </div>
   );
 
-  const tradeListContent = isLoaded ? trades.length > 0 ? (
-    trades.map((trade) => (
+  let tradeListContent: React.ReactNode;
+  if (!isLoaded) {
+    tradeListContent = <LoadingScreen />;
+  } else if (trades.length > 0) {
+    tradeListContent = trades.map((trade) => (
       <Trade
         key={`trade${trade.idtrade}`}
         trade={trade}
         userDiscordId={userProfile?.discordid}
         onDelete={handleDeleteTrade}
       />
-    ))
-  ) : (
-    <div className="col-span-full text-center text-gray-400 py-8">
-      {t("trades.noTradesFound")}
-    </div>
-  ) : (
-    <LoadingScreen />
-  );
+    ));
+  } else {
+    tradeListContent = (
+      <div className="col-span-full text-center text-gray-400 py-8">
+        {t("trades.noTradesFound")}
+      </div>
+    );
+  }
 
   if (error) {
     return (
