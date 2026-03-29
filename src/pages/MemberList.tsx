@@ -220,33 +220,39 @@ const MemberList = () => {
     />
   ));
 
-  const requestRows = isLoadedRequestList
-    ? requestMembers.length > 0
-      ? requestMembers.map((member) => (
-          <RequestMemberListItem
-            key={member.discordid}
-            member={member}
-            isLeader={isLeader || hasRequestPermissions}
-            onShowRequest={(requestMember: MemberRequest) => {
-              setRequestData(requestMember);
-              setShowRequestModal(true);
-            }}
-          />
-        ))
-      : (
-          <tr>
-            <td colSpan={4} className="text-center py-4 text-gray-400">
-              {t("members.noPendingRequests")}
-            </td>
-          </tr>
-        )
-    : (
+  const requestRows = (() => {
+    if (!isLoadedRequestList) {
+      return (
         <tr>
           <td colSpan={4} className="text-center py-4 text-gray-400">
             {t("members.loadingRequests")}
           </td>
         </tr>
       );
+    }
+
+    if (requestMembers.length === 0) {
+      return (
+        <tr>
+          <td colSpan={4} className="text-center py-4 text-gray-400">
+            {t("members.noPendingRequests")}
+          </td>
+        </tr>
+      );
+    }
+
+    return requestMembers.map((member) => (
+      <RequestMemberListItem
+        key={member.discordid}
+        member={member}
+        isLeader={isLeader || hasRequestPermissions}
+        onShowRequest={(requestMember: MemberRequest) => {
+          setRequestData(requestMember);
+          setShowRequestModal(true);
+        }}
+      />
+    ));
+  })();
 
   const showLeaderPanels = members.length > 0 && isLeader;
   const transferOwnerPanel = showLeaderPanels ? (
