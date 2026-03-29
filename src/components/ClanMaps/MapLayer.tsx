@@ -67,15 +67,11 @@ type MapLayerAction =
     }
   | {
       type: MapLayerActionType.SetGridOpacity;
-      payload: {
-        gridOpacity: number;
-      };
+      payload: number;
     }
   | {
       type: MapLayerActionType.SetPoachingHutRadius;
-      payload: {
-        poachingHutRadius: number;
-      };
+      payload: number;
     };
 
 const initialMapLayerState: MapLayerState = {
@@ -102,13 +98,13 @@ const mapLayerReducer = (
     case MapLayerActionType.SetGridOpacity: {
       return {
         ...state,
-        gridOpacity: action.payload.gridOpacity,
+        gridOpacity: action.payload,
       };
     }
     case MapLayerActionType.SetPoachingHutRadius: {
       return {
         ...state,
-        poachingHutRadius: action.payload.poachingHutRadius,
+        poachingHutRadius: action.payload,
       };
     }
     default: {
@@ -160,9 +156,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
   const setPoachingHutRadius = useCallback((radius: number) => {
     dispatch({
       type: MapLayerActionType.SetPoachingHutRadius,
-      payload: {
-        poachingHutRadius: radius,
-      },
+      payload: radius,
     });
   }, []);
 
@@ -224,18 +218,14 @@ const MapLayer: React.FC<MapLayerProps> = ({
   const handleShowGrid = useCallback(() => {
     dispatch({
       type: MapLayerActionType.SetGridOpacity,
-      payload: {
-        gridOpacity: 1,
-      },
+      payload: 1,
     });
   }, []);
 
   const handleHideGrid = useCallback(() => {
     dispatch({
       type: MapLayerActionType.SetGridOpacity,
-      payload: {
-        gridOpacity: 0,
-      },
+      payload: 0,
     });
   }, []);
 
