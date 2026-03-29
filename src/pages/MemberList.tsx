@@ -7,6 +7,7 @@ import LoadingScreen from "@components/LoadingScreen";
 import ClanConfig from "@components/ClanConfig";
 import MemberListItem from "@components/MemberList/MemberListItem";
 import RequestMemberListItem from "@components/MemberList/RequestMemberListItem";
+import RequestActionModal from "@components/MemberList/RequestActionModal";
 import MemberPermissionsConfig from "@components/MemberList/MemberPermissionsConfig";
 import { sendNotification } from "@functions/broadcast";
 import { getDomain } from "@functions/utils";
@@ -510,41 +511,12 @@ const MemberList = () => {
         {deleteClanPanel}
       </div>
 
-      {/* Request Modal */}
-      <div
-        className={
-          showRequestModal
-            ? "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
-            : "hidden"
-        }
-      >
-        <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-xl max-w-md w-full mx-4">
-          <div className="bg-gray-900 px-4 py-3 border-b border-gray-700">
-            <h5 className="text-white font-medium">{t("common.request")}</h5>
-          </div>
-          <div className="p-4 text-gray-300">
-            {requestData ? requestData.message : ""}
-          </div>
-          <div className="p-4 bg-gray-900 border-t border-gray-700 flex flex-col space-y-2">
-            <button
-              type="button"
-              className="w-full px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500"
-              onClick={acceptMember}
-              data-testid="accept-request-button"
-            >
-              {t("common.accept")}
-            </button>
-            <button
-              type="button"
-              className="w-full px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500"
-              onClick={rejectMember}
-              data-testid="reject-request-button"
-            >
-              {t("common.reject")}
-            </button>
-          </div>
-        </div>
-      </div>
+      <RequestActionModal
+        isOpen={showRequestModal}
+        message={requestData?.message}
+        onAccept={acceptMember}
+        onReject={rejectMember}
+      />
       {showClanConfig && (
         <ClanConfig
           key="clanconfig"
