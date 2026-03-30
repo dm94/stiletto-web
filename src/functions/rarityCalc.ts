@@ -281,7 +281,11 @@ const getFactorName = (
       }
       break;
     case "weaponSpeed":
-      factorName = "WeaponItemSpeedBonus";
+      if (category === "Weapons") {
+        factorName = "SiegeWeaponReloadTimeFactor";
+      } else {
+        factorName = "WeaponItemSpeedBonus";
+      }
       break;
     case "damage":
       factorName = "WeaponItemDamageFactor";
