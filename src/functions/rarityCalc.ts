@@ -46,6 +46,10 @@ const getRarityFactor = (
   rarity: Rarity | undefined,
   factorName: keyof RarityFactors,
 ): number | undefined => {
+  if (factorName === "name") {
+    return undefined;
+  }
+
   const rarityKey = rarity ? RARITY_MAP[rarity] : undefined;
   return rarityKey ? rarityData?.[rarityKey]?.[factorName] : undefined;
 };
