@@ -14,23 +14,21 @@ const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const renderLanguageButtons = () => {
-    return supportedLanguages.map((language: Language) => (
-      <button
-        type="button"
-        className="p-2 text-center"
-        key={language.key}
-        onClick={() => switchLanguage?.(language.key)}
-      >
-        <img
-          className="w-full rounded-lg border-2 border-gray-600 hover:border-blue-500 transition-colors"
-          src={`/img/${language.key}.jpg`}
-          alt={`${language.name} language`}
-        />
-        <p className="mt-2 text-sm text-gray-300">{t(language.name)}</p>
-      </button>
-    ));
-  };
+  const languageButtons = supportedLanguages.map((language: Language) => (
+    <button
+      type="button"
+      className="p-2 text-center"
+      key={language.key}
+      onClick={() => switchLanguage?.(language.key)}
+    >
+      <img
+        className="w-full rounded-lg border-2 border-gray-600 hover:border-blue-500 transition-colors"
+        src={`/img/${language.key}.jpg`}
+        alt={`${language.name} language`}
+      />
+      <p className="mt-2 text-sm text-gray-300">{t(language.name)}</p>
+    </button>
+  ));
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -42,7 +40,7 @@ const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({
         </div>
         <div className="p-4">
           <div className="grid grid-cols-4 gap-4">
-            {renderLanguageButtons()}
+            {languageButtons}
           </div>
         </div>
         <div className="p-4 border-t border-gray-700 flex justify-end">
