@@ -30,34 +30,40 @@ const CreatureWiki = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      let creatureName = name;
-      if (creatureName) {
-        creatureName = getItemDecodedName(creatureName);
-      }
-
-      const creatures = await getCreatures();
-      if (creatures) {
-        const foundCreature = creatures.find(
-          (cr) => cr.name.toLowerCase() === creatureName?.toLowerCase(),
-        );
-        setCreature(foundCreature);
-
-        try {
-          const creatureInfo = await getCreatureInfo(
-            foundCreature?.name ?? creatureName ?? "",
-          );
-          setCreatureInfo({
-            ...creatureInfo,
-            ...foundCreature,
-          });
-        } catch {
-          setCreatureInfo(undefined);
+      try {
+        let creatureName = name;
+        if (creatureName) {
+          creatureName = getItemDecodedName(creatureName);
         }
+
+        const creatures = await getCreatures();
+        if (creatures) {
+          const foundCreature = creatures.find(
+            (cr) => cr.name.toLowerCase() === creatureName?.toLowerCase(),
+          );
+          setCreature(foundCreature);
+
+          try {
+            const creatureInfo = await getCreatureInfo(
+              foundCreature?.name ?? creatureName ?? "",
+            );
+            setCreatureInfo({
+              ...creatureInfo,
+              ...foundCreature,
+            });
+          } catch {
+            setCreatureInfo(undefined);
+          }
+        }
+      } catch {
+        setCreature(undefined);
+        setCreatureInfo(undefined);
+      } finally {
         setIsLoaded(true);
       }
     };
 
-    loadData();
+    void loadData();
   }, [name]);
 
   const loadingCreaturePart = () => (
