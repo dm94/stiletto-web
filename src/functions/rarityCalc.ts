@@ -21,18 +21,22 @@ const initialRarityData: RarityData = {
 };
 
 const rarityData: RarityData = await (async () => {
-  const mappedRarityData = { ...initialRarityData };
-  const rarities = (await getRarityFactors()) as RarityJsonData[];
+  try {
+    const mappedRarityData = { ...initialRarityData };
+    const rarities = (await getRarityFactors()) as RarityJsonData[];
 
-  for (const rarityInfo of rarities) {
-    const { name, ...rarityFactors } = rarityInfo;
+    for (const rarityInfo of rarities) {
+      const { name, ...rarityFactors } = rarityInfo;
 
-    if (name in mappedRarityData) {
-      mappedRarityData[name as keyof RarityData] = rarityFactors;
+      if (name in mappedRarityData) {
+        mappedRarityData[name as keyof RarityData] = rarityFactors;
+      }
     }
-  }
 
-  return mappedRarityData;
+    return mappedRarityData;
+  } catch {
+    return { ...initialRarityData };
+  }
 })();
 
 const RARITY_MAP: Partial<Record<Rarity, keyof RarityData>> = {
