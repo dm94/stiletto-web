@@ -66,33 +66,41 @@ const ItemWiki = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      let itemName = name;
-      if (itemName) {
-        itemName = getItemDecodedName(itemName);
-      }
-
-      const items = await getItems();
-      if (items) {
-        const foundItem = items.find(
-          (it) => it.name.toLowerCase() === itemName,
-        );
-        setItem(foundItem);
-        setAllItems(items);
-
-        try {
-          const itemInfo = await getItemInfo(foundItem?.name ?? itemName ?? "");
-          setItemInfo({
-            ...itemInfo,
-            ...foundItem,
-          });
-        } catch {
-          setItemInfo(undefined);
+      try {
+        let itemName = name;
+        if (itemName) {
+          itemName = getItemDecodedName(itemName);
         }
+
+        const items = await getItems();
+        if (items) {
+          const foundItem = items.find(
+            (it) => it.name.toLowerCase() === itemName,
+          );
+          setItem(foundItem);
+          setAllItems(items);
+
+          try {
+            const itemInfo = await getItemInfo(
+              foundItem?.name ?? itemName ?? "",
+            );
+            setItemInfo({
+              ...itemInfo,
+              ...foundItem,
+            });
+          } catch {
+            setItemInfo(undefined);
+          }
+        }
+      } catch {
+        setItem(undefined);
+        setItemInfo(undefined);
+      } finally {
         setIsLoaded(true);
       }
     };
 
-    loadData();
+    void loadData();
   }, [name]);
 
   const showIngredient = useCallback((ingre: Item) => {

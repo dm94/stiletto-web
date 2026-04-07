@@ -92,28 +92,32 @@ const Crafter: React.FC = () => {
 
   useEffect(() => {
     const updateRecipes = async (): Promise<void> => {
-      const itemsData = await getItems();
-      if (!itemsData) {
-        return;
-      }
+      try {
+        const itemsData = await getItems();
+        if (!itemsData) {
+          return;
+        }
 
-      const craftableItems = itemsData.filter((it) => it.crafting);
-      setAllItems(craftableItems);
+        const craftableItems = itemsData.filter((it) => it.crafting);
+        setAllItems(craftableItems);
 
-      const parsed = queryString.parse(location.search);
-      const recipeToken =
-        typeof parsed.recipe === "string" ? parsed.recipe : undefined;
-      const craftToken =
-        typeof parsed.craft === "string" ? parsed.craft : undefined;
+        const parsed = queryString.parse(location.search);
+        const recipeToken =
+          typeof parsed.recipe === "string" ? parsed.recipe : undefined;
+        const craftToken =
+          typeof parsed.craft === "string" ? parsed.craft : undefined;
 
-      if (recipeToken) {
-        await loadRecipeSelection(recipeToken, craftableItems);
-        return;
-      }
+        if (recipeToken) {
+          await loadRecipeSelection(recipeToken, craftableItems);
+          return;
+        }
 
-      if (craftToken) {
-        const decodedName = getItemDecodedName(craftToken);
-        setSearchText(decodedName);
+        if (craftToken) {
+          const decodedName = getItemDecodedName(craftToken);
+          setSearchText(decodedName);
+        }
+      } catch {
+        setError("errors.apiConnection");
       }
     };
 
