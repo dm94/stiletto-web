@@ -5,6 +5,7 @@ import type { MapJsonInfo } from "@ctypes/dto/maps";
 import { toSnakeCase } from "./utils";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 import type { Perk } from "@ctypes/perk";
+import type { RarityFactors } from "@ctypes/rarity";
 
 const USER_REPO = "dm94/stiletto-web";
 const RESOURCE_CACHE_TIME_CHECK = import.meta.env.PROD ? 86400000 : 1;
@@ -91,6 +92,9 @@ export const getCreatures = (): Promise<Creature[]> =>
 
 export const getPerks = (): Promise<Perk[]> =>
   fetchResource<Perk[]>("/perks_min.json");
+
+export const getRarityFactors = (): Promise<RarityFactors[]> =>
+  fetchResource<RarityFactors[]>("/rarities.json");
 
 export const getCreatureInfo = (
   creatureName: string,
