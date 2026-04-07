@@ -1,6 +1,6 @@
 {
   "name": "stiletto-web",
-  "version": "5.54.0",
+  "version": "5.54.1",
   "license": "UNLICENSED",
   "author": "Dm94Dani",
   "description": "Web with different utilities for the game Last Oasis",
@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "7.28.5",
-    "@biomejs/biome": "2.4.6",
+    "@biomejs/biome": "2.4.10",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "4.2.2",
     "@types/leaflet": "^1.9.21",

@@ -35,12 +35,10 @@ const ClanMaps = () => {
   const fetchMaps = useCallback(async () => {
     setIsLoading(true);
     try {
-      const [mapNames, mapResponse] = await Promise.all([
-        getMapNames(),
-        getMaps(),
-      ]);
-
+      const mapNames = await getMapNames();
       setMaps(mapNames);
+
+      const mapResponse = await getMaps();
       setClanMaps(mapResponse);
     } catch {
       setError("errors.apiConnection");
@@ -112,7 +110,7 @@ const ClanMaps = () => {
   }, []);
 
   const renderClanMapList = useMemo(() => {
-    if (!clanMaps || !maps || clanMaps.length === 0) {
+    if (!clanMaps || !maps || clanMaps?.length === 0) {
       return (
         <div className="col-span-full text-center py-8">
           <p className="text-gray-400 text-lg">{t("maps.noMapsFound")}</p>
@@ -120,7 +118,7 @@ const ClanMaps = () => {
       );
     }
 
-    return clanMaps.map((map) => (
+    return clanMaps?.map((map) => (
       <ClanMapItem
         key={`clanmap${map.mapid}`}
         map={map}
