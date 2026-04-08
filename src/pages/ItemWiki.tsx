@@ -18,7 +18,7 @@ import ToolInfo from "@components/Wiki/ToolInfo";
 import GenericInfo from "@components/Wiki/GenericInfo";
 import Comments from "@components/Wiki/Comments";
 import WalkerUpgrades from "@components/Wiki/WalkerUpgrades";
-import { calcRarityValue } from "@functions/rarityCalc";
+import { calcRarityUpgradePrice, calcRarityValue } from "@functions/rarityCalc";
 import {
   getCreatureUrl,
   getDomain,
@@ -511,6 +511,25 @@ const ItemWiki = () => {
                         itemInfo.durability,
                       )}
                     </div>
+                  </li>
+                )}
+                {itemInfo?.qualityUpgradePrice && (
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">
+                      {t("wiki.qualityUpgradePrice")}
+                    </div>
+                    <div className={textColor}>
+                      {calcRarityUpgradePrice(
+                        rarity,
+                        itemInfo.qualityUpgradePrice,
+                      )}
+                    </div>
+                  </li>
+                )}
+                {itemInfo?.whereToFarm && (
+                  <li className="flex justify-between items-center p-3 border-b border-gray-700 last:border-b-0">
+                    <div className="text-gray-300">{t("wiki.whereToFarm")}</div>
+                    <div className="text-gray-400">{itemInfo.whereToFarm}</div>
                   </li>
                 )}
               </ul>
