@@ -4,6 +4,7 @@
   "type": "EarthWax_C",
   "category": "Resources",
   "trade_price": 1.4,
+  "qualityUpgradePrice": 280,
   "stackSize": 100,
   "weight": 0.44,
   "description": "Nomads rely on earth wax to waterproof walker sails and make their wooden decks resistant to decay. Often found when mining rocks, it can also be extracted from some natural resources through pressure.",

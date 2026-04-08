@@ -3,6 +3,7 @@
   "type": "BoneSplinter_C",
   "category": "Resources",
   "trade_price": 0.4,
+  "qualityUpgradePrice": 80,
   "stackSize": 100,
   "weight": 0.28,
   "description": "Flexible bones make excellent tools and armor.",

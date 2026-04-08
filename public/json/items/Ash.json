@@ -4,6 +4,7 @@
   "type": "Ash_C",
   "category": "Resources",
   "trade_price": 0.1,
+  "qualityUpgradePrice": 20,
   "stackSize": 100,
   "weight": 0.01,
   "description": "A product of burning wood.",

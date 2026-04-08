@@ -3,6 +3,7 @@
   "type": "GelatinousGoo_C",
   "category": "Liquids",
   "trade_price": 1.9,
+  "qualityUpgradePrice": 380,
   "stackSize": 100,
   "weight": 0.17,
   "description": "A foul, viscous liquid collected from the glands of the Mist Papak.",

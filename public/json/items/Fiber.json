@@ -3,6 +3,7 @@
   "type": "Fiber_C",
   "category": "Resources",
   "trade_price": 0.2,
+  "qualityUpgradePrice": 40,
   "stackSize": 100,
   "weight": 0.02,
   "description": "Used to make everything from ropes, sails, to garments.",

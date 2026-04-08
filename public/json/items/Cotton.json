@@ -3,6 +3,7 @@
   "type": "Cotton_C",
   "category": "Resources",
   "trade_price": 2.1,
+  "qualityUpgradePrice": 420,
   "stackSize": 100,
   "weight": 0.01,
   "description": "Grows in open meadows.",

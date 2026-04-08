@@ -3,6 +3,7 @@
   "type": "Spearmint_C",
   "category": "Resources",
   "trade_price": 1.9,
+  "qualityUpgradePrice": 380,
   "stackSize": 100,
   "weight": 0.25,
   "description": "This lush green plant has been used by nomads for many applications over the centuries. Many prize it's refreshing aroma against the dankness of the wasteland.",

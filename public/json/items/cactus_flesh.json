@@ -3,6 +3,7 @@
   "type": "CactusFlesh_C",
   "category": "Resources",
   "trade_price": 0.2,
+  "qualityUpgradePrice": 40,
   "stackSize": 100,
   "weight": 0.12,
   "description": "Significantly reduces stamina regenarion if eaten raw, but drinking clean water inreaes it again.The last resort for nomads dying of thirst.",

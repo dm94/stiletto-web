@@ -3,6 +3,7 @@
   "type": "Hide_C",
   "category": "Resources",
   "trade_price": 1.1,
+  "qualityUpgradePrice": 220,
   "stackSize": 100,
   "weight": 0.34,
   "description": "The raw skin of an animal.",

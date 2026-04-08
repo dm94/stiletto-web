@@ -3,6 +3,7 @@
   "type": "StonePlank_C",
   "category": "Resources",
   "trade_price": 100,
+  "qualityUpgradePrice": 100,
   "stackSize": 100,
   "weight": 1,
   "experiencieReward": 25,

@@ -3,6 +3,7 @@
   "type": "RupuFur_C",
   "category": "Resources",
   "trade_price": 0.2,
+  "qualityUpgradePrice": 40,
   "stackSize": 100,
   "weight": 0.55,
   "description": "Garments made from this oily fur are favoured for voyages into the Ice Lands.",

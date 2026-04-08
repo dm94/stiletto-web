@@ -3,6 +3,7 @@
   "type": "Corn_C",
   "category": "Resources",
   "trade_price": 0.2,
+  "qualityUpgradePrice": 40,
   "stackSize": 50,
   "weight": 0.33,
   "description": "Corn is seeded by expeditionary planters on the fringe of the Ice Lands.",

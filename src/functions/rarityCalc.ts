@@ -58,6 +58,27 @@ const getRarityFactor = (
   return rarityKey ? rarityData?.[rarityKey]?.[factorName] : undefined;
 };
 
+export const getFactorMultiplier = (rarity: Rarity | undefined) => {
+  switch (rarity) {
+    case Rarity.Rare:
+      return 2;
+    case Rarity.Epic:
+      return 4;
+    case Rarity.Legendary:
+      return 8;
+    default:
+      return 1;
+  }
+};
+
+export const calcRarityUpgradePrice = (
+  rarity: Rarity | undefined,
+  basePrice: number,
+) => {
+  const factorMultiplier = getFactorMultiplier(rarity);
+  return basePrice * factorMultiplier;
+};
+
 export const calcRarityValue = (
   rarity: Rarity | undefined,
   type: string,

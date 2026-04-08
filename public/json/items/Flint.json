@@ -3,6 +3,7 @@
   "type": "Flint_C",
   "category": "Resources",
   "trade_price": 0.1,
+  "qualityUpgradePrice": 20,
   "stackSize": 100,
   "weight": 0.4,
   "description": "A sharp mineral, handy for the production of primitive blades and extra pointy sticks",

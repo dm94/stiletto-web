@@ -1,4 +1,5 @@
 export interface RarityFactors {
+  order?: number;
   name?: string;
   WalkerHealthFactor?: number;
   WalkerPartHealthFactor?: number;

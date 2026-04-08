@@ -3,6 +3,7 @@
   "type": "Hollowbone_C",
   "category": "Resources",
   "trade_price": 30,
+  "qualityUpgradePrice": 10000,
   "stackSize": 100,
   "weight": 0.18,
   "description": "Hollowbone is a lightweight yet incredibly strong material extracted from the remains of Koa. Its natural hollow structure makes it perfect for crafting lightweight techonlogies, prized by nomads who value speed and mobility.",

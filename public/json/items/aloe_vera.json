@@ -3,6 +3,7 @@
   "type": "Aloe_C",
   "category": "Resources",
   "trade_price": 0.3,
+  "qualityUpgradePrice": 60,
   "stackSize": 100,
   "weight": 0.4,
   "description": "This hardy plant grows in the hottest of conditions. Great for stomping.",
