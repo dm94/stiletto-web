@@ -3,6 +3,7 @@
   "type": "WormScale_C",
   "category": "Resources",
   "trade_price": 250,
+  "qualityUpgradePrice": 50000,
   "stackSize": 100,
   "weight": 2.5,
   "description": "The corpse of a single worm can provide enough meat to feed a large family for months; its hard scales can be used to craft armor; its silk makes the sturdiest sails, its sinew the strongest rope; and its blood, when imbibed, heightens the user’s olfactory senses to supernatural levels.",

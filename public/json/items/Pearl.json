@@ -3,6 +3,7 @@
   "type": "Pearl_C",
   "category": "Resources",
   "trade_price": 1.1,
+  "qualityUpgradePrice": 220,
   "stackSize": 100,
   "weight": 0.01,
   "description": "In the dry southern valleys, the fossils of old sea creatures litter the ground, turning the hills white.",

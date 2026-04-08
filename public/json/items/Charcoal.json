@@ -4,6 +4,7 @@
   "type": "CharcoalFuel_C",
   "category": "Resources",
   "trade_price": 0.1,
+  "qualityUpgradePrice": 20,
   "stackSize": 100,
   "weight": 0.15,
   "description": "Burns hotter in a furnace than normal wood. Produced from wood burning and found as mineral in rocks.",

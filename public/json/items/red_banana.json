@@ -3,6 +3,7 @@
   "type": "RedBanana_C",
   "category": "Resources",
   "trade_price": 0.1,
+  "qualityUpgradePrice": 20,
   "stackSize": 100,
   "weight": 0.18,
   "description": "Looks delicious, tastes HORRIBLE.",

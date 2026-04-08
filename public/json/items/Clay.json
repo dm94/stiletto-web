@@ -4,6 +4,7 @@
   "type": "ClayLump_C",
   "category": "Resources",
   "trade_price": 0.1,
+  "qualityUpgradePrice": 100,
   "stackSize": 100,
   "weight": 0.35,
   "description": "Extracted with Soil Excavator from mud puddles in hard oases.",

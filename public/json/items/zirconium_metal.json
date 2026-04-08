@@ -3,6 +3,7 @@
   "type": "ZirconiumMetal_C",
   "category": "Resources",
   "trade_price": 0.4,
+  "qualityUpgradePrice": 100,
   "stackSize": 100,
   "weight": 1,
   "description": "this metal gleams with a silvery hue, hinting at its unique properties. Lightweight yet strong, zirconium is essential for crafting more durable weapons, and protective gear that can withstand the harsher environments of the desert. Its rarity makes it a coveted resource among nomadic clans, often leading to fierce battles over small quantities.",

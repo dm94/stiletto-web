@@ -3,6 +3,7 @@
   "type": "BloodTurnip_C",
   "category": "Resources",
   "trade_price": 0.9,
+  "qualityUpgradePrice": 180,
   "stackSize": 100,
   "weight": 0.5,
   "description": "The wandering wisemen use a divining technique to locate the rare blood turnip root, which when cut open bleeds like a slaughtered animal. Many have tried without success to cultivate it.",
