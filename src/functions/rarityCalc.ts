@@ -76,7 +76,7 @@ export const calcRarityUpgradePrice = (
   basePrice: number,
 ) => {
   const factorMultiplier = getFactorMultiplier(rarity);
-  return !factorMultiplier ? basePrice : basePrice * factorMultiplier;
+  return basePrice * factorMultiplier;
 };
 
 export const calcRarityValue = (
