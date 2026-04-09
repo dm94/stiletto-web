@@ -425,6 +425,8 @@
   "wiki.containerCapacity.Fuelcontainer": "Fuel",
   "wiki.containerCapacity.Inputscontainer": "Inputs",
   "wiki.containerCapacity.Outputscontainer": "Outputs",
+  "wiki.whereToFarm": "Where to farm",
+  "wiki.qualityUpgradePrice": "Quality upgrade price",
   "notification.share": "共享代码已生成",
   "error.databaseConnection": "连接数据库时出错",
   "error.discordClanNotLinked": "你的部族没有链接的不和对",

@@ -425,6 +425,8 @@
   "wiki.containerCapacity.Fuelcontainer": "Fuel",
   "wiki.containerCapacity.Inputscontainer": "Inputs",
   "wiki.containerCapacity.Outputscontainer": "Outputs",
+  "wiki.whereToFarm": "Where to farm",
+  "wiki.qualityUpgradePrice": "Quality upgrade price",
   "notification.share": "Se ha generado el código compartido",
   "error.databaseConnection": "Error al conectar a la base de datos",
   "error.discordClanNotLinked": "Tu clan no tiene una discordia vinculada",
