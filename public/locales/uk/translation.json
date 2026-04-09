@@ -425,6 +425,8 @@
   "wiki.containerCapacity.Fuelcontainer": "Fuel",
   "wiki.containerCapacity.Inputscontainer": "Inputs",
   "wiki.containerCapacity.Outputscontainer": "Outputs",
+  "wiki.whereToFarm": "Where to farm",
+  "wiki.qualityUpgradePrice": "Quality upgrade price",
   "notification.share": "Код спільного користування було створено",
   "error.databaseConnection": "Помилка підключення до бази даних",
   "error.discordClanNotLinked": "У вашому клану немає пов'язаного розколу",
