@@ -425,6 +425,8 @@
   "wiki.containerCapacity.Fuelcontainer": "Fuel",
   "wiki.containerCapacity.Inputscontainer": "Inputs",
   "wiki.containerCapacity.Outputscontainer": "Outputs",
+  "wiki.whereToFarm": "Where to farm",
+  "wiki.qualityUpgradePrice": "Quality upgrade price",
   "notification.share": "共有コードが生成されました",
   "error.databaseConnection": "データベースへの接続エラー",
   "error.discordClanNotLinked": "クランはリンクされた不和を持っていません",
