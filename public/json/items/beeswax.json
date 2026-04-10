@@ -3,6 +3,7 @@
   "type": "Beeswax_C",
   "category": "Resources",
   "trade_price": 1.2,
+  "qualityUpgradePrice": 240,
   "stackSize": 100,
   "weight": 0.01,
   "experiencieReward": 18,

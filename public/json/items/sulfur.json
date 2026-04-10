@@ -3,6 +3,7 @@
   "type": "Sulfur_C",
   "category": "Resources",
   "trade_price": 1.4,
+  "qualityUpgradePrice": 280,
   "stackSize": 100,
   "weight": 0.03,
   "description": "A yellow mineral that typically forms in sulfur lakes.",

@@ -3,6 +3,7 @@
   "type": "NurrFang_C",
   "category": "Resources",
   "trade_price": 0.4,
+  "qualityUpgradePrice": 80,
   "stackSize": 100,
   "weight": 0.28,
   "description": "Sharp fangs make excellent tools and weapons.",

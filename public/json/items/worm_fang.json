@@ -3,6 +3,7 @@
   "type": "WormFang_C",
   "category": "Resources",
   "trade_price": 3500,
+  "qualityUpgradePrice": 700000,
   "stackSize": 100,
   "weight": 20,
   "description": "A trophy of tremendous value proving the ultimate hunting skills and heroism among Nomads. Exchange for valuable rewards!",

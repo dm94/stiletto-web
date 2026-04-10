@@ -1,12 +1,13 @@
 {
-  "name": "Ash",
+  "name": "Charcoal",
   "parent": "Camp Fire",
-  "type": "Ash_C",
+  "type": "CharcoalFuel_C",
   "category": "Resources",
   "trade_price": 0.1,
+  "qualityUpgradePrice": 20,
   "stackSize": 100,
-  "weight": 0.01,
-  "description": "A product of burning wood.",
+  "weight": 0.15,
+  "description": "Burns hotter in a furnace than normal wood. Produced from wood burning and found as mineral in rocks.",
   "experiencieReward": 1,
   "crafting": [
     {
@@ -16,7 +17,7 @@
           "count": 1
         }
       ],
-      "time": 13,
+      "time": 21,
       "station": "FuelBurning"
     },
     {
@@ -26,38 +27,8 @@
           "count": 1
         }
       ],
-      "time": 20,
-      "station": "FuelBurning"
-    },
-    {
-      "ingredients": [
-        {
-          "name": "Lightwood",
-          "count": 1
-        }
-      ],
       "time": 30,
       "station": "FuelBurning"
-    },
-    {
-      "ingredients": [
-        {
-          "name": "Wood",
-          "count": 1
-        }
-      ],
-      "time": 20,
-      "station": "FuelLightSource"
-    },
-    {
-      "ingredients": [
-        {
-          "name": "Redwood Wood",
-          "count": 1
-        }
-      ],
-      "time": 30,
-      "station": "FuelLightSource"
     },
     {
       "ingredients": [
@@ -67,7 +38,7 @@
         }
       ],
       "time": 40,
-      "station": "FuelLightSource"
+      "station": "FuelBurning"
     },
     {
       "ingredients": [
@@ -78,190 +49,280 @@
       ],
       "time": 60,
       "station": "FuelBurning"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Wood",
+          "count": 1
+        }
+      ],
+      "time": 72,
+      "station": "FuelLightSource"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Redwood Wood",
+          "count": 1
+        }
+      ],
+      "time": 90,
+      "station": "FuelLightSource"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 1
+        }
+      ],
+      "time": 120,
+      "station": "FuelLightSource"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Wood",
+          "count": 4
+        }
+      ],
+      "time": 600,
+      "station": "Furnace"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Redwood Wood",
+          "count": 4
+        }
+      ],
+      "time": 450,
+      "station": "Furnace"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 4
+        }
+      ],
+      "time": 300,
+      "station": "Furnace"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Wood",
+          "count": 2
+        }
+      ],
+      "time": 600,
+      "station": "Advanced Furnace"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Redwood Wood",
+          "count": 2
+        }
+      ],
+      "time": 450,
+      "station": "Advanced Furnace"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 2
+        }
+      ],
+      "time": 300,
+      "station": "Advanced Furnace"
     }
   ],
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",
       "chance": 1.8181818,
-      "minQuantity": 6,
-      "maxQuantity": 12,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu Camp T1",
       "chance": 1.99999998,
-      "minQuantity": 10,
-      "maxQuantity": 20,
+      "minQuantity": 3,
+      "maxQuantity": 6,
       "tier": "T1"
     },
     {
       "name": "Easy Rupu Camp T2",
       "chance": 1.63636362,
-      "minQuantity": 12,
-      "maxQuantity": 24,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T2"
     },
     {
       "name": "Easy Rupu Camp T3",
       "chance": 1.49999994,
-      "minQuantity": 14,
-      "maxQuantity": 28,
+      "minQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T3"
     },
     {
       "name": "Easy Rupu Camp T4",
       "chance": 1.38461535,
-      "minQuantity": 20,
-      "maxQuantity": 40,
+      "minQuantity": 9,
+      "maxQuantity": 18,
       "tier": "T4"
     },
     {
       "name": "Go Go T4",
       "chance": 1.5384615000000001,
-      "minQuantity": 500,
-      "maxQuantity": 1000,
+      "minQuantity": 225,
+      "maxQuantity": 450,
       "tier": "T4"
     },
     {
       "name": "Go Go T4 Q",
       "chance": 1.5384615000000001,
-      "minQuantity": 500,
-      "maxQuantity": 1000,
+      "minQuantity": 225,
+      "maxQuantity": 450,
       "tier": "T4"
     },
     {
       "name": "Gogo",
       "chance": 1.5384615000000001,
-      "minQuantity": 500,
-      "maxQuantity": 1000
+      "minQuantity": 225,
+      "maxQuantity": 450
     },
     {
       "name": "Hard Rupu Camp T1",
       "chance": 2.9999999699999993,
-      "minQuantity": 15,
-      "maxQuantity": 30,
+      "minQuantity": 5,
+      "maxQuantity": 9,
       "tier": "T1"
     },
     {
       "name": "Hard Rupu Camp T2",
       "chance": 2.4545454299999996,
-      "minQuantity": 18,
-      "maxQuantity": 36,
+      "minQuantity": 6,
+      "maxQuantity": 12,
       "tier": "T2"
     },
     {
       "name": "Hard Rupu Camp T3",
       "chance": 2.2499999099999997,
-      "minQuantity": 21,
-      "maxQuantity": 42,
+      "minQuantity": 8,
+      "maxQuantity": 15,
       "tier": "T3"
     },
     {
       "name": "Hard Rupu Camp T4",
       "chance": 2.0769230249999997,
-      "minQuantity": 30,
-      "maxQuantity": 60,
+      "minQuantity": 14,
+      "maxQuantity": 27,
       "tier": "T4"
     },
     {
       "name": "Hotspot Loot T1",
       "chance": 11.111111,
-      "minQuantity": 5,
-      "maxQuantity": 10,
+      "minQuantity": 2,
+      "maxQuantity": 3,
       "tier": "T1"
     },
     {
       "name": "Hotspot Loot T2",
       "chance": 9.090909,
-      "minQuantity": 6,
-      "maxQuantity": 12,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T2 AC",
       "chance": 0,
-      "minQuantity": 6,
-      "maxQuantity": 12,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "tier": "T2"
     },
     {
       "name": "Hotspot Loot T3",
       "chance": 8.333333,
-      "minQuantity": 7,
-      "maxQuantity": 14,
+      "minQuantity": 3,
+      "maxQuantity": 5,
       "tier": "T3"
     },
     {
       "name": "Hotspot Loot T4",
       "chance": 7.6923075,
-      "minQuantity": 10,
-      "maxQuantity": 20,
+      "minQuantity": 5,
+      "maxQuantity": 9,
       "tier": "T4"
     },
     {
       "name": "Hotspot Loot Windmill T2 AC",
       "chance": 0,
-      "minQuantity": 6,
-      "maxQuantity": 12,
+      "minQuantity": 2,
+      "maxQuantity": 4,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu Camp T1",
       "chance": 2.4999999749999997,
-      "minQuantity": 12,
-      "maxQuantity": 24,
+      "minQuantity": 4,
+      "maxQuantity": 7,
       "tier": "T1"
     },
     {
       "name": "Medium Rupu Camp T2",
       "chance": 1.63636362,
-      "minQuantity": 12,
-      "maxQuantity": 24,
+      "minQuantity": 4,
+      "maxQuantity": 8,
       "tier": "T2"
     },
     {
       "name": "Medium Rupu Camp T3",
       "chance": 1.49999994,
-      "minQuantity": 14,
-      "maxQuantity": 28,
+      "minQuantity": 5,
+      "maxQuantity": 10,
       "tier": "T3"
     },
     {
       "name": "Medium Rupu Camp T4",
       "chance": 1.38461535,
-      "minQuantity": 20,
-      "maxQuantity": 40,
+      "minQuantity": 9,
+      "maxQuantity": 18,
       "tier": "T4"
     },
     {
       "name": "Treasure Chest T1",
       "chance": 13.333333200000002,
-      "minQuantity": 50,
-      "maxQuantity": 100,
+      "minQuantity": 15,
+      "maxQuantity": 30,
       "tier": "T1"
     },
     {
       "name": "Treasure Chest T2",
       "chance": 10.909090800000001,
-      "minQuantity": 60,
-      "maxQuantity": 120,
+      "minQuantity": 20,
+      "maxQuantity": 40,
       "tier": "T2"
     },
     {
       "name": "Treasure Chest T3",
       "chance": 9.9999996,
-      "minQuantity": 70,
-      "maxQuantity": 140,
+      "minQuantity": 25,
+      "maxQuantity": 50,
       "tier": "T3"
     },
     {
       "name": "Treasure Chest T4",
       "chance": 9.230769000000002,
-      "minQuantity": 100,
-      "maxQuantity": 200,
+      "minQuantity": 45,
+      "maxQuantity": 90,
       "tier": "T4"
     }
   ],
-  "whereToFarm": "Leftover from burning materials."
+  "whereToFarm": "Mined from rocks or as leftover from burning wood."
 }

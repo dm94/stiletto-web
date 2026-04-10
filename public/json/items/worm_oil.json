@@ -4,6 +4,7 @@
   "type": "WormOil_C",
   "category": "Liquids",
   "trade_price": 300,
+  "qualityUpgradePrice": 5,
   "stackSize": 100,
   "weight": 0.1,
   "experiencieReward": 30,

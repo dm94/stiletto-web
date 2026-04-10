@@ -3,6 +3,7 @@
   "type": "CactusFruit_C",
   "category": "Resources",
   "trade_price": 1.6,
+  "qualityUpgradePrice": 320,
   "stackSize": 100,
   "weight": 1.2,
   "description": "Some strange plants with psychoactive properties can be turned into mind enhancing vitamins.",

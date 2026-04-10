@@ -3,6 +3,7 @@
   "type": "ThornBerry_C",
   "category": "Resources",
   "trade_price": 2.6,
+  "qualityUpgradePrice": 520,
   "stackSize": 100,
   "weight": 0.05,
   "description": "Grows inside a notoriously dangerous, bulbous plant. The thornberry has mystical properties and is said to have appeared with the arrival of Nibiru.",

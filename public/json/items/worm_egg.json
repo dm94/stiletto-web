@@ -3,6 +3,7 @@
   "type": "WormEgg_C",
   "category": "Resources",
   "trade_price": 1000,
+  "qualityUpgradePrice": 5,
   "stackSize": 100,
   "weight": 0.2
 }

@@ -3,6 +3,7 @@
   "type": "Cattail_C",
   "category": "Resources",
   "trade_price": 0.2,
+  "qualityUpgradePrice": 40,
   "stackSize": 100,
   "weight": 0.01,
   "description": "An abundant marsh plant favoured by nomads for its medicinal properties.",

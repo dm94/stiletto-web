@@ -3,6 +3,7 @@
   "type": "Insects_C",
   "category": "Resources",
   "trade_price": 0.8,
+  "qualityUpgradePrice": 160,
   "stackSize": 100,
   "weight": 0.01,
   "description": "Its extremely hard carapace evolved to shield it from extreme weather.",

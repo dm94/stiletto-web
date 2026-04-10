@@ -3,6 +3,7 @@
   "type": "RupuVine_C",
   "category": "Resources",
   "trade_price": 0.5,
+  "qualityUpgradePrice": 100,
   "stackSize": 100,
   "weight": 0.01,
   "description": "These vines grow exclusively in rupu excrement, which the rupu use as a binding agent in the construction of their mud huts.",

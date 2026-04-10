@@ -114,6 +114,8 @@ export type ItemCompleteInfo = {
   drops?: Drop[];
   upgradeInfo?: any;
   walkerInfo?: WalkerInfo;
+  whereToFarm?: string;
+	qualityUpgradePrice?: number;
 };
 
 export type Item = {
