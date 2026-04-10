@@ -116,6 +116,19 @@ export type ItemCompleteInfo = {
   walkerInfo?: WalkerInfo;
   whereToFarm?: string;
 	qualityUpgradePrice?: number;
+  rigSlots?: RigSlots;
+};
+
+export type RigSlots = {
+	cosmetic?: number;
+	edgeSmall?: number;
+	edgeMedium?: number;
+	edgeLarge?: number;
+	small?: number;
+	medium?: number;
+	large?: number;
+	steeringLever?: number;
+	special?: number;
 };
 
 export type Item = {
