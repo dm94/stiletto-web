@@ -70,7 +70,9 @@ const GenericInfo: React.FC<GenericInfoProps> = ({
         ? t("wiki.containerCapacity", {
             defaultValue: "Container Capacity",
           })
-        : t(key, { defaultValue: key });
+        : t(`wiki.genericInfo.${toCamelCase(key)}`, {
+            defaultValue: key,
+          });
 
       let content: React.ReactNode = t(String(rawValue));
       let valueClassName = "text-gray-400";
