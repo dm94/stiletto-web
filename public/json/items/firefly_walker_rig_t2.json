@@ -1,0 +1,24 @@
+{
+  "name": "Firefly Walker Rig T2",
+  "type": "FireflyRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Firefly Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 5,
+    "edgeSmall": 1,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 2,
+    "medium": 1,
+    "large": 0
+  }
+}

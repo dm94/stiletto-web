@@ -1,0 +1,17 @@
+{
+  "name": "Titan Walker Rig T1",
+  "type": "DefaultTitanRig_T1_C",
+  "category": "Rigs",
+  "description": "Titan Walker",
+  "rigSlots": {
+    "cosmetic": 25,
+    "edgeSmall": 6,
+    "edgeMedium": 3,
+    "edgeLarge": 1,
+    "small": 15,
+    "medium": 15,
+    "large": 2,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

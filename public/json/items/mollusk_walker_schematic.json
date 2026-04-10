@@ -6,9 +6,6 @@
   "learn": [
     "Mollusk Walker"
   ],
-  "walkerInfo": {
-    "carryCapacity": 3200
-  },
   "droppedBy": [
     {
       "name": "Easy Rupu T2 Q",

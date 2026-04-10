@@ -1,0 +1,26 @@
+{
+  "name": "Panda Walker Rig T2",
+  "type": "PandaRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Panda Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 20,
+    "edgeSmall": 6,
+    "edgeMedium": 6,
+    "edgeLarge": 2,
+    "small": 24,
+    "medium": 9,
+    "large": 3,
+    "steeringLever": 1,
+    "special": 0
+  }
+}

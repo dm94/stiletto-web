@@ -1,0 +1,26 @@
+{
+  "name": "Schmetterling Walker Rig T2",
+  "type": "SchmetterlingRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Schmetterling Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 20,
+    "edgeSmall": 7,
+    "edgeMedium": 4,
+    "edgeLarge": 1,
+    "small": 23,
+    "medium": 6,
+    "large": 2,
+    "steeringLever": 1,
+    "special": 0
+  }
+}

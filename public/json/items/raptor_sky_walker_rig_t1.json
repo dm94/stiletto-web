@@ -1,0 +1,15 @@
+{
+  "name": "Raptor Sky Walker Rig T1",
+  "type": "RaptorRig_T1_C",
+  "category": "Rigs",
+  "description": "Raptor Sky Walker",
+  "rigSlots": {
+    "cosmetic": 5,
+    "edgeSmall": 1,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 1,
+    "medium": 0,
+    "large": 0
+  }
+}

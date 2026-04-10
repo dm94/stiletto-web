@@ -50,6 +50,7 @@
   "walkerInfo": {
     "category": "Medium",
     "carryCapacity": 12500,
+    "crewSize": 16,
     "containerCapacity": 1
   }
 }

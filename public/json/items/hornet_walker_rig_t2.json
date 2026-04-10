@@ -1,0 +1,26 @@
+{
+  "name": "Hornet Walker Rig T2",
+  "type": "HornetRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Hornet Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 15,
+    "edgeSmall": 7,
+    "edgeMedium": 4,
+    "edgeLarge": 1,
+    "small": 11,
+    "medium": 6,
+    "large": 1,
+    "steeringLever": 1,
+    "special": 0
+  }
+}

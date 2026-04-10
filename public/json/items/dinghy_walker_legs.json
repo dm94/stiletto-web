@@ -18,8 +18,5 @@
     "hp": 1200,
     "type": "Medium",
     "containerCapacity": 50
-  },
-  "walkerInfo": {
-    "carryCapacity": 1500
   }
 }

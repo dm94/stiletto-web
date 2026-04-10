@@ -1,0 +1,17 @@
+{
+  "name": "Camelop Walker Rig T1",
+  "type": "CamelopRig_T1_C",
+  "category": "Rigs",
+  "description": "Camelop  Walker",
+  "rigSlots": {
+    "cosmetic": 0,
+    "edgeSmall": 0,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 0,
+    "medium": 0,
+    "large": 0,
+    "steeringLever": 0,
+    "special": 0
+  }
+}

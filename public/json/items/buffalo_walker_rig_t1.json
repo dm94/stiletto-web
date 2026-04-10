@@ -1,0 +1,17 @@
+{
+  "name": "Buffalo Walker Rig T1",
+  "type": "DefaultBuffaloRig_T1_C",
+  "category": "Rigs",
+  "description": "Buffalo Walker",
+  "rigSlots": {
+    "cosmetic": 15,
+    "edgeSmall": 3,
+    "edgeMedium": 3,
+    "edgeLarge": 1,
+    "small": 8,
+    "medium": 4,
+    "large": 1,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

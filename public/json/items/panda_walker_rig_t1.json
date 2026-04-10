@@ -1,0 +1,17 @@
+{
+  "name": "Panda Walker Rig T1",
+  "type": "DefaultPandaRig_T1_C",
+  "category": "Rigs",
+  "description": "Panda Walker",
+  "rigSlots": {
+    "cosmetic": 20,
+    "edgeSmall": 4,
+    "edgeMedium": 4,
+    "edgeLarge": 2,
+    "small": 20,
+    "medium": 7,
+    "large": 2,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

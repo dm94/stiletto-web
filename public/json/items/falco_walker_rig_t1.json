@@ -1,0 +1,17 @@
+{
+  "name": "Falco Walker Rig T1",
+  "type": "DefaultFalcoRig_T1_C",
+  "category": "Rigs",
+  "description": "Falco Walker",
+  "rigSlots": {
+    "cosmetic": 15,
+    "edgeSmall": 3,
+    "edgeMedium": 3,
+    "edgeLarge": 1,
+    "small": 10,
+    "medium": 6,
+    "large": 2,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Dinghy Walker Rig T1",
+  "type": "DinghyRig_T1_C",
+  "category": "Rigs",
+  "description": "Dinghy Walker",
+  "rigSlots": {
+    "cosmetic": 10,
+    "edgeSmall": 2,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 4,
+    "medium": 1,
+    "large": 0,
+    "steeringLever": 0,
+    "special": 1
+  }
+}

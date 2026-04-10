@@ -1,0 +1,26 @@
+{
+  "name": "Domus Walker Rig T3",
+  "type": "DomusRig_T3_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Domus Walker Rig T3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 20,
+    "edgeSmall": 7,
+    "edgeMedium": 5,
+    "edgeLarge": 2,
+    "small": 12,
+    "medium": 6,
+    "large": 2,
+    "steeringLever": 1,
+    "special": 0
+  }
+}

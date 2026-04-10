@@ -1,0 +1,26 @@
+{
+  "name": "Falco Walker Rig T2",
+  "type": "FalcoRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Falco Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 15,
+    "edgeSmall": 4,
+    "edgeMedium": 4,
+    "edgeLarge": 1,
+    "small": 12,
+    "medium": 7,
+    "large": 2,
+    "steeringLever": 1,
+    "special": 0
+  }
+}
