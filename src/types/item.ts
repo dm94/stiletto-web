@@ -131,6 +131,8 @@ export type RigSlots = {
 	special?: number;
 };
 
+export type RigSlotKey = keyof RigSlots;
+
 export type Item = {
   name: string;
   category?: string;

@@ -1,75 +1,56 @@
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import type { RigSlots } from "@ctypes/item";
-
-enum RigSlotKey {
-  Cosmetic = "cosmetic",
-  EdgeSmall = "edgeSmall",
-  EdgeMedium = "edgeMedium",
-  EdgeLarge = "edgeLarge",
-  Small = "small",
-  Medium = "medium",
-  Large = "large",
-  SteeringLever = "steeringLever",
-  Special = "special",
-}
+import type { RigSlotKey, RigSlots } from "@ctypes/item";
 
 type RigSlotDisplayConfig = {
-  key: RigSlotKey;
   colorClassName: string;
 };
 
-const RIG_SLOT_DISPLAY_CONFIG: RigSlotDisplayConfig[] = [
-  {
-    key: RigSlotKey.Cosmetic,
+const RIG_SLOT_DISPLAY_CONFIG: Record<RigSlotKey, RigSlotDisplayConfig> = {
+  cosmetic: {
     colorClassName: "text-blue-600",
   },
-  {
-    key: RigSlotKey.EdgeSmall,
+  edgeSmall: {
     colorClassName: "text-green-500",
   },
-  {
-    key: RigSlotKey.EdgeMedium,
+  edgeMedium: {
     colorClassName: "text-green-500",
   },
-  {
-    key: RigSlotKey.EdgeLarge,
+  edgeLarge: {
     colorClassName: "text-green-500",
   },
-  {
-    key: RigSlotKey.Small,
+  small: {
     colorClassName: "text-red-600",
   },
-  {
-    key: RigSlotKey.Medium,
+  medium: {
     colorClassName: "text-red-600",
   },
-  {
-    key: RigSlotKey.Large,
+  large: {
     colorClassName: "text-red-600",
   },
-  {
-    key: RigSlotKey.SteeringLever,
+  steeringLever: {
     colorClassName: "text-blue-600",
   },
-  {
-    key: RigSlotKey.Special,
+  special: {
     colorClassName: "text-yellow-400",
   },
-];
+};
 
 const RigSlotsInfo = memo(({ rigSlots }: { rigSlots: RigSlots }) => {
   const { t } = useTranslation();
   const slots = useMemo(() => {
-    const rigSlotItems: Array<RigSlotDisplayConfig & { value: number }> = [];
+    const rigSlotItems: Array<RigSlotDisplayConfig & { key: RigSlotKey; value: number }> = [];
 
-    for (const config of RIG_SLOT_DISPLAY_CONFIG) {
-      const value = rigSlots[config.key];
+    for (const [key, config] of Object.entries(RIG_SLOT_DISPLAY_CONFIG) as Array<
+      [RigSlotKey, RigSlotDisplayConfig]
+    >) {
+      const value = rigSlots[key];
       if (value === undefined) {
         continue;
       }
 
       rigSlotItems.push({
+        key,
         ...config,
         value,
       });
