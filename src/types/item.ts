@@ -88,6 +88,9 @@ export type TechItem = {
 export type WalkerInfo = {
   carryCapacity?: number;
   category?: string;
+	crewSize?: number;
+	walkerCapPower?: number;
+	containerCapacity?: number | Record<string, number>;
 };
 
 export type ItemCompleteInfo = {
