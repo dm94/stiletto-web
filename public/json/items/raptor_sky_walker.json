@@ -53,7 +53,7 @@
   },
   "walkerInfo": {
     "category": "Flying",
-    "carryCapacity": 12500,
-    "crewSize": 16
+    "crewSize": 4,
+    "walkerCapPower": 30
   }
 }

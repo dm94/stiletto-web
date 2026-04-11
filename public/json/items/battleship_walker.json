@@ -28,7 +28,8 @@
     "type": "Hard"
   },
   "walkerInfo": {
-    "carryCapacity": 12500,
-    "crewSize": 16
+    "carryCapacity": 20000,
+    "crewSize": 40,
+    "walkerCapPower": 40
   }
 }

@@ -41,7 +41,8 @@
   },
   "walkerInfo": {
     "category": "Medium",
-    "carryCapacity": 12500,
-    "crewSize": 16
+    "carryCapacity": 3200,
+    "crewSize": 5,
+    "walkerCapPower": 50
   }
 }

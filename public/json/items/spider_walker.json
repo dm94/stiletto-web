@@ -32,8 +32,6 @@
     "type": "Hard"
   },
   "walkerInfo": {
-    "category": "Small",
-    "carryCapacity": 12500,
-    "crewSize": 16
+    "category": "Small"
   }
 }
