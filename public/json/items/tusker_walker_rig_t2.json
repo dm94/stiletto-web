@@ -1,0 +1,26 @@
+{
+  "name": "Tusker Walker Rig T2",
+  "type": "TuskerRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Tusker Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 20,
+    "edgeSmall": 6,
+    "edgeMedium": 4,
+    "edgeLarge": 2,
+    "small": 30,
+    "medium": 10,
+    "large": 2,
+    "steeringLever": 1,
+    "special": 0
+  }
+}

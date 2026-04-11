@@ -4,9 +4,6 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Rig T2"
-  ],
-  "walkerInfo": {
-    "carryCapacity": 7500
-  }
+    "Toboggan Walker Rig T2"
+  ]
 }

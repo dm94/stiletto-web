@@ -32,7 +32,6 @@
     "type": "Hard"
   },
   "walkerInfo": {
-    "category": "Small",
-    "carryCapacity": 12500
+    "category": "Small"
   }
 }

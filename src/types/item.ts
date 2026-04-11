@@ -88,6 +88,9 @@ export type TechItem = {
 export type WalkerInfo = {
   carryCapacity?: number;
   category?: string;
+	crewSize?: number;
+	walkerCapPower?: number;
+	containerCapacity?: number | Record<string, number>;
 };
 
 export type ItemCompleteInfo = {
@@ -116,7 +119,22 @@ export type ItemCompleteInfo = {
   walkerInfo?: WalkerInfo;
   whereToFarm?: string;
 	qualityUpgradePrice?: number;
+  rigSlots?: RigSlots;
 };
+
+export type RigSlots = {
+	cosmetic?: number;
+	edgeSmall?: number;
+	edgeMedium?: number;
+	edgeLarge?: number;
+	small?: number;
+	medium?: number;
+	large?: number;
+	steeringLever?: number;
+	special?: number;
+};
+
+export type RigSlotKey = keyof RigSlots;
 
 export type Item = {
   name: string;

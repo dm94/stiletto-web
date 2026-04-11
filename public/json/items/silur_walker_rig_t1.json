@@ -1,0 +1,17 @@
+{
+  "name": "Silur Walker Rig T1",
+  "type": "SilurRig_T1_C",
+  "category": "Rigs",
+  "description": "Silur Walker",
+  "rigSlots": {
+    "cosmetic": 5,
+    "edgeSmall": 0,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 2,
+    "medium": 0,
+    "large": 0,
+    "steeringLever": 1,
+    "special": 0
+  }
+}

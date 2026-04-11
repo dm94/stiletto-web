@@ -1,0 +1,17 @@
+{
+  "name": "Tusker Walker Rig T1",
+  "type": "DefaultTuskerRig_T1_C",
+  "category": "Rigs",
+  "description": "Tusker Walker",
+  "rigSlots": {
+    "cosmetic": 20,
+    "edgeSmall": 4,
+    "edgeMedium": 2,
+    "edgeLarge": 1,
+    "small": 23,
+    "medium": 7,
+    "large": 1,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

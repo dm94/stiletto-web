@@ -1,0 +1,26 @@
+{
+  "name": "Toboggan Walker Rig T3",
+  "type": "TobogganRig_T3_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Toboggan Walker Rig T3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 10,
+    "edgeSmall": 8,
+    "edgeMedium": 2,
+    "edgeLarge": 0,
+    "small": 7,
+    "medium": 4,
+    "large": 0,
+    "steeringLever": 1,
+    "special": 0
+  }
+}

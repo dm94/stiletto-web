@@ -1,0 +1,17 @@
+{
+  "name": "Stiletto Walker Rig T1",
+  "type": "DefaultStilettoRig_T1_C",
+  "category": "Rigs",
+  "description": "Stiletto Walker",
+  "rigSlots": {
+    "cosmetic": 10,
+    "edgeSmall": 3,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 5,
+    "medium": 2,
+    "large": 0,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

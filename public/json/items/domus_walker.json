@@ -53,6 +53,8 @@
   },
   "walkerInfo": {
     "category": "Capital",
-    "carryCapacity": 12500
+    "carryCapacity": 10500,
+    "crewSize": 20,
+    "walkerCapPower": 150
   }
 }

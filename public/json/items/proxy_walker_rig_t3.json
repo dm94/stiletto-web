@@ -1,0 +1,25 @@
+{
+  "name": "Proxy Walker Rig T3",
+  "type": "ProxyRig_T3_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Proxy Walker Rig T3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 15,
+    "edgeSmall": 10,
+    "edgeMedium": 6,
+    "edgeLarge": 2,
+    "small": 13,
+    "medium": 10,
+    "large": 5,
+    "steeringLever": 1
+  }
+}

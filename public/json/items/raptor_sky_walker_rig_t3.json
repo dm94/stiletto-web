@@ -1,0 +1,24 @@
+{
+  "name": "Raptor Sky Walker Rig T3",
+  "type": "RaptorRig_T3_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Raptor Sky Walker Rig T3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 5,
+    "edgeSmall": 3,
+    "edgeMedium": 1,
+    "edgeLarge": 0,
+    "small": 3,
+    "medium": 1,
+    "large": 0
+  }
+}

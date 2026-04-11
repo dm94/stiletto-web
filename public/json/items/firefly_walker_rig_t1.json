@@ -1,0 +1,15 @@
+{
+  "name": "Firefly Walker Rig T1",
+  "type": "FireflyRig_T1_C",
+  "category": "Rigs",
+  "description": "Firefly Walker",
+  "rigSlots": {
+    "cosmetic": 5,
+    "edgeSmall": 0,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 1,
+    "medium": 1,
+    "large": 0
+  }
+}

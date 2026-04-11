@@ -1,0 +1,26 @@
+{
+  "name": "Dinghy Walker Rig T2",
+  "type": "DinghyRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Dinghy Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 10,
+    "edgeSmall": 3,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 5,
+    "medium": 1,
+    "large": 0,
+    "steeringLever": 0,
+    "special": 0
+  }
+}

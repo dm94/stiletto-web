@@ -4,11 +4,8 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Rig T3"
+    "Proxy Walker Rig T3"
   ],
-  "walkerInfo": {
-    "carryCapacity": 8000
-  },
   "droppedBy": [
     {
       "name": "Basket Loot T2 AC",
