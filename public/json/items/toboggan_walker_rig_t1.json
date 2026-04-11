@@ -1,0 +1,17 @@
+{
+  "name": "Toboggan Walker Rig T1",
+  "type": "DefaultTobogganRig_T1_C",
+  "category": "Rigs",
+  "description": "Toboggan Walker",
+  "rigSlots": {
+    "cosmetic": 10,
+    "edgeSmall": 4,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 4,
+    "medium": 2,
+    "large": 0,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

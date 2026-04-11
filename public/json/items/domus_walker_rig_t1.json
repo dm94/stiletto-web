@@ -1,0 +1,17 @@
+{
+  "name": "Domus Walker Rig T1",
+  "type": "DefaultDomusRig_T1_C",
+  "category": "Rigs",
+  "description": "Domus Walker",
+  "rigSlots": {
+    "cosmetic": 20,
+    "edgeSmall": 3,
+    "edgeMedium": 3,
+    "edgeLarge": 1,
+    "small": 8,
+    "medium": 4,
+    "large": 1,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

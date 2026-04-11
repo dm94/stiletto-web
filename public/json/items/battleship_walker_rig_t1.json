@@ -1,0 +1,17 @@
+{
+  "name": "Battleship Walker Rig T1",
+  "type": "DefaultBattleshipRig_T1_C",
+  "category": "Rigs",
+  "description": "Battleship Walker",
+  "rigSlots": {
+    "cosmetic": 30,
+    "edgeSmall": 10,
+    "edgeMedium": 10,
+    "edgeLarge": 10,
+    "small": 30,
+    "medium": 15,
+    "large": 8,
+    "steeringLever": 1,
+    "special": 0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "Hornet Walker Rig T1",
+  "type": "DefaultHornetRig_T1_C",
+  "category": "Rigs",
+  "description": "Hornet Walker",
+  "rigSlots": {
+    "cosmetic": 15,
+    "edgeSmall": 5,
+    "edgeMedium": 3,
+    "edgeLarge": 1,
+    "small": 9,
+    "medium": 5,
+    "large": 1,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

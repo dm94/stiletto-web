@@ -1,0 +1,17 @@
+{
+  "name": "Hercul Walker Rig T1",
+  "type": "HerculRig_T1_C",
+  "category": "Rigs",
+  "description": "Hercul Walker",
+  "rigSlots": {
+    "cosmetic": 10,
+    "edgeSmall": 2,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 4,
+    "medium": 2,
+    "large": 0,
+    "steeringLever": 1,
+    "special": 1
+  }
+}

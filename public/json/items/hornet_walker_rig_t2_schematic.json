@@ -4,11 +4,8 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Rig T2"
+    "Hornet Walker Rig T2"
   ],
-  "walkerInfo": {
-    "carryCapacity": 4800
-  },
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T3",

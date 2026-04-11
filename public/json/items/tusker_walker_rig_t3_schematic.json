@@ -4,11 +4,8 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Rig T3"
+    "Tusker Walker Rig T3"
   ],
-  "walkerInfo": {
-    "carryCapacity": 12500
-  },
   "droppedBy": [
     {
       "name": "Big Hotspot Loot T3",

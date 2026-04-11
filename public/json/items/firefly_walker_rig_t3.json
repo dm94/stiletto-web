@@ -1,0 +1,24 @@
+{
+  "name": "Firefly Walker Rig T3",
+  "type": "FireflyRig_T3_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Firefly Walker Rig T3",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 5,
+    "edgeSmall": 2,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 3,
+    "medium": 1,
+    "large": 0
+  }
+}

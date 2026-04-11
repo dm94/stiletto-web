@@ -1,0 +1,25 @@
+{
+  "name": "Mollusk Walker Rig T2",
+  "type": "MolluskRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Mollusk Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 10,
+    "edgeSmall": 3,
+    "edgeMedium": 0,
+    "edgeLarge": 0,
+    "small": 6,
+    "medium": 3,
+    "large": 0,
+    "steeringLever": 1
+  }
+}

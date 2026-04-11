@@ -1,0 +1,16 @@
+{
+  "name": "Proxy Walker Rig T1",
+  "type": "ProxyRig_T1_C",
+  "category": "Rigs",
+  "description": "Proxy Walker",
+  "rigSlots": {
+    "cosmetic": 15,
+    "edgeSmall": 5,
+    "edgeMedium": 2,
+    "edgeLarge": 0,
+    "small": 7,
+    "medium": 5,
+    "large": 2,
+    "steeringLever": 1
+  }
+}

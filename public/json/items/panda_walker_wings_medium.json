@@ -17,8 +17,5 @@
   "structureInfo": {
     "hp": 14800,
     "type": "Soft"
-  },
-  "walkerInfo": {
-    "carryCapacity": 25000
   }
 }

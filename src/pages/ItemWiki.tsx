@@ -18,6 +18,7 @@ import ToolInfo from "@components/Wiki/ToolInfo";
 import GenericInfo from "@components/Wiki/GenericInfo";
 import Comments from "@components/Wiki/Comments";
 import WalkerUpgrades from "@components/Wiki/WalkerUpgrades";
+import RigSlotsInfo from "@components/Wiki/RigSlotsInfo";
 import { calcRarityUpgradePrice, calcRarityValue } from "@functions/rarityCalc";
 import {
   getCreatureUrl,
@@ -531,6 +532,9 @@ const ItemWiki = () => {
                     <div className="text-gray-300">{t("wiki.whereToFarm")}</div>
                     <div className="text-gray-400">{itemInfo.whereToFarm}</div>
                   </li>
+                )}
+                {itemInfo?.rigSlots && (
+                  <RigSlotsInfo rigSlots={itemInfo.rigSlots} />
                 )}
               </ul>
             </div>

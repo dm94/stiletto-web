@@ -40,8 +40,5 @@
       "station": "Artificer Woodworking Station"
     }
   ],
-  "walkerInfo": {
-    "carryCapacity": 8000
-  },
   "whereToFarm": "Bought from Trading Stations for Flots."
 }

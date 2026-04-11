@@ -1,0 +1,26 @@
+{
+  "name": "Titan Walker Rig T2",
+  "type": "TitanRig_T2_C",
+  "category": "Rigs",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Titan Walker Rig T2",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "rigSlots": {
+    "cosmetic": 25,
+    "edgeSmall": 8,
+    "edgeMedium": 4,
+    "edgeLarge": 1,
+    "small": 25,
+    "medium": 20,
+    "large": 4,
+    "steeringLever": 1,
+    "special": 0
+  }
+}
