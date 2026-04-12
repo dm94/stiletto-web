@@ -28,6 +28,12 @@ type WalkerUpgradeTable = Record<
   Partial<Record<WalkerUpgradeType, WalkerUpgradeCell>>
 >;
 
+type WalkerUpgradeCellViewProps = {
+  upgradeCell?: WalkerUpgradeCell;
+  textColor: string;
+  translate: (key: string, options?: { defaultValue?: string }) => string;
+};
+
 type WalkerUpgradesProps = {
   itemName: string;
   category?: string;
@@ -41,6 +47,49 @@ const emptyWalkerUpgradeTable = (): WalkerUpgradeTable => ({
   3: {},
   4: {},
 });
+
+const WalkerUpgradeCellView: React.FC<WalkerUpgradeCellViewProps> = ({
+  upgradeCell,
+  textColor,
+  translate,
+}) => {
+  if (!upgradeCell) {
+    return <span className="text-gray-500">-</span>;
+  }
+
+  const upgradeEntries = Object.entries(upgradeCell.upgradeInfo);
+  if (upgradeEntries.length === 0) {
+    return <span className="text-gray-500">-</span>;
+  }
+
+  return (
+    <div className="space-y-1">
+      {upgradeEntries.map(([upgradeKey, upgradeValue]) => {
+        const parsedUpgradeValue =
+          upgradeValue != null && typeof upgradeValue === "object"
+            ? JSON.stringify(upgradeValue)
+            : String(upgradeValue ?? "-");
+
+        return (
+          <div
+            key={`${upgradeCell.itemName}-${upgradeKey}`}
+            className="text-xs leading-5"
+          >
+            <span className="text-gray-300 capitalize">
+              {translate(
+                `${WALKER_UPGRADES_TRANSLATION_PREFIX}.stats.${upgradeKey}`,
+                {
+                  defaultValue: translate(upgradeKey, { defaultValue: upgradeKey }),
+                },
+              )}
+            </span>
+            <span className={`ml-2 ${textColor}`}>{parsedUpgradeValue}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
 
 const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
   itemName,
@@ -152,45 +201,6 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
     defaultValue: "Tier",
   });
 
-  const renderUpgradeCell = (upgradeCell?: WalkerUpgradeCell) => {
-    if (!upgradeCell) {
-      return <span className="text-gray-500">-</span>;
-    }
-
-    const upgradeEntries = Object.entries(upgradeCell.upgradeInfo);
-    if (upgradeEntries.length === 0) {
-      return <span className="text-gray-500">-</span>;
-    }
-
-    return (
-      <div className="space-y-1">
-        {upgradeEntries.map(([upgradeKey, upgradeValue]) => {
-          const parsedUpgradeValue =
-            upgradeValue != null && typeof upgradeValue === "object"
-              ? JSON.stringify(upgradeValue)
-              : String(upgradeValue ?? "-");
-
-          return (
-            <div
-              key={`${upgradeCell.itemName}-${upgradeKey}`}
-              className="text-xs leading-5"
-            >
-              <span className="text-gray-300 capitalize">
-                {t(
-                  `${WALKER_UPGRADES_TRANSLATION_PREFIX}.stats.${upgradeKey}`,
-                  {
-                    defaultValue: t(upgradeKey, { defaultValue: upgradeKey }),
-                  },
-                )}
-              </span>
-              <span className={`ml-2 ${textColor}`}>{parsedUpgradeValue}</span>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
   return (
     <div className="w-full p-4">
       <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden mb-4">
@@ -232,9 +242,11 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
                       key={`walker-upgrade-cell-${tier}-${upgradeType}`}
                       className="p-3 align-top text-gray-400 min-w-[120px]"
                     >
-                      {renderUpgradeCell(
-                        walkerUpgradeTable[tier]?.[upgradeType],
-                      )}
+                      <WalkerUpgradeCellView
+                        upgradeCell={walkerUpgradeTable[tier]?.[upgradeType]}
+                        textColor={textColor}
+                        translate={t}
+                      />
                     </td>
                   ))}
                 </tr>

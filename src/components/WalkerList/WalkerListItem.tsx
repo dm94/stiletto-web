@@ -48,262 +48,243 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
     [],
   );
 
-  const renderWalkerInfo = useCallback(() => {
-    if (!isOpen) {
-      return false;
-    }
-
-    return (
-      <tr>
-        <td colSpan={6} className="px-6 py-4 bg-gray-900">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            <div>
-              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-                <div className="p-4">
-                  <div className="flex flex-col space-y-2">
-                    <label
-                      htmlFor="walkerID"
-                      className="block text-sm font-medium text-gray-300"
-                    >
-                      {t("walkers.walkerId")}
-                    </label>
-                    <input
-                      id="walkerID"
-                      type="text"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={walker.walkerid}
-                      readOnly
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-                <div className="p-4">
-                  <div className="flex flex-col space-y-2">
-                    <label
-                      htmlFor="lastUser"
-                      className="block text-sm font-medium text-gray-300"
-                    >
-                      {t("walkers.lastUser")}
-                    </label>
-                    <input
-                      id="lastUser"
-                      type="text"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={walker.lastuser}
-                      readOnly
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-                <div className="p-4">
-                  <div className="flex flex-col space-y-2">
-                    <label
-                      htmlFor="lastUse"
-                      className="block text-sm font-medium text-gray-300"
-                    >
-                      {t("walkers.lastUse")}
-                    </label>
-                    <input
-                      id="lastUse"
-                      type="text"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={walker.datelastuse}
-                      readOnly
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-                <div className="p-4">
-                  <div className="flex flex-col space-y-2">
-                    <label
-                      htmlFor="inputOwner"
-                      className="block text-sm font-medium text-gray-300"
-                    >
-                      {t("common.owner")}
-                    </label>
-                    <select
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      id="inputOwner"
-                      value={walkerState.ownerUser ?? ""}
-                      onChange={(e) =>
-                        handleWalkerUpdate("ownerUser", e.target.value)
-                      }
-                      disabled={!canEdit}
-                    >
-                      <option value="clan">{t("common.clan")}</option>
-                      {memberList?.map((member) => (
-                        <option key={member.discordid} value={member.nickname}>
-                          {member.nickname ?? member.discordtag}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-                <div className="p-4">
-                  <div className="flex flex-col space-y-2">
-                    <label
-                      htmlFor="inputUse"
-                      className="block text-sm font-medium text-gray-300"
-                    >
-                      {t("common.use")}
-                    </label>
-                    <select
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      id="inputUse"
-                      value={walkerState.use ?? "None"}
-                      onChange={(e) =>
-                        handleWalkerUpdate("walker_use", e.target.value)
-                      }
-                      disabled={!canEdit}
-                    >
-                      {["None", "Personal", "PVP", "RAM", "Farming"].map(
-                        (use) => (
-                          <option key={use} value={use}>
-                            {t(use)}
-                          </option>
-                        ),
-                      )}
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-                <div className="p-4">
-                  <div className="flex flex-col space-y-2">
-                    <label
-                      htmlFor="inputType"
-                      className="block text-sm font-medium text-gray-300"
-                    >
-                      {t("common.type")}
-                    </label>
-                    <select
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      id="inputType"
-                      value={walkerState.type ?? ""}
-                      onChange={(e) =>
-                        handleWalkerUpdate("type", e.target.value)
-                      }
-                      disabled={!canEdit}
-                    >
-                      <option value="" />
-                      {walkerListTypes.map((name) => (
-                        <option key={name} value={name}>
-                          {name}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-3">
-              <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
-                <div className="p-4">
-                  <div className="flex flex-col space-y-2">
-                    <label
-                      htmlFor="description"
-                      className="block text-sm font-medium text-gray-300"
-                    >
-                      {t("common.description")}
-                    </label>
-                    <textarea
-                      id="description"
-                      className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      value={walkerState.description ?? ""}
-                      onChange={(e) =>
-                        handleWalkerUpdate("description", e.target.value)
-                      }
-                      maxLength={200}
-                      disabled={!canEdit}
-                      rows={3}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="lg:col-span-3">
-              <div className="flex flex-col space-y-4 items-center mt-3">
-                <div className="flex space-x-2">
-                  <button
-                    type="button"
-                    className={`p-2 rounded-l-lg focus:outline-none ${
-                      walkerState.isReady
-                        ? "bg-green-600 text-white"
-                        : "bg-gray-700 text-gray-300 hover:bg-green-600 hover:text-white"
-                    }`}
-                    onClick={() => handleWalkerUpdate("isReady", true)}
+  const walkerInfo = isOpen ? (
+    <tr>
+      <td colSpan={6} className="px-6 py-4 bg-gray-900">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex flex-col space-y-2">
+                  <label
+                    htmlFor="walkerID"
+                    className="block text-sm font-medium text-gray-300"
                   >
-                    <FaCheck />
-                  </button>
-                  <span className="p-2 bg-gray-700 text-gray-300">
-                    {t("common.isReady")}
-                  </span>
-                  <button
-                    type="button"
-                    className={`p-2 rounded-r-lg focus:outline-none ${
-                      walkerState.isReady
-                        ? "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
-                        : "bg-red-600 text-white"
-                    }`}
-                    onClick={() => handleWalkerUpdate("isReady", false)}
-                  >
-                    <FaTimes />
-                  </button>
+                    {t("walkers.walkerId")}
+                  </label>
+                  <input
+                    id="walkerID"
+                    type="text"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    value={walker.walkerid}
+                    readOnly
+                  />
                 </div>
-
-                <button
-                  type="button"
-                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 w-full max-w-xs"
-                  onClick={() => {
-                    onSave(walkerState);
-                    setIsOpen(false);
-                  }}
-                >
-                  <FaSave className="mr-2 inline" /> {t("common.save")}
-                </button>
-
-                {canEdit && (
-                  <button
-                    type="button"
-                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-xs"
-                    onClick={() => onRemove(walker.walkerid)}
-                  >
-                    <FaTrashAlt className="mr-2 inline" /> {t("common.delete")}
-                  </button>
-                )}
               </div>
             </div>
           </div>
-        </td>
-      </tr>
-    );
-  }, [
-    isOpen,
-    walker,
-    walkerState,
-    canEdit,
-    memberList,
-    walkerListTypes,
-    t,
-    handleWalkerUpdate,
-    onSave,
-    onRemove,
-  ]);
+          <div>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex flex-col space-y-2">
+                  <label
+                    htmlFor="lastUser"
+                    className="block text-sm font-medium text-gray-300"
+                  >
+                    {t("walkers.lastUser")}
+                  </label>
+                  <input
+                    id="lastUser"
+                    type="text"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    value={walker.lastuser}
+                    readOnly
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex flex-col space-y-2">
+                  <label
+                    htmlFor="lastUse"
+                    className="block text-sm font-medium text-gray-300"
+                  >
+                    {t("walkers.lastUse")}
+                  </label>
+                  <input
+                    id="lastUse"
+                    type="text"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    value={walker.datelastuse}
+                    readOnly
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex flex-col space-y-2">
+                  <label
+                    htmlFor="inputOwner"
+                    className="block text-sm font-medium text-gray-300"
+                  >
+                    {t("common.owner")}
+                  </label>
+                  <select
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="inputOwner"
+                    value={walkerState.ownerUser ?? ""}
+                    onChange={(e) =>
+                      handleWalkerUpdate("ownerUser", e.target.value)
+                    }
+                    disabled={!canEdit}
+                  >
+                    <option value="clan">{t("common.clan")}</option>
+                    {memberList?.map((member) => (
+                      <option key={member.discordid} value={member.nickname}>
+                        {member.nickname ?? member.discordtag}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex flex-col space-y-2">
+                  <label
+                    htmlFor="inputUse"
+                    className="block text-sm font-medium text-gray-300"
+                  >
+                    {t("common.use")}
+                  </label>
+                  <select
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="inputUse"
+                    value={walkerState.use ?? "None"}
+                    onChange={(e) =>
+                      handleWalkerUpdate("walker_use", e.target.value)
+                    }
+                    disabled={!canEdit}
+                  >
+                    {["None", "Personal", "PVP", "RAM", "Farming"].map(
+                      (use) => (
+                        <option key={use} value={use}>
+                          {t(use)}
+                        </option>
+                      ),
+                    )}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex flex-col space-y-2">
+                  <label
+                    htmlFor="inputType"
+                    className="block text-sm font-medium text-gray-300"
+                  >
+                    {t("common.type")}
+                  </label>
+                  <select
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="inputType"
+                    value={walkerState.type ?? ""}
+                    onChange={(e) => handleWalkerUpdate("type", e.target.value)}
+                    disabled={!canEdit}
+                  >
+                    <option value="" />
+                    {walkerListTypes.map((name) => (
+                      <option key={name} value={name}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-3">
+            <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+              <div className="p-4">
+                <div className="flex flex-col space-y-2">
+                  <label
+                    htmlFor="description"
+                    className="block text-sm font-medium text-gray-300"
+                  >
+                    {t("common.description")}
+                  </label>
+                  <textarea
+                    id="description"
+                    className="w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    value={walkerState.description ?? ""}
+                    onChange={(e) =>
+                      handleWalkerUpdate("description", e.target.value)
+                    }
+                    maxLength={200}
+                    disabled={!canEdit}
+                    rows={3}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-3">
+            <div className="flex flex-col space-y-4 items-center mt-3">
+              <div className="flex space-x-2">
+                <button
+                  type="button"
+                  className={`p-2 rounded-l-lg focus:outline-none ${
+                    walkerState.isReady
+                      ? "bg-green-600 text-white"
+                      : "bg-gray-700 text-gray-300 hover:bg-green-600 hover:text-white"
+                  }`}
+                  onClick={() => handleWalkerUpdate("isReady", true)}
+                >
+                  <FaCheck />
+                </button>
+                <span className="p-2 bg-gray-700 text-gray-300">
+                  {t("common.isReady")}
+                </span>
+                <button
+                  type="button"
+                  className={`p-2 rounded-r-lg focus:outline-none ${
+                    walkerState.isReady
+                      ? "bg-gray-700 text-gray-300 hover:bg-red-600 hover:text-white"
+                      : "bg-red-600 text-white"
+                  }`}
+                  onClick={() => handleWalkerUpdate("isReady", false)}
+                >
+                  <FaTimes />
+                </button>
+              </div>
+
+              <button
+                type="button"
+                className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 w-full max-w-xs"
+                onClick={() => {
+                  onSave(walkerState);
+                  setIsOpen(false);
+                }}
+              >
+                <FaSave className="mr-2 inline" /> {t("common.save")}
+              </button>
+
+              {canEdit && (
+                <button
+                  type="button"
+                  className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 w-full max-w-xs"
+                  onClick={() => onRemove(walker.walkerid)}
+                >
+                  <FaTrashAlt className="mr-2 inline" /> {t("common.delete")}
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  ) : null;
 
   if (!walker.walkerid) {
     return "";
@@ -350,7 +331,7 @@ const WalkerListItem: React.FC<WalkerListItemProps> = ({
           </button>
         </td>
       </tr>
-      {renderWalkerInfo()}
+      {walkerInfo}
     </>
   );
 };

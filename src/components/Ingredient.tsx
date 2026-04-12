@@ -45,47 +45,41 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
     return `shrink-0 p-1 rounded-lg ${color}`;
   }, []);
 
-  const renderSubList = () => {
-    if (
-      showList &&
-      ingredient?.ingredients &&
-      ingredient?.ingredients.length > 0
-    ) {
-      return ingredient?.ingredients.map((ingredients) => {
-        const subIngredientsKey =
-          ingredients.ingredients
-            ?.map((subIngredient) =>
-              [subIngredient.name, subIngredient.count].join("-"),
-            )
-            .join("|") ?? "no-ingredients";
+  const subList =
+    showList && ingredient?.ingredients && ingredient?.ingredients.length > 0
+      ? ingredient?.ingredients.map((ingredients) => {
+          const subIngredientsKey =
+            ingredients.ingredients
+              ?.map((subIngredient) =>
+                [subIngredient.name, subIngredient.count].join("-"),
+              )
+              .join("|") ?? "no-ingredients";
 
-        const subListKey = [
-          String(ingredient?.name),
-          ingredients.station ?? "no-station",
-          ingredients.time ?? "no-time",
-          ingredients.output ?? "no-output",
-          subIngredientsKey,
-          value,
-        ].join("-");
-        return (
-          <div
-            className="mt-3 p-3 bg-gray-700 rounded-lg border-l-2 border-green-500"
-            key={subListKey}
-          >
-            <Ingredients
-              crafting={ingredients}
-              value={
-                ingredients.output
-                  ? (ingredient?.count ?? 1 * value) / ingredients.output
-                  : (ingredient?.count ?? 1 * value)
-              }
-            />
-          </div>
-        );
-      });
-    }
-    return "";
-  };
+          const subListKey = [
+            String(ingredient?.name),
+            ingredients.station ?? "no-station",
+            ingredients.time ?? "no-time",
+            ingredients.output ?? "no-output",
+            subIngredientsKey,
+            value,
+          ].join("-");
+          return (
+            <div
+              className="mt-3 p-3 bg-gray-700 rounded-lg border-l-2 border-green-500"
+              key={subListKey}
+            >
+              <Ingredients
+                crafting={ingredients}
+                value={
+                  ingredients.output
+                    ? (ingredient?.count ?? 1 * value) / ingredients.output
+                    : (ingredient?.count ?? 1 * value)
+                }
+              />
+            </div>
+          );
+        })
+      : null;
 
   return (
     <div className="w-full" data-testid="ingredient">
@@ -163,7 +157,7 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
           )}
         </div>
       )}
-      {hasIngredients && <div className="mt-2">{renderSubList()}</div>}
+      {hasIngredients && <div className="mt-2">{subList}</div>}
     </div>
   );
 });

@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo, memo } from "react";
+import React, { useReducer, useCallback, useMemo, memo } from "react";
 import {
   TileLayer,
   Marker,
@@ -38,6 +38,93 @@ const myMarker = L.icon({
   popupAnchor: [-6, -20],
 });
 
+type MapClickHandlerProps = {
+  onMapClick: (lat: number, lng: number) => void;
+};
+
+interface MapLayerState {
+  coordinateXInput: number;
+  coordinateYInput: number;
+  hasLocation: boolean;
+  gridOpacity: number;
+  poachingHutRadius: number;
+}
+
+enum MapLayerActionType {
+  SetCoordinates = "SET_COORDINATES",
+  SetGridOpacity = "SET_GRID_OPACITY",
+  SetPoachingHutRadius = "SET_POACHING_HUT_RADIUS",
+}
+
+type MapLayerAction =
+  | {
+      type: MapLayerActionType.SetCoordinates;
+      payload: {
+        coordinateXInput: number;
+        coordinateYInput: number;
+        hasLocation: boolean;
+      };
+    }
+  | {
+      type: MapLayerActionType.SetGridOpacity;
+      payload: number;
+    }
+  | {
+      type: MapLayerActionType.SetPoachingHutRadius;
+      payload: number;
+    };
+
+const initialMapLayerState: MapLayerState = {
+  coordinateXInput: 0,
+  coordinateYInput: 0,
+  hasLocation: false,
+  gridOpacity: 0,
+  poachingHutRadius: 150,
+};
+
+const mapLayerReducer = (
+  state: MapLayerState,
+  action: MapLayerAction,
+): MapLayerState => {
+  switch (action.type) {
+    case MapLayerActionType.SetCoordinates: {
+      return {
+        ...state,
+        coordinateXInput: action.payload.coordinateXInput,
+        coordinateYInput: action.payload.coordinateYInput,
+        hasLocation: action.payload.hasLocation,
+      };
+    }
+    case MapLayerActionType.SetGridOpacity: {
+      return {
+        ...state,
+        gridOpacity: action.payload,
+      };
+    }
+    case MapLayerActionType.SetPoachingHutRadius: {
+      return {
+        ...state,
+        poachingHutRadius: action.payload,
+      };
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
+const MapClickHandler: React.FC<MapClickHandlerProps> = ({ onMapClick }) => {
+  useMapEvents({
+    click: (e) => {
+      const roundedLat = Math.round(e.latlng.lat * 100) / 100;
+      const roundedLng = Math.round(e.latlng.lng * 100) / 100;
+      onMapClick(roundedLat, roundedLng);
+    },
+  });
+
+  return null;
+};
+
 const MapLayer: React.FC<MapLayerProps> = ({
   resourcesInTheMap,
   center,
@@ -47,11 +134,14 @@ const MapLayer: React.FC<MapLayerProps> = ({
   changeInput,
 }) => {
   const { t } = useTranslation();
-  const [coordinateXInput, setCoordinateXInput] = useState<number>(0);
-  const [coordinateYInput, setCoordinateYInput] = useState<number>(0);
-  const [hasLocation, setHasLocation] = useState<boolean>(false);
-  const [gridOpacity, setGridOpacity] = useState<number>(0);
-  const [poachingHutRadius, setPoachingHutRadius] = useState<number>(150);
+  const [state, dispatch] = useReducer(mapLayerReducer, initialMapLayerState);
+  const {
+    coordinateXInput,
+    coordinateYInput,
+    hasLocation,
+    gridOpacity,
+    poachingHutRadius,
+  } = state;
 
   const getMarketDesign = useCallback((resource: string) => {
     const res = resource.replaceAll(" ", "_");
@@ -80,7 +170,12 @@ const MapLayer: React.FC<MapLayerProps> = ({
               poachingHutRadius={poachingHutRadius}
               updateResource={updateResource}
               deleteResource={deleteResource}
-              setPoachingHutRadius={setPoachingHutRadius}
+              setPoachingHutRadius={(radius: number) => {
+                dispatch({
+                  type: MapLayerActionType.SetPoachingHutRadius,
+                  payload: radius,
+                });
+              }}
             />
           </Popup>
         </Marker>
@@ -102,24 +197,34 @@ const MapLayer: React.FC<MapLayerProps> = ({
     deleteResource,
   ]);
 
-  // Map click handler component using useMapEvents hook
-  const MapClickHandler = () => {
-    useMapEvents({
-      click: (e) => {
-        const roundedLat = Math.round(e.latlng.lat * 100) / 100;
-        const roundedLng = Math.round(e.latlng.lng * 100) / 100;
+  const handleMapClick = useCallback(
+    (roundedLat: number, roundedLng: number) => {
+      dispatch({
+        type: MapLayerActionType.SetCoordinates,
+        payload: {
+          coordinateXInput: roundedLat,
+          coordinateYInput: roundedLng,
+          hasLocation: true,
+        },
+      });
+      changeInput?.(roundedLat, roundedLng);
+    },
+    [changeInput],
+  );
 
-        setHasLocation(true);
-        setCoordinateXInput(roundedLat);
-        setCoordinateYInput(roundedLng);
-        changeInput?.(roundedLat, roundedLng);
-      },
+  const handleShowGrid = useCallback(() => {
+    dispatch({
+      type: MapLayerActionType.SetGridOpacity,
+      payload: 1,
     });
-    return null;
-  };
+  }, []);
 
-  const handleShowGrid = useCallback(() => setGridOpacity(1), []);
-  const handleHideGrid = useCallback(() => setGridOpacity(0), []);
+  const handleHideGrid = useCallback(() => {
+    dispatch({
+      type: MapLayerActionType.SetGridOpacity,
+      payload: 0,
+    });
+  }, []);
 
   const position: [number, number] = useMemo(
     () => [coordinateXInput, coordinateYInput],
@@ -174,7 +279,7 @@ const MapLayer: React.FC<MapLayerProps> = ({
         center={center}
         attributionControl={false}
       >
-        <MapClickHandler />
+        <MapClickHandler onMapClick={handleMapClick} />
         <ImageOverlay
           bounds={[
             [85.5, -180],

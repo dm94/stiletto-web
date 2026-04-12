@@ -22,28 +22,24 @@ interface QualityOption {
 const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
   const { t } = useTranslation();
 
-  const renderCardFooter = (): React.ReactElement => {
-    if (!userDiscordId || userDiscordId !== trade?.discordid) {
-      return (
-        <div className="p-4 bg-gray-900 border-t border-gray-700">
-          <div className="flex justify-between items-center">
-            <span className="text-gray-300">Discord: {trade?.discordtag}</span>
-            <a
-              className="text-blue-400 hover:text-blue-300"
-              href={`https://discordapp.com/users/${trade?.discordid}`}
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="Send DM"
-              data-testid="discord-link"
-            >
-              <FaDiscord />
-            </a>
-          </div>
+  const cardFooter =
+    !userDiscordId || userDiscordId !== trade?.discordid ? (
+      <div className="p-4 bg-gray-900 border-t border-gray-700">
+        <div className="flex justify-between items-center">
+          <span className="text-gray-300">Discord: {trade?.discordtag}</span>
+          <a
+            className="text-blue-400 hover:text-blue-300"
+            href={`https://discordapp.com/users/${trade?.discordid}`}
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="Send DM"
+            data-testid="discord-link"
+          >
+            <FaDiscord />
+          </a>
         </div>
-      );
-    }
-
-    return (
+      </div>
+    ) : (
       <div className="p-4 bg-gray-900 border-t border-gray-700">
         <button
           type="button"
@@ -55,7 +51,6 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
         </button>
       </div>
     );
-  };
 
   const getQualityBadge = (): React.ReactElement => {
     const qualities: Record<number, QualityOption> = {
@@ -121,7 +116,7 @@ const Trade: React.FC<TradeProps> = ({ trade, onDelete, userDiscordId }) => {
             )}: ${trade.nickname}`}</p>
           )}
         </div>
-        {renderCardFooter()}
+        {cardFooter}
       </div>
     </div>
   );
