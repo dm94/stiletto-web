@@ -238,14 +238,19 @@ const Wiki = () => {
       // Read the category parameter from URL
       if (parsed?.category && typeof parsed.category === "string") {
         setCategoryFilter(parsed.category);
+      } else {
+        setCategoryFilter("All");
       }
 
       if (parsed?.s) {
+        setSearchText(String(parsed.s));
         // Use the category from URL if available, or "All" if not
         const categoryToUse = parsed?.category
           ? String(parsed.category)
           : "All";
         searchContent(String(parsed.s), categoryToUse);
+      } else {
+        setSearchText("");
       }
     }
   }, [location, searchContent]);
