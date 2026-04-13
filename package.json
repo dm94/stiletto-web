@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "7.28.5",
-    "@biomejs/biome": "2.4.10",
+    "@biomejs/biome": "2.4.11",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/postcss": "4.2.2",
     "@types/leaflet": "^1.9.21",
