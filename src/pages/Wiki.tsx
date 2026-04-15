@@ -150,7 +150,7 @@ const Wiki = () => {
   }, [contentType, processItemsData, processCreaturesData, processPerksData]);
 
   const searchContent = useCallback(
-    (search = searchText, category = categoryFilter) => {
+    (search: string, category: string) => {
       sendEvent(AnalyticsEvent.SEARCH, { props: { term: search } });
 
       if (contentType === "items") {
@@ -219,7 +219,7 @@ const Wiki = () => {
         setHasMore(filtered.length > ITEMS_PER_PAGE);
       }
     },
-    [items, creatures, perks, searchText, categoryFilter, t, contentType],
+    [items, creatures, perks, t, contentType],
   );
 
   useEffect(() => {
