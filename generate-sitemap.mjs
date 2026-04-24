@@ -44,6 +44,16 @@ const STATIC_ROUTES = [
   "creature",
 ];
 
+const toSlug = (name) =>
+  name
+    .toLowerCase()
+    .replaceAll(" ", "-")
+    .replaceAll(":", "")
+    .replaceAll("/", "")
+    .replaceAll("\\", "")
+    .replaceAll("?", "")
+    .replaceAll("*", "");
+
 const toCodedName = (name) => name.toLowerCase().replaceAll(" ", "_");
 const SUPPORTED_LANGUAGES = [
   "en",
@@ -59,8 +69,8 @@ const SUPPORTED_LANGUAGES = [
   "uk",
 ];
 
-const toItemPath = (name) => `item/${encodeURI(toCodedName(name))}`;
-const toCreaturePath = (name) => `creature/${encodeURI(toCodedName(name))}`;
+const toItemPath = (name) => `item/${toSlug(name)}`;
+const toCreaturePath = (name) => `creature/${toSlug(name)}`;
 const trimSlash = (value) => value.replace(/\/+$/, "");
 
 const escapeXml = (value) =>

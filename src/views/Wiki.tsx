@@ -1,3 +1,4 @@
+"use client";
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import "../styles/loader-small.css";
@@ -12,7 +13,7 @@ import {
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { getCreatureUrl, getDomain, getItemUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
-import { useLocation, useNavigate } from "react-router";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { Item } from "@ctypes/item";
 import type { Creature } from "@ctypes/creature";
 import type { Perk } from "@ctypes/perk";
@@ -26,8 +27,9 @@ import Pagination from "@components/Wiki/Pagination";
 type WikiContentType = "items" | "creatures" | "perks";
 
 const Wiki = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const { t, i18n } = useTranslation();
   const domain = getDomain();
   const wikiCanonical = `${domain}/wiki`;
@@ -223,37 +225,26 @@ const Wiki = () => {
   );
 
   useEffect(() => {
-    if (location?.search) {
-      const parsed = queryString.parse(location.search);
-
-      if (
-        parsed?.type &&
-        (parsed.type === "items" ||
-          parsed.type === "creatures" ||
-          parsed.type === "perks")
-      ) {
-        setContentType(parsed.type);
-      }
-
-      // Read the category parameter from URL
-      if (parsed?.category && typeof parsed.category === "string") {
-        setCategoryFilter(parsed.category);
-      } else {
-        setCategoryFilter("All");
-      }
-
-      if (parsed?.s) {
-        setSearchText(String(parsed.s));
-        // Use the category from URL if available, or "All" if not
-        const categoryToUse = parsed?.category
-          ? String(parsed.category)
-          : "All";
-        searchContent(String(parsed.s), categoryToUse);
-      } else {
-        setSearchText("");
-      }
+    const type = searchParams.get("type");
+    if (type === "items" || type === "creatures" || type === "perks") {
+      setContentType(type);
     }
-  }, [location, searchContent]);
+
+    const category = searchParams.get("category");
+    if (category) {
+      setCategoryFilter(category);
+    } else {
+      setCategoryFilter("All");
+    }
+
+    const search = searchParams.get("s");
+    if (search) {
+      setSearchText(search);
+      searchContent(search, category || "All");
+    } else {
+      setSearchText("");
+    }
+  }, [searchParams, searchContent]);
 
   const handleLoadMore = useCallback(() => {
     const nextPage = currentPage + 1;
@@ -323,14 +314,14 @@ const Wiki = () => {
       setCategoryFilter(newCategory);
       searchContent(searchText, newCategory);
 
-      const searchParams = buildSearchParams(
+      const params = buildSearchParams(
         searchText,
         newCategory,
         contentType,
       );
-      navigate(`/wiki?${searchParams.toString()}`);
+      router.push(`/wiki?${params.toString()}`);
     },
-    [searchText, searchContent, navigate, contentType, buildSearchParams],
+    [searchText, searchContent, router, contentType, buildSearchParams],
   );
 
   const handleKeyPress = useCallback(
@@ -338,19 +329,19 @@ const Wiki = () => {
       if (e.key === "Enter") {
         searchContent(searchText, categoryFilter);
 
-        const searchParams = buildSearchParams(
+        const params = buildSearchParams(
           searchText,
           categoryFilter,
           contentType,
         );
-        navigate(`/wiki?${searchParams.toString()}`);
+        router.push(`/wiki?${params.toString()}`);
       }
     },
     [
       searchContent,
       searchText,
       categoryFilter,
-      navigate,
+      router,
       contentType,
       buildSearchParams,
     ],
@@ -359,17 +350,17 @@ const Wiki = () => {
   const handleSearchClick = useCallback(() => {
     searchContent(searchText, categoryFilter);
 
-    const searchParams = buildSearchParams(
+    const params = buildSearchParams(
       searchText,
       categoryFilter,
       contentType,
     );
-    navigate(`/wiki?${searchParams.toString()}`);
+    router.push(`/wiki?${params.toString()}`);
   }, [
     searchContent,
     searchText,
     categoryFilter,
-    navigate,
+    router,
     contentType,
     buildSearchParams,
   ]);
@@ -381,10 +372,10 @@ const Wiki = () => {
       setCategoryFilter("All");
       setCurrentPage(1);
 
-      const searchParams = buildSearchParams("", "All", type);
-      navigate(`/wiki?${searchParams.toString()}`);
+      const params = buildSearchParams("", "All", type);
+      router.push(`/wiki?${params.toString()}`);
     },
-    [navigate, buildSearchParams],
+    [router, buildSearchParams],
   );
 
   const wikiStructuredData = useMemo(() => {

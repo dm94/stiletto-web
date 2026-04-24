@@ -18,7 +18,7 @@
     /* Path Aliases */
     "baseUrl": ".",
     "paths": {
-      "@pages/*": ["src/pages/*"],
+      "@pages/*": ["src/views/*"],
       "@components/*": ["src/components/*"],
       "@functions/*": ["src/functions/*"],
       "@config/*": ["src/config/*"],

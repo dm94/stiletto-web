@@ -1,3 +1,4 @@
+"use client";
 import React, {
   useState,
   useEffect,
@@ -7,7 +8,7 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { getItems, getItemInfo } from "@functions/github";
-import { Navigate, useParams, useNavigate } from "react-router";
+import { useParams, useRouter } from "next/navigation";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
 import Icon from "@components/Icon";
@@ -26,6 +27,7 @@ import {
   getItemUrl,
   getItemCraftUrl,
   getItemDecodedName,
+  toSlug,
 } from "@functions/utils";
 import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
@@ -52,8 +54,8 @@ const CreatureDropsInfo = React.lazy(
 
 const ItemWiki = () => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
-  const { name, rarity: rarityParam } = useParams();
+  const router = useRouter();
+  const { name, rarity: rarityParam } = useParams() as { name: string, rarity?: string };
   const [item, setItem] = useState<Item>();
   const [itemInfo, setItemInfo] = useState<ItemCompleteInfo>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -76,7 +78,7 @@ const ItemWiki = () => {
         const items = await getItems();
         if (items) {
           const foundItem = items.find(
-            (it) => it.name.toLowerCase() === itemName,
+            (it) => it.name.toLowerCase() === itemName || toSlug(it.name) === name,
           );
           setItem(foundItem);
           setAllItems(items);
@@ -178,10 +180,10 @@ const ItemWiki = () => {
   const updateRarity = useCallback(
     (value: Rarity) => {
       if (name) {
-        navigate(getItemUrl(name, value));
+        router.push(getItemUrl(name, value));
       }
     },
-    [name, navigate],
+    [name, router],
   );
 
   const getRarityClass = useCallback(
@@ -375,12 +377,18 @@ const ItemWiki = () => {
     itemName,
   ]);
 
+  useEffect(() => {
+    if (isLoaded && !item) {
+      router.push("/wiki");
+    }
+  }, [isLoaded, item, router]);
+
   if (!isLoaded) {
     return <LoadingScreen />;
   }
 
   if (!item) {
-    return <Navigate to={"/wiki"} />;
+    return null;
   }
 
   return (

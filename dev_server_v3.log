@@ -1,0 +1,18 @@
+
+> stiletto-web@5.56.1 dev
+> next dev
+
+⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+▲ Next.js 16.2.4 (Turbopack)
+- Local:         http://localhost:3001
+- Network:       http://192.168.0.2:3001
+✓ Ready in 719ms
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3000
+- PID:          760807
+- Dir:          /app
+- Log:          .next/dev/logs/next-development.log
+
+Run kill 760807 to stop it.
+[?25h

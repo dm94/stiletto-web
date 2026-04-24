@@ -1,9 +1,7 @@
-const {
-  VITE_API_URL,
-  VITE_RESOURCES_URL,
-  VITE_DISCORD_CLIENT_ID,
-  VITE_PLAUSIBLE_URL,
-} = import.meta.env;
+const VITE_API_URL = process.env.NEXT_PUBLIC_VITE_API_URL || process.env.VITE_API_URL;
+const VITE_RESOURCES_URL = process.env.NEXT_PUBLIC_VITE_RESOURCES_URL || process.env.VITE_RESOURCES_URL;
+const VITE_DISCORD_CLIENT_ID = process.env.NEXT_PUBLIC_VITE_DISCORD_CLIENT_ID || process.env.VITE_DISCORD_CLIENT_ID;
+const VITE_PLAUSIBLE_URL = process.env.NEXT_PUBLIC_VITE_PLAUSIBLE_URL || process.env.VITE_PLAUSIBLE_URL;
 
 export const config = {
   API_URL: VITE_API_URL,

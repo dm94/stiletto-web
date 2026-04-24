@@ -2,9 +2,27 @@ import { config } from "@config/config";
 import { supportedLanguages } from "@config/languages";
 import type { Rarity } from "@ctypes/item";
 
-export const getDomain = () =>
-  globalThis.location.protocol.concat("//").concat(globalThis.location.hostname) +
-  (globalThis.location.port ? `:${globalThis.location.port}` : "");
+export const getDomain = () => {
+  if (typeof globalThis.location === "undefined") {
+    return process.env.NEXT_PUBLIC_URL || "https://stiletto.deeme.dev";
+  }
+  return (
+    globalThis.location.protocol
+      .concat("//")
+      .concat(globalThis.location.hostname) +
+    (globalThis.location.port ? `:${globalThis.location.port}` : "")
+  );
+};
+
+export const toSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replaceAll(" ", "-")
+    .replaceAll(":", "")
+    .replaceAll("/", "")
+    .replaceAll("\\", "")
+    .replaceAll("?", "")
+    .replaceAll("*", "");
 
 export const getItemCodedName = (itemName: string) =>
   itemName.toLowerCase().replaceAll(" ", "_");
@@ -13,6 +31,9 @@ export const getItemDecodedName = (itemName: string) =>
   decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase().trim();
 
 const getValidLangPrefix = (): string => {
+  if (typeof globalThis.location === "undefined") {
+    return "";
+  }
   const currentLang = globalThis.location.pathname.split("/").filter(Boolean)[0];
   const supportedLangCodes = supportedLanguages.map((lang) => lang.key);
   return supportedLangCodes.includes(currentLang) && currentLang
@@ -23,12 +44,12 @@ const getValidLangPrefix = (): string => {
 export const getItemUrl = (itemName: string, rarity?: Rarity) => {
   const langPrefix = getValidLangPrefix();
   const rarityPath = rarity ? `/${rarity}` : "";
-  return `${langPrefix}/item/${encodeURI(getItemCodedName(itemName))}${rarityPath}`;
+  return `${langPrefix}/item/${toSlug(itemName)}${rarityPath}`;
 };
 
 export const getCreatureUrl = (creatureName: string) => {
   const langPrefix = getValidLangPrefix();
-  return `${langPrefix}/creature/${encodeURI(getItemCodedName(creatureName))}`;
+  return `${langPrefix}/creature/${toSlug(creatureName)}`;
 };
 
 export const getItemCraftUrl = (itemName: string) =>
