@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, Suspense, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { getCreatures, getCreatureInfo } from "@functions/github";
