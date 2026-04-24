@@ -3,7 +3,7 @@
   "type": "WormSilk_C",
   "category": "Resources",
   "trade_price": 16.5,
-  "qualityUpgradePrice": 3300,
+  "qualityUpgradePrice": 1000,
   "stackSize": 100,
   "weight": 0.01,
   "description": "Worm silk exists in vastly different tensile strengths and purities, and must be graded by the Flotillan Merchant's Guild before it can be legally sold at markets. Aside from certain prohibited substances, it is one of the most desirable luxury goods.",

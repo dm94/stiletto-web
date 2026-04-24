@@ -26,10 +26,28 @@
       ],
       "time": 2,
       "station": "Artificer Woodworking Station"
+    },
+    {
+      "ingredients": [
+        {
+          "name": "Earth Wax",
+          "count": 40
+        },
+        {
+          "name": "Fiber Weave",
+          "count": 8
+        },
+        {
+          "name": "Obsidian",
+          "count": 15
+        }
+      ],
+      "time": 2,
+      "station": "Advanced Woodworking Station"
     }
   ],
   "projectileDamage": {
-    "damage": 500,
+    "damage": 400,
     "penetration": 10,
     "effectivenessVsSoak": 70,
     "effectivenessVsReduce": 70

@@ -22,7 +22,7 @@
     }
   ],
   "structureInfo": {
-    "hp": 500,
-    "type": "Solid"
+    "hp": 200,
+    "type": "Reinforced"
   }
 }

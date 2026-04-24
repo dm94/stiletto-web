@@ -20,6 +20,7 @@
     "small": 13,
     "medium": 10,
     "large": 5,
-    "steeringLever": 1
+    "steeringLever": 1,
+    "special": 0
   }
 }

@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Charcoal",
-          "count": 25,
+          "name": "Leather",
+          "count": 17,
           "quality": 2
         },
         {
@@ -16,8 +16,8 @@
           "quality": 2
         },
         {
-          "name": "Leather",
-          "count": 17,
+          "name": "Charcoal",
+          "count": 25,
           "quality": 2
         }
       ]

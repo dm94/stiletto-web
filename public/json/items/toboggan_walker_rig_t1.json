@@ -4,12 +4,12 @@
   "category": "Rigs",
   "description": "Toboggan Walker",
   "rigSlots": {
-    "cosmetic": 10,
-    "edgeSmall": 4,
+    "cosmetic": 8,
+    "edgeSmall": 1,
     "edgeMedium": 0,
     "edgeLarge": 0,
     "small": 4,
-    "medium": 2,
+    "medium": 1,
     "large": 0,
     "steeringLever": 1,
     "special": 1

@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Rope",
-          "count": 5,
+          "name": "Wood",
+          "count": 52,
           "quality": 4
         },
         {
@@ -16,8 +16,8 @@
           "quality": 4
         },
         {
-          "name": "Wood",
-          "count": 52,
+          "name": "Rope",
+          "count": 5,
           "quality": 4
         }
       ]

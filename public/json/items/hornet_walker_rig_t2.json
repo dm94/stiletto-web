@@ -14,9 +14,9 @@
   ],
   "rigSlots": {
     "cosmetic": 15,
-    "edgeSmall": 7,
-    "edgeMedium": 4,
-    "edgeLarge": 1,
+    "edgeSmall": 3,
+    "edgeMedium": 3,
+    "edgeLarge": 0,
     "small": 11,
     "medium": 6,
     "large": 1,

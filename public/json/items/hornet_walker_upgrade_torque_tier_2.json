@@ -6,13 +6,13 @@
     {
       "ingredients": [
         {
-          "name": "Wood Shaft",
-          "count": 13,
+          "name": "Earth Wax",
+          "count": 8,
           "quality": 2
         },
         {
-          "name": "Earth Wax",
-          "count": 8,
+          "name": "Wood Shaft",
+          "count": 13,
           "quality": 2
         },
         {

@@ -23,14 +23,10 @@
         {
           "name": "Wood Shaft",
           "count": 4
-        },
-        {
-          "name": "Clay",
-          "count": 1
         }
       ],
       "time": 2,
-      "station": "Lathe"
+      "station": "Crafting Bench"
     }
   ],
   "weaponInfo": {

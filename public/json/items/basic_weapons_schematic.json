@@ -4,15 +4,14 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
-    "Beat Stick",
-    "Blunt Quarterstaff",
-    "Light Javelin",
     "Stone Axe",
     "Jaggertooth Club",
+    "Blunt Quarterstaff",
     "Traveller’s Staff",
-    "Jaggertooth Maul",
+    "Light Javelin",
+    "Jaggertooth Swordclub",
     "Rawbone Sawsword",
-    "Jaggertooth Swordclub"
+    "Jaggertooth Maul"
   ],
   "droppedBy": [
     {
