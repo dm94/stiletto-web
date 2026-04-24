@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Suspense, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { getCreatures, getCreatureInfo } from "@functions/github";
-import { Navigate, useParams } from "react-router";
+import { useParams, useRouter } from "next/navigation";
 import Icon from "@components/Icon";
 import LoadingScreen from "@components/LoadingScreen";
 import Comments from "@components/Wiki/Comments";
@@ -24,7 +24,8 @@ const WikiDescription = React.lazy(
 
 const CreatureWiki = () => {
   const { t, i18n } = useTranslation();
-  const { name } = useParams();
+  const router = useRouter();
+  const { name } = useParams() as { name: string };
   const [creature, setCreature] = useState<Creature>();
   const [creatureInfo, setCreatureInfo] = useState<CreatureCompleteInfo>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
@@ -172,12 +173,18 @@ const CreatureWiki = () => {
     t,
   ]);
 
+  useEffect(() => {
+    if (isLoaded && !creature) {
+      router.push("/wiki");
+    }
+  }, [isLoaded, creature, router]);
+
   if (!isLoaded) {
     return <LoadingScreen />;
   }
 
   if (!creature) {
-    return <Navigate to={"/wiki"} />;
+    return null;
   }
 
   const showCreatureInfo = () => {
