@@ -14,6 +14,16 @@ export const getDomain = () => {
   );
 };
 
+export const toSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replaceAll(" ", "-")
+    .replaceAll(":", "")
+    .replaceAll("/", "")
+    .replaceAll("\\", "")
+    .replaceAll("?", "")
+    .replaceAll("*", "");
+
 export const getItemCodedName = (itemName: string) =>
   itemName.toLowerCase().replaceAll(" ", "_");
 
@@ -34,12 +44,12 @@ const getValidLangPrefix = (): string => {
 export const getItemUrl = (itemName: string, rarity?: Rarity) => {
   const langPrefix = getValidLangPrefix();
   const rarityPath = rarity ? `/${rarity}` : "";
-  return `${langPrefix}/item/${encodeURI(getItemCodedName(itemName))}${rarityPath}`;
+  return `${langPrefix}/item/${toSlug(itemName)}${rarityPath}`;
 };
 
 export const getCreatureUrl = (creatureName: string) => {
   const langPrefix = getValidLangPrefix();
-  return `${langPrefix}/creature/${encodeURI(getItemCodedName(creatureName))}`;
+  return `${langPrefix}/creature/${toSlug(creatureName)}`;
 };
 
 export const getItemCraftUrl = (itemName: string) =>

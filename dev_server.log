@@ -1149,3 +1149,100 @@ Exports made by CommonJs syntax will lead to a runtime error, since the module i
 
 
  HEAD /wiki 404 in 90ms (next.js: 11ms, application-code: 79ms)
+✓ Compiled in 1701ms
+✓ Compiled in 467ms
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next { code: 'NO_I18NEXT_INSTANCE' }
+ HEAD /en/item/terrain-asteroid-crash-site 200 in 5.1s (next.js: 677ms, generate-params: 165ms, application-code: 4.5s)
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+ GET /en/item/terrain-asteroid-crash-site 200 in 193ms (next.js: 47ms, generate-params: 38ms, application-code: 146ms)
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+[browser] react-i18next:: useTranslation: You will need to pass in an i18next instance by using initReactI18next { code: [32m'NO_I18NEXT_INSTANCE'[39m } (src/views/ItemWiki.tsx:56:37)
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+[browser] Using UNSAFE_componentWillMount in strict mode is not recommended and may indicate bugs in your code. See https://react.dev/link/unsafe-component-lifecycles for details.
+
+* Move code with side effects to componentDidMount, and set initial state in the constructor.
+
+Please update the following components: SideEffect(NullComponent)
+ GET /en/item/undefined/items/terrain:%20asteroid%20crash%20site%20icon.png 404 in 282ms (next.js: 45ms, application-code: 237ms)
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+⚠ ./tailwind.config.js
+Specified module format (EcmaScript Modules) is not matching the module format of the source code (CommonJs)
+The EcmaScript module format was specified in the package.json that is affecting this source file or by using an special extension, but it looks like that CommonJs syntax is used in the source code.
+Exports made by CommonJs syntax will lead to a runtime error, since the module is in EcmaScript mode. Either change the "type" field in the package.json or replace CommonJs syntax with EcmaScript import/export syntax in the source file.
+
+
+ GET /en/item/undefined/items/iron%20ore%20icon.png 404 in 169ms (next.js: 11ms, application-code: 158ms)
+[browser] Error fetching wiki description:
+    at WikiDescription.useEffect.updateDescription (src/components/Wiki/WikiDescription.tsx:22:17)
+  20 |         }
+  21 |       } catch {
+> 22 |         console.error("Error fetching wiki description:");
+     |                 ^
+  23 |       }
+  24 |     };
+  25 | (src/components/Wiki/WikiDescription.tsx:22:17)
+[browser] Error fetching wiki description:
+    at WikiDescription.useEffect.updateDescription (src/components/Wiki/WikiDescription.tsx:22:17)
+  20 |         }
+  21 |       } catch {
+> 22 |         console.error("Error fetching wiki description:");
+     |                 ^
+  23 |       }
+  24 |     };
+  25 | (src/components/Wiki/WikiDescription.tsx:22:17)

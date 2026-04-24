@@ -11,6 +11,7 @@ import {
   getItemDecodedName,
   getCreatureUrl,
   getItemUrl,
+  toSlug,
 } from "@functions/utils";
 import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
@@ -41,7 +42,9 @@ const CreatureWiki = () => {
         const creatures = await getCreatures();
         if (creatures) {
           const foundCreature = creatures.find(
-            (cr) => cr.name.toLowerCase() === creatureName?.toLowerCase(),
+            (cr) =>
+              cr.name.toLowerCase() === creatureName?.toLowerCase() ||
+              toSlug(cr.name) === name,
           );
           setCreature(foundCreature);
 

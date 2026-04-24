@@ -27,6 +27,7 @@ import {
   getItemUrl,
   getItemCraftUrl,
   getItemDecodedName,
+  toSlug,
 } from "@functions/utils";
 import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
@@ -77,7 +78,7 @@ const ItemWiki = () => {
         const items = await getItems();
         if (items) {
           const foundItem = items.find(
-            (it) => it.name.toLowerCase() === itemName,
+            (it) => it.name.toLowerCase() === itemName || toSlug(it.name) === name,
           );
           setItem(foundItem);
           setAllItems(items);

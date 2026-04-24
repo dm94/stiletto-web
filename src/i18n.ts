@@ -6,7 +6,6 @@ import { supportedLanguages } from "./config/languages";
 
 const languageWhitelist = supportedLanguages.map((lang) => lang.key);
 
-// For Next.js SSG/SSR, we need a way to initialize i18n on the server
 if (!i18n.isInitialized) {
   i18n
     .use(HttpApi)
@@ -18,10 +17,12 @@ if (!i18n.isInitialized) {
       ns: ["translation", "items", "creatures"],
       defaultNS: "translation",
       supportedLngs: languageWhitelist,
+      interpolation: {
+        escapeValue: false,
+      },
       backend: {
-        // Use absolute URL during build if possible, or relative path for client
         loadPath: typeof window === 'undefined'
-          ? `http://localhost:3000/locales/{{lng}}/{{ns}}.json`
+          ? `${process.env.NEXT_PUBLIC_URL || 'http://localhost:3000'}/locales/{{lng}}/{{ns}}.json`
           : "/locales/{{lng}}/{{ns}}.json",
         crossDomain: true,
       },

@@ -1,5 +1,6 @@
 import ItemWiki from "@pages/ItemWiki";
 import { supportedLanguages } from "@config/languages";
+import { toSlug } from "@functions/utils";
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -19,7 +20,7 @@ export async function generateStaticParams() {
     for (const lang of langs) {
       params.push({
         lang,
-        name: item.name.toLowerCase().replace(/ /g, "-")
+        name: toSlug(item.name)
       });
     }
   }
