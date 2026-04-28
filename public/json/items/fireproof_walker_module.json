@@ -27,8 +27,8 @@
   ],
   "moduleInfo": {
     "max": 20,
-    "increase": 1.75,
-    "maxIncrease": 35
+    "increase": 3.25,
+    "maxIncrease": 65
   },
   "droppedBy": [
     {

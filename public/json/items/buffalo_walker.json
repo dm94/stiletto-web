@@ -57,7 +57,7 @@
   },
   "walkerInfo": {
     "category": "Large",
-    "carryCapacity": 5200,
+    "carryCapacity": 4800,
     "crewSize": 10,
     "walkerCapPower": 85
   }
