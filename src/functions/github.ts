@@ -8,11 +8,10 @@ import type { Perk } from "@ctypes/perk";
 import type { RarityFactors } from "@ctypes/rarity";
 
 const USER_REPO = "dm94/stiletto-web";
-const RESOURCE_CACHE_TIME_CHECK = import.meta.env.PROD ? 86400000 : 1;
+const RESOURCE_CACHE_TIME_CHECK =
+  process.env.NODE_ENV === "production" ? 86400000 : 1;
 const REPO_URL = `https://raw.githubusercontent.com/${USER_REPO}/master`;
-const REPO_JSON_URL = import.meta.env.PROD
-  ? `${REPO_URL}/public/json`
-  : "/json";
+const REPO_JSON_URL = "/json";
 
 const GITHUB_API_URL = `https://api.github.com/repos/${USER_REPO}`;
 

@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import "../styles/loader-small.css";
@@ -12,7 +14,7 @@ import {
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { getCreatureUrl, getDomain, getItemUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
-import { useLocation, useNavigate } from "react-router";
+import { useRouter, useSearchParams } from "next/navigation";
 import type { Item } from "@ctypes/item";
 import type { Creature } from "@ctypes/creature";
 import type { Perk } from "@ctypes/perk";
@@ -22,31 +24,49 @@ import SearchBar from "@components/Wiki/SearchBar";
 import CategoryFilter from "@components/Wiki/CategoryFilter";
 import WikiContent from "@components/Wiki/WikiContent";
 import Pagination from "@components/Wiki/Pagination";
+import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 type WikiContentType = "items" | "creatures" | "perks";
 
-const Wiki = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+type WikiProps = {
+  initialItems?: Item[];
+  initialCreatures?: Creature[];
+  initialPerks?: Perk[];
+  initialWikiLastUpdate?: string;
+};
+
+const Wiki: React.FC<WikiProps> = ({
+  initialItems,
+  initialCreatures,
+  initialPerks,
+  initialWikiLastUpdate,
+}) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { getLanguagePrefixedPath } = useLanguagePrefix();
   const { t, i18n } = useTranslation();
   const domain = getDomain();
   const wikiCanonical = `${domain}/wiki`;
   const wikiDescription = t("seo.wiki.description");
   const [contentType, setContentType] = useState<WikiContentType>("items");
-  const [wikiLastUpdate, setWikiLastUpdate] = useState<string>();
+  const [wikiLastUpdate, setWikiLastUpdate] = useState<string | undefined>(
+    initialWikiLastUpdate,
+  );
 
   // Items state
-  const [items, setItems] = useState<Item[]>([]);
+  const [items, setItems] = useState<Item[]>(initialItems ?? []);
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
   const [displayedItems, setDisplayedItems] = useState<Item[]>([]);
 
   // Creatures state
-  const [creatures, setCreatures] = useState<Creature[]>([]);
+  const [creatures, setCreatures] = useState<Creature[]>(
+    initialCreatures ?? [],
+  );
   const [filteredCreatures, setFilteredCreatures] = useState<Creature[]>([]);
   const [displayedCreatures, setDisplayedCreatures] = useState<Creature[]>([]);
 
   // Perks state
-  const [perks, setPerks] = useState<Perk[]>([]);
+  const [perks, setPerks] = useState<Perk[]>(initialPerks ?? []);
   const [filteredPerks, setFilteredPerks] = useState<Perk[]>([]);
   const [displayedPerks, setDisplayedPerks] = useState<Perk[]>([]);
 
@@ -54,7 +74,9 @@ const Wiki = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [categories, setCategories] = useState<string[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<string>("All");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState<boolean>(
+    (initialItems?.length ?? 0) === 0,
+  );
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [hasMore, setHasMore] = useState<boolean>(true);
   const ITEMS_PER_PAGE = 12;
@@ -115,19 +137,36 @@ const Wiki = () => {
 
   useEffect(() => {
     const loadData = async () => {
-      setIsLoading(true);
       try {
         if (contentType === "items") {
+          if (items.length > 0) {
+            processItemsData(items);
+            setIsLoading(false);
+            return;
+          }
+          setIsLoading(true);
           const fetchedItems = await getItems();
           if (fetchedItems != null) {
             processItemsData(fetchedItems);
           }
         } else if (contentType === "creatures") {
+          if (creatures.length > 0) {
+            processCreaturesData(creatures);
+            setIsLoading(false);
+            return;
+          }
+          setIsLoading(true);
           const fetchedCreatures = await getCreatures();
           if (fetchedCreatures != null) {
             processCreaturesData(fetchedCreatures);
           }
         } else if (contentType === "perks") {
+          if (perks.length > 0) {
+            processPerksData(perks);
+            setIsLoading(false);
+            return;
+          }
+          setIsLoading(true);
           const fetchedPerks = await getPerks();
           if (fetchedPerks != null) {
             processPerksData(fetchedPerks);
@@ -141,13 +180,25 @@ const Wiki = () => {
     };
 
     const fetchWikiUpdate = async () => {
+      if (wikiLastUpdate) {
+        return;
+      }
       const lastUpdate = await getWikiLastUpdate();
       setWikiLastUpdate(lastUpdate);
     };
 
     loadData();
     fetchWikiUpdate();
-  }, [contentType, processItemsData, processCreaturesData, processPerksData]);
+  }, [
+    contentType,
+    creatures,
+    items,
+    perks,
+    processItemsData,
+    processCreaturesData,
+    processPerksData,
+    wikiLastUpdate,
+  ]);
 
   const searchContent = useCallback(
     (search: string, category: string) => {
@@ -223,8 +274,9 @@ const Wiki = () => {
   );
 
   useEffect(() => {
-    if (location?.search) {
-      const parsed = queryString.parse(location.search);
+    const search = searchParams?.toString() ?? "";
+    if (search) {
+      const parsed = queryString.parse(`?${search}`);
 
       if (
         parsed?.type &&
@@ -253,7 +305,7 @@ const Wiki = () => {
         setSearchText("");
       }
     }
-  }, [location, searchContent]);
+  }, [searchParams, searchContent]);
 
   const handleLoadMore = useCallback(() => {
     const nextPage = currentPage + 1;
@@ -328,9 +380,16 @@ const Wiki = () => {
         newCategory,
         contentType,
       );
-      navigate(`/wiki?${searchParams.toString()}`);
+      router.push(getLanguagePrefixedPath(`/wiki?${searchParams.toString()}`));
     },
-    [searchText, searchContent, navigate, contentType, buildSearchParams],
+    [
+      searchText,
+      searchContent,
+      router,
+      getLanguagePrefixedPath,
+      contentType,
+      buildSearchParams,
+    ],
   );
 
   const handleKeyPress = useCallback(
@@ -343,14 +402,15 @@ const Wiki = () => {
           categoryFilter,
           contentType,
         );
-        navigate(`/wiki?${searchParams.toString()}`);
+        router.push(getLanguagePrefixedPath(`/wiki?${searchParams.toString()}`));
       }
     },
     [
       searchContent,
       searchText,
       categoryFilter,
-      navigate,
+      router,
+      getLanguagePrefixedPath,
       contentType,
       buildSearchParams,
     ],
@@ -364,12 +424,13 @@ const Wiki = () => {
       categoryFilter,
       contentType,
     );
-    navigate(`/wiki?${searchParams.toString()}`);
+    router.push(getLanguagePrefixedPath(`/wiki?${searchParams.toString()}`));
   }, [
     searchContent,
     searchText,
     categoryFilter,
-    navigate,
+    router,
+    getLanguagePrefixedPath,
     contentType,
     buildSearchParams,
   ]);
@@ -382,9 +443,9 @@ const Wiki = () => {
       setCurrentPage(1);
 
       const searchParams = buildSearchParams("", "All", type);
-      navigate(`/wiki?${searchParams.toString()}`);
+      router.push(getLanguagePrefixedPath(`/wiki?${searchParams.toString()}`));
     },
-    [navigate, buildSearchParams],
+    [router, getLanguagePrefixedPath, buildSearchParams],
   );
 
   const wikiStructuredData = useMemo(() => {

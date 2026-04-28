@@ -7,7 +7,7 @@ import React, {
   memo,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
+import { useRouter } from "next/navigation";
 import ModalMessage from "@components/ModalMessage";
 import ClanMapItem from "@components/ClanMaps/ClanMapItem";
 import CreateMapPanel from "@components/ClanMaps/CreateMapPanel";
@@ -17,6 +17,7 @@ import { getMaps, addMap, deleteMap } from "@functions/requests/maps";
 import { getMapNames } from "@functions/github";
 import type { MapInfo, MapJsonInfo } from "@ctypes/dto/maps";
 import LoadingScreen from "@components/LoadingScreen";
+import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 const DeleteMapModal = React.lazy(
   () => import("@components/ClanMaps/DeleteMapModal"),
@@ -24,7 +25,8 @@ const DeleteMapModal = React.lazy(
 
 const ClanMaps = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { getLanguagePrefixedPath } = useLanguagePrefix();
   const [clanMaps, setClanMaps] = useState<MapInfo[]>([]);
   const [maps, setMaps] = useState<MapJsonInfo[]>([]);
   const [error, setError] = useState<string>();
@@ -94,9 +96,9 @@ const ClanMaps = () => {
 
   const handleOpenMap = useCallback(
     (mapData: MapInfo) => {
-      navigate(`/maps/${mapData.mapid}`);
+      router.push(getLanguagePrefixedPath(`/maps/${mapData.mapid}`));
     },
-    [navigate],
+    [router, getLanguagePrefixedPath],
   );
 
   const handleCancelDelete = useCallback(() => {

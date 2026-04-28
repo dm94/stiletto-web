@@ -7,7 +7,7 @@ import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { sendNotification } from "@functions/broadcast";
 import { getDomain, getItemUrl } from "@functions/utils";
 import { addRecipe } from "@functions/requests/recipes";
-import type { CraftItem, ItemIngredient } from "@ctypes/item";
+import type { CraftItem, ItemRecipe } from "@ctypes/item";
 import type { Recipe } from "@ctypes/dto/recipe";
 import { FaShareAlt, FaCopy } from "react-icons/fa";
 
@@ -106,7 +106,7 @@ const TotalMaterials: React.FC<TotalMaterialsProps> = memo(
       const totalIngredients: Array<{
         name: string;
         count: number;
-        ingredients?: ItemIngredient[];
+        ingredients?: ItemRecipe[];
       }> = [];
 
       for (const item of selectedItems ?? []) {

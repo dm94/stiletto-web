@@ -20,15 +20,12 @@ i18n
     supportedLngs: languageWhitelist,
     detection: {
       order: ["localStorage", "navigator"],
-      convertPathToLanguage: (lng: string) => lng.toLowerCase(),
       caches: ["localStorage"],
-      checkWhitelist: true,
-      skipRouteLocalizationIfPathContainsLocale: true,
-    },
+    } as never,
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",
       crossDomain: true,
     },
-  });
+  } as never);
 
 export default i18n;

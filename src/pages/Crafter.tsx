@@ -1,7 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import queryString from "query-string";
 import { getItems } from "@functions/github";
 import ModalMessage from "@components/ModalMessage";
 import Items from "@components/Crafter/Items";
@@ -9,7 +8,7 @@ import SelectedItem from "@components/Crafter/SelectedItem";
 import TotalMaterials from "@components/Crafter/TotalMaterials";
 import { getDomain, getItemDecodedName } from "@functions/utils";
 import { getRecipe } from "@functions/requests/recipes";
-import { useLocation } from "react-router";
+import { useSearchParams } from "next/navigation";
 import type { CraftItem, Item, ItemRecipe } from "@ctypes/item";
 import HeaderMeta from "@components/HeaderMeta";
 import { FaList, FaExclamationTriangle } from "react-icons/fa";
@@ -63,7 +62,7 @@ const mapRecipeItemsToSelectedItems = (
 };
 
 const Crafter: React.FC = () => {
-  const location = useLocation();
+  const searchParams = useSearchParams();
   const { t } = useTranslation();
   const [allItems, setAllItems] = useState<Item[]>([]);
   const [selectedItems, setSelectedItems] = useState<CraftItem[]>([]);
@@ -101,11 +100,8 @@ const Crafter: React.FC = () => {
         const craftableItems = itemsData.filter((it) => it.crafting);
         setAllItems(craftableItems);
 
-        const parsed = queryString.parse(location.search);
-        const recipeToken =
-          typeof parsed.recipe === "string" ? parsed.recipe : undefined;
-        const craftToken =
-          typeof parsed.craft === "string" ? parsed.craft : undefined;
+        const recipeToken = searchParams?.get("recipe") ?? undefined;
+        const craftToken = searchParams?.get("craft") ?? undefined;
 
         if (recipeToken) {
           await loadRecipeSelection(recipeToken, craftableItems);
@@ -122,7 +118,7 @@ const Crafter: React.FC = () => {
     };
 
     updateRecipes();
-  }, [location.search, loadRecipeSelection]);
+  }, [searchParams, loadRecipeSelection]);
 
   const updateSearch = useCallback(
     (searchText: string): void => {

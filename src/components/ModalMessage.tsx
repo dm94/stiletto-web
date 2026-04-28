@@ -1,8 +1,9 @@
 import type React from "react";
-import { useNavigate } from "react-router";
+import { useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { useEffect } from "react";
+import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 export interface MessageProps {
   isError?: boolean;
@@ -30,7 +31,8 @@ const ActionButton: React.FC<{
 
 const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { getLanguagePrefixedPath } = useLanguagePrefix();
 
   useEffect(() => {
     sendEvent(AnalyticsEvent.MODAL, {
@@ -42,7 +44,8 @@ const ModalMessage: React.FC<ModalMessageProps> = ({ message, onClickOk }) => {
   }, [message?.isError, message?.text]);
 
   const navigateTo = (): void => {
-    navigate(message?.redirectPage ?? "");
+    if (!message?.redirectPage) return;
+    router.push(getLanguagePrefixedPath(message.redirectPage));
   };
 
   return (

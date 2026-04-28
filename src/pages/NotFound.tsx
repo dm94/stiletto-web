@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import LanguageLink from "@components/LanguageLink";
 import { getDomain } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 
@@ -24,12 +24,12 @@ const NotFoundPage = () => {
           {t("errors.oopsPageNotFound")}
         </h2>
         <p className="text-gray-400 mb-4">{t("errors.pageNotFound")}</p>
-        <Link
+        <LanguageLink
           to="/"
           className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           {t("common.goBackToHome")}
-        </Link>
+        </LanguageLink>
       </div>
     </div>
   );

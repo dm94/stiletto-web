@@ -8,28 +8,34 @@ import ReactMarkdown from "react-markdown";
 interface ExtraInfoProps {
   type: "items" | "creatures";
   name: string;
+  content?: string;
 }
 
-const ExtraInfo: React.FC<ExtraInfoProps> = ({ type, name }) => {
-  const [content, setContent] = useState<string>("");
+const ExtraInfo: React.FC<ExtraInfoProps> = ({ type, name, content }) => {
+  const [loadedContent, setLoadedContent] = useState<string>(content ?? "");
   const [error, setError] = useState<boolean>(false);
 
   const codedName = getItemCodedName(name);
   const { t } = useTranslation();
 
   useEffect(() => {
+    if (content) {
+      setLoadedContent(content);
+      return;
+    }
+
     const fetchMarkdown = async () => {
       try {
         const text = await getMDContent(type, codedName);
-        setContent(text);
+        setLoadedContent(text);
       } catch {
         setError(true);
       }
     };
     fetchMarkdown();
-  }, [codedName, type]);
+  }, [codedName, type, content]);
 
-  if (error || !content) {
+  if (error || !loadedContent) {
     return null;
   }
 
@@ -40,7 +46,7 @@ const ExtraInfo: React.FC<ExtraInfoProps> = ({ type, name }) => {
           {t("wiki.extraInfo")}
         </div>
         <div className="p-4 text-neutral-400">
-          <ReactMarkdown skipHtml={true}>{content}</ReactMarkdown>
+          <ReactMarkdown skipHtml={true}>{loadedContent}</ReactMarkdown>
         </div>
       </div>
     </div>

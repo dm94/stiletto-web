@@ -7,7 +7,7 @@ import React, {
   useMemo,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink, useParams } from "react-router";
+import { useParams, usePathname } from "next/navigation";
 import { getStoredItem, storeItem } from "@functions/services";
 import { useUser } from "@store/userStore";
 import LoadingScreen from "@components/LoadingScreen";
@@ -19,6 +19,7 @@ import HeaderMeta from "@components/HeaderMeta";
 import type { TechItem } from "@ctypes/item";
 import { Tree } from "@ctypes/dto/tech";
 import { getTechItems } from "@functions/github";
+import LanguageLink from "@components/LanguageLink";
 
 const SkillTreeTab = React.lazy(
   () => import("@components/TechTree/SkillTreeTab"),
@@ -27,7 +28,9 @@ const SkillTreeTab = React.lazy(
 const TechTree = () => {
   const { t } = useTranslation();
   const { isConnected } = useUser();
-  const { tree } = useParams();
+  const params = useParams<{ tree?: string }>();
+  const tree = Array.isArray(params?.tree) ? params?.tree[0] : params?.tree;
+  const pathname = usePathname() ?? "";
   const [items, setItems] = useState<TechItem[]>([]);
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>();
@@ -299,6 +302,12 @@ const TechTree = () => {
   }
 
   const tabSelected = t(`tech.${tabSelect}`);
+  const activeTabClass =
+    "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500";
+  const inactiveTabClass =
+    "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500";
+  const isTabActive = (target: string) =>
+    pathname.toLowerCase().endsWith(target.toLowerCase());
 
   return (
     <div className="container mx-auto px-4">
@@ -320,12 +329,10 @@ const TechTree = () => {
           aria-orientation="horizontal"
         >
           <div className="flex-1">
-            <NavLink
+            <LanguageLink
               to="/tech/Vitamins"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                isTabActive("/tech/Vitamins") ? activeTabClass : inactiveTabClass
               }
               role="tab"
               aria-selected={tabSelect === Tree.VITAMINS}
@@ -333,15 +340,15 @@ const TechTree = () => {
             >
               <Icon key="Vitamins" name="Vitamins" width={30} />{" "}
               {t("crafting.vitamins")}
-            </NavLink>
+            </LanguageLink>
           </div>
           <div className="flex-1">
-            <NavLink
+            <LanguageLink
               to="/tech/Equipment"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                isTabActive("/tech/Equipment")
+                  ? activeTabClass
+                  : inactiveTabClass
               }
               role="tab"
               aria-selected={tabSelect === Tree.EQUIPMENT}
@@ -349,15 +356,15 @@ const TechTree = () => {
             >
               <Icon key="Equipment" name="Equipment" width={30} />{" "}
               {t("crafting.equipment")}
-            </NavLink>
+            </LanguageLink>
           </div>
           <div className="flex-1">
-            <NavLink
+            <LanguageLink
               to="/tech/Crafting"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                isTabActive("/tech/Crafting")
+                  ? activeTabClass
+                  : inactiveTabClass
               }
               role="tab"
               aria-selected={tabSelect === Tree.CRAFTING}
@@ -365,15 +372,15 @@ const TechTree = () => {
             >
               <Icon key="Crafting" name="Crafting" width={30} />{" "}
               {t("menu.crafting")}
-            </NavLink>
+            </LanguageLink>
           </div>
           <div className="flex-1">
-            <NavLink
+            <LanguageLink
               to="/tech/Construction"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                isTabActive("/tech/Construction")
+                  ? activeTabClass
+                  : inactiveTabClass
               }
               role="tab"
               aria-selected={tabSelect === Tree.CONSTRUCTION}
@@ -381,15 +388,13 @@ const TechTree = () => {
             >
               <Icon key="Construction" name="Construction" width={30} />{" "}
               {t("crafting.construction")}
-            </NavLink>
+            </LanguageLink>
           </div>
           <div className="flex-1">
-            <NavLink
+            <LanguageLink
               to="/tech/Walkers"
-              className={({ isActive }) =>
-                isActive
-                  ? "flex items-center justify-center px-4 py-2 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500 text-white border-blue-500"
-                  : "flex items-center justify-center px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-700 border-b-2 border-transparent hover:border-blue-500"
+              className={
+                isTabActive("/tech/Walkers") ? activeTabClass : inactiveTabClass
               }
               role="tab"
               aria-selected={tabSelect === Tree.WALKERS}
@@ -397,7 +402,7 @@ const TechTree = () => {
             >
               <Icon key="Walkers" name="Walkers" width={30} />{" "}
               {t("crafting.walkers")}
-            </NavLink>
+            </LanguageLink>
           </div>
         </div>
       </nav>

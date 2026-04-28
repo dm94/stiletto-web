@@ -19,8 +19,9 @@ import {
 import type { ResourceInfo } from "@ctypes/dto/resources";
 import { editMap } from "@functions/requests/maps";
 import { sendNotification } from "@functions/broadcast";
-import { useNavigate } from "react-router";
+import { useRouter } from "next/navigation";
 import { FaCircleNotch, FaTimes, FaBars } from "react-icons/fa";
+import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 interface ResourceMapProps {
   map: MapInfo;
@@ -54,7 +55,8 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
   const [activeTab, setActiveTab] = useState<string>("resources");
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { getLanguagePrefixedPath } = useLanguagePrefix();
   const fetchData = useCallback(async () => {
     setIsLoading(true);
     try {
@@ -68,11 +70,11 @@ const ResourceMap: React.FC<ResourceMapProps> = ({ map, onReturn }) => {
       setResourcesFiltered(responseResources);
     } catch {
       sendNotification("Failed to fetch data", "Error");
-      navigate("/");
+      router.push(getLanguagePrefixedPath("/"));
     } finally {
       setIsLoading(false);
     }
-  }, [map.mapid, map.pass, navigate]);
+  }, [map.mapid, map.pass, router, getLanguagePrefixedPath]);
 
   useEffect(() => {
     fetchData();

@@ -58,7 +58,7 @@ const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({
           onClick={() => handleResourceSelect(resource)}
           aria-label={`${t(resource.resourcetype)} at coordinates ${Math.floor(resource.x)},${Math.floor(resource.y)}`}
         >
-          <Icon name={resource.resourcetype} aria-hidden="true" />
+          <Icon name={resource.resourcetype} aria-hidden={true} />
           {t(resource.resourcetype)}
         </button>
       </li>
@@ -93,7 +93,7 @@ const ResourcesInMapList: React.FC<ResourcesInMapListProps> = ({
         aria-pressed={type === resourceTypeFilter}
         aria-label={`${t("common.filter")}: ${t(type)}`}
       >
-        <Icon name={type} aria-hidden="true" />
+        <Icon name={type} aria-hidden={true} />
         {t(type)}
       </button>
     ));

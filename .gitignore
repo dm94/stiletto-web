@@ -10,9 +10,12 @@
 
 # production
 /build
+.next/
 
 # misc
 .DS_Store
+.pnpm-store/
+.vercel/
 .env.local
 .env.development.local
 .env.test.local

@@ -1,14 +1,14 @@
-import { useLocation } from "react-router";
 import i18n from "i18next";
 import { DEFAULT_LANGUAGE } from "@config/config";
 import { supportedLanguages } from "@config/languages";
+import { usePathname } from "next/navigation";
 
 /**
  * Custom hook that provides language prefix functionality for routes
  * Extracts the current language from URL or i18n state and handles path prefixing
  */
 export const useLanguagePrefix = () => {
-  const location = useLocation();
+  const pathname = usePathname() ?? "/";
   const supportedLangCodes = new Set(supportedLanguages.map((lang) => lang.key));
 
   /**
@@ -17,8 +17,7 @@ export const useLanguagePrefix = () => {
    */
   const getCurrentLanguage = (): string => {
     // Try to extract the language from the current URL
-    const pathSegment = location.pathname.split("/").find(Boolean);
-    const firstSegment = pathSegment;
+    const firstSegment = pathname.split("/").find(Boolean);
 
     if (firstSegment && supportedLangCodes.has(firstSegment)) {
       return firstSegment;

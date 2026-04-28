@@ -9,7 +9,7 @@ import {
 } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import { useLocation, useNavigate } from "react-router";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { getPerks } from "@functions/github";
 import {
   buildPerkGraph,
@@ -85,8 +85,9 @@ const removeStoredBuild = (): void => {
 };
 
 const PerkCostCalculator = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const pathname = usePathname() ?? "/perks";
+  const searchParams = useSearchParams();
   const { t } = useTranslation();
   const [perks, setPerks] = useState<Perk[]>([]);
   const [selectedPerks, setSelectedPerks] = useState<Set<string>>(new Set());
@@ -182,11 +183,7 @@ const PerkCostCalculator = () => {
       return;
     }
 
-    const parsedQuery = queryString.parse(location.search);
-    const queryToken =
-      typeof parsedQuery[BUILD_QUERY_KEY] === "string"
-        ? parsedQuery[BUILD_QUERY_KEY]
-        : undefined;
+    const queryToken = searchParams?.get(BUILD_QUERY_KEY) ?? undefined;
     const buildFromQuery = decodeBuildToken(queryToken);
     const buildFromStorage = parseSavedBuild(
       getStoredItem(PERK_BUILD_STORAGE_KEY) ?? "",
@@ -208,9 +205,9 @@ const PerkCostCalculator = () => {
   }, [
     didHydrateBuild,
     isLoaded,
-    location.search,
     logicalRoots,
     normalizeSelection,
+    searchParams,
   ]);
 
   useEffect(() => {
@@ -289,17 +286,17 @@ const PerkCostCalculator = () => {
   }, [selectedPerks]);
 
   const shareSearch = useMemo(() => {
-    const parsedQuery = queryString.parse(location.search);
+    const parsedQuery = queryString.parse(searchParams?.toString() ?? "");
     parsedQuery[BUILD_QUERY_KEY] = encodeBuildToken(savedBuild);
     return queryString.stringify(parsedQuery);
-  }, [location.search, savedBuild]);
+  }, [searchParams, savedBuild]);
 
   const shareUrl = useMemo(() => {
     if (globalThis.window === undefined) {
-      return `${location.pathname}?${shareSearch}`;
+      return `${pathname}?${shareSearch}`;
     }
-    return `${globalThis.globalThis.location.origin}${location.pathname}?${shareSearch}`;
-  }, [location.pathname, shareSearch]);
+    return `${globalThis.globalThis.location.origin}${pathname}?${shareSearch}`;
+  }, [pathname, shareSearch]);
 
   const nextPerkInfo = useMemo(() => {
     const currentCost = totalCost;
@@ -335,7 +332,7 @@ const PerkCostCalculator = () => {
   }, [canSelectWithCostLimit, perkGraph, selectedPerks, totalCost]);
 
   const handleShareBuild = useCallback(async () => {
-    navigate(`${location.pathname}?${shareSearch}`);
+    router.replace(`${pathname}?${shareSearch}`);
 
     try {
       await navigator.clipboard.writeText(shareUrl);
@@ -343,23 +340,22 @@ const PerkCostCalculator = () => {
     } catch {
       setShareStatusKey(ShareStatusKey.BuildLinkReadyToCopy);
     }
-  }, [location.pathname, navigate, shareSearch, shareUrl]);
+  }, [pathname, router, shareSearch, shareUrl]);
 
   const handleResetBuild = useCallback(() => {
     setSelectedPerks(new Set());
     removeStoredBuild();
     setShareStatusKey(ShareStatusKey.BuildReset);
 
-    const parsedQuery = queryString.parse(location.search);
+    const parsedQuery = queryString.parse(searchParams?.toString() ?? "");
     delete parsedQuery[BUILD_QUERY_KEY];
     const nextSearch = queryString.stringify(parsedQuery);
-    navigate(
+    router.replace(
       nextSearch.length > 0
-        ? `${location.pathname}?${nextSearch}`
-        : location.pathname,
-      { replace: true },
+        ? `${pathname}?${nextSearch}`
+        : pathname,
     );
-  }, [location.pathname, location.search, navigate]);
+  }, [pathname, searchParams, router]);
 
   const handleRootTabKeyDown = useCallback(
     (event: KeyboardEvent<HTMLButtonElement>, index: number) => {

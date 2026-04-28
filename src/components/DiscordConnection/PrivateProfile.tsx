@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import { Helmet } from "react-helmet";
-import { Link } from "react-router";
+import LanguageLink from "@components/LanguageLink";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
 import ClanConfig from "../ClanConfig";
@@ -208,27 +208,27 @@ const PrivateProfile = () => {
           <div className="p-3 space-y-2">
             {isLoaded && userData?.clanname ? (
               <>
-                <Link
+                <LanguageLink
                   to="/members"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <FaUsers className="mr-2" />
                   {t("menu.clanGeneral")}
-                </Link>
-                <Link
+                </LanguageLink>
+                <LanguageLink
                   to="/diplomacy"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <FaFlag className="mr-2" />
                   {t("menu.diplomacy")}
-                </Link>
-                <Link
+                </LanguageLink>
+                <LanguageLink
                   to="/clan/walkers"
                   className="w-full inline-flex items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
                 >
                   <FaFlag className="mr-2" />
                   {t("menu.walkers")}
-                </Link>
+                </LanguageLink>
                 {isLoaded && userData?.discordid !== userData?.leaderid && (
                   <button
                     type="button"
@@ -242,13 +242,13 @@ const PrivateProfile = () => {
               </>
             ) : (
               <>
-                <Link
+                <LanguageLink
                   to="/clanlist"
                   data-testid="join-clan-btn"
                   className="w-full inline-flex justify-center items-center p-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none"
                 >
                   {t("clan.joinClan")}
-                </Link>
+                </LanguageLink>
                 <button
                   type="button"
                   data-testid="create-clan-btn"
@@ -263,12 +263,12 @@ const PrivateProfile = () => {
         </div>
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
           <div className="p-3">
-            <Link
+            <LanguageLink
               to="/maps"
               className="w-full inline-flex justify-center items-center p-3 bg-gray-700 text-white rounded-lg hover:bg-gray-600 focus:outline-none"
             >
               {t("menu.resourceMaps")}
-            </Link>
+            </LanguageLink>
           </div>
         </div>
         <div className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">

@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router";
+import { usePathname, useSearchParams } from "next/navigation";
 import posthog from "posthog-js";
 import {
   ANALYTICS_CONSENT_KEY,
   COOKIE_CONSENT_UPDATED_EVENT,
 } from "../config/analyticsConsentConstants";
 
-const POSTHOG_KEY = import.meta.env.VITE_PUBLIC_POSTHOG_KEY;
-const POSTHOG_HOST = import.meta.env.VITE_PUBLIC_POSTHOG_HOST;
+const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
+const POSTHOG_HOST = process.env.NEXT_PUBLIC_POSTHOG_HOST;
 let isPostHogInitialized = false;
 
 const hasAnalyticsConsent = (): boolean => {
@@ -71,7 +71,8 @@ const applyAnalyticsConsent = (): void => {
 };
 
 export function PostHogPageView(): null {
-  const location = useLocation();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     applyAnalyticsConsent();
@@ -123,12 +124,13 @@ export function PostHogPageView(): null {
 
   useEffect(() => {
     if (shouldCaptureWithPostHog()) {
-      const currentUrl = `${globalThis.location.origin}${location.pathname}${location.search}${location.hash}`;
+      const search = searchParams?.toString() ?? "";
+      const currentUrl = `${globalThis.location.origin}${pathname}${search ? `?${search}` : ""}${globalThis.location.hash}`;
       posthog.capture("$pageview", {
         $current_url: currentUrl,
       });
     }
-  }, [location]);
+  }, [pathname, searchParams]);
 
   return null;
 }

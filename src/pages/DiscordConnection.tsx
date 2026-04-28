@@ -1,40 +1,40 @@
 import type React from "react";
 import { useState, useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import queryString from "query-string";
 import LoadingScreen from "@components/LoadingScreen";
 import PrivateProfile from "@components/DiscordConnection/PrivateProfile";
 import ModalMessage from "@components/ModalMessage";
 import HeaderMeta from "@components/HeaderMeta";
-import { useNavigate, useLocation } from "react-router";
+import { useRouter, useSearchParams } from "next/navigation";
 import { getDomain, getDiscordLoginUrl } from "@functions/utils";
 import { authDiscord } from "@functions/requests/users";
 import { useUser } from "@store/userStore";
 import { FaDiscord } from "react-icons/fa";
+import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 const DiscordConnection: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { getLanguagePrefixedPath } = useLanguagePrefix();
   const { login, isConnected } = useUser();
 
   useEffect(() => {
     const handleAuth = async () => {
-      const parsed = queryString.parse(location?.search);
-
-      if (!parsed.code || isConnected) {
+      const code = searchParams?.get("code");
+      if (!code || isConnected) {
         setIsLoaded(true);
         return;
       }
 
       try {
-        const response = await authDiscord(String(parsed.code));
+        const response = await authDiscord(code);
 
         if (response?.discordid && response?.token) {
           login(response.discordid, response.token);
-          navigate("/");
+          router.push(getLanguagePrefixedPath("/"));
         }
       } catch {
         setError(t("errors.apiConnection"));
@@ -44,16 +44,17 @@ const DiscordConnection: React.FC = () => {
     };
 
     handleAuth();
-  }, [location, navigate, t, login, isConnected]);
+  }, [searchParams, router, getLanguagePrefixedPath, t, login, isConnected]);
 
   const discordLoginUrl = useMemo(() => getDiscordLoginUrl(), []);
 
   useEffect(() => {
-    const parsed = queryString.parse(location?.search);
-    if (parsed.discordid && parsed.token) {
-      login(String(parsed.discordid), String(parsed.token));
+    const discordid = searchParams?.get("discordid");
+    const token = searchParams?.get("token");
+    if (discordid && token) {
+      login(discordid, token);
     }
-  }, [location, login]);
+  }, [searchParams, login]);
 
   const clanInfo = isConnected ? (
     <PrivateProfile key="profile" />

@@ -1,7 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import queryString from "query-string";
 import { getMarkers } from "@functions/github";
 import LoadingScreen from "../LoadingScreen";
 import ModalMessage from "../ModalMessage";
@@ -9,7 +8,7 @@ import MapLayer from "./MapLayer";
 import ResourcesInMapList from "./ResourcesInMapList";
 import CreateResourceTab from "./CreateResourceTab";
 import "../../styles/map-sidebar.css";
-import { useLocation, useParams } from "react-router";
+import { useParams, useSearchParams } from "next/navigation";
 import type { Marker } from "@ctypes/dto/marker";
 import type { ResourceInfo } from "@ctypes/dto/resources";
 import {
@@ -28,8 +27,9 @@ interface ResourceMapNoLogProps {
 }
 
 const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
-  const location = useLocation();
-  const { id } = useParams<{ id: string }>();
+  const params = useParams<{ id: string }>();
+  const id = params?.id;
+  const searchParams = useSearchParams();
   const { t } = useTranslation();
   const [resourcesInTheMap, setResourcesInTheMap] = useState<ResourceInfo[]>(
     [],
@@ -51,18 +51,16 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
   const [activeTab, setActiveTab] = useState<string>("resources");
 
   const fetchData = useCallback(async () => {
-    let parsed = null;
-    if (location?.search) {
-      parsed = queryString.parse(location.search);
-    }
+    const parsedPass = searchParams?.get("pass");
+    const currentId = Array.isArray(id) ? id[0] : id;
 
-    if ((props?.mapId || id) && (props?.pass || parsed?.pass)) {
+    if ((props?.mapId || currentId) && (props?.pass || parsedPass)) {
       try {
         const markers = await getMarkers();
         setItems(markers);
 
-        const currentMapId = Number(props?.mapId ?? id);
-        const currentPass = String(props?.pass ?? parsed?.pass);
+        const currentMapId = Number(props?.mapId ?? currentId);
+        const currentPass = String(props?.pass ?? parsedPass);
 
         setMapId(currentMapId);
         setPass(currentPass);
@@ -80,7 +78,7 @@ const ResourceMapNoLog: React.FC<ResourceMapNoLogProps> = (props) => {
       setError("error.unauthorized");
     }
     setIsLoaded(true);
-  }, [props, id, location?.search]);
+  }, [props, id, searchParams]);
 
   useEffect(() => {
     fetchData();

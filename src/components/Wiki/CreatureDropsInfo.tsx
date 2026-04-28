@@ -1,6 +1,6 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import LanguageLink from "@components/LanguageLink";
 import type { Drop } from "@ctypes/item";
 import { getItemUrl } from "@functions/utils";
 
@@ -21,11 +21,11 @@ const CreatureDropsInfo: React.FC<CreatureDropsInfoProps> = ({
       const dropKey = `${drop.name}-${drop.tier ?? "no-tier"}-${drop.minQuantity ?? "no-min"}-${drop.maxQuantity ?? "no-max"}-${drop.chance ?? "no-chance"}`;
       return (
         <li className="inline-block mr-2 mb-2" key={dropKey} title={titleInfo}>
-          <Link to={getItemUrl(drop.name)}>
+          <LanguageLink to={getItemUrl(drop.name)}>
             <div className="p-2 bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg text-neutral-300 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
               {t(drop.name)} {drop?.tier && `(${drop.tier})`}
             </div>
-          </Link>
+          </LanguageLink>
         </li>
       );
     });

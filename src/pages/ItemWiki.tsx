@@ -1,3 +1,5 @@
+"use client";
+
 import React, {
   useState,
   useEffect,
@@ -7,7 +9,7 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { getItems, getItemInfo } from "@functions/github";
-import { Navigate, useParams, useNavigate } from "react-router";
+import { useParams, useRouter } from "next/navigation";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
 import Icon from "@components/Icon";
@@ -32,6 +34,7 @@ import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
 import { FaTools, FaExclamationTriangle } from "react-icons/fa";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
 import ReportIncidentModal from "@components/ReportIncidentModal";
+import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -50,13 +53,32 @@ const CreatureDropsInfo = React.lazy(
   () => import("@components/Wiki/CreatureDropsInfo"),
 );
 
-const ItemWiki = () => {
+type ItemWikiProps = {
+  initialItem?: Item;
+  initialItemInfo?: ItemCompleteInfo;
+  extraInfoContent?: string;
+};
+
+const ItemWiki: React.FC<ItemWikiProps> = ({
+  initialItem,
+  initialItemInfo,
+  extraInfoContent,
+}) => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
-  const { name, rarity: rarityParam } = useParams();
-  const [item, setItem] = useState<Item>();
-  const [itemInfo, setItemInfo] = useState<ItemCompleteInfo>();
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const router = useRouter();
+  const params = useParams<{ name?: string; rarity?: string }>();
+  const { getLanguagePrefixedPath } = useLanguagePrefix();
+  const name = Array.isArray(params?.name) ? params?.name[0] : params?.name;
+  const rarityParam = Array.isArray(params?.rarity)
+    ? params?.rarity[0]
+    : params?.rarity;
+  const [item, setItem] = useState<Item | undefined>(initialItem);
+  const [itemInfo, setItemInfo] = useState<ItemCompleteInfo | undefined>(
+    initialItemInfo,
+  );
+  const [isLoaded, setIsLoaded] = useState<boolean>(
+    Boolean(initialItem || initialItemInfo),
+  );
   const [allItems, setAllItems] = useState<Item[]>([]);
   const [textColor, setTextColor] = useState<string>("text-gray-400");
   const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
@@ -66,6 +88,10 @@ const ItemWiki = () => {
     : Rarity.Common;
 
   useEffect(() => {
+    if (initialItem || initialItemInfo) {
+      return;
+    }
+
     const loadData = async () => {
       try {
         let itemName = name;
@@ -102,7 +128,7 @@ const ItemWiki = () => {
     };
 
     void loadData();
-  }, [name]);
+  }, [name, initialItem, initialItemInfo]);
 
   const showIngredient = useCallback((ingre: Item) => {
     if (!ingre?.crafting) {
@@ -178,10 +204,10 @@ const ItemWiki = () => {
   const updateRarity = useCallback(
     (value: Rarity) => {
       if (name) {
-        navigate(getItemUrl(name, value));
+        router.push(getLanguagePrefixedPath(getItemUrl(name, value)));
       }
     },
-    [name, navigate],
+    [name, router, getLanguagePrefixedPath],
   );
 
   const getRarityClass = useCallback(
@@ -375,12 +401,18 @@ const ItemWiki = () => {
     itemName,
   ]);
 
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (item) return;
+    router.replace(getLanguagePrefixedPath("/wiki"));
+  }, [isLoaded, item, router, getLanguagePrefixedPath]);
+
   if (!isLoaded) {
     return <LoadingScreen />;
   }
 
   if (!item) {
-    return <Navigate to={"/wiki"} />;
+    return null;
   }
 
   return (
@@ -696,7 +728,7 @@ const ItemWiki = () => {
           )}
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <ExtraInfo type="items" name={itemName} />
+          <ExtraInfo type="items" name={itemName} content={extraInfoContent} />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <Comments key="comments" name={itemName} />

@@ -1,11 +1,11 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
-import type { ToolInfo as Info } from "@ctypes/item";
+import type { Rarity, ToolInfo as Info } from "@ctypes/item";
 import { calcRarityValue } from "@functions/rarityCalc";
 
 interface ToolInfoProps {
   toolInfo?: Info[];
-  rarity?: string;
+  rarity?: Rarity;
   textColor?: string;
 }
 

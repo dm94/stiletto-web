@@ -1,5 +1,5 @@
 import type React from "react";
-import { Link } from "react-router";
+import LanguageLink from "@components/LanguageLink";
 import { useTranslation } from "react-i18next";
 import { getDomain } from "@functions/utils";
 import { config } from "@config/config";
@@ -12,13 +12,13 @@ const DiscordButton: React.FC = () => {
 
   if (isConnected) {
     return (
-      <Link
+      <LanguageLink
         className="px-4 py-2 text-sm font-medium text-white border border-gray-600 rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
         to="/profile"
         data-testid="profile-link"
       >
         <FaUser className="mr-2 inline" /> {t("menu.profile")}
-      </Link>
+      </LanguageLink>
     );
   }
 

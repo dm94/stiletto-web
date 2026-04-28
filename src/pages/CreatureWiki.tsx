@@ -1,7 +1,9 @@
+"use client";
+
 import React, { useState, useEffect, Suspense, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { getCreatures, getCreatureInfo } from "@functions/github";
-import { Navigate, useParams } from "react-router";
+import { useParams, useRouter } from "next/navigation";
 import Icon from "@components/Icon";
 import LoadingScreen from "@components/LoadingScreen";
 import Comments from "@components/Wiki/Comments";
@@ -16,19 +18,41 @@ import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
 import CreatureDropsInfo from "@components/Wiki/CreatureDropsInfo";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
 import RelatedCreatures from "@components/Wiki/RelatedCreatures";
+import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
 );
 
-const CreatureWiki = () => {
+type CreatureWikiProps = {
+  initialCreature?: Creature;
+  initialCreatureInfo?: CreatureCompleteInfo;
+  extraInfoContent?: string;
+};
+
+const CreatureWiki: React.FC<CreatureWikiProps> = ({
+  initialCreature,
+  initialCreatureInfo,
+  extraInfoContent,
+}) => {
   const { t, i18n } = useTranslation();
-  const { name } = useParams();
-  const [creature, setCreature] = useState<Creature>();
-  const [creatureInfo, setCreatureInfo] = useState<CreatureCompleteInfo>();
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+  const router = useRouter();
+  const params = useParams<{ name?: string }>();
+  const { getLanguagePrefixedPath } = useLanguagePrefix();
+  const name = Array.isArray(params?.name) ? params?.name[0] : params?.name;
+  const [creature, setCreature] = useState<Creature | undefined>(initialCreature);
+  const [creatureInfo, setCreatureInfo] = useState<
+    CreatureCompleteInfo | undefined
+  >(initialCreatureInfo);
+  const [isLoaded, setIsLoaded] = useState<boolean>(
+    Boolean(initialCreature || initialCreatureInfo),
+  );
 
   useEffect(() => {
+    if (initialCreature || initialCreatureInfo) {
+      return;
+    }
+
     const loadData = async () => {
       try {
         let creatureName = name;
@@ -64,7 +88,7 @@ const CreatureWiki = () => {
     };
 
     void loadData();
-  }, [name]);
+  }, [name, initialCreature, initialCreatureInfo]);
 
   const loadingCreaturePart = () => (
     <div className="w-full md:w-1/2">
@@ -171,12 +195,18 @@ const CreatureWiki = () => {
     t,
   ]);
 
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (creature) return;
+    router.replace(getLanguagePrefixedPath("/wiki"));
+  }, [isLoaded, creature, router, getLanguagePrefixedPath]);
+
   if (!isLoaded) {
     return <LoadingScreen />;
   }
 
   if (!creature) {
-    return <Navigate to={"/wiki"} />;
+    return null;
   }
 
   const showCreatureInfo = () => {
@@ -264,7 +294,11 @@ const CreatureWiki = () => {
           )}
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
-          <ExtraInfo type="creatures" name={creatureName} />
+          <ExtraInfo
+            type="creatures"
+            name={creatureName}
+            content={extraInfoContent}
+          />
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
           <WikiDescription key="wikidescription" name={creatureName} />

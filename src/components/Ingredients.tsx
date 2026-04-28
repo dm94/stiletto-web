@@ -2,11 +2,10 @@ import type React from "react";
 import { memo } from "react";
 import Ingredient from "./Ingredient";
 import { useTranslation } from "react-i18next";
-import type { Ingredient as IngredientType } from "@ctypes";
 import type { ItemRecipe } from "@ctypes/item";
 
 interface IngredientsProps {
-  crafting: IngredientType | ItemRecipe;
+  crafting: ItemRecipe;
   value: number;
 }
 

@@ -1,6 +1,6 @@
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useParams, useRouter } from "next/navigation";
 import { useTranslation } from "react-i18next";
 import LoadingScreen from "@components/LoadingScreen";
 import ModalMessage from "@components/ModalMessage";
@@ -9,39 +9,43 @@ import ResourceMap from "@components/ClanMaps/ResourceMap";
 import { getMapInfo } from "@functions/requests/maps";
 import { getDomain } from "@functions/utils";
 import type { MapInfo } from "@ctypes/dto/maps";
+import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
 
 const MapDetail: React.FC = () => {
   const { t } = useTranslation();
-  const { id } = useParams<{ id: string }>();
-  const navigate = useNavigate();
+  const params = useParams<{ id: string }>();
+  const id = params?.id;
+  const router = useRouter();
+  const { getLanguagePrefixedPath } = useLanguagePrefix();
   const [map, setMap] = useState<MapInfo>();
   const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchMap = useCallback(async () => {
-    if (!id) {
-      navigate("/maps");
+    const currentId = Array.isArray(id) ? id[0] : id;
+    if (!currentId) {
+      router.push(getLanguagePrefixedPath("/maps"));
       return;
     }
 
     setIsLoading(true);
     try {
-      const mapData = await getMapInfo(Number(id));
+      const mapData = await getMapInfo(Number(currentId));
       setMap(mapData);
     } catch {
       setError("errors.apiConnection");
     } finally {
       setIsLoading(false);
     }
-  }, [id, navigate]);
+  }, [id, router, getLanguagePrefixedPath]);
 
   useEffect(() => {
     fetchMap();
   }, [fetchMap]);
 
   const handleReturn = useCallback(() => {
-    navigate("/maps");
-  }, [navigate]);
+    router.push(getLanguagePrefixedPath("/maps"));
+  }, [router, getLanguagePrefixedPath]);
 
   const canonicalUrl = useMemo(() => {
     return `${getDomain()}/maps/${map?.mapid}`;

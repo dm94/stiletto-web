@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import LanguageLink from "@components/LanguageLink";
 import Ingredient from "@components/Ingredient";
 import Icon from "@components/Icon";
 import { getCreatureUrl } from "@functions/utils";
@@ -66,7 +66,7 @@ const WikiContent = ({
           className="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-3"
           data-testid="wiki-creature"
         >
-          <Link
+          <LanguageLink
             to={getCreatureUrl(creature.name)}
             aria-label={t(creature.name, { ns: "creatures" })}
           >
@@ -76,14 +76,14 @@ const WikiContent = ({
                   key={creature.name}
                   name={creature.name}
                   width={35}
-                  aria-hidden="true"
+                  aria-hidden={true}
                 />
                 <span className="ml-2 text-gray-300">
                   {t(creature.name, { ns: "creatures" })}
                 </span>
               </div>
             </div>
-          </Link>
+          </LanguageLink>
         </article>
       ));
     }

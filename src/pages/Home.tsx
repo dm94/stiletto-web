@@ -4,7 +4,7 @@ import { memo, useMemo } from "react";
 import Others from "@pages/Others";
 import { useUser } from "@store/userStore";
 import { getDomain } from "@functions/utils";
-import { Link } from "react-router";
+import LanguageLink from "@components/LanguageLink";
 import HeaderMeta from "@components/HeaderMeta";
 
 const Home: React.FC = () => {
@@ -57,30 +57,30 @@ const Home: React.FC = () => {
         {t("seo.home.title", "Stiletto for Last Oasis")}
       </h1>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mb-8">
-        <Link
+        <LanguageLink
           className="text-center"
           to="/crafter"
           aria-label={t("crafting.calculator")}
         >
           <h2 className="lo-title text-3xl">{t("crafting.calculator")}</h2>
           <p className="text-white">{t("crafting.description")}</p>
-        </Link>
-        <Link
+        </LanguageLink>
+        <LanguageLink
           className="text-center"
           to="/trades"
           aria-label={t("trades.title")}
         >
           <h2 className="lo-title text-3xl">{t("trades.title")}</h2>
           <p className="text-white">{t("trades.description")}</p>
-        </Link>
-        <Link
+        </LanguageLink>
+        <LanguageLink
           className="text-center"
           to={resourceMapsUrl}
           aria-label={t("menu.resourceMaps")}
         >
           <h2 className="lo-title text-3xl">{t("menu.resourceMaps")}</h2>
           <p className="text-white">{t("resourceMaps.description")}</p>
-        </Link>
+        </LanguageLink>
       </div>
       <Others />
     </div>
