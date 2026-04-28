@@ -8,7 +8,6 @@ import React, {
   useCallback,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { getItems, getItemInfo } from "@functions/github";
 import { useParams, useRouter } from "next/navigation";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
@@ -28,6 +27,7 @@ import {
   getItemUrl,
   getItemCraftUrl,
   getItemDecodedName,
+  toSnakeCase,
 } from "@functions/utils";
 import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
 import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
@@ -99,24 +99,29 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
           itemName = getItemDecodedName(itemName);
         }
 
-        const items = await getItems();
-        if (items) {
+        const itemsResponse = await fetch("/json/items_min.json");
+        if (itemsResponse.ok) {
+          const items = (await itemsResponse.json()) as Item[];
           const foundItem = items.find(
-            (it) => it.name.toLowerCase() === itemName,
+            (it) => it.name.toLowerCase() === (itemName ?? "").toLowerCase(),
           );
           setItem(foundItem);
           setAllItems(items);
 
-          try {
-            const itemInfo = await getItemInfo(
-              foundItem?.name ?? itemName ?? "",
+          const infoName = foundItem?.name ?? itemName ?? "";
+          if (infoName) {
+            const infoResponse = await fetch(
+              `/json/items/${toSnakeCase(infoName)}.json`,
             );
-            setItemInfo({
-              ...itemInfo,
-              ...foundItem,
-            });
-          } catch {
-            setItemInfo(undefined);
+            if (infoResponse.ok) {
+              const itemInfo = (await infoResponse.json()) as ItemCompleteInfo;
+              setItemInfo({
+                ...itemInfo,
+                ...foundItem,
+              });
+            } else {
+              setItemInfo(undefined);
+            }
           }
         }
       } catch {

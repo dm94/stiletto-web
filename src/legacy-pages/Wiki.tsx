@@ -5,12 +5,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import "../styles/loader-small.css";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
-import {
-  getItems,
-  getCreatures,
-  getPerks,
-  getWikiLastUpdate,
-} from "@functions/github";
+import { getWikiLastUpdate } from "@functions/github";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
 import { getCreatureUrl, getDomain, getItemUrl } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
@@ -145,8 +140,9 @@ const Wiki: React.FC<WikiProps> = ({
             return;
           }
           setIsLoading(true);
-          const fetchedItems = await getItems();
-          if (fetchedItems != null) {
+          const response = await fetch("/json/items_min.json");
+          if (response.ok) {
+            const fetchedItems = (await response.json()) as Item[];
             processItemsData(fetchedItems);
           }
         } else if (contentType === "creatures") {
@@ -156,8 +152,9 @@ const Wiki: React.FC<WikiProps> = ({
             return;
           }
           setIsLoading(true);
-          const fetchedCreatures = await getCreatures();
-          if (fetchedCreatures != null) {
+          const response = await fetch("/json/creatures_min.json");
+          if (response.ok) {
+            const fetchedCreatures = (await response.json()) as Creature[];
             processCreaturesData(fetchedCreatures);
           }
         } else if (contentType === "perks") {
@@ -167,8 +164,9 @@ const Wiki: React.FC<WikiProps> = ({
             return;
           }
           setIsLoading(true);
-          const fetchedPerks = await getPerks();
-          if (fetchedPerks != null) {
+          const response = await fetch("/json/perks_min.json");
+          if (response.ok) {
+            const fetchedPerks = (await response.json()) as Perk[];
             processPerksData(fetchedPerks);
           }
         }

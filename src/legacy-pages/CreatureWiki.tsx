@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, Suspense, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { getCreatures, getCreatureInfo } from "@functions/github";
 import { useParams, useRouter } from "next/navigation";
 import Icon from "@components/Icon";
 import LoadingScreen from "@components/LoadingScreen";
@@ -12,6 +11,7 @@ import {
   getItemDecodedName,
   getCreatureUrl,
   getItemUrl,
+  toSnakeCase,
 } from "@functions/utils";
 import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
 import type { Creature, CreatureCompleteInfo } from "@ctypes/creature";
@@ -60,23 +60,30 @@ const CreatureWiki: React.FC<CreatureWikiProps> = ({
           creatureName = getItemDecodedName(creatureName);
         }
 
-        const creatures = await getCreatures();
-        if (creatures) {
+        const creaturesResponse = await fetch("/json/creatures_min.json");
+        if (creaturesResponse.ok) {
+          const creatures = (await creaturesResponse.json()) as Creature[];
           const foundCreature = creatures.find(
-            (cr) => cr.name.toLowerCase() === creatureName?.toLowerCase(),
+            (cr) =>
+              cr.name.toLowerCase() === (creatureName ?? "").toLowerCase(),
           );
           setCreature(foundCreature);
 
-          try {
-            const creatureInfo = await getCreatureInfo(
-              foundCreature?.name ?? creatureName ?? "",
+          const infoName = foundCreature?.name ?? creatureName ?? "";
+          if (infoName) {
+            const infoResponse = await fetch(
+              `/json/creatures/${toSnakeCase(infoName)}.json`,
             );
-            setCreatureInfo({
-              ...creatureInfo,
-              ...foundCreature,
-            });
-          } catch {
-            setCreatureInfo(undefined);
+            if (infoResponse.ok) {
+              const creatureInfo =
+                (await infoResponse.json()) as CreatureCompleteInfo;
+              setCreatureInfo({
+                ...creatureInfo,
+                ...foundCreature,
+              });
+            } else {
+              setCreatureInfo(undefined);
+            }
           }
         }
       } catch {
