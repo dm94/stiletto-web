@@ -27,6 +27,10 @@ export function middleware(req: NextRequest) {
   const first = segments[0];
 
   if (first && languageSet.has(first)) {
+    const second = segments[1];
+    if (second === "wiki" || second === "item" || second === "creature") {
+      return NextResponse.next();
+    }
     const restSegments = segments.slice(1);
     const url = req.nextUrl.clone();
     url.pathname = `/${restSegments.join("/")}`;

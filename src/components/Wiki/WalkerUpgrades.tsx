@@ -1,8 +1,6 @@
 import type React from "react";
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import type { Item } from "@ctypes/item";
-import { getItemInfo } from "@functions/github";
 
 const WALKER_UPGRADE_TIERS = [1, 2, 3, 4] as const;
 const WALKER_UPGRADE_TYPES = [
@@ -28,6 +26,8 @@ type WalkerUpgradeTable = Record<
   Partial<Record<WalkerUpgradeType, WalkerUpgradeCell>>
 >;
 
+export type { WalkerUpgradeCell, WalkerUpgradeTable, WalkerUpgradeTier, WalkerUpgradeType };
+
 type WalkerUpgradeCellViewProps = {
   upgradeCell?: WalkerUpgradeCell;
   textColor: string;
@@ -37,8 +37,9 @@ type WalkerUpgradeCellViewProps = {
 type WalkerUpgradesProps = {
   itemName: string;
   category?: string;
-  allItems: Item[];
+  allItems?: Item[];
   textColor: string;
+  walkerUpgradeTable?: WalkerUpgradeTable;
 };
 
 const emptyWalkerUpgradeTable = (): WalkerUpgradeTable => ({
@@ -92,107 +93,17 @@ const WalkerUpgradeCellView: React.FC<WalkerUpgradeCellViewProps> = ({
 };
 
 const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
-  itemName,
   category,
-  allItems,
   textColor,
+  walkerUpgradeTable,
 }) => {
   const { t } = useTranslation();
-  const [walkerUpgradeTable, setWalkerUpgradeTable] =
-    useState<WalkerUpgradeTable>(emptyWalkerUpgradeTable());
-
-  useEffect(() => {
-    const isWalkerItem = category === "Walkers";
-    if (!isWalkerItem || allItems.length === 0) {
-      setWalkerUpgradeTable(emptyWalkerUpgradeTable());
-      return;
-    }
-
-    const escapedItemName = itemName.replaceAll(
-      /[.*+?^${}()|[\]\\]/g,
-      String.raw`\$&`,
-    );
-    const walkerUpgradePattern = new RegExp(
-      `^${escapedItemName} Upgrade (Cargo|Water|Gear|Durability|Mobility|Torque) Tier ([1-4])$`,
-      "i",
-    );
-
-    let isActive = true;
-    const loadWalkerUpgrades = async () => {
-      const nextTable: WalkerUpgradeTable = emptyWalkerUpgradeTable();
-      const candidateUpgrades = allItems.filter((candidateItem) =>
-        walkerUpgradePattern.test(candidateItem.name),
-      );
-
-      const upgradeRequests: Array<
-        Promise<{
-          tier: WalkerUpgradeTier;
-          upgradeType: WalkerUpgradeType;
-          upgradeCell: WalkerUpgradeCell;
-        } | null>
-      > = [];
-
-      for (const candidateUpgrade of candidateUpgrades) {
-        const patternMatch = candidateUpgrade.name.match(walkerUpgradePattern);
-        if (!patternMatch) {
-          continue;
-        }
-
-        const upgradeType = patternMatch[1].toLowerCase() as WalkerUpgradeType;
-        const tier = Number(patternMatch[2]) as WalkerUpgradeTier;
-        upgradeRequests.push(
-          (async () => {
-            try {
-              const upgradeItem = await getItemInfo(candidateUpgrade.name);
-              if (
-                !upgradeItem.upgradeInfo ||
-                typeof upgradeItem.upgradeInfo !== "object"
-              ) {
-                return null;
-              }
-
-              return {
-                tier,
-                upgradeType,
-                upgradeCell: {
-                  itemName: upgradeItem.name,
-                  upgradeInfo: upgradeItem.upgradeInfo as Record<
-                    string,
-                    unknown
-                  >,
-                },
-              };
-            } catch {
-              return null;
-            }
-          })(),
-        );
-      }
-
-      const upgrades = await Promise.all(upgradeRequests);
-      for (const upgrade of upgrades) {
-        if (!upgrade) {
-          continue;
-        }
-
-        nextTable[upgrade.tier][upgrade.upgradeType] = upgrade.upgradeCell;
-      }
-
-      if (isActive) {
-        setWalkerUpgradeTable(nextTable);
-      }
-    };
-
-    loadWalkerUpgrades();
-
-    return () => {
-      isActive = false;
-    };
-  }, [allItems, category, itemName]);
 
   if (category !== "Walkers") {
     return null;
   }
+
+  const table = walkerUpgradeTable ?? emptyWalkerUpgradeTable();
 
   const upgradesTitle = t(`${WALKER_UPGRADES_TRANSLATION_PREFIX}.title`, {
     defaultValue: "Upgrades",
@@ -243,7 +154,7 @@ const WalkerUpgrades: React.FC<WalkerUpgradesProps> = ({
                       className="p-3 align-top text-gray-400 min-w-[120px]"
                     >
                       <WalkerUpgradeCellView
-                        upgradeCell={walkerUpgradeTable[tier]?.[upgradeType]}
+                        upgradeCell={table[tier]?.[upgradeType]}
                         textColor={textColor}
                         translate={t}
                       />

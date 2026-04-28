@@ -3,9 +3,9 @@
 import React, { useState, useEffect, Suspense, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams, useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import Icon from "@components/Icon";
 import LoadingScreen from "@components/LoadingScreen";
-import Comments from "@components/Wiki/Comments";
 import {
   getDomain,
   getItemDecodedName,
@@ -24,16 +24,20 @@ const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
 );
 
+const Comments = dynamic(() => import("@components/Wiki/Comments"), { ssr: false });
+
 type CreatureWikiProps = {
   initialCreature?: Creature;
   initialCreatureInfo?: CreatureCompleteInfo;
   extraInfoContent?: string;
+  wikiDescription?: string;
 };
 
 const CreatureWiki: React.FC<CreatureWikiProps> = ({
   initialCreature,
   initialCreatureInfo,
   extraInfoContent,
+  wikiDescription,
 }) => {
   const { t, i18n } = useTranslation();
   const router = useRouter();
@@ -308,7 +312,11 @@ const CreatureWiki: React.FC<CreatureWikiProps> = ({
           />
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
-          <WikiDescription key="wikidescription" name={creatureName} />
+          <WikiDescription
+            key="wikidescription"
+            name={creatureName}
+            description={wikiDescription}
+          />
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
           <Comments key="comments" name={creatureName} />

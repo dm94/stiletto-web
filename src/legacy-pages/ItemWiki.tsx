@@ -9,6 +9,7 @@ import React, {
 } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams, useRouter } from "next/navigation";
+import dynamic from "next/dynamic";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
 import Icon from "@components/Icon";
@@ -17,7 +18,6 @@ import LoadingScreen from "@components/LoadingScreen";
 import ModuleInfo from "@components/Wiki/ModuleInfo";
 import ToolInfo from "@components/Wiki/ToolInfo";
 import GenericInfo from "@components/Wiki/GenericInfo";
-import Comments from "@components/Wiki/Comments";
 import WalkerUpgrades from "@components/Wiki/WalkerUpgrades";
 import RigSlotsInfo from "@components/Wiki/RigSlotsInfo";
 import { calcRarityUpgradePrice, calcRarityValue } from "@functions/rarityCalc";
@@ -35,6 +35,7 @@ import { FaTools, FaExclamationTriangle } from "react-icons/fa";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
 import ReportIncidentModal from "@components/ReportIncidentModal";
 import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
+import type { WalkerUpgradeTable } from "@components/Wiki/WalkerUpgrades";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -53,16 +54,24 @@ const CreatureDropsInfo = React.lazy(
   () => import("@components/Wiki/CreatureDropsInfo"),
 );
 
+const Comments = dynamic(() => import("@components/Wiki/Comments"), { ssr: false });
+
 type ItemWikiProps = {
   initialItem?: Item;
   initialItemInfo?: ItemCompleteInfo;
   extraInfoContent?: string;
+  canBeUsedItems?: Item[];
+  walkerUpgradeTable?: WalkerUpgradeTable;
+  wikiDescription?: string;
 };
 
 const ItemWiki: React.FC<ItemWikiProps> = ({
   initialItem,
   initialItemInfo,
   extraInfoContent,
+  canBeUsedItems,
+  walkerUpgradeTable,
+  wikiDescription,
 }) => {
   const { t, i18n } = useTranslation();
   const router = useRouter();
@@ -79,7 +88,7 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
   const [isLoaded, setIsLoaded] = useState<boolean>(
     Boolean(initialItem || initialItemInfo),
   );
-  const [allItems, setAllItems] = useState<Item[]>([]);
+  const [allItems, setAllItems] = useState<Item[]>(canBeUsedItems ?? []);
   const [textColor, setTextColor] = useState<string>("text-gray-400");
   const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
 
@@ -705,8 +714,8 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
         <WalkerUpgrades
           itemName={itemName}
           category={category}
-          allItems={allItems}
           textColor={textColor}
+          walkerUpgradeTable={walkerUpgradeTable}
         />
         {itemInfo?.moduleInfo && (
           <ModuleInfo key="moduleinfo" moduleInfo={itemInfo.moduleInfo} />
@@ -717,10 +726,18 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
           )}
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <WikiDescription key="wikidescription" name={itemName} />
+          <WikiDescription
+            key="wikidescription"
+            name={itemName}
+            description={wikiDescription}
+          />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <CanBeUsedInfo key="CanBeUsedInfo" name={itemName} items={allItems} />
+          <CanBeUsedInfo
+            key="CanBeUsedInfo"
+            name={itemName}
+            items={allItems}
+          />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           {itemInfo?.droppedBy && (

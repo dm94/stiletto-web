@@ -1,30 +1,14 @@
 import type React from "react";
-import { useState, useEffect, useMemo, memo } from "react";
+import { useMemo, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { getExternalWikiDescription } from "@functions/requests/other";
 
 interface WikiDescriptionProps {
   name: string;
+  description?: string;
 }
 
-const WikiDescription: React.FC<WikiDescriptionProps> = ({ name }) => {
-  const [description, setDescription] = useState<string>();
+const WikiDescription: React.FC<WikiDescriptionProps> = ({ name, description }) => {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const updateDescription = async () => {
-      try {
-        const detail = await getExternalWikiDescription(name);
-        if (detail) {
-          setDescription(detail);
-        }
-      } catch {
-        console.error("Error fetching wiki description:");
-      }
-    };
-
-    updateDescription();
-  }, [name]);
 
   const wikiUrl = useMemo(() => {
     return `https://lastoasis.fandom.com/wiki/Special:Search?query=${encodeURIComponent(name)}&scope=internal&navigationSearch=true`;
