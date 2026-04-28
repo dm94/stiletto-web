@@ -59,7 +59,15 @@ const SUPPORTED_LANGUAGES = [
   "uk",
 ];
 
+const ITEM_RARITIES = ["common", "uncommon", "rare", "epic", "legendary"];
+
 const toItemPath = (name) => `item/${encodeURI(toCodedName(name))}`;
+const toItemPaths = (name) => [
+  toItemPath(name),
+  ...ITEM_RARITIES.map(
+    (rarity) => `item/${encodeURI(toCodedName(name))}/${rarity}`,
+  ),
+];
 const toCreaturePath = (name) => `creature/${encodeURI(toCodedName(name))}`;
 const trimSlash = (value) => value.replace(/\/+$/, "");
 
@@ -231,7 +239,7 @@ const buildStaticRouteEntries = (baseUrl) => {
   return sortByUrl([...routeMap.values()]);
 };
 
-const buildEntityRouteEntries = (baseUrl, entities, toRoutePath) => {
+const buildEntityRouteEntries = (baseUrl, entities, toRoutePaths) => {
   const routeMap = new Map();
 
   for (const entity of entities) {
@@ -240,11 +248,15 @@ const buildEntityRouteEntries = (baseUrl, entities, toRoutePath) => {
       continue;
     }
 
-    const routePath = toRoutePath(name);
-    routeMap.set(
-      buildRouteUrl(baseUrl, routePath),
-      createRouteEntry(baseUrl, routePath, "weekly", 0.6),
-    );
+    const routePaths = toRoutePaths(name);
+    const normalizedPaths = Array.isArray(routePaths) ? routePaths : [routePaths];
+
+    for (const routePath of normalizedPaths) {
+      routeMap.set(
+        buildRouteUrl(baseUrl, routePath),
+        createRouteEntry(baseUrl, routePath, "weekly", 0.6),
+      );
+    }
   }
 
   return sortByUrl([...routeMap.values()]);
@@ -282,7 +294,7 @@ const run = async () => {
   const creatures = Array.isArray(parsedCreatures) ? parsedCreatures : [];
 
   const staticEntries = buildStaticRouteEntries(baseUrl);
-  const itemEntries = buildEntityRouteEntries(baseUrl, items, toItemPath);
+  const itemEntries = buildEntityRouteEntries(baseUrl, items, toItemPaths);
   const creatureEntries = buildEntityRouteEntries(
     baseUrl,
     creatures,

@@ -1,7 +1,7 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import LanguageLink from "@components/LanguageLink";
-import { getCreatureUrl } from "@functions/utils";
+import { getCreaturePath } from "@functions/utils";
 
 interface RelatedCreaturesProps {
   related?: string[];
@@ -16,7 +16,7 @@ const RelatedCreatures: React.FC<RelatedCreaturesProps> = ({
     return related?.map((related) => {
       return (
         <li className="inline-block mr-2 mb-2" key={related} title={related}>
-          <LanguageLink to={getCreatureUrl(related)}>
+          <LanguageLink to={getCreaturePath(related)}>
             <div className="p-2 bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg text-neutral-300 transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">
               {related}
             </div>

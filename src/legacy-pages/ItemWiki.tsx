@@ -17,14 +17,13 @@ import LoadingScreen from "@components/LoadingScreen";
 import ModuleInfo from "@components/Wiki/ModuleInfo";
 import ToolInfo from "@components/Wiki/ToolInfo";
 import GenericInfo from "@components/Wiki/GenericInfo";
-import Comments from "@components/Wiki/Comments";
 import WalkerUpgrades from "@components/Wiki/WalkerUpgrades";
 import RigSlotsInfo from "@components/Wiki/RigSlotsInfo";
 import { calcRarityUpgradePrice, calcRarityValue } from "@functions/rarityCalc";
 import {
-  getCreatureUrl,
   getDomain,
-  getItemUrl,
+  getCreaturePath,
+  getItemPath,
   getItemCraftUrl,
   getItemDecodedName,
   toSnakeCase,
@@ -35,6 +34,11 @@ import { FaTools, FaExclamationTriangle } from "react-icons/fa";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
 import ReportIncidentModal from "@components/ReportIncidentModal";
 import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
+import dynamic from "next/dynamic";
+
+const Comments = dynamic(() => import("@components/Wiki/Comments"), {
+  ssr: false,
+});
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -56,13 +60,17 @@ const CreatureDropsInfo = React.lazy(
 type ItemWikiProps = {
   initialItem?: Item;
   initialItemInfo?: ItemCompleteInfo;
+  initialAllItems?: Item[];
   extraInfoContent?: string;
+  disableExternalFetches?: boolean;
 };
 
 const ItemWiki: React.FC<ItemWikiProps> = ({
   initialItem,
   initialItemInfo,
+  initialAllItems,
   extraInfoContent,
+  disableExternalFetches,
 }) => {
   const { t, i18n } = useTranslation();
   const router = useRouter();
@@ -79,7 +87,7 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
   const [isLoaded, setIsLoaded] = useState<boolean>(
     Boolean(initialItem || initialItemInfo),
   );
-  const [allItems, setAllItems] = useState<Item[]>([]);
+  const [allItems, setAllItems] = useState<Item[]>(initialAllItems ?? []);
   const [textColor, setTextColor] = useState<string>("text-gray-400");
   const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
 
@@ -209,7 +217,7 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
   const updateRarity = useCallback(
     (value: Rarity) => {
       if (name) {
-        router.push(getLanguagePrefixedPath(getItemUrl(name, value)));
+        router.push(getLanguagePrefixedPath(getItemPath(name, value)));
       }
     },
     [name, router, getLanguagePrefixedPath],
@@ -271,10 +279,13 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
   const itemName =
     item?.name ?? itemInfo?.name ?? getItemDecodedName(name ?? "");
   const domain = getDomain();
-  const canonical = `${domain}${getItemUrl(itemName, rarity)}`;
+  const canonical = `${domain}${getLanguagePrefixedPath(
+    getItemPath(itemName, rarity),
+  )}`;
   const itemDescription = `Crafting, stats and usages for ${itemName} in Last Oasis.`;
   const category = itemInfo?.category ?? item?.category;
-  const parentUrl = itemInfo?.parent && getItemUrl(itemInfo.parent);
+  const parentUrl =
+    itemInfo?.parent && getLanguagePrefixedPath(getItemPath(itemInfo.parent));
   const craftUrl = getItemCraftUrl(name ?? itemName);
 
   const itemStructuredData = useMemo(() => {
@@ -349,7 +360,7 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
       mentions.push({
         "@type": "Thing",
         name: itemDrop.name,
-        url: `${domain}${getItemUrl(itemDrop.name)}`,
+        url: `${domain}${getLanguagePrefixedPath(getItemPath(itemDrop.name))}`,
       });
     }
 
@@ -357,7 +368,9 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
       mentions.push({
         "@type": "Thing",
         name: droppedBy.name,
-        url: `${domain}${getCreatureUrl(droppedBy.name)}`,
+        url: `${domain}${getLanguagePrefixedPath(
+          getCreaturePath(droppedBy.name),
+        )}`,
       });
     }
 
@@ -365,7 +378,7 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
       mentions.push({
         "@type": "Thing",
         name: relatedLearn,
-        url: `${domain}${getItemUrl(relatedLearn)}`,
+        url: `${domain}${getLanguagePrefixedPath(getItemPath(relatedLearn))}`,
       });
     }
 
@@ -387,7 +400,7 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
       data.isPartOf = {
         "@type": "DefinedTerm",
         name: itemInfo.parent,
-        url: `${domain}${getItemUrl(itemInfo.parent)}`,
+        url: `${domain}${getLanguagePrefixedPath(getItemPath(itemInfo.parent))}`,
       };
     }
 
@@ -404,6 +417,7 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
     itemDescription,
     itemInfo,
     itemName,
+    getLanguagePrefixedPath,
   ]);
 
   useEffect(() => {
@@ -717,7 +731,11 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
           )}
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <WikiDescription key="wikidescription" name={itemName} />
+          <WikiDescription
+            key="wikidescription"
+            name={itemName}
+            disableFetch={disableExternalFetches}
+          />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <CanBeUsedInfo key="CanBeUsedInfo" name={itemName} items={allItems} />
@@ -733,7 +751,12 @@ const ItemWiki: React.FC<ItemWikiProps> = ({
           )}
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
-          <ExtraInfo type="items" name={itemName} content={extraInfoContent} />
+          <ExtraInfo
+            type="items"
+            name={itemName}
+            content={extraInfoContent}
+            disableFetch={disableExternalFetches}
+          />
         </Suspense>
         <Suspense fallback={loadingItemPart()}>
           <Comments key="comments" name={itemName} />

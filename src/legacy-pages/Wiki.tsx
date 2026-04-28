@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import queryString from "query-string";
 import { getWikiLastUpdate } from "@functions/github";
 import { AnalyticsEvent, sendEvent } from "@functions/page-tracking";
-import { getCreatureUrl, getDomain, getItemUrl } from "@functions/utils";
+import { getCreaturePath, getDomain, getItemPath } from "@functions/utils";
 import HeaderMeta from "@components/HeaderMeta";
 import { useRouter, useSearchParams } from "next/navigation";
 import type { Item } from "@ctypes/item";
@@ -41,7 +41,7 @@ const Wiki: React.FC<WikiProps> = ({
   const { getLanguagePrefixedPath } = useLanguagePrefix();
   const { t, i18n } = useTranslation();
   const domain = getDomain();
-  const wikiCanonical = `${domain}/wiki`;
+  const wikiCanonical = `${domain}${getLanguagePrefixedPath("/wiki")}`;
   const wikiDescription = t("seo.wiki.description");
   const [contentType, setContentType] = useState<WikiContentType>("items");
   const [wikiLastUpdate, setWikiLastUpdate] = useState<string | undefined>(
@@ -457,7 +457,9 @@ const Wiki: React.FC<WikiProps> = ({
           item: {
             "@type": "DefinedTerm",
             name: currentItem.name,
-            url: `${domain}${getItemUrl(currentItem.name)}`,
+            url: `${domain}${getLanguagePrefixedPath(
+              getItemPath(currentItem.name),
+            )}`,
           },
         });
       }
@@ -468,7 +470,9 @@ const Wiki: React.FC<WikiProps> = ({
           item: {
             "@type": "Thing",
             name: currentCreature.name,
-            url: `${domain}${getCreatureUrl(currentCreature.name)}`,
+            url: `${domain}${getLanguagePrefixedPath(
+              getCreaturePath(currentCreature.name),
+            )}`,
           },
         });
       }
@@ -525,6 +529,7 @@ const Wiki: React.FC<WikiProps> = ({
     domain,
     i18n.language,
     t,
+    getLanguagePrefixedPath,
     wikiCanonical,
     wikiDescription,
   ]);

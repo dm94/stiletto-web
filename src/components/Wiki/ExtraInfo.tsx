@@ -9,9 +9,15 @@ interface ExtraInfoProps {
   type: "items" | "creatures";
   name: string;
   content?: string;
+  disableFetch?: boolean;
 }
 
-const ExtraInfo: React.FC<ExtraInfoProps> = ({ type, name, content }) => {
+const ExtraInfo: React.FC<ExtraInfoProps> = ({
+  type,
+  name,
+  content,
+  disableFetch,
+}) => {
   const [loadedContent, setLoadedContent] = useState<string>(content ?? "");
   const [error, setError] = useState<boolean>(false);
 
@@ -21,6 +27,10 @@ const ExtraInfo: React.FC<ExtraInfoProps> = ({ type, name, content }) => {
   useEffect(() => {
     if (content) {
       setLoadedContent(content);
+      return;
+    }
+
+    if (disableFetch) {
       return;
     }
 

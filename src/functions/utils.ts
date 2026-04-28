@@ -22,6 +22,23 @@ export const getItemCodedName = (itemName: string) =>
 export const getItemDecodedName = (itemName: string) =>
   decodeURI(String(itemName)).replaceAll("_", " ").toLowerCase().trim();
 
+export const getItemPath = (itemName?: string, rarity?: Rarity) => {
+  if (!itemName) {
+    return "/item";
+  }
+
+  const rarityPath = rarity ? `/${rarity}` : "";
+  return `/item/${encodeURI(getItemCodedName(itemName))}${rarityPath}`;
+};
+
+export const getCreaturePath = (creatureName?: string) => {
+  if (!creatureName) {
+    return "/creature";
+  }
+
+  return `/creature/${encodeURI(getItemCodedName(creatureName))}`;
+};
+
 const getValidLangPrefix = (): string => {
   const pathname =
     typeof globalThis !== "undefined" && "location" in globalThis
@@ -36,13 +53,12 @@ const getValidLangPrefix = (): string => {
 
 export const getItemUrl = (itemName: string, rarity?: Rarity) => {
   const langPrefix = getValidLangPrefix();
-  const rarityPath = rarity ? `/${rarity}` : "";
-  return `${langPrefix}/item/${encodeURI(getItemCodedName(itemName))}${rarityPath}`;
+  return `${langPrefix}${getItemPath(itemName, rarity)}`;
 };
 
 export const getCreatureUrl = (creatureName: string) => {
   const langPrefix = getValidLangPrefix();
-  return `${langPrefix}/creature/${encodeURI(getItemCodedName(creatureName))}`;
+  return `${langPrefix}${getCreaturePath(creatureName)}`;
 };
 
 export const getItemCraftUrl = (itemName: string) =>

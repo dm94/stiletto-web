@@ -4,9 +4,10 @@ import { useTranslation } from "react-i18next";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 import Icon from "./Icon";
 import Ingredients from "./Ingredients";
-import { getItemUrl } from "@functions/utils";
+import { getItemPath } from "@functions/utils";
 import type { CustomItem } from "@ctypes";
 import { RarityTierEnum } from "@ctypes/item";
+import LanguageLink from "@components/LanguageLink";
 
 interface IngredientProps {
   ingredient: CustomItem;
@@ -20,7 +21,7 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
   const hasIngredients =
     ingredient?.ingredients && ingredient?.ingredients.length > 0;
 
-  const url = getItemUrl(ingredient?.name);
+  const url = getItemPath(ingredient?.name);
 
   const getRarityColor = useCallback((value: RarityTierEnum) => {
     let color = "";
@@ -136,12 +137,12 @@ const Ingredient: React.FC<IngredientProps> = memo(({ ingredient, value }) => {
                   {Math.ceil(ingredient?.count * value)}×
                 </span>
               )}
-              <a
-                href={url}
+              <LanguageLink
+                to={url}
                 className="text-blue-400 hover:text-blue-300 transition-colors duration-200 font-medium"
               >
                 {t(ingredient?.name, { ns: "items" })}
-              </a>
+              </LanguageLink>
             </div>
             {ingredient?.category && (
               <div className="text-sm text-gray-400 mt-1">

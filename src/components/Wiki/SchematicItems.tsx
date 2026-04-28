@@ -1,8 +1,9 @@
 import type React from "react";
 import { useTranslation } from "react-i18next";
 import Icon from "../Icon";
-import { getItemUrl } from "@functions/utils";
+import { getItemPath } from "@functions/utils";
 import type { ItemCompleteInfo } from "@ctypes/item";
+import LanguageLink from "@components/LanguageLink";
 
 interface SchematicItemsProps {
   item: ItemCompleteInfo;
@@ -13,15 +14,15 @@ const SchematicItems: React.FC<SchematicItemsProps> = ({ item }) => {
 
   const showSchematicItems = () => {
     return item?.learn?.map((itemCraft: string) => {
-      const url = getItemUrl(itemCraft);
+      const url = getItemPath(itemCraft);
 
       return (
         <li className="inline-block mr-2 mb-2" key={itemCraft}>
           <div className="p-2 bg-gray-800 border border-gray-700 rounded-lg flex items-center space-x-2">
             <Icon key={itemCraft} name={itemCraft} />
-            <a href={url} className="text-blue-400 hover:text-blue-300">
+            <LanguageLink to={url} className="text-blue-400 hover:text-blue-300">
               {t(itemCraft)}
-            </a>
+            </LanguageLink>
           </div>
         </li>
       );

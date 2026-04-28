@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import LanguageLink from "@components/LanguageLink";
 import Ingredient from "@components/Ingredient";
 import Icon from "@components/Icon";
-import { getCreatureUrl } from "@functions/utils";
+import { getCreaturePath } from "@functions/utils";
 import type { Item } from "@ctypes/item";
 import type { Creature } from "@ctypes/creature";
 import type { Perk } from "@ctypes/perk";
@@ -67,7 +67,7 @@ const WikiContent = ({
           data-testid="wiki-creature"
         >
           <LanguageLink
-            to={getCreatureUrl(creature.name)}
+            to={getCreaturePath(creature.name)}
             aria-label={t(creature.name, { ns: "creatures" })}
           >
             <div className="bg-gray-800 border border-gray-700 hover:border-blue-500 rounded-lg overflow-hidden shadow-md transition-all duration-300 hover:shadow-lg hover:transform hover:scale-102">

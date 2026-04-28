@@ -5,13 +5,25 @@ import { getExternalWikiDescription } from "@functions/requests/other";
 
 interface WikiDescriptionProps {
   name: string;
+  description?: string;
+  disableFetch?: boolean;
 }
 
-const WikiDescription: React.FC<WikiDescriptionProps> = ({ name }) => {
-  const [description, setDescription] = useState<string>();
+const WikiDescription: React.FC<WikiDescriptionProps> = ({
+  name,
+  description: initialDescription,
+  disableFetch,
+}) => {
+  const [description, setDescription] = useState<string | undefined>(
+    initialDescription,
+  );
   const { t } = useTranslation();
 
   useEffect(() => {
+    if (disableFetch || initialDescription) {
+      return;
+    }
+
     const updateDescription = async () => {
       try {
         const detail = await getExternalWikiDescription(name);
@@ -24,7 +36,7 @@ const WikiDescription: React.FC<WikiDescriptionProps> = ({ name }) => {
     };
 
     updateDescription();
-  }, [name]);
+  }, [name, disableFetch, initialDescription]);
 
   const wikiUrl = useMemo(() => {
     return `https://lastoasis.fandom.com/wiki/Special:Search?query=${encodeURIComponent(name)}&scope=internal&navigationSearch=true`;

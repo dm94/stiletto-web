@@ -20,3 +20,15 @@ export async function readOptionalTextFile(
   }
 }
 
+export async function readOptionalJsonFile<T>(
+  relativePath: string,
+): Promise<T | undefined> {
+  const text = await readOptionalTextFile(relativePath);
+  if (!text) return undefined;
+
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    return undefined;
+  }
+}

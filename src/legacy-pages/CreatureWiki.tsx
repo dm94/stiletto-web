@@ -5,12 +5,11 @@ import { useTranslation } from "react-i18next";
 import { useParams, useRouter } from "next/navigation";
 import Icon from "@components/Icon";
 import LoadingScreen from "@components/LoadingScreen";
-import Comments from "@components/Wiki/Comments";
 import {
   getDomain,
   getItemDecodedName,
-  getCreatureUrl,
-  getItemUrl,
+  getCreaturePath,
+  getItemPath,
   toSnakeCase,
 } from "@functions/utils";
 import HeaderMeta, { OpenGraphType } from "@components/HeaderMeta";
@@ -19,6 +18,11 @@ import CreatureDropsInfo from "@components/Wiki/CreatureDropsInfo";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
 import RelatedCreatures from "@components/Wiki/RelatedCreatures";
 import { useLanguagePrefix } from "@hooks/useLanguagePrefix";
+import dynamic from "next/dynamic";
+
+const Comments = dynamic(() => import("@components/Wiki/Comments"), {
+  ssr: false,
+});
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -28,12 +32,14 @@ type CreatureWikiProps = {
   initialCreature?: Creature;
   initialCreatureInfo?: CreatureCompleteInfo;
   extraInfoContent?: string;
+  disableExternalFetches?: boolean;
 };
 
 const CreatureWiki: React.FC<CreatureWikiProps> = ({
   initialCreature,
   initialCreatureInfo,
   extraInfoContent,
+  disableExternalFetches,
 }) => {
   const { t, i18n } = useTranslation();
   const router = useRouter();
@@ -107,7 +113,9 @@ const CreatureWiki: React.FC<CreatureWikiProps> = ({
   const creatureName =
     creature?.name ?? creatureInfo?.name ?? getItemDecodedName(name ?? "");
   const domain = getDomain();
-  const canonical = `${domain}${getCreatureUrl(creatureName)}`;
+  const canonical = `${domain}${getLanguagePrefixedPath(
+    getCreaturePath(creatureName),
+  )}`;
   const creatureDescription = `Drops, stats and locations for ${creatureName} in Last Oasis.`;
   const creatureStructuredData = useMemo(() => {
     const additionalProperty: Array<Record<string, unknown>> = [];
@@ -157,7 +165,9 @@ const CreatureWiki: React.FC<CreatureWikiProps> = ({
       mentions.push({
         "@type": "Thing",
         name: relatedCreature,
-        url: `${domain}${getCreatureUrl(relatedCreature)}`,
+        url: `${domain}${getLanguagePrefixedPath(
+          getCreaturePath(relatedCreature),
+        )}`,
       });
     }
 
@@ -165,7 +175,7 @@ const CreatureWiki: React.FC<CreatureWikiProps> = ({
       mentions.push({
         "@type": "Thing",
         name: creatureDrop.name,
-        url: `${domain}${getItemUrl(creatureDrop.name)}`,
+        url: `${domain}${getLanguagePrefixedPath(getItemPath(creatureDrop.name))}`,
       });
     }
 
@@ -179,7 +189,7 @@ const CreatureWiki: React.FC<CreatureWikiProps> = ({
       isPartOf: {
         "@type": "CollectionPage",
         name: t("seo.wiki.title"),
-        url: `${domain}/wiki`,
+        url: `${domain}${getLanguagePrefixedPath("/wiki")}`,
       },
     };
 
@@ -200,6 +210,7 @@ const CreatureWiki: React.FC<CreatureWikiProps> = ({
     domain,
     i18n.language,
     t,
+    getLanguagePrefixedPath,
   ]);
 
   useEffect(() => {
@@ -305,10 +316,15 @@ const CreatureWiki: React.FC<CreatureWikiProps> = ({
             type="creatures"
             name={creatureName}
             content={extraInfoContent}
+            disableFetch={disableExternalFetches}
           />
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
-          <WikiDescription key="wikidescription" name={creatureName} />
+          <WikiDescription
+            key="wikidescription"
+            name={creatureName}
+            disableFetch={disableExternalFetches}
+          />
         </Suspense>
         <Suspense fallback={loadingCreaturePart()}>
           <Comments key="comments" name={creatureName} />
