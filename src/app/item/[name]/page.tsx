@@ -4,15 +4,7 @@ import { readJsonFile, readOptionalTextFile } from "../../../lib/wikiData";
 import type { Item, ItemCompleteInfo } from "@ctypes/item";
 import { getItemCodedName, getItemDecodedName, toSnakeCase } from "@functions/utils";
 
-export const dynamicParams = false;
-export const dynamic = "force-static";
-
-export async function generateStaticParams() {
-  const items = await readJsonFile<Item[]>("public/json/items_min.json");
-  return items.map((item) => ({
-    name: getItemCodedName(item.name),
-  }));
-}
+export const revalidate = 86400;
 
 export default async function Page({
   params,

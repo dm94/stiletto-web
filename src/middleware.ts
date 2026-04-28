@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supportedLanguages } from "./src/config/languages";
+import { supportedLanguages } from "./config/languages";
 
 const DEFAULT_LANG = "en";
 const languageSet = new Set(supportedLanguages.map((l) => l.key));
@@ -46,4 +46,3 @@ export function middleware(req: NextRequest) {
 export const config = {
   matcher: ["/((?!_next|api|.*\\..*).*)"],
 };
-

@@ -4,7 +4,7 @@ import type { Item } from "@ctypes/item";
 import type { Creature } from "@ctypes/creature";
 import type { Perk } from "@ctypes/perk";
 
-export const dynamic = "force-static";
+export const revalidate = 3600;
 
 export default async function Page() {
   const [items, creatures, perks] = await Promise.all([
@@ -13,5 +13,7 @@ export default async function Page() {
     readJsonFile<Perk[]>("public/json/perks_min.json"),
   ]);
 
-  return <Wiki initialItems={items} initialCreatures={creatures} initialPerks={perks} />;
+  return (
+    <Wiki initialItems={items} initialCreatures={creatures} initialPerks={perks} />
+  );
 }
