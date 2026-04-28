@@ -1,27 +1,12 @@
 import Wiki from "@pages/Wiki";
-import { supportedLanguages } from "@config/languages";
-import { getCreaturesMin, getItemsMin, getPerksMin, getWikiBuildTimestamp } from "@lib/wikiStatic";
+import { getWikiBuildTimestamp } from "@lib/wikiStatic";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
-export function generateStaticParams() {
-  return supportedLanguages.map((lang) => ({ lang: lang.key }));
-}
-
-export default async function Page() {
-  const [items, creatures, perks] = await Promise.all([
-    getItemsMin(),
-    getCreaturesMin(),
-    getPerksMin(),
-  ]);
-
+export default function Page() {
   return (
     <Wiki
-      initialItems={items}
-      initialCreatures={creatures}
-      initialPerks={perks}
       initialWikiLastUpdate={getWikiBuildTimestamp()}
     />
   );
 }
-

@@ -1,28 +1,16 @@
 import ItemWiki from "@pages/ItemWiki";
-import { supportedLanguages } from "@config/languages";
-import { getExtraInfoMarkdown, getItemInfoByName, getItemsMin, getItemsUsingIngredient, getWalkerUpgradeTable, resolveItemFromParams, getCodedNameFromDisplayName } from "@lib/wikiStatic";
+import {
+  getCodedNameFromDisplayName,
+  getExtraInfoMarkdown,
+  getItemInfoByName,
+  getItemsUsingIngredient,
+  getWalkerUpgradeTable,
+  resolveItemFromParams,
+} from "@lib/wikiStatic";
 import type { ItemCompleteInfo } from "@ctypes/item";
-import { Rarity } from "@ctypes/item";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-static";
-
-export async function generateStaticParams() {
-  const items = await getItemsMin();
-  const codedNames = items.map((item) => getCodedNameFromDisplayName(item.name));
-  const rarities = Object.values(Rarity);
-
-  const params: Array<{ lang: string; name: string; rarity: string }> = [];
-  for (const lang of supportedLanguages) {
-    for (const name of codedNames) {
-      for (const rarity of rarities) {
-        params.push({ lang: lang.key, name, rarity });
-      }
-    }
-  }
-
-  return params;
-}
+export const revalidate = 86400;
 
 export default async function Page({
   params,

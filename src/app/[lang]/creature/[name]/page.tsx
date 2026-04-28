@@ -1,26 +1,14 @@
 import CreatureWiki from "@pages/CreatureWiki";
-import { supportedLanguages } from "@config/languages";
-import { getCodedNameFromDisplayName, getCreatureInfoByName, getCreaturesMin, getExtraInfoMarkdown, resolveCreatureFromParams } from "@lib/wikiStatic";
+import {
+  getCodedNameFromDisplayName,
+  getCreatureInfoByName,
+  getExtraInfoMarkdown,
+  resolveCreatureFromParams,
+} from "@lib/wikiStatic";
 import type { CreatureCompleteInfo } from "@ctypes/creature";
 import { notFound } from "next/navigation";
 
-export const dynamic = "force-static";
-
-export async function generateStaticParams() {
-  const creatures = await getCreaturesMin();
-  const codedNames = creatures.map((creature) =>
-    getCodedNameFromDisplayName(creature.name),
-  );
-
-  const params: Array<{ lang: string; name: string }> = [];
-  for (const lang of supportedLanguages) {
-    for (const name of codedNames) {
-      params.push({ lang: lang.key, name });
-    }
-  }
-
-  return params;
-}
+export const revalidate = 86400;
 
 export default async function Page({
   params,
