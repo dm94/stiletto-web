@@ -24,7 +24,7 @@ export async function generateStaticParams() {
   for (const lang of supportedLanguages) {
     for (const name of codedNames) {
       for (const rarity of rarities) {
-        params.push({ lang: lang.key, name, rarity });
+        params.push({ lang: lang.key, name: encodeURIComponent(name), rarity });
       }
     }
   }
@@ -51,7 +51,7 @@ export default async function Page({
 
   const [info, extraInfoContent] = await Promise.all([
     getItemInfoByName(item.name),
-    getExtraInfoMarkdown("items", name),
+    getExtraInfoMarkdown("items", decodeURI(name)),
   ]);
 
   const displayName = getDisplayName(item, info);

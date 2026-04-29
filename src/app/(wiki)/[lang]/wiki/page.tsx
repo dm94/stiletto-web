@@ -33,7 +33,7 @@ export default async function Page({
     const coded = getCodedNameFromDisplayName(item.name);
     return (
       <li key={coded}>
-        <a href={`/${lang}/item/${coded}/common`}>
+        <a href={`/${lang}/item/${encodeURIComponent(coded)}/common`}>
           {t(item.name, { ns: "items", defaultValue: item.name })}
         </a>
       </li>
@@ -44,7 +44,7 @@ export default async function Page({
     const coded = getCodedNameFromDisplayName(creature.name);
     return (
       <li key={coded}>
-        <a href={`/${lang}/creature/${coded}`}>{creature.name}</a>
+        <a href={`/${lang}/creature/${encodeURIComponent(coded)}`}>{creature.name}</a>
       </li>
     );
   };

@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   const params: Array<{ lang: string; name: string }> = [];
   for (const lang of supportedLanguages) {
     for (const name of codedNames) {
-      params.push({ lang: lang.key, name });
+      params.push({ lang: lang.key, name: encodeURIComponent(name) });
     }
   }
   return params;
@@ -26,4 +26,3 @@ export default async function Page({
   const { lang, name } = await params;
   redirect(`/${lang}/item/${name}/${Rarity.Common}`);
 }
-

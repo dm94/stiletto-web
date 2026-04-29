@@ -37,12 +37,12 @@ const getValidLangPrefix = (): string => {
 export const getItemUrl = (itemName: string, rarity?: Rarity) => {
   const langPrefix = getValidLangPrefix();
   const rarityPath = rarity ? `/${rarity}` : "";
-  return `${langPrefix}/item/${encodeURI(getItemCodedName(itemName))}${rarityPath}`;
+  return `${langPrefix}/item/${encodeURIComponent(getItemCodedName(itemName))}${rarityPath}`;
 };
 
 export const getCreatureUrl = (creatureName: string) => {
   const langPrefix = getValidLangPrefix();
-  return `${langPrefix}/creature/${encodeURI(getItemCodedName(creatureName))}`;
+  return `${langPrefix}/creature/${encodeURIComponent(getItemCodedName(creatureName))}`;
 };
 
 export const getItemCraftUrl = (itemName: string) =>
