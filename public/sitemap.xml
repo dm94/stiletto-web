@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://stiletto.deeme.dev/sitemap-static.xml</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-04-29</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://stiletto.deeme.dev/sitemap-items.xml</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-04-29</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://stiletto.deeme.dev/sitemap-creatures.xml</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-04-29</lastmod>
   </sitemap>
 </sitemapindex>

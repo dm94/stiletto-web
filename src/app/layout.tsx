@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import "./globals.css";
-import AppShell from "@components/AppShell";
 
 export const metadata: Metadata = {
   title: "Stiletto",
@@ -15,9 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Suspense fallback={null}>
-          <AppShell>{children}</AppShell>
-        </Suspense>
+        {children}
       </body>
     </html>
   );
