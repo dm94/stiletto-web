@@ -6,7 +6,6 @@ import React, {
   useCallback,
 } from "react";
 import { useTranslation } from "react-i18next";
-import { getItems, getItemInfo } from "@functions/github";
 import { Navigate, useParams, useNavigate } from "react-router";
 import Ingredients from "@components/Ingredients";
 import Station from "@components/Station";
@@ -32,6 +31,7 @@ import { type Item, type ItemCompleteInfo, Rarity } from "@ctypes/item";
 import { FaTools, FaExclamationTriangle } from "react-icons/fa";
 import ExtraInfo from "@components/Wiki/ExtraInfo";
 import ReportIncidentModal from "@components/ReportIncidentModal";
+import { loadItemWikiData, type ItemWikiInitialData } from "./itemWikiData";
 
 const WikiDescription = React.lazy(
   () => import("@components/Wiki/WikiDescription"),
@@ -50,14 +50,28 @@ const CreatureDropsInfo = React.lazy(
   () => import("@components/Wiki/CreatureDropsInfo"),
 );
 
-const ItemWiki = () => {
+type ItemWikiProps = {
+  initialData?: ItemWikiInitialData;
+};
+
+const ItemWiki = ({ initialData }: ItemWikiProps) => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const { name, rarity: rarityParam } = useParams();
-  const [item, setItem] = useState<Item>();
-  const [itemInfo, setItemInfo] = useState<ItemCompleteInfo>();
-  const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  const [allItems, setAllItems] = useState<Item[]>([]);
+
+  const decodedName = name ? getItemDecodedName(name) : "";
+  const hasInitialData = initialData?.itemName === decodedName;
+
+  const [item, setItem] = useState<Item | undefined>(() =>
+    hasInitialData ? initialData?.item : undefined,
+  );
+  const [itemInfo, setItemInfo] = useState<ItemCompleteInfo | undefined>(() =>
+    hasInitialData ? initialData?.itemInfo : undefined,
+  );
+  const [isLoaded, setIsLoaded] = useState<boolean>(() => Boolean(hasInitialData));
+  const [allItems, setAllItems] = useState<Item[]>(() =>
+    hasInitialData ? initialData?.allItems ?? [] : [],
+  );
   const [textColor, setTextColor] = useState<string>("text-gray-400");
   const [isReportModalOpen, setIsReportModalOpen] = useState<boolean>(false);
 
@@ -67,42 +81,31 @@ const ItemWiki = () => {
 
   useEffect(() => {
     const loadData = async () => {
+      if (hasInitialData) {
+        setItem(initialData?.item);
+        setItemInfo(initialData?.itemInfo);
+        setAllItems(initialData?.allItems ?? []);
+        setIsLoaded(true);
+        return;
+      }
+
+      setIsLoaded(false);
       try {
-        let itemName = name;
-        if (itemName) {
-          itemName = getItemDecodedName(itemName);
-        }
-
-        const items = await getItems();
-        if (items) {
-          const foundItem = items.find(
-            (it) => it.name.toLowerCase() === itemName,
-          );
-          setItem(foundItem);
-          setAllItems(items);
-
-          try {
-            const itemInfo = await getItemInfo(
-              foundItem?.name ?? itemName ?? "",
-            );
-            setItemInfo({
-              ...itemInfo,
-              ...foundItem,
-            });
-          } catch {
-            setItemInfo(undefined);
-          }
-        }
+        const data = await loadItemWikiData(name);
+        setItem(data.item);
+        setItemInfo(data.itemInfo);
+        setAllItems(data.allItems);
       } catch {
         setItem(undefined);
         setItemInfo(undefined);
+        setAllItems([]);
       } finally {
         setIsLoaded(true);
       }
     };
 
     void loadData();
-  }, [name]);
+  }, [hasInitialData, initialData, name]);
 
   const showIngredient = useCallback((ingre: Item) => {
     if (!ingre?.crafting) {
@@ -237,8 +240,7 @@ const ItemWiki = () => {
       </div>
     </div>
   );
-  const itemName =
-    item?.name ?? itemInfo?.name ?? getItemDecodedName(name ?? "");
+  const itemName = item?.name ?? itemInfo?.name ?? decodedName;
   const domain = getDomain();
   const canonical = `${domain}${getItemUrl(itemName, rarity)}`;
   const itemDescription = `Crafting, stats and usages for ${itemName} in Last Oasis.`;
