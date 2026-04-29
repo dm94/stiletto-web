@@ -1,8 +1,9 @@
 "use client";
 
-import MemberList from "@pages/MemberList";
+import dynamic from "next/dynamic";
+
+const MemberList = dynamic(() => import("@pages/MemberList"), { ssr: false });
 
 export default function Page() {
   return <MemberList />;
 }
-

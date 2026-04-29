@@ -1,8 +1,9 @@
 "use client";
 
-import DiscordConnection from "@pages/DiscordConnection";
+import dynamic from "next/dynamic";
+
+const DiscordConnection = dynamic(() => import("@pages/DiscordConnection"), { ssr: false });
 
 export default function Page() {
   return <DiscordConnection />;
 }
-

@@ -1,8 +1,9 @@
 "use client";
 
-import Diplomacy from "@pages/Diplomacy";
+import dynamic from "next/dynamic";
+
+const Diplomacy = dynamic(() => import("@pages/Diplomacy"), { ssr: false });
 
 export default function Page() {
   return <Diplomacy />;
 }
-

@@ -1,8 +1,9 @@
 "use client";
 
-import Wiki from "@pages/Wiki";
+import dynamic from "next/dynamic";
+
+const Wiki = dynamic(() => import("@pages/Wiki"), { ssr: false });
 
 export default function Page() {
   return <Wiki />;
 }
-

@@ -1,8 +1,9 @@
 "use client";
 
-import ClanList from "@pages/ClanList";
+import dynamic from "next/dynamic";
+
+const ClanList = dynamic(() => import("@pages/ClanList"), { ssr: false });
 
 export default function Page() {
   return <ClanList />;
 }
-

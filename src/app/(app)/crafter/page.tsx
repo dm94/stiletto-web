@@ -1,8 +1,9 @@
 "use client";
 
-import Crafter from "@pages/Crafter";
+import dynamic from "next/dynamic";
+
+const Crafter = dynamic(() => import("@pages/Crafter"), { ssr: false });
 
 export default function Page() {
   return <Crafter />;
 }
-
