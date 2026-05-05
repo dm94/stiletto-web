@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Wood Shaft",
-          "count": 13,
+          "name": "Earth Wax",
+          "count": 8,
           "quality": 3
         },
         {
@@ -16,8 +16,8 @@
           "quality": 3
         },
         {
-          "name": "Earth Wax",
-          "count": 8,
+          "name": "Wood Shaft",
+          "count": 13,
           "quality": 3
         }
       ]

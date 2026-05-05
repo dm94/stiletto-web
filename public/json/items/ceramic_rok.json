@@ -1,6 +1,6 @@
 {
   "name": "Ceramic Rok",
-  "parent": "Rokker",
+  "parent": "Obsidian Rok",
   "type": "CeramicRok_C",
   "category": "Ammo",
   "trade_price": 5.2,
@@ -20,26 +20,12 @@
           "count": 5
         }
       ],
-      "time": 3,
-      "station": "Advanced Woodworking Station"
-    },
-    {
-      "ingredients": [
-        {
-          "name": "Ceramic Shard",
-          "count": 10
-        },
-        {
-          "name": "Fiber Weave",
-          "count": 5
-        }
-      ],
       "time": 2,
       "station": "Artificer Woodworking Station"
     }
   ],
   "projectileDamage": {
-    "damage": 400,
+    "damage": 500,
     "penetration": 10,
     "effectivenessVsSoak": 70,
     "effectivenessVsReduce": 70

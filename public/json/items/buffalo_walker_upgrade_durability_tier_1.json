@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Tar",
-          "count": 24,
+          "name": "Chitin Plate",
+          "count": 40,
           "quality": 1
         },
         {
@@ -16,8 +16,8 @@
           "quality": 1
         },
         {
-          "name": "Chitin Plate",
-          "count": 40,
+          "name": "Tar",
+          "count": 24,
           "quality": 1
         }
       ]

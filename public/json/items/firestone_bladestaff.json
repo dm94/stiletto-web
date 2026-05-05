@@ -16,8 +16,8 @@
           "count": 6
         },
         {
-          "name": "Rope",
-          "count": 4
+          "name": "Cotton",
+          "count": 7
         },
         {
           "name": "Bone Glue",
@@ -25,7 +25,7 @@
         }
       ],
       "time": 2,
-      "station": "Lathe"
+      "station": "Crafting Bench"
     }
   ],
   "weaponInfo": {

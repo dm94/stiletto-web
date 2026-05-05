@@ -245,44 +245,44 @@
     },
     {
       "name": "Spring",
-      "chance": 2.3333332399999995,
+      "chance": 1.1666666199999998,
       "minQuantity": 1,
-      "maxQuantity": 3,
+      "maxQuantity": 1,
       "source": "components_t1"
     },
     {
       "name": "Shackle",
-      "chance": 2.3333332399999995,
+      "chance": 1.1666666199999998,
       "minQuantity": 1,
-      "maxQuantity": 3,
+      "maxQuantity": 1,
       "source": "components_t1"
     },
     {
       "name": "Strut",
-      "chance": 2.3333332399999995,
+      "chance": 1.1666666199999998,
       "minQuantity": 1,
-      "maxQuantity": 3,
+      "maxQuantity": 1,
       "source": "components_t1"
     },
     {
       "name": "Cog",
-      "chance": 2.3333332399999995,
+      "chance": 1.1666666199999998,
       "minQuantity": 1,
-      "maxQuantity": 3,
+      "maxQuantity": 1,
       "source": "components_t1"
     },
     {
       "name": "Lever",
-      "chance": 2.3333332399999995,
+      "chance": 1.1666666199999998,
       "minQuantity": 1,
-      "maxQuantity": 3,
+      "maxQuantity": 1,
       "source": "components_t1"
     },
     {
       "name": "Spline",
-      "chance": 2.3333332399999995,
+      "chance": 1.1666666199999998,
       "minQuantity": 1,
-      "maxQuantity": 3,
+      "maxQuantity": 1,
       "source": "components_t1"
     },
     {
@@ -313,12 +313,6 @@
       "maxQuantity": 1,
       "source": "rigs_t1"
     }
-  ],
-  "related": [
-    "Rupu Raiding Checkpoint"
-  ],
-  "maps": [
-    "Canyon"
   ],
   "originalName": "HotspotLoot T1"
 }

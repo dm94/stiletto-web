@@ -6,13 +6,13 @@
     {
       "ingredients": [
         {
-          "name": "Fiber Weave",
-          "count": 32,
+          "name": "Redwood Wood",
+          "count": 48,
           "quality": 1
         },
         {
-          "name": "Redwood Wood",
-          "count": 48,
+          "name": "Fiber Weave",
+          "count": 32,
           "quality": 1
         }
       ]

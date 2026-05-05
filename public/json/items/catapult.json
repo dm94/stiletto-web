@@ -38,7 +38,7 @@
   ],
   "structureInfo": {
     "hp": 7000,
-    "type": "Hard",
+    "type": "Medium",
     "containerCapacity": 4
   }
 }

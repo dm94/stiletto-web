@@ -14,11 +14,11 @@
   ],
   "rigSlots": {
     "cosmetic": 15,
-    "edgeSmall": 4,
-    "edgeMedium": 4,
-    "edgeLarge": 1,
+    "edgeSmall": 2,
+    "edgeMedium": 1,
+    "edgeLarge": 0,
     "small": 12,
-    "medium": 7,
+    "medium": 4,
     "large": 2,
     "steeringLever": 1,
     "special": 0

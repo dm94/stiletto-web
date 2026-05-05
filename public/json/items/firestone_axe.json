@@ -17,20 +17,16 @@
           "count": 6
         },
         {
-          "name": "Rope",
-          "count": 3
+          "name": "Cotton",
+          "count": 8
         },
         {
           "name": "Wood Shaft",
           "count": 4
-        },
-        {
-          "name": "Clay",
-          "count": 1
         }
       ],
       "time": 2,
-      "station": "Lathe"
+      "station": "Crafting Bench"
     }
   ],
   "weaponInfo": {

@@ -6,13 +6,13 @@
     {
       "ingredients": [
         {
-          "name": "Rope",
-          "count": 5,
+          "name": "Earth Wax",
+          "count": 8,
           "quality": 1
         },
         {
-          "name": "Earth Wax",
-          "count": 8,
+          "name": "Rope",
+          "count": 5,
           "quality": 1
         }
       ]

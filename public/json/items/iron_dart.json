@@ -50,6 +50,13 @@
       "tier": "T4"
     },
     {
+      "name": "Ancient Towers Loot T4",
+      "chance": 28.571428,
+      "minQuantity": 30,
+      "maxQuantity": 60,
+      "tier": "T4"
+    },
+    {
       "name": "Big Hotspot Loot T4",
       "chance": 28.571428,
       "minQuantity": 60,

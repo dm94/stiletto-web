@@ -21,12 +21,12 @@
           "count": 8
         },
         {
-          "name": "Triple Stitch Fabric",
+          "name": "Cotton",
           "count": 10
         }
       ],
       "time": 2,
-      "station": "Lathe"
+      "station": "Crafting Bench"
     }
   ],
   "weaponInfo": {

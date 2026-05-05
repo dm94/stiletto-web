@@ -33,3 +33,5 @@ cypress/screenshots
 dist/
 test-results/
 playwright-report/
+.vercel
+.next/

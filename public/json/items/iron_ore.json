@@ -4,7 +4,7 @@
   "type": "IronOre_C",
   "category": "Resources",
   "trade_price": 8,
-  "qualityUpgradePrice": 1600,
+  "qualityUpgradePrice": 800,
   "stackSize": 100,
   "weight": 0.78,
   "description": "Over the centuries, nomads have experimented with iron in the construction of their walkers and armor. However, in the race to outrun the sun, it was those who travelled lightest that survived longest.",

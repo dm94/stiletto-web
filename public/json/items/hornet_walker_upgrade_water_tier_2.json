@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Leather",
-          "count": 8,
+          "name": "Gelatinous Goo",
+          "count": 3,
           "quality": 2
         },
         {
@@ -16,8 +16,8 @@
           "quality": 2
         },
         {
-          "name": "Gelatinous Goo",
-          "count": 3,
+          "name": "Leather",
+          "count": 8,
           "quality": 2
         }
       ]

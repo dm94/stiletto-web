@@ -118,6 +118,13 @@
       "source": "weapons_t2"
     },
     {
+      "name": "Nurrfang Maul",
+      "chance": 10.909090800000001,
+      "minQuantity": 5,
+      "maxQuantity": 10,
+      "source": "weapons_t2"
+    },
+    {
       "name": "Rawbone Maul",
       "chance": 10.909090800000001,
       "minQuantity": 5,
