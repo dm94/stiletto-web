@@ -20,7 +20,7 @@
     "i18next-browser-languagedetector": "8.2.1",
     "i18next-http-backend": "3.0.6",
     "leaflet": "1.9.4",
-    "posthog-js": "^1.368.0",
+    "posthog-js": "^1.372.8",
     "query-string": "9.3.1",
     "react": "19.2.5",
     "react-dom": "19.2.5",
