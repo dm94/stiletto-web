@@ -6,13 +6,13 @@
     {
       "ingredients": [
         {
-          "name": "Chitin Plate",
-          "count": 10,
+          "name": "Redwood Wood",
+          "count": 14,
           "quality": 2
         },
         {
-          "name": "Redwood Wood",
-          "count": 14,
+          "name": "Chitin Plate",
+          "count": 10,
           "quality": 2
         },
         {

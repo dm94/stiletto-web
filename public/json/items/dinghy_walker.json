@@ -38,7 +38,7 @@
   "walkerInfo": {
     "category": "Small",
     "carryCapacity": 1500,
-    "crewSize": 5,
+    "crewSize": 4,
     "walkerCapPower": 25
   }
 }

@@ -3,7 +3,7 @@
   "type": "GlowingOre_C",
   "category": "Resources",
   "trade_price": 16.5,
-  "qualityUpgradePrice": 3300,
+  "qualityUpgradePrice": 1000,
   "stackSize": 100,
   "weight": 0.28,
   "description": "This inconspicuous rock glows brightly when the Moon and Sun align. The mineral has permeated the soil, water, plant life, and possibly more.",

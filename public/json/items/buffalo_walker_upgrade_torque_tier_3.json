@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Redwood Wood",
-          "count": 36,
+          "name": "Wood Shaft",
+          "count": 13,
           "quality": 3
         },
         {
@@ -16,8 +16,8 @@
           "quality": 3
         },
         {
-          "name": "Wood Shaft",
-          "count": 13,
+          "name": "Redwood Wood",
+          "count": 36,
           "quality": 3
         }
       ]

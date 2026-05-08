@@ -37,11 +37,18 @@
   },
   "toolInfo": [
     {
-      "tier": 0,
+      "tier": 20,
       "toolType": "TreeCutting"
     }
   ],
   "droppedBy": [
+    {
+      "name": "Ancient Towers Loot T4",
+      "chance": 8.571428400000002,
+      "minQuantity": 1,
+      "maxQuantity": 2,
+      "tier": "T4"
+    },
     {
       "name": "Big Hotspot Loot T4",
       "chance": 7.142857,

@@ -6,8 +6,13 @@
     {
       "ingredients": [
         {
+          "name": "Wood",
+          "count": 12,
+          "quality": 1
+        },
+        {
           "name": "Palm Leaves",
-          "count": 25,
+          "count": 8,
           "quality": 1
         }
       ]

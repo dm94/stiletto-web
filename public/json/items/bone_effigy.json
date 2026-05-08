@@ -8,11 +8,15 @@
     {
       "ingredients": [
         {
-          "name": "Wood",
+          "name": "Wood Shaft",
           "count": 5
         },
         {
           "name": "Rupu Pelt",
+          "count": 1
+        },
+        {
+          "name": "Rupu Gel",
           "count": 1
         }
       ]

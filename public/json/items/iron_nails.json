@@ -23,6 +23,13 @@
   ],
   "droppedBy": [
     {
+      "name": "Ancient Towers Loot T4",
+      "chance": 8.7719296,
+      "minQuantity": 9,
+      "maxQuantity": 15,
+      "tier": "T4"
+    },
+    {
       "name": "Big Hotspot Loot T4",
       "chance": 8.7719296,
       "minQuantity": 9,

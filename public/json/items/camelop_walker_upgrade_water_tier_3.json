@@ -6,19 +6,19 @@
     {
       "ingredients": [
         {
-          "name": "Wood Shaft",
-          "count": 42,
+          "name": "Rope",
+          "count": 28,
           "quality": 3
         },
         {
-          "name": "Rope",
-          "count": 28,
+          "name": "Wood Shaft",
+          "count": 42,
           "quality": 3
         }
       ]
     }
   ],
   "upgradeInfo": {
-    "stackSize": 800
+    "stackSize": 8000
   }
 }

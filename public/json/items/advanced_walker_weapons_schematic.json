@@ -4,16 +4,16 @@
   "category": "Schematics",
   "stackSize": 100,
   "learn": [
+    "Rokker",
     "Tool Pod",
     "Gun Pod",
     "Catapult",
     "Hose Station",
-    "Rokker",
+    "Gunpod Ballista",
+    "Small Scattershot Gun",
     "Gun Pod Shell",
     "Gunpod Stinger",
-    "Sawblade",
-    "Tall Stinger",
-    "Small Scattershot Gun"
+    "Sawblade"
   ],
   "droppedBy": [
     {

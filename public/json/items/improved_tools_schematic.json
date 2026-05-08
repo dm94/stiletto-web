@@ -6,6 +6,8 @@
   "learn": [
     "Rawbone Hand Axe",
     "Heavy Rawbone Hand Axe",
+    "Rawbone Battle Axe",
+    "Torque Battery",
     "Durable Water Sack",
     "Bone Bottle",
     "Bone Pickaxe",
@@ -13,14 +15,13 @@
     "Bone Sickle",
     "Sterile Bandage",
     "Drill Spade",
+    "Torque Backpack",
     "Large Gathering Pouch",
     "Medium Backpack",
     "Net Pouch",
     "Schematic Bag",
     "Split Bone Bottle",
     "Sturdy Grappling Hook",
-    "Torque Battery",
-    "Rawbone Battle Axe",
     "Wingsuit"
   ],
   "droppedBy": [

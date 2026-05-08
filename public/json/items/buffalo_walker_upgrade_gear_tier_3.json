@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Triple Stitch Fabric",
-          "count": 9,
+          "name": "Bone Splinter",
+          "count": 27,
           "quality": 3
         },
         {
@@ -16,8 +16,8 @@
           "quality": 3
         },
         {
-          "name": "Bone Splinter",
-          "count": 27,
+          "name": "Triple Stitch Fabric",
+          "count": 9,
           "quality": 3
         }
       ]

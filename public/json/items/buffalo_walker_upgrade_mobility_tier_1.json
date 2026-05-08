@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Reinforced Gear",
-          "count": 5,
+          "name": "Chitin Plate",
+          "count": 56,
           "quality": 1
         },
         {
@@ -16,8 +16,8 @@
           "quality": 1
         },
         {
-          "name": "Chitin Plate",
-          "count": 56,
+          "name": "Reinforced Gear",
+          "count": 5,
           "quality": 1
         }
       ]

@@ -6,8 +6,8 @@
     {
       "ingredients": [
         {
-          "name": "Redwood Wood",
-          "count": 36,
+          "name": "Earth Wax",
+          "count": 17,
           "quality": 2
         },
         {
@@ -16,8 +16,8 @@
           "quality": 2
         },
         {
-          "name": "Earth Wax",
-          "count": 17,
+          "name": "Redwood Wood",
+          "count": 36,
           "quality": 2
         }
       ]

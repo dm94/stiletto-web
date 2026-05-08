@@ -31,7 +31,9 @@
   ],
   "projectileDamage": {
     "damage": 165,
-    "penetration": 10
+    "penetration": 10,
+    "effectivenessVsSoak": 90,
+    "effectivenessVsReduce": 40
   },
   "toolInfo": [
     {
@@ -45,6 +47,13 @@
       "chance": 28.571428,
       "minQuantity": 3,
       "maxQuantity": 6,
+      "tier": "T4"
+    },
+    {
+      "name": "Ancient Towers Loot T4",
+      "chance": 28.571428,
+      "minQuantity": 15,
+      "maxQuantity": 30,
       "tier": "T4"
     },
     {

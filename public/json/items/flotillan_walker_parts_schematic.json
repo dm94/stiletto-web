@@ -1,0 +1,20 @@
+{
+  "name": "Flotillan Walker Parts Schematic",
+  "type": "WalkerPartsFlotillanSchematic_C",
+  "category": "Schematics",
+  "stackSize": 100,
+  "learn": [
+    "Flotillan Capital Walker Wing",
+    "Flotillan Large Walker Wing",
+    "Flotillan Medium Walker Wing",
+    "Schmetterling Walker Wings Large",
+    "Domus Walker Wings Large",
+    "Panda Walker Wings Large",
+    "Titan Walker Wings Large",
+    "Tusker Walker Wings Large",
+    "Falco Walker Wings Large",
+    "Hornet Walker Wings Large",
+    "Tusker Walker Wings Medium",
+    "Toboggan Walker Wings Large"
+  ]
+}

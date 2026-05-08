@@ -6,18 +6,18 @@
     {
       "ingredients": [
         {
+          "name": "Gelatinous Goo",
+          "count": 3,
+          "quality": 3
+        },
+        {
           "name": "Clay",
           "count": 40,
           "quality": 3
         },
         {
-          "name": "Wood",
+          "name": "Leather",
           "count": 8,
-          "quality": 3
-        },
-        {
-          "name": "Gelatinous Goo",
-          "count": 3,
           "quality": 3
         }
       ]

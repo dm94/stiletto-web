@@ -6,13 +6,13 @@
     {
       "ingredients": [
         {
-          "name": "Tar",
-          "count": 24,
+          "name": "Obsidian",
+          "count": 40,
           "quality": 2
         },
         {
-          "name": "Obsidian",
-          "count": 40,
+          "name": "Tar",
+          "count": 24,
           "quality": 2
         },
         {

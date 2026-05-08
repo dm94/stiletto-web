@@ -6,6 +6,7 @@
   "weight": 10,
   "description": "Used to prepare packages for delivery to the trade station.",
   "experiencieReward": 92,
+  "onlyDevs": true,
   "crafting": [
     {
       "ingredients": [

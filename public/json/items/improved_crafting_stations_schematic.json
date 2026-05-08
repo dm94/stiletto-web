@@ -8,13 +8,14 @@
     "Advanced Fiberworking Station",
     "Stomping Station",
     "Soil Excavator",
+    "Artisan Soil Auger",
     "Curing Station",
     "Crafting Bench",
-    "Packing Station",
     "Repair Station",
     "Cauterizing Station",
     "Grappling Belt Charging Station",
-    "Windmill"
+    "Windmill",
+    "Torque Chest"
   ],
   "droppedBy": [
     {

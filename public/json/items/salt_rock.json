@@ -8,7 +8,7 @@
   "stackSize": 100,
   "weight": 0.23,
   "description": "Mined from desert salt lakes.",
-  "experiencieReward": 100,
+  "experiencieReward": 1,
   "crafting": [
     {
       "ingredients": [

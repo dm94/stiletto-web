@@ -8,12 +8,20 @@
     {
       "ingredients": [
         {
-          "name": "Wood",
-          "count": 40
+          "name": "Wood Shaft",
+          "count": 6
         },
         {
-          "name": "Fiber",
-          "count": 30
+          "name": "Fiber Weave",
+          "count": 12
+        },
+        {
+          "name": "Rupu Pelt",
+          "count": 5
+        },
+        {
+          "name": "Wooden Slab",
+          "count": 3
         }
       ]
     }

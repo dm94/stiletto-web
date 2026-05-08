@@ -3,7 +3,7 @@
   "parent": "Improved Walker Weapons",
   "type": "Automaton_C",
   "category": "Interactables",
-  "weight": 50,
+  "weight": 500,
   "description": "A remote-controlled mechanical tool that can handle mounted weapons.",
   "experiencieReward": 78,
   "crafting": [

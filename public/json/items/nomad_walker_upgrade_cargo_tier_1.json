@@ -7,17 +7,12 @@
       "ingredients": [
         {
           "name": "Wood",
-          "count": 30,
-          "quality": 1
-        },
-        {
-          "name": "Fiber",
           "count": 20,
           "quality": 1
         },
         {
           "name": "Stone",
-          "count": 10,
+          "count": 5,
           "quality": 1
         }
       ]

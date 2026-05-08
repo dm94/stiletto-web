@@ -12,14 +12,22 @@
           "count": 25
         },
         {
-          "name": "Fiber",
-          "count": 50
+          "name": "Fiber Weave",
+          "count": 12
+        },
+        {
+          "name": "Wooden Slab",
+          "count": 8
+        },
+        {
+          "name": "Rupu Vine",
+          "count": 25
         }
       ]
     }
   ],
   "structureInfo": {
-    "hp": 500,
+    "hp": 600,
     "type": "Soft"
   }
 }

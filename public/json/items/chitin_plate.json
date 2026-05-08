@@ -3,7 +3,7 @@
   "type": "ChitinShell_C",
   "category": "Resources",
   "trade_price": 6.6,
-  "qualityUpgradePrice": 1320,
+  "qualityUpgradePrice": 600,
   "stackSize": 100,
   "weight": 0.01,
   "description": "Skittering parasites make their nests between the gooey cracks. Harvesting chitin is dirty work.",
