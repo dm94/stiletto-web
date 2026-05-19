@@ -8,12 +8,8 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      registerType: "prompt",
+      registerType: "autoUpdate",
       injectRegister: "auto",
-      workbox: {
-        cleanupOutdatedCaches: true,
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,json,jpg,jpeg,webp,woff,woff2}"],
-      },
       manifest: {
         name: "Stiletto Web",
         short_name: "Stiletto",
@@ -46,7 +42,7 @@ export default defineConfig({
   build: {
     outDir: "./build",
     emptyOutDir: true,
-    sourcemap: true,
+    sourcemap: false,
   },
   resolve: {
     alias: {
