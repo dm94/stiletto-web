@@ -12,7 +12,7 @@ export default defineConfig({
       injectRegister: "auto",
       workbox: {
         cleanupOutdatedCaches: true,
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,json}"],
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,json,jpg,jpeg,webp,woff,woff2}"],
       },
       manifest: {
         name: "Stiletto Web",
