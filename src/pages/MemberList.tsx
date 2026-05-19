@@ -260,7 +260,9 @@ const MemberList = () => {
       key={member.discordid}
       member={member}
       onKick={kickMember}
-      onClickEditPermissions={(discordid: string) => setMemberForEdit(discordid)}
+      onClickEditPermissions={(discordid: string) =>
+        setMemberForEdit(discordid)
+      }
       isLeader={isLeader}
       hasPermissions={hasKickMembersPermisssions}
     />
@@ -288,7 +290,10 @@ const MemberList = () => {
         </div>
         <div className="p-4 text-gray-300">
           <p className="mb-4">{t("clan.transferWarning")}</p>
-          <label htmlFor="selectNewOwner" className="block mb-2 text-sm font-medium">
+          <label
+            htmlFor="selectNewOwner"
+            className="block mb-2 text-sm font-medium"
+          >
             {t("clan.newLeader")}
           </label>
           <select

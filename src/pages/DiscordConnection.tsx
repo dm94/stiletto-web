@@ -60,7 +60,10 @@ const DiscordConnection: React.FC = () => {
   ) : (
     <div className="w-full max-w-2xl mx-auto">
       <HeaderMeta
-        title={t("seo.discord.title", "Discord Login - Stiletto for Last Oasis")}
+        title={t(
+          "seo.discord.title",
+          "Discord Login - Stiletto for Last Oasis",
+        )}
         description={t(
           "seo.discord.description",
           "Link discord with stiletto and use more functions",

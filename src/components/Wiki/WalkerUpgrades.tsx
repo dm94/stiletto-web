@@ -79,7 +79,9 @@ const WalkerUpgradeCellView: React.FC<WalkerUpgradeCellViewProps> = ({
               {translate(
                 `${WALKER_UPGRADES_TRANSLATION_PREFIX}.stats.${upgradeKey}`,
                 {
-                  defaultValue: translate(upgradeKey, { defaultValue: upgradeKey }),
+                  defaultValue: translate(upgradeKey, {
+                    defaultValue: upgradeKey,
+                  }),
                 },
               )}
             </span>

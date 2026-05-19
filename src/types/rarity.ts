@@ -41,4 +41,4 @@ export interface RarityFactors {
   MobStructureHealthFactor?: number;
   MobProjectileDamageFactor?: number;
   ItemDurabilityFactor?: number;
-};
+}

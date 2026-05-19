@@ -7,12 +7,12 @@ export enum Rarity {
 }
 
 export enum RarityTierEnum {
-	COMMON = 0,
-	UNCOMMON = 1,
-	RARE = 2,
-	EPIC = 3,
-	LEGENDARY = 4,
-} 
+  COMMON = 0,
+  UNCOMMON = 1,
+  RARE = 2,
+  EPIC = 3,
+  LEGENDARY = 4,
+}
 
 export type ItemIngredient = {
   ingredients?: ItemIngredient[];
@@ -88,9 +88,9 @@ export type TechItem = {
 export type WalkerInfo = {
   carryCapacity?: number;
   category?: string;
-	crewSize?: number;
-	walkerCapPower?: number;
-	containerCapacity?: number | Record<string, number>;
+  crewSize?: number;
+  walkerCapPower?: number;
+  containerCapacity?: number | Record<string, number>;
 };
 
 export type ItemCompleteInfo = {
@@ -118,20 +118,20 @@ export type ItemCompleteInfo = {
   upgradeInfo?: any;
   walkerInfo?: WalkerInfo;
   whereToFarm?: string;
-	qualityUpgradePrice?: number;
+  qualityUpgradePrice?: number;
   rigSlots?: RigSlots;
 };
 
 export type RigSlots = {
-	cosmetic?: number;
-	edgeSmall?: number;
-	edgeMedium?: number;
-	edgeLarge?: number;
-	small?: number;
-	medium?: number;
-	large?: number;
-	steeringLever?: number;
-	special?: number;
+  cosmetic?: number;
+  edgeSmall?: number;
+  edgeMedium?: number;
+  edgeLarge?: number;
+  small?: number;
+  medium?: number;
+  large?: number;
+  steeringLever?: number;
+  special?: number;
 };
 
 export type RigSlotKey = keyof RigSlots;
