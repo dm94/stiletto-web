@@ -39,9 +39,7 @@ const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({
           </h2>
         </div>
         <div className="p-4">
-          <div className="grid grid-cols-4 gap-4">
-            {languageButtons}
-          </div>
+          <div className="grid grid-cols-4 gap-4">{languageButtons}</div>
         </div>
         <div className="p-4 border-t border-gray-700 flex justify-end">
           <button

@@ -39,11 +39,13 @@ const RIG_SLOT_DISPLAY_CONFIG: Record<RigSlotKey, RigSlotDisplayConfig> = {
 const RigSlotsInfo = memo(({ rigSlots }: { rigSlots: RigSlots }) => {
   const { t } = useTranslation();
   const slots = useMemo(() => {
-    const rigSlotItems: Array<RigSlotDisplayConfig & { key: RigSlotKey; value: number }> = [];
+    const rigSlotItems: Array<
+      RigSlotDisplayConfig & { key: RigSlotKey; value: number }
+    > = [];
 
-    for (const [key, config] of Object.entries(RIG_SLOT_DISPLAY_CONFIG) as Array<
-      [RigSlotKey, RigSlotDisplayConfig]
-    >) {
+    for (const [key, config] of Object.entries(
+      RIG_SLOT_DISPLAY_CONFIG,
+    ) as Array<[RigSlotKey, RigSlotDisplayConfig]>) {
       const value = rigSlots[key];
       if (value === undefined) {
         continue;

@@ -267,13 +267,13 @@ const WalkerList: React.FC = () => {
 
   const helmetInfo = useMemo(
     () => (
-    <HeaderMeta
-      title={t("seo.walkers.title")}
-      description={t("seo.walkers.description")}
-      canonical={`${getDomain()}/walkerlist`}
-      image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
-      keywords="Last Oasis, walkers, clan, management, vehicles, stiletto, toboggan, falco, spider, buffalo"
-    />
+      <HeaderMeta
+        title={t("seo.walkers.title")}
+        description={t("seo.walkers.description")}
+        canonical={`${getDomain()}/walkerlist`}
+        image="https://raw.githubusercontent.com/dm94/stiletto-web/master/design/walkersList.png"
+        keywords="Last Oasis, walkers, clan, management, vehicles, stiletto, toboggan, falco, spider, buffalo"
+      />
     ),
     [t],
   );

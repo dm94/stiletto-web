@@ -14,6 +14,7 @@ import NotificationList from "@components/Notifications/NotificationList";
 import Footer from "@components/Footer";
 import { UserProvider } from "@store/userStore";
 import { PostHogPageView } from "@components/PostHogProvider";
+import PWAReloadPrompt from "@components/PWAReloadPrompt";
 
 const CrafterApp: React.FC = () => {
   const navigate = useNavigate();
@@ -59,6 +60,7 @@ const CrafterApp: React.FC = () => {
       <Footer />
       <VanillaCookieConsent />
       <NotificationList />
+      <PWAReloadPrompt />
     </UserProvider>
   );
 };

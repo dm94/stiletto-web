@@ -18,7 +18,9 @@ const AuctionTimers = memo(() => {
 
   const timerElements = [];
   for (const timerId of timerIds) {
-    timerElements.push(<Timer key={timerId} onPlay={playAlarm} value={playSound} />);
+    timerElements.push(
+      <Timer key={timerId} onPlay={playAlarm} value={playSound} />,
+    );
   }
 
   return (

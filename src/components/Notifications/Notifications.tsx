@@ -44,9 +44,7 @@ const Notifications: React.FC<NotificationsProps> = ({
   ));
 
   return (
-    <div className="fixed top-4 right-4 z-50 max-w-sm">
-      {notificationItems}
-    </div>
+    <div className="fixed top-4 right-4 z-50 max-w-sm">{notificationItems}</div>
   );
 };
 

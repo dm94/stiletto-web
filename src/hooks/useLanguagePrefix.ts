@@ -9,7 +9,9 @@ import { supportedLanguages } from "@config/languages";
  */
 export const useLanguagePrefix = () => {
   const location = useLocation();
-  const supportedLangCodes = new Set(supportedLanguages.map((lang) => lang.key));
+  const supportedLangCodes = new Set(
+    supportedLanguages.map((lang) => lang.key),
+  );
 
   /**
    * Gets the current language from URL or i18n state

@@ -6,7 +6,8 @@
 
 .perk-tree-stage {
   background-color: #0a0a0a;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 50% 50%,
       rgba(30, 30, 30, 0.32),
       rgba(10, 10, 10, 0.9)
