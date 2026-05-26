@@ -529,8 +529,8 @@
   "perksCalculator.tree.actions.selectPerk": "Select perk",
   "perksCalculator.tree.actions.deselectPerk": "Deselect perk",
   "crafter.reportBug": "Report bug",
-  "pwa.updateAvailable": "Nueva versión disponible",
-  "pwa.updateMessage": "Hay una nueva versión de la aplicación disponible. ¿Quieres actualizar ahora para recibir los últimos cambios?",
-  "pwa.updateButton": "Actualizar ahora",
-  "pwa.dismissButton": "Más tarde"
+  "pwa.updateAvailable": "New Version Available",
+  "pwa.updateMessage": "A new version of the app is available. Would you like to update now to get the latest changes?",
+  "pwa.updateButton": "Update Now",
+  "pwa.dismissButton": "Later"
 }
