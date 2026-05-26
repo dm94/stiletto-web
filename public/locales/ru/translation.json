@@ -528,5 +528,9 @@
   "perksCalculator.tree.cost": "Cost",
   "perksCalculator.tree.actions.selectPerk": "Select perk",
   "perksCalculator.tree.actions.deselectPerk": "Deselect perk",
-  "crafter.reportBug": "Report bug"
+  "crafter.reportBug": "Report bug",
+  "pwa.updateAvailable": "New Version Available",
+  "pwa.updateMessage": "A new version of the app is available. Would you like to update now to get the latest changes?",
+  "pwa.updateButton": "Update Now",
+  "pwa.dismissButton": "Later"
 }

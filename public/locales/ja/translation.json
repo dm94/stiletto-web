@@ -528,5 +528,9 @@
   "perksCalculator.tree.cost": "コスト",
   "perksCalculator.tree.actions.selectPerk": "パークを選択",
   "perksCalculator.tree.actions.deselectPerk": "パークの選択を解除",
-  "crafter.reportBug": "バグを報告"
+  "crafter.reportBug": "バグを報告",
+  "pwa.updateAvailable": "New Version Available",
+  "pwa.updateMessage": "A new version of the app is available. Would you like to update now to get the latest changes?",
+  "pwa.updateButton": "Update Now",
+  "pwa.dismissButton": "Later"
 }
