@@ -21,7 +21,7 @@
     "i18next-http-backend": "3.0.6",
     "leaflet": "1.9.4",
     "posthog-js": "^1.372.8",
-    "query-string": "9.3.1",
+    "query-string": "9.4.0",
     "react": "19.2.5",
     "react-dom": "19.2.5",
     "react-helmet": "6.1.0",
