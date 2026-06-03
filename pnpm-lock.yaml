@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@giscus/react':
         specifier: 3.1.0
-        version: 3.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 3.1.0(react-dom@19.2.5(react@19.2.7))(react@19.2.7)
       '@tanstack/react-virtual':
         specifier: ^3.13.24
-        version: 3.13.24(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 3.13.24(react-dom@19.2.5(react@19.2.7))(react@19.2.7)
       i18next:
         specifier: 26.3.0
         version: 26.3.0(typescript@5.9.3)
@@ -33,29 +33,29 @@ importers:
         specifier: 9.3.1
         version: 9.3.1
       react:
-        specifier: 19.2.5
-        version: 19.2.5
+        specifier: 19.2.7
+        version: 19.2.7
       react-dom:
         specifier: 19.2.5
-        version: 19.2.5(react@19.2.5)
+        version: 19.2.5(react@19.2.7)
       react-helmet:
         specifier: 6.1.0
-        version: 6.1.0(react@19.2.5)
+        version: 6.1.0(react@19.2.7)
       react-i18next:
         specifier: 17.0.8
-        version: 17.0.8(i18next@26.3.0(typescript@5.9.3))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3)
+        version: 17.0.8(i18next@26.3.0(typescript@5.9.3))(react-dom@19.2.5(react@19.2.7))(react@19.2.7)(typescript@5.9.3)
       react-icons:
         specifier: ^5.6.0
-        version: 5.6.0(react@19.2.5)
+        version: 5.6.0(react@19.2.7)
       react-leaflet:
         specifier: 4.2.1
-        version: 4.2.1(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 4.2.1(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.7))(react@19.2.7)
       react-markdown:
         specifier: ^10.1.0
-        version: 10.1.0(@types/react@19.2.14)(react@19.2.5)
+        version: 10.1.0(@types/react@19.2.16)(react@19.2.7)
       react-router:
         specifier: ^7.14.1
-        version: 7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 7.14.1(react-dom@19.2.5(react@19.2.7))(react@19.2.7)
       vanilla-cookieconsent:
         specifier: 3.1.0
         version: 3.1.0
@@ -82,17 +82,17 @@ importers:
         specifier: ^25.9.0
         version: 25.9.0
       '@types/react':
-        specifier: ^19.2.14
-        version: 19.2.14
+        specifier: ^19.2.16
+        version: 19.2.16
       '@types/react-dom':
         specifier: ^19.2.3
-        version: 19.2.3(@types/react@19.2.14)
+        version: 19.2.3(@types/react@19.2.16)
       '@types/react-helmet':
         specifier: ^6.1.11
         version: 6.1.11
       '@types/react-leaflet':
         specifier: ^3.0.0
-        version: 3.0.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        version: 3.0.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.7))(react@19.2.7)
       '@types/react-router':
         specifier: ^5.1.20
         version: 5.1.20
@@ -1537,8 +1537,8 @@ packages:
   '@types/react-router@5.1.20':
     resolution: {integrity: sha512-jGjmu/ZqS7FjSH6owMcD5qpq19+1RS9DeVRqfl1FeBMxTDQAGwlMWOcs52NDoXaNKyG3d1cYQFMs9rCrb88o9Q==}
 
-  '@types/react@19.2.14':
-    resolution: {integrity: sha512-ilcTH/UniCkMdtexkoCN0bI7pMcJDvmQFPvuPvmEaYA/NSfFTAgdUSLAoVjaRJm7+6PvcM+q1zYOwS4wTYMF9w==}
+  '@types/react@19.2.16':
+    resolution: {integrity: sha512-esJiCAnl0kfpNdE69f3So4WJUXy95dLZydX0KwK46riIHDzHM7O9Vtf9xCHW0PXIqvgqNrswl522kA/5yx+F4w==}
 
   '@types/resolve@1.20.2':
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
@@ -2574,8 +2574,8 @@ packages:
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0
 
-  react@19.2.5:
-    resolution: {integrity: sha512-llUJLzz1zTUBrskt2pwZgLq59AemifIftw4aB7JxOqf1HY2FDaGDxgwpAPVzHU1kdWabH7FauP4i1oEeer2WCA==}
+  react@19.2.7:
+    resolution: {integrity: sha512-HNe9WslTbXmFK8o8cmwgAeJFSBvt1bPdHCVKtaaV+WlAN36mpT4hcRpwbf3fY56ar2oIXzsBpOAiIRHAdY0OlQ==}
     engines: {node: '>=0.10.0'}
 
   reflect.getprototypeof@1.0.10:
@@ -3975,11 +3975,11 @@ snapshots:
   '@esbuild/win32-x64@0.27.2':
     optional: true
 
-  '@giscus/react@3.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@giscus/react@3.1.0(react-dom@19.2.5(react@19.2.7))(react@19.2.7)':
     dependencies:
       giscus: 1.6.0
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.7
+      react-dom: 19.2.5(react@19.2.7)
 
   '@isaacs/cliui@9.0.0': {}
 
@@ -4131,11 +4131,11 @@ snapshots:
 
   '@protobufjs/utf8@1.1.1': {}
 
-  '@react-leaflet/core@2.1.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@react-leaflet/core@2.1.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.7))(react@19.2.7)':
     dependencies:
       leaflet: 1.9.4
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.7
+      react-dom: 19.2.5(react@19.2.7)
 
   '@rolldown/binding-android-arm64@1.0.2':
     optional: true
@@ -4376,11 +4376,11 @@ snapshots:
       postcss: 8.5.12
       tailwindcss: 4.2.2
 
-  '@tanstack/react-virtual@3.13.24(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@tanstack/react-virtual@3.13.24(react-dom@19.2.5(react@19.2.7))(react@19.2.7)':
     dependencies:
       '@tanstack/virtual-core': 3.14.0
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.7
+      react-dom: 19.2.5(react@19.2.7)
 
   '@tanstack/virtual-core@3.14.0': {}
 
@@ -4455,17 +4455,17 @@ snapshots:
     dependencies:
       undici-types: 7.24.6
 
-  '@types/react-dom@19.2.3(@types/react@19.2.14)':
+  '@types/react-dom@19.2.3(@types/react@19.2.16)':
     dependencies:
-      '@types/react': 19.2.14
+      '@types/react': 19.2.16
 
   '@types/react-helmet@6.1.11':
     dependencies:
-      '@types/react': 19.2.14
+      '@types/react': 19.2.16
 
-  '@types/react-leaflet@3.0.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@types/react-leaflet@3.0.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.7))(react@19.2.7)':
     dependencies:
-      react-leaflet: 4.2.1(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      react-leaflet: 4.2.1(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.7))(react@19.2.7)
     transitivePeerDependencies:
       - leaflet
       - react
@@ -4474,9 +4474,9 @@ snapshots:
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.2.14
+      '@types/react': 19.2.16
 
-  '@types/react@19.2.14':
+  '@types/react@19.2.16':
     dependencies:
       csstype: 3.2.3
 
@@ -5636,55 +5636,55 @@ snapshots:
       filter-obj: 5.1.0
       split-on-first: 3.0.0
 
-  react-dom@19.2.5(react@19.2.5):
+  react-dom@19.2.5(react@19.2.7):
     dependencies:
-      react: 19.2.5
+      react: 19.2.7
       scheduler: 0.27.0
 
   react-fast-compare@3.2.2: {}
 
-  react-helmet@6.1.0(react@19.2.5):
+  react-helmet@6.1.0(react@19.2.7):
     dependencies:
       object-assign: 4.1.1
       prop-types: 15.8.1
-      react: 19.2.5
+      react: 19.2.7
       react-fast-compare: 3.2.2
-      react-side-effect: 2.1.2(react@19.2.5)
+      react-side-effect: 2.1.2(react@19.2.7)
 
-  react-i18next@17.0.8(i18next@26.3.0(typescript@5.9.3))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)(typescript@5.9.3):
+  react-i18next@17.0.8(i18next@26.3.0(typescript@5.9.3))(react-dom@19.2.5(react@19.2.7))(react@19.2.7)(typescript@5.9.3):
     dependencies:
       '@babel/runtime': 7.29.7
       html-parse-stringify: 3.0.1
       i18next: 26.3.0(typescript@5.9.3)
-      react: 19.2.5
-      use-sync-external-store: 1.6.0(react@19.2.5)
+      react: 19.2.7
+      use-sync-external-store: 1.6.0(react@19.2.7)
     optionalDependencies:
-      react-dom: 19.2.5(react@19.2.5)
+      react-dom: 19.2.5(react@19.2.7)
       typescript: 5.9.3
 
-  react-icons@5.6.0(react@19.2.5):
+  react-icons@5.6.0(react@19.2.7):
     dependencies:
-      react: 19.2.5
+      react: 19.2.7
 
   react-is@16.13.1: {}
 
-  react-leaflet@4.2.1(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  react-leaflet@4.2.1(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.7))(react@19.2.7):
     dependencies:
-      '@react-leaflet/core': 2.1.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@react-leaflet/core': 2.1.0(leaflet@1.9.4)(react-dom@19.2.5(react@19.2.7))(react@19.2.7)
       leaflet: 1.9.4
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
+      react: 19.2.7
+      react-dom: 19.2.5(react@19.2.7)
 
-  react-markdown@10.1.0(@types/react@19.2.14)(react@19.2.5):
+  react-markdown@10.1.0(@types/react@19.2.16)(react@19.2.7):
     dependencies:
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
-      '@types/react': 19.2.14
+      '@types/react': 19.2.16
       devlop: 1.1.0
       hast-util-to-jsx-runtime: 2.3.6
       html-url-attributes: 3.0.1
       mdast-util-to-hast: 13.2.1
-      react: 19.2.5
+      react: 19.2.7
       remark-parse: 11.0.0
       remark-rehype: 11.1.2
       unified: 11.0.5
@@ -5693,19 +5693,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  react-router@7.14.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
+  react-router@7.14.1(react-dom@19.2.5(react@19.2.7))(react@19.2.7):
     dependencies:
       cookie: 1.1.1
-      react: 19.2.5
+      react: 19.2.7
       set-cookie-parser: 2.7.2
     optionalDependencies:
-      react-dom: 19.2.5(react@19.2.5)
+      react-dom: 19.2.5(react@19.2.7)
 
-  react-side-effect@2.1.2(react@19.2.5):
+  react-side-effect@2.1.2(react@19.2.7):
     dependencies:
-      react: 19.2.5
+      react: 19.2.7
 
-  react@19.2.5: {}
+  react@19.2.7: {}
 
   reflect.getprototypeof@1.0.10:
     dependencies:
@@ -6141,9 +6141,9 @@ snapshots:
       escalade: 3.2.0
       picocolors: 1.1.1
 
-  use-sync-external-store@1.6.0(react@19.2.5):
+  use-sync-external-store@1.6.0(react@19.2.7):
     dependencies:
-      react: 19.2.5
+      react: 19.2.7
 
   vanilla-cookieconsent@3.1.0: {}
 
