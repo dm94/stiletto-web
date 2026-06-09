@@ -1,0 +1,29 @@
+{
+  "name": "Raptor Sky Walker Upgrade Durability Tier 2",
+  "type": "Raptor Sky Walker Upgrade Durability Tier 2",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Rubber Block",
+          "count": 32,
+          "quality": 2
+        },
+        {
+          "name": "Lightwood",
+          "count": 12,
+          "quality": 2
+        },
+        {
+          "name": "Hollowbone",
+          "count": 15,
+          "quality": 2
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 2000
+  }
+}
