@@ -1,0 +1,29 @@
+{
+  "name": "Raptor Sky Walker Upgrade Durability Tier 4",
+  "type": "Raptor Sky Walker Upgrade Durability Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Rubber Block",
+          "count": 32,
+          "quality": 4
+        },
+        {
+          "name": "Lightwood",
+          "count": 12,
+          "quality": 4
+        },
+        {
+          "name": "Hollowbone",
+          "count": 15,
+          "quality": 4
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "bonusHp": 4000
+  }
+}

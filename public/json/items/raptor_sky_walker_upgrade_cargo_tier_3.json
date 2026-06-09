@@ -1,0 +1,29 @@
+{
+  "name": "Raptor Sky Walker Upgrade Cargo Tier 3",
+  "type": "Raptor Sky Walker Upgrade Cargo Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Hollowbone",
+          "count": 15,
+          "quality": 3
+        },
+        {
+          "name": "Iron Nails",
+          "count": 32,
+          "quality": 3
+        },
+        {
+          "name": "Lightwood",
+          "count": 12,
+          "quality": 3
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "slots": 18
+  }
+}

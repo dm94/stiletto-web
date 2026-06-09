@@ -1,0 +1,29 @@
+{
+  "name": "Raptor Sky Walker Upgrade Water Tier 4",
+  "type": "Raptor Sky Walker Upgrade Water Tier 4",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Rubber Block",
+          "count": 15,
+          "quality": 4
+        },
+        {
+          "name": "Iron Ore",
+          "count": 32,
+          "quality": 4
+        },
+        {
+          "name": "Lightwood",
+          "count": 12,
+          "quality": 4
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSize": 45
+  }
+}
