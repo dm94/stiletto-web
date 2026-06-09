@@ -1,0 +1,29 @@
+{
+  "name": "Raptor Sky Walker Upgrade Torque Tier 3",
+  "type": "Raptor Sky Walker Upgrade Torque Tier 3",
+  "category": "Upgrades",
+  "crafting": [
+    {
+      "ingredients": [
+        {
+          "name": "Lightwood",
+          "count": 12,
+          "quality": 3
+        },
+        {
+          "name": "Rope",
+          "count": 7,
+          "quality": 3
+        },
+        {
+          "name": "Iron Ore",
+          "count": 32,
+          "quality": 3
+        }
+      ]
+    }
+  ],
+  "upgradeInfo": {
+    "stackSize": 25500
+  }
+}
