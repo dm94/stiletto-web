@@ -1,7 +1,9 @@
+import { useWebMCP, useWebMCPContext } from "@mcp-b/react-webmcp";
 import type React from "react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import queryString from "query-string";
+import { z } from "zod";
 import { getItems } from "@functions/github";
 import ModalMessage from "@components/ModalMessage";
 import Items from "@components/Crafter/Items";
@@ -228,6 +230,105 @@ const Crafter: React.FC = () => {
   const toggleReportModal = useCallback((): void => {
     setIsReportModalOpen((prev) => !prev);
   }, []);
+
+  useWebMCPContext(
+    "crafter_context",
+    "Current crafter state: selected items with their counts",
+    () => ({
+      selectedItems: selectedItems.map((item) => ({
+        name: item.name,
+        displayName: t(item.name, { ns: "items" }),
+        count: item.count,
+      })),
+    }),
+  );
+
+  useWebMCP({
+    name: "crafter_search",
+    description:
+      "Search for craftable items by name. Returns matching item names and display names. Use the 'name' field from results with crafter_add_item.",
+    inputSchema: {
+      query: z.string().describe("Search query to find items by name"),
+    },
+    outputSchema: {
+      items: z.array(z.object({ name: z.string(), displayName: z.string() })),
+      total: z.number(),
+    },
+    annotations: {
+      title: "Search Craftable Items",
+      readOnlyHint: true,
+    },
+    handler: async ({ query }) => {
+      const lowerQuery = query.toLowerCase();
+      const filtered = allItems.filter((item) =>
+        t(item.name, { ns: "items" }).toLowerCase().includes(lowerQuery),
+      );
+      return {
+        items: filtered.slice(0, 20).map((item) => ({
+          name: item.name,
+          displayName: t(item.name, { ns: "items" }),
+        })),
+        total: filtered.length,
+      };
+    },
+    formatOutput: (result) =>
+      `Found ${result.total} items: ${result.items.map((i) => i.displayName).join(", ")}`,
+  });
+
+  useWebMCP({
+    name: "crafter_add_item",
+    description:
+      "Add a craftable item to the crafting list. Use crafter_search first to find the exact item name.",
+    inputSchema: {
+      name: z
+        .string()
+        .describe("Item name (the 'name' field from crafter_search results)"),
+      count: z.number().min(1).default(1).describe("Quantity to add"),
+    },
+    outputSchema: {
+      success: z.boolean(),
+      name: z.string(),
+      count: z.number(),
+    },
+    annotations: {
+      title: "Add Item to Crafter",
+      readOnlyHint: false,
+      idempotentHint: false,
+    },
+    handler: async ({ name, count }) => {
+      const exists = allItems.some((it) => it.name === name);
+      if (!exists) {
+        throw new Error(
+          `Item "${name}" not found. Use crafter_search to find available items.`,
+        );
+      }
+      handleAdd(name, count);
+      return { success: true, name, count };
+    },
+    formatOutput: (result) => `Added ${result.count}x ${result.name}`,
+  });
+
+  useWebMCP({
+    name: "crafter_remove_item",
+    description: "Remove an item from the crafting list by name.",
+    inputSchema: {
+      name: z.string().describe("The item name to remove"),
+    },
+    outputSchema: {
+      success: z.boolean(),
+      name: z.string(),
+    },
+    annotations: {
+      title: "Remove Item from Crafter",
+      readOnlyHint: false,
+      idempotentHint: true,
+    },
+    handler: async ({ name }) => {
+      removeSelectedItem(name);
+      return { success: true, name };
+    },
+    formatOutput: (result) => `Removed ${result.name} from the crafting list`,
+  });
 
   if (error) {
     return (

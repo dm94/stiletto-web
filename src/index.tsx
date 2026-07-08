@@ -1,3 +1,4 @@
+import "@mcp-b/global";
 import { createRoot } from "react-dom/client";
 
 import CrafterApp from "./CrafterApp";
