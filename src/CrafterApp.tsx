@@ -1,7 +1,9 @@
+import { useWebMCP, useWebMCPContext } from "@mcp-b/react-webmcp";
 import type React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import i18next from "i18next";
+import { z } from "zod";
 import { supportedLanguages } from "@config/languages";
 import { Helmet } from "react-helmet";
 import VanillaCookieConsent from "@components/VanillaCookieConsent";
@@ -16,6 +18,24 @@ import { UserProvider } from "@store/userStore";
 import { PostHogPageView } from "@components/PostHogProvider";
 import PWAReloadPrompt from "@components/PWAReloadPrompt";
 
+const APP_PAGES = [
+  "home",
+  "crafter",
+  "clanlist",
+  "maps",
+  "trades",
+  "diplomacy",
+  "auctions",
+  "map",
+  "tech",
+  "perks",
+  "wiki",
+  "item",
+  "creature",
+] as const;
+
+const NAVIGATE_DESCRIPTION = `Navigate to a Stiletto Web page. Available pages: ${APP_PAGES.join(", ")}`;
+
 const CrafterApp: React.FC = () => {
   const navigate = useNavigate();
   const [showChangeLanguageModal, setShowChangeLanguageModal] =
@@ -25,6 +45,38 @@ const CrafterApp: React.FC = () => {
   usePageTracking();
 
   const language = getStoredItem("i18nextLng");
+
+  useWebMCPContext(
+    "stiletto_context",
+    "Current Stiletto Web app state: active language and current page path",
+    () => ({
+      language: language ?? "en",
+      currentPath: globalThis.location.pathname,
+    }),
+  );
+
+  useWebMCP({
+    name: "stiletto_navigate",
+    description: NAVIGATE_DESCRIPTION,
+    inputSchema: {
+      page: z.enum(APP_PAGES).describe("Target page name"),
+    },
+    outputSchema: {
+      success: z.boolean(),
+      page: z.string(),
+    },
+    annotations: {
+      title: "Navigate to Page",
+      readOnlyHint: false,
+      idempotentHint: true,
+    },
+    handler: async ({ page }) => {
+      const path = page === "home" ? "/" : `/${page}`;
+      navigate(path);
+      return { success: true, page };
+    },
+    formatOutput: (result) => `Navigated to ${result.page}`,
+  });
 
   if (redirectTo != null) {
     navigate(redirectTo);
