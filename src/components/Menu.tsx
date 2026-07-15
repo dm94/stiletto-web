@@ -1,5 +1,5 @@
 import type React from "react";
-import { useState, useRef, type KeyboardEvent } from "react";
+import { useState, useRef, useEffect, type KeyboardEvent } from "react";
 import { FaSearch } from "react-icons/fa";
 import LanguageLink from "./LanguageLink";
 import DiscordButton from "./DiscordButton";
@@ -20,9 +20,26 @@ const Menu: React.FC<MenuProps> = ({
   language,
 }) => {
   const [searchText, setSearchText] = useState<string>("");
+  const [isFocused, setIsFocused] = useState<boolean>(false);
   const { t } = useTranslation();
   const { isConnected } = useUser();
   const menuRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: globalThis.KeyboardEvent) => {
+      // Focus search input when Cmd+K (Mac) or Ctrl+K (Windows/Linux) is pressed
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+    };
+
+    globalThis.addEventListener("keydown", handleKeyDown);
+    return () => {
+      globalThis.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
 
   const closeMenu = (): void => {
     if (
@@ -178,18 +195,29 @@ const Menu: React.FC<MenuProps> = ({
             <div className="flex items-center mt-4 md:mt-0 flex-wrap md:flex-nowrap gap-y-1 gap-x-2">
               <div className="relative">
                 <input
+                  ref={searchInputRef}
                   type="search"
-                  className="w-full px-4 py-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500"
+                  className="w-full pl-4 pr-16 py-2 text-gray-700 bg-white border rounded-lg focus:outline-none focus:border-blue-500"
                   placeholder={t("common.search")}
                   aria-label={t("common.search")}
                   onChange={(e) => setSearchText(e.currentTarget.value)}
                   onKeyDown={handleKeyPress}
+                  onFocus={() => setIsFocused(true)}
+                  onBlur={() => setIsFocused(false)}
                   value={searchText}
                 />
+                {!isFocused && !searchText && (
+                  <span className="absolute right-10 top-1/2 transform -translate-y-1/2 pointer-events-none text-[10px] font-semibold text-gray-400 bg-gray-100 border border-gray-200 px-1.5 py-0.5 rounded shadow-sm">
+                    {/Mac/.test(globalThis.navigator?.userAgent)
+                      ? "⌘K"
+                      : "Ctrl+K"}
+                  </span>
+                )}
                 <button
                   type="button"
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-gray-800 bg-transparent"
                   onClick={searchItem}
+                  aria-label={t("common.search")}
                 >
                   <FaSearch />
                 </button>
