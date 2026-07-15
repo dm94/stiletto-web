@@ -28,8 +28,21 @@ const Menu: React.FC<MenuProps> = ({
 
   useEffect(() => {
     const handleKeyDown = (e: globalThis.KeyboardEvent) => {
-      // Focus search input when Cmd+K (Mac) or Ctrl+K (Windows/Linux) is pressed
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      // Do not trigger search shortcut if we are already in an input, textarea, or contenteditable element
+      const activeElement = document.activeElement;
+      if (activeElement) {
+        const tagName = activeElement.tagName.toLowerCase();
+        if (
+          tagName === "input" ||
+          tagName === "textarea" ||
+          activeElement.hasAttribute("contenteditable")
+        ) {
+          return;
+        }
+      }
+
+      // Focus search input when "/" is pressed
+      if (e.key === "/") {
         e.preventDefault();
         searchInputRef.current?.focus();
       }
@@ -207,10 +220,8 @@ const Menu: React.FC<MenuProps> = ({
                   value={searchText}
                 />
                 {!isFocused && !searchText && (
-                  <span className="absolute right-10 top-1/2 transform -translate-y-1/2 pointer-events-none text-[10px] font-semibold text-gray-400 bg-gray-100 border border-gray-200 px-1.5 py-0.5 rounded shadow-sm">
-                    {/Mac/.test(globalThis.navigator?.userAgent)
-                      ? "⌘K"
-                      : "Ctrl+K"}
+                  <span className="absolute right-10 top-1/2 transform -translate-y-1/2 pointer-events-none text-xs font-semibold text-gray-400 bg-gray-100 border border-gray-200 px-2 py-0.5 rounded shadow-sm">
+                    /
                   </span>
                 )}
                 <button

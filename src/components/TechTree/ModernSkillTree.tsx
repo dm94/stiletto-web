@@ -58,28 +58,10 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  // Group tech items by parent to enable O(1) map lookup during tree construction,
-  // preventing O(N^2) complexity with array scans.
-  const itemsByParent = useMemo(() => {
-    const map = new Map<string, TechItem[]>();
-    for (const item of items) {
-      if (item.parent) {
-        let list = map.get(item.parent);
-        if (!list) {
-          list = [];
-          map.set(item.parent, list);
-        }
-        list.push(item);
-      }
-    }
-    return map;
-  }, [items]);
-
   // Build tree structure from items
   const buildTreeData = useCallback(() => {
     const buildChildren = (parent: string, level = 0): NodeData[] => {
-      // O(1) lookup from pre-grouped map instead of filtering the whole array
-      const filteredItems = itemsByParent.get(parent) || [];
+      const filteredItems = items.filter((item) => item.parent === parent);
 
       const children: NodeData[] = filteredItems.map((item) => ({
         id: item.name,
@@ -97,7 +79,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     };
 
     return buildChildren(treeId);
-  }, [itemsByParent, skills, t, treeId]);
+  }, [items, skills, t, treeId]);
 
   // Calculate node positions for horizontal layout
   const calculateNodePositions = useCallback((treeData: NodeData[]) => {
@@ -149,16 +131,12 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       processLevel(nodes, level + 1, startY);
     };
 
-    // Flatten the tree for easier processing using O(N) linear recursion (avoiding array spreading overhead)
-    const flattenTree = (
-      nodesList: NodeData[],
-      acc: NodeData[] = [],
-    ): NodeData[] => {
-      for (const node of nodesList) {
-        acc.push(node);
-        flattenTree(node.children, acc);
-      }
-      return acc;
+    // Flatten the tree for easier processing
+    const flattenTree = (nodes: NodeData[]): NodeData[] => {
+      return nodes.reduce((acc, node) => {
+        acc.push(node, ...flattenTree(node.children));
+        return acc;
+      }, [] as NodeData[]);
     };
 
     const flatNodes = flattenTree(treeData);
