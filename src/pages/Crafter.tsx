@@ -362,7 +362,7 @@ const Crafter: React.FC = () => {
             value={searchText}
           />
           <button
-            className="ml-3 p-2 text-gray-300 hover:text-white focus:outline-none bg-transparent"
+            className="ml-3 p-2 text-gray-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg bg-transparent"
             type="button"
             onClick={toggleReportModal}
             aria-label={t("crafter.reportBug")}
@@ -371,7 +371,7 @@ const Crafter: React.FC = () => {
             <FaExclamationTriangle className="fa-lg" />
           </button>
           <button
-            className="lg:hidden ml-3 p-2 text-gray-300 hover:text-white focus:outline-none"
+            className="lg:hidden ml-3 p-2 text-gray-300 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
             type="button"
             onClick={toggleItemsNav}
             aria-controls="items-nav"

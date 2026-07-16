@@ -210,4 +210,52 @@ test.describe("Trades Page", () => {
     // Assert the payload of the POST request
     expect(postRequestPayload).not.toBeNull();
   });
+
+  test("should handle keyboard accessibility on resource-type searchable select", async ({
+    page,
+  }) => {
+    await page.route("**/users", (route) => {
+      route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify({
+          discordtag: "testUser#1234",
+          nickname: "TestNickname",
+        }),
+      });
+    });
+
+    await page.evaluate(() => {
+      localStorage.setItem("token", "fake-user-token");
+      localStorage.setItem("discordid", "fake-discord-id");
+    });
+
+    await page.route("**/items_min.json", async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: "application/json",
+        body: JSON.stringify([
+          { name: "Aloe Vera", category: "Resource" },
+          { name: "Wood", category: "Resource" },
+        ]),
+      });
+    });
+
+    await page.reload();
+
+    const selectButton = page.getByTestId("resource-type");
+    await expect(selectButton).toBeVisible();
+
+    // Trigger button should open the searchable select on click
+    await selectButton.click();
+
+    // Dropdown search input should automatically receive focus
+    const searchInput = page.locator("#resourcetype-options input");
+    await expect(searchInput).toBeFocused();
+
+    // Pressing Escape should close the dropdown and return focus to the trigger button
+    await page.keyboard.press("Escape");
+    await expect(searchInput).not.toBeVisible();
+    await expect(selectButton).toBeFocused();
+  });
 });

@@ -27,6 +27,8 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
   const [searchText, setSearchText] = useState("");
   const [filteredOptions, setFilteredOptions] = useState(options);
   const wrapperRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (searchText.trim() === "") {
@@ -55,6 +57,13 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
     };
   }, []);
 
+  // Auto-focus input on open
+  useEffect(() => {
+    if (isOpen && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isOpen]);
+
   const selectedLabel =
     options.find((option) => option.value === value)?.label ?? "";
 
@@ -62,11 +71,31 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
     onChange(optionValue);
     setIsOpen(false);
     setSearchText("");
+    buttonRef.current?.focus();
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Escape") {
+      setIsOpen(false);
+      buttonRef.current?.focus();
+    }
+  };
+
+  const handleInputKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      const selectEl = document.getElementById(`${id}-select`);
+      if (selectEl) {
+        (selectEl as HTMLSelectElement).focus();
+      }
+    }
   };
 
   return (
-    <div className="relative" ref={wrapperRef}>
+    // biome-ignore lint/a11y/noStaticElementInteractions: Keyboard container handler is required for custom select accessibility
+    <div className="relative" ref={wrapperRef} onKeyDown={handleKeyDown}>
       <button
+        ref={buttonRef}
         type="button"
         className={`w-full p-2 bg-gray-700 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer flex justify-between items-center ${className}`}
         onClick={() => setIsOpen(!isOpen)}
@@ -87,6 +116,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
         >
           <div className="p-2 sticky top-0 bg-gray-700 border-b border-gray-600">
             <input
+              ref={inputRef}
               id={id}
               type="text"
               className="w-full p-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -94,6 +124,7 @@ const SearchableSelect: React.FC<SearchableSelectProps> = ({
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
               onClick={(e) => e.stopPropagation()}
+              onKeyDown={handleInputKeyDown}
               aria-label={t("common.search")}
             />
           </div>
