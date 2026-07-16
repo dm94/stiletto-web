@@ -18,11 +18,11 @@ import { FaList, FaExclamationTriangle } from "react-icons/fa";
 import ReportIncidentModal from "@components/ReportIncidentModal";
 
 const getIngredientsFromItems = (
-  items: Item[],
+  itemsMap: Map<string, Item>,
   itemName: string,
   secondTree: boolean,
 ): ItemRecipe[] => {
-  const selectedItem = items.find((it) => it.name === itemName);
+  const selectedItem = itemsMap.get(itemName);
   if (!selectedItem?.crafting) {
     return [];
   }
@@ -34,7 +34,7 @@ const getIngredientsFromItems = (
         ...ingredient,
         ingredients: secondTree
           ? []
-          : getIngredientsFromItems(items, ingredient.name, true),
+          : getIngredientsFromItems(itemsMap, ingredient.name, true),
       })),
     }),
   );
@@ -45,9 +45,13 @@ const mapRecipeItemsToSelectedItems = (
   recipes: Array<{ name: string; count: number }>,
 ): CraftItem[] => {
   const nextSelectedItems: CraftItem[] = [];
+  const itemsMap = new Map<string, Item>();
+  for (const item of items) {
+    itemsMap.set(item.name, item);
+  }
 
   for (const recipeItem of recipes) {
-    const selectedItem = items.find((item) => item.name === recipeItem.name);
+    const selectedItem = itemsMap.get(recipeItem.name);
     if (!selectedItem) {
       continue;
     }
@@ -56,7 +60,7 @@ const mapRecipeItemsToSelectedItems = (
       ...selectedItem,
       name: selectedItem.name,
       category: selectedItem.category ?? "",
-      crafting: getIngredientsFromItems(items, selectedItem.name, false),
+      crafting: getIngredientsFromItems(itemsMap, selectedItem.name, false),
       count: recipeItem.count,
     });
   }
@@ -154,6 +158,15 @@ const Crafter: React.FC = () => {
     [],
   );
 
+  // Pre-index items to enable O(1) map lookup during ingredient resolution and node selection
+  const allItemsMap = useMemo(() => {
+    const map = new Map<string, Item>();
+    for (const item of allItems) {
+      map.set(item.name, item);
+    }
+    return map;
+  }, [allItems]);
+
   const removeSelectedItem = useCallback((itemName: string): void => {
     setSelectedItems((prevItems) =>
       prevItems.filter((it) => it.name !== itemName),
@@ -178,8 +191,8 @@ const Crafter: React.FC = () => {
 
   const getIngredients = useCallback(
     (itemName: string, secondTree: boolean): ItemRecipe[] =>
-      getIngredientsFromItems(allItems, itemName, secondTree),
-    [allItems],
+      getIngredientsFromItems(allItemsMap, itemName, secondTree),
+    [allItemsMap],
   );
 
   const handleAdd = useCallback(
@@ -191,7 +204,10 @@ const Crafter: React.FC = () => {
         return;
       }
 
-      const selectedItem = itemsList.find((it) => it.name === itemName);
+      const selectedItem =
+        itemsList === allItems
+          ? allItemsMap.get(itemName)
+          : itemsList.find((it) => it.name === itemName);
       if (selectedItem) {
         setSelectedItems((prevItems) => [
           ...prevItems,
@@ -205,7 +221,7 @@ const Crafter: React.FC = () => {
         ]);
       }
     },
-    [allItems, selectedItems, changeCount, getIngredients],
+    [allItems, allItemsMap, selectedItems, changeCount, getIngredients],
   );
 
   const showAllItems = useMemo((): React.ReactNode => {
