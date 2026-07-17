@@ -45,6 +45,9 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [nodes, setNodes] = useState<NodeData[]>([]);
   const [edges, setEdges] = useState<EdgeData[]>([]);
+
+  // Create an O(1) lookup Map for nodes by their ID to avoid repeated O(N) array scans.
+  const nodesMap = useMemo(() => new Map(nodes.map((n) => [n.id, n])), [nodes]);
   const [skills, setSkills] = useState<SkillStateMap>({});
   const [tooltipInfo, setTooltipInfo] = useState<{
     visible: boolean;
@@ -105,6 +108,8 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     const verticalSpacing = 110;
     const processedNodes: NodeData[] = [];
     const processedEdges: EdgeData[] = [];
+    // Maintain a map of processed nodes to perform O(1) parentNode lookups rather than O(N) scans.
+    const processedNodesMap = new Map<string, NodeData>();
 
     // Process nodes level by level for horizontal layout
     const processLevel = (nodes: NodeData[], level: number, startY: number) => {
@@ -129,10 +134,11 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         };
 
         processedNodes.push(updatedNode);
+        processedNodesMap.set(updatedNode.id, updatedNode);
 
         // Create edge if node has a parent
         if (node.parentId) {
-          const parentNode = processedNodes.find((n) => n.id === node.parentId);
+          const parentNode = processedNodesMap.get(node.parentId);
           if (parentNode) {
             processedEdges.push({
               from: parentNode.id,
@@ -182,8 +188,8 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
   // Check if a node can be learned based on its parent's status
   const canLearnNode = useCallback(
     (nodeId: string): boolean => {
-      // Find the node in our nodes array
-      const node = nodes.find((n) => n.id === nodeId);
+      // Find the node using our O(1) Map
+      const node = nodesMap.get(nodeId);
       if (!node) {
         return false;
       }
@@ -196,7 +202,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       // Check if parent node is selected
       return skills[node.parentId]?.nodeState === "selected";
     },
-    [nodes, skills],
+    [nodesMap, skills],
   );
 
   const toggleNode = useCallback(
@@ -207,7 +213,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         if (newSkills[nodeId]?.nodeState === "selected") {
           newSkills[nodeId] = { nodeState: "unlocked" };
         } else {
-          const node = nodes.find((n) => n.id === nodeId);
+          const node = nodesMap.get(nodeId);
           if (
             node?.parentId &&
             prevSkills[node.parentId]?.nodeState !== "selected"
@@ -224,7 +230,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         return newSkills;
       });
     },
-    [treeId, nodes],
+    [treeId, nodesMap],
   );
 
   const showTooltip = useCallback((nodeId: string) => {
@@ -236,7 +242,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
 
   const getTooltipContent = useCallback(
     (nodeId: string) => {
-      const node = nodes.find((n) => n.id === nodeId);
+      const node = nodesMap.get(nodeId);
       if (!node) {
         return null;
       }
@@ -295,7 +301,7 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         </div>
       );
     },
-    [clan, nodes, t, treeId, toggleNode, canLearnNode],
+    [clan, nodesMap, t, treeId, toggleNode, canLearnNode],
   );
 
   // Zoom controls
@@ -401,8 +407,8 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
           >
             <title>Lines</title>
             {edges.map((edge) => {
-              const fromNode = nodes.find((n) => n.id === edge.from);
-              const toNode = nodes.find((n) => n.id === edge.to);
+              const fromNode = nodesMap.get(edge.from);
+              const toNode = nodesMap.get(edge.to);
 
               if (!fromNode || !toNode) {
                 return null;
