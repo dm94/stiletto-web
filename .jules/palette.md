@@ -1,0 +1,3 @@
+## 2025-05-18 - Keyboard shortcut helper for global search and navigation
+**Learning:** Users on content-heavy wikis highly appreciate quick, keyboard-driven navigation to search filters and inputs. Adding a standard shortcut key like `/` to focus search bars drastically lowers interaction friction, especially when accompanied by a subtle, screen-reader-friendly keyboard hint.
+**Action:** Implement `/` keyboard shortcut key to focus the input field in the wiki search component and render a visual `[/]` helper next to or inside the search field. Ensure the shortcut is suppressed when focusing on other input or editing controls to avoid conflict.
