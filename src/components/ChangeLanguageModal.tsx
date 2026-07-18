@@ -1,4 +1,5 @@
 import type React from "react";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { supportedLanguages } from "@config/languages";
 import type { Language } from "@ctypes";
@@ -13,11 +14,27 @@ const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({
   hideModal,
 }) => {
   const { t } = useTranslation();
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    dialogRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        hideModal?.();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [hideModal]);
 
   const languageButtons = supportedLanguages.map((language: Language) => (
     <button
       type="button"
-      className="p-2 text-center"
+      className="p-2 text-center rounded-lg focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none"
       key={language.key}
       onClick={() => switchLanguage?.(language.key)}
     >
@@ -32,9 +49,19 @@ const ChangeLanguageModal: React.FC<ChangeLanguageModalProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full mx-4">
+      <div
+        ref={dialogRef}
+        tabIndex={-1}
+        className="bg-gray-800 rounded-lg shadow-xl max-w-2xl w-full mx-4 focus:outline-none"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="change-language-title"
+      >
         <div className="p-4 border-b border-gray-700">
-          <h2 className="text-xl font-semibold text-white">
+          <h2
+            id="change-language-title"
+            className="text-xl font-semibold text-white"
+          >
             {t("settings.changeLanguage")}
           </h2>
         </div>
