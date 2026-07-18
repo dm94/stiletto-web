@@ -91,6 +91,12 @@ const PerkTree = ({
     return { nodes, edges };
   }, [activeRoot, graph, selectedPerks]);
 
+  // Create an O(1) lookup Map for nodes by their ID to avoid repeated O(N) array scans during edge rendering.
+  const nodesMap = useMemo(
+    () => new Map(treeData.nodes.map((node) => [node.id, node])),
+    [treeData.nodes],
+  );
+
   const dimensions = useMemo(() => {
     if (treeData.nodes.length === 0) {
       return { width: 1000, height: 500, offsetX: 0, offsetY: 0 };
@@ -146,10 +152,9 @@ const PerkTree = ({
           <svg width="100%" height="100%" className="perk-tree-lines">
             <title>{t("perksCalculator.tree.dependencies")}</title>
             {treeData.edges.map((edge) => {
-              const fromNode = treeData.nodes.find(
-                (node) => node.id === edge.from,
-              );
-              const toNode = treeData.nodes.find((node) => node.id === edge.to);
+              // Retrieve nodes from the pre-computed O(1) Map instead of doing O(N) array scans.
+              const fromNode = nodesMap.get(edge.from);
+              const toNode = nodesMap.get(edge.to);
 
               if (fromNode == null || toNode == null) {
                 return null;
