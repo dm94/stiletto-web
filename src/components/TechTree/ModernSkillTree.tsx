@@ -111,9 +111,36 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
     // Maintain a map of processed nodes to perform O(1) parentNode lookups rather than O(N) scans.
     const processedNodesMap = new Map<string, NodeData>();
 
+    // Flatten the tree for easier processing using O(N) linear recursion (avoiding array spreading overhead)
+    const flattenTree = (
+      nodesList: NodeData[],
+      acc: NodeData[] = [],
+    ): NodeData[] => {
+      for (const node of nodesList) {
+        acc.push(node);
+        flattenTree(node.children, acc);
+      }
+      return acc;
+    };
+
+    const flatNodes = flattenTree(treeData);
+
+    // Group nodes by their level to enable O(1) map lookup during layout processing,
+    // avoiding the O(N^2) complexity of scanning flatNodes for each level.
+    const nodesByLevel = new Map<number, NodeData[]>();
+    for (let i = 0; i < flatNodes.length; i++) {
+      const node = flatNodes[i];
+      let levelList = nodesByLevel.get(node.level);
+      if (!levelList) {
+        levelList = [];
+        nodesByLevel.set(node.level, levelList);
+      }
+      levelList.push(node);
+    }
+
     // Process nodes level by level for horizontal layout
-    const processLevel = (nodes: NodeData[], level: number, startY: number) => {
-      const levelNodes = nodes.filter((node) => node.level === level);
+    const processLevel = (level: number, startY: number) => {
+      const levelNodes = nodesByLevel.get(level) || [];
       if (levelNodes.length === 0) {
         return;
       }
@@ -122,7 +149,8 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       const totalHeight = (levelNodes.length - 1) * verticalSpacing;
       let currentY = startY - totalHeight / 2;
 
-      for (const node of levelNodes) {
+      for (let i = 0; i < levelNodes.length; i++) {
+        const node = levelNodes[i];
         // Set horizontal position based on level
         const x = 100 + level * horizontalSpacing;
         const y = currentY;
@@ -151,26 +179,12 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
         currentY += verticalSpacing;
       }
 
-      // Process next level
-      processLevel(nodes, level + 1, startY);
+      // Process next level using O(1) level lookup
+      processLevel(level + 1, startY);
     };
-
-    // Flatten the tree for easier processing using O(N) linear recursion (avoiding array spreading overhead)
-    const flattenTree = (
-      nodesList: NodeData[],
-      acc: NodeData[] = [],
-    ): NodeData[] => {
-      for (const node of nodesList) {
-        acc.push(node);
-        flattenTree(node.children, acc);
-      }
-      return acc;
-    };
-
-    const flatNodes = flattenTree(treeData);
 
     // Start processing from level 0
-    processLevel(flatNodes, 0, 300);
+    processLevel(0, 300);
 
     return { nodes: processedNodes, edges: processedEdges };
   }, []);
@@ -362,14 +376,39 @@ const ModernSkillTree: React.FC<ModernSkillTreeProps> = ({
       return { width: 1000, height: 600, offsetX: 0, offsetY: 0 };
     }
 
-    const minX = Math.min(...nodes.map((n) => n.x));
-    const minY = Math.min(...nodes.map((n) => n.y));
-    const maxX = Math.max(...nodes.map((n) => n.x)) + 100;
-    const maxY = Math.max(...nodes.map((n) => n.y)) + 100;
+    let minX = Infinity;
+    let minY = Infinity;
+    let maxX = -Infinity;
+    let maxY = -Infinity;
+
+    for (let i = 0; i < nodes.length; i++) {
+      const node = nodes[i];
+      if (node.x < minX) {
+        minX = node.x;
+      }
+      if (node.y < minY) {
+        minY = node.y;
+      }
+      if (node.x > maxX) {
+        maxX = node.x;
+      }
+      if (node.y > maxY) {
+        maxY = node.y;
+      }
+    }
+
+    const maxXWithPadding = maxX + 100;
+    const maxYWithPadding = maxY + 100;
+
     // Offset to ensure all nodes are visible (no negative positions)
     const offsetX = minX < 0 ? -minX + 20 : 0;
     const offsetY = minY < 0 ? -minY + 20 : 0;
-    return { width: maxX + offsetX, height: maxY + offsetY, offsetX, offsetY };
+    return {
+      width: maxXWithPadding + offsetX,
+      height: maxYWithPadding + offsetY,
+      offsetX,
+      offsetY,
+    };
   }, [nodes]);
 
   return (
