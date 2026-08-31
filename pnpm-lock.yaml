@@ -12,8 +12,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@mcp-b/global':
-        specifier: ^4.0.0
-        version: 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
+        specifier: ^5.0.1
+        version: 5.0.1
       '@mcp-b/react-webmcp':
         specifier: ^4.0.0
         version: 4.0.0(@cfworker/json-schema@4.1.1)(react@19.2.5)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
@@ -995,6 +995,10 @@ packages:
     resolution: {integrity: sha512-jDBrAwN/A3jJ+tUxtS5IcM7en8VS38n0TUkibcZspq+Pu4Romh1s99jlkOkk1r1CvIbLJ5zJqgIMzWKFR4067A==}
     engines: {node: '>=18'}
 
+  '@mcp-b/global@5.0.1':
+    resolution: {integrity: sha512-Wca64tan5xaz1yyT8xeZj/3CLhN2vSjUUYmiZIBSw0XkgqDfezLc8EoLqAWIBgtbddDMpAHI3WDd+RhgJViQbg==}
+    engines: {node: '>=20'}
+
   '@mcp-b/react-webmcp@4.0.0':
     resolution: {integrity: sha512-FEbUXmziTxcdIpNzqbsabE/6ukgP1W7t81ZeWgNJOHHEWk8S1x/ZJ2bcEEDI22XtB45SAlBySD/uXyk9R5iWWw==}
     peerDependencies:
@@ -1007,9 +1011,17 @@ packages:
   '@mcp-b/transports@4.0.0':
     resolution: {integrity: sha512-uf8a1zYnpfT0ugBobElhH37Z4jNlBV76WvaHZPKO8DYSvAI4Qs7B+bUQwNpCoSC/tCqdMbHkLxW2G/6Xz9/4Mw==}
 
+  '@mcp-b/transports@5.0.1':
+    resolution: {integrity: sha512-qgFns3DJ8I2LWDPx6CItQdGIHIammYTcVo6LqdcjC1pURhJyJRUCBc8Q2dNjNEK2gp3dALPmvk5S7OOe5iyA7w==}
+    engines: {node: '>=20'}
+
   '@mcp-b/webmcp-polyfill@4.0.0':
     resolution: {integrity: sha512-7M6WS3IcxaIEhidbS9N7wrrGjtJf474Vi4Fn1hGkFkmYFT5EoFw/kS/4CSdUR/KmlInO1kyluHRY6t3avMQfFw==}
     engines: {node: '>=18'}
+
+  '@mcp-b/webmcp-polyfill@5.0.1':
+    resolution: {integrity: sha512-xw/7f0bu4dsqWaGCE4RbB5/nkkbczeIP6NNeatE61Yxfpfp3r2E7pdgHmtYKb3oZ2BxROiM/yWkgiM3Ol0nkjA==}
+    engines: {node: '>=20'}
 
   '@mcp-b/webmcp-ts-sdk@4.0.0':
     resolution: {integrity: sha512-zXdbBdefgcBz077NkvZ3WZhkHOvBU2rpsVK8ytQt/SbiS2tCIFshuB027QceuTyuprOjW0b7XKDnSzDB2DQVMA==}
@@ -1023,8 +1035,20 @@ packages:
       zod-to-json-schema:
         optional: true
 
+  '@mcp-b/webmcp-ts-sdk@5.0.1':
+    resolution: {integrity: sha512-0o/mtUCjJSLw6l/81Yexnd6pXTYw1tZN2a7/e5zaMM5UWp/97vXhh5ktwfbodwu//L8/Rag7n69++rnhhE8zxw==}
+    engines: {node: '>=20'}
+
   '@mcp-b/webmcp-types@4.0.0':
     resolution: {integrity: sha512-CUBBmiut1UBsiD3FAF6xrLKeKAuJkzd6/BlL1C/uo8sVpwY42NW4mls9rLcTxmLF/8Cj5/ZOwJiLzXl/T3GIQg==}
+
+  '@mcp-b/webmcp-types@5.0.1':
+    resolution: {integrity: sha512-UN7GsTrudXoMWxTL6n6451C19r5nsBzU4WLovRC6YVFnOJk3N5qYwmQySAISEi/0fcWkRDcT3OqAee7/jrl1iA==}
+    engines: {node: '>=20'}
+
+  '@modelcontextprotocol/core@2.0.0':
+    resolution: {integrity: sha512-pJCEwGG7Lfr/+PQp9ZTwKXNeO5wzbfKL7H3MYpCorM4oFBoQrdjnBgEoqG+RjhsvS1FKrDbKux+M1HhlnGWqcA==}
+    engines: {node: '>=20'}
 
   '@modelcontextprotocol/sdk@1.29.0':
     resolution: {integrity: sha512-zo37mZA9hJWpULgkRpowewez1y6ML5GsXJPY8FI0tBBCd77HEvza4jDqRKOXgHNn867PVGCyTdzqpz0izu5ZjQ==}
@@ -1035,6 +1059,10 @@ packages:
     peerDependenciesMeta:
       '@cfworker/json-schema':
         optional: true
+
+  '@modelcontextprotocol/server@2.0.0':
+    resolution: {integrity: sha512-YhHWdHfpFMQfd0prsEnxKeS3Qz3ytIGmsS0sth4KDjnacIT7hxk6hXHkJ9KysxlkvTM+WZAtQbbcUhdoP4Hvtw==}
+    engines: {node: '>=20'}
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     resolution: {integrity: sha512-oTXEIha4SsuXdTA4Iyskj0kpdx2yVXdhd75c2v3xGrHFfVMsbhTPZU/nMPL4sWKo4pBHm3aucLaqGlF696dTyQ==}
@@ -1473,6 +1501,9 @@ packages:
   '@types/babel__traverse@7.28.0':
     resolution: {integrity: sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q==}
 
+  '@types/chrome@0.0.326':
+    resolution: {integrity: sha512-WS7jKf3ZRZFHOX7dATCZwqNJgdfiSF0qBRFxaO0LhIOvTNBrfkab26bsZwp6EBpYtqp8loMHJTnD6vDTLWPKYw==}
+
   '@types/debug@4.1.12':
     resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
@@ -1485,8 +1516,17 @@ packages:
   '@types/estree@1.0.9':
     resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
 
+  '@types/filesystem@0.0.36':
+    resolution: {integrity: sha512-vPDXOZuannb9FZdxgHnqSwAG/jvdGM8Wq+6N4D/d80z+D4HWH+bItqsZaVRQykAn6WEVeEkLm2oQigyHtgb0RA==}
+
+  '@types/filewriter@0.0.33':
+    resolution: {integrity: sha512-xFU8ZXTw4gd358lb2jw25nxY9QAgqn2+bKKjKOYfNCzN4DKCFetK7sPtrlpg66Ywe3vWY9FNxprZawAh9wfJ3g==}
+
   '@types/geojson@7946.0.16':
     resolution: {integrity: sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg==}
+
+  '@types/har-format@1.2.16':
+    resolution: {integrity: sha512-fluxdy7ryD3MV6h8pTfTYpy/xQzCFC7m89nOH9y94cNqJ1mDIDPut7MnRHI3F6qRmh/cT2fUjG1MLdCNb4hE9A==}
 
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
@@ -4307,6 +4347,14 @@ snapshots:
       - zod
       - zod-to-json-schema
 
+  '@mcp-b/global@5.0.1':
+    dependencies:
+      '@mcp-b/transports': 5.0.1
+      '@mcp-b/webmcp-polyfill': 5.0.1
+      '@mcp-b/webmcp-ts-sdk': 5.0.1
+      '@mcp-b/webmcp-types': 5.0.1
+      '@modelcontextprotocol/server': 2.0.0
+
   '@mcp-b/react-webmcp@4.0.0(@cfworker/json-schema@4.1.1)(react@19.2.5)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)':
     dependencies:
       '@mcp-b/global': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
@@ -4333,10 +4381,21 @@ snapshots:
       - supports-color
       - zod-to-json-schema
 
+  '@mcp-b/transports@5.0.1':
+    dependencies:
+      '@modelcontextprotocol/core': 2.0.0
+      '@modelcontextprotocol/server': 2.0.0
+      '@types/chrome': 0.0.326
+
   '@mcp-b/webmcp-polyfill@4.0.0':
     dependencies:
       '@cfworker/json-schema': 4.1.1
       '@mcp-b/webmcp-types': 4.0.0
+      '@standard-schema/spec': 1.1.0
+
+  '@mcp-b/webmcp-polyfill@5.0.1':
+    dependencies:
+      '@mcp-b/webmcp-types': 5.0.1
       '@standard-schema/spec': 1.1.0
 
   '@mcp-b/webmcp-ts-sdk@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@3.25.76)':
@@ -4363,7 +4422,21 @@ snapshots:
       - '@cfworker/json-schema'
       - supports-color
 
+  '@mcp-b/webmcp-ts-sdk@5.0.1':
+    dependencies:
+      '@mcp-b/webmcp-polyfill': 5.0.1
+      '@mcp-b/webmcp-types': 5.0.1
+      '@modelcontextprotocol/server': 2.0.0
+
   '@mcp-b/webmcp-types@4.0.0': {}
+
+  '@mcp-b/webmcp-types@5.0.1':
+    dependencies:
+      '@modelcontextprotocol/server': 2.0.0
+
+  '@modelcontextprotocol/core@2.0.0':
+    dependencies:
+      zod: 4.4.3
 
   '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)':
     dependencies:
@@ -4412,6 +4485,11 @@ snapshots:
       '@cfworker/json-schema': 4.1.1
     transitivePeerDependencies:
       - supports-color
+
+  '@modelcontextprotocol/server@2.0.0':
+    dependencies:
+      '@modelcontextprotocol/core': 2.0.0
+      zod: 4.4.3
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
     optional: true
@@ -4716,6 +4794,11 @@ snapshots:
       '@babel/types': 7.29.8
     optional: true
 
+  '@types/chrome@0.0.326':
+    dependencies:
+      '@types/filesystem': 0.0.36
+      '@types/har-format': 1.2.16
+
   '@types/debug@4.1.12':
     dependencies:
       '@types/ms': 2.1.0
@@ -4728,7 +4811,15 @@ snapshots:
 
   '@types/estree@1.0.9': {}
 
+  '@types/filesystem@0.0.36':
+    dependencies:
+      '@types/filewriter': 0.0.33
+
+  '@types/filewriter@0.0.33': {}
+
   '@types/geojson@7946.0.16': {}
+
+  '@types/har-format@1.2.16': {}
 
   '@types/hast@3.0.4':
     dependencies:
