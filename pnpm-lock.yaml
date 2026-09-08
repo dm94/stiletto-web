@@ -13,10 +13,10 @@ importers:
         version: 3.1.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@mcp-b/global':
         specifier: ^4.0.0
-        version: 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
+        version: 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@4.5.4)
       '@mcp-b/react-webmcp':
         specifier: ^4.0.0
-        version: 4.0.0(@cfworker/json-schema@4.1.1)(react@19.2.5)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
+        version: 4.0.0(@cfworker/json-schema@4.1.1)(react@19.2.5)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@4.5.4)
       '@tanstack/react-virtual':
         specifier: ^3.14.10
         version: 3.14.10(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -69,8 +69,8 @@ importers:
         specifier: ^7.4.1
         version: 7.4.1
       zod:
-        specifier: ^4.4.3
-        version: 4.4.3
+        specifier: ^4.5.4
+        version: 4.5.4
     devDependencies:
       '@babel/preset-react':
         specifier: 7.28.5
@@ -3344,8 +3344,8 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.4.3:
-    resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
+  zod@4.5.4:
+    resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -4295,11 +4295,11 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.4.0
 
-  '@mcp-b/global@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)':
+  '@mcp-b/global@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@4.5.4)':
     dependencies:
-      '@mcp-b/transports': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))
+      '@mcp-b/transports': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))
       '@mcp-b/webmcp-polyfill': 4.0.0
-      '@mcp-b/webmcp-ts-sdk': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
+      '@mcp-b/webmcp-ts-sdk': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@4.5.4)
       '@mcp-b/webmcp-types': 4.0.0
     transitivePeerDependencies:
       - '@cfworker/json-schema'
@@ -4307,25 +4307,25 @@ snapshots:
       - zod
       - zod-to-json-schema
 
-  '@mcp-b/react-webmcp@4.0.0(@cfworker/json-schema@4.1.1)(react@19.2.5)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)':
+  '@mcp-b/react-webmcp@4.0.0(@cfworker/json-schema@4.1.1)(react@19.2.5)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@4.5.4)':
     dependencies:
-      '@mcp-b/global': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
-      '@mcp-b/transports': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))
+      '@mcp-b/global': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@4.5.4)
+      '@mcp-b/transports': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))
       '@mcp-b/webmcp-polyfill': 4.0.0
-      '@mcp-b/webmcp-ts-sdk': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)
+      '@mcp-b/webmcp-ts-sdk': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@4.5.4)
       '@mcp-b/webmcp-types': 4.0.0
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.4.3)
+      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.5.4)
       react: 19.2.5
     optionalDependencies:
-      zod: 4.4.3
+      zod: 4.5.4
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - supports-color
       - zod-to-json-schema
 
-  '@mcp-b/transports@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))':
+  '@mcp-b/transports@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))':
     dependencies:
-      '@mcp-b/webmcp-ts-sdk': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@3.25.76)
+      '@mcp-b/webmcp-ts-sdk': 4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@3.25.76)
       '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
       zod: 3.25.76
     transitivePeerDependencies:
@@ -4339,26 +4339,26 @@ snapshots:
       '@mcp-b/webmcp-types': 4.0.0
       '@standard-schema/spec': 1.1.0
 
-  '@mcp-b/webmcp-ts-sdk@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@3.25.76)':
+  '@mcp-b/webmcp-ts-sdk@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@3.25.76)':
     dependencies:
       '@mcp-b/webmcp-polyfill': 4.0.0
       '@mcp-b/webmcp-types': 4.0.0
       '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@3.25.76)
     optionalDependencies:
       zod: 3.25.76
-      zod-to-json-schema: 3.25.2(zod@4.4.3)
+      zod-to-json-schema: 3.25.2(zod@4.5.4)
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - supports-color
 
-  '@mcp-b/webmcp-ts-sdk@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.4.3))(zod@4.4.3)':
+  '@mcp-b/webmcp-ts-sdk@4.0.0(@cfworker/json-schema@4.1.1)(zod-to-json-schema@3.25.2(zod@4.5.4))(zod@4.5.4)':
     dependencies:
       '@mcp-b/webmcp-polyfill': 4.0.0
       '@mcp-b/webmcp-types': 4.0.0
-      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.4.3)
+      '@modelcontextprotocol/sdk': 1.29.0(@cfworker/json-schema@4.1.1)(zod@4.5.4)
     optionalDependencies:
-      zod: 4.4.3
-      zod-to-json-schema: 3.25.2(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.25.2(zod@4.5.4)
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - supports-color
@@ -4389,7 +4389,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.4.3)':
+  '@modelcontextprotocol/sdk@1.29.0(@cfworker/json-schema@4.1.1)(zod@4.5.4)':
     dependencies:
       '@hono/node-server': 1.19.14(hono@4.12.28)
       ajv: 8.20.0
@@ -4406,8 +4406,8 @@ snapshots:
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
       raw-body: 3.0.2
-      zod: 4.4.3
-      zod-to-json-schema: 3.25.2(zod@4.4.3)
+      zod: 4.5.4
+      zod-to-json-schema: 3.25.2(zod@4.5.4)
     optionalDependencies:
       '@cfworker/json-schema': 4.1.1
     transitivePeerDependencies:
@@ -6930,12 +6930,12 @@ snapshots:
     dependencies:
       zod: 3.25.76
 
-  zod-to-json-schema@3.25.2(zod@4.4.3):
+  zod-to-json-schema@3.25.2(zod@4.5.4):
     dependencies:
-      zod: 4.4.3
+      zod: 4.5.4
 
   zod@3.25.76: {}
 
-  zod@4.4.3: {}
+  zod@4.5.4: {}
 
   zwitch@2.0.4: {}
