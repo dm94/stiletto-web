@@ -34,7 +34,7 @@
     "react-router": "^8.3.1",
     "vanilla-cookieconsent": "3.1.0",
     "workbox-window": "^7.4.1",
-    "zod": "^4.5.4"
+    "zod": "^4.6.7"
   },
   "scripts": {
     "dev": "vite",
@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@babel/preset-react": "7.28.5",
-    "@biomejs/biome": "2.5.11",
+    "@biomejs/biome": "2.5.15",
     "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "4.3.2",
     "@types/leaflet": "^1.9.22",
