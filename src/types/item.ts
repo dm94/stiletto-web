@@ -15,7 +15,7 @@ export enum RarityTierEnum {
 }
 
 export type ItemIngredient = {
-  ingredients?: ItemIngredient[];
+  ingredients?: ItemRecipe[];
   name: string;
   count: number;
   category?: string;
@@ -140,6 +140,7 @@ export type Item = {
   name: string;
   category?: string;
   crafting?: ItemRecipe[];
+  learn?: string[];
 };
 
 export type CraftItem = Item & { count: number };

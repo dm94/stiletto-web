@@ -20,10 +20,8 @@ i18n
     supportedLngs: languageWhitelist,
     detection: {
       order: ["localStorage", "navigator"],
-      convertPathToLanguage: (lng: string) => lng.toLowerCase(),
+      convertDetectedLanguage: (lng: string) => lng.toLowerCase(),
       caches: ["localStorage"],
-      checkWhitelist: true,
-      skipRouteLocalizationIfPathContainsLocale: true,
     },
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",

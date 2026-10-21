@@ -10,6 +10,7 @@ import VanillaCookieConsent from "@components/VanillaCookieConsent";
 import Menu from "@components/Menu";
 import ChangeLanguageModal from "@components/ChangeLanguageModal";
 import { getStoredItem, storeItem } from "@functions/services";
+import { mcpToolResponse } from "@functions/utils";
 import AppRoutes from "./router";
 import { usePageTracking } from "@functions/page-tracking";
 import NotificationList from "@components/Notifications/NotificationList";
@@ -58,24 +59,29 @@ const CrafterApp: React.FC = () => {
   useWebMCP({
     name: "stiletto_navigate",
     description: NAVIGATE_DESCRIPTION,
-    inputSchema: {
+    inputSchema: z.object({
       page: z.enum(APP_PAGES).describe("Target page name"),
-    },
+    }),
     outputSchema: {
-      success: z.boolean(),
-      page: z.string(),
+      type: "object",
+      properties: {
+        success: { type: "boolean" },
+        page: { type: "string" },
+      },
+      required: ["success", "page"],
     },
     annotations: {
       title: "Navigate to Page",
       readOnlyHint: false,
       idempotentHint: true,
     },
-    handler: async ({ page }) => {
+    execute: async ({ page }) => {
       const path = page === "home" ? "/" : `/${page}`;
       navigate(path);
       return { success: true, page };
     },
-    formatOutput: (result) => `Navigated to ${result.page}`,
+    formatOutput: (result) =>
+      mcpToolResponse(`Navigated to ${result.page}`, result),
   });
 
   if (redirectTo != null) {
