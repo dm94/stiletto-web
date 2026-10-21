@@ -5,7 +5,7 @@ export interface CustomItem {
   category?: string;
   count?: number;
   crafting?: ItemRecipe[];
-  ingredients?: Ingredient[];
+  ingredients?: (Ingredient | ItemRecipe)[];
   value?: number;
   rarity?: RarityTierEnum;
 }

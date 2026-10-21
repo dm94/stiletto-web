@@ -2,10 +2,9 @@ import type React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
 import { getCreatureUrl } from "@functions/utils";
-import type { RelatedCreature } from "@ctypes/creature";
 
 interface RelatedCreaturesProps {
-  related?: RelatedCreature[];
+  related?: string[];
 }
 
 const RelatedCreatures: React.FC<RelatedCreaturesProps> = ({

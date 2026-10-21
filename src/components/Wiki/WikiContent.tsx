@@ -76,7 +76,7 @@ const WikiContent = ({
                   key={creature.name}
                   name={creature.name}
                   width={35}
-                  aria-hidden="true"
+                  aria-hidden
                 />
                 <span className="ml-2 text-gray-300">
                   {t(creature.name, { ns: "creatures" })}

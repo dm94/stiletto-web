@@ -59,6 +59,18 @@ export const toCamelCase = (str: string) =>
     .replaceAll(/_+/g, "")
     .replaceAll(/(^|_)([a-z])/g, (_, __, letter) => letter.toUpperCase());
 
+/**
+ * Builds an MCP tool response that carries both a human-readable text block
+ * and the schema-valid structured content required when `outputSchema` is set.
+ */
+export const mcpToolResponse = <T extends object>(
+  text: string,
+  structuredContent: T,
+) => ({
+  content: [{ type: "text" as const, text }],
+  structuredContent,
+});
+
 export const objectToURLSearchParams = (obj: object): URLSearchParams => {
   const keyValuePairs = Object.keys(obj)
     .filter((key) => obj[key as keyof typeof obj] !== undefined)

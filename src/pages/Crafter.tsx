@@ -9,7 +9,11 @@ import ModalMessage from "@components/ModalMessage";
 import Items from "@components/Crafter/Items";
 import SelectedItem from "@components/Crafter/SelectedItem";
 import TotalMaterials from "@components/Crafter/TotalMaterials";
-import { getDomain, getItemDecodedName } from "@functions/utils";
+import {
+  getDomain,
+  getItemDecodedName,
+  mcpToolResponse,
+} from "@functions/utils";
 import { getRecipe } from "@functions/requests/recipes";
 import { useLocation } from "react-router";
 import type { CraftItem, Item, ItemRecipe } from "@ctypes/item";
@@ -263,18 +267,32 @@ const Crafter: React.FC = () => {
     name: "crafter_search",
     description:
       "Search for craftable items by name. Returns matching item names and display names. Use the 'name' field from results with crafter_add_item.",
-    inputSchema: {
+    inputSchema: z.object({
       query: z.string().describe("Search query to find items by name"),
-    },
+    }),
     outputSchema: {
-      items: z.array(z.object({ name: z.string(), displayName: z.string() })),
-      total: z.number(),
+      type: "object",
+      properties: {
+        items: {
+          type: "array",
+          items: {
+            type: "object",
+            properties: {
+              name: { type: "string" },
+              displayName: { type: "string" },
+            },
+            required: ["name", "displayName"],
+          },
+        },
+        total: { type: "number" },
+      },
+      required: ["items", "total"],
     },
     annotations: {
       title: "Search Craftable Items",
       readOnlyHint: true,
     },
-    handler: async ({ query }) => {
+    execute: async ({ query }) => {
       const lowerQuery = query.toLowerCase();
       const filtered = allItems.filter((item) =>
         t(item.name, { ns: "items" }).toLowerCase().includes(lowerQuery),
@@ -288,30 +306,37 @@ const Crafter: React.FC = () => {
       };
     },
     formatOutput: (result) =>
-      `Found ${result.total} items: ${result.items.map((i) => i.displayName).join(", ")}`,
+      mcpToolResponse(
+        `Found ${result.total} items: ${result.items.map((i) => i.displayName).join(", ")}`,
+        result,
+      ),
   });
 
   useWebMCP({
     name: "crafter_add_item",
     description:
       "Add a craftable item to the crafting list. Use crafter_search first to find the exact item name.",
-    inputSchema: {
+    inputSchema: z.object({
       name: z
         .string()
         .describe("Item name (the 'name' field from crafter_search results)"),
       count: z.number().min(1).default(1).describe("Quantity to add"),
-    },
+    }),
     outputSchema: {
-      success: z.boolean(),
-      name: z.string(),
-      count: z.number(),
+      type: "object",
+      properties: {
+        success: { type: "boolean" },
+        name: { type: "string" },
+        count: { type: "number" },
+      },
+      required: ["success", "name", "count"],
     },
     annotations: {
       title: "Add Item to Crafter",
       readOnlyHint: false,
       idempotentHint: false,
     },
-    handler: async ({ name, count }) => {
+    execute: async ({ name, count }) => {
       const exists = allItems.some((it) => it.name === name);
       if (!exists) {
         throw new Error(
@@ -321,29 +346,35 @@ const Crafter: React.FC = () => {
       handleAdd(name, count);
       return { success: true, name, count };
     },
-    formatOutput: (result) => `Added ${result.count}x ${result.name}`,
+    formatOutput: (result) =>
+      mcpToolResponse(`Added ${result.count}x ${result.name}`, result),
   });
 
   useWebMCP({
     name: "crafter_remove_item",
     description: "Remove an item from the crafting list by name.",
-    inputSchema: {
+    inputSchema: z.object({
       name: z.string().describe("The item name to remove"),
-    },
+    }),
     outputSchema: {
-      success: z.boolean(),
-      name: z.string(),
+      type: "object",
+      properties: {
+        success: { type: "boolean" },
+        name: { type: "string" },
+      },
+      required: ["success", "name"],
     },
     annotations: {
       title: "Remove Item from Crafter",
       readOnlyHint: false,
       idempotentHint: true,
     },
-    handler: async ({ name }) => {
+    execute: async ({ name }) => {
       removeSelectedItem(name);
       return { success: true, name };
     },
-    formatOutput: (result) => `Removed ${result.name} from the crafting list`,
+    formatOutput: (result) =>
+      mcpToolResponse(`Removed ${result.name} from the crafting list`, result),
   });
 
   if (error) {
