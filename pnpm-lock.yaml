@@ -24,8 +24,8 @@ importers:
         specifier: 26.5.7
         version: 26.5.7(typescript@7.0.2)
       i18next-browser-languagedetector:
-        specifier: 8.2.1
-        version: 8.2.1
+        specifier: 8.2.2
+        version: 8.2.2
       i18next-http-backend:
         specifier: 4.0.5
         version: 4.0.5
@@ -611,10 +611,6 @@ packages:
     resolution: {integrity: sha512-HrcgcIESLm9aIR842yhJ5RWan/gebQUJ6E/E5+rf0y9o6oj7w0Br+sWuL6kEQ/o/AdfvR1Je9jG18/gnpwjEyA==}
     peerDependencies:
       '@babel/core': ^7.0.0-0 || ^8.0.0-0 <8.0.0
-
-  '@babel/runtime@7.28.6':
-    resolution: {integrity: sha512-05WQkdpL9COIMz4LjTxGpPNCdlpyimKppYNoJ5Di5EUObifl8t4tuLuUBBZEpoLYOmfvIWrsp9fCl0HoPRVTdA==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/runtime@7.29.10':
     resolution: {integrity: sha512-NpugTzbKgGrNe45Ui32cN8vCFFMxVtP/9rtfwv0nP5FRDAjvYBxJcLVpYA9mr1jxP6cnIT7x9LUzuDTbWYYNRA==}
@@ -1990,8 +1986,8 @@ packages:
   html-url-attributes@3.0.1:
     resolution: {integrity: sha512-ol6UPyBWqsrO6EJySPz2O7ZSr856WDrEzM5zMqp+FJJLGMW35cLYmmZnl0vztAZxRUoNZJFTCohfjuIJ8I4QBQ==}
 
-  i18next-browser-languagedetector@8.2.1:
-    resolution: {integrity: sha512-bZg8+4bdmaOiApD7N7BPT9W8MLZG+nPTOFlLiJiT8uzKXFjhxw4v2ierCXOwB5sFDMtuA5G4kgYZ0AznZxQ/cw==}
+  i18next-browser-languagedetector@8.2.2:
+    resolution: {integrity: sha512-99PKPDVeLj7s4nDJAz+z664/6IWEb2EyssTsknyzc1MY+mmtAXpx3BP862MrKLGRtmSJnlUioPuOE22F+RR+ng==}
 
   i18next-http-backend@4.0.5:
     resolution: {integrity: sha512-0uXq24ZAVFwbA0MGija0AZYBcs8iA+wbC//UiDyZwPC3/wZfyD20LgGxvjMOqf9o3/pDJ05ZLIlB4U3+AdA9AQ==}
@@ -3780,8 +3776,6 @@ snapshots:
       '@babel/types': 7.29.11
       esutils: 2.0.3
 
-  '@babel/runtime@7.28.6': {}
-
   '@babel/runtime@7.29.10': {}
 
   '@babel/template@7.29.7':
@@ -4969,9 +4963,9 @@ snapshots:
 
   html-url-attributes@3.0.1: {}
 
-  i18next-browser-languagedetector@8.2.1:
+  i18next-browser-languagedetector@8.2.2:
     dependencies:
-      '@babel/runtime': 7.28.6
+      '@babel/runtime': 7.29.10
 
   i18next-http-backend@4.0.5: {}
 
