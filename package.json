@@ -18,7 +18,7 @@
     "@mcp-b/global": "6.0.3",
     "@mcp-b/react-webmcp": "6.0.3",
     "@tanstack/react-virtual": "3.14.21",
-    "i18next": "26.5.4",
+    "i18next": "26.5.7",
     "i18next-browser-languagedetector": "8.2.1",
     "i18next-http-backend": "4.0.4",
     "leaflet": "1.9.4",
