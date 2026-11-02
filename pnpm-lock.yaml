@@ -24,8 +24,8 @@ importers:
         specifier: 26.5.7
         version: 26.5.7(typescript@7.0.2)
       i18next-browser-languagedetector:
-        specifier: 8.2.2
-        version: 8.2.2
+        specifier: 8.2.4
+        version: 8.2.4
       i18next-http-backend:
         specifier: 4.0.5
         version: 4.0.5
@@ -1991,8 +1991,8 @@ packages:
   html-url-attributes@3.0.1:
     resolution: {integrity: sha512-ol6UPyBWqsrO6EJySPz2O7ZSr856WDrEzM5zMqp+FJJLGMW35cLYmmZnl0vztAZxRUoNZJFTCohfjuIJ8I4QBQ==}
 
-  i18next-browser-languagedetector@8.2.2:
-    resolution: {integrity: sha512-99PKPDVeLj7s4nDJAz+z664/6IWEb2EyssTsknyzc1MY+mmtAXpx3BP862MrKLGRtmSJnlUioPuOE22F+RR+ng==}
+  i18next-browser-languagedetector@8.2.4:
+    resolution: {integrity: sha512-n6zWTCD8plrPN6gotXNXf0qdM2cORZqZ6ypJA4aIXZkEa45Ds2BVlrZfFItD+XQWP3yAgWxV+euldyN+2utk0Q==}
 
   i18next-http-backend@4.0.5:
     resolution: {integrity: sha512-0uXq24ZAVFwbA0MGija0AZYBcs8iA+wbC//UiDyZwPC3/wZfyD20LgGxvjMOqf9o3/pDJ05ZLIlB4U3+AdA9AQ==}
@@ -4971,7 +4971,7 @@ snapshots:
 
   html-url-attributes@3.0.1: {}
 
-  i18next-browser-languagedetector@8.2.2:
+  i18next-browser-languagedetector@8.2.4:
     dependencies:
       '@babel/runtime': 7.29.10
 
