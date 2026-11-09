@@ -63,8 +63,8 @@ importers:
         specifier: 8.5.1
         version: 8.5.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       vanilla-cookieconsent:
-        specifier: 3.2.1
-        version: 3.2.1
+        specifier: 3.3.0
+        version: 3.3.0
       workbox-window:
         specifier: ^7.4.1
         version: 7.4.1
@@ -2891,8 +2891,8 @@ packages:
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
 
-  vanilla-cookieconsent@3.2.1:
-    resolution: {integrity: sha512-M3XXHR7AitvIRLj0kq5wZQqTNmAtINhxy4+IO2Tknm064uPzEgv8WQdp8ttgblspPvvocF8BkLI5qnkB31nVVA==}
+  vanilla-cookieconsent@3.3.0:
+    resolution: {integrity: sha512-KkFJL9W9MAOC7ipSmk1CqTY1PHBViDU81jRBRWGw1Zhx5Y3nyAQ2COYwMpEG2z2SM75HNUIOwM7NnkSJe775Tw==}
 
   vfile-message@4.0.3:
     resolution: {integrity: sha512-QTHzsGd1EhbZs4AsQ20JX1rC3cOlt/IWJruk893DfLRr57lcnOeMaWG4K0JrRta4mIJZKth2Au3mM3u03/JWKw==}
@@ -6010,7 +6010,7 @@ snapshots:
       react: 19.3.1
       webmcp-types: 0.1.9
 
-  vanilla-cookieconsent@3.2.1: {}
+  vanilla-cookieconsent@3.3.0: {}
 
   vfile-message@4.0.3:
     dependencies:
