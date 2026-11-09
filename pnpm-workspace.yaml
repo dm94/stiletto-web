@@ -19,9 +19,26 @@ minimumReleaseAgeExclude:
   - '@tailwindcss/oxide-win32-x64-msvc@4.3.4'
   - '@tailwindcss/oxide@4.3.4'
   - '@tailwindcss/postcss@4.3.4'
-  - '@vitejs/plugin-react@6.2.1'
+  - '@vitejs/plugin-react@6.2.1 || 6.3.0'
   - i18next-browser-languagedetector@8.3.0
   - i18next-http-backend@4.0.9
   - i18next@26.7.1
-  - posthog-js@1.444.4
+  - posthog-js@1.444.4 || 1.447.5
   - tailwindcss@4.3.4
+  - '@rolldown/binding-android-arm-eabi@1.2.18'
+  - '@rolldown/binding-android-arm64@1.2.18'
+  - '@rolldown/binding-darwin-arm64@1.2.18'
+  - '@rolldown/binding-darwin-x64@1.2.18'
+  - '@rolldown/binding-freebsd-x64@1.2.18'
+  - '@rolldown/binding-linux-arm-gnueabihf@1.2.18'
+  - '@rolldown/binding-linux-arm64-gnu@1.2.18'
+  - '@rolldown/binding-linux-arm64-musl@1.2.18'
+  - '@rolldown/binding-linux-ppc64-gnu@1.2.18'
+  - '@rolldown/binding-linux-s390x-gnu@1.2.18'
+  - '@rolldown/binding-linux-x64-gnu@1.2.18'
+  - '@rolldown/binding-linux-x64-musl@1.2.18'
+  - '@rolldown/binding-openharmony-arm64@1.2.18'
+  - '@rolldown/binding-win32-arm64-msvc@1.2.18'
+  - '@rolldown/binding-win32-x64-msvc@1.2.18'
+  - rolldown@1.2.18
+  - vite@8.3.7
