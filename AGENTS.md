@@ -43,7 +43,7 @@ Current stack:
 Requirements:
 
 - Node.js `>=22.x`
-- pnpm `10.26.2`
+- pnpm `11.28.10`
 
 Install dependencies:
 
