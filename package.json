@@ -74,7 +74,7 @@
     "autoprefixer": "10.6.2",
     "tailwindcss": "^4.3.3",
     "typescript": "7.0.2",
-    "vite": "8.3.5",
+    "vite": "8.3.6",
     "vite-plugin-pwa": "2.0.0"
   },
   "engines": {
