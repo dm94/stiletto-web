@@ -35,3 +35,5 @@ test-results/
 playwright-report/
 .next/
 .vercel/
+.impeccable/
+.agents/
